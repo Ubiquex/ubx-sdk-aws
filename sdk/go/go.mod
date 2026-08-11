@@ -1,4 +1,4 @@
-module github.com/ubiquex/ubx-sdk-aws/go
+module github.com/ubiquex/ubx-sdk-aws/sdk/go
 
 go 1.26.3
 

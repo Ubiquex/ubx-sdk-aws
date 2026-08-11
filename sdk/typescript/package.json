@@ -1,6 +1,6 @@
 {
   "name": "@ubx/sdk-aws",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Generated TypeScript bindings for hashicorp/aws@6.58.0 (ubx sdk gen). DO NOT EDIT.",
   "type": "module",
   "dependencies": {
