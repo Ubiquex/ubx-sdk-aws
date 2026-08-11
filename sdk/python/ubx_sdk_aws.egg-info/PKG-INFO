@@ -1,5 +1,0 @@
-Metadata-Version: 2.4
-Name: ubx-sdk-aws
-Version: 0.3.0
-Summary: Generated Python bindings for hashicorp/aws@6.58.0 (ubx sdk gen). DO NOT EDIT.
-Requires-Dist: ubx_sdk<0.2.0,>=0.1.0

@@ -1,0 +1,10 @@
+# Python build artifacts (twice now leaked into commits: __pycache__ in the
+# original 0.3.0 generation, *.egg-info in the 0.3.1 restructure)
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# TypeScript/Deno
+node_modules/
