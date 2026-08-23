@@ -2,126 +2,100 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Capability_Configuration_ArgoCd_AwsIdc {
-  idcInstanceArn: string;
-  idcManagedApplicationArn: string;
-  idcRegion: string;
+  /** The ARN of the IAM Identity Center instance to use for authentication. */
+  idcInstanceArn: string | Computed<string>;
+  /** The ARN of the managed application created in IAM Identity Center for this Argo CD capability. This application is automatically created and managed by EKS. */
+  idcManagedApplicationArn?: string | Computed<string>;
+  /** The Region where your IAM Identity Center instance is located. */
+  idcRegion?: string | Computed<string>;
 }
 
 export interface Capability_Configuration_ArgoCd_NetworkAccess {
-  vpceIds: string[];
+  /** A list of VPC endpoint IDs to associate with the managed Argo CD API server endpoint. Each VPC endpoint provides private connectivity from a specific VPC to the Argo CD server. You can specify multiple VPC endpoint IDs to enable access from multiple VPCs. */
+  vpceIds?: string[] | Computed<string[]>;
 }
 
-export interface Capability_Configuration_ArgoCd_RbacRoleMapping_Identity {
-  id: string;
-  type: string;
+export interface Capability_Configuration_ArgoCd_RbacRoleMappings_Identities {
+  id?: string | Computed<string>;
+  /** Defines the identity type (user or group) for an Argo CD RBAC role mapping in the EKS capability configuration. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
-export interface Capability_Configuration_ArgoCd_RbacRoleMapping {
-  role: string;
-  identity: Capability_Configuration_ArgoCd_RbacRoleMapping_Identity[];
+export interface Capability_Configuration_ArgoCd_RbacRoleMappings {
+  /** Specifies a list of IAM principal ARNs (users or roles) that are mapped to the corresponding Argo CD RBAC role, granting those identities the permissions defined for that role in the Kubernetes cluster. (AI-inferred) */
+  identities?: Capability_Configuration_ArgoCd_RbacRoleMappings_Identities[] | Computed<Capability_Configuration_ArgoCd_RbacRoleMappings_Identities[]>;
+  role?: string | Computed<string>;
 }
 
 export interface Capability_Configuration_ArgoCd {
-  namespace: string;
-  serverUrl: string;
-  awsIdc: Capability_Configuration_ArgoCd_AwsIdc[];
-  networkAccess: Capability_Configuration_ArgoCd_NetworkAccess[];
-  rbacRoleMapping: Capability_Configuration_ArgoCd_RbacRoleMapping[];
+  /** Configuration for integrating Argo CD with IAM Identity Center. This allows you to use your organization's identity provider for authentication to Argo CD. */
+  awsIdc: Capability_Configuration_ArgoCd_AwsIdc | Computed<Capability_Configuration_ArgoCd_AwsIdc>;
+  /** The Kubernetes namespace where Argo CD resources will be created. If not specified, the default namespace is used. */
+  namespace?: string | Computed<string>;
+  /** Configuration for network access to the Argo CD capability's managed API server endpoint. By default, the Argo CD server is accessible via a public endpoint. You can optionally specify one or more VPC endpoint IDs to enable private connectivity from your VPCs. */
+  networkAccess?: Capability_Configuration_ArgoCd_NetworkAccess | Computed<Capability_Configuration_ArgoCd_NetworkAccess>;
+  /** A list of role mappings that define which IAM Identity Center users or groups have which Argo CD roles. Each mapping associates an Argo CD role (ADMIN, EDITOR, or VIEWER) with one or more IAM Identity Center identities. */
+  rbacRoleMappings?: Capability_Configuration_ArgoCd_RbacRoleMappings[] | Computed<Capability_Configuration_ArgoCd_RbacRoleMappings[]>;
+  /** The URL of the Argo CD server. Use this URL to access the Argo CD web interface and API. */
+  serverUrl?: string | Computed<string>;
 }
 
 export interface Capability_Configuration {
-  argoCd: Capability_Configuration_ArgoCd[];
+  ack?: unknown | Computed<unknown>;
+  /** Configuration settings for an Argo CD capability. This includes the Kubernetes namespace, IAM Identity Center integration, RBAC role mappings, and network access configuration. */
+  argoCd?: Capability_Configuration_ArgoCd | Computed<Capability_Configuration_ArgoCd>;
 }
 
-export interface Capability_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Capability_Tags {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
-const Capability_Configuration_ArgoCd_AwsIdcFields: FieldMap = {
-  idcInstanceArn: "idc_instance_arn",
-  idcManagedApplicationArn: "idc_managed_application_arn",
-  idcRegion: "idc_region",
-};
-
-const Capability_Configuration_ArgoCd_NetworkAccessFields: FieldMap = {
-  vpceIds: "vpce_ids",
-};
-
-const Capability_Configuration_ArgoCd_RbacRoleMapping_IdentityFields: FieldMap = {
-  id: "id",
-  type: "type",
-};
-
-const Capability_Configuration_ArgoCd_RbacRoleMappingFields: FieldMap = {
-  role: "role",
-  identity: {
-    wireName: "identity",
-    kind: "set",
-    fields: Capability_Configuration_ArgoCd_RbacRoleMapping_IdentityFields,
-  },
-};
-
-const Capability_Configuration_ArgoCdFields: FieldMap = {
-  namespace: "namespace",
-  serverUrl: "server_url",
-  awsIdc: {
-    wireName: "aws_idc",
-    kind: "list",
-    fields: Capability_Configuration_ArgoCd_AwsIdcFields,
-  },
-  networkAccess: {
-    wireName: "network_access",
-    kind: "list",
-    fields: Capability_Configuration_ArgoCd_NetworkAccessFields,
-  },
-  rbacRoleMapping: {
-    wireName: "rbac_role_mapping",
-    kind: "set",
-    fields: Capability_Configuration_ArgoCd_RbacRoleMappingFields,
-  },
-};
-
-const Capability_ConfigurationFields: FieldMap = {
-  argoCd: {
-    wireName: "argo_cd",
-    kind: "list",
-    fields: Capability_Configuration_ArgoCdFields,
-  },
-};
-
-const Capability_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Capability_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface CapabilityConfig {
+  /** A unique name for the capability. The name must be unique within your cluster and can contain alphanumeric characters, hyphens, and underscores. */
   capabilityName: string | Computed<string>;
+  /** The name of the EKS cluster where you want to create the capability. */
   clusterName: string | Computed<string>;
+  /** Specifies how Kubernetes resources managed by the capability should be handled when the capability is deleted. Currently, the only supported value is RETAIN which retains all Kubernetes resources managed by the capability when the capability is deleted. */
   deletePropagationPolicy: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the IAM role that the capability uses to interact with AWS services. This role must have a trust policy that allows the EKS service principal to assume it, and it must have the necessary permissions for the capability type you're creating. */
   roleArn: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
+  /** An array of key-value pairs to apply to this resource. */
+  tags?: Capability_Tags[] | Computed<Capability_Tags[]>;
+  /** The type of capability to create. Valid values are: ACK (AWS Controllers for Kubernetes, which lets you manage AWS resources directly from Kubernetes), ARGOCD (Argo CD for GitOps-based continuous delivery), or KRO (Kube Resource Orchestrator for composing and managing custom Kubernetes resources). */
   type: string | Computed<string>;
-  configuration?: Capability_Configuration[] | Computed<Capability_Configuration[]>;
-  timeouts?: Capability_Timeouts | Computed<Capability_Timeouts>;
 }
 
 export interface CapabilityAttrs {
+  /** The Amazon Resource Name (ARN) of the capability. */
   arn: string;
+  /** A unique name for the capability. The name must be unique within your cluster and can contain alphanumeric characters, hyphens, and underscores. */
   capabilityName: string;
+  /** The name of the EKS cluster where you want to create the capability. */
   clusterName: string;
+  /** Configuration settings for a capability. The structure of this object varies depending on the capability type. */
+  configuration: Capability_Configuration;
+  /** The Unix epoch timestamp in seconds for when the capability was created. */
+  createdAt: string;
+  /** Specifies how Kubernetes resources managed by the capability should be handled when the capability is deleted. Currently, the only supported value is RETAIN which retains all Kubernetes resources managed by the capability when the capability is deleted. */
   deletePropagationPolicy: string;
-  region: string;
+  /** The Unix epoch timestamp in seconds for when the capability was last modified. */
+  modifiedAt: string;
+  /** The Amazon Resource Name (ARN) of the IAM role that the capability uses to interact with AWS services. This role must have a trust policy that allows the EKS service principal to assume it, and it must have the necessary permissions for the capability type you're creating. */
   roleArn: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** The current status of the capability. Valid values include: CREATING (the capability is being created), ACTIVE (the capability is running and available), UPDATING (the capability is being updated), DELETING (the capability is being deleted), CREATE_FAILED (the capability creation failed), UPDATE_FAILED (the capability update failed), or DELETE_FAILED (the capability deletion failed). */
+  status: string;
+  /** An array of key-value pairs to apply to this resource. */
+  tags: Capability_Tags[];
+  /** The type of capability to create. Valid values are: ACK (AWS Controllers for Kubernetes, which lets you manage AWS resources directly from Kubernetes), ARGOCD (Argo CD for GitOps-based continuous delivery), or KRO (Kube Resource Orchestrator for composing and managing custom Kubernetes resources). */
   type: string;
+  /** The version of the capability software that is currently running. */
   version: string;
-  configuration: Capability_Configuration[];
-  timeouts: Capability_Timeouts;
 }
 
 export const Capability: ResourceBinding<CapabilityConfig, CapabilityAttrs> = {
@@ -130,19 +104,12 @@ export const Capability: ResourceBinding<CapabilityConfig, CapabilityAttrs> = {
     capabilityName: "capability_name",
     clusterName: "cluster_name",
     deletePropagationPolicy: "delete_propagation_policy",
-    region: "region",
     roleArn: "role_arn",
-    tags: "tags",
-    type: "type",
-    configuration: {
-      wireName: "configuration",
+    tags: {
+      wireName: "tags",
       kind: "list",
-      fields: Capability_ConfigurationFields,
+      fields: Capability_TagsFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Capability_TimeoutsFields,
-    },
+    type: "type",
   },
 };

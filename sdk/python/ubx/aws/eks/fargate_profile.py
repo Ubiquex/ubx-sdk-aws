@@ -7,58 +7,81 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class FargateProfile_Selector:
-    labels: Any = None
-    namespace: Any = None
+class FargateProfile_Selectors_Labels:
+    # The key of a Kubernetes label pair used in the selector to match pods that will be scheduled on the Fargate profile. (AI-inferred)
+    key: Any = None
+    # The value of a Kubernetes label, paired with its key in the selector’s labels map, that a pod must have to be eligible for scheduling on this Fargate profile. (AI-inferred)
+    value: Any = None
 
 @dataclasses.dataclass
-class FargateProfile_Timeouts:
-    create: Any = None
-    delete: Any = None
+class FargateProfile_Selectors:
+    # Specifies Kubernetes labels (key-value pairs) that the selector uses to match pods in the specified namespace for scheduling on Fargate. (AI-inferred)
+    labels: Any = None
+    # The Kubernetes namespace that this selector matches; only pods running in this namespace are eligible to be scheduled onto Fargate. (AI-inferred)
+    namespace: Any = None
 
-_FargateProfile_SelectorFields = {
-    "labels": ubx.FieldSpec(wire_name="labels"),
-    "namespace": ubx.FieldSpec(wire_name="namespace"),
+_FargateProfile_Selectors_LabelsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
-_FargateProfile_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_FargateProfile_SelectorsFields = {
+    "labels": ubx.FieldSpec(
+        wire_name="labels",
+        kind="list",
+        fields=_FargateProfile_Selectors_LabelsFields,
+    ),
+    "namespace": ubx.FieldSpec(wire_name="namespace"),
 }
 
 @dataclasses.dataclass
 class FargateProfileConfig:
+    # Name of the Cluster
     cluster_name: Any = None
+    # Name of FargateProfile
     fargate_profile_name: Any = None
-    id: Any = None
+    # The IAM policy arn for pods
     pod_execution_role_arn: Any = None
-    region: Any = None
-    subnet_ids: Any = None
+    # Specifies the Kubernetes namespaces and label selectors that determine which pods are scheduled to run on Fargate using this profile. (AI-inferred)
+    selectors: Any = None
+    # Specifies the list of subnet IDs where Amazon EKS launches Fargate pods for this profile; if omitted, the subnets selected for the EKS cluster are used. (AI-inferred)
+    subnets: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
-    selector: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class FargateProfileAttrs:
+    # The Amazon Resource Name (ARN) of the Fargate profile. (AI-inferred)
+    arn: Any = None
+    # Name of the Cluster
+    cluster_name: Any = None
+    # Name of FargateProfile
+    fargate_profile_name: Any = None
+    # The IAM policy arn for pods
+    pod_execution_role_arn: Any = None
+    # Specifies the Kubernetes namespaces and label selectors that determine which pods are scheduled to run on Fargate using this profile. (AI-inferred)
+    selectors: Any = None
+    # Specifies the list of subnet IDs where Amazon EKS launches Fargate pods for this profile; if omitted, the subnets selected for the EKS cluster are used. (AI-inferred)
+    subnets: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 FargateProfile = ubx.ResourceBinding(
     wire_type="aws_eks_fargate_profile",
     fields={
         "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
         "fargate_profile_name": ubx.FieldSpec(wire_name="fargate_profile_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "pod_execution_role_arn": ubx.FieldSpec(wire_name="pod_execution_role_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "selector": ubx.FieldSpec(
-            wire_name="selector",
-            kind="set",
-            fields=_FargateProfile_SelectorFields,
+        "selectors": ubx.FieldSpec(
+            wire_name="selectors",
+            kind="list",
+            fields=_FargateProfile_SelectorsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_FargateProfile_TimeoutsFields,
+        "subnets": ubx.FieldSpec(wire_name="subnets"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_FargateProfile_Selectors_LabelsFields,
         ),
     },
 )

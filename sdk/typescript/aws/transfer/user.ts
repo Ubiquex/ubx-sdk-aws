@@ -2,23 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface User_HomeDirectoryMappings {
-  entry: string;
-  target: string;
+  /** For each home directory mapping of an AWS Transfer Family user, this field specifies the logical directory path that the user will see, which is paired with a target path to define the mapping. (AI-inferred) */
+  entry?: string | Computed<string>;
+  /** Specifies the destination absolute or relative path in the Amazon S3 bucket or Amazon EFS file system to which the 'Entry' logical directory is mapped for this AWS Transfer Family user. (AI-inferred) */
+  target?: string | Computed<string>;
+  /** Specifies whether the home directory mapping entry maps to a file ('FILE') or a directory ('DIRECTORY') in AWS Transfer Family. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
 export interface User_PosixProfile {
-  gid: number;
-  secondaryGids: number[];
-  uid: number;
+  /** Specifies the POSIX group ID (GID) that maps to the user's group on the file transfer server's backing storage, determining file ownership and access permissions for the associated AWS Transfer Family user. (AI-inferred) */
+  gid: number | Computed<number>;
+  /** Specifies the secondary group IDs (GIDs) for the user's POSIX profile, granting additional group memberships that affect file and folder access on the AWS Transfer server. (AI-inferred) */
+  secondaryGids?: number[] | Computed<number[]>;
+  /** Defines the numeric POSIX user ID (UID) that AWS Transfer Family uses to set file ownership and permission checks for this user on the underlying file system (e.g., Amazon EFS). (AI-inferred) */
+  uid: number | Computed<number>;
 }
 
-export interface User_Timeouts {
-  delete: string;
+export interface User_Tags {
+  /** The key of a user-defined tag applied to an AWS Transfer Family user, used for identifying, organizing, and managing the user resource within AWS. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value of a tag key-value pair applied to the AWS Transfer Family user, used for resource organization and access control. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const User_HomeDirectoryMappingsFields: FieldMap = {
   entry: "entry",
   target: "target",
+  type: "type",
 };
 
 const User_PosixProfileFields: FieldMap = {
@@ -27,70 +38,83 @@ const User_PosixProfileFields: FieldMap = {
   uid: "uid",
 };
 
-const User_TimeoutsFields: FieldMap = {
-  delete: "delete",
+const User_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface UserConfig {
+  /** The landing directory (folder) for the user when they log in to the Transfer Family server, specified as an absolute path or a virtual path that can include the {Transfer:UserName} variable. (AI-inferred) */
   homeDirectory?: string | Computed<string>;
-  homeDirectoryType?: string | Computed<string>;
-  id?: string | Computed<string>;
-  policy?: string | Computed<string>;
-  region?: string | Computed<string>;
-  role: string | Computed<string>;
-  serverId: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  userName: string | Computed<string>;
+  /** Specifies a set of logical directory mappings that translate a user's home directory path to a target S3 or EFS location, allowing different storage paths to be presented as a single virtual path. (AI-inferred) */
   homeDirectoryMappings?: User_HomeDirectoryMappings[] | Computed<User_HomeDirectoryMappings[]>;
-  posixProfile?: User_PosixProfile[] | Computed<User_PosixProfile[]>;
-  timeouts?: User_Timeouts | Computed<User_Timeouts>;
+  /** Determines whether the user's home directory is defined as a logical directory (LOGICAL) or a direct file system path (PATH), with PATH being the default when this property is not specified. (AI-inferred) */
+  homeDirectoryType?: string | Computed<string>;
+  /** A JSON string specifying an IAM scope-down policy that restricts the permissions of the AWS Transfer Family user, allowing multiple users to share the same IAM role with different access levels. (AI-inferred) */
+  policy?: string | Computed<string>;
+  /** Specifies the POSIX user profile, including the UID, GID, and secondary group IDs, used by the AWS Transfer Family user for file system permissions and ownership when operating over SFTP, FTPS, or FTP. (AI-inferred) */
+  posixProfile?: User_PosixProfile | Computed<User_PosixProfile>;
+  /** The IAM role that AWS Transfer Family assumes to define the user's permissions for accessing the underlying storage (e.g., Amazon S3) and other resources. (AI-inferred) */
+  role: string | Computed<string>;
+  /** The unique identifier of the AWS Transfer Family server to which this user is associated. (AI-inferred) */
+  serverId: string | Computed<string>;
+  /** This represents the SSH User Public Keys for CloudFormation resource */
+  sshPublicKeys?: string[] | Computed<string[]>;
+  /** Assigns customizable metadata tags to the AWS Transfer Family user, enabling categorization, cost allocation, and access-control scoping across AWS resources. (AI-inferred) */
+  tags?: User_Tags[] | Computed<User_Tags[]>;
+  /** Sets the unique login name for the user in the AWS Transfer Family service, which must be unique within the associated server and is used to identify and authenticate the user during file transfer sessions. (AI-inferred) */
+  userName: string | Computed<string>;
 }
 
 export interface UserAttrs {
+  /** The Amazon Resource Name (ARN) uniquely identifying the AWS Transfer Family user, assigned by AWS when the user is created. (AI-inferred) */
   arn: string;
+  /** The landing directory (folder) for the user when they log in to the Transfer Family server, specified as an absolute path or a virtual path that can include the {Transfer:UserName} variable. (AI-inferred) */
   homeDirectory: string;
-  homeDirectoryType: string;
-  id: string;
-  policy: string;
-  region: string;
-  role: string;
-  serverId: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  userName: string;
+  /** Specifies a set of logical directory mappings that translate a user's home directory path to a target S3 or EFS location, allowing different storage paths to be presented as a single virtual path. (AI-inferred) */
   homeDirectoryMappings: User_HomeDirectoryMappings[];
-  posixProfile: User_PosixProfile[];
-  timeouts: User_Timeouts;
+  /** Determines whether the user's home directory is defined as a logical directory (LOGICAL) or a direct file system path (PATH), with PATH being the default when this property is not specified. (AI-inferred) */
+  homeDirectoryType: string;
+  /** A JSON string specifying an IAM scope-down policy that restricts the permissions of the AWS Transfer Family user, allowing multiple users to share the same IAM role with different access levels. (AI-inferred) */
+  policy: string;
+  /** Specifies the POSIX user profile, including the UID, GID, and secondary group IDs, used by the AWS Transfer Family user for file system permissions and ownership when operating over SFTP, FTPS, or FTP. (AI-inferred) */
+  posixProfile: User_PosixProfile;
+  /** The IAM role that AWS Transfer Family assumes to define the user's permissions for accessing the underlying storage (e.g., Amazon S3) and other resources. (AI-inferred) */
+  role: string;
+  /** The unique identifier of the AWS Transfer Family server to which this user is associated. (AI-inferred) */
+  serverId: string;
+  /** This represents the SSH User Public Keys for CloudFormation resource */
+  sshPublicKeys: string[];
+  /** Assigns customizable metadata tags to the AWS Transfer Family user, enabling categorization, cost allocation, and access-control scoping across AWS resources. (AI-inferred) */
+  tags: User_Tags[];
+  /** Sets the unique login name for the user in the AWS Transfer Family service, which must be unique within the associated server and is used to identify and authenticate the user during file transfer sessions. (AI-inferred) */
+  userName: string;
 }
 
 export const User: ResourceBinding<UserConfig, UserAttrs> = {
   wireType: "aws_transfer_user",
   fields: {
     homeDirectory: "home_directory",
-    homeDirectoryType: "home_directory_type",
-    id: "id",
-    policy: "policy",
-    region: "region",
-    role: "role",
-    serverId: "server_id",
-    tags: "tags",
-    tagsAll: "tags_all",
-    userName: "user_name",
     homeDirectoryMappings: {
       wireName: "home_directory_mappings",
       kind: "list",
       fields: User_HomeDirectoryMappingsFields,
     },
+    homeDirectoryType: "home_directory_type",
+    policy: "policy",
     posixProfile: {
       wireName: "posix_profile",
-      kind: "list",
+      kind: "object",
       fields: User_PosixProfileFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: User_TimeoutsFields,
+    role: "role",
+    serverId: "server_id",
+    sshPublicKeys: "ssh_public_keys",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: User_TagsFields,
     },
+    userName: "user_name",
   },
 };

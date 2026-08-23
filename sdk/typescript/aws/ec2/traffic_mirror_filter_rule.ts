@@ -2,8 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TrafficMirrorFilterRule_DestinationPortRange {
-  fromPort: number;
-  toPort: number;
+  /** The first port in the Traffic Mirror port range. */
+  fromPort: number | Computed<number>;
+  /** The last port in the Traffic Mirror port range. */
+  toPort: number | Computed<number>;
+}
+
+export interface TrafficMirrorFilterRule_Tags {
+  key?: string | Computed<string>;
+  /** The value of a tag key-value pair assigned to the traffic mirror filter rule, used to organize and identify the rule. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const TrafficMirrorFilterRule_DestinationPortRangeFields: FieldMap = {
@@ -11,35 +19,61 @@ const TrafficMirrorFilterRule_DestinationPortRangeFields: FieldMap = {
   toPort: "to_port",
 };
 
+const TrafficMirrorFilterRule_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
 export interface TrafficMirrorFilterRuleConfig {
+  /** The description of the Traffic Mirror Filter rule. */
   description?: string | Computed<string>;
+  /** The destination CIDR block to assign to the Traffic Mirror rule. */
   destinationCidrBlock: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred) */
+  destinationPortRange?: TrafficMirrorFilterRule_DestinationPortRange | Computed<TrafficMirrorFilterRule_DestinationPortRange>;
+  /** The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule. */
   protocol?: number | Computed<number>;
-  region?: string | Computed<string>;
+  /** The action to take on the filtered traffic. */
   ruleAction: string | Computed<string>;
+  /** The number of the Traffic Mirror rule. */
   ruleNumber: number | Computed<number>;
+  /** The source CIDR block to assign to the Traffic Mirror Filter rule. */
   sourceCidrBlock: string | Computed<string>;
+  /** The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred) */
+  sourcePortRange?: TrafficMirrorFilterRule_DestinationPortRange | Computed<TrafficMirrorFilterRule_DestinationPortRange>;
+  /** Any tags assigned to the Traffic Mirror Filter rule. */
+  tags?: TrafficMirrorFilterRule_Tags[] | Computed<TrafficMirrorFilterRule_Tags[]>;
+  /** The type of traffic. */
   trafficDirection: string | Computed<string>;
+  /** The ID of the filter that this rule is associated with. */
   trafficMirrorFilterId: string | Computed<string>;
-  destinationPortRange?: TrafficMirrorFilterRule_DestinationPortRange[] | Computed<TrafficMirrorFilterRule_DestinationPortRange[]>;
-  sourcePortRange?: TrafficMirrorFilterRule_DestinationPortRange[] | Computed<TrafficMirrorFilterRule_DestinationPortRange[]>;
 }
 
 export interface TrafficMirrorFilterRuleAttrs {
-  arn: string;
+  /** The description of the Traffic Mirror Filter rule. */
   description: string;
+  /** The destination CIDR block to assign to the Traffic Mirror rule. */
   destinationCidrBlock: string;
-  id: string;
+  /** Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred) */
+  destinationPortRange: TrafficMirrorFilterRule_DestinationPortRange;
+  /** The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule. */
   protocol: number;
-  region: string;
+  /** The action to take on the filtered traffic. */
   ruleAction: string;
+  /** The number of the Traffic Mirror rule. */
   ruleNumber: number;
+  /** The source CIDR block to assign to the Traffic Mirror Filter rule. */
   sourceCidrBlock: string;
+  /** The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred) */
+  sourcePortRange: TrafficMirrorFilterRule_DestinationPortRange;
+  /** Any tags assigned to the Traffic Mirror Filter rule. */
+  tags: TrafficMirrorFilterRule_Tags[];
+  /** The type of traffic. */
   trafficDirection: string;
+  /** The ID of the filter that this rule is associated with. */
   trafficMirrorFilterId: string;
-  destinationPortRange: TrafficMirrorFilterRule_DestinationPortRange[];
-  sourcePortRange: TrafficMirrorFilterRule_DestinationPortRange[];
+  /** The ID of the Traffic Mirror Filter rule. */
+  trafficMirrorFilterRuleId: string;
 }
 
 export const TrafficMirrorFilterRule: ResourceBinding<TrafficMirrorFilterRuleConfig, TrafficMirrorFilterRuleAttrs> = {
@@ -47,23 +81,26 @@ export const TrafficMirrorFilterRule: ResourceBinding<TrafficMirrorFilterRuleCon
   fields: {
     description: "description",
     destinationCidrBlock: "destination_cidr_block",
-    id: "id",
+    destinationPortRange: {
+      wireName: "destination_port_range",
+      kind: "object",
+      fields: TrafficMirrorFilterRule_DestinationPortRangeFields,
+    },
     protocol: "protocol",
-    region: "region",
     ruleAction: "rule_action",
     ruleNumber: "rule_number",
     sourceCidrBlock: "source_cidr_block",
-    trafficDirection: "traffic_direction",
-    trafficMirrorFilterId: "traffic_mirror_filter_id",
-    destinationPortRange: {
-      wireName: "destination_port_range",
-      kind: "list",
-      fields: TrafficMirrorFilterRule_DestinationPortRangeFields,
-    },
     sourcePortRange: {
       wireName: "source_port_range",
-      kind: "list",
+      kind: "object",
       fields: TrafficMirrorFilterRule_DestinationPortRangeFields,
     },
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: TrafficMirrorFilterRule_TagsFields,
+    },
+    trafficDirection: "traffic_direction",
+    trafficMirrorFilterId: "traffic_mirror_filter_id",
   },
 };

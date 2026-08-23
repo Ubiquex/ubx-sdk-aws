@@ -7,34 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ParameterGroup_Parameters:
-    name: Any = None
-    value: Any = None
-
-_ParameterGroup_ParametersFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "value": ubx.FieldSpec(wire_name="value"),
-}
+class ParameterGroupConfig:
+    # A description of the parameter group.
+    description: Any = None
+    # The name of the parameter group.
+    parameter_group_name: Any = None
+    # An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.
+    parameter_name_values: Any = None
 
 @dataclasses.dataclass
-class ParameterGroupConfig:
+class ParameterGroupAttrs:
+    # A description of the parameter group.
     description: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
-    parameters: Any = None
+    # The name of the parameter group.
+    parameter_group_name: Any = None
+    # An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.
+    parameter_name_values: Any = None
 
 ParameterGroup = ubx.ResourceBinding(
     wire_type="aws_dax_parameter_group",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "parameters": ubx.FieldSpec(
-            wire_name="parameters",
-            kind="set",
-            fields=_ParameterGroup_ParametersFields,
-        ),
+        "parameter_group_name": ubx.FieldSpec(wire_name="parameter_group_name"),
+        "parameter_name_values": ubx.FieldSpec(wire_name="parameter_name_values"),
     },
 )

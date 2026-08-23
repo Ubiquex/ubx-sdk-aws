@@ -4,106 +4,155 @@ package mwaa
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Environment_LoggingConfiguration_DagProcessingLogs struct {
+	// The ARN of the CloudWatch log group where Apache Airflow DAG processing logs are delivered in the MWAA environment. (AI-inferred)
 	CloudWatchLogGroupArn any
+	// Indicates whether DAG processing logs are enabled for the Amazon Managed Workflows for Apache Airflow (MWAA) environment. (AI-inferred)
 	Enabled any
+	// Sets the log level (e.g., CRITICAL, ERROR, WARNING, INFO, or DEBUG) for the DAG processing logs in the Amazon MWAA environment. (AI-inferred)
 	LogLevel any
 }
 
 type Environment_LoggingConfiguration struct {
+	// Logging configuration for a specific airflow component.
 	DagProcessingLogs any
+	// Logging configuration for a specific airflow component.
 	SchedulerLogs any
+	// Logging configuration for a specific airflow component.
 	TaskLogs any
+	// Logging configuration for a specific airflow component.
 	WebserverLogs any
+	// Logging configuration for a specific airflow component.
 	WorkerLogs any
 }
 
 type Environment_NetworkConfiguration struct {
+	// A list of security groups to use for the environment.
 	SecurityGroupIds any
+	// A list of subnets to use for the environment. These must be private subnets, in the same VPC, in two different availability zones.
 	SubnetIds any
 }
-
-type Environment_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
-
-var Environment_LoggingConfiguration_DagProcessingLogsFields = ubx.FieldMap{
-		"CloudWatchLogGroupArn": ubx.FieldSpec{WireName: "cloud_watch_log_group_arn"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-	}
-
-var Environment_LoggingConfigurationFields = ubx.FieldMap{
-		"DagProcessingLogs": ubx.FieldSpec{
-			WireName: "dag_processing_logs",
-			Kind: "list",
-			Fields: Environment_LoggingConfiguration_DagProcessingLogsFields,
-		},
-		"SchedulerLogs": ubx.FieldSpec{
-			WireName: "scheduler_logs",
-			Kind: "list",
-			Fields: Environment_LoggingConfiguration_DagProcessingLogsFields,
-		},
-		"TaskLogs": ubx.FieldSpec{
-			WireName: "task_logs",
-			Kind: "list",
-			Fields: Environment_LoggingConfiguration_DagProcessingLogsFields,
-		},
-		"WebserverLogs": ubx.FieldSpec{
-			WireName: "webserver_logs",
-			Kind: "list",
-			Fields: Environment_LoggingConfiguration_DagProcessingLogsFields,
-		},
-		"WorkerLogs": ubx.FieldSpec{
-			WireName: "worker_logs",
-			Kind: "list",
-			Fields: Environment_LoggingConfiguration_DagProcessingLogsFields,
-		},
-	}
 
 var Environment_NetworkConfigurationFields = ubx.FieldMap{
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
 	}
 
-var Environment_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type EnvironmentConfig struct {
+	// Key/value pairs representing Airflow configuration variables. Keys are prefixed by their section: [core] dags_folder={AIRFLOW_HOME}/dags Would be represented as "core.dags_folder": "{AIRFLOW_HOME}/dags"
 	AirflowConfigurationOptions any
+	// Version of airflow to deploy to the environment.
 	AirflowVersion any
+	// Represents an S3 prefix relative to the root of an S3 bucket.
 	DagS3Path any
+	// Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA.
 	EndpointManagement any
+	// Templated configuration for airflow processes and backing infrastructure.
 	EnvironmentClass any
+	// IAM role to be used by tasks.
 	ExecutionRoleArn any
-	Id any
+	// The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for MWAA data encryption. You can specify the CMK using any of the following: Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab. Key alias. For example, alias/ExampleAlias. Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef. Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias. AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.
 	KmsKey any
+	// Maximum webserver compute units.
 	MaxWebservers any
+	// Maximum worker compute units.
 	MaxWorkers any
+	// Minimum webserver compute units.
 	MinWebservers any
+	// Minimum worker compute units.
 	MinWorkers any
+	// Customer-defined identifier for the environment, unique per customer region.
 	Name any
-	PluginsS3ObjectVersion any
-	PluginsS3Path any
-	Region any
-	RequirementsS3ObjectVersion any
-	RequirementsS3Path any
-	Schedulers any
-	SourceBucketArn any
-	StartupScriptS3ObjectVersion any
-	StartupScriptS3Path any
-	Tags any
-	TagsAll any
-	WebserverAccessMode any
-	WeeklyMaintenanceWindowStart any
-	WorkerReplacementStrategy any
-	LoggingConfiguration any
+	// Configures the network resources of the environment.
 	NetworkConfiguration any
-	Timeouts any
+	// Represents an version ID for an S3 object.
+	PluginsS3ObjectVersion any
+	// Represents an S3 prefix relative to the root of an S3 bucket.
+	PluginsS3Path any
+	// Represents an version ID for an S3 object.
+	RequirementsS3ObjectVersion any
+	// Represents an S3 prefix relative to the root of an S3 bucket.
+	RequirementsS3Path any
+	// Scheduler compute units.
+	Schedulers any
+	// ARN for the AWS S3 bucket to use as the source of DAGs and plugins for the environment.
+	SourceBucketArn any
+	// Represents an version ID for an S3 object.
+	StartupScriptS3ObjectVersion any
+	// Represents an S3 prefix relative to the root of an S3 bucket.
+	StartupScriptS3Path any
+	// A map of tags for the environment.
+	Tags any
+	// Choice for mode of webserver access including over public internet or via private VPC endpoint.
+	WebserverAccessMode any
+	// Start time for the weekly maintenance window.
+	WeeklyMaintenanceWindowStart any
+	// The worker replacement strategy to use when updating the environment. Valid values: `FORCED`, `GRACEFUL`. FORCED means Apache Airflow workers will be stopped and replaced without waiting for tasks to complete before an update. GRACEFUL means Apache Airflow workers will be able to complete running tasks for up to 12 hours during an update before being stopped and replaced.
+	WorkerReplacementStrategy any
+}
+
+type EnvironmentAttrs struct {
+	// Key/value pairs representing Airflow configuration variables. Keys are prefixed by their section: [core] dags_folder={AIRFLOW_HOME}/dags Would be represented as "core.dags_folder": "{AIRFLOW_HOME}/dags"
+	AirflowConfigurationOptions any
+	// Version of airflow to deploy to the environment.
+	AirflowVersion any
+	// ARN for the MWAA environment.
+	Arn any
+	// The celery executor queue associated with the environment.
+	CeleryExecutorQueue any
+	// Represents an S3 prefix relative to the root of an S3 bucket.
+	DagS3Path any
+	// The database VPC endpoint service name.
+	DatabaseVpcEndpointService any
+	// Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA.
+	EndpointManagement any
+	// Templated configuration for airflow processes and backing infrastructure.
+	EnvironmentClass any
+	// IAM role to be used by tasks.
+	ExecutionRoleArn any
+	// The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for MWAA data encryption. You can specify the CMK using any of the following: Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab. Key alias. For example, alias/ExampleAlias. Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef. Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias. AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.
+	KmsKey any
+	// Logging configuration for the environment.
+	LoggingConfiguration any
+	// Maximum webserver compute units.
+	MaxWebservers any
+	// Maximum worker compute units.
+	MaxWorkers any
+	// Minimum webserver compute units.
+	MinWebservers any
+	// Minimum worker compute units.
+	MinWorkers any
+	// Customer-defined identifier for the environment, unique per customer region.
+	Name any
+	// Configures the network resources of the environment.
+	NetworkConfiguration any
+	// Represents an version ID for an S3 object.
+	PluginsS3ObjectVersion any
+	// Represents an S3 prefix relative to the root of an S3 bucket.
+	PluginsS3Path any
+	// Represents an version ID for an S3 object.
+	RequirementsS3ObjectVersion any
+	// Represents an S3 prefix relative to the root of an S3 bucket.
+	RequirementsS3Path any
+	// Scheduler compute units.
+	Schedulers any
+	// ARN for the AWS S3 bucket to use as the source of DAGs and plugins for the environment.
+	SourceBucketArn any
+	// Represents an version ID for an S3 object.
+	StartupScriptS3ObjectVersion any
+	// Represents an S3 prefix relative to the root of an S3 bucket.
+	StartupScriptS3Path any
+	// A map of tags for the environment.
+	Tags any
+	// Choice for mode of webserver access including over public internet or via private VPC endpoint.
+	WebserverAccessMode any
+	// Url endpoint for the environment's Airflow UI.
+	WebserverUrl any
+	// The webserver VPC endpoint service name, applicable if private webserver access mode selected.
+	WebserverVpcEndpointService any
+	// Start time for the weekly maintenance window.
+	WeeklyMaintenanceWindowStart any
+	// The worker replacement strategy to use when updating the environment. Valid values: `FORCED`, `GRACEFUL`. FORCED means Apache Airflow workers will be stopped and replaced without waiting for tasks to complete before an update. GRACEFUL means Apache Airflow workers will be able to complete running tasks for up to 12 hours during an update before being stopped and replaced.
+	WorkerReplacementStrategy any
 }
 
 var Environment = ubx.ResourceBinding{
@@ -115,16 +164,19 @@ var Environment = ubx.ResourceBinding{
 		"EndpointManagement": ubx.FieldSpec{WireName: "endpoint_management"},
 		"EnvironmentClass": ubx.FieldSpec{WireName: "environment_class"},
 		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
 		"MaxWebservers": ubx.FieldSpec{WireName: "max_webservers"},
 		"MaxWorkers": ubx.FieldSpec{WireName: "max_workers"},
 		"MinWebservers": ubx.FieldSpec{WireName: "min_webservers"},
 		"MinWorkers": ubx.FieldSpec{WireName: "min_workers"},
 		"Name": ubx.FieldSpec{WireName: "name"},
+		"NetworkConfiguration": ubx.FieldSpec{
+			WireName: "network_configuration",
+			Kind: "object",
+			Fields: Environment_NetworkConfigurationFields,
+		},
 		"PluginsS3ObjectVersion": ubx.FieldSpec{WireName: "plugins_s3_object_version"},
 		"PluginsS3Path": ubx.FieldSpec{WireName: "plugins_s3_path"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RequirementsS3ObjectVersion": ubx.FieldSpec{WireName: "requirements_s3_object_version"},
 		"RequirementsS3Path": ubx.FieldSpec{WireName: "requirements_s3_path"},
 		"Schedulers": ubx.FieldSpec{WireName: "schedulers"},
@@ -132,24 +184,8 @@ var Environment = ubx.ResourceBinding{
 		"StartupScriptS3ObjectVersion": ubx.FieldSpec{WireName: "startup_script_s3_object_version"},
 		"StartupScriptS3Path": ubx.FieldSpec{WireName: "startup_script_s3_path"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"WebserverAccessMode": ubx.FieldSpec{WireName: "webserver_access_mode"},
 		"WeeklyMaintenanceWindowStart": ubx.FieldSpec{WireName: "weekly_maintenance_window_start"},
 		"WorkerReplacementStrategy": ubx.FieldSpec{WireName: "worker_replacement_strategy"},
-		"LoggingConfiguration": ubx.FieldSpec{
-			WireName: "logging_configuration",
-			Kind: "list",
-			Fields: Environment_LoggingConfigurationFields,
-		},
-		"NetworkConfiguration": ubx.FieldSpec{
-			WireName: "network_configuration",
-			Kind: "list",
-			Fields: Environment_NetworkConfigurationFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Environment_TimeoutsFields,
-		},
 	},
 }

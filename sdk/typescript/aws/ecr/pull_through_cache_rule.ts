@@ -2,23 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PullThroughCacheRuleConfig {
+  /** The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that identifies the credentials to authenticate to the upstream registry. */
   credentialArn?: string | Computed<string>;
+  /** The ARN of the IAM role to be assumed by Amazon ECR to authenticate to ECR upstream registry. This role must be in the same account as the registry that you are configuring. */
   customRoleArn?: string | Computed<string>;
-  ecrRepositoryPrefix: string | Computed<string>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
-  upstreamRegistryUrl: string | Computed<string>;
+  /** The ECRRepositoryPrefix is a custom alias for upstream registry url. */
+  ecrRepositoryPrefix?: string | Computed<string>;
+  /** The name of the upstream registry. */
+  upstreamRegistry?: string | Computed<string>;
+  /** The upstreamRegistryUrl is the endpoint of upstream registry url of the public repository to be cached */
+  upstreamRegistryUrl?: string | Computed<string>;
+  /** The repository name prefix of upstream registry to match with the upstream repository name. When this field isn't specified, Amazon ECR will use the `ROOT`. */
   upstreamRepositoryPrefix?: string | Computed<string>;
 }
 
 export interface PullThroughCacheRuleAttrs {
+  /** The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that identifies the credentials to authenticate to the upstream registry. */
   credentialArn: string;
+  /** The ARN of the IAM role to be assumed by Amazon ECR to authenticate to ECR upstream registry. This role must be in the same account as the registry that you are configuring. */
   customRoleArn: string;
+  /** The ECRRepositoryPrefix is a custom alias for upstream registry url. */
   ecrRepositoryPrefix: string;
-  id: string;
-  region: string;
-  registryId: string;
+  /** The name of the upstream registry. */
+  upstreamRegistry: string;
+  /** The upstreamRegistryUrl is the endpoint of upstream registry url of the public repository to be cached */
   upstreamRegistryUrl: string;
+  /** The repository name prefix of upstream registry to match with the upstream repository name. When this field isn't specified, Amazon ECR will use the `ROOT`. */
   upstreamRepositoryPrefix: string;
 }
 
@@ -28,8 +37,7 @@ export const PullThroughCacheRule: ResourceBinding<PullThroughCacheRuleConfig, P
     credentialArn: "credential_arn",
     customRoleArn: "custom_role_arn",
     ecrRepositoryPrefix: "ecr_repository_prefix",
-    id: "id",
-    region: "region",
+    upstreamRegistry: "upstream_registry",
     upstreamRegistryUrl: "upstream_registry_url",
     upstreamRepositoryPrefix: "upstream_repository_prefix",
   },

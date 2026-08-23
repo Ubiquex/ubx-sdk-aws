@@ -7,28 +7,82 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Certificate_Tags:
+    key: Any = None
+    # The value portion of a key-value tag attached to the AWS Transfer Family certificate, used for identifying and categorizing the resource. (AI-inferred)
+    value: Any = None
+
+_Certificate_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class CertificateConfig:
+    # Specifies the active date for the certificate.
+    active_date: Any = None
+    # Specifies the certificate body to be imported.
     certificate: Any = None
+    # Specifies the certificate chain to be imported.
     certificate_chain: Any = None
+    # A textual description for the certificate.
     description: Any = None
-    id: Any = None
+    # Specifies the inactive date for the certificate.
+    inactive_date: Any = None
+    # Specifies the private key for the certificate.
     private_key: Any = None
-    region: Any = None
+    # Key-value pairs that can be used to group and search for certificates. Tags are metadata attached to certificates for any purpose.
     tags: Any = None
-    tags_all: Any = None
+    # Specifies the usage type for the certificate.
+    usage: Any = None
+
+@dataclasses.dataclass
+class CertificateAttrs:
+    # Specifies the active date for the certificate.
+    active_date: Any = None
+    # Specifies the unique Amazon Resource Name (ARN) for the agreement.
+    arn: Any = None
+    # Specifies the certificate body to be imported.
+    certificate: Any = None
+    # Specifies the certificate chain to be imported.
+    certificate_chain: Any = None
+    # A unique identifier for the certificate.
+    certificate_id: Any = None
+    # A textual description for the certificate.
+    description: Any = None
+    # Specifies the inactive date for the certificate.
+    inactive_date: Any = None
+    # Specifies the not after date for the certificate.
+    not_after_date: Any = None
+    # Specifies the not before date for the certificate.
+    not_before_date: Any = None
+    # Specifies the private key for the certificate.
+    private_key: Any = None
+    # Specifies Certificate's serial.
+    serial: Any = None
+    # A status description for the certificate.
+    status: Any = None
+    # Key-value pairs that can be used to group and search for certificates. Tags are metadata attached to certificates for any purpose.
+    tags: Any = None
+    # Describing the type of certificate. With or without a private key.
+    type: Any = None
+    # Specifies the usage type for the certificate.
     usage: Any = None
 
 Certificate = ubx.ResourceBinding(
     wire_type="aws_transfer_certificate",
     fields={
+        "active_date": ubx.FieldSpec(wire_name="active_date"),
         "certificate": ubx.FieldSpec(wire_name="certificate"),
         "certificate_chain": ubx.FieldSpec(wire_name="certificate_chain"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "inactive_date": ubx.FieldSpec(wire_name="inactive_date"),
         "private_key": ubx.FieldSpec(wire_name="private_key"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Certificate_TagsFields,
+        ),
         "usage": ubx.FieldSpec(wire_name="usage"),
     },
 )

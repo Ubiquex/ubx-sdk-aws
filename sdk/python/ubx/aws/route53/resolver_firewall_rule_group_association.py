@@ -7,28 +7,74 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ResolverFirewallRuleGroupAssociation_Tags:
+    key: Any = None
+    # The value part of a tag attached to the Route 53 Resolver firewall rule group association, used to attach arbitrary metadata like environment or owner for identifying and managing the association. (AI-inferred)
+    value: Any = None
+
+_ResolverFirewallRuleGroupAssociation_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ResolverFirewallRuleGroupAssociationConfig:
+    # FirewallRuleGroupId
     firewall_rule_group_id: Any = None
-    id: Any = None
+    # MutationProtectionStatus
     mutation_protection: Any = None
+    # FirewallRuleGroupAssociationName
     name: Any = None
+    # Priority
     priority: Any = None
-    region: Any = None
+    # Tags
     tags: Any = None
-    tags_all: Any = None
+    # VpcId
+    vpc_id: Any = None
+
+@dataclasses.dataclass
+class ResolverFirewallRuleGroupAssociationAttrs:
+    # Arn
+    arn: Any = None
+    # Rfc3339TimeString
+    creation_time: Any = None
+    # The id of the creator request.
+    creator_request_id: Any = None
+    # FirewallRuleGroupId
+    firewall_rule_group_id: Any = None
+    # Id
+    id: Any = None
+    # ServicePrincipal
+    managed_owner_name: Any = None
+    # Rfc3339TimeString
+    modification_time: Any = None
+    # MutationProtectionStatus
+    mutation_protection: Any = None
+    # FirewallRuleGroupAssociationName
+    name: Any = None
+    # Priority
+    priority: Any = None
+    # ResolverFirewallRuleGroupAssociation, possible values are COMPLETE, DELETING, UPDATING, and INACTIVE_OWNER_ACCOUNT_CLOSED.
+    status: Any = None
+    # FirewallDomainListAssociationStatus
+    status_message: Any = None
+    # Tags
+    tags: Any = None
+    # VpcId
     vpc_id: Any = None
 
 ResolverFirewallRuleGroupAssociation = ubx.ResourceBinding(
     wire_type="aws_route53_resolver_firewall_rule_group_association",
     fields={
         "firewall_rule_group_id": ubx.FieldSpec(wire_name="firewall_rule_group_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "mutation_protection": ubx.FieldSpec(wire_name="mutation_protection"),
         "name": ubx.FieldSpec(wire_name="name"),
         "priority": ubx.FieldSpec(wire_name="priority"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ResolverFirewallRuleGroupAssociation_TagsFields,
+        ),
         "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
     },
 )

@@ -7,30 +7,63 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ReplicaKey_Tags:
+    # The key of a tag attached to the AWS KMS replica key, used as part of a key-value pair to identify, categorize, and manage the resource. (AI-inferred)
+    key: Any = None
+    # The value component of a key-value tag that can be assigned to the AWS KMS replica key for resource identification and management. (AI-inferred)
+    value: Any = None
+
+_ReplicaKey_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ReplicaKeyConfig:
-    bypass_policy_lockout_safety_check: Any = None
-    deletion_window_in_days: Any = None
+    # A description of the AWS KMS key. Use a description that helps you to distinguish this AWS KMS key from others in the account, such as its intended use.
     description: Any = None
+    # Specifies whether the AWS KMS key is enabled. Disabled AWS KMS keys cannot be used in cryptographic operations.
     enabled: Any = None
-    id: Any = None
-    policy: Any = None
+    # The key policy that authorizes use of the AWS KMS key. The key policy must observe the following rules.
+    key_policy: Any = None
+    # Specifies the number of days in the waiting period before AWS KMS deletes an AWS KMS key that has been removed from a CloudFormation stack. Enter a value between 7 and 30 days. The default value is 30 days.
+    pending_window_in_days: Any = None
+    # Identifies the primary AWS KMS key to create a replica of. Specify the Amazon Resource Name (ARN) of the AWS KMS key. You cannot specify an alias or key ID. For help finding the ARN, see Finding the Key ID and ARN in the AWS Key Management Service Developer Guide.
     primary_key_arn: Any = None
-    region: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class ReplicaKeyAttrs:
+    # The Amazon Resource Name (ARN) of the replica key. (AI-inferred)
+    arn: Any = None
+    # A description of the AWS KMS key. Use a description that helps you to distinguish this AWS KMS key from others in the account, such as its intended use.
+    description: Any = None
+    # Specifies whether the AWS KMS key is enabled. Disabled AWS KMS keys cannot be used in cryptographic operations.
+    enabled: Any = None
+    # The unique identifier of the replica KMS key, returned as a 32-character UUID string, which can be used to reference the key in IAM policies, aliases, and encryption operations. (AI-inferred)
+    key_id: Any = None
+    # The key policy that authorizes use of the AWS KMS key. The key policy must observe the following rules.
+    key_policy: Any = None
+    # Specifies the number of days in the waiting period before AWS KMS deletes an AWS KMS key that has been removed from a CloudFormation stack. Enter a value between 7 and 30 days. The default value is 30 days.
+    pending_window_in_days: Any = None
+    # Identifies the primary AWS KMS key to create a replica of. Specify the Amazon Resource Name (ARN) of the AWS KMS key. You cannot specify an alias or key ID. For help finding the ARN, see Finding the Key ID and ARN in the AWS Key Management Service Developer Guide.
+    primary_key_arn: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 ReplicaKey = ubx.ResourceBinding(
     wire_type="aws_kms_replica_key",
     fields={
-        "bypass_policy_lockout_safety_check": ubx.FieldSpec(wire_name="bypass_policy_lockout_safety_check"),
-        "deletion_window_in_days": ubx.FieldSpec(wire_name="deletion_window_in_days"),
         "description": ubx.FieldSpec(wire_name="description"),
         "enabled": ubx.FieldSpec(wire_name="enabled"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "policy": ubx.FieldSpec(wire_name="policy"),
+        "key_policy": ubx.FieldSpec(wire_name="key_policy"),
+        "pending_window_in_days": ubx.FieldSpec(wire_name="pending_window_in_days"),
         "primary_key_arn": ubx.FieldSpec(wire_name="primary_key_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ReplicaKey_TagsFields,
+        ),
     },
 )

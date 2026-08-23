@@ -4,11 +4,40 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndpointAuthorizationConfig struct {
+	// The AWS account ID of the customer to be authorized to access the Redshift cluster's VPC endpoint. (AI-inferred)
 	Account any
+	// The cluster identifier.
 	ClusterIdentifier any
-	ForceDelete any
-	Id any
-	Region any
+	// Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.
+	Force any
+	// The virtual private cloud (VPC) identifiers to grant or revoke access to.
+	VpcIds any
+}
+
+type EndpointAuthorizationAttrs struct {
+	// The AWS account ID of the customer to be authorized to access the Redshift cluster's VPC endpoint. (AI-inferred)
+	Account any
+	// Indicates whether all VPCs in the grantee account are allowed access to the cluster.
+	AllowedAllVpcs any
+	// The VPCs allowed access to the cluster.
+	AllowedVpcs any
+	// The time (UTC) when the authorization was created.
+	AuthorizeTime any
+	// The cluster identifier.
+	ClusterIdentifier any
+	// The status of the cluster.
+	ClusterStatus any
+	// The number of Redshift-managed VPC endpoints created for the authorization.
+	EndpointCount any
+	// Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.
+	Force any
+	// The AWS account ID that is granted access to the cluster's endpoint, returned as a computed read-only attribute. (AI-inferred)
+	Grantee any
+	// The AWS account ID of the cluster owner that grants the cross-account endpoint authorization. (AI-inferred)
+	Grantor any
+	// The status of the authorization action.
+	Status any
+	// The virtual private cloud (VPC) identifiers to grant or revoke access to.
 	VpcIds any
 }
 
@@ -17,9 +46,7 @@ var EndpointAuthorization = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Account": ubx.FieldSpec{WireName: "account"},
 		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-		"ForceDelete": ubx.FieldSpec{WireName: "force_delete"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Force": ubx.FieldSpec{WireName: "force"},
 		"VpcIds": ubx.FieldSpec{WireName: "vpc_ids"},
 	},
 }

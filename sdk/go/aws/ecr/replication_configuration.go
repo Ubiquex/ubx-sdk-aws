@@ -3,70 +3,81 @@ package ecr
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ReplicationConfiguration_ReplicationConfiguration_Rule_Destination struct {
+type ReplicationConfiguration_ReplicationConfiguration_Rules_Destinations struct {
+	// The AWS region of the destination registry to which container images are replicated, such as us-east-1. (AI-inferred)
 	Region any
+	// The AWS account ID of the destination registry where replicated images are stored. (AI-inferred)
 	RegistryId any
 }
 
-type ReplicationConfiguration_ReplicationConfiguration_Rule_RepositoryFilter struct {
+type ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFilters struct {
+	// The repository name prefix pattern (e.g., 'prod/') that determines which ECR repositories are included in the replication rule, matching repositories whose names begin with this filter string. (AI-inferred)
 	Filter any
+	// Specifies the type of repository filter in an ECR replication rule, where PREFIX_MATCH is the only supported value and indicates that the filter value matches repository names by prefix. (AI-inferred)
 	FilterType any
 }
 
-type ReplicationConfiguration_ReplicationConfiguration_Rule struct {
-	Destination any
-	RepositoryFilter any
+type ReplicationConfiguration_ReplicationConfiguration_Rules struct {
+	// Specifies the destination registry details, including the AWS Region and registry ID, to which this replication rule replicates images. (AI-inferred)
+	Destinations any
+	// Defines which repositories in the source registry are replicated by the rule, using filter type (such as PREFIX_MATCH) and a filter value that matches repository names. (AI-inferred)
+	RepositoryFilters any
 }
 
 type ReplicationConfiguration_ReplicationConfiguration struct {
-	Rule any
+	// An array of objects representing the replication destinations and repository filters for a replication configuration.
+	Rules any
 }
 
-var ReplicationConfiguration_ReplicationConfiguration_Rule_DestinationFields = ubx.FieldMap{
+var ReplicationConfiguration_ReplicationConfiguration_Rules_DestinationsFields = ubx.FieldMap{
 		"Region": ubx.FieldSpec{WireName: "region"},
 		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
 	}
 
-var ReplicationConfiguration_ReplicationConfiguration_Rule_RepositoryFilterFields = ubx.FieldMap{
+var ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFiltersFields = ubx.FieldMap{
 		"Filter": ubx.FieldSpec{WireName: "filter"},
 		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
 	}
 
-var ReplicationConfiguration_ReplicationConfiguration_RuleFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
+var ReplicationConfiguration_ReplicationConfiguration_RulesFields = ubx.FieldMap{
+		"Destinations": ubx.FieldSpec{
+			WireName: "destinations",
 			Kind: "list",
-			Fields: ReplicationConfiguration_ReplicationConfiguration_Rule_DestinationFields,
+			Fields: ReplicationConfiguration_ReplicationConfiguration_Rules_DestinationsFields,
 		},
-		"RepositoryFilter": ubx.FieldSpec{
-			WireName: "repository_filter",
+		"RepositoryFilters": ubx.FieldSpec{
+			WireName: "repository_filters",
 			Kind: "list",
-			Fields: ReplicationConfiguration_ReplicationConfiguration_Rule_RepositoryFilterFields,
+			Fields: ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFiltersFields,
 		},
 	}
 
 var ReplicationConfiguration_ReplicationConfigurationFields = ubx.FieldMap{
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
 			Kind: "list",
-			Fields: ReplicationConfiguration_ReplicationConfiguration_RuleFields,
+			Fields: ReplicationConfiguration_ReplicationConfiguration_RulesFields,
 		},
 	}
 
 type ReplicationConfigurationConfig struct {
-	Id any
-	Region any
+	// The replication configuration for a registry.
+	ReplicationConfiguration any
+}
+
+type ReplicationConfigurationAttrs struct {
+	// The registry_id is the AWS account ID (or registry ID) of the Amazon ECR private registry that this replication configuration is associated with, automatically assigned by CloudFormation. (AI-inferred)
+	RegistryId any
+	// The replication configuration for a registry.
 	ReplicationConfiguration any
 }
 
 var ReplicationConfiguration = ubx.ResourceBinding{
 	WireType: "aws_ecr_replication_configuration",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ReplicationConfiguration": ubx.FieldSpec{
 			WireName: "replication_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: ReplicationConfiguration_ReplicationConfigurationFields,
 		},
 	},

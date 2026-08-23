@@ -7,46 +7,79 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class VideoStream_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class VideoStream_StreamStorageConfiguration:
+    # The storage tier for the Kinesis Video Stream. Determines the storage class used for stream data.
+    default_storage_tier: Any = None
 
-_VideoStream_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+@dataclasses.dataclass
+class VideoStream_Tags:
+    # The key (name) portion of a tag attached to the Kinesis Video Stream, used as a unique identifier within the stream's tag set for organizing, managing, and tracking the resource. (AI-inferred)
+    key: Any = None
+    # The value of a tag key-value pair attached to the Kinesis video stream, used for organizing and identifying the resource. (AI-inferred)
+    value: Any = None
+
+_VideoStream_StreamStorageConfigurationFields = {
+    "default_storage_tier": ubx.FieldSpec(wire_name="default_storage_tier"),
+}
+
+_VideoStream_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class VideoStreamConfig:
+    # The number of hours till which Kinesis Video will retain the data in the stream
     data_retention_in_hours: Any = None
+    # The name of the device that is writing to the stream.
     device_name: Any = None
-    id: Any = None
+    # AWS KMS key ID that Kinesis Video Streams uses to encrypt stream data.
     kms_key_id: Any = None
+    # The media type of the stream. Consumers of the stream can use this information when processing the stream.
     media_type: Any = None
+    # The name of the Kinesis Video stream.
     name: Any = None
-    region: Any = None
+    # Configuration for the storage tier of the Kinesis Video Stream.
+    stream_storage_configuration: Any = None
+    # An array of key-value pairs associated with the Kinesis Video Stream.
     tags: Any = None
-    tags_all: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class VideoStreamAttrs:
+    # The Amazon Resource Name (ARN) of the Kinesis Video stream.
+    arn: Any = None
+    # The number of hours till which Kinesis Video will retain the data in the stream
+    data_retention_in_hours: Any = None
+    # The name of the device that is writing to the stream.
+    device_name: Any = None
+    # AWS KMS key ID that Kinesis Video Streams uses to encrypt stream data.
+    kms_key_id: Any = None
+    # The media type of the stream. Consumers of the stream can use this information when processing the stream.
+    media_type: Any = None
+    # The name of the Kinesis Video stream.
+    name: Any = None
+    # Configuration for the storage tier of the Kinesis Video Stream.
+    stream_storage_configuration: Any = None
+    # An array of key-value pairs associated with the Kinesis Video Stream.
+    tags: Any = None
 
 VideoStream = ubx.ResourceBinding(
     wire_type="aws_kinesis_video_stream",
     fields={
         "data_retention_in_hours": ubx.FieldSpec(wire_name="data_retention_in_hours"),
         "device_name": ubx.FieldSpec(wire_name="device_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
         "media_type": ubx.FieldSpec(wire_name="media_type"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "stream_storage_configuration": ubx.FieldSpec(
+            wire_name="stream_storage_configuration",
             kind="object",
-            fields=_VideoStream_TimeoutsFields,
+            fields=_VideoStream_StreamStorageConfigurationFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_VideoStream_TagsFields,
         ),
     },
 )

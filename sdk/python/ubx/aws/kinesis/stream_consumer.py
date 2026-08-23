@@ -7,22 +7,50 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StreamConsumer_Tags:
+    # The key of a tag applied to the Kinesis stream consumer, enabling resource identification and attribute-based access control for the consumer. (AI-inferred)
+    key: Any = None
+    # Specifies the value for a tag assigned to the Kinesis stream consumer, used for cost allocation, access control, and metadata organization. (AI-inferred)
+    value: Any = None
+
+_StreamConsumer_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class StreamConsumerConfig:
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # The name of the Kinesis Stream Consumer. For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.
+    consumer_name: Any = None
+    # The Amazon resource name (ARN) of the Kinesis data stream that you want to register the consumer with.
     stream_arn: Any = None
+    # An arbitrary set of tags (key–value pairs) to associate with the Kinesis consumer.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class StreamConsumerAttrs:
+    # The ARN returned by Kinesis Data Streams when you registered the consumer. If you don't know the ARN of the consumer that you want to deregister, you can use the ListStreamConsumers operation to get a list of the descriptions of all the consumers that are currently registered with a given data stream. The description of a consumer contains its ARN.
+    consumer_arn: Any = None
+    # Timestamp when the consumer was created.
+    consumer_creation_timestamp: Any = None
+    # The name of the Kinesis Stream Consumer. For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.
+    consumer_name: Any = None
+    # A consumer can't read data while in the CREATING or DELETING states. Valid Values: CREATING | DELETING | ACTIVE
+    consumer_status: Any = None
+    # The Amazon resource name (ARN) of the Kinesis data stream that you want to register the consumer with.
+    stream_arn: Any = None
+    # An arbitrary set of tags (key–value pairs) to associate with the Kinesis consumer.
+    tags: Any = None
 
 StreamConsumer = ubx.ResourceBinding(
     wire_type="aws_kinesis_stream_consumer",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "consumer_name": ubx.FieldSpec(wire_name="consumer_name"),
         "stream_arn": ubx.FieldSpec(wire_name="stream_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_StreamConsumer_TagsFields,
+        ),
     },
 )

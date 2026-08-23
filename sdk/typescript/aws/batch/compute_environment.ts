@@ -2,86 +2,159 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ComputeEnvironment_ComputeResources_Ec2Configuration {
-  imageIdOverride: string;
-  imageKubernetesVersion: string;
-  imageType: string;
+  batchImageStatus?: string | Computed<string>;
+  /** Specifies a custom Amazon Machine Image (AMI) ID that overrides the default ECS-optimized AMI used for the EC2 instances in the AWS Batch compute environment. (AI-inferred) */
+  imageIdOverride?: string | Computed<string>;
+  /** This field sets the Kubernetes version for the Amazon EKS optimized AMI used in the EC2 configuration of an AWS Batch compute environment, enabling the compute instances to run a specific Kubernetes minor version. (AI-inferred) */
+  imageKubernetesVersion?: string | Computed<string>;
+  /** Specifies the ECS-optimized AMI type (e.g., ECS_AL2 for Linux, ECS_AL2_NVIDIA for GPU) used for EC2 instances in the compute environment. (AI-inferred) */
+  imageType?: string | Computed<string>;
+}
+
+export interface ComputeEnvironment_ComputeResources_LaunchTemplate_Overrides {
+  launchTemplateId?: string | Computed<string>;
+  launchTemplateName?: string | Computed<string>;
+  /** A list of EC2 instance types that override the instance types specified in the launch template used for the AWS Batch compute environment's compute resources. (AI-inferred) */
+  targetInstanceTypes?: string[] | Computed<string[]>;
+  /** Determines whether the override user data is provided as plain text (TEXT) or as a base64-encoded string (BASE64) when overriding the EC2 launch template's user data for AWS Batch compute resources. (AI-inferred) */
+  userdataType?: string | Computed<string>;
+  version?: string | Computed<string>;
 }
 
 export interface ComputeEnvironment_ComputeResources_LaunchTemplate {
-  launchTemplateId: string;
-  launchTemplateName: string;
-  version: string;
+  /** The ID of the Amazon EC2 launch template to use for the compute resources in this AWS Batch compute environment. (AI-inferred) */
+  launchTemplateId?: string | Computed<string>;
+  /** The name of the EC2 launch template that AWS Batch uses to launch instances for the compute environment's compute resources. (AI-inferred) */
+  launchTemplateName?: string | Computed<string>;
+  /** The overrides list inside the launch template configuration lets you assign different launch templates to specific EC2 instance types used in the compute environment, so those instance types use their own launch template instead of the base one. (AI-inferred) */
+  overrides?: ComputeEnvironment_ComputeResources_LaunchTemplate_Overrides[] | Computed<ComputeEnvironment_ComputeResources_LaunchTemplate_Overrides[]>;
+  userdataType?: string | Computed<string>;
+  /** The version of the AWS EC2 launch template to use for the compute resources of the Batch compute environment, where you can specify a specific version number or use the special values $Latest or $Default to automatically use the latest or default edition of the launch template. (AI-inferred) */
+  version?: string | Computed<string>;
+}
+
+export interface ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InfrastructureOptimization {
+  scaleInAfter?: number | Computed<number>;
+}
+
+export interface ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_CapacityReservations {
+  /** The ARN of the resource group that contains the EC2 Capacity Reservations to be used when launching instances in the managed compute environment. (AI-inferred) */
+  reservationGroupArn?: string | Computed<string>;
+  /** Sets the capacity reservation preference for instances launched via the launch template used by this AWS Batch managed compute environment, where 'open' uses any matching open Capacity Reservation and 'none' skips capacity reservations entirely. (AI-inferred) */
+  reservationPreference?: string | Computed<string>;
+}
+
+export interface ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements {
+  /** Limits the pool of EC2 instance types that the compute environment can launch to only those explicitly listed in this allowed instance types list. (AI-inferred) */
+  allowedInstanceTypes?: string[] | Computed<string[]>;
+}
+
+export interface ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_LocalStorageConfiguration {
+  useLocalStorage?: boolean | Computed<boolean>;
+}
+
+export interface ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_NetworkConfiguration {
+  /** Specifies the security group IDs to assign to the EC2 instances in the AWS Batch managed compute environment when the launch template's network configuration is used. (AI-inferred) */
+  securityGroups: string[] | Computed<string[]>;
+  /** Specifies the subnets in which the managed compute environment instances are launched, as part of the network configuration of the EC2 launch template referenced by the managed instances provider. (AI-inferred) */
+  subnets: string[] | Computed<string[]>;
+}
+
+export interface ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_StorageConfiguration {
+  /** Specifies the size in GiB of the storage volume (e.g., an Amazon EBS volume) attached to the managed instances when launched using the specified launch template in the AWS Batch compute environment's managed instances provider. (AI-inferred) */
+  storageSizeGiB?: number | Computed<number>;
+}
+
+export interface ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate {
+  /** Specifies the capacity option (such as ON_DEMAND or SPOT) for instances launched from the provided launch template in the managed instances provider, determining whether the compute environment purchases instances on demand or as spot capacity. (AI-inferred) */
+  capacityOptionType?: string | Computed<string>;
+  /** Specifies the capacity reservation targeting configuration (such as the specific Capacity Reservation ID or the open/reserved preference) for EC2 instances launched by the compute environment's managed instance provider using the given launch template. (AI-inferred) */
+  capacityReservations?: ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_CapacityReservations | Computed<ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_CapacityReservations>;
+  /** The ARN of the IAM instance profile that is attached to the EC2 instances launched for the AWS Batch managed compute environment. (AI-inferred) */
+  ec2InstanceProfileArn: string | Computed<string>;
+  /** Enables the use of FIPS (Federal Information Processing Standards) compliant endpoints on EC2 instances launched from this launch template within the AWS Batch managed compute environment. (AI-inferred) */
+  fipsEnabled?: boolean | Computed<boolean>;
+  /** Specifies whether to enable propagation of instance tags to the instance metadata service (IMDS) for instances launched via the launch template in this AWS Batch compute environment. (AI-inferred) */
+  instanceMetadataTagsPropagation?: boolean | Computed<boolean>;
+  /** Defines the instance requirements (such as vCPU count, memory, and CPU architecture) used to select EC2 instance types for the managed instances in the AWS Batch compute environment. (AI-inferred) */
+  instanceRequirements?: ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements | Computed<ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements>;
+  localStorageConfiguration?: ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_LocalStorageConfiguration | Computed<ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_LocalStorageConfiguration>;
+  /** Determines whether detailed CloudWatch monitoring is enabled for the EC2 instances launched from this launch template, controlling the granularity of metrics collected (1-minute vs 5-minute intervals). (AI-inferred) */
+  monitoring?: string | Computed<string>;
+  networkConfiguration: ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_NetworkConfiguration | Computed<ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_NetworkConfiguration>;
+  storageConfiguration?: ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_StorageConfiguration | Computed<ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_StorageConfiguration>;
+}
+
+export interface ComputeEnvironment_ComputeResources_ManagedInstancesProvider {
+  infrastructureOptimization?: ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InfrastructureOptimization | Computed<ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InfrastructureOptimization>;
+  /** The ARN of the IAM role that AWS Batch assumes to launch and manage the EC2 instances in a managed compute environment that uses the managed instances provider. (AI-inferred) */
+  infrastructureRoleArn: string | Computed<string>;
+  instanceLaunchTemplate: ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate | Computed<ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate>;
+  /** When set to true, the tags of the AWS Batch compute environment are propagated to the EC2 instances launched for the managed instances provider. (AI-inferred) */
+  propagateTags?: string | Computed<string>;
+}
+
+export interface ComputeEnvironment_ComputeResources_ScalingPolicy {
+  minScaleDownDelayMinutes?: number | Computed<number>;
 }
 
 export interface ComputeEnvironment_ComputeResources {
-  allocationStrategy: string;
-  bidPercentage: number;
-  desiredVcpus: number;
-  ec2KeyPair: string;
-  imageId: string;
-  instanceRole: string;
-  instanceType: string[];
-  maxVcpus: number;
-  minVcpus: number;
-  placementGroup: string;
-  securityGroupIds: string[];
-  spotIamFleetRole: string;
-  subnets: string[];
-  tags: Record<string, string>;
-  type: string;
-  ec2Configuration: ComputeEnvironment_ComputeResources_Ec2Configuration[];
-  launchTemplate: ComputeEnvironment_ComputeResources_LaunchTemplate[];
+  /** Specifies the strategy used by AWS Batch to select which compute resources (e.g., instance types) to use for the compute environment, such as BEST_FIT, BEST_FIT_PROGRESSIVE, or SPOT_CAPACITY_OPTIMIZED. (AI-inferred) */
+  allocationStrategy?: string | Computed<string>;
+  /** The percentage of the On-Demand price that you are willing to pay for Spot Instances in the compute environment's Spot Fleet, influencing the maximum bid price for Spot capacity. (AI-inferred) */
+  bidPercentage?: number | Computed<number>;
+  /** Capacity-level tags for compute environments. */
+  capacityTags?: unknown | Computed<unknown>;
+  /** Sets the desired number of vCPUs for the managed EC2 compute environment, which AWS Batch automatically scales between the minimum and maximum vCPU limits based on job queue demand. (AI-inferred) */
+  desiredvCpus?: number | Computed<number>;
+  /** Defines EC2 configuration settings for the compute resources, including AMI overrides and image type (e.g., ECS or EKS) used for the Batch compute environment's instances. (AI-inferred) */
+  ec2Configuration?: ComputeEnvironment_ComputeResources_Ec2Configuration[] | Computed<ComputeEnvironment_ComputeResources_Ec2Configuration[]>;
+  /** The name of the Amazon EC2 key pair used to enable SSH access to the EC2 instances that AWS Batch launches in the compute environment. (AI-inferred) */
+  ec2KeyPair?: string | Computed<string>;
+  /** The AMI ID used for the EC2 instances in the compute environment; when omitted, AWS Batch automatically selects an appropriate Amazon ECS-optimized AMI. (AI-inferred) */
+  imageId?: string | Computed<string>;
+  /** The ARN of the IAM role that the compute environment's EC2 container instances assume to enable the ECS agent to make AWS API calls on your behalf. (AI-inferred) */
+  instanceRole?: string | Computed<string>;
+  /** The EC2 instance types that the compute environment may use for its compute resources; if not specified, AWS Batch chooses default instance types based on the allocation strategy. (AI-inferred) */
+  instanceTypes?: string[] | Computed<string[]>;
+  /** Specifies an Amazon EC2 launch template that defines the instance configuration for the compute resources of the AWS Batch compute environment. (AI-inferred) */
+  launchTemplate?: ComputeEnvironment_ComputeResources_LaunchTemplate | Computed<ComputeEnvironment_ComputeResources_LaunchTemplate>;
+  /** Configures the provider for managed compute instances in the AWS Batch compute environment, allowing selection between EC2 instances and EC2 Fleet and specifying their provisioning details. (AI-inferred) */
+  managedInstancesProvider?: ComputeEnvironment_ComputeResources_ManagedInstancesProvider | Computed<ComputeEnvironment_ComputeResources_ManagedInstancesProvider>;
+  /** Maximum number of vCPUs that the compute environment can scale out to, capping the total vCPU capacity of the managed compute resources. (AI-inferred) */
+  maxvCpus: number | Computed<number>;
+  /** The minimum number of vCPUs that the compute environment will maintain, defining the lower bound for the managed EC2 compute environment's auto-scaling group. (AI-inferred) */
+  minvCpus?: number | Computed<number>;
+  /** The name of an EC2 placement group to associate with the compute resources, which controls the physical placement strategy of the launched instances and may affect job performance. (AI-inferred) */
+  placementGroup?: string | Computed<string>;
+  scalingPolicy?: ComputeEnvironment_ComputeResources_ScalingPolicy | Computed<ComputeEnvironment_ComputeResources_ScalingPolicy>;
+  /** This is a list of VPC security group IDs that AWS Batch assigns to the compute resources' EC2 instances (or Fargate tasks) in the managed compute environment, defining the firewall rules for network access. (AI-inferred) */
+  securityGroupIds?: string[] | Computed<string[]>;
+  /** The Amazon Resource Name (ARN) of the IAM role that AWS Batch assumes to launch and manage Spot Fleet instances in the compute environment. (AI-inferred) */
+  spotIamFleetRole?: string | Computed<string>;
+  /** The VPC subnet IDs where the Batch compute resources (EC2 instances or Fargate tasks) are launched. (AI-inferred) */
+  subnets?: string[] | Computed<string[]>;
+  /** A key-value pair to associate with a resource. */
+  tags?: unknown | Computed<unknown>;
+  /** The compute resources type (e.g., EC2, SPOT, FARGATE, or FARGATE_SPOT) that determines the infrastructure on which this AWS Batch compute environment runs jobs. (AI-inferred) */
+  type: string | Computed<string>;
+  /** When enabled, AWS Batch updates the compute environment's instances to the latest Amazon ECS-optimized AMI version (including the ECS container agent) when the environment is updated. (AI-inferred) */
+  updateToLatestImageVersion?: boolean | Computed<boolean>;
 }
 
 export interface ComputeEnvironment_EksConfiguration {
-  eksClusterArn: string;
-  kubernetesNamespace: string;
+  /** The Amazon Resource Name (ARN) of the Amazon EKS cluster that this compute environment uses to run Batch jobs. (AI-inferred) */
+  eksClusterArn: string | Computed<string>;
+  /** Specifies the Kubernetes namespace on the Amazon EKS cluster where the AWS Batch compute environment runs its job pods. (AI-inferred) */
+  kubernetesNamespace: string | Computed<string>;
 }
 
 export interface ComputeEnvironment_UpdatePolicy {
-  jobExecutionTimeoutMinutes: number;
-  terminateJobsOnUpdate: boolean;
+  /** The maximum time in minutes that a job in the compute environment can run before AWS Batch terminates it when the compute environment's update policy is applied. (AI-inferred) */
+  jobExecutionTimeoutMinutes?: number | Computed<number>;
+  /** If true, AWS Batch terminates running jobs in the compute environment whenever the compute environment is updated. (AI-inferred) */
+  terminateJobsOnUpdate?: boolean | Computed<boolean>;
 }
-
-const ComputeEnvironment_ComputeResources_Ec2ConfigurationFields: FieldMap = {
-  imageIdOverride: "image_id_override",
-  imageKubernetesVersion: "image_kubernetes_version",
-  imageType: "image_type",
-};
-
-const ComputeEnvironment_ComputeResources_LaunchTemplateFields: FieldMap = {
-  launchTemplateId: "launch_template_id",
-  launchTemplateName: "launch_template_name",
-  version: "version",
-};
-
-const ComputeEnvironment_ComputeResourcesFields: FieldMap = {
-  allocationStrategy: "allocation_strategy",
-  bidPercentage: "bid_percentage",
-  desiredVcpus: "desired_vcpus",
-  ec2KeyPair: "ec2_key_pair",
-  imageId: "image_id",
-  instanceRole: "instance_role",
-  instanceType: "instance_type",
-  maxVcpus: "max_vcpus",
-  minVcpus: "min_vcpus",
-  placementGroup: "placement_group",
-  securityGroupIds: "security_group_ids",
-  spotIamFleetRole: "spot_iam_fleet_role",
-  subnets: "subnets",
-  tags: "tags",
-  type: "type",
-  ec2Configuration: {
-    wireName: "ec2_configuration",
-    kind: "list",
-    fields: ComputeEnvironment_ComputeResources_Ec2ConfigurationFields,
-  },
-  launchTemplate: {
-    wireName: "launch_template",
-    kind: "list",
-    fields: ComputeEnvironment_ComputeResources_LaunchTemplateFields,
-  },
-};
 
 const ComputeEnvironment_EksConfigurationFields: FieldMap = {
   eksClusterArn: "eks_cluster_arn",
@@ -94,64 +167,72 @@ const ComputeEnvironment_UpdatePolicyFields: FieldMap = {
 };
 
 export interface ComputeEnvironmentConfig {
-  id?: string | Computed<string>;
-  name?: string | Computed<string>;
-  namePrefix?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The name for the AWS Batch compute environment, which must be unique within the region and can contain letters, numbers, hyphens, and underscores; if omitted, AWS CloudFormation generates a unique name. (AI-inferred) */
+  computeEnvironmentName?: string | Computed<string>;
+  context?: string | Computed<string>;
+  /** Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred) */
+  eksConfiguration?: ComputeEnvironment_EksConfiguration | Computed<ComputeEnvironment_EksConfiguration>;
+  /** Specifies whether the compute environment is replaced with a new one when updating this resource, allowing changes to properties that require replacement to take effect. (AI-inferred) */
+  replaceComputeEnvironment?: boolean | Computed<boolean>;
+  /** The ARN of the IAM role that AWS Batch assumes to make calls to other AWS services on your behalf when creating and managing the compute environment (required for managed compute environments). (AI-inferred) */
   serviceRole?: string | Computed<string>;
+  /** Specifies whether the compute environment is enabled for job submission, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred) */
   state?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** A key-value pair to associate with a resource. */
+  tags?: unknown | Computed<unknown>;
+  /** Specifies whether the compute environment is managed or unmanaged by AWS Batch, with valid values being MANAGED or UNMANAGED. (AI-inferred) */
   type: string | Computed<string>;
-  computeResources?: ComputeEnvironment_ComputeResources[] | Computed<ComputeEnvironment_ComputeResources[]>;
-  eksConfiguration?: ComputeEnvironment_EksConfiguration[] | Computed<ComputeEnvironment_EksConfiguration[]>;
-  updatePolicy?: ComputeEnvironment_UpdatePolicy[] | Computed<ComputeEnvironment_UpdatePolicy[]>;
+  /** The number of vCPUs to allocate to the unmanaged compute environment, used when the compute environment type is set to UNMANAGED. (AI-inferred) */
+  unmanagedvCpus?: number | Computed<number>;
+  /** Configures the update policy for the compute environment, controlling whether in-progress jobs are terminated and the maximum time to wait for jobs to finish before an update is applied. (AI-inferred) */
+  updatePolicy?: ComputeEnvironment_UpdatePolicy | Computed<ComputeEnvironment_UpdatePolicy>;
 }
 
 export interface ComputeEnvironmentAttrs {
-  arn: string;
-  ecsClusterArn: string;
-  id: string;
-  name: string;
-  namePrefix: string;
-  region: string;
+  /** The Amazon Resource Name (ARN) that uniquely identifies the AWS Batch compute environment, assigned by AWS when the resource is created. (AI-inferred) */
+  computeEnvironmentArn: string;
+  /** The name for the AWS Batch compute environment, which must be unique within the region and can contain letters, numbers, hyphens, and underscores; if omitted, AWS CloudFormation generates a unique name. (AI-inferred) */
+  computeEnvironmentName: string;
+  /** The resolved configuration of EC2 compute resources (instance types, min/max vCPUs, subnets, security groups) that AWS Batch uses to run jobs in the managed compute environment. (AI-inferred) */
+  computeResources: ComputeEnvironment_ComputeResources;
+  context: string;
+  /** Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred) */
+  eksConfiguration: ComputeEnvironment_EksConfiguration;
+  /** Specifies whether the compute environment is replaced with a new one when updating this resource, allowing changes to properties that require replacement to take effect. (AI-inferred) */
+  replaceComputeEnvironment: boolean;
+  /** The ARN of the IAM role that AWS Batch assumes to make calls to other AWS services on your behalf when creating and managing the compute environment (required for managed compute environments). (AI-inferred) */
   serviceRole: string;
+  /** Specifies whether the compute environment is enabled for job submission, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred) */
   state: string;
-  status: string;
-  statusReason: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** A key-value pair to associate with a resource. */
+  tags: unknown;
+  /** Specifies whether the compute environment is managed or unmanaged by AWS Batch, with valid values being MANAGED or UNMANAGED. (AI-inferred) */
   type: string;
-  computeResources: ComputeEnvironment_ComputeResources[];
-  eksConfiguration: ComputeEnvironment_EksConfiguration[];
-  updatePolicy: ComputeEnvironment_UpdatePolicy[];
+  /** The number of vCPUs to allocate to the unmanaged compute environment, used when the compute environment type is set to UNMANAGED. (AI-inferred) */
+  unmanagedvCpus: number;
+  /** Configures the update policy for the compute environment, controlling whether in-progress jobs are terminated and the maximum time to wait for jobs to finish before an update is applied. (AI-inferred) */
+  updatePolicy: ComputeEnvironment_UpdatePolicy;
 }
 
 export const ComputeEnvironment: ResourceBinding<ComputeEnvironmentConfig, ComputeEnvironmentAttrs> = {
   wireType: "aws_batch_compute_environment",
   fields: {
-    id: "id",
-    name: "name",
-    namePrefix: "name_prefix",
-    region: "region",
+    computeEnvironmentName: "compute_environment_name",
+    context: "context",
+    eksConfiguration: {
+      wireName: "eks_configuration",
+      kind: "object",
+      fields: ComputeEnvironment_EksConfigurationFields,
+    },
+    replaceComputeEnvironment: "replace_compute_environment",
     serviceRole: "service_role",
     state: "state",
     tags: "tags",
-    tagsAll: "tags_all",
     type: "type",
-    computeResources: {
-      wireName: "compute_resources",
-      kind: "list",
-      fields: ComputeEnvironment_ComputeResourcesFields,
-    },
-    eksConfiguration: {
-      wireName: "eks_configuration",
-      kind: "list",
-      fields: ComputeEnvironment_EksConfigurationFields,
-    },
+    unmanagedvCpus: "unmanagedv_cpus",
     updatePolicy: {
       wireName: "update_policy",
-      kind: "list",
+      kind: "object",
       fields: ComputeEnvironment_UpdatePolicyFields,
     },
   },

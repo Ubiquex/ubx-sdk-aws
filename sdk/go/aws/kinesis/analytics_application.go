@@ -3,307 +3,213 @@ package kinesis
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type AnalyticsApplication_CloudwatchLoggingOptions struct {
-	Id any
-	LogStreamArn any
-	RoleArn any
-}
-
-type AnalyticsApplication_Inputs_KinesisFirehose struct {
-	ResourceArn any
-	RoleArn any
-}
-
-type AnalyticsApplication_Inputs_Parallelism struct {
+type AnalyticsApplication_Inputs_InputParallelism struct {
+	// Specifies the number of in-application streams to create for the input, controlling how the source data is partitioned for parallel processing within the Kinesis Analytics application. (AI-inferred)
 	Count any
 }
 
-type AnalyticsApplication_Inputs_ProcessingConfiguration struct {
-	Lambda any
-}
-
-type AnalyticsApplication_Inputs_Schema_RecordColumns struct {
-	Mapping any
-	Name any
-	SqlType any
-}
-
-type AnalyticsApplication_Inputs_Schema_RecordFormat_MappingParameters_Csv struct {
-	RecordColumnDelimiter any
-	RecordRowDelimiter any
-}
-
-type AnalyticsApplication_Inputs_Schema_RecordFormat_MappingParameters_Json struct {
-	RecordRowPath any
-}
-
-type AnalyticsApplication_Inputs_Schema_RecordFormat_MappingParameters struct {
-	Csv any
-	Json any
-}
-
-type AnalyticsApplication_Inputs_Schema_RecordFormat struct {
-	RecordFormatType any
-	MappingParameters any
-}
-
-type AnalyticsApplication_Inputs_Schema struct {
-	RecordEncoding any
-	RecordColumns any
-	RecordFormat any
-}
-
-type AnalyticsApplication_Inputs_StartingPositionConfiguration struct {
-	StartingPosition any
-}
-
-type AnalyticsApplication_Inputs struct {
-	Id any
-	NamePrefix any
-	StreamNames any
-	KinesisFirehose any
-	KinesisStream any
-	Parallelism any
-	ProcessingConfiguration any
-	Schema any
-	StartingPositionConfiguration any
-}
-
-type AnalyticsApplication_Outputs_Schema struct {
-	RecordFormatType any
-}
-
-type AnalyticsApplication_Outputs struct {
-	Id any
-	Name any
-	KinesisFirehose any
-	KinesisStream any
-	Lambda any
-	Schema any
-}
-
-type AnalyticsApplication_ReferenceDataSources_S3 struct {
-	BucketArn any
-	FileKey any
+type AnalyticsApplication_Inputs_InputProcessingConfiguration_InputLambdaProcessor struct {
+	// The ARN of the AWS Lambda function that Kinesis Data Analytics invokes to preprocess and transform records in the input stream before they are processed by the application. (AI-inferred)
+	ResourceArn any
+	// The ARN of the IAM role that grants Amazon Kinesis Analytics permission to invoke the specified Lambda function for input preprocessing. (AI-inferred)
 	RoleArn any
 }
 
-type AnalyticsApplication_ReferenceDataSources struct {
-	Id any
-	TableName any
-	S3 any
-	Schema any
+type AnalyticsApplication_Inputs_InputProcessingConfiguration struct {
+	// Defines a Lambda function used to pre-process records in the input stream before Kinesis Analytics reads them, including the function's ARN and the IAM role ARN that Kinesis Analytics assumes to invoke it. (AI-inferred)
+	InputLambdaProcessor any
 }
 
-var AnalyticsApplication_CloudwatchLoggingOptionsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LogStreamArn": ubx.FieldSpec{WireName: "log_stream_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+type AnalyticsApplication_Inputs_InputSchema_RecordColumns struct {
+	// Specifies how the column maps to a field in the source record, typically a JSON path (e.g., '$.user_id') for streaming JSON data or a zero-based column position for CSV/TSV inputs. (AI-inferred)
+	Mapping any
+	// The name of the column in the in-application stream that maps to a data element in the streaming source record. (AI-inferred)
+	Name any
+	// Specifies the SQL data type (e.g., INTEGER, VARCHAR, TIMESTAMP) of the column in the input record schema for the Kinesis Analytics application. (AI-inferred)
+	SqlType any
+}
+
+type AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParameters_CsvmappingParameters struct {
+	// Specifies the single character used to separate fields (columns) within each CSV-format record of the input stream for the Kinesis Analytics application. (AI-inferred)
+	RecordColumnDelimiter any
+	// Specifies the character used to separate rows (records) in the CSV mapping parameter of the record format, such as a newline ('\n'), so that Kinesis Analytics can parse each record from the input data stream. (AI-inferred)
+	RecordRowDelimiter any
+}
+
+type AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParameters_JsonmappingParameters struct {
+	// Specifies the JSONPath expression pointing to the array of records within the incoming JSON payload, which Kinesis Data Analytics uses to extract each data row for mapping. (AI-inferred)
+	RecordRowPath any
+}
+
+type AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParameters struct {
+	// Configures the CSV-specific mapping parameters, such as record column and row delimiters, used to parse the input stream records into the application schema. (AI-inferred)
+	CsvmappingParameters any
+	// Defines the JSON mapping parameters used by the Kinesis Analytics application to parse JSON-formatted input records, including the record row path (RecordRowPath). (AI-inferred)
+	JsonmappingParameters any
+}
+
+type AnalyticsApplication_Inputs_InputSchema_RecordFormat struct {
+	// Defines how the raw input record is parsed and mapped to the schema's columns, either via CSV delimiters (record row delimiter and column delimiter) or via a JSON record row path, depending on which mapping parameter type is supplied. (AI-inferred)
+	MappingParameters any
+	// The record format type for the input stream, specifying whether records are parsed as CSV or JSON. (AI-inferred)
+	RecordFormatType any
+}
+
+type AnalyticsApplication_Inputs_InputSchema struct {
+	// Defines the list of record columns for the input schema, each specifying the column name, SQL type, and optional mapping to the field in the streaming source data. (AI-inferred)
+	RecordColumns any
+	// Specifies the character encoding of the records in the input stream (for example, UTF-8) that the Kinesis Analytics application uses to parse the input schema. (AI-inferred)
+	RecordEncoding any
+	// Defines the record format of incoming source data (e.g., JSON or CSV), including the type and mapping parameters used to parse each record in the input stream before it is processed by the Kinesis Analytics application. (AI-inferred)
+	RecordFormat any
+}
+
+type AnalyticsApplication_Inputs struct {
+	// Configures the input parallelism by specifying the number of in-application streams (Count) to create for the input, which controls how Kinesis Data Analytics processes the streaming data concurrently. (AI-inferred)
+	InputParallelism any
+	// Configures an optional Lambda function that pre-processes and transforms input records before they are consumed by the Kinesis Analytics application, enabling data cleaning or enrichment on the streaming source. (AI-inferred)
+	InputProcessingConfiguration any
+	// Defines how raw records from the streaming source are parsed into in-application columns, specifying the record format (e.g., CSV or JSON), encoding (e.g., UTF-8), and column definitions including names, types, and optional mapping from source fields. (AI-inferred)
+	InputSchema any
+	// Configuration for a Kinesis Firehose delivery stream as the application's streaming input source, specifying the delivery stream ARN and the IAM role that Kinesis Analytics assumes to read from it. (AI-inferred)
+	KinesisFirehoseInput any
+	// Configures a Kinesis stream as the input source for the Kinesis Analytics application, specifying the stream ARN and the IAM role ARN used to read from the stream. (AI-inferred)
+	KinesisStreamsInput any
+	// Specifies a name prefix used to generate the names of in-application streams that Kinesis Analytics creates from the input, and this prefix must be unique within the application. (AI-inferred)
+	NamePrefix any
+}
+
+var AnalyticsApplication_Inputs_InputParallelismFields = ubx.FieldMap{
+		"Count": ubx.FieldSpec{WireName: "count"},
 	}
 
-var AnalyticsApplication_Inputs_KinesisFirehoseFields = ubx.FieldMap{
+var AnalyticsApplication_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields = ubx.FieldMap{
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 	}
 
-var AnalyticsApplication_Inputs_ParallelismFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-	}
-
-var AnalyticsApplication_Inputs_ProcessingConfigurationFields = ubx.FieldMap{
-		"Lambda": ubx.FieldSpec{
-			WireName: "lambda",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_KinesisFirehoseFields,
+var AnalyticsApplication_Inputs_InputProcessingConfigurationFields = ubx.FieldMap{
+		"InputLambdaProcessor": ubx.FieldSpec{
+			WireName: "input_lambda_processor",
+			Kind: "object",
+			Fields: AnalyticsApplication_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
 		},
 	}
 
-var AnalyticsApplication_Inputs_Schema_RecordColumnsFields = ubx.FieldMap{
+var AnalyticsApplication_Inputs_InputSchema_RecordColumnsFields = ubx.FieldMap{
 		"Mapping": ubx.FieldSpec{WireName: "mapping"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SqlType": ubx.FieldSpec{WireName: "sql_type"},
 	}
 
-var AnalyticsApplication_Inputs_Schema_RecordFormat_MappingParameters_CsvFields = ubx.FieldMap{
+var AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParameters_CsvmappingParametersFields = ubx.FieldMap{
 		"RecordColumnDelimiter": ubx.FieldSpec{WireName: "record_column_delimiter"},
 		"RecordRowDelimiter": ubx.FieldSpec{WireName: "record_row_delimiter"},
 	}
 
-var AnalyticsApplication_Inputs_Schema_RecordFormat_MappingParameters_JsonFields = ubx.FieldMap{
+var AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParameters_JsonmappingParametersFields = ubx.FieldMap{
 		"RecordRowPath": ubx.FieldSpec{WireName: "record_row_path"},
 	}
 
-var AnalyticsApplication_Inputs_Schema_RecordFormat_MappingParametersFields = ubx.FieldMap{
-		"Csv": ubx.FieldSpec{
-			WireName: "csv",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_Schema_RecordFormat_MappingParameters_CsvFields,
+var AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParametersFields = ubx.FieldMap{
+		"CsvmappingParameters": ubx.FieldSpec{
+			WireName: "csvmapping_parameters",
+			Kind: "object",
+			Fields: AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParameters_CsvmappingParametersFields,
 		},
-		"Json": ubx.FieldSpec{
-			WireName: "json",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_Schema_RecordFormat_MappingParameters_JsonFields,
+		"JsonmappingParameters": ubx.FieldSpec{
+			WireName: "jsonmapping_parameters",
+			Kind: "object",
+			Fields: AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParameters_JsonmappingParametersFields,
 		},
 	}
 
-var AnalyticsApplication_Inputs_Schema_RecordFormatFields = ubx.FieldMap{
-		"RecordFormatType": ubx.FieldSpec{WireName: "record_format_type"},
+var AnalyticsApplication_Inputs_InputSchema_RecordFormatFields = ubx.FieldMap{
 		"MappingParameters": ubx.FieldSpec{
 			WireName: "mapping_parameters",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_Schema_RecordFormat_MappingParametersFields,
+			Kind: "object",
+			Fields: AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParametersFields,
 		},
+		"RecordFormatType": ubx.FieldSpec{WireName: "record_format_type"},
 	}
 
-var AnalyticsApplication_Inputs_SchemaFields = ubx.FieldMap{
-		"RecordEncoding": ubx.FieldSpec{WireName: "record_encoding"},
+var AnalyticsApplication_Inputs_InputSchemaFields = ubx.FieldMap{
 		"RecordColumns": ubx.FieldSpec{
 			WireName: "record_columns",
 			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_Schema_RecordColumnsFields,
+			Fields: AnalyticsApplication_Inputs_InputSchema_RecordColumnsFields,
 		},
+		"RecordEncoding": ubx.FieldSpec{WireName: "record_encoding"},
 		"RecordFormat": ubx.FieldSpec{
 			WireName: "record_format",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_Schema_RecordFormatFields,
+			Kind: "object",
+			Fields: AnalyticsApplication_Inputs_InputSchema_RecordFormatFields,
 		},
-	}
-
-var AnalyticsApplication_Inputs_StartingPositionConfigurationFields = ubx.FieldMap{
-		"StartingPosition": ubx.FieldSpec{WireName: "starting_position"},
 	}
 
 var AnalyticsApplication_InputsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"InputParallelism": ubx.FieldSpec{
+			WireName: "input_parallelism",
+			Kind: "object",
+			Fields: AnalyticsApplication_Inputs_InputParallelismFields,
+		},
+		"InputProcessingConfiguration": ubx.FieldSpec{
+			WireName: "input_processing_configuration",
+			Kind: "object",
+			Fields: AnalyticsApplication_Inputs_InputProcessingConfigurationFields,
+		},
+		"InputSchema": ubx.FieldSpec{
+			WireName: "input_schema",
+			Kind: "object",
+			Fields: AnalyticsApplication_Inputs_InputSchemaFields,
+		},
+		"KinesisFirehoseInput": ubx.FieldSpec{
+			WireName: "kinesis_firehose_input",
+			Kind: "object",
+			Fields: AnalyticsApplication_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
+		},
+		"KinesisStreamsInput": ubx.FieldSpec{
+			WireName: "kinesis_streams_input",
+			Kind: "object",
+			Fields: AnalyticsApplication_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
+		},
 		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"StreamNames": ubx.FieldSpec{WireName: "stream_names"},
-		"KinesisFirehose": ubx.FieldSpec{
-			WireName: "kinesis_firehose",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_KinesisFirehoseFields,
-		},
-		"KinesisStream": ubx.FieldSpec{
-			WireName: "kinesis_stream",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_KinesisFirehoseFields,
-		},
-		"Parallelism": ubx.FieldSpec{
-			WireName: "parallelism",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_ParallelismFields,
-		},
-		"ProcessingConfiguration": ubx.FieldSpec{
-			WireName: "processing_configuration",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_ProcessingConfigurationFields,
-		},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_SchemaFields,
-		},
-		"StartingPositionConfiguration": ubx.FieldSpec{
-			WireName: "starting_position_configuration",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_StartingPositionConfigurationFields,
-		},
-	}
-
-var AnalyticsApplication_Outputs_SchemaFields = ubx.FieldMap{
-		"RecordFormatType": ubx.FieldSpec{WireName: "record_format_type"},
-	}
-
-var AnalyticsApplication_OutputsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"KinesisFirehose": ubx.FieldSpec{
-			WireName: "kinesis_firehose",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_KinesisFirehoseFields,
-		},
-		"KinesisStream": ubx.FieldSpec{
-			WireName: "kinesis_stream",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_KinesisFirehoseFields,
-		},
-		"Lambda": ubx.FieldSpec{
-			WireName: "lambda",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_KinesisFirehoseFields,
-		},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "list",
-			Fields: AnalyticsApplication_Outputs_SchemaFields,
-		},
-	}
-
-var AnalyticsApplication_ReferenceDataSources_S3Fields = ubx.FieldMap{
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-		"FileKey": ubx.FieldSpec{WireName: "file_key"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
-
-var AnalyticsApplication_ReferenceDataSourcesFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "list",
-			Fields: AnalyticsApplication_ReferenceDataSources_S3Fields,
-		},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "list",
-			Fields: AnalyticsApplication_Inputs_SchemaFields,
-		},
 	}
 
 type AnalyticsApplicationConfig struct {
-	Code any
-	Description any
-	Id any
-	Name any
-	Region any
-	StartApplication any
-	Tags any
-	TagsAll any
-	CloudwatchLoggingOptions any
+	// Specifies the SQL statements that define the data processing logic of the Kinesis Analytics application, including how input streams are transformed and output to destinations. (AI-inferred)
+	ApplicationCode any
+	// A user-supplied, optional description string that provides human-readable context for the Kinesis Analytics application. (AI-inferred)
+	ApplicationDescription any
+	// The name of the Kinesis Analytics application, used to identify and reference the application within AWS. (AI-inferred)
+	ApplicationName any
+	// Specifies the streaming sources (e.g., Kinesis streams or Kinesis Firehose delivery streams) that the Kinesis Analytics application reads data from, including source stream identifiers and the schema mapping for how records are parsed into in-application streams. (AI-inferred)
 	Inputs any
-	Outputs any
-	ReferenceDataSources any
+}
+
+type AnalyticsApplicationAttrs struct {
+	// Specifies the SQL statements that define the data processing logic of the Kinesis Analytics application, including how input streams are transformed and output to destinations. (AI-inferred)
+	ApplicationCode any
+	// A user-supplied, optional description string that provides human-readable context for the Kinesis Analytics application. (AI-inferred)
+	ApplicationDescription any
+	// The name of the Kinesis Analytics application, used to identify and reference the application within AWS. (AI-inferred)
+	ApplicationName any
+	// The application name, which serves as the unique identifier for this Kinesis Analytics application. (AI-inferred)
+	Id any
+	// Specifies the streaming sources (e.g., Kinesis streams or Kinesis Firehose delivery streams) that the Kinesis Analytics application reads data from, including source stream identifiers and the schema mapping for how records are parsed into in-application streams. (AI-inferred)
+	Inputs any
 }
 
 var AnalyticsApplication = ubx.ResourceBinding{
 	WireType: "aws_kinesis_analytics_application",
 	Fields: ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"StartApplication": ubx.FieldSpec{WireName: "start_application"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"CloudwatchLoggingOptions": ubx.FieldSpec{
-			WireName: "cloudwatch_logging_options",
-			Kind: "list",
-			Fields: AnalyticsApplication_CloudwatchLoggingOptionsFields,
-		},
+		"ApplicationCode": ubx.FieldSpec{WireName: "application_code"},
+		"ApplicationDescription": ubx.FieldSpec{WireName: "application_description"},
+		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
 		"Inputs": ubx.FieldSpec{
 			WireName: "inputs",
 			Kind: "list",
 			Fields: AnalyticsApplication_InputsFields,
-		},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "set",
-			Fields: AnalyticsApplication_OutputsFields,
-		},
-		"ReferenceDataSources": ubx.FieldSpec{
-			WireName: "reference_data_sources",
-			Kind: "list",
-			Fields: AnalyticsApplication_ReferenceDataSourcesFields,
 		},
 	},
 }

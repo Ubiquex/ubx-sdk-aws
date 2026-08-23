@@ -3,17 +3,151 @@ package ses
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EmailIdentity_ConfigurationSetAttributes struct {
+	// The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.
+	ConfigurationSetName any
+}
+
+type EmailIdentity_DkimAttributes struct {
+	// Sets the DKIM signing configuration for the identity. When you set this value true, then the messages that are sent from the identity are signed using DKIM. If you set this value to false, your messages are sent without DKIM signing.
+	SigningEnabled any
+}
+
+type EmailIdentity_DkimSigningAttributes struct {
+	// [Bring Your Own DKIM] A private key that's used to generate a DKIM signature. The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.
+	DomainSigningPrivateKey any
+	// [Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.
+	DomainSigningSelector any
+	// [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+	NextSigningKeyLength any
+}
+
+type EmailIdentity_FeedbackAttributes struct {
+	// If the value is true, you receive email notifications when bounce or complaint events occur
+	EmailForwardingEnabled any
+}
+
+type EmailIdentity_MailFromAttributes struct {
+	// The action to take if the required MX record isn't found when you send an email. When you set this value to UseDefaultValue , the mail is sent using amazonses.com as the MAIL FROM domain. When you set this value to RejectMessage , the Amazon SES API v2 returns a MailFromDomainNotVerified error, and doesn't attempt to deliver the email.
+	BehaviorOnMxFailure any
+	// The custom MAIL FROM domain that you want the verified identity to use
+	MailFromDomain any
+}
+
+type EmailIdentity_Tags struct {
+	// The key of a tag applied to the SES email identity, used for organizing and managing the identity via metadata. (AI-inferred)
+	Key any
+	// The value of a tag assigned to the SES email identity, used for metadata and resource management. (AI-inferred)
+	Value any
+}
+
+var EmailIdentity_ConfigurationSetAttributesFields = ubx.FieldMap{
+		"ConfigurationSetName": ubx.FieldSpec{WireName: "configuration_set_name"},
+	}
+
+var EmailIdentity_DkimAttributesFields = ubx.FieldMap{
+		"SigningEnabled": ubx.FieldSpec{WireName: "signing_enabled"},
+	}
+
+var EmailIdentity_DkimSigningAttributesFields = ubx.FieldMap{
+		"DomainSigningPrivateKey": ubx.FieldSpec{WireName: "domain_signing_private_key"},
+		"DomainSigningSelector": ubx.FieldSpec{WireName: "domain_signing_selector"},
+		"NextSigningKeyLength": ubx.FieldSpec{WireName: "next_signing_key_length"},
+	}
+
+var EmailIdentity_FeedbackAttributesFields = ubx.FieldMap{
+		"EmailForwardingEnabled": ubx.FieldSpec{WireName: "email_forwarding_enabled"},
+	}
+
+var EmailIdentity_MailFromAttributesFields = ubx.FieldMap{
+		"BehaviorOnMxFailure": ubx.FieldSpec{WireName: "behavior_on_mx_failure"},
+		"MailFromDomain": ubx.FieldSpec{WireName: "mail_from_domain"},
+	}
+
+var EmailIdentity_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type EmailIdentityConfig struct {
-	Email any
-	Id any
-	Region any
+	// Used to associate a configuration set with an email identity.
+	ConfigurationSetAttributes any
+	// Used to enable or disable DKIM authentication for an email identity.
+	DkimAttributes any
+	// If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for Easy DKIM.
+	DkimSigningAttributes any
+	// The email address or domain to verify.
+	EmailIdentity any
+	// Used to enable or disable feedback forwarding for an identity.
+	FeedbackAttributes any
+	// Used to enable or disable the custom Mail-From domain configuration for an email identity.
+	MailFromAttributes any
+	// The tags (keys and values) associated with the email identity.
+	Tags any
+}
+
+type EmailIdentityAttrs struct {
+	// Used to associate a configuration set with an email identity.
+	ConfigurationSetAttributes any
+	// Used to enable or disable DKIM authentication for an email identity.
+	DkimAttributes any
+	// The first CNAME record name (DKIM DNS token name) that you must publish in your DNS configuration to complete Easy DKIM setup for this Amazon SES email identity. (AI-inferred)
+	DkimDnstokenName1 any
+	// The second of three DNS record names (CNAME route) generated for Easy DKIM, which must be added to the domain's DNS settings to complete identity verification. (AI-inferred)
+	DkimDnstokenName2 any
+	// For the third Easy DKIM token generated for this SES identity, this is the DNS CNAME record name that you must publish in your domain's DNS settings to complete DKIM verification. (AI-inferred)
+	DkimDnstokenName3 any
+	// This read-only value is the first of three DKIM DNS token values that must be published as a CNAME record in your DNS to enable DKIM signing for the SES email identity. (AI-inferred)
+	DkimDnstokenValue1 any
+	// The second of three DNS CNAME record values that must be published to complete Easy DKIM verification for the SES email identity. (AI-inferred)
+	DkimDnstokenValue2 any
+	// The third DKIM DNS token value, automatically generated by Amazon SES for this email identity, which is used as the record name in the CNAME record required for Easy DKIM authentication. (AI-inferred)
+	DkimDnstokenValue3 any
+	// If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for Easy DKIM.
+	DkimSigningAttributes any
+	// The email address or domain to verify.
+	EmailIdentity any
+	// Used to enable or disable feedback forwarding for an identity.
+	FeedbackAttributes any
+	// Used to enable or disable the custom Mail-From domain configuration for an email identity.
+	MailFromAttributes any
+	// The tags (keys and values) associated with the email identity.
+	Tags any
 }
 
 var EmailIdentity = ubx.ResourceBinding{
 	WireType: "aws_ses_email_identity",
 	Fields: ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"ConfigurationSetAttributes": ubx.FieldSpec{
+			WireName: "configuration_set_attributes",
+			Kind: "object",
+			Fields: EmailIdentity_ConfigurationSetAttributesFields,
+		},
+		"DkimAttributes": ubx.FieldSpec{
+			WireName: "dkim_attributes",
+			Kind: "object",
+			Fields: EmailIdentity_DkimAttributesFields,
+		},
+		"DkimSigningAttributes": ubx.FieldSpec{
+			WireName: "dkim_signing_attributes",
+			Kind: "object",
+			Fields: EmailIdentity_DkimSigningAttributesFields,
+		},
+		"EmailIdentity": ubx.FieldSpec{WireName: "email_identity"},
+		"FeedbackAttributes": ubx.FieldSpec{
+			WireName: "feedback_attributes",
+			Kind: "object",
+			Fields: EmailIdentity_FeedbackAttributesFields,
+		},
+		"MailFromAttributes": ubx.FieldSpec{
+			WireName: "mail_from_attributes",
+			Kind: "object",
+			Fields: EmailIdentity_MailFromAttributesFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: EmailIdentity_TagsFields,
+		},
 	},
 }

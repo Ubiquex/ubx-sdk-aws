@@ -7,64 +7,91 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class IdentityProviderConfig_Oidc:
-    client_id: Any = None
-    groups_claim: Any = None
-    groups_prefix: Any = None
-    identity_provider_config_name: Any = None
-    issuer_url: Any = None
-    required_claims: Any = None
-    username_claim: Any = None
-    username_prefix: Any = None
+class IdentityProviderConfig_Oidc_RequiredClaims:
+    # Specifies the name of an OIDC claim that must be present in the token issued by the identity provider for authentication to be considered valid. (AI-inferred)
+    key: Any = None
+    # The expected value for a required claim in the OIDC identity provider's token, where the map key is the claim name and this value must match the claim's value in the token for authentication to succeed. (AI-inferred)
+    value: Any = None
 
 @dataclasses.dataclass
-class IdentityProviderConfig_Timeouts:
-    create: Any = None
-    delete: Any = None
+class IdentityProviderConfig_Oidc:
+    # This is also known as audience. The ID for the client application that makes authentication requests to the OpenID identity provider.
+    client_id: Any = None
+    # The JWT claim that the provider uses to return your groups.
+    groups_claim: Any = None
+    # The prefix that is prepended to group claims to prevent clashes with existing names (such as system: groups).
+    groups_prefix: Any = None
+    # The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens.
+    issuer_url: Any = None
+    # Specifies the list of required claims (each a key-value pair) that must be present in the OIDC identity token with matching values for authentication to succeed. (AI-inferred)
+    required_claims: Any = None
+    # The JSON Web Token (JWT) claim to use as the username. The default is sub, which is expected to be a unique identifier of the end user. You can choose other claims, such as email or name, depending on the OpenID identity provider. Claims other than email are prefixed with the issuer URL to prevent naming clashes with other plug-ins.
+    username_claim: Any = None
+    # The prefix that is prepended to username claims to prevent clashes with existing names. If you do not provide this field, and username is a value other than email, the prefix defaults to issuerurl#. You can use the value - to disable all prefixing.
+    username_prefix: Any = None
+
+_IdentityProviderConfig_Oidc_RequiredClaimsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
 
 _IdentityProviderConfig_OidcFields = {
     "client_id": ubx.FieldSpec(wire_name="client_id"),
     "groups_claim": ubx.FieldSpec(wire_name="groups_claim"),
     "groups_prefix": ubx.FieldSpec(wire_name="groups_prefix"),
-    "identity_provider_config_name": ubx.FieldSpec(wire_name="identity_provider_config_name"),
     "issuer_url": ubx.FieldSpec(wire_name="issuer_url"),
-    "required_claims": ubx.FieldSpec(wire_name="required_claims"),
+    "required_claims": ubx.FieldSpec(
+        wire_name="required_claims",
+        kind="list",
+        fields=_IdentityProviderConfig_Oidc_RequiredClaimsFields,
+    ),
     "username_claim": ubx.FieldSpec(wire_name="username_claim"),
     "username_prefix": ubx.FieldSpec(wire_name="username_prefix"),
 }
 
-_IdentityProviderConfig_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-}
-
 @dataclasses.dataclass
 class IdentityProviderConfigConfig:
+    # The name of the identity provider configuration.
     cluster_name: Any = None
-    id: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # The name of the OIDC provider configuration.
+    identity_provider_config_name: Any = None
+    # An object representing an OpenID Connect (OIDC) configuration.
     oidc: Any = None
-    timeouts: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # The type of the identity provider configuration.
+    type: Any = None
+
+@dataclasses.dataclass
+class IdentityProviderConfigAttrs:
+    # The name of the identity provider configuration.
+    cluster_name: Any = None
+    # The ARN of the configuration.
+    identity_provider_config_arn: Any = None
+    # The name of the OIDC provider configuration.
+    identity_provider_config_name: Any = None
+    # An object representing an OpenID Connect (OIDC) configuration.
+    oidc: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # The type of the identity provider configuration.
+    type: Any = None
 
 IdentityProviderConfig = ubx.ResourceBinding(
     wire_type="aws_eks_identity_provider_config",
     fields={
         "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "identity_provider_config_name": ubx.FieldSpec(wire_name="identity_provider_config_name"),
         "oidc": ubx.FieldSpec(
             wire_name="oidc",
-            kind="list",
+            kind="object",
             fields=_IdentityProviderConfig_OidcFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_IdentityProviderConfig_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_IdentityProviderConfig_Oidc_RequiredClaimsFields,
         ),
+        "type": ubx.FieldSpec(wire_name="type"),
     },
 )

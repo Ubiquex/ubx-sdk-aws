@@ -4,23 +4,70 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevEndpointConfig struct {
+	// A map of key-value pairs that specify configuration arguments passed to the Apache Spark environment of the development endpoint. (AI-inferred)
 	Arguments any
+	// Specifies a user-defined name for this AWS Glue development endpoint, which AWS Glue uses to identify it; if omitted, CloudFormation automatically generates a unique name. (AI-inferred)
+	EndpointName any
+	// The S3 path to one or more Java JAR files that provide custom jars to be used by the Glue development endpoint. (AI-inferred)
 	ExtraJarsS3Path any
+	// The S3 path to a Python library (or set of libraries) that AWS Glue installs on the development endpoint for use by your ETL scripts. (AI-inferred)
 	ExtraPythonLibsS3Path any
+	// Specifies the AWS Glue version (such as '1.0' or '2.0') that defines the Apache Spark and Python runtime environment for this development endpoint. (AI-inferred)
 	GlueVersion any
-	Id any
-	Name any
+	// Specifies the number of compute nodes for the development endpoint, which determines its processing capacity and parallelism. (AI-inferred)
 	NumberOfNodes any
+	// The number of worker nodes allocated to this AWS Glue development endpoint. (AI-inferred)
 	NumberOfWorkers any
+	// The SSH public key that AWS Glue uses to authenticate connections to the development endpoint. (AI-inferred)
 	PublicKey any
+	// A list of SSH public keys used to authenticate to the dev endpoint for secure access. (AI-inferred)
 	PublicKeys any
-	Region any
+	// The ARN of the IAM role that the development endpoint assumes to access resources such as data stores and scripts. (AI-inferred)
 	RoleArn any
+	// The name of an AWS Glue security configuration to attach to this development endpoint, which defines encryption and other security settings. (AI-inferred)
 	SecurityConfiguration any
+	// List of security group IDs to attach to the Glue dev endpoint for VPC networking. (AI-inferred)
 	SecurityGroupIds any
+	// The subnet ID within a VPC where the AWS Glue development endpoint is provisioned, used when the endpoint needs access to resources in a Virtual Private Cloud. (AI-inferred)
 	SubnetId any
+	// Specifies a set of key-value tags to attach to the AWS Glue development endpoint, used for resource organization, cost allocation, and access control. (AI-inferred)
 	Tags any
-	TagsAll any
+	// The worker type for the development endpoint, such as Standard, G.1X, or G.2X, which determines the compute capacity of each worker. (AI-inferred)
+	WorkerType any
+}
+
+type DevEndpointAttrs struct {
+	// A map of key-value pairs that specify configuration arguments passed to the Apache Spark environment of the development endpoint. (AI-inferred)
+	Arguments any
+	// Specifies a user-defined name for this AWS Glue development endpoint, which AWS Glue uses to identify it; if omitted, CloudFormation automatically generates a unique name. (AI-inferred)
+	EndpointName any
+	// The S3 path to one or more Java JAR files that provide custom jars to be used by the Glue development endpoint. (AI-inferred)
+	ExtraJarsS3Path any
+	// The S3 path to a Python library (or set of libraries) that AWS Glue installs on the development endpoint for use by your ETL scripts. (AI-inferred)
+	ExtraPythonLibsS3Path any
+	// Specifies the AWS Glue version (such as '1.0' or '2.0') that defines the Apache Spark and Python runtime environment for this development endpoint. (AI-inferred)
+	GlueVersion any
+	// The unique identifier for the Glue development endpoint, which is the same as the endpoint's name and is used as the Terraform resource ID for import and state tracking. (AI-inferred)
+	Id any
+	// Specifies the number of compute nodes for the development endpoint, which determines its processing capacity and parallelism. (AI-inferred)
+	NumberOfNodes any
+	// The number of worker nodes allocated to this AWS Glue development endpoint. (AI-inferred)
+	NumberOfWorkers any
+	// The SSH public key that AWS Glue uses to authenticate connections to the development endpoint. (AI-inferred)
+	PublicKey any
+	// A list of SSH public keys used to authenticate to the dev endpoint for secure access. (AI-inferred)
+	PublicKeys any
+	// The ARN of the IAM role that the development endpoint assumes to access resources such as data stores and scripts. (AI-inferred)
+	RoleArn any
+	// The name of an AWS Glue security configuration to attach to this development endpoint, which defines encryption and other security settings. (AI-inferred)
+	SecurityConfiguration any
+	// List of security group IDs to attach to the Glue dev endpoint for VPC networking. (AI-inferred)
+	SecurityGroupIds any
+	// The subnet ID within a VPC where the AWS Glue development endpoint is provisioned, used when the endpoint needs access to resources in a Virtual Private Cloud. (AI-inferred)
+	SubnetId any
+	// Specifies a set of key-value tags to attach to the AWS Glue development endpoint, used for resource organization, cost allocation, and access control. (AI-inferred)
+	Tags any
+	// The worker type for the development endpoint, such as Standard, G.1X, or G.2X, which determines the compute capacity of each worker. (AI-inferred)
 	WorkerType any
 }
 
@@ -28,22 +75,19 @@ var DevEndpoint = ubx.ResourceBinding{
 	WireType: "aws_glue_dev_endpoint",
 	Fields: ubx.FieldMap{
 		"Arguments": ubx.FieldSpec{WireName: "arguments"},
+		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
 		"ExtraJarsS3Path": ubx.FieldSpec{WireName: "extra_jars_s3_path"},
 		"ExtraPythonLibsS3Path": ubx.FieldSpec{WireName: "extra_python_libs_s3_path"},
 		"GlueVersion": ubx.FieldSpec{WireName: "glue_version"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"NumberOfNodes": ubx.FieldSpec{WireName: "number_of_nodes"},
 		"NumberOfWorkers": ubx.FieldSpec{WireName: "number_of_workers"},
 		"PublicKey": ubx.FieldSpec{WireName: "public_key"},
 		"PublicKeys": ubx.FieldSpec{WireName: "public_keys"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
 		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"WorkerType": ubx.FieldSpec{WireName: "worker_type"},
 	},
 }

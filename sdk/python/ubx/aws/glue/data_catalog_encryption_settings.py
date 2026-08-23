@@ -8,22 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryption:
-    aws_kms_key_id: Any = None
+    # An AWS KMS key that is used to encrypt the connection password.
+    kms_key_id: Any = None
+    # When the ReturnConnectionPasswordEncrypted flag is set to 'true', passwords remain encrypted in the responses of GetConnection and GetConnections. This encryption takes effect independently from catalog encryption.
     return_connection_password_encrypted: Any = None
 
 @dataclasses.dataclass
 class DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRest:
+    # The encryption-at-rest mode for encrypting Data Catalog data.
     catalog_encryption_mode: Any = None
+    # The role that AWS Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.
     catalog_encryption_service_role: Any = None
+    # The ID of the AWS KMS key to use for encryption at rest.
     sse_aws_kms_key_id: Any = None
 
 @dataclasses.dataclass
 class DataCatalogEncryptionSettings_DataCatalogEncryptionSettings:
+    # When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of CreateConnection or UpdateConnection and store it in the ENCRYPTED_PASSWORD field in the connection properties. You can enable catalog encryption or only password encryption.
     connection_password_encryption: Any = None
+    # Specifies the encryption-at-rest configuration for the Data Catalog.
     encryption_at_rest: Any = None
 
 _DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryptionFields = {
-    "aws_kms_key_id": ubx.FieldSpec(wire_name="aws_kms_key_id"),
+    "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
     "return_connection_password_encrypted": ubx.FieldSpec(wire_name="return_connection_password_encrypted"),
 }
 
@@ -36,32 +43,37 @@ _DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRestFie
 _DataCatalogEncryptionSettings_DataCatalogEncryptionSettingsFields = {
     "connection_password_encryption": ubx.FieldSpec(
         wire_name="connection_password_encryption",
-        kind="list",
+        kind="object",
         fields=_DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryptionFields,
     ),
     "encryption_at_rest": ubx.FieldSpec(
         wire_name="encryption_at_rest",
-        kind="list",
+        kind="object",
         fields=_DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRestFields,
     ),
 }
 
 @dataclasses.dataclass
 class DataCatalogEncryptionSettingsConfig:
+    # The ID of the Data Catalog in which the settings are created.
     catalog_id: Any = None
-    id: Any = None
-    region: Any = None
+    # Contains configuration information for maintaining Data Catalog security.
+    data_catalog_encryption_settings: Any = None
+
+@dataclasses.dataclass
+class DataCatalogEncryptionSettingsAttrs:
+    # The ID of the Data Catalog in which the settings are created.
+    catalog_id: Any = None
+    # Contains configuration information for maintaining Data Catalog security.
     data_catalog_encryption_settings: Any = None
 
 DataCatalogEncryptionSettings = ubx.ResourceBinding(
     wire_type="aws_glue_data_catalog_encryption_settings",
     fields={
         "catalog_id": ubx.FieldSpec(wire_name="catalog_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "data_catalog_encryption_settings": ubx.FieldSpec(
             wire_name="data_catalog_encryption_settings",
-            kind="list",
+            kind="object",
             fields=_DataCatalogEncryptionSettings_DataCatalogEncryptionSettingsFields,
         ),
     },

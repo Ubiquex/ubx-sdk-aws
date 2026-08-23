@@ -7,35 +7,87 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TransitGatewayVpcAttachmentConfig:
+class TransitGatewayVpcAttachment_Options:
+    # Indicates whether to enable Ipv6 Support for Vpc Attachment. Valid Values: enable | disable
     appliance_mode_support: Any = None
+    # Indicates whether to enable DNS Support for Vpc Attachment. Valid Values: enable | disable
     dns_support: Any = None
-    id: Any = None
+    # Indicates whether to enable Ipv6 Support for Vpc Attachment. Valid Values: enable | disable
     ipv6_support: Any = None
-    region: Any = None
+    # Indicates whether to enable Security Group referencing support for Vpc Attachment. Valid values: enable | disable
     security_group_referencing_support: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayVpcAttachment_Tags:
+    # The key of a tag attached to the EC2 Transit Gateway VPC Attachment, used for adding metadata like 'Name' or 'Environment' to identify and manage the attachment. (AI-inferred)
+    key: Any = None
+    # The value of a user-defined tag on the EC2 Transit Gateway VPC Attachment, used for metadata, cost allocation, and IAM resource-level access control. (AI-inferred)
+    value: Any = None
+
+_TransitGatewayVpcAttachment_OptionsFields = {
+    "appliance_mode_support": ubx.FieldSpec(wire_name="appliance_mode_support"),
+    "dns_support": ubx.FieldSpec(wire_name="dns_support"),
+    "ipv6_support": ubx.FieldSpec(wire_name="ipv6_support"),
+    "security_group_referencing_support": ubx.FieldSpec(wire_name="security_group_referencing_support"),
+}
+
+_TransitGatewayVpcAttachment_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
+class TransitGatewayVpcAttachmentConfig:
+    # Specifies a list of subnet IDs to add to the transit gateway VPC attachment during an update, expanding the set of subnets used by the attachment for routing traffic. (AI-inferred)
+    add_subnet_ids: Any = None
+    # The options for the transit gateway vpc attachment.
+    options: Any = None
+    # Specifies the list of subnet IDs to remove from the transit gateway VPC attachment during an update, enabling you to detach specific subnets from the attachment without recreating the resource. (AI-inferred)
+    remove_subnet_ids: Any = None
+    # The IDs of the subnets in the VPC that the transit gateway attachment routes traffic to and from, with at least one subnet per Availability Zone used by the attachment. (AI-inferred)
     subnet_ids: Any = None
+    # Specifies one or more tags to apply to the transit gateway VPC attachment, with each tag consisting of a key and an optional value. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
-    transit_gateway_default_route_table_association: Any = None
-    transit_gateway_default_route_table_propagation: Any = None
+    # The ID of the transit gateway to which the VPC is attached, creating a VPC attachment in that transit gateway. (AI-inferred)
     transit_gateway_id: Any = None
+    # The ID of the VPC to attach to the transit gateway, which must be in the same AWS account and region as the transit gateway. (AI-inferred)
+    vpc_id: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayVpcAttachmentAttrs:
+    # Specifies a list of subnet IDs to add to the transit gateway VPC attachment during an update, expanding the set of subnets used by the attachment for routing traffic. (AI-inferred)
+    add_subnet_ids: Any = None
+    # The AWS-assigned unique identifier for the transit gateway VPC attachment (e.g., tgw-attach-...). (AI-inferred)
+    id: Any = None
+    # The options for the transit gateway vpc attachment.
+    options: Any = None
+    # Specifies the list of subnet IDs to remove from the transit gateway VPC attachment during an update, enabling you to detach specific subnets from the attachment without recreating the resource. (AI-inferred)
+    remove_subnet_ids: Any = None
+    # The IDs of the subnets in the VPC that the transit gateway attachment routes traffic to and from, with at least one subnet per Availability Zone used by the attachment. (AI-inferred)
+    subnet_ids: Any = None
+    # Specifies one or more tags to apply to the transit gateway VPC attachment, with each tag consisting of a key and an optional value. (AI-inferred)
+    tags: Any = None
+    # The ID of the transit gateway to which the VPC is attached, creating a VPC attachment in that transit gateway. (AI-inferred)
+    transit_gateway_id: Any = None
+    # The ID of the VPC to attach to the transit gateway, which must be in the same AWS account and region as the transit gateway. (AI-inferred)
     vpc_id: Any = None
 
 TransitGatewayVpcAttachment = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_vpc_attachment",
     fields={
-        "appliance_mode_support": ubx.FieldSpec(wire_name="appliance_mode_support"),
-        "dns_support": ubx.FieldSpec(wire_name="dns_support"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "ipv6_support": ubx.FieldSpec(wire_name="ipv6_support"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "security_group_referencing_support": ubx.FieldSpec(wire_name="security_group_referencing_support"),
+        "add_subnet_ids": ubx.FieldSpec(wire_name="add_subnet_ids"),
+        "options": ubx.FieldSpec(
+            wire_name="options",
+            kind="object",
+            fields=_TransitGatewayVpcAttachment_OptionsFields,
+        ),
+        "remove_subnet_ids": ubx.FieldSpec(wire_name="remove_subnet_ids"),
         "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "transit_gateway_default_route_table_association": ubx.FieldSpec(wire_name="transit_gateway_default_route_table_association"),
-        "transit_gateway_default_route_table_propagation": ubx.FieldSpec(wire_name="transit_gateway_default_route_table_propagation"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_TransitGatewayVpcAttachment_TagsFields,
+        ),
         "transit_gateway_id": ubx.FieldSpec(wire_name="transit_gateway_id"),
         "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
     },

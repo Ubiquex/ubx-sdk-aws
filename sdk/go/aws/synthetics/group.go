@@ -3,21 +3,47 @@ package synthetics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Group_Tags struct {
+	// The key part of a key-value tag, used to assign metadata to the canary group for identification and resource management. (AI-inferred)
+	Key any
+	// The value of a tag attached to the Synthetics canary group, which is a user-defined string that helps manage and identify the group. (AI-inferred)
+	Value any
+}
+
+var Group_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type GroupConfig struct {
-	Id any
+	// Name of the group.
 	Name any
-	Region any
+	// Specifies the ARNs of the Synthetics canaries to associate with this group, making them members of the group. (AI-inferred)
+	ResourceArns any
+	// Tags are metadata labels (key-value pairs) that you can assign to the Synthetics group to help organize, identify, and manage it, with each tag defined by a key and optional value. (AI-inferred)
 	Tags any
-	TagsAll any
+}
+
+type GroupAttrs struct {
+	// Id of the group.
+	Id any
+	// Name of the group.
+	Name any
+	// Specifies the ARNs of the Synthetics canaries to associate with this group, making them members of the group. (AI-inferred)
+	ResourceArns any
+	// Tags are metadata labels (key-value pairs) that you can assign to the Synthetics group to help organize, identify, and manage it, with each tag defined by a key and optional value. (AI-inferred)
+	Tags any
 }
 
 var Group = ubx.ResourceBinding{
 	WireType: "aws_synthetics_group",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Group_TagsFields,
+		},
 	},
 }

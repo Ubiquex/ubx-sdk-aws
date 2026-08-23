@@ -8,15 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResourcePolicyConfig:
-    policy: Any = None
-    region: Any = None
+    # The ARN of the AWS Kinesis resource to which the policy applies.
     resource_arn: Any = None
+    # A policy document containing permissions to add to the specified resource. In IAM, you must provide policy documents in JSON format. However, in CloudFormation you can provide the policy in JSON or YAML format because CloudFormation converts YAML to JSON before submitting it to IAM.
+    resource_policy: Any = None
+
+@dataclasses.dataclass
+class ResourcePolicyAttrs:
+    # The ARN of the AWS Kinesis resource to which the policy applies.
+    resource_arn: Any = None
+    # A policy document containing permissions to add to the specified resource. In IAM, you must provide policy documents in JSON format. However, in CloudFormation you can provide the policy in JSON or YAML format because CloudFormation converts YAML to JSON before submitting it to IAM.
+    resource_policy: Any = None
 
 ResourcePolicy = ubx.ResourceBinding(
     wire_type="aws_kinesis_resource_policy",
     fields={
-        "policy": ubx.FieldSpec(wire_name="policy"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "resource_arn": ubx.FieldSpec(wire_name="resource_arn"),
+        "resource_policy": ubx.FieldSpec(wire_name="resource_policy"),
     },
 )

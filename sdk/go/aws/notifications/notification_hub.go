@@ -3,29 +3,29 @@ package notifications
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type NotificationHub_Timeouts struct {
-	Create any
-	Delete any
+type NotificationHub_NotificationHubStatusSummary struct {
+	NotificationHubStatus any
+	// A human-readable explanation accompanying the hub's status that provides additional context when the notification hub is not fully active, such as a reason for an inactive or pending state. (AI-inferred)
+	NotificationHubStatusReason any
 }
 
-var NotificationHub_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
 type NotificationHubConfig struct {
-	NotificationHubRegion any
-	Timeouts any
+	// Region that NotificationHub is present in.
+	Region any
+}
+
+type NotificationHubAttrs struct {
+	// The date and time when the notification hub was created, typically returned as a string in ISO 8601 format. (AI-inferred)
+	CreationTime any
+	// Returns a summary of the current status of the notification hub in each region where it is enabled, with each entry specifying the region and its operational status (such as ACTIVE). (AI-inferred)
+	NotificationHubStatusSummary any
+	// Region that NotificationHub is present in.
+	Region any
 }
 
 var NotificationHub = ubx.ResourceBinding{
 	WireType: "aws_notifications_notification_hub",
 	Fields: ubx.FieldMap{
-		"NotificationHubRegion": ubx.FieldSpec{WireName: "notification_hub_region"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: NotificationHub_TimeoutsFields,
-		},
+		"Region": ubx.FieldSpec{WireName: "region"},
 	},
 }

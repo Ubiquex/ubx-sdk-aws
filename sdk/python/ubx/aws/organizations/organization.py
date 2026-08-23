@@ -8,19 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OrganizationConfig:
-    aws_service_access_principals: Any = None
-    enabled_policy_types: Any = None
+    # Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.
     feature_set: Any = None
+
+@dataclasses.dataclass
+class OrganizationAttrs:
+    # The Amazon Resource Name (ARN) of an organization.
+    arn: Any = None
+    # Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.
+    feature_set: Any = None
+    # The unique identifier (ID) of an organization.
     id: Any = None
-    return_organization_only: Any = None
+    # The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
+    management_account_arn: Any = None
+    # The email address that is associated with the AWS account that is designated as the management account for the organization.
+    management_account_email: Any = None
+    # The unique identifier (ID) of the management account of an organization.
+    management_account_id: Any = None
+    # The unique identifier (ID) for the root.
+    root_id: Any = None
 
 Organization = ubx.ResourceBinding(
     wire_type="aws_organizations_organization",
     fields={
-        "aws_service_access_principals": ubx.FieldSpec(wire_name="aws_service_access_principals"),
-        "enabled_policy_types": ubx.FieldSpec(wire_name="enabled_policy_types"),
         "feature_set": ubx.FieldSpec(wire_name="feature_set"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "return_organization_only": ubx.FieldSpec(wire_name="return_organization_only"),
     },
 )

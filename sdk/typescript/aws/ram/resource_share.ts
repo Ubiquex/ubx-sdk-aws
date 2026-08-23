@@ -2,67 +2,97 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResourceShare_ResourceShareConfiguration {
-  retainSharingOnAccountLeaveOrganization: boolean;
+  /** The resource share restricts access to an account */
+  exclusiveAccountAccess?: boolean | Computed<boolean>;
+  /** Specifies whether the consumer account retains access to the resource share after leaving the organization. */
+  retainSharingOnAccountLeaveOrganization?: boolean | Computed<boolean>;
 }
 
-export interface ResourceShare_Timeouts {
-  create: string;
-  delete: string;
+export interface ResourceShare_Tags {
+  /** The key of a user-defined tag attached to the AWS RAM resource share, used for cost allocation and resource categorization. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value of a tag attached to the AWS RAM resource share, used for categorizing and managing the resource share. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const ResourceShare_ResourceShareConfigurationFields: FieldMap = {
+  exclusiveAccountAccess: "exclusive_account_access",
   retainSharingOnAccountLeaveOrganization: "retain_sharing_on_account_leave_organization",
 };
 
-const ResourceShare_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
+const ResourceShare_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface ResourceShareConfig {
+  /** Specifies whether principals outside your organization in AWS Organizations can be associated with a resource share. A value of `true` lets you share with individual AWS accounts that are not in your organization. A value of `false` only has meaning if your account is a member of an AWS Organization. The default value is `true`. */
   allowExternalPrincipals?: boolean | Computed<boolean>;
-  id?: string | Computed<string>;
+  /** Specifies the name of the resource share. */
   name: string | Computed<string>;
+  /** Specifies the [Amazon Resource Names (ARNs)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the AWS RAM permission to associate with the resource share. If you do not specify an ARN for the permission, AWS RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share. */
   permissionArns?: string[] | Computed<string[]>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  resourceShareConfiguration?: ResourceShare_ResourceShareConfiguration[] | Computed<ResourceShare_ResourceShareConfiguration[]>;
-  timeouts?: ResourceShare_Timeouts | Computed<ResourceShare_Timeouts>;
+  /** Specifies the principals to associate with the resource share. The possible values are: - An AWS account ID - An Amazon Resource Name (ARN) of an organization in AWS Organizations - An ARN of an organizational unit (OU) in AWS Organizations - An ARN of an IAM role - An ARN of an IAM user */
+  principals?: string[] | Computed<string[]>;
+  /** Specifies a list of one or more ARNs of the resources to associate with the resource share. */
+  resourceArns?: string[] | Computed<string[]>;
+  /** The configuration for a resource share. */
+  resourceShareConfiguration?: ResourceShare_ResourceShareConfiguration | Computed<ResourceShare_ResourceShareConfiguration>;
+  /** Specifies from which source accounts the service principal has access to the resources in this resource share. */
+  sources?: string[] | Computed<string[]>;
+  /** Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share. */
+  tags?: ResourceShare_Tags[] | Computed<ResourceShare_Tags[]>;
 }
 
 export interface ResourceShareAttrs {
+  /** Specifies whether principals outside your organization in AWS Organizations can be associated with a resource share. A value of `true` lets you share with individual AWS accounts that are not in your organization. A value of `false` only has meaning if your account is a member of an AWS Organization. The default value is `true`. */
   allowExternalPrincipals: boolean;
+  /** The Amazon Resource Name (ARN) that uniquely identifies the resource share. (AI-inferred) */
   arn: string;
-  id: string;
+  /** The date and time when the resource share was created. */
+  creationTime: string;
+  /** The feature set of the resource share. */
+  featureSet: string;
+  /** The date and time when the resource share was last updated. */
+  lastUpdatedTime: string;
+  /** Specifies the name of the resource share. */
   name: string;
+  /** The ID of the AWS account that owns the resource share. */
+  owningAccountId: string;
+  /** Specifies the [Amazon Resource Names (ARNs)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the AWS RAM permission to associate with the resource share. If you do not specify an ARN for the permission, AWS RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share. */
   permissionArns: string[];
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  resourceShareConfiguration: ResourceShare_ResourceShareConfiguration[];
-  timeouts: ResourceShare_Timeouts;
+  /** Specifies the principals to associate with the resource share. The possible values are: - An AWS account ID - An Amazon Resource Name (ARN) of an organization in AWS Organizations - An ARN of an organizational unit (OU) in AWS Organizations - An ARN of an IAM role - An ARN of an IAM user */
+  principals: string[];
+  /** Specifies a list of one or more ARNs of the resources to associate with the resource share. */
+  resourceArns: string[];
+  /** The configuration for a resource share. */
+  resourceShareConfiguration: ResourceShare_ResourceShareConfiguration;
+  /** Specifies from which source accounts the service principal has access to the resources in this resource share. */
+  sources: string[];
+  /** The current status of the resource share. */
+  status: string;
+  /** Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share. */
+  tags: ResourceShare_Tags[];
 }
 
 export const ResourceShare: ResourceBinding<ResourceShareConfig, ResourceShareAttrs> = {
   wireType: "aws_ram_resource_share",
   fields: {
     allowExternalPrincipals: "allow_external_principals",
-    id: "id",
     name: "name",
     permissionArns: "permission_arns",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
+    principals: "principals",
+    resourceArns: "resource_arns",
     resourceShareConfiguration: {
       wireName: "resource_share_configuration",
-      kind: "list",
+      kind: "object",
       fields: ResourceShare_ResourceShareConfigurationFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: ResourceShare_TimeoutsFields,
+    sources: "sources",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: ResourceShare_TagsFields,
     },
   },
 };

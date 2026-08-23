@@ -3,25 +3,48 @@ package iam
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ServerCertificate_Timeouts struct {
-	Delete any
+type ServerCertificate_Tags struct {
+	// The key of a tag attached to the IAM server certificate, used to identify and categorize the certificate. (AI-inferred)
+	Key any
+	// The value of a tag key attached to the IAM server certificate, used to store custom metadata that helps identify, organize, or manage the certificate within AWS. (AI-inferred)
+	Value any
 }
 
-var ServerCertificate_TimeoutsFields = ubx.FieldMap{
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var ServerCertificate_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ServerCertificateConfig struct {
+	// The PEM-encoded certificate body (the public key certificate) for the IAM server certificate, used to enable TLS/SSL connections for AWS services. (AI-inferred)
 	CertificateBody any
+	// Specifies the PEM-encoded certificate chain of intermediate certificates that must be included when the server certificate is presented to clients, establishing trust back to a root CA. (AI-inferred)
 	CertificateChain any
-	Id any
-	Name any
-	NamePrefix any
+	// Specifies the IAM path under which the server certificate is stored, used to organize and identify the certificate within the AWS account. (AI-inferred)
 	Path any
+	// The PEM-encoded private key that pairs with the uploaded server certificate, allowing AWS services such as Elastic Load Balancing to terminate SSL/TLS traffic. (AI-inferred)
 	PrivateKey any
+	// Specifies the name of the server certificate, which must be unique within the AWS account; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
+	ServerCertificateName any
+	// Specifies a list of tag key-value pairs to attach to the IAM server certificate for identification, organization, and cost allocation. (AI-inferred)
 	Tags any
-	TagsAll any
-	Timeouts any
+}
+
+type ServerCertificateAttrs struct {
+	// Amazon Resource Name (ARN) of the server certificate
+	Arn any
+	// The PEM-encoded certificate body (the public key certificate) for the IAM server certificate, used to enable TLS/SSL connections for AWS services. (AI-inferred)
+	CertificateBody any
+	// Specifies the PEM-encoded certificate chain of intermediate certificates that must be included when the server certificate is presented to clients, establishing trust back to a root CA. (AI-inferred)
+	CertificateChain any
+	// Specifies the IAM path under which the server certificate is stored, used to organize and identify the certificate within the AWS account. (AI-inferred)
+	Path any
+	// The PEM-encoded private key that pairs with the uploaded server certificate, allowing AWS services such as Elastic Load Balancing to terminate SSL/TLS traffic. (AI-inferred)
+	PrivateKey any
+	// Specifies the name of the server certificate, which must be unique within the AWS account; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
+	ServerCertificateName any
+	// Specifies a list of tag key-value pairs to attach to the IAM server certificate for identification, organization, and cost allocation. (AI-inferred)
+	Tags any
 }
 
 var ServerCertificate = ubx.ResourceBinding{
@@ -29,17 +52,13 @@ var ServerCertificate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CertificateBody": ubx.FieldSpec{WireName: "certificate_body"},
 		"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
 		"Path": ubx.FieldSpec{WireName: "path"},
 		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: ServerCertificate_TimeoutsFields,
+		"ServerCertificateName": ubx.FieldSpec{WireName: "server_certificate_name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ServerCertificate_TagsFields,
 		},
 	},
 }

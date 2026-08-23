@@ -7,96 +7,195 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class PatchBaseline_ApprovalRule_PatchFilter:
+class PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup_PatchFilters:
+    # The name of the patch attribute to filter on, such as PRODUCT, CLASSIFICATION, or MSRC_SEVERITY, for the approval rule's patch filter group. (AI-inferred)
     key: Any = None
+    # The list of values used to match patches for the associated patch filter key (e.g., product, classification, or severity) in an AWS SSM patch baseline approval rule. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
-class PatchBaseline_ApprovalRule:
-    approve_after_days: Any = None
-    approve_until_date: Any = None
-    compliance_level: Any = None
-    enable_non_security: Any = None
-    patch_filter: Any = None
+class PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup:
+    # Defines the patch filters (each with a key and values) that determine which patches this approval rule applies to, such as by product, severity, or classification. (AI-inferred)
+    patch_filters: Any = None
 
 @dataclasses.dataclass
-class PatchBaseline_Source:
+class PatchBaseline_ApprovalRules_PatchRules:
+    # Specifies the number of days after a patch's release date that it is automatically approved for installation in the patch baseline. (AI-inferred)
+    approve_after_days: Any = None
+    # The date (in YYYY-MM-DD format) after which the patch is no longer automatically approved for this rule. (AI-inferred)
+    approve_until_date: Any = None
+    # Specifies the compliance severity level (e.g., CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, or UNSPECIFIED) assigned to patches that match this rule for reporting and compliance purposes. (AI-inferred)
+    compliance_level: Any = None
+    # Indicates whether this approval rule also applies to patches that are not classified as security updates, allowing non-security patches to be approved based on the same schedule and filters. (AI-inferred)
+    enable_non_security: Any = None
+    # The patch_filter_group object within a patch rule defines the set of patch filter criteria (e.g., product, severity, classification) that a patch must match for the rule to approve it, with all specified filters required to match (AND logic). (AI-inferred)
+    patch_filter_group: Any = None
+
+@dataclasses.dataclass
+class PatchBaseline_ApprovalRules:
+    # A list of patch rules that define which patches are approved for the baseline, including patch filters, approval delay, and compliance level. (AI-inferred)
+    patch_rules: Any = None
+
+@dataclasses.dataclass
+class PatchBaseline_Sources:
+    # Specifies the repository configuration string (such as a yum repository configuration for Amazon Linux) that defines the patch source location for this patch baseline. (AI-inferred)
     configuration: Any = None
+    # The name of the patch source, such as 'Amazon Linux 2' or 'Ubuntu', which identifies the repository configured for this patch baseline. (AI-inferred)
     name: Any = None
+    # Specifies the operating system product versions (e.g., 'AmazonLinux2012.03', 'RedhatEnterpriseLinux7') that this patch source repository applies to in the patch baseline. (AI-inferred)
     products: Any = None
 
-_PatchBaseline_ApprovalRule_PatchFilterFields = {
+@dataclasses.dataclass
+class PatchBaseline_Tags:
+    # The key of a tag attached to the patch baseline, used to organize and identify the baseline for cost, environment, or operational purposes. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup_PatchFiltersFields = {
     "key": ubx.FieldSpec(wire_name="key"),
     "values": ubx.FieldSpec(wire_name="values"),
 }
 
-_PatchBaseline_ApprovalRuleFields = {
+_PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroupFields = {
+    "patch_filters": ubx.FieldSpec(
+        wire_name="patch_filters",
+        kind="list",
+        fields=_PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup_PatchFiltersFields,
+    ),
+}
+
+_PatchBaseline_ApprovalRules_PatchRulesFields = {
     "approve_after_days": ubx.FieldSpec(wire_name="approve_after_days"),
     "approve_until_date": ubx.FieldSpec(wire_name="approve_until_date"),
     "compliance_level": ubx.FieldSpec(wire_name="compliance_level"),
     "enable_non_security": ubx.FieldSpec(wire_name="enable_non_security"),
-    "patch_filter": ubx.FieldSpec(
-        wire_name="patch_filter",
-        kind="list",
-        fields=_PatchBaseline_ApprovalRule_PatchFilterFields,
+    "patch_filter_group": ubx.FieldSpec(
+        wire_name="patch_filter_group",
+        kind="object",
+        fields=_PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroupFields,
     ),
 }
 
-_PatchBaseline_SourceFields = {
+_PatchBaseline_ApprovalRulesFields = {
+    "patch_rules": ubx.FieldSpec(
+        wire_name="patch_rules",
+        kind="list",
+        fields=_PatchBaseline_ApprovalRules_PatchRulesFields,
+    ),
+}
+
+_PatchBaseline_SourcesFields = {
     "configuration": ubx.FieldSpec(wire_name="configuration"),
     "name": ubx.FieldSpec(wire_name="name"),
     "products": ubx.FieldSpec(wire_name="products"),
 }
 
+_PatchBaseline_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 @dataclasses.dataclass
 class PatchBaselineConfig:
+    # A set of rules defining the approval rules for a patch baseline.
+    approval_rules: Any = None
+    # A list of explicitly approved patches for the baseline.
     approved_patches: Any = None
+    # Defines the compliance level for approved patches. This means that if an approved patch is reported as missing, this is the severity of the compliance violation. The default value is UNSPECIFIED.
     approved_patches_compliance_level: Any = None
+    # Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. The default value is 'false'. Applies to Linux instances only.
     approved_patches_enable_non_security: Any = None
+    # The compliance status for vendor recommended security updates that are not approved by this patch baseline.
     available_security_updates_compliance_status: Any = None
+    # Set the baseline as default baseline. Only registering to default patch baseline is allowed.
+    default_baseline: Any = None
+    # The description of the patch baseline.
     description: Any = None
-    id: Any = None
+    # The patch filter group that defines the criteria for the rule.
+    global_filters: Any = None
+    # The name of the patch baseline.
     name: Any = None
+    # Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
     operating_system: Any = None
-    region: Any = None
+    # PatchGroups is used to associate instances with a specific patch baseline
+    patch_groups: Any = None
+    # A list of explicitly rejected patches for the baseline.
     rejected_patches: Any = None
+    # The action for Patch Manager to take on patches included in the RejectedPackages list.
     rejected_patches_action: Any = None
+    # Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.
+    sources: Any = None
+    # Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways.
     tags: Any = None
-    tags_all: Any = None
-    approval_rule: Any = None
-    global_filter: Any = None
-    source: Any = None
+
+@dataclasses.dataclass
+class PatchBaselineAttrs:
+    # A set of rules defining the approval rules for a patch baseline.
+    approval_rules: Any = None
+    # A list of explicitly approved patches for the baseline.
+    approved_patches: Any = None
+    # Defines the compliance level for approved patches. This means that if an approved patch is reported as missing, this is the severity of the compliance violation. The default value is UNSPECIFIED.
+    approved_patches_compliance_level: Any = None
+    # Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. The default value is 'false'. Applies to Linux instances only.
+    approved_patches_enable_non_security: Any = None
+    # The compliance status for vendor recommended security updates that are not approved by this patch baseline.
+    available_security_updates_compliance_status: Any = None
+    # Set the baseline as default baseline. Only registering to default patch baseline is allowed.
+    default_baseline: Any = None
+    # The description of the patch baseline.
+    description: Any = None
+    # The patch filter group that defines the criteria for the rule.
+    global_filters: Any = None
+    # The ID of the patch baseline.
+    id: Any = None
+    # The name of the patch baseline.
+    name: Any = None
+    # Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+    operating_system: Any = None
+    # PatchGroups is used to associate instances with a specific patch baseline
+    patch_groups: Any = None
+    # A list of explicitly rejected patches for the baseline.
+    rejected_patches: Any = None
+    # The action for Patch Manager to take on patches included in the RejectedPackages list.
+    rejected_patches_action: Any = None
+    # Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.
+    sources: Any = None
+    # Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways.
+    tags: Any = None
 
 PatchBaseline = ubx.ResourceBinding(
     wire_type="aws_ssm_patch_baseline",
     fields={
+        "approval_rules": ubx.FieldSpec(
+            wire_name="approval_rules",
+            kind="object",
+            fields=_PatchBaseline_ApprovalRulesFields,
+        ),
         "approved_patches": ubx.FieldSpec(wire_name="approved_patches"),
         "approved_patches_compliance_level": ubx.FieldSpec(wire_name="approved_patches_compliance_level"),
         "approved_patches_enable_non_security": ubx.FieldSpec(wire_name="approved_patches_enable_non_security"),
         "available_security_updates_compliance_status": ubx.FieldSpec(wire_name="available_security_updates_compliance_status"),
+        "default_baseline": ubx.FieldSpec(wire_name="default_baseline"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "global_filters": ubx.FieldSpec(
+            wire_name="global_filters",
+            kind="object",
+            fields=_PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroupFields,
+        ),
         "name": ubx.FieldSpec(wire_name="name"),
         "operating_system": ubx.FieldSpec(wire_name="operating_system"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "patch_groups": ubx.FieldSpec(wire_name="patch_groups"),
         "rejected_patches": ubx.FieldSpec(wire_name="rejected_patches"),
         "rejected_patches_action": ubx.FieldSpec(wire_name="rejected_patches_action"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "approval_rule": ubx.FieldSpec(
-            wire_name="approval_rule",
+        "sources": ubx.FieldSpec(
+            wire_name="sources",
             kind="list",
-            fields=_PatchBaseline_ApprovalRuleFields,
+            fields=_PatchBaseline_SourcesFields,
         ),
-        "global_filter": ubx.FieldSpec(
-            wire_name="global_filter",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_PatchBaseline_ApprovalRule_PatchFilterFields,
-        ),
-        "source": ubx.FieldSpec(
-            wire_name="source",
-            kind="list",
-            fields=_PatchBaseline_SourceFields,
+            fields=_PatchBaseline_TagsFields,
         ),
     },
 )

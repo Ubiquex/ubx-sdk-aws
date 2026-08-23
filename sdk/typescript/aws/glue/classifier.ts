@@ -2,104 +2,129 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Classifier_CsvClassifier {
-  allowSingleColumn: boolean;
-  containsHeader: string;
-  customDatatypeConfigured: boolean;
-  customDatatypes: string[];
-  delimiter: string;
-  disableValueTrimming: boolean;
-  header: string[];
-  quoteSymbol: string;
-  serde: string;
+  /** Enables the processing of files that contain only one column. */
+  allowSingleColumn?: boolean | Computed<boolean>;
+  /** Indicates whether the CSV file contains custom data types. */
+  containsCustomDatatype?: string[] | Computed<string[]>;
+  /** Indicates whether the CSV file contains a header. A value of UNKNOWN specifies that the classifier will detect whether the CSV file contains headings. A value of PRESENT specifies that the CSV file contains headings. A value of ABSENT specifies that the CSV file does not contain headings. */
+  containsHeader?: string | Computed<string>;
+  /** Enables the configuration of custom data types. */
+  customDatatypeConfigured?: boolean | Computed<boolean>;
+  /** A custom symbol to denote what separates each column entry in the row. */
+  delimiter?: string | Computed<string>;
+  /** Specifies not to trim values before identifying the type of column values. The default value is true. */
+  disableValueTrimming?: boolean | Computed<boolean>;
+  /** A list of strings representing column names. */
+  header?: string[] | Computed<string[]>;
+  /** The name of the classifier. */
+  name?: string | Computed<string>;
+  /** A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter. */
+  quoteSymbol?: string | Computed<string>;
 }
 
 export interface Classifier_GrokClassifier {
-  classification: string;
-  customPatterns: string;
-  grokPattern: string;
+  /** An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on. */
+  classification: string | Computed<string>;
+  /** Optional custom grok patterns defined by this classifier. */
+  customPatterns?: string | Computed<string>;
+  /** The grok pattern applied to a data store by this classifier. */
+  grokPattern: string | Computed<string>;
+  /** The name of the classifier. */
+  name?: string | Computed<string>;
 }
 
 export interface Classifier_JsonClassifier {
-  jsonPath: string;
+  /** A JsonPath string defining the JSON data for the classifier to classify. AWS Glue supports a subset of JsonPath, as described in Writing JsonPath Custom Classifiers. */
+  jsonPath: string | Computed<string>;
+  /** The name of the classifier. */
+  name?: string | Computed<string>;
 }
 
-export interface Classifier_XmlClassifier {
-  classification: string;
-  rowTag: string;
+export interface Classifier_Xmlclassifier {
+  /** An identifier of the data format that the classifier matches. */
+  classification: string | Computed<string>;
+  /** The name of the classifier. */
+  name?: string | Computed<string>;
+  /** The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by />). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <row item_a="A" item_b="B"></row> is okay, but <row item_a="A" item_b="B" /> is not). */
+  rowTag: string | Computed<string>;
 }
 
 const Classifier_CsvClassifierFields: FieldMap = {
   allowSingleColumn: "allow_single_column",
+  containsCustomDatatype: "contains_custom_datatype",
   containsHeader: "contains_header",
   customDatatypeConfigured: "custom_datatype_configured",
-  customDatatypes: "custom_datatypes",
   delimiter: "delimiter",
   disableValueTrimming: "disable_value_trimming",
   header: "header",
+  name: "name",
   quoteSymbol: "quote_symbol",
-  serde: "serde",
 };
 
 const Classifier_GrokClassifierFields: FieldMap = {
   classification: "classification",
   customPatterns: "custom_patterns",
   grokPattern: "grok_pattern",
+  name: "name",
 };
 
 const Classifier_JsonClassifierFields: FieldMap = {
   jsonPath: "json_path",
+  name: "name",
 };
 
-const Classifier_XmlClassifierFields: FieldMap = {
+const Classifier_XmlclassifierFields: FieldMap = {
   classification: "classification",
+  name: "name",
   rowTag: "row_tag",
 };
 
 export interface ClassifierConfig {
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  region?: string | Computed<string>;
-  csvClassifier?: Classifier_CsvClassifier[] | Computed<Classifier_CsvClassifier[]>;
-  grokClassifier?: Classifier_GrokClassifier[] | Computed<Classifier_GrokClassifier[]>;
-  jsonClassifier?: Classifier_JsonClassifier[] | Computed<Classifier_JsonClassifier[]>;
-  xmlClassifier?: Classifier_XmlClassifier[] | Computed<Classifier_XmlClassifier[]>;
+  /** Defines the configuration for an AWS Glue classifier that parses CSV files, including the delimiter, quote symbol, header detection, and whether to treat a single column as a valid CSV format. (AI-inferred) */
+  csvClassifier?: Classifier_CsvClassifier | Computed<Classifier_CsvClassifier>;
+  /** Configures a Grok classifier in AWS Glue, specifying the grok pattern used to parse log or unstructured data, custom pattern definitions, and the classification name applied to matched data. (AI-inferred) */
+  grokClassifier?: Classifier_GrokClassifier | Computed<Classifier_GrokClassifier>;
+  /** Specifies a JSON classifier for AWS Glue that uses a JSON path to identify the JSON data structure within input records. (AI-inferred) */
+  jsonClassifier?: Classifier_JsonClassifier | Computed<Classifier_JsonClassifier>;
+  /** Defines the row tag and optional classification for an XML classifier, used by AWS Glue to parse XML data and infer its schema. (AI-inferred) */
+  xmlclassifier?: Classifier_Xmlclassifier | Computed<Classifier_Xmlclassifier>;
 }
 
 export interface ClassifierAttrs {
-  id: string;
+  /** Defines the configuration for an AWS Glue classifier that parses CSV files, including the delimiter, quote symbol, header detection, and whether to treat a single column as a valid CSV format. (AI-inferred) */
+  csvClassifier: Classifier_CsvClassifier;
+  /** Configures a Grok classifier in AWS Glue, specifying the grok pattern used to parse log or unstructured data, custom pattern definitions, and the classification name applied to matched data. (AI-inferred) */
+  grokClassifier: Classifier_GrokClassifier;
+  /** Specifies a JSON classifier for AWS Glue that uses a JSON path to identify the JSON data structure within input records. (AI-inferred) */
+  jsonClassifier: Classifier_JsonClassifier;
+  /** One of XMLClassifier/Name, GrokClassifier/Name, JsonClassifier/Name or CsvClassifier/Name */
   name: string;
-  region: string;
-  csvClassifier: Classifier_CsvClassifier[];
-  grokClassifier: Classifier_GrokClassifier[];
-  jsonClassifier: Classifier_JsonClassifier[];
-  xmlClassifier: Classifier_XmlClassifier[];
+  /** Defines the row tag and optional classification for an XML classifier, used by AWS Glue to parse XML data and infer its schema. (AI-inferred) */
+  xmlclassifier: Classifier_Xmlclassifier;
 }
 
 export const Classifier: ResourceBinding<ClassifierConfig, ClassifierAttrs> = {
   wireType: "aws_glue_classifier",
   fields: {
-    id: "id",
-    name: "name",
-    region: "region",
     csvClassifier: {
       wireName: "csv_classifier",
-      kind: "list",
+      kind: "object",
       fields: Classifier_CsvClassifierFields,
     },
     grokClassifier: {
       wireName: "grok_classifier",
-      kind: "list",
+      kind: "object",
       fields: Classifier_GrokClassifierFields,
     },
     jsonClassifier: {
       wireName: "json_classifier",
-      kind: "list",
+      kind: "object",
       fields: Classifier_JsonClassifierFields,
     },
-    xmlClassifier: {
-      wireName: "xml_classifier",
-      kind: "list",
-      fields: Classifier_XmlClassifierFields,
+    xmlclassifier: {
+      wireName: "xmlclassifier",
+      kind: "object",
+      fields: Classifier_XmlclassifierFields,
     },
   },
 };

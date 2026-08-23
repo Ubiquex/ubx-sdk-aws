@@ -8,22 +8,31 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StudioSessionMappingConfig:
-    id: Any = None
-    identity_id: Any = None
+    # The name of the user or group. For more information, see UserName and DisplayName in the AWS SSO Identity Store API Reference. Either IdentityName or IdentityId must be specified.
     identity_name: Any = None
+    # Specifies whether the identity to map to the Studio is a user or a group.
     identity_type: Any = None
-    region: Any = None
+    # The ARN of the IAM policy that defines the permissions for the EMR Studio session assigned to the mapped user or group. (AI-inferred)
     session_policy_arn: Any = None
+    # The ID of the Amazon EMR Studio to which the user or group will be mapped.
+    studio_id: Any = None
+
+@dataclasses.dataclass
+class StudioSessionMappingAttrs:
+    # The name of the user or group. For more information, see UserName and DisplayName in the AWS SSO Identity Store API Reference. Either IdentityName or IdentityId must be specified.
+    identity_name: Any = None
+    # Specifies whether the identity to map to the Studio is a user or a group.
+    identity_type: Any = None
+    # The ARN of the IAM policy that defines the permissions for the EMR Studio session assigned to the mapped user or group. (AI-inferred)
+    session_policy_arn: Any = None
+    # The ID of the Amazon EMR Studio to which the user or group will be mapped.
     studio_id: Any = None
 
 StudioSessionMapping = ubx.ResourceBinding(
     wire_type="aws_emr_studio_session_mapping",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "identity_id": ubx.FieldSpec(wire_name="identity_id"),
         "identity_name": ubx.FieldSpec(wire_name="identity_name"),
         "identity_type": ubx.FieldSpec(wire_name="identity_type"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "session_policy_arn": ubx.FieldSpec(wire_name="session_policy_arn"),
         "studio_id": ubx.FieldSpec(wire_name="studio_id"),
     },

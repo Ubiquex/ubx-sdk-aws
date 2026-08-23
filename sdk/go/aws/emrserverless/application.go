@@ -4,86 +4,108 @@ package emrserverless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Application_AutoStartConfiguration struct {
+	// If set to true, the Application will automatically start. Defaults to true.
 	Enabled any
 }
 
 type Application_AutoStopConfiguration struct {
+	// If set to true, the Application will automatically stop after being idle. Defaults to true.
 	Enabled any
+	// The amount of time [in minutes] to wait before auto stopping the Application when idle. Defaults to 15 minutes.
 	IdleTimeoutMinutes any
 }
 
+type Application_IdentityCenterConfiguration struct {
+	// The IAM IdentityCenter instance arn
+	IdentityCenterInstanceArn any
+}
+
 type Application_ImageConfiguration struct {
+	// The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.
 	ImageUri any
 }
 
-type Application_InitialCapacity_InitialCapacityConfig_WorkerConfiguration struct {
+type Application_InitialCapacity_Value_WorkerConfiguration struct {
+	// The number of vCPUs allocated to each worker in the initial capacity configuration of the EMR Serverless application. (AI-inferred)
 	Cpu any
+	// Specifies the disk size in GB for the worker in the initial capacity configuration of the EMR Serverless application. (AI-inferred)
 	Disk any
+	// The disk type (e.g., SSD or HDD) for the storage attached to each worker instance in the initial capacity configuration of the EMR Serverless application. (AI-inferred)
+	DiskType any
+	// Defines the memory size (in MB) allocated per worker for the initial capacity of the EMR Serverless application. (AI-inferred)
 	Memory any
 }
 
-type Application_InitialCapacity_InitialCapacityConfig struct {
-	WorkerCount any
+type Application_InitialCapacity_Value struct {
+	// Specifies the CPU, memory, and disk configuration for workers allocated as the initial capacity of the EMR Serverless application. (AI-inferred)
 	WorkerConfiguration any
+	// The number of workers of the specified worker type (the key in the initial capacity map) to provision for the EMR Serverless application at startup. (AI-inferred)
+	WorkerCount any
 }
 
 type Application_InitialCapacity struct {
-	InitialCapacityType any
-	InitialCapacityConfig any
+	// Specifies the name of the worker type (for example, driver or executor) for which to define the initial capacity configuration in an AWS EMR Serverless application. (AI-inferred)
+	Key any
+	// Defines the initial capacity configuration for a given worker type (e.g., Driver or Executor) in the serverless application, specifying the number of workers and their CPU/memory resources via the workerCount and workerConfiguration properties. (AI-inferred)
+	Value any
 }
 
 type Application_InteractiveConfiguration struct {
+	// Enables an Apache Livy endpoint that you can connect to and run interactive jobs
 	LivyEndpointEnabled any
+	// Enables interactive sessions on the application
+	SessionEnabled any
+	// Enabled you to connect an Application to Amazon EMR Studio to run interactive workloads in a notebook
 	StudioEnabled any
 }
 
-type Application_MonitoringConfiguration_CloudwatchLoggingConfiguration_LogTypes struct {
-	Name any
-	Values any
-}
-
-type Application_MonitoringConfiguration_CloudwatchLoggingConfiguration struct {
-	Enabled any
-	EncryptionKeyArn any
-	LogGroupName any
-	LogStreamNamePrefix any
-	LogTypes any
-}
-
-type Application_MonitoringConfiguration_ManagedPersistenceMonitoringConfiguration struct {
-	Enabled any
-	EncryptionKeyArn any
-}
-
-type Application_MonitoringConfiguration_PrometheusMonitoringConfiguration struct {
-	RemoteWriteUrl any
-}
-
-type Application_MonitoringConfiguration_S3MonitoringConfiguration struct {
-	EncryptionKeyArn any
-	LogUri any
+type Application_MaximumCapacity struct {
+	// Per worker CPU resource. vCPU is the only supported unit and specifying vCPU is optional.
+	Cpu any
+	// Per worker Disk resource. GB is the only supported unit and specifying GB is optional
+	Disk any
+	// Per worker memory resource. GB is the only supported unit and specifying GB is optional.
+	Memory any
 }
 
 type Application_MonitoringConfiguration struct {
-	CloudwatchLoggingConfiguration any
+	// Specifies the CloudWatch Logs group, log stream name prefix, and optional encryption key ARN that the EMR Serverless application uses to deliver its runtime logs to Amazon CloudWatch. (AI-inferred)
+	CloudWatchLoggingConfiguration any
+	// This field specifies the managed persistence monitoring configuration, controlling whether Spark event logs are persisted and the S3 location where they are stored for the EMR Serverless application. (AI-inferred)
 	ManagedPersistenceMonitoringConfiguration any
+	// Configures the Prometheus monitoring endpoint for the EMR Serverless application by specifying the remote write URL where application metrics are sent. (AI-inferred)
 	PrometheusMonitoringConfiguration any
+	// This nested block configures the S3 monitoring destination for the EMR Serverless application, specifying the S3 URI (log_uri) where logs are delivered and optionally a KMS key ARN (encryption_key_arn) for encrypting the logs. (AI-inferred)
 	S3MonitoringConfiguration any
 }
 
 type Application_NetworkConfiguration struct {
+	// The ID of the security groups in the VPC to which you want to connect your job or application.
 	SecurityGroupIds any
+	// The ID of the subnets in the VPC to which you want to connect your job or application.
 	SubnetIds any
 }
 
 type Application_RuntimeConfiguration struct {
+	// Specifies the classification name (e.g., spark-defaults) for the runtime configuration, which defines the set of properties that apply to the EMR Serverless application. (AI-inferred)
 	Classification any
+	// Specifies a list of sub-configurations for a given runtime configuration classification, allowing nested engine-specific settings (such as Spark or Hive properties) to be applied to the EMR Serverless application. (AI-inferred)
+	Configurations any
+	// Specifies a map of additional key-value pairs to apply as runtime configuration settings for the EMR Serverless application, extending the configuration defined by the parent runtime configuration's key and value fields. (AI-inferred)
 	Properties any
 }
 
 type Application_SchedulerConfiguration struct {
+	// The maximum concurrent job runs on this application. If scheduler configuration is enabled on your application, the default value is 15. The valid range is 1 to 1000.
 	MaxConcurrentRuns any
+	// The maximum duration in minutes for the job in QUEUED state. If scheduler configuration is enabled on your application, the default value is 360 minutes (6 hours). The valid range is from 15 to 720.
 	QueueTimeoutMinutes any
+}
+
+type Application_Tags struct {
+	Key any
+	// The value component of a key-value tag applied to the EMR Serverless application, which can be any string and is used for resource metadata, filtering, and cost allocation. (AI-inferred)
+	Value any
 }
 
 var Application_AutoStartConfigurationFields = ubx.FieldMap{
@@ -95,91 +117,56 @@ var Application_AutoStopConfigurationFields = ubx.FieldMap{
 		"IdleTimeoutMinutes": ubx.FieldSpec{WireName: "idle_timeout_minutes"},
 	}
 
+var Application_IdentityCenterConfigurationFields = ubx.FieldMap{
+		"IdentityCenterInstanceArn": ubx.FieldSpec{WireName: "identity_center_instance_arn"},
+	}
+
 var Application_ImageConfigurationFields = ubx.FieldMap{
 		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
 	}
 
-var Application_InitialCapacity_InitialCapacityConfig_WorkerConfigurationFields = ubx.FieldMap{
+var Application_InitialCapacity_Value_WorkerConfigurationFields = ubx.FieldMap{
 		"Cpu": ubx.FieldSpec{WireName: "cpu"},
 		"Disk": ubx.FieldSpec{WireName: "disk"},
+		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
 		"Memory": ubx.FieldSpec{WireName: "memory"},
 	}
 
-var Application_InitialCapacity_InitialCapacityConfigFields = ubx.FieldMap{
-		"WorkerCount": ubx.FieldSpec{WireName: "worker_count"},
+var Application_InitialCapacity_ValueFields = ubx.FieldMap{
 		"WorkerConfiguration": ubx.FieldSpec{
 			WireName: "worker_configuration",
-			Kind: "list",
-			Fields: Application_InitialCapacity_InitialCapacityConfig_WorkerConfigurationFields,
+			Kind: "object",
+			Fields: Application_InitialCapacity_Value_WorkerConfigurationFields,
 		},
+		"WorkerCount": ubx.FieldSpec{WireName: "worker_count"},
 	}
 
 var Application_InitialCapacityFields = ubx.FieldMap{
-		"InitialCapacityType": ubx.FieldSpec{WireName: "initial_capacity_type"},
-		"InitialCapacityConfig": ubx.FieldSpec{
-			WireName: "initial_capacity_config",
-			Kind: "list",
-			Fields: Application_InitialCapacity_InitialCapacityConfigFields,
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{
+			WireName: "value",
+			Kind: "object",
+			Fields: Application_InitialCapacity_ValueFields,
 		},
 	}
 
 var Application_InteractiveConfigurationFields = ubx.FieldMap{
 		"LivyEndpointEnabled": ubx.FieldSpec{WireName: "livy_endpoint_enabled"},
+		"SessionEnabled": ubx.FieldSpec{WireName: "session_enabled"},
 		"StudioEnabled": ubx.FieldSpec{WireName: "studio_enabled"},
 	}
 
-var Application_MonitoringConfiguration_CloudwatchLoggingConfiguration_LogTypesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
-
-var Application_MonitoringConfiguration_CloudwatchLoggingConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"LogStreamNamePrefix": ubx.FieldSpec{WireName: "log_stream_name_prefix"},
-		"LogTypes": ubx.FieldSpec{
-			WireName: "log_types",
-			Kind: "set",
-			Fields: Application_MonitoringConfiguration_CloudwatchLoggingConfiguration_LogTypesFields,
-		},
-	}
-
-var Application_MonitoringConfiguration_ManagedPersistenceMonitoringConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
-	}
-
-var Application_MonitoringConfiguration_PrometheusMonitoringConfigurationFields = ubx.FieldMap{
-		"RemoteWriteUrl": ubx.FieldSpec{WireName: "remote_write_url"},
-	}
-
-var Application_MonitoringConfiguration_S3MonitoringConfigurationFields = ubx.FieldMap{
-		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
-		"LogUri": ubx.FieldSpec{WireName: "log_uri"},
+var Application_MaximumCapacityFields = ubx.FieldMap{
+		"Cpu": ubx.FieldSpec{WireName: "cpu"},
+		"Disk": ubx.FieldSpec{WireName: "disk"},
+		"Memory": ubx.FieldSpec{WireName: "memory"},
 	}
 
 var Application_MonitoringConfigurationFields = ubx.FieldMap{
-		"CloudwatchLoggingConfiguration": ubx.FieldSpec{
-			WireName: "cloudwatch_logging_configuration",
-			Kind: "list",
-			Fields: Application_MonitoringConfiguration_CloudwatchLoggingConfigurationFields,
-		},
-		"ManagedPersistenceMonitoringConfiguration": ubx.FieldSpec{
-			WireName: "managed_persistence_monitoring_configuration",
-			Kind: "list",
-			Fields: Application_MonitoringConfiguration_ManagedPersistenceMonitoringConfigurationFields,
-		},
-		"PrometheusMonitoringConfiguration": ubx.FieldSpec{
-			WireName: "prometheus_monitoring_configuration",
-			Kind: "list",
-			Fields: Application_MonitoringConfiguration_PrometheusMonitoringConfigurationFields,
-		},
-		"S3MonitoringConfiguration": ubx.FieldSpec{
-			WireName: "s3_monitoring_configuration",
-			Kind: "list",
-			Fields: Application_MonitoringConfiguration_S3MonitoringConfigurationFields,
-		},
+		"CloudWatchLoggingConfiguration": ubx.FieldSpec{WireName: "cloud_watch_logging_configuration"},
+		"ManagedPersistenceMonitoringConfiguration": ubx.FieldSpec{WireName: "managed_persistence_monitoring_configuration"},
+		"PrometheusMonitoringConfiguration": ubx.FieldSpec{WireName: "prometheus_monitoring_configuration"},
+		"S3MonitoringConfiguration": ubx.FieldSpec{WireName: "s3_monitoring_configuration"},
 	}
 
 var Application_NetworkConfigurationFields = ubx.FieldMap{
@@ -189,6 +176,7 @@ var Application_NetworkConfigurationFields = ubx.FieldMap{
 
 var Application_RuntimeConfigurationFields = ubx.FieldMap{
 		"Classification": ubx.FieldSpec{WireName: "classification"},
+		"Configurations": ubx.FieldSpec{WireName: "configurations"},
 		"Properties": ubx.FieldSpec{WireName: "properties"},
 	}
 
@@ -197,84 +185,140 @@ var Application_SchedulerConfigurationFields = ubx.FieldMap{
 		"QueueTimeoutMinutes": ubx.FieldSpec{WireName: "queue_timeout_minutes"},
 	}
 
+var Application_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ApplicationConfig struct {
+	// The cpu architecture of an application.
 	Architecture any
-	Id any
-	Name any
-	Region any
-	ReleaseLabel any
-	Tags any
-	TagsAll any
-	Type any
+	// Configuration for Auto Start of Application
 	AutoStartConfiguration any
+	// Configuration for Auto Stop of Application
 	AutoStopConfiguration any
+	// The IAM IdentityCenter configuration for trusted-identity-propagation on this application. Supported with release labels emr-7.8.0 and above.
+	IdentityCenterConfiguration any
+	// The image configuration.
 	ImageConfiguration any
+	// Configures the initial capacity for each worker type (e.g., driver, executor) of the EMR Serverless application, specifying the worker count and the CPU/memory allocated for that type. (AI-inferred)
 	InitialCapacity any
+	// Configures interactive capabilities for the EMR Serverless application, including enabling the Livy endpoint and EMR Studio integration. (AI-inferred)
 	InteractiveConfiguration any
-	JobLevelCostAllocationConfiguration any
+	// The maximum capacity limits (CPU, memory, and optional disk) that the EMR Serverless application is allowed to use, defined as a MaximumAllowedResources object that caps the application's total resource usage. (AI-inferred)
 	MaximumCapacity any
+	// Monitoring configuration for batch and interactive JobRun.
 	MonitoringConfiguration any
+	// User friendly Application name.
+	Name any
+	// Specifies the VPC subnets and security group IDs that the EMR Serverless application uses to run jobs within a private network. (AI-inferred)
 	NetworkConfiguration any
+	// EMR release label.
+	ReleaseLabel any
+	// Runtime configuration for batch and interactive JobRun.
 	RuntimeConfiguration any
+	// The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.
 	SchedulerConfiguration any
+	// Tag map with key and value
+	Tags any
+	// The type of the application
+	Type any
+	// Defines CPU and memory specifications for each worker type (e.g., Driver or Executor) in the EMR Serverless application, allowing per-worker-type resource overrides. (AI-inferred)
+	WorkerTypeSpecifications any
+}
+
+type ApplicationAttrs struct {
+	// The ID of the EMR Serverless Application.
+	ApplicationId any
+	// The cpu architecture of an application.
+	Architecture any
+	// The Amazon Resource Name (ARN) of the EMR Serverless Application.
+	Arn any
+	// Configuration for Auto Start of Application
+	AutoStartConfiguration any
+	// Configuration for Auto Stop of Application
+	AutoStopConfiguration any
+	// The IAM IdentityCenter configuration for trusted-identity-propagation on this application. Supported with release labels emr-7.8.0 and above.
+	IdentityCenterConfiguration any
+	// The image configuration.
+	ImageConfiguration any
+	// Configures the initial capacity for each worker type (e.g., driver, executor) of the EMR Serverless application, specifying the worker count and the CPU/memory allocated for that type. (AI-inferred)
+	InitialCapacity any
+	// Configures interactive capabilities for the EMR Serverless application, including enabling the Livy endpoint and EMR Studio integration. (AI-inferred)
+	InteractiveConfiguration any
+	// The maximum capacity limits (CPU, memory, and optional disk) that the EMR Serverless application is allowed to use, defined as a MaximumAllowedResources object that caps the application's total resource usage. (AI-inferred)
+	MaximumCapacity any
+	// Monitoring configuration for batch and interactive JobRun.
+	MonitoringConfiguration any
+	// User friendly Application name.
+	Name any
+	// Specifies the VPC subnets and security group IDs that the EMR Serverless application uses to run jobs within a private network. (AI-inferred)
+	NetworkConfiguration any
+	// EMR release label.
+	ReleaseLabel any
+	// Runtime configuration for batch and interactive JobRun.
+	RuntimeConfiguration any
+	// The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.
+	SchedulerConfiguration any
+	// Tag map with key and value
+	Tags any
+	// The type of the application
+	Type any
+	// Defines CPU and memory specifications for each worker type (e.g., Driver or Executor) in the EMR Serverless application, allowing per-worker-type resource overrides. (AI-inferred)
+	WorkerTypeSpecifications any
 }
 
 var Application = ubx.ResourceBinding{
 	WireType: "aws_emrserverless_application",
 	Fields: ubx.FieldMap{
 		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ReleaseLabel": ubx.FieldSpec{WireName: "release_label"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Type": ubx.FieldSpec{WireName: "type"},
 		"AutoStartConfiguration": ubx.FieldSpec{
 			WireName: "auto_start_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Application_AutoStartConfigurationFields,
 		},
 		"AutoStopConfiguration": ubx.FieldSpec{
 			WireName: "auto_stop_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Application_AutoStopConfigurationFields,
+		},
+		"IdentityCenterConfiguration": ubx.FieldSpec{
+			WireName: "identity_center_configuration",
+			Kind: "object",
+			Fields: Application_IdentityCenterConfigurationFields,
 		},
 		"ImageConfiguration": ubx.FieldSpec{
 			WireName: "image_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Application_ImageConfigurationFields,
 		},
 		"InitialCapacity": ubx.FieldSpec{
 			WireName: "initial_capacity",
-			Kind: "set",
+			Kind: "list",
 			Fields: Application_InitialCapacityFields,
 		},
 		"InteractiveConfiguration": ubx.FieldSpec{
 			WireName: "interactive_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Application_InteractiveConfigurationFields,
-		},
-		"JobLevelCostAllocationConfiguration": ubx.FieldSpec{
-			WireName: "job_level_cost_allocation_configuration",
-			Kind: "list",
-			Fields: Application_AutoStartConfigurationFields,
 		},
 		"MaximumCapacity": ubx.FieldSpec{
 			WireName: "maximum_capacity",
-			Kind: "list",
-			Fields: Application_InitialCapacity_InitialCapacityConfig_WorkerConfigurationFields,
+			Kind: "object",
+			Fields: Application_MaximumCapacityFields,
 		},
 		"MonitoringConfiguration": ubx.FieldSpec{
 			WireName: "monitoring_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Application_MonitoringConfigurationFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Application_NetworkConfigurationFields,
 		},
+		"ReleaseLabel": ubx.FieldSpec{WireName: "release_label"},
 		"RuntimeConfiguration": ubx.FieldSpec{
 			WireName: "runtime_configuration",
 			Kind: "list",
@@ -282,8 +326,15 @@ var Application = ubx.ResourceBinding{
 		},
 		"SchedulerConfiguration": ubx.FieldSpec{
 			WireName: "scheduler_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Application_SchedulerConfigurationFields,
 		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Application_TagsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"WorkerTypeSpecifications": ubx.FieldSpec{WireName: "worker_type_specifications"},
 	},
 }

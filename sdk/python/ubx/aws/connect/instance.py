@@ -7,54 +7,112 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Instance_Timeouts:
-    create: Any = None
-    delete: Any = None
+class Instance_Attributes:
+    # Boolean flag which enables AUTO_RESOLVE_BEST_VOICES on an instance.
+    auto_resolve_best_voices: Any = None
+    # Boolean flag which enables CONTACT_LENS on an instance.
+    contact_lens: Any = None
+    # Boolean flag which enables CONTACTFLOW_LOGS on an instance.
+    contactflow_logs: Any = None
+    # Boolean flag which enables EARLY_MEDIA on an instance.
+    early_media: Any = None
+    # Boolean flag which enables ENHANCED_CHAT_MONITORING on an instance.
+    enhanced_chat_monitoring: Any = None
+    # Boolean flag which enables ENHANCED_CONTACT_MONITORING on an instance.
+    enhanced_contact_monitoring: Any = None
+    # Boolean flag which enables HIGH_VOLUME_OUTBOUND on an instance.
+    high_volume_out_bound: Any = None
+    # Mandatory element which enables inbound calls on new instance.
+    inbound_calls: Any = None
+    # Boolean flag which enables MESSAGE_STREAMING on an instance.
+    message_streaming: Any = None
+    # Boolean flag which enables MULTI_PARTY_CHAT_CONFERENCE on an instance.
+    multi_party_chat_conference: Any = None
+    # Boolean flag which enables MULTI_PARTY_CONFERENCE on an instance.
+    multi_party_conference: Any = None
+    # Mandatory element which enables outbound calls on new instance.
+    outbound_calls: Any = None
+    # Boolean flag which enables USE_CUSTOM_TTS_VOICES on an instance.
+    use_custom_ttsvoices: Any = None
 
-_Instance_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+@dataclasses.dataclass
+class Instance_Tags:
+    # The key of a user-defined tag applied to the Amazon Connect instance, used to categorize and manage the resource in AWS. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_Instance_AttributesFields = {
+    "auto_resolve_best_voices": ubx.FieldSpec(wire_name="auto_resolve_best_voices"),
+    "contact_lens": ubx.FieldSpec(wire_name="contact_lens"),
+    "contactflow_logs": ubx.FieldSpec(wire_name="contactflow_logs"),
+    "early_media": ubx.FieldSpec(wire_name="early_media"),
+    "enhanced_chat_monitoring": ubx.FieldSpec(wire_name="enhanced_chat_monitoring"),
+    "enhanced_contact_monitoring": ubx.FieldSpec(wire_name="enhanced_contact_monitoring"),
+    "high_volume_out_bound": ubx.FieldSpec(wire_name="high_volume_out_bound"),
+    "inbound_calls": ubx.FieldSpec(wire_name="inbound_calls"),
+    "message_streaming": ubx.FieldSpec(wire_name="message_streaming"),
+    "multi_party_chat_conference": ubx.FieldSpec(wire_name="multi_party_chat_conference"),
+    "multi_party_conference": ubx.FieldSpec(wire_name="multi_party_conference"),
+    "outbound_calls": ubx.FieldSpec(wire_name="outbound_calls"),
+    "use_custom_ttsvoices": ubx.FieldSpec(wire_name="use_custom_ttsvoices"),
+}
+
+_Instance_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class InstanceConfig:
-    auto_resolve_best_voices_enabled: Any = None
-    contact_flow_logs_enabled: Any = None
-    contact_lens_enabled: Any = None
+    # Defines feature configuration flags for the Amazon Connect instance as key-value pairs (e.g., enabling or disabling inbound/outbound calls, contact lens, or auto-resolve best voices). (AI-inferred)
+    attributes: Any = None
+    # Existing directoryId user wants to map to the new Connect instance.
     directory_id: Any = None
-    early_media_enabled: Any = None
-    id: Any = None
+    # Specifies the type of directory integration for new instance.
     identity_management_type: Any = None
-    inbound_calls_enabled: Any = None
+    # Alias of the new directory created as part of new instance creation.
     instance_alias: Any = None
-    multi_party_conference_enabled: Any = None
-    outbound_calls_enabled: Any = None
-    region: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class InstanceAttrs:
+    # An instanceArn is automatically generated on creation based on instanceId.
+    arn: Any = None
+    # Defines feature configuration flags for the Amazon Connect instance as key-value pairs (e.g., enabling or disabling inbound/outbound calls, contact lens, or auto-resolve best voices). (AI-inferred)
+    attributes: Any = None
+    # Timestamp of instance creation logged as part of instance creation.
+    created_time: Any = None
+    # Existing directoryId user wants to map to the new Connect instance.
+    directory_id: Any = None
+    # An instanceId is automatically generated on creation and assigned as the unique identifier.
+    id: Any = None
+    # Specifies the type of directory integration for new instance.
+    identity_management_type: Any = None
+    # Alias of the new directory created as part of new instance creation.
+    instance_alias: Any = None
+    # Specifies the creation status of new instance.
+    instance_status: Any = None
+    # Service linked role created as part of instance creation.
+    service_role: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Instance = ubx.ResourceBinding(
     wire_type="aws_connect_instance",
     fields={
-        "auto_resolve_best_voices_enabled": ubx.FieldSpec(wire_name="auto_resolve_best_voices_enabled"),
-        "contact_flow_logs_enabled": ubx.FieldSpec(wire_name="contact_flow_logs_enabled"),
-        "contact_lens_enabled": ubx.FieldSpec(wire_name="contact_lens_enabled"),
-        "directory_id": ubx.FieldSpec(wire_name="directory_id"),
-        "early_media_enabled": ubx.FieldSpec(wire_name="early_media_enabled"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "identity_management_type": ubx.FieldSpec(wire_name="identity_management_type"),
-        "inbound_calls_enabled": ubx.FieldSpec(wire_name="inbound_calls_enabled"),
-        "instance_alias": ubx.FieldSpec(wire_name="instance_alias"),
-        "multi_party_conference_enabled": ubx.FieldSpec(wire_name="multi_party_conference_enabled"),
-        "outbound_calls_enabled": ubx.FieldSpec(wire_name="outbound_calls_enabled"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "attributes": ubx.FieldSpec(
+            wire_name="attributes",
             kind="object",
-            fields=_Instance_TimeoutsFields,
+            fields=_Instance_AttributesFields,
+        ),
+        "directory_id": ubx.FieldSpec(wire_name="directory_id"),
+        "identity_management_type": ubx.FieldSpec(wire_name="identity_management_type"),
+        "instance_alias": ubx.FieldSpec(wire_name="instance_alias"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Instance_TagsFields,
         ),
     },
 )

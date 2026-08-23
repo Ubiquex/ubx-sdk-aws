@@ -8,17 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegexPatternSetConfig:
-    id: Any = None
+    # A unique, user-defined name for the regex pattern set, used to identify it in AWS WAF Regional. (AI-inferred)
     name: Any = None
+    # Specifies the regular expression patterns to include in this set, where each string is a distinct pattern that AWS WAF Regional uses to match against web requests. (AI-inferred)
     regex_pattern_strings: Any = None
-    region: Any = None
+
+@dataclasses.dataclass
+class RegexPatternSetAttrs:
+    # The unique identifier automatically assigned to this WAF Regional regex pattern set, used to reference it in other resources such as rules and WebACLs. (AI-inferred)
+    id: Any = None
+    # A unique, user-defined name for the regex pattern set, used to identify it in AWS WAF Regional. (AI-inferred)
+    name: Any = None
+    # Specifies the regular expression patterns to include in this set, where each string is a distinct pattern that AWS WAF Regional uses to match against web requests. (AI-inferred)
+    regex_pattern_strings: Any = None
 
 RegexPatternSet = ubx.ResourceBinding(
     wire_type="aws_wafregional_regex_pattern_set",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "regex_pattern_strings": ubx.FieldSpec(wire_name="regex_pattern_strings"),
-        "region": ubx.FieldSpec(wire_name="region"),
     },
 )

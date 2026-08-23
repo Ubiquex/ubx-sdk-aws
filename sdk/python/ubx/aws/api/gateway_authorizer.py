@@ -8,30 +8,63 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayAuthorizerConfig:
+    # Specifies the required authentication type (such as 'oauth' or 'openid') for the custom authorizer, which is optional and only relevant when the authorizer type is 'CUSTOM'. (AI-inferred)
+    auth_type: Any = None
+    # Specifies the ARN of an IAM role that Amazon API Gateway assumes when invoking the authorizer, used to grant permissions for the authorizer's backend (such as a Lambda function) to be called. (AI-inferred)
     authorizer_credentials: Any = None
+    # The number of seconds that API Gateway caches the authorizer result before re-invoking the authorizer Lambda function. (AI-inferred)
     authorizer_result_ttl_in_seconds: Any = None
+    # The URI of the Lambda function that serves as the custom authorizer, typically formatted as arn:aws:apigateway:{region}:lambda:path/2015-03-31/functions/{lambda-arn}/invocations. (AI-inferred)
     authorizer_uri: Any = None
-    id: Any = None
+    # Defines the request parameter (e.g., method.request.header.Authorization) from which API Gateway extracts the caller's identity token for the custom or token authorizer. (AI-inferred)
     identity_source: Any = None
+    # Specifies a regular expression that AWS API Gateway uses to validate the incoming identity (such as a bearer token) for the authorizer; if the identity does not match the expression, API Gateway rejects the request with a 401 response. (AI-inferred)
     identity_validation_expression: Any = None
+    # The name of the custom authorizer, which must be unique within the API Gateway REST API. (AI-inferred)
     name: Any = None
+    # The list of Amazon Cognito user pool ARNs that this API Gateway authorizer uses to validate tokens for a COGNITO_USER_POOLS authorizer type. (AI-inferred)
     provider_arns: Any = None
-    region: Any = None
+    # The unique identifier or reference (typically the logical ID of an aws_api_gateway_rest_api resource) of the REST API in API Gateway that this custom authorizer is associated with. (AI-inferred)
     rest_api_id: Any = None
+    # Specifies the authorizer type, which determines the authorization mechanism for API Gateway requests: valid values are TOKEN, REQUEST, or COGNITO_USER_POOLS, corresponding to Lambda token authorizers, Lambda request authorizers, and Amazon Cognito user pool authorizers respectively. (AI-inferred)
+    type: Any = None
+
+@dataclasses.dataclass
+class GatewayAuthorizerAttrs:
+    # Specifies the required authentication type (such as 'oauth' or 'openid') for the custom authorizer, which is optional and only relevant when the authorizer type is 'CUSTOM'. (AI-inferred)
+    auth_type: Any = None
+    # Specifies the ARN of an IAM role that Amazon API Gateway assumes when invoking the authorizer, used to grant permissions for the authorizer's backend (such as a Lambda function) to be called. (AI-inferred)
+    authorizer_credentials: Any = None
+    # The unique identifier assigned by Amazon API Gateway to the authorizer when it is created. (AI-inferred)
+    authorizer_id: Any = None
+    # The number of seconds that API Gateway caches the authorizer result before re-invoking the authorizer Lambda function. (AI-inferred)
+    authorizer_result_ttl_in_seconds: Any = None
+    # The URI of the Lambda function that serves as the custom authorizer, typically formatted as arn:aws:apigateway:{region}:lambda:path/2015-03-31/functions/{lambda-arn}/invocations. (AI-inferred)
+    authorizer_uri: Any = None
+    # Defines the request parameter (e.g., method.request.header.Authorization) from which API Gateway extracts the caller's identity token for the custom or token authorizer. (AI-inferred)
+    identity_source: Any = None
+    # Specifies a regular expression that AWS API Gateway uses to validate the incoming identity (such as a bearer token) for the authorizer; if the identity does not match the expression, API Gateway rejects the request with a 401 response. (AI-inferred)
+    identity_validation_expression: Any = None
+    # The name of the custom authorizer, which must be unique within the API Gateway REST API. (AI-inferred)
+    name: Any = None
+    # The list of Amazon Cognito user pool ARNs that this API Gateway authorizer uses to validate tokens for a COGNITO_USER_POOLS authorizer type. (AI-inferred)
+    provider_arns: Any = None
+    # The unique identifier or reference (typically the logical ID of an aws_api_gateway_rest_api resource) of the REST API in API Gateway that this custom authorizer is associated with. (AI-inferred)
+    rest_api_id: Any = None
+    # Specifies the authorizer type, which determines the authorization mechanism for API Gateway requests: valid values are TOKEN, REQUEST, or COGNITO_USER_POOLS, corresponding to Lambda token authorizers, Lambda request authorizers, and Amazon Cognito user pool authorizers respectively. (AI-inferred)
     type: Any = None
 
 GatewayAuthorizer = ubx.ResourceBinding(
     wire_type="aws_api_gateway_authorizer",
     fields={
+        "auth_type": ubx.FieldSpec(wire_name="auth_type"),
         "authorizer_credentials": ubx.FieldSpec(wire_name="authorizer_credentials"),
         "authorizer_result_ttl_in_seconds": ubx.FieldSpec(wire_name="authorizer_result_ttl_in_seconds"),
         "authorizer_uri": ubx.FieldSpec(wire_name="authorizer_uri"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "identity_source": ubx.FieldSpec(wire_name="identity_source"),
         "identity_validation_expression": ubx.FieldSpec(wire_name="identity_validation_expression"),
         "name": ubx.FieldSpec(wire_name="name"),
         "provider_arns": ubx.FieldSpec(wire_name="provider_arns"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "rest_api_id": ubx.FieldSpec(wire_name="rest_api_id"),
         "type": ubx.FieldSpec(wire_name="type"),
     },

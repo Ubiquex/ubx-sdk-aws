@@ -8,30 +8,42 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypes:
+    # Specifies the list of AWS resource types that will be excluded from recording by the configuration recorder. (AI-inferred)
     resource_types: Any = None
 
 @dataclasses.dataclass
 class ConfigurationRecorder_RecordingGroup_RecordingStrategy:
+    # Defines the recording strategy for the configuration recorder, with values such as ALL_SUPPORTED_RESOURCE_TYPES to record all supported resource types, INCLUDE_SPECIFIED_RESOURCE_TYPES to record only those listed in the recording group's resourceTypes, or EXCLUDE_SPECIFIED_RESOURCE_TYPES to record all except those listed. (AI-inferred)
     use_only: Any = None
 
 @dataclasses.dataclass
 class ConfigurationRecorder_RecordingGroup:
+    # When set to true, AWS Config records configuration changes for all supported AWS resource types in the region. (AI-inferred)
     all_supported: Any = None
-    include_global_resource_types: Any = None
-    resource_types: Any = None
+    # Specifies the resource types to exclude from being recorded by AWS Config, allowing you to record all supported types except those listed when allSupported is enabled. (AI-inferred)
     exclusion_by_resource_types: Any = None
+    # Indicates whether AWS Config records configuration changes to global resource types (such as IAM users, groups, roles, and customer managed policies) across all regions. (AI-inferred)
+    include_global_resource_types: Any = None
+    # Defines the recording strategy for AWS Config, specifying whether to record all supported resource types, only included resource types, or all except excluded resource types. (AI-inferred)
     recording_strategy: Any = None
+    # Specifies the list of AWS resource types to be recorded by AWS Config; if omitted or empty, AWS Config records all supported resource types. (AI-inferred)
+    resource_types: Any = None
 
 @dataclasses.dataclass
-class ConfigurationRecorder_RecordingMode_RecordingModeOverride:
+class ConfigurationRecorder_RecordingMode_RecordingModeOverrides:
+    # A description that you provide for this recording mode override, explaining its purpose or distinguishing it from other overrides for specific resource types. (AI-inferred)
     description: Any = None
+    # Specifies how often AWS Config records configuration changes for the resource types in this override, either CONTINUOUS for real-time recording or DAILY for a single daily snapshot. (AI-inferred)
     recording_frequency: Any = None
+    # Lists the AWS resource types (e.g., 'AWS::EC2::Instance') for which this recording mode override applies, allowing a different recording frequency to be set for those specific resources. (AI-inferred)
     resource_types: Any = None
 
 @dataclasses.dataclass
 class ConfigurationRecorder_RecordingMode:
+    # Specifies how often AWS Config records configuration changes for the resources in scope, either continuously or on a daily basis. (AI-inferred)
     recording_frequency: Any = None
-    recording_mode_override: Any = None
+    # Specifies a list of overrides that set the recording mode (either CONTINUOUS or RECORD_ONLY) for specific AWS resource types, allowing you to customize recording behavior on a per-resource-type basis within the configuration recorder's recording mode. (AI-inferred)
+    recording_mode_overrides: Any = None
 
 _ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypesFields = {
     "resource_types": ubx.FieldSpec(wire_name="resource_types"),
@@ -43,21 +55,21 @@ _ConfigurationRecorder_RecordingGroup_RecordingStrategyFields = {
 
 _ConfigurationRecorder_RecordingGroupFields = {
     "all_supported": ubx.FieldSpec(wire_name="all_supported"),
-    "include_global_resource_types": ubx.FieldSpec(wire_name="include_global_resource_types"),
-    "resource_types": ubx.FieldSpec(wire_name="resource_types"),
     "exclusion_by_resource_types": ubx.FieldSpec(
         wire_name="exclusion_by_resource_types",
-        kind="list",
+        kind="object",
         fields=_ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypesFields,
     ),
+    "include_global_resource_types": ubx.FieldSpec(wire_name="include_global_resource_types"),
     "recording_strategy": ubx.FieldSpec(
         wire_name="recording_strategy",
-        kind="list",
+        kind="object",
         fields=_ConfigurationRecorder_RecordingGroup_RecordingStrategyFields,
     ),
+    "resource_types": ubx.FieldSpec(wire_name="resource_types"),
 }
 
-_ConfigurationRecorder_RecordingMode_RecordingModeOverrideFields = {
+_ConfigurationRecorder_RecordingMode_RecordingModeOverridesFields = {
     "description": ubx.FieldSpec(wire_name="description"),
     "recording_frequency": ubx.FieldSpec(wire_name="recording_frequency"),
     "resource_types": ubx.FieldSpec(wire_name="resource_types"),
@@ -65,38 +77,51 @@ _ConfigurationRecorder_RecordingMode_RecordingModeOverrideFields = {
 
 _ConfigurationRecorder_RecordingModeFields = {
     "recording_frequency": ubx.FieldSpec(wire_name="recording_frequency"),
-    "recording_mode_override": ubx.FieldSpec(
-        wire_name="recording_mode_override",
+    "recording_mode_overrides": ubx.FieldSpec(
+        wire_name="recording_mode_overrides",
         kind="list",
-        fields=_ConfigurationRecorder_RecordingMode_RecordingModeOverrideFields,
+        fields=_ConfigurationRecorder_RecordingMode_RecordingModeOverridesFields,
     ),
 }
 
 @dataclasses.dataclass
 class ConfigurationRecorderConfig:
-    id: Any = None
+    # The name of the configuration recorder, which must be unique within the region and defaults to 'default' if not specified. (AI-inferred)
     name: Any = None
-    region: Any = None
-    role_arn: Any = None
+    # Specifies which AWS resource types are recorded by the configuration recorder, including whether to record all supported resource types and global resource types like IAM resources. (AI-inferred)
     recording_group: Any = None
+    # Specifies the recording frequency (continuous or periodic) that controls how often AWS Config records configuration changes for supported resources. (AI-inferred)
     recording_mode: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role that AWS Config uses to record resource changes and deliver them to the delivery channel. (AI-inferred)
+    role_arn: Any = None
+
+@dataclasses.dataclass
+class ConfigurationRecorderAttrs:
+    # The physical resource ID of the configuration recorder, which is the same as its user-defined Name. (AI-inferred)
+    id: Any = None
+    # The name of the configuration recorder, which must be unique within the region and defaults to 'default' if not specified. (AI-inferred)
+    name: Any = None
+    # Specifies which AWS resource types are recorded by the configuration recorder, including whether to record all supported resource types and global resource types like IAM resources. (AI-inferred)
+    recording_group: Any = None
+    # Specifies the recording frequency (continuous or periodic) that controls how often AWS Config records configuration changes for supported resources. (AI-inferred)
+    recording_mode: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role that AWS Config uses to record resource changes and deliver them to the delivery channel. (AI-inferred)
+    role_arn: Any = None
 
 ConfigurationRecorder = ubx.ResourceBinding(
     wire_type="aws_config_configuration_recorder",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "role_arn": ubx.FieldSpec(wire_name="role_arn"),
         "recording_group": ubx.FieldSpec(
             wire_name="recording_group",
-            kind="list",
+            kind="object",
             fields=_ConfigurationRecorder_RecordingGroupFields,
         ),
         "recording_mode": ubx.FieldSpec(
             wire_name="recording_mode",
-            kind="list",
+            kind="object",
             fields=_ConfigurationRecorder_RecordingModeFields,
         ),
+        "role_arn": ubx.FieldSpec(wire_name="role_arn"),
     },
 )

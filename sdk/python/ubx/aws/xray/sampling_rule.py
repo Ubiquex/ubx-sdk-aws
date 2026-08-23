@@ -7,42 +7,199 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class SamplingRuleConfig:
+class SamplingRule_SamplingRule_SamplingRateBoost:
+    # Time window (in minutes) in which only one sampling rate boost can be triggered. After a boost occurs, no further boosts are allowed until the next window.
+    cooldown_window_minutes: Any = None
+    # The maximum sampling rate X-Ray will apply when it detects anomalies. X-Ray determines the appropriate rate between your baseline and the maximum, depending on anomaly activity.
+    max_rate: Any = None
+
+@dataclasses.dataclass
+class SamplingRule_SamplingRule:
+    # Matches attributes derived from the request.
     attributes: Any = None
+    # The percentage of matching requests to instrument, after the reservoir is exhausted.
     fixed_rate: Any = None
+    # Matches the hostname from a request URL.
     host: Any = None
-    http_method: Any = None
-    id: Any = None
+    # Matches the HTTP method from a request URL.
+    httpmethod: Any = None
+    # The priority of the sampling rule.
     priority: Any = None
-    region: Any = None
+    # A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.
     reservoir_size: Any = None
+    # Matches the ARN of the AWS resource on which the service runs.
     resource_arn: Any = None
+    # The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+    rule_arn: Any = None
+    # The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
     rule_name: Any = None
+    # Specifies the sampling-rate boost configuration for this X-Ray sampling rule, including whether the boost is enabled, the conditions that trigger it, and the boosted sampling rate to apply when those conditions are met. (AI-inferred)
+    sampling_rate_boost: Any = None
+    # Matches the name that the service uses to identify itself in segments.
     service_name: Any = None
+    # Matches the origin that the service uses to identify its type in segments.
     service_type: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    url_path: Any = None
+    # Matches the path from a request URL.
+    urlpath: Any = None
+    # The version of the sampling rule format (1)
     version: Any = None
+
+@dataclasses.dataclass
+class SamplingRule_SamplingRuleRecord:
+    # When the rule was created, in Unix time seconds.
+    created_at: Any = None
+    # When the rule was modified, in Unix time seconds.
+    modified_at: Any = None
+    # The sampling rule configuration (including rule name, priority, reservoir size, fixed rate, and service matching attributes) embedded within the sampling rule record. (AI-inferred)
+    sampling_rule: Any = None
+
+@dataclasses.dataclass
+class SamplingRule_SamplingRuleUpdate:
+    # Matches attributes derived from the request.
+    attributes: Any = None
+    # The percentage of matching requests to instrument, after the reservoir is exhausted.
+    fixed_rate: Any = None
+    # Matches the hostname from a request URL.
+    host: Any = None
+    # Matches the HTTP method from a request URL.
+    httpmethod: Any = None
+    # The priority of the sampling rule.
+    priority: Any = None
+    # A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.
+    reservoir_size: Any = None
+    # Matches the ARN of the AWS resource on which the service runs.
+    resource_arn: Any = None
+    # The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+    rule_arn: Any = None
+    # The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+    rule_name: Any = None
+    sampling_rate_boost: Any = None
+    # Matches the name that the service uses to identify itself in segments.
+    service_name: Any = None
+    # Matches the origin that the service uses to identify its type in segments.
+    service_type: Any = None
+    # Matches the path from a request URL.
+    urlpath: Any = None
+
+@dataclasses.dataclass
+class SamplingRule_Tags:
+    # The key of a tag assigned to the AWS X-Ray sampling rule, used to categorize and manage the rule. (AI-inferred)
+    key: Any = None
+    # The value component of a tag assigned to an AWS X-Ray sampling rule, used for metadata, identification, and cost allocation. (AI-inferred)
+    value: Any = None
+
+_SamplingRule_SamplingRule_SamplingRateBoostFields = {
+    "cooldown_window_minutes": ubx.FieldSpec(wire_name="cooldown_window_minutes"),
+    "max_rate": ubx.FieldSpec(wire_name="max_rate"),
+}
+
+_SamplingRule_SamplingRuleFields = {
+    "attributes": ubx.FieldSpec(wire_name="attributes"),
+    "fixed_rate": ubx.FieldSpec(wire_name="fixed_rate"),
+    "host": ubx.FieldSpec(wire_name="host"),
+    "httpmethod": ubx.FieldSpec(wire_name="httpmethod"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "reservoir_size": ubx.FieldSpec(wire_name="reservoir_size"),
+    "resource_arn": ubx.FieldSpec(wire_name="resource_arn"),
+    "rule_arn": ubx.FieldSpec(wire_name="rule_arn"),
+    "rule_name": ubx.FieldSpec(wire_name="rule_name"),
+    "sampling_rate_boost": ubx.FieldSpec(
+        wire_name="sampling_rate_boost",
+        kind="object",
+        fields=_SamplingRule_SamplingRule_SamplingRateBoostFields,
+    ),
+    "service_name": ubx.FieldSpec(wire_name="service_name"),
+    "service_type": ubx.FieldSpec(wire_name="service_type"),
+    "urlpath": ubx.FieldSpec(wire_name="urlpath"),
+    "version": ubx.FieldSpec(wire_name="version"),
+}
+
+_SamplingRule_SamplingRuleRecordFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "sampling_rule": ubx.FieldSpec(
+        wire_name="sampling_rule",
+        kind="object",
+        fields=_SamplingRule_SamplingRuleFields,
+    ),
+}
+
+_SamplingRule_SamplingRuleUpdateFields = {
+    "attributes": ubx.FieldSpec(wire_name="attributes"),
+    "fixed_rate": ubx.FieldSpec(wire_name="fixed_rate"),
+    "host": ubx.FieldSpec(wire_name="host"),
+    "httpmethod": ubx.FieldSpec(wire_name="httpmethod"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "reservoir_size": ubx.FieldSpec(wire_name="reservoir_size"),
+    "resource_arn": ubx.FieldSpec(wire_name="resource_arn"),
+    "rule_arn": ubx.FieldSpec(wire_name="rule_arn"),
+    "rule_name": ubx.FieldSpec(wire_name="rule_name"),
+    "sampling_rate_boost": ubx.FieldSpec(
+        wire_name="sampling_rate_boost",
+        kind="object",
+        fields=_SamplingRule_SamplingRule_SamplingRateBoostFields,
+    ),
+    "service_name": ubx.FieldSpec(wire_name="service_name"),
+    "service_type": ubx.FieldSpec(wire_name="service_type"),
+    "urlpath": ubx.FieldSpec(wire_name="urlpath"),
+}
+
+_SamplingRule_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
+class SamplingRuleConfig:
+    # The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+    rule_name: Any = None
+    # This object defines the X-Ray sampling rule's configuration, including priority, reservoir size, fixed rate, and matching criteria such as host, service, HTTP method, URL path, resource ARN, and attributes. (AI-inferred)
+    sampling_rule: Any = None
+    # The sampling_rule_record field contains the complete sampling rule record, including the rule name, ARN, creation and modification timestamps, and the sampling rule's configuration details such as priority, reservoir size, and fixed rate. (AI-inferred)
+    sampling_rule_record: Any = None
+    # Sampling rule update configuration for an existing AWS X-Ray sampling rule, specifying the desired changes such as reservoir size, fixed rate, and rule attributes. (AI-inferred)
+    sampling_rule_update: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class SamplingRuleAttrs:
+    # The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+    rule_arn: Any = None
+    # The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+    rule_name: Any = None
+    # This object defines the X-Ray sampling rule's configuration, including priority, reservoir size, fixed rate, and matching criteria such as host, service, HTTP method, URL path, resource ARN, and attributes. (AI-inferred)
+    sampling_rule: Any = None
+    # The sampling_rule_record field contains the complete sampling rule record, including the rule name, ARN, creation and modification timestamps, and the sampling rule's configuration details such as priority, reservoir size, and fixed rate. (AI-inferred)
+    sampling_rule_record: Any = None
+    # Sampling rule update configuration for an existing AWS X-Ray sampling rule, specifying the desired changes such as reservoir size, fixed rate, and rule attributes. (AI-inferred)
+    sampling_rule_update: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 SamplingRule = ubx.ResourceBinding(
     wire_type="aws_xray_sampling_rule",
     fields={
-        "attributes": ubx.FieldSpec(wire_name="attributes"),
-        "fixed_rate": ubx.FieldSpec(wire_name="fixed_rate"),
-        "host": ubx.FieldSpec(wire_name="host"),
-        "http_method": ubx.FieldSpec(wire_name="http_method"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "priority": ubx.FieldSpec(wire_name="priority"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "reservoir_size": ubx.FieldSpec(wire_name="reservoir_size"),
-        "resource_arn": ubx.FieldSpec(wire_name="resource_arn"),
         "rule_name": ubx.FieldSpec(wire_name="rule_name"),
-        "service_name": ubx.FieldSpec(wire_name="service_name"),
-        "service_type": ubx.FieldSpec(wire_name="service_type"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "url_path": ubx.FieldSpec(wire_name="url_path"),
-        "version": ubx.FieldSpec(wire_name="version"),
+        "sampling_rule": ubx.FieldSpec(
+            wire_name="sampling_rule",
+            kind="object",
+            fields=_SamplingRule_SamplingRuleFields,
+        ),
+        "sampling_rule_record": ubx.FieldSpec(
+            wire_name="sampling_rule_record",
+            kind="object",
+            fields=_SamplingRule_SamplingRuleRecordFields,
+        ),
+        "sampling_rule_update": ubx.FieldSpec(
+            wire_name="sampling_rule_update",
+            kind="object",
+            fields=_SamplingRule_SamplingRuleUpdateFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_SamplingRule_TagsFields,
+        ),
     },
 )

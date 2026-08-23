@@ -7,100 +7,35 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Endpoint_DnsOptions:
-    dns_record_ip_type: Any = None
-    private_dns_only_for_inbound_resolver_endpoint: Any = None
-    private_dns_preference: Any = None
-    private_dns_specified_domains: Any = None
-
-@dataclasses.dataclass
-class Endpoint_SubnetConfiguration:
-    ipv4: Any = None
-    ipv6: Any = None
-    subnet_id: Any = None
-
-@dataclasses.dataclass
-class Endpoint_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_Endpoint_DnsOptionsFields = {
-    "dns_record_ip_type": ubx.FieldSpec(wire_name="dns_record_ip_type"),
-    "private_dns_only_for_inbound_resolver_endpoint": ubx.FieldSpec(wire_name="private_dns_only_for_inbound_resolver_endpoint"),
-    "private_dns_preference": ubx.FieldSpec(wire_name="private_dns_preference"),
-    "private_dns_specified_domains": ubx.FieldSpec(wire_name="private_dns_specified_domains"),
-}
-
-_Endpoint_SubnetConfigurationFields = {
-    "ipv4": ubx.FieldSpec(wire_name="ipv4"),
-    "ipv6": ubx.FieldSpec(wire_name="ipv6"),
-    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
-}
-
-_Endpoint_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
-
-@dataclasses.dataclass
 class EndpointConfig:
-    auto_accept: Any = None
-    id: Any = None
-    ip_address_type: Any = None
-    policy: Any = None
-    private_dns_enabled: Any = None
-    region: Any = None
-    resource_configuration_arn: Any = None
-    route_table_ids: Any = None
+    # The name of the VPC Endpoint
+    name: Any = None
+    # The ID of one or more security groups to associate with the endpoint network interface
     security_group_ids: Any = None
-    service_name: Any = None
-    service_network_arn: Any = None
-    service_region: Any = None
+    # The ID of one or more subnets in which to create an endpoint network interface
     subnet_ids: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    vpc_endpoint_type: Any = None
+    # The ID of the VPC in which the endpoint will be used.
     vpc_id: Any = None
-    dns_options: Any = None
-    subnet_configuration: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class EndpointAttrs:
+    # The identifier of the VPC Endpoint
+    id: Any = None
+    # The name of the VPC Endpoint
+    name: Any = None
+    # The ID of one or more security groups to associate with the endpoint network interface
+    security_group_ids: Any = None
+    # The ID of one or more subnets in which to create an endpoint network interface
+    subnet_ids: Any = None
+    # The ID of the VPC in which the endpoint will be used.
+    vpc_id: Any = None
 
 Endpoint = ubx.ResourceBinding(
     wire_type="aws_vpc_endpoint",
     fields={
-        "auto_accept": ubx.FieldSpec(wire_name="auto_accept"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "ip_address_type": ubx.FieldSpec(wire_name="ip_address_type"),
-        "policy": ubx.FieldSpec(wire_name="policy"),
-        "private_dns_enabled": ubx.FieldSpec(wire_name="private_dns_enabled"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "resource_configuration_arn": ubx.FieldSpec(wire_name="resource_configuration_arn"),
-        "route_table_ids": ubx.FieldSpec(wire_name="route_table_ids"),
+        "name": ubx.FieldSpec(wire_name="name"),
         "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
-        "service_name": ubx.FieldSpec(wire_name="service_name"),
-        "service_network_arn": ubx.FieldSpec(wire_name="service_network_arn"),
-        "service_region": ubx.FieldSpec(wire_name="service_region"),
         "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "vpc_endpoint_type": ubx.FieldSpec(wire_name="vpc_endpoint_type"),
         "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
-        "dns_options": ubx.FieldSpec(
-            wire_name="dns_options",
-            kind="list",
-            fields=_Endpoint_DnsOptionsFields,
-        ),
-        "subnet_configuration": ubx.FieldSpec(
-            wire_name="subnet_configuration",
-            kind="set",
-            fields=_Endpoint_SubnetConfigurationFields,
-        ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Endpoint_TimeoutsFields,
-        ),
     },
 )

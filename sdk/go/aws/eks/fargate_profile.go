@@ -3,37 +3,64 @@ package eks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type FargateProfile_Selector struct {
+type FargateProfile_Selectors_Labels struct {
+	// The key of a Kubernetes label pair used in the selector to match pods that will be scheduled on the Fargate profile. (AI-inferred)
+	Key any
+	// The value of a Kubernetes label, paired with its key in the selector’s labels map, that a pod must have to be eligible for scheduling on this Fargate profile. (AI-inferred)
+	Value any
+}
+
+type FargateProfile_Selectors struct {
+	// Specifies Kubernetes labels (key-value pairs) that the selector uses to match pods in the specified namespace for scheduling on Fargate. (AI-inferred)
 	Labels any
+	// The Kubernetes namespace that this selector matches; only pods running in this namespace are eligible to be scheduled onto Fargate. (AI-inferred)
 	Namespace any
 }
 
-type FargateProfile_Timeouts struct {
-	Create any
-	Delete any
-}
+var FargateProfile_Selectors_LabelsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
-var FargateProfile_SelectorFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+var FargateProfile_SelectorsFields = ubx.FieldMap{
+		"Labels": ubx.FieldSpec{
+			WireName: "labels",
+			Kind: "list",
+			Fields: FargateProfile_Selectors_LabelsFields,
+		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
 	}
 
-var FargateProfile_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
 type FargateProfileConfig struct {
+	// Name of the Cluster
 	ClusterName any
+	// Name of FargateProfile
 	FargateProfileName any
-	Id any
+	// The IAM policy arn for pods
 	PodExecutionRoleArn any
-	Region any
-	SubnetIds any
+	// Specifies the Kubernetes namespaces and label selectors that determine which pods are scheduled to run on Fargate using this profile. (AI-inferred)
+	Selectors any
+	// Specifies the list of subnet IDs where Amazon EKS launches Fargate pods for this profile; if omitted, the subnets selected for the EKS cluster are used. (AI-inferred)
+	Subnets any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
-	Selector any
-	Timeouts any
+}
+
+type FargateProfileAttrs struct {
+	// The Amazon Resource Name (ARN) of the Fargate profile. (AI-inferred)
+	Arn any
+	// Name of the Cluster
+	ClusterName any
+	// Name of FargateProfile
+	FargateProfileName any
+	// The IAM policy arn for pods
+	PodExecutionRoleArn any
+	// Specifies the Kubernetes namespaces and label selectors that determine which pods are scheduled to run on Fargate using this profile. (AI-inferred)
+	Selectors any
+	// Specifies the list of subnet IDs where Amazon EKS launches Fargate pods for this profile; if omitted, the subnets selected for the EKS cluster are used. (AI-inferred)
+	Subnets any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var FargateProfile = ubx.ResourceBinding{
@@ -41,21 +68,17 @@ var FargateProfile = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
 		"FargateProfileName": ubx.FieldSpec{WireName: "fargate_profile_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"PodExecutionRoleArn": ubx.FieldSpec{WireName: "pod_execution_role_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Selector": ubx.FieldSpec{
-			WireName: "selector",
-			Kind: "set",
-			Fields: FargateProfile_SelectorFields,
+		"Selectors": ubx.FieldSpec{
+			WireName: "selectors",
+			Kind: "list",
+			Fields: FargateProfile_SelectorsFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: FargateProfile_TimeoutsFields,
+		"Subnets": ubx.FieldSpec{WireName: "subnets"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: FargateProfile_Selectors_LabelsFields,
 		},
 	},
 }

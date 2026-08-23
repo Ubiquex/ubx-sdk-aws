@@ -7,38 +7,89 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class InstanceConnectEndpoint_Timeouts:
-    create: Any = None
-    delete: Any = None
+class InstanceConnectEndpoint_PublicDnsNames_Dualstack:
+    # The DNS name of the EC2 Instance Connect Endpoint.
+    dns_name: Any = None
+    # The Federal Information Processing Standards (FIPS) compliant DNS name of the EC2 Instance Connect Endpoint.
+    fips_dns_name: Any = None
 
-_InstanceConnectEndpoint_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+@dataclasses.dataclass
+class InstanceConnectEndpoint_PublicDnsNames:
+    # The DNS names of the endpoint.
+    dualstack: Any = None
+    # The DNS names of the endpoint.
+    ipv4: Any = None
+
+@dataclasses.dataclass
+class InstanceConnectEndpoint_Tags:
+    # The key of a tag attached to the EC2 Instance Connect Endpoint, used to identify, categorize, and filter the resource within AWS. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_InstanceConnectEndpoint_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class InstanceConnectEndpointConfig:
-    ip_address_type: Any = None
+    # The client token of the instance connect endpoint.
+    client_token: Any = None
+    # Indicates whether your client's IP address is preserved as the source when you connect to a resource.
     preserve_client_ip: Any = None
-    region: Any = None
+    # The security groups associated with the endpoint.
     security_group_ids: Any = None
+    # The ID of the subnet in which the EC2 Instance Connect Endpoint was created.
     subnet_id: Any = None
+    # The tags assigned to the EC2 Instance Connect Endpoint.
     tags: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class InstanceConnectEndpointAttrs:
+    # The Availability Zone of the EC2 Instance Connect Endpoint
+    availability_zone: Any = None
+    # The ID of the Availability Zone of the EC2 Instance Connect Endpoint
+    availability_zone_id: Any = None
+    # The client token of the instance connect endpoint.
+    client_token: Any = None
+    # The date and time that the EC2 Instance Connect Endpoint was created
+    created_at: Any = None
+    # The ID of the EC2 Instance Connect Endpoint.
+    id: Any = None
+    # The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint
+    instance_connect_endpoint_arn: Any = None
+    # The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint
+    network_interface_ids: Any = None
+    # The ID of the AWS account that created the EC2 Instance Connect Endpoint
+    owner_id: Any = None
+    # Indicates whether your client's IP address is preserved as the source when you connect to a resource.
+    preserve_client_ip: Any = None
+    # The public DNS names of the endpoint, including IPv4-only and dualstack DNS names.
+    public_dns_names: Any = None
+    # The security groups associated with the endpoint.
+    security_group_ids: Any = None
+    # The current state of the EC2 Instance Connect Endpoint
+    state: Any = None
+    # The message for the current state of the EC2 Instance Connect Endpoint. Can include a failure message
+    state_message: Any = None
+    # The ID of the subnet in which the EC2 Instance Connect Endpoint was created.
+    subnet_id: Any = None
+    # The tags assigned to the EC2 Instance Connect Endpoint.
+    tags: Any = None
+    # The ID of the VPC in which the EC2 Instance Connect Endpoint was created
+    vpc_id: Any = None
 
 InstanceConnectEndpoint = ubx.ResourceBinding(
     wire_type="aws_ec2_instance_connect_endpoint",
     fields={
-        "ip_address_type": ubx.FieldSpec(wire_name="ip_address_type"),
+        "client_token": ubx.FieldSpec(wire_name="client_token"),
         "preserve_client_ip": ubx.FieldSpec(wire_name="preserve_client_ip"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
         "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_InstanceConnectEndpoint_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_InstanceConnectEndpoint_TagsFields,
         ),
     },
 )

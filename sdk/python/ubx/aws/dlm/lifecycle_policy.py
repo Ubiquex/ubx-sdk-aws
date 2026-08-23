@@ -7,166 +7,276 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Action_CrossRegionCopy_EncryptionConfiguration:
+class LifecyclePolicy_CrossRegionCopyTargets:
+    # The destination AWS region to which the policy copies snapshots or AMIs as part of its cross-region copy action. (AI-inferred)
+    target_region: Any = None
+
+@dataclasses.dataclass
+class LifecyclePolicy_Exclusions_ExcludeTags:
+    # The tag key that, when present on a resource, excludes that resource from the DLM lifecycle policy's actions. (AI-inferred)
+    key: Any = None
+    # The tag value that, when paired with the corresponding tag key in an exclusion filter, causes matching resources to be excluded from the lifecycle policy's actions. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class LifecyclePolicy_Exclusions:
+    # When true, the lifecycle policy excludes boot volumes from its snapshot schedules, preventing snapshots from being created for EC2 instance boot volumes. (AI-inferred)
+    exclude_boot_volumes: Any = None
+    # The list of key-value tag pairs that, when matched on a resource, cause that resource to be excluded from the lifecycle policy. (AI-inferred)
+    exclude_tags: Any = None
+    # Specifies the EBS volume types (for example, gp2 or io1) that should be excluded from the lifecycle policy's snapshot or AMI creation actions. (AI-inferred)
+    exclude_volume_types: Any = None
+
+@dataclasses.dataclass
+class LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_EncryptionConfiguration:
+    # The ARN of the AWS KMS customer master key (CMK) used to encrypt snapshots copied to the destination region, defaulting to the region's default EBS encryption key if not specified. (AI-inferred)
     cmk_arn: Any = None
+    # Whether the cross-Region snapshot copies are encrypted, which when true uses the specified KMS key or an AWS managed key. (AI-inferred)
     encrypted: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Action_CrossRegionCopy_RetainRule:
+class LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRule:
+    # Specifies the retention period value for cross-region copied snapshots or AMIs, which combined with interval_unit determines how long they are kept in the destination region. (AI-inferred)
     interval: Any = None
+    # Specifies the unit of time (DAYS, WEEKS, MONTHS, or YEARS) for the retention interval of the cross-region copy action in the lifecycle policy. (AI-inferred)
     interval_unit: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Action_CrossRegionCopy:
-    target: Any = None
+class LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy:
+    # Specifies the encryption settings for snapshot copies created by the cross-region copy action, including whether the copied snapshots are encrypted and the ARN of the AWS KMS customer master key (CMK) to use for encryption. (AI-inferred)
     encryption_configuration: Any = None
+    # Specifies the retention rule for snapshots copied to the target region, defining either a retention interval (value and unit such as days, weeks, months, or years) or a maximum count of snapshots to retain. (AI-inferred)
     retain_rule: Any = None
+    # The AWS Region to which the resource is copied by this cross-region copy action in the DLM lifecycle policy. (AI-inferred)
+    target: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Action:
-    name: Any = None
+class LifecyclePolicy_PolicyDetails_Actions:
+    # Specifies the cross-Region copy action parameters that define how snapshots or AMIs are copied from the source Region to one or more target Regions as part of the lifecycle policy's action. (AI-inferred)
     cross_region_copy: Any = None
+    # Identifies the type of action to be performed by the DLM lifecycle policy, such as 'cross-region-copy', which determines the operation executed on the target resources. (AI-inferred)
+    name: Any = None
 
 @dataclasses.dataclass
 class LifecyclePolicy_PolicyDetails_EventSource_Parameters:
+    # A regular expression used to match the description of snapshots to trigger this event-based DLM lifecycle policy. (AI-inferred)
     description_regex: Any = None
+    # Specifies the type of event that triggers this event-based lifecycle policy, with `shareSnapshot` being the only supported value, meaning the policy runs when a snapshot is shared with your account. (AI-inferred)
     event_type: Any = None
+    # Specifies the AWS account IDs of the snapshot owners that can trigger the lifecycle policy when an event occurs (e.g., shared snapshot event) for an event-driven DLM policy. (AI-inferred)
     snapshot_owner: Any = None
 
 @dataclasses.dataclass
 class LifecyclePolicy_PolicyDetails_EventSource:
-    type: Any = None
+    # The parameters object of an event source in a DLM lifecycle policy, used when the event source type is MANAGED_CWE, contains a description that identifies the CloudWatch Events rule that triggers the event-based policy. (AI-inferred)
     parameters: Any = None
-
-@dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Exclusions:
-    exclude_boot_volumes: Any = None
-    exclude_tags: Any = None
-    exclude_volume_types: Any = None
+    # Specifies the type of event source for an event-based DLM lifecycle policy, where the only valid value is MANAGED_CWL to use Amazon CloudWatch Events. (AI-inferred)
+    type: Any = None
 
 @dataclasses.dataclass
 class LifecyclePolicy_PolicyDetails_Parameters:
+    # Indicates whether the boot volume of the instance is excluded from the EBS snapshots created by this lifecycle policy when the policy targets instances. (AI-inferred)
     exclude_boot_volume: Any = None
+    # A list of tag filters (key-value pairs) that identifies data volumes to exclude from the lifecycle policy's snapshot or AMI creation actions. (AI-inferred)
+    exclude_data_volume_tags: Any = None
+    # Indicates whether to skip rebooting the instance when creating snapshots, so a value of true prevents the typical reboot that occurs during snapshot creation. (AI-inferred)
     no_reboot: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Schedule_ArchiveRule_ArchiveRetainRule_RetentionArchiveTier:
+class LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTier:
+    # The number of snapshots to retain in the archive storage tier. (AI-inferred)
     count: Any = None
+    # Specifies the numeric value for how long snapshots are retained in the archive tier before deletion, paired with the interval_unit property to define the unit of time (e.g., days, weeks). (AI-inferred)
     interval: Any = None
+    # Specifies the unit of time (e.g., DAYS, WEEKS, MONTHS, YEARS) for the retention period of snapshots in the archive tier, used with the retention_archive_tier.interval value. (AI-inferred)
     interval_unit: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Schedule_ArchiveRule_ArchiveRetainRule:
+class LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule:
+    # Specifies the retention period for snapshots stored in the archive tier, either as a count of snapshots or as an interval with a unit (e.g., days), after which they expire. (AI-inferred)
     retention_archive_tier: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Schedule_ArchiveRule:
-    archive_retain_rule: Any = None
+class LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule:
+    # Specifies the retention duration for archived snapshots created by the containing archive rule, defining how long they are kept before being expired. (AI-inferred)
+    retain_rule: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Schedule_CreateRule_Scripts:
+class LifecyclePolicy_PolicyDetails_Schedules_CreateRule_Scripts:
+    # Determines whether the DLM lifecycle policy should proceed with the snapshot creation operation even if this script fails to execute successfully. (AI-inferred)
     execute_operation_on_script_failure: Any = None
+    # Specifies the ARN of the AWS Lambda function or the name of an AWS Systems Manager document that acts as the execution handler for the script configured in this DLM lifecycle policy schedule, enabling custom pre-snapshot or post-snapshot actions. (AI-inferred)
     execution_handler: Any = None
+    # Specifies the AWS service that executes the script (for example, AWS Systems Manager) when the create rule triggers snapshot creation in a DLM lifecycle policy. (AI-inferred)
     execution_handler_service: Any = None
+    # Sets the maximum time in seconds that AWS Data Lifecycle Manager waits for the script (a Systems Manager automation document) to finish executing before declaring the pre/post snapshot action a failure, applied per script in the create rule of the lifecycle policy schedule. (AI-inferred)
     execution_timeout: Any = None
+    # Specifies the maximum number of times AWS DLM will retry a script (defined in the schedule's create rule) after it fails before marking the script execution as failed. (AI-inferred)
     maximum_retry_count: Any = None
+    # Specifies the stage(s) during the EBS snapshot creation process at which the script should run, with allowed values 'pre' and 'post'. (AI-inferred)
     stages: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Schedule_CreateRule:
+class LifecyclePolicy_PolicyDetails_Schedules_CreateRule:
+    # The cron expression that specifies when this create rule triggers snapshot or AMI creation in the DLM lifecycle policy. (AI-inferred)
     cron_expression: Any = None
+    # Specifies how often the lifecycle policy creates snapshots; for example, a value of 12 with an interval_unit of 'hours' creates snapshots every 12 hours, and it must be paired with the interval_unit property to define the schedule frequency. (AI-inferred)
     interval: Any = None
+    # For the create rule of a schedule, this field sets the time unit (HOURS or DAYS) that the interval value uses to control how often AWS Data Lifecycle Manager creates snapshots or AMIs. (AI-inferred)
     interval_unit: Any = None
+    # Specifies whether the lifecycle policy creates snapshots of resources in the AWS Cloud (CLOUD) or on AWS Outposts (OUTPOST). (AI-inferred)
     location: Any = None
-    times: Any = None
     scripts: Any = None
+    # Specifies the times in UTC (formatted as HH:00) at which the lifecycle policy creates snapshots according to this schedule. (AI-inferred)
+    times: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Schedule_CrossRegionCopyRule:
+class LifecyclePolicy_PolicyDetails_Schedules_CrossRegionCopyRules:
+    # The ARN of the AWS KMS customer master key (CMK) used to encrypt the EBS snapshots or AMIs copied to the target region under this cross-region copy rule in the DLM lifecycle policy. (AI-inferred)
     cmk_arn: Any = None
+    # Indicates whether to copy all user-defined tags from the source EBS snapshot (or AMI) to the cross-region copied snapshot (or AMI). (AI-inferred)
     copy_tags: Any = None
-    encrypted: Any = None
-    target: Any = None
-    target_region: Any = None
+    # Specifies the interval and interval unit after which the cross-region copied AMIs are deprecated in the target Region. (AI-inferred)
     deprecate_rule: Any = None
+    # Specifies whether snapshots copied to the target region by this cross-region copy rule are encrypted. (AI-inferred)
+    encrypted: Any = None
+    # Defines the retention behavior for snapshots copied to the destination region, specifying either a time-based interval (with unit such as days, weeks, months, or years) or a maximum count of snapshots to retain. (AI-inferred)
     retain_rule: Any = None
+    # The destination AWS Region to which the snapshot or AMI is copied, specified as a Region name (e.g., us-east-1) in the cross-Region copy rule. (AI-inferred)
+    target: Any = None
+    # The destination AWS Region to which snapshots or AMIs are copied by this cross-Region copy rule. (AI-inferred)
+    target_region: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Schedule_FastRestoreRule:
+class LifecyclePolicy_PolicyDetails_Schedules_FastRestoreRule:
+    # Specifies the list of Availability Zones in which to enable fast snapshot restore for snapshots created by this schedule. (AI-inferred)
+    availability_zone_ids: Any = None
+    # Specifies the Availability Zones in which fast snapshot restore is enabled for snapshots created by this schedule. (AI-inferred)
     availability_zones: Any = None
+    # The number of snapshots to enable Fast Snapshot Restore on for this schedule's fast restore rule in the DLM lifecycle policy. (AI-inferred)
     count: Any = None
+    # Specifies the interval number, paired with the interval unit, that determines how frequently the lifecycle policy enables fast snapshot restore for snapshots taken under this schedule, used as an alternative to the count parameter. (AI-inferred)
     interval: Any = None
+    # The unit of time (DAYS or WEEKS) for the interval during which snapshots created by this schedule will have fast snapshot restore enabled. (AI-inferred)
     interval_unit: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Schedule_ShareRule:
+class LifecyclePolicy_PolicyDetails_Schedules_ShareRules:
+    # Specifies the AWS account IDs to which snapshots created by this schedule are shared, as defined in the share rules of the lifecycle policy. (AI-inferred)
     target_accounts: Any = None
+    # Specifies the numeric interval, paired with the associated unit, after which DLM automatically unshares snapshots or AMIs that were shared with the target accounts in this share rule. (AI-inferred)
     unshare_interval: Any = None
+    # The unit of time (DAYS or WEEKS) used with the unshare interval to determine how frequently snapshots are unshared from other accounts in the lifecycle policy's share rule. (AI-inferred)
     unshare_interval_unit: Any = None
 
 @dataclasses.dataclass
-class LifecyclePolicy_PolicyDetails_Schedule:
-    copy_tags: Any = None
-    name: Any = None
-    tags_to_add: Any = None
-    variable_tags: Any = None
+class LifecyclePolicy_PolicyDetails_Schedules:
+    # Defines the archive rule for this schedule, specifying how long snapshots are retained in the Amazon EBS Archive tier (e.g., the number of days to keep them archived) before deletion. (AI-inferred)
     archive_rule: Any = None
+    # Copies all user-defined tags from the source snapshot to the snapshots created by this schedule. (AI-inferred)
+    copy_tags: Any = None
+    # Defines when the schedule triggers resource creation (e.g., EBS snapshots or AMIs), typically via a recurring interval or a cron expression. (AI-inferred)
     create_rule: Any = None
-    cross_region_copy_rule: Any = None
+    # Configures the rules for copying snapshots to other AWS Regions as part of this schedule, including destination region, encryption, and retention settings. (AI-inferred)
+    cross_region_copy_rules: Any = None
+    # Defines when AMIs created by this schedule are automatically deprecated, either by specifying a maximum retained count or a time-based interval (e.g., days) after which the AMI is deprecated. (AI-inferred)
     deprecate_rule: Any = None
+    # Configures the fast snapshot restore rule for this schedule, specifying the Availability Zones in which to enable fast snapshot restore and the number of snapshots (or time interval) for which fast restore is retained, allowing EBS snapshots to be restored quickly in those zones. (AI-inferred)
     fast_restore_rule: Any = None
+    # The name of the DLM lifecycle policy schedule, which must be unique among all schedules in the policy and is used to reference the schedule in associated tags and rules. (AI-inferred)
+    name: Any = None
+    # Specifies the retention rule for snapshots or AMIs created by this schedule, controlling whether to keep a maximum count or retain for a specific interval (in days or years) before deletion. (AI-inferred)
     retain_rule: Any = None
-    share_rule: Any = None
+    # Specifies the rules for sharing snapshots created by this schedule with other AWS accounts, including target account IDs and the interval for unsharing them. (AI-inferred)
+    share_rules: Any = None
+    # Specifies the tags to apply to the snapshots or AMIs created by this schedule, allowing you to organize and identify the resources created by the lifecycle policy. (AI-inferred)
+    tags_to_add: Any = None
+    # Specifies a list of tags with variable placeholders that are applied to the snapshots or AMIs created when the schedule triggers, where tag values can use DLM-supported variables such as $(instance-id), $(timestamp), or $(uuid) and are replaced with actual resource information at execution time. (AI-inferred)
+    variable_tags: Any = None
 
 @dataclasses.dataclass
 class LifecyclePolicy_PolicyDetails:
+    # Specifies the list of actions, each containing a name and cross-Region copy settings, that an event-based DLM lifecycle policy executes when its configured event is triggered. (AI-inferred)
+    actions: Any = None
+    # Indicates whether to copy all user-defined tags from the source snapshot to the target snapshots created by the lifecycle policy. (AI-inferred)
     copy_tags: Any = None
+    # The create_interval determines how often the Data Lifecycle Manager policy creates snapshots or AMIs, specified in hours for EBS snapshot policies (1–24) and in days for EBS-backed AMI policies (1–7). (AI-inferred)
     create_interval: Any = None
+    # Defines the list of destination Regions to which snapshots or AMIs are copied, along with per-target encryption and retention settings. (AI-inferred)
+    cross_region_copy_targets: Any = None
+    # Defines the event source that triggers an event-based lifecycle policy, such as a CloudWatch Events rule, including its type (e.g., MANAGED_CWS_EVENT) and parameters like event type and snapshot owner. (AI-inferred)
+    event_source: Any = None
+    # Defines the exclusions for the lifecycle policy, which identify specific resources or resource types (such as volumes with certain tags or specific volume types) that should not be affected by the policy. (AI-inferred)
+    exclusions: Any = None
     extend_deletion: Any = None
+    # Specifies optional parameters, such as ExcludeBootVolume or NoReboot, that modify the behavior of the lifecycle policy's snapshot creation operations. (AI-inferred)
+    parameters: Any = None
+    # Specifies the policy language format, either SIMPLIFIED or STANDARD, which determines how resource types and actions are expressed in the policy. (AI-inferred)
     policy_language: Any = None
+    # Specifies the type of lifecycle policy, which can be EBS_SNAPSHOT_MANAGEMENT to manage EBS snapshots, IMAGE_MANAGEMENT to manage EBS-backed AMIs, or EVENT_BASED to trigger on Amazon CloudWatch events. (AI-inferred)
     policy_type: Any = None
+    # Specifies the target resource locations for the lifecycle policy, allowing values like 'CLOUD' for resources in the AWS cloud and 'OUTPOST' for resources on an AWS Outpost. (AI-inferred)
     resource_locations: Any = None
+    # Specifies the type of AWS resource (either 'VOLUME' or 'INSTANCE') that a DLM lifecycle policy targets, determining whether the policy creates EBS snapshots or AMIs. (AI-inferred)
     resource_type: Any = None
+    # The types of resources (such as VOLUME or INSTANCE) that this lifecycle policy will manage and snapshot. (AI-inferred)
     resource_types: Any = None
     retain_interval: Any = None
+    # Defines the schedule(s) that specify when to create Amazon EBS snapshots (or AMIs) and how long to retain them under this lifecycle policy. (AI-inferred)
+    schedules: Any = None
+    # Tags that identify the resources the lifecycle policy will manage; the policy applies to resources that have all these tags. (AI-inferred)
     target_tags: Any = None
-    action: Any = None
-    event_source: Any = None
-    exclusions: Any = None
-    parameters: Any = None
-    schedule: Any = None
 
-_LifecyclePolicy_PolicyDetails_Action_CrossRegionCopy_EncryptionConfigurationFields = {
+_LifecyclePolicy_CrossRegionCopyTargetsFields = {
+    "target_region": ubx.FieldSpec(wire_name="target_region"),
+}
+
+_LifecyclePolicy_Exclusions_ExcludeTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_LifecyclePolicy_ExclusionsFields = {
+    "exclude_boot_volumes": ubx.FieldSpec(wire_name="exclude_boot_volumes"),
+    "exclude_tags": ubx.FieldSpec(
+        wire_name="exclude_tags",
+        kind="list",
+        fields=_LifecyclePolicy_Exclusions_ExcludeTagsFields,
+    ),
+    "exclude_volume_types": ubx.FieldSpec(wire_name="exclude_volume_types"),
+}
+
+_LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_EncryptionConfigurationFields = {
     "cmk_arn": ubx.FieldSpec(wire_name="cmk_arn"),
     "encrypted": ubx.FieldSpec(wire_name="encrypted"),
 }
 
-_LifecyclePolicy_PolicyDetails_Action_CrossRegionCopy_RetainRuleFields = {
+_LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRuleFields = {
     "interval": ubx.FieldSpec(wire_name="interval"),
     "interval_unit": ubx.FieldSpec(wire_name="interval_unit"),
 }
 
-_LifecyclePolicy_PolicyDetails_Action_CrossRegionCopyFields = {
-    "target": ubx.FieldSpec(wire_name="target"),
+_LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopyFields = {
     "encryption_configuration": ubx.FieldSpec(
         wire_name="encryption_configuration",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Action_CrossRegionCopy_EncryptionConfigurationFields,
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_EncryptionConfigurationFields,
     ),
     "retain_rule": ubx.FieldSpec(
         wire_name="retain_rule",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Action_CrossRegionCopy_RetainRuleFields,
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRuleFields,
     ),
+    "target": ubx.FieldSpec(wire_name="target"),
 }
 
-_LifecyclePolicy_PolicyDetails_ActionFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
+_LifecyclePolicy_PolicyDetails_ActionsFields = {
     "cross_region_copy": ubx.FieldSpec(
         wire_name="cross_region_copy",
-        kind="set",
-        fields=_LifecyclePolicy_PolicyDetails_Action_CrossRegionCopyFields,
+        kind="list",
+        fields=_LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopyFields,
     ),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _LifecyclePolicy_PolicyDetails_EventSource_ParametersFields = {
@@ -176,48 +286,47 @@ _LifecyclePolicy_PolicyDetails_EventSource_ParametersFields = {
 }
 
 _LifecyclePolicy_PolicyDetails_EventSourceFields = {
-    "type": ubx.FieldSpec(wire_name="type"),
     "parameters": ubx.FieldSpec(
         wire_name="parameters",
-        kind="list",
+        kind="object",
         fields=_LifecyclePolicy_PolicyDetails_EventSource_ParametersFields,
     ),
-}
-
-_LifecyclePolicy_PolicyDetails_ExclusionsFields = {
-    "exclude_boot_volumes": ubx.FieldSpec(wire_name="exclude_boot_volumes"),
-    "exclude_tags": ubx.FieldSpec(wire_name="exclude_tags"),
-    "exclude_volume_types": ubx.FieldSpec(wire_name="exclude_volume_types"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _LifecyclePolicy_PolicyDetails_ParametersFields = {
     "exclude_boot_volume": ubx.FieldSpec(wire_name="exclude_boot_volume"),
+    "exclude_data_volume_tags": ubx.FieldSpec(
+        wire_name="exclude_data_volume_tags",
+        kind="list",
+        fields=_LifecyclePolicy_Exclusions_ExcludeTagsFields,
+    ),
     "no_reboot": ubx.FieldSpec(wire_name="no_reboot"),
 }
 
-_LifecyclePolicy_PolicyDetails_Schedule_ArchiveRule_ArchiveRetainRule_RetentionArchiveTierFields = {
+_LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTierFields = {
     "count": ubx.FieldSpec(wire_name="count"),
     "interval": ubx.FieldSpec(wire_name="interval"),
     "interval_unit": ubx.FieldSpec(wire_name="interval_unit"),
 }
 
-_LifecyclePolicy_PolicyDetails_Schedule_ArchiveRule_ArchiveRetainRuleFields = {
+_LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRuleFields = {
     "retention_archive_tier": ubx.FieldSpec(
         wire_name="retention_archive_tier",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Schedule_ArchiveRule_ArchiveRetainRule_RetentionArchiveTierFields,
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTierFields,
     ),
 }
 
-_LifecyclePolicy_PolicyDetails_Schedule_ArchiveRuleFields = {
-    "archive_retain_rule": ubx.FieldSpec(
-        wire_name="archive_retain_rule",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Schedule_ArchiveRule_ArchiveRetainRuleFields,
+_LifecyclePolicy_PolicyDetails_Schedules_ArchiveRuleFields = {
+    "retain_rule": ubx.FieldSpec(
+        wire_name="retain_rule",
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRuleFields,
     ),
 }
 
-_LifecyclePolicy_PolicyDetails_Schedule_CreateRule_ScriptsFields = {
+_LifecyclePolicy_PolicyDetails_Schedules_CreateRule_ScriptsFields = {
     "execute_operation_on_script_failure": ubx.FieldSpec(wire_name="execute_operation_on_script_failure"),
     "execution_handler": ubx.FieldSpec(wire_name="execution_handler"),
     "execution_handler_service": ubx.FieldSpec(wire_name="execution_handler_service"),
@@ -226,157 +335,232 @@ _LifecyclePolicy_PolicyDetails_Schedule_CreateRule_ScriptsFields = {
     "stages": ubx.FieldSpec(wire_name="stages"),
 }
 
-_LifecyclePolicy_PolicyDetails_Schedule_CreateRuleFields = {
+_LifecyclePolicy_PolicyDetails_Schedules_CreateRuleFields = {
     "cron_expression": ubx.FieldSpec(wire_name="cron_expression"),
     "interval": ubx.FieldSpec(wire_name="interval"),
     "interval_unit": ubx.FieldSpec(wire_name="interval_unit"),
     "location": ubx.FieldSpec(wire_name="location"),
-    "times": ubx.FieldSpec(wire_name="times"),
     "scripts": ubx.FieldSpec(
         wire_name="scripts",
         kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Schedule_CreateRule_ScriptsFields,
+        fields=_LifecyclePolicy_PolicyDetails_Schedules_CreateRule_ScriptsFields,
     ),
+    "times": ubx.FieldSpec(wire_name="times"),
 }
 
-_LifecyclePolicy_PolicyDetails_Schedule_CrossRegionCopyRuleFields = {
+_LifecyclePolicy_PolicyDetails_Schedules_CrossRegionCopyRulesFields = {
     "cmk_arn": ubx.FieldSpec(wire_name="cmk_arn"),
     "copy_tags": ubx.FieldSpec(wire_name="copy_tags"),
-    "encrypted": ubx.FieldSpec(wire_name="encrypted"),
-    "target": ubx.FieldSpec(wire_name="target"),
-    "target_region": ubx.FieldSpec(wire_name="target_region"),
     "deprecate_rule": ubx.FieldSpec(
         wire_name="deprecate_rule",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Action_CrossRegionCopy_RetainRuleFields,
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRuleFields,
     ),
+    "encrypted": ubx.FieldSpec(wire_name="encrypted"),
     "retain_rule": ubx.FieldSpec(
         wire_name="retain_rule",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Action_CrossRegionCopy_RetainRuleFields,
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRuleFields,
     ),
+    "target": ubx.FieldSpec(wire_name="target"),
+    "target_region": ubx.FieldSpec(wire_name="target_region"),
 }
 
-_LifecyclePolicy_PolicyDetails_Schedule_FastRestoreRuleFields = {
+_LifecyclePolicy_PolicyDetails_Schedules_FastRestoreRuleFields = {
+    "availability_zone_ids": ubx.FieldSpec(wire_name="availability_zone_ids"),
     "availability_zones": ubx.FieldSpec(wire_name="availability_zones"),
     "count": ubx.FieldSpec(wire_name="count"),
     "interval": ubx.FieldSpec(wire_name="interval"),
     "interval_unit": ubx.FieldSpec(wire_name="interval_unit"),
 }
 
-_LifecyclePolicy_PolicyDetails_Schedule_ShareRuleFields = {
+_LifecyclePolicy_PolicyDetails_Schedules_ShareRulesFields = {
     "target_accounts": ubx.FieldSpec(wire_name="target_accounts"),
     "unshare_interval": ubx.FieldSpec(wire_name="unshare_interval"),
     "unshare_interval_unit": ubx.FieldSpec(wire_name="unshare_interval_unit"),
 }
 
-_LifecyclePolicy_PolicyDetails_ScheduleFields = {
-    "copy_tags": ubx.FieldSpec(wire_name="copy_tags"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "tags_to_add": ubx.FieldSpec(wire_name="tags_to_add"),
-    "variable_tags": ubx.FieldSpec(wire_name="variable_tags"),
+_LifecyclePolicy_PolicyDetails_SchedulesFields = {
     "archive_rule": ubx.FieldSpec(
         wire_name="archive_rule",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Schedule_ArchiveRuleFields,
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_Schedules_ArchiveRuleFields,
     ),
+    "copy_tags": ubx.FieldSpec(wire_name="copy_tags"),
     "create_rule": ubx.FieldSpec(
         wire_name="create_rule",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Schedule_CreateRuleFields,
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_Schedules_CreateRuleFields,
     ),
-    "cross_region_copy_rule": ubx.FieldSpec(
-        wire_name="cross_region_copy_rule",
-        kind="set",
-        fields=_LifecyclePolicy_PolicyDetails_Schedule_CrossRegionCopyRuleFields,
+    "cross_region_copy_rules": ubx.FieldSpec(
+        wire_name="cross_region_copy_rules",
+        kind="list",
+        fields=_LifecyclePolicy_PolicyDetails_Schedules_CrossRegionCopyRulesFields,
     ),
     "deprecate_rule": ubx.FieldSpec(
         wire_name="deprecate_rule",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Schedule_ArchiveRule_ArchiveRetainRule_RetentionArchiveTierFields,
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTierFields,
     ),
     "fast_restore_rule": ubx.FieldSpec(
         wire_name="fast_restore_rule",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Schedule_FastRestoreRuleFields,
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_Schedules_FastRestoreRuleFields,
     ),
+    "name": ubx.FieldSpec(wire_name="name"),
     "retain_rule": ubx.FieldSpec(
         wire_name="retain_rule",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Schedule_ArchiveRule_ArchiveRetainRule_RetentionArchiveTierFields,
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTierFields,
     ),
-    "share_rule": ubx.FieldSpec(
-        wire_name="share_rule",
+    "share_rules": ubx.FieldSpec(
+        wire_name="share_rules",
         kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_Schedule_ShareRuleFields,
+        fields=_LifecyclePolicy_PolicyDetails_Schedules_ShareRulesFields,
+    ),
+    "tags_to_add": ubx.FieldSpec(
+        wire_name="tags_to_add",
+        kind="list",
+        fields=_LifecyclePolicy_Exclusions_ExcludeTagsFields,
+    ),
+    "variable_tags": ubx.FieldSpec(
+        wire_name="variable_tags",
+        kind="list",
+        fields=_LifecyclePolicy_Exclusions_ExcludeTagsFields,
     ),
 }
 
 _LifecyclePolicy_PolicyDetailsFields = {
+    "actions": ubx.FieldSpec(
+        wire_name="actions",
+        kind="list",
+        fields=_LifecyclePolicy_PolicyDetails_ActionsFields,
+    ),
     "copy_tags": ubx.FieldSpec(wire_name="copy_tags"),
     "create_interval": ubx.FieldSpec(wire_name="create_interval"),
+    "cross_region_copy_targets": ubx.FieldSpec(
+        wire_name="cross_region_copy_targets",
+        kind="list",
+        fields=_LifecyclePolicy_CrossRegionCopyTargetsFields,
+    ),
+    "event_source": ubx.FieldSpec(
+        wire_name="event_source",
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_EventSourceFields,
+    ),
+    "exclusions": ubx.FieldSpec(
+        wire_name="exclusions",
+        kind="object",
+        fields=_LifecyclePolicy_ExclusionsFields,
+    ),
     "extend_deletion": ubx.FieldSpec(wire_name="extend_deletion"),
+    "parameters": ubx.FieldSpec(
+        wire_name="parameters",
+        kind="object",
+        fields=_LifecyclePolicy_PolicyDetails_ParametersFields,
+    ),
     "policy_language": ubx.FieldSpec(wire_name="policy_language"),
     "policy_type": ubx.FieldSpec(wire_name="policy_type"),
     "resource_locations": ubx.FieldSpec(wire_name="resource_locations"),
     "resource_type": ubx.FieldSpec(wire_name="resource_type"),
     "resource_types": ubx.FieldSpec(wire_name="resource_types"),
     "retain_interval": ubx.FieldSpec(wire_name="retain_interval"),
-    "target_tags": ubx.FieldSpec(wire_name="target_tags"),
-    "action": ubx.FieldSpec(
-        wire_name="action",
+    "schedules": ubx.FieldSpec(
+        wire_name="schedules",
         kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_ActionFields,
+        fields=_LifecyclePolicy_PolicyDetails_SchedulesFields,
     ),
-    "event_source": ubx.FieldSpec(
-        wire_name="event_source",
+    "target_tags": ubx.FieldSpec(
+        wire_name="target_tags",
         kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_EventSourceFields,
-    ),
-    "exclusions": ubx.FieldSpec(
-        wire_name="exclusions",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_ExclusionsFields,
-    ),
-    "parameters": ubx.FieldSpec(
-        wire_name="parameters",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_ParametersFields,
-    ),
-    "schedule": ubx.FieldSpec(
-        wire_name="schedule",
-        kind="list",
-        fields=_LifecyclePolicy_PolicyDetails_ScheduleFields,
+        fields=_LifecyclePolicy_Exclusions_ExcludeTagsFields,
     ),
 }
 
 @dataclasses.dataclass
 class LifecyclePolicyConfig:
+    # Indicates whether to copy tags from the source EBS volume to the snapshots created by this lifecycle policy. (AI-inferred)
+    copy_tags: Any = None
+    # The interval (in hours or days) between automatic EBS snapshot creations for a schedule in the DLM lifecycle policy, controlled by the associated interval unit. (AI-inferred)
+    create_interval: Any = None
+    # Defines the destination regions and their encryption configurations (including optional KMS key ARN) to which snapshots or AMIs created by this DLM lifecycle policy are copied. (AI-inferred)
+    cross_region_copy_targets: Any = None
     default_policy: Any = None
+    # A user-provided descriptive text that identifies the purpose and details of the DLM lifecycle policy, helping to distinguish it from other policies in the AWS account. (AI-inferred)
     description: Any = None
+    # Specifies the tags and resource types that exclude matching resources from the lifecycle policy, preventing automatic snapshots or AMI creation for those resources. (AI-inferred)
+    exclusions: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role that AWS Data Lifecycle Manager assumes to create snapshots and manage the lifecycle of the target resources. (AI-inferred)
     execution_role_arn: Any = None
-    id: Any = None
-    region: Any = None
-    state: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    extend_deletion: Any = None
+    # This object defines the core configuration of the DLM lifecycle policy, specifying the resource type (e.g., EBS snapshots or AMIs), target resource tags, state, and the schedules with their associated actions, such as creating, retaining, and deleting snapshots or AMIs. (AI-inferred)
     policy_details: Any = None
+    # The numeric interval for retaining snapshots in a DLM lifecycle policy schedule, working with `retain_interval_unit` to define the duration (e.g., number of days, weeks, months, or years). (AI-inferred)
+    retain_interval: Any = None
+    # Specifies whether the lifecycle policy is set to ENABLED or DISABLED, controlling whether the policy is active and can create snapshots. (AI-inferred)
+    state: Any = None
+    # This field defines the user-defined tags to attach to the lifecycle policy, which can be used to organize, identify, and manage the policy through cost allocation and resource tagging. (AI-inferred)
+    tags: Any = None
+
+@dataclasses.dataclass
+class LifecyclePolicyAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies this DLM lifecycle policy. (AI-inferred)
+    arn: Any = None
+    # Indicates whether to copy tags from the source EBS volume to the snapshots created by this lifecycle policy. (AI-inferred)
+    copy_tags: Any = None
+    # The interval (in hours or days) between automatic EBS snapshot creations for a schedule in the DLM lifecycle policy, controlled by the associated interval unit. (AI-inferred)
+    create_interval: Any = None
+    # Defines the destination regions and their encryption configurations (including optional KMS key ARN) to which snapshots or AMIs created by this DLM lifecycle policy are copied. (AI-inferred)
+    cross_region_copy_targets: Any = None
+    default_policy: Any = None
+    # A user-provided descriptive text that identifies the purpose and details of the DLM lifecycle policy, helping to distinguish it from other policies in the AWS account. (AI-inferred)
+    description: Any = None
+    # Specifies the tags and resource types that exclude matching resources from the lifecycle policy, preventing automatic snapshots or AMI creation for those resources. (AI-inferred)
+    exclusions: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role that AWS Data Lifecycle Manager assumes to create snapshots and manage the lifecycle of the target resources. (AI-inferred)
+    execution_role_arn: Any = None
+    extend_deletion: Any = None
+    # The unique identifier assigned by AWS to the DLM lifecycle policy. (AI-inferred)
+    id: Any = None
+    # This object defines the core configuration of the DLM lifecycle policy, specifying the resource type (e.g., EBS snapshots or AMIs), target resource tags, state, and the schedules with their associated actions, such as creating, retaining, and deleting snapshots or AMIs. (AI-inferred)
+    policy_details: Any = None
+    # The numeric interval for retaining snapshots in a DLM lifecycle policy schedule, working with `retain_interval_unit` to define the duration (e.g., number of days, weeks, months, or years). (AI-inferred)
+    retain_interval: Any = None
+    # Specifies whether the lifecycle policy is set to ENABLED or DISABLED, controlling whether the policy is active and can create snapshots. (AI-inferred)
+    state: Any = None
+    # This field defines the user-defined tags to attach to the lifecycle policy, which can be used to organize, identify, and manage the policy through cost allocation and resource tagging. (AI-inferred)
+    tags: Any = None
 
 LifecyclePolicy = ubx.ResourceBinding(
     wire_type="aws_dlm_lifecycle_policy",
     fields={
+        "copy_tags": ubx.FieldSpec(wire_name="copy_tags"),
+        "create_interval": ubx.FieldSpec(wire_name="create_interval"),
+        "cross_region_copy_targets": ubx.FieldSpec(
+            wire_name="cross_region_copy_targets",
+            kind="list",
+            fields=_LifecyclePolicy_CrossRegionCopyTargetsFields,
+        ),
         "default_policy": ubx.FieldSpec(wire_name="default_policy"),
         "description": ubx.FieldSpec(wire_name="description"),
+        "exclusions": ubx.FieldSpec(
+            wire_name="exclusions",
+            kind="object",
+            fields=_LifecyclePolicy_ExclusionsFields,
+        ),
         "execution_role_arn": ubx.FieldSpec(wire_name="execution_role_arn"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "extend_deletion": ubx.FieldSpec(wire_name="extend_deletion"),
         "policy_details": ubx.FieldSpec(
             wire_name="policy_details",
-            kind="list",
+            kind="object",
             fields=_LifecyclePolicy_PolicyDetailsFields,
+        ),
+        "retain_interval": ubx.FieldSpec(wire_name="retain_interval"),
+        "state": ubx.FieldSpec(wire_name="state"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_LifecyclePolicy_Exclusions_ExcludeTagsFields,
         ),
     },
 )

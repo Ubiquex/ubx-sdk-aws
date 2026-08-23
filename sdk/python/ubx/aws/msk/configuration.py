@@ -7,22 +7,46 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ConfigurationConfig:
+class Configuration_LatestRevision:
+    # Creation time of the latest revision of the MSK configuration, returned as an RFC3339 timestamp string. (AI-inferred)
+    creation_time: Any = None
+    # The description of the latest revision of this Amazon MSK configuration, which is an optional user-defined string. (AI-inferred)
     description: Any = None
-    id: Any = None
-    kafka_versions: Any = None
+    # The revision number of the latest version of the MSK configuration, incremented each time the configuration is updated. (AI-inferred)
+    revision: Any = None
+
+@dataclasses.dataclass
+class ConfigurationConfig:
+    # A user-friendly description of the MSK configuration. (AI-inferred)
+    description: Any = None
+    # Defines the list of Apache Kafka versions that this MSK configuration supports, restricting its use to clusters running one of the specified versions. (AI-inferred)
+    kafka_versions_list: Any = None
+    # The name of the MSK configuration, which must be unique within an AWS account and Region. (AI-inferred)
     name: Any = None
-    region: Any = None
+    # Specifies the Apache Kafka server properties for this MSK configuration, supplied as a string of newline-separated `key=value` pairs that define broker settings such as `auto.create.topics.enable`. (AI-inferred)
+    server_properties: Any = None
+
+@dataclasses.dataclass
+class ConfigurationAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies this MSK configuration. (AI-inferred)
+    arn: Any = None
+    # A user-friendly description of the MSK configuration. (AI-inferred)
+    description: Any = None
+    # Defines the list of Apache Kafka versions that this MSK configuration supports, restricting its use to clusters running one of the specified versions. (AI-inferred)
+    kafka_versions_list: Any = None
+    # Provides details about the latest revision of the MSK configuration, including its revision number, creation time, and description. (AI-inferred)
+    latest_revision: Any = None
+    # The name of the MSK configuration, which must be unique within an AWS account and Region. (AI-inferred)
+    name: Any = None
+    # Specifies the Apache Kafka server properties for this MSK configuration, supplied as a string of newline-separated `key=value` pairs that define broker settings such as `auto.create.topics.enable`. (AI-inferred)
     server_properties: Any = None
 
 Configuration = ubx.ResourceBinding(
     wire_type="aws_msk_configuration",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kafka_versions": ubx.FieldSpec(wire_name="kafka_versions"),
+        "kafka_versions_list": ubx.FieldSpec(wire_name="kafka_versions_list"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "server_properties": ubx.FieldSpec(wire_name="server_properties"),
     },
 )

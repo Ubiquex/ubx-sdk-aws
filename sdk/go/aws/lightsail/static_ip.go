@@ -4,16 +4,29 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StaticIpConfig struct {
-	Id any
-	Name any
-	Region any
+	// The instance where the static IP is attached.
+	AttachedTo any
+	// The name of the static IP address.
+	StaticIpName any
+}
+
+type StaticIpAttrs struct {
+	// The instance where the static IP is attached.
+	AttachedTo any
+	// The static IP address.
+	IpAddress any
+	// A Boolean value indicating whether the static IP is attached.
+	IsAttached any
+	// The Amazon Resource Name (ARN) uniquely identifying the Lightsail static IP within AWS. (AI-inferred)
+	StaticIpArn any
+	// The name of the static IP address.
+	StaticIpName any
 }
 
 var StaticIp = ubx.ResourceBinding{
 	WireType: "aws_lightsail_static_ip",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"AttachedTo": ubx.FieldSpec{WireName: "attached_to"},
+		"StaticIpName": ubx.FieldSpec{WireName: "static_ip_name"},
 	},
 }

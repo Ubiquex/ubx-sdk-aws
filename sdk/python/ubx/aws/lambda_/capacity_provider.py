@@ -13,29 +13,56 @@ class CapacityProvider_CapacityProviderScalingConfig_ScalingPolicies:
 
 @dataclasses.dataclass
 class CapacityProvider_CapacityProviderScalingConfig:
+    # The maximum number of vCPUs that the capacity provider can provision across all compute instances.
     max_vcpu_count: Any = None
+    # The scaling mode for the capacity provider.
     scaling_mode: Any = None
+    # A list of target tracking scaling policies for the capacity provider.
     scaling_policies: Any = None
 
 @dataclasses.dataclass
 class CapacityProvider_InstanceRequirements:
+    # A list of EC2 instance types that the capacity provider is allowed to use. If not specified, all compatible instance types are allowed.
     allowed_instance_types: Any = None
+    # A list of supported CPU architectures for compute instances. Valid values include ``x86_64`` and ``arm64``.
     architectures: Any = None
+    # A list of EC2 instance types that the capacity provider should not use, even if they meet other requirements.
     excluded_instance_types: Any = None
 
 @dataclasses.dataclass
 class CapacityProvider_PermissionsConfig:
+    # The ARN of the IAM role that the capacity provider uses to manage compute instances and other AWS resources.
     capacity_provider_operator_role_arn: Any = None
 
 @dataclasses.dataclass
-class CapacityProvider_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class CapacityProvider_PropagateTags_ExplicitTags:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class CapacityProvider_PropagateTags:
+    # A list of tags to explicitly propagate to managed resources. Maximum of 40 tags.
+    explicit_tags: Any = None
+    # The mode for tag propagation.
+    mode: Any = None
+
+@dataclasses.dataclass
+class CapacityProvider_TelemetryConfig_LoggingConfig:
+    # The name of the Amazon CloudWatch log group the capacity provider sends logs to. By default, Lambda capacity providers send logs to a default log group named ``/aws/lambda/capacity-provider/<capacity provider name>``. To use a different log group, enter an existing log group or enter a new log group name.
+    log_group: Any = None
+    # Set this property to filter the system logs for your capacity provider that Lambda sends to CloudWatch. Lambda only sends system logs at the selected level of detail and lower, where ``DEBUG`` is the highest level and ``WARN`` is the lowest.
+    system_log_level: Any = None
+
+@dataclasses.dataclass
+class CapacityProvider_TelemetryConfig:
+    # The capacity provider's Amazon CloudWatch Logs configuration settings.
+    logging_config: Any = None
 
 @dataclasses.dataclass
 class CapacityProvider_VpcConfig:
+    # A list of security group IDs that control network access for compute instances managed by the capacity provider.
     security_group_ids: Any = None
+    # A list of subnet IDs where the capacity provider launches compute instances.
     subnet_ids: Any = None
 
 _CapacityProvider_CapacityProviderScalingConfig_ScalingPoliciesFields = {
@@ -63,10 +90,31 @@ _CapacityProvider_PermissionsConfigFields = {
     "capacity_provider_operator_role_arn": ubx.FieldSpec(wire_name="capacity_provider_operator_role_arn"),
 }
 
-_CapacityProvider_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_CapacityProvider_PropagateTags_ExplicitTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_CapacityProvider_PropagateTagsFields = {
+    "explicit_tags": ubx.FieldSpec(
+        wire_name="explicit_tags",
+        kind="list",
+        fields=_CapacityProvider_PropagateTags_ExplicitTagsFields,
+    ),
+    "mode": ubx.FieldSpec(wire_name="mode"),
+}
+
+_CapacityProvider_TelemetryConfig_LoggingConfigFields = {
+    "log_group": ubx.FieldSpec(wire_name="log_group"),
+    "system_log_level": ubx.FieldSpec(wire_name="system_log_level"),
+}
+
+_CapacityProvider_TelemetryConfigFields = {
+    "logging_config": ubx.FieldSpec(
+        wire_name="logging_config",
+        kind="object",
+        fields=_CapacityProvider_TelemetryConfig_LoggingConfigFields,
+    ),
 }
 
 _CapacityProvider_VpcConfigFields = {
@@ -76,46 +124,85 @@ _CapacityProvider_VpcConfigFields = {
 
 @dataclasses.dataclass
 class CapacityProviderConfig:
+    capacity_provider_name: Any = None
+    # Configuration that defines how the capacity provider scales compute instances based on demand and policies.
     capacity_provider_scaling_config: Any = None
+    # Specifications that define the characteristics and constraints for compute instances used by the capacity provider.
     instance_requirements: Any = None
+    # The ARN of the KMS key used to encrypt the capacity provider's resources.
     kms_key_arn: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
+    # Configuration that specifies the permissions required for the capacity provider to manage compute resources.
     permissions_config: Any = None
-    timeouts: Any = None
+    # Configuration that defines how tags are propagated to managed resources.
+    propagate_tags: Any = None
+    # A key-value pair that provides metadata for the capacity provider.
+    tags: Any = None
+    # Configuration that specifies the telemetry collection for the capacity provider.
+    telemetry_config: Any = None
+    # VPC configuration that specifies the network settings for compute instances managed by the capacity provider.
+    vpc_config: Any = None
+
+@dataclasses.dataclass
+class CapacityProviderAttrs:
+    arn: Any = None
+    capacity_provider_name: Any = None
+    # Configuration that defines how the capacity provider scales compute instances based on demand and policies.
+    capacity_provider_scaling_config: Any = None
+    # Specifications that define the characteristics and constraints for compute instances used by the capacity provider.
+    instance_requirements: Any = None
+    # The ARN of the KMS key used to encrypt the capacity provider's resources.
+    kms_key_arn: Any = None
+    # Configuration that specifies the permissions required for the capacity provider to manage compute resources.
+    permissions_config: Any = None
+    # Configuration that defines how tags are propagated to managed resources.
+    propagate_tags: Any = None
+    # The current state of the capacity provider. Indicates whether the provider is being created, is active and ready for use, has failed, or is being deleted.
+    state: Any = None
+    # A key-value pair that provides metadata for the capacity provider.
+    tags: Any = None
+    # Configuration that specifies the telemetry collection for the capacity provider.
+    telemetry_config: Any = None
+    # VPC configuration that specifies the network settings for compute instances managed by the capacity provider.
     vpc_config: Any = None
 
 CapacityProvider = ubx.ResourceBinding(
     wire_type="aws_lambda_capacity_provider",
     fields={
+        "capacity_provider_name": ubx.FieldSpec(wire_name="capacity_provider_name"),
         "capacity_provider_scaling_config": ubx.FieldSpec(
             wire_name="capacity_provider_scaling_config",
-            kind="list",
+            kind="object",
             fields=_CapacityProvider_CapacityProviderScalingConfigFields,
         ),
         "instance_requirements": ubx.FieldSpec(
             wire_name="instance_requirements",
-            kind="list",
+            kind="object",
             fields=_CapacityProvider_InstanceRequirementsFields,
         ),
         "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
         "permissions_config": ubx.FieldSpec(
             wire_name="permissions_config",
-            kind="list",
+            kind="object",
             fields=_CapacityProvider_PermissionsConfigFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "propagate_tags": ubx.FieldSpec(
+            wire_name="propagate_tags",
             kind="object",
-            fields=_CapacityProvider_TimeoutsFields,
+            fields=_CapacityProvider_PropagateTagsFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_CapacityProvider_PropagateTags_ExplicitTagsFields,
+        ),
+        "telemetry_config": ubx.FieldSpec(
+            wire_name="telemetry_config",
+            kind="object",
+            fields=_CapacityProvider_TelemetryConfigFields,
         ),
         "vpc_config": ubx.FieldSpec(
             wire_name="vpc_config",
-            kind="list",
+            kind="object",
             fields=_CapacityProvider_VpcConfigFields,
         ),
     },

@@ -4,11 +4,24 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayRouteConfig struct {
+	// Indicates whether to drop traffic that matches this route.
 	Blackhole any
+	// The CIDR range used for destination matches. Routing decisions are based on the most specific match.
 	DestinationCidrBlock any
-	Id any
-	Region any
+	// The ID of transit gateway attachment.
 	TransitGatewayAttachmentId any
+	// The ID of transit gateway route table.
+	TransitGatewayRouteTableId any
+}
+
+type TransitGatewayRouteAttrs struct {
+	// Indicates whether to drop traffic that matches this route.
+	Blackhole any
+	// The CIDR range used for destination matches. Routing decisions are based on the most specific match.
+	DestinationCidrBlock any
+	// The ID of transit gateway attachment.
+	TransitGatewayAttachmentId any
+	// The ID of transit gateway route table.
 	TransitGatewayRouteTableId any
 }
 
@@ -17,8 +30,6 @@ var TransitGatewayRoute = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Blackhole": ubx.FieldSpec{WireName: "blackhole"},
 		"DestinationCidrBlock": ubx.FieldSpec{WireName: "destination_cidr_block"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
 		"TransitGatewayRouteTableId": ubx.FieldSpec{WireName: "transit_gateway_route_table_id"},
 	},

@@ -7,48 +7,81 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class SlackChannelConfiguration_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class SlackChannelConfiguration_Tags:
+    # The key of a tag assigned to an AWS Chatbot Slack channel configuration, enabling cost allocation tracking and resource categorization within AWS. (AI-inferred)
+    key: Any = None
+    # The value component of a key-value tag that can be attached to the AWS Chatbot Slack channel configuration for resource organization and cost allocation. (AI-inferred)
+    value: Any = None
 
-_SlackChannelConfiguration_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_SlackChannelConfiguration_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class SlackChannelConfigurationConfig:
+    # The name of the configuration
     configuration_name: Any = None
-    guardrail_policy_arns: Any = None
+    # ARNs of Custom Actions to associate with notifications in the provided chat channel.
+    customization_resource_arns: Any = None
+    # The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied as a default if this is not set.
+    guardrail_policies: Any = None
+    # The ARN of the IAM role that defines the permissions for AWS Chatbot
     iam_role_arn: Any = None
+    # Specifies the logging level for this configuration:ERROR,INFO or NONE. This property affects the log entries pushed to Amazon CloudWatch logs
     logging_level: Any = None
-    region: Any = None
+    # The id of the Slack channel
     slack_channel_id: Any = None
-    slack_team_id: Any = None
+    # The id of the Slack workspace
+    slack_workspace_id: Any = None
+    # ARNs of SNS topics which delivers notifications to AWS Chatbot, for example CloudWatch alarm notifications.
     sns_topic_arns: Any = None
+    # The tags to add to the configuration
     tags: Any = None
-    user_authorization_required: Any = None
-    timeouts: Any = None
+    # Enables use of a user role requirement in your chat configuration
+    user_role_required: Any = None
+
+@dataclasses.dataclass
+class SlackChannelConfigurationAttrs:
+    # Amazon Resource Name (ARN) of the configuration
+    arn: Any = None
+    # The name of the configuration
+    configuration_name: Any = None
+    # ARNs of Custom Actions to associate with notifications in the provided chat channel.
+    customization_resource_arns: Any = None
+    # The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied as a default if this is not set.
+    guardrail_policies: Any = None
+    # The ARN of the IAM role that defines the permissions for AWS Chatbot
+    iam_role_arn: Any = None
+    # Specifies the logging level for this configuration:ERROR,INFO or NONE. This property affects the log entries pushed to Amazon CloudWatch logs
+    logging_level: Any = None
+    # The id of the Slack channel
+    slack_channel_id: Any = None
+    # The id of the Slack workspace
+    slack_workspace_id: Any = None
+    # ARNs of SNS topics which delivers notifications to AWS Chatbot, for example CloudWatch alarm notifications.
+    sns_topic_arns: Any = None
+    # The tags to add to the configuration
+    tags: Any = None
+    # Enables use of a user role requirement in your chat configuration
+    user_role_required: Any = None
 
 SlackChannelConfiguration = ubx.ResourceBinding(
     wire_type="aws_chatbot_slack_channel_configuration",
     fields={
         "configuration_name": ubx.FieldSpec(wire_name="configuration_name"),
-        "guardrail_policy_arns": ubx.FieldSpec(wire_name="guardrail_policy_arns"),
+        "customization_resource_arns": ubx.FieldSpec(wire_name="customization_resource_arns"),
+        "guardrail_policies": ubx.FieldSpec(wire_name="guardrail_policies"),
         "iam_role_arn": ubx.FieldSpec(wire_name="iam_role_arn"),
         "logging_level": ubx.FieldSpec(wire_name="logging_level"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "slack_channel_id": ubx.FieldSpec(wire_name="slack_channel_id"),
-        "slack_team_id": ubx.FieldSpec(wire_name="slack_team_id"),
+        "slack_workspace_id": ubx.FieldSpec(wire_name="slack_workspace_id"),
         "sns_topic_arns": ubx.FieldSpec(wire_name="sns_topic_arns"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "user_authorization_required": ubx.FieldSpec(wire_name="user_authorization_required"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_SlackChannelConfiguration_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_SlackChannelConfiguration_TagsFields,
         ),
+        "user_role_required": ubx.FieldSpec(wire_name="user_role_required"),
     },
 )

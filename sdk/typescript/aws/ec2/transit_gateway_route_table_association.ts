@@ -2,29 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TransitGatewayRouteTableAssociationConfig {
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
-  replaceExistingAssociation?: boolean | Computed<boolean>;
+  /** The ID of transit gateway attachment. */
   transitGatewayAttachmentId: string | Computed<string>;
+  /** The ID of transit gateway route table. */
   transitGatewayRouteTableId: string | Computed<string>;
 }
 
 export interface TransitGatewayRouteTableAssociationAttrs {
-  id: string;
-  region: string;
-  replaceExistingAssociation: boolean;
-  resourceId: string;
-  resourceType: string;
+  /** The ID of transit gateway attachment. */
   transitGatewayAttachmentId: string;
+  /** The ID of transit gateway route table. */
   transitGatewayRouteTableId: string;
 }
 
 export const TransitGatewayRouteTableAssociation: ResourceBinding<TransitGatewayRouteTableAssociationConfig, TransitGatewayRouteTableAssociationAttrs> = {
   wireType: "aws_ec2_transit_gateway_route_table_association",
   fields: {
-    id: "id",
-    region: "region",
-    replaceExistingAssociation: "replace_existing_association",
     transitGatewayAttachmentId: "transit_gateway_attachment_id",
     transitGatewayRouteTableId: "transit_gateway_route_table_id",
   },

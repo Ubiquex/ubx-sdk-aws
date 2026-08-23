@@ -2,26 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceSettingConfig {
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The ID of the service setting, such as /ssm/parameter-store/high-throughput-enabled. */
   settingId: string | Computed<string>;
+  /** The value of the service setting. */
   settingValue: string | Computed<string>;
 }
 
 export interface ServiceSettingAttrs {
+  /** The ARN of the service setting. */
   arn: string;
-  id: string;
-  region: string;
+  /** The last time the service setting was modified. */
+  lastModifiedDate: string;
+  /** The ARN of the last modified user. */
+  lastModifiedUser: string;
+  /** The ID of the service setting, such as /ssm/parameter-store/high-throughput-enabled. */
   settingId: string;
+  /** The value of the service setting. */
   settingValue: string;
+  /** The status of the service setting. The value can be Default, Customized or PendingUpdate. */
   status: string;
 }
 
 export const ServiceSetting: ResourceBinding<ServiceSettingConfig, ServiceSettingAttrs> = {
   wireType: "aws_ssm_service_setting",
   fields: {
-    id: "id",
-    region: "region",
     settingId: "setting_id",
     settingValue: "setting_value",
   },

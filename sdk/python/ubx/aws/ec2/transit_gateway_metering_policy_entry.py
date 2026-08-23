@@ -7,31 +7,58 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TransitGatewayMeteringPolicyEntry_Timeouts:
-    create: Any = None
-    delete: Any = None
-
-_TransitGatewayMeteringPolicyEntry_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-}
-
-@dataclasses.dataclass
 class TransitGatewayMeteringPolicyEntryConfig:
+    # The list of IP addresses of the instances receiving traffic from the transit gateway
     destination_cidr_block: Any = None
+    # The list of ports on destination instances receiving traffic from the transit gateway
     destination_port_range: Any = None
+    # The ID of the source attachment through which traffic leaves a transit gateway
     destination_transit_gateway_attachment_id: Any = None
     destination_transit_gateway_attachment_type: Any = None
+    # The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
     metered_account: Any = None
+    # The rule number of the metering policy entry
     policy_rule_number: Any = None
+    # The protocol of the traffic
     protocol: Any = None
-    region: Any = None
+    # The list of IP addresses of the instances sending traffic to the transit gateway for which the metering policy entry is applicable
     source_cidr_block: Any = None
+    # The list of ports on source instances sending traffic to the transit gateway
     source_port_range: Any = None
+    # The ID of the source attachment through which traffic enters a transit gateway
     source_transit_gateway_attachment_id: Any = None
     source_transit_gateway_attachment_type: Any = None
+    # The ID of the transit gateway metering policy for which the entry is being created
     transit_gateway_metering_policy_id: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayMeteringPolicyEntryAttrs:
+    # The list of IP addresses of the instances receiving traffic from the transit gateway
+    destination_cidr_block: Any = None
+    # The list of ports on destination instances receiving traffic from the transit gateway
+    destination_port_range: Any = None
+    # The ID of the source attachment through which traffic leaves a transit gateway
+    destination_transit_gateway_attachment_id: Any = None
+    destination_transit_gateway_attachment_type: Any = None
+    # The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
+    metered_account: Any = None
+    # The rule number of the metering policy entry
+    policy_rule_number: Any = None
+    # The protocol of the traffic
+    protocol: Any = None
+    # The list of IP addresses of the instances sending traffic to the transit gateway for which the metering policy entry is applicable
+    source_cidr_block: Any = None
+    # The list of ports on source instances sending traffic to the transit gateway
+    source_port_range: Any = None
+    # The ID of the source attachment through which traffic enters a transit gateway
+    source_transit_gateway_attachment_id: Any = None
+    source_transit_gateway_attachment_type: Any = None
+    # State of the transit gateway metering policy
+    state: Any = None
+    # The ID of the transit gateway metering policy for which the entry is being created
+    transit_gateway_metering_policy_id: Any = None
+    # The timestamp at which the latest action performed on the metering policy entry will become effective
+    update_effective_at: Any = None
 
 TransitGatewayMeteringPolicyEntry = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_metering_policy_entry",
@@ -43,16 +70,10 @@ TransitGatewayMeteringPolicyEntry = ubx.ResourceBinding(
         "metered_account": ubx.FieldSpec(wire_name="metered_account"),
         "policy_rule_number": ubx.FieldSpec(wire_name="policy_rule_number"),
         "protocol": ubx.FieldSpec(wire_name="protocol"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "source_cidr_block": ubx.FieldSpec(wire_name="source_cidr_block"),
         "source_port_range": ubx.FieldSpec(wire_name="source_port_range"),
         "source_transit_gateway_attachment_id": ubx.FieldSpec(wire_name="source_transit_gateway_attachment_id"),
         "source_transit_gateway_attachment_type": ubx.FieldSpec(wire_name="source_transit_gateway_attachment_type"),
         "transit_gateway_metering_policy_id": ubx.FieldSpec(wire_name="transit_gateway_metering_policy_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_TransitGatewayMeteringPolicyEntry_TimeoutsFields,
-        ),
     },
 )

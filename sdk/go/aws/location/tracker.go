@@ -3,27 +3,83 @@ package location
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Tracker_Tags struct {
+	// The key of a tag assigned to the Amazon Location Service tracker, used to organize and identify the resource. (AI-inferred)
+	Key any
+	// The value portion of a tag assigned to the AWS Location Service tracker, used to identify and organize tracker resources. (AI-inferred)
+	Value any
+}
+
+var Tracker_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type TrackerConfig struct {
+	// The optional description string for the AWS Location Service tracker, allowing users to attach a human-readable note to the resource. (AI-inferred)
 	Description any
-	Id any
+	// Specifies whether the tracker publishes geofence and location events to Amazon EventBridge for downstream processing. (AI-inferred)
+	EventBridgeEnabled any
+	// When set to true, enables the tracker to encrypt and perform geospatial queries (e.g., search by polygon) using the specified AWS KMS key, rather than only simple positional updates. (AI-inferred)
+	KmsKeyEnableGeospatialQueries any
+	// The ID of an AWS KMS customer-managed key used to encrypt the tracker's location data; if not specified, an AWS-owned key encrypts the data. (AI-inferred)
 	KmsKeyId any
+	// Specifies how incoming device position updates are filtered for storage, with valid values being TimeBased, DistanceBased, or AccuracyBased. (AI-inferred)
 	PositionFiltering any
-	Region any
+	// Specifies the pricing plan for the tracker, which determines the billing rate and feature set, with valid values such as 'RequestBasedUsage', 'MobileAssetTracking', and 'MobileAssetManagement'. (AI-inferred)
+	PricingPlan any
+	// This shape is deprecated since 2022-02-01: Deprecated. No longer allowed.
+	PricingPlanDataSource any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
+	// A unique name for the tracker resource, used as its identifier and required when creating the tracker in Amazon Location Service. (AI-inferred)
 	TrackerName any
+}
+
+type TrackerAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies the Location Service tracker, assigned by AWS when the tracker is created. (AI-inferred)
+	Arn any
+	// The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
+	CreateTime any
+	// The optional description string for the AWS Location Service tracker, allowing users to attach a human-readable note to the resource. (AI-inferred)
+	Description any
+	// Specifies whether the tracker publishes geofence and location events to Amazon EventBridge for downstream processing. (AI-inferred)
+	EventBridgeEnabled any
+	// When set to true, enables the tracker to encrypt and perform geospatial queries (e.g., search by polygon) using the specified AWS KMS key, rather than only simple positional updates. (AI-inferred)
+	KmsKeyEnableGeospatialQueries any
+	// The ID of an AWS KMS customer-managed key used to encrypt the tracker's location data; if not specified, an AWS-owned key encrypts the data. (AI-inferred)
+	KmsKeyId any
+	// Specifies how incoming device position updates are filtered for storage, with valid values being TimeBased, DistanceBased, or AccuracyBased. (AI-inferred)
+	PositionFiltering any
+	// Specifies the pricing plan for the tracker, which determines the billing rate and feature set, with valid values such as 'RequestBasedUsage', 'MobileAssetTracking', and 'MobileAssetManagement'. (AI-inferred)
+	PricingPlan any
+	// This shape is deprecated since 2022-02-01: Deprecated. No longer allowed.
+	PricingPlanDataSource any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// The Amazon Resource Name (ARN) of the AWS Location Service tracker, which uniquely identifies the tracker resource. (AI-inferred)
+	TrackerArn any
+	// A unique name for the tracker resource, used as its identifier and required when creating the tracker in Amazon Location Service. (AI-inferred)
+	TrackerName any
+	// The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
+	UpdateTime any
 }
 
 var Tracker = ubx.ResourceBinding{
 	WireType: "aws_location_tracker",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"EventBridgeEnabled": ubx.FieldSpec{WireName: "event_bridge_enabled"},
+		"KmsKeyEnableGeospatialQueries": ubx.FieldSpec{WireName: "kms_key_enable_geospatial_queries"},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 		"PositionFiltering": ubx.FieldSpec{WireName: "position_filtering"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"PricingPlan": ubx.FieldSpec{WireName: "pricing_plan"},
+		"PricingPlanDataSource": ubx.FieldSpec{WireName: "pricing_plan_data_source"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Tracker_TagsFields,
+		},
 		"TrackerName": ubx.FieldSpec{WireName: "tracker_name"},
 	},
 }

@@ -3,37 +3,35 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TransitGatewayMulticastDomainAssociation_Timeouts struct {
-	Create any
-	Delete any
+type TransitGatewayMulticastDomainAssociationConfig struct {
+	// The IDs of the subnets to associate with the transit gateway multicast domain.
+	SubnetId any
+	// The ID of the transit gateway attachment.
+	TransitGatewayAttachmentId any
+	// The ID of the transit gateway multicast domain.
+	TransitGatewayMulticastDomainId any
 }
 
-var TransitGatewayMulticastDomainAssociation_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
-type TransitGatewayMulticastDomainAssociationConfig struct {
-	Id any
-	Region any
+type TransitGatewayMulticastDomainAssociationAttrs struct {
+	// The ID of the resource.
+	ResourceId any
+	// The type of resource, for example a VPC attachment.
+	ResourceType any
+	// The state of the subnet association.
+	State any
+	// The IDs of the subnets to associate with the transit gateway multicast domain.
 	SubnetId any
+	// The ID of the transit gateway attachment.
 	TransitGatewayAttachmentId any
+	// The ID of the transit gateway multicast domain.
 	TransitGatewayMulticastDomainId any
-	Timeouts any
 }
 
 var TransitGatewayMulticastDomainAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_multicast_domain_association",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
 		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
 		"TransitGatewayMulticastDomainId": ubx.FieldSpec{WireName: "transit_gateway_multicast_domain_id"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: TransitGatewayMulticastDomainAssociation_TimeoutsFields,
-		},
 	},
 }

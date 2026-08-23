@@ -2,14 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Log_DestinationOptions {
-  fileFormat: string;
-  hiveCompatiblePartitions: boolean;
-  perHourPartition: boolean;
+  /** Specifies the file format (plain-text or parquet) used to store VPC flow log records in the destination S3 bucket. (AI-inferred) */
+  fileFormat: string | Computed<string>;
+  /** Whether to enable Hive-compatible partitioning (e.g., year=2023/month=01/day=01/hour=00) for the S3 destination of the flow log, instead of the default partition format (e.g., 2023/01/01/00). (AI-inferred) */
+  hiveCompatiblePartitions: boolean | Computed<boolean>;
+  /** Indicates whether to partition flow log records in the S3 destination into separate hourly folders, creating a new partition for each hour. (AI-inferred) */
+  perHourPartition: boolean | Computed<boolean>;
 }
 
-export interface Log_TagFieldSpecification {
-  resourceType: string;
-  tagKeys: string[];
+export interface Log_TagFieldSpecifications {
+  resourceType?: string | Computed<string>;
+  tagKeys?: string[] | Computed<string[]>;
+}
+
+export interface Log_Tags {
+  /** The key of a user-defined tag attached to the VPC flow log, used to organize and identify the log resource. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value component of a key-value tag applied to the AWS Flow Log, used for resource identification and management. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const Log_DestinationOptionsFields: FieldMap = {
@@ -18,85 +28,103 @@ const Log_DestinationOptionsFields: FieldMap = {
   perHourPartition: "per_hour_partition",
 };
 
-const Log_TagFieldSpecificationFields: FieldMap = {
+const Log_TagFieldSpecificationsFields: FieldMap = {
   resourceType: "resource_type",
   tagKeys: "tag_keys",
 };
 
+const Log_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
 export interface LogConfig {
+  /** The ARN of the IAM role that allows Amazon EC2 to publish flow logs across accounts. */
   deliverCrossAccountRole?: string | Computed<string>;
-  eniId?: string | Computed<string>;
-  iamRoleArn?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account. If you specify LogDestinationType as s3 or kinesis-data-firehose, do not specify DeliverLogsPermissionArn or LogGroupName. */
+  deliverLogsPermissionArn?: string | Computed<string>;
+  /** Specifies the destination options for the flow log, such as the file format (plain-text or parquet), whether to enable Hive-compatible partitions, and whether to partition logs by hour, when delivering to an Amazon S3 bucket. (AI-inferred) */
+  destinationOptions?: Log_DestinationOptions | Computed<Log_DestinationOptions>;
+  /** Specifies the destination to which the flow log data is to be published. Flow log data can be published to a CloudWatch Logs log group, an Amazon S3 bucket, or a Kinesis Firehose stream. The value specified for this parameter depends on the value specified for LogDestinationType. */
   logDestination?: string | Computed<string>;
+  /** Specifies the type of destination to which the flow log data is to be published. Flow log data can be published to CloudWatch Logs or Amazon S3. */
   logDestinationType?: string | Computed<string>;
+  /** The fields to include in the flow log record, in the order in which they should appear. */
   logFormat?: string | Computed<string>;
+  /** The name of a new or existing CloudWatch Logs log group where Amazon EC2 publishes your flow logs. If you specify LogDestinationType as s3 or kinesis-data-firehose, do not specify DeliverLogsPermissionArn or LogGroupName. */
+  logGroupName?: string | Computed<string>;
+  /** The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes). */
   maxAggregationInterval?: number | Computed<number>;
-  region?: string | Computed<string>;
-  regionalNatGatewayId?: string | Computed<string>;
-  subnetId?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** The ID of the subnet, network interface, or VPC for which you want to create a flow log. */
+  resourceId: string | Computed<string>;
+  /** The type of resource for which to create the flow log. For example, if you specified a VPC ID for the ResourceId property, specify VPC for this property. */
+  resourceType: string | Computed<string>;
+  /** The resource types and associated tags for EC2 resources associated with the EC2 Tags feature for log enrichment. */
+  tagFieldSpecifications?: Log_TagFieldSpecifications[] | Computed<Log_TagFieldSpecifications[]>;
+  /** The tags to apply to the flow logs. */
+  tags?: Log_Tags[] | Computed<Log_Tags[]>;
+  /** The type of traffic to log. You can log traffic that the resource accepts or rejects, or all traffic. */
   trafficType?: string | Computed<string>;
-  transitGatewayAttachmentId?: string | Computed<string>;
-  transitGatewayId?: string | Computed<string>;
-  vpcId?: string | Computed<string>;
-  destinationOptions?: Log_DestinationOptions[] | Computed<Log_DestinationOptions[]>;
-  tagFieldSpecification?: Log_TagFieldSpecification[] | Computed<Log_TagFieldSpecification[]>;
 }
 
 export interface LogAttrs {
-  arn: string;
+  /** The ARN of the IAM role that allows Amazon EC2 to publish flow logs across accounts. */
   deliverCrossAccountRole: string;
-  eniId: string;
-  iamRoleArn: string;
+  /** The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account. If you specify LogDestinationType as s3 or kinesis-data-firehose, do not specify DeliverLogsPermissionArn or LogGroupName. */
+  deliverLogsPermissionArn: string;
+  /** Specifies the destination options for the flow log, such as the file format (plain-text or parquet), whether to enable Hive-compatible partitions, and whether to partition logs by hour, when delivering to an Amazon S3 bucket. (AI-inferred) */
+  destinationOptions: Log_DestinationOptions;
+  /** The Flow Log ID */
   id: string;
+  /** Specifies the destination to which the flow log data is to be published. Flow log data can be published to a CloudWatch Logs log group, an Amazon S3 bucket, or a Kinesis Firehose stream. The value specified for this parameter depends on the value specified for LogDestinationType. */
   logDestination: string;
+  /** Specifies the type of destination to which the flow log data is to be published. Flow log data can be published to CloudWatch Logs or Amazon S3. */
   logDestinationType: string;
+  /** The fields to include in the flow log record, in the order in which they should appear. */
   logFormat: string;
+  /** The name of a new or existing CloudWatch Logs log group where Amazon EC2 publishes your flow logs. If you specify LogDestinationType as s3 or kinesis-data-firehose, do not specify DeliverLogsPermissionArn or LogGroupName. */
+  logGroupName: string;
+  /** The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes). */
   maxAggregationInterval: number;
-  region: string;
-  regionalNatGatewayId: string;
-  subnetId: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** The ID of the subnet, network interface, or VPC for which you want to create a flow log. */
+  resourceId: string;
+  /** The type of resource for which to create the flow log. For example, if you specified a VPC ID for the ResourceId property, specify VPC for this property. */
+  resourceType: string;
+  /** The resource types and associated tags for EC2 resources associated with the EC2 Tags feature for log enrichment. */
+  tagFieldSpecifications: Log_TagFieldSpecifications[];
+  /** The tags to apply to the flow logs. */
+  tags: Log_Tags[];
+  /** The type of traffic to log. You can log traffic that the resource accepts or rejects, or all traffic. */
   trafficType: string;
-  transitGatewayAttachmentId: string;
-  transitGatewayId: string;
-  vpcId: string;
-  destinationOptions: Log_DestinationOptions[];
-  tagFieldSpecification: Log_TagFieldSpecification[];
 }
 
 export const Log: ResourceBinding<LogConfig, LogAttrs> = {
   wireType: "aws_flow_log",
   fields: {
     deliverCrossAccountRole: "deliver_cross_account_role",
-    eniId: "eni_id",
-    iamRoleArn: "iam_role_arn",
-    id: "id",
+    deliverLogsPermissionArn: "deliver_logs_permission_arn",
+    destinationOptions: {
+      wireName: "destination_options",
+      kind: "object",
+      fields: Log_DestinationOptionsFields,
+    },
     logDestination: "log_destination",
     logDestinationType: "log_destination_type",
     logFormat: "log_format",
+    logGroupName: "log_group_name",
     maxAggregationInterval: "max_aggregation_interval",
-    region: "region",
-    regionalNatGatewayId: "regional_nat_gateway_id",
-    subnetId: "subnet_id",
-    tags: "tags",
-    tagsAll: "tags_all",
-    trafficType: "traffic_type",
-    transitGatewayAttachmentId: "transit_gateway_attachment_id",
-    transitGatewayId: "transit_gateway_id",
-    vpcId: "vpc_id",
-    destinationOptions: {
-      wireName: "destination_options",
+    resourceId: "resource_id",
+    resourceType: "resource_type",
+    tagFieldSpecifications: {
+      wireName: "tag_field_specifications",
       kind: "list",
-      fields: Log_DestinationOptionsFields,
+      fields: Log_TagFieldSpecificationsFields,
     },
-    tagFieldSpecification: {
-      wireName: "tag_field_specification",
-      kind: "set",
-      fields: Log_TagFieldSpecificationFields,
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Log_TagsFields,
     },
+    trafficType: "traffic_type",
   },
 };

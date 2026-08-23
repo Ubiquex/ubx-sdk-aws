@@ -7,38 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Sink_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_Sink_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
+class SinkConfig:
+    # The name of the ObservabilityAccessManager Sink.
+    name: Any = None
+    # The policy of this ObservabilityAccessManager Sink.
+    policy: Any = None
+    # Tags to apply to the sink
+    tags: Any = None
 
 @dataclasses.dataclass
-class SinkConfig:
-    id: Any = None
+class SinkAttrs:
+    # The Amazon resource name (ARN) of the ObservabilityAccessManager Sink
+    arn: Any = None
+    # The name of the ObservabilityAccessManager Sink.
     name: Any = None
-    region: Any = None
+    # The policy of this ObservabilityAccessManager Sink.
+    policy: Any = None
+    # Tags to apply to the sink
     tags: Any = None
-    tags_all: Any = None
-    timeouts: Any = None
 
 Sink = ubx.ResourceBinding(
     wire_type="aws_oam_sink",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "policy": ubx.FieldSpec(wire_name="policy"),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Sink_TimeoutsFields,
-        ),
     },
 )

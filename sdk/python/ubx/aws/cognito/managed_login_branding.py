@@ -7,14 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ManagedLoginBranding_Asset:
+class ManagedLoginBranding_Assets:
+    # Base64-encoded binary data for the brand asset, such as a logo, icon, or favicon, used in the Cognito managed login branding configuration. (AI-inferred)
     bytes: Any = None
+    # Specifies the type of the managed login brand asset, such as FAVICON, LOGO, BACKGROUND, or CSS, which determines where and how the asset is applied to the user pool's managed login pages. (AI-inferred)
     category: Any = None
+    # Indicates the display theme (light or dark) for which an asset in the managed login branding is intended, so the appropriate asset variant is served when the login page renders in that color mode. (AI-inferred)
     color_mode: Any = None
+    # The file extension (e.g., png, jpg, ico, svg) of a brand asset used in the managed login branding, indicating the image format of the asset's binary content. (AI-inferred)
     extension: Any = None
+    # The unique identifier for a custom branding asset (such as a logo or icon) within the Cognito managed login branding, used to reference or update that specific asset in subsequent operations. (AI-inferred)
     resource_id: Any = None
 
-_ManagedLoginBranding_AssetFields = {
+_ManagedLoginBranding_AssetsFields = {
     "bytes": ubx.FieldSpec(wire_name="bytes"),
     "category": ubx.FieldSpec(wire_name="category"),
     "color_mode": ubx.FieldSpec(wire_name="color_mode"),
@@ -24,25 +29,48 @@ _ManagedLoginBranding_AssetFields = {
 
 @dataclasses.dataclass
 class ManagedLoginBrandingConfig:
+    # Specifies the list of image assets (such as logos, icons, and email graphics) to associate with the managed login branding, where each asset defines a category, resource identifier, and optional file URI. (AI-inferred)
+    assets: Any = None
+    # The unique identifier of the Amazon Cognito app client to which this managed login branding is applied. (AI-inferred)
     client_id: Any = None
-    region: Any = None
+    # Indicates whether the API should return the merged branding resources (combination of user pool and client branding settings) after applying managed login branding, rather than only the explicitly provided values. (AI-inferred)
+    return_merged_resources: Any = None
+    # The JSON object containing the customizable branding settings (such as colors, logo, and layout) that are applied to the managed login pages of the associated user pool app client. (AI-inferred)
     settings: Any = None
+    # Indicates whether to use the preset branding provided by Amazon Cognito for the managed login experience, rather than the custom values you supply for the branding configuration. (AI-inferred)
     use_cognito_provided_values: Any = None
+    # The ID of the user pool for which managed login branding is configured. (AI-inferred)
     user_pool_id: Any = None
-    asset: Any = None
+
+@dataclasses.dataclass
+class ManagedLoginBrandingAttrs:
+    # Specifies the list of image assets (such as logos, icons, and email graphics) to associate with the managed login branding, where each asset defines a category, resource identifier, and optional file URI. (AI-inferred)
+    assets: Any = None
+    # The unique identifier of the Amazon Cognito app client to which this managed login branding is applied. (AI-inferred)
+    client_id: Any = None
+    # The unique identifier assigned by Amazon Cognito to this managed login branding configuration. (AI-inferred)
+    managed_login_branding_id: Any = None
+    # Indicates whether the API should return the merged branding resources (combination of user pool and client branding settings) after applying managed login branding, rather than only the explicitly provided values. (AI-inferred)
+    return_merged_resources: Any = None
+    # The JSON object containing the customizable branding settings (such as colors, logo, and layout) that are applied to the managed login pages of the associated user pool app client. (AI-inferred)
+    settings: Any = None
+    # Indicates whether to use the preset branding provided by Amazon Cognito for the managed login experience, rather than the custom values you supply for the branding configuration. (AI-inferred)
+    use_cognito_provided_values: Any = None
+    # The ID of the user pool for which managed login branding is configured. (AI-inferred)
+    user_pool_id: Any = None
 
 ManagedLoginBranding = ubx.ResourceBinding(
     wire_type="aws_cognito_managed_login_branding",
     fields={
+        "assets": ubx.FieldSpec(
+            wire_name="assets",
+            kind="list",
+            fields=_ManagedLoginBranding_AssetsFields,
+        ),
         "client_id": ubx.FieldSpec(wire_name="client_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "return_merged_resources": ubx.FieldSpec(wire_name="return_merged_resources"),
         "settings": ubx.FieldSpec(wire_name="settings"),
         "use_cognito_provided_values": ubx.FieldSpec(wire_name="use_cognito_provided_values"),
         "user_pool_id": ubx.FieldSpec(wire_name="user_pool_id"),
-        "asset": ubx.FieldSpec(
-            wire_name="asset",
-            kind="set",
-            fields=_ManagedLoginBranding_AssetFields,
-        ),
     },
 )

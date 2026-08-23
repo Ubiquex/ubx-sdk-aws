@@ -7,74 +7,94 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Plan_Stage_Target_ChannelTargetInfo:
-    contact_channel_id: Any = None
+class Plan_Stages_Targets_ChannelTargetInfo:
+    # The Amazon Resource Name (ARN) of the contact channel to notify when this stage is triggered. (AI-inferred)
+    channel_id: Any = None
+    # The number of minutes to wait before retrying the contact channel if the previous attempt fails, as part of the channel target configuration in an SSM Contacts plan stage. (AI-inferred)
     retry_interval_in_minutes: Any = None
 
 @dataclasses.dataclass
-class Plan_Stage_Target_ContactTargetInfo:
+class Plan_Stages_Targets_ContactTargetInfo:
+    # The Amazon Resource Name (ARN) of the AWS SSM Contacts contact that this stage targets when the escalation plan is executed. (AI-inferred)
     contact_id: Any = None
+    # A boolean that, when true, marks this contact as essential so that if the contact cannot be reached during an incident, the escalation plan stops and does not continue to subsequent targets. (AI-inferred)
     is_essential: Any = None
 
 @dataclasses.dataclass
-class Plan_Stage_Target:
+class Plan_Stages_Targets:
+    # Specifies the target as a contact channel rather than a contact, detailing the contact channel's identifier and the retry interval in minutes to wait before re-contacting it during the escalation stage. (AI-inferred)
     channel_target_info: Any = None
+    # Identifies an SSM Contacts contact as a target for the stage, using its contact ID and an IsEssential flag that determines whether the contact must be reached for the on-call handoff to continue. (AI-inferred)
     contact_target_info: Any = None
 
 @dataclasses.dataclass
-class Plan_Stage:
+class Plan_Stages:
+    # The duration, in minutes, for which this stage of the engagement runs before moving to the next stage or ending the engagement. (AI-inferred)
     duration_in_minutes: Any = None
-    target: Any = None
+    # Specifies the contacts or contact channels that are notified when this stage of the on-call escalation plan is reached, based on the escalation time. (AI-inferred)
+    targets: Any = None
 
-_Plan_Stage_Target_ChannelTargetInfoFields = {
-    "contact_channel_id": ubx.FieldSpec(wire_name="contact_channel_id"),
+_Plan_Stages_Targets_ChannelTargetInfoFields = {
+    "channel_id": ubx.FieldSpec(wire_name="channel_id"),
     "retry_interval_in_minutes": ubx.FieldSpec(wire_name="retry_interval_in_minutes"),
 }
 
-_Plan_Stage_Target_ContactTargetInfoFields = {
+_Plan_Stages_Targets_ContactTargetInfoFields = {
     "contact_id": ubx.FieldSpec(wire_name="contact_id"),
     "is_essential": ubx.FieldSpec(wire_name="is_essential"),
 }
 
-_Plan_Stage_TargetFields = {
+_Plan_Stages_TargetsFields = {
     "channel_target_info": ubx.FieldSpec(
         wire_name="channel_target_info",
-        kind="list",
-        fields=_Plan_Stage_Target_ChannelTargetInfoFields,
+        kind="object",
+        fields=_Plan_Stages_Targets_ChannelTargetInfoFields,
     ),
     "contact_target_info": ubx.FieldSpec(
         wire_name="contact_target_info",
-        kind="list",
-        fields=_Plan_Stage_Target_ContactTargetInfoFields,
+        kind="object",
+        fields=_Plan_Stages_Targets_ContactTargetInfoFields,
     ),
 }
 
-_Plan_StageFields = {
+_Plan_StagesFields = {
     "duration_in_minutes": ubx.FieldSpec(wire_name="duration_in_minutes"),
-    "target": ubx.FieldSpec(
-        wire_name="target",
+    "targets": ubx.FieldSpec(
+        wire_name="targets",
         kind="list",
-        fields=_Plan_Stage_TargetFields,
+        fields=_Plan_Stages_TargetsFields,
     ),
 }
 
 @dataclasses.dataclass
 class PlanConfig:
+    # Contact ID for the AWS SSM Incident Manager Contact to associate the plan.
     contact_id: Any = None
-    id: Any = None
-    region: Any = None
-    stage: Any = None
+    # Rotation Ids to associate with Oncall Contact for engagement.
+    rotation_ids: Any = None
+    # The stages that an escalation plan or engagement plan engages contacts and contact methods in.
+    stages: Any = None
+
+@dataclasses.dataclass
+class PlanAttrs:
+    # The Amazon Resource Name (ARN) of the contact.
+    arn: Any = None
+    # Contact ID for the AWS SSM Incident Manager Contact to associate the plan.
+    contact_id: Any = None
+    # Rotation Ids to associate with Oncall Contact for engagement.
+    rotation_ids: Any = None
+    # The stages that an escalation plan or engagement plan engages contacts and contact methods in.
+    stages: Any = None
 
 Plan = ubx.ResourceBinding(
     wire_type="aws_ssmcontacts_plan",
     fields={
         "contact_id": ubx.FieldSpec(wire_name="contact_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "stage": ubx.FieldSpec(
-            wire_name="stage",
+        "rotation_ids": ubx.FieldSpec(wire_name="rotation_ids"),
+        "stages": ubx.FieldSpec(
+            wire_name="stages",
             kind="list",
-            fields=_Plan_StageFields,
+            fields=_Plan_StagesFields,
         ),
     },
 )

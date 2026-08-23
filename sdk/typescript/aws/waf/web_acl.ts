@@ -2,117 +2,70 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WebAcl_DefaultAction {
-  type: string;
-}
-
-export interface WebAcl_LoggingConfiguration_RedactedFields_FieldToMatch {
-  data: string;
-  type: string;
-}
-
-export interface WebAcl_LoggingConfiguration_RedactedFields {
-  fieldToMatch: WebAcl_LoggingConfiguration_RedactedFields_FieldToMatch[];
-}
-
-export interface WebAcl_LoggingConfiguration {
-  logDestination: string;
-  redactedFields: WebAcl_LoggingConfiguration_RedactedFields[];
+  /** Specifies the default action, either ALLOW or BLOCK, that AWS WAF applies to web requests that don't match any rule in this web ACL. (AI-inferred) */
+  type: string | Computed<string>;
 }
 
 export interface WebAcl_Rules {
-  priority: number;
-  ruleId: string;
-  type: string;
-  action: WebAcl_DefaultAction[];
-  overrideAction: WebAcl_DefaultAction[];
+  /** Specifies the action (ALLOW, BLOCK, or COUNT) that AWS WAF takes when a request matches the associated rule in this web ACL. (AI-inferred) */
+  action?: WebAcl_DefaultAction | Computed<WebAcl_DefaultAction>;
+  /** The evaluation order for the rule, where lower numbers are evaluated first and each rule in the web ACL must have a unique priority value. (AI-inferred) */
+  priority?: number | Computed<number>;
+  /** The unique identifier of the AWS WAF rule that this web ACL action applies to within the rules list. (AI-inferred) */
+  ruleId?: string | Computed<string>;
 }
 
 const WebAcl_DefaultActionFields: FieldMap = {
   type: "type",
 };
 
-const WebAcl_LoggingConfiguration_RedactedFields_FieldToMatchFields: FieldMap = {
-  data: "data",
-  type: "type",
-};
-
-const WebAcl_LoggingConfiguration_RedactedFieldsFields: FieldMap = {
-  fieldToMatch: {
-    wireName: "field_to_match",
-    kind: "set",
-    fields: WebAcl_LoggingConfiguration_RedactedFields_FieldToMatchFields,
-  },
-};
-
-const WebAcl_LoggingConfigurationFields: FieldMap = {
-  logDestination: "log_destination",
-  redactedFields: {
-    wireName: "redacted_fields",
-    kind: "list",
-    fields: WebAcl_LoggingConfiguration_RedactedFieldsFields,
-  },
-};
-
 const WebAcl_RulesFields: FieldMap = {
-  priority: "priority",
-  ruleId: "rule_id",
-  type: "type",
   action: {
     wireName: "action",
-    kind: "list",
+    kind: "object",
     fields: WebAcl_DefaultActionFields,
   },
-  overrideAction: {
-    wireName: "override_action",
-    kind: "list",
-    fields: WebAcl_DefaultActionFields,
-  },
+  priority: "priority",
+  ruleId: "rule_id",
 };
 
 export interface WebAclConfig {
-  id?: string | Computed<string>;
+  /** Determines the action (ALLOW or BLOCK) that AWS WAF takes for web requests that do not match any rule in this web ACL. (AI-inferred) */
+  defaultAction: WebAcl_DefaultAction | Computed<WebAcl_DefaultAction>;
+  /** The name of the Amazon CloudWatch metric used to monitor the Web ACL, which must be unique within the region and is displayed in the WAF console and CloudWatch. (AI-inferred) */
   metricName: string | Computed<string>;
+  /** The user-defined name of the web ACL, used as its unique identifier within the AWS WAF service. (AI-inferred) */
   name: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  defaultAction?: WebAcl_DefaultAction[] | Computed<WebAcl_DefaultAction[]>;
-  loggingConfiguration?: WebAcl_LoggingConfiguration[] | Computed<WebAcl_LoggingConfiguration[]>;
+  /** A list of rule overrides, each specifying a priority, AWS WAF rule identifier, and action (allow, block, or count) that together define the evaluation order and handling of matching requests. (AI-inferred) */
   rules?: WebAcl_Rules[] | Computed<WebAcl_Rules[]>;
 }
 
 export interface WebAclAttrs {
-  arn: string;
+  /** Determines the action (ALLOW or BLOCK) that AWS WAF takes for web requests that do not match any rule in this web ACL. (AI-inferred) */
+  defaultAction: WebAcl_DefaultAction;
+  /** The unique AWS-assigned ID of the web ACL, used to reference the web ACL in other resources (e.g., aws_waf_association) and in API calls. (AI-inferred) */
   id: string;
+  /** The name of the Amazon CloudWatch metric used to monitor the Web ACL, which must be unique within the region and is displayed in the WAF console and CloudWatch. (AI-inferred) */
   metricName: string;
+  /** The user-defined name of the web ACL, used as its unique identifier within the AWS WAF service. (AI-inferred) */
   name: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  defaultAction: WebAcl_DefaultAction[];
-  loggingConfiguration: WebAcl_LoggingConfiguration[];
+  /** A list of rule overrides, each specifying a priority, AWS WAF rule identifier, and action (allow, block, or count) that together define the evaluation order and handling of matching requests. (AI-inferred) */
   rules: WebAcl_Rules[];
 }
 
 export const WebAcl: ResourceBinding<WebAclConfig, WebAclAttrs> = {
   wireType: "aws_waf_web_acl",
   fields: {
-    id: "id",
-    metricName: "metric_name",
-    name: "name",
-    tags: "tags",
-    tagsAll: "tags_all",
     defaultAction: {
       wireName: "default_action",
-      kind: "list",
+      kind: "object",
       fields: WebAcl_DefaultActionFields,
     },
-    loggingConfiguration: {
-      wireName: "logging_configuration",
-      kind: "list",
-      fields: WebAcl_LoggingConfigurationFields,
-    },
+    metricName: "metric_name",
+    name: "name",
     rules: {
       wireName: "rules",
-      kind: "set",
+      kind: "list",
       fields: WebAcl_RulesFields,
     },
   },

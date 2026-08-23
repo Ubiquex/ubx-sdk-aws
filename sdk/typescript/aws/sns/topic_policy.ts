@@ -2,26 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TopicPolicyConfig {
-  arn: string | Computed<string>;
-  id?: string | Computed<string>;
-  policy: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** A policy document that contains permissions to add to the specified SNS topics. */
+  policyDocument: unknown | Computed<unknown>;
+  /** The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SNS::Topic`` resource. */
+  topics: string[] | Computed<string[]>;
 }
 
 export interface TopicPolicyAttrs {
-  arn: string;
+  /** The ARN of the SNS topic that this policy is attached to, which serves as the unique identifier for the aws_sns_topic_policy resource. (AI-inferred) */
   id: string;
-  owner: string;
-  policy: string;
-  region: string;
+  /** A policy document that contains permissions to add to the specified SNS topics. */
+  policyDocument: unknown;
+  /** The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SNS::Topic`` resource. */
+  topics: string[];
 }
 
 export const TopicPolicy: ResourceBinding<TopicPolicyConfig, TopicPolicyAttrs> = {
   wireType: "aws_sns_topic_policy",
   fields: {
-    arn: "arn",
-    id: "id",
-    policy: "policy",
-    region: "region",
+    policyDocument: "policy_document",
+    topics: "topics",
   },
 };

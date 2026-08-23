@@ -8,111 +8,100 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Capability_Configuration_ArgoCd_AwsIdc:
+    # The ARN of the IAM Identity Center instance to use for authentication.
     idc_instance_arn: Any = None
+    # The ARN of the managed application created in IAM Identity Center for this Argo CD capability. This application is automatically created and managed by EKS.
     idc_managed_application_arn: Any = None
+    # The Region where your IAM Identity Center instance is located.
     idc_region: Any = None
 
 @dataclasses.dataclass
 class Capability_Configuration_ArgoCd_NetworkAccess:
+    # A list of VPC endpoint IDs to associate with the managed Argo CD API server endpoint. Each VPC endpoint provides private connectivity from a specific VPC to the Argo CD server. You can specify multiple VPC endpoint IDs to enable access from multiple VPCs.
     vpce_ids: Any = None
 
 @dataclasses.dataclass
-class Capability_Configuration_ArgoCd_RbacRoleMapping_Identity:
+class Capability_Configuration_ArgoCd_RbacRoleMappings_Identities:
     id: Any = None
+    # Defines the identity type (user or group) for an Argo CD RBAC role mapping in the EKS capability configuration. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
-class Capability_Configuration_ArgoCd_RbacRoleMapping:
+class Capability_Configuration_ArgoCd_RbacRoleMappings:
+    # Specifies a list of IAM principal ARNs (users or roles) that are mapped to the corresponding Argo CD RBAC role, granting those identities the permissions defined for that role in the Kubernetes cluster. (AI-inferred)
+    identities: Any = None
     role: Any = None
-    identity: Any = None
 
 @dataclasses.dataclass
 class Capability_Configuration_ArgoCd:
-    namespace: Any = None
-    server_url: Any = None
+    # Configuration for integrating Argo CD with IAM Identity Center. This allows you to use your organization's identity provider for authentication to Argo CD.
     aws_idc: Any = None
+    # The Kubernetes namespace where Argo CD resources will be created. If not specified, the default namespace is used.
+    namespace: Any = None
+    # Configuration for network access to the Argo CD capability's managed API server endpoint. By default, the Argo CD server is accessible via a public endpoint. You can optionally specify one or more VPC endpoint IDs to enable private connectivity from your VPCs.
     network_access: Any = None
-    rbac_role_mapping: Any = None
+    # A list of role mappings that define which IAM Identity Center users or groups have which Argo CD roles. Each mapping associates an Argo CD role (ADMIN, EDITOR, or VIEWER) with one or more IAM Identity Center identities.
+    rbac_role_mappings: Any = None
+    # The URL of the Argo CD server. Use this URL to access the Argo CD web interface and API.
+    server_url: Any = None
 
 @dataclasses.dataclass
 class Capability_Configuration:
+    ack: Any = None
+    # Configuration settings for an Argo CD capability. This includes the Kubernetes namespace, IAM Identity Center integration, RBAC role mappings, and network access configuration.
     argo_cd: Any = None
 
 @dataclasses.dataclass
-class Capability_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Capability_Tags:
+    key: Any = None
+    value: Any = None
 
-_Capability_Configuration_ArgoCd_AwsIdcFields = {
-    "idc_instance_arn": ubx.FieldSpec(wire_name="idc_instance_arn"),
-    "idc_managed_application_arn": ubx.FieldSpec(wire_name="idc_managed_application_arn"),
-    "idc_region": ubx.FieldSpec(wire_name="idc_region"),
-}
-
-_Capability_Configuration_ArgoCd_NetworkAccessFields = {
-    "vpce_ids": ubx.FieldSpec(wire_name="vpce_ids"),
-}
-
-_Capability_Configuration_ArgoCd_RbacRoleMapping_IdentityFields = {
-    "id": ubx.FieldSpec(wire_name="id"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
-_Capability_Configuration_ArgoCd_RbacRoleMappingFields = {
-    "role": ubx.FieldSpec(wire_name="role"),
-    "identity": ubx.FieldSpec(
-        wire_name="identity",
-        kind="set",
-        fields=_Capability_Configuration_ArgoCd_RbacRoleMapping_IdentityFields,
-    ),
-}
-
-_Capability_Configuration_ArgoCdFields = {
-    "namespace": ubx.FieldSpec(wire_name="namespace"),
-    "server_url": ubx.FieldSpec(wire_name="server_url"),
-    "aws_idc": ubx.FieldSpec(
-        wire_name="aws_idc",
-        kind="list",
-        fields=_Capability_Configuration_ArgoCd_AwsIdcFields,
-    ),
-    "network_access": ubx.FieldSpec(
-        wire_name="network_access",
-        kind="list",
-        fields=_Capability_Configuration_ArgoCd_NetworkAccessFields,
-    ),
-    "rbac_role_mapping": ubx.FieldSpec(
-        wire_name="rbac_role_mapping",
-        kind="set",
-        fields=_Capability_Configuration_ArgoCd_RbacRoleMappingFields,
-    ),
-}
-
-_Capability_ConfigurationFields = {
-    "argo_cd": ubx.FieldSpec(
-        wire_name="argo_cd",
-        kind="list",
-        fields=_Capability_Configuration_ArgoCdFields,
-    ),
-}
-
-_Capability_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Capability_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class CapabilityConfig:
+    # A unique name for the capability. The name must be unique within your cluster and can contain alphanumeric characters, hyphens, and underscores.
     capability_name: Any = None
+    # The name of the EKS cluster where you want to create the capability.
     cluster_name: Any = None
+    # Specifies how Kubernetes resources managed by the capability should be handled when the capability is deleted. Currently, the only supported value is RETAIN which retains all Kubernetes resources managed by the capability when the capability is deleted.
     delete_propagation_policy: Any = None
-    region: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role that the capability uses to interact with AWS services. This role must have a trust policy that allows the EKS service principal to assume it, and it must have the necessary permissions for the capability type you're creating.
     role_arn: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
+    # The type of capability to create. Valid values are: ACK (AWS Controllers for Kubernetes, which lets you manage AWS resources directly from Kubernetes), ARGOCD (Argo CD for GitOps-based continuous delivery), or KRO (Kube Resource Orchestrator for composing and managing custom Kubernetes resources).
     type: Any = None
+
+@dataclasses.dataclass
+class CapabilityAttrs:
+    # The Amazon Resource Name (ARN) of the capability.
+    arn: Any = None
+    # A unique name for the capability. The name must be unique within your cluster and can contain alphanumeric characters, hyphens, and underscores.
+    capability_name: Any = None
+    # The name of the EKS cluster where you want to create the capability.
+    cluster_name: Any = None
+    # Configuration settings for a capability. The structure of this object varies depending on the capability type.
     configuration: Any = None
-    timeouts: Any = None
+    # The Unix epoch timestamp in seconds for when the capability was created.
+    created_at: Any = None
+    # Specifies how Kubernetes resources managed by the capability should be handled when the capability is deleted. Currently, the only supported value is RETAIN which retains all Kubernetes resources managed by the capability when the capability is deleted.
+    delete_propagation_policy: Any = None
+    # The Unix epoch timestamp in seconds for when the capability was last modified.
+    modified_at: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role that the capability uses to interact with AWS services. This role must have a trust policy that allows the EKS service principal to assume it, and it must have the necessary permissions for the capability type you're creating.
+    role_arn: Any = None
+    # The current status of the capability. Valid values include: CREATING (the capability is being created), ACTIVE (the capability is running and available), UPDATING (the capability is being updated), DELETING (the capability is being deleted), CREATE_FAILED (the capability creation failed), UPDATE_FAILED (the capability update failed), or DELETE_FAILED (the capability deletion failed).
+    status: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # The type of capability to create. Valid values are: ACK (AWS Controllers for Kubernetes, which lets you manage AWS resources directly from Kubernetes), ARGOCD (Argo CD for GitOps-based continuous delivery), or KRO (Kube Resource Orchestrator for composing and managing custom Kubernetes resources).
+    type: Any = None
+    # The version of the capability software that is currently running.
+    version: Any = None
 
 Capability = ubx.ResourceBinding(
     wire_type="aws_eks_capability",
@@ -120,19 +109,12 @@ Capability = ubx.ResourceBinding(
         "capability_name": ubx.FieldSpec(wire_name="capability_name"),
         "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
         "delete_propagation_policy": ubx.FieldSpec(wire_name="delete_propagation_policy"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "role_arn": ubx.FieldSpec(wire_name="role_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "type": ubx.FieldSpec(wire_name="type"),
-        "configuration": ubx.FieldSpec(
-            wire_name="configuration",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_Capability_ConfigurationFields,
+            fields=_Capability_TagsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Capability_TimeoutsFields,
-        ),
+        "type": ubx.FieldSpec(wire_name="type"),
     },
 )

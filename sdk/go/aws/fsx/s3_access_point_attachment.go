@@ -3,107 +3,167 @@ package fsx
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type S3AccessPointAttachment_OpenzfsConfiguration_FileSystemIdentity_PosixUser struct {
+type S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_UnixUser struct {
+	// The name of the UNIX user.
+	Name any
+}
+
+type S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity struct {
+	// Specifies the FSx for ONTAP user identity type, accepts either UNIX or WINDOWS.
+	Type any
+	// Configures the Unix user identity (e.g., user name or UID) that the FSx for ONTAP S3 access point uses to map file system access requests to a specific Unix user's permissions. (AI-inferred)
+	UnixUser any
+	// Specifies the Windows user credentials (domain and password) that define the file system's identity when the FSx for ONTAP file system is joined to an Active Directory domain. (AI-inferred)
+	WindowsUser any
+}
+
+type S3AccessPointAttachment_OntapConfiguration struct {
+	// Identifies the FSx for ONTAP file system and its storage virtual machine (SVM) to which the S3 access point is attached, containing the file system ID and SVM ID. (AI-inferred)
+	FileSystemIdentity any
+	// The ID of the FSx for ONTAP volume that the S3 access point is attached to.
+	VolumeId any
+}
+
+type S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUser_SecondaryGids struct {
+	// The numeric secondary group ID (GID) that is added to the POSIX user's secondary group list for the file system identity used by the S3 access point attachment. (AI-inferred)
 	Gid any
+}
+
+type S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUser struct {
+	// The GID of the file system user.
+	Gid any
+	// The list of secondary GIDs for the file system user.
 	SecondaryGids any
+	// The UID of the file system user.
 	Uid any
 }
 
-type S3AccessPointAttachment_OpenzfsConfiguration_FileSystemIdentity struct {
-	Type any
+type S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity struct {
+	// Defines the POSIX user (UID and GID) on the FSx for OpenZFS file system that is used to map operations from the attached S3 access point. (AI-inferred)
 	PosixUser any
+	// Specifies the FSx for OpenZFS user identity type, accepts only POSIX.
+	Type any
 }
 
-type S3AccessPointAttachment_OpenzfsConfiguration struct {
-	VolumeId any
+type S3AccessPointAttachment_OpenZfsconfiguration struct {
+	// Specifies the POSIX user ID and group ID (file system identity) that the OpenZFS file system uses when accessing the attached S3 access point. (AI-inferred)
 	FileSystemIdentity any
+	// The ID of the FSx for OpenZFS volume that the S3 access point is attached to.
+	VolumeId any
 }
 
 type S3AccessPointAttachment_S3AccessPoint_VpcConfiguration struct {
+	// Specifies the virtual private cloud (VPC) for the S3 access point VPC configuration, if one exists.
 	VpcId any
 }
 
 type S3AccessPointAttachment_S3AccessPoint struct {
+	// The S3 access point's alias.
+	Alias any
+	// The S3 access point's policy.
 	Policy any
+	// The S3 access point's ARN.
+	ResourceArn any
+	// Specifies the VPC configuration for the S3 access point, including the VPC ID in which the access point is created and which restricts access to requests originating from that VPC only. (AI-inferred)
 	VpcConfiguration any
 }
 
-type S3AccessPointAttachment_Timeouts struct {
-	Create any
-	Delete any
-}
+var S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_UnixUserFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
-var S3AccessPointAttachment_OpenzfsConfiguration_FileSystemIdentity_PosixUserFields = ubx.FieldMap{
+var S3AccessPointAttachment_OntapConfiguration_FileSystemIdentityFields = ubx.FieldMap{
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"UnixUser": ubx.FieldSpec{
+			WireName: "unix_user",
+			Kind: "object",
+			Fields: S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_UnixUserFields,
+		},
+		"WindowsUser": ubx.FieldSpec{
+			WireName: "windows_user",
+			Kind: "object",
+			Fields: S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_UnixUserFields,
+		},
+	}
+
+var S3AccessPointAttachment_OntapConfigurationFields = ubx.FieldMap{
+		"FileSystemIdentity": ubx.FieldSpec{
+			WireName: "file_system_identity",
+			Kind: "object",
+			Fields: S3AccessPointAttachment_OntapConfiguration_FileSystemIdentityFields,
+		},
+		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+	}
+
+var S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUser_SecondaryGidsFields = ubx.FieldMap{
 		"Gid": ubx.FieldSpec{WireName: "gid"},
-		"SecondaryGids": ubx.FieldSpec{WireName: "secondary_gids"},
+	}
+
+var S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUserFields = ubx.FieldMap{
+		"Gid": ubx.FieldSpec{WireName: "gid"},
+		"SecondaryGids": ubx.FieldSpec{
+			WireName: "secondary_gids",
+			Kind: "list",
+			Fields: S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUser_SecondaryGidsFields,
+		},
 		"Uid": ubx.FieldSpec{WireName: "uid"},
 	}
 
-var S3AccessPointAttachment_OpenzfsConfiguration_FileSystemIdentityFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
+var S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentityFields = ubx.FieldMap{
 		"PosixUser": ubx.FieldSpec{
 			WireName: "posix_user",
-			Kind: "list",
-			Fields: S3AccessPointAttachment_OpenzfsConfiguration_FileSystemIdentity_PosixUserFields,
+			Kind: "object",
+			Fields: S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUserFields,
 		},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
-var S3AccessPointAttachment_OpenzfsConfigurationFields = ubx.FieldMap{
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+var S3AccessPointAttachment_OpenZfsconfigurationFields = ubx.FieldMap{
 		"FileSystemIdentity": ubx.FieldSpec{
 			WireName: "file_system_identity",
-			Kind: "list",
-			Fields: S3AccessPointAttachment_OpenzfsConfiguration_FileSystemIdentityFields,
+			Kind: "object",
+			Fields: S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentityFields,
 		},
-	}
-
-var S3AccessPointAttachment_S3AccessPoint_VpcConfigurationFields = ubx.FieldMap{
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
-
-var S3AccessPointAttachment_S3AccessPointFields = ubx.FieldMap{
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"VpcConfiguration": ubx.FieldSpec{
-			WireName: "vpc_configuration",
-			Kind: "list",
-			Fields: S3AccessPointAttachment_S3AccessPoint_VpcConfigurationFields,
-		},
-	}
-
-var S3AccessPointAttachment_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
 	}
 
 type S3AccessPointAttachmentConfig struct {
+	// The name of the S3 access point attachment; also used for the name of the S3 access point.
 	Name any
-	Region any
+	// The ONTAP-specific settings for the S3 access point, defining the FSx for ONTAP volume to attach, the S3 bucket and read/write settings, and an optional alias used to address the access point. (AI-inferred)
+	OntapConfiguration any
+	OpenZfsconfiguration any
+	// The type of Amazon FSx volume that the S3 access point is attached to.
 	Type any
-	OpenzfsConfiguration any
+}
+
+type S3AccessPointAttachmentAttrs struct {
+	// The lifecycle status of the S3 access point attachment.
+	Lifecycle any
+	// The name of the S3 access point attachment; also used for the name of the S3 access point.
+	Name any
+	// The ONTAP-specific settings for the S3 access point, defining the FSx for ONTAP volume to attach, the S3 bucket and read/write settings, and an optional alias used to address the access point. (AI-inferred)
+	OntapConfiguration any
+	OpenZfsconfiguration any
 	S3AccessPoint any
-	Timeouts any
+	// The type of Amazon FSx volume that the S3 access point is attached to.
+	Type any
 }
 
 var S3AccessPointAttachment = ubx.ResourceBinding{
 	WireType: "aws_fsx_s3_access_point_attachment",
 	Fields: ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"OpenzfsConfiguration": ubx.FieldSpec{
-			WireName: "openzfs_configuration",
-			Kind: "list",
-			Fields: S3AccessPointAttachment_OpenzfsConfigurationFields,
-		},
-		"S3AccessPoint": ubx.FieldSpec{
-			WireName: "s3_access_point",
-			Kind: "list",
-			Fields: S3AccessPointAttachment_S3AccessPointFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"OntapConfiguration": ubx.FieldSpec{
+			WireName: "ontap_configuration",
 			Kind: "object",
-			Fields: S3AccessPointAttachment_TimeoutsFields,
+			Fields: S3AccessPointAttachment_OntapConfigurationFields,
 		},
+		"OpenZfsconfiguration": ubx.FieldSpec{
+			WireName: "open_zfsconfiguration",
+			Kind: "object",
+			Fields: S3AccessPointAttachment_OpenZfsconfigurationFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

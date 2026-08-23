@@ -8,35 +8,39 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Job_Command:
+    # The name of the job command
     name: Any = None
+    # The Python version being used to execute a Python shell job.
     python_version: Any = None
+    # Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment
     runtime: Any = None
+    # Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job
     script_location: Any = None
 
 @dataclasses.dataclass
+class Job_Connections:
+    # A list of connections used by the job.
+    connections: Any = None
+
+@dataclasses.dataclass
 class Job_ExecutionProperty:
+    # The maximum number of concurrent runs allowed for the job.
     max_concurrent_runs: Any = None
 
 @dataclasses.dataclass
 class Job_NotificationProperty:
+    # It is the number of minutes to wait before sending a job run delay notification after a job run starts
     notify_delay_after: Any = None
-
-@dataclasses.dataclass
-class Job_SourceControlDetails:
-    auth_strategy: Any = None
-    auth_token: Any = None
-    branch: Any = None
-    folder: Any = None
-    last_commit_id: Any = None
-    owner: Any = None
-    provider: Any = None
-    repository: Any = None
 
 _Job_CommandFields = {
     "name": ubx.FieldSpec(wire_name="name"),
     "python_version": ubx.FieldSpec(wire_name="python_version"),
     "runtime": ubx.FieldSpec(wire_name="runtime"),
     "script_location": ubx.FieldSpec(wire_name="script_location"),
+}
+
+_Job_ConnectionsFields = {
+    "connections": ubx.FieldSpec(wire_name="connections"),
 }
 
 _Job_ExecutionPropertyFields = {
@@ -47,88 +51,145 @@ _Job_NotificationPropertyFields = {
     "notify_delay_after": ubx.FieldSpec(wire_name="notify_delay_after"),
 }
 
-_Job_SourceControlDetailsFields = {
-    "auth_strategy": ubx.FieldSpec(wire_name="auth_strategy"),
-    "auth_token": ubx.FieldSpec(wire_name="auth_token"),
-    "branch": ubx.FieldSpec(wire_name="branch"),
-    "folder": ubx.FieldSpec(wire_name="folder"),
-    "last_commit_id": ubx.FieldSpec(wire_name="last_commit_id"),
-    "owner": ubx.FieldSpec(wire_name="owner"),
-    "provider": ubx.FieldSpec(wire_name="provider"),
-    "repository": ubx.FieldSpec(wire_name="repository"),
-}
-
 @dataclasses.dataclass
 class JobConfig:
-    connections: Any = None
-    default_arguments: Any = None
-    description: Any = None
-    execution_class: Any = None
-    glue_version: Any = None
-    id: Any = None
-    job_mode: Any = None
-    job_run_queuing_enabled: Any = None
-    maintenance_window: Any = None
-    max_capacity: Any = None
-    max_retries: Any = None
-    name: Any = None
-    non_overridable_arguments: Any = None
-    number_of_workers: Any = None
-    region: Any = None
-    role_arn: Any = None
-    security_configuration: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    timeout: Any = None
-    worker_type: Any = None
+    # The number of capacity units that are allocated to this job.
+    allocated_capacity: Any = None
+    # Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred)
     command: Any = None
+    # Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred)
+    connections: Any = None
+    # The default arguments for this job, specified as name-value pairs.
+    default_arguments: Any = None
+    # A description of the job.
+    description: Any = None
+    # Indicates whether the job is run with a standard or flexible execution class.
+    execution_class: Any = None
+    # Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred)
     execution_property: Any = None
+    # Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+    glue_version: Any = None
+    # Property description not available.
+    job_mode: Any = None
+    # Property description not available.
+    job_run_queuing_enabled: Any = None
+    # This field is reserved for future use.
+    log_uri: Any = None
+    # Property description not available.
+    maintenance_window: Any = None
+    # The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs.
+    max_capacity: Any = None
+    # The maximum number of times to retry this job after a JobRun fails
+    max_retries: Any = None
+    # The name you assign to the job definition
+    name: Any = None
+    # Non-overridable arguments for this job, specified as name-value pairs.
+    non_overridable_arguments: Any = None
+    # Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred)
     notification_property: Any = None
-    source_control_details: Any = None
+    # The number of workers of a defined workerType that are allocated when a job runs.
+    number_of_workers: Any = None
+    # The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
+    role: Any = None
+    # The name of the SecurityConfiguration structure to be used with this job.
+    security_configuration: Any = None
+    # The tags to use with this job.
+    tags: Any = None
+    # The maximum time that a job run can consume resources before it is terminated and enters TIMEOUT status.
+    timeout: Any = None
+    # TThe type of predefined worker that is allocated when a job runs.
+    worker_type: Any = None
+
+@dataclasses.dataclass
+class JobAttrs:
+    # The number of capacity units that are allocated to this job.
+    allocated_capacity: Any = None
+    # Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred)
+    command: Any = None
+    # Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred)
+    connections: Any = None
+    # The default arguments for this job, specified as name-value pairs.
+    default_arguments: Any = None
+    # A description of the job.
+    description: Any = None
+    # Indicates whether the job is run with a standard or flexible execution class.
+    execution_class: Any = None
+    # Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred)
+    execution_property: Any = None
+    # Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+    glue_version: Any = None
+    # Property description not available.
+    job_mode: Any = None
+    # Property description not available.
+    job_run_queuing_enabled: Any = None
+    # This field is reserved for future use.
+    log_uri: Any = None
+    # Property description not available.
+    maintenance_window: Any = None
+    # The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs.
+    max_capacity: Any = None
+    # The maximum number of times to retry this job after a JobRun fails
+    max_retries: Any = None
+    # The name you assign to the job definition
+    name: Any = None
+    # Non-overridable arguments for this job, specified as name-value pairs.
+    non_overridable_arguments: Any = None
+    # Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred)
+    notification_property: Any = None
+    # The number of workers of a defined workerType that are allocated when a job runs.
+    number_of_workers: Any = None
+    # The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
+    role: Any = None
+    # The name of the SecurityConfiguration structure to be used with this job.
+    security_configuration: Any = None
+    # The tags to use with this job.
+    tags: Any = None
+    # The maximum time that a job run can consume resources before it is terminated and enters TIMEOUT status.
+    timeout: Any = None
+    # TThe type of predefined worker that is allocated when a job runs.
+    worker_type: Any = None
 
 Job = ubx.ResourceBinding(
     wire_type="aws_glue_job",
     fields={
-        "connections": ubx.FieldSpec(wire_name="connections"),
+        "allocated_capacity": ubx.FieldSpec(wire_name="allocated_capacity"),
+        "command": ubx.FieldSpec(
+            wire_name="command",
+            kind="object",
+            fields=_Job_CommandFields,
+        ),
+        "connections": ubx.FieldSpec(
+            wire_name="connections",
+            kind="object",
+            fields=_Job_ConnectionsFields,
+        ),
         "default_arguments": ubx.FieldSpec(wire_name="default_arguments"),
         "description": ubx.FieldSpec(wire_name="description"),
         "execution_class": ubx.FieldSpec(wire_name="execution_class"),
+        "execution_property": ubx.FieldSpec(
+            wire_name="execution_property",
+            kind="object",
+            fields=_Job_ExecutionPropertyFields,
+        ),
         "glue_version": ubx.FieldSpec(wire_name="glue_version"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "job_mode": ubx.FieldSpec(wire_name="job_mode"),
         "job_run_queuing_enabled": ubx.FieldSpec(wire_name="job_run_queuing_enabled"),
+        "log_uri": ubx.FieldSpec(wire_name="log_uri"),
         "maintenance_window": ubx.FieldSpec(wire_name="maintenance_window"),
         "max_capacity": ubx.FieldSpec(wire_name="max_capacity"),
         "max_retries": ubx.FieldSpec(wire_name="max_retries"),
         "name": ubx.FieldSpec(wire_name="name"),
         "non_overridable_arguments": ubx.FieldSpec(wire_name="non_overridable_arguments"),
-        "number_of_workers": ubx.FieldSpec(wire_name="number_of_workers"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "role_arn": ubx.FieldSpec(wire_name="role_arn"),
-        "security_configuration": ubx.FieldSpec(wire_name="security_configuration"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "timeout": ubx.FieldSpec(wire_name="timeout"),
-        "worker_type": ubx.FieldSpec(wire_name="worker_type"),
-        "command": ubx.FieldSpec(
-            wire_name="command",
-            kind="list",
-            fields=_Job_CommandFields,
-        ),
-        "execution_property": ubx.FieldSpec(
-            wire_name="execution_property",
-            kind="list",
-            fields=_Job_ExecutionPropertyFields,
-        ),
         "notification_property": ubx.FieldSpec(
             wire_name="notification_property",
-            kind="list",
+            kind="object",
             fields=_Job_NotificationPropertyFields,
         ),
-        "source_control_details": ubx.FieldSpec(
-            wire_name="source_control_details",
-            kind="list",
-            fields=_Job_SourceControlDetailsFields,
-        ),
+        "number_of_workers": ubx.FieldSpec(wire_name="number_of_workers"),
+        "role": ubx.FieldSpec(wire_name="role"),
+        "security_configuration": ubx.FieldSpec(wire_name="security_configuration"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeout": ubx.FieldSpec(wire_name="timeout"),
+        "worker_type": ubx.FieldSpec(wire_name="worker_type"),
     },
 )

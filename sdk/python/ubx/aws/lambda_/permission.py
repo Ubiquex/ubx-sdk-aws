@@ -7,34 +7,48 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Permission_Timeouts:
-    create: Any = None
-    delete: Any = None
-    read: Any = None
-
-_Permission_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "read": ubx.FieldSpec(wire_name="read"),
-}
+class PermissionConfig:
+    # The action that the principal can use on the function. For example, ``lambda:InvokeFunction`` or ``lambda:GetFunction``.
+    action: Any = None
+    # For Alexa Smart Home functions, a token that the invoker must supply.
+    event_source_token: Any = None
+    # The name or ARN of the Lambda function, version, or alias. **Name formats** + *Function name* – ``my-function`` (name-only), ``my-function:v1`` (with alias). + *Function ARN* – ``arn:aws:lambda:us-west-2:123456789012:function:my-function``. + *Partial ARN* – ``123456789012:function:my-function``. You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.
+    function_name: Any = None
+    # The type of authentication that your function URL uses. Set to ``AWS_IAM`` if you want to restrict access to authenticated users only. Set to ``NONE`` if you want to bypass IAM authentication to create a public endpoint. For more information, see [Control access to Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html).
+    function_url_auth_type: Any = None
+    # Indicates whether the permission applies when the function is invoked through a function URL.
+    invoked_via_function_url: Any = None
+    # The AWS-service, AWS-account, IAM user, or IAM role that invokes the function. If you specify a service, use ``SourceArn`` or ``SourceAccount`` to limit who can invoke the function through that service.
+    principal: Any = None
+    # The identifier for your organization in AOlong. Use this to grant permissions to all the AWS-accounts under this organization.
+    principal_org_id: Any = None
+    # For AWS-service, the ID of the AWS-account that owns the resource. Use this together with ``SourceArn`` to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.
+    source_account: Any = None
+    # For AWS-services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic. Note that Lambda configures the comparison using the ``StringLike`` operator.
+    source_arn: Any = None
 
 @dataclasses.dataclass
-class PermissionConfig:
+class PermissionAttrs:
+    # The action that the principal can use on the function. For example, ``lambda:InvokeFunction`` or ``lambda:GetFunction``.
     action: Any = None
+    # For Alexa Smart Home functions, a token that the invoker must supply.
     event_source_token: Any = None
+    # The name or ARN of the Lambda function, version, or alias. **Name formats** + *Function name* – ``my-function`` (name-only), ``my-function:v1`` (with alias). + *Function ARN* – ``arn:aws:lambda:us-west-2:123456789012:function:my-function``. + *Partial ARN* – ``123456789012:function:my-function``. You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.
     function_name: Any = None
+    # The type of authentication that your function URL uses. Set to ``AWS_IAM`` if you want to restrict access to authenticated users only. Set to ``NONE`` if you want to bypass IAM authentication to create a public endpoint. For more information, see [Control access to Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html).
     function_url_auth_type: Any = None
+    # The unique identifier for the Lambda permission, typically a combination of the function name and the statement ID. (AI-inferred)
     id: Any = None
+    # Indicates whether the permission applies when the function is invoked through a function URL.
     invoked_via_function_url: Any = None
+    # The AWS-service, AWS-account, IAM user, or IAM role that invokes the function. If you specify a service, use ``SourceArn`` or ``SourceAccount`` to limit who can invoke the function through that service.
     principal: Any = None
+    # The identifier for your organization in AOlong. Use this to grant permissions to all the AWS-accounts under this organization.
     principal_org_id: Any = None
-    qualifier: Any = None
-    region: Any = None
+    # For AWS-service, the ID of the AWS-account that owns the resource. Use this together with ``SourceArn`` to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.
     source_account: Any = None
+    # For AWS-services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic. Note that Lambda configures the comparison using the ``StringLike`` operator.
     source_arn: Any = None
-    statement_id: Any = None
-    statement_id_prefix: Any = None
-    timeouts: Any = None
 
 Permission = ubx.ResourceBinding(
     wire_type="aws_lambda_permission",
@@ -43,20 +57,10 @@ Permission = ubx.ResourceBinding(
         "event_source_token": ubx.FieldSpec(wire_name="event_source_token"),
         "function_name": ubx.FieldSpec(wire_name="function_name"),
         "function_url_auth_type": ubx.FieldSpec(wire_name="function_url_auth_type"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "invoked_via_function_url": ubx.FieldSpec(wire_name="invoked_via_function_url"),
         "principal": ubx.FieldSpec(wire_name="principal"),
         "principal_org_id": ubx.FieldSpec(wire_name="principal_org_id"),
-        "qualifier": ubx.FieldSpec(wire_name="qualifier"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "source_account": ubx.FieldSpec(wire_name="source_account"),
         "source_arn": ubx.FieldSpec(wire_name="source_arn"),
-        "statement_id": ubx.FieldSpec(wire_name="statement_id"),
-        "statement_id_prefix": ubx.FieldSpec(wire_name="statement_id_prefix"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Permission_TimeoutsFields,
-        ),
     },
 )

@@ -7,22 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class InterfacePermission_Timeouts:
-    create: Any = None
-    delete: Any = None
-
-_InterfacePermission_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-}
+class InterfacePermissionConfig:
+    # The AWS account ID that is granted permission to attach the network interface to an instance or associate it with an Elastic IP. (AI-inferred)
+    aws_account_id: Any = None
+    # The ID of the Elastic Network Interface (ENI) to which this permission grants cross-account attachment access. (AI-inferred)
+    network_interface_id: Any = None
+    # The type of permission to grant on the network interface, either INSTANCE-ATTACH (allows an instance to attach to the interface) or EIP-ASSOCIATE (allows an Elastic IP to be associated with the interface). (AI-inferred)
+    permission: Any = None
 
 @dataclasses.dataclass
-class InterfacePermissionConfig:
+class InterfacePermissionAttrs:
+    # The AWS account ID that is granted permission to attach the network interface to an instance or associate it with an Elastic IP. (AI-inferred)
     aws_account_id: Any = None
+    # The unique identifier assigned by AWS to this network interface permission, used to reference the permission in other API calls. (AI-inferred)
+    id: Any = None
+    # The ID of the Elastic Network Interface (ENI) to which this permission grants cross-account attachment access. (AI-inferred)
     network_interface_id: Any = None
+    # The type of permission to grant on the network interface, either INSTANCE-ATTACH (allows an instance to attach to the interface) or EIP-ASSOCIATE (allows an Elastic IP to be associated with the interface). (AI-inferred)
     permission: Any = None
-    region: Any = None
-    timeouts: Any = None
 
 InterfacePermission = ubx.ResourceBinding(
     wire_type="aws_network_interface_permission",
@@ -30,11 +32,5 @@ InterfacePermission = ubx.ResourceBinding(
         "aws_account_id": ubx.FieldSpec(wire_name="aws_account_id"),
         "network_interface_id": ubx.FieldSpec(wire_name="network_interface_id"),
         "permission": ubx.FieldSpec(wire_name="permission"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_InterfacePermission_TimeoutsFields,
-        ),
     },
 )

@@ -2,319 +2,547 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Pipe_EnrichmentParameters_HttpParameters {
-  headerParameters: Record<string, string>;
-  pathParameterValues: string[];
-  queryStringParameters: Record<string, string>;
+  /** Specifies the HTTP headers to include in the enrichment request, mapping each header name to its value (which may be a static string or a dynamic expression). (AI-inferred) */
+  headerParameters?: unknown | Computed<unknown>;
+  /** Specifies the list of values to substitute for each path parameter placeholder in the enrichment HTTP endpoint's URL, in the order the placeholders appear. (AI-inferred) */
+  pathParameterValues?: string[] | Computed<string[]>;
+  /** Specifies the key-value pairs to be included as query string parameters in the HTTP request when the pipe invokes the enrichment endpoint defined by http_parameters. (AI-inferred) */
+  queryStringParameters?: unknown | Computed<unknown>;
 }
 
 export interface Pipe_EnrichmentParameters {
-  inputTemplate: string;
-  httpParameters: Pipe_EnrichmentParameters_HttpParameters[];
+  /** Specifies the HTTP request parameters (including headers, query strings, and path parameter values) for a pipe's enrichment step when the target is an API destination. (AI-inferred) */
+  httpParameters?: Pipe_EnrichmentParameters_HttpParameters | Computed<Pipe_EnrichmentParameters_HttpParameters>;
+  /** Specifies the input template, a JSON string with dynamic references, that determines the payload delivered to the enrichment target for each event. (AI-inferred) */
+  inputTemplate?: string | Computed<string>;
 }
 
 export interface Pipe_LogConfiguration_CloudwatchLogsLogDestination {
-  logGroupArn: string;
+  /** The ARN of the CloudWatch Logs log group that receives the pipe's execution logs. (AI-inferred) */
+  logGroupArn?: string | Computed<string>;
 }
 
 export interface Pipe_LogConfiguration_FirehoseLogDestination {
-  deliveryStreamArn: string;
+  /** The ARN of the Amazon Data Firehose delivery stream to which the pipe's execution logs are delivered when Firehose is selected as the log destination. (AI-inferred) */
+  deliveryStreamArn?: string | Computed<string>;
 }
 
 export interface Pipe_LogConfiguration_S3LogDestination {
-  bucketName: string;
-  bucketOwner: string;
-  outputFormat: string;
-  prefix: string;
+  /** The name of the S3 bucket where AWS Pipes delivers execution logs when the pipe's log configuration uses an S3 log destination. (AI-inferred) */
+  bucketName?: string | Computed<string>;
+  /** The AWS account ID of the Amazon S3 bucket owner, used to validate ownership when the destination bucket is in a different account. (AI-inferred) */
+  bucketOwner?: string | Computed<string>;
+  /** Controls whether the logs delivered to the S3 bucket are formatted as JSON or as plain text, based on the value of this output format field. (AI-inferred) */
+  outputFormat?: string | Computed<string>;
+  /** The object key prefix to prepend to log files delivered to the S3 bucket when logging is configured for the pipe. (AI-inferred) */
+  prefix?: string | Computed<string>;
 }
 
 export interface Pipe_LogConfiguration {
-  includeExecutionData: string[];
-  level: string;
-  cloudwatchLogsLogDestination: Pipe_LogConfiguration_CloudwatchLogsLogDestination[];
-  firehoseLogDestination: Pipe_LogConfiguration_FirehoseLogDestination[];
-  s3LogDestination: Pipe_LogConfiguration_S3LogDestination[];
+  /** Specifies the CloudWatch Logs log destination (including the log group ARN) for this pipe, used when log_configuration is configured to send execution logs to CloudWatch Logs. (AI-inferred) */
+  cloudwatchLogsLogDestination?: Pipe_LogConfiguration_CloudwatchLogsLogDestination | Computed<Pipe_LogConfiguration_CloudwatchLogsLogDestination>;
+  /** Specifies the Amazon Data Firehose delivery stream (via its ARN) to which AWS Pipes delivers execution and diagnostic logs. (AI-inferred) */
+  firehoseLogDestination?: Pipe_LogConfiguration_FirehoseLogDestination | Computed<Pipe_LogConfiguration_FirehoseLogDestination>;
+  /** Controls which pipe execution data fields (such as the input payload, output payload, or metadata) are included in the log records written to the configured log destination for an AWS Pipes pipe. (AI-inferred) */
+  includeExecutionData?: string[] | Computed<string[]>;
+  /** The log level for the pipe's logging configuration, such as OFF, ERROR, INFO, TRACE, or WARN, controlling the granularity of log entries emitted by the pipe. (AI-inferred) */
+  level?: string | Computed<string>;
+  /** Configures the Amazon S3 bucket, and optionally a prefix, that acts as the destination for logs emitted by the pipe when S3 is selected as the log delivery mechanism. (AI-inferred) */
+  s3LogDestination?: Pipe_LogConfiguration_S3LogDestination | Computed<Pipe_LogConfiguration_S3LogDestination>;
 }
 
-export interface Pipe_SourceParameters_ActivemqBrokerParameters_Credentials {
-  basicAuth: string;
+export interface Pipe_SourceParameters_ActiveMqbrokerParameters_Credentials {
+  /** Specifies the ARN of the AWS Secrets Manager secret that contains the basic authentication credentials (username and password) used to connect to the ActiveMQ broker source. (AI-inferred) */
+  basicAuth?: string | Computed<string>;
 }
 
-export interface Pipe_SourceParameters_ActivemqBrokerParameters {
-  batchSize: number;
-  maximumBatchingWindowInSeconds: number;
-  queueName: string;
-  credentials: Pipe_SourceParameters_ActivemqBrokerParameters_Credentials[];
+export interface Pipe_SourceParameters_ActiveMqbrokerParameters {
+  /** The maximum number of records to include in each batch when reading from the ActiveMQ broker source. (AI-inferred) */
+  batchSize?: number | Computed<number>;
+  /** Defines the authentication credentials required to connect to the ActiveMQ broker, supporting either basic authentication with a username and password or client certificate TLS authentication. (AI-inferred) */
+  credentials: Pipe_SourceParameters_ActiveMqbrokerParameters_Credentials | Computed<Pipe_SourceParameters_ActiveMqbrokerParameters_Credentials>;
+  /** Specifies the maximum number of seconds that EventBridge Pipes waits when gathering events from an ActiveMQ broker source before invoking the target with a batch. (AI-inferred) */
+  maximumBatchingWindowInSeconds?: number | Computed<number>;
+  /** Specifies the name of the ActiveMQ queue from which the pipe reads messages. (AI-inferred) */
+  queueName: string | Computed<string>;
 }
 
-export interface Pipe_SourceParameters_DynamodbStreamParameters_DeadLetterConfig {
-  arn: string;
+export interface Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfig {
+  /** The ARN of the Amazon SQS queue or Amazon SNS topic that receives events when AWS Pipes fails to deliver them from the DynamoDB stream source. (AI-inferred) */
+  arn?: string | Computed<string>;
 }
 
-export interface Pipe_SourceParameters_DynamodbStreamParameters {
-  batchSize: number;
-  maximumBatchingWindowInSeconds: number;
-  maximumRecordAgeInSeconds: number;
-  maximumRetryAttempts: number;
-  onPartialBatchItemFailure: string;
-  parallelizationFactor: number;
-  startingPosition: string;
-  deadLetterConfig: Pipe_SourceParameters_DynamodbStreamParameters_DeadLetterConfig[];
+export interface Pipe_SourceParameters_DynamoDbstreamParameters {
+  /** The maximum number of records to read from the DynamoDB stream in a single batch when using DynamoDB as a pipe source. (AI-inferred) */
+  batchSize?: number | Computed<number>;
+  /** Specifies the ARN of an SQS queue or SNS topic where records that fail processing from the DynamoDB stream are sent, serving as a dead-letter target for the pipe source. (AI-inferred) */
+  deadLetterConfig?: Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfig | Computed<Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfig>;
+  /** Specifies the maximum number of seconds that AWS Pipes will wait to gather records from the DynamoDB stream before sending a batch to the target, allowing you to control the batching behavior. (AI-inferred) */
+  maximumBatchingWindowInSeconds?: number | Computed<number>;
+  /** Sets the maximum age in seconds that a record from the DynamoDB stream source can be retained before the pipe considers it expired and discards it from processing. (AI-inferred) */
+  maximumRecordAgeInSeconds?: number | Computed<number>;
+  /** Specifies the maximum number of retry attempts AWS Pipes will make to deliver an event from a DynamoDB stream source to the pipe's target before giving up. (AI-inferred) */
+  maximumRetryAttempts?: number | Computed<number>;
+  /** Determines how the pipe handles a partial batch failure from the DynamoDB stream, either by discarding the failed batch and continuing (SEND_AND_FORGET) or by sending the failed batch to a destination specified by its ARN. (AI-inferred) */
+  onPartialBatchItemFailure?: string | Computed<string>;
+  /** Sets the maximum number of shards processed concurrently for a DynamoDB stream source, allowing you to scale the pipe's throughput by increasing parallel shard consumption. (AI-inferred) */
+  parallelizationFactor?: number | Computed<number>;
+  /** Determines the point in the DynamoDB stream from which the pipe starts reading, with valid values including LATEST, TRIM_HORIZON, and AT_TIMESTAMP. (AI-inferred) */
+  startingPosition: string | Computed<string>;
 }
 
-export interface Pipe_SourceParameters_FilterCriteria_Filter {
-  pattern: string;
+export interface Pipe_SourceParameters_FilterCriteria_Filters {
+  /** Defines the EventBridge event pattern (as a JSON string) that determines which incoming events from the source are matched and processed, based on the source's filter criteria. (AI-inferred) */
+  pattern?: string | Computed<string>;
 }
 
 export interface Pipe_SourceParameters_FilterCriteria {
-  filter: Pipe_SourceParameters_FilterCriteria_Filter[];
+  /** Specifies the list of event patterns used to filter which source events are processed by the pipe, where each filter defines a JSON pattern that an incoming event must match. (AI-inferred) */
+  filters?: Pipe_SourceParameters_FilterCriteria_Filters[] | Computed<Pipe_SourceParameters_FilterCriteria_Filters[]>;
 }
 
 export interface Pipe_SourceParameters_KinesisStreamParameters {
-  batchSize: number;
-  maximumBatchingWindowInSeconds: number;
-  maximumRecordAgeInSeconds: number;
-  maximumRetryAttempts: number;
-  onPartialBatchItemFailure: string;
-  parallelizationFactor: number;
-  startingPosition: string;
-  startingPositionTimestamp: string;
-  deadLetterConfig: Pipe_SourceParameters_DynamodbStreamParameters_DeadLetterConfig[];
+  /** The maximum number of records to read from the Kinesis stream in a single batch, which controls how many records are processed at once by the pipe. (AI-inferred) */
+  batchSize?: number | Computed<number>;
+  /** Configuration for sending events that fail processing from the Kinesis stream to a specified Amazon SQS queue or Amazon SNS topic for dead-letter handling. (AI-inferred) */
+  deadLetterConfig?: Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfig | Computed<Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfig>;
+  /** Specifies the maximum number of seconds that EventBridge Pipes accumulates records from the Kinesis stream before sending the batch to the target, with a maximum allowed value of 300 seconds. (AI-inferred) */
+  maximumBatchingWindowInSeconds?: number | Computed<number>;
+  /** Specifies the maximum age in seconds that a record from the source Kinesis stream can be before it is considered expired and skipped, so that stale data is not delivered to the pipe. (AI-inferred) */
+  maximumRecordAgeInSeconds?: number | Computed<number>;
+  /** Specifies the maximum number of retry attempts AWS Pipes will make for a batch of Kinesis stream records that fail to be delivered to the target, before invoking dead-letter queue or error handling. (AI-inferred) */
+  maximumRetryAttempts?: number | Computed<number>;
+  /** The ARN of a Lambda function that AWS EventBridge Pipes invokes to handle records that fail processing from a Kinesis stream. (AI-inferred) */
+  onPartialBatchItemFailure?: string | Computed<string>;
+  /** Specifies the number of batches to process concurrently from each shard of the Kinesis stream, allowing you to increase throughput by processing multiple batches in parallel per shard (values 1-10). (AI-inferred) */
+  parallelizationFactor?: number | Computed<number>;
+  /** Specifies the position in the Kinesis stream from which to start reading records, with valid values including LATEST, TRIM_HORIZON, and AT_TIMESTAMP. (AI-inferred) */
+  startingPosition: string | Computed<string>;
+  /** The timestamp (in milliseconds since Unix epoch) in the Kinesis stream from which to start reading records when the source's starting position is set to AT_TIMESTAMP. (AI-inferred) */
+  startingPositionTimestamp?: string | Computed<string>;
 }
 
 export interface Pipe_SourceParameters_ManagedStreamingKafkaParameters_Credentials {
-  clientCertificateTlsAuth: string;
-  saslScram512Auth: string;
+  /** The ARN of an AWS Secrets Manager secret that stores the client certificate and private key used for mutual TLS authentication to the MSK cluster. (AI-inferred) */
+  clientCertificateTlsAuth?: string | Computed<string>;
+  /** Specifies the ARN of the AWS Secrets Manager secret that contains the SASL/SCRAM-512 credentials used to authenticate to the managed Kafka stream configured as the pipe source. (AI-inferred) */
+  saslScram512Auth?: string | Computed<string>;
 }
 
 export interface Pipe_SourceParameters_ManagedStreamingKafkaParameters {
-  batchSize: number;
-  consumerGroupId: string;
-  maximumBatchingWindowInSeconds: number;
-  startingPosition: string;
-  topicName: string;
-  credentials: Pipe_SourceParameters_ManagedStreamingKafkaParameters_Credentials[];
+  /** The maximum number of records to include in a single batch when reading from the managed Kafka topic used as the source of the pipe. (AI-inferred) */
+  batchSize?: number | Computed<number>;
+  /** The consumer group ID that the pipe uses to consume messages from the Amazon Managed Streaming for Apache Kafka (MSK) topic. (AI-inferred) */
+  consumerGroupId?: string | Computed<string>;
+  /** Specifies the Secrets Manager secret ARN(s) used for client authentication (either TLS client certificate or SASL/SCRAM) when connecting to the Amazon MSK stream source. (AI-inferred) */
+  credentials?: Pipe_SourceParameters_ManagedStreamingKafkaParameters_Credentials | Computed<Pipe_SourceParameters_ManagedStreamingKafkaParameters_Credentials>;
+  /** The maximum number of seconds that AWS Pipes will wait to collect records from the managed Kafka stream before sending a batch to the target, allowing for batching of incoming messages. (AI-inferred) */
+  maximumBatchingWindowInSeconds?: number | Computed<number>;
+  /** Specifies the starting position in the Kafka stream from which the pipe begins consuming records, with valid values being LATEST (default) or TRIM_HORIZON (earliest available). (AI-inferred) */
+  startingPosition?: string | Computed<string>;
+  /** The name of the Kafka topic in the Managed Streaming for Apache Kafka (MSK) cluster from which the pipe reads messages. (AI-inferred) */
+  topicName: string | Computed<string>;
 }
 
-export interface Pipe_SourceParameters_RabbitmqBrokerParameters {
-  batchSize: number;
-  maximumBatchingWindowInSeconds: number;
-  queueName: string;
-  virtualHost: string;
-  credentials: Pipe_SourceParameters_ActivemqBrokerParameters_Credentials[];
+export interface Pipe_SourceParameters_RabbitMqbrokerParameters {
+  /** The maximum number of messages from the RabbitMQ broker that can be read in a single batch, before the batch is sent to the target. (AI-inferred) */
+  batchSize?: number | Computed<number>;
+  /** This object holds the basic authentication parameters for connecting to the RabbitMQ broker, specifically the Amazon Resource Name (ARN) of a Secrets Manager secret that stores the broker username and password. (AI-inferred) */
+  credentials: Pipe_SourceParameters_ActiveMqbrokerParameters_Credentials | Computed<Pipe_SourceParameters_ActiveMqbrokerParameters_Credentials>;
+  /** The maximum amount of time in seconds that EventBridge Pipes waits to gather messages from a RabbitMQ broker into a batch before invoking the target, even if the configured batch size has not been reached. (AI-inferred) */
+  maximumBatchingWindowInSeconds?: number | Computed<number>;
+  /** Specifies the name of the RabbitMQ queue that the pipe consumes messages from when using an Amazon MQ for RabbitMQ broker as the source. (AI-inferred) */
+  queueName: string | Computed<string>;
+  /** The name of the RabbitMQ virtual host from which the pipe reads messages. (AI-inferred) */
+  virtualHost?: string | Computed<string>;
 }
 
 export interface Pipe_SourceParameters_SelfManagedKafkaParameters_Credentials {
-  basicAuth: string;
-  clientCertificateTlsAuth: string;
-  saslScram256Auth: string;
-  saslScram512Auth: string;
+  /** The ARN of the AWS Secrets Manager secret that contains the username and password used for basic authentication to the self-managed Kafka cluster. (AI-inferred) */
+  basicAuth?: string | Computed<string>;
+  /** The ARN of an AWS Secrets Manager secret that stores the client certificate and private key for mutual TLS authentication with the self-managed Apache Kafka cluster. (AI-inferred) */
+  clientCertificateTlsAuth?: string | Computed<string>;
+  /** The ARN of the AWS Secrets Manager secret that stores the SASL SCRAM256 credentials used to authenticate against the self-managed Kafka cluster that is the source of the pipe. (AI-inferred) */
+  saslScram256Auth?: string | Computed<string>;
+  /** The ARN of the AWS Secrets Manager secret that stores the SASL/SCRAM-512 username and password used to authenticate to the self-managed Apache Kafka cluster. (AI-inferred) */
+  saslScram512Auth?: string | Computed<string>;
 }
 
 export interface Pipe_SourceParameters_SelfManagedKafkaParameters_Vpc {
-  securityGroups: string[];
-  subnets: string[];
+  /** List of SecurityGroupId. */
+  securityGroup?: string[] | Computed<string[]>;
+  /** List of SubnetId. */
+  subnets?: string[] | Computed<string[]>;
 }
 
 export interface Pipe_SourceParameters_SelfManagedKafkaParameters {
-  additionalBootstrapServers: string[];
-  batchSize: number;
-  consumerGroupId: string;
-  maximumBatchingWindowInSeconds: number;
-  serverRootCaCertificate: string;
-  startingPosition: string;
-  topicName: string;
-  credentials: Pipe_SourceParameters_SelfManagedKafkaParameters_Credentials[];
-  vpc: Pipe_SourceParameters_SelfManagedKafkaParameters_Vpc[];
+  /** Specifies additional Kafka bootstrap server addresses that the pipe may use to connect to the self-managed Kafka cluster, supplementing the primary bootstrap servers for broker discovery. (AI-inferred) */
+  additionalBootstrapServers?: string[] | Computed<string[]>;
+  /** The maximum number of records to read from a self-managed Kafka topic and include in each batch sent to the pipe target. (AI-inferred) */
+  batchSize?: number | Computed<number>;
+  /** Specifies the consumer group ID that the AWS Pipes pipe uses when consuming messages from the self-managed Apache Kafka topic, allowing you to manage offsets and consumer group coordination. (AI-inferred) */
+  consumerGroupId?: string | Computed<string>;
+  /** Specifies the authentication credentials (basic auth, client certificate TLS, or SASL/SCRAM) required to connect to the self-managed Apache Kafka cluster source. (AI-inferred) */
+  credentials?: Pipe_SourceParameters_SelfManagedKafkaParameters_Credentials | Computed<Pipe_SourceParameters_SelfManagedKafkaParameters_Credentials>;
+  /** The maximum number of seconds that EventBridge Pipes will wait to accumulate records from the self-managed Apache Kafka source before sending them in a single batch to the target. (AI-inferred) */
+  maximumBatchingWindowInSeconds?: number | Computed<number>;
+  /** Optional SecretManager ARN which stores the database credentials */
+  serverRootCaCertificate?: string | Computed<string>;
+  /** Specifies whether the pipe starts reading messages from the beginning (TRIM_HORIZON) or from the latest offset (LATEST) in the self-managed Kafka topic. (AI-inferred) */
+  startingPosition?: string | Computed<string>;
+  /** The name of the Kafka topic from which the pipe consumes messages when using a self-managed Apache Kafka source. (AI-inferred) */
+  topicName: string | Computed<string>;
+  /** The VPC configuration (subnets and security groups) that the pipe uses to connect to your self-managed Kafka brokers. (AI-inferred) */
+  vpc?: Pipe_SourceParameters_SelfManagedKafkaParameters_Vpc | Computed<Pipe_SourceParameters_SelfManagedKafkaParameters_Vpc>;
 }
 
 export interface Pipe_SourceParameters_SqsQueueParameters {
-  batchSize: number;
-  maximumBatchingWindowInSeconds: number;
+  /** The maximum number of messages that can be polled from the SQS queue in a single batch and then passed as a batch to the pipe's target. (AI-inferred) */
+  batchSize?: number | Computed<number>;
+  /** Specifies the maximum amount of time (in seconds) that EventBridge Pipes accumulates records from the source SQS queue before sending a batch to the target. (AI-inferred) */
+  maximumBatchingWindowInSeconds?: number | Computed<number>;
 }
 
 export interface Pipe_SourceParameters {
-  activemqBrokerParameters: Pipe_SourceParameters_ActivemqBrokerParameters[];
-  dynamodbStreamParameters: Pipe_SourceParameters_DynamodbStreamParameters[];
-  filterCriteria: Pipe_SourceParameters_FilterCriteria[];
-  kinesisStreamParameters: Pipe_SourceParameters_KinesisStreamParameters[];
-  managedStreamingKafkaParameters: Pipe_SourceParameters_ManagedStreamingKafkaParameters[];
-  rabbitmqBrokerParameters: Pipe_SourceParameters_RabbitmqBrokerParameters[];
-  selfManagedKafkaParameters: Pipe_SourceParameters_SelfManagedKafkaParameters[];
-  sqsQueueParameters: Pipe_SourceParameters_SqsQueueParameters[];
+  /** Specifies the parameters for an Amazon MQ ActiveMQ broker used as the event source, including the queue name, batch size, and credentials for consuming messages. (AI-inferred) */
+  activeMqbrokerParameters?: Pipe_SourceParameters_ActiveMqbrokerParameters | Computed<Pipe_SourceParameters_ActiveMqbrokerParameters>;
+  /** Specifies the DynamoDB stream source parameters, including the stream's starting position and batch size, used when the pipe's source is a DynamoDB stream. (AI-inferred) */
+  dynamoDbstreamParameters?: Pipe_SourceParameters_DynamoDbstreamParameters | Computed<Pipe_SourceParameters_DynamoDbstreamParameters>;
+  /** Defines the event filter patterns (a list of JSON matching patterns) that select which source events are passed through the pipe for processing. (AI-inferred) */
+  filterCriteria?: Pipe_SourceParameters_FilterCriteria | Computed<Pipe_SourceParameters_FilterCriteria>;
+  /** Specifies the parameters for consuming records from an Amazon Kinesis data stream as the pipe source, such as the batch size, starting position, and retry/dead-letter settings. (AI-inferred) */
+  kinesisStreamParameters?: Pipe_SourceParameters_KinesisStreamParameters | Computed<Pipe_SourceParameters_KinesisStreamParameters>;
+  /** Specifies the parameters that configure an Amazon Managed Streaming for Apache Kafka (MSK) stream as the event source for the pipe, including the topic name, starting position, consumer group ID, and batch settings. (AI-inferred) */
+  managedStreamingKafkaParameters?: Pipe_SourceParameters_ManagedStreamingKafkaParameters | Computed<Pipe_SourceParameters_ManagedStreamingKafkaParameters>;
+  /** Specifies the parameters for using an Amazon MQ for RabbitMQ broker as the pipe's event source, including the queue name, virtual host, credentials, batch size, and batching window. (AI-inferred) */
+  rabbitMqbrokerParameters?: Pipe_SourceParameters_RabbitMqbrokerParameters | Computed<Pipe_SourceParameters_RabbitMqbrokerParameters>;
+  /** Defines the parameters for using a self-managed Apache Kafka stream as the pipe's event source, including broker connection details, topic name, and authentication credentials. (AI-inferred) */
+  selfManagedKafkaParameters?: Pipe_SourceParameters_SelfManagedKafkaParameters | Computed<Pipe_SourceParameters_SelfManagedKafkaParameters>;
+  /** This configures the polling behavior for an SQS queue used as the event source in AWS Pipes, allowing you to set properties such as the batch size and the maximum batching window in seconds. (AI-inferred) */
+  sqsQueueParameters?: Pipe_SourceParameters_SqsQueueParameters | Computed<Pipe_SourceParameters_SqsQueueParameters>;
 }
 
 export interface Pipe_TargetParameters_BatchJobParameters_ArrayProperties {
-  size: number;
+  /** Specifies the number of child jobs to run when the pipe targets an AWS Batch job as an array job, allowing multiple parallel task executions. (AI-inferred) */
+  size?: number | Computed<number>;
 }
 
 export interface Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_Environment {
-  name: string;
-  value: string;
+  /** The name of the environment variable to set in the container when the AWS Batch job is run by the pipe target. (AI-inferred) */
+  name?: string | Computed<string>;
+  /** The value of the environment variable to set in the container override for the AWS Batch job target of the pipe. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
-export interface Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirement {
-  type: string;
-  value: string;
+export interface Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirements {
+  /** The type of resource the container override applies to, such as MEMORY, VCPU, or GPU, controlling how the resource requirement is interpreted. (AI-inferred) */
+  type?: string | Computed<string>;
+  /** The value of the resource requirement (e.g., number of vCPUs or memory in MiB) applied as a container override for an AWS Batch job, corresponding to the type specified in the resource_requirements entry. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 export interface Pipe_TargetParameters_BatchJobParameters_ContainerOverrides {
-  command: string[];
-  instanceType: string;
-  environment: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_Environment[];
-  resourceRequirement: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirement[];
+  /** Overrides the command executed by the container in the AWS Batch job configured as the pipe target, providing a list of strings that replace the default container command. (AI-inferred) */
+  command?: string[] | Computed<string[]>;
+  /** Specifies a list of environment variable overrides (each with a `Name` and `Value`) to apply to the container when the pipe's target AWS Batch job is executed. (AI-inferred) */
+  environment?: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_Environment[] | Computed<Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_Environment[]>;
+  /** Specifies the instance type to use for the AWS Batch container when the pipe runs a batch job, overriding the default instance type in the job definition. (AI-inferred) */
+  instanceType?: string | Computed<string>;
+  /** Defines the resource requirements (such as GPU count) to override for the AWS Batch container when the pipe sends events to the Batch job target. (AI-inferred) */
+  resourceRequirements?: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirements[] | Computed<Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirements[]>;
 }
 
 export interface Pipe_TargetParameters_BatchJobParameters_DependsOn {
-  jobId: string;
-  type: string;
+  /** The job ID of a Batch job that must complete before the job submitted by this pipe target can start, used to define job dependencies in the AWS Batch target. (AI-inferred) */
+  jobId?: string | Computed<string>;
+  /** Specifies the type of dependency for the AWS Batch job (e.g., N_TO_N or SEQUENTIAL), defining how the target job's start is conditioned on other jobs in the depends_on list. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
 export interface Pipe_TargetParameters_BatchJobParameters_RetryStrategy {
-  attempts: number;
+  /** The number of times to retry the AWS Batch job target when it fails, as part of the retry strategy. (AI-inferred) */
+  attempts?: number | Computed<number>;
 }
 
 export interface Pipe_TargetParameters_BatchJobParameters {
-  jobDefinition: string;
-  jobName: string;
-  parameters: Record<string, string>;
-  arrayProperties: Pipe_TargetParameters_BatchJobParameters_ArrayProperties[];
-  containerOverrides: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides[];
-  dependsOn: Pipe_TargetParameters_BatchJobParameters_DependsOn[];
-  retryStrategy: Pipe_TargetParameters_BatchJobParameters_RetryStrategy[];
+  /** Configures the array size for the AWS Batch job target, determining how many parallel child jobs are submitted as an array job. (AI-inferred) */
+  arrayProperties?: Pipe_TargetParameters_BatchJobParameters_ArrayProperties | Computed<Pipe_TargetParameters_BatchJobParameters_ArrayProperties>;
+  /** Overrides the container properties (command, environment, memory, vCPUs, etc.) of the AWS Batch job that the pipe targets when invoking the job. (AI-inferred) */
+  containerOverrides?: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides | Computed<Pipe_TargetParameters_BatchJobParameters_ContainerOverrides>;
+  /** Defines the AWS Batch job dependencies for a Pipes target job, listing prior jobs that must complete successfully before this job can start. (AI-inferred) */
+  dependsOn?: Pipe_TargetParameters_BatchJobParameters_DependsOn[] | Computed<Pipe_TargetParameters_BatchJobParameters_DependsOn[]>;
+  /** The name or ARN of the AWS Batch job definition used to run the target job. (AI-inferred) */
+  jobDefinition: string | Computed<string>;
+  /** The name to assign to the AWS Batch job that this pipe submits when targeting AWS Batch. (AI-inferred) */
+  jobName: string | Computed<string>;
+  /** A map of parameter names to values that are passed to the AWS Batch job when the pipe invokes the target, overriding or supplying the job's parameter values. (AI-inferred) */
+  parameters?: unknown | Computed<unknown>;
+  /** Specifies the retry strategy for the AWS Batch job, including the number of attempts and the conditions under which the job retries based on exit codes. (AI-inferred) */
+  retryStrategy?: Pipe_TargetParameters_BatchJobParameters_RetryStrategy | Computed<Pipe_TargetParameters_BatchJobParameters_RetryStrategy>;
 }
 
-export interface Pipe_TargetParameters_CloudwatchLogsParameters {
-  logStreamName: string;
-  timestamp: string;
+export interface Pipe_TargetParameters_CloudWatchLogsParameters {
+  /** The name of the CloudWatch Logs log stream where the pipe writes the event data, overriding the default log stream for the target log group. (AI-inferred) */
+  logStreamName?: string | Computed<string>;
+  /** The Unix timestamp (as a string) to use as the timestamp for the log event sent to CloudWatch Logs, overriding the event's original time. (AI-inferred) */
+  timestamp?: string | Computed<string>;
 }
 
 export interface Pipe_TargetParameters_EcsTaskParameters_CapacityProviderStrategy {
-  base: number;
-  capacityProvider: string;
-  weight: number;
+  /** The minimum number of tasks to run on the specified capacity provider as part of the ECS task placement strategy. (AI-inferred) */
+  base?: number | Computed<number>;
+  /** The name of the Amazon ECS capacity provider to use when running the task as part of the capacity provider strategy. (AI-inferred) */
+  capacityProvider?: string | Computed<string>;
+  /** The relative weight of this capacity provider in the ECS task's capacity provider strategy, which AWS Pipes uses when placing the task on the target ECS service or cluster. (AI-inferred) */
+  weight?: number | Computed<number>;
 }
 
-export interface Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsVpcConfiguration {
-  assignPublicIp: string;
-  securityGroups: string[];
-  subnets: string[];
+export interface Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsvpcConfiguration {
+  /** Determines whether the ECS task's elastic network interface is assigned a public IP address when using the specified VPC configuration, with values 'ENABLED' or 'DISABLED'. (AI-inferred) */
+  assignPublicIp?: string | Computed<string>;
+  /** A list of security group IDs to attach to the ECS task's elastic network interface when the task uses awsvpc network mode as the target of the pipe. (AI-inferred) */
+  securityGroups?: string[] | Computed<string[]>;
+  /** The IDs of the subnets in which the ECS task will run when using the awsvpc network mode. (AI-inferred) */
+  subnets: string[] | Computed<string[]>;
 }
 
 export interface Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration {
-  awsVpcConfiguration: Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsVpcConfiguration[];
+  /** Specifies the VPC configuration (subnets, security groups, and whether to assign a public IP) for the ECS task when its network mode is awsvpc. (AI-inferred) */
+  awsvpcConfiguration?: Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsvpcConfiguration | Computed<Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsvpcConfiguration>;
 }
 
-export interface Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverride {
-  command: string[];
-  cpu: number;
-  memory: number;
-  memoryReservation: number;
-  name: string;
-  environment: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_Environment[];
-  environmentFile: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirement[];
-  resourceRequirement: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirement[];
+export interface Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverrides {
+  /** In the ECS task overrides for an AWS Pipes target, this list of strings specifies the container command to run, replacing the default command defined in the container image. (AI-inferred) */
+  command?: string[] | Computed<string[]>;
+  /** Overrides the number of CPU units reserved for the container in the ECS task, as part of the ECS task override for the pipe target. (AI-inferred) */
+  cpu?: number | Computed<number>;
+  /** Specifies the environment variables (as name/value pairs) to set for the container when the ECS task is run, overriding the values from the container definition. (AI-inferred) */
+  environment?: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_Environment[] | Computed<Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_Environment[]>;
+  /** Specifies a list of environment files (typically from Amazon S3) that inject environment variables into the container when the ECS task is the pipe target. (AI-inferred) */
+  environmentFiles?: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirements[] | Computed<Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirements[]>;
+  /** Specifies the hard memory limit in MiB for the container, overriding the memory value set in the task definition for this ECS task override. (AI-inferred) */
+  memory?: number | Computed<number>;
+  /** The soft memory limit in MiB to reserve for the container, overriding the memoryReservation value from the container definition. (AI-inferred) */
+  memoryReservation?: number | Computed<number>;
+  /** Specifies the name of the container in the ECS task definition that this override applies to. (AI-inferred) */
+  name?: string | Computed<string>;
+  /** Specifies the resource requirements (such as GPU or InferenceAccelerator) to override for the container in the Amazon ECS task when the pipe target is an ECS task. (AI-inferred) */
+  resourceRequirements?: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirements[] | Computed<Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirements[]>;
 }
 
 export interface Pipe_TargetParameters_EcsTaskParameters_Overrides_EphemeralStorage {
-  sizeInGib: number;
+  /** Specifies the amount of ephemeral storage (in GiB) for the ECS task, overriding the task definition's ephemeral storage configuration when the pipe runs the task. (AI-inferred) */
+  sizeInGiB: number | Computed<number>;
 }
 
-export interface Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverride {
-  deviceName: string;
-  deviceType: string;
+export interface Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverrides {
+  /** Specifies the device name of the inference accelerator whose settings are overridden in the ECS task definition. (AI-inferred) */
+  deviceName?: string | Computed<string>;
+  /** The device type of the inference accelerator override to apply to the ECS task when the pipe invokes the target, such as 'eia1.medium' or 'eia2.large'. (AI-inferred) */
+  deviceType?: string | Computed<string>;
 }
 
 export interface Pipe_TargetParameters_EcsTaskParameters_Overrides {
-  cpu: string;
-  executionRoleArn: string;
-  memory: string;
-  taskRoleArn: string;
-  containerOverride: Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverride[];
-  ephemeralStorage: Pipe_TargetParameters_EcsTaskParameters_Overrides_EphemeralStorage[];
-  inferenceAcceleratorOverride: Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverride[];
+  /** Defines a list of container overrides to apply to the ECS task launched by the pipe, allowing per-container changes to command, environment variables, and resource limits during the invocation. (AI-inferred) */
+  containerOverrides?: Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverrides[] | Computed<Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverrides[]>;
+  /** The number of CPU units to reserve for the ECS task, overriding the CPU value specified in the task definition. (AI-inferred) */
+  cpu?: string | Computed<string>;
+  /** Specifies the ephemeral storage size override (in GiB) applied to the ECS task when this pipe triggers an ECS task, allowing adjustment of the task's ephemeral storage beyond its registered task definition. (AI-inferred) */
+  ephemeralStorage?: Pipe_TargetParameters_EcsTaskParameters_Overrides_EphemeralStorage | Computed<Pipe_TargetParameters_EcsTaskParameters_Overrides_EphemeralStorage>;
+  /** The ARN of the IAM execution role that Amazon ECS uses to run the task, overriding the execution role defined in the task definition when the pipe targets an ECS task. (AI-inferred) */
+  executionRoleArn?: string | Computed<string>;
+  /** Overrides the inference accelerator devices for the ECS task launched by this pipe, allowing you to specify a custom device name and type that supersede the task definition's settings. (AI-inferred) */
+  inferenceAcceleratorOverrides?: Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverrides[] | Computed<Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverrides[]>;
+  /** Specifies the total memory (in MiB) override for the ECS task executed by this pipe, replacing the memory limit defined in the task definition when the target is invoked. (AI-inferred) */
+  memory?: string | Computed<string>;
+  /** Specifies the Amazon Resource Name (ARN) of the IAM role that the Amazon ECS task uses as its task role when the pipe triggers the task. (AI-inferred) */
+  taskRoleArn?: string | Computed<string>;
 }
 
-export interface Pipe_TargetParameters_EcsTaskParameters_PlacementConstraint {
-  expression: string;
-  type: string;
+export interface Pipe_TargetParameters_EcsTaskParameters_PlacementConstraints {
+  /** The placement constraint expression (using Amazon ECS placement constraint syntax, such as a cluster query language expression like 'attribute:ecs.instance-type =~ t2.*') that applies when the placement constraint type is 'memberOf'. (AI-inferred) */
+  expression?: string | Computed<string>;
+  /** Specifies the type of ECS task placement constraint (e.g., distinctInstance or memberOf) that governs how the task is placed on container instances. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
 export interface Pipe_TargetParameters_EcsTaskParameters_PlacementStrategy {
-  field: string;
-  type: string;
+  /** Specifies the field to apply the placement strategy against (e.g., 'instanceId' or a custom attribute like 'attribute:ecs.availability-zone') when scheduling the ECS task. (AI-inferred) */
+  field?: string | Computed<string>;
+  /** Specifies the type of ECS task placement strategy (e.g., random, spread, or binpack) used when placing the task that the pipe invokes. (AI-inferred) */
+  type?: string | Computed<string>;
+}
+
+export interface Pipe_TargetParameters_EcsTaskParameters_Tags {
+  /** The key of a tag to apply to the ECS task that the pipe launches as its target. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value portion of a key-value tag that is attached to the ECS task when the pipe runs the task. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 export interface Pipe_TargetParameters_EcsTaskParameters {
-  enableEcsManagedTags: boolean;
-  enableExecuteCommand: boolean;
-  group: string;
-  launchType: string;
-  platformVersion: string;
-  propagateTags: string;
-  referenceId: string;
-  tags: Record<string, string>;
-  taskCount: number;
-  taskDefinitionArn: string;
-  capacityProviderStrategy: Pipe_TargetParameters_EcsTaskParameters_CapacityProviderStrategy[];
-  networkConfiguration: Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration[];
-  overrides: Pipe_TargetParameters_EcsTaskParameters_Overrides[];
-  placementConstraint: Pipe_TargetParameters_EcsTaskParameters_PlacementConstraint[];
-  placementStrategy: Pipe_TargetParameters_EcsTaskParameters_PlacementStrategy[];
+  /** Defines the capacity provider strategy for the ECS task launched by the pipe target, specifying capacity providers and their base and weight values for task placement. (AI-inferred) */
+  capacityProviderStrategy?: Pipe_TargetParameters_EcsTaskParameters_CapacityProviderStrategy[] | Computed<Pipe_TargetParameters_EcsTaskParameters_CapacityProviderStrategy[]>;
+  /** Specifies whether to enable Amazon ECS managed tags on the ECS task launched as the pipe's target, so that AWS automatically applies system tags to the task. (AI-inferred) */
+  enableEcsmanagedTags?: boolean | Computed<boolean>;
+  /** Enables Amazon ECS Exec (execute command) for the ECS task when the pipe invokes the target. (AI-inferred) */
+  enableExecuteCommand?: boolean | Computed<boolean>;
+  /** Specifies the ECS task group, a customizable identifier for a set of related tasks, used for task filtering and grouping. (AI-inferred) */
+  group?: string | Computed<string>;
+  /** Specifies the launch type (e.g., FARGATE or EC2) to use when the pipe runs the target Amazon ECS task. (AI-inferred) */
+  launchType?: string | Computed<string>;
+  /** Specifies the VPC network configuration for the ECS task target, including subnets, security groups, and whether to assign a public IP address. (AI-inferred) */
+  networkConfiguration?: Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration | Computed<Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration>;
+  /** Specifies the ECS task and container overrides (such as command, environment variables, CPU/memory limits, task role, and ephemeral storage) applied when the pipe runs the target task. (AI-inferred) */
+  overrides?: Pipe_TargetParameters_EcsTaskParameters_Overrides | Computed<Pipe_TargetParameters_EcsTaskParameters_Overrides>;
+  /** Specifies the placement constraints (e.g., distinctInstance or memberOf) that control how the ECS task is placed on container instances when the pipe target runs the task. (AI-inferred) */
+  placementConstraints?: Pipe_TargetParameters_EcsTaskParameters_PlacementConstraints[] | Computed<Pipe_TargetParameters_EcsTaskParameters_PlacementConstraints[]>;
+  /** Specifies the placement strategy (e.g., spread, binpack, random) used for the ECS task targeted by the pipe, including the strategy type and optional field on which to base it. (AI-inferred) */
+  placementStrategy?: Pipe_TargetParameters_EcsTaskParameters_PlacementStrategy[] | Computed<Pipe_TargetParameters_EcsTaskParameters_PlacementStrategy[]>;
+  /** Specifies the ECS platform version on which the task runs (e.g., 'LATEST' or a specific version like '1.4.0') when the AWS Pipes target invokes an Amazon ECS task. (AI-inferred) */
+  platformVersion?: string | Computed<string>;
+  /** Specifies whether tags from the ECS task definition or service are propagated to the ECS task started when the pipe invokes the target, with valid values being TASK_DEFINITION or SERVICE. (AI-inferred) */
+  propagateTags?: string | Computed<string>;
+  /** A reference identifier you assign to the ECS task, which is passed to the RunTask API as the referenceId to ensure idempotent task creation and to aid in identifying the task in logs. (AI-inferred) */
+  referenceId?: string | Computed<string>;
+  /** The tags to apply to the ECS task when the pipe invokes the ECS target. (AI-inferred) */
+  tags?: Pipe_TargetParameters_EcsTaskParameters_Tags[] | Computed<Pipe_TargetParameters_EcsTaskParameters_Tags[]>;
+  /** The number of ECS tasks to launch for this target. (AI-inferred) */
+  taskCount?: number | Computed<number>;
+  /** Specifies the ARN of the ECS task definition that EventBridge Pipes uses to run a task when the pipe's target is an Amazon ECS task. (AI-inferred) */
+  taskDefinitionArn: string | Computed<string>;
 }
 
-export interface Pipe_TargetParameters_EventbridgeEventBusParameters {
-  detailType: string;
-  endpointId: string;
-  resources: string[];
-  source: string;
-  time: string;
+export interface Pipe_TargetParameters_EventBridgeEventBusParameters {
+  /** Specifies the DetailType value that AWS Pipes assigns to the event when it is delivered to the EventBridge event bus target, allowing the event to be categorized by its type. (AI-inferred) */
+  detailType?: string | Computed<string>;
+  /** The ID of an EventBridge global endpoint used to route the event to an EventBridge event bus in a different AWS Region. (AI-inferred) */
+  endpointId?: string | Computed<string>;
+  /** Specifies the list of ARNs that identify the resources associated with the event, which are included in the event sent to the EventBridge event bus target. (AI-inferred) */
+  resources?: string[] | Computed<string[]>;
+  /** Sets the source of the event sent to the EventBridge event bus, identifying the service or application that produced the event. (AI-inferred) */
+  source?: string | Computed<string>;
+  /** The timestamp to assign to the event when sending to the EventBridge event bus target; if omitted, the current time is used. (AI-inferred) */
+  time?: string | Computed<string>;
 }
 
 export interface Pipe_TargetParameters_KinesisStreamParameters {
-  partitionKey: string;
+  /** The partition key value used by the pipe to route the record to a specific shard of the target Kinesis data stream. (AI-inferred) */
+  partitionKey: string | Computed<string>;
 }
 
 export interface Pipe_TargetParameters_LambdaFunctionParameters {
-  invocationType: string;
+  /** Specifies the invocation type for the Lambda function target, either 'RequestResponse' for synchronous invocation (default) or 'Event' for asynchronous invocation. (AI-inferred) */
+  invocationType?: string | Computed<string>;
 }
 
 export interface Pipe_TargetParameters_RedshiftDataParameters {
-  database: string;
-  dbUser: string;
-  secretManagerArn: string;
-  sqls: string[];
-  statementName: string;
-  withEvent: boolean;
+  /** Redshift Database */
+  database: string | Computed<string>;
+  /** Database user name */
+  dbUser?: string | Computed<string>;
+  /** Optional SecretManager ARN which stores the database credentials */
+  secretManagerArn?: string | Computed<string>;
+  /** A list of SQLs. */
+  sqls: string[] | Computed<string[]>;
+  /** A name for Redshift DataAPI statement which can be used as filter of ListStatement. */
+  statementName?: string | Computed<string>;
+  /** When set to true, this flag includes the original event payload in the request sent to the Redshift Data API by the pipe. (AI-inferred) */
+  withEvent?: boolean | Computed<boolean>;
 }
 
-export interface Pipe_TargetParameters_SagemakerPipelineParameters {
-  pipelineParameter: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_Environment[];
+export interface Pipe_TargetParameters_SageMakerPipelineParameters {
+  /** Provides a list of name/value pairs that are passed as input parameters to the SageMaker pipeline execution when this pipe targets a SageMaker pipeline. (AI-inferred) */
+  pipelineParameterList?: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_Environment[] | Computed<Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_Environment[]>;
 }
 
 export interface Pipe_TargetParameters_SqsQueueParameters {
-  messageDeduplicationId: string;
-  messageGroupId: string;
+  /** The deduplication ID used for messages sent to the SQS queue, which ensures exactly-once delivery for FIFO queues. (AI-inferred) */
+  messageDeduplicationId?: string | Computed<string>;
+  /** Specifies the message group ID for messages sent to an Amazon SQS FIFO queue, which groups messages to be delivered in a strict order and within a single consumer at a time. (AI-inferred) */
+  messageGroupId?: string | Computed<string>;
+}
+
+export interface Pipe_TargetParameters_TimestreamParameters_DimensionMappings {
+  /** The name of the Timestream dimension to which the mapped value is written when the pipe sends data to Amazon Timestream. (AI-inferred) */
+  dimensionName?: string | Computed<string>;
+  /** Specifies the value for the Timestream dimension, which can be a literal string or a JSONPath expression (such as `$.detail.region`) that extracts a value from the event data being sent to the target. (AI-inferred) */
+  dimensionValue?: string | Computed<string>;
+  /** Indicates the value type (VARCHAR or BIGINT) for the mapped dimension, used to cast the incoming event value before sending it to Amazon Timestream. (AI-inferred) */
+  dimensionValueType?: string | Computed<string>;
+}
+
+export interface Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings_MultiMeasureAttributeMappings {
+  /** Specifies the literal value or JSONPath expression used to populate the multi-measure attribute value in the Timestream record written by this pipe target. (AI-inferred) */
+  measureValue?: string | Computed<string>;
+  /** Specifies the data type of the measure attribute in the Timestream multi-measure record (e.g., DOUBLE, BIGINT, BOOLEAN, VARCHAR, TIMESTAMP) so that Timestream correctly interprets the incoming value. (AI-inferred) */
+  measureValueType?: string | Computed<string>;
+  /** In an AWS Pipes Timestream target, this defines the name of an individual multi-measure attribute, which becomes the measure name in the Timestream record when using multi-measure mappings. (AI-inferred) */
+  multiMeasureAttributeName?: string | Computed<string>;
+}
+
+export interface Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings {
+  /** Defines the list of mappings that specify how source data is assigned to each attribute (measure) within a multi-measure record written to Amazon Timestream. (AI-inferred) */
+  multiMeasureAttributeMappings?: Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings_MultiMeasureAttributeMappings[] | Computed<Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings_MultiMeasureAttributeMappings[]>;
+  /** Specifies the name of the multi-measure record to write to Amazon Timestream when using multi-measure mappings in the pipe target. (AI-inferred) */
+  multiMeasureName?: string | Computed<string>;
+}
+
+export interface Pipe_TargetParameters_TimestreamParameters_SingleMeasureMappings {
+  /** The name of the measure (column) in the Timestream table to which the source record field is mapped. (AI-inferred) */
+  measureName?: string | Computed<string>;
+  /** Provides the value of a single measure in a Timestream record, which can be a literal string or a dynamic JSON path expression (such as '$.field') resolved from the event payload. (AI-inferred) */
+  measureValue?: string | Computed<string>;
+  /** Specifies the data type of the measure value for this single measure mapping, such as DOUBLE, BIGINT, VARCHAR, or BOOLEAN, which determines how the source data is interpreted when written to Amazon Timestream. (AI-inferred) */
+  measureValueType?: string | Computed<string>;
+}
+
+export interface Pipe_TargetParameters_TimestreamParameters {
+  /** Defines the list of dimension mappings that specify how source data is mapped to Timestream record dimension names and values when the pipe target writes to Timestream. (AI-inferred) */
+  dimensionMappings: Pipe_TargetParameters_TimestreamParameters_DimensionMappings[] | Computed<Pipe_TargetParameters_TimestreamParameters_DimensionMappings[]>;
+  /** Specifies the unit of measure for the epoch timestamp value used in the Timestream target's time column, such as MILLISECONDS, SECONDS, MICROSECONDS, or NANOSECONDS. (AI-inferred) */
+  epochTimeUnit?: string | Computed<string>;
+  /** Defines the multi-measure mappings for the Timestream target, specifying a list of measure names and their associated attribute mappings (including attribute value, measure value, and measure value type) to write multi-measure records. (AI-inferred) */
+  multiMeasureMappings?: Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings[] | Computed<Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings[]>;
+  /** Defines a list of single-measure mappings that specify how source data maps to Timestream measure records, including the measure name, value, and value type. (AI-inferred) */
+  singleMeasureMappings?: Pipe_TargetParameters_TimestreamParameters_SingleMeasureMappings[] | Computed<Pipe_TargetParameters_TimestreamParameters_SingleMeasureMappings[]>;
+  /** Specifies whether the value in the time field is interpreted as a Unix epoch timestamp (seconds since epoch) or as a formatted timestamp string when writing to Amazon Timestream. (AI-inferred) */
+  timeFieldType?: string | Computed<string>;
+  /** Specifies the static timestamp value (as a string) used for the time column when writing the pipe's data to an Amazon Timestream target table. (AI-inferred) */
+  timeValue: string | Computed<string>;
+  /** Specifies the format string used to parse the source event's timestamp field when TimeFieldType is set to TIMESTAMP_FORMAT, determining how AWS Pipes converts the event time into the Timestream record's timestamp. (AI-inferred) */
+  timestampFormat?: string | Computed<string>;
+  /** Provides the value for the version attribute of each record written to the Timestream table, used to enforce record versioning and support upserts. (AI-inferred) */
+  versionValue: string | Computed<string>;
 }
 
 export interface Pipe_TargetParameters {
-  inputTemplate: string;
-  batchJobParameters: Pipe_TargetParameters_BatchJobParameters[];
-  cloudwatchLogsParameters: Pipe_TargetParameters_CloudwatchLogsParameters[];
-  ecsTaskParameters: Pipe_TargetParameters_EcsTaskParameters[];
-  eventbridgeEventBusParameters: Pipe_TargetParameters_EventbridgeEventBusParameters[];
-  httpParameters: Pipe_EnrichmentParameters_HttpParameters[];
-  kinesisStreamParameters: Pipe_TargetParameters_KinesisStreamParameters[];
-  lambdaFunctionParameters: Pipe_TargetParameters_LambdaFunctionParameters[];
-  redshiftDataParameters: Pipe_TargetParameters_RedshiftDataParameters[];
-  sagemakerPipelineParameters: Pipe_TargetParameters_SagemakerPipelineParameters[];
-  sqsQueueParameters: Pipe_TargetParameters_SqsQueueParameters[];
-  stepFunctionStateMachineParameters: Pipe_TargetParameters_LambdaFunctionParameters[];
-}
-
-export interface Pipe_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+  /** Specifies the configuration for an AWS Batch job when it is the target of the pipe, including the job definition, job name, and optional array, retry, and container override settings. (AI-inferred) */
+  batchJobParameters?: Pipe_TargetParameters_BatchJobParameters | Computed<Pipe_TargetParameters_BatchJobParameters>;
+  /** Specifies the CloudWatch Logs target parameters, including the log stream name and an optional timestamp that is added to each event sent to the log stream. (AI-inferred) */
+  cloudWatchLogsParameters?: Pipe_TargetParameters_CloudWatchLogsParameters | Computed<Pipe_TargetParameters_CloudWatchLogsParameters>;
+  /** Specifies the parameters for running an Amazon ECS task when the Pipe target is an ECS service, including task definition, count, launch type, network configuration, and placement settings. (AI-inferred) */
+  ecsTaskParameters?: Pipe_TargetParameters_EcsTaskParameters | Computed<Pipe_TargetParameters_EcsTaskParameters>;
+  /** Configures the parameters used by the pipe when sending events to an Amazon EventBridge event bus target, including the event source, detail type, and optional resources. (AI-inferred) */
+  eventBridgeEventBusParameters?: Pipe_TargetParameters_EventBridgeEventBusParameters | Computed<Pipe_TargetParameters_EventBridgeEventBusParameters>;
+  /** Specifies the HTTP parameters, including header, query string, and path parameter values, used when the Pipe targets an HTTP endpoint such as an API destination. (AI-inferred) */
+  httpParameters?: Pipe_EnrichmentParameters_HttpParameters | Computed<Pipe_EnrichmentParameters_HttpParameters>;
+  /** The template used to transform the input event before it is sent to the target, allowing you to map and extract fields from the original event using JSONPath expressions. (AI-inferred) */
+  inputTemplate?: string | Computed<string>;
+  /** Specifies the parameters for a Kinesis stream target, including the partition key that determines the shard to which the event is delivered. (AI-inferred) */
+  kinesisStreamParameters?: Pipe_TargetParameters_KinesisStreamParameters | Computed<Pipe_TargetParameters_KinesisStreamParameters>;
+  /** Defines the target-specific parameters for a Lambda function target in an AWS Pipe, including the invocation type (e.g., 'Event' or 'RequestResponse') that controls how the pipe invokes the function. (AI-inferred) */
+  lambdaFunctionParameters?: Pipe_TargetParameters_LambdaFunctionParameters | Computed<Pipe_TargetParameters_LambdaFunctionParameters>;
+  /** Defines the configuration for invoking the Amazon Redshift Data API, including the SQL statement, database details, and credentials, when the pipe's target is an Amazon Redshift cluster or serverless workgroup. (AI-inferred) */
+  redshiftDataParameters?: Pipe_TargetParameters_RedshiftDataParameters | Computed<Pipe_TargetParameters_RedshiftDataParameters>;
+  /** Configures the parameters for invoking an Amazon SageMaker pipeline as the pipe's target, specifying the list of pipeline parameters to pass to the pipeline execution. (AI-inferred) */
+  sageMakerPipelineParameters?: Pipe_TargetParameters_SageMakerPipelineParameters | Computed<Pipe_TargetParameters_SageMakerPipelineParameters>;
+  /** Specifies the parameters for sending events to an SQS queue as the pipe target, including optional message group ID and message deduplication ID for FIFO queues. (AI-inferred) */
+  sqsQueueParameters?: Pipe_TargetParameters_SqsQueueParameters | Computed<Pipe_TargetParameters_SqsQueueParameters>;
+  /** The target parameters for a Step Functions state machine, specifying how the pipe invokes the state machine, including the invocation type such as synchronous (REQUEST_RESPONSE) or asynchronous (FIRE_AND_FORGET) execution. (AI-inferred) */
+  stepFunctionStateMachineParameters?: Pipe_TargetParameters_LambdaFunctionParameters | Computed<Pipe_TargetParameters_LambdaFunctionParameters>;
+  /** Specifies the Amazon Timestream target configuration, including the database and table names, time column type, and dimension mappings used to write event data from the pipe. (AI-inferred) */
+  timestreamParameters?: Pipe_TargetParameters_TimestreamParameters | Computed<Pipe_TargetParameters_TimestreamParameters>;
 }
 
 const Pipe_EnrichmentParameters_HttpParametersFields: FieldMap = {
@@ -324,12 +552,12 @@ const Pipe_EnrichmentParameters_HttpParametersFields: FieldMap = {
 };
 
 const Pipe_EnrichmentParametersFields: FieldMap = {
-  inputTemplate: "input_template",
   httpParameters: {
     wireName: "http_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_EnrichmentParameters_HttpParametersFields,
   },
+  inputTemplate: "input_template",
 };
 
 const Pipe_LogConfiguration_CloudwatchLogsLogDestinationFields: FieldMap = {
@@ -348,73 +576,78 @@ const Pipe_LogConfiguration_S3LogDestinationFields: FieldMap = {
 };
 
 const Pipe_LogConfigurationFields: FieldMap = {
-  includeExecutionData: "include_execution_data",
-  level: "level",
   cloudwatchLogsLogDestination: {
     wireName: "cloudwatch_logs_log_destination",
-    kind: "list",
+    kind: "object",
     fields: Pipe_LogConfiguration_CloudwatchLogsLogDestinationFields,
   },
   firehoseLogDestination: {
     wireName: "firehose_log_destination",
-    kind: "list",
+    kind: "object",
     fields: Pipe_LogConfiguration_FirehoseLogDestinationFields,
   },
+  includeExecutionData: "include_execution_data",
+  level: "level",
   s3LogDestination: {
     wireName: "s3_log_destination",
-    kind: "list",
+    kind: "object",
     fields: Pipe_LogConfiguration_S3LogDestinationFields,
   },
 };
 
-const Pipe_SourceParameters_ActivemqBrokerParameters_CredentialsFields: FieldMap = {
+const Pipe_SourceParameters_ActiveMqbrokerParameters_CredentialsFields: FieldMap = {
   basicAuth: "basic_auth",
 };
 
-const Pipe_SourceParameters_ActivemqBrokerParametersFields: FieldMap = {
+const Pipe_SourceParameters_ActiveMqbrokerParametersFields: FieldMap = {
   batchSize: "batch_size",
-  maximumBatchingWindowInSeconds: "maximum_batching_window_in_seconds",
-  queueName: "queue_name",
   credentials: {
     wireName: "credentials",
-    kind: "list",
-    fields: Pipe_SourceParameters_ActivemqBrokerParameters_CredentialsFields,
+    kind: "object",
+    fields: Pipe_SourceParameters_ActiveMqbrokerParameters_CredentialsFields,
   },
+  maximumBatchingWindowInSeconds: "maximum_batching_window_in_seconds",
+  queueName: "queue_name",
 };
 
-const Pipe_SourceParameters_DynamodbStreamParameters_DeadLetterConfigFields: FieldMap = {
+const Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfigFields: FieldMap = {
   arn: "arn",
 };
 
-const Pipe_SourceParameters_DynamodbStreamParametersFields: FieldMap = {
+const Pipe_SourceParameters_DynamoDbstreamParametersFields: FieldMap = {
   batchSize: "batch_size",
+  deadLetterConfig: {
+    wireName: "dead_letter_config",
+    kind: "object",
+    fields: Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfigFields,
+  },
   maximumBatchingWindowInSeconds: "maximum_batching_window_in_seconds",
   maximumRecordAgeInSeconds: "maximum_record_age_in_seconds",
   maximumRetryAttempts: "maximum_retry_attempts",
   onPartialBatchItemFailure: "on_partial_batch_item_failure",
   parallelizationFactor: "parallelization_factor",
   startingPosition: "starting_position",
-  deadLetterConfig: {
-    wireName: "dead_letter_config",
-    kind: "list",
-    fields: Pipe_SourceParameters_DynamodbStreamParameters_DeadLetterConfigFields,
-  },
 };
 
-const Pipe_SourceParameters_FilterCriteria_FilterFields: FieldMap = {
+const Pipe_SourceParameters_FilterCriteria_FiltersFields: FieldMap = {
   pattern: "pattern",
 };
 
 const Pipe_SourceParameters_FilterCriteriaFields: FieldMap = {
-  filter: {
-    wireName: "filter",
+  filters: {
+    wireName: "filters",
     kind: "list",
-    fields: Pipe_SourceParameters_FilterCriteria_FilterFields,
+    fields: Pipe_SourceParameters_FilterCriteria_FiltersFields,
   },
 };
 
 const Pipe_SourceParameters_KinesisStreamParametersFields: FieldMap = {
   batchSize: "batch_size",
+  deadLetterConfig: {
+    wireName: "dead_letter_config",
+    kind: "object",
+    fields: Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfigFields,
+  },
   maximumBatchingWindowInSeconds: "maximum_batching_window_in_seconds",
   maximumRecordAgeInSeconds: "maximum_record_age_in_seconds",
   maximumRetryAttempts: "maximum_retry_attempts",
@@ -422,52 +655,47 @@ const Pipe_SourceParameters_KinesisStreamParametersFields: FieldMap = {
   parallelizationFactor: "parallelization_factor",
   startingPosition: "starting_position",
   startingPositionTimestamp: "starting_position_timestamp",
-  deadLetterConfig: {
-    wireName: "dead_letter_config",
-    kind: "list",
-    fields: Pipe_SourceParameters_DynamodbStreamParameters_DeadLetterConfigFields,
-  },
 };
 
 const Pipe_SourceParameters_ManagedStreamingKafkaParameters_CredentialsFields: FieldMap = {
   clientCertificateTlsAuth: "client_certificate_tls_auth",
-  saslScram512Auth: "sasl_scram_512_auth",
+  saslScram512Auth: "sasl_scram512_auth",
 };
 
 const Pipe_SourceParameters_ManagedStreamingKafkaParametersFields: FieldMap = {
   batchSize: "batch_size",
   consumerGroupId: "consumer_group_id",
+  credentials: {
+    wireName: "credentials",
+    kind: "object",
+    fields: Pipe_SourceParameters_ManagedStreamingKafkaParameters_CredentialsFields,
+  },
   maximumBatchingWindowInSeconds: "maximum_batching_window_in_seconds",
   startingPosition: "starting_position",
   topicName: "topic_name",
-  credentials: {
-    wireName: "credentials",
-    kind: "list",
-    fields: Pipe_SourceParameters_ManagedStreamingKafkaParameters_CredentialsFields,
-  },
 };
 
-const Pipe_SourceParameters_RabbitmqBrokerParametersFields: FieldMap = {
+const Pipe_SourceParameters_RabbitMqbrokerParametersFields: FieldMap = {
   batchSize: "batch_size",
+  credentials: {
+    wireName: "credentials",
+    kind: "object",
+    fields: Pipe_SourceParameters_ActiveMqbrokerParameters_CredentialsFields,
+  },
   maximumBatchingWindowInSeconds: "maximum_batching_window_in_seconds",
   queueName: "queue_name",
   virtualHost: "virtual_host",
-  credentials: {
-    wireName: "credentials",
-    kind: "list",
-    fields: Pipe_SourceParameters_ActivemqBrokerParameters_CredentialsFields,
-  },
 };
 
 const Pipe_SourceParameters_SelfManagedKafkaParameters_CredentialsFields: FieldMap = {
   basicAuth: "basic_auth",
   clientCertificateTlsAuth: "client_certificate_tls_auth",
-  saslScram256Auth: "sasl_scram_256_auth",
-  saslScram512Auth: "sasl_scram_512_auth",
+  saslScram256Auth: "sasl_scram256_auth",
+  saslScram512Auth: "sasl_scram512_auth",
 };
 
 const Pipe_SourceParameters_SelfManagedKafkaParameters_VpcFields: FieldMap = {
-  securityGroups: "security_groups",
+  securityGroup: "security_group",
   subnets: "subnets",
 };
 
@@ -475,18 +703,18 @@ const Pipe_SourceParameters_SelfManagedKafkaParametersFields: FieldMap = {
   additionalBootstrapServers: "additional_bootstrap_servers",
   batchSize: "batch_size",
   consumerGroupId: "consumer_group_id",
+  credentials: {
+    wireName: "credentials",
+    kind: "object",
+    fields: Pipe_SourceParameters_SelfManagedKafkaParameters_CredentialsFields,
+  },
   maximumBatchingWindowInSeconds: "maximum_batching_window_in_seconds",
   serverRootCaCertificate: "server_root_ca_certificate",
   startingPosition: "starting_position",
   topicName: "topic_name",
-  credentials: {
-    wireName: "credentials",
-    kind: "list",
-    fields: Pipe_SourceParameters_SelfManagedKafkaParameters_CredentialsFields,
-  },
   vpc: {
     wireName: "vpc",
-    kind: "list",
+    kind: "object",
     fields: Pipe_SourceParameters_SelfManagedKafkaParameters_VpcFields,
   },
 };
@@ -497,44 +725,44 @@ const Pipe_SourceParameters_SqsQueueParametersFields: FieldMap = {
 };
 
 const Pipe_SourceParametersFields: FieldMap = {
-  activemqBrokerParameters: {
-    wireName: "activemq_broker_parameters",
-    kind: "list",
-    fields: Pipe_SourceParameters_ActivemqBrokerParametersFields,
+  activeMqbrokerParameters: {
+    wireName: "active_mqbroker_parameters",
+    kind: "object",
+    fields: Pipe_SourceParameters_ActiveMqbrokerParametersFields,
   },
-  dynamodbStreamParameters: {
-    wireName: "dynamodb_stream_parameters",
-    kind: "list",
-    fields: Pipe_SourceParameters_DynamodbStreamParametersFields,
+  dynamoDbstreamParameters: {
+    wireName: "dynamo_dbstream_parameters",
+    kind: "object",
+    fields: Pipe_SourceParameters_DynamoDbstreamParametersFields,
   },
   filterCriteria: {
     wireName: "filter_criteria",
-    kind: "list",
+    kind: "object",
     fields: Pipe_SourceParameters_FilterCriteriaFields,
   },
   kinesisStreamParameters: {
     wireName: "kinesis_stream_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_SourceParameters_KinesisStreamParametersFields,
   },
   managedStreamingKafkaParameters: {
     wireName: "managed_streaming_kafka_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_SourceParameters_ManagedStreamingKafkaParametersFields,
   },
-  rabbitmqBrokerParameters: {
-    wireName: "rabbitmq_broker_parameters",
-    kind: "list",
-    fields: Pipe_SourceParameters_RabbitmqBrokerParametersFields,
+  rabbitMqbrokerParameters: {
+    wireName: "rabbit_mqbroker_parameters",
+    kind: "object",
+    fields: Pipe_SourceParameters_RabbitMqbrokerParametersFields,
   },
   selfManagedKafkaParameters: {
     wireName: "self_managed_kafka_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_SourceParameters_SelfManagedKafkaParametersFields,
   },
   sqsQueueParameters: {
     wireName: "sqs_queue_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_SourceParameters_SqsQueueParametersFields,
   },
 };
@@ -548,23 +776,23 @@ const Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_EnvironmentFie
   value: "value",
 };
 
-const Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementFields: FieldMap = {
+const Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementsFields: FieldMap = {
   type: "type",
   value: "value",
 };
 
 const Pipe_TargetParameters_BatchJobParameters_ContainerOverridesFields: FieldMap = {
   command: "command",
-  instanceType: "instance_type",
   environment: {
     wireName: "environment",
     kind: "list",
     fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_EnvironmentFields,
   },
-  resourceRequirement: {
-    wireName: "resource_requirement",
+  instanceType: "instance_type",
+  resourceRequirements: {
+    wireName: "resource_requirements",
     kind: "list",
-    fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementFields,
+    fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementsFields,
   },
 };
 
@@ -578,17 +806,14 @@ const Pipe_TargetParameters_BatchJobParameters_RetryStrategyFields: FieldMap = {
 };
 
 const Pipe_TargetParameters_BatchJobParametersFields: FieldMap = {
-  jobDefinition: "job_definition",
-  jobName: "job_name",
-  parameters: "parameters",
   arrayProperties: {
     wireName: "array_properties",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_BatchJobParameters_ArrayPropertiesFields,
   },
   containerOverrides: {
     wireName: "container_overrides",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverridesFields,
   },
   dependsOn: {
@@ -596,14 +821,17 @@ const Pipe_TargetParameters_BatchJobParametersFields: FieldMap = {
     kind: "list",
     fields: Pipe_TargetParameters_BatchJobParameters_DependsOnFields,
   },
+  jobDefinition: "job_definition",
+  jobName: "job_name",
+  parameters: "parameters",
   retryStrategy: {
     wireName: "retry_strategy",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_BatchJobParameters_RetryStrategyFields,
   },
 };
 
-const Pipe_TargetParameters_CloudwatchLogsParametersFields: FieldMap = {
+const Pipe_TargetParameters_CloudWatchLogsParametersFields: FieldMap = {
   logStreamName: "log_stream_name",
   timestamp: "timestamp",
 };
@@ -614,75 +842,75 @@ const Pipe_TargetParameters_EcsTaskParameters_CapacityProviderStrategyFields: Fi
   weight: "weight",
 };
 
-const Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsVpcConfigurationFields: FieldMap = {
+const Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsvpcConfigurationFields: FieldMap = {
   assignPublicIp: "assign_public_ip",
   securityGroups: "security_groups",
   subnets: "subnets",
 };
 
 const Pipe_TargetParameters_EcsTaskParameters_NetworkConfigurationFields: FieldMap = {
-  awsVpcConfiguration: {
-    wireName: "aws_vpc_configuration",
-    kind: "list",
-    fields: Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsVpcConfigurationFields,
+  awsvpcConfiguration: {
+    wireName: "awsvpc_configuration",
+    kind: "object",
+    fields: Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsvpcConfigurationFields,
   },
 };
 
-const Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverrideFields: FieldMap = {
+const Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverridesFields: FieldMap = {
   command: "command",
   cpu: "cpu",
-  memory: "memory",
-  memoryReservation: "memory_reservation",
-  name: "name",
   environment: {
     wireName: "environment",
     kind: "list",
     fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_EnvironmentFields,
   },
-  environmentFile: {
-    wireName: "environment_file",
+  environmentFiles: {
+    wireName: "environment_files",
     kind: "list",
-    fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementFields,
+    fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementsFields,
   },
-  resourceRequirement: {
-    wireName: "resource_requirement",
+  memory: "memory",
+  memoryReservation: "memory_reservation",
+  name: "name",
+  resourceRequirements: {
+    wireName: "resource_requirements",
     kind: "list",
-    fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementFields,
+    fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementsFields,
   },
 };
 
 const Pipe_TargetParameters_EcsTaskParameters_Overrides_EphemeralStorageFields: FieldMap = {
-  sizeInGib: "size_in_gib",
+  sizeInGiB: "size_in_gi_b",
 };
 
-const Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverrideFields: FieldMap = {
+const Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverridesFields: FieldMap = {
   deviceName: "device_name",
   deviceType: "device_type",
 };
 
 const Pipe_TargetParameters_EcsTaskParameters_OverridesFields: FieldMap = {
-  cpu: "cpu",
-  executionRoleArn: "execution_role_arn",
-  memory: "memory",
-  taskRoleArn: "task_role_arn",
-  containerOverride: {
-    wireName: "container_override",
+  containerOverrides: {
+    wireName: "container_overrides",
     kind: "list",
-    fields: Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverrideFields,
+    fields: Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverridesFields,
   },
+  cpu: "cpu",
   ephemeralStorage: {
     wireName: "ephemeral_storage",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_EcsTaskParameters_Overrides_EphemeralStorageFields,
   },
-  inferenceAcceleratorOverride: {
-    wireName: "inference_accelerator_override",
+  executionRoleArn: "execution_role_arn",
+  inferenceAcceleratorOverrides: {
+    wireName: "inference_accelerator_overrides",
     kind: "list",
-    fields: Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverrideFields,
+    fields: Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverridesFields,
   },
+  memory: "memory",
+  taskRoleArn: "task_role_arn",
 };
 
-const Pipe_TargetParameters_EcsTaskParameters_PlacementConstraintFields: FieldMap = {
+const Pipe_TargetParameters_EcsTaskParameters_PlacementConstraintsFields: FieldMap = {
   expression: "expression",
   type: "type",
 };
@@ -692,45 +920,54 @@ const Pipe_TargetParameters_EcsTaskParameters_PlacementStrategyFields: FieldMap 
   type: "type",
 };
 
+const Pipe_TargetParameters_EcsTaskParameters_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
 const Pipe_TargetParameters_EcsTaskParametersFields: FieldMap = {
-  enableEcsManagedTags: "enable_ecs_managed_tags",
-  enableExecuteCommand: "enable_execute_command",
-  group: "group",
-  launchType: "launch_type",
-  platformVersion: "platform_version",
-  propagateTags: "propagate_tags",
-  referenceId: "reference_id",
-  tags: "tags",
-  taskCount: "task_count",
-  taskDefinitionArn: "task_definition_arn",
   capacityProviderStrategy: {
     wireName: "capacity_provider_strategy",
     kind: "list",
     fields: Pipe_TargetParameters_EcsTaskParameters_CapacityProviderStrategyFields,
   },
+  enableEcsmanagedTags: "enable_ecsmanaged_tags",
+  enableExecuteCommand: "enable_execute_command",
+  group: "group",
+  launchType: "launch_type",
   networkConfiguration: {
     wireName: "network_configuration",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_EcsTaskParameters_NetworkConfigurationFields,
   },
   overrides: {
     wireName: "overrides",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_EcsTaskParameters_OverridesFields,
   },
-  placementConstraint: {
-    wireName: "placement_constraint",
+  placementConstraints: {
+    wireName: "placement_constraints",
     kind: "list",
-    fields: Pipe_TargetParameters_EcsTaskParameters_PlacementConstraintFields,
+    fields: Pipe_TargetParameters_EcsTaskParameters_PlacementConstraintsFields,
   },
   placementStrategy: {
     wireName: "placement_strategy",
     kind: "list",
     fields: Pipe_TargetParameters_EcsTaskParameters_PlacementStrategyFields,
   },
+  platformVersion: "platform_version",
+  propagateTags: "propagate_tags",
+  referenceId: "reference_id",
+  tags: {
+    wireName: "tags",
+    kind: "list",
+    fields: Pipe_TargetParameters_EcsTaskParameters_TagsFields,
+  },
+  taskCount: "task_count",
+  taskDefinitionArn: "task_definition_arn",
 };
 
-const Pipe_TargetParameters_EventbridgeEventBusParametersFields: FieldMap = {
+const Pipe_TargetParameters_EventBridgeEventBusParametersFields: FieldMap = {
   detailType: "detail_type",
   endpointId: "endpoint_id",
   resources: "resources",
@@ -755,9 +992,9 @@ const Pipe_TargetParameters_RedshiftDataParametersFields: FieldMap = {
   withEvent: "with_event",
 };
 
-const Pipe_TargetParameters_SagemakerPipelineParametersFields: FieldMap = {
-  pipelineParameter: {
-    wireName: "pipeline_parameter",
+const Pipe_TargetParameters_SageMakerPipelineParametersFields: FieldMap = {
+  pipelineParameterList: {
+    wireName: "pipeline_parameter_list",
     kind: "list",
     fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_EnvironmentFields,
   },
@@ -768,112 +1005,186 @@ const Pipe_TargetParameters_SqsQueueParametersFields: FieldMap = {
   messageGroupId: "message_group_id",
 };
 
+const Pipe_TargetParameters_TimestreamParameters_DimensionMappingsFields: FieldMap = {
+  dimensionName: "dimension_name",
+  dimensionValue: "dimension_value",
+  dimensionValueType: "dimension_value_type",
+};
+
+const Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings_MultiMeasureAttributeMappingsFields: FieldMap = {
+  measureValue: "measure_value",
+  measureValueType: "measure_value_type",
+  multiMeasureAttributeName: "multi_measure_attribute_name",
+};
+
+const Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappingsFields: FieldMap = {
+  multiMeasureAttributeMappings: {
+    wireName: "multi_measure_attribute_mappings",
+    kind: "list",
+    fields: Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings_MultiMeasureAttributeMappingsFields,
+  },
+  multiMeasureName: "multi_measure_name",
+};
+
+const Pipe_TargetParameters_TimestreamParameters_SingleMeasureMappingsFields: FieldMap = {
+  measureName: "measure_name",
+  measureValue: "measure_value",
+  measureValueType: "measure_value_type",
+};
+
+const Pipe_TargetParameters_TimestreamParametersFields: FieldMap = {
+  dimensionMappings: {
+    wireName: "dimension_mappings",
+    kind: "list",
+    fields: Pipe_TargetParameters_TimestreamParameters_DimensionMappingsFields,
+  },
+  epochTimeUnit: "epoch_time_unit",
+  multiMeasureMappings: {
+    wireName: "multi_measure_mappings",
+    kind: "list",
+    fields: Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappingsFields,
+  },
+  singleMeasureMappings: {
+    wireName: "single_measure_mappings",
+    kind: "list",
+    fields: Pipe_TargetParameters_TimestreamParameters_SingleMeasureMappingsFields,
+  },
+  timeFieldType: "time_field_type",
+  timeValue: "time_value",
+  timestampFormat: "timestamp_format",
+  versionValue: "version_value",
+};
+
 const Pipe_TargetParametersFields: FieldMap = {
-  inputTemplate: "input_template",
   batchJobParameters: {
     wireName: "batch_job_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_BatchJobParametersFields,
   },
-  cloudwatchLogsParameters: {
-    wireName: "cloudwatch_logs_parameters",
-    kind: "list",
-    fields: Pipe_TargetParameters_CloudwatchLogsParametersFields,
+  cloudWatchLogsParameters: {
+    wireName: "cloud_watch_logs_parameters",
+    kind: "object",
+    fields: Pipe_TargetParameters_CloudWatchLogsParametersFields,
   },
   ecsTaskParameters: {
     wireName: "ecs_task_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_EcsTaskParametersFields,
   },
-  eventbridgeEventBusParameters: {
-    wireName: "eventbridge_event_bus_parameters",
-    kind: "list",
-    fields: Pipe_TargetParameters_EventbridgeEventBusParametersFields,
+  eventBridgeEventBusParameters: {
+    wireName: "event_bridge_event_bus_parameters",
+    kind: "object",
+    fields: Pipe_TargetParameters_EventBridgeEventBusParametersFields,
   },
   httpParameters: {
     wireName: "http_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_EnrichmentParameters_HttpParametersFields,
   },
+  inputTemplate: "input_template",
   kinesisStreamParameters: {
     wireName: "kinesis_stream_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_KinesisStreamParametersFields,
   },
   lambdaFunctionParameters: {
     wireName: "lambda_function_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_LambdaFunctionParametersFields,
   },
   redshiftDataParameters: {
     wireName: "redshift_data_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_RedshiftDataParametersFields,
   },
-  sagemakerPipelineParameters: {
-    wireName: "sagemaker_pipeline_parameters",
-    kind: "list",
-    fields: Pipe_TargetParameters_SagemakerPipelineParametersFields,
+  sageMakerPipelineParameters: {
+    wireName: "sage_maker_pipeline_parameters",
+    kind: "object",
+    fields: Pipe_TargetParameters_SageMakerPipelineParametersFields,
   },
   sqsQueueParameters: {
     wireName: "sqs_queue_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_SqsQueueParametersFields,
   },
   stepFunctionStateMachineParameters: {
     wireName: "step_function_state_machine_parameters",
-    kind: "list",
+    kind: "object",
     fields: Pipe_TargetParameters_LambdaFunctionParametersFields,
+  },
+  timestreamParameters: {
+    wireName: "timestream_parameters",
+    kind: "object",
+    fields: Pipe_TargetParameters_TimestreamParametersFields,
   },
 };
 
-const Pipe_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
-};
-
 export interface PipeConfig {
+  /** The description field is an optional user-defined text description for the AWS Pipes pipe, used to identify the pipe's purpose or distinguish it from other pipes. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Sets the pipe to either RUNNING or STOPPED after creation or update, controlling whether it actively processes events. (AI-inferred) */
   desiredState?: string | Computed<string>;
+  /** The ARN of the enrichment resource (such as an AWS Lambda function, AWS Step Functions state machine, or API destination) that EventBridge Pipes invokes to transform or enrich the event before sending it to the target. (AI-inferred) */
   enrichment?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** Specifies the configuration for the pipe's enrichment stage, including the input template that controls how the source event is transformed before being passed to the enrichment target (e.g., a Lambda function, Step Functions state machine, or API destination). (AI-inferred) */
+  enrichmentParameters?: Pipe_EnrichmentParameters | Computed<Pipe_EnrichmentParameters>;
+  /** Specifies the ARN, ID, or alias of the AWS KMS key used to encrypt data in the EventBridge Pipe. (AI-inferred) */
   kmsKeyIdentifier?: string | Computed<string>;
+  /** Configures the destination (such as CloudWatch Logs, Amazon Data Firehose, or Amazon S3) and the log level for the pipe's execution activity, capturing invocation and error logs. (AI-inferred) */
+  logConfiguration?: Pipe_LogConfiguration | Computed<Pipe_LogConfiguration>;
+  /** The name of the EventBridge pipe; if not provided, CloudFormation generates a unique name. (AI-inferred) */
   name?: string | Computed<string>;
-  namePrefix?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The ARN of the IAM role that the pipe assumes to read from the source, invoke the enrichment, and deliver to the target. (AI-inferred) */
   roleArn: string | Computed<string>;
+  /** The ARN of the source resource (such as a Kinesis stream, DynamoDB stream, SQS queue, or EventBridge event bus) from which the pipe reads data. (AI-inferred) */
   source: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** Defines source-specific configuration for the pipe's integration, including filtering criteria and service-specific settings (e.g., batch size or stream starting position) for sources like SQS, Kinesis, or DynamoDB. (AI-inferred) */
+  sourceParameters?: Pipe_SourceParameters | Computed<Pipe_SourceParameters>;
+  /** Specifies the key-value metadata tags to attach to this EventBridge Pipes pipe for resource identification and management. (AI-inferred) */
+  tags?: unknown | Computed<unknown>;
+  /** The Amazon Resource Name (ARN) of the target resource (for example, an SQS queue, Lambda function, or EventBridge event bus) to which the pipe delivers events. (AI-inferred) */
   target: string | Computed<string>;
-  enrichmentParameters?: Pipe_EnrichmentParameters[] | Computed<Pipe_EnrichmentParameters[]>;
-  logConfiguration?: Pipe_LogConfiguration[] | Computed<Pipe_LogConfiguration[]>;
-  sourceParameters?: Pipe_SourceParameters[] | Computed<Pipe_SourceParameters[]>;
-  targetParameters?: Pipe_TargetParameters[] | Computed<Pipe_TargetParameters[]>;
-  timeouts?: Pipe_Timeouts | Computed<Pipe_Timeouts>;
+  /** Specifies the target-specific configuration for the pipe, including the input template, input transformation, dead-letter configuration, and parameters tailored to the destination service (such as Lambda, SQS, SNS). (AI-inferred) */
+  targetParameters?: Pipe_TargetParameters | Computed<Pipe_TargetParameters>;
 }
 
 export interface PipeAttrs {
+  /** The Amazon Resource Name (ARN) that uniquely identifies this pipe, assigned by AWS and used to reference the pipe in IAM policies and other AWS services. (AI-inferred) */
   arn: string;
+  /** The timestamp of when the pipe was created, represented as a string in ISO 8601 format. (AI-inferred) */
+  creationTime: string;
+  /** The current lifecycle state of the pipe, such as RUNNING or STOPPED, as reported by AWS after the pipe is created or updated. (AI-inferred) */
+  currentState: string;
+  /** The description field is an optional user-defined text description for the AWS Pipes pipe, used to identify the pipe's purpose or distinguish it from other pipes. (AI-inferred) */
   description: string;
+  /** Sets the pipe to either RUNNING or STOPPED after creation or update, controlling whether it actively processes events. (AI-inferred) */
   desiredState: string;
+  /** The ARN of the enrichment resource (such as an AWS Lambda function, AWS Step Functions state machine, or API destination) that EventBridge Pipes invokes to transform or enrich the event before sending it to the target. (AI-inferred) */
   enrichment: string;
-  id: string;
+  /** Specifies the configuration for the pipe's enrichment stage, including the input template that controls how the source event is transformed before being passed to the enrichment target (e.g., a Lambda function, Step Functions state machine, or API destination). (AI-inferred) */
+  enrichmentParameters: Pipe_EnrichmentParameters;
+  /** Specifies the ARN, ID, or alias of the AWS KMS key used to encrypt data in the EventBridge Pipe. (AI-inferred) */
   kmsKeyIdentifier: string;
+  /** The timestamp indicating when the pipe was last modified. (AI-inferred) */
+  lastModifiedTime: string;
+  /** Configures the destination (such as CloudWatch Logs, Amazon Data Firehose, or Amazon S3) and the log level for the pipe's execution activity, capturing invocation and error logs. (AI-inferred) */
+  logConfiguration: Pipe_LogConfiguration;
+  /** The name of the EventBridge pipe; if not provided, CloudFormation generates a unique name. (AI-inferred) */
   name: string;
-  namePrefix: string;
-  region: string;
+  /** The ARN of the IAM role that the pipe assumes to read from the source, invoke the enrichment, and deliver to the target. (AI-inferred) */
   roleArn: string;
+  /** The ARN of the source resource (such as a Kinesis stream, DynamoDB stream, SQS queue, or EventBridge event bus) from which the pipe reads data. (AI-inferred) */
   source: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** Defines source-specific configuration for the pipe's integration, including filtering criteria and service-specific settings (e.g., batch size or stream starting position) for sources like SQS, Kinesis, or DynamoDB. (AI-inferred) */
+  sourceParameters: Pipe_SourceParameters;
+  /** The reason why the pipe is in its current state, such as an error message when the pipe is in a failed state. (AI-inferred) */
+  stateReason: string;
+  /** Specifies the key-value metadata tags to attach to this EventBridge Pipes pipe for resource identification and management. (AI-inferred) */
+  tags: unknown;
+  /** The Amazon Resource Name (ARN) of the target resource (for example, an SQS queue, Lambda function, or EventBridge event bus) to which the pipe delivers events. (AI-inferred) */
   target: string;
-  enrichmentParameters: Pipe_EnrichmentParameters[];
-  logConfiguration: Pipe_LogConfiguration[];
-  sourceParameters: Pipe_SourceParameters[];
-  targetParameters: Pipe_TargetParameters[];
-  timeouts: Pipe_Timeouts;
+  /** Specifies the target-specific configuration for the pipe, including the input template, input transformation, dead-letter configuration, and parameters tailored to the destination service (such as Lambda, SQS, SNS). (AI-inferred) */
+  targetParameters: Pipe_TargetParameters;
 }
 
 export const Pipe: ResourceBinding<PipeConfig, PipeAttrs> = {
@@ -882,40 +1193,31 @@ export const Pipe: ResourceBinding<PipeConfig, PipeAttrs> = {
     description: "description",
     desiredState: "desired_state",
     enrichment: "enrichment",
-    id: "id",
-    kmsKeyIdentifier: "kms_key_identifier",
-    name: "name",
-    namePrefix: "name_prefix",
-    region: "region",
-    roleArn: "role_arn",
-    source: "source",
-    tags: "tags",
-    tagsAll: "tags_all",
-    target: "target",
     enrichmentParameters: {
       wireName: "enrichment_parameters",
-      kind: "list",
+      kind: "object",
       fields: Pipe_EnrichmentParametersFields,
     },
+    kmsKeyIdentifier: "kms_key_identifier",
     logConfiguration: {
       wireName: "log_configuration",
-      kind: "list",
+      kind: "object",
       fields: Pipe_LogConfigurationFields,
     },
+    name: "name",
+    roleArn: "role_arn",
+    source: "source",
     sourceParameters: {
       wireName: "source_parameters",
-      kind: "list",
+      kind: "object",
       fields: Pipe_SourceParametersFields,
     },
+    tags: "tags",
+    target: "target",
     targetParameters: {
       wireName: "target_parameters",
-      kind: "list",
-      fields: Pipe_TargetParametersFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
       kind: "object",
-      fields: Pipe_TimeoutsFields,
+      fields: Pipe_TargetParametersFields,
     },
   },
 };

@@ -4,22 +4,30 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceLinkedRoleConfig struct {
-	AwsServiceName any
+	// The service principal for the AWS service to which this role is attached.
+	AwsserviceName any
+	// A string that you provide, which is combined with the service-provided prefix to form the complete role name.
 	CustomSuffix any
+	// The description of the role.
 	Description any
-	Id any
-	Tags any
-	TagsAll any
+}
+
+type ServiceLinkedRoleAttrs struct {
+	// The service principal for the AWS service to which this role is attached.
+	AwsserviceName any
+	// A string that you provide, which is combined with the service-provided prefix to form the complete role name.
+	CustomSuffix any
+	// The description of the role.
+	Description any
+	// The name of the role.
+	RoleName any
 }
 
 var ServiceLinkedRole = ubx.ResourceBinding{
 	WireType: "aws_iam_service_linked_role",
 	Fields: ubx.FieldMap{
-		"AwsServiceName": ubx.FieldSpec{WireName: "aws_service_name"},
+		"AwsserviceName": ubx.FieldSpec{WireName: "awsservice_name"},
 		"CustomSuffix": ubx.FieldSpec{WireName: "custom_suffix"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 	},
 }

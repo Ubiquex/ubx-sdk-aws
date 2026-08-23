@@ -2,35 +2,62 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CapacityProvider_CapacityProviderScalingConfig_ScalingPolicies {
-  predefinedMetricType: string;
-  targetValue: number;
+  predefinedMetricType?: string | Computed<string>;
+  targetValue?: number | Computed<number>;
 }
 
 export interface CapacityProvider_CapacityProviderScalingConfig {
-  maxVcpuCount: number;
-  scalingMode: string;
-  scalingPolicies: CapacityProvider_CapacityProviderScalingConfig_ScalingPolicies[];
+  /** The maximum number of vCPUs that the capacity provider can provision across all compute instances. */
+  maxVcpuCount?: number | Computed<number>;
+  /** The scaling mode for the capacity provider. */
+  scalingMode?: string | Computed<string>;
+  /** A list of target tracking scaling policies for the capacity provider. */
+  scalingPolicies?: CapacityProvider_CapacityProviderScalingConfig_ScalingPolicies[] | Computed<CapacityProvider_CapacityProviderScalingConfig_ScalingPolicies[]>;
 }
 
 export interface CapacityProvider_InstanceRequirements {
-  allowedInstanceTypes: string[];
-  architectures: string[];
-  excludedInstanceTypes: string[];
+  /** A list of EC2 instance types that the capacity provider is allowed to use. If not specified, all compatible instance types are allowed. */
+  allowedInstanceTypes?: string[] | Computed<string[]>;
+  /** A list of supported CPU architectures for compute instances. Valid values include ``x86_64`` and ``arm64``. */
+  architectures?: string[] | Computed<string[]>;
+  /** A list of EC2 instance types that the capacity provider should not use, even if they meet other requirements. */
+  excludedInstanceTypes?: string[] | Computed<string[]>;
 }
 
 export interface CapacityProvider_PermissionsConfig {
-  capacityProviderOperatorRoleArn: string;
+  /** The ARN of the IAM role that the capacity provider uses to manage compute instances and other AWS resources. */
+  capacityProviderOperatorRoleArn: string | Computed<string>;
 }
 
-export interface CapacityProvider_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface CapacityProvider_PropagateTags_ExplicitTags {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface CapacityProvider_PropagateTags {
+  /** A list of tags to explicitly propagate to managed resources. Maximum of 40 tags. */
+  explicitTags?: CapacityProvider_PropagateTags_ExplicitTags[] | Computed<CapacityProvider_PropagateTags_ExplicitTags[]>;
+  /** The mode for tag propagation. */
+  mode?: string | Computed<string>;
+}
+
+export interface CapacityProvider_TelemetryConfig_LoggingConfig {
+  /** The name of the Amazon CloudWatch log group the capacity provider sends logs to. By default, Lambda capacity providers send logs to a default log group named ``/aws/lambda/capacity-provider/<capacity provider name>``. To use a different log group, enter an existing log group or enter a new log group name. */
+  logGroup?: string | Computed<string>;
+  /** Set this property to filter the system logs for your capacity provider that Lambda sends to CloudWatch. Lambda only sends system logs at the selected level of detail and lower, where ``DEBUG`` is the highest level and ``WARN`` is the lowest. */
+  systemLogLevel?: string | Computed<string>;
+}
+
+export interface CapacityProvider_TelemetryConfig {
+  /** The capacity provider's Amazon CloudWatch Logs configuration settings. */
+  loggingConfig?: CapacityProvider_TelemetryConfig_LoggingConfig | Computed<CapacityProvider_TelemetryConfig_LoggingConfig>;
 }
 
 export interface CapacityProvider_VpcConfig {
-  securityGroupIds: string[];
-  subnetIds: string[];
+  /** A list of security group IDs that control network access for compute instances managed by the capacity provider. */
+  securityGroupIds: string[] | Computed<string[]>;
+  /** A list of subnet IDs where the capacity provider launches compute instances. */
+  subnetIds: string[] | Computed<string[]>;
 }
 
 const CapacityProvider_CapacityProviderScalingConfig_ScalingPoliciesFields: FieldMap = {
@@ -58,10 +85,31 @@ const CapacityProvider_PermissionsConfigFields: FieldMap = {
   capacityProviderOperatorRoleArn: "capacity_provider_operator_role_arn",
 };
 
-const CapacityProvider_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const CapacityProvider_PropagateTags_ExplicitTagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
+const CapacityProvider_PropagateTagsFields: FieldMap = {
+  explicitTags: {
+    wireName: "explicit_tags",
+    kind: "list",
+    fields: CapacityProvider_PropagateTags_ExplicitTagsFields,
+  },
+  mode: "mode",
+};
+
+const CapacityProvider_TelemetryConfig_LoggingConfigFields: FieldMap = {
+  logGroup: "log_group",
+  systemLogLevel: "system_log_level",
+};
+
+const CapacityProvider_TelemetryConfigFields: FieldMap = {
+  loggingConfig: {
+    wireName: "logging_config",
+    kind: "object",
+    fields: CapacityProvider_TelemetryConfig_LoggingConfigFields,
+  },
 };
 
 const CapacityProvider_VpcConfigFields: FieldMap = {
@@ -70,61 +118,86 @@ const CapacityProvider_VpcConfigFields: FieldMap = {
 };
 
 export interface CapacityProviderConfig {
-  capacityProviderScalingConfig?: CapacityProvider_CapacityProviderScalingConfig[] | Computed<CapacityProvider_CapacityProviderScalingConfig[]>;
-  instanceRequirements?: CapacityProvider_InstanceRequirements[] | Computed<CapacityProvider_InstanceRequirements[]>;
+  capacityProviderName?: string | Computed<string>;
+  /** Configuration that defines how the capacity provider scales compute instances based on demand and policies. */
+  capacityProviderScalingConfig?: CapacityProvider_CapacityProviderScalingConfig | Computed<CapacityProvider_CapacityProviderScalingConfig>;
+  /** Specifications that define the characteristics and constraints for compute instances used by the capacity provider. */
+  instanceRequirements?: CapacityProvider_InstanceRequirements | Computed<CapacityProvider_InstanceRequirements>;
+  /** The ARN of the KMS key used to encrypt the capacity provider's resources. */
   kmsKeyArn?: string | Computed<string>;
-  name: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  permissionsConfig?: CapacityProvider_PermissionsConfig[] | Computed<CapacityProvider_PermissionsConfig[]>;
-  timeouts?: CapacityProvider_Timeouts | Computed<CapacityProvider_Timeouts>;
-  vpcConfig?: CapacityProvider_VpcConfig[] | Computed<CapacityProvider_VpcConfig[]>;
+  /** Configuration that specifies the permissions required for the capacity provider to manage compute resources. */
+  permissionsConfig: CapacityProvider_PermissionsConfig | Computed<CapacityProvider_PermissionsConfig>;
+  /** Configuration that defines how tags are propagated to managed resources. */
+  propagateTags?: CapacityProvider_PropagateTags | Computed<CapacityProvider_PropagateTags>;
+  /** A key-value pair that provides metadata for the capacity provider. */
+  tags?: CapacityProvider_PropagateTags_ExplicitTags[] | Computed<CapacityProvider_PropagateTags_ExplicitTags[]>;
+  /** Configuration that specifies the telemetry collection for the capacity provider. */
+  telemetryConfig?: CapacityProvider_TelemetryConfig | Computed<CapacityProvider_TelemetryConfig>;
+  /** VPC configuration that specifies the network settings for compute instances managed by the capacity provider. */
+  vpcConfig: CapacityProvider_VpcConfig | Computed<CapacityProvider_VpcConfig>;
 }
 
 export interface CapacityProviderAttrs {
   arn: string;
-  capacityProviderScalingConfig: CapacityProvider_CapacityProviderScalingConfig[];
-  instanceRequirements: CapacityProvider_InstanceRequirements[];
+  capacityProviderName: string;
+  /** Configuration that defines how the capacity provider scales compute instances based on demand and policies. */
+  capacityProviderScalingConfig: CapacityProvider_CapacityProviderScalingConfig;
+  /** Specifications that define the characteristics and constraints for compute instances used by the capacity provider. */
+  instanceRequirements: CapacityProvider_InstanceRequirements;
+  /** The ARN of the KMS key used to encrypt the capacity provider's resources. */
   kmsKeyArn: string;
-  name: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  permissionsConfig: CapacityProvider_PermissionsConfig[];
-  timeouts: CapacityProvider_Timeouts;
-  vpcConfig: CapacityProvider_VpcConfig[];
+  /** Configuration that specifies the permissions required for the capacity provider to manage compute resources. */
+  permissionsConfig: CapacityProvider_PermissionsConfig;
+  /** Configuration that defines how tags are propagated to managed resources. */
+  propagateTags: CapacityProvider_PropagateTags;
+  /** The current state of the capacity provider. Indicates whether the provider is being created, is active and ready for use, has failed, or is being deleted. */
+  state: string;
+  /** A key-value pair that provides metadata for the capacity provider. */
+  tags: CapacityProvider_PropagateTags_ExplicitTags[];
+  /** Configuration that specifies the telemetry collection for the capacity provider. */
+  telemetryConfig: CapacityProvider_TelemetryConfig;
+  /** VPC configuration that specifies the network settings for compute instances managed by the capacity provider. */
+  vpcConfig: CapacityProvider_VpcConfig;
 }
 
 export const CapacityProvider: ResourceBinding<CapacityProviderConfig, CapacityProviderAttrs> = {
   wireType: "aws_lambda_capacity_provider",
   fields: {
+    capacityProviderName: "capacity_provider_name",
     capacityProviderScalingConfig: {
       wireName: "capacity_provider_scaling_config",
-      kind: "list",
+      kind: "object",
       fields: CapacityProvider_CapacityProviderScalingConfigFields,
     },
     instanceRequirements: {
       wireName: "instance_requirements",
-      kind: "list",
+      kind: "object",
       fields: CapacityProvider_InstanceRequirementsFields,
     },
     kmsKeyArn: "kms_key_arn",
-    name: "name",
-    region: "region",
-    tags: "tags",
     permissionsConfig: {
       wireName: "permissions_config",
-      kind: "list",
+      kind: "object",
       fields: CapacityProvider_PermissionsConfigFields,
     },
-    timeouts: {
-      wireName: "timeouts",
+    propagateTags: {
+      wireName: "propagate_tags",
       kind: "object",
-      fields: CapacityProvider_TimeoutsFields,
+      fields: CapacityProvider_PropagateTagsFields,
+    },
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: CapacityProvider_PropagateTags_ExplicitTagsFields,
+    },
+    telemetryConfig: {
+      wireName: "telemetry_config",
+      kind: "object",
+      fields: CapacityProvider_TelemetryConfigFields,
     },
     vpcConfig: {
       wireName: "vpc_config",
-      kind: "list",
+      kind: "object",
       fields: CapacityProvider_VpcConfigFields,
     },
   },

@@ -4,14 +4,34 @@ package msk
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcConnectionConfig struct {
+	// The type of private link authentication
 	Authentication any
+	// Specifies the subnets in the client VPC where the MSK VPC connection is created, enabling network access from those subnets to the cluster. (AI-inferred)
 	ClientSubnets any
-	Id any
-	Region any
+	// Specifies the security group IDs to attach to the elastic network interface created for the MSK VPC connection, controlling traffic to and from client resources. (AI-inferred)
 	SecurityGroups any
+	// A key-value pair to associate with a resource.
 	Tags any
-	TagsAll any
+	// The Amazon Resource Name (ARN) of the target cluster
 	TargetClusterArn any
+	// The ID of the client VPC that will be connected to the MSK cluster using this VPC connection. (AI-inferred)
+	VpcId any
+}
+
+type VpcConnectionAttrs struct {
+	// The Amazon Resource Name (ARN) assigned to the MSK VPC connection. (AI-inferred)
+	Arn any
+	// The type of private link authentication
+	Authentication any
+	// Specifies the subnets in the client VPC where the MSK VPC connection is created, enabling network access from those subnets to the cluster. (AI-inferred)
+	ClientSubnets any
+	// Specifies the security group IDs to attach to the elastic network interface created for the MSK VPC connection, controlling traffic to and from client resources. (AI-inferred)
+	SecurityGroups any
+	// A key-value pair to associate with a resource.
+	Tags any
+	// The Amazon Resource Name (ARN) of the target cluster
+	TargetClusterArn any
+	// The ID of the client VPC that will be connected to the MSK cluster using this VPC connection. (AI-inferred)
 	VpcId any
 }
 
@@ -20,11 +40,8 @@ var VpcConnection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Authentication": ubx.FieldSpec{WireName: "authentication"},
 		"ClientSubnets": ubx.FieldSpec{WireName: "client_subnets"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"TargetClusterArn": ubx.FieldSpec{WireName: "target_cluster_arn"},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

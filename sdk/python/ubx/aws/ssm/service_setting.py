@@ -8,16 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceSettingConfig:
-    id: Any = None
-    region: Any = None
+    # The ID of the service setting, such as /ssm/parameter-store/high-throughput-enabled.
     setting_id: Any = None
+    # The value of the service setting.
     setting_value: Any = None
+
+@dataclasses.dataclass
+class ServiceSettingAttrs:
+    # The ARN of the service setting.
+    arn: Any = None
+    # The last time the service setting was modified.
+    last_modified_date: Any = None
+    # The ARN of the last modified user.
+    last_modified_user: Any = None
+    # The ID of the service setting, such as /ssm/parameter-store/high-throughput-enabled.
+    setting_id: Any = None
+    # The value of the service setting.
+    setting_value: Any = None
+    # The status of the service setting. The value can be Default, Customized or PendingUpdate.
+    status: Any = None
 
 ServiceSetting = ubx.ResourceBinding(
     wire_type="aws_ssm_service_setting",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "setting_id": ubx.FieldSpec(wire_name="setting_id"),
         "setting_value": ubx.FieldSpec(wire_name="setting_value"),
     },

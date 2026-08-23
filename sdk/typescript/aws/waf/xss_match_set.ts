@@ -2,13 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface XssMatchSet_XssMatchTuples_FieldToMatch {
-  data: string;
-  type: string;
+  /** The name of the header or query argument that AWS WAF inspects, used when the field-to-match type is HEADER or SINGLE_QUERY_ARG. (AI-inferred) */
+  data?: string | Computed<string>;
+  /** Specifies the type of web request component (such as HEADER, METHOD, QUERY_STRING, URI, or BODY) that AWS WAF inspects for cross-site scripting attacks. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
 export interface XssMatchSet_XssMatchTuples {
-  textTransformation: string;
-  fieldToMatch: XssMatchSet_XssMatchTuples_FieldToMatch[];
+  /** Specifies the part of a web request to inspect for cross-site scripting attacks, such as the URI, query string, body, or a named header, via the type and optional data subfields. (AI-inferred) */
+  fieldToMatch?: XssMatchSet_XssMatchTuples_FieldToMatch | Computed<XssMatchSet_XssMatchTuples_FieldToMatch>;
+  /** Specifies how AWS WAF transforms the text component of the web request before inspection for XSS patterns, such as converting to lowercase, decoding HTML entities, or compressing white spaces. (AI-inferred) */
+  textTransformation?: string | Computed<string>;
 }
 
 const XssMatchSet_XssMatchTuples_FieldToMatchFields: FieldMap = {
@@ -17,35 +21,37 @@ const XssMatchSet_XssMatchTuples_FieldToMatchFields: FieldMap = {
 };
 
 const XssMatchSet_XssMatchTuplesFields: FieldMap = {
-  textTransformation: "text_transformation",
   fieldToMatch: {
     wireName: "field_to_match",
-    kind: "list",
+    kind: "object",
     fields: XssMatchSet_XssMatchTuples_FieldToMatchFields,
   },
+  textTransformation: "text_transformation",
 };
 
 export interface XssMatchSetConfig {
-  id?: string | Computed<string>;
+  /** A friendly name or description of the XssMatchSet, which is required and cannot be changed after creation. (AI-inferred) */
   name: string | Computed<string>;
-  xssMatchTuples?: XssMatchSet_XssMatchTuples[] | Computed<XssMatchSet_XssMatchTuples[]>;
+  /** Specifies the parts of the web request to inspect for cross-site scripting attacks and the text transformations to apply, where each tuple consists of a FieldToMatch and a TextTransformation. (AI-inferred) */
+  xssMatchTuples: XssMatchSet_XssMatchTuples[] | Computed<XssMatchSet_XssMatchTuples[]>;
 }
 
 export interface XssMatchSetAttrs {
-  arn: string;
+  /** The unique identifier assigned by AWS to the XSS match set, used to reference the set in other WAF resources. (AI-inferred) */
   id: string;
+  /** A friendly name or description of the XssMatchSet, which is required and cannot be changed after creation. (AI-inferred) */
   name: string;
+  /** Specifies the parts of the web request to inspect for cross-site scripting attacks and the text transformations to apply, where each tuple consists of a FieldToMatch and a TextTransformation. (AI-inferred) */
   xssMatchTuples: XssMatchSet_XssMatchTuples[];
 }
 
 export const XssMatchSet: ResourceBinding<XssMatchSetConfig, XssMatchSetAttrs> = {
   wireType: "aws_waf_xss_match_set",
   fields: {
-    id: "id",
     name: "name",
     xssMatchTuples: {
       wireName: "xss_match_tuples",
-      kind: "set",
+      kind: "list",
       fields: XssMatchSet_XssMatchTuplesFields,
     },
   },

@@ -2,33 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StudioSessionMappingConfig {
-  id?: string | Computed<string>;
-  identityId?: string | Computed<string>;
-  identityName?: string | Computed<string>;
+  /** The name of the user or group. For more information, see UserName and DisplayName in the AWS SSO Identity Store API Reference. Either IdentityName or IdentityId must be specified. */
+  identityName: string | Computed<string>;
+  /** Specifies whether the identity to map to the Studio is a user or a group. */
   identityType: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The ARN of the IAM policy that defines the permissions for the EMR Studio session assigned to the mapped user or group. (AI-inferred) */
   sessionPolicyArn: string | Computed<string>;
+  /** The ID of the Amazon EMR Studio to which the user or group will be mapped. */
   studioId: string | Computed<string>;
 }
 
 export interface StudioSessionMappingAttrs {
-  id: string;
-  identityId: string;
+  /** The name of the user or group. For more information, see UserName and DisplayName in the AWS SSO Identity Store API Reference. Either IdentityName or IdentityId must be specified. */
   identityName: string;
+  /** Specifies whether the identity to map to the Studio is a user or a group. */
   identityType: string;
-  region: string;
+  /** The ARN of the IAM policy that defines the permissions for the EMR Studio session assigned to the mapped user or group. (AI-inferred) */
   sessionPolicyArn: string;
+  /** The ID of the Amazon EMR Studio to which the user or group will be mapped. */
   studioId: string;
 }
 
 export const StudioSessionMapping: ResourceBinding<StudioSessionMappingConfig, StudioSessionMappingAttrs> = {
   wireType: "aws_emr_studio_session_mapping",
   fields: {
-    id: "id",
-    identityId: "identity_id",
     identityName: "identity_name",
     identityType: "identity_type",
-    region: "region",
     sessionPolicyArn: "session_policy_arn",
     studioId: "studio_id",
   },

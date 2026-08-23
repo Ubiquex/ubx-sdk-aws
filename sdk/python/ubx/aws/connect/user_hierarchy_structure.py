@@ -7,70 +7,85 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class UserHierarchyStructure_HierarchyStructure_LevelFive:
-    arn: Any = None
-    id: Any = None
+class UserHierarchyStructure_UserHierarchyStructure_LevelFive:
+    # The Amazon Resource Name (ARN) of the hierarchy level.
+    hierarchy_level_arn: Any = None
+    # The identifier of the hierarchy level.
+    hierarchy_level_id: Any = None
+    # The name of the hierarchy level.
     name: Any = None
 
 @dataclasses.dataclass
-class UserHierarchyStructure_HierarchyStructure:
+class UserHierarchyStructure_UserHierarchyStructure:
+    # Information about level five.
     level_five: Any = None
+    # Information about level four.
     level_four: Any = None
+    # Information about level one.
     level_one: Any = None
+    # Information about level three.
     level_three: Any = None
+    # Information about level two.
     level_two: Any = None
 
-_UserHierarchyStructure_HierarchyStructure_LevelFiveFields = {
-    "arn": ubx.FieldSpec(wire_name="arn"),
-    "id": ubx.FieldSpec(wire_name="id"),
+_UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields = {
+    "hierarchy_level_arn": ubx.FieldSpec(wire_name="hierarchy_level_arn"),
+    "hierarchy_level_id": ubx.FieldSpec(wire_name="hierarchy_level_id"),
     "name": ubx.FieldSpec(wire_name="name"),
 }
 
-_UserHierarchyStructure_HierarchyStructureFields = {
+_UserHierarchyStructure_UserHierarchyStructureFields = {
     "level_five": ubx.FieldSpec(
         wire_name="level_five",
-        kind="list",
-        fields=_UserHierarchyStructure_HierarchyStructure_LevelFiveFields,
+        kind="object",
+        fields=_UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
     ),
     "level_four": ubx.FieldSpec(
         wire_name="level_four",
-        kind="list",
-        fields=_UserHierarchyStructure_HierarchyStructure_LevelFiveFields,
+        kind="object",
+        fields=_UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
     ),
     "level_one": ubx.FieldSpec(
         wire_name="level_one",
-        kind="list",
-        fields=_UserHierarchyStructure_HierarchyStructure_LevelFiveFields,
+        kind="object",
+        fields=_UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
     ),
     "level_three": ubx.FieldSpec(
         wire_name="level_three",
-        kind="list",
-        fields=_UserHierarchyStructure_HierarchyStructure_LevelFiveFields,
+        kind="object",
+        fields=_UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
     ),
     "level_two": ubx.FieldSpec(
         wire_name="level_two",
-        kind="list",
-        fields=_UserHierarchyStructure_HierarchyStructure_LevelFiveFields,
+        kind="object",
+        fields=_UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
     ),
 }
 
 @dataclasses.dataclass
 class UserHierarchyStructureConfig:
-    id: Any = None
-    instance_id: Any = None
-    region: Any = None
-    hierarchy_structure: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # Information about the hierarchy structure.
+    user_hierarchy_structure: Any = None
+
+@dataclasses.dataclass
+class UserHierarchyStructureAttrs:
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # Information about the hierarchy structure.
+    user_hierarchy_structure: Any = None
+    # The identifier of the User Hierarchy Structure.
+    user_hierarchy_structure_arn: Any = None
 
 UserHierarchyStructure = ubx.ResourceBinding(
     wire_type="aws_connect_user_hierarchy_structure",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "instance_id": ubx.FieldSpec(wire_name="instance_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "hierarchy_structure": ubx.FieldSpec(
-            wire_name="hierarchy_structure",
-            kind="list",
-            fields=_UserHierarchyStructure_HierarchyStructureFields,
+        "instance_arn": ubx.FieldSpec(wire_name="instance_arn"),
+        "user_hierarchy_structure": ubx.FieldSpec(
+            wire_name="user_hierarchy_structure",
+            kind="object",
+            fields=_UserHierarchyStructure_UserHierarchyStructureFields,
         ),
     },
 )

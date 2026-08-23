@@ -3,37 +3,57 @@ package config
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ConfigRule_EvaluationMode struct {
+type ConfigRule_Compliance struct {
+	// Compliance type determined by the Config rule
+	Type any
+}
+
+type ConfigRule_EvaluationModes struct {
+	// Specifies the evaluation mode of the AWS Config rule, which is either 'DETECTIVE' (evaluates resources after changes are made) or 'PROACTIVE' (evaluates resources before deployment to prevent noncompliant resources). (AI-inferred)
 	Mode any
 }
 
 type ConfigRule_Scope struct {
+	// The ID of the only AWS resource that you want to trigger an evaluation for the rule. If you specify a resource ID, you must specify one resource type for ``ComplianceResourceTypes``.
 	ComplianceResourceId any
+	// The resource types of only those AWS resources that you want to trigger an evaluation for the rule. You can only specify one type if you also specify a resource ID for ``ComplianceResourceId``.
 	ComplianceResourceTypes any
+	// The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.
 	TagKey any
+	// The tag value applied to only those AWS resources that you want to trigger an evaluation for the rule. If you specify a value for ``TagValue``, you must also specify a value for ``TagKey``.
 	TagValue any
 }
 
 type ConfigRule_Source_CustomPolicyDetails struct {
+	// The boolean expression for enabling debug logging for your CC Custom Policy rule. The default value is ``false``.
 	EnableDebugLogDelivery any
+	// The runtime system for your CC Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by CC Custom Policy rules. For more information about Guard, see the [Guard GitHub Repository](https://docs.aws.amazon.com/https://github.com/aws-cloudformation/cloudformation-guard).
 	PolicyRuntime any
+	// The policy definition containing the logic for your CC Custom Policy rule.
 	PolicyText any
 }
 
-type ConfigRule_Source_SourceDetail struct {
+type ConfigRule_Source_SourceDetails struct {
+	// For a custom AWS Config rule, this field indicates the AWS service that emits the events that trigger the rule, and the only valid value is `aws.config`. (AI-inferred)
 	EventSource any
+	// Specifies how often AWS Config runs the rule's evaluations (e.g., One_Hour, TwentyFour_Hours) when the rule's source details define a periodic trigger. (AI-inferred)
 	MaximumExecutionFrequency any
+	// The type of event that triggers the AWS Config rule's Lambda function, such as ConfigurationItemChangeNotification or ScheduledNotification. (AI-inferred)
 	MessageType any
 }
 
 type ConfigRule_Source struct {
-	Owner any
-	SourceIdentifier any
+	// Provides the CustomPolicyDetails, the rule owner (```` for managed rules, ``CUSTOM_POLICY`` for Custom Policy rules, and ``CUSTOM_LAMBDA`` for Custom Lambda rules), the rule identifier, and the events that cause the evaluation of your AWS resources.
 	CustomPolicyDetails any
-	SourceDetail any
+	// Indicates whether AWS or the customer owns and manages the CC rule. CC Managed Rules are predefined rules owned by AWS. For more information, see [Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html) in the *developer guide*. CC Custom Rules are rules that you can develop either with Guard (``CUSTOM_POLICY``) or LAMlong (``CUSTOM_LAMBDA``). For more information, see [Custom Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html) in the *developer guide*.
+	Owner any
+	// Provides the source and the message types that cause CC to evaluate your AWS resources against a rule. It also provides the frequency with which you want CC to run evaluations for the rule if the trigger type is periodic. If the owner is set to ``CUSTOM_POLICY``, the only acceptable values for the CC rule trigger message type are ``ConfigurationItemChangeNotification`` and ``OversizedConfigurationItemChangeNotification``.
+	SourceDetails any
+	// For CC Managed rules, a predefined identifier from a list. For example, ``IAM_PASSWORD_POLICY`` is a managed rule. To reference a managed rule, see [List of Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html). For CC Custom Lambda rules, the identifier is the Amazon Resource Name (ARN) of the rule's LAMlong function, such as ``arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name``. For CC Custom Policy rules, this field will be ignored.
+	SourceIdentifier any
 }
 
-var ConfigRule_EvaluationModeFields = ubx.FieldMap{
+var ConfigRule_EvaluationModesFields = ubx.FieldMap{
 		"Mode": ubx.FieldSpec{WireName: "mode"},
 	}
 
@@ -50,65 +70,87 @@ var ConfigRule_Source_CustomPolicyDetailsFields = ubx.FieldMap{
 		"PolicyText": ubx.FieldSpec{WireName: "policy_text"},
 	}
 
-var ConfigRule_Source_SourceDetailFields = ubx.FieldMap{
+var ConfigRule_Source_SourceDetailsFields = ubx.FieldMap{
 		"EventSource": ubx.FieldSpec{WireName: "event_source"},
 		"MaximumExecutionFrequency": ubx.FieldSpec{WireName: "maximum_execution_frequency"},
 		"MessageType": ubx.FieldSpec{WireName: "message_type"},
 	}
 
 var ConfigRule_SourceFields = ubx.FieldMap{
-		"Owner": ubx.FieldSpec{WireName: "owner"},
-		"SourceIdentifier": ubx.FieldSpec{WireName: "source_identifier"},
 		"CustomPolicyDetails": ubx.FieldSpec{
 			WireName: "custom_policy_details",
-			Kind: "list",
+			Kind: "object",
 			Fields: ConfigRule_Source_CustomPolicyDetailsFields,
 		},
-		"SourceDetail": ubx.FieldSpec{
-			WireName: "source_detail",
-			Kind: "set",
-			Fields: ConfigRule_Source_SourceDetailFields,
+		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"SourceDetails": ubx.FieldSpec{
+			WireName: "source_details",
+			Kind: "list",
+			Fields: ConfigRule_Source_SourceDetailsFields,
 		},
+		"SourceIdentifier": ubx.FieldSpec{WireName: "source_identifier"},
 	}
 
 type ConfigRuleConfig struct {
+	// A name for the CC rule. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the rule name. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html).
+	ConfigRuleName any
+	// The description that you provide for the CC rule.
 	Description any
-	Id any
+	// The modes the CC rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.
+	EvaluationModes any
+	// A string, in JSON format, that is passed to the CC rule Lambda function.
 	InputParameters any
+	// The maximum frequency with which CC runs evaluations for a rule. You can specify a value for ``MaximumExecutionFrequency`` when: + You are using an AWS managed rule that is triggered at a periodic frequency. + Your custom rule is triggered when CC delivers the configuration snapshot. For more information, see [ConfigSnapshotDeliveryProperties](https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigSnapshotDeliveryProperties.html). By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the ``MaximumExecutionFrequency`` parameter.
 	MaximumExecutionFrequency any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
-	EvaluationMode any
+	// Defines which resources trigger an evaluation for an CC rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
 	Scope any
+	// Provides the CustomPolicyDetails, the rule owner (```` for managed rules, ``CUSTOM_POLICY`` for Custom Policy rules, and ``CUSTOM_LAMBDA`` for Custom Lambda rules), the rule identifier, and the events that cause the evaluation of your AWS resources.
+	Source any
+}
+
+type ConfigRuleAttrs struct {
+	// The Amazon Resource Name (ARN) of the AWS Config rule, automatically assigned by AWS when the rule is created and used to uniquely identify the rule. (AI-inferred)
+	Arn any
+	// Indicates whether an AWS resource or CC rule is compliant and provides the number of contributors that affect the compliance.
+	Compliance any
+	// The unique identifier assigned by AWS to the Config rule when it is created. (AI-inferred)
+	ConfigRuleId any
+	// A name for the CC rule. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the rule name. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html).
+	ConfigRuleName any
+	// The description that you provide for the CC rule.
+	Description any
+	// The modes the CC rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.
+	EvaluationModes any
+	// A string, in JSON format, that is passed to the CC rule Lambda function.
+	InputParameters any
+	// The maximum frequency with which CC runs evaluations for a rule. You can specify a value for ``MaximumExecutionFrequency`` when: + You are using an AWS managed rule that is triggered at a periodic frequency. + Your custom rule is triggered when CC delivers the configuration snapshot. For more information, see [ConfigSnapshotDeliveryProperties](https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigSnapshotDeliveryProperties.html). By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the ``MaximumExecutionFrequency`` parameter.
+	MaximumExecutionFrequency any
+	// Defines which resources trigger an evaluation for an CC rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
+	Scope any
+	// Provides the CustomPolicyDetails, the rule owner (```` for managed rules, ``CUSTOM_POLICY`` for Custom Policy rules, and ``CUSTOM_LAMBDA`` for Custom Lambda rules), the rule identifier, and the events that cause the evaluation of your AWS resources.
 	Source any
 }
 
 var ConfigRule = ubx.ResourceBinding{
 	WireType: "aws_config_config_rule",
 	Fields: ubx.FieldMap{
+		"ConfigRuleName": ubx.FieldSpec{WireName: "config_rule_name"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"EvaluationModes": ubx.FieldSpec{
+			WireName: "evaluation_modes",
+			Kind: "list",
+			Fields: ConfigRule_EvaluationModesFields,
+		},
 		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
 		"MaximumExecutionFrequency": ubx.FieldSpec{WireName: "maximum_execution_frequency"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"EvaluationMode": ubx.FieldSpec{
-			WireName: "evaluation_mode",
-			Kind: "set",
-			Fields: ConfigRule_EvaluationModeFields,
-		},
 		"Scope": ubx.FieldSpec{
 			WireName: "scope",
-			Kind: "list",
+			Kind: "object",
 			Fields: ConfigRule_ScopeFields,
 		},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "list",
+			Kind: "object",
 			Fields: ConfigRule_SourceFields,
 		},
 	},

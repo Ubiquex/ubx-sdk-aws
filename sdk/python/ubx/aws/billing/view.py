@@ -8,37 +8,33 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class View_DataFilterExpression_Dimensions:
+    # The name of the billing dimension to filter on (for example, 'SERVICE' or 'REGION'), which along with the dimension values determines which data is included in the billing view. (AI-inferred)
     key: Any = None
-    values: Any = None
-
-@dataclasses.dataclass
-class View_DataFilterExpression_Tags:
-    key: Any = None
+    # Specifies a list of dimension values (such as AWS service names or linked account IDs) that the billing view's data filter expression will match against when selecting which cost and usage data to include in the view. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class View_DataFilterExpression_TimeRange:
+    # The time in ISO 8601 format, UTC time (YYYY-MM-DDTHH:MM:SSZ).
     begin_date_inclusive: Any = None
+    # The time in ISO 8601 format, UTC time (YYYY-MM-DDTHH:MM:SSZ).
     end_date_inclusive: Any = None
 
 @dataclasses.dataclass
 class View_DataFilterExpression:
+    # The dimensions property of the data filter expression specifies dimension filters (such as service or region) that restrict the billing view to only include matching billing data. (AI-inferred)
     dimensions: Any = None
+    # Specifies tag key-value pairs used by the data filter expression to include only resources that have those tags in the billing view. (AI-inferred)
     tags: Any = None
     time_range: Any = None
 
 @dataclasses.dataclass
-class View_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class View_Tags:
+    # The key (name) of a tag attached to this billing view, used for cost allocation and management in AWS Billing. (AI-inferred)
+    key: Any = None
+    value: Any = None
 
 _View_DataFilterExpression_DimensionsFields = {
-    "key": ubx.FieldSpec(wire_name="key"),
-    "values": ubx.FieldSpec(wire_name="values"),
-}
-
-_View_DataFilterExpression_TagsFields = {
     "key": ubx.FieldSpec(wire_name="key"),
     "values": ubx.FieldSpec(wire_name="values"),
 }
@@ -51,52 +47,76 @@ _View_DataFilterExpression_TimeRangeFields = {
 _View_DataFilterExpressionFields = {
     "dimensions": ubx.FieldSpec(
         wire_name="dimensions",
-        kind="list",
+        kind="object",
         fields=_View_DataFilterExpression_DimensionsFields,
     ),
     "tags": ubx.FieldSpec(
         wire_name="tags",
-        kind="list",
-        fields=_View_DataFilterExpression_TagsFields,
+        kind="object",
+        fields=_View_DataFilterExpression_DimensionsFields,
     ),
     "time_range": ubx.FieldSpec(
         wire_name="time_range",
-        kind="list",
+        kind="object",
         fields=_View_DataFilterExpression_TimeRangeFields,
     ),
 }
 
-_View_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_View_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ViewConfig:
-    description: Any = None
-    name: Any = None
-    source_views: Any = None
-    tags: Any = None
+    # DataFilterExpression selects which cost and usage records are included in the billing view by specifying dimension filters such as service, region, record type, or linked account. (AI-inferred)
     data_filter_expression: Any = None
-    timeouts: Any = None
+    # An optional user-provided text that gives a human-readable explanation or context for the billing view, helping to distinguish it from other views. (AI-inferred)
+    description: Any = None
+    # The name of the AWS Billing view, which is required to uniquely identify the view within your account. (AI-inferred)
+    name: Any = None
+    # An array of strings that define the billing view's source.
+    source_views: Any = None
+    # An array of key-value pairs associated to the billing view being created.
+    tags: Any = None
+
+@dataclasses.dataclass
+class ViewAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies this AWS Billing billing view. (AI-inferred)
+    arn: Any = None
+    billing_view_type: Any = None
+    # The time when the billing view was created.
+    created_at: Any = None
+    # DataFilterExpression selects which cost and usage records are included in the billing view by specifying dimension filters such as service, region, record type, or linked account. (AI-inferred)
+    data_filter_expression: Any = None
+    # An optional user-provided text that gives a human-readable explanation or context for the billing view, helping to distinguish it from other views. (AI-inferred)
+    description: Any = None
+    # The name of the AWS Billing view, which is required to uniquely identify the view within your account. (AI-inferred)
+    name: Any = None
+    # The AWS account ID of the account that owns the billing view, which is set automatically at creation and cannot be modified. (AI-inferred)
+    owner_account_id: Any = None
+    # An array of strings that define the billing view's source.
+    source_views: Any = None
+    # An array of key-value pairs associated to the billing view being created.
+    tags: Any = None
+    # The time when the billing view was last updated.
+    updated_at: Any = None
 
 View = ubx.ResourceBinding(
     wire_type="aws_billing_view",
     fields={
+        "data_filter_expression": ubx.FieldSpec(
+            wire_name="data_filter_expression",
+            kind="object",
+            fields=_View_DataFilterExpressionFields,
+        ),
         "description": ubx.FieldSpec(wire_name="description"),
         "name": ubx.FieldSpec(wire_name="name"),
         "source_views": ubx.FieldSpec(wire_name="source_views"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "data_filter_expression": ubx.FieldSpec(
-            wire_name="data_filter_expression",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_View_DataFilterExpressionFields,
-        ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_View_TimeoutsFields,
+            fields=_View_TagsFields,
         ),
     },
 )

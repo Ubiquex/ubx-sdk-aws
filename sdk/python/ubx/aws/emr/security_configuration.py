@@ -8,19 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityConfigurationConfig:
-    configuration: Any = None
-    id: Any = None
+    # The name of the security configuration.
     name: Any = None
-    name_prefix: Any = None
-    region: Any = None
+    # The security configuration details in JSON format.
+    security_configuration: Any = None
+
+@dataclasses.dataclass
+class SecurityConfigurationAttrs:
+    # The name of the security configuration.
+    name: Any = None
+    # The security configuration details in JSON format.
+    security_configuration: Any = None
 
 SecurityConfiguration = ubx.ResourceBinding(
     wire_type="aws_emr_security_configuration",
     fields={
-        "configuration": ubx.FieldSpec(wire_name="configuration"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "security_configuration": ubx.FieldSpec(wire_name="security_configuration"),
     },
 )

@@ -2,23 +2,31 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NamedQueryConfig {
+  /** The database to which the query belongs. */
   database: string | Computed<string>;
+  /** The query description. */
   description?: string | Computed<string>;
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  query: string | Computed<string>;
-  region?: string | Computed<string>;
-  workgroup?: string | Computed<string>;
+  /** The query name. */
+  name?: string | Computed<string>;
+  /** The contents of the query with all query statements. */
+  queryString: string | Computed<string>;
+  /** The name of the workgroup that contains the named query. */
+  workGroup?: string | Computed<string>;
 }
 
 export interface NamedQueryAttrs {
+  /** The database to which the query belongs. */
   database: string;
+  /** The query description. */
   description: string;
-  id: string;
+  /** The query name. */
   name: string;
-  query: string;
-  region: string;
-  workgroup: string;
+  /** The unique ID of the query. */
+  namedQueryId: string;
+  /** The contents of the query with all query statements. */
+  queryString: string;
+  /** The name of the workgroup that contains the named query. */
+  workGroup: string;
 }
 
 export const NamedQuery: ResourceBinding<NamedQueryConfig, NamedQueryAttrs> = {
@@ -26,10 +34,8 @@ export const NamedQuery: ResourceBinding<NamedQueryConfig, NamedQueryAttrs> = {
   fields: {
     database: "database",
     description: "description",
-    id: "id",
     name: "name",
-    query: "query",
-    region: "region",
-    workgroup: "workgroup",
+    queryString: "query_string",
+    workGroup: "work_group",
   },
 };

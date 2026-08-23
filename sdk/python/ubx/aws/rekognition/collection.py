@@ -7,30 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Collection_Timeouts:
-    create: Any = None
+class Collection_Tags:
+    # The key of a user-defined tag applied to the Amazon Rekognition collection, used for organizing and managing the resource. (AI-inferred)
+    key: Any = None
+    # The value portion of a user-defined tag attached to the Rekognition collection, used to add metadata for organizing and identifying the resource. (AI-inferred)
+    value: Any = None
 
-_Collection_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
+_Collection_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class CollectionConfig:
+    # The name of the collection
     collection_id: Any = None
-    region: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class CollectionAttrs:
+    # The Amazon Resource Name (ARN) assigned by AWS to uniquely identify this Rekognition collection across the service. (AI-inferred)
+    arn: Any = None
+    # The name of the collection
+    collection_id: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Collection = ubx.ResourceBinding(
     wire_type="aws_rekognition_collection",
     fields={
         "collection_id": ubx.FieldSpec(wire_name="collection_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Collection_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Collection_TagsFields,
         ),
     },
 )

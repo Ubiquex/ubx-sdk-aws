@@ -2,91 +2,142 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Schedule_FlexibleTimeWindow {
-  maximumWindowInMinutes: number;
-  mode: string;
+  /** The maximum time window during which a schedule can be invoked. */
+  maximumWindowInMinutes?: number | Computed<number>;
+  /** Determines whether the schedule is executed within a flexible time window. */
+  mode: string | Computed<string>;
 }
 
 export interface Schedule_Target_DeadLetterConfig {
-  arn: string;
+  /** The ARN of the SQS queue specified as the target for the dead-letter queue. */
+  arn?: string | Computed<string>;
 }
 
 export interface Schedule_Target_EcsParameters_CapacityProviderStrategy {
-  base: number;
-  capacityProvider: string;
-  weight: number;
+  /** The base value in the capacity provider strategy defines the minimum number of tasks that must be run on this capacity provider before the provider's weight is considered for additional task placement. (AI-inferred) */
+  base?: number | Computed<number>;
+  /** The short name of the capacity provider that ECS uses for placing the task when the schedule triggers. (AI-inferred) */
+  capacityProvider?: string | Computed<string>;
+  /** Specifies the relative weight of this capacity provider in the strategy, determining the proportional share of tasks placed on it compared to other capacity providers. (AI-inferred) */
+  weight?: number | Computed<number>;
+}
+
+export interface Schedule_Target_EcsParameters_NetworkConfiguration_AwsvpcConfiguration {
+  /** Specifies whether the task's elastic network interface receives a public IP address. You can specify ENABLED only when LaunchType in EcsParameters is set to FARGATE. */
+  assignPublicIp?: string | Computed<string>;
+  /** Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used. */
+  securityGroups?: string[] | Computed<string[]>;
+  /** Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets. */
+  subnets: string[] | Computed<string[]>;
 }
 
 export interface Schedule_Target_EcsParameters_NetworkConfiguration {
-  assignPublicIp: boolean;
-  securityGroups: string[];
-  subnets: string[];
+  /** This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode. */
+  awsvpcConfiguration?: Schedule_Target_EcsParameters_NetworkConfiguration_AwsvpcConfiguration | Computed<Schedule_Target_EcsParameters_NetworkConfiguration_AwsvpcConfiguration>;
 }
 
 export interface Schedule_Target_EcsParameters_PlacementConstraints {
-  expression: string;
-  type: string;
+  /** The expression, such as attribute:instance-type =~ t2.*, that defines the placement constraint for the Amazon ECS task scheduled by this EventBridge Scheduler schedule. (AI-inferred) */
+  expression?: string | Computed<string>;
+  /** The type of placement constraint for the ECS task, either 'distinctInstance' to place each task on a different container instance or 'memberOf' to constrain placement using a cluster query language expression. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
 export interface Schedule_Target_EcsParameters_PlacementStrategy {
-  field: string;
-  type: string;
+  /** Specifies the field (for example, `instanceId`, `host`, or an attribute expression) on which the ECS placement strategy operates, matching the ECS `PlacementStrategy.field` property. (AI-inferred) */
+  field?: string | Computed<string>;
+  /** Specifies the ECS placement strategy type for the scheduler-targeted task, choosing between random, spread, or binpack to control how tasks are distributed across container instances. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
 export interface Schedule_Target_EcsParameters {
-  enableEcsManagedTags: boolean;
-  enableExecuteCommand: boolean;
-  group: string;
-  launchType: string;
-  platformVersion: string;
-  propagateTags: string;
-  referenceId: string;
-  tags: Record<string, string>;
-  taskCount: number;
-  taskDefinitionArn: string;
-  capacityProviderStrategy: Schedule_Target_EcsParameters_CapacityProviderStrategy[];
-  networkConfiguration: Schedule_Target_EcsParameters_NetworkConfiguration[];
-  placementConstraints: Schedule_Target_EcsParameters_PlacementConstraints[];
-  placementStrategy: Schedule_Target_EcsParameters_PlacementStrategy[];
+  /** The capacity provider strategy to use for the task. */
+  capacityProviderStrategy?: Schedule_Target_EcsParameters_CapacityProviderStrategy[] | Computed<Schedule_Target_EcsParameters_CapacityProviderStrategy[]>;
+  /** Specifies whether to enable Amazon ECS managed tags for the task. For more information, see Tagging Your Amazon ECS Resources in the Amazon Elastic Container Service Developer Guide. */
+  enableEcsmanagedTags?: boolean | Computed<boolean>;
+  /** Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task. */
+  enableExecuteCommand?: boolean | Computed<boolean>;
+  /** Specifies an ECS task group for the task. The maximum length is 255 characters. */
+  group?: string | Computed<string>;
+  /** Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The FARGATE value is supported only in the Regions where AWS Fargate with Amazon ECS is supported. For more information, see AWS Fargate on Amazon ECS in the Amazon Elastic Container Service Developer Guide. */
+  launchType?: string | Computed<string>;
+  /** This structure specifies the network configuration for an ECS task. */
+  networkConfiguration?: Schedule_Target_EcsParameters_NetworkConfiguration | Computed<Schedule_Target_EcsParameters_NetworkConfiguration>;
+  /** An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime). */
+  placementConstraints?: Schedule_Target_EcsParameters_PlacementConstraints[] | Computed<Schedule_Target_EcsParameters_PlacementConstraints[]>;
+  /** The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. */
+  placementStrategy?: Schedule_Target_EcsParameters_PlacementStrategy[] | Computed<Schedule_Target_EcsParameters_PlacementStrategy[]>;
+  /** Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as 1.1.0. */
+  platformVersion?: string | Computed<string>;
+  /** Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action. */
+  propagateTags?: string | Computed<string>;
+  /** The reference ID to use for the task. */
+  referenceId?: string | Computed<string>;
+  /** The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see RunTask in the Amazon ECS API Reference. */
+  tags?: unknown[] | Computed<unknown[]>;
+  /** The number of tasks to create based on TaskDefinition. The default is 1. */
+  taskCount?: number | Computed<number>;
+  /** The ARN of the task definition to use if the event target is an Amazon ECS task. */
+  taskDefinitionArn: string | Computed<string>;
 }
 
-export interface Schedule_Target_EventbridgeParameters {
-  detailType: string;
-  source: string;
+export interface Schedule_Target_EventBridgeParameters {
+  /** Free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail. */
+  detailType: string | Computed<string>;
+  /** The source of the event. */
+  source: string | Computed<string>;
 }
 
 export interface Schedule_Target_KinesisParameters {
-  partitionKey: string;
+  /** The custom parameter used as the Kinesis partition key. For more information, see Amazon Kinesis Streams Key Concepts in the Amazon Kinesis Streams Developer Guide. */
+  partitionKey: string | Computed<string>;
 }
 
 export interface Schedule_Target_RetryPolicy {
-  maximumEventAgeInSeconds: number;
-  maximumRetryAttempts: number;
+  /** The maximum amount of time, in seconds, to continue to make retry attempts. */
+  maximumEventAgeInSeconds?: number | Computed<number>;
+  /** The maximum number of retry attempts to make before the request fails. Retry attempts with exponential backoff continue until either the maximum number of attempts is made or until the duration of the MaximumEventAgeInSeconds is reached. */
+  maximumRetryAttempts?: number | Computed<number>;
 }
 
-export interface Schedule_Target_SagemakerPipelineParameters_PipelineParameter {
-  name: string;
-  value: string;
+export interface Schedule_Target_SageMakerPipelineParameters_PipelineParameterList {
+  /** The name of the SageMaker pipeline parameter to pass to the pipeline execution when the schedule triggers the target. (AI-inferred) */
+  name?: string | Computed<string>;
+  /** The value to assign to the specified SageMaker pipeline parameter when the schedule triggers the pipeline. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
-export interface Schedule_Target_SagemakerPipelineParameters {
-  pipelineParameter: Schedule_Target_SagemakerPipelineParameters_PipelineParameter[];
+export interface Schedule_Target_SageMakerPipelineParameters {
+  /** List of Parameter names and values for SageMaker Model Building Pipeline execution. */
+  pipelineParameterList?: Schedule_Target_SageMakerPipelineParameters_PipelineParameterList[] | Computed<Schedule_Target_SageMakerPipelineParameters_PipelineParameterList[]>;
 }
 
 export interface Schedule_Target_SqsParameters {
-  messageGroupId: string;
+  /** The FIFO message group ID to use as the target. */
+  messageGroupId?: string | Computed<string>;
 }
 
 export interface Schedule_Target {
-  arn: string;
-  input: string;
-  roleArn: string;
-  deadLetterConfig: Schedule_Target_DeadLetterConfig[];
-  ecsParameters: Schedule_Target_EcsParameters[];
-  eventbridgeParameters: Schedule_Target_EventbridgeParameters[];
-  kinesisParameters: Schedule_Target_KinesisParameters[];
-  retryPolicy: Schedule_Target_RetryPolicy[];
-  sagemakerPipelineParameters: Schedule_Target_SagemakerPipelineParameters[];
-  sqsParameters: Schedule_Target_SqsParameters[];
+  /** The Amazon Resource Name (ARN) of the target. */
+  arn: string | Computed<string>;
+  /** A DeadLetterConfig object that contains information about a dead-letter queue configuration. */
+  deadLetterConfig?: Schedule_Target_DeadLetterConfig | Computed<Schedule_Target_DeadLetterConfig>;
+  /** The custom parameters to be used when the target is an Amazon ECS task. */
+  ecsParameters?: Schedule_Target_EcsParameters | Computed<Schedule_Target_EcsParameters>;
+  /** EventBridge PutEvent predefined target type. */
+  eventBridgeParameters?: Schedule_Target_EventBridgeParameters | Computed<Schedule_Target_EventBridgeParameters>;
+  /** The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target. */
+  input?: string | Computed<string>;
+  /** The custom parameter you can use to control the shard to which EventBridge Scheduler sends the event. */
+  kinesisParameters?: Schedule_Target_KinesisParameters | Computed<Schedule_Target_KinesisParameters>;
+  /** A RetryPolicy object that includes information about the retry policy settings. */
+  retryPolicy?: Schedule_Target_RetryPolicy | Computed<Schedule_Target_RetryPolicy>;
+  /** The Amazon Resource Name (ARN) of the IAM role to be used for this target when the schedule is triggered. */
+  roleArn: string | Computed<string>;
+  /** These are custom parameters to use when the target is a SageMaker Model Building Pipeline that starts based on AWS EventBridge Scheduler schedules. */
+  sageMakerPipelineParameters?: Schedule_Target_SageMakerPipelineParameters | Computed<Schedule_Target_SageMakerPipelineParameters>;
+  /** Contains the message group ID to use when the target is a FIFO queue. If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled. */
+  sqsParameters?: Schedule_Target_SqsParameters | Computed<Schedule_Target_SqsParameters>;
 }
 
 const Schedule_FlexibleTimeWindowFields: FieldMap = {
@@ -104,10 +155,18 @@ const Schedule_Target_EcsParameters_CapacityProviderStrategyFields: FieldMap = {
   weight: "weight",
 };
 
-const Schedule_Target_EcsParameters_NetworkConfigurationFields: FieldMap = {
+const Schedule_Target_EcsParameters_NetworkConfiguration_AwsvpcConfigurationFields: FieldMap = {
   assignPublicIp: "assign_public_ip",
   securityGroups: "security_groups",
   subnets: "subnets",
+};
+
+const Schedule_Target_EcsParameters_NetworkConfigurationFields: FieldMap = {
+  awsvpcConfiguration: {
+    wireName: "awsvpc_configuration",
+    kind: "object",
+    fields: Schedule_Target_EcsParameters_NetworkConfiguration_AwsvpcConfigurationFields,
+  },
 };
 
 const Schedule_Target_EcsParameters_PlacementConstraintsFields: FieldMap = {
@@ -121,39 +180,39 @@ const Schedule_Target_EcsParameters_PlacementStrategyFields: FieldMap = {
 };
 
 const Schedule_Target_EcsParametersFields: FieldMap = {
-  enableEcsManagedTags: "enable_ecs_managed_tags",
+  capacityProviderStrategy: {
+    wireName: "capacity_provider_strategy",
+    kind: "list",
+    fields: Schedule_Target_EcsParameters_CapacityProviderStrategyFields,
+  },
+  enableEcsmanagedTags: "enable_ecsmanaged_tags",
   enableExecuteCommand: "enable_execute_command",
   group: "group",
   launchType: "launch_type",
+  networkConfiguration: {
+    wireName: "network_configuration",
+    kind: "object",
+    fields: Schedule_Target_EcsParameters_NetworkConfigurationFields,
+  },
+  placementConstraints: {
+    wireName: "placement_constraints",
+    kind: "list",
+    fields: Schedule_Target_EcsParameters_PlacementConstraintsFields,
+  },
+  placementStrategy: {
+    wireName: "placement_strategy",
+    kind: "list",
+    fields: Schedule_Target_EcsParameters_PlacementStrategyFields,
+  },
   platformVersion: "platform_version",
   propagateTags: "propagate_tags",
   referenceId: "reference_id",
   tags: "tags",
   taskCount: "task_count",
   taskDefinitionArn: "task_definition_arn",
-  capacityProviderStrategy: {
-    wireName: "capacity_provider_strategy",
-    kind: "set",
-    fields: Schedule_Target_EcsParameters_CapacityProviderStrategyFields,
-  },
-  networkConfiguration: {
-    wireName: "network_configuration",
-    kind: "list",
-    fields: Schedule_Target_EcsParameters_NetworkConfigurationFields,
-  },
-  placementConstraints: {
-    wireName: "placement_constraints",
-    kind: "set",
-    fields: Schedule_Target_EcsParameters_PlacementConstraintsFields,
-  },
-  placementStrategy: {
-    wireName: "placement_strategy",
-    kind: "set",
-    fields: Schedule_Target_EcsParameters_PlacementStrategyFields,
-  },
 };
 
-const Schedule_Target_EventbridgeParametersFields: FieldMap = {
+const Schedule_Target_EventBridgeParametersFields: FieldMap = {
   detailType: "detail_type",
   source: "source",
 };
@@ -167,16 +226,16 @@ const Schedule_Target_RetryPolicyFields: FieldMap = {
   maximumRetryAttempts: "maximum_retry_attempts",
 };
 
-const Schedule_Target_SagemakerPipelineParameters_PipelineParameterFields: FieldMap = {
+const Schedule_Target_SageMakerPipelineParameters_PipelineParameterListFields: FieldMap = {
   name: "name",
   value: "value",
 };
 
-const Schedule_Target_SagemakerPipelineParametersFields: FieldMap = {
-  pipelineParameter: {
-    wireName: "pipeline_parameter",
-    kind: "set",
-    fields: Schedule_Target_SagemakerPipelineParameters_PipelineParameterFields,
+const Schedule_Target_SageMakerPipelineParametersFields: FieldMap = {
+  pipelineParameterList: {
+    wireName: "pipeline_parameter_list",
+    kind: "list",
+    fields: Schedule_Target_SageMakerPipelineParameters_PipelineParameterListFields,
   },
 };
 
@@ -186,106 +245,117 @@ const Schedule_Target_SqsParametersFields: FieldMap = {
 
 const Schedule_TargetFields: FieldMap = {
   arn: "arn",
-  input: "input",
-  roleArn: "role_arn",
   deadLetterConfig: {
     wireName: "dead_letter_config",
-    kind: "list",
+    kind: "object",
     fields: Schedule_Target_DeadLetterConfigFields,
   },
   ecsParameters: {
     wireName: "ecs_parameters",
-    kind: "list",
+    kind: "object",
     fields: Schedule_Target_EcsParametersFields,
   },
-  eventbridgeParameters: {
-    wireName: "eventbridge_parameters",
-    kind: "list",
-    fields: Schedule_Target_EventbridgeParametersFields,
+  eventBridgeParameters: {
+    wireName: "event_bridge_parameters",
+    kind: "object",
+    fields: Schedule_Target_EventBridgeParametersFields,
   },
+  input: "input",
   kinesisParameters: {
     wireName: "kinesis_parameters",
-    kind: "list",
+    kind: "object",
     fields: Schedule_Target_KinesisParametersFields,
   },
   retryPolicy: {
     wireName: "retry_policy",
-    kind: "list",
+    kind: "object",
     fields: Schedule_Target_RetryPolicyFields,
   },
-  sagemakerPipelineParameters: {
-    wireName: "sagemaker_pipeline_parameters",
-    kind: "list",
-    fields: Schedule_Target_SagemakerPipelineParametersFields,
+  roleArn: "role_arn",
+  sageMakerPipelineParameters: {
+    wireName: "sage_maker_pipeline_parameters",
+    kind: "object",
+    fields: Schedule_Target_SageMakerPipelineParametersFields,
   },
   sqsParameters: {
     wireName: "sqs_parameters",
-    kind: "list",
+    kind: "object",
     fields: Schedule_Target_SqsParametersFields,
   },
 };
 
 export interface ScheduleConfig {
-  actionAfterCompletion?: string | Computed<string>;
+  /** The description of the schedule. */
   description?: string | Computed<string>;
+  /** The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the EndDate you specify. */
   endDate?: string | Computed<string>;
+  /** Flexible time window allows configuration of a window within which a schedule can be invoked */
+  flexibleTimeWindow: Schedule_FlexibleTimeWindow | Computed<Schedule_FlexibleTimeWindow>;
+  /** The name of the schedule group to associate with this schedule. If you omit this, the default schedule group is used. */
   groupName?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** The ARN for a KMS Key that will be used to encrypt customer data. */
   kmsKeyArn?: string | Computed<string>;
+  /** Specifies the name of the Amazon EventBridge Scheduler schedule, which must be unique within a schedule group; if omitted, CloudFormation generates a unique name for the schedule. (AI-inferred) */
   name?: string | Computed<string>;
-  namePrefix?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The scheduling expression. */
   scheduleExpression: string | Computed<string>;
+  /** The timezone in which the scheduling expression is evaluated. */
   scheduleExpressionTimezone?: string | Computed<string>;
+  /** The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the StartDate you specify. */
   startDate?: string | Computed<string>;
+  /** Specifies whether the schedule is enabled or disabled. */
   state?: string | Computed<string>;
-  flexibleTimeWindow?: Schedule_FlexibleTimeWindow[] | Computed<Schedule_FlexibleTimeWindow[]>;
-  target?: Schedule_Target[] | Computed<Schedule_Target[]>;
+  /** The schedule target. */
+  target: Schedule_Target | Computed<Schedule_Target>;
 }
 
 export interface ScheduleAttrs {
-  actionAfterCompletion: string;
+  /** The Amazon Resource Name (ARN) of the schedule. */
   arn: string;
+  /** The description of the schedule. */
   description: string;
+  /** The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the EndDate you specify. */
   endDate: string;
+  /** Flexible time window allows configuration of a window within which a schedule can be invoked */
+  flexibleTimeWindow: Schedule_FlexibleTimeWindow;
+  /** The name of the schedule group to associate with this schedule. If you omit this, the default schedule group is used. */
   groupName: string;
-  id: string;
+  /** The ARN for a KMS Key that will be used to encrypt customer data. */
   kmsKeyArn: string;
+  /** Specifies the name of the Amazon EventBridge Scheduler schedule, which must be unique within a schedule group; if omitted, CloudFormation generates a unique name for the schedule. (AI-inferred) */
   name: string;
-  namePrefix: string;
-  region: string;
+  /** The scheduling expression. */
   scheduleExpression: string;
+  /** The timezone in which the scheduling expression is evaluated. */
   scheduleExpressionTimezone: string;
+  /** The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the StartDate you specify. */
   startDate: string;
+  /** Specifies whether the schedule is enabled or disabled. */
   state: string;
-  flexibleTimeWindow: Schedule_FlexibleTimeWindow[];
-  target: Schedule_Target[];
+  /** The schedule target. */
+  target: Schedule_Target;
 }
 
 export const Schedule: ResourceBinding<ScheduleConfig, ScheduleAttrs> = {
   wireType: "aws_scheduler_schedule",
   fields: {
-    actionAfterCompletion: "action_after_completion",
     description: "description",
     endDate: "end_date",
+    flexibleTimeWindow: {
+      wireName: "flexible_time_window",
+      kind: "object",
+      fields: Schedule_FlexibleTimeWindowFields,
+    },
     groupName: "group_name",
-    id: "id",
     kmsKeyArn: "kms_key_arn",
     name: "name",
-    namePrefix: "name_prefix",
-    region: "region",
     scheduleExpression: "schedule_expression",
     scheduleExpressionTimezone: "schedule_expression_timezone",
     startDate: "start_date",
     state: "state",
-    flexibleTimeWindow: {
-      wireName: "flexible_time_window",
-      kind: "list",
-      fields: Schedule_FlexibleTimeWindowFields,
-    },
     target: {
       wireName: "target",
-      kind: "list",
+      kind: "object",
       fields: Schedule_TargetFields,
     },
   },

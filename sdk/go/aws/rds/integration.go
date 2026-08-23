@@ -3,28 +3,57 @@ package rds
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Integration_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Integration_Tags struct {
+	Key any
+	// The value component of a resource tag attached to the AWS RDS integration, used to categorize or identify the integration for cost allocation and management. (AI-inferred)
+	Value any
 }
 
-var Integration_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Integration_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type IntegrationConfig struct {
+	// An optional set of non-secret key–value pairs that contains additional contextual information about the data.
 	AdditionalEncryptionContext any
+	// Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.
 	DataFilter any
+	// A description of the integration.
+	Description any
+	// The name of the integration.
 	IntegrationName any
-	KmsKeyId any
-	Region any
+	// The AWS Key Management System (AWS KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default AWS owned key.
+	KmskeyId any
+	// The Amazon Resource Name (ARN) of the database to use as the source for replication.
 	SourceArn any
+	// A list of tags. For more information, see [Tagging Amazon RDS Resources](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html) in the *Amazon RDS User Guide.*.
 	Tags any
+	// The ARN of the Redshift data warehouse to use as the target for replication.
 	TargetArn any
-	Timeouts any
+}
+
+type IntegrationAttrs struct {
+	// An optional set of non-secret key–value pairs that contains additional contextual information about the data.
+	AdditionalEncryptionContext any
+	// The time the integration was created, in ISO 8601 format (e.g., 2023-01-01T00:00:00Z). (AI-inferred)
+	CreateTime any
+	// Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.
+	DataFilter any
+	// A description of the integration.
+	Description any
+	// The Amazon Resource Name (ARN) that uniquely identifies this RDS integration, returned by AWS after creation. (AI-inferred)
+	IntegrationArn any
+	// The name of the integration.
+	IntegrationName any
+	// The AWS Key Management System (AWS KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default AWS owned key.
+	KmskeyId any
+	// The Amazon Resource Name (ARN) of the database to use as the source for replication.
+	SourceArn any
+	// A list of tags. For more information, see [Tagging Amazon RDS Resources](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html) in the *Amazon RDS User Guide.*.
+	Tags any
+	// The ARN of the Redshift data warehouse to use as the target for replication.
+	TargetArn any
 }
 
 var Integration = ubx.ResourceBinding{
@@ -32,16 +61,15 @@ var Integration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdditionalEncryptionContext": ubx.FieldSpec{WireName: "additional_encryption_context"},
 		"DataFilter": ubx.FieldSpec{WireName: "data_filter"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"IntegrationName": ubx.FieldSpec{WireName: "integration_name"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"KmskeyId": ubx.FieldSpec{WireName: "kmskey_id"},
 		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Integration_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Integration_TagsFields,
 		},
+		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
 	},
 }

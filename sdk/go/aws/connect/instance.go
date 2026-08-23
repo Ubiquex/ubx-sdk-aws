@@ -3,55 +3,113 @@ package connect
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Instance_Timeouts struct {
-	Create any
-	Delete any
+type Instance_Attributes struct {
+	// Boolean flag which enables AUTO_RESOLVE_BEST_VOICES on an instance.
+	AutoResolveBestVoices any
+	// Boolean flag which enables CONTACT_LENS on an instance.
+	ContactLens any
+	// Boolean flag which enables CONTACTFLOW_LOGS on an instance.
+	ContactflowLogs any
+	// Boolean flag which enables EARLY_MEDIA on an instance.
+	EarlyMedia any
+	// Boolean flag which enables ENHANCED_CHAT_MONITORING on an instance.
+	EnhancedChatMonitoring any
+	// Boolean flag which enables ENHANCED_CONTACT_MONITORING on an instance.
+	EnhancedContactMonitoring any
+	// Boolean flag which enables HIGH_VOLUME_OUTBOUND on an instance.
+	HighVolumeOutBound any
+	// Mandatory element which enables inbound calls on new instance.
+	InboundCalls any
+	// Boolean flag which enables MESSAGE_STREAMING on an instance.
+	MessageStreaming any
+	// Boolean flag which enables MULTI_PARTY_CHAT_CONFERENCE on an instance.
+	MultiPartyChatConference any
+	// Boolean flag which enables MULTI_PARTY_CONFERENCE on an instance.
+	MultiPartyConference any
+	// Mandatory element which enables outbound calls on new instance.
+	OutboundCalls any
+	// Boolean flag which enables USE_CUSTOM_TTS_VOICES on an instance.
+	UseCustomTtsvoices any
 }
 
-var Instance_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+type Instance_Tags struct {
+	// The key of a user-defined tag applied to the Amazon Connect instance, used to categorize and manage the resource in AWS. (AI-inferred)
+	Key any
+	Value any
+}
+
+var Instance_AttributesFields = ubx.FieldMap{
+		"AutoResolveBestVoices": ubx.FieldSpec{WireName: "auto_resolve_best_voices"},
+		"ContactLens": ubx.FieldSpec{WireName: "contact_lens"},
+		"ContactflowLogs": ubx.FieldSpec{WireName: "contactflow_logs"},
+		"EarlyMedia": ubx.FieldSpec{WireName: "early_media"},
+		"EnhancedChatMonitoring": ubx.FieldSpec{WireName: "enhanced_chat_monitoring"},
+		"EnhancedContactMonitoring": ubx.FieldSpec{WireName: "enhanced_contact_monitoring"},
+		"HighVolumeOutBound": ubx.FieldSpec{WireName: "high_volume_out_bound"},
+		"InboundCalls": ubx.FieldSpec{WireName: "inbound_calls"},
+		"MessageStreaming": ubx.FieldSpec{WireName: "message_streaming"},
+		"MultiPartyChatConference": ubx.FieldSpec{WireName: "multi_party_chat_conference"},
+		"MultiPartyConference": ubx.FieldSpec{WireName: "multi_party_conference"},
+		"OutboundCalls": ubx.FieldSpec{WireName: "outbound_calls"},
+		"UseCustomTtsvoices": ubx.FieldSpec{WireName: "use_custom_ttsvoices"},
+	}
+
+var Instance_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type InstanceConfig struct {
-	AutoResolveBestVoicesEnabled any
-	ContactFlowLogsEnabled any
-	ContactLensEnabled any
+	// Defines feature configuration flags for the Amazon Connect instance as key-value pairs (e.g., enabling or disabling inbound/outbound calls, contact lens, or auto-resolve best voices). (AI-inferred)
+	Attributes any
+	// Existing directoryId user wants to map to the new Connect instance.
 	DirectoryId any
-	EarlyMediaEnabled any
-	Id any
+	// Specifies the type of directory integration for new instance.
 	IdentityManagementType any
-	InboundCallsEnabled any
+	// Alias of the new directory created as part of new instance creation.
 	InstanceAlias any
-	MultiPartyConferenceEnabled any
-	OutboundCallsEnabled any
-	Region any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
-	Timeouts any
+}
+
+type InstanceAttrs struct {
+	// An instanceArn is automatically generated on creation based on instanceId.
+	Arn any
+	// Defines feature configuration flags for the Amazon Connect instance as key-value pairs (e.g., enabling or disabling inbound/outbound calls, contact lens, or auto-resolve best voices). (AI-inferred)
+	Attributes any
+	// Timestamp of instance creation logged as part of instance creation.
+	CreatedTime any
+	// Existing directoryId user wants to map to the new Connect instance.
+	DirectoryId any
+	// An instanceId is automatically generated on creation and assigned as the unique identifier.
+	Id any
+	// Specifies the type of directory integration for new instance.
+	IdentityManagementType any
+	// Alias of the new directory created as part of new instance creation.
+	InstanceAlias any
+	// Specifies the creation status of new instance.
+	InstanceStatus any
+	// Service linked role created as part of instance creation.
+	ServiceRole any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Instance = ubx.ResourceBinding{
 	WireType: "aws_connect_instance",
 	Fields: ubx.FieldMap{
-		"AutoResolveBestVoicesEnabled": ubx.FieldSpec{WireName: "auto_resolve_best_voices_enabled"},
-		"ContactFlowLogsEnabled": ubx.FieldSpec{WireName: "contact_flow_logs_enabled"},
-		"ContactLensEnabled": ubx.FieldSpec{WireName: "contact_lens_enabled"},
-		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"EarlyMediaEnabled": ubx.FieldSpec{WireName: "early_media_enabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IdentityManagementType": ubx.FieldSpec{WireName: "identity_management_type"},
-		"InboundCallsEnabled": ubx.FieldSpec{WireName: "inbound_calls_enabled"},
-		"InstanceAlias": ubx.FieldSpec{WireName: "instance_alias"},
-		"MultiPartyConferenceEnabled": ubx.FieldSpec{WireName: "multi_party_conference_enabled"},
-		"OutboundCallsEnabled": ubx.FieldSpec{WireName: "outbound_calls_enabled"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
 			Kind: "object",
-			Fields: Instance_TimeoutsFields,
+			Fields: Instance_AttributesFields,
+		},
+		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
+		"IdentityManagementType": ubx.FieldSpec{WireName: "identity_management_type"},
+		"InstanceAlias": ubx.FieldSpec{WireName: "instance_alias"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Instance_TagsFields,
 		},
 	},
 }

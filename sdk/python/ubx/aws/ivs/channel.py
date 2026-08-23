@@ -7,46 +7,104 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Channel_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Channel_MultitrackInputConfiguration:
+    # Indicates whether multitrack input is enabled. Can be set to true only if channel type is STANDARD. Setting enabled to true with any other channel type will cause an exception. If true, then policy, maximumResolution, and containerFormat are required, and containerFormat must be set to FRAGMENTED_MP4. Default: false.
+    enabled: Any = None
+    # Maximum resolution for multitrack input. Required if enabled is true.
+    maximum_resolution: Any = None
+    # Indicates whether multitrack input is allowed or required. Required if enabled is true.
+    policy: Any = None
 
-_Channel_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+@dataclasses.dataclass
+class Channel_Tags:
+    # The key of a tag attached to the IVS channel, enabling you to categorize and manage the resource by custom metadata. (AI-inferred)
+    key: Any = None
+    # The string value of a tag attached to the AWS IVS channel, used to store arbitrary metadata such as environment, project, or owner information. (AI-inferred)
+    value: Any = None
+
+_Channel_MultitrackInputConfigurationFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "maximum_resolution": ubx.FieldSpec(wire_name="maximum_resolution"),
+    "policy": ubx.FieldSpec(wire_name="policy"),
+}
+
+_Channel_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ChannelConfig:
+    # Whether the channel is authorized.
     authorized: Any = None
-    id: Any = None
+    # Indicates which content-packaging format is used (MPEG-TS or fMP4). If multitrackInputConfiguration is specified and enabled is true, then containerFormat is required and must be set to FRAGMENTED_MP4. Otherwise, containerFormat may be set to TS or FRAGMENTED_MP4. Default: TS.
+    container_format: Any = None
+    # Whether the channel allows insecure ingest.
+    insecure_ingest: Any = None
+    # Channel latency mode.
     latency_mode: Any = None
+    # Configures multitrack input for the IVS channel, including whether multitrack input is enabled and the maximum resolution allowed for the input. (AI-inferred)
+    multitrack_input_configuration: Any = None
+    # Channel
     name: Any = None
+    # Optional transcode preset for the channel. This is selectable only for ADVANCED_HD and ADVANCED_SD channel types. For those channel types, the default preset is HIGHER_BANDWIDTH_DELIVERY. For other channel types (BASIC and STANDARD), preset is the empty string ("").
+    preset: Any = None
+    # Recording Configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (recording is disabled).
     recording_configuration_arn: Any = None
-    region: Any = None
+    # A list of key-value pairs that contain metadata for the asset model.
     tags: Any = None
-    tags_all: Any = None
+    # Channel type, which determines the allowable resolution and bitrate. If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.
     type: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class ChannelAttrs:
+    # Channel ARN is automatically generated on creation and assigned as the unique identifier.
+    arn: Any = None
+    # Whether the channel is authorized.
+    authorized: Any = None
+    # Indicates which content-packaging format is used (MPEG-TS or fMP4). If multitrackInputConfiguration is specified and enabled is true, then containerFormat is required and must be set to FRAGMENTED_MP4. Otherwise, containerFormat may be set to TS or FRAGMENTED_MP4. Default: TS.
+    container_format: Any = None
+    # Channel ingest endpoint, part of the definition of an ingest server, used when you set up streaming software.
+    ingest_endpoint: Any = None
+    # Whether the channel allows insecure ingest.
+    insecure_ingest: Any = None
+    # Channel latency mode.
+    latency_mode: Any = None
+    # Configures multitrack input for the IVS channel, including whether multitrack input is enabled and the maximum resolution allowed for the input. (AI-inferred)
+    multitrack_input_configuration: Any = None
+    # Channel
+    name: Any = None
+    # Channel Playback URL.
+    playback_url: Any = None
+    # Optional transcode preset for the channel. This is selectable only for ADVANCED_HD and ADVANCED_SD channel types. For those channel types, the default preset is HIGHER_BANDWIDTH_DELIVERY. For other channel types (BASIC and STANDARD), preset is the empty string ("").
+    preset: Any = None
+    # Recording Configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (recording is disabled).
+    recording_configuration_arn: Any = None
+    # A list of key-value pairs that contain metadata for the asset model.
+    tags: Any = None
+    # Channel type, which determines the allowable resolution and bitrate. If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.
+    type: Any = None
 
 Channel = ubx.ResourceBinding(
     wire_type="aws_ivs_channel",
     fields={
         "authorized": ubx.FieldSpec(wire_name="authorized"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "container_format": ubx.FieldSpec(wire_name="container_format"),
+        "insecure_ingest": ubx.FieldSpec(wire_name="insecure_ingest"),
         "latency_mode": ubx.FieldSpec(wire_name="latency_mode"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "recording_configuration_arn": ubx.FieldSpec(wire_name="recording_configuration_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "type": ubx.FieldSpec(wire_name="type"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "multitrack_input_configuration": ubx.FieldSpec(
+            wire_name="multitrack_input_configuration",
             kind="object",
-            fields=_Channel_TimeoutsFields,
+            fields=_Channel_MultitrackInputConfigurationFields,
         ),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "preset": ubx.FieldSpec(wire_name="preset"),
+        "recording_configuration_arn": ubx.FieldSpec(wire_name="recording_configuration_arn"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Channel_TagsFields,
+        ),
+        "type": ubx.FieldSpec(wire_name="type"),
     },
 )

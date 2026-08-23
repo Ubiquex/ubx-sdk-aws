@@ -3,139 +3,203 @@ package backup
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Plan_AdvancedBackupSetting struct {
+type Plan_BackupPlan_AdvancedBackupSettings struct {
+	// Specifies the key-value pairs that configure advanced backup settings for the associated resource type, such as enabling Windows VSS for Windows workloads via a key like `WindowsVSS` set to `enabled`. (AI-inferred)
 	BackupOptions any
+	// Specifies the AWS resource type (such as EC2, RDS, or DynamoDB) to which these advanced backup settings apply. (AI-inferred)
 	ResourceType any
 }
 
-type Plan_Rule_CopyAction_Lifecycle struct {
-	ColdStorageAfter any
-	DeleteAfter any
+type Plan_BackupPlan_BackupPlanRule_CopyActions_Lifecycle struct {
+	// For a copy action in a backup plan rule, this specifies the number of days after the copied recovery point is created before it is permanently deleted. (AI-inferred)
+	DeleteAfterDays any
+	// For each copied recovery point, the number of days after creation when AWS Backup moves it to cold storage. (AI-inferred)
+	MoveToColdStorageAfterDays any
+	// When set to true, this boolean opts the backup copy created by this copy action into transitioning to the archive storage tier for supported resources, based on the lifecycle's archive-after days setting. (AI-inferred)
 	OptInToArchiveForSupportedResources any
 }
 
-type Plan_Rule_CopyAction struct {
-	DestinationVaultArn any
+type Plan_BackupPlan_BackupPlanRule_CopyActions struct {
+	// Specifies the Amazon Resource Name (ARN) of the backup vault to which the backup copy is sent when a backup rule's copy action is executed. (AI-inferred)
+	DestinationBackupVaultArn any
+	// For each copy action in a backup plan rule, this lifecycle object specifies when the copied recovery point transitions to cold storage (MoveToColdStorageAfterDays) and when it expires and is deleted (DeleteAfterDays). (AI-inferred)
 	Lifecycle any
 }
 
-type Plan_Rule_ScanAction struct {
+type Plan_BackupPlan_BackupPlanRule_IndexActions struct {
+	// Defines the AWS resource types to index for backup search (for example, S3), enabling item-level querying and recovery from the backup. (AI-inferred)
+	ResourceTypes any
+}
+
+type Plan_BackupPlan_BackupPlanRule_ScanActions struct {
+	// Enables or disables the malware scan action on backups created under this backup plan rule. (AI-inferred)
 	MalwareScanner any
+	// Specifies the mode for scanning backups, with value 'ON' to enable malware scanning or 'OFF' to disable it for the associated backup rule. (AI-inferred)
 	ScanMode any
 }
 
-type Plan_Rule struct {
-	CompletionWindow any
+type Plan_BackupPlan_BackupPlanRule struct {
+	// Specifies the time window, in minutes, within which the backup job must complete; if the job exceeds this duration, AWS Backup cancels it. (AI-inferred)
+	CompletionWindowMinutes any
+	// Configures the copy actions, each of which copies a backup created by this rule to a separate destination Backup vault (optionally applying a different lifecycle). (AI-inferred)
+	CopyActions any
+	// Specifies whether to enable continuous backup for the rule, which provides point-in-time recovery (PITR) with a retention window of up to 35 days. (AI-inferred)
 	EnableContinuousBackup any
-	RecoveryPointTags any
-	RuleName any
-	Schedule any
-	ScheduleExpressionTimezone any
-	StartWindow any
-	TargetLogicallyAirGappedBackupVaultArn any
-	TargetVaultName any
-	CopyAction any
+	// Configures backup indexing for the rule by specifying the resource types whose backups will be indexed, enabling fast search and query of backup contents. (AI-inferred)
+	IndexActions any
+	// Defines when backups expire and optionally move to cold storage, via DeleteAfterDays and MoveToColdStorageAfterDays settings for the rule. (AI-inferred)
 	Lifecycle any
-	ScanAction any
+	// Specifies the key-value tags that AWS Backup applies to recovery points created by this backup plan rule. (AI-inferred)
+	RecoveryPointTags any
+	// A human-readable name for the backup rule that uniquely identifies it within the backup plan. (AI-inferred)
+	RuleName any
+	ScanActions any
+	// Defines the schedule for the backup rule using a cron or rate expression, such as `cron(0 5 * * ? *)` or `rate(12 hours)`. (AI-inferred)
+	ScheduleExpression any
+	// Specifies the timezone (e.g., America/New_York or Etc/UTC) in which the backup rule's schedule expression is evaluated, determining when the backup is scheduled to run. (AI-inferred)
+	ScheduleExpressionTimezone any
+	// The number of minutes before the scheduled backup start time that AWS Backup can wait before starting the backup, providing a window to accommodate resource availability or conflicts. (AI-inferred)
+	StartWindowMinutes any
+	// The name of the backup vault in which the backups created by this rule are stored. (AI-inferred)
+	TargetBackupVault any
+	// The ARN of the logically air-gapped backup vault that this backup plan rule targets, causing backups to be stored in an immutable, ransomware-protected vault for the rule's retention period. (AI-inferred)
+	TargetLogicallyAirGappedBackupVaultArn any
 }
 
-type Plan_ScanSetting struct {
+type Plan_BackupPlan_ScanSettings struct {
+	// Indicates whether AWS Backup malware scanning is enabled for the backup plan, with accepted string values 'TRUE' or 'FALSE' that determine if newly created backups are scanned for potentially malicious software. (AI-inferred)
 	MalwareScanner any
+	// Lists the AWS resource types (e.g., 'Aurora', 'RDS') that are selected for malware scanning under the backup plan's scan settings. (AI-inferred)
 	ResourceTypes any
+	// The ARN of the IAM role that AWS Backup uses to scan backups for sensitive data, typically via Amazon Macie, when vault scanning is enabled. (AI-inferred)
 	ScannerRoleArn any
 }
 
-var Plan_AdvancedBackupSettingFields = ubx.FieldMap{
+type Plan_BackupPlan struct {
+	// Specifies backup options for specific resource types, such as enabling Windows VSS for EC2 instances, by associating a resource type with backup option key-value pairs. (AI-inferred)
+	AdvancedBackupSettings any
+	// The user-defined name for the backup plan, used to identify it in AWS Backup and required when creating the plan. (AI-inferred)
+	BackupPlanName any
+	// Specifies the list of backup rules, each defining the backup schedule, lifecycle (transition to cold storage or expiration), and target backup vault for the AWS Backup plan. (AI-inferred)
+	BackupPlanRule any
+	// Specifies the scanning configuration used by AWS Backup to run malware detection on supported backup resources (such as S3) when backups are created under this backup plan. (AI-inferred)
+	ScanSettings any
+}
+
+var Plan_BackupPlan_AdvancedBackupSettingsFields = ubx.FieldMap{
 		"BackupOptions": ubx.FieldSpec{WireName: "backup_options"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	}
 
-var Plan_Rule_CopyAction_LifecycleFields = ubx.FieldMap{
-		"ColdStorageAfter": ubx.FieldSpec{WireName: "cold_storage_after"},
-		"DeleteAfter": ubx.FieldSpec{WireName: "delete_after"},
+var Plan_BackupPlan_BackupPlanRule_CopyActions_LifecycleFields = ubx.FieldMap{
+		"DeleteAfterDays": ubx.FieldSpec{WireName: "delete_after_days"},
+		"MoveToColdStorageAfterDays": ubx.FieldSpec{WireName: "move_to_cold_storage_after_days"},
 		"OptInToArchiveForSupportedResources": ubx.FieldSpec{WireName: "opt_in_to_archive_for_supported_resources"},
 	}
 
-var Plan_Rule_CopyActionFields = ubx.FieldMap{
-		"DestinationVaultArn": ubx.FieldSpec{WireName: "destination_vault_arn"},
+var Plan_BackupPlan_BackupPlanRule_CopyActionsFields = ubx.FieldMap{
+		"DestinationBackupVaultArn": ubx.FieldSpec{WireName: "destination_backup_vault_arn"},
 		"Lifecycle": ubx.FieldSpec{
 			WireName: "lifecycle",
-			Kind: "list",
-			Fields: Plan_Rule_CopyAction_LifecycleFields,
+			Kind: "object",
+			Fields: Plan_BackupPlan_BackupPlanRule_CopyActions_LifecycleFields,
 		},
 	}
 
-var Plan_Rule_ScanActionFields = ubx.FieldMap{
+var Plan_BackupPlan_BackupPlanRule_IndexActionsFields = ubx.FieldMap{
+		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+	}
+
+var Plan_BackupPlan_BackupPlanRule_ScanActionsFields = ubx.FieldMap{
 		"MalwareScanner": ubx.FieldSpec{WireName: "malware_scanner"},
 		"ScanMode": ubx.FieldSpec{WireName: "scan_mode"},
 	}
 
-var Plan_RuleFields = ubx.FieldMap{
-		"CompletionWindow": ubx.FieldSpec{WireName: "completion_window"},
+var Plan_BackupPlan_BackupPlanRuleFields = ubx.FieldMap{
+		"CompletionWindowMinutes": ubx.FieldSpec{WireName: "completion_window_minutes"},
+		"CopyActions": ubx.FieldSpec{
+			WireName: "copy_actions",
+			Kind: "list",
+			Fields: Plan_BackupPlan_BackupPlanRule_CopyActionsFields,
+		},
 		"EnableContinuousBackup": ubx.FieldSpec{WireName: "enable_continuous_backup"},
-		"RecoveryPointTags": ubx.FieldSpec{WireName: "recovery_point_tags"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"ScheduleExpressionTimezone": ubx.FieldSpec{WireName: "schedule_expression_timezone"},
-		"StartWindow": ubx.FieldSpec{WireName: "start_window"},
-		"TargetLogicallyAirGappedBackupVaultArn": ubx.FieldSpec{WireName: "target_logically_air_gapped_backup_vault_arn"},
-		"TargetVaultName": ubx.FieldSpec{WireName: "target_vault_name"},
-		"CopyAction": ubx.FieldSpec{
-			WireName: "copy_action",
-			Kind: "set",
-			Fields: Plan_Rule_CopyActionFields,
+		"IndexActions": ubx.FieldSpec{
+			WireName: "index_actions",
+			Kind: "list",
+			Fields: Plan_BackupPlan_BackupPlanRule_IndexActionsFields,
 		},
 		"Lifecycle": ubx.FieldSpec{
 			WireName: "lifecycle",
+			Kind: "object",
+			Fields: Plan_BackupPlan_BackupPlanRule_CopyActions_LifecycleFields,
+		},
+		"RecoveryPointTags": ubx.FieldSpec{WireName: "recovery_point_tags"},
+		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+		"ScanActions": ubx.FieldSpec{
+			WireName: "scan_actions",
 			Kind: "list",
-			Fields: Plan_Rule_CopyAction_LifecycleFields,
+			Fields: Plan_BackupPlan_BackupPlanRule_ScanActionsFields,
 		},
-		"ScanAction": ubx.FieldSpec{
-			WireName: "scan_action",
-			Kind: "set",
-			Fields: Plan_Rule_ScanActionFields,
-		},
+		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
+		"ScheduleExpressionTimezone": ubx.FieldSpec{WireName: "schedule_expression_timezone"},
+		"StartWindowMinutes": ubx.FieldSpec{WireName: "start_window_minutes"},
+		"TargetBackupVault": ubx.FieldSpec{WireName: "target_backup_vault"},
+		"TargetLogicallyAirGappedBackupVaultArn": ubx.FieldSpec{WireName: "target_logically_air_gapped_backup_vault_arn"},
 	}
 
-var Plan_ScanSettingFields = ubx.FieldMap{
+var Plan_BackupPlan_ScanSettingsFields = ubx.FieldMap{
 		"MalwareScanner": ubx.FieldSpec{WireName: "malware_scanner"},
 		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
 		"ScannerRoleArn": ubx.FieldSpec{WireName: "scanner_role_arn"},
 	}
 
+var Plan_BackupPlanFields = ubx.FieldMap{
+		"AdvancedBackupSettings": ubx.FieldSpec{
+			WireName: "advanced_backup_settings",
+			Kind: "list",
+			Fields: Plan_BackupPlan_AdvancedBackupSettingsFields,
+		},
+		"BackupPlanName": ubx.FieldSpec{WireName: "backup_plan_name"},
+		"BackupPlanRule": ubx.FieldSpec{
+			WireName: "backup_plan_rule",
+			Kind: "list",
+			Fields: Plan_BackupPlan_BackupPlanRuleFields,
+		},
+		"ScanSettings": ubx.FieldSpec{
+			WireName: "scan_settings",
+			Kind: "list",
+			Fields: Plan_BackupPlan_ScanSettingsFields,
+		},
+	}
+
 type PlanConfig struct {
-	Id any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
-	AdvancedBackupSetting any
-	Rule any
-	ScanSetting any
+	// Provides the backup plan configuration, including the plan name and the set of backup rules that define the backup schedule, lifecycle, and vault. (AI-inferred)
+	BackupPlan any
+	// Tags (key-value pairs) to attach to the backup plan for cost allocation, access control, and resource management in AWS Backup. (AI-inferred)
+	BackupPlanTags any
+}
+
+type PlanAttrs struct {
+	// Provides the backup plan configuration, including the plan name and the set of backup rules that define the backup schedule, lifecycle, and vault. (AI-inferred)
+	BackupPlan any
+	// The Amazon Resource Name (ARN) of the backup plan, uniquely identifying the resource across AWS, such as arn:aws:backup:region:account:backup-plan:plan-id. (AI-inferred)
+	BackupPlanArn any
+	// The unique identifier assigned by AWS Backup when the backup plan is created. (AI-inferred)
+	BackupPlanId any
+	// Tags (key-value pairs) to attach to the backup plan for cost allocation, access control, and resource management in AWS Backup. (AI-inferred)
+	BackupPlanTags any
+	// The version identifier of the backup plan, which changes each time the plan is updated. (AI-inferred)
+	VersionId any
 }
 
 var Plan = ubx.ResourceBinding{
 	WireType: "aws_backup_plan",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"AdvancedBackupSetting": ubx.FieldSpec{
-			WireName: "advanced_backup_setting",
-			Kind: "set",
-			Fields: Plan_AdvancedBackupSettingFields,
+		"BackupPlan": ubx.FieldSpec{
+			WireName: "backup_plan",
+			Kind: "object",
+			Fields: Plan_BackupPlanFields,
 		},
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "set",
-			Fields: Plan_RuleFields,
-		},
-		"ScanSetting": ubx.FieldSpec{
-			WireName: "scan_setting",
-			Kind: "set",
-			Fields: Plan_ScanSettingFields,
-		},
+		"BackupPlanTags": ubx.FieldSpec{WireName: "backup_plan_tags"},
 	},
 }

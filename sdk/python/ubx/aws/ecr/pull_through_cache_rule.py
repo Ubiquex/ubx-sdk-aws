@@ -8,12 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PullThroughCacheRuleConfig:
+    # The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.
     credential_arn: Any = None
+    # The ARN of the IAM role to be assumed by Amazon ECR to authenticate to ECR upstream registry. This role must be in the same account as the registry that you are configuring.
     custom_role_arn: Any = None
+    # The ECRRepositoryPrefix is a custom alias for upstream registry url.
     ecr_repository_prefix: Any = None
-    id: Any = None
-    region: Any = None
+    # The name of the upstream registry.
+    upstream_registry: Any = None
+    # The upstreamRegistryUrl is the endpoint of upstream registry url of the public repository to be cached
     upstream_registry_url: Any = None
+    # The repository name prefix of upstream registry to match with the upstream repository name. When this field isn't specified, Amazon ECR will use the `ROOT`.
+    upstream_repository_prefix: Any = None
+
+@dataclasses.dataclass
+class PullThroughCacheRuleAttrs:
+    # The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.
+    credential_arn: Any = None
+    # The ARN of the IAM role to be assumed by Amazon ECR to authenticate to ECR upstream registry. This role must be in the same account as the registry that you are configuring.
+    custom_role_arn: Any = None
+    # The ECRRepositoryPrefix is a custom alias for upstream registry url.
+    ecr_repository_prefix: Any = None
+    # The name of the upstream registry.
+    upstream_registry: Any = None
+    # The upstreamRegistryUrl is the endpoint of upstream registry url of the public repository to be cached
+    upstream_registry_url: Any = None
+    # The repository name prefix of upstream registry to match with the upstream repository name. When this field isn't specified, Amazon ECR will use the `ROOT`.
     upstream_repository_prefix: Any = None
 
 PullThroughCacheRule = ubx.ResourceBinding(
@@ -22,8 +42,7 @@ PullThroughCacheRule = ubx.ResourceBinding(
         "credential_arn": ubx.FieldSpec(wire_name="credential_arn"),
         "custom_role_arn": ubx.FieldSpec(wire_name="custom_role_arn"),
         "ecr_repository_prefix": ubx.FieldSpec(wire_name="ecr_repository_prefix"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "upstream_registry": ubx.FieldSpec(wire_name="upstream_registry"),
         "upstream_registry_url": ubx.FieldSpec(wire_name="upstream_registry_url"),
         "upstream_repository_prefix": ubx.FieldSpec(wire_name="upstream_repository_prefix"),
     },

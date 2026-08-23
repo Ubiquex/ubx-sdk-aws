@@ -4,7 +4,9 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MaintenanceWindowTarget_Targets struct {
+	// Specifies the type of target, such as 'InstanceIds' to match EC2 instance IDs or a tag key in the format 'tag:key' to match instances by tag, which determines how the associated Values are interpreted. (AI-inferred)
 	Key any
+	// Specifies the values for the maintenance window target key, such as EC2 instance IDs when the key is 'InstanceIds' or resource group names when the key is 'ResourceGroup'. (AI-inferred)
 	Values any
 }
 
@@ -14,30 +16,49 @@ var MaintenanceWindowTarget_TargetsFields = ubx.FieldMap{
 	}
 
 type MaintenanceWindowTargetConfig struct {
+	// A description for the target.
 	Description any
-	Id any
+	// The name for the maintenance window target.
 	Name any
+	// A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.
 	OwnerInformation any
-	Region any
+	// The type of target that is being registered with the maintenance window.
 	ResourceType any
-	WindowId any
+	// The targets to register with the maintenance window.
 	Targets any
+	// The ID of the maintenance window to register the target with.
+	WindowId any
+}
+
+type MaintenanceWindowTargetAttrs struct {
+	// A description for the target.
+	Description any
+	// The name for the maintenance window target.
+	Name any
+	// A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.
+	OwnerInformation any
+	// The type of target that is being registered with the maintenance window.
+	ResourceType any
+	// The targets to register with the maintenance window.
+	Targets any
+	// The ID of the maintenance window to register the target with.
+	WindowId any
+	// The ID of the target.
+	WindowTargetId any
 }
 
 var MaintenanceWindowTarget = ubx.ResourceBinding{
 	WireType: "aws_ssm_maintenance_window_target",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OwnerInformation": ubx.FieldSpec{WireName: "owner_information"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"WindowId": ubx.FieldSpec{WireName: "window_id"},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
 			Kind: "list",
 			Fields: MaintenanceWindowTarget_TargetsFields,
 		},
+		"WindowId": ubx.FieldSpec{WireName: "window_id"},
 	},
 }

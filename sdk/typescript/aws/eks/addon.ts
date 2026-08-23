@@ -2,72 +2,83 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Addon_NamespaceConfig {
-  namespace: string;
+  /** The custom namespace for creating the add-on */
+  namespace: string | Computed<string>;
 }
 
-export interface Addon_PodIdentityAssociation {
-  roleArn: string;
-  serviceAccount: string;
+export interface Addon_PodIdentityAssociations {
+  /** The ARN of the IAM role to associate with the Kubernetes service account for the EKS pod identity association, which grants pods that use that service account permissions to call AWS APIs. (AI-inferred) */
+  roleArn?: string | Computed<string>;
+  /** The name of the Kubernetes service account that the addon's pod identity association will map to the specified IAM role, granting the addon permissions via that role. (AI-inferred) */
+  serviceAccount?: string | Computed<string>;
 }
 
-export interface Addon_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Addon_Tags {
+  key?: string | Computed<string>;
+  /** The string value assigned to a tag key on the EKS addon, used to store arbitrary metadata such as environment or owner identifiers for the addon. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const Addon_NamespaceConfigFields: FieldMap = {
   namespace: "namespace",
 };
 
-const Addon_PodIdentityAssociationFields: FieldMap = {
+const Addon_PodIdentityAssociationsFields: FieldMap = {
   roleArn: "role_arn",
   serviceAccount: "service_account",
 };
 
-const Addon_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Addon_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface AddonConfig {
+  /** Name of Addon */
   addonName: string | Computed<string>;
+  /** Version of Addon */
   addonVersion?: string | Computed<string>;
+  /** Name of Cluster */
   clusterName: string | Computed<string>;
+  /** The configuration values to use with the add-on */
   configurationValues?: string | Computed<string>;
-  id?: string | Computed<string>;
-  preserve?: boolean | Computed<boolean>;
-  region?: string | Computed<string>;
-  resolveConflictsOnCreate?: string | Computed<string>;
-  resolveConflictsOnUpdate?: string | Computed<string>;
+  /** The custom namespace configuration to use with the add-on */
+  namespaceConfig?: Addon_NamespaceConfig | Computed<Addon_NamespaceConfig>;
+  /** An array of pod identities to apply to this add-on. */
+  podIdentityAssociations?: Addon_PodIdentityAssociations[] | Computed<Addon_PodIdentityAssociations[]>;
+  /** PreserveOnDelete parameter value */
+  preserveOnDelete?: boolean | Computed<boolean>;
+  /** Resolve parameter value conflicts */
+  resolveConflicts?: string | Computed<string>;
+  /** IAM role to bind to the add-on's service account */
   serviceAccountRoleArn?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  namespaceConfig?: Addon_NamespaceConfig[] | Computed<Addon_NamespaceConfig[]>;
-  podIdentityAssociation?: Addon_PodIdentityAssociation[] | Computed<Addon_PodIdentityAssociation[]>;
-  timeouts?: Addon_Timeouts | Computed<Addon_Timeouts>;
+  /** An array of key-value pairs to apply to this resource. */
+  tags?: Addon_Tags[] | Computed<Addon_Tags[]>;
 }
 
 export interface AddonAttrs {
+  /** Name of Addon */
   addonName: string;
+  /** Version of Addon */
   addonVersion: string;
+  /** Amazon Resource Name (ARN) of the add-on */
   arn: string;
+  /** Name of Cluster */
   clusterName: string;
+  /** The configuration values to use with the add-on */
   configurationValues: string;
-  createdAt: string;
-  id: string;
-  modifiedAt: string;
-  preserve: boolean;
-  region: string;
-  resolveConflictsOnCreate: string;
-  resolveConflictsOnUpdate: string;
+  /** The custom namespace configuration to use with the add-on */
+  namespaceConfig: Addon_NamespaceConfig;
+  /** An array of pod identities to apply to this add-on. */
+  podIdentityAssociations: Addon_PodIdentityAssociations[];
+  /** PreserveOnDelete parameter value */
+  preserveOnDelete: boolean;
+  /** Resolve parameter value conflicts */
+  resolveConflicts: string;
+  /** IAM role to bind to the add-on's service account */
   serviceAccountRoleArn: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  namespaceConfig: Addon_NamespaceConfig[];
-  podIdentityAssociation: Addon_PodIdentityAssociation[];
-  timeouts: Addon_Timeouts;
+  /** An array of key-value pairs to apply to this resource. */
+  tags: Addon_Tags[];
 }
 
 export const Addon: ResourceBinding<AddonConfig, AddonAttrs> = {
@@ -77,28 +88,23 @@ export const Addon: ResourceBinding<AddonConfig, AddonAttrs> = {
     addonVersion: "addon_version",
     clusterName: "cluster_name",
     configurationValues: "configuration_values",
-    id: "id",
-    preserve: "preserve",
-    region: "region",
-    resolveConflictsOnCreate: "resolve_conflicts_on_create",
-    resolveConflictsOnUpdate: "resolve_conflicts_on_update",
-    serviceAccountRoleArn: "service_account_role_arn",
-    tags: "tags",
-    tagsAll: "tags_all",
     namespaceConfig: {
       wireName: "namespace_config",
-      kind: "list",
+      kind: "object",
       fields: Addon_NamespaceConfigFields,
     },
-    podIdentityAssociation: {
-      wireName: "pod_identity_association",
-      kind: "set",
-      fields: Addon_PodIdentityAssociationFields,
+    podIdentityAssociations: {
+      wireName: "pod_identity_associations",
+      kind: "list",
+      fields: Addon_PodIdentityAssociationsFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Addon_TimeoutsFields,
+    preserveOnDelete: "preserve_on_delete",
+    resolveConflicts: "resolve_conflicts",
+    serviceAccountRoleArn: "service_account_role_arn",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Addon_TagsFields,
     },
   },
 };

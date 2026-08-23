@@ -4,24 +4,30 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CertificateConfig struct {
-	CertificateId any
+	// The certificate Identifier
+	CertificateIdentifier any
+	// The certificate Pem
 	CertificatePem any
+	// The certificate Wallet
 	CertificateWallet any
-	Id any
-	Region any
-	Tags any
-	TagsAll any
+}
+
+type CertificateAttrs struct {
+	// The certificate Arn
+	CertificateArn any
+	// The certificate Identifier
+	CertificateIdentifier any
+	// The certificate Pem
+	CertificatePem any
+	// The certificate Wallet
+	CertificateWallet any
 }
 
 var Certificate = ubx.ResourceBinding{
 	WireType: "aws_dms_certificate",
 	Fields: ubx.FieldMap{
-		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
+		"CertificateIdentifier": ubx.FieldSpec{WireName: "certificate_identifier"},
 		"CertificatePem": ubx.FieldSpec{WireName: "certificate_pem"},
 		"CertificateWallet": ubx.FieldSpec{WireName: "certificate_wallet"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 	},
 }

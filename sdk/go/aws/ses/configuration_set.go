@@ -3,49 +3,249 @@ package ses
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ConfigurationSet_ArchivingOptions struct {
+	// The ARN of the MailManager archive to associate with the configuration set.
+	ArchiveArn any
+}
+
 type ConfigurationSet_DeliveryOptions struct {
+	// Specifies the maximum time until which SES will retry sending emails
+	MaxDeliverySeconds any
+	// The name of the dedicated IP pool to associate with the configuration set.
+	SendingPoolName any
+	// Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is Require , messages are only delivered if a TLS connection can be established. If the value is Optional , messages can be delivered in plain text if a TLS connection can't be established.
 	TlsPolicy any
 }
 
-type ConfigurationSet_TrackingOptions struct {
-	CustomRedirectDomain any
+type ConfigurationSet_ReputationOptions struct {
+	// If true , tracking of reputation metrics is enabled for the configuration set. If false , tracking of reputation metrics is disabled for the configuration set.
+	ReputationMetricsEnabled any
 }
 
+type ConfigurationSet_SendingOptions struct {
+	// Indicates whether email sending is enabled for the configuration set. (AI-inferred)
+	SendingEnabled any
+}
+
+type ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThreshold_OverallConfidenceThreshold struct {
+	// The confidence verdict threshold level.
+	ConfidenceVerdictThreshold any
+}
+
+type ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThreshold struct {
+	// Whether the condition threshold is enabled or disabled.
+	ConditionThresholdEnabled any
+	// The overall confidence threshold settings.
+	OverallConfidenceThreshold any
+}
+
+type ConfigurationSet_SuppressionOptions_ValidationOptions struct {
+	// The condition threshold settings for suppression validation.
+	ConditionThreshold any
+}
+
+type ConfigurationSet_SuppressionOptions struct {
+	// A list that contains the reasons that email addresses are automatically added to the suppression list for your account.
+	SuppressedReasons any
+	// An object that contains information about the validation options for your account.
+	ValidationOptions any
+}
+
+type ConfigurationSet_Tags struct {
+	// The key of a tag attached to the Amazon SES configuration set. (AI-inferred)
+	Key any
+	// Specifies the value part of a tag assigned to the SES configuration set, used for metadata and resource management. (AI-inferred)
+	Value any
+}
+
+type ConfigurationSet_TrackingOptions struct {
+	// The domain to use for tracking open and click events.
+	CustomRedirectDomain any
+	// The https policy to use for tracking open and click events.
+	HttpsPolicy any
+}
+
+type ConfigurationSet_VdmOptions_DashboardOptions struct {
+	// Whether emails sent with this configuration set have engagement tracking enabled.
+	EngagementMetrics any
+}
+
+type ConfigurationSet_VdmOptions_GuardianOptions struct {
+	// Whether emails sent with this configuration set have optimized delivery algorithm enabled.
+	OptimizedSharedDelivery any
+}
+
+type ConfigurationSet_VdmOptions struct {
+	// Preferences regarding the Dashboard feature.
+	DashboardOptions any
+	// Preferences regarding the Guardian feature.
+	GuardianOptions any
+}
+
+var ConfigurationSet_ArchivingOptionsFields = ubx.FieldMap{
+		"ArchiveArn": ubx.FieldSpec{WireName: "archive_arn"},
+	}
+
 var ConfigurationSet_DeliveryOptionsFields = ubx.FieldMap{
+		"MaxDeliverySeconds": ubx.FieldSpec{WireName: "max_delivery_seconds"},
+		"SendingPoolName": ubx.FieldSpec{WireName: "sending_pool_name"},
 		"TlsPolicy": ubx.FieldSpec{WireName: "tls_policy"},
+	}
+
+var ConfigurationSet_ReputationOptionsFields = ubx.FieldMap{
+		"ReputationMetricsEnabled": ubx.FieldSpec{WireName: "reputation_metrics_enabled"},
+	}
+
+var ConfigurationSet_SendingOptionsFields = ubx.FieldMap{
+		"SendingEnabled": ubx.FieldSpec{WireName: "sending_enabled"},
+	}
+
+var ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThreshold_OverallConfidenceThresholdFields = ubx.FieldMap{
+		"ConfidenceVerdictThreshold": ubx.FieldSpec{WireName: "confidence_verdict_threshold"},
+	}
+
+var ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThresholdFields = ubx.FieldMap{
+		"ConditionThresholdEnabled": ubx.FieldSpec{WireName: "condition_threshold_enabled"},
+		"OverallConfidenceThreshold": ubx.FieldSpec{
+			WireName: "overall_confidence_threshold",
+			Kind: "object",
+			Fields: ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThreshold_OverallConfidenceThresholdFields,
+		},
+	}
+
+var ConfigurationSet_SuppressionOptions_ValidationOptionsFields = ubx.FieldMap{
+		"ConditionThreshold": ubx.FieldSpec{
+			WireName: "condition_threshold",
+			Kind: "object",
+			Fields: ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThresholdFields,
+		},
+	}
+
+var ConfigurationSet_SuppressionOptionsFields = ubx.FieldMap{
+		"SuppressedReasons": ubx.FieldSpec{WireName: "suppressed_reasons"},
+		"ValidationOptions": ubx.FieldSpec{
+			WireName: "validation_options",
+			Kind: "object",
+			Fields: ConfigurationSet_SuppressionOptions_ValidationOptionsFields,
+		},
+	}
+
+var ConfigurationSet_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 var ConfigurationSet_TrackingOptionsFields = ubx.FieldMap{
 		"CustomRedirectDomain": ubx.FieldSpec{WireName: "custom_redirect_domain"},
+		"HttpsPolicy": ubx.FieldSpec{WireName: "https_policy"},
+	}
+
+var ConfigurationSet_VdmOptions_DashboardOptionsFields = ubx.FieldMap{
+		"EngagementMetrics": ubx.FieldSpec{WireName: "engagement_metrics"},
+	}
+
+var ConfigurationSet_VdmOptions_GuardianOptionsFields = ubx.FieldMap{
+		"OptimizedSharedDelivery": ubx.FieldSpec{WireName: "optimized_shared_delivery"},
+	}
+
+var ConfigurationSet_VdmOptionsFields = ubx.FieldMap{
+		"DashboardOptions": ubx.FieldSpec{
+			WireName: "dashboard_options",
+			Kind: "object",
+			Fields: ConfigurationSet_VdmOptions_DashboardOptionsFields,
+		},
+		"GuardianOptions": ubx.FieldSpec{
+			WireName: "guardian_options",
+			Kind: "object",
+			Fields: ConfigurationSet_VdmOptions_GuardianOptionsFields,
+		},
 	}
 
 type ConfigurationSetConfig struct {
-	Id any
-	Name any
-	Region any
-	ReputationMetricsEnabled any
-	SendingEnabled any
+	// An object that defines a MailManager archive that is used to preserve emails that you send using the configuration set.
+	ArchivingOptions any
+	// An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.
 	DeliveryOptions any
+	// The name of the configuration set.
+	Name any
+	// An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.
+	ReputationOptions any
+	// An object that defines whether or not Amazon SES can send email that you send using the configuration set.
+	SendingOptions any
+	// An object that contains information about the suppression list preferences for your account.
+	SuppressionOptions any
+	// The tags (keys and values) associated with the contact list.
+	Tags any
+	// An object that defines the open and click tracking options for emails that you send using the configuration set.
 	TrackingOptions any
+	// An object that contains Virtual Deliverability Manager (VDM) settings for this configuration set.
+	VdmOptions any
+}
+
+type ConfigurationSetAttrs struct {
+	// An object that defines a MailManager archive that is used to preserve emails that you send using the configuration set.
+	ArchivingOptions any
+	// An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.
+	DeliveryOptions any
+	// The name of the configuration set.
+	Name any
+	// An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.
+	ReputationOptions any
+	// An object that defines whether or not Amazon SES can send email that you send using the configuration set.
+	SendingOptions any
+	// An object that contains information about the suppression list preferences for your account.
+	SuppressionOptions any
+	// The tags (keys and values) associated with the contact list.
+	Tags any
+	// An object that defines the open and click tracking options for emails that you send using the configuration set.
+	TrackingOptions any
+	// An object that contains Virtual Deliverability Manager (VDM) settings for this configuration set.
+	VdmOptions any
 }
 
 var ConfigurationSet = ubx.ResourceBinding{
 	WireType: "aws_ses_configuration_set",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ReputationMetricsEnabled": ubx.FieldSpec{WireName: "reputation_metrics_enabled"},
-		"SendingEnabled": ubx.FieldSpec{WireName: "sending_enabled"},
+		"ArchivingOptions": ubx.FieldSpec{
+			WireName: "archiving_options",
+			Kind: "object",
+			Fields: ConfigurationSet_ArchivingOptionsFields,
+		},
 		"DeliveryOptions": ubx.FieldSpec{
 			WireName: "delivery_options",
-			Kind: "list",
+			Kind: "object",
 			Fields: ConfigurationSet_DeliveryOptionsFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ReputationOptions": ubx.FieldSpec{
+			WireName: "reputation_options",
+			Kind: "object",
+			Fields: ConfigurationSet_ReputationOptionsFields,
+		},
+		"SendingOptions": ubx.FieldSpec{
+			WireName: "sending_options",
+			Kind: "object",
+			Fields: ConfigurationSet_SendingOptionsFields,
+		},
+		"SuppressionOptions": ubx.FieldSpec{
+			WireName: "suppression_options",
+			Kind: "object",
+			Fields: ConfigurationSet_SuppressionOptionsFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ConfigurationSet_TagsFields,
 		},
 		"TrackingOptions": ubx.FieldSpec{
 			WireName: "tracking_options",
-			Kind: "list",
+			Kind: "object",
 			Fields: ConfigurationSet_TrackingOptionsFields,
+		},
+		"VdmOptions": ubx.FieldSpec{
+			WireName: "vdm_options",
+			Kind: "object",
+			Fields: ConfigurationSet_VdmOptionsFields,
 		},
 	},
 }

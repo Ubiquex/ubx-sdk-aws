@@ -7,76 +7,630 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_DependsOn:
+    # Specifies the state that the container named in depends_on must reach for this container to start, such as START, COMPLETE, SUCCESS, or HEALTHY. (AI-inferred)
+    condition: Any = None
+    # Specifies the name of the container that this container depends on, as part of the container's dependency conditions within the same task definition. (AI-inferred)
+    container_name: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_Environment:
+    # The name of the environment variable to configure in the container as part of the task definition's container environment list. (AI-inferred)
+    name: Any = None
+    # The value of the environment variable defined for the container in the ECS task definition, paired with the corresponding name in the environment key-value list. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_EnvironmentFiles:
+    # Specifies the type of the environment file, where the only supported value is 's3', indicating the file is stored in an Amazon S3 bucket. (AI-inferred)
+    type: Any = None
+    # The Amazon S3 object ARN (e.g., arn:aws:s3:::bucket-name/key-name) of the environment variables file that ECS loads into the container environment. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_ExtraHosts:
+    # The hostname to add to the container's /etc/hosts file, paired with its IP address in the same extra_hosts entry. (AI-inferred)
+    hostname: Any = None
+    # The IP address to which the corresponding hostname in the extra_hosts entry is resolved inside the container's network configuration (e.g., appended to /etc/hosts). (AI-inferred)
+    ip_address: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_FirelensConfiguration:
+    # Configures FireLens log routing by providing settings such as config-file-type, config-file-value, and enable-ecs-log-metadata. (AI-inferred)
+    options: Any = None
+    # Specifies the log router to use for Firelens, either 'fluentd' or 'fluentbit' (required). (AI-inferred)
+    type: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_HealthCheck:
+    # The command (as a list of strings, e.g., ["CMD-SHELL", "curl -f http://localhost/"]) that the container runs to perform its health check, corresponding directly to the Docker HEALTHCHECK instruction's command portion. (AI-inferred)
+    command: Any = None
+    # The time period in seconds between each container health check execution, as part of the ECS task definition container health check configuration. (AI-inferred)
+    interval: Any = None
+    # Specifies the number of times to retry a failed health check before the container is considered unhealthy, with a default of 3. (AI-inferred)
+    retries: Any = None
+    # Specifies the duration in seconds that Amazon ECS waits after the container starts before it begins counting failed health check results, providing a grace period for containers that need time to initialize before being marked unhealthy. (AI-inferred)
+    start_period: Any = None
+    # The number of seconds to wait for a health check to succeed before considering the container unhealthy. (AI-inferred)
+    timeout: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_LinuxParameters_Capabilities:
+    # Specifies additional Linux capabilities to grant the container, such as SYS_ADMIN or NET_ADMIN, in the task definition's Linux parameters. (AI-inferred)
+    add: Any = None
+    # Specifies the Linux capabilities to remove from the container's default set, such as SYS_ADMIN or NET_RAW, to restrict its privileges at runtime. (AI-inferred)
+    drop: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_LinuxParameters_Devices:
+    # The path inside the container at which the host device is mounted and exposed. (AI-inferred)
+    container_path: Any = None
+    # The absolute path on the host of the device to expose to the container, used in a Linux container's devices configuration to grant access to host devices. (AI-inferred)
+    host_path: Any = None
+    # Specifies the device permissions (e.g., read, write, mknod) that grant the container access to each host device listed in the devices block, controlling what operations the container can perform on those devices. (AI-inferred)
+    permissions: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_LinuxParameters_Tmpfs:
+    # The absolute file path inside the container where the tmpfs volume is mounted. (AI-inferred)
+    container_path: Any = None
+    # Specifies the mount options (e.g., size, mode, ro) passed to the tmpfs mount for the container. (AI-inferred)
+    mount_options: Any = None
+    # The size of the tmpfs mount in MiB, specifying the maximum capacity of the temporary filesystem mounted at the container's path. (AI-inferred)
+    size: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_LinuxParameters:
+    # Specifies the Linux capabilities to add or remove from the container's default set, with 'add' and 'drop' lists of capability names. (AI-inferred)
+    capabilities: Any = None
+    # A list of host devices to expose to the container, each specifying the host path, optional container path, and access permissions (read, write, mknod). (AI-inferred)
+    devices: Any = None
+    # When true, runs an init process as PID 1 inside the container to reap zombie processes and properly forward signals, such as SIGTERM, to the main application. (AI-inferred)
+    init_process_enabled: Any = None
+    # The maximum amount of swap memory (in MiB) the container can use, overriding the host's default swap settings for this container. (AI-inferred)
+    max_swap: Any = None
+    # Specifies the size in MiB of the shared memory (/dev/shm) volume to allocate for the container, overriding the default 64 MiB. (AI-inferred)
+    shared_memory_size: Any = None
+    # The swappiness parameter controls the relative weight of swapping out anonymous pages versus page cache in the container, accepting an integer from 0 to 100 that is passed as a kernel tuning option. (AI-inferred)
+    swappiness: Any = None
+    # Configures temporary file system (tmpfs) mounts for the container, listing each mount's container path, size in MiB, and optional mount options as defined under LinuxParameters in the ECS task definition. (AI-inferred)
+    tmpfs: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions:
+    # The name (key) of the log driver option for which the referenced secret's value is used, such as 'splunk-token' or 'project' in the log configuration. (AI-inferred)
+    name: Any = None
+    # The ARN of the secret (from AWS Secrets Manager or Systems Manager Parameter Store) that provides the value for the corresponding log driver option in the ECS task definition's log configuration. (AI-inferred)
+    value_from: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_LogConfiguration:
+    # Specifies the logging driver used by the container, such as awslogs for CloudWatch Logs, fluentd, syslog, json-file, or splunk, which determines how and where container logs are delivered. (AI-inferred)
+    log_driver: Any = None
+    # The options map provides the key-value configuration parameters for the container's chosen log driver (for example, awslogs-group and awslogs-region for the awslogs driver). (AI-inferred)
+    options: Any = None
+    # Specifies the secrets to pass to the log driver configuration, allowing you to reference sensitive information from AWS Secrets Manager or Systems Manager Parameter Store. (AI-inferred)
+    secret_options: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_MountPoints:
+    # The container_path specifies the absolute path inside the container where the volume is mounted. (AI-inferred)
+    container_path: Any = None
+    # Determines whether the container has read-only access to the mounted volume; when set to true, writes to the volume are rejected, and when false, read/write access is permitted. (AI-inferred)
+    read_only: Any = None
+    # Name of the volume to mount, which must match the name of a volume defined in the task definition's volumes block. (AI-inferred)
+    source_volume: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_PortMappings:
+    # Specifies the application protocol (e.g., http, http2, grpc) for this port mapping, which is used by AWS App Mesh and Amazon ECS Service Connect to route traffic to the container. (AI-inferred)
+    app_protocol: Any = None
+    # The port number on the container that receives inbound traffic, paired with a host port to map a container port to a port on the host for ECS task definition port mappings. (AI-inferred)
+    container_port: Any = None
+    # Specifies the inclusive range of container ports to map to the host, using the format 'startPort-endPort' (for example, '8000-8080'), enabling the task to expose multiple ports in one definition. (AI-inferred)
+    container_port_range: Any = None
+    # The port number on the container instance (host) that receives inbound traffic and forwards it to the container's `containerPort`, used with bridge and host network modes; it can be left empty to map directly to the container port. (AI-inferred)
+    host_port: Any = None
+    # The name that identifies this port mapping, used when configuring Service Connect for the ECS service. (AI-inferred)
+    name: Any = None
+    # The transport protocol (tcp, udp, or tcpudp) that this port mapping uses for communication in the container definition. (AI-inferred)
+    protocol: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_RepositoryCredentials:
+    # The ARN of the AWS Secrets Manager secret or Systems Manager parameter that stores the authentication credentials for the private container repository used by this container definition. (AI-inferred)
+    credentials_parameter: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_RestartPolicy:
+    # Whether the container's restart policy is enabled, allowing ECS to automatically restart the container if it exits or fails. (AI-inferred)
+    enabled: Any = None
+    # Specifies a list of container exit codes that are ignored by the ECS restart policy, so the container is not restarted when it exits with any of these codes. (AI-inferred)
+    ignored_exit_codes: Any = None
+    # The number of seconds to wait after a container exits before attempting to restart it, as part of the ECS restart policy to control the frequency of restart attempts. (AI-inferred)
+    restart_attempt_period: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_SystemControls:
+    # The sysctl namespace (kernel parameter name) to configure for the container, such as `kernel.msgmax` or `net.ipv4.ip_forward`. (AI-inferred)
+    namespace: Any = None
+    # The value assigned to the Linux kernel system control (sysctl) specified by the `namespace` field, such as `1` to enable IP forwarding in the container's network namespace. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_Ulimits:
+    # The hard limit (maximum value) for the ulimit setting on the container, which the container cannot exceed. (AI-inferred)
+    hard_limit: Any = None
+    # Specifies the type of ulimit to apply to the container, such as 'cpu', 'nofile', 'nproc', or other valid Linux resource limit names. (AI-inferred)
+    name: Any = None
+    # The lower boundary (soft limit) for the container's ulimit value, specifying the resource limit that can be raised by the process up to the hard limit. (AI-inferred)
+    soft_limit: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions_VolumesFrom:
+    # If true, the container mounts the volume from the source container as read-only. (AI-inferred)
+    read_only: Any = None
+    # The name of the source container from which this container mounts volumes, as defined in the containerDefinitions. (AI-inferred)
+    source_container: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_ContainerDefinitions:
+    # The command to run in the container, which overrides the default command specified in the container image. (AI-inferred)
+    command: Any = None
+    # The number of CPU units reserved for this container, which determines the relative CPU share allocated to it within the task. (AI-inferred)
+    cpu: Any = None
+    # A list of ARNs for Windows credential specification files (used for gMSA or domain-joined containers) that are applied to this container definition, either stored in an S3 bucket or in the ECS service-linked role. (AI-inferred)
+    credential_specs: Any = None
+    # Specifies dependencies on other containers in the same task, controlling startup and shutdown order by requiring a container to reach a certain condition (e.g., START, COMPLETE, SUCCESS, HEALTHY) before this container starts. (AI-inferred)
+    depends_on: Any = None
+    # When set to true, disables networking for the container, meaning it does not receive a network interface and has no network access within the task. (AI-inferred)
+    disable_networking: Any = None
+    # A list of DNS search domain names that are passed to the container's resolver configuration, allowing the container to search these domains when resolving hostnames. (AI-inferred)
+    dns_search_domains: Any = None
+    # Specifies the DNS servers for the container, which are written to the container's /etc/resolv.conf file as nameserver entries. (AI-inferred)
+    dns_servers: Any = None
+    # Specifies the custom Docker labels to add to the container as key-value pairs, which can be used for organizing or identifying the container. (AI-inferred)
+    docker_labels: Any = None
+    # Specifies the Docker security options (a list of strings) that are passed to the container runtime, such as 'no-new-privileges', to enforce additional security constraints on the container. (AI-inferred)
+    docker_security_options: Any = None
+    # Specifies the entry point for the container as a list of strings, overriding the default ENTRYPOINT defined in the container image, where the first string is the executable and the rest are arguments. (AI-inferred)
+    entry_point: Any = None
+    # The environment variables to pass to the container, as a list of objects each containing a name and a value. (AI-inferred)
+    environment: Any = None
+    # A list of environment files (S3 objects) whose contents define environment variables that are injected into the container at task launch. (AI-inferred)
+    environment_files: Any = None
+    # Specifies whether this container is essential to the task; if an essential container stops or fails, all other containers in the task are stopped and the task is considered failed. (AI-inferred)
+    essential: Any = None
+    # Specifies additional hostname-to-IP address mappings to add to the container's /etc/hosts file, allowing the container to resolve those hostnames. (AI-inferred)
+    extra_hosts: Any = None
+    # Specifies the FireLens configuration for a container in the ECS task definition, enabling log routing to destinations like Fluentd or Fluent Bit via a configurable type and options such as log metadata and config file delivery. (AI-inferred)
+    firelens_configuration: Any = None
+    # Defines the container health check configuration, including the command to run and parameters such as interval, timeout, retries, and start period, which ECS uses to determine container health. (AI-inferred)
+    health_check: Any = None
+    # Sets the hostname of the container, which other containers in the same task definition can use for DNS resolution. (AI-inferred)
+    hostname: Any = None
+    # The Docker image (e.g., a repository URL or image name:tag) to run for this container in the ECS task definition. (AI-inferred)
+    image: Any = None
+    # When set to true, this enables the container's interactive mode, keeping STDIN open and allowing a shell or other process to interact with the container, equivalent to Docker's `--interactive` flag. (AI-inferred)
+    interactive: Any = None
+    # Specifies a list of container names to link, enabling network connectivity and injecting environment variables for inter-container communication. (AI-inferred)
+    links: Any = None
+    # Specifies Linux-specific container configuration options such as kernel capabilities, device mappings, init process enablement, shared memory size, tmpfs mounts, and swap settings for a container in an ECS task definition. (AI-inferred)
+    linux_parameters: Any = None
+    # This object configures the logging driver for the container (e.g., awslogs, json-file, syslog) and its options, such as awslogs-group and awslogs-region, controlling how container logs are captured and delivered to the specified destination. (AI-inferred)
+    log_configuration: Any = None
+    # Specifies the hard limit (in MiB) of memory available to the container; when the container's memory usage reaches this limit, the container is killed. (AI-inferred)
+    memory: Any = None
+    # The soft memory limit in MiB for the container, which ECS uses for placement and scheduling, allowing the container to burst above this value when the host has spare memory. (AI-inferred)
+    memory_reservation: Any = None
+    # Specifies the mount points for data volumes in the container, including the source volume name and the container path where the volume is mounted. (AI-inferred)
+    mount_points: Any = None
+    # The name of the container definition, which must be unique among all container definitions in the task definition and is used to reference the container from other definitions (e.g., links, dependsOn, and volume mounts). (AI-inferred)
+    name: Any = None
+    # Defines the port mappings for a container, specifying container port, host port, and protocol (tcp/udp), which controls how traffic is routed to the container in the ECS task. (AI-inferred)
+    port_mappings: Any = None
+    # When set to true, the container runs in privileged mode, granting it elevated permissions on the host container instance (similar to Docker's --privileged flag). (AI-inferred)
+    privileged: Any = None
+    # Indicates whether to allocate a pseudo-TTY (teletypewriter) for the container, enabling an interactive terminal session, similar to the Docker `--tty` flag. (AI-inferred)
+    pseudo_terminal: Any = None
+    # Specifies whether the container's root filesystem is mounted in read-only mode, preventing the container from writing to its root filesystem while still permitting writes to attached volumes. (AI-inferred)
+    readonly_root_filesystem: Any = None
+    # Specifies the AWS Secrets Manager secret or SSM parameter ARN that holds the credentials needed to pull the container image from a private registry. (AI-inferred)
+    repository_credentials: Any = None
+    # Specifies the type and amount of a resource (such as GPU or InferenceAccelerator) that the container requires, used to request hardware accelerators like NVIDIA GPUs or AWS Inferentia chips. (AI-inferred)
+    resource_requirements: Any = None
+    # Specifies the restart policy for the container, including whether it is enabled and the attempt period, allowing the container to automatically restart after a failure or exit; it is only supported for tasks using the Fargate launch type. (AI-inferred)
+    restart_policy: Any = None
+    # Specifies the secrets to pass to the container, referencing either AWS Secrets Manager secrets or SSM Parameter Store parameters, each containing a name and a valueFrom ARN or full SSM parameter name. (AI-inferred)
+    secrets: Any = None
+    # Specifies the time duration in seconds to wait for the container to become healthy after it starts, after which the container is considered failed if it has not reached a healthy state. (AI-inferred)
+    start_timeout: Any = None
+    # The time in seconds to wait for the container to stop after sending SIGTERM before the system sends SIGKILL, overriding the Docker daemon's default stop timeout. (AI-inferred)
+    stop_timeout: Any = None
+    # Specifies a list of system control (sysctl) settings to apply to the container, allowing you to modify kernel parameters such as network stack settings (e.g., net.ipv4.ip_forward) as defined in the container definition. (AI-inferred)
+    system_controls: Any = None
+    # Defines a list of ulimit settings for the container that override Docker defaults, each specifying a resource type (such as 'nofile' or 'cpu') along with soft and hard limits. (AI-inferred)
+    ulimits: Any = None
+    # The user name or numeric UID (and optionally group) to run the container process as, overriding the image's default user. (AI-inferred)
+    user: Any = None
+    # Specifies whether ECS version consistency is enabled for this container definition, accepting values 'enabled' or 'disabled' to control whether the container image is pinned to an exact digest for immutable deployments. (AI-inferred)
+    version_consistency: Any = None
+    # Specifies the volumes to mount from other containers in the same task definition, including the source container name and whether the mount is read-only. (AI-inferred)
+    volumes_from: Any = None
+    # The working directory inside the container where the container's entrypoint command is run. (AI-inferred)
+    working_directory: Any = None
+
+@dataclasses.dataclass
 class TaskDefinition_EphemeralStorage:
-    size_in_gib: Any = None
+    # The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is ``21`` GiB and the maximum supported value is ``200`` GiB.
+    size_in_gi_b: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_InferenceAccelerators:
+    # The name of the inference accelerator device, which the container uses to access the accelerator (e.g., 'device1'). (AI-inferred)
+    device_name: Any = None
+    # Specifies the Elastic Inference accelerator type (e.g., eia2.medium or eia1.large) to attach to the task. (AI-inferred)
+    device_type: Any = None
 
 @dataclasses.dataclass
 class TaskDefinition_PlacementConstraints:
+    # The cluster query language expression that defines the placement constraint when the type is 'memberOf', specifying which container instances the task can be placed on. (AI-inferred)
     expression: Any = None
+    # The placement constraint type, which must be either 'distinctInstance' (place each task on a distinct container instance) or 'memberOf' (use a cluster query language expression defined in the expression field). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class TaskDefinition_ProxyConfiguration:
+    # The name of the container that will serve as the App Mesh proxy.
     container_name: Any = None
-    properties: Any = None
+    # The set of network configuration parameters to provide the Container Network Interface (CNI) plugin, specified as key-value pairs. + ``IgnoredUID`` - (Required) The user ID (UID) of the proxy container as defined by the ``user`` parameter in a container definition. This is used to ensure the proxy ignores its own traffic. If ``IgnoredGID`` is specified, this field can be empty. + ``IgnoredGID`` - (Required) The group ID (GID) of the proxy container as defined by the ``user`` parameter in a container definition. This is used to ensure the proxy ignores its own traffic. If ``IgnoredUID`` is specified, this field can be empty. + ``AppPorts`` - (Required) The list of ports that the application uses. Network traffic to these ports is forwarded to the ``ProxyIngressPort`` and ``ProxyEgressPort``. + ``ProxyIngressPort`` - (Required) Specifies the port that incoming traffic to the ``AppPorts`` is directed to. + ``ProxyEgressPort`` - (Required) Specifies the port that outgoing traffic from the ``AppPorts`` is directed to. + ``EgressIgnoredPorts`` - (Required) The egress traffic going to the specified ports is ignored and not redirected to the ``ProxyEgressPort``. It can be an empty list. + ``EgressIgnoredIPs`` - (Required) The egress traffic going to the specified IP addresses is ignored and not redirected to the ``ProxyEgressPort``. It can be an empty list.
+    proxy_configuration_properties: Any = None
+    # The proxy type. The only supported value is ``APPMESH``.
     type: Any = None
 
 @dataclasses.dataclass
 class TaskDefinition_RuntimePlatform:
+    # The CPU architecture. You can run your Linux tasks on an ARM-based platform by setting the value to ``ARM64``. This option is available for tasks that run on Linux Amazon EC2 instance, Amazon ECS Managed Instances, or Linux containers on Fargate.
     cpu_architecture: Any = None
+    # The operating system.
     operating_system_family: Any = None
 
 @dataclasses.dataclass
-class TaskDefinition_Volume_DockerVolumeConfiguration:
+class TaskDefinition_Tags:
+    # The key (name) of a key-value tag attached to the ECS task definition, used for resource identification and cost allocation. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_Volumes_DockerVolumeConfiguration:
+    # When true, ECS automatically creates the named Docker volume if it does not already exist when the task is launched. (AI-inferred)
     autoprovision: Any = None
+    # Specifies the Docker volume driver to use, such as 'local' or a third-party driver (e.g., 'rexray'), for the volume configured in the task definition. (AI-inferred)
     driver: Any = None
+    # Specifies a map of Docker driver-specific options passed to the volume driver when configuring a Docker volume in an ECS task definition. (AI-inferred)
     driver_opts: Any = None
+    # Specifies key-value pairs that are assigned as Docker volume labels, which serve as metadata for organizing and identifying the volume and are passed to the Docker volume driver. (AI-inferred)
     labels: Any = None
+    # Determines the lifecycle of the Docker volume, where 'task' auto-provisions and deletes the volume when the task stops, and 'shared' allows the volume to exist independently of any single task. (AI-inferred)
     scope: Any = None
 
 @dataclasses.dataclass
-class TaskDefinition_Volume_EfsVolumeConfiguration_AuthorizationConfig:
+class TaskDefinition_Volumes_EfsvolumeConfiguration_AuthorizationConfig:
+    # The access point ID of the EFS file system that Amazon ECS uses to mount the volume, applying the access point's root directory and POSIX user/group permissions to the task's container. (AI-inferred)
     access_point_id: Any = None
+    # Specifies whether to use IAM authorization for the EFS volume's access point, with a value of 'ENABLED' to enable IAM authentication or 'DISABLED' to use the default EFS security settings. (AI-inferred)
     iam: Any = None
 
 @dataclasses.dataclass
-class TaskDefinition_Volume_EfsVolumeConfiguration:
-    file_system_id: Any = None
-    root_directory: Any = None
-    transit_encryption: Any = None
-    transit_encryption_port: Any = None
+class TaskDefinition_Volumes_EfsvolumeConfiguration:
+    # The authorization configuration for an Amazon EFS volume, specifying the EFS access point ID and IAM role to use for the volume's file system access. (AI-inferred)
     authorization_config: Any = None
+    # The ID of the Amazon EFS file system that this volume mounts, identifying the target file system for the container's persistent storage. (AI-inferred)
+    filesystem_id: Any = None
+    # The path on the Amazon EFS file system to mount as the root directory for the container, defaulting to '/' if not specified. (AI-inferred)
+    root_directory: Any = None
+    # Indicates whether Amazon EFS uses encryption for data in transit when the volume is mounted in the task, accepting 'ENABLED' to enable encryption or 'DISABLED' to disable it. (AI-inferred)
+    transit_encryption: Any = None
+    # Specifies the port on the EFS file system to use for transit encryption, required when transit encryption is enabled. (AI-inferred)
+    transit_encryption_port: Any = None
 
 @dataclasses.dataclass
-class TaskDefinition_Volume_FsxWindowsFileServerVolumeConfiguration_AuthorizationConfig:
+class TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration_AuthorizationConfig:
+    # Specifies the ARN of the AWS Secrets Manager secret or Systems Manager parameter that stores the Microsoft Active Directory domain credentials for mounting the FSx Windows file server volume. (AI-inferred)
     credentials_parameter: Any = None
+    # The domain field specifies the fully qualified domain name (FQDN) of the Active Directory domain to use for authentication when accessing the FSx Windows File Server volume. (AI-inferred)
     domain: Any = None
 
 @dataclasses.dataclass
-class TaskDefinition_Volume_FsxWindowsFileServerVolumeConfiguration:
-    file_system_id: Any = None
-    root_directory: Any = None
+class TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration:
+    # Specifies the domain and the AWS Secrets Manager credential secret that the container uses to mount the FSx for Windows File Server volume. (AI-inferred)
     authorization_config: Any = None
+    # The ID of the Amazon FSx for Windows File Server file system to mount for this volume in the ECS task definition. (AI-inferred)
+    file_system_id: Any = None
+    # The root directory on the FSx Windows File Server file system to mount as the root for the container's volume. (AI-inferred)
+    root_directory: Any = None
 
 @dataclasses.dataclass
-class TaskDefinition_Volume_S3filesVolumeConfiguration:
+class TaskDefinition_Volumes_Host:
+    # Specifies the path on the host container instance (EC2) that is mounted into the container when the volume type is 'host'. (AI-inferred)
+    source_path: Any = None
+
+@dataclasses.dataclass
+class TaskDefinition_Volumes_S3FilesVolumeConfiguration:
+    # The Amazon Resource Name (ARN) of the S3 access point that ECS uses to access the S3 bucket for this volume configuration. (AI-inferred)
     access_point_arn: Any = None
+    # The Amazon Resource Name (ARN) of the S3 bucket that ECS mounts as a file system volume to tasks using the S3 file volume configuration. (AI-inferred)
     file_system_arn: Any = None
+    # Specifies the subdirectory within the S3 bucket that is mounted as the root of the ECS volume, determining the base path for files exposed via this volume configuration. (AI-inferred)
     root_directory: Any = None
+    # Specifies the custom port used for encrypted (TLS) communication with Amazon S3 when the S3 volume's transit encryption is enabled. (AI-inferred)
     transit_encryption_port: Any = None
 
 @dataclasses.dataclass
-class TaskDefinition_Volume:
-    configure_at_launch: Any = None
-    host_path: Any = None
-    name: Any = None
+class TaskDefinition_Volumes:
+    # When set to true, indicates that the volume is configured on the container instance at launch time rather than being fully specified in the task definition, enabling dynamic volume configuration (such as for Docker volumes) at runtime. (AI-inferred)
+    configured_at_launch: Any = None
+    # Specifies the Docker volume configuration for a volume in the task definition, including the volume scope, autoprovision setting, driver, driver options, and labels when the volume type is 'docker'. (AI-inferred)
     docker_volume_configuration: Any = None
-    efs_volume_configuration: Any = None
+    # Configures an Amazon EFS volume for the task definition, specifying the EFS filesystem ID, root directory path, transit encryption and port, and optional IAM authorization via an access point. (AI-inferred)
+    efsvolume_configuration: Any = None
+    # Specifies the configuration for using an Amazon FSx for Windows File Server volume as a data volume in the ECS task definition, including the file system ID, root directory, and authorization configuration. (AI-inferred)
     fsx_windows_file_server_volume_configuration: Any = None
-    s3files_volume_configuration: Any = None
+    # The host object defines the source path on the container instance for a bind mount volume, with its `sourcePath` property specifying the exact host directory to mount. (AI-inferred)
+    host: Any = None
+    # The name of the volume, which is referenced by container definitions in the mountPoints.sourceVolume property. (AI-inferred)
+    name: Any = None
+    # Configuration for an Amazon S3 file volume within an ECS task definition, specifying the S3 bucket, key (object path), and optional object version used to mount a single S3 object as a file into the container. (AI-inferred)
+    s3_files_volume_configuration: Any = None
+
+_TaskDefinition_ContainerDefinitions_DependsOnFields = {
+    "condition": ubx.FieldSpec(wire_name="condition"),
+    "container_name": ubx.FieldSpec(wire_name="container_name"),
+}
+
+_TaskDefinition_ContainerDefinitions_EnvironmentFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_TaskDefinition_ContainerDefinitions_EnvironmentFilesFields = {
+    "type": ubx.FieldSpec(wire_name="type"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_TaskDefinition_ContainerDefinitions_ExtraHostsFields = {
+    "hostname": ubx.FieldSpec(wire_name="hostname"),
+    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+}
+
+_TaskDefinition_ContainerDefinitions_FirelensConfigurationFields = {
+    "options": ubx.FieldSpec(wire_name="options"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_TaskDefinition_ContainerDefinitions_HealthCheckFields = {
+    "command": ubx.FieldSpec(wire_name="command"),
+    "interval": ubx.FieldSpec(wire_name="interval"),
+    "retries": ubx.FieldSpec(wire_name="retries"),
+    "start_period": ubx.FieldSpec(wire_name="start_period"),
+    "timeout": ubx.FieldSpec(wire_name="timeout"),
+}
+
+_TaskDefinition_ContainerDefinitions_LinuxParameters_CapabilitiesFields = {
+    "add": ubx.FieldSpec(wire_name="add"),
+    "drop": ubx.FieldSpec(wire_name="drop"),
+}
+
+_TaskDefinition_ContainerDefinitions_LinuxParameters_DevicesFields = {
+    "container_path": ubx.FieldSpec(wire_name="container_path"),
+    "host_path": ubx.FieldSpec(wire_name="host_path"),
+    "permissions": ubx.FieldSpec(wire_name="permissions"),
+}
+
+_TaskDefinition_ContainerDefinitions_LinuxParameters_TmpfsFields = {
+    "container_path": ubx.FieldSpec(wire_name="container_path"),
+    "mount_options": ubx.FieldSpec(wire_name="mount_options"),
+    "size": ubx.FieldSpec(wire_name="size"),
+}
+
+_TaskDefinition_ContainerDefinitions_LinuxParametersFields = {
+    "capabilities": ubx.FieldSpec(
+        wire_name="capabilities",
+        kind="object",
+        fields=_TaskDefinition_ContainerDefinitions_LinuxParameters_CapabilitiesFields,
+    ),
+    "devices": ubx.FieldSpec(
+        wire_name="devices",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_LinuxParameters_DevicesFields,
+    ),
+    "init_process_enabled": ubx.FieldSpec(wire_name="init_process_enabled"),
+    "max_swap": ubx.FieldSpec(wire_name="max_swap"),
+    "shared_memory_size": ubx.FieldSpec(wire_name="shared_memory_size"),
+    "swappiness": ubx.FieldSpec(wire_name="swappiness"),
+    "tmpfs": ubx.FieldSpec(
+        wire_name="tmpfs",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_LinuxParameters_TmpfsFields,
+    ),
+}
+
+_TaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptionsFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value_from": ubx.FieldSpec(wire_name="value_from"),
+}
+
+_TaskDefinition_ContainerDefinitions_LogConfigurationFields = {
+    "log_driver": ubx.FieldSpec(wire_name="log_driver"),
+    "options": ubx.FieldSpec(wire_name="options"),
+    "secret_options": ubx.FieldSpec(
+        wire_name="secret_options",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptionsFields,
+    ),
+}
+
+_TaskDefinition_ContainerDefinitions_MountPointsFields = {
+    "container_path": ubx.FieldSpec(wire_name="container_path"),
+    "read_only": ubx.FieldSpec(wire_name="read_only"),
+    "source_volume": ubx.FieldSpec(wire_name="source_volume"),
+}
+
+_TaskDefinition_ContainerDefinitions_PortMappingsFields = {
+    "app_protocol": ubx.FieldSpec(wire_name="app_protocol"),
+    "container_port": ubx.FieldSpec(wire_name="container_port"),
+    "container_port_range": ubx.FieldSpec(wire_name="container_port_range"),
+    "host_port": ubx.FieldSpec(wire_name="host_port"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+}
+
+_TaskDefinition_ContainerDefinitions_RepositoryCredentialsFields = {
+    "credentials_parameter": ubx.FieldSpec(wire_name="credentials_parameter"),
+}
+
+_TaskDefinition_ContainerDefinitions_RestartPolicyFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "ignored_exit_codes": ubx.FieldSpec(wire_name="ignored_exit_codes"),
+    "restart_attempt_period": ubx.FieldSpec(wire_name="restart_attempt_period"),
+}
+
+_TaskDefinition_ContainerDefinitions_SystemControlsFields = {
+    "namespace": ubx.FieldSpec(wire_name="namespace"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_TaskDefinition_ContainerDefinitions_UlimitsFields = {
+    "hard_limit": ubx.FieldSpec(wire_name="hard_limit"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "soft_limit": ubx.FieldSpec(wire_name="soft_limit"),
+}
+
+_TaskDefinition_ContainerDefinitions_VolumesFromFields = {
+    "read_only": ubx.FieldSpec(wire_name="read_only"),
+    "source_container": ubx.FieldSpec(wire_name="source_container"),
+}
+
+_TaskDefinition_ContainerDefinitionsFields = {
+    "command": ubx.FieldSpec(wire_name="command"),
+    "cpu": ubx.FieldSpec(wire_name="cpu"),
+    "credential_specs": ubx.FieldSpec(wire_name="credential_specs"),
+    "depends_on": ubx.FieldSpec(
+        wire_name="depends_on",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_DependsOnFields,
+    ),
+    "disable_networking": ubx.FieldSpec(wire_name="disable_networking"),
+    "dns_search_domains": ubx.FieldSpec(wire_name="dns_search_domains"),
+    "dns_servers": ubx.FieldSpec(wire_name="dns_servers"),
+    "docker_labels": ubx.FieldSpec(wire_name="docker_labels"),
+    "docker_security_options": ubx.FieldSpec(wire_name="docker_security_options"),
+    "entry_point": ubx.FieldSpec(wire_name="entry_point"),
+    "environment": ubx.FieldSpec(
+        wire_name="environment",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_EnvironmentFields,
+    ),
+    "environment_files": ubx.FieldSpec(
+        wire_name="environment_files",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_EnvironmentFilesFields,
+    ),
+    "essential": ubx.FieldSpec(wire_name="essential"),
+    "extra_hosts": ubx.FieldSpec(
+        wire_name="extra_hosts",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_ExtraHostsFields,
+    ),
+    "firelens_configuration": ubx.FieldSpec(
+        wire_name="firelens_configuration",
+        kind="object",
+        fields=_TaskDefinition_ContainerDefinitions_FirelensConfigurationFields,
+    ),
+    "health_check": ubx.FieldSpec(
+        wire_name="health_check",
+        kind="object",
+        fields=_TaskDefinition_ContainerDefinitions_HealthCheckFields,
+    ),
+    "hostname": ubx.FieldSpec(wire_name="hostname"),
+    "image": ubx.FieldSpec(wire_name="image"),
+    "interactive": ubx.FieldSpec(wire_name="interactive"),
+    "links": ubx.FieldSpec(wire_name="links"),
+    "linux_parameters": ubx.FieldSpec(
+        wire_name="linux_parameters",
+        kind="object",
+        fields=_TaskDefinition_ContainerDefinitions_LinuxParametersFields,
+    ),
+    "log_configuration": ubx.FieldSpec(
+        wire_name="log_configuration",
+        kind="object",
+        fields=_TaskDefinition_ContainerDefinitions_LogConfigurationFields,
+    ),
+    "memory": ubx.FieldSpec(wire_name="memory"),
+    "memory_reservation": ubx.FieldSpec(wire_name="memory_reservation"),
+    "mount_points": ubx.FieldSpec(
+        wire_name="mount_points",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_MountPointsFields,
+    ),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "port_mappings": ubx.FieldSpec(
+        wire_name="port_mappings",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_PortMappingsFields,
+    ),
+    "privileged": ubx.FieldSpec(wire_name="privileged"),
+    "pseudo_terminal": ubx.FieldSpec(wire_name="pseudo_terminal"),
+    "readonly_root_filesystem": ubx.FieldSpec(wire_name="readonly_root_filesystem"),
+    "repository_credentials": ubx.FieldSpec(
+        wire_name="repository_credentials",
+        kind="object",
+        fields=_TaskDefinition_ContainerDefinitions_RepositoryCredentialsFields,
+    ),
+    "resource_requirements": ubx.FieldSpec(
+        wire_name="resource_requirements",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_EnvironmentFilesFields,
+    ),
+    "restart_policy": ubx.FieldSpec(
+        wire_name="restart_policy",
+        kind="object",
+        fields=_TaskDefinition_ContainerDefinitions_RestartPolicyFields,
+    ),
+    "secrets": ubx.FieldSpec(
+        wire_name="secrets",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptionsFields,
+    ),
+    "start_timeout": ubx.FieldSpec(wire_name="start_timeout"),
+    "stop_timeout": ubx.FieldSpec(wire_name="stop_timeout"),
+    "system_controls": ubx.FieldSpec(
+        wire_name="system_controls",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_SystemControlsFields,
+    ),
+    "ulimits": ubx.FieldSpec(
+        wire_name="ulimits",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_UlimitsFields,
+    ),
+    "user": ubx.FieldSpec(wire_name="user"),
+    "version_consistency": ubx.FieldSpec(wire_name="version_consistency"),
+    "volumes_from": ubx.FieldSpec(
+        wire_name="volumes_from",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_VolumesFromFields,
+    ),
+    "working_directory": ubx.FieldSpec(wire_name="working_directory"),
+}
 
 _TaskDefinition_EphemeralStorageFields = {
-    "size_in_gib": ubx.FieldSpec(wire_name="size_in_gib"),
+    "size_in_gi_b": ubx.FieldSpec(wire_name="size_in_gi_b"),
+}
+
+_TaskDefinition_InferenceAcceleratorsFields = {
+    "device_name": ubx.FieldSpec(wire_name="device_name"),
+    "device_type": ubx.FieldSpec(wire_name="device_type"),
 }
 
 _TaskDefinition_PlacementConstraintsFields = {
@@ -86,7 +640,11 @@ _TaskDefinition_PlacementConstraintsFields = {
 
 _TaskDefinition_ProxyConfigurationFields = {
     "container_name": ubx.FieldSpec(wire_name="container_name"),
-    "properties": ubx.FieldSpec(wire_name="properties"),
+    "proxy_configuration_properties": ubx.FieldSpec(
+        wire_name="proxy_configuration_properties",
+        kind="list",
+        fields=_TaskDefinition_ContainerDefinitions_EnvironmentFields,
+    ),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
@@ -95,7 +653,12 @@ _TaskDefinition_RuntimePlatformFields = {
     "operating_system_family": ubx.FieldSpec(wire_name="operating_system_family"),
 }
 
-_TaskDefinition_Volume_DockerVolumeConfigurationFields = {
+_TaskDefinition_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_TaskDefinition_Volumes_DockerVolumeConfigurationFields = {
     "autoprovision": ubx.FieldSpec(wire_name="autoprovision"),
     "driver": ubx.FieldSpec(wire_name="driver"),
     "driver_opts": ubx.FieldSpec(wire_name="driver_opts"),
@@ -103,140 +666,211 @@ _TaskDefinition_Volume_DockerVolumeConfigurationFields = {
     "scope": ubx.FieldSpec(wire_name="scope"),
 }
 
-_TaskDefinition_Volume_EfsVolumeConfiguration_AuthorizationConfigFields = {
+_TaskDefinition_Volumes_EfsvolumeConfiguration_AuthorizationConfigFields = {
     "access_point_id": ubx.FieldSpec(wire_name="access_point_id"),
     "iam": ubx.FieldSpec(wire_name="iam"),
 }
 
-_TaskDefinition_Volume_EfsVolumeConfigurationFields = {
-    "file_system_id": ubx.FieldSpec(wire_name="file_system_id"),
+_TaskDefinition_Volumes_EfsvolumeConfigurationFields = {
+    "authorization_config": ubx.FieldSpec(
+        wire_name="authorization_config",
+        kind="object",
+        fields=_TaskDefinition_Volumes_EfsvolumeConfiguration_AuthorizationConfigFields,
+    ),
+    "filesystem_id": ubx.FieldSpec(wire_name="filesystem_id"),
     "root_directory": ubx.FieldSpec(wire_name="root_directory"),
     "transit_encryption": ubx.FieldSpec(wire_name="transit_encryption"),
     "transit_encryption_port": ubx.FieldSpec(wire_name="transit_encryption_port"),
-    "authorization_config": ubx.FieldSpec(
-        wire_name="authorization_config",
-        kind="list",
-        fields=_TaskDefinition_Volume_EfsVolumeConfiguration_AuthorizationConfigFields,
-    ),
 }
 
-_TaskDefinition_Volume_FsxWindowsFileServerVolumeConfiguration_AuthorizationConfigFields = {
+_TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration_AuthorizationConfigFields = {
     "credentials_parameter": ubx.FieldSpec(wire_name="credentials_parameter"),
     "domain": ubx.FieldSpec(wire_name="domain"),
 }
 
-_TaskDefinition_Volume_FsxWindowsFileServerVolumeConfigurationFields = {
-    "file_system_id": ubx.FieldSpec(wire_name="file_system_id"),
-    "root_directory": ubx.FieldSpec(wire_name="root_directory"),
+_TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfigurationFields = {
     "authorization_config": ubx.FieldSpec(
         wire_name="authorization_config",
-        kind="list",
-        fields=_TaskDefinition_Volume_FsxWindowsFileServerVolumeConfiguration_AuthorizationConfigFields,
+        kind="object",
+        fields=_TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration_AuthorizationConfigFields,
     ),
+    "file_system_id": ubx.FieldSpec(wire_name="file_system_id"),
+    "root_directory": ubx.FieldSpec(wire_name="root_directory"),
 }
 
-_TaskDefinition_Volume_S3filesVolumeConfigurationFields = {
+_TaskDefinition_Volumes_HostFields = {
+    "source_path": ubx.FieldSpec(wire_name="source_path"),
+}
+
+_TaskDefinition_Volumes_S3FilesVolumeConfigurationFields = {
     "access_point_arn": ubx.FieldSpec(wire_name="access_point_arn"),
     "file_system_arn": ubx.FieldSpec(wire_name="file_system_arn"),
     "root_directory": ubx.FieldSpec(wire_name="root_directory"),
     "transit_encryption_port": ubx.FieldSpec(wire_name="transit_encryption_port"),
 }
 
-_TaskDefinition_VolumeFields = {
-    "configure_at_launch": ubx.FieldSpec(wire_name="configure_at_launch"),
-    "host_path": ubx.FieldSpec(wire_name="host_path"),
-    "name": ubx.FieldSpec(wire_name="name"),
+_TaskDefinition_VolumesFields = {
+    "configured_at_launch": ubx.FieldSpec(wire_name="configured_at_launch"),
     "docker_volume_configuration": ubx.FieldSpec(
         wire_name="docker_volume_configuration",
-        kind="list",
-        fields=_TaskDefinition_Volume_DockerVolumeConfigurationFields,
+        kind="object",
+        fields=_TaskDefinition_Volumes_DockerVolumeConfigurationFields,
     ),
-    "efs_volume_configuration": ubx.FieldSpec(
-        wire_name="efs_volume_configuration",
-        kind="list",
-        fields=_TaskDefinition_Volume_EfsVolumeConfigurationFields,
+    "efsvolume_configuration": ubx.FieldSpec(
+        wire_name="efsvolume_configuration",
+        kind="object",
+        fields=_TaskDefinition_Volumes_EfsvolumeConfigurationFields,
     ),
     "fsx_windows_file_server_volume_configuration": ubx.FieldSpec(
         wire_name="fsx_windows_file_server_volume_configuration",
-        kind="list",
-        fields=_TaskDefinition_Volume_FsxWindowsFileServerVolumeConfigurationFields,
+        kind="object",
+        fields=_TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfigurationFields,
     ),
-    "s3files_volume_configuration": ubx.FieldSpec(
-        wire_name="s3files_volume_configuration",
-        kind="list",
-        fields=_TaskDefinition_Volume_S3filesVolumeConfigurationFields,
+    "host": ubx.FieldSpec(
+        wire_name="host",
+        kind="object",
+        fields=_TaskDefinition_Volumes_HostFields,
+    ),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "s3_files_volume_configuration": ubx.FieldSpec(
+        wire_name="s3_files_volume_configuration",
+        kind="object",
+        fields=_TaskDefinition_Volumes_S3FilesVolumeConfigurationFields,
     ),
 }
 
 @dataclasses.dataclass
 class TaskDefinitionConfig:
+    # A list of container definitions in JSON format that describe the different containers that make up your task. For more information about container definition parameters and defaults, see [Amazon ECS Task Definitions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html) in the *Amazon Elastic Container Service Developer Guide*.
     container_definitions: Any = None
+    # The number of ``cpu`` units used by the task. If you use the EC2 launch type, this field is optional. Any value can be used. If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines your range of valid values for the ``memory`` parameter. If you're using the EC2 launch type or the external launch type, this field is optional. Supported values are between ``128`` CPU units (``0.125`` vCPUs) and ``196608`` CPU units (``192`` vCPUs). This field is required for Fargate. For information about the valid values, see [Task size](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size) in the *Amazon Elastic Container Service Developer Guide*.
     cpu: Any = None
+    # Enables fault injection and allows for fault injection requests to be accepted from the task's containers. The default value is ``false``.
     enable_fault_injection: Any = None
-    execution_role_arn: Any = None
-    family: Any = None
-    id: Any = None
-    ipc_mode: Any = None
-    memory: Any = None
-    network_mode: Any = None
-    pid_mode: Any = None
-    region: Any = None
-    requires_compatibilities: Any = None
-    skip_destroy: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    task_role_arn: Any = None
-    track_latest: Any = None
+    # The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on FARGATElong. For more information, see [Using data volumes in tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) in the *Amazon ECS Developer Guide;*. For tasks using the Fargate launch type, the task requires the following platforms: + Linux platform version ``1.4.0`` or later. + Windows platform version ``1.0.0`` or later.
     ephemeral_storage: Any = None
+    # The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make AWS API calls on your behalf. For informationabout the required IAM roles for Amazon ECS, see [IAM roles for Amazon ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security-ecs-iam-role-overview.html) in the *Amazon Elastic Container Service Developer Guide*.
+    execution_role_arn: Any = None
+    # The name of a family that this task definition is registered to. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add. To use revision numbers when you update a task definition, specify this property. If you don't specify a value, CFNlong generates a new task definition each time that you update it.
+    family: Any = None
+    # Configures the Amazon Elastic Inference accelerators to attach to the task, where each accelerator is specified by a device name and device type. (AI-inferred)
+    inference_accelerators: Any = None
+    # The IPC resource namespace to use for the containers in the task. The valid values are ``host``, ``task``, or ``none``. If ``host`` is specified, then all containers within the tasks that specified the ``host`` IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If ``task`` is specified, all containers within the specified task share the same IPC resources. If ``none`` is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. If the ``host`` IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. If you are setting namespaced kernel parameters using ``systemControls`` for the containers in the task, the following will apply to your IPC resource namespace. For more information, see [System Controls](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html) in the *Amazon Elastic Container Service Developer Guide*. + For tasks that use the ``host`` IPC mode, IPC namespace related ``systemControls`` are not supported. + For tasks that use the ``task`` IPC mode, IPC namespace related ``systemControls`` will apply to all containers within a task. This parameter is not supported for Windows containers or tasks run on FARGATElong.
+    ipc_mode: Any = None
+    # The amount (in MiB) of memory used by the task. If your tasks runs on Amazon EC2 instances, you must specify either a task-level memory value or a container-level memory value. This field is optional and any value can be used. If a task-level memory value is specified, the container-level memory value is optional. For more information regarding container-level memory and memory reservation, see [ContainerDefinition](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html). If your tasks runs on FARGATElong, this field is required. You must use one of the following values. The value you choose determines your range of valid values for the ``cpu`` parameter. + 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available ``cpu`` values: 256 (.25 vCPU) + 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available ``cpu`` values: 512 (.5 vCPU) + 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available ``cpu`` values: 1024 (1 vCPU) + Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available ``cpu`` values: 2048 (2 vCPU) + Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available ``cpu`` values: 4096 (4 vCPU) + Between 16 GB and 60 GB in 4 GB increments - Available ``cpu`` values: 8192 (8 vCPU) This option requires Linux platform ``1.4.0`` or later. + Between 32GB and 120 GB in 8 GB increments - Available ``cpu`` values: 16384 (16 vCPU) This option requires Linux platform ``1.4.0`` or later.
+    memory: Any = None
+    # The Docker networking mode to use for the containers in the task. The valid values are ``none``, ``bridge``, ``awsvpc``, and ``host``. If no network mode is specified, the default is ``bridge``. For Amazon ECS tasks on Fargate, the ``awsvpc`` network mode is required. For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon EC2 Windows instances, ``<default>`` or ``awsvpc`` can be used. If the network mode is set to ``none``, you cannot specify port mappings in your container definitions, and the tasks containers do not have external connectivity. The ``host`` and ``awsvpc`` network modes offer the highest networking performance for containers because they use the EC2 network stack instead of the virtualized network stack provided by the ``bridge`` mode. With the ``host`` and ``awsvpc`` network modes, exposed container ports are mapped directly to the corresponding host port (for the ``host`` network mode) or the attached elastic network interface port (for the ``awsvpc`` network mode), so you cannot take advantage of dynamic host port mappings. When using the ``host`` network mode, you should not run containers using the root user (UID 0). It is considered best practice to use a non-root user. If the network mode is ``awsvpc``, the task is allocated an elastic network interface, and you must specify a [NetworkConfiguration](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_NetworkConfiguration.html) value when you create a service or run a task with the task definition. For more information, see [Task Networking](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html) in the *Amazon Elastic Container Service Developer Guide*. If the network mode is ``host``, you cannot run multiple instantiations of the same task on a single container instance when port mappings are used.
+    network_mode: Any = None
+    # The process namespace to use for the containers in the task. The valid values are ``host`` or ``task``. On Fargate for Linux containers, the only valid value is ``task``. For example, monitoring sidecars might need ``pidMode`` to access information about other containers running in the same task. If ``host`` is specified, all containers within the tasks that specified the ``host`` PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If ``task`` is specified, all containers within the specified task share the same process namespace. If no value is specified, the The default is a private namespace for each container. If the ``host`` PID mode is used, there's a heightened risk of undesired process namespace exposure. This parameter is not supported for Windows containers. This parameter is only supported for tasks that are hosted on FARGATElong if the tasks are using platform version ``1.4.0`` or later (Linux). This isn't supported for Windows containers on Fargate.
+    pid_mode: Any = None
+    # An array of placement constraint objects to use for tasks. This parameter isn't supported for tasks run on FARGATElong.
     placement_constraints: Any = None
+    # The configuration details for the App Mesh proxy. For tasks that use the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the ``ecs-init`` package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version ``20190301`` or later, then they contain the required versions of the container agent and ``ecs-init``. For more information, see [Amazon ECS-optimized Linux AMI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html)
     proxy_configuration: Any = None
+    # The task launch types the task definition was validated against. The valid values are ``MANAGED_INSTANCES``, ``EC2``, ``FARGATE``, and ``EXTERNAL``. For more information, see [Amazon ECS launch types](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) in the *Amazon Elastic Container Service Developer Guide*.
+    requires_compatibilities: Any = None
+    # Information about the platform for the Amazon ECS service or task. For more information about ``RuntimePlatform``, see [RuntimePlatform](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform) in the *Amazon Elastic Container Service Developer Guide*.
     runtime_platform: Any = None
-    volume: Any = None
+    # The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value. You define both of them. The following basic restrictions apply to tags: + Maximum number of tags per resource - 50 + For each resource, each tag key must be unique, and each tag key can have only one value. + Maximum key length - 128 Unicode characters in UTF-8 + Maximum value length - 256 Unicode characters in UTF-8 + If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. + Tag keys and values are case-sensitive. + Do not use ``aws:``, ``AWS:``, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
+    tags: Any = None
+    # The short name or full Amazon Resource Name (ARN) of the IAMlong role that grants containers in the task permission to call AWS APIs on your behalf. For more information, see [Amazon ECS Task Role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html) in the *Amazon Elastic Container Service Developer Guide*. IAM roles for tasks on Windows require that the ``-EnableTaskIAMRole`` option is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code to use the feature. For more information, see [Windows IAM roles for tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html) in the *Amazon Elastic Container Service Developer Guide*. String validation is done on the ECS side. If an invalid string value is given for ``TaskRoleArn``, it may cause the Cloudformation job to hang.
+    task_role_arn: Any = None
+    # The list of data volume definitions for the task. For more information, see [Using data volumes in tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) in the *Amazon Elastic Container Service Developer Guide*. The ``host`` and ``sourcePath`` parameters aren't supported for tasks run on FARGATElong.
+    volumes: Any = None
+
+@dataclasses.dataclass
+class TaskDefinitionAttrs:
+    # A list of container definitions in JSON format that describe the different containers that make up your task. For more information about container definition parameters and defaults, see [Amazon ECS Task Definitions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html) in the *Amazon Elastic Container Service Developer Guide*.
+    container_definitions: Any = None
+    # The number of ``cpu`` units used by the task. If you use the EC2 launch type, this field is optional. Any value can be used. If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines your range of valid values for the ``memory`` parameter. If you're using the EC2 launch type or the external launch type, this field is optional. Supported values are between ``128`` CPU units (``0.125`` vCPUs) and ``196608`` CPU units (``192`` vCPUs). This field is required for Fargate. For information about the valid values, see [Task size](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size) in the *Amazon Elastic Container Service Developer Guide*.
+    cpu: Any = None
+    # Enables fault injection and allows for fault injection requests to be accepted from the task's containers. The default value is ``false``.
+    enable_fault_injection: Any = None
+    # The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on FARGATElong. For more information, see [Using data volumes in tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) in the *Amazon ECS Developer Guide;*. For tasks using the Fargate launch type, the task requires the following platforms: + Linux platform version ``1.4.0`` or later. + Windows platform version ``1.0.0`` or later.
+    ephemeral_storage: Any = None
+    # The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make AWS API calls on your behalf. For informationabout the required IAM roles for Amazon ECS, see [IAM roles for Amazon ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security-ecs-iam-role-overview.html) in the *Amazon Elastic Container Service Developer Guide*.
+    execution_role_arn: Any = None
+    # The name of a family that this task definition is registered to. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add. To use revision numbers when you update a task definition, specify this property. If you don't specify a value, CFNlong generates a new task definition each time that you update it.
+    family: Any = None
+    # Configures the Amazon Elastic Inference accelerators to attach to the task, where each accelerator is specified by a device name and device type. (AI-inferred)
+    inference_accelerators: Any = None
+    # The IPC resource namespace to use for the containers in the task. The valid values are ``host``, ``task``, or ``none``. If ``host`` is specified, then all containers within the tasks that specified the ``host`` IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If ``task`` is specified, all containers within the specified task share the same IPC resources. If ``none`` is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. If the ``host`` IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. If you are setting namespaced kernel parameters using ``systemControls`` for the containers in the task, the following will apply to your IPC resource namespace. For more information, see [System Controls](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html) in the *Amazon Elastic Container Service Developer Guide*. + For tasks that use the ``host`` IPC mode, IPC namespace related ``systemControls`` are not supported. + For tasks that use the ``task`` IPC mode, IPC namespace related ``systemControls`` will apply to all containers within a task. This parameter is not supported for Windows containers or tasks run on FARGATElong.
+    ipc_mode: Any = None
+    # The amount (in MiB) of memory used by the task. If your tasks runs on Amazon EC2 instances, you must specify either a task-level memory value or a container-level memory value. This field is optional and any value can be used. If a task-level memory value is specified, the container-level memory value is optional. For more information regarding container-level memory and memory reservation, see [ContainerDefinition](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html). If your tasks runs on FARGATElong, this field is required. You must use one of the following values. The value you choose determines your range of valid values for the ``cpu`` parameter. + 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available ``cpu`` values: 256 (.25 vCPU) + 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available ``cpu`` values: 512 (.5 vCPU) + 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available ``cpu`` values: 1024 (1 vCPU) + Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available ``cpu`` values: 2048 (2 vCPU) + Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available ``cpu`` values: 4096 (4 vCPU) + Between 16 GB and 60 GB in 4 GB increments - Available ``cpu`` values: 8192 (8 vCPU) This option requires Linux platform ``1.4.0`` or later. + Between 32GB and 120 GB in 8 GB increments - Available ``cpu`` values: 16384 (16 vCPU) This option requires Linux platform ``1.4.0`` or later.
+    memory: Any = None
+    # The Docker networking mode to use for the containers in the task. The valid values are ``none``, ``bridge``, ``awsvpc``, and ``host``. If no network mode is specified, the default is ``bridge``. For Amazon ECS tasks on Fargate, the ``awsvpc`` network mode is required. For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon EC2 Windows instances, ``<default>`` or ``awsvpc`` can be used. If the network mode is set to ``none``, you cannot specify port mappings in your container definitions, and the tasks containers do not have external connectivity. The ``host`` and ``awsvpc`` network modes offer the highest networking performance for containers because they use the EC2 network stack instead of the virtualized network stack provided by the ``bridge`` mode. With the ``host`` and ``awsvpc`` network modes, exposed container ports are mapped directly to the corresponding host port (for the ``host`` network mode) or the attached elastic network interface port (for the ``awsvpc`` network mode), so you cannot take advantage of dynamic host port mappings. When using the ``host`` network mode, you should not run containers using the root user (UID 0). It is considered best practice to use a non-root user. If the network mode is ``awsvpc``, the task is allocated an elastic network interface, and you must specify a [NetworkConfiguration](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_NetworkConfiguration.html) value when you create a service or run a task with the task definition. For more information, see [Task Networking](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html) in the *Amazon Elastic Container Service Developer Guide*. If the network mode is ``host``, you cannot run multiple instantiations of the same task on a single container instance when port mappings are used.
+    network_mode: Any = None
+    # The process namespace to use for the containers in the task. The valid values are ``host`` or ``task``. On Fargate for Linux containers, the only valid value is ``task``. For example, monitoring sidecars might need ``pidMode`` to access information about other containers running in the same task. If ``host`` is specified, all containers within the tasks that specified the ``host`` PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If ``task`` is specified, all containers within the specified task share the same process namespace. If no value is specified, the The default is a private namespace for each container. If the ``host`` PID mode is used, there's a heightened risk of undesired process namespace exposure. This parameter is not supported for Windows containers. This parameter is only supported for tasks that are hosted on FARGATElong if the tasks are using platform version ``1.4.0`` or later (Linux). This isn't supported for Windows containers on Fargate.
+    pid_mode: Any = None
+    # An array of placement constraint objects to use for tasks. This parameter isn't supported for tasks run on FARGATElong.
+    placement_constraints: Any = None
+    # The configuration details for the App Mesh proxy. For tasks that use the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the ``ecs-init`` package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version ``20190301`` or later, then they contain the required versions of the container agent and ``ecs-init``. For more information, see [Amazon ECS-optimized Linux AMI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html)
+    proxy_configuration: Any = None
+    # The task launch types the task definition was validated against. The valid values are ``MANAGED_INSTANCES``, ``EC2``, ``FARGATE``, and ``EXTERNAL``. For more information, see [Amazon ECS launch types](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) in the *Amazon Elastic Container Service Developer Guide*.
+    requires_compatibilities: Any = None
+    # Information about the platform for the Amazon ECS service or task. For more information about ``RuntimePlatform``, see [RuntimePlatform](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform) in the *Amazon Elastic Container Service Developer Guide*.
+    runtime_platform: Any = None
+    # The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value. You define both of them. The following basic restrictions apply to tags: + Maximum number of tags per resource - 50 + For each resource, each tag key must be unique, and each tag key can have only one value. + Maximum key length - 128 Unicode characters in UTF-8 + Maximum value length - 256 Unicode characters in UTF-8 + If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. + Tag keys and values are case-sensitive. + Do not use ``aws:``, ``AWS:``, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
+    tags: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies this task definition. (AI-inferred)
+    task_definition_arn: Any = None
+    # The short name or full Amazon Resource Name (ARN) of the IAMlong role that grants containers in the task permission to call AWS APIs on your behalf. For more information, see [Amazon ECS Task Role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html) in the *Amazon Elastic Container Service Developer Guide*. IAM roles for tasks on Windows require that the ``-EnableTaskIAMRole`` option is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code to use the feature. For more information, see [Windows IAM roles for tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html) in the *Amazon Elastic Container Service Developer Guide*. String validation is done on the ECS side. If an invalid string value is given for ``TaskRoleArn``, it may cause the Cloudformation job to hang.
+    task_role_arn: Any = None
+    # The list of data volume definitions for the task. For more information, see [Using data volumes in tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) in the *Amazon Elastic Container Service Developer Guide*. The ``host`` and ``sourcePath`` parameters aren't supported for tasks run on FARGATElong.
+    volumes: Any = None
 
 TaskDefinition = ubx.ResourceBinding(
     wire_type="aws_ecs_task_definition",
     fields={
-        "container_definitions": ubx.FieldSpec(wire_name="container_definitions"),
+        "container_definitions": ubx.FieldSpec(
+            wire_name="container_definitions",
+            kind="list",
+            fields=_TaskDefinition_ContainerDefinitionsFields,
+        ),
         "cpu": ubx.FieldSpec(wire_name="cpu"),
         "enable_fault_injection": ubx.FieldSpec(wire_name="enable_fault_injection"),
+        "ephemeral_storage": ubx.FieldSpec(
+            wire_name="ephemeral_storage",
+            kind="object",
+            fields=_TaskDefinition_EphemeralStorageFields,
+        ),
         "execution_role_arn": ubx.FieldSpec(wire_name="execution_role_arn"),
         "family": ubx.FieldSpec(wire_name="family"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "inference_accelerators": ubx.FieldSpec(
+            wire_name="inference_accelerators",
+            kind="list",
+            fields=_TaskDefinition_InferenceAcceleratorsFields,
+        ),
         "ipc_mode": ubx.FieldSpec(wire_name="ipc_mode"),
         "memory": ubx.FieldSpec(wire_name="memory"),
         "network_mode": ubx.FieldSpec(wire_name="network_mode"),
         "pid_mode": ubx.FieldSpec(wire_name="pid_mode"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "requires_compatibilities": ubx.FieldSpec(wire_name="requires_compatibilities"),
-        "skip_destroy": ubx.FieldSpec(wire_name="skip_destroy"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "task_role_arn": ubx.FieldSpec(wire_name="task_role_arn"),
-        "track_latest": ubx.FieldSpec(wire_name="track_latest"),
-        "ephemeral_storage": ubx.FieldSpec(
-            wire_name="ephemeral_storage",
-            kind="list",
-            fields=_TaskDefinition_EphemeralStorageFields,
-        ),
         "placement_constraints": ubx.FieldSpec(
             wire_name="placement_constraints",
-            kind="set",
+            kind="list",
             fields=_TaskDefinition_PlacementConstraintsFields,
         ),
         "proxy_configuration": ubx.FieldSpec(
             wire_name="proxy_configuration",
-            kind="list",
+            kind="object",
             fields=_TaskDefinition_ProxyConfigurationFields,
         ),
+        "requires_compatibilities": ubx.FieldSpec(wire_name="requires_compatibilities"),
         "runtime_platform": ubx.FieldSpec(
             wire_name="runtime_platform",
-            kind="list",
+            kind="object",
             fields=_TaskDefinition_RuntimePlatformFields,
         ),
-        "volume": ubx.FieldSpec(
-            wire_name="volume",
-            kind="set",
-            fields=_TaskDefinition_VolumeFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_TaskDefinition_TagsFields,
+        ),
+        "task_role_arn": ubx.FieldSpec(wire_name="task_role_arn"),
+        "volumes": ubx.FieldSpec(
+            wire_name="volumes",
+            kind="list",
+            fields=_TaskDefinition_VolumesFields,
         ),
     },
 )

@@ -4,8 +4,16 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrafficMirrorFilterRule_DestinationPortRange struct {
+	// The first port in the Traffic Mirror port range.
 	FromPort any
+	// The last port in the Traffic Mirror port range.
 	ToPort any
+}
+
+type TrafficMirrorFilterRule_Tags struct {
+	Key any
+	// The value of a tag key-value pair assigned to the traffic mirror filter rule, used to organize and identify the rule. (AI-inferred)
+	Value any
 }
 
 var TrafficMirrorFilterRule_DestinationPortRangeFields = ubx.FieldMap{
@@ -13,19 +21,61 @@ var TrafficMirrorFilterRule_DestinationPortRangeFields = ubx.FieldMap{
 		"ToPort": ubx.FieldSpec{WireName: "to_port"},
 	}
 
+var TrafficMirrorFilterRule_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type TrafficMirrorFilterRuleConfig struct {
+	// The description of the Traffic Mirror Filter rule.
 	Description any
+	// The destination CIDR block to assign to the Traffic Mirror rule.
 	DestinationCidrBlock any
-	Id any
-	Protocol any
-	Region any
-	RuleAction any
-	RuleNumber any
-	SourceCidrBlock any
-	TrafficDirection any
-	TrafficMirrorFilterId any
+	// Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred)
 	DestinationPortRange any
+	// The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule.
+	Protocol any
+	// The action to take on the filtered traffic.
+	RuleAction any
+	// The number of the Traffic Mirror rule.
+	RuleNumber any
+	// The source CIDR block to assign to the Traffic Mirror Filter rule.
+	SourceCidrBlock any
+	// The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred)
 	SourcePortRange any
+	// Any tags assigned to the Traffic Mirror Filter rule.
+	Tags any
+	// The type of traffic.
+	TrafficDirection any
+	// The ID of the filter that this rule is associated with.
+	TrafficMirrorFilterId any
+}
+
+type TrafficMirrorFilterRuleAttrs struct {
+	// The description of the Traffic Mirror Filter rule.
+	Description any
+	// The destination CIDR block to assign to the Traffic Mirror rule.
+	DestinationCidrBlock any
+	// Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred)
+	DestinationPortRange any
+	// The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule.
+	Protocol any
+	// The action to take on the filtered traffic.
+	RuleAction any
+	// The number of the Traffic Mirror rule.
+	RuleNumber any
+	// The source CIDR block to assign to the Traffic Mirror Filter rule.
+	SourceCidrBlock any
+	// The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred)
+	SourcePortRange any
+	// Any tags assigned to the Traffic Mirror Filter rule.
+	Tags any
+	// The type of traffic.
+	TrafficDirection any
+	// The ID of the filter that this rule is associated with.
+	TrafficMirrorFilterId any
+	// The ID of the Traffic Mirror Filter rule.
+	TrafficMirrorFilterRuleId any
 }
 
 var TrafficMirrorFilterRule = ubx.ResourceBinding{
@@ -33,23 +83,26 @@ var TrafficMirrorFilterRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DestinationCidrBlock": ubx.FieldSpec{WireName: "destination_cidr_block"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"DestinationPortRange": ubx.FieldSpec{
+			WireName: "destination_port_range",
+			Kind: "object",
+			Fields: TrafficMirrorFilterRule_DestinationPortRangeFields,
+		},
 		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RuleAction": ubx.FieldSpec{WireName: "rule_action"},
 		"RuleNumber": ubx.FieldSpec{WireName: "rule_number"},
 		"SourceCidrBlock": ubx.FieldSpec{WireName: "source_cidr_block"},
-		"TrafficDirection": ubx.FieldSpec{WireName: "traffic_direction"},
-		"TrafficMirrorFilterId": ubx.FieldSpec{WireName: "traffic_mirror_filter_id"},
-		"DestinationPortRange": ubx.FieldSpec{
-			WireName: "destination_port_range",
-			Kind: "list",
-			Fields: TrafficMirrorFilterRule_DestinationPortRangeFields,
-		},
 		"SourcePortRange": ubx.FieldSpec{
 			WireName: "source_port_range",
-			Kind: "list",
+			Kind: "object",
 			Fields: TrafficMirrorFilterRule_DestinationPortRangeFields,
 		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: TrafficMirrorFilterRule_TagsFields,
+		},
+		"TrafficDirection": ubx.FieldSpec{WireName: "traffic_direction"},
+		"TrafficMirrorFilterId": ubx.FieldSpec{WireName: "traffic_mirror_filter_id"},
 	},
 }

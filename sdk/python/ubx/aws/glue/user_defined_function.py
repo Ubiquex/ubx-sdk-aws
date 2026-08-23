@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserDefinedFunction_ResourceUris:
+    # Specifies the type of resource stored at the URI, such as 'JAR', 'FILE', or 'ARCHIVE', for the user-defined function's resource URIs. (AI-inferred)
     resource_type: Any = None
+    # The URI (typically an S3 path or similar location) of the resource (e.g., jar, archive, or file) associated with the user-defined function. (AI-inferred)
     uri: Any = None
 
 _UserDefinedFunction_ResourceUrisFields = {
@@ -18,30 +20,52 @@ _UserDefinedFunction_ResourceUrisFields = {
 
 @dataclasses.dataclass
 class UserDefinedFunctionConfig:
-    catalog_id: Any = None
+    # The Java class that contains the function code.
     class_name: Any = None
+    # The name of the catalog database in which the function is located.
     database_name: Any = None
-    id: Any = None
-    name: Any = None
+    # The name of the function.
+    function_name: Any = None
+    # The type of the function.
+    function_type: Any = None
+    # The owner of the function.
     owner_name: Any = None
+    # The owner type.
     owner_type: Any = None
-    region: Any = None
+    # The resource URIs for the function.
+    resource_uris: Any = None
+
+@dataclasses.dataclass
+class UserDefinedFunctionAttrs:
+    # The Amazon Resource Name (ARN) of the user-defined function.
+    arn: Any = None
+    # The Java class that contains the function code.
+    class_name: Any = None
+    # The name of the catalog database in which the function is located.
+    database_name: Any = None
+    # The name of the function.
+    function_name: Any = None
+    # The type of the function.
+    function_type: Any = None
+    # The owner of the function.
+    owner_name: Any = None
+    # The owner type.
+    owner_type: Any = None
+    # The resource URIs for the function.
     resource_uris: Any = None
 
 UserDefinedFunction = ubx.ResourceBinding(
     wire_type="aws_glue_user_defined_function",
     fields={
-        "catalog_id": ubx.FieldSpec(wire_name="catalog_id"),
         "class_name": ubx.FieldSpec(wire_name="class_name"),
         "database_name": ubx.FieldSpec(wire_name="database_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
+        "function_name": ubx.FieldSpec(wire_name="function_name"),
+        "function_type": ubx.FieldSpec(wire_name="function_type"),
         "owner_name": ubx.FieldSpec(wire_name="owner_name"),
         "owner_type": ubx.FieldSpec(wire_name="owner_type"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "resource_uris": ubx.FieldSpec(
             wire_name="resource_uris",
-            kind="set",
+            kind="list",
             fields=_UserDefinedFunction_ResourceUrisFields,
         ),
     },

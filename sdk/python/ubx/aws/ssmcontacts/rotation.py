@@ -7,97 +7,87 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Rotation_Recurrence_DailySettings:
-    hour_of_day: Any = None
-    minute_of_hour: Any = None
-
-@dataclasses.dataclass
 class Rotation_Recurrence_MonthlySettings:
+    # Specifies the day of the month on which the monthly rotation shift begins, used in monthly recurrence settings for an AWS Systems Manager Incident Manager contacts rotation. (AI-inferred)
     day_of_month: Any = None
+    # Specifies the time of day (in HH:MM format) when the shift handoff occurs for the monthly rotation schedule, within the monthly recurrence settings. (AI-inferred)
     hand_off_time: Any = None
 
 @dataclasses.dataclass
 class Rotation_Recurrence_ShiftCoverages_CoverageTimes:
-    end: Any = None
-    start: Any = None
+    # The time (in HH:MM format) when the shift coverage window ends for the associated day in the rotation recurrence. (AI-inferred)
+    end_time: Any = None
+    # The start time of the daily coverage window, in 24-hour HH:MM format, that defines when this shift's on-call coverage begins. (AI-inferred)
+    start_time: Any = None
 
 @dataclasses.dataclass
 class Rotation_Recurrence_ShiftCoverages:
-    map_block_key: Any = None
+    # Specifies the list of time ranges (each with start and end time) during which on-call coverage is active for a particular day of the week in the rotation's shift coverage schedule. (AI-inferred)
     coverage_times: Any = None
+    # The day of the week (e.g., Monday, Tuesday) that this shift coverage applies to within the rotation's recurrence schedule. (AI-inferred)
+    day_of_week: Any = None
 
 @dataclasses.dataclass
 class Rotation_Recurrence_WeeklySettings:
+    # Specifies the day of the week (using a three-letter abbreviation such as MON, TUE, WED, THU, FRI, SAT, or SUN) on which the rotation's weekly on-call shift occurs. (AI-inferred)
     day_of_week: Any = None
+    # The time of day, in 24-hour HH:MM format, when the on-call shift hands off to the next shift on the scheduled day of the week for the rotation recurrence. (AI-inferred)
     hand_off_time: Any = None
 
 @dataclasses.dataclass
 class Rotation_Recurrence:
-    number_of_on_calls: Any = None
-    recurrence_multiplier: Any = None
+    # Information about on-call rotations that recur daily.
     daily_settings: Any = None
+    # Information about on-call rotations that recur monthly.
     monthly_settings: Any = None
+    # Number of Oncalls per shift.
+    number_of_on_calls: Any = None
+    # The number of days, weeks, or months a single rotation lasts.
+    recurrence_multiplier: Any = None
+    # Information about the days of the week included in on-call rotation coverage.
     shift_coverages: Any = None
+    # Information about on-call rotations that recur weekly.
     weekly_settings: Any = None
 
-_Rotation_Recurrence_DailySettingsFields = {
-    "hour_of_day": ubx.FieldSpec(wire_name="hour_of_day"),
-    "minute_of_hour": ubx.FieldSpec(wire_name="minute_of_hour"),
-}
+@dataclasses.dataclass
+class Rotation_Tags:
+    key: Any = None
+    # The value of a tag assigned to the SSM Contacts rotation, used to store metadata such as ownership, environment, or cost center for organizing and managing the rotation resource. (AI-inferred)
+    value: Any = None
 
 _Rotation_Recurrence_MonthlySettingsFields = {
     "day_of_month": ubx.FieldSpec(wire_name="day_of_month"),
-    "hand_off_time": ubx.FieldSpec(
-        wire_name="hand_off_time",
-        kind="list",
-        fields=_Rotation_Recurrence_DailySettingsFields,
-    ),
+    "hand_off_time": ubx.FieldSpec(wire_name="hand_off_time"),
 }
 
 _Rotation_Recurrence_ShiftCoverages_CoverageTimesFields = {
-    "end": ubx.FieldSpec(
-        wire_name="end",
-        kind="list",
-        fields=_Rotation_Recurrence_DailySettingsFields,
-    ),
-    "start": ubx.FieldSpec(
-        wire_name="start",
-        kind="list",
-        fields=_Rotation_Recurrence_DailySettingsFields,
-    ),
+    "end_time": ubx.FieldSpec(wire_name="end_time"),
+    "start_time": ubx.FieldSpec(wire_name="start_time"),
 }
 
 _Rotation_Recurrence_ShiftCoveragesFields = {
-    "map_block_key": ubx.FieldSpec(wire_name="map_block_key"),
     "coverage_times": ubx.FieldSpec(
         wire_name="coverage_times",
         kind="list",
         fields=_Rotation_Recurrence_ShiftCoverages_CoverageTimesFields,
     ),
+    "day_of_week": ubx.FieldSpec(wire_name="day_of_week"),
 }
 
 _Rotation_Recurrence_WeeklySettingsFields = {
     "day_of_week": ubx.FieldSpec(wire_name="day_of_week"),
-    "hand_off_time": ubx.FieldSpec(
-        wire_name="hand_off_time",
-        kind="list",
-        fields=_Rotation_Recurrence_DailySettingsFields,
-    ),
+    "hand_off_time": ubx.FieldSpec(wire_name="hand_off_time"),
 }
 
 _Rotation_RecurrenceFields = {
-    "number_of_on_calls": ubx.FieldSpec(wire_name="number_of_on_calls"),
-    "recurrence_multiplier": ubx.FieldSpec(wire_name="recurrence_multiplier"),
-    "daily_settings": ubx.FieldSpec(
-        wire_name="daily_settings",
-        kind="list",
-        fields=_Rotation_Recurrence_DailySettingsFields,
-    ),
+    "daily_settings": ubx.FieldSpec(wire_name="daily_settings"),
     "monthly_settings": ubx.FieldSpec(
         wire_name="monthly_settings",
         kind="list",
         fields=_Rotation_Recurrence_MonthlySettingsFields,
     ),
+    "number_of_on_calls": ubx.FieldSpec(wire_name="number_of_on_calls"),
+    "recurrence_multiplier": ubx.FieldSpec(wire_name="recurrence_multiplier"),
     "shift_coverages": ubx.FieldSpec(
         wire_name="shift_coverages",
         kind="list",
@@ -110,29 +100,59 @@ _Rotation_RecurrenceFields = {
     ),
 }
 
+_Rotation_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 @dataclasses.dataclass
 class RotationConfig:
+    # Members of the rotation
     contact_ids: Any = None
+    # Name of the Rotation
     name: Any = None
-    region: Any = None
-    start_time: Any = None
-    tags: Any = None
-    time_zone_id: Any = None
+    # Information about when an on-call rotation is in effect and how long the rotation period lasts.
     recurrence: Any = None
+    # Start time of the first shift of Oncall Schedule
+    start_time: Any = None
+    # Specifies the tags to attach to the rotation, where each tag is an object containing a Key and Value, used to identify, organize, and manage the rotation resource. (AI-inferred)
+    tags: Any = None
+    # TimeZone Identifier for the Oncall Schedule
+    time_zone_id: Any = None
+
+@dataclasses.dataclass
+class RotationAttrs:
+    # The Amazon Resource Name (ARN) of the rotation.
+    arn: Any = None
+    # Members of the rotation
+    contact_ids: Any = None
+    # Name of the Rotation
+    name: Any = None
+    # Information about when an on-call rotation is in effect and how long the rotation period lasts.
+    recurrence: Any = None
+    # Start time of the first shift of Oncall Schedule
+    start_time: Any = None
+    # Specifies the tags to attach to the rotation, where each tag is an object containing a Key and Value, used to identify, organize, and manage the rotation resource. (AI-inferred)
+    tags: Any = None
+    # TimeZone Identifier for the Oncall Schedule
+    time_zone_id: Any = None
 
 Rotation = ubx.ResourceBinding(
     wire_type="aws_ssmcontacts_rotation",
     fields={
         "contact_ids": ubx.FieldSpec(wire_name="contact_ids"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "time_zone_id": ubx.FieldSpec(wire_name="time_zone_id"),
         "recurrence": ubx.FieldSpec(
             wire_name="recurrence",
-            kind="list",
+            kind="object",
             fields=_Rotation_RecurrenceFields,
         ),
+        "start_time": ubx.FieldSpec(wire_name="start_time"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Rotation_TagsFields,
+        ),
+        "time_zone_id": ubx.FieldSpec(wire_name="time_zone_id"),
     },
 )

@@ -7,76 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class App_CampaignHook:
-    lambda_function_name: Any = None
-    mode: Any = None
-    web_url: Any = None
-
-@dataclasses.dataclass
-class App_Limits:
-    daily: Any = None
-    maximum_duration: Any = None
-    messages_per_second: Any = None
-    total: Any = None
-
-@dataclasses.dataclass
-class App_QuietTime:
-    end: Any = None
-    start: Any = None
-
-_App_CampaignHookFields = {
-    "lambda_function_name": ubx.FieldSpec(wire_name="lambda_function_name"),
-    "mode": ubx.FieldSpec(wire_name="mode"),
-    "web_url": ubx.FieldSpec(wire_name="web_url"),
-}
-
-_App_LimitsFields = {
-    "daily": ubx.FieldSpec(wire_name="daily"),
-    "maximum_duration": ubx.FieldSpec(wire_name="maximum_duration"),
-    "messages_per_second": ubx.FieldSpec(wire_name="messages_per_second"),
-    "total": ubx.FieldSpec(wire_name="total"),
-}
-
-_App_QuietTimeFields = {
-    "end": ubx.FieldSpec(wire_name="end"),
-    "start": ubx.FieldSpec(wire_name="start"),
-}
-
-@dataclasses.dataclass
 class AppConfig:
-    id: Any = None
+    # The display name of the Amazon Pinpoint application. (AI-inferred)
     name: Any = None
-    name_prefix: Any = None
-    region: Any = None
+    # Assigns tags (key-value pairs) to the Amazon Pinpoint application, enabling categorization and management via AWS Resource Groups and cost allocation. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
-    campaign_hook: Any = None
-    limits: Any = None
-    quiet_time: Any = None
+
+@dataclasses.dataclass
+class AppAttrs:
+    # The Amazon Resource Name (ARN) of the Pinpoint application. (AI-inferred)
+    arn: Any = None
+    # The unique identifier assigned to the Amazon Pinpoint application when it is created. (AI-inferred)
+    id: Any = None
+    # The display name of the Amazon Pinpoint application. (AI-inferred)
+    name: Any = None
+    # Assigns tags (key-value pairs) to the Amazon Pinpoint application, enabling categorization and management via AWS Resource Groups and cost allocation. (AI-inferred)
+    tags: Any = None
 
 App = ubx.ResourceBinding(
     wire_type="aws_pinpoint_app",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "campaign_hook": ubx.FieldSpec(
-            wire_name="campaign_hook",
-            kind="list",
-            fields=_App_CampaignHookFields,
-        ),
-        "limits": ubx.FieldSpec(
-            wire_name="limits",
-            kind="list",
-            fields=_App_LimitsFields,
-        ),
-        "quiet_time": ubx.FieldSpec(
-            wire_name="quiet_time",
-            kind="list",
-            fields=_App_QuietTimeFields,
-        ),
     },
 )

@@ -3,59 +3,42 @@ package network
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Acl_Egress struct {
-	Action any
-	CidrBlock any
-	FromPort any
-	IcmpCode any
-	IcmpType any
-	Ipv6CidrBlock any
-	Protocol any
-	RuleNo any
-	ToPort any
+type Acl_Tags struct {
+	// The key of a tag attached to the network ACL, used to label and organize the resource for identification and management within AWS. (AI-inferred)
+	Key any
+	// The value portion of a key-value tag applied to the network ACL, used to assign metadata such as purpose or ownership to the ACL. (AI-inferred)
+	Value any
 }
 
-var Acl_EgressFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"IcmpCode": ubx.FieldSpec{WireName: "icmp_code"},
-		"IcmpType": ubx.FieldSpec{WireName: "icmp_type"},
-		"Ipv6CidrBlock": ubx.FieldSpec{WireName: "ipv6_cidr_block"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"RuleNo": ubx.FieldSpec{WireName: "rule_no"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
+var Acl_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type AclConfig struct {
-	Egress any
-	Id any
-	Ingress any
-	Region any
-	SubnetIds any
+	// The tags for the network ACL.
 	Tags any
-	TagsAll any
+	// The ID of the VPC for the network ACL.
+	VpcId any
+}
+
+type AclAttrs struct {
+	// The AWS-assigned identifier for the network ACL, which uses the format acl-xxxxxxxx. (AI-inferred)
+	Id any
+	// The tags for the network ACL.
+	Tags any
+	// The ID of the VPC for the network ACL.
 	VpcId any
 }
 
 var Acl = ubx.ResourceBinding{
 	WireType: "aws_network_acl",
 	Fields: ubx.FieldMap{
-		"Egress": ubx.FieldSpec{
-			WireName: "egress",
-			Kind: "set",
-			Fields: Acl_EgressFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Acl_TagsFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Ingress": ubx.FieldSpec{
-			WireName: "ingress",
-			Kind: "set",
-			Fields: Acl_EgressFields,
-		},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

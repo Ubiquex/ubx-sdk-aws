@@ -3,126 +3,179 @@ package evidently
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Launch_ExecutionStatus struct {
+	// Provide CANCELLED or COMPLETED as the launch desired state. Defaults to Completed if not provided.
+	DesiredState any
+	// Provide a reason for stopping the launch. Defaults to empty if not provided.
+	Reason any
+	// Provide START or STOP action to apply on a launch
+	Status any
+}
+
 type Launch_Groups struct {
+	// A human-readable description of the launch group, specifying the purpose or context of the traffic segment in the Evidently launch. (AI-inferred)
 	Description any
+	// The name or ARN of the feature that this launch group uses to serve a variation to the assigned traffic. (AI-inferred)
 	Feature any
-	Name any
+	// The name of a group in an AWS Evidently launch, which identifies a feature variation and the percentage of traffic allocated to that group. (AI-inferred)
+	GroupName any
+	// The name of the variation that this launch group is allocated, determining which feature variant is served to users in this group. (AI-inferred)
 	Variation any
 }
 
-type Launch_MetricMonitors_MetricDefinition struct {
+type Launch_MetricMonitors struct {
+	// For an AWS Evidently launch metric monitor, this specifies the event attribute name (e.g., `userId`) that identifies the entity the metric is measured for. (AI-inferred)
 	EntityIdKey any
+	// The CloudWatch Events event pattern, specified as a JSON string, that defines which application events are counted for this metric monitor in an Evidently launch, used to extract metric values. (AI-inferred)
 	EventPattern any
-	Name any
+	// The metric_name field is the human-readable name of a metric that the Evidently launch monitors, used by Evidently to identify the metric in console views and when reporting metric values. (AI-inferred)
+	MetricName any
+	// The human-readable label that describes the unit of measurement for the metric being monitored by this metric monitor (for example, 'requests' or 'errors'). (AI-inferred)
 	UnitLabel any
+	// The JSON path or key in the event payload that holds the numeric value used to evaluate the metric for the AWS Evidently launch's metric monitor. (AI-inferred)
 	ValueKey any
 }
 
-type Launch_MetricMonitors struct {
-	MetricDefinition any
+type Launch_ScheduledSplitsConfig_GroupWeights struct {
+	// The name of the feature variation (group) to which the corresponding weight is assigned in this scheduled traffic split for the AWS Evidently launch. (AI-inferred)
+	GroupName any
+	// Sets the proportion of traffic allocated to the corresponding variation group for a scheduled split in the Amazon CloudWatch Evidently launch. (AI-inferred)
+	SplitWeight any
 }
 
-type Launch_ScheduledSplitsConfig_Steps_SegmentOverrides struct {
+type Launch_ScheduledSplitsConfig_SegmentOverrides struct {
+	// The order in which this segment override is evaluated relative to other segment overrides in the same scheduled split, with lower numbers evaluated first. (AI-inferred)
 	EvaluationOrder any
+	// Specifies the name or ARN of the Evidently segment to which the override applies, enabling different traffic allocation or variation choices for users matching that segment during the launch step. (AI-inferred)
 	Segment any
+	// Specifies the traffic percentage allocated to each feature variation for a given audience segment override in a scheduled split of the Evidently launch. (AI-inferred)
 	Weights any
 }
 
-type Launch_ScheduledSplitsConfig_Steps struct {
-	GroupWeights any
-	StartTime any
-	SegmentOverrides any
-}
-
 type Launch_ScheduledSplitsConfig struct {
-	Steps any
+	// The group_weights list assigns a traffic weight to each launch group (variation) for the scheduled split, determining what percentage of user traffic that variation receives during that time segment. (AI-inferred)
+	GroupWeights any
+	// Configures traffic-split overrides for specific audience segments during a scheduled split, letting you direct different proportions of a segment's users to the launch's variations. (AI-inferred)
+	SegmentOverrides any
+	// The UTC timestamp that marks the start of this step in a scheduled split launch, after which the specified group weights apply. (AI-inferred)
+	StartTime any
 }
 
-type Launch_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Launch_Tags struct {
+	// Represents a tag key assigned to the Evidently launch, allowing you to categorize and manage this launch resource with custom metadata. (AI-inferred)
+	Key any
+	// The value of a tag attached to the Evidently launch, used to organize and identify the launch resource. (AI-inferred)
+	Value any
 }
+
+var Launch_ExecutionStatusFields = ubx.FieldMap{
+		"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
+		"Reason": ubx.FieldSpec{WireName: "reason"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+	}
 
 var Launch_GroupsFields = ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Feature": ubx.FieldSpec{WireName: "feature"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"GroupName": ubx.FieldSpec{WireName: "group_name"},
 		"Variation": ubx.FieldSpec{WireName: "variation"},
 	}
 
-var Launch_MetricMonitors_MetricDefinitionFields = ubx.FieldMap{
+var Launch_MetricMonitorsFields = ubx.FieldMap{
 		"EntityIdKey": ubx.FieldSpec{WireName: "entity_id_key"},
 		"EventPattern": ubx.FieldSpec{WireName: "event_pattern"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
 		"UnitLabel": ubx.FieldSpec{WireName: "unit_label"},
 		"ValueKey": ubx.FieldSpec{WireName: "value_key"},
 	}
 
-var Launch_MetricMonitorsFields = ubx.FieldMap{
-		"MetricDefinition": ubx.FieldSpec{
-			WireName: "metric_definition",
-			Kind: "list",
-			Fields: Launch_MetricMonitors_MetricDefinitionFields,
-		},
+var Launch_ScheduledSplitsConfig_GroupWeightsFields = ubx.FieldMap{
+		"GroupName": ubx.FieldSpec{WireName: "group_name"},
+		"SplitWeight": ubx.FieldSpec{WireName: "split_weight"},
 	}
 
-var Launch_ScheduledSplitsConfig_Steps_SegmentOverridesFields = ubx.FieldMap{
+var Launch_ScheduledSplitsConfig_SegmentOverridesFields = ubx.FieldMap{
 		"EvaluationOrder": ubx.FieldSpec{WireName: "evaluation_order"},
 		"Segment": ubx.FieldSpec{WireName: "segment"},
-		"Weights": ubx.FieldSpec{WireName: "weights"},
-	}
-
-var Launch_ScheduledSplitsConfig_StepsFields = ubx.FieldMap{
-		"GroupWeights": ubx.FieldSpec{WireName: "group_weights"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"SegmentOverrides": ubx.FieldSpec{
-			WireName: "segment_overrides",
+		"Weights": ubx.FieldSpec{
+			WireName: "weights",
 			Kind: "list",
-			Fields: Launch_ScheduledSplitsConfig_Steps_SegmentOverridesFields,
+			Fields: Launch_ScheduledSplitsConfig_GroupWeightsFields,
 		},
 	}
 
 var Launch_ScheduledSplitsConfigFields = ubx.FieldMap{
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
+		"GroupWeights": ubx.FieldSpec{
+			WireName: "group_weights",
 			Kind: "list",
-			Fields: Launch_ScheduledSplitsConfig_StepsFields,
+			Fields: Launch_ScheduledSplitsConfig_GroupWeightsFields,
 		},
+		"SegmentOverrides": ubx.FieldSpec{
+			WireName: "segment_overrides",
+			Kind: "list",
+			Fields: Launch_ScheduledSplitsConfig_SegmentOverridesFields,
+		},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 	}
 
-var Launch_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Launch_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type LaunchConfig struct {
+	// Provides an optional human-readable description of the launch to help identify its purpose. (AI-inferred)
 	Description any
-	Id any
-	Name any
-	Project any
-	RandomizationSalt any
-	Region any
-	Tags any
-	TagsAll any
+	// Configures the execution state of an Amazon CloudWatch Evidently launch by specifying a target status (such as RUNNING or CANCELLED) and an optional status reason, which is used when updating the launch resource. (AI-inferred)
+	ExecutionStatus any
+	// Specifies the launch groups that define how traffic is allocated to feature variations in this Evidently launch. (AI-inferred)
 	Groups any
+	// This list specifies the CloudWatch metrics that Evidently monitors to evaluate the launch's performance, where each monitor defines the metric name, entity ID key, value key, event pattern, and unit label used to measure the launch's success. (AI-inferred)
 	MetricMonitors any
+	// The name of the Evidently launch. (AI-inferred)
+	Name any
+	// The name or ARN of the Evidently project in which this launch is created. (AI-inferred)
+	Project any
+	// A string hashing salt that Evidently uses to compute deterministic assignment of evaluation units to variations, allowing you to change the randomization behavior of the launch. (AI-inferred)
+	RandomizationSalt any
+	// A list of scheduled split configurations that define how traffic is allocated to each feature variation at specified start times, enabling a gradual time-based rollout for the launch. (AI-inferred)
 	ScheduledSplitsConfig any
-	Timeouts any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type LaunchAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies the Evidently launch within AWS. (AI-inferred)
+	Arn any
+	// Provides an optional human-readable description of the launch to help identify its purpose. (AI-inferred)
+	Description any
+	// Configures the execution state of an Amazon CloudWatch Evidently launch by specifying a target status (such as RUNNING or CANCELLED) and an optional status reason, which is used when updating the launch resource. (AI-inferred)
+	ExecutionStatus any
+	// Specifies the launch groups that define how traffic is allocated to feature variations in this Evidently launch. (AI-inferred)
+	Groups any
+	// This list specifies the CloudWatch metrics that Evidently monitors to evaluate the launch's performance, where each monitor defines the metric name, entity ID key, value key, event pattern, and unit label used to measure the launch's success. (AI-inferred)
+	MetricMonitors any
+	// The name of the Evidently launch. (AI-inferred)
+	Name any
+	// The name or ARN of the Evidently project in which this launch is created. (AI-inferred)
+	Project any
+	// A string hashing salt that Evidently uses to compute deterministic assignment of evaluation units to variations, allowing you to change the randomization behavior of the launch. (AI-inferred)
+	RandomizationSalt any
+	// A list of scheduled split configurations that define how traffic is allocated to each feature variation at specified start times, enabling a gradual time-based rollout for the launch. (AI-inferred)
+	ScheduledSplitsConfig any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Launch = ubx.ResourceBinding{
 	WireType: "aws_evidently_launch",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"RandomizationSalt": ubx.FieldSpec{WireName: "randomization_salt"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"ExecutionStatus": ubx.FieldSpec{
+			WireName: "execution_status",
+			Kind: "object",
+			Fields: Launch_ExecutionStatusFields,
+		},
 		"Groups": ubx.FieldSpec{
 			WireName: "groups",
 			Kind: "list",
@@ -133,15 +186,18 @@ var Launch = ubx.ResourceBinding{
 			Kind: "list",
 			Fields: Launch_MetricMonitorsFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Project": ubx.FieldSpec{WireName: "project"},
+		"RandomizationSalt": ubx.FieldSpec{WireName: "randomization_salt"},
 		"ScheduledSplitsConfig": ubx.FieldSpec{
 			WireName: "scheduled_splits_config",
 			Kind: "list",
 			Fields: Launch_ScheduledSplitsConfigFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Launch_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Launch_TagsFields,
 		},
 	},
 }

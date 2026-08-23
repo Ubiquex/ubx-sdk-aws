@@ -7,34 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class GuardrailVersion_Timeouts:
-    create: Any = None
-    delete: Any = None
-
-_GuardrailVersion_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-}
+class GuardrailVersionConfig:
+    # Description of the Guardrail version
+    description: Any = None
+    # Identifier (GuardrailId or GuardrailArn) for the guardrail
+    guardrail_identifier: Any = None
 
 @dataclasses.dataclass
-class GuardrailVersionConfig:
+class GuardrailVersionAttrs:
+    # Description of the Guardrail version
     description: Any = None
+    # Arn representation for the guardrail
     guardrail_arn: Any = None
-    region: Any = None
-    skip_destroy: Any = None
-    timeouts: Any = None
+    # Unique id for the guardrail
+    guardrail_id: Any = None
+    # Identifier (GuardrailId or GuardrailArn) for the guardrail
+    guardrail_identifier: Any = None
+    # Guardrail version
+    version: Any = None
 
 GuardrailVersion = ubx.ResourceBinding(
     wire_type="aws_bedrock_guardrail_version",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "guardrail_arn": ubx.FieldSpec(wire_name="guardrail_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "skip_destroy": ubx.FieldSpec(wire_name="skip_destroy"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_GuardrailVersion_TimeoutsFields,
-        ),
+        "guardrail_identifier": ubx.FieldSpec(wire_name="guardrail_identifier"),
     },
 )

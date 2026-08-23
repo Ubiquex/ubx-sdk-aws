@@ -3,27 +3,69 @@ package athena
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DataCatalog_Tags struct {
+	Key any
+	// The value string of a user-defined tag attached to the Athena data catalog, used for resource organization and access control. (AI-inferred)
+	Value any
+}
+
+var DataCatalog_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type DataCatalogConfig struct {
+	// The type of connection for a FEDERATED data catalog
+	ConnectionType any
+	// A description of the data catalog to be created.
 	Description any
-	Id any
+	// Text of the error that occurred during data catalog creation or deletion.
+	Error any
+	// The name of the data catalog to create. The catalog name must be unique for the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
 	Name any
+	// Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type.
 	Parameters any
-	Region any
+	// The status of the creation or deletion of the data catalog. LAMBDA, GLUE, and HIVE data catalog types are created synchronously. Their status is either CREATE_COMPLETE or CREATE_FAILED. The FEDERATED data catalog type is created asynchronously.
+	Status any
+	// Specifies the key-value tags to attach to the Athena data catalog for metadata management, cost allocation, and access control. (AI-inferred)
 	Tags any
-	TagsAll any
+	// The type of data catalog to create: LAMBDA for a federated catalog, GLUE for AWS Glue Catalog, or HIVE for an external hive metastore. FEDERATED is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.
+	Type any
+}
+
+type DataCatalogAttrs struct {
+	// The type of connection for a FEDERATED data catalog
+	ConnectionType any
+	// A description of the data catalog to be created.
+	Description any
+	// Text of the error that occurred during data catalog creation or deletion.
+	Error any
+	// The name of the data catalog to create. The catalog name must be unique for the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+	Name any
+	// Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type.
+	Parameters any
+	// The status of the creation or deletion of the data catalog. LAMBDA, GLUE, and HIVE data catalog types are created synchronously. Their status is either CREATE_COMPLETE or CREATE_FAILED. The FEDERATED data catalog type is created asynchronously.
+	Status any
+	// Specifies the key-value tags to attach to the Athena data catalog for metadata management, cost allocation, and access control. (AI-inferred)
+	Tags any
+	// The type of data catalog to create: LAMBDA for a federated catalog, GLUE for AWS Glue Catalog, or HIVE for an external hive metastore. FEDERATED is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.
 	Type any
 }
 
 var DataCatalog = ubx.ResourceBinding{
 	WireType: "aws_athena_data_catalog",
 	Fields: ubx.FieldMap{
+		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Error": ubx.FieldSpec{WireName: "error"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: DataCatalog_TagsFields,
+		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -2,27 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VpcConnectionConfig {
+  /** The type of private link authentication */
   authentication: string | Computed<string>;
+  /** Specifies the subnets in the client VPC where the MSK VPC connection is created, enabling network access from those subnets to the cluster. (AI-inferred) */
   clientSubnets: string[] | Computed<string[]>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** Specifies the security group IDs to attach to the elastic network interface created for the MSK VPC connection, controlling traffic to and from client resources. (AI-inferred) */
   securityGroups: string[] | Computed<string[]>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** A key-value pair to associate with a resource. */
+  tags?: unknown | Computed<unknown>;
+  /** The Amazon Resource Name (ARN) of the target cluster */
   targetClusterArn: string | Computed<string>;
+  /** The ID of the client VPC that will be connected to the MSK cluster using this VPC connection. (AI-inferred) */
   vpcId: string | Computed<string>;
 }
 
 export interface VpcConnectionAttrs {
+  /** The Amazon Resource Name (ARN) assigned to the MSK VPC connection. (AI-inferred) */
   arn: string;
+  /** The type of private link authentication */
   authentication: string;
+  /** Specifies the subnets in the client VPC where the MSK VPC connection is created, enabling network access from those subnets to the cluster. (AI-inferred) */
   clientSubnets: string[];
-  id: string;
-  region: string;
+  /** Specifies the security group IDs to attach to the elastic network interface created for the MSK VPC connection, controlling traffic to and from client resources. (AI-inferred) */
   securityGroups: string[];
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** A key-value pair to associate with a resource. */
+  tags: unknown;
+  /** The Amazon Resource Name (ARN) of the target cluster */
   targetClusterArn: string;
+  /** The ID of the client VPC that will be connected to the MSK cluster using this VPC connection. (AI-inferred) */
   vpcId: string;
 }
 
@@ -31,11 +38,8 @@ export const VpcConnection: ResourceBinding<VpcConnectionConfig, VpcConnectionAt
   fields: {
     authentication: "authentication",
     clientSubnets: "client_subnets",
-    id: "id",
-    region: "region",
     securityGroups: "security_groups",
     tags: "tags",
-    tagsAll: "tags_all",
     targetClusterArn: "target_cluster_arn",
     vpcId: "vpc_id",
   },

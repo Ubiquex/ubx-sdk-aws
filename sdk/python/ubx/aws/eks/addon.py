@@ -8,51 +8,83 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Addon_NamespaceConfig:
+    # The custom namespace for creating the add-on
     namespace: Any = None
 
 @dataclasses.dataclass
-class Addon_PodIdentityAssociation:
+class Addon_PodIdentityAssociations:
+    # The ARN of the IAM role to associate with the Kubernetes service account for the EKS pod identity association, which grants pods that use that service account permissions to call AWS APIs. (AI-inferred)
     role_arn: Any = None
+    # The name of the Kubernetes service account that the addon's pod identity association will map to the specified IAM role, granting the addon permissions via that role. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
-class Addon_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Addon_Tags:
+    key: Any = None
+    # The string value assigned to a tag key on the EKS addon, used to store arbitrary metadata such as environment or owner identifiers for the addon. (AI-inferred)
+    value: Any = None
 
 _Addon_NamespaceConfigFields = {
     "namespace": ubx.FieldSpec(wire_name="namespace"),
 }
 
-_Addon_PodIdentityAssociationFields = {
+_Addon_PodIdentityAssociationsFields = {
     "role_arn": ubx.FieldSpec(wire_name="role_arn"),
     "service_account": ubx.FieldSpec(wire_name="service_account"),
 }
 
-_Addon_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Addon_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class AddonConfig:
+    # Name of Addon
     addon_name: Any = None
+    # Version of Addon
     addon_version: Any = None
+    # Name of Cluster
     cluster_name: Any = None
+    # The configuration values to use with the add-on
     configuration_values: Any = None
-    id: Any = None
-    preserve: Any = None
-    region: Any = None
-    resolve_conflicts_on_create: Any = None
-    resolve_conflicts_on_update: Any = None
-    service_account_role_arn: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # The custom namespace configuration to use with the add-on
     namespace_config: Any = None
-    pod_identity_association: Any = None
-    timeouts: Any = None
+    # An array of pod identities to apply to this add-on.
+    pod_identity_associations: Any = None
+    # PreserveOnDelete parameter value
+    preserve_on_delete: Any = None
+    # Resolve parameter value conflicts
+    resolve_conflicts: Any = None
+    # IAM role to bind to the add-on's service account
+    service_account_role_arn: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class AddonAttrs:
+    # Name of Addon
+    addon_name: Any = None
+    # Version of Addon
+    addon_version: Any = None
+    # Amazon Resource Name (ARN) of the add-on
+    arn: Any = None
+    # Name of Cluster
+    cluster_name: Any = None
+    # The configuration values to use with the add-on
+    configuration_values: Any = None
+    # The custom namespace configuration to use with the add-on
+    namespace_config: Any = None
+    # An array of pod identities to apply to this add-on.
+    pod_identity_associations: Any = None
+    # PreserveOnDelete parameter value
+    preserve_on_delete: Any = None
+    # Resolve parameter value conflicts
+    resolve_conflicts: Any = None
+    # IAM role to bind to the add-on's service account
+    service_account_role_arn: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Addon = ubx.ResourceBinding(
     wire_type="aws_eks_addon",
@@ -61,28 +93,23 @@ Addon = ubx.ResourceBinding(
         "addon_version": ubx.FieldSpec(wire_name="addon_version"),
         "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
         "configuration_values": ubx.FieldSpec(wire_name="configuration_values"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "preserve": ubx.FieldSpec(wire_name="preserve"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "resolve_conflicts_on_create": ubx.FieldSpec(wire_name="resolve_conflicts_on_create"),
-        "resolve_conflicts_on_update": ubx.FieldSpec(wire_name="resolve_conflicts_on_update"),
-        "service_account_role_arn": ubx.FieldSpec(wire_name="service_account_role_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "namespace_config": ubx.FieldSpec(
             wire_name="namespace_config",
-            kind="list",
+            kind="object",
             fields=_Addon_NamespaceConfigFields,
         ),
-        "pod_identity_association": ubx.FieldSpec(
-            wire_name="pod_identity_association",
-            kind="set",
-            fields=_Addon_PodIdentityAssociationFields,
+        "pod_identity_associations": ubx.FieldSpec(
+            wire_name="pod_identity_associations",
+            kind="list",
+            fields=_Addon_PodIdentityAssociationsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Addon_TimeoutsFields,
+        "preserve_on_delete": ubx.FieldSpec(wire_name="preserve_on_delete"),
+        "resolve_conflicts": ubx.FieldSpec(wire_name="resolve_conflicts"),
+        "service_account_role_arn": ubx.FieldSpec(wire_name="service_account_role_arn"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Addon_TagsFields,
         ),
     },
 )

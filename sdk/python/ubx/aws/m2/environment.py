@@ -8,103 +8,99 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Environment_HighAvailabilityConfig:
+    # The desired number of instances to run in the high availability configuration of the AWS Mainframe Modernization (M2) environment. (AI-inferred)
     desired_capacity: Any = None
-
-@dataclasses.dataclass
-class Environment_StorageConfiguration_Efs:
-    file_system_id: Any = None
-    mount_point: Any = None
-
-@dataclasses.dataclass
-class Environment_StorageConfiguration:
-    efs: Any = None
-    fsx: Any = None
-
-@dataclasses.dataclass
-class Environment_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
 
 _Environment_HighAvailabilityConfigFields = {
     "desired_capacity": ubx.FieldSpec(wire_name="desired_capacity"),
 }
 
-_Environment_StorageConfiguration_EfsFields = {
-    "file_system_id": ubx.FieldSpec(wire_name="file_system_id"),
-    "mount_point": ubx.FieldSpec(wire_name="mount_point"),
-}
-
-_Environment_StorageConfigurationFields = {
-    "efs": ubx.FieldSpec(
-        wire_name="efs",
-        kind="list",
-        fields=_Environment_StorageConfiguration_EfsFields,
-    ),
-    "fsx": ubx.FieldSpec(
-        wire_name="fsx",
-        kind="list",
-        fields=_Environment_StorageConfiguration_EfsFields,
-    ),
-}
-
-_Environment_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
-
 @dataclasses.dataclass
 class EnvironmentConfig:
-    apply_changes_during_maintenance_window: Any = None
+    # The description of the environment.
     description: Any = None
+    # The target platform for the environment.
     engine_type: Any = None
+    # The version of the runtime engine for the environment.
     engine_version: Any = None
-    force_update: Any = None
-    instance_type: Any = None
-    kms_key_id: Any = None
-    name: Any = None
-    preferred_maintenance_window: Any = None
-    publicly_accessible: Any = None
-    region: Any = None
-    security_group_ids: Any = None
-    subnet_ids: Any = None
-    tags: Any = None
+    # Defines the details of a high availability configuration.
     high_availability_config: Any = None
-    storage_configuration: Any = None
-    timeouts: Any = None
+    # The type of instance underlying the environment.
+    instance_type: Any = None
+    # The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting environment-related resources.
+    kms_key_id: Any = None
+    # The name of the environment.
+    name: Any = None
+    # Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred)
+    network_type: Any = None
+    # Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.
+    preferred_maintenance_window: Any = None
+    # Specifies whether the environment is publicly accessible.
+    publicly_accessible: Any = None
+    # The list of security groups for the VPC associated with this environment.
+    security_group_ids: Any = None
+    # The storage configurations defined for the runtime environment.
+    storage_configurations: Any = None
+    # The unique identifiers of the subnets assigned to this runtime environment.
+    subnet_ids: Any = None
+    # Defines tags associated to an environment.
+    tags: Any = None
+
+@dataclasses.dataclass
+class EnvironmentAttrs:
+    # The description of the environment.
+    description: Any = None
+    # The target platform for the environment.
+    engine_type: Any = None
+    # The version of the runtime engine for the environment.
+    engine_version: Any = None
+    # The Amazon Resource Name (ARN) of the runtime environment.
+    environment_arn: Any = None
+    # The unique identifier of the environment.
+    environment_id: Any = None
+    # Defines the details of a high availability configuration.
+    high_availability_config: Any = None
+    # The type of instance underlying the environment.
+    instance_type: Any = None
+    # The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting environment-related resources.
+    kms_key_id: Any = None
+    # The name of the environment.
+    name: Any = None
+    # Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred)
+    network_type: Any = None
+    # Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.
+    preferred_maintenance_window: Any = None
+    # Specifies whether the environment is publicly accessible.
+    publicly_accessible: Any = None
+    # The list of security groups for the VPC associated with this environment.
+    security_group_ids: Any = None
+    # The storage configurations defined for the runtime environment.
+    storage_configurations: Any = None
+    # The unique identifiers of the subnets assigned to this runtime environment.
+    subnet_ids: Any = None
+    # Defines tags associated to an environment.
+    tags: Any = None
 
 Environment = ubx.ResourceBinding(
     wire_type="aws_m2_environment",
     fields={
-        "apply_changes_during_maintenance_window": ubx.FieldSpec(wire_name="apply_changes_during_maintenance_window"),
         "description": ubx.FieldSpec(wire_name="description"),
         "engine_type": ubx.FieldSpec(wire_name="engine_type"),
         "engine_version": ubx.FieldSpec(wire_name="engine_version"),
-        "force_update": ubx.FieldSpec(wire_name="force_update"),
+        "high_availability_config": ubx.FieldSpec(
+            wire_name="high_availability_config",
+            kind="object",
+            fields=_Environment_HighAvailabilityConfigFields,
+        ),
         "instance_type": ubx.FieldSpec(wire_name="instance_type"),
         "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
         "name": ubx.FieldSpec(wire_name="name"),
+        "network_type": ubx.FieldSpec(wire_name="network_type"),
         "preferred_maintenance_window": ubx.FieldSpec(wire_name="preferred_maintenance_window"),
         "publicly_accessible": ubx.FieldSpec(wire_name="publicly_accessible"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
+        "storage_configurations": ubx.FieldSpec(wire_name="storage_configurations"),
         "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "high_availability_config": ubx.FieldSpec(
-            wire_name="high_availability_config",
-            kind="list",
-            fields=_Environment_HighAvailabilityConfigFields,
-        ),
-        "storage_configuration": ubx.FieldSpec(
-            wire_name="storage_configuration",
-            kind="list",
-            fields=_Environment_StorageConfigurationFields,
-        ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Environment_TimeoutsFields,
-        ),
     },
 )

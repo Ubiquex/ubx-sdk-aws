@@ -2,29 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Job_Command {
-  name: string;
-  pythonVersion: string;
-  runtime: string;
-  scriptLocation: string;
+  /** The name of the job command */
+  name?: string | Computed<string>;
+  /** The Python version being used to execute a Python shell job. */
+  pythonVersion?: string | Computed<string>;
+  /** Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment */
+  runtime?: string | Computed<string>;
+  /** Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job */
+  scriptLocation?: string | Computed<string>;
+}
+
+export interface Job_Connections {
+  /** A list of connections used by the job. */
+  connections?: string[] | Computed<string[]>;
 }
 
 export interface Job_ExecutionProperty {
-  maxConcurrentRuns: number;
+  /** The maximum number of concurrent runs allowed for the job. */
+  maxConcurrentRuns?: number | Computed<number>;
 }
 
 export interface Job_NotificationProperty {
-  notifyDelayAfter: number;
-}
-
-export interface Job_SourceControlDetails {
-  authStrategy: string;
-  authToken: string;
-  branch: string;
-  folder: string;
-  lastCommitId: string;
-  owner: string;
-  provider: string;
-  repository: string;
+  /** It is the number of minutes to wait before sending a job run delay notification after a job run starts */
+  notifyDelayAfter?: number | Computed<number>;
 }
 
 const Job_CommandFields: FieldMap = {
@@ -32,6 +32,10 @@ const Job_CommandFields: FieldMap = {
   pythonVersion: "python_version",
   runtime: "runtime",
   scriptLocation: "script_location",
+};
+
+const Job_ConnectionsFields: FieldMap = {
+  connections: "connections",
 };
 
 const Job_ExecutionPropertyFields: FieldMap = {
@@ -42,117 +46,145 @@ const Job_NotificationPropertyFields: FieldMap = {
   notifyDelayAfter: "notify_delay_after",
 };
 
-const Job_SourceControlDetailsFields: FieldMap = {
-  authStrategy: "auth_strategy",
-  authToken: "auth_token",
-  branch: "branch",
-  folder: "folder",
-  lastCommitId: "last_commit_id",
-  owner: "owner",
-  provider: "provider",
-  repository: "repository",
-};
-
 export interface JobConfig {
-  connections?: string[] | Computed<string[]>;
-  defaultArguments?: Record<string, string> | Computed<Record<string, string>>;
+  /** The number of capacity units that are allocated to this job. */
+  allocatedCapacity?: number | Computed<number>;
+  /** Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred) */
+  command: Job_Command | Computed<Job_Command>;
+  /** Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred) */
+  connections?: Job_Connections | Computed<Job_Connections>;
+  /** The default arguments for this job, specified as name-value pairs. */
+  defaultArguments?: unknown | Computed<unknown>;
+  /** A description of the job. */
   description?: string | Computed<string>;
+  /** Indicates whether the job is run with a standard or flexible execution class. */
   executionClass?: string | Computed<string>;
+  /** Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred) */
+  executionProperty?: Job_ExecutionProperty | Computed<Job_ExecutionProperty>;
+  /** Glue version determines the versions of Apache Spark and Python that AWS Glue supports. */
   glueVersion?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** Property description not available. */
   jobMode?: string | Computed<string>;
+  /** Property description not available. */
   jobRunQueuingEnabled?: boolean | Computed<boolean>;
+  /** This field is reserved for future use. */
+  logUri?: string | Computed<string>;
+  /** Property description not available. */
   maintenanceWindow?: string | Computed<string>;
+  /** The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. */
   maxCapacity?: number | Computed<number>;
+  /** The maximum number of times to retry this job after a JobRun fails */
   maxRetries?: number | Computed<number>;
-  name: string | Computed<string>;
-  nonOverridableArguments?: Record<string, string> | Computed<Record<string, string>>;
+  /** The name you assign to the job definition */
+  name?: string | Computed<string>;
+  /** Non-overridable arguments for this job, specified as name-value pairs. */
+  nonOverridableArguments?: unknown | Computed<unknown>;
+  /** Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred) */
+  notificationProperty?: Job_NotificationProperty | Computed<Job_NotificationProperty>;
+  /** The number of workers of a defined workerType that are allocated when a job runs. */
   numberOfWorkers?: number | Computed<number>;
-  region?: string | Computed<string>;
-  roleArn: string | Computed<string>;
+  /** The name or Amazon Resource Name (ARN) of the IAM role associated with this job. */
+  role: string | Computed<string>;
+  /** The name of the SecurityConfiguration structure to be used with this job. */
   securityConfiguration?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** The tags to use with this job. */
+  tags?: unknown | Computed<unknown>;
+  /** The maximum time that a job run can consume resources before it is terminated and enters TIMEOUT status. */
   timeout?: number | Computed<number>;
+  /** TThe type of predefined worker that is allocated when a job runs. */
   workerType?: string | Computed<string>;
-  command?: Job_Command[] | Computed<Job_Command[]>;
-  executionProperty?: Job_ExecutionProperty[] | Computed<Job_ExecutionProperty[]>;
-  notificationProperty?: Job_NotificationProperty[] | Computed<Job_NotificationProperty[]>;
-  sourceControlDetails?: Job_SourceControlDetails[] | Computed<Job_SourceControlDetails[]>;
 }
 
 export interface JobAttrs {
-  arn: string;
-  connections: string[];
-  defaultArguments: Record<string, string>;
+  /** The number of capacity units that are allocated to this job. */
+  allocatedCapacity: number;
+  /** Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred) */
+  command: Job_Command;
+  /** Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred) */
+  connections: Job_Connections;
+  /** The default arguments for this job, specified as name-value pairs. */
+  defaultArguments: unknown;
+  /** A description of the job. */
   description: string;
+  /** Indicates whether the job is run with a standard or flexible execution class. */
   executionClass: string;
+  /** Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred) */
+  executionProperty: Job_ExecutionProperty;
+  /** Glue version determines the versions of Apache Spark and Python that AWS Glue supports. */
   glueVersion: string;
-  id: string;
+  /** Property description not available. */
   jobMode: string;
+  /** Property description not available. */
   jobRunQueuingEnabled: boolean;
+  /** This field is reserved for future use. */
+  logUri: string;
+  /** Property description not available. */
   maintenanceWindow: string;
+  /** The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. */
   maxCapacity: number;
+  /** The maximum number of times to retry this job after a JobRun fails */
   maxRetries: number;
+  /** The name you assign to the job definition */
   name: string;
-  nonOverridableArguments: Record<string, string>;
+  /** Non-overridable arguments for this job, specified as name-value pairs. */
+  nonOverridableArguments: unknown;
+  /** Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred) */
+  notificationProperty: Job_NotificationProperty;
+  /** The number of workers of a defined workerType that are allocated when a job runs. */
   numberOfWorkers: number;
-  region: string;
-  roleArn: string;
+  /** The name or Amazon Resource Name (ARN) of the IAM role associated with this job. */
+  role: string;
+  /** The name of the SecurityConfiguration structure to be used with this job. */
   securityConfiguration: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** The tags to use with this job. */
+  tags: unknown;
+  /** The maximum time that a job run can consume resources before it is terminated and enters TIMEOUT status. */
   timeout: number;
+  /** TThe type of predefined worker that is allocated when a job runs. */
   workerType: string;
-  command: Job_Command[];
-  executionProperty: Job_ExecutionProperty[];
-  notificationProperty: Job_NotificationProperty[];
-  sourceControlDetails: Job_SourceControlDetails[];
 }
 
 export const Job: ResourceBinding<JobConfig, JobAttrs> = {
   wireType: "aws_glue_job",
   fields: {
-    connections: "connections",
+    allocatedCapacity: "allocated_capacity",
+    command: {
+      wireName: "command",
+      kind: "object",
+      fields: Job_CommandFields,
+    },
+    connections: {
+      wireName: "connections",
+      kind: "object",
+      fields: Job_ConnectionsFields,
+    },
     defaultArguments: "default_arguments",
     description: "description",
     executionClass: "execution_class",
+    executionProperty: {
+      wireName: "execution_property",
+      kind: "object",
+      fields: Job_ExecutionPropertyFields,
+    },
     glueVersion: "glue_version",
-    id: "id",
     jobMode: "job_mode",
     jobRunQueuingEnabled: "job_run_queuing_enabled",
+    logUri: "log_uri",
     maintenanceWindow: "maintenance_window",
     maxCapacity: "max_capacity",
     maxRetries: "max_retries",
     name: "name",
     nonOverridableArguments: "non_overridable_arguments",
-    numberOfWorkers: "number_of_workers",
-    region: "region",
-    roleArn: "role_arn",
-    securityConfiguration: "security_configuration",
-    tags: "tags",
-    tagsAll: "tags_all",
-    timeout: "timeout",
-    workerType: "worker_type",
-    command: {
-      wireName: "command",
-      kind: "list",
-      fields: Job_CommandFields,
-    },
-    executionProperty: {
-      wireName: "execution_property",
-      kind: "list",
-      fields: Job_ExecutionPropertyFields,
-    },
     notificationProperty: {
       wireName: "notification_property",
-      kind: "list",
+      kind: "object",
       fields: Job_NotificationPropertyFields,
     },
-    sourceControlDetails: {
-      wireName: "source_control_details",
-      kind: "list",
-      fields: Job_SourceControlDetailsFields,
-    },
+    numberOfWorkers: "number_of_workers",
+    role: "role",
+    securityConfiguration: "security_configuration",
+    tags: "tags",
+    timeout: "timeout",
+    workerType: "worker_type",
   },
 };

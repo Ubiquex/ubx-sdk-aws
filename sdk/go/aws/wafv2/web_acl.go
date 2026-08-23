@@ -3,524 +3,700 @@ package wafv2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type WebAcl_AssociationConfig_RequestBody_ApiGateway struct {
-	DefaultSizeInspectionLimit any
+type WebAcl_ApplicationConfig_Attributes struct {
+	Name any
+	Values any
 }
 
-type WebAcl_AssociationConfig_RequestBody struct {
-	ApiGateway any
-	AppRunnerService any
-	Cloudfront any
-	CognitoUserPool any
-	VerifiedAccessInstance any
+type WebAcl_ApplicationConfig struct {
+	// Contains the attribute name and a list of values for that attribute.
+	Attributes any
 }
 
 type WebAcl_AssociationConfig struct {
+	// Map of AssociatedResourceType and RequestBodyAssociatedResourceTypeConfig
 	RequestBody any
 }
 
 type WebAcl_CaptchaConfig_ImmunityTimeProperty struct {
+	// Specifies the duration in seconds that a user who successfully completes a CAPTCHA challenge remains immune from being challenged again by the web ACL. (AI-inferred)
 	ImmunityTime any
 }
 
 type WebAcl_CaptchaConfig struct {
+	// Defines how long a CAPTCHA token remains valid after a successful challenge, setting the immunity time during which repeat requests from the same client are exempt from additional CAPTCHA challenges. (AI-inferred)
 	ImmunityTimeProperty any
 }
 
-type WebAcl_CustomResponseBody struct {
-	Content any
-	ContentType any
-	Key any
-}
-
-type WebAcl_DataProtectionConfig_DataProtection_Field struct {
+type WebAcl_DataProtectionConfig_DataProtections_Field struct {
+	// Lists the specific names (keys) within the selected field type, such as particular HTTP header names or cookie names, that AWS WAF inspects and applies the data protection action to, with an empty list meaning all components of that type are protected. (AI-inferred)
 	FieldKeys any
+	// Specifies the type of request component (e.g., body, headers, query string, cookies, or JSON body) that the data protection rule's field targets, optionally refined by an identifier. (AI-inferred)
 	FieldType any
 }
 
-type WebAcl_DataProtectionConfig_DataProtection struct {
+type WebAcl_DataProtectionConfig_DataProtections struct {
+	// The action that AWS WAF takes when it detects the sensitive data pattern defined by this data protection, such as 'BLOCK' to stop the request or 'COUNT' to observe and log it. (AI-inferred)
 	Action any
 	ExcludeRateBasedDetails any
+	// Exclude rule match details from AWS WAF logs for requests that match this data protection rule, preventing sensitive data that triggered the rule from being exposed in log output. (AI-inferred)
 	ExcludeRuleMatchDetails any
+	// Specifies the request field (such as a header, cookie, query argument, or JSON body field) whose sensitive data is masked or redacted by this data protection action in the web ACL's data protection configuration. (AI-inferred)
 	Field any
 }
 
 type WebAcl_DataProtectionConfig struct {
-	DataProtection any
+	// Specifies the list of data protection rules for the web ACL, each mapping a sensitive data type (e.g., credit card numbers, social security numbers) to an action (omit or redact) that controls how that data appears in AWS WAF logs. (AI-inferred)
+	DataProtections any
 }
 
-type WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeader struct {
+type WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeaders struct {
+	// The name of the custom HTTP header that AWS WAF inserts into the request when the default action is 'Allow' and custom request handling is configured, as part of the insert_headers list. (AI-inferred)
 	Name any
+	// The value of the HTTP header that AWS WAF inserts into the request to the origin when the default action is Allow and custom request handling is configured. (AI-inferred)
 	Value any
 }
 
 type WebAcl_DefaultAction_Allow_CustomRequestHandling struct {
-	InsertHeader any
+	// Collection of HTTP headers.
+	InsertHeaders any
 }
 
 type WebAcl_DefaultAction_Allow struct {
+	// Custom request handling.
 	CustomRequestHandling any
 }
 
 type WebAcl_DefaultAction_Block_CustomResponse struct {
+	// Custom response body key.
 	CustomResponseBodyKey any
+	// Custom response code.
 	ResponseCode any
-	ResponseHeader any
+	// Collection of HTTP headers.
+	ResponseHeaders any
 }
 
 type WebAcl_DefaultAction_Block struct {
+	// Custom response.
 	CustomResponse any
 }
 
 type WebAcl_DefaultAction struct {
+	// Allow traffic towards application.
 	Allow any
+	// Block traffic towards application.
 	Block any
 }
 
-type WebAcl_Rule_Action struct {
+type WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworks_Prices struct {
+	Amount any
+	Currency any
+}
+
+type WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworks struct {
+	Chain any
+	Prices any
+	WalletAddress any
+}
+
+type WebAcl_MonetizationConfig_CryptoConfig struct {
+	// List of payment network configurations.
+	PaymentNetworks any
+}
+
+type WebAcl_MonetizationConfig struct {
+	// Configures cryptocurrency payment settings.
+	CryptoConfig any
+	// The currency mode for monetization. Use REAL for production payments and TEST for testing with testnet currencies.
+	CurrencyMode any
+}
+
+type WebAcl_OnSourceDdoSprotectionConfig struct {
+	AlblowReputationMode any
+}
+
+type WebAcl_Rules_Action_Monetize struct {
+	PriceMultiplier any
+}
+
+type WebAcl_Rules_Action struct {
+	// Defines the 'allow' action for this rule, meaning that matching requests are forwarded to the origin, and can optionally specify custom request handling to add or modify headers before the request is sent to the protected resource. (AI-inferred)
 	Allow any
+	// Configures the block action for the rule, causing matching requests to be denied, with an option to define a custom response body and headers via CustomResponse. (AI-inferred)
 	Block any
+	// Configures the rule's CAPTCHA action, which challenges matching web requests with a CAPTCHA puzzle and includes optional settings for custom response handling and immunity time. (AI-inferred)
 	Captcha any
+	// Specifies the Challenge action for the rule, which silently validates that a client is a legitimate browser by sending a non-interactive challenge, with optional settings for custom request handling and immunity time. (AI-inferred)
 	Challenge any
+	// This object defines the count action for a rule, meaning WAF increments a counter for requests that match the rule's statement without allowing or blocking them, and it can optionally include custom request handling to add headers to the request before passing it along. (AI-inferred)
 	Count any
+	// Specifies the Monetize action, which adds a configurable monetary amount to the token of a matching request so it can be tracked by AWS WAF Fraud Control. (AI-inferred)
+	Monetize any
 }
 
-type WebAcl_Rule_OverrideAction_Count struct {
-}
-
-type WebAcl_Rule_OverrideAction struct {
+type WebAcl_Rules_OverrideAction struct {
+	// When configured (as an empty block), this sets the override action for the referenced rule group to Count, so that all rules in the group are evaluated but only counted, bypassing their original actions. (AI-inferred)
 	Count any
+	// Specifies that the rule's action is not overridden, so the rule uses its original action as defined in the rule group. (AI-inferred)
 	None any
 }
 
-type WebAcl_Rule_RuleLabel struct {
+type WebAcl_Rules_RuleLabels struct {
+	// The name of the label that is attached to matching web requests, which can be referenced by other rules or in logging. (AI-inferred)
 	Name any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement_ForwardedIpConfig struct {
+type WebAcl_Rules_Statement_AndStatement struct {
+	// The list of sub-statements that are logically combined with AND, so all must match for the rule's statement to evaluate to true. (AI-inferred)
+	Statements any
+}
+
+type WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfig struct {
+	// Determines whether the ASN match statement matches (MATCH) or does not match (NO_MATCH) a request when the IP address in the specified forwarded header is missing or invalid. (AI-inferred)
 	FallbackBehavior any
+	// The name of the HTTP header that holds the client IP address to use for ASN matching when traffic is forwarded through a proxy (e.g., X-Forwarded-For). (AI-inferred)
 	HeaderName any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement struct {
+type WebAcl_Rules_Statement_AsnMatchStatement struct {
+	// Specifies the list of autonomous system numbers (ASNs) that the client's address must match for the ASN match statement to trigger, with a match occurring if the request's ASN is present in this list. (AI-inferred)
 	AsnList any
-	ForwardedIpConfig any
+	// Specifies how AWS WAF inspects the forwarded client IP address from an HTTP header for an ASN match statement, including the header name and fallback behavior when the header is absent. (AI-inferred)
+	ForwardedIpconfig any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Body struct {
+type WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Body struct {
+	// Specifies how AWS WAF treats a request body that exceeds its inspection size limit, with CONTINUE to process normally, MATCH to count as a match, or NO_MATCH to count as no match. (AI-inferred)
 	OversizeHandling any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPattern struct {
+type WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPattern struct {
+	// When this configuration block is present, it instructs AWS WAF to inspect all cookies in the request, as opposed to only included or excluded cookies. (AI-inferred)
+	All any
+	// In a byte match statement inspecting cookies, specifies the list of cookie names to exclude from inspection, so that the statement only examines cookies not listed here. (AI-inferred)
 	ExcludedCookies any
+	// Specifies the list of cookie names to include in the cookie match pattern, so AWS WAF inspects only those cookies in the request's cookie header when evaluating the byte match statement. (AI-inferred)
 	IncludedCookies any
-	All any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Cookies struct {
-	MatchScope any
-	OversizeHandling any
+type WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies struct {
+	// Specifies the CookieMatchPattern that determines which cookies in the request to inspect for the byte match condition, supporting all cookies, a specified list of included cookies, or all cookies except a list of excluded cookies. (AI-inferred)
 	MatchPattern any
+	// Inspects the cookie values in a web ACL rule, with match_scope determining whether WAF checks the entire cookie, only the cookie name, or only the cookie value (ALL, KEY, or VALUE) when inspecting cookies for a byte match statement. (AI-inferred)
+	MatchScope any
+	// Specifies how AWS WAF handles oversized cookies in the request when inspecting cookie fields, with allowed values CONTINUE (continue inspecting without the oversized cookie), MATCH (treat the request as matching the rule), or NO_MATCH (treat the request as not matching). (AI-inferred)
+	OversizeHandling any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPattern struct {
+type WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPattern struct {
+	// When this object is present, the match pattern matches all header names in the web request. (AI-inferred)
+	All any
+	// The list of HTTP header names to exclude from inspection when the byte match statement's header match pattern is set to exclude those headers, meaning all other headers are examined. (AI-inferred)
 	ExcludedHeaders any
+	// Specifies the names of the headers to include when inspecting request headers in the byte match statement, so only the listed headers are considered for the match pattern. (AI-inferred)
 	IncludedHeaders any
-	All any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Headers struct {
-	MatchScope any
-	OversizeHandling any
+type WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers struct {
+	// In an AWS WAFv2 web ACL rule, this object defines the set of request headers that the byte match statement will inspect, supporting options for all headers, a specific list of included headers, or a list of excluded headers. (AI-inferred)
 	MatchPattern any
+	// Specifies whether the byte match rule inspects the entire header, the header name (key), or only the header value when evaluating header fields in a web request. (AI-inferred)
+	MatchScope any
+	// Specifies how AWS WAF handles oversized header keys or values when inspecting request headers for this byte match statement, with valid values of CONTINUE, MATCH, or NO_MATCH. (AI-inferred)
+	OversizeHandling any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint struct {
+type WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint struct {
+	// Specifies how AWS WAF should treat a request when it cannot detect a JA3 TLS fingerprint for the connection, causing the byte match statement to match (MATCH) or not match (NO_MATCH). (AI-inferred)
 	FallbackBehavior any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPattern struct {
-	IncludedPaths any
+type WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPattern struct {
+	// When present, this property declares that the match pattern applies to all JSON paths within the request body, rather than only to the paths listed in 'IncludedPaths'. (AI-inferred)
 	All any
+	// Specifies the list of JSON paths (e.g., '/foo/bar') within the request body that are inspected for the byte match condition; only values at these paths are matched. (AI-inferred)
+	IncludedPaths any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBody struct {
+type WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody struct {
+	// Specifies whether to treat a request as matching or not matching the rule when the request body is not valid JSON, with allowed values 'MATCH' and 'NO_MATCH'. (AI-inferred)
 	InvalidFallbackBehavior any
-	MatchScope any
-	OversizeHandling any
+	// Determines which parts of the request's JSON body are inspected by defining either all JSON content or a set of included/excluded JSON paths for the byte match statement. (AI-inferred)
 	MatchPattern any
+	// Specifies whether AWS WAF inspects the entire JSON request body, only its keys, or only its values when evaluating byte match conditions. (AI-inferred)
+	MatchScope any
+	// Determines how AWS WAF handles a JSON request body that exceeds the size limit, either continuing without matching, or treating it as a match or non-match. (AI-inferred)
+	OversizeHandling any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch struct {
+type WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch struct {
+	// Configures the byte match statement to inspect the entire query string of the web request, thereby matching against all query arguments. (AI-inferred)
 	AllQueryArguments any
+	// This object configures matching on the raw request body for the byte match statement, optionally specifying oversize handling behavior. (AI-inferred)
 	Body any
+	// Specifies the cookie match settings for the byte match statement, including the cookie filter pattern, match scope (key or value), and oversize handling behavior. (AI-inferred)
 	Cookies any
+	// Specifies the order in which header names are considered when inspecting HTTP headers for the byte match statement, ensuring consistent evaluation even when headers appear multiple times in the request. (AI-inferred)
 	HeaderOrder any
+	// Configures the inspection of HTTP request headers for the byte match, specifying the header name and match pattern to match against. (AI-inferred)
 	Headers any
+	// Specifies that the WAFv2 rule inspects the JA3 fingerprint of the TLS client as the request part to match, with a configurable fallback behavior (match or no_match) for when the fingerprint is unavailable. (AI-inferred)
 	Ja3Fingerprint any
+	// Indicates that the JA4 fingerprint of the client's TLS connection is the field to match in the byte match statement. (AI-inferred)
 	Ja4Fingerprint any
+	// Specifies the JSON body of a web request as the location to inspect, allowing the rule to match on the structure and values of the parsed JSON payload. (AI-inferred)
 	JsonBody any
+	// Specifies that the byte match statement inspects the HTTP request method (such as GET or POST) for matching. (AI-inferred)
 	Method any
+	// Specifies that the byte match statement inspects the raw query string of the web request, excluding the leading '?', as the field to match. (AI-inferred)
 	QueryString any
+	// Defines a single HTTP header to inspect by its name, so the byte match statement evaluates the header's value against its search string. (AI-inferred)
 	SingleHeader any
+	// Specifies that the match condition inspects a single query string argument by its exact name, allowing you to target a specific query parameter. (AI-inferred)
 	SingleQueryArgument any
+	// Specifies that the rule inspects the URI fragment (the part of the web request URI that appears after the '#' character) for byte match conditions. (AI-inferred)
 	UriFragment any
+	// Specifies that the byte match statement should inspect the URI path of the web request (e.g., the /products/shoes portion, not including the query string). (AI-inferred)
 	UriPath any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformation struct {
+type WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations struct {
+	// Determines the order in which this text transformation is applied relative to other pre-parse text transformations, with lower values executed first. (AI-inferred)
 	Priority any
+	// Specifies the type of text transformation (e.g., LOWERCASE, HTML_ENTITY_DECODE, COMPRESS_WHITE_SPACE) applied to the web request content before the byte match statement evaluates it. (AI-inferred)
 	Type any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement struct {
-	PositionalConstraint any
-	SearchString any
+type WebAcl_Rules_Statement_ByteMatchStatement struct {
+	// Specifies the web request component (such as a header, query string, URI path, body, or HTTP method) that the byte match statement inspects for matching strings. (AI-inferred)
 	FieldToMatch any
-	TextTransformation any
+	// Defines how AWS WAF searches for the specified match string within the web request component, accepting values like EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, or CONTAINS_WORD. (AI-inferred)
+	PositionalConstraint any
+	PreParseTextTransformations any
+	// Specifies the literal string (or base64-encoded byte sequence) that AWS WAF searches for in the request component inspected by this rule's byte match statement. (AI-inferred)
+	SearchString any
+	// The base64-encoded string that the byte match statement searches for in the web request, used as an alternative to the plaintext search string. (AI-inferred)
+	SearchStringBase64 any
+	// Specifies the ordered list of text transformations (e.g., LOWERCASE, HTML_ENTITY_DECODE, COMPRESS_WHITE_SPACE) that are applied by priority to the inspected request component before the byte match statement compares it against the search string. (AI-inferred)
+	TextTransformations any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatement struct {
+type WebAcl_Rules_Statement_GeoMatchStatement struct {
+	// Specifies the two-character country codes (ISO 3166-1 alpha-2) that the geo match statement uses to match requests originating from those countries. (AI-inferred)
 	CountryCodes any
-	ForwardedIpConfig any
+	// Specifies how to inspect the IP address in a forwarded header for geo matching, including the header name and the fallback behavior when the header is absent or invalid. (AI-inferred)
+	ForwardedIpconfig any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatement_IpSetForwardedIpConfig struct {
+type WebAcl_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfig struct {
+	// Determines whether a request that lacks a valid forwarded IP header should match the IP set (MATCH) or not match (NO_MATCH). (AI-inferred)
 	FallbackBehavior any
+	// The name of the HTTP header from which AWS WAF extracts the client IP address when using the forwarded IP configuration for an IP set reference statement. (AI-inferred)
 	HeaderName any
+	// Specifies whether AWS WAF should use the first IP address (FIRST) or the last IP address (LAST) from the X-Forwarded-For header when evaluating the IP set reference statement. (AI-inferred)
 	Position any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatement struct {
+type WebAcl_Rules_Statement_IpsetReferenceStatement struct {
+	// The Amazon Resource Name (ARN) of the AWS WAFv2 IP set that this rule statement references to match traffic based on its IP addresses. (AI-inferred)
 	Arn any
-	IpSetForwardedIpConfig any
+	// Defines how to derive the client IP from a forwarded header (such as X-Forwarded-For) for inspection against the referenced IP set, including the header name, fallback behavior, and the position (e.g., FIRST, LAST, or ANY) to select. (AI-inferred)
+	IpsetForwardedIpconfig any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatement struct {
+type WebAcl_Rules_Statement_LabelMatchStatement struct {
+	// The string label name or label namespace prefix that the label match statement checks for, used to match labels added to web requests by other rules. (AI-inferred)
 	Key any
+	// Determines whether the label match key is interpreted as an exact label (`LABEL`) or as a namespace prefix (`NAMESPACE`) to match against labels applied to the web request or rule. (AI-inferred)
 	Scope any
 }
 
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatement struct {
-	RegexString any
-	FieldToMatch any
-	TextTransformation any
-}
-
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatement struct {
-	Arn any
-	FieldToMatch any
-	TextTransformation any
-}
-
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatement struct {
-	ComparisonOperator any
-	Size any
-	FieldToMatch any
-	TextTransformation any
-}
-
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatement struct {
-	SensitivityLevel any
-	FieldToMatch any
-	TextTransformation any
-}
-
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatement struct {
-	FieldToMatch any
-	TextTransformation any
-}
-
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement struct {
-	AsnMatchStatement any
-	ByteMatchStatement any
-	GeoMatchStatement any
-	IpSetReferenceStatement any
-	LabelMatchStatement any
-	RegexMatchStatement any
-	RegexPatternSetReferenceStatement any
-	SizeConstraintStatement any
-	SqliMatchStatement any
-	XssMatchStatement any
-}
-
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement struct {
-	Statement any
-}
-
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement struct {
-	AndStatement any
-	AsnMatchStatement any
-	ByteMatchStatement any
-	GeoMatchStatement any
-	IpSetReferenceStatement any
-	LabelMatchStatement any
-	NotStatement any
-	OrStatement any
-	RegexMatchStatement any
-	RegexPatternSetReferenceStatement any
-	SizeConstraintStatement any
-	SqliMatchStatement any
-	XssMatchStatement any
-}
-
-type WebAcl_Rule_Statement_AndStatement_Statement_AndStatement struct {
-	Statement any
-}
-
-type WebAcl_Rule_Statement_AndStatement_Statement struct {
-	AndStatement any
-	AsnMatchStatement any
-	ByteMatchStatement any
-	GeoMatchStatement any
-	IpSetReferenceStatement any
-	LabelMatchStatement any
-	NotStatement any
-	OrStatement any
-	RegexMatchStatement any
-	RegexPatternSetReferenceStatement any
-	SizeConstraintStatement any
-	SqliMatchStatement any
-	XssMatchStatement any
-}
-
-type WebAcl_Rule_Statement_AndStatement struct {
-	Statement any
-}
-
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_AddressFields struct {
-	Identifiers any
-}
-
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_EmailField struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields struct {
+	// The name of the request component (such as a JSON body field or form field) that contains the address value, used by the AWS WAF ACFP managed rule set to inspect address-type fields. (AI-inferred)
 	Identifier any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection struct {
-	PayloadType any
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection struct {
+	// Specifies the identifiers of the address fields in the incoming request that AWS WAF extracts and inspects for the AWSManagedRulesACFPRuleSet, enabling account creation fraud prevention to evaluate the customer's address data. (AI-inferred)
 	AddressFields any
+	// Specifies the request component (such as a header or query parameter) from which the AWS Managed Rules ACFP rule set extracts the email address for account creation fraud prevention. (AI-inferred)
 	EmailField any
+	// Specifies the request field identifier that contains the password for the AWSManagedRulesACFPRuleSet, enabling WAF to locate and inspect the password value in the request payload during account creation fraud prevention. (AI-inferred)
 	PasswordField any
+	// Specifies whether the AWSManagedRulesACFPRuleSet request inspection inspects the request payload as JSON or as form-encoded data (allowed values: JSON, FORM). (AI-inferred)
+	PayloadType any
+	// Specifies the request fields (such as JSON body fields, headers, or query strings) that contain the phone number, which the AWS Managed Rules ACFP rule set inspects to identify phone numbers in incoming requests for account creation fraud prevention. (AI-inferred)
 	PhoneNumberFields any
+	// Identifies the request component (such as a JSON body field or header) that contains the username, which the AWS Managed Rules ACFP rule set uses to inspect account creation requests for fraud. (AI-inferred)
 	UsernameField any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_BodyContains struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_BodyContains struct {
+	// Specifies the list of strings that must appear in the response body for the login attempt to be considered a failure, used by the AWS Managed Rules ACFP rule set's response inspection. (AI-inferred)
 	FailureStrings any
+	// Specifies the strings that the AWS WAF account creation fraud prevention (ACFP) managed rule group searches for in the response body, so that the response is considered successful if any of these strings are present. (AI-inferred)
 	SuccessStrings any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_Header struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_Header struct {
+	// Specifies the list of string values that, when found in the configured response header, are treated as a failure signal by the AWS Managed Rules ACFP rule set, causing the request to be blocked. (AI-inferred)
 	FailureValues any
+	// Specifies the name of the HTTP response header that AWS WAF inspects for the token value used in the AWSManagedRulesACFPRuleSet's response inspection for the account creation fraud prevention rule group. (AI-inferred)
 	Name any
+	// In the response inspection configuration for the AWS Managed Rules ACFP rule set, the success_values under the header inspector defines the list of header values that, when present in the specified response header, cause the account creation attempt to be classified as successful. (AI-inferred)
 	SuccessValues any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_Json struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_Json struct {
+	// A list of string values that, when present in the JSON response body, indicate a failed authentication or account-creation request, causing the AWS managed rule group to apply its configured action. (AI-inferred)
 	FailureValues any
+	// The name of the JSON field in the response body that AWS WAF checks for the account creation success or failure value, as configured in the ACFP rule set's response inspection. (AI-inferred)
 	Identifier any
+	// A list of string values that, when found in the JSON response body, indicate a successful account creation attempt, allowing the AWS Managed Rules ACFP rule set to override its default success/failure evaluation. (AI-inferred)
 	SuccessValues any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_StatusCode struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_StatusCode struct {
+	// Specifies a list of HTTP status codes (e.g., 403) that the AWS WAFv2 AWSManagedRulesACFPRuleSet treats as failure indicators when inspecting the origin response status code to classify a request as bot traffic. (AI-inferred)
 	FailureCodes any
+	// Defines the list of HTTP status codes that the AWS WAF managed rule group for account creation fraud prevention (ACFP) treats as successful when inspecting the response status code, as part of its response inspection configuration. (AI-inferred)
 	SuccessCodes any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection struct {
+	// Defines the response body inspection for the AWS Managed Rules ACFP rule set, specifying the success and failure strings that the WAF service looks for in the response body to determine whether an account creation attempt succeeded or failed. (AI-inferred)
 	BodyContains any
+	// Configures AWS WAF to inspect the HTTP header in the response from the protected application, using the specified header name and success values, to determine whether the account creation fraud prevention rule set should treat the request as successful. (AI-inferred)
 	Header any
+	// Specifies the JSON response body field (identifier) that AWS WAF inspects within the response from an account creation attempt to determine whether it succeeded, for the AWSManagedRulesACFPRuleSet managed rule group. (AI-inferred)
 	Json any
+	// Specifies the expected HTTP status codes in the response that indicate a successful or failed token challenge for the AWS Managed Rules Account Creation Fraud Prevention rule set, used to determine whether to allow or block the request. (AI-inferred)
 	StatusCode any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet struct {
+	// The URI path of the account creation endpoint (for example, /signup) that the AWS Managed Rules ACFP rule set inspects to detect account creation fraud. (AI-inferred)
 	CreationPath any
+	// Controls whether the path values (such as the login or sign-up path) in the AWS Managed Rules ACFP rule set are evaluated as regular expressions rather than literal strings when inspecting request paths. (AI-inferred)
 	EnableRegexInPath any
+	// Specifies the JSON path in the request body that identifies the registration page for the AWS Managed Rules account creation fraud prevention (ACFP) rule set to extract and use in its analysis. (AI-inferred)
 	RegistrationPagePath any
+	// Defines the request inspection configuration, including the payload type and the location of username, password, phone number, and email fields in the web request, for the AWS Managed Rules ACFP rule set. (AI-inferred)
 	RequestInspection any
+	// Configures how the AWS Managed Rules ACFP rule set inspects the HTTP response from the protected resource to identify successful account creation or login attempts, using criteria like status codes, headers, or body content. (AI-inferred)
 	ResponseInspection any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpression struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressions struct {
+	// The regular expression pattern that matches request URIs to exempt from the client-side challenge action in the AWS WAFv2 anti-DDoS managed rule group configuration. (AI-inferred)
 	RegexString any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSet_ClientSideActionConfig_Challenge struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge struct {
+	// Specifies a list of regular expression patterns for URI paths that are exempt from the challenge action in the client-side action configuration of the AWS Managed Rules Anti-DDoS rule set. (AI-inferred)
+	ExemptUriRegularExpressions any
+	// Specifies the sensitivity level (LOW, MEDIUM, or HIGH) for the challenge action in the AWSManagedRulesAntiDDoSRuleSet managed rule group, controlling how aggressively clients are challenged. (AI-inferred)
 	Sensitivity any
+	// Specifies whether the challenge action is used as a count action (observing traffic without blocking) or a block action (applying the challenge) for the AWSManagedRulesAntiDDoSRuleSet managed rule group. (AI-inferred)
 	UsageOfAction any
-	ExemptUriRegularExpression any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSet_ClientSideActionConfig struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig struct {
+	// The `challenge` object configures the challenge action for the client-side action of the AWS Managed Rules anti-DDoS rule set, determining that AWS WAF presents a CAPTCHA-style challenge instead of blocking when the rule set flags a request. (AI-inferred)
 	Challenge any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSet struct {
-	SensitivityToBlock any
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet struct {
+	// Specifies the client-side action (such as Challenge or CAPTCHA) and the list of custom token domains that AWS WAF uses to verify client requests for the AWSManagedRulesAntiDDoSRuleSet. (AI-inferred)
 	ClientSideActionConfig any
+	// Sets the sensitivity threshold for the AWS Managed Rules Anti-DDoS rule set, controlling how aggressively it identifies and blocks potential DDoS traffic (accepting values such as HIGH and LOW). (AI-inferred)
+	SensitivityToBlock any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAtpRuleSet_RequestInspection struct {
-	PayloadType any
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet_RequestInspection struct {
+	// Specifies the password field in the request body that the AWS Managed Rules ATP rule set inspects for account takeover attempts, using its Identifier sub-field. (AI-inferred)
 	PasswordField any
+	// Specifies the format of the request body payload that AWS WAF inspects for the AWSManagedRulesATPRuleSet, either JSON or form data. (AI-inferred)
+	PayloadType any
+	// Specifies the location (such as a JSON body field or form field) in the web request from which the AWS Managed Rules ATP rule set extracts the username for account takeover protection. (AI-inferred)
 	UsernameField any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAtpRuleSet struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet struct {
+	// When set to true, the ATP rule set interprets the login path as a regular expression pattern instead of a literal string. (AI-inferred)
 	EnableRegexInPath any
+	// The URI path of the application's login endpoint (e.g., /login) that AWS Managed Rules for Account Takeover Protection (ATP) inspects for anomalous login activity. (AI-inferred)
 	LoginPath any
+	// Configures how AWS WAFv2 inspects incoming requests for account takeover attempts, specifying the login path and the location of username and password fields in the request, for the AWS Managed Rules Account Takeover Protection rule set. (AI-inferred)
 	RequestInspection any
+	// Configures how AWS WAF inspects the login response to determine whether a login attempt succeeded for the AWS account takeover prevention (ATP) managed rule group. (AI-inferred)
 	ResponseInspection any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesBotControlRuleSet struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesBotControlRuleSet struct {
+	// When set to true, enables machine learning for the AWS Managed Rules Bot Control rule set, allowing AWS WAF to use ML models to improve the accuracy of bot detection and classification. (AI-inferred)
 	EnableMachineLearning any
+	// Sets the inspection level for the AWSManagedRulesBotControlRuleSet, either COMMON or TARGETED, to control the depth of bot detection rules applied. (AI-inferred)
 	InspectionLevel any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs struct {
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs struct {
+	// Configures the AWSManagedRulesACFPRuleSet for the managed rule group, defining the account creation request paths and field identifiers (such as email, phone, and login paths) that AWS WAF inspects to detect and block fraud. (AI-inferred)
+	AwsmanagedRulesAcfpruleSet any
+	// Specifies the configuration for the AWS Managed Rules Anti-DDoS rule set (AWSManagedRulesAntiDDoSRuleSet), an empty object that enables the AWS WAF managed DDoS protection rules when associated with a managed rule group statement. (AI-inferred)
+	AwsmanagedRulesAntiDdoSruleSet any
+	// Configures the AWS Managed Rules ATP (Account Takeover Protection) rule set's settings, such as the login request path and the password field, to detect account takeover attempts. (AI-inferred)
+	AwsmanagedRulesAtpruleSet any
+	// Configures the AWS Managed Rules Bot Control rule set within the managed rule group, enabling you to set its inspection level (Common or Targeted) and optionally enable machine learning for bot detection. (AI-inferred)
+	AwsmanagedRulesBotControlRuleSet any
+	// The URL path of the application's login endpoint, used by the managed rule group (e.g., AWS WAF Bot Control) to identify login attempts for token management and rate-based rules. (AI-inferred)
 	LoginPath any
-	PayloadType any
-	AwsManagedRulesAcfpRuleSet any
-	AwsManagedRulesAntiDdosRuleSet any
-	AwsManagedRulesAtpRuleSet any
-	AwsManagedRulesBotControlRuleSet any
+	// Specifies the name of the form field in the request body that contains the password, used by the AWS Managed Rules ATP rule set for account takeover protection analysis. (AI-inferred)
 	PasswordField any
+	// Specifies whether the request body payload inspected by the managed rule group is JSON or form-encoded (FORM_ENCODED), enabling AWS WAF to parse the data for the account takeover prevention or account creation fraud prevention rule sets. (AI-inferred)
+	PayloadType any
+	// Specifies the request field (by its name/identifier) that contains the account username, used by AWS-managed rule groups for account takeover prevention (ATP) and account creation fraud prevention (ACFP) to inspect login or sign-up attempts. (AI-inferred)
 	UsernameField any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement_RuleActionOverride struct {
-	Name any
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverrides struct {
+	// Specifies the action (Allow, Block, Count, Captcha, or Challenge) to apply to a specific rule in a managed rule group, overriding that rule's default action within the rule_action_overrides configuration. (AI-inferred)
 	ActionToUse any
+	// The name of the specific rule inside the referenced AWS Managed Rules group whose action is being overridden by the paired action_to_use value. (AI-inferred)
+	Name any
 }
 
-type WebAcl_Rule_Statement_ManagedRuleGroupStatement struct {
-	Name any
-	VendorName any
-	Version any
+type WebAcl_Rules_Statement_ManagedRuleGroupStatement struct {
+	// Specifies the rules within the managed rule group that you want to exclude from being evaluated for web requests, using a list of objects each containing the rule name to exclude. (AI-inferred)
+	ExcludedRules any
+	// Specifies additional configuration for the managed rule group, such as the login path and password/username field indicators, which AWS Managed Rules for Bot Control or Account Takeover Prevention use to inspect request payloads. (AI-inferred)
 	ManagedRuleGroupConfigs any
-	RuleActionOverride any
-	ScopeDownStatement any
-}
-
-type WebAcl_Rule_Statement_RateBasedStatement_CustomKey_Cookie struct {
+	// The name of the AWS managed rule group to use in this statement, such as AWSManagedRulesCommonRuleSet or AWSManagedRulesSQLiRuleSet. (AI-inferred)
 	Name any
-	TextTransformation any
+	// Overrides the action for specific managed rules inside the managed rule group by mapping each managed rule's name to a new action (such as Allow, Block, Count, Captcha, or Challenge) that replaces the rule group's default behavior. (AI-inferred)
+	RuleActionOverrides any
+	// A nested statement that limits the managed rule group to inspect only requests that match this scope-down condition, so the group's rules run only when this additional statement is satisfied. (AI-inferred)
+	ScopeDownStatement any
+	// The name of the vendor that provides the managed rule group, such as 'AWS' for AWS managed rule groups or partner vendors like 'Fortinet' or 'Imperva'. (AI-inferred)
+	VendorName any
+	// Specifies the version of the managed rule group to use; when omitted, AWS WAF uses the vendor's default version. (AI-inferred)
+	Version any
 }
 
-type WebAcl_Rule_Statement_RateBasedStatement_CustomKey_LabelNamespace struct {
+type WebAcl_Rules_Statement_NotStatement struct {
+	// The WAFv2 statement that is logically negated by the enclosing not_statement, allowing the rule to match when the nested statement evaluates to false. (AI-inferred)
+	Statement any
+}
+
+type WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_Cookie struct {
+	// The name of the cookie whose value will be used as the custom key for aggregating requests in the rate-based rule's custom key configuration. (AI-inferred)
+	Name any
+	// This list specifies the ordered text transformations (each with a priority and type, e.g., LOWERCASE, URL_DECODE) that are applied to the cookie value before it is used as a key for rate-based rule aggregation, enabling normalized matching for rate limits. (AI-inferred)
+	TextTransformations any
+}
+
+type WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespace struct {
+	// Specifies the label namespace used to aggregate requests for a rate-based rule when using a label_namespace custom key, such that all requests carrying a label that begins with this namespace count toward the rate limit. (AI-inferred)
 	Namespace any
 }
 
-type WebAcl_Rule_Statement_RateBasedStatement_CustomKey_QueryString struct {
-	TextTransformation any
+type WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryString struct {
+	// Defines the list of text transformations (each with a priority and transformation type) that are applied to the query string value when it is used as a custom key in the rate-based statement's aggregation. (AI-inferred)
+	TextTransformations any
 }
 
-type WebAcl_Rule_Statement_RateBasedStatement_CustomKey struct {
+type WebAcl_Rules_Statement_RateBasedStatement_CustomKeys struct {
+	// This field defines a custom key for the rate-based statement that uses the client's ASN (Autonomous System Number) to aggregate requests, so all requests from networks managed by the same ASN count together toward the rate limit. (AI-inferred)
 	Asn any
+	// Specifies the cookie to use as a custom request aggregation key for a rate-based rule, including its name and text transformations. (AI-inferred)
 	Cookie any
+	// Configures the forwarded IP custom key for the rate-based statement, which uses the client IP from a specified header (such as X-Forwarded-For) as the aggregation key for rate limiting and requires a `header_name` argument. (AI-inferred)
 	ForwardedIp any
+	// Configures a request header as a custom key for the rate-based statement, so AWS WAF can aggregate and rate-limit requests based on the value of that header after applying any specified text transformations. (AI-inferred)
 	Header any
-	HttpMethod any
+	// Defines the HTTP method (e.g., GET, POST) as a custom key in a rate-based statement, so that requests with the same method are grouped together when counting requests for rate limiting. (AI-inferred)
+	Httpmethod any
+	// Specifies that the originating IP address of the web request is used as a custom key for aggregating requests in the rate-based rule. (AI-inferred)
 	Ip any
+	// Configures the client's JA3 TLS fingerprint as a custom key for the rate-based rule's request aggregation, containing the fallback behavior to apply when the fingerprint is unavailable. (AI-inferred)
 	Ja3Fingerprint any
+	// Sets the JA4 fingerprint as a custom key for the rate-based statement, making AWS WAF aggregate requests by the client's JA4 TLS fingerprint when rate limiting. (AI-inferred)
 	Ja4Fingerprint any
+	// Specifies the label namespace used as a custom key in a rate-based rule, so requests with labels from that namespace are grouped together for rate limiting decisions. (AI-inferred)
 	LabelNamespace any
+	// Defines the query argument (query parameter) whose value AWS WAF uses as a custom key for aggregating requests in a rate-based rule statement. (AI-inferred)
 	QueryArgument any
+	// This object configures the request's query string as a custom key for rate-based aggregation, with an optional list of text transformations to preprocess the query string before it is counted. (AI-inferred)
 	QueryString any
+	// Configures the request's URI path as a custom key for the rate-based rule, with optional text transformations applied to the path before counting. (AI-inferred)
 	UriPath any
 }
 
-type WebAcl_Rule_Statement_RateBasedStatement struct {
+type WebAcl_Rules_Statement_RateBasedStatement struct {
+	// Specifies how to aggregate requests for rate limiting in the WAFv2 rate-based rule, with valid values including IP (default), FORWARDED_IP (using the forwarded IP address from a header), or CUSTOM_KEYS (using custom key components like labels or headers). (AI-inferred)
 	AggregateKeyType any
+	// Defines the request characteristics (such as header, cookie, query argument, label, or IP) used to aggregate requests for rate limiting, so the rule counts and limits requests grouped by distinct values for those keys instead of just the client IP. (AI-inferred)
+	CustomKeys any
+	// The evaluation window (in seconds) used to calculate the request rate for the rate-based rule, with allowed values of 60, 120, 300, 600, 1200, or 1800. (AI-inferred)
 	EvaluationWindowSec any
+	// Defines the HTTP header (such as X-Forwarded-For) and fallback behavior used to extract the originating client IP address for rate-based rule evaluation when the request origin IP is masked by a proxy or load balancer. (AI-inferred)
+	ForwardedIpconfig any
+	// The maximum number of requests permitted within a rate-based rule's evaluation window (default 5 minutes) before the rule's action is triggered. (AI-inferred)
 	Limit any
-	CustomKey any
-	ForwardedIpConfig any
+	// Narrows the rate-based rule's rate limiting to only those web requests that match this nested statement, so requests that do not match are excluded from the rate count. (AI-inferred)
 	ScopeDownStatement any
 }
 
-type WebAcl_Rule_Statement_RuleGroupReferenceStatement struct {
-	Arn any
-	RuleActionOverride any
+type WebAcl_Rules_Statement_RegexMatchStatement struct {
+	// Specifies the part of the web request (such as a header, query string, body, or URI path) that the regular expression pattern is matched against. (AI-inferred)
+	FieldToMatch any
+	// A list of text transformation objects with priorities that are applied to the inspected web request content before the regex match statement's standard text transformations, enabling decoding or normalization (e.g., Base64 or HTML entity decoding) prior to pattern matching. (AI-inferred)
+	PreParseTextTransformations any
+	// The regular expression pattern that AWS WAFv2 uses to inspect the specified web request component (such as a header or query string) for a match in the regex match statement. (AI-inferred)
+	RegexString any
+	// Defines the ordered list of text transformations that AWS WAF applies to the web request content before it is evaluated against the regular expression in this regex match statement, for example by lowercasing or HTML-decoding the input. (AI-inferred)
+	TextTransformations any
 }
 
-type WebAcl_Rule_Statement struct {
+type WebAcl_Rules_Statement_RegexPatternSetReferenceStatement struct {
+	// ARN of the AWS WAFv2 regex pattern set that this statement references, used to match web request components against the regex patterns. (AI-inferred)
+	Arn any
+	// Specifies the part of the web request (such as a header, the body, or the query string) that AWS WAF inspects for the regex pattern set. (AI-inferred)
+	FieldToMatch any
+	// Applies a list of text transformations to the selected request component before the regex pattern set is evaluated, allowing normalizations like lowercasing or HTML decoding to be performed first. (AI-inferred)
+	PreParseTextTransformations any
+	// Specifies the ordered list of text transformations (for example, lowercase, URL decode, or HTML entity decode) that are applied to the web request component before it is evaluated against the associated regex pattern set. (AI-inferred)
+	TextTransformations any
+}
+
+type WebAcl_Rules_Statement_RuleGroupReferenceStatement struct {
+	// The Amazon Resource Name (ARN) of the AWS WAFv2 rule group that this statement references, which identifies the rule group to include in the web ACL's rule evaluation. (AI-inferred)
+	Arn any
+	ExcludedRules any
+	// Specifies a list of actions to override for specific rules within the referenced rule group, allowing you to change the action (e.g., Allow, Block, Count) of individual rules without modifying the rule group itself. (AI-inferred)
+	RuleActionOverrides any
+}
+
+type WebAcl_Rules_Statement_SizeConstraintStatement struct {
+	// Specifies the comparison operator (e.g., EQ, GE, LT) used to compare the actual size of the inspected web request component against the declared Size in the size constraint statement of an AWS WAFv2 web ACL rule. (AI-inferred)
+	ComparisonOperator any
+	// Specifies the part of the web request to inspect for the size constraint, such as a header, the query string, the body, or the URI. (AI-inferred)
+	FieldToMatch any
+	// Specifies the list of text transformations (such as lowercase, HTML decode, or normalize path) to apply to the request component before the size constraint check evaluates it. (AI-inferred)
+	PreParseTextTransformations any
+	// The size, in bytes, that the inspected request component is compared against for the size constraint statement. (AI-inferred)
+	Size any
+	// A list of text transformations that are applied to the inspected content before the size constraint is evaluated, each specifying a transformation priority and type (e.g., NONE, LOWERCASE, COMPRESS_WHITE_SPACE). (AI-inferred)
+	TextTransformations any
+}
+
+type WebAcl_Rules_Statement_SqliMatchStatement struct {
+	// Specifies the part of the web request (such as headers, query string, body, or URI path) that AWS WAF Classic should inspect for SQL injection attack patterns. (AI-inferred)
+	FieldToMatch any
+	// A list of text transformations (such as URL_DECODE, HTML_ENTITY_DECODE, or LOWERCASE) that AWS WAF applies to the inspection target before matching it against SQL injection signatures. (AI-inferred)
+	PreParseTextTransformations any
+	// Controls the sensitivity level of the SQL injection match statement, with 'HIGH' (the default) detecting a broader range of SQL injection attempts and 'LOW' matching only the most common patterns. (AI-inferred)
+	SensitivityLevel any
+	// List of text transformations (each with a priority and a transformation type such as URL_DECODE or LOWERCASE) that are applied to the web request content before the SQL injection match statement evaluates it. (AI-inferred)
+	TextTransformations any
+}
+
+type WebAcl_Rules_Statement_XssMatchStatement struct {
+	// Specifies the part of the web request (such as a header, the body, or all query arguments) that the XSS match statement inspects for cross-site scripting patterns. (AI-inferred)
+	FieldToMatch any
+	// The list of text transformation objects applied to the web request before AWS WAF parses it for cross-site scripting (XSS) attack signatures. (AI-inferred)
+	PreParseTextTransformations any
+	// Specifies the ordered text transformations to apply to the inspected web request content before evaluating the XSS match condition, enabling normalization such as lowercase conversion or HTML entity decoding. (AI-inferred)
+	TextTransformations any
+}
+
+type WebAcl_Rules_Statement struct {
+	// Represents an AND rule statement that requires all nested statements inside its Statements list to match for the rule to match. (AI-inferred)
 	AndStatement any
+	// Defines an ASN match statement, which matches requests based on the Autonomous System Number (ASN) of the client IP address by comparing it against a specified list of ASNs. (AI-inferred)
 	AsnMatchStatement any
+	// Configures a byte match rule statement that matches a specific string or binary pattern in a selected component of the web request (e.g., header, query string, body) using a defined positional constraint and optional text transformations. (AI-inferred)
 	ByteMatchStatement any
+	// Specifies a geographic match statement that filters requests by the country of the origin IP address, using an array of two-letter country codes. (AI-inferred)
 	GeoMatchStatement any
-	IpSetReferenceStatement any
+	// Defines a rule statement that matches web requests against the IP addresses contained in a referenced AWS WAF IP set, triggering when the request's source IP falls within the set's CIDR ranges. (AI-inferred)
+	IpsetReferenceStatement any
+	// Configures a label match statement that checks whether the request carries a specific label (or label in a namespace) set by a previous rule, enabling rule chaining based on prior label matches. (AI-inferred)
 	LabelMatchStatement any
+	// Defines a rule statement that uses a preconfigured managed rule group from a vendor (e.g., AWS or AWS Marketplace), specifying the group by name and optionally excluding rules from that group. (AI-inferred)
 	ManagedRuleGroupStatement any
+	// Negates the nested statement, matching web requests that do not match the enclosed statement. (AI-inferred)
 	NotStatement any
+	// An OR statement that matches a request if any of the nested statements match, allowing you to combine multiple match criteria in a single rule. (AI-inferred)
 	OrStatement any
+	// Configures the rule as a rate-based statement, which counts matching requests from a given source (such as an IP address or custom key) over a specified time window and triggers the rule's action when the count exceeds the configured limit. (AI-inferred)
 	RateBasedStatement any
+	// Defines a rule statement that matches a request component against a specified regular expression pattern, including the pattern string, the component to inspect (such as a header, query string, or body), and any text transformations to apply before evaluation. (AI-inferred)
 	RegexMatchStatement any
+	// A rule statement that references an AWS WAFv2 regex pattern set by its ARN and defines the web request component (like headers, body, or query string) to inspect for regex matches. (AI-inferred)
 	RegexPatternSetReferenceStatement any
+	// Defines a statement that includes all rules from a referenced rule group by its ARN, optionally overriding actions for specific rules. (AI-inferred)
 	RuleGroupReferenceStatement any
+	// This rule statement checks the size of a specified web request component (such as a header, body, or query string) against a defined size limit and comparison operator, matching requests that violate the size constraint. (AI-inferred)
 	SizeConstraintStatement any
+	// Defines a statement that inspects a specified part of the web request (such as body, query string, or URI) for SQL injection patterns, including configurable text transformations to apply before the inspection. (AI-inferred)
 	SqliMatchStatement any
+	// Defines the criteria for inspecting web requests for cross-site scripting (XSS) attacks, including the part of the request to inspect (e.g., body, query string) and any text transformations to apply. (AI-inferred)
 	XssMatchStatement any
 }
 
-type WebAcl_Rule_VisibilityConfig struct {
-	CloudwatchMetricsEnabled any
+type WebAcl_Rules_VisibilityConfig struct {
+	// When true, AWS WAFv2 publishes the rule's metrics to Amazon CloudWatch, allowing you to monitor the rule's activity and performance. (AI-inferred)
+	CloudWatchMetricsEnabled any
+	// For a rule in an AWS WAFv2 web ACL, this specifies the unique name of the CloudWatch metric generated for that rule's traffic, enabling per-rule monitoring in CloudWatch. (AI-inferred)
 	MetricName any
+	// Indicates whether AWS WAF should store a sample of web requests that match the rule's criteria, allowing inspection and analysis of sampled requests. (AI-inferred)
 	SampledRequestsEnabled any
 }
 
-type WebAcl_Rule struct {
-	Name any
-	Priority any
+type WebAcl_Rules struct {
+	// Determines the action AWS WAF takes when a web request matches the rule's statement, such as allowing, blocking, counting, or challenging the request. (AI-inferred)
 	Action any
+	// Configures the CAPTCHA challenge settings for this rule, such as the token immunity time (in seconds) during which a user who has successfully solved a CAPTCHA is not challenged again. (AI-inferred)
 	CaptchaConfig any
+	// Configures challenge action settings, including the immunity time (in seconds) that a successfully challenged client's token remains valid in the web ACL rule. (AI-inferred)
 	ChallengeConfig any
+	// The friendly name of the rule, which must be unique within the web ACL. (AI-inferred)
+	Name any
+	// Specifies the override action for a rule that is part of a rule group, which can be set to Count to only count matching requests or None to retain the rule group's original action, and is valid only for rule group rules. (AI-inferred)
 	OverrideAction any
-	RuleLabel any
+	// The integer priority that determines the evaluation order of this rule among all rules in the web ACL, with lower values evaluated first, and each rule requiring a unique priority. (AI-inferred)
+	Priority any
+	// The rule_labels blocks define custom labels to attach to matching web requests for this rule, allowing later rules in the same web ACL to reference these labels via label match statements. (AI-inferred)
+	RuleLabels any
+	// Specifies the matching logic for a rule in the AWS WAFv2 web ACL, defining which web requests (based on attributes such as IP addresses, geographic region, or request content) the rule evaluates to determine whether to apply its action like allow, block, or count. (AI-inferred)
 	Statement any
+	// Determines whether AWS WAF records metrics and sampled requests for this rule, including the CloudWatch metric name and whether sampled requests are enabled. (AI-inferred)
 	VisibilityConfig any
 }
 
-var WebAcl_AssociationConfig_RequestBody_ApiGatewayFields = ubx.FieldMap{
-		"DefaultSizeInspectionLimit": ubx.FieldSpec{WireName: "default_size_inspection_limit"},
+type WebAcl_Tags struct {
+	// The key of a tag assigned to a WAFv2 Web ACL for cost allocation and resource identification. (AI-inferred)
+	Key any
+	// The value of a user-defined tag key attached to the Web ACL, used to store arbitrary metadata for identifying, organizing, and managing the resource. (AI-inferred)
+	Value any
+}
+
+var WebAcl_ApplicationConfig_AttributesFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Values": ubx.FieldSpec{WireName: "values"},
 	}
 
-var WebAcl_AssociationConfig_RequestBodyFields = ubx.FieldMap{
-		"ApiGateway": ubx.FieldSpec{
-			WireName: "api_gateway",
+var WebAcl_ApplicationConfigFields = ubx.FieldMap{
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
 			Kind: "list",
-			Fields: WebAcl_AssociationConfig_RequestBody_ApiGatewayFields,
-		},
-		"AppRunnerService": ubx.FieldSpec{
-			WireName: "app_runner_service",
-			Kind: "list",
-			Fields: WebAcl_AssociationConfig_RequestBody_ApiGatewayFields,
-		},
-		"Cloudfront": ubx.FieldSpec{
-			WireName: "cloudfront",
-			Kind: "list",
-			Fields: WebAcl_AssociationConfig_RequestBody_ApiGatewayFields,
-		},
-		"CognitoUserPool": ubx.FieldSpec{
-			WireName: "cognito_user_pool",
-			Kind: "list",
-			Fields: WebAcl_AssociationConfig_RequestBody_ApiGatewayFields,
-		},
-		"VerifiedAccessInstance": ubx.FieldSpec{
-			WireName: "verified_access_instance",
-			Kind: "list",
-			Fields: WebAcl_AssociationConfig_RequestBody_ApiGatewayFields,
+			Fields: WebAcl_ApplicationConfig_AttributesFields,
 		},
 	}
 
 var WebAcl_AssociationConfigFields = ubx.FieldMap{
-		"RequestBody": ubx.FieldSpec{
-			WireName: "request_body",
-			Kind: "list",
-			Fields: WebAcl_AssociationConfig_RequestBodyFields,
-		},
+		"RequestBody": ubx.FieldSpec{WireName: "request_body"},
 	}
 
 var WebAcl_CaptchaConfig_ImmunityTimePropertyFields = ubx.FieldMap{
@@ -530,58 +706,52 @@ var WebAcl_CaptchaConfig_ImmunityTimePropertyFields = ubx.FieldMap{
 var WebAcl_CaptchaConfigFields = ubx.FieldMap{
 		"ImmunityTimeProperty": ubx.FieldSpec{
 			WireName: "immunity_time_property",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_CaptchaConfig_ImmunityTimePropertyFields,
 		},
 	}
 
-var WebAcl_CustomResponseBodyFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
-
-var WebAcl_DataProtectionConfig_DataProtection_FieldFields = ubx.FieldMap{
+var WebAcl_DataProtectionConfig_DataProtections_FieldFields = ubx.FieldMap{
 		"FieldKeys": ubx.FieldSpec{WireName: "field_keys"},
 		"FieldType": ubx.FieldSpec{WireName: "field_type"},
 	}
 
-var WebAcl_DataProtectionConfig_DataProtectionFields = ubx.FieldMap{
+var WebAcl_DataProtectionConfig_DataProtectionsFields = ubx.FieldMap{
 		"Action": ubx.FieldSpec{WireName: "action"},
 		"ExcludeRateBasedDetails": ubx.FieldSpec{WireName: "exclude_rate_based_details"},
 		"ExcludeRuleMatchDetails": ubx.FieldSpec{WireName: "exclude_rule_match_details"},
 		"Field": ubx.FieldSpec{
 			WireName: "field",
-			Kind: "list",
-			Fields: WebAcl_DataProtectionConfig_DataProtection_FieldFields,
+			Kind: "object",
+			Fields: WebAcl_DataProtectionConfig_DataProtections_FieldFields,
 		},
 	}
 
 var WebAcl_DataProtectionConfigFields = ubx.FieldMap{
-		"DataProtection": ubx.FieldSpec{
-			WireName: "data_protection",
+		"DataProtections": ubx.FieldSpec{
+			WireName: "data_protections",
 			Kind: "list",
-			Fields: WebAcl_DataProtectionConfig_DataProtectionFields,
+			Fields: WebAcl_DataProtectionConfig_DataProtectionsFields,
 		},
 	}
 
-var WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeaderFields = ubx.FieldMap{
+var WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeadersFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 var WebAcl_DefaultAction_Allow_CustomRequestHandlingFields = ubx.FieldMap{
-		"InsertHeader": ubx.FieldSpec{
-			WireName: "insert_header",
-			Kind: "set",
-			Fields: WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeaderFields,
+		"InsertHeaders": ubx.FieldSpec{
+			WireName: "insert_headers",
+			Kind: "list",
+			Fields: WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeadersFields,
 		},
 	}
 
 var WebAcl_DefaultAction_AllowFields = ubx.FieldMap{
 		"CustomRequestHandling": ubx.FieldSpec{
 			WireName: "custom_request_handling",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultAction_Allow_CustomRequestHandlingFields,
 		},
 	}
@@ -589,17 +759,17 @@ var WebAcl_DefaultAction_AllowFields = ubx.FieldMap{
 var WebAcl_DefaultAction_Block_CustomResponseFields = ubx.FieldMap{
 		"CustomResponseBodyKey": ubx.FieldSpec{WireName: "custom_response_body_key"},
 		"ResponseCode": ubx.FieldSpec{WireName: "response_code"},
-		"ResponseHeader": ubx.FieldSpec{
-			WireName: "response_header",
-			Kind: "set",
-			Fields: WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeaderFields,
+		"ResponseHeaders": ubx.FieldSpec{
+			WireName: "response_headers",
+			Kind: "list",
+			Fields: WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeadersFields,
 		},
 	}
 
 var WebAcl_DefaultAction_BlockFields = ubx.FieldMap{
 		"CustomResponse": ubx.FieldSpec{
 			WireName: "custom_response",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultAction_Block_CustomResponseFields,
 		},
 	}
@@ -607,1095 +777,981 @@ var WebAcl_DefaultAction_BlockFields = ubx.FieldMap{
 var WebAcl_DefaultActionFields = ubx.FieldMap{
 		"Allow": ubx.FieldSpec{
 			WireName: "allow",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultAction_AllowFields,
 		},
 		"Block": ubx.FieldSpec{
 			WireName: "block",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultAction_BlockFields,
 		},
 	}
 
-var WebAcl_Rule_ActionFields = ubx.FieldMap{
+var WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworks_PricesFields = ubx.FieldMap{
+		"Amount": ubx.FieldSpec{WireName: "amount"},
+		"Currency": ubx.FieldSpec{WireName: "currency"},
+	}
+
+var WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworksFields = ubx.FieldMap{
+		"Chain": ubx.FieldSpec{WireName: "chain"},
+		"Prices": ubx.FieldSpec{
+			WireName: "prices",
+			Kind: "list",
+			Fields: WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworks_PricesFields,
+		},
+		"WalletAddress": ubx.FieldSpec{WireName: "wallet_address"},
+	}
+
+var WebAcl_MonetizationConfig_CryptoConfigFields = ubx.FieldMap{
+		"PaymentNetworks": ubx.FieldSpec{
+			WireName: "payment_networks",
+			Kind: "list",
+			Fields: WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworksFields,
+		},
+	}
+
+var WebAcl_MonetizationConfigFields = ubx.FieldMap{
+		"CryptoConfig": ubx.FieldSpec{
+			WireName: "crypto_config",
+			Kind: "object",
+			Fields: WebAcl_MonetizationConfig_CryptoConfigFields,
+		},
+		"CurrencyMode": ubx.FieldSpec{WireName: "currency_mode"},
+	}
+
+var WebAcl_OnSourceDdoSprotectionConfigFields = ubx.FieldMap{
+		"AlblowReputationMode": ubx.FieldSpec{WireName: "alblow_reputation_mode"},
+	}
+
+var WebAcl_Rules_Action_MonetizeFields = ubx.FieldMap{
+		"PriceMultiplier": ubx.FieldSpec{WireName: "price_multiplier"},
+	}
+
+var WebAcl_Rules_ActionFields = ubx.FieldMap{
 		"Allow": ubx.FieldSpec{
 			WireName: "allow",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultAction_AllowFields,
 		},
 		"Block": ubx.FieldSpec{
 			WireName: "block",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultAction_BlockFields,
 		},
 		"Captcha": ubx.FieldSpec{
 			WireName: "captcha",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultAction_AllowFields,
 		},
 		"Challenge": ubx.FieldSpec{
 			WireName: "challenge",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultAction_AllowFields,
 		},
 		"Count": ubx.FieldSpec{
 			WireName: "count",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultAction_AllowFields,
 		},
-	}
-
-var WebAcl_Rule_OverrideAction_CountFields = ubx.FieldMap{
-	}
-
-var WebAcl_Rule_OverrideActionFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{
-			WireName: "count",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
-		"None": ubx.FieldSpec{
-			WireName: "none",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
+		"Monetize": ubx.FieldSpec{
+			WireName: "monetize",
+			Kind: "object",
+			Fields: WebAcl_Rules_Action_MonetizeFields,
 		},
 	}
 
-var WebAcl_Rule_RuleLabelFields = ubx.FieldMap{
+var WebAcl_Rules_OverrideActionFields = ubx.FieldMap{
+		"Count": ubx.FieldSpec{WireName: "count"},
+		"None": ubx.FieldSpec{WireName: "none"},
+	}
+
+var WebAcl_Rules_RuleLabelsFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement_ForwardedIpConfigFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_AndStatementFields = ubx.FieldMap{
+		"Statements": ubx.FieldSpec{WireName: "statements"},
+	}
+
+var WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields = ubx.FieldMap{
 		"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
 		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatementFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_AsnMatchStatementFields = ubx.FieldMap{
 		"AsnList": ubx.FieldSpec{WireName: "asn_list"},
-		"ForwardedIpConfig": ubx.FieldSpec{
-			WireName: "forwarded_ip_config",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement_ForwardedIpConfigFields,
+		"ForwardedIpconfig": ubx.FieldSpec{
+			WireName: "forwarded_ipconfig",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_BodyFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_BodyFields = ubx.FieldMap{
 		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPatternFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPatternFields = ubx.FieldMap{
+		"All": ubx.FieldSpec{WireName: "all"},
 		"ExcludedCookies": ubx.FieldSpec{WireName: "excluded_cookies"},
 		"IncludedCookies": ubx.FieldSpec{WireName: "included_cookies"},
-		"All": ubx.FieldSpec{
-			WireName: "all",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_CookiesFields = ubx.FieldMap{
-		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
-		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
+var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_CookiesFields = ubx.FieldMap{
 		"MatchPattern": ubx.FieldSpec{
 			WireName: "match_pattern",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPatternFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPatternFields,
 		},
+		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
+		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPatternFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPatternFields = ubx.FieldMap{
+		"All": ubx.FieldSpec{WireName: "all"},
 		"ExcludedHeaders": ubx.FieldSpec{WireName: "excluded_headers"},
 		"IncludedHeaders": ubx.FieldSpec{WireName: "included_headers"},
-		"All": ubx.FieldSpec{
-			WireName: "all",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_HeadersFields = ubx.FieldMap{
-		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
-		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
+var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_HeadersFields = ubx.FieldMap{
 		"MatchPattern": ubx.FieldSpec{
 			WireName: "match_pattern",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPatternFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPatternFields,
 		},
+		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
+		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields = ubx.FieldMap{
 		"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPatternFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPatternFields = ubx.FieldMap{
+		"All": ubx.FieldSpec{WireName: "all"},
 		"IncludedPaths": ubx.FieldSpec{WireName: "included_paths"},
-		"All": ubx.FieldSpec{
-			WireName: "all",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBodyFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBodyFields = ubx.FieldMap{
 		"InvalidFallbackBehavior": ubx.FieldSpec{WireName: "invalid_fallback_behavior"},
-		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
-		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
 		"MatchPattern": ubx.FieldSpec{
 			WireName: "match_pattern",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPatternFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPatternFields,
 		},
+		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
+		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields = ubx.FieldMap{
-		"AllQueryArguments": ubx.FieldSpec{
-			WireName: "all_query_arguments",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
+var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields = ubx.FieldMap{
+		"AllQueryArguments": ubx.FieldSpec{WireName: "all_query_arguments"},
 		"Body": ubx.FieldSpec{
 			WireName: "body",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
 		},
 		"Cookies": ubx.FieldSpec{
 			WireName: "cookies",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_CookiesFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_CookiesFields,
 		},
 		"HeaderOrder": ubx.FieldSpec{
 			WireName: "header_order",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
 		},
 		"Headers": ubx.FieldSpec{
 			WireName: "headers",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_HeadersFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_HeadersFields,
 		},
 		"Ja3Fingerprint": ubx.FieldSpec{
 			WireName: "ja3_fingerprint",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
 		},
 		"Ja4Fingerprint": ubx.FieldSpec{
 			WireName: "ja4_fingerprint",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
 		},
 		"JsonBody": ubx.FieldSpec{
 			WireName: "json_body",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBodyFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBodyFields,
 		},
-		"Method": ubx.FieldSpec{
-			WireName: "method",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
-		"QueryString": ubx.FieldSpec{
-			WireName: "query_string",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
+		"Method": ubx.FieldSpec{WireName: "method"},
+		"QueryString": ubx.FieldSpec{WireName: "query_string"},
 		"SingleHeader": ubx.FieldSpec{
 			WireName: "single_header",
-			Kind: "list",
-			Fields: WebAcl_Rule_RuleLabelFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_RuleLabelsFields,
 		},
 		"SingleQueryArgument": ubx.FieldSpec{
 			WireName: "single_query_argument",
-			Kind: "list",
-			Fields: WebAcl_Rule_RuleLabelFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_RuleLabelsFields,
 		},
 		"UriFragment": ubx.FieldSpec{
 			WireName: "uri_fragment",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
 		},
-		"UriPath": ubx.FieldSpec{
-			WireName: "uri_path",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
+		"UriPath": ubx.FieldSpec{WireName: "uri_path"},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields = ubx.FieldMap{
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatementFields = ubx.FieldMap{
-		"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
-		"SearchString": ubx.FieldSpec{WireName: "search_string"},
+var WebAcl_Rules_Statement_ByteMatchStatementFields = ubx.FieldMap{
 		"FieldToMatch": ubx.FieldSpec{
 			WireName: "field_to_match",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
 		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
+		"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+		"SearchString": ubx.FieldSpec{WireName: "search_string"},
+		"SearchStringBase64": ubx.FieldSpec{WireName: "search_string_base64"},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatementFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_GeoMatchStatementFields = ubx.FieldMap{
 		"CountryCodes": ubx.FieldSpec{WireName: "country_codes"},
-		"ForwardedIpConfig": ubx.FieldSpec{
-			WireName: "forwarded_ip_config",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement_ForwardedIpConfigFields,
+		"ForwardedIpconfig": ubx.FieldSpec{
+			WireName: "forwarded_ipconfig",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatement_IpSetForwardedIpConfigFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfigFields = ubx.FieldMap{
 		"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
 		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
 		"Position": ubx.FieldSpec{WireName: "position"},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatementFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_IpsetReferenceStatementFields = ubx.FieldMap{
 		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"IpSetForwardedIpConfig": ubx.FieldSpec{
-			WireName: "ip_set_forwarded_ip_config",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatement_IpSetForwardedIpConfigFields,
+		"IpsetForwardedIpconfig": ubx.FieldSpec{
+			WireName: "ipset_forwarded_ipconfig",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfigFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatementFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_LabelMatchStatementFields = ubx.FieldMap{
 		"Key": ubx.FieldSpec{WireName: "key"},
 		"Scope": ubx.FieldSpec{WireName: "scope"},
 	}
 
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatementFields = ubx.FieldMap{
-		"RegexString": ubx.FieldSpec{WireName: "regex_string"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatementFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatementFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatementFields = ubx.FieldMap{
-		"SensitivityLevel": ubx.FieldSpec{WireName: "sensitivity_level"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatementFields = ubx.FieldMap{
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_StatementFields = ubx.FieldMap{
-		"AsnMatchStatement": ubx.FieldSpec{
-			WireName: "asn_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatementFields,
-		},
-		"ByteMatchStatement": ubx.FieldSpec{
-			WireName: "byte_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatementFields,
-		},
-		"GeoMatchStatement": ubx.FieldSpec{
-			WireName: "geo_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatementFields,
-		},
-		"IpSetReferenceStatement": ubx.FieldSpec{
-			WireName: "ip_set_reference_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatementFields,
-		},
-		"LabelMatchStatement": ubx.FieldSpec{
-			WireName: "label_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatementFields,
-		},
-		"RegexMatchStatement": ubx.FieldSpec{
-			WireName: "regex_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatementFields,
-		},
-		"RegexPatternSetReferenceStatement": ubx.FieldSpec{
-			WireName: "regex_pattern_set_reference_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatementFields,
-		},
-		"SizeConstraintStatement": ubx.FieldSpec{
-			WireName: "size_constraint_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatementFields,
-		},
-		"SqliMatchStatement": ubx.FieldSpec{
-			WireName: "sqli_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatementFields,
-		},
-		"XssMatchStatement": ubx.FieldSpec{
-			WireName: "xss_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatementFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatementFields = ubx.FieldMap{
-		"Statement": ubx.FieldSpec{
-			WireName: "statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_StatementFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_StatementFields = ubx.FieldMap{
-		"AndStatement": ubx.FieldSpec{
-			WireName: "and_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"AsnMatchStatement": ubx.FieldSpec{
-			WireName: "asn_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatementFields,
-		},
-		"ByteMatchStatement": ubx.FieldSpec{
-			WireName: "byte_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatementFields,
-		},
-		"GeoMatchStatement": ubx.FieldSpec{
-			WireName: "geo_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatementFields,
-		},
-		"IpSetReferenceStatement": ubx.FieldSpec{
-			WireName: "ip_set_reference_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatementFields,
-		},
-		"LabelMatchStatement": ubx.FieldSpec{
-			WireName: "label_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatementFields,
-		},
-		"NotStatement": ubx.FieldSpec{
-			WireName: "not_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"OrStatement": ubx.FieldSpec{
-			WireName: "or_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"RegexMatchStatement": ubx.FieldSpec{
-			WireName: "regex_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatementFields,
-		},
-		"RegexPatternSetReferenceStatement": ubx.FieldSpec{
-			WireName: "regex_pattern_set_reference_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatementFields,
-		},
-		"SizeConstraintStatement": ubx.FieldSpec{
-			WireName: "size_constraint_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatementFields,
-		},
-		"SqliMatchStatement": ubx.FieldSpec{
-			WireName: "sqli_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatementFields,
-		},
-		"XssMatchStatement": ubx.FieldSpec{
-			WireName: "xss_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatementFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_AndStatement_Statement_AndStatementFields = ubx.FieldMap{
-		"Statement": ubx.FieldSpec{
-			WireName: "statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_StatementFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_AndStatement_StatementFields = ubx.FieldMap{
-		"AndStatement": ubx.FieldSpec{
-			WireName: "and_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"AsnMatchStatement": ubx.FieldSpec{
-			WireName: "asn_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatementFields,
-		},
-		"ByteMatchStatement": ubx.FieldSpec{
-			WireName: "byte_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatementFields,
-		},
-		"GeoMatchStatement": ubx.FieldSpec{
-			WireName: "geo_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatementFields,
-		},
-		"IpSetReferenceStatement": ubx.FieldSpec{
-			WireName: "ip_set_reference_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatementFields,
-		},
-		"LabelMatchStatement": ubx.FieldSpec{
-			WireName: "label_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatementFields,
-		},
-		"NotStatement": ubx.FieldSpec{
-			WireName: "not_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"OrStatement": ubx.FieldSpec{
-			WireName: "or_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"RegexMatchStatement": ubx.FieldSpec{
-			WireName: "regex_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatementFields,
-		},
-		"RegexPatternSetReferenceStatement": ubx.FieldSpec{
-			WireName: "regex_pattern_set_reference_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatementFields,
-		},
-		"SizeConstraintStatement": ubx.FieldSpec{
-			WireName: "size_constraint_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatementFields,
-		},
-		"SqliMatchStatement": ubx.FieldSpec{
-			WireName: "sqli_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatementFields,
-		},
-		"XssMatchStatement": ubx.FieldSpec{
-			WireName: "xss_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatementFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_AndStatementFields = ubx.FieldMap{
-		"Statement": ubx.FieldSpec{
-			WireName: "statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_StatementFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_AddressFieldsFields = ubx.FieldMap{
-		"Identifiers": ubx.FieldSpec{WireName: "identifiers"},
-	}
-
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_EmailFieldFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields = ubx.FieldMap{
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspectionFields = ubx.FieldMap{
-		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspectionFields = ubx.FieldMap{
 		"AddressFields": ubx.FieldSpec{
 			WireName: "address_fields",
 			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_AddressFieldsFields,
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
 		},
 		"EmailField": ubx.FieldSpec{
 			WireName: "email_field",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_EmailFieldFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
 		},
 		"PasswordField": ubx.FieldSpec{
 			WireName: "password_field",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_EmailFieldFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
 		},
+		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
 		"PhoneNumberFields": ubx.FieldSpec{
 			WireName: "phone_number_fields",
 			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_AddressFieldsFields,
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
 		},
 		"UsernameField": ubx.FieldSpec{
 			WireName: "username_field",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_EmailFieldFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_BodyContainsFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_BodyContainsFields = ubx.FieldMap{
 		"FailureStrings": ubx.FieldSpec{WireName: "failure_strings"},
 		"SuccessStrings": ubx.FieldSpec{WireName: "success_strings"},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_HeaderFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_HeaderFields = ubx.FieldMap{
 		"FailureValues": ubx.FieldSpec{WireName: "failure_values"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SuccessValues": ubx.FieldSpec{WireName: "success_values"},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_JsonFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_JsonFields = ubx.FieldMap{
 		"FailureValues": ubx.FieldSpec{WireName: "failure_values"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 		"SuccessValues": ubx.FieldSpec{WireName: "success_values"},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_StatusCodeFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_StatusCodeFields = ubx.FieldMap{
 		"FailureCodes": ubx.FieldSpec{WireName: "failure_codes"},
 		"SuccessCodes": ubx.FieldSpec{WireName: "success_codes"},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspectionFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspectionFields = ubx.FieldMap{
 		"BodyContains": ubx.FieldSpec{
 			WireName: "body_contains",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_BodyContainsFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_BodyContainsFields,
 		},
 		"Header": ubx.FieldSpec{
 			WireName: "header",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_HeaderFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_HeaderFields,
 		},
 		"Json": ubx.FieldSpec{
 			WireName: "json",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_JsonFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_JsonFields,
 		},
 		"StatusCode": ubx.FieldSpec{
 			WireName: "status_code",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspection_StatusCodeFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_StatusCodeFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSetFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSetFields = ubx.FieldMap{
 		"CreationPath": ubx.FieldSpec{WireName: "creation_path"},
 		"EnableRegexInPath": ubx.FieldSpec{WireName: "enable_regex_in_path"},
 		"RegistrationPagePath": ubx.FieldSpec{WireName: "registration_page_path"},
 		"RequestInspection": ubx.FieldSpec{
 			WireName: "request_inspection",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspectionFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspectionFields,
 		},
 		"ResponseInspection": ubx.FieldSpec{
 			WireName: "response_inspection",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspectionFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspectionFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressionFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressionsFields = ubx.FieldMap{
 		"RegexString": ubx.FieldSpec{WireName: "regex_string"},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSet_ClientSideActionConfig_ChallengeFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_ChallengeFields = ubx.FieldMap{
+		"ExemptUriRegularExpressions": ubx.FieldSpec{
+			WireName: "exempt_uri_regular_expressions",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressionsFields,
+		},
 		"Sensitivity": ubx.FieldSpec{WireName: "sensitivity"},
 		"UsageOfAction": ubx.FieldSpec{WireName: "usage_of_action"},
-		"ExemptUriRegularExpression": ubx.FieldSpec{
-			WireName: "exempt_uri_regular_expression",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressionFields,
-		},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSet_ClientSideActionConfigFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfigFields = ubx.FieldMap{
 		"Challenge": ubx.FieldSpec{
 			WireName: "challenge",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSet_ClientSideActionConfig_ChallengeFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_ChallengeFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSetFields = ubx.FieldMap{
-		"SensitivityToBlock": ubx.FieldSpec{WireName: "sensitivity_to_block"},
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSetFields = ubx.FieldMap{
 		"ClientSideActionConfig": ubx.FieldSpec{
 			WireName: "client_side_action_config",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSet_ClientSideActionConfigFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfigFields,
 		},
+		"SensitivityToBlock": ubx.FieldSpec{WireName: "sensitivity_to_block"},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAtpRuleSet_RequestInspectionFields = ubx.FieldMap{
-		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet_RequestInspectionFields = ubx.FieldMap{
 		"PasswordField": ubx.FieldSpec{
 			WireName: "password_field",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_EmailFieldFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
 		},
+		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
 		"UsernameField": ubx.FieldSpec{
 			WireName: "username_field",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_EmailFieldFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAtpRuleSetFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSetFields = ubx.FieldMap{
 		"EnableRegexInPath": ubx.FieldSpec{WireName: "enable_regex_in_path"},
 		"LoginPath": ubx.FieldSpec{WireName: "login_path"},
 		"RequestInspection": ubx.FieldSpec{
 			WireName: "request_inspection",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAtpRuleSet_RequestInspectionFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet_RequestInspectionFields,
 		},
 		"ResponseInspection": ubx.FieldSpec{
 			WireName: "response_inspection",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_ResponseInspectionFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspectionFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesBotControlRuleSetFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesBotControlRuleSetFields = ubx.FieldMap{
 		"EnableMachineLearning": ubx.FieldSpec{WireName: "enable_machine_learning"},
 		"InspectionLevel": ubx.FieldSpec{WireName: "inspection_level"},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigsFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigsFields = ubx.FieldMap{
+		"AwsmanagedRulesAcfpruleSet": ubx.FieldSpec{
+			WireName: "awsmanaged_rules_acfprule_set",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSetFields,
+		},
+		"AwsmanagedRulesAntiDdoSruleSet": ubx.FieldSpec{
+			WireName: "awsmanaged_rules_anti_ddo_srule_set",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSetFields,
+		},
+		"AwsmanagedRulesAtpruleSet": ubx.FieldSpec{
+			WireName: "awsmanaged_rules_atprule_set",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSetFields,
+		},
+		"AwsmanagedRulesBotControlRuleSet": ubx.FieldSpec{
+			WireName: "awsmanaged_rules_bot_control_rule_set",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesBotControlRuleSetFields,
+		},
 		"LoginPath": ubx.FieldSpec{WireName: "login_path"},
-		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
-		"AwsManagedRulesAcfpRuleSet": ubx.FieldSpec{
-			WireName: "aws_managed_rules_acfp_rule_set",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSetFields,
-		},
-		"AwsManagedRulesAntiDdosRuleSet": ubx.FieldSpec{
-			WireName: "aws_managed_rules_anti_ddos_rule_set",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAntiDdosRuleSetFields,
-		},
-		"AwsManagedRulesAtpRuleSet": ubx.FieldSpec{
-			WireName: "aws_managed_rules_atp_rule_set",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAtpRuleSetFields,
-		},
-		"AwsManagedRulesBotControlRuleSet": ubx.FieldSpec{
-			WireName: "aws_managed_rules_bot_control_rule_set",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesBotControlRuleSetFields,
-		},
 		"PasswordField": ubx.FieldSpec{
 			WireName: "password_field",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_EmailFieldFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
 		},
+		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
 		"UsernameField": ubx.FieldSpec{
 			WireName: "username_field",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsManagedRulesAcfpRuleSet_RequestInspection_EmailFieldFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatement_RuleActionOverrideFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+var WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverridesFields = ubx.FieldMap{
 		"ActionToUse": ubx.FieldSpec{
 			WireName: "action_to_use",
-			Kind: "list",
-			Fields: WebAcl_Rule_ActionFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_ActionFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	}
 
-var WebAcl_Rule_Statement_ManagedRuleGroupStatementFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"VendorName": ubx.FieldSpec{WireName: "vendor_name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+var WebAcl_Rules_Statement_ManagedRuleGroupStatementFields = ubx.FieldMap{
+		"ExcludedRules": ubx.FieldSpec{
+			WireName: "excluded_rules",
+			Kind: "list",
+			Fields: WebAcl_Rules_RuleLabelsFields,
+		},
 		"ManagedRuleGroupConfigs": ubx.FieldSpec{
 			WireName: "managed_rule_group_configs",
 			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigsFields,
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigsFields,
 		},
-		"RuleActionOverride": ubx.FieldSpec{
-			WireName: "rule_action_override",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_RuleActionOverrideFields,
-		},
-		"ScopeDownStatement": ubx.FieldSpec{
-			WireName: "scope_down_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_StatementFields,
-		},
-	}
-
-var WebAcl_Rule_Statement_RateBasedStatement_CustomKey_CookieFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
+		"RuleActionOverrides": ubx.FieldSpec{
+			WireName: "rule_action_overrides",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverridesFields,
+		},
+		"ScopeDownStatement": ubx.FieldSpec{WireName: "scope_down_statement"},
+		"VendorName": ubx.FieldSpec{WireName: "vendor_name"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
+
+var WebAcl_Rules_Statement_NotStatementFields = ubx.FieldMap{
+		"Statement": ubx.FieldSpec{WireName: "statement"},
+	}
+
+var WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_RateBasedStatement_CustomKey_LabelNamespaceFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespaceFields = ubx.FieldMap{
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
 	}
 
-var WebAcl_Rule_Statement_RateBasedStatement_CustomKey_QueryStringFields = ubx.FieldMap{
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
+var WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryStringFields = ubx.FieldMap{
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_RateBasedStatement_CustomKeyFields = ubx.FieldMap{
-		"Asn": ubx.FieldSpec{
-			WireName: "asn",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
+var WebAcl_Rules_Statement_RateBasedStatement_CustomKeysFields = ubx.FieldMap{
+		"Asn": ubx.FieldSpec{WireName: "asn"},
 		"Cookie": ubx.FieldSpec{
 			WireName: "cookie",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_RateBasedStatement_CustomKey_CookieFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
 		},
-		"ForwardedIp": ubx.FieldSpec{
-			WireName: "forwarded_ip",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
+		"ForwardedIp": ubx.FieldSpec{WireName: "forwarded_ip"},
 		"Header": ubx.FieldSpec{
 			WireName: "header",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_RateBasedStatement_CustomKey_CookieFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
 		},
-		"HttpMethod": ubx.FieldSpec{
-			WireName: "http_method",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
-		"Ip": ubx.FieldSpec{
-			WireName: "ip",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideAction_CountFields,
-		},
+		"Httpmethod": ubx.FieldSpec{WireName: "httpmethod"},
+		"Ip": ubx.FieldSpec{WireName: "ip"},
 		"Ja3Fingerprint": ubx.FieldSpec{
 			WireName: "ja3_fingerprint",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
 		},
 		"Ja4Fingerprint": ubx.FieldSpec{
 			WireName: "ja4_fingerprint",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
 		},
 		"LabelNamespace": ubx.FieldSpec{
 			WireName: "label_namespace",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_RateBasedStatement_CustomKey_LabelNamespaceFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespaceFields,
 		},
 		"QueryArgument": ubx.FieldSpec{
 			WireName: "query_argument",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_RateBasedStatement_CustomKey_CookieFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
 		},
 		"QueryString": ubx.FieldSpec{
 			WireName: "query_string",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_RateBasedStatement_CustomKey_QueryStringFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryStringFields,
 		},
 		"UriPath": ubx.FieldSpec{
 			WireName: "uri_path",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_RateBasedStatement_CustomKey_QueryStringFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryStringFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_RateBasedStatementFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_RateBasedStatementFields = ubx.FieldMap{
 		"AggregateKeyType": ubx.FieldSpec{WireName: "aggregate_key_type"},
+		"CustomKeys": ubx.FieldSpec{
+			WireName: "custom_keys",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeysFields,
+		},
 		"EvaluationWindowSec": ubx.FieldSpec{WireName: "evaluation_window_sec"},
+		"ForwardedIpconfig": ubx.FieldSpec{
+			WireName: "forwarded_ipconfig",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
+		},
 		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"CustomKey": ubx.FieldSpec{
-			WireName: "custom_key",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_RateBasedStatement_CustomKeyFields,
+		"ScopeDownStatement": ubx.FieldSpec{WireName: "scope_down_statement"},
+	}
+
+var WebAcl_Rules_Statement_RegexMatchStatementFields = ubx.FieldMap{
+		"FieldToMatch": ubx.FieldSpec{
+			WireName: "field_to_match",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
 		},
-		"ForwardedIpConfig": ubx.FieldSpec{
-			WireName: "forwarded_ip_config",
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
 			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement_ForwardedIpConfigFields,
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
 		},
-		"ScopeDownStatement": ubx.FieldSpec{
-			WireName: "scope_down_statement",
+		"RegexString": ubx.FieldSpec{WireName: "regex_string"},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
 			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_StatementFields,
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
 		},
 	}
 
-var WebAcl_Rule_Statement_RuleGroupReferenceStatementFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_RegexPatternSetReferenceStatementFields = ubx.FieldMap{
 		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"RuleActionOverride": ubx.FieldSpec{
-			WireName: "rule_action_override",
+		"FieldToMatch": ubx.FieldSpec{
+			WireName: "field_to_match",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+		},
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
 			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatement_RuleActionOverrideFields,
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
 		},
 	}
 
-var WebAcl_Rule_StatementFields = ubx.FieldMap{
+var WebAcl_Rules_Statement_RuleGroupReferenceStatementFields = ubx.FieldMap{
+		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"ExcludedRules": ubx.FieldSpec{
+			WireName: "excluded_rules",
+			Kind: "list",
+			Fields: WebAcl_Rules_RuleLabelsFields,
+		},
+		"RuleActionOverrides": ubx.FieldSpec{
+			WireName: "rule_action_overrides",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverridesFields,
+		},
+	}
+
+var WebAcl_Rules_Statement_SizeConstraintStatementFields = ubx.FieldMap{
+		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+		"FieldToMatch": ubx.FieldSpec{
+			WireName: "field_to_match",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+		},
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+		"Size": ubx.FieldSpec{WireName: "size"},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+	}
+
+var WebAcl_Rules_Statement_SqliMatchStatementFields = ubx.FieldMap{
+		"FieldToMatch": ubx.FieldSpec{
+			WireName: "field_to_match",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+		},
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+		"SensitivityLevel": ubx.FieldSpec{WireName: "sensitivity_level"},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+	}
+
+var WebAcl_Rules_Statement_XssMatchStatementFields = ubx.FieldMap{
+		"FieldToMatch": ubx.FieldSpec{
+			WireName: "field_to_match",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+		},
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+	}
+
+var WebAcl_Rules_StatementFields = ubx.FieldMap{
 		"AndStatement": ubx.FieldSpec{
 			WireName: "and_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_AndStatementFields,
 		},
 		"AsnMatchStatement": ubx.FieldSpec{
 			WireName: "asn_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_AsnMatchStatementFields,
 		},
 		"ByteMatchStatement": ubx.FieldSpec{
 			WireName: "byte_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ByteMatchStatementFields,
 		},
 		"GeoMatchStatement": ubx.FieldSpec{
 			WireName: "geo_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_GeoMatchStatementFields,
 		},
-		"IpSetReferenceStatement": ubx.FieldSpec{
-			WireName: "ip_set_reference_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatementFields,
+		"IpsetReferenceStatement": ubx.FieldSpec{
+			WireName: "ipset_reference_statement",
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_IpsetReferenceStatementFields,
 		},
 		"LabelMatchStatement": ubx.FieldSpec{
 			WireName: "label_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_LabelMatchStatementFields,
 		},
 		"ManagedRuleGroupStatement": ubx.FieldSpec{
 			WireName: "managed_rule_group_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_ManagedRuleGroupStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatementFields,
 		},
 		"NotStatement": ubx.FieldSpec{
 			WireName: "not_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_NotStatementFields,
 		},
 		"OrStatement": ubx.FieldSpec{
 			WireName: "or_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_AndStatementFields,
 		},
 		"RateBasedStatement": ubx.FieldSpec{
 			WireName: "rate_based_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_RateBasedStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_RateBasedStatementFields,
 		},
 		"RegexMatchStatement": ubx.FieldSpec{
 			WireName: "regex_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_RegexMatchStatementFields,
 		},
 		"RegexPatternSetReferenceStatement": ubx.FieldSpec{
 			WireName: "regex_pattern_set_reference_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_RegexPatternSetReferenceStatementFields,
 		},
 		"RuleGroupReferenceStatement": ubx.FieldSpec{
 			WireName: "rule_group_reference_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_RuleGroupReferenceStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_RuleGroupReferenceStatementFields,
 		},
 		"SizeConstraintStatement": ubx.FieldSpec{
 			WireName: "size_constraint_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_SizeConstraintStatementFields,
 		},
 		"SqliMatchStatement": ubx.FieldSpec{
 			WireName: "sqli_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_SqliMatchStatementFields,
 		},
 		"XssMatchStatement": ubx.FieldSpec{
 			WireName: "xss_match_statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_Statement_XssMatchStatementFields,
 		},
 	}
 
-var WebAcl_Rule_VisibilityConfigFields = ubx.FieldMap{
-		"CloudwatchMetricsEnabled": ubx.FieldSpec{WireName: "cloudwatch_metrics_enabled"},
+var WebAcl_Rules_VisibilityConfigFields = ubx.FieldMap{
+		"CloudWatchMetricsEnabled": ubx.FieldSpec{WireName: "cloud_watch_metrics_enabled"},
 		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
 		"SampledRequestsEnabled": ubx.FieldSpec{WireName: "sampled_requests_enabled"},
 	}
 
-var WebAcl_RuleFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+var WebAcl_RulesFields = ubx.FieldMap{
 		"Action": ubx.FieldSpec{
 			WireName: "action",
-			Kind: "list",
-			Fields: WebAcl_Rule_ActionFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_ActionFields,
 		},
 		"CaptchaConfig": ubx.FieldSpec{
 			WireName: "captcha_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_CaptchaConfigFields,
 		},
 		"ChallengeConfig": ubx.FieldSpec{
 			WireName: "challenge_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_CaptchaConfigFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"OverrideAction": ubx.FieldSpec{
 			WireName: "override_action",
-			Kind: "list",
-			Fields: WebAcl_Rule_OverrideActionFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_OverrideActionFields,
 		},
-		"RuleLabel": ubx.FieldSpec{
-			WireName: "rule_label",
-			Kind: "set",
-			Fields: WebAcl_Rule_RuleLabelFields,
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"RuleLabels": ubx.FieldSpec{
+			WireName: "rule_labels",
+			Kind: "list",
+			Fields: WebAcl_Rules_RuleLabelsFields,
 		},
 		"Statement": ubx.FieldSpec{
 			WireName: "statement",
-			Kind: "list",
-			Fields: WebAcl_Rule_StatementFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_StatementFields,
 		},
 		"VisibilityConfig": ubx.FieldSpec{
 			WireName: "visibility_config",
-			Kind: "list",
-			Fields: WebAcl_Rule_VisibilityConfigFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_VisibilityConfigFields,
 		},
 	}
 
+var WebAcl_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type WebAclConfig struct {
-	Description any
-	Id any
-	Name any
-	NamePrefix any
-	Region any
-	RuleJson any
-	Scope any
-	Tags any
-	TagsAll any
-	TokenDomains any
+	// Configures the ability for the WAF; console to store and retrieve application attributes during the webacl; creation process. Application attributes help WAF; give recommendations for protection packs.
+	ApplicationConfig any
+	// AssociationConfig for body inspection
 	AssociationConfig any
+	// Configures the web ACL's CAPTCHA challenge behavior, including the immunity time that specifies how long a successful CAPTCHA solve exempts a client from being challenged again. (AI-inferred)
 	CaptchaConfig any
+	// Specifies the challenge configuration for the web ACL, including an immunity time that controls how long a client that successfully answers a challenge is exempt from subsequent challenges. (AI-inferred)
 	ChallengeConfig any
-	CustomResponseBody any
+	// Custom response key and body map.
+	CustomResponseBodies any
+	// Configures data protection for the web ACL, specifying which sensitive data patterns in requests to detect and whether to redact or log them. (AI-inferred)
 	DataProtectionConfig any
+	// Default Action WebACL will take against ingress traffic when there is no matching Rule.
 	DefaultAction any
-	Rule any
+	// Description of the entity.
+	Description any
+	// Configures monetization for the web ACL or rule group.
+	MonetizationConfig any
+	// Name of the WebACL.
+	Name any
+	// Configures the options for on-source DDoS protection provided by supported resource type.
+	OnSourceDdoSprotectionConfig any
+	// Collection of Rules.
+	Rules any
+	// Use CLOUDFRONT for CloudFront WebACL, use REGIONAL for Application Load Balancer and API Gateway.
+	Scope any
+	// A list of key-value pairs to tag the web ACL for cost allocation, access control, and resource identification, where each object contains a Key and Value. (AI-inferred)
+	Tags any
+	// List of domains to accept in web request tokens, in addition to the domain of the protected resource.
+	TokenDomains any
+	// Visibility Metric of the WebACL.
+	VisibilityConfig any
+}
+
+type WebAclAttrs struct {
+	// Configures the ability for the WAF; console to store and retrieve application attributes during the webacl; creation process. Application attributes help WAF; give recommendations for protection packs.
+	ApplicationConfig any
+	// ARN of the WAF entity.
+	Arn any
+	// AssociationConfig for body inspection
+	AssociationConfig any
+	// The current capacity units consumed by the rules configured in this web ACL, as reported by AWS WAFv2 after applying the rule configurations. (AI-inferred)
+	Capacity any
+	// Configures the web ACL's CAPTCHA challenge behavior, including the immunity time that specifies how long a successful CAPTCHA solve exempts a client from being challenged again. (AI-inferred)
+	CaptchaConfig any
+	// Specifies the challenge configuration for the web ACL, including an immunity time that controls how long a client that successfully answers a challenge is exempt from subsequent challenges. (AI-inferred)
+	ChallengeConfig any
+	// Custom response key and body map.
+	CustomResponseBodies any
+	// Configures data protection for the web ACL, specifying which sensitive data patterns in requests to detect and whether to redact or log them. (AI-inferred)
+	DataProtectionConfig any
+	// Default Action WebACL will take against ingress traffic when there is no matching Rule.
+	DefaultAction any
+	// Description of the entity.
+	Description any
+	// Id of the WebACL
+	Id any
+	// Name of the Label.
+	LabelNamespace any
+	// Configures monetization for the web ACL or rule group.
+	MonetizationConfig any
+	// Name of the WebACL.
+	Name any
+	// Configures the options for on-source DDoS protection provided by supported resource type.
+	OnSourceDdoSprotectionConfig any
+	// Collection of Rules.
+	Rules any
+	// Use CLOUDFRONT for CloudFront WebACL, use REGIONAL for Application Load Balancer and API Gateway.
+	Scope any
+	// A list of key-value pairs to tag the web ACL for cost allocation, access control, and resource identification, where each object contains a Key and Value. (AI-inferred)
+	Tags any
+	// List of domains to accept in web request tokens, in addition to the domain of the protected resource.
+	TokenDomains any
+	// Visibility Metric of the WebACL.
 	VisibilityConfig any
 }
 
 var WebAcl = ubx.ResourceBinding{
 	WireType: "aws_wafv2_web_acl",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RuleJson": ubx.FieldSpec{WireName: "rule_json"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"TokenDomains": ubx.FieldSpec{WireName: "token_domains"},
+		"ApplicationConfig": ubx.FieldSpec{
+			WireName: "application_config",
+			Kind: "object",
+			Fields: WebAcl_ApplicationConfigFields,
+		},
 		"AssociationConfig": ubx.FieldSpec{
 			WireName: "association_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_AssociationConfigFields,
 		},
 		"CaptchaConfig": ubx.FieldSpec{
 			WireName: "captcha_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_CaptchaConfigFields,
 		},
 		"ChallengeConfig": ubx.FieldSpec{
 			WireName: "challenge_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_CaptchaConfigFields,
 		},
-		"CustomResponseBody": ubx.FieldSpec{
-			WireName: "custom_response_body",
-			Kind: "set",
-			Fields: WebAcl_CustomResponseBodyFields,
-		},
+		"CustomResponseBodies": ubx.FieldSpec{WireName: "custom_response_bodies"},
 		"DataProtectionConfig": ubx.FieldSpec{
 			WireName: "data_protection_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DataProtectionConfigFields,
 		},
 		"DefaultAction": ubx.FieldSpec{
 			WireName: "default_action",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultActionFields,
 		},
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "set",
-			Fields: WebAcl_RuleFields,
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"MonetizationConfig": ubx.FieldSpec{
+			WireName: "monetization_config",
+			Kind: "object",
+			Fields: WebAcl_MonetizationConfigFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"OnSourceDdoSprotectionConfig": ubx.FieldSpec{
+			WireName: "on_source_ddo_sprotection_config",
+			Kind: "object",
+			Fields: WebAcl_OnSourceDdoSprotectionConfigFields,
+		},
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: WebAcl_RulesFields,
+		},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: WebAcl_TagsFields,
+		},
+		"TokenDomains": ubx.FieldSpec{WireName: "token_domains"},
 		"VisibilityConfig": ubx.FieldSpec{
 			WireName: "visibility_config",
-			Kind: "list",
-			Fields: WebAcl_Rule_VisibilityConfigFields,
+			Kind: "object",
+			Fields: WebAcl_Rules_VisibilityConfigFields,
 		},
 	},
 }

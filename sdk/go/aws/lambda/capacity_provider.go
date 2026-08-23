@@ -9,29 +9,56 @@ type CapacityProvider_CapacityProviderScalingConfig_ScalingPolicies struct {
 }
 
 type CapacityProvider_CapacityProviderScalingConfig struct {
+	// The maximum number of vCPUs that the capacity provider can provision across all compute instances.
 	MaxVcpuCount any
+	// The scaling mode for the capacity provider.
 	ScalingMode any
+	// A list of target tracking scaling policies for the capacity provider.
 	ScalingPolicies any
 }
 
 type CapacityProvider_InstanceRequirements struct {
+	// A list of EC2 instance types that the capacity provider is allowed to use. If not specified, all compatible instance types are allowed.
 	AllowedInstanceTypes any
+	// A list of supported CPU architectures for compute instances. Valid values include ``x86_64`` and ``arm64``.
 	Architectures any
+	// A list of EC2 instance types that the capacity provider should not use, even if they meet other requirements.
 	ExcludedInstanceTypes any
 }
 
 type CapacityProvider_PermissionsConfig struct {
+	// The ARN of the IAM role that the capacity provider uses to manage compute instances and other AWS resources.
 	CapacityProviderOperatorRoleArn any
 }
 
-type CapacityProvider_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type CapacityProvider_PropagateTags_ExplicitTags struct {
+	Key any
+	Value any
+}
+
+type CapacityProvider_PropagateTags struct {
+	// A list of tags to explicitly propagate to managed resources. Maximum of 40 tags.
+	ExplicitTags any
+	// The mode for tag propagation.
+	Mode any
+}
+
+type CapacityProvider_TelemetryConfig_LoggingConfig struct {
+	// The name of the Amazon CloudWatch log group the capacity provider sends logs to. By default, Lambda capacity providers send logs to a default log group named ``/aws/lambda/capacity-provider/<capacity provider name>``. To use a different log group, enter an existing log group or enter a new log group name.
+	LogGroup any
+	// Set this property to filter the system logs for your capacity provider that Lambda sends to CloudWatch. Lambda only sends system logs at the selected level of detail and lower, where ``DEBUG`` is the highest level and ``WARN`` is the lowest.
+	SystemLogLevel any
+}
+
+type CapacityProvider_TelemetryConfig struct {
+	// The capacity provider's Amazon CloudWatch Logs configuration settings.
+	LoggingConfig any
 }
 
 type CapacityProvider_VpcConfig struct {
+	// A list of security group IDs that control network access for compute instances managed by the capacity provider.
 	SecurityGroupIds any
+	// A list of subnet IDs where the capacity provider launches compute instances.
 	SubnetIds any
 }
 
@@ -60,10 +87,31 @@ var CapacityProvider_PermissionsConfigFields = ubx.FieldMap{
 		"CapacityProviderOperatorRoleArn": ubx.FieldSpec{WireName: "capacity_provider_operator_role_arn"},
 	}
 
-var CapacityProvider_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var CapacityProvider_PropagateTags_ExplicitTagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var CapacityProvider_PropagateTagsFields = ubx.FieldMap{
+		"ExplicitTags": ubx.FieldSpec{
+			WireName: "explicit_tags",
+			Kind: "list",
+			Fields: CapacityProvider_PropagateTags_ExplicitTagsFields,
+		},
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+	}
+
+var CapacityProvider_TelemetryConfig_LoggingConfigFields = ubx.FieldMap{
+		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+		"SystemLogLevel": ubx.FieldSpec{WireName: "system_log_level"},
+	}
+
+var CapacityProvider_TelemetryConfigFields = ubx.FieldMap{
+		"LoggingConfig": ubx.FieldSpec{
+			WireName: "logging_config",
+			Kind: "object",
+			Fields: CapacityProvider_TelemetryConfig_LoggingConfigFields,
+		},
 	}
 
 var CapacityProvider_VpcConfigFields = ubx.FieldMap{
@@ -72,47 +120,86 @@ var CapacityProvider_VpcConfigFields = ubx.FieldMap{
 	}
 
 type CapacityProviderConfig struct {
+	CapacityProviderName any
+	// Configuration that defines how the capacity provider scales compute instances based on demand and policies.
 	CapacityProviderScalingConfig any
+	// Specifications that define the characteristics and constraints for compute instances used by the capacity provider.
 	InstanceRequirements any
+	// The ARN of the KMS key used to encrypt the capacity provider's resources.
 	KmsKeyArn any
-	Name any
-	Region any
-	Tags any
+	// Configuration that specifies the permissions required for the capacity provider to manage compute resources.
 	PermissionsConfig any
-	Timeouts any
+	// Configuration that defines how tags are propagated to managed resources.
+	PropagateTags any
+	// A key-value pair that provides metadata for the capacity provider.
+	Tags any
+	// Configuration that specifies the telemetry collection for the capacity provider.
+	TelemetryConfig any
+	// VPC configuration that specifies the network settings for compute instances managed by the capacity provider.
+	VpcConfig any
+}
+
+type CapacityProviderAttrs struct {
+	Arn any
+	CapacityProviderName any
+	// Configuration that defines how the capacity provider scales compute instances based on demand and policies.
+	CapacityProviderScalingConfig any
+	// Specifications that define the characteristics and constraints for compute instances used by the capacity provider.
+	InstanceRequirements any
+	// The ARN of the KMS key used to encrypt the capacity provider's resources.
+	KmsKeyArn any
+	// Configuration that specifies the permissions required for the capacity provider to manage compute resources.
+	PermissionsConfig any
+	// Configuration that defines how tags are propagated to managed resources.
+	PropagateTags any
+	// The current state of the capacity provider. Indicates whether the provider is being created, is active and ready for use, has failed, or is being deleted.
+	State any
+	// A key-value pair that provides metadata for the capacity provider.
+	Tags any
+	// Configuration that specifies the telemetry collection for the capacity provider.
+	TelemetryConfig any
+	// VPC configuration that specifies the network settings for compute instances managed by the capacity provider.
 	VpcConfig any
 }
 
 var CapacityProvider = ubx.ResourceBinding{
 	WireType: "aws_lambda_capacity_provider",
 	Fields: ubx.FieldMap{
+		"CapacityProviderName": ubx.FieldSpec{WireName: "capacity_provider_name"},
 		"CapacityProviderScalingConfig": ubx.FieldSpec{
 			WireName: "capacity_provider_scaling_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_CapacityProviderScalingConfigFields,
 		},
 		"InstanceRequirements": ubx.FieldSpec{
 			WireName: "instance_requirements",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_InstanceRequirementsFields,
 		},
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"PermissionsConfig": ubx.FieldSpec{
 			WireName: "permissions_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_PermissionsConfigFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"PropagateTags": ubx.FieldSpec{
+			WireName: "propagate_tags",
 			Kind: "object",
-			Fields: CapacityProvider_TimeoutsFields,
+			Fields: CapacityProvider_PropagateTagsFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: CapacityProvider_PropagateTags_ExplicitTagsFields,
+		},
+		"TelemetryConfig": ubx.FieldSpec{
+			WireName: "telemetry_config",
+			Kind: "object",
+			Fields: CapacityProvider_TelemetryConfigFields,
 		},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_VpcConfigFields,
 		},
 	},

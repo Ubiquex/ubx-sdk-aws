@@ -3,33 +3,42 @@ package wafregional
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Ipset_IpSetDescriptor struct {
+type Ipset_IpsetDescriptors struct {
+	// Specifies the IP address type (IPV4 or IPV6) for the IP set descriptor. (AI-inferred)
 	Type any
+	// The IP address or CIDR block to match, such as 192.0.2.0/24 or 2001:db8::/32. (AI-inferred)
 	Value any
 }
 
-var Ipset_IpSetDescriptorFields = ubx.FieldMap{
+var Ipset_IpsetDescriptorsFields = ubx.FieldMap{
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type IpsetConfig struct {
-	Id any
+	// Lists the IP addresses and CIDR ranges in the IPSet, where each descriptor specifies a Type (IPV4 or IPV6) and a Value in CIDR notation. (AI-inferred)
+	IpsetDescriptors any
+	// Sets the friendly name that identifies this AWS WAF Regional IP set, used as a unique label for the set within the AWS WAF service. (AI-inferred)
 	Name any
-	Region any
-	IpSetDescriptor any
+}
+
+type IpsetAttrs struct {
+	// Lists the IP addresses and CIDR ranges in the IPSet, where each descriptor specifies a Type (IPV4 or IPV6) and a Value in CIDR notation. (AI-inferred)
+	IpsetDescriptors any
+	// The unique identifier (IPSetId) assigned by AWS to this WAF Regional IP set, used to reference the IP set in AWS WAF rules and other resources. (AI-inferred)
+	Id any
+	// Sets the friendly name that identifies this AWS WAF Regional IP set, used as a unique label for the set within the AWS WAF service. (AI-inferred)
+	Name any
 }
 
 var Ipset = ubx.ResourceBinding{
 	WireType: "aws_wafregional_ipset",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"IpSetDescriptor": ubx.FieldSpec{
-			WireName: "ip_set_descriptor",
-			Kind: "set",
-			Fields: Ipset_IpSetDescriptorFields,
+		"IpsetDescriptors": ubx.FieldSpec{
+			WireName: "ipset_descriptors",
+			Kind: "list",
+			Fields: Ipset_IpsetDescriptorsFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

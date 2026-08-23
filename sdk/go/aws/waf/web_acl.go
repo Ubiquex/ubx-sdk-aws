@@ -4,105 +4,70 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WebAcl_DefaultAction struct {
+	// Specifies the default action, either ALLOW or BLOCK, that AWS WAF applies to web requests that don't match any rule in this web ACL. (AI-inferred)
 	Type any
-}
-
-type WebAcl_LoggingConfiguration_RedactedFields_FieldToMatch struct {
-	Data any
-	Type any
-}
-
-type WebAcl_LoggingConfiguration_RedactedFields struct {
-	FieldToMatch any
-}
-
-type WebAcl_LoggingConfiguration struct {
-	LogDestination any
-	RedactedFields any
 }
 
 type WebAcl_Rules struct {
-	Priority any
-	RuleId any
-	Type any
+	// Specifies the action (ALLOW, BLOCK, or COUNT) that AWS WAF takes when a request matches the associated rule in this web ACL. (AI-inferred)
 	Action any
-	OverrideAction any
+	// The evaluation order for the rule, where lower numbers are evaluated first and each rule in the web ACL must have a unique priority value. (AI-inferred)
+	Priority any
+	// The unique identifier of the AWS WAF rule that this web ACL action applies to within the rules list. (AI-inferred)
+	RuleId any
 }
 
 var WebAcl_DefaultActionFields = ubx.FieldMap{
 		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
-var WebAcl_LoggingConfiguration_RedactedFields_FieldToMatchFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
-
-var WebAcl_LoggingConfiguration_RedactedFieldsFields = ubx.FieldMap{
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "set",
-			Fields: WebAcl_LoggingConfiguration_RedactedFields_FieldToMatchFields,
-		},
-	}
-
-var WebAcl_LoggingConfigurationFields = ubx.FieldMap{
-		"LogDestination": ubx.FieldSpec{WireName: "log_destination"},
-		"RedactedFields": ubx.FieldSpec{
-			WireName: "redacted_fields",
-			Kind: "list",
-			Fields: WebAcl_LoggingConfiguration_RedactedFieldsFields,
-		},
-	}
-
 var WebAcl_RulesFields = ubx.FieldMap{
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
 		"Action": ubx.FieldSpec{
 			WireName: "action",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultActionFields,
 		},
-		"OverrideAction": ubx.FieldSpec{
-			WireName: "override_action",
-			Kind: "list",
-			Fields: WebAcl_DefaultActionFields,
-		},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	}
 
 type WebAclConfig struct {
-	Id any
-	MetricName any
-	Name any
-	Tags any
-	TagsAll any
+	// Determines the action (ALLOW or BLOCK) that AWS WAF takes for web requests that do not match any rule in this web ACL. (AI-inferred)
 	DefaultAction any
-	LoggingConfiguration any
+	// The name of the Amazon CloudWatch metric used to monitor the Web ACL, which must be unique within the region and is displayed in the WAF console and CloudWatch. (AI-inferred)
+	MetricName any
+	// The user-defined name of the web ACL, used as its unique identifier within the AWS WAF service. (AI-inferred)
+	Name any
+	// A list of rule overrides, each specifying a priority, AWS WAF rule identifier, and action (allow, block, or count) that together define the evaluation order and handling of matching requests. (AI-inferred)
+	Rules any
+}
+
+type WebAclAttrs struct {
+	// Determines the action (ALLOW or BLOCK) that AWS WAF takes for web requests that do not match any rule in this web ACL. (AI-inferred)
+	DefaultAction any
+	// The unique AWS-assigned ID of the web ACL, used to reference the web ACL in other resources (e.g., aws_waf_association) and in API calls. (AI-inferred)
+	Id any
+	// The name of the Amazon CloudWatch metric used to monitor the Web ACL, which must be unique within the region and is displayed in the WAF console and CloudWatch. (AI-inferred)
+	MetricName any
+	// The user-defined name of the web ACL, used as its unique identifier within the AWS WAF service. (AI-inferred)
+	Name any
+	// A list of rule overrides, each specifying a priority, AWS WAF rule identifier, and action (allow, block, or count) that together define the evaluation order and handling of matching requests. (AI-inferred)
 	Rules any
 }
 
 var WebAcl = ubx.ResourceBinding{
 	WireType: "aws_waf_web_acl",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"DefaultAction": ubx.FieldSpec{
 			WireName: "default_action",
-			Kind: "list",
+			Kind: "object",
 			Fields: WebAcl_DefaultActionFields,
 		},
-		"LoggingConfiguration": ubx.FieldSpec{
-			WireName: "logging_configuration",
-			Kind: "list",
-			Fields: WebAcl_LoggingConfigurationFields,
-		},
+		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "set",
+			Kind: "list",
 			Fields: WebAcl_RulesFields,
 		},
 	},

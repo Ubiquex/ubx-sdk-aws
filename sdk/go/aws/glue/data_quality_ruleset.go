@@ -4,41 +4,58 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQualityRuleset_TargetTable struct {
-	CatalogId any
+	// The name of the database where the AWS Glue table exists.
 	DatabaseName any
+	// The name of the AWS Glue table.
 	TableName any
 }
 
 var DataQualityRuleset_TargetTableFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
 		"TableName": ubx.FieldSpec{WireName: "table_name"},
 	}
 
 type DataQualityRulesetConfig struct {
+	// A unique token for idempotency.
+	ClientToken any
+	// A description of the data quality ruleset.
 	Description any
-	Id any
+	// A unique name for the data quality ruleset.
 	Name any
-	Region any
+	// A Data Quality Definition Language (DQDL) ruleset.
 	Ruleset any
+	// A map of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
+	// An object representing an AWS Glue table.
+	TargetTable any
+}
+
+type DataQualityRulesetAttrs struct {
+	// A unique token for idempotency.
+	ClientToken any
+	// A description of the data quality ruleset.
+	Description any
+	// A unique name for the data quality ruleset.
+	Name any
+	// A Data Quality Definition Language (DQDL) ruleset.
+	Ruleset any
+	// A map of key-value pairs to apply to this resource.
+	Tags any
+	// An object representing an AWS Glue table.
 	TargetTable any
 }
 
 var DataQualityRuleset = ubx.ResourceBinding{
 	WireType: "aws_glue_data_quality_ruleset",
 	Fields: ubx.FieldMap{
+		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"Ruleset": ubx.FieldSpec{WireName: "ruleset"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"TargetTable": ubx.FieldSpec{
 			WireName: "target_table",
-			Kind: "list",
+			Kind: "object",
 			Fields: DataQualityRuleset_TargetTableFields,
 		},
 	},

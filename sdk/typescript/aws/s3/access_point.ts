@@ -2,14 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AccessPoint_PublicAccessBlockConfiguration {
-  blockPublicAcls: boolean;
-  blockPublicPolicy: boolean;
-  ignorePublicAcls: boolean;
-  restrictPublicBuckets: boolean;
+  /** Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to TRUE causes the following behavior: - PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public. - PUT Object calls fail if the request includes a public ACL. . - PUT Bucket calls fail if the request includes a public ACL. Enabling this setting doesn't affect existing policies or ACLs. */
+  blockPublicAcls?: boolean | Computed<boolean>;
+  /** Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to TRUE causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. Enabling this setting doesn't affect existing bucket policies. */
+  blockPublicPolicy?: boolean | Computed<boolean>;
+  /** Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to TRUE causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set. */
+  ignorePublicAcls?: boolean | Computed<boolean>;
+  /** Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to TRUE restricts access to this bucket to only AWS services and authorized users within this account if the bucket has a public policy. Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked. */
+  restrictPublicBuckets?: boolean | Computed<boolean>;
+}
+
+export interface AccessPoint_Tags {
+  key?: string | Computed<string>;
+  /** The value of a tag key-value pair attached to the S3 access point, used for metadata, cost allocation, and tag-based access control through IAM policies. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 export interface AccessPoint_VpcConfiguration {
-  vpcId: string;
+  /** If this field is specified, this access point will only allow connections from the specified VPC ID. */
+  vpcId?: string | Computed<string>;
 }
 
 const AccessPoint_PublicAccessBlockConfigurationFields: FieldMap = {
@@ -19,64 +30,75 @@ const AccessPoint_PublicAccessBlockConfigurationFields: FieldMap = {
   restrictPublicBuckets: "restrict_public_buckets",
 };
 
+const AccessPoint_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
 const AccessPoint_VpcConfigurationFields: FieldMap = {
   vpcId: "vpc_id",
 };
 
 export interface AccessPointConfig {
-  accountId?: string | Computed<string>;
+  /** The name of the bucket that you want to associate this Access Point with. */
   bucket: string | Computed<string>;
+  /** The AWS account ID associated with the S3 bucket associated with this access point. */
   bucketAccountId?: string | Computed<string>;
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  policy?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  publicAccessBlockConfiguration?: AccessPoint_PublicAccessBlockConfiguration[] | Computed<AccessPoint_PublicAccessBlockConfiguration[]>;
-  vpcConfiguration?: AccessPoint_VpcConfiguration[] | Computed<AccessPoint_VpcConfiguration[]>;
+  /** The name you want to assign to this Access Point. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the access point name. */
+  name?: string | Computed<string>;
+  /** The Access Point Policy you want to apply to this access point. */
+  policy?: unknown | Computed<unknown>;
+  /** Configuration block that specifies the public access block settings for this S3 access point, controlling whether public ACLs and public bucket policies are blocked and whether the access point can be accessed by public buckets. (AI-inferred) */
+  publicAccessBlockConfiguration?: AccessPoint_PublicAccessBlockConfiguration | Computed<AccessPoint_PublicAccessBlockConfiguration>;
+  /** An arbitrary set of tags (key-value pairs) for this S3 Access Point. */
+  tags?: AccessPoint_Tags[] | Computed<AccessPoint_Tags[]>;
+  /** The Virtual Private Cloud (VPC) configuration for a bucket access point. */
+  vpcConfiguration?: AccessPoint_VpcConfiguration | Computed<AccessPoint_VpcConfiguration>;
 }
 
 export interface AccessPointAttrs {
-  accountId: string;
+  /** The alias of this Access Point. This alias can be used for compatibility purposes with other AWS services and third-party applications. */
   alias: string;
+  /** the Amazon Resource Name (ARN) of the specified accesspoint. */
   arn: string;
+  /** The name of the bucket that you want to associate this Access Point with. */
   bucket: string;
+  /** The AWS account ID associated with the S3 bucket associated with this access point. */
   bucketAccountId: string;
-  domainName: string;
-  endpoints: Record<string, string>;
-  hasPublicAccessPolicy: boolean;
-  id: string;
+  /** The name you want to assign to this Access Point. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the access point name. */
   name: string;
+  /** Indicates whether this Access Point allows access from the public Internet. If VpcConfiguration is specified for this Access Point, then NetworkOrigin is VPC, and the Access Point doesn't allow access from the public Internet. Otherwise, NetworkOrigin is Internet, and the Access Point allows access from the public Internet, subject to the Access Point and bucket access policies. */
   networkOrigin: string;
-  policy: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  publicAccessBlockConfiguration: AccessPoint_PublicAccessBlockConfiguration[];
-  vpcConfiguration: AccessPoint_VpcConfiguration[];
+  /** The Access Point Policy you want to apply to this access point. */
+  policy: unknown;
+  /** Configuration block that specifies the public access block settings for this S3 access point, controlling whether public ACLs and public bucket policies are blocked and whether the access point can be accessed by public buckets. (AI-inferred) */
+  publicAccessBlockConfiguration: AccessPoint_PublicAccessBlockConfiguration;
+  /** An arbitrary set of tags (key-value pairs) for this S3 Access Point. */
+  tags: AccessPoint_Tags[];
+  /** The Virtual Private Cloud (VPC) configuration for a bucket access point. */
+  vpcConfiguration: AccessPoint_VpcConfiguration;
 }
 
 export const AccessPoint: ResourceBinding<AccessPointConfig, AccessPointAttrs> = {
   wireType: "aws_s3_access_point",
   fields: {
-    accountId: "account_id",
     bucket: "bucket",
     bucketAccountId: "bucket_account_id",
-    id: "id",
     name: "name",
     policy: "policy",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
     publicAccessBlockConfiguration: {
       wireName: "public_access_block_configuration",
-      kind: "list",
+      kind: "object",
       fields: AccessPoint_PublicAccessBlockConfigurationFields,
+    },
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: AccessPoint_TagsFields,
     },
     vpcConfiguration: {
       wireName: "vpc_configuration",
-      kind: "list",
+      kind: "object",
       fields: AccessPoint_VpcConfigurationFields,
     },
   },

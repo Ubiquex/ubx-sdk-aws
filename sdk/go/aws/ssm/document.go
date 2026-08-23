@@ -3,51 +3,114 @@ package ssm
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Document_AttachmentsSource struct {
+type Document_Attachments struct {
+	// The key name of an attachment entry, such as 'SourceUrl' or 'Script', that specifies the attachment's purpose within an Automation document. (AI-inferred)
 	Key any
 	Name any
+	// Provides the list of source URLs (such as Amazon S3 file URLs) that define the actual content locations for an SSM document attachment, matched with the attachment's key to specify the type of source. (AI-inferred)
 	Values any
 }
 
-var Document_AttachmentsSourceFields = ubx.FieldMap{
+type Document_Requires struct {
+	// The name of the AWS Systems Manager document that this document requires as a dependency. (AI-inferred)
+	Name any
+	// The version of another SSM document that this document requires as a dependency, specified in the 'requires' block of the aws_ssm_document resource. (AI-inferred)
+	Version any
+}
+
+type Document_Tags struct {
+	// The tag key to assign to the SSM document, used for identifying and managing the document in AWS Systems Manager. (AI-inferred)
+	Key any
+	// The value portion of a key-value tag attached to an SSM document, used to add metadata that supports resource identification, organization, and access control in AWS Systems Manager. (AI-inferred)
+	Value any
+}
+
+var Document_AttachmentsFields = ubx.FieldMap{
 		"Key": ubx.FieldSpec{WireName: "key"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Values": ubx.FieldSpec{WireName: "values"},
 	}
 
+var Document_RequiresFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
+
+var Document_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type DocumentConfig struct {
+	// A list of key and value pairs that describe attachments to a version of a document.
+	Attachments any
+	// The content for the Systems Manager document in JSON, YAML or String format.
 	Content any
+	// Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default format.
 	DocumentFormat any
+	// The type of document to create.
 	DocumentType any
-	Id any
+	// A name for the Systems Manager document.
 	Name any
-	Permissions any
-	Region any
+	// A list of SSM documents required by a document. For example, an ApplicationConfiguration document requires an ApplicationConfigurationSchema document.
+	Requires any
+	// Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
 	Tags any
-	TagsAll any
+	// Specify a target type to define the kinds of resources the document can run on.
 	TargetType any
+	// Update method - when set to 'Replace', the update will replace the existing document; when set to 'NewVersion', the update will create a new version.
+	UpdateMethod any
+	// An optional field specifying the version of the artifact you are creating with the document. This value is unique across all versions of a document, and cannot be changed.
 	VersionName any
-	AttachmentsSource any
+}
+
+type DocumentAttrs struct {
+	// A list of key and value pairs that describe attachments to a version of a document.
+	Attachments any
+	// The content for the Systems Manager document in JSON, YAML or String format.
+	Content any
+	// Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default format.
+	DocumentFormat any
+	// The type of document to create.
+	DocumentType any
+	// A name for the Systems Manager document.
+	Name any
+	// A list of SSM documents required by a document. For example, an ApplicationConfiguration document requires an ApplicationConfigurationSchema document.
+	Requires any
+	// Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
+	Tags any
+	// Specify a target type to define the kinds of resources the document can run on.
+	TargetType any
+	// Update method - when set to 'Replace', the update will replace the existing document; when set to 'NewVersion', the update will create a new version.
+	UpdateMethod any
+	// An optional field specifying the version of the artifact you are creating with the document. This value is unique across all versions of a document, and cannot be changed.
+	VersionName any
 }
 
 var Document = ubx.ResourceBinding{
 	WireType: "aws_ssm_document",
 	Fields: ubx.FieldMap{
+		"Attachments": ubx.FieldSpec{
+			WireName: "attachments",
+			Kind: "list",
+			Fields: Document_AttachmentsFields,
+		},
 		"Content": ubx.FieldSpec{WireName: "content"},
 		"DocumentFormat": ubx.FieldSpec{WireName: "document_format"},
 		"DocumentType": ubx.FieldSpec{WireName: "document_type"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
-		"VersionName": ubx.FieldSpec{WireName: "version_name"},
-		"AttachmentsSource": ubx.FieldSpec{
-			WireName: "attachments_source",
+		"Requires": ubx.FieldSpec{
+			WireName: "requires",
 			Kind: "list",
-			Fields: Document_AttachmentsSourceFields,
+			Fields: Document_RequiresFields,
 		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Document_TagsFields,
+		},
+		"TargetType": ubx.FieldSpec{WireName: "target_type"},
+		"UpdateMethod": ubx.FieldSpec{WireName: "update_method"},
+		"VersionName": ubx.FieldSpec{WireName: "version_name"},
 	},
 }

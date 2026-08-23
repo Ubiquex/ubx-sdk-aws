@@ -2,18 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TransitGatewayMulticastGroupMemberConfig {
+  /** The IP address assigned to the transit gateway multicast group. */
   groupIpAddress: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** The ID of the transit gateway attachment. */
   networkInterfaceId: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The ID of the transit gateway multicast domain. */
   transitGatewayMulticastDomainId: string | Computed<string>;
 }
 
 export interface TransitGatewayMulticastGroupMemberAttrs {
+  /** The IP address assigned to the transit gateway multicast group. */
   groupIpAddress: string;
-  id: string;
+  /** Indicates that the resource is a transit gateway multicast group member. */
+  groupMember: boolean;
+  /** Indicates that the resource is a transit gateway multicast group member. */
+  groupSource: boolean;
+  /** The member type (for example, static). */
+  memberType: string;
+  /** The ID of the transit gateway attachment. */
   networkInterfaceId: string;
-  region: string;
+  /** The ID of the resource. */
+  resourceId: string;
+  /** The type of resource, for example a VPC attachment. */
+  resourceType: string;
+  /** The ID of the subnet. */
+  subnetId: string;
+  /** The ID of the transit gateway attachment. */
+  transitGatewayAttachmentId: string;
+  /** The ID of the transit gateway multicast domain. */
   transitGatewayMulticastDomainId: string;
 }
 
@@ -21,9 +37,7 @@ export const TransitGatewayMulticastGroupMember: ResourceBinding<TransitGatewayM
   wireType: "aws_ec2_transit_gateway_multicast_group_member",
   fields: {
     groupIpAddress: "group_ip_address",
-    id: "id",
     networkInterfaceId: "network_interface_id",
-    region: "region",
     transitGatewayMulticastDomainId: "transit_gateway_multicast_domain_id",
   },
 };

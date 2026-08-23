@@ -7,28 +7,37 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class SecurityConfiguration_EncryptionConfiguration_CloudwatchEncryption:
-    cloudwatch_encryption_mode: Any = None
+class SecurityConfiguration_EncryptionConfiguration_CloudWatchEncryption:
+    # Specifies whether CloudWatch Logs encryption is disabled or uses SSE-KMS for the Glue security configuration, with allowed values 'DISABLED' and 'SSE-KMS'. (AI-inferred)
+    cloud_watch_encryption_mode: Any = None
+    # The ARN of the AWS KMS key used to encrypt CloudWatch log data for the Glue security configuration. (AI-inferred)
     kms_key_arn: Any = None
 
 @dataclasses.dataclass
 class SecurityConfiguration_EncryptionConfiguration_JobBookmarksEncryption:
+    # Sets the encryption mode for job bookmark data to either DISABLED (no encryption) or CSE-KMS (client-side encryption via an AWS KMS key specified in the same job_bookmarks_encryption block). (AI-inferred)
     job_bookmarks_encryption_mode: Any = None
+    # The ARN of the AWS KMS key used to encrypt job bookmark data when job bookmark encryption is enabled for the Glue security configuration. (AI-inferred)
     kms_key_arn: Any = None
 
 @dataclasses.dataclass
-class SecurityConfiguration_EncryptionConfiguration_S3Encryption:
+class SecurityConfiguration_EncryptionConfiguration_S3Encryptions:
+    # The ARN of the AWS KMS key used to encrypt data in Amazon S3 when the encryption mode is set to SSE-KMS, as part of a Glue security configuration's S3 encryption settings. (AI-inferred)
     kms_key_arn: Any = None
+    # Specifies the S3 encryption mode for the Glue security configuration, which can be 'DISABLED', 'SSE-S3', or 'SSE-KMS' to control how data in S3 is encrypted. (AI-inferred)
     s3_encryption_mode: Any = None
 
 @dataclasses.dataclass
 class SecurityConfiguration_EncryptionConfiguration:
-    cloudwatch_encryption: Any = None
+    # The encryption configuration for Amazon CloudWatch.
+    cloud_watch_encryption: Any = None
+    # The encryption configuration for job bookmarks.
     job_bookmarks_encryption: Any = None
-    s3_encryption: Any = None
+    # The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
+    s3_encryptions: Any = None
 
-_SecurityConfiguration_EncryptionConfiguration_CloudwatchEncryptionFields = {
-    "cloudwatch_encryption_mode": ubx.FieldSpec(wire_name="cloudwatch_encryption_mode"),
+_SecurityConfiguration_EncryptionConfiguration_CloudWatchEncryptionFields = {
+    "cloud_watch_encryption_mode": ubx.FieldSpec(wire_name="cloud_watch_encryption_mode"),
     "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
 }
 
@@ -37,46 +46,51 @@ _SecurityConfiguration_EncryptionConfiguration_JobBookmarksEncryptionFields = {
     "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
 }
 
-_SecurityConfiguration_EncryptionConfiguration_S3EncryptionFields = {
+_SecurityConfiguration_EncryptionConfiguration_S3EncryptionsFields = {
     "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
     "s3_encryption_mode": ubx.FieldSpec(wire_name="s3_encryption_mode"),
 }
 
 _SecurityConfiguration_EncryptionConfigurationFields = {
-    "cloudwatch_encryption": ubx.FieldSpec(
-        wire_name="cloudwatch_encryption",
-        kind="list",
-        fields=_SecurityConfiguration_EncryptionConfiguration_CloudwatchEncryptionFields,
+    "cloud_watch_encryption": ubx.FieldSpec(
+        wire_name="cloud_watch_encryption",
+        kind="object",
+        fields=_SecurityConfiguration_EncryptionConfiguration_CloudWatchEncryptionFields,
     ),
     "job_bookmarks_encryption": ubx.FieldSpec(
         wire_name="job_bookmarks_encryption",
-        kind="list",
+        kind="object",
         fields=_SecurityConfiguration_EncryptionConfiguration_JobBookmarksEncryptionFields,
     ),
-    "s3_encryption": ubx.FieldSpec(
-        wire_name="s3_encryption",
+    "s3_encryptions": ubx.FieldSpec(
+        wire_name="s3_encryptions",
         kind="list",
-        fields=_SecurityConfiguration_EncryptionConfiguration_S3EncryptionFields,
+        fields=_SecurityConfiguration_EncryptionConfiguration_S3EncryptionsFields,
     ),
 }
 
 @dataclasses.dataclass
 class SecurityConfigurationConfig:
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # The encryption configuration for the security configuration.
     encryption_configuration: Any = None
+    # The name for the security configuration.
+    name: Any = None
+
+@dataclasses.dataclass
+class SecurityConfigurationAttrs:
+    # The encryption configuration for the security configuration.
+    encryption_configuration: Any = None
+    # The name for the security configuration.
+    name: Any = None
 
 SecurityConfiguration = ubx.ResourceBinding(
     wire_type="aws_glue_security_configuration",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "encryption_configuration": ubx.FieldSpec(
             wire_name="encryption_configuration",
-            kind="list",
+            kind="object",
             fields=_SecurityConfiguration_EncryptionConfigurationFields,
         ),
+        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

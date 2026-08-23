@@ -7,46 +7,57 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class SqlInjectionMatchSet_SqlInjectionMatchTuple_FieldToMatch:
+class SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatch:
+    # The name of the HTTP header to inspect when the field_to_match type is HEADER, as used in the SQL injection match tuple. (AI-inferred)
     data: Any = None
+    # Specifies the part of the web request to inspect for SQL injection patterns, such as HEADER, QUERY_STRING, BODY, or URI. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
-class SqlInjectionMatchSet_SqlInjectionMatchTuple:
-    text_transformation: Any = None
+class SqlInjectionMatchSet_SqlInjectionMatchTuples:
+    # Identifies the specific portion of the web request (e.g., query string, header, body, or method) that the SQL injection match tuple will inspect for malicious patterns. (AI-inferred)
     field_to_match: Any = None
+    # Specifies how the web request component (e.g., the query string or header) is transformed before WAF inspects it for SQL injection patterns, such as 'NONE', 'URL_DECODE', or 'BASE64_DECODE'. (AI-inferred)
+    text_transformation: Any = None
 
-_SqlInjectionMatchSet_SqlInjectionMatchTuple_FieldToMatchFields = {
+_SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatchFields = {
     "data": ubx.FieldSpec(wire_name="data"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_SqlInjectionMatchSet_SqlInjectionMatchTupleFields = {
-    "text_transformation": ubx.FieldSpec(wire_name="text_transformation"),
+_SqlInjectionMatchSet_SqlInjectionMatchTuplesFields = {
     "field_to_match": ubx.FieldSpec(
         wire_name="field_to_match",
-        kind="list",
-        fields=_SqlInjectionMatchSet_SqlInjectionMatchTuple_FieldToMatchFields,
+        kind="object",
+        fields=_SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatchFields,
     ),
+    "text_transformation": ubx.FieldSpec(wire_name="text_transformation"),
 }
 
 @dataclasses.dataclass
 class SqlInjectionMatchSetConfig:
-    id: Any = None
+    # The required friendly name of the SQL injection match set, used to identify it within AWS WAF Regional. (AI-inferred)
     name: Any = None
-    region: Any = None
-    sql_injection_match_tuple: Any = None
+    # Specifies a list of SQL injection match tuples, each containing a field to match (such as URI or query string) and a text transformation, that together determine which requests are flagged for SQL injection in this AWS WAF Regional match set. (AI-inferred)
+    sql_injection_match_tuples: Any = None
+
+@dataclasses.dataclass
+class SqlInjectionMatchSetAttrs:
+    # The unique AWS-assigned identifier for this SQL injection match set. (AI-inferred)
+    id: Any = None
+    # The required friendly name of the SQL injection match set, used to identify it within AWS WAF Regional. (AI-inferred)
+    name: Any = None
+    # Specifies a list of SQL injection match tuples, each containing a field to match (such as URI or query string) and a text transformation, that together determine which requests are flagged for SQL injection in this AWS WAF Regional match set. (AI-inferred)
+    sql_injection_match_tuples: Any = None
 
 SqlInjectionMatchSet = ubx.ResourceBinding(
     wire_type="aws_wafregional_sql_injection_match_set",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "sql_injection_match_tuple": ubx.FieldSpec(
-            wire_name="sql_injection_match_tuple",
-            kind="set",
-            fields=_SqlInjectionMatchSet_SqlInjectionMatchTupleFields,
+        "sql_injection_match_tuples": ubx.FieldSpec(
+            wire_name="sql_injection_match_tuples",
+            kind="list",
+            fields=_SqlInjectionMatchSet_SqlInjectionMatchTuplesFields,
         ),
     },
 )

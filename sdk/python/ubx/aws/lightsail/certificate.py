@@ -7,24 +7,53 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Certificate_Tags:
+    # The key of a tag assigned to the Lightsail certificate, used to categorize and identify the certificate in the Lightsail console and API. (AI-inferred)
+    key: Any = None
+    # The value portion of a tag assigned to the AWS Lightsail certificate, used to label, organize, and support cost allocation for the certificate. (AI-inferred)
+    value: Any = None
+
+_Certificate_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class CertificateConfig:
+    # The name for the certificate.
+    certificate_name: Any = None
+    # The domain name (e.g., example.com ) for the certificate.
     domain_name: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # An array of strings that specify the alternate domains (e.g., example2.com) and subdomains (e.g., blog.example.com) for the certificate.
     subject_alternative_names: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class CertificateAttrs:
+    # The Amazon Resource Name (ARN) of the Lightsail certificate, assigned by AWS when the certificate is created. (AI-inferred)
+    certificate_arn: Any = None
+    # The name for the certificate.
+    certificate_name: Any = None
+    # The domain name (e.g., example.com ) for the certificate.
+    domain_name: Any = None
+    # The validation status of the certificate.
+    status: Any = None
+    # An array of strings that specify the alternate domains (e.g., example2.com) and subdomains (e.g., blog.example.com) for the certificate.
+    subject_alternative_names: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Certificate = ubx.ResourceBinding(
     wire_type="aws_lightsail_certificate",
     fields={
+        "certificate_name": ubx.FieldSpec(wire_name="certificate_name"),
         "domain_name": ubx.FieldSpec(wire_name="domain_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "subject_alternative_names": ubx.FieldSpec(wire_name="subject_alternative_names"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Certificate_TagsFields,
+        ),
     },
 )

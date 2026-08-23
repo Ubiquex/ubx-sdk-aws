@@ -4,20 +4,30 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationConfig struct {
-	AwsServiceAccessPrincipals any
-	EnabledPolicyTypes any
+	// Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.
 	FeatureSet any
+}
+
+type OrganizationAttrs struct {
+	// The Amazon Resource Name (ARN) of an organization.
+	Arn any
+	// Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.
+	FeatureSet any
+	// The unique identifier (ID) of an organization.
 	Id any
-	ReturnOrganizationOnly any
+	// The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
+	ManagementAccountArn any
+	// The email address that is associated with the AWS account that is designated as the management account for the organization.
+	ManagementAccountEmail any
+	// The unique identifier (ID) of the management account of an organization.
+	ManagementAccountId any
+	// The unique identifier (ID) for the root.
+	RootId any
 }
 
 var Organization = ubx.ResourceBinding{
 	WireType: "aws_organizations_organization",
 	Fields: ubx.FieldMap{
-		"AwsServiceAccessPrincipals": ubx.FieldSpec{WireName: "aws_service_access_principals"},
-		"EnabledPolicyTypes": ubx.FieldSpec{WireName: "enabled_policy_types"},
 		"FeatureSet": ubx.FieldSpec{WireName: "feature_set"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ReturnOrganizationOnly": ubx.FieldSpec{WireName: "return_organization_only"},
 	},
 }

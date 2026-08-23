@@ -4,32 +4,64 @@ package osis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pipeline_BufferOptions struct {
+	// Whether persistent buffering should be enabled.
 	PersistentBufferEnabled any
 }
 
 type Pipeline_EncryptionAtRestOptions struct {
+	// The KMS key to use for encrypting data. By default an AWS owned key is used
 	KmsKeyArn any
 }
 
-type Pipeline_LogPublishingOptions_CloudwatchLogDestination struct {
+type Pipeline_LogPublishingOptions_CloudWatchLogDestination struct {
+	// The name of the CloudWatch Logs log group where the OpenSearch Ingestion pipeline publishes logs. (AI-inferred)
 	LogGroup any
 }
 
 type Pipeline_LogPublishingOptions struct {
+	// The destination for OpenSearch Ingestion Service logs sent to Amazon CloudWatch.
+	CloudWatchLogDestination any
+	// Whether logs should be published.
 	IsLoggingEnabled any
-	CloudwatchLogDestination any
 }
 
-type Pipeline_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Pipeline_ResourcePolicy struct {
+	// The `policy` field specifies the JSON resource-based policy document that defines permissions for the OpenSearch Ingestion pipeline to access specified AWS resources, such as the source and sink data stores. (AI-inferred)
+	Policy any
 }
 
-type Pipeline_VpcOptions struct {
+type Pipeline_Tags struct {
+	// The key of a user-defined tag to attach to the OpenSearch Ingestion pipeline. (AI-inferred)
+	Key any
+	// The value of a tag attached to the OpenSearch Ingestion pipeline, used to store metadata such as environment, owner, or cost center for resource identification and management. (AI-inferred)
+	Value any
+}
+
+type Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptions struct {
+	// Indicates whether the OpenSearch Ingestion pipeline's VPC endpoint is attached to a VPC, enabling the pipeline to access resources within that VPC when set to true. (AI-inferred)
+	AttachToVpc any
+	// The CIDR block (e.g., 10.0.0.0/16) that defines the IP address range for the VPC attachment of the OpenSearch Ingestion pipeline's VPC endpoint. (AI-inferred)
+	CidrBlock any
+}
+
+type Pipeline_VpcEndpoints_VpcOptions struct {
+	// Specifies the security group IDs to attach to the VPC endpoint for the OpenSearch Ingestion pipeline, controlling network traffic to and from the endpoint within the VPC. (AI-inferred)
 	SecurityGroupIds any
+	// Specifies the subnet IDs within the VPC where the OpenSearch Ingestion pipeline's VPC endpoint will be provisioned. (AI-inferred)
 	SubnetIds any
+	// Configures VPC attachment options for the OpenSearch Ingestion pipeline's VPC endpoint, including whether to attach to a VPC endpoint service and the IAM role used for that attachment. (AI-inferred)
+	VpcAttachmentOptions any
+	// Indicates whether the VPC endpoint for this OpenSearch Ingestion pipeline is managed by the customer ('CUSTOMER') or by the AWS service ('SERVICE') in the pipeline's VPC options. (AI-inferred)
 	VpcEndpointManagement any
+}
+
+type Pipeline_VpcEndpoints struct {
+	// The unique identifier of a VPC endpoint that clients can use to access the OpenSearch Ingestion pipeline within its VPC. (AI-inferred)
+	VpcEndpointId any
+	// The ID of the VPC in which the VPC endpoint for the OpenSearch Ingestion pipeline is automatically created, allowing the pipeline to be accessed within that VPC. (AI-inferred)
+	VpcId any
+	// VPC configuration for a VPC endpoint, specifying the subnet IDs and security group IDs associated with the endpoint in the pipeline's VPC. (AI-inferred)
+	VpcOptions any
 }
 
 var Pipeline_BufferOptionsFields = ubx.FieldMap{
@@ -40,80 +72,139 @@ var Pipeline_EncryptionAtRestOptionsFields = ubx.FieldMap{
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
 	}
 
-var Pipeline_LogPublishingOptions_CloudwatchLogDestinationFields = ubx.FieldMap{
+var Pipeline_LogPublishingOptions_CloudWatchLogDestinationFields = ubx.FieldMap{
 		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
 	}
 
 var Pipeline_LogPublishingOptionsFields = ubx.FieldMap{
-		"IsLoggingEnabled": ubx.FieldSpec{WireName: "is_logging_enabled"},
-		"CloudwatchLogDestination": ubx.FieldSpec{
-			WireName: "cloudwatch_log_destination",
-			Kind: "list",
-			Fields: Pipeline_LogPublishingOptions_CloudwatchLogDestinationFields,
+		"CloudWatchLogDestination": ubx.FieldSpec{
+			WireName: "cloud_watch_log_destination",
+			Kind: "object",
+			Fields: Pipeline_LogPublishingOptions_CloudWatchLogDestinationFields,
 		},
+		"IsLoggingEnabled": ubx.FieldSpec{WireName: "is_logging_enabled"},
 	}
 
-var Pipeline_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Pipeline_ResourcePolicyFields = ubx.FieldMap{
+		"Policy": ubx.FieldSpec{WireName: "policy"},
 	}
 
-var Pipeline_VpcOptionsFields = ubx.FieldMap{
+var Pipeline_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptionsFields = ubx.FieldMap{
+		"AttachToVpc": ubx.FieldSpec{WireName: "attach_to_vpc"},
+		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
+	}
+
+var Pipeline_VpcEndpoints_VpcOptionsFields = ubx.FieldMap{
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"VpcAttachmentOptions": ubx.FieldSpec{
+			WireName: "vpc_attachment_options",
+			Kind: "object",
+			Fields: Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptionsFields,
+		},
 		"VpcEndpointManagement": ubx.FieldSpec{WireName: "vpc_endpoint_management"},
 	}
 
 type PipelineConfig struct {
-	MaxUnits any
-	MinUnits any
-	PipelineConfigurationBody any
-	PipelineName any
-	PipelineRoleArn any
-	Region any
-	Tags any
+	// Key-value pairs to configure buffering.
 	BufferOptions any
+	// Key-value pairs to configure encryption at rest.
 	EncryptionAtRestOptions any
+	// Key-value pairs to configure log publishing.
 	LogPublishingOptions any
-	Timeouts any
+	// The maximum pipeline capacity, in Ingestion OpenSearch Compute Units (OCUs).
+	MaxUnits any
+	// The minimum pipeline capacity, in Ingestion OpenSearch Compute Units (OCUs).
+	MinUnits any
+	// The Data Prepper pipeline configuration.
+	PipelineConfigurationBody any
+	// Name of the OpenSearch Ingestion Service pipeline to create. Pipeline names are unique across the pipelines owned by an account within an AWS Region.
+	PipelineName any
+	// The Pipeline Role (ARN) for the pipeline.
+	PipelineRoleArn any
+	// The IAM resource policy that grants other AWS services permissions to send messages or data to the OpenSearch Ingestion pipeline. (AI-inferred)
+	ResourcePolicy any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion Service creates the pipeline with a public endpoint.
+	VpcOptions any
+}
+
+type PipelineAttrs struct {
+	// Key-value pairs to configure buffering.
+	BufferOptions any
+	// Key-value pairs to configure encryption at rest.
+	EncryptionAtRestOptions any
+	// A list of endpoints that can be used for ingesting data into a pipeline
+	IngestEndpointUrls any
+	// Key-value pairs to configure log publishing.
+	LogPublishingOptions any
+	// The maximum pipeline capacity, in Ingestion OpenSearch Compute Units (OCUs).
+	MaxUnits any
+	// The minimum pipeline capacity, in Ingestion OpenSearch Compute Units (OCUs).
+	MinUnits any
+	// The Amazon Resource Name (ARN) of the pipeline.
+	PipelineArn any
+	// The Data Prepper pipeline configuration.
+	PipelineConfigurationBody any
+	// Name of the OpenSearch Ingestion Service pipeline to create. Pipeline names are unique across the pipelines owned by an account within an AWS Region.
+	PipelineName any
+	// The Pipeline Role (ARN) for the pipeline.
+	PipelineRoleArn any
+	// The IAM resource policy that grants other AWS services permissions to send messages or data to the OpenSearch Ingestion pipeline. (AI-inferred)
+	ResourcePolicy any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// The VPC endpoint service name for the pipeline.
+	VpcEndpointService any
+	// The VPC interface endpoints that have access to the pipeline.
+	VpcEndpoints any
+	// Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion Service creates the pipeline with a public endpoint.
 	VpcOptions any
 }
 
 var Pipeline = ubx.ResourceBinding{
 	WireType: "aws_osis_pipeline",
 	Fields: ubx.FieldMap{
+		"BufferOptions": ubx.FieldSpec{
+			WireName: "buffer_options",
+			Kind: "object",
+			Fields: Pipeline_BufferOptionsFields,
+		},
+		"EncryptionAtRestOptions": ubx.FieldSpec{
+			WireName: "encryption_at_rest_options",
+			Kind: "object",
+			Fields: Pipeline_EncryptionAtRestOptionsFields,
+		},
+		"LogPublishingOptions": ubx.FieldSpec{
+			WireName: "log_publishing_options",
+			Kind: "object",
+			Fields: Pipeline_LogPublishingOptionsFields,
+		},
 		"MaxUnits": ubx.FieldSpec{WireName: "max_units"},
 		"MinUnits": ubx.FieldSpec{WireName: "min_units"},
 		"PipelineConfigurationBody": ubx.FieldSpec{WireName: "pipeline_configuration_body"},
 		"PipelineName": ubx.FieldSpec{WireName: "pipeline_name"},
 		"PipelineRoleArn": ubx.FieldSpec{WireName: "pipeline_role_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"BufferOptions": ubx.FieldSpec{
-			WireName: "buffer_options",
-			Kind: "list",
-			Fields: Pipeline_BufferOptionsFields,
-		},
-		"EncryptionAtRestOptions": ubx.FieldSpec{
-			WireName: "encryption_at_rest_options",
-			Kind: "list",
-			Fields: Pipeline_EncryptionAtRestOptionsFields,
-		},
-		"LogPublishingOptions": ubx.FieldSpec{
-			WireName: "log_publishing_options",
-			Kind: "list",
-			Fields: Pipeline_LogPublishingOptionsFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"ResourcePolicy": ubx.FieldSpec{
+			WireName: "resource_policy",
 			Kind: "object",
-			Fields: Pipeline_TimeoutsFields,
+			Fields: Pipeline_ResourcePolicyFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Pipeline_TagsFields,
 		},
 		"VpcOptions": ubx.FieldSpec{
 			WireName: "vpc_options",
-			Kind: "list",
-			Fields: Pipeline_VpcOptionsFields,
+			Kind: "object",
+			Fields: Pipeline_VpcEndpoints_VpcOptionsFields,
 		},
 	},
 }

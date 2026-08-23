@@ -4,20 +4,37 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LocalGatewayRouteConfig struct {
+	// The CIDR block used for destination matches.
 	DestinationCidrBlock any
-	Id any
+	// The ID of the local gateway route table.
 	LocalGatewayRouteTableId any
+	// The ID of the virtual interface group.
 	LocalGatewayVirtualInterfaceGroupId any
-	Region any
+	// The ID of the network interface.
+	NetworkInterfaceId any
+}
+
+type LocalGatewayRouteAttrs struct {
+	// The CIDR block used for destination matches.
+	DestinationCidrBlock any
+	// The ID of the local gateway route table.
+	LocalGatewayRouteTableId any
+	// The ID of the virtual interface group.
+	LocalGatewayVirtualInterfaceGroupId any
+	// The ID of the network interface.
+	NetworkInterfaceId any
+	// The state of the route.
+	State any
+	// The route type.
+	Type any
 }
 
 var LocalGatewayRoute = ubx.ResourceBinding{
 	WireType: "aws_ec2_local_gateway_route",
 	Fields: ubx.FieldMap{
 		"DestinationCidrBlock": ubx.FieldSpec{WireName: "destination_cidr_block"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"LocalGatewayRouteTableId": ubx.FieldSpec{WireName: "local_gateway_route_table_id"},
 		"LocalGatewayVirtualInterfaceGroupId": ubx.FieldSpec{WireName: "local_gateway_virtual_interface_group_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
 	},
 }

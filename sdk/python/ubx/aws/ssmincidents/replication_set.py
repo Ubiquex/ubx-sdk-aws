@@ -7,60 +7,75 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ReplicationSet_Region:
-    kms_key_arn: Any = None
-    name: Any = None
-    status: Any = None
-    status_message: Any = None
+class ReplicationSet_Regions_RegionConfiguration:
+    # The ARN of the AWS KMS key used to encrypt the replication set data in this region. (AI-inferred)
+    sse_kms_key_id: Any = None
 
 @dataclasses.dataclass
-class ReplicationSet_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class ReplicationSet_Regions:
+    # This object defines the per-region encryption configuration for the replication set, specifying the AWS KMS key ARN used to encrypt incident data replicated to that region. (AI-inferred)
+    region_configuration: Any = None
+    # The name of an AWS Region to include in the Incident Manager replication set, determining where incident data will be replicated. (AI-inferred)
+    region_name: Any = None
 
-_ReplicationSet_RegionFields = {
-    "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "status": ubx.FieldSpec(wire_name="status"),
-    "status_message": ubx.FieldSpec(wire_name="status_message"),
+@dataclasses.dataclass
+class ReplicationSet_Tags:
+    # The key of a tag assigned to the AWS SSM Incident replication set, used to identify and organize the resource. (AI-inferred)
+    key: Any = None
+    # The value of a key-value tag attached to the replication set, used to organize, identify, and manage the resource within AWS Systems Manager Incident Manager. (AI-inferred)
+    value: Any = None
+
+_ReplicationSet_Regions_RegionConfigurationFields = {
+    "sse_kms_key_id": ubx.FieldSpec(wire_name="sse_kms_key_id"),
 }
 
-_ReplicationSet_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_ReplicationSet_RegionsFields = {
+    "region_configuration": ubx.FieldSpec(
+        wire_name="region_configuration",
+        kind="object",
+        fields=_ReplicationSet_Regions_RegionConfigurationFields,
+    ),
+    "region_name": ubx.FieldSpec(wire_name="region_name"),
+}
+
+_ReplicationSet_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ReplicationSetConfig:
-    id: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    region: Any = None
+    # Configures the ReplicationSet deletion protection.
+    deletion_protected: Any = None
+    # The regions list specifies the AWS Regions in which incident records are replicated for this replication set, with each object defining a Region name and an optional customer-managed KMS key for encryption. (AI-inferred)
     regions: Any = None
-    timeouts: Any = None
+    # The tags to apply to the replication set.
+    tags: Any = None
+
+@dataclasses.dataclass
+class ReplicationSetAttrs:
+    # The ARN of the ReplicationSet.
+    arn: Any = None
+    # Configures the ReplicationSet deletion protection.
+    deletion_protected: Any = None
+    # The regions list specifies the AWS Regions in which incident records are replicated for this replication set, with each object defining a Region name and an optional customer-managed KMS key for encryption. (AI-inferred)
+    regions: Any = None
+    # The tags to apply to the replication set.
+    tags: Any = None
 
 ReplicationSet = ubx.ResourceBinding(
     wire_type="aws_ssmincidents_replication_set",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "region": ubx.FieldSpec(
-            wire_name="region",
-            kind="set",
-            fields=_ReplicationSet_RegionFields,
-        ),
+        "deletion_protected": ubx.FieldSpec(wire_name="deletion_protected"),
         "regions": ubx.FieldSpec(
             wire_name="regions",
-            kind="set",
-            fields=_ReplicationSet_RegionFields,
+            kind="list",
+            fields=_ReplicationSet_RegionsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_ReplicationSet_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ReplicationSet_TagsFields,
         ),
     },
 )

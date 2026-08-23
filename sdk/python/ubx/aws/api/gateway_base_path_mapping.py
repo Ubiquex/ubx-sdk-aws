@@ -8,23 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayBasePathMappingConfig:
-    api_id: Any = None
+    # Specifies the base path of the custom domain that maps to the API, such that requests to that path are routed to the associated API and stage; if not set, the API is served at the root of the domain (path '/'). (AI-inferred)
     base_path: Any = None
+    # The custom domain name (e.g., api.example.com) registered in API Gateway to which this base path mapping is attached, matching the DomainName property of an AWS::ApiGateway::DomainName resource. (AI-inferred)
     domain_name: Any = None
-    domain_name_id: Any = None
-    id: Any = None
-    region: Any = None
-    stage_name: Any = None
+    # The ID of the API Gateway REST API to which the base path mapping routes traffic. (AI-inferred)
+    rest_api_id: Any = None
+    # The name of the API Gateway stage that the base path mapping targets. (AI-inferred)
+    stage: Any = None
+
+@dataclasses.dataclass
+class GatewayBasePathMappingAttrs:
+    # Specifies the base path of the custom domain that maps to the API, such that requests to that path are routed to the associated API and stage; if not set, the API is served at the root of the domain (path '/'). (AI-inferred)
+    base_path: Any = None
+    # The custom domain name (e.g., api.example.com) registered in API Gateway to which this base path mapping is attached, matching the DomainName property of an AWS::ApiGateway::DomainName resource. (AI-inferred)
+    domain_name: Any = None
+    # The ID of the API Gateway REST API to which the base path mapping routes traffic. (AI-inferred)
+    rest_api_id: Any = None
+    # The name of the API Gateway stage that the base path mapping targets. (AI-inferred)
+    stage: Any = None
 
 GatewayBasePathMapping = ubx.ResourceBinding(
     wire_type="aws_api_gateway_base_path_mapping",
     fields={
-        "api_id": ubx.FieldSpec(wire_name="api_id"),
         "base_path": ubx.FieldSpec(wire_name="base_path"),
         "domain_name": ubx.FieldSpec(wire_name="domain_name"),
-        "domain_name_id": ubx.FieldSpec(wire_name="domain_name_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "stage_name": ubx.FieldSpec(wire_name="stage_name"),
+        "rest_api_id": ubx.FieldSpec(wire_name="rest_api_id"),
+        "stage": ubx.FieldSpec(wire_name="stage"),
     },
 )

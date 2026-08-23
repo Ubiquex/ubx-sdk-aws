@@ -8,11 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PermissionConfig:
+    # The actions that the specified AWS service principal can use. Actions IssueCertificate, GetCertificate and ListPermissions must be provided.
     actions: Any = None
+    # The Amazon Resource Name (ARN) of the Private Certificate Authority that grants the permission.
     certificate_authority_arn: Any = None
-    id: Any = None
+    # The AWS service or identity that receives the permission. At this time, the only valid principal is acm.amazonaws.com.
     principal: Any = None
-    region: Any = None
+    # The ID of the calling account.
+    source_account: Any = None
+
+@dataclasses.dataclass
+class PermissionAttrs:
+    # The actions that the specified AWS service principal can use. Actions IssueCertificate, GetCertificate and ListPermissions must be provided.
+    actions: Any = None
+    # The Amazon Resource Name (ARN) of the Private Certificate Authority that grants the permission.
+    certificate_authority_arn: Any = None
+    # The AWS service or identity that receives the permission. At this time, the only valid principal is acm.amazonaws.com.
+    principal: Any = None
+    # The ID of the calling account.
     source_account: Any = None
 
 Permission = ubx.ResourceBinding(
@@ -20,9 +33,7 @@ Permission = ubx.ResourceBinding(
     fields={
         "actions": ubx.FieldSpec(wire_name="actions"),
         "certificate_authority_arn": ubx.FieldSpec(wire_name="certificate_authority_arn"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "principal": ubx.FieldSpec(wire_name="principal"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "source_account": ubx.FieldSpec(wire_name="source_account"),
     },
 )

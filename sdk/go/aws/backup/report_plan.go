@@ -4,17 +4,31 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportPlan_ReportDeliveryChannel struct {
+	// A list of the format of your reports: CSV, JSON, or both. If not specified, the default format is CSV.
 	Formats any
+	// The unique name of the S3 bucket that receives your reports.
 	S3BucketName any
+	// The prefix for where AWS Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path: s3://your-bucket-name/prefix/Backup/us-west-2/year/month/day/report-name. If not specified, there is no prefix.
 	S3KeyPrefix any
 }
 
+type ReportPlan_ReportPlanTags struct {
+	// The key of a user-defined tag attached to the AWS Backup report plan, used to categorize and manage the resource. (AI-inferred)
+	Key any
+	// The value portion of a key-value tag attached to the AWS Backup report plan, used for identifying and organizing the report plan. (AI-inferred)
+	Value any
+}
+
 type ReportPlan_ReportSetting struct {
+	// The list of AWS accounts that a report covers.
 	Accounts any
+	// The Amazon Resource Names (ARNs) of the frameworks a report covers.
 	FrameworkArns any
-	NumberOfFrameworks any
+	// The list of AWS organization units that a report covers.
 	OrganizationUnits any
+	// The list of AWS regions that a report covers.
 	Regions any
+	// Identifies the report template for the report. Reports are built using a report template. The report templates are: `BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT`
 	ReportTemplate any
 }
 
@@ -24,43 +38,65 @@ var ReportPlan_ReportDeliveryChannelFields = ubx.FieldMap{
 		"S3KeyPrefix": ubx.FieldSpec{WireName: "s3_key_prefix"},
 	}
 
+var ReportPlan_ReportPlanTagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 var ReportPlan_ReportSettingFields = ubx.FieldMap{
 		"Accounts": ubx.FieldSpec{WireName: "accounts"},
 		"FrameworkArns": ubx.FieldSpec{WireName: "framework_arns"},
-		"NumberOfFrameworks": ubx.FieldSpec{WireName: "number_of_frameworks"},
 		"OrganizationUnits": ubx.FieldSpec{WireName: "organization_units"},
 		"Regions": ubx.FieldSpec{WireName: "regions"},
 		"ReportTemplate": ubx.FieldSpec{WireName: "report_template"},
 	}
 
 type ReportPlanConfig struct {
-	Description any
-	Id any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
+	// A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.
 	ReportDeliveryChannel any
+	// An optional description of the report plan with a maximum of 1,024 characters.
+	ReportPlanDescription any
+	// The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+	ReportPlanName any
+	// Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.
+	ReportPlanTags any
+	// Identifies the report template for the report. Reports are built using a report template.
+	ReportSetting any
+}
+
+type ReportPlanAttrs struct {
+	// A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.
+	ReportDeliveryChannel any
+	// An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.
+	ReportPlanArn any
+	// An optional description of the report plan with a maximum of 1,024 characters.
+	ReportPlanDescription any
+	// The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+	ReportPlanName any
+	// Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.
+	ReportPlanTags any
+	// Identifies the report template for the report. Reports are built using a report template.
 	ReportSetting any
 }
 
 var ReportPlan = ubx.ResourceBinding{
 	WireType: "aws_backup_report_plan",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"ReportDeliveryChannel": ubx.FieldSpec{
 			WireName: "report_delivery_channel",
-			Kind: "list",
+			Kind: "object",
 			Fields: ReportPlan_ReportDeliveryChannelFields,
+		},
+		"ReportPlanDescription": ubx.FieldSpec{WireName: "report_plan_description"},
+		"ReportPlanName": ubx.FieldSpec{WireName: "report_plan_name"},
+		"ReportPlanTags": ubx.FieldSpec{
+			WireName: "report_plan_tags",
+			Kind: "list",
+			Fields: ReportPlan_ReportPlanTagsFields,
 		},
 		"ReportSetting": ubx.FieldSpec{
 			WireName: "report_setting",
-			Kind: "list",
+			Kind: "object",
 			Fields: ReportPlan_ReportSettingFields,
 		},
 	},

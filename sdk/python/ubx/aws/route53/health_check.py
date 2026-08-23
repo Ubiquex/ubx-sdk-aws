@@ -7,58 +7,118 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class HealthCheckConfig:
-    child_health_threshold: Any = None
-    child_healthchecks: Any = None
-    cloudwatch_alarm_name: Any = None
-    cloudwatch_alarm_region: Any = None
-    disabled: Any = None
+class HealthCheck_HealthCheckConfig_AlarmIdentifier:
+    # The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.
+    name: Any = None
+    # For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.
+    region: Any = None
+
+@dataclasses.dataclass
+class HealthCheck_HealthCheckConfig:
+    # A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.
+    alarm_identifier: Any = None
+    # For a calculated health check, this field lists the health check IDs that Route 53 evaluates to determine the calculated health check's overall status. (AI-inferred)
+    child_health_checks: Any = None
+    # Indicates whether the health check uses Server Name Indication (SNI) when checking an HTTPS endpoint. (AI-inferred)
     enable_sni: Any = None
+    # The number of consecutive health check failures that Amazon Route 53 must observe before marking the endpoint as unhealthy, as part of the health check configuration. (AI-inferred)
     failure_threshold: Any = None
-    fqdn: Any = None
-    id: Any = None
+    # Specifies the fully qualified domain name of the endpoint (such as 'example.com') that Route 53 sends health check requests to, used when the health check targets a domain name instead of an IP address. (AI-inferred)
+    fully_qualified_domain_name: Any = None
+    # The number of individual health checks that must be healthy for a calculated health check to be considered healthy. (AI-inferred)
+    health_threshold: Any = None
+    # Sets the health check status that Route 53 reports when CloudWatch does not have sufficient data to determine the endpoint's health, with allowed values of Healthy, Unhealthy, or LastKnownStatus. (AI-inferred)
     insufficient_data_health_status: Any = None
-    invert_healthcheck: Any = None
-    ip_address: Any = None
+    # When true, inverts the health check result so that a failed check is reported as healthy and a successful check is reported as unhealthy. (AI-inferred)
+    inverted: Any = None
+    # The IPv4 or IPv6 address of the endpoint that Route 53 health checks, used when the health check is configured to check a specific IP rather than a domain name. (AI-inferred)
+    ipaddress: Any = None
+    # Indicates whether Route 53 should measure latency between health checkers in different AWS regions and include the resulting latency data in the health check report. (AI-inferred)
     measure_latency: Any = None
+    # Specifies the port on the endpoint that Route 53 performs health checks against, with defaults of 80 for TCP/HTTP and 443 for HTTPS when omitted. (AI-inferred)
     port: Any = None
-    reference_name: Any = None
+    # Specifies the list of AWS regions from which Route 53 health checkers will issue requests to the endpoint being checked. (AI-inferred)
     regions: Any = None
+    # How often Route 53 sends a health check request to the endpoint; can be either 10 or 30 seconds, with 10 enabling fast health checks. (AI-inferred)
     request_interval: Any = None
+    # The URL path that Route 53 requests from the endpoint when performing an HTTP or HTTPS health check (for example, '/' or '/health'). (AI-inferred)
     resource_path: Any = None
+    # The ARN of the Route 53 Application Recovery Controller routing control that this health check is associated with, allowing the health check status to determine the routing control's state. (AI-inferred)
     routing_control_arn: Any = None
+    # Specifies the string that must appear in the response body for the health check to pass; used with HTTP/HTTPS health checks where the HealthCheckType is HTTP_STR_MATCH or HTTPS_STR_MATCH. (AI-inferred)
     search_string: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    triggers: Any = None
+    # The type of health check to create (e.g., HTTP, HTTPS, TCP, HTTP_STR_MATCH, or CALCULATED), which determines the protocol or method used to evaluate the endpoint's health. (AI-inferred)
     type: Any = None
+
+@dataclasses.dataclass
+class HealthCheck_HealthCheckTags:
+    # The key (name) of a user-defined tag to associate with the Route 53 health check. (AI-inferred)
+    key: Any = None
+    # The value of a tag on the Route 53 health check, providing arbitrary metadata associated with the resource for identification or categorization. (AI-inferred)
+    value: Any = None
+
+_HealthCheck_HealthCheckConfig_AlarmIdentifierFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "region": ubx.FieldSpec(wire_name="region"),
+}
+
+_HealthCheck_HealthCheckConfigFields = {
+    "alarm_identifier": ubx.FieldSpec(
+        wire_name="alarm_identifier",
+        kind="object",
+        fields=_HealthCheck_HealthCheckConfig_AlarmIdentifierFields,
+    ),
+    "child_health_checks": ubx.FieldSpec(wire_name="child_health_checks"),
+    "enable_sni": ubx.FieldSpec(wire_name="enable_sni"),
+    "failure_threshold": ubx.FieldSpec(wire_name="failure_threshold"),
+    "fully_qualified_domain_name": ubx.FieldSpec(wire_name="fully_qualified_domain_name"),
+    "health_threshold": ubx.FieldSpec(wire_name="health_threshold"),
+    "insufficient_data_health_status": ubx.FieldSpec(wire_name="insufficient_data_health_status"),
+    "inverted": ubx.FieldSpec(wire_name="inverted"),
+    "ipaddress": ubx.FieldSpec(wire_name="ipaddress"),
+    "measure_latency": ubx.FieldSpec(wire_name="measure_latency"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "regions": ubx.FieldSpec(wire_name="regions"),
+    "request_interval": ubx.FieldSpec(wire_name="request_interval"),
+    "resource_path": ubx.FieldSpec(wire_name="resource_path"),
+    "routing_control_arn": ubx.FieldSpec(wire_name="routing_control_arn"),
+    "search_string": ubx.FieldSpec(wire_name="search_string"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_HealthCheck_HealthCheckTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
+class HealthCheckConfig:
+    # A complex type that contains information about the health check.
+    health_check_config: Any = None
+    # An array of key-value pairs to apply to this resource.
+    health_check_tags: Any = None
+
+@dataclasses.dataclass
+class HealthCheckAttrs:
+    # A complex type that contains information about the health check.
+    health_check_config: Any = None
+    # The unique identifier assigned by Route 53 to the health check. (AI-inferred)
+    health_check_id: Any = None
+    # An array of key-value pairs to apply to this resource.
+    health_check_tags: Any = None
 
 HealthCheck = ubx.ResourceBinding(
     wire_type="aws_route53_health_check",
     fields={
-        "child_health_threshold": ubx.FieldSpec(wire_name="child_health_threshold"),
-        "child_healthchecks": ubx.FieldSpec(wire_name="child_healthchecks"),
-        "cloudwatch_alarm_name": ubx.FieldSpec(wire_name="cloudwatch_alarm_name"),
-        "cloudwatch_alarm_region": ubx.FieldSpec(wire_name="cloudwatch_alarm_region"),
-        "disabled": ubx.FieldSpec(wire_name="disabled"),
-        "enable_sni": ubx.FieldSpec(wire_name="enable_sni"),
-        "failure_threshold": ubx.FieldSpec(wire_name="failure_threshold"),
-        "fqdn": ubx.FieldSpec(wire_name="fqdn"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "insufficient_data_health_status": ubx.FieldSpec(wire_name="insufficient_data_health_status"),
-        "invert_healthcheck": ubx.FieldSpec(wire_name="invert_healthcheck"),
-        "ip_address": ubx.FieldSpec(wire_name="ip_address"),
-        "measure_latency": ubx.FieldSpec(wire_name="measure_latency"),
-        "port": ubx.FieldSpec(wire_name="port"),
-        "reference_name": ubx.FieldSpec(wire_name="reference_name"),
-        "regions": ubx.FieldSpec(wire_name="regions"),
-        "request_interval": ubx.FieldSpec(wire_name="request_interval"),
-        "resource_path": ubx.FieldSpec(wire_name="resource_path"),
-        "routing_control_arn": ubx.FieldSpec(wire_name="routing_control_arn"),
-        "search_string": ubx.FieldSpec(wire_name="search_string"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "triggers": ubx.FieldSpec(wire_name="triggers"),
-        "type": ubx.FieldSpec(wire_name="type"),
+        "health_check_config": ubx.FieldSpec(
+            wire_name="health_check_config",
+            kind="object",
+            fields=_HealthCheck_HealthCheckConfigFields,
+        ),
+        "health_check_tags": ubx.FieldSpec(
+            wire_name="health_check_tags",
+            kind="list",
+            fields=_HealthCheck_HealthCheckTagsFields,
+        ),
     },
 )

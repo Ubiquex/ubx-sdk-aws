@@ -4,28 +4,29 @@ package rbin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rule_ExcludeResourceTags struct {
+	// Specifies the tag key used to identify resources that should be excluded from the retention rule's cleanup (i.e., resources with this tag key will not be affected by the rule). (AI-inferred)
 	ResourceTagKey any
+	// The value of a resource tag that, when matched on a resource, excludes that resource from the retention rule's effect. (AI-inferred)
 	ResourceTagValue any
 }
 
-type Rule_LockConfiguration_UnlockDelay struct {
+type Rule_LockConfiguration struct {
+	// The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.
 	UnlockDelayUnit any
+	// The unlock delay period, measured in the unit specified for UnlockDelayUnit.
 	UnlockDelayValue any
 }
 
-type Rule_LockConfiguration struct {
-	UnlockDelay any
-}
-
 type Rule_RetentionPeriod struct {
+	// The retention period unit of the rule
 	RetentionPeriodUnit any
+	// The retention period value of the rule.
 	RetentionPeriodValue any
 }
 
-type Rule_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Rule_Tags struct {
+	Key any
+	Value any
 }
 
 var Rule_ExcludeResourceTagsFields = ubx.FieldMap{
@@ -33,17 +34,9 @@ var Rule_ExcludeResourceTagsFields = ubx.FieldMap{
 		"ResourceTagValue": ubx.FieldSpec{WireName: "resource_tag_value"},
 	}
 
-var Rule_LockConfiguration_UnlockDelayFields = ubx.FieldMap{
+var Rule_LockConfigurationFields = ubx.FieldMap{
 		"UnlockDelayUnit": ubx.FieldSpec{WireName: "unlock_delay_unit"},
 		"UnlockDelayValue": ubx.FieldSpec{WireName: "unlock_delay_value"},
-	}
-
-var Rule_LockConfigurationFields = ubx.FieldMap{
-		"UnlockDelay": ubx.FieldSpec{
-			WireName: "unlock_delay",
-			Kind: "list",
-			Fields: Rule_LockConfiguration_UnlockDelayFields,
-		},
 	}
 
 var Rule_RetentionPeriodFields = ubx.FieldMap{
@@ -51,57 +44,85 @@ var Rule_RetentionPeriodFields = ubx.FieldMap{
 		"RetentionPeriodValue": ubx.FieldSpec{WireName: "retention_period_value"},
 	}
 
-var Rule_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Rule_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type RuleConfig struct {
+	// The description of the retention rule.
 	Description any
-	Region any
-	ResourceType any
-	Tags any
-	TagsAll any
+	// Information about the exclude resource tags used to identify resources that are excluded by the retention rule.
 	ExcludeResourceTags any
+	// The lock configuration for the Recycle Bin rule, specifying the lock mode ('governance' or 'compliance') that determines whether the rule can be modified or deleted after creation. (AI-inferred)
 	LockConfiguration any
+	// Information about the resource tags used to identify resources that are retained by the retention rule.
 	ResourceTags any
+	// The resource type retained by the retention rule.
+	ResourceType any
+	// The retention period of the rule.
 	RetentionPeriod any
-	Timeouts any
+	// The state of the retention rule. Only retention rules that are in the available state retain resources.
+	Status any
+	// Information about the tags assigned to the retention rule.
+	Tags any
+}
+
+type RuleAttrs struct {
+	// Rule Arn is unique for each rule.
+	Arn any
+	// The description of the retention rule.
+	Description any
+	// Information about the exclude resource tags used to identify resources that are excluded by the retention rule.
+	ExcludeResourceTags any
+	// The unique ID of the retention rule.
+	Identifier any
+	// The lock configuration for the Recycle Bin rule, specifying the lock mode ('governance' or 'compliance') that determines whether the rule can be modified or deleted after creation. (AI-inferred)
+	LockConfiguration any
+	// The lock state for the retention rule.
+	LockState any
+	// Information about the resource tags used to identify resources that are retained by the retention rule.
+	ResourceTags any
+	// The resource type retained by the retention rule.
+	ResourceType any
+	// The retention period of the rule.
+	RetentionPeriod any
+	// The state of the retention rule. Only retention rules that are in the available state retain resources.
+	Status any
+	// Information about the tags assigned to the retention rule.
+	Tags any
 }
 
 var Rule = ubx.ResourceBinding{
 	WireType: "aws_rbin_rule",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"ExcludeResourceTags": ubx.FieldSpec{
 			WireName: "exclude_resource_tags",
-			Kind: "set",
+			Kind: "list",
 			Fields: Rule_ExcludeResourceTagsFields,
 		},
 		"LockConfiguration": ubx.FieldSpec{
 			WireName: "lock_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Rule_LockConfigurationFields,
 		},
 		"ResourceTags": ubx.FieldSpec{
 			WireName: "resource_tags",
-			Kind: "set",
+			Kind: "list",
 			Fields: Rule_ExcludeResourceTagsFields,
 		},
+		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 		"RetentionPeriod": ubx.FieldSpec{
 			WireName: "retention_period",
-			Kind: "list",
+			Kind: "object",
 			Fields: Rule_RetentionPeriodFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Rule_TimeoutsFields,
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Rule_TagsFields,
 		},
 	},
 }

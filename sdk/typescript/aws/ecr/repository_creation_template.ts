@@ -2,13 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RepositoryCreationTemplate_EncryptionConfiguration {
-  encryptionType: string;
-  kmsKey: string;
+  /** The encryption type to use. */
+  encryptionType: string | Computed<string>;
+  /** If you use the KMS or KMS_DSSE encryption type, specify the CMK to use for encryption. The alias, key ID, or full ARN of the CMK can be specified. The key must exist in the same Region as the repository. If no key is specified, the default AWS managed CMK for Amazon ECR will be used. */
+  kmsKey?: string | Computed<string>;
 }
 
-export interface RepositoryCreationTemplate_ImageTagMutabilityExclusionFilter {
-  filter: string;
-  filterType: string;
+export interface RepositoryCreationTemplate_ImageTagMutabilityExclusionFilters {
+  /** Specifies the type of filter for image tag mutability exclusions, where 'ALL' matches every tag and 'REGEX' uses a regular expression pattern in the corresponding value field. (AI-inferred) */
+  imageTagMutabilityExclusionFilterType?: string | Computed<string>;
+  /** This field specifies the tag pattern (such as a regex or wildcard expression) that identifies image tags excluded from the repository creation template's image tag mutability policy, allowing those tags to be overwritten even in immutable repositories. (AI-inferred) */
+  imageTagMutabilityExclusionFilterValue?: string | Computed<string>;
+}
+
+export interface RepositoryCreationTemplate_ResourceTags {
+  /** The key of a tag that this repository creation template automatically applies to newly created Amazon ECR repositories. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value of a tag key-value pair in the ResourceTags list of the AWS ECR Repository Creation Template, used to add metadata for identification, categorization, and cost allocation. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const RepositoryCreationTemplate_EncryptionConfigurationFields: FieldMap = {
@@ -16,40 +27,64 @@ const RepositoryCreationTemplate_EncryptionConfigurationFields: FieldMap = {
   kmsKey: "kms_key",
 };
 
-const RepositoryCreationTemplate_ImageTagMutabilityExclusionFilterFields: FieldMap = {
-  filter: "filter",
-  filterType: "filter_type",
+const RepositoryCreationTemplate_ImageTagMutabilityExclusionFiltersFields: FieldMap = {
+  imageTagMutabilityExclusionFilterType: "image_tag_mutability_exclusion_filter_type",
+  imageTagMutabilityExclusionFilterValue: "image_tag_mutability_exclusion_filter_value",
+};
+
+const RepositoryCreationTemplate_ResourceTagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface RepositoryCreationTemplateConfig {
+  /** A list of enumerable Strings representing the repository creation scenarios that this template will apply towards. The supported scenarios are PULL_THROUGH_CACHE, REPLICATION, and CREATE_ON_PUSH */
   appliedFor: string[] | Computed<string[]>;
+  /** The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template. */
   customRoleArn?: string | Computed<string>;
+  /** The description associated with the repository creation template. */
   description?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest. By default, when no encryption configuration is set or the ``AES256`` encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES256 encryption algorithm. This does not require any action on your part. For more control over the encryption of the contents of your repository, you can use server-side encryption with KMSlong key stored in KMSlong (KMS) to encrypt your images. For more information, see [Amazon ECR encryption at rest](https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html) in the *Amazon Elastic Container Registry User Guide*. */
+  encryptionConfiguration?: RepositoryCreationTemplate_EncryptionConfiguration | Computed<RepositoryCreationTemplate_EncryptionConfiguration>;
+  /** The tag mutability setting for the repository. If this parameter is omitted, the default setting of ``MUTABLE`` will be used which will allow image tags to be overwritten. If ``IMMUTABLE`` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten. */
   imageTagMutability?: string | Computed<string>;
+  /** A list of filters that specify which image tags are excluded from the repository creation template's image tag mutability setting. */
+  imageTagMutabilityExclusionFilters?: RepositoryCreationTemplate_ImageTagMutabilityExclusionFilters[] | Computed<RepositoryCreationTemplate_ImageTagMutabilityExclusionFilters[]>;
+  /** The lifecycle policy to use for repositories created using the template. */
   lifecyclePolicy?: string | Computed<string>;
+  /** The repository namespace prefix associated with the repository creation template. */
   prefix: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions. */
   repositoryPolicy?: string | Computed<string>;
-  resourceTags?: Record<string, string> | Computed<Record<string, string>>;
-  encryptionConfiguration?: RepositoryCreationTemplate_EncryptionConfiguration[] | Computed<RepositoryCreationTemplate_EncryptionConfiguration[]>;
-  imageTagMutabilityExclusionFilter?: RepositoryCreationTemplate_ImageTagMutabilityExclusionFilter[] | Computed<RepositoryCreationTemplate_ImageTagMutabilityExclusionFilter[]>;
+  /** The metadata to apply to the repository to help you categorize and organize. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
+  resourceTags?: RepositoryCreationTemplate_ResourceTags[] | Computed<RepositoryCreationTemplate_ResourceTags[]>;
 }
 
 export interface RepositoryCreationTemplateAttrs {
+  /** A list of enumerable Strings representing the repository creation scenarios that this template will apply towards. The supported scenarios are PULL_THROUGH_CACHE, REPLICATION, and CREATE_ON_PUSH */
   appliedFor: string[];
+  /** The creation timestamp (in ISO 8601 format) recorded by AWS ECR when this repository creation template was first created, provided as a read-only computed attribute. (AI-inferred) */
+  createdAt: string;
+  /** The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template. */
   customRoleArn: string;
+  /** The description associated with the repository creation template. */
   description: string;
-  id: string;
+  /** The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest. By default, when no encryption configuration is set or the ``AES256`` encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES256 encryption algorithm. This does not require any action on your part. For more control over the encryption of the contents of your repository, you can use server-side encryption with KMSlong key stored in KMSlong (KMS) to encrypt your images. For more information, see [Amazon ECR encryption at rest](https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html) in the *Amazon Elastic Container Registry User Guide*. */
+  encryptionConfiguration: RepositoryCreationTemplate_EncryptionConfiguration;
+  /** The tag mutability setting for the repository. If this parameter is omitted, the default setting of ``MUTABLE`` will be used which will allow image tags to be overwritten. If ``IMMUTABLE`` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten. */
   imageTagMutability: string;
+  /** A list of filters that specify which image tags are excluded from the repository creation template's image tag mutability setting. */
+  imageTagMutabilityExclusionFilters: RepositoryCreationTemplate_ImageTagMutabilityExclusionFilters[];
+  /** The lifecycle policy to use for repositories created using the template. */
   lifecyclePolicy: string;
+  /** The repository namespace prefix associated with the repository creation template. */
   prefix: string;
-  region: string;
-  registryId: string;
+  /** The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions. */
   repositoryPolicy: string;
-  resourceTags: Record<string, string>;
-  encryptionConfiguration: RepositoryCreationTemplate_EncryptionConfiguration[];
-  imageTagMutabilityExclusionFilter: RepositoryCreationTemplate_ImageTagMutabilityExclusionFilter[];
+  /** The metadata to apply to the repository to help you categorize and organize. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
+  resourceTags: RepositoryCreationTemplate_ResourceTags[];
+  /** The timestamp indicating when the AWS ECR repository creation template was last updated. (AI-inferred) */
+  updatedAt: string;
 }
 
 export const RepositoryCreationTemplate: ResourceBinding<RepositoryCreationTemplateConfig, RepositoryCreationTemplateAttrs> = {
@@ -58,22 +93,24 @@ export const RepositoryCreationTemplate: ResourceBinding<RepositoryCreationTempl
     appliedFor: "applied_for",
     customRoleArn: "custom_role_arn",
     description: "description",
-    id: "id",
-    imageTagMutability: "image_tag_mutability",
-    lifecyclePolicy: "lifecycle_policy",
-    prefix: "prefix",
-    region: "region",
-    repositoryPolicy: "repository_policy",
-    resourceTags: "resource_tags",
     encryptionConfiguration: {
       wireName: "encryption_configuration",
-      kind: "list",
+      kind: "object",
       fields: RepositoryCreationTemplate_EncryptionConfigurationFields,
     },
-    imageTagMutabilityExclusionFilter: {
-      wireName: "image_tag_mutability_exclusion_filter",
+    imageTagMutability: "image_tag_mutability",
+    imageTagMutabilityExclusionFilters: {
+      wireName: "image_tag_mutability_exclusion_filters",
       kind: "list",
-      fields: RepositoryCreationTemplate_ImageTagMutabilityExclusionFilterFields,
+      fields: RepositoryCreationTemplate_ImageTagMutabilityExclusionFiltersFields,
+    },
+    lifecyclePolicy: "lifecycle_policy",
+    prefix: "prefix",
+    repositoryPolicy: "repository_policy",
+    resourceTags: {
+      wireName: "resource_tags",
+      kind: "list",
+      fields: RepositoryCreationTemplate_ResourceTagsFields,
     },
   },
 };

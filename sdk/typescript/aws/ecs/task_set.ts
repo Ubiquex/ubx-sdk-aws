@@ -2,34 +2,60 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TaskSet_CapacityProviderStrategy {
-  base: number;
-  capacityProvider: string;
-  weight: number;
+  /** The minimum number of tasks to run on this capacity provider before the task set's weight-based scaling applies. (AI-inferred) */
+  base?: number | Computed<number>;
+  /** The name of the capacity provider, as registered in the ECS cluster, that this task set should use for running tasks. (AI-inferred) */
+  capacityProvider?: string | Computed<string>;
+  /** The relative weight assigned to a capacity provider in the strategy, determining what proportion of tasks from the task set are placed on that provider. (AI-inferred) */
+  weight?: number | Computed<number>;
 }
 
-export interface TaskSet_LoadBalancer {
-  containerName: string;
-  containerPort: number;
-  loadBalancerName: string;
-  targetGroupArn: string;
+export interface TaskSet_LoadBalancers {
+  /** The name of the container, as defined in the task definition, to which the load balancer routes traffic for this task set. (AI-inferred) */
+  containerName?: string | Computed<string>;
+  /** The container port on which the task set's containers receive traffic from the associated load balancer or target group, used to route incoming requests to the correct container port. (AI-inferred) */
+  containerPort?: number | Computed<number>;
+  /** The Amazon Resource Name (ARN) of the target group to which the ECS task set's tasks are registered for load balancing. (AI-inferred) */
+  targetGroupArn?: string | Computed<string>;
+}
+
+export interface TaskSet_NetworkConfiguration_AwsVpcConfiguration {
+  /** Whether the task's elastic network interface receives a public IP address. The default value is DISABLED. */
+  assignPublicIp?: string | Computed<string>;
+  /** The security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used. There is a limit of 5 security groups that can be specified per AwsVpcConfiguration. */
+  securityGroups?: string[] | Computed<string[]>;
+  /** The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per AwsVpcConfiguration. */
+  subnets: string[] | Computed<string[]>;
 }
 
 export interface TaskSet_NetworkConfiguration {
-  assignPublicIp: boolean;
-  securityGroups: string[];
-  subnets: string[];
+  /** The VPC subnets and security groups associated with a task. All specified subnets and security groups must be from the same VPC. */
+  awsVpcConfiguration?: TaskSet_NetworkConfiguration_AwsVpcConfiguration | Computed<TaskSet_NetworkConfiguration_AwsVpcConfiguration>;
 }
 
 export interface TaskSet_Scale {
-  unit: string;
-  value: number;
+  /** The unit of measure for the scale value. */
+  unit?: string | Computed<string>;
+  /** The value, specified as a percent total of a service's desiredCount, to scale the task set. Accepted values are numbers between 0 and 100. */
+  value?: number | Computed<number>;
 }
 
 export interface TaskSet_ServiceRegistries {
-  containerName: string;
-  containerPort: number;
-  port: number;
-  registryArn: string;
+  /** Specifies the container name from the task definition to use for the service discovery (Cloud Map) registry, and if not provided, the default container in the task definition is used. (AI-inferred) */
+  containerName?: string | Computed<string>;
+  /** Specifies the container port that the Amazon ECS task set's service registry uses for service discovery with AWS Cloud Map. (AI-inferred) */
+  containerPort?: number | Computed<number>;
+  /** The port number that the service discovery service uses for the task's registry entry, which overrides the container's port mapping if specified. (AI-inferred) */
+  port?: number | Computed<number>;
+  /** The ARN of the AWS Cloud Map service registry in which the task set's tasks are registered for service discovery. (AI-inferred) */
+  registryArn?: string | Computed<string>;
+}
+
+export interface TaskSet_Tags {
+  /** The key of a tag that can be assigned to the ECS task set for organizational or identification purposes. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** Specifies the value of a user-defined tag attached to the ECS task set, which can be used for resource categorization, cost allocation, and operational management. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const TaskSet_CapacityProviderStrategyFields: FieldMap = {
@@ -38,17 +64,24 @@ const TaskSet_CapacityProviderStrategyFields: FieldMap = {
   weight: "weight",
 };
 
-const TaskSet_LoadBalancerFields: FieldMap = {
+const TaskSet_LoadBalancersFields: FieldMap = {
   containerName: "container_name",
   containerPort: "container_port",
-  loadBalancerName: "load_balancer_name",
   targetGroupArn: "target_group_arn",
 };
 
-const TaskSet_NetworkConfigurationFields: FieldMap = {
+const TaskSet_NetworkConfiguration_AwsVpcConfigurationFields: FieldMap = {
   assignPublicIp: "assign_public_ip",
   securityGroups: "security_groups",
   subnets: "subnets",
+};
+
+const TaskSet_NetworkConfigurationFields: FieldMap = {
+  awsVpcConfiguration: {
+    wireName: "aws_vpc_configuration",
+    kind: "object",
+    fields: TaskSet_NetworkConfiguration_AwsVpcConfigurationFields,
+  },
 };
 
 const TaskSet_ScaleFields: FieldMap = {
@@ -63,92 +96,103 @@ const TaskSet_ServiceRegistriesFields: FieldMap = {
   registryArn: "registry_arn",
 };
 
+const TaskSet_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
 export interface TaskSetConfig {
-  cluster: string | Computed<string>;
-  externalId?: string | Computed<string>;
-  forceDelete?: boolean | Computed<boolean>;
-  id?: string | Computed<string>;
-  launchType?: string | Computed<string>;
-  platformVersion?: string | Computed<string>;
-  region?: string | Computed<string>;
-  service: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  taskDefinition: string | Computed<string>;
-  waitUntilStable?: boolean | Computed<boolean>;
-  waitUntilStableTimeout?: string | Computed<string>;
+  /** Specifies the capacity provider strategy for the task set, defining which capacity providers to use and the weights and base values that govern how tasks are distributed among them. (AI-inferred) */
   capacityProviderStrategy?: TaskSet_CapacityProviderStrategy[] | Computed<TaskSet_CapacityProviderStrategy[]>;
-  loadBalancer?: TaskSet_LoadBalancer[] | Computed<TaskSet_LoadBalancer[]>;
-  networkConfiguration?: TaskSet_NetworkConfiguration[] | Computed<TaskSet_NetworkConfiguration[]>;
-  scale?: TaskSet_Scale[] | Computed<TaskSet_Scale[]>;
+  /** The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in. */
+  cluster: string | Computed<string>;
+  /** An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the ECS_TASK_SET_EXTERNAL_ID AWS Cloud Map attribute set to the provided value. */
+  externalId?: string | Computed<string>;
+  /** The launch type that new tasks in the task set will use. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html in the Amazon Elastic Container Service Developer Guide. */
+  launchType?: string | Computed<string>;
+  /** Configures the load balancer or target groups that route traffic to the tasks in this ECS task set, specifying the container and port to receive traffic. (AI-inferred) */
+  loadBalancers?: TaskSet_LoadBalancers[] | Computed<TaskSet_LoadBalancers[]>;
+  /** An object representing the network configuration for a task or service. */
+  networkConfiguration?: TaskSet_NetworkConfiguration | Computed<TaskSet_NetworkConfiguration>;
+  /** The platform version that the tasks in the task set should use. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the LATEST platform version is used by default. */
+  platformVersion?: string | Computed<string>;
+  /** Specifies the scaling configuration for the task set, including the unit (e.g., PERCENT) and value that determine the target number of tasks for the task set. (AI-inferred) */
+  scale?: TaskSet_Scale | Computed<TaskSet_Scale>;
+  /** The short name or full Amazon Resource Name (ARN) of the service to create the task set in. */
+  service: string | Computed<string>;
+  /** The details of the service discovery registries to assign to this task set. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html. */
   serviceRegistries?: TaskSet_ServiceRegistries[] | Computed<TaskSet_ServiceRegistries[]>;
+  tags?: TaskSet_Tags[] | Computed<TaskSet_Tags[]>;
+  /** The short name or full Amazon Resource Name (ARN) of the task definition for the tasks in the task set to use. */
+  taskDefinition: string | Computed<string>;
 }
 
 export interface TaskSetAttrs {
-  arn: string;
-  cluster: string;
-  externalId: string;
-  forceDelete: boolean;
-  id: string;
-  launchType: string;
-  platformVersion: string;
-  region: string;
-  service: string;
-  stabilityStatus: string;
-  status: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  taskDefinition: string;
-  taskSetId: string;
-  waitUntilStable: boolean;
-  waitUntilStableTimeout: string;
+  /** Specifies the capacity provider strategy for the task set, defining which capacity providers to use and the weights and base values that govern how tasks are distributed among them. (AI-inferred) */
   capacityProviderStrategy: TaskSet_CapacityProviderStrategy[];
-  loadBalancer: TaskSet_LoadBalancer[];
-  networkConfiguration: TaskSet_NetworkConfiguration[];
-  scale: TaskSet_Scale[];
+  /** The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in. */
+  cluster: string;
+  /** An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the ECS_TASK_SET_EXTERNAL_ID AWS Cloud Map attribute set to the provided value. */
+  externalId: string;
+  /** The ID of the task set. */
+  id: string;
+  /** The launch type that new tasks in the task set will use. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html in the Amazon Elastic Container Service Developer Guide. */
+  launchType: string;
+  /** Configures the load balancer or target groups that route traffic to the tasks in this ECS task set, specifying the container and port to receive traffic. (AI-inferred) */
+  loadBalancers: TaskSet_LoadBalancers[];
+  /** An object representing the network configuration for a task or service. */
+  networkConfiguration: TaskSet_NetworkConfiguration;
+  /** The platform version that the tasks in the task set should use. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the LATEST platform version is used by default. */
+  platformVersion: string;
+  /** Specifies the scaling configuration for the task set, including the unit (e.g., PERCENT) and value that determine the target number of tasks for the task set. (AI-inferred) */
+  scale: TaskSet_Scale;
+  /** The short name or full Amazon Resource Name (ARN) of the service to create the task set in. */
+  service: string;
+  /** The details of the service discovery registries to assign to this task set. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html. */
   serviceRegistries: TaskSet_ServiceRegistries[];
+  tags: TaskSet_Tags[];
+  /** The short name or full Amazon Resource Name (ARN) of the task definition for the tasks in the task set to use. */
+  taskDefinition: string;
 }
 
 export const TaskSet: ResourceBinding<TaskSetConfig, TaskSetAttrs> = {
   wireType: "aws_ecs_task_set",
   fields: {
-    cluster: "cluster",
-    externalId: "external_id",
-    forceDelete: "force_delete",
-    id: "id",
-    launchType: "launch_type",
-    platformVersion: "platform_version",
-    region: "region",
-    service: "service",
-    tags: "tags",
-    tagsAll: "tags_all",
-    taskDefinition: "task_definition",
-    waitUntilStable: "wait_until_stable",
-    waitUntilStableTimeout: "wait_until_stable_timeout",
     capacityProviderStrategy: {
       wireName: "capacity_provider_strategy",
-      kind: "set",
+      kind: "list",
       fields: TaskSet_CapacityProviderStrategyFields,
     },
-    loadBalancer: {
-      wireName: "load_balancer",
-      kind: "set",
-      fields: TaskSet_LoadBalancerFields,
+    cluster: "cluster",
+    externalId: "external_id",
+    launchType: "launch_type",
+    loadBalancers: {
+      wireName: "load_balancers",
+      kind: "list",
+      fields: TaskSet_LoadBalancersFields,
     },
     networkConfiguration: {
       wireName: "network_configuration",
-      kind: "list",
+      kind: "object",
       fields: TaskSet_NetworkConfigurationFields,
     },
+    platformVersion: "platform_version",
     scale: {
       wireName: "scale",
-      kind: "list",
+      kind: "object",
       fields: TaskSet_ScaleFields,
     },
+    service: "service",
     serviceRegistries: {
       wireName: "service_registries",
       kind: "list",
       fields: TaskSet_ServiceRegistriesFields,
     },
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: TaskSet_TagsFields,
+    },
+    taskDefinition: "task_definition",
   },
 };

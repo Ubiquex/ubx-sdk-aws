@@ -7,24 +7,95 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DiscoveryPrivateDnsNamespace_Properties_DnsProperties_Soa:
+    # Specifies the time-to-live (TTL) in seconds for the SOA (Start of Authority) record of the private DNS namespace, controlling how long DNS resolvers cache the SOA information. (AI-inferred)
+    ttl: Any = None
+
+@dataclasses.dataclass
+class DiscoveryPrivateDnsNamespace_Properties_DnsProperties:
+    # Configures the start of authority (SOA) record settings for the private DNS namespace, allowing you to set the time-to-live (TTL) for the SOA record. (AI-inferred)
+    soa: Any = None
+
+@dataclasses.dataclass
+class DiscoveryPrivateDnsNamespace_Properties:
+    # Defines the DNS properties for the private namespace, specifically the SOA (Start of Authority) record settings that control the default DNS behavior for the namespace. (AI-inferred)
+    dns_properties: Any = None
+
+@dataclasses.dataclass
+class DiscoveryPrivateDnsNamespace_Tags:
+    key: Any = None
+    value: Any = None
+
+_DiscoveryPrivateDnsNamespace_Properties_DnsProperties_SoaFields = {
+    "ttl": ubx.FieldSpec(wire_name="ttl"),
+}
+
+_DiscoveryPrivateDnsNamespace_Properties_DnsPropertiesFields = {
+    "soa": ubx.FieldSpec(
+        wire_name="soa",
+        kind="object",
+        fields=_DiscoveryPrivateDnsNamespace_Properties_DnsProperties_SoaFields,
+    ),
+}
+
+_DiscoveryPrivateDnsNamespace_PropertiesFields = {
+    "dns_properties": ubx.FieldSpec(
+        wire_name="dns_properties",
+        kind="object",
+        fields=_DiscoveryPrivateDnsNamespace_Properties_DnsPropertiesFields,
+    ),
+}
+
+_DiscoveryPrivateDnsNamespace_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class DiscoveryPrivateDnsNamespaceConfig:
+    # A description of the namespace.
     description: Any = None
-    id: Any = None
+    # The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
     name: Any = None
-    region: Any = None
+    properties: Any = None
+    # The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     tags: Any = None
-    tags_all: Any = None
+    # The ID of the Amazon VPC that you want to associate the namespace with.
+    vpc: Any = None
+
+@dataclasses.dataclass
+class DiscoveryPrivateDnsNamespaceAttrs:
+    # The Amazon Resource Name (ARN) of the private namespace.
+    arn: Any = None
+    # A description of the namespace.
+    description: Any = None
+    # The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+    hosted_zone_id: Any = None
+    # The ID of the private namespace.
+    id: Any = None
+    # The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
+    name: Any = None
+    properties: Any = None
+    # The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    tags: Any = None
+    # The ID of the Amazon VPC that you want to associate the namespace with.
     vpc: Any = None
 
 DiscoveryPrivateDnsNamespace = ubx.ResourceBinding(
     wire_type="aws_service_discovery_private_dns_namespace",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "properties": ubx.FieldSpec(
+            wire_name="properties",
+            kind="object",
+            fields=_DiscoveryPrivateDnsNamespace_PropertiesFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_DiscoveryPrivateDnsNamespace_TagsFields,
+        ),
         "vpc": ubx.FieldSpec(wire_name="vpc"),
     },
 )

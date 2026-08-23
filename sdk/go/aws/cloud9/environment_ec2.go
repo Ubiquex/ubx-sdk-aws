@@ -3,19 +3,77 @@ package cloud9
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EnvironmentEc2_Repositories struct {
+	// The relative path component within the AWS Cloud9 environment where the source repository will be cloned, serving as the directory name for the repository. (AI-inferred)
+	PathComponent any
+	// The URL of the source code repository to clone into the Cloud9 environment when the environment is created. (AI-inferred)
+	RepositoryUrl any
+}
+
+type EnvironmentEc2_Tags struct {
+	Key any
+	// Specifies the value for a tag key on the AWS Cloud9 EC2 environment, allowing you to add arbitrary metadata for identifying or organizing the environment. (AI-inferred)
+	Value any
+}
+
+var EnvironmentEc2_RepositoriesFields = ubx.FieldMap{
+		"PathComponent": ubx.FieldSpec{WireName: "path_component"},
+		"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
+	}
+
+var EnvironmentEc2_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type EnvironmentEc2Config struct {
+	// The number of minutes of inactivity after which AWS Cloud9 automatically stops the environment's EC2 instance, shutting down the environment when this time is reached. (AI-inferred)
 	AutomaticStopTimeMinutes any
+	// Specifies whether AWS Cloud9 connects to the environment's Amazon EC2 instance via SSH (CONNECT_SSH, the default) or AWS Systems Manager (CONNECT_SSM). (AI-inferred)
 	ConnectionType any
+	// An optional description that provides additional non-identifying context about the Cloud9 environment. (AI-inferred)
 	Description any
-	Id any
+	// The image_id specifies the Amazon Machine Image (AMI) ID used to launch the Amazon EC2 instance that hosts the Cloud9 environment. (AI-inferred)
 	ImageId any
+	// Specifies the EC2 instance type (e.g., t2.micro, m5.large) that the AWS Cloud9 environment runs on, determining the compute and memory resources available. (AI-inferred)
 	InstanceType any
+	// Specifies the name of the Cloud9 development environment. (AI-inferred)
 	Name any
+	// The Amazon Resource Name (ARN) of the environment owner; if not specified, the environment is owned by the user who created it. (AI-inferred)
 	OwnerArn any
-	Region any
+	// A list of repositories to clone into the environment, each containing the repository URL and the path component where it should be cloned. (AI-inferred)
+	Repositories any
+	// The ID of the subnet in which the Cloud9 environment's EC2 instance is launched, allowing the environment to reside in a specific VPC and network configuration. (AI-inferred)
 	SubnetId any
+	// Specifies a list of tag key-value pairs to associate with the Cloud9 EC2 environment. (AI-inferred)
 	Tags any
-	TagsAll any
+}
+
+type EnvironmentEc2Attrs struct {
+	// The Amazon Resource Name (ARN) of the Cloud9 EC2 development environment. (AI-inferred)
+	Arn any
+	// The number of minutes of inactivity after which AWS Cloud9 automatically stops the environment's EC2 instance, shutting down the environment when this time is reached. (AI-inferred)
+	AutomaticStopTimeMinutes any
+	// Specifies whether AWS Cloud9 connects to the environment's Amazon EC2 instance via SSH (CONNECT_SSH, the default) or AWS Systems Manager (CONNECT_SSM). (AI-inferred)
+	ConnectionType any
+	// An optional description that provides additional non-identifying context about the Cloud9 environment. (AI-inferred)
+	Description any
+	// The unique identifier assigned by AWS Cloud9 to the environment, such as 'env-1234567890abcdef0'. (AI-inferred)
+	Id any
+	// The image_id specifies the Amazon Machine Image (AMI) ID used to launch the Amazon EC2 instance that hosts the Cloud9 environment. (AI-inferred)
+	ImageId any
+	// Specifies the EC2 instance type (e.g., t2.micro, m5.large) that the AWS Cloud9 environment runs on, determining the compute and memory resources available. (AI-inferred)
+	InstanceType any
+	// Specifies the name of the Cloud9 development environment. (AI-inferred)
+	Name any
+	// The Amazon Resource Name (ARN) of the environment owner; if not specified, the environment is owned by the user who created it. (AI-inferred)
+	OwnerArn any
+	// A list of repositories to clone into the environment, each containing the repository URL and the path component where it should be cloned. (AI-inferred)
+	Repositories any
+	// The ID of the subnet in which the Cloud9 environment's EC2 instance is launched, allowing the environment to reside in a specific VPC and network configuration. (AI-inferred)
+	SubnetId any
+	// Specifies a list of tag key-value pairs to associate with the Cloud9 EC2 environment. (AI-inferred)
+	Tags any
 }
 
 var EnvironmentEc2 = ubx.ResourceBinding{
@@ -24,14 +82,20 @@ var EnvironmentEc2 = ubx.ResourceBinding{
 		"AutomaticStopTimeMinutes": ubx.FieldSpec{WireName: "automatic_stop_time_minutes"},
 		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"ImageId": ubx.FieldSpec{WireName: "image_id"},
 		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OwnerArn": ubx.FieldSpec{WireName: "owner_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Repositories": ubx.FieldSpec{
+			WireName: "repositories",
+			Kind: "list",
+			Fields: EnvironmentEc2_RepositoriesFields,
+		},
 		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: EnvironmentEc2_TagsFields,
+		},
 	},
 }

@@ -8,59 +8,77 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Room_MessageReviewHandler:
+    # Specifies the fallback behavior if the handler does not return a valid response, encounters an error, or times out.
     fallback_result: Any = None
+    # Identifier of the message review handler.
     uri: Any = None
 
 @dataclasses.dataclass
-class Room_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Room_Tags:
+    # The key of a tag assigned to the IVS Chat Room, used to organize and identify the resource (e.g., 'Environment' or 'Owner'). (AI-inferred)
+    key: Any = None
+    value: Any = None
 
 _Room_MessageReviewHandlerFields = {
     "fallback_result": ubx.FieldSpec(wire_name="fallback_result"),
     "uri": ubx.FieldSpec(wire_name="uri"),
 }
 
-_Room_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Room_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class RoomConfig:
-    id: Any = None
+    # Array of logging configuration identifiers attached to the room.
     logging_configuration_identifiers: Any = None
+    # The maximum number of characters in a single message.
     maximum_message_length: Any = None
+    # The maximum number of messages per second that can be sent to the room.
     maximum_message_rate_per_second: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Configuration information for optional review of messages.
     message_review_handler: Any = None
-    timeouts: Any = None
+    # The name of the room. The value does not need to be unique.
+    name: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class RoomAttrs:
+    # Room ARN is automatically generated on creation and assigned as the unique identifier.
+    arn: Any = None
+    # The system-generated ID of the room.
+    id: Any = None
+    # Array of logging configuration identifiers attached to the room.
+    logging_configuration_identifiers: Any = None
+    # The maximum number of characters in a single message.
+    maximum_message_length: Any = None
+    # The maximum number of messages per second that can be sent to the room.
+    maximum_message_rate_per_second: Any = None
+    # Configuration information for optional review of messages.
+    message_review_handler: Any = None
+    # The name of the room. The value does not need to be unique.
+    name: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Room = ubx.ResourceBinding(
     wire_type="aws_ivschat_room",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "logging_configuration_identifiers": ubx.FieldSpec(wire_name="logging_configuration_identifiers"),
         "maximum_message_length": ubx.FieldSpec(wire_name="maximum_message_length"),
         "maximum_message_rate_per_second": ubx.FieldSpec(wire_name="maximum_message_rate_per_second"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "message_review_handler": ubx.FieldSpec(
             wire_name="message_review_handler",
-            kind="list",
+            kind="object",
             fields=_Room_MessageReviewHandlerFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Room_TimeoutsFields,
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Room_TagsFields,
         ),
     },
 )

@@ -8,106 +8,155 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Environment_LoggingConfiguration_DagProcessingLogs:
+    # The ARN of the CloudWatch log group where Apache Airflow DAG processing logs are delivered in the MWAA environment. (AI-inferred)
     cloud_watch_log_group_arn: Any = None
+    # Indicates whether DAG processing logs are enabled for the Amazon Managed Workflows for Apache Airflow (MWAA) environment. (AI-inferred)
     enabled: Any = None
+    # Sets the log level (e.g., CRITICAL, ERROR, WARNING, INFO, or DEBUG) for the DAG processing logs in the Amazon MWAA environment. (AI-inferred)
     log_level: Any = None
 
 @dataclasses.dataclass
 class Environment_LoggingConfiguration:
+    # Logging configuration for a specific airflow component.
     dag_processing_logs: Any = None
+    # Logging configuration for a specific airflow component.
     scheduler_logs: Any = None
+    # Logging configuration for a specific airflow component.
     task_logs: Any = None
+    # Logging configuration for a specific airflow component.
     webserver_logs: Any = None
+    # Logging configuration for a specific airflow component.
     worker_logs: Any = None
 
 @dataclasses.dataclass
 class Environment_NetworkConfiguration:
+    # A list of security groups to use for the environment.
     security_group_ids: Any = None
+    # A list of subnets to use for the environment. These must be private subnets, in the same VPC, in two different availability zones.
     subnet_ids: Any = None
-
-@dataclasses.dataclass
-class Environment_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_Environment_LoggingConfiguration_DagProcessingLogsFields = {
-    "cloud_watch_log_group_arn": ubx.FieldSpec(wire_name="cloud_watch_log_group_arn"),
-    "enabled": ubx.FieldSpec(wire_name="enabled"),
-    "log_level": ubx.FieldSpec(wire_name="log_level"),
-}
-
-_Environment_LoggingConfigurationFields = {
-    "dag_processing_logs": ubx.FieldSpec(
-        wire_name="dag_processing_logs",
-        kind="list",
-        fields=_Environment_LoggingConfiguration_DagProcessingLogsFields,
-    ),
-    "scheduler_logs": ubx.FieldSpec(
-        wire_name="scheduler_logs",
-        kind="list",
-        fields=_Environment_LoggingConfiguration_DagProcessingLogsFields,
-    ),
-    "task_logs": ubx.FieldSpec(
-        wire_name="task_logs",
-        kind="list",
-        fields=_Environment_LoggingConfiguration_DagProcessingLogsFields,
-    ),
-    "webserver_logs": ubx.FieldSpec(
-        wire_name="webserver_logs",
-        kind="list",
-        fields=_Environment_LoggingConfiguration_DagProcessingLogsFields,
-    ),
-    "worker_logs": ubx.FieldSpec(
-        wire_name="worker_logs",
-        kind="list",
-        fields=_Environment_LoggingConfiguration_DagProcessingLogsFields,
-    ),
-}
 
 _Environment_NetworkConfigurationFields = {
     "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
     "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
 }
 
-_Environment_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
-
 @dataclasses.dataclass
 class EnvironmentConfig:
+    # Key/value pairs representing Airflow configuration variables. Keys are prefixed by their section: [core] dags_folder={AIRFLOW_HOME}/dags Would be represented as "core.dags_folder": "{AIRFLOW_HOME}/dags"
     airflow_configuration_options: Any = None
+    # Version of airflow to deploy to the environment.
     airflow_version: Any = None
+    # Represents an S3 prefix relative to the root of an S3 bucket.
     dag_s3_path: Any = None
+    # Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA.
     endpoint_management: Any = None
+    # Templated configuration for airflow processes and backing infrastructure.
     environment_class: Any = None
+    # IAM role to be used by tasks.
     execution_role_arn: Any = None
-    id: Any = None
+    # The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for MWAA data encryption. You can specify the CMK using any of the following: Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab. Key alias. For example, alias/ExampleAlias. Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef. Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias. AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.
     kms_key: Any = None
+    # Maximum webserver compute units.
     max_webservers: Any = None
+    # Maximum worker compute units.
     max_workers: Any = None
+    # Minimum webserver compute units.
     min_webservers: Any = None
+    # Minimum worker compute units.
     min_workers: Any = None
+    # Customer-defined identifier for the environment, unique per customer region.
     name: Any = None
-    plugins_s3_object_version: Any = None
-    plugins_s3_path: Any = None
-    region: Any = None
-    requirements_s3_object_version: Any = None
-    requirements_s3_path: Any = None
-    schedulers: Any = None
-    source_bucket_arn: Any = None
-    startup_script_s3_object_version: Any = None
-    startup_script_s3_path: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    webserver_access_mode: Any = None
-    weekly_maintenance_window_start: Any = None
-    worker_replacement_strategy: Any = None
-    logging_configuration: Any = None
+    # Configures the network resources of the environment.
     network_configuration: Any = None
-    timeouts: Any = None
+    # Represents an version ID for an S3 object.
+    plugins_s3_object_version: Any = None
+    # Represents an S3 prefix relative to the root of an S3 bucket.
+    plugins_s3_path: Any = None
+    # Represents an version ID for an S3 object.
+    requirements_s3_object_version: Any = None
+    # Represents an S3 prefix relative to the root of an S3 bucket.
+    requirements_s3_path: Any = None
+    # Scheduler compute units.
+    schedulers: Any = None
+    # ARN for the AWS S3 bucket to use as the source of DAGs and plugins for the environment.
+    source_bucket_arn: Any = None
+    # Represents an version ID for an S3 object.
+    startup_script_s3_object_version: Any = None
+    # Represents an S3 prefix relative to the root of an S3 bucket.
+    startup_script_s3_path: Any = None
+    # A map of tags for the environment.
+    tags: Any = None
+    # Choice for mode of webserver access including over public internet or via private VPC endpoint.
+    webserver_access_mode: Any = None
+    # Start time for the weekly maintenance window.
+    weekly_maintenance_window_start: Any = None
+    # The worker replacement strategy to use when updating the environment. Valid values: `FORCED`, `GRACEFUL`. FORCED means Apache Airflow workers will be stopped and replaced without waiting for tasks to complete before an update. GRACEFUL means Apache Airflow workers will be able to complete running tasks for up to 12 hours during an update before being stopped and replaced.
+    worker_replacement_strategy: Any = None
+
+@dataclasses.dataclass
+class EnvironmentAttrs:
+    # Key/value pairs representing Airflow configuration variables. Keys are prefixed by their section: [core] dags_folder={AIRFLOW_HOME}/dags Would be represented as "core.dags_folder": "{AIRFLOW_HOME}/dags"
+    airflow_configuration_options: Any = None
+    # Version of airflow to deploy to the environment.
+    airflow_version: Any = None
+    # ARN for the MWAA environment.
+    arn: Any = None
+    # The celery executor queue associated with the environment.
+    celery_executor_queue: Any = None
+    # Represents an S3 prefix relative to the root of an S3 bucket.
+    dag_s3_path: Any = None
+    # The database VPC endpoint service name.
+    database_vpc_endpoint_service: Any = None
+    # Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA.
+    endpoint_management: Any = None
+    # Templated configuration for airflow processes and backing infrastructure.
+    environment_class: Any = None
+    # IAM role to be used by tasks.
+    execution_role_arn: Any = None
+    # The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for MWAA data encryption. You can specify the CMK using any of the following: Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab. Key alias. For example, alias/ExampleAlias. Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef. Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias. AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.
+    kms_key: Any = None
+    # Logging configuration for the environment.
+    logging_configuration: Any = None
+    # Maximum webserver compute units.
+    max_webservers: Any = None
+    # Maximum worker compute units.
+    max_workers: Any = None
+    # Minimum webserver compute units.
+    min_webservers: Any = None
+    # Minimum worker compute units.
+    min_workers: Any = None
+    # Customer-defined identifier for the environment, unique per customer region.
+    name: Any = None
+    # Configures the network resources of the environment.
+    network_configuration: Any = None
+    # Represents an version ID for an S3 object.
+    plugins_s3_object_version: Any = None
+    # Represents an S3 prefix relative to the root of an S3 bucket.
+    plugins_s3_path: Any = None
+    # Represents an version ID for an S3 object.
+    requirements_s3_object_version: Any = None
+    # Represents an S3 prefix relative to the root of an S3 bucket.
+    requirements_s3_path: Any = None
+    # Scheduler compute units.
+    schedulers: Any = None
+    # ARN for the AWS S3 bucket to use as the source of DAGs and plugins for the environment.
+    source_bucket_arn: Any = None
+    # Represents an version ID for an S3 object.
+    startup_script_s3_object_version: Any = None
+    # Represents an S3 prefix relative to the root of an S3 bucket.
+    startup_script_s3_path: Any = None
+    # A map of tags for the environment.
+    tags: Any = None
+    # Choice for mode of webserver access including over public internet or via private VPC endpoint.
+    webserver_access_mode: Any = None
+    # Url endpoint for the environment's Airflow UI.
+    webserver_url: Any = None
+    # The webserver VPC endpoint service name, applicable if private webserver access mode selected.
+    webserver_vpc_endpoint_service: Any = None
+    # Start time for the weekly maintenance window.
+    weekly_maintenance_window_start: Any = None
+    # The worker replacement strategy to use when updating the environment. Valid values: `FORCED`, `GRACEFUL`. FORCED means Apache Airflow workers will be stopped and replaced without waiting for tasks to complete before an update. GRACEFUL means Apache Airflow workers will be able to complete running tasks for up to 12 hours during an update before being stopped and replaced.
+    worker_replacement_strategy: Any = None
 
 Environment = ubx.ResourceBinding(
     wire_type="aws_mwaa_environment",
@@ -118,16 +167,19 @@ Environment = ubx.ResourceBinding(
         "endpoint_management": ubx.FieldSpec(wire_name="endpoint_management"),
         "environment_class": ubx.FieldSpec(wire_name="environment_class"),
         "execution_role_arn": ubx.FieldSpec(wire_name="execution_role_arn"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "kms_key": ubx.FieldSpec(wire_name="kms_key"),
         "max_webservers": ubx.FieldSpec(wire_name="max_webservers"),
         "max_workers": ubx.FieldSpec(wire_name="max_workers"),
         "min_webservers": ubx.FieldSpec(wire_name="min_webservers"),
         "min_workers": ubx.FieldSpec(wire_name="min_workers"),
         "name": ubx.FieldSpec(wire_name="name"),
+        "network_configuration": ubx.FieldSpec(
+            wire_name="network_configuration",
+            kind="object",
+            fields=_Environment_NetworkConfigurationFields,
+        ),
         "plugins_s3_object_version": ubx.FieldSpec(wire_name="plugins_s3_object_version"),
         "plugins_s3_path": ubx.FieldSpec(wire_name="plugins_s3_path"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "requirements_s3_object_version": ubx.FieldSpec(wire_name="requirements_s3_object_version"),
         "requirements_s3_path": ubx.FieldSpec(wire_name="requirements_s3_path"),
         "schedulers": ubx.FieldSpec(wire_name="schedulers"),
@@ -135,24 +187,8 @@ Environment = ubx.ResourceBinding(
         "startup_script_s3_object_version": ubx.FieldSpec(wire_name="startup_script_s3_object_version"),
         "startup_script_s3_path": ubx.FieldSpec(wire_name="startup_script_s3_path"),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "webserver_access_mode": ubx.FieldSpec(wire_name="webserver_access_mode"),
         "weekly_maintenance_window_start": ubx.FieldSpec(wire_name="weekly_maintenance_window_start"),
         "worker_replacement_strategy": ubx.FieldSpec(wire_name="worker_replacement_strategy"),
-        "logging_configuration": ubx.FieldSpec(
-            wire_name="logging_configuration",
-            kind="list",
-            fields=_Environment_LoggingConfigurationFields,
-        ),
-        "network_configuration": ubx.FieldSpec(
-            wire_name="network_configuration",
-            kind="list",
-            fields=_Environment_NetworkConfigurationFields,
-        ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Environment_TimeoutsFields,
-        ),
     },
 )

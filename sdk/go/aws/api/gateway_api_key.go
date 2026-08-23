@@ -3,15 +3,66 @@ package api
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type GatewayApiKey_StageKeys struct {
+	// The ID of the REST API that this API key is tied to for the stage key entry, indicating which API's stage the key can access. (AI-inferred)
+	RestApiId any
+	// The name of the API Gateway stage to which this API key is associated, enabling the key to access APIs in that stage. (AI-inferred)
+	StageName any
+}
+
+type GatewayApiKey_Tags struct {
+	Key any
+	// The value of a tag attached to the API key, which can be used for metadata, cost tracking, and access control. (AI-inferred)
+	Value any
+}
+
+var GatewayApiKey_StageKeysFields = ubx.FieldMap{
+		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+		"StageName": ubx.FieldSpec{WireName: "stage_name"},
+	}
+
+var GatewayApiKey_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type GatewayApiKeyConfig struct {
+	// Specifies an optional customer identifier that can be associated with the API key for tracking or organizational purposes. (AI-inferred)
 	CustomerId any
+	// Specifies a user-defined description of the API key, which can be used to provide additional context or metadata about the key. (AI-inferred)
 	Description any
+	// Indicates whether the API key is enabled for use, where setting it to false disables the key so that client requests using the key are rejected by API Gateway. (AI-inferred)
 	Enabled any
-	Id any
+	// When set to true, it instructs AWS to generate a unique API key value automatically, so you do not need to provide a Value and the resulting key is guaranteed distinct from other API keys. (AI-inferred)
+	GenerateDistinctId any
+	// A name for the API key. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the API key name. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
 	Name any
-	Region any
+	// A list of stage keys, each identifying an API Gateway REST API and stage, that associates the API key with those stages so it can be used to access their methods. (AI-inferred)
+	StageKeys any
+	// Specifies a list of tags, each containing a Key and Value, to attach to the API Gateway API key for cost allocation and resource management. (AI-inferred)
 	Tags any
-	TagsAll any
+	// The alphanumeric string value of the API key; if omitted, API Gateway generates a unique value. (AI-inferred)
+	Value any
+}
+
+type GatewayApiKeyAttrs struct {
+	// The unique identifier that API Gateway assigns to the API key. (AI-inferred)
+	ApikeyId any
+	// Specifies an optional customer identifier that can be associated with the API key for tracking or organizational purposes. (AI-inferred)
+	CustomerId any
+	// Specifies a user-defined description of the API key, which can be used to provide additional context or metadata about the key. (AI-inferred)
+	Description any
+	// Indicates whether the API key is enabled for use, where setting it to false disables the key so that client requests using the key are rejected by API Gateway. (AI-inferred)
+	Enabled any
+	// When set to true, it instructs AWS to generate a unique API key value automatically, so you do not need to provide a Value and the resulting key is guaranteed distinct from other API keys. (AI-inferred)
+	GenerateDistinctId any
+	// A name for the API key. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the API key name. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+	Name any
+	// A list of stage keys, each identifying an API Gateway REST API and stage, that associates the API key with those stages so it can be used to access their methods. (AI-inferred)
+	StageKeys any
+	// Specifies a list of tags, each containing a Key and Value, to attach to the API Gateway API key for cost allocation and resource management. (AI-inferred)
+	Tags any
+	// The alphanumeric string value of the API key; if omitted, API Gateway generates a unique value. (AI-inferred)
 	Value any
 }
 
@@ -21,11 +72,18 @@ var GatewayApiKey = ubx.ResourceBinding{
 		"CustomerId": ubx.FieldSpec{WireName: "customer_id"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"GenerateDistinctId": ubx.FieldSpec{WireName: "generate_distinct_id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"StageKeys": ubx.FieldSpec{
+			WireName: "stage_keys",
+			Kind: "list",
+			Fields: GatewayApiKey_StageKeysFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: GatewayApiKey_TagsFields,
+		},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	},
 }

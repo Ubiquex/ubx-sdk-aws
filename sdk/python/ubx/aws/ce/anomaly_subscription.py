@@ -7,124 +7,74 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class AnomalySubscription_Subscriber:
+class AnomalySubscription_ResourceTags:
+    # The key of a resource tag attached to the AWS Cost Explorer anomaly subscription, used to identify or categorize the subscription within a key-value pair. (AI-inferred)
+    key: Any = None
+    # Specifies the value of a key-value tag applied to the AWS Cost Explorer anomaly subscription, used for organizing, filtering, and controlling access to the subscription resource. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class AnomalySubscription_Subscribers:
+    # The email address or Amazon SNS topic ARN that receives notifications for this anomaly subscription. (AI-inferred)
     address: Any = None
+    # The subscription status of the subscriber, indicating whether the subscriber has confirmed or declined the anomaly alert subscription. (AI-inferred)
+    status: Any = None
+    # Specifies the type of AWS Cost Explorer anomaly subscription subscriber, either EMAIL or SNS_TOPIC. (AI-inferred)
     type: Any = None
 
-@dataclasses.dataclass
-class AnomalySubscription_ThresholdExpression_And_CostCategory:
-    key: Any = None
-    match_options: Any = None
-    values: Any = None
-
-@dataclasses.dataclass
-class AnomalySubscription_ThresholdExpression_And:
-    cost_category: Any = None
-    dimension: Any = None
-    tags: Any = None
-
-@dataclasses.dataclass
-class AnomalySubscription_ThresholdExpression:
-    and_: Any = None
-    cost_category: Any = None
-    dimension: Any = None
-    not_: Any = None
-    or_: Any = None
-    tags: Any = None
-
-_AnomalySubscription_SubscriberFields = {
-    "address": ubx.FieldSpec(wire_name="address"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
-_AnomalySubscription_ThresholdExpression_And_CostCategoryFields = {
+_AnomalySubscription_ResourceTagsFields = {
     "key": ubx.FieldSpec(wire_name="key"),
-    "match_options": ubx.FieldSpec(wire_name="match_options"),
-    "values": ubx.FieldSpec(wire_name="values"),
-}
-
-_AnomalySubscription_ThresholdExpression_AndFields = {
-    "cost_category": ubx.FieldSpec(
-        wire_name="cost_category",
-        kind="list",
-        fields=_AnomalySubscription_ThresholdExpression_And_CostCategoryFields,
-    ),
-    "dimension": ubx.FieldSpec(
-        wire_name="dimension",
-        kind="list",
-        fields=_AnomalySubscription_ThresholdExpression_And_CostCategoryFields,
-    ),
-    "tags": ubx.FieldSpec(
-        wire_name="tags",
-        kind="list",
-        fields=_AnomalySubscription_ThresholdExpression_And_CostCategoryFields,
-    ),
-}
-
-_AnomalySubscription_ThresholdExpressionFields = {
-    "and_": ubx.FieldSpec(
-        wire_name="and",
-        kind="set",
-        fields=_AnomalySubscription_ThresholdExpression_AndFields,
-    ),
-    "cost_category": ubx.FieldSpec(
-        wire_name="cost_category",
-        kind="list",
-        fields=_AnomalySubscription_ThresholdExpression_And_CostCategoryFields,
-    ),
-    "dimension": ubx.FieldSpec(
-        wire_name="dimension",
-        kind="list",
-        fields=_AnomalySubscription_ThresholdExpression_And_CostCategoryFields,
-    ),
-    "not_": ubx.FieldSpec(
-        wire_name="not",
-        kind="list",
-        fields=_AnomalySubscription_ThresholdExpression_AndFields,
-    ),
-    "or_": ubx.FieldSpec(
-        wire_name="or",
-        kind="set",
-        fields=_AnomalySubscription_ThresholdExpression_AndFields,
-    ),
-    "tags": ubx.FieldSpec(
-        wire_name="tags",
-        kind="list",
-        fields=_AnomalySubscription_ThresholdExpression_And_CostCategoryFields,
-    ),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class AnomalySubscriptionConfig:
-    account_id: Any = None
+    # The frequency at which anomaly reports are sent over email.
     frequency: Any = None
-    id: Any = None
+    # A list of cost anomaly monitors.
     monitor_arn_list: Any = None
-    name: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    subscriber: Any = None
+    # Tags to assign to subscription.
+    resource_tags: Any = None
+    # The name of the subscription.
+    subscription_name: Any = None
+    # The dollar value that triggers a notification if the threshold is exceeded.
+    threshold: Any = None
+    # An Expression object in JSON String format used to specify the anomalies that you want to generate alerts for.
+    threshold_expression: Any = None
+
+@dataclasses.dataclass
+class AnomalySubscriptionAttrs:
+    # The accountId
+    account_id: Any = None
+    # The frequency at which anomaly reports are sent over email.
+    frequency: Any = None
+    # A list of cost anomaly monitors.
+    monitor_arn_list: Any = None
+    # Tags to assign to subscription.
+    resource_tags: Any = None
+    # A list of subscriber
+    subscribers: Any = None
+    # Subscription ARN
+    subscription_arn: Any = None
+    # The name of the subscription.
+    subscription_name: Any = None
+    # The dollar value that triggers a notification if the threshold is exceeded.
+    threshold: Any = None
+    # An Expression object in JSON String format used to specify the anomalies that you want to generate alerts for.
     threshold_expression: Any = None
 
 AnomalySubscription = ubx.ResourceBinding(
     wire_type="aws_ce_anomaly_subscription",
     fields={
-        "account_id": ubx.FieldSpec(wire_name="account_id"),
         "frequency": ubx.FieldSpec(wire_name="frequency"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "monitor_arn_list": ubx.FieldSpec(wire_name="monitor_arn_list"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "subscriber": ubx.FieldSpec(
-            wire_name="subscriber",
-            kind="set",
-            fields=_AnomalySubscription_SubscriberFields,
-        ),
-        "threshold_expression": ubx.FieldSpec(
-            wire_name="threshold_expression",
+        "resource_tags": ubx.FieldSpec(
+            wire_name="resource_tags",
             kind="list",
-            fields=_AnomalySubscription_ThresholdExpressionFields,
+            fields=_AnomalySubscription_ResourceTagsFields,
         ),
+        "subscription_name": ubx.FieldSpec(wire_name="subscription_name"),
+        "threshold": ubx.FieldSpec(wire_name="threshold"),
+        "threshold_expression": ubx.FieldSpec(wire_name="threshold_expression"),
     },
 )

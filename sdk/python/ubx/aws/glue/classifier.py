@@ -8,93 +8,128 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Classifier_CsvClassifier:
+    # Enables the processing of files that contain only one column.
     allow_single_column: Any = None
+    # Indicates whether the CSV file contains custom data types.
+    contains_custom_datatype: Any = None
+    # Indicates whether the CSV file contains a header. A value of UNKNOWN specifies that the classifier will detect whether the CSV file contains headings. A value of PRESENT specifies that the CSV file contains headings. A value of ABSENT specifies that the CSV file does not contain headings.
     contains_header: Any = None
+    # Enables the configuration of custom data types.
     custom_datatype_configured: Any = None
-    custom_datatypes: Any = None
+    # A custom symbol to denote what separates each column entry in the row.
     delimiter: Any = None
+    # Specifies not to trim values before identifying the type of column values. The default value is true.
     disable_value_trimming: Any = None
+    # A list of strings representing column names.
     header: Any = None
+    # The name of the classifier.
+    name: Any = None
+    # A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.
     quote_symbol: Any = None
-    serde: Any = None
 
 @dataclasses.dataclass
 class Classifier_GrokClassifier:
+    # An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.
     classification: Any = None
+    # Optional custom grok patterns defined by this classifier.
     custom_patterns: Any = None
+    # The grok pattern applied to a data store by this classifier.
     grok_pattern: Any = None
+    # The name of the classifier.
+    name: Any = None
 
 @dataclasses.dataclass
 class Classifier_JsonClassifier:
+    # A JsonPath string defining the JSON data for the classifier to classify. AWS Glue supports a subset of JsonPath, as described in Writing JsonPath Custom Classifiers.
     json_path: Any = None
+    # The name of the classifier.
+    name: Any = None
 
 @dataclasses.dataclass
-class Classifier_XmlClassifier:
+class Classifier_Xmlclassifier:
+    # An identifier of the data format that the classifier matches.
     classification: Any = None
+    # The name of the classifier.
+    name: Any = None
+    # The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by />). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <row item_a="A" item_b="B"></row> is okay, but <row item_a="A" item_b="B" /> is not).
     row_tag: Any = None
 
 _Classifier_CsvClassifierFields = {
     "allow_single_column": ubx.FieldSpec(wire_name="allow_single_column"),
+    "contains_custom_datatype": ubx.FieldSpec(wire_name="contains_custom_datatype"),
     "contains_header": ubx.FieldSpec(wire_name="contains_header"),
     "custom_datatype_configured": ubx.FieldSpec(wire_name="custom_datatype_configured"),
-    "custom_datatypes": ubx.FieldSpec(wire_name="custom_datatypes"),
     "delimiter": ubx.FieldSpec(wire_name="delimiter"),
     "disable_value_trimming": ubx.FieldSpec(wire_name="disable_value_trimming"),
     "header": ubx.FieldSpec(wire_name="header"),
+    "name": ubx.FieldSpec(wire_name="name"),
     "quote_symbol": ubx.FieldSpec(wire_name="quote_symbol"),
-    "serde": ubx.FieldSpec(wire_name="serde"),
 }
 
 _Classifier_GrokClassifierFields = {
     "classification": ubx.FieldSpec(wire_name="classification"),
     "custom_patterns": ubx.FieldSpec(wire_name="custom_patterns"),
     "grok_pattern": ubx.FieldSpec(wire_name="grok_pattern"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Classifier_JsonClassifierFields = {
     "json_path": ubx.FieldSpec(wire_name="json_path"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
-_Classifier_XmlClassifierFields = {
+_Classifier_XmlclassifierFields = {
     "classification": ubx.FieldSpec(wire_name="classification"),
+    "name": ubx.FieldSpec(wire_name="name"),
     "row_tag": ubx.FieldSpec(wire_name="row_tag"),
 }
 
 @dataclasses.dataclass
 class ClassifierConfig:
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # Defines the configuration for an AWS Glue classifier that parses CSV files, including the delimiter, quote symbol, header detection, and whether to treat a single column as a valid CSV format. (AI-inferred)
     csv_classifier: Any = None
+    # Configures a Grok classifier in AWS Glue, specifying the grok pattern used to parse log or unstructured data, custom pattern definitions, and the classification name applied to matched data. (AI-inferred)
     grok_classifier: Any = None
+    # Specifies a JSON classifier for AWS Glue that uses a JSON path to identify the JSON data structure within input records. (AI-inferred)
     json_classifier: Any = None
-    xml_classifier: Any = None
+    # Defines the row tag and optional classification for an XML classifier, used by AWS Glue to parse XML data and infer its schema. (AI-inferred)
+    xmlclassifier: Any = None
+
+@dataclasses.dataclass
+class ClassifierAttrs:
+    # Defines the configuration for an AWS Glue classifier that parses CSV files, including the delimiter, quote symbol, header detection, and whether to treat a single column as a valid CSV format. (AI-inferred)
+    csv_classifier: Any = None
+    # Configures a Grok classifier in AWS Glue, specifying the grok pattern used to parse log or unstructured data, custom pattern definitions, and the classification name applied to matched data. (AI-inferred)
+    grok_classifier: Any = None
+    # Specifies a JSON classifier for AWS Glue that uses a JSON path to identify the JSON data structure within input records. (AI-inferred)
+    json_classifier: Any = None
+    # One of XMLClassifier/Name, GrokClassifier/Name, JsonClassifier/Name or CsvClassifier/Name
+    name: Any = None
+    # Defines the row tag and optional classification for an XML classifier, used by AWS Glue to parse XML data and infer its schema. (AI-inferred)
+    xmlclassifier: Any = None
 
 Classifier = ubx.ResourceBinding(
     wire_type="aws_glue_classifier",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "csv_classifier": ubx.FieldSpec(
             wire_name="csv_classifier",
-            kind="list",
+            kind="object",
             fields=_Classifier_CsvClassifierFields,
         ),
         "grok_classifier": ubx.FieldSpec(
             wire_name="grok_classifier",
-            kind="list",
+            kind="object",
             fields=_Classifier_GrokClassifierFields,
         ),
         "json_classifier": ubx.FieldSpec(
             wire_name="json_classifier",
-            kind="list",
+            kind="object",
             fields=_Classifier_JsonClassifierFields,
         ),
-        "xml_classifier": ubx.FieldSpec(
-            wire_name="xml_classifier",
-            kind="list",
-            fields=_Classifier_XmlClassifierFields,
+        "xmlclassifier": ubx.FieldSpec(
+            wire_name="xmlclassifier",
+            kind="object",
+            fields=_Classifier_XmlclassifierFields,
         ),
     },
 )

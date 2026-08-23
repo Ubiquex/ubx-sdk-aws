@@ -3,98 +3,88 @@ package ssmcontacts
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Rotation_Recurrence_DailySettings struct {
-	HourOfDay any
-	MinuteOfHour any
-}
-
 type Rotation_Recurrence_MonthlySettings struct {
+	// Specifies the day of the month on which the monthly rotation shift begins, used in monthly recurrence settings for an AWS Systems Manager Incident Manager contacts rotation. (AI-inferred)
 	DayOfMonth any
+	// Specifies the time of day (in HH:MM format) when the shift handoff occurs for the monthly rotation schedule, within the monthly recurrence settings. (AI-inferred)
 	HandOffTime any
 }
 
 type Rotation_Recurrence_ShiftCoverages_CoverageTimes struct {
-	End any
-	Start any
+	// The time (in HH:MM format) when the shift coverage window ends for the associated day in the rotation recurrence. (AI-inferred)
+	EndTime any
+	// The start time of the daily coverage window, in 24-hour HH:MM format, that defines when this shift's on-call coverage begins. (AI-inferred)
+	StartTime any
 }
 
 type Rotation_Recurrence_ShiftCoverages struct {
-	MapBlockKey any
+	// Specifies the list of time ranges (each with start and end time) during which on-call coverage is active for a particular day of the week in the rotation's shift coverage schedule. (AI-inferred)
 	CoverageTimes any
+	// The day of the week (e.g., Monday, Tuesday) that this shift coverage applies to within the rotation's recurrence schedule. (AI-inferred)
+	DayOfWeek any
 }
 
 type Rotation_Recurrence_WeeklySettings struct {
+	// Specifies the day of the week (using a three-letter abbreviation such as MON, TUE, WED, THU, FRI, SAT, or SUN) on which the rotation's weekly on-call shift occurs. (AI-inferred)
 	DayOfWeek any
+	// The time of day, in 24-hour HH:MM format, when the on-call shift hands off to the next shift on the scheduled day of the week for the rotation recurrence. (AI-inferred)
 	HandOffTime any
 }
 
 type Rotation_Recurrence struct {
-	NumberOfOnCalls any
-	RecurrenceMultiplier any
+	// Information about on-call rotations that recur daily.
 	DailySettings any
+	// Information about on-call rotations that recur monthly.
 	MonthlySettings any
+	// Number of Oncalls per shift.
+	NumberOfOnCalls any
+	// The number of days, weeks, or months a single rotation lasts.
+	RecurrenceMultiplier any
+	// Information about the days of the week included in on-call rotation coverage.
 	ShiftCoverages any
+	// Information about on-call rotations that recur weekly.
 	WeeklySettings any
 }
 
-var Rotation_Recurrence_DailySettingsFields = ubx.FieldMap{
-		"HourOfDay": ubx.FieldSpec{WireName: "hour_of_day"},
-		"MinuteOfHour": ubx.FieldSpec{WireName: "minute_of_hour"},
-	}
+type Rotation_Tags struct {
+	Key any
+	// The value of a tag assigned to the SSM Contacts rotation, used to store metadata such as ownership, environment, or cost center for organizing and managing the rotation resource. (AI-inferred)
+	Value any
+}
 
 var Rotation_Recurrence_MonthlySettingsFields = ubx.FieldMap{
 		"DayOfMonth": ubx.FieldSpec{WireName: "day_of_month"},
-		"HandOffTime": ubx.FieldSpec{
-			WireName: "hand_off_time",
-			Kind: "list",
-			Fields: Rotation_Recurrence_DailySettingsFields,
-		},
+		"HandOffTime": ubx.FieldSpec{WireName: "hand_off_time"},
 	}
 
 var Rotation_Recurrence_ShiftCoverages_CoverageTimesFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{
-			WireName: "end",
-			Kind: "list",
-			Fields: Rotation_Recurrence_DailySettingsFields,
-		},
-		"Start": ubx.FieldSpec{
-			WireName: "start",
-			Kind: "list",
-			Fields: Rotation_Recurrence_DailySettingsFields,
-		},
+		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 	}
 
 var Rotation_Recurrence_ShiftCoveragesFields = ubx.FieldMap{
-		"MapBlockKey": ubx.FieldSpec{WireName: "map_block_key"},
 		"CoverageTimes": ubx.FieldSpec{
 			WireName: "coverage_times",
 			Kind: "list",
 			Fields: Rotation_Recurrence_ShiftCoverages_CoverageTimesFields,
 		},
+		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
 	}
 
 var Rotation_Recurrence_WeeklySettingsFields = ubx.FieldMap{
 		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-		"HandOffTime": ubx.FieldSpec{
-			WireName: "hand_off_time",
-			Kind: "list",
-			Fields: Rotation_Recurrence_DailySettingsFields,
-		},
+		"HandOffTime": ubx.FieldSpec{WireName: "hand_off_time"},
 	}
 
 var Rotation_RecurrenceFields = ubx.FieldMap{
-		"NumberOfOnCalls": ubx.FieldSpec{WireName: "number_of_on_calls"},
-		"RecurrenceMultiplier": ubx.FieldSpec{WireName: "recurrence_multiplier"},
-		"DailySettings": ubx.FieldSpec{
-			WireName: "daily_settings",
-			Kind: "list",
-			Fields: Rotation_Recurrence_DailySettingsFields,
-		},
+		"DailySettings": ubx.FieldSpec{WireName: "daily_settings"},
 		"MonthlySettings": ubx.FieldSpec{
 			WireName: "monthly_settings",
 			Kind: "list",
 			Fields: Rotation_Recurrence_MonthlySettingsFields,
 		},
+		"NumberOfOnCalls": ubx.FieldSpec{WireName: "number_of_on_calls"},
+		"RecurrenceMultiplier": ubx.FieldSpec{WireName: "recurrence_multiplier"},
 		"ShiftCoverages": ubx.FieldSpec{
 			WireName: "shift_coverages",
 			Kind: "list",
@@ -107,14 +97,41 @@ var Rotation_RecurrenceFields = ubx.FieldMap{
 		},
 	}
 
+var Rotation_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type RotationConfig struct {
+	// Members of the rotation
 	ContactIds any
+	// Name of the Rotation
 	Name any
-	Region any
-	StartTime any
-	Tags any
-	TimeZoneId any
+	// Information about when an on-call rotation is in effect and how long the rotation period lasts.
 	Recurrence any
+	// Start time of the first shift of Oncall Schedule
+	StartTime any
+	// Specifies the tags to attach to the rotation, where each tag is an object containing a Key and Value, used to identify, organize, and manage the rotation resource. (AI-inferred)
+	Tags any
+	// TimeZone Identifier for the Oncall Schedule
+	TimeZoneId any
+}
+
+type RotationAttrs struct {
+	// The Amazon Resource Name (ARN) of the rotation.
+	Arn any
+	// Members of the rotation
+	ContactIds any
+	// Name of the Rotation
+	Name any
+	// Information about when an on-call rotation is in effect and how long the rotation period lasts.
+	Recurrence any
+	// Start time of the first shift of Oncall Schedule
+	StartTime any
+	// Specifies the tags to attach to the rotation, where each tag is an object containing a Key and Value, used to identify, organize, and manage the rotation resource. (AI-inferred)
+	Tags any
+	// TimeZone Identifier for the Oncall Schedule
+	TimeZoneId any
 }
 
 var Rotation = ubx.ResourceBinding{
@@ -122,14 +139,17 @@ var Rotation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ContactIds": ubx.FieldSpec{WireName: "contact_ids"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TimeZoneId": ubx.FieldSpec{WireName: "time_zone_id"},
 		"Recurrence": ubx.FieldSpec{
 			WireName: "recurrence",
-			Kind: "list",
+			Kind: "object",
 			Fields: Rotation_RecurrenceFields,
 		},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Rotation_TagsFields,
+		},
+		"TimeZoneId": ubx.FieldSpec{WireName: "time_zone_id"},
 	},
 }

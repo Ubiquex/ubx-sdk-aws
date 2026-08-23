@@ -3,21 +3,51 @@ package organizations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type OrganizationalUnit_Tags struct {
+	// The user-defined key (name) of a tag attached to the organizational unit, used to identify and categorize the unit for resource management. (AI-inferred)
+	Key any
+	// The value for a tag key attached to the organizational unit, used to assign metadata for management and tracking purposes. (AI-inferred)
+	Value any
+}
+
+var OrganizationalUnit_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type OrganizationalUnitConfig struct {
-	Id any
+	// The friendly name of this OU.
 	Name any
+	// The unique identifier (ID) of the parent root or OU that you want to create the new OU in.
 	ParentId any
+	// A list of tags that you want to attach to the newly created OU.
 	Tags any
-	TagsAll any
+}
+
+type OrganizationalUnitAttrs struct {
+	// The Amazon Resource Name (ARN) of this OU.
+	Arn any
+	// The unique identifier (ID) associated with this OU.
+	Id any
+	// The friendly name of this OU.
+	Name any
+	// The unique identifier (ID) of the parent root or OU that you want to create the new OU in.
+	ParentId any
+	// The path in the organization where this OU exists.
+	Path any
+	// A list of tags that you want to attach to the newly created OU.
+	Tags any
 }
 
 var OrganizationalUnit = ubx.ResourceBinding{
 	WireType: "aws_organizations_organizational_unit",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ParentId": ubx.FieldSpec{WireName: "parent_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: OrganizationalUnit_TagsFields,
+		},
 	},
 }

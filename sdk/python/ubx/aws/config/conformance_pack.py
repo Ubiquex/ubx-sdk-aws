@@ -7,40 +7,103 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ConformancePack_InputParameter:
+class ConformancePack_ConformancePackInputParameters:
+    # The name of an input parameter declared in the conformance pack template, used to provide a value when creating or updating the pack. (AI-inferred)
     parameter_name: Any = None
+    # The value assigned to a specific input parameter defined by the conformance pack template, used to customize the pack's configuration when deployed. (AI-inferred)
     parameter_value: Any = None
 
-_ConformancePack_InputParameterFields = {
+@dataclasses.dataclass
+class ConformancePack_Tags:
+    # The key of a user-defined tag applied to the AWS Config Conformance Pack, used to categorize, organize, or identify the conformance pack resource in AWS. (AI-inferred)
+    key: Any = None
+    # The value part of a tag key-value pair assigned to the Conformance Pack, used for identifying, organizing, and managing the pack in AWS Config. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class ConformancePack_TemplateSsmdocumentDetails:
+    # The name of the AWS Systems Manager (SSM) document that contains the conformance pack template. (AI-inferred)
+    document_name: Any = None
+    # The version of the AWS Systems Manager (SSM) document that provides the conformance pack template; when omitted, the default version of the document is used. (AI-inferred)
+    document_version: Any = None
+
+_ConformancePack_ConformancePackInputParametersFields = {
     "parameter_name": ubx.FieldSpec(wire_name="parameter_name"),
     "parameter_value": ubx.FieldSpec(wire_name="parameter_value"),
 }
 
+_ConformancePack_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_ConformancePack_TemplateSsmdocumentDetailsFields = {
+    "document_name": ubx.FieldSpec(wire_name="document_name"),
+    "document_version": ubx.FieldSpec(wire_name="document_version"),
+}
+
 @dataclasses.dataclass
 class ConformancePackConfig:
+    # A list of ConformancePackInputParameter objects.
+    conformance_pack_input_parameters: Any = None
+    # Name of the conformance pack which will be assigned as the unique identifier.
+    conformance_pack_name: Any = None
+    # AWS Config stores intermediate files while processing conformance pack template.
     delivery_s3_bucket: Any = None
+    # The prefix for delivery S3 bucket.
     delivery_s3_key_prefix: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # The tags for the conformance pack.
+    tags: Any = None
+    # A string containing full conformance pack template body. You can only specify one of the template body or template S3Uri fields.
     template_body: Any = None
+    # Location of file containing the template body which points to the conformance pack template that is located in an Amazon S3 bucket. You can only specify one of the template body or template S3Uri fields.
     template_s3_uri: Any = None
-    input_parameter: Any = None
+    # The TemplateSSMDocumentDetails object contains the name of the SSM document and the version of the SSM document.
+    template_ssmdocument_details: Any = None
+
+@dataclasses.dataclass
+class ConformancePackAttrs:
+    # Amazon Resource Name (ARN) of the conformance pack.
+    conformance_pack_arn: Any = None
+    # A list of ConformancePackInputParameter objects.
+    conformance_pack_input_parameters: Any = None
+    # Name of the conformance pack which will be assigned as the unique identifier.
+    conformance_pack_name: Any = None
+    # AWS Config stores intermediate files while processing conformance pack template.
+    delivery_s3_bucket: Any = None
+    # The prefix for delivery S3 bucket.
+    delivery_s3_key_prefix: Any = None
+    # The tags for the conformance pack.
+    tags: Any = None
+    # A string containing full conformance pack template body. You can only specify one of the template body or template S3Uri fields.
+    template_body: Any = None
+    # Location of file containing the template body which points to the conformance pack template that is located in an Amazon S3 bucket. You can only specify one of the template body or template S3Uri fields.
+    template_s3_uri: Any = None
+    # The TemplateSSMDocumentDetails object contains the name of the SSM document and the version of the SSM document.
+    template_ssmdocument_details: Any = None
 
 ConformancePack = ubx.ResourceBinding(
     wire_type="aws_config_conformance_pack",
     fields={
+        "conformance_pack_input_parameters": ubx.FieldSpec(
+            wire_name="conformance_pack_input_parameters",
+            kind="list",
+            fields=_ConformancePack_ConformancePackInputParametersFields,
+        ),
+        "conformance_pack_name": ubx.FieldSpec(wire_name="conformance_pack_name"),
         "delivery_s3_bucket": ubx.FieldSpec(wire_name="delivery_s3_bucket"),
         "delivery_s3_key_prefix": ubx.FieldSpec(wire_name="delivery_s3_key_prefix"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ConformancePack_TagsFields,
+        ),
         "template_body": ubx.FieldSpec(wire_name="template_body"),
         "template_s3_uri": ubx.FieldSpec(wire_name="template_s3_uri"),
-        "input_parameter": ubx.FieldSpec(
-            wire_name="input_parameter",
-            kind="set",
-            fields=_ConformancePack_InputParameterFields,
+        "template_ssmdocument_details": ubx.FieldSpec(
+            wire_name="template_ssmdocument_details",
+            kind="object",
+            fields=_ConformancePack_TemplateSsmdocumentDetailsFields,
         ),
     },
 )

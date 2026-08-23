@@ -8,15 +8,28 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StaticIpConfig:
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # The instance where the static IP is attached.
+    attached_to: Any = None
+    # The name of the static IP address.
+    static_ip_name: Any = None
+
+@dataclasses.dataclass
+class StaticIpAttrs:
+    # The instance where the static IP is attached.
+    attached_to: Any = None
+    # The static IP address.
+    ip_address: Any = None
+    # A Boolean value indicating whether the static IP is attached.
+    is_attached: Any = None
+    # The Amazon Resource Name (ARN) uniquely identifying the Lightsail static IP within AWS. (AI-inferred)
+    static_ip_arn: Any = None
+    # The name of the static IP address.
+    static_ip_name: Any = None
 
 StaticIp = ubx.ResourceBinding(
     wire_type="aws_lightsail_static_ip",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "attached_to": ubx.FieldSpec(wire_name="attached_to"),
+        "static_ip_name": ubx.FieldSpec(wire_name="static_ip_name"),
     },
 )

@@ -8,18 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TransitGatewayRouteTableAssociationConfig:
-    id: Any = None
-    region: Any = None
-    replace_existing_association: Any = None
+    # The ID of transit gateway attachment.
     transit_gateway_attachment_id: Any = None
+    # The ID of transit gateway route table.
+    transit_gateway_route_table_id: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayRouteTableAssociationAttrs:
+    # The ID of transit gateway attachment.
+    transit_gateway_attachment_id: Any = None
+    # The ID of transit gateway route table.
     transit_gateway_route_table_id: Any = None
 
 TransitGatewayRouteTableAssociation = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_route_table_association",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "replace_existing_association": ubx.FieldSpec(wire_name="replace_existing_association"),
         "transit_gateway_attachment_id": ubx.FieldSpec(wire_name="transit_gateway_attachment_id"),
         "transit_gateway_route_table_id": ubx.FieldSpec(wire_name="transit_gateway_route_table_id"),
     },

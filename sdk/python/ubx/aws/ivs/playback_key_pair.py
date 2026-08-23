@@ -7,38 +7,48 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class PlaybackKeyPair_Timeouts:
-    create: Any = None
-    delete: Any = None
+class PlaybackKeyPair_Tags:
+    # The key portion of a tag attached to the IVS playback key pair, used to label and organize the resource within AWS. (AI-inferred)
+    key: Any = None
+    # The value of a tag applied to the Amazon IVS playback key pair, used for metadata management. (AI-inferred)
+    value: Any = None
 
-_PlaybackKeyPair_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_PlaybackKeyPair_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class PlaybackKeyPairConfig:
-    id: Any = None
+    # An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource. The value does not need to be unique.
     name: Any = None
-    public_key: Any = None
-    region: Any = None
+    # The public portion of a customer-generated key pair. This field is required to create the AWS::IVS::PlaybackKeyPair resource.
+    public_key_material: Any = None
+    # A list of key-value pairs that contain metadata for the asset model.
     tags: Any = None
-    tags_all: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class PlaybackKeyPairAttrs:
+    # Key-pair identifier.
+    arn: Any = None
+    # Key-pair identifier.
+    fingerprint: Any = None
+    # An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource. The value does not need to be unique.
+    name: Any = None
+    # The public portion of a customer-generated key pair. This field is required to create the AWS::IVS::PlaybackKeyPair resource.
+    public_key_material: Any = None
+    # A list of key-value pairs that contain metadata for the asset model.
+    tags: Any = None
 
 PlaybackKeyPair = ubx.ResourceBinding(
     wire_type="aws_ivs_playback_key_pair",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "public_key": ubx.FieldSpec(wire_name="public_key"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_PlaybackKeyPair_TimeoutsFields,
+        "public_key_material": ubx.FieldSpec(wire_name="public_key_material"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_PlaybackKeyPair_TagsFields,
         ),
     },
 )

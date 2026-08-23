@@ -8,22 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LogDeliveryConfiguration_LogConfigurations_CloudWatchLogsConfiguration:
+    # The ARN of the CloudWatch Logs log group where Cognito user pool logs are delivered when CloudWatch Logs is the log destination. (AI-inferred)
     log_group_arn: Any = None
 
 @dataclasses.dataclass
 class LogDeliveryConfiguration_LogConfigurations_FirehoseConfiguration:
+    # The Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream that receives the specified user pool log events for this log delivery configuration. (AI-inferred)
     stream_arn: Any = None
 
 @dataclasses.dataclass
 class LogDeliveryConfiguration_LogConfigurations_S3Configuration:
+    # The ARN of the Amazon S3 bucket to which Amazon Cognito user pool logs are delivered for this log configuration. (AI-inferred)
     bucket_arn: Any = None
 
 @dataclasses.dataclass
 class LogDeliveryConfiguration_LogConfigurations:
-    event_source: Any = None
-    log_level: Any = None
+    # Specifies the CloudWatch Logs log group (via its ARN) that receives Cognito user pool audit logs for the corresponding event source in the log delivery configuration. (AI-inferred)
     cloud_watch_logs_configuration: Any = None
+    # Identifies which event source within the Cognito user pool (userNotification or userAuthEvents) this log configuration applies to, controlling which activity is delivered to the associated CloudWatch log group. (AI-inferred)
+    event_source: Any = None
+    # Specifies the Amazon Data Firehose delivery stream destination for a given log type, including the ARN of the delivery stream to which logs are delivered. (AI-inferred)
     firehose_configuration: Any = None
+    # Determines the verbosity of logs (either ERROR or INFO) that are delivered to CloudWatch Logs for a specific event source in the user pool's log delivery configuration. (AI-inferred)
+    log_level: Any = None
+    # Specifies the Amazon S3 bucket destination (by bucket ARN) for delivering a particular log level from a Cognito user pool, used within one log configuration entry. (AI-inferred)
     s3_configuration: Any = None
 
 _LogDeliveryConfiguration_LogConfigurations_CloudWatchLogsConfigurationFields = {
@@ -39,40 +47,49 @@ _LogDeliveryConfiguration_LogConfigurations_S3ConfigurationFields = {
 }
 
 _LogDeliveryConfiguration_LogConfigurationsFields = {
-    "event_source": ubx.FieldSpec(wire_name="event_source"),
-    "log_level": ubx.FieldSpec(wire_name="log_level"),
     "cloud_watch_logs_configuration": ubx.FieldSpec(
         wire_name="cloud_watch_logs_configuration",
-        kind="list",
+        kind="object",
         fields=_LogDeliveryConfiguration_LogConfigurations_CloudWatchLogsConfigurationFields,
     ),
+    "event_source": ubx.FieldSpec(wire_name="event_source"),
     "firehose_configuration": ubx.FieldSpec(
         wire_name="firehose_configuration",
-        kind="list",
+        kind="object",
         fields=_LogDeliveryConfiguration_LogConfigurations_FirehoseConfigurationFields,
     ),
+    "log_level": ubx.FieldSpec(wire_name="log_level"),
     "s3_configuration": ubx.FieldSpec(
         wire_name="s3_configuration",
-        kind="list",
+        kind="object",
         fields=_LogDeliveryConfiguration_LogConfigurations_S3ConfigurationFields,
     ),
 }
 
 @dataclasses.dataclass
 class LogDeliveryConfigurationConfig:
-    region: Any = None
-    user_pool_id: Any = None
+    # Specifies the list of log delivery configurations for the user pool, each defining the event source (e.g., userNotification, userAuthEvents), the log level (e.g., ERROR, INFO), and the destination CloudWatch log group to which Amazon Cognito delivers user activity logs. (AI-inferred)
     log_configurations: Any = None
+    # The ID of the Amazon Cognito user pool to which this log delivery configuration applies. (AI-inferred)
+    user_pool_id: Any = None
+
+@dataclasses.dataclass
+class LogDeliveryConfigurationAttrs:
+    # The unique identifier of the user pool to which this log delivery configuration belongs, acting as the resource's primary identifier. (AI-inferred)
+    id: Any = None
+    # Specifies the list of log delivery configurations for the user pool, each defining the event source (e.g., userNotification, userAuthEvents), the log level (e.g., ERROR, INFO), and the destination CloudWatch log group to which Amazon Cognito delivers user activity logs. (AI-inferred)
+    log_configurations: Any = None
+    # The ID of the Amazon Cognito user pool to which this log delivery configuration applies. (AI-inferred)
+    user_pool_id: Any = None
 
 LogDeliveryConfiguration = ubx.ResourceBinding(
     wire_type="aws_cognito_log_delivery_configuration",
     fields={
-        "region": ubx.FieldSpec(wire_name="region"),
-        "user_pool_id": ubx.FieldSpec(wire_name="user_pool_id"),
         "log_configurations": ubx.FieldSpec(
             wire_name="log_configurations",
             kind="list",
             fields=_LogDeliveryConfiguration_LogConfigurationsFields,
         ),
+        "user_pool_id": ubx.FieldSpec(wire_name="user_pool_id"),
     },
 )

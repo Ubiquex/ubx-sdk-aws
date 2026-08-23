@@ -4,14 +4,16 @@ package ivschat
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Room_MessageReviewHandler struct {
+	// Specifies the fallback behavior if the handler does not return a valid response, encounters an error, or times out.
 	FallbackResult any
+	// Identifier of the message review handler.
 	Uri any
 }
 
-type Room_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Room_Tags struct {
+	// The key of a tag assigned to the IVS Chat Room, used to organize and identify the resource (e.g., 'Environment' or 'Owner'). (AI-inferred)
+	Key any
+	Value any
 }
 
 var Room_MessageReviewHandlerFields = ubx.FieldMap{
@@ -19,45 +21,61 @@ var Room_MessageReviewHandlerFields = ubx.FieldMap{
 		"Uri": ubx.FieldSpec{WireName: "uri"},
 	}
 
-var Room_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Room_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type RoomConfig struct {
-	Id any
+	// Array of logging configuration identifiers attached to the room.
 	LoggingConfigurationIdentifiers any
+	// The maximum number of characters in a single message.
 	MaximumMessageLength any
+	// The maximum number of messages per second that can be sent to the room.
 	MaximumMessageRatePerSecond any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
+	// Configuration information for optional review of messages.
 	MessageReviewHandler any
-	Timeouts any
+	// The name of the room. The value does not need to be unique.
+	Name any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type RoomAttrs struct {
+	// Room ARN is automatically generated on creation and assigned as the unique identifier.
+	Arn any
+	// The system-generated ID of the room.
+	Id any
+	// Array of logging configuration identifiers attached to the room.
+	LoggingConfigurationIdentifiers any
+	// The maximum number of characters in a single message.
+	MaximumMessageLength any
+	// The maximum number of messages per second that can be sent to the room.
+	MaximumMessageRatePerSecond any
+	// Configuration information for optional review of messages.
+	MessageReviewHandler any
+	// The name of the room. The value does not need to be unique.
+	Name any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Room = ubx.ResourceBinding{
 	WireType: "aws_ivschat_room",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"LoggingConfigurationIdentifiers": ubx.FieldSpec{WireName: "logging_configuration_identifiers"},
 		"MaximumMessageLength": ubx.FieldSpec{WireName: "maximum_message_length"},
 		"MaximumMessageRatePerSecond": ubx.FieldSpec{WireName: "maximum_message_rate_per_second"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"MessageReviewHandler": ubx.FieldSpec{
 			WireName: "message_review_handler",
-			Kind: "list",
+			Kind: "object",
 			Fields: Room_MessageReviewHandlerFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Room_TimeoutsFields,
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Room_TagsFields,
 		},
 	},
 }

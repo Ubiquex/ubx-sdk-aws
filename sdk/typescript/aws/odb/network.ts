@@ -2,135 +2,186 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Network_ManagedServices_CrossRegionS3RestoreSourcesAccess {
-  ipv4Addresses: string[];
-  region: string;
-  status: string;
+  ipv4Addresses?: string[] | Computed<string[]>;
+  /** Specifies the AWS region where the S3 bucket serving as a cross-region restore source is located. (AI-inferred) */
+  region?: string | Computed<string>;
+  status?: string | Computed<string>;
 }
 
 export interface Network_ManagedServices_KmsAccess {
-  domainName: string;
-  ipv4Addresses: string[];
-  kmsPolicyDocument: string;
-  status: string;
+  /** The domain name for the AWS KMS access. */
+  domainName?: string | Computed<string>;
+  /** The IPv4 addresses for the AWS KMS access. */
+  ipv4Addresses?: string[] | Computed<string[]>;
+  /** The endpoint policy for the AWS KMS access. */
+  kmsPolicyDocument?: string | Computed<string>;
+  /** The status of the managed resource access. */
+  status?: string | Computed<string>;
 }
 
 export interface Network_ManagedServices_ManagedS3BackupAccess {
-  ipv4Addresses: string[];
-  status: string;
+  /** The IPv4 addresses for the managed Amazon S3 backup access. */
+  ipv4Addresses?: string[] | Computed<string[]>;
+  /** The status of the managed resource access. */
+  status?: string | Computed<string>;
 }
 
 export interface Network_ManagedServices_S3Access {
-  domainName: string;
-  ipv4Addresses: string[];
-  s3PolicyDocument: string;
-  status: string;
+  /** The domain name for the Amazon S3 access. */
+  domainName?: string | Computed<string>;
+  /** The IPv4 addresses for the Amazon S3 access. */
+  ipv4Addresses?: string[] | Computed<string[]>;
+  /** The endpoint policy for the Amazon S3 access. */
+  s3PolicyDocument?: string | Computed<string>;
+  /** The status of the managed resource access. */
+  status?: string | Computed<string>;
 }
 
 export interface Network_ManagedServices_ServiceNetworkEndpoint {
-  vpcEndpointId: string;
-  vpcEndpointType: string;
+  /** The identifier of the VPC endpoint. */
+  vpcEndpointId?: string | Computed<string>;
+  /** The type of the VPC endpoint. */
+  vpcEndpointType?: string | Computed<string>;
 }
 
 export interface Network_ManagedServices_StsAccess {
-  domainName: string;
-  ipv4Addresses: string[];
-  status: string;
-  stsPolicyDocument: string;
+  /** The domain name for the AWS STS access. */
+  domainName?: string | Computed<string>;
+  /** The IPv4 addresses for the AWS STS access. */
+  ipv4Addresses?: string[] | Computed<string[]>;
+  /** The status of the managed resource access. */
+  status?: string | Computed<string>;
+  /** The endpoint policy for the AWS STS access. */
+  stsPolicyDocument?: string | Computed<string>;
 }
 
 export interface Network_ManagedServices_ZeroEtlAccess {
-  cidr: string;
-  status: string;
+  /** The CIDR block for the Zero-ETL access. */
+  cidr?: string | Computed<string>;
+  /** The status of the managed resource access. */
+  status?: string | Computed<string>;
 }
 
 export interface Network_ManagedServices {
-  crossRegionS3RestoreSourcesAccess: Network_ManagedServices_CrossRegionS3RestoreSourcesAccess[];
-  kmsAccess: Network_ManagedServices_KmsAccess[];
-  managedS3BackupAccess: Network_ManagedServices_ManagedS3BackupAccess[];
-  managedServiceIpv4Cidrs: string[];
-  resourceGatewayArn: string;
-  s3Access: Network_ManagedServices_S3Access[];
-  serviceNetworkArn: string;
-  serviceNetworkEndpoint: Network_ManagedServices_ServiceNetworkEndpoint[];
-  stsAccess: Network_ManagedServices_StsAccess[];
-  zeroEtlAccess: Network_ManagedServices_ZeroEtlAccess[];
+  /** The access configuration for the cross-Region Amazon S3 database restore source. */
+  crossRegionS3RestoreSourcesAccess?: Network_ManagedServices_CrossRegionS3RestoreSourcesAccess[] | Computed<Network_ManagedServices_CrossRegionS3RestoreSourcesAccess[]>;
+  /** The AWS Key Management Service (KMS) access configuration. */
+  kmsAccess?: Network_ManagedServices_KmsAccess | Computed<Network_ManagedServices_KmsAccess>;
+  /** The managed Amazon S3 backup access configuration. */
+  managedS3BackupAccess?: Network_ManagedServices_ManagedS3BackupAccess | Computed<Network_ManagedServices_ManagedS3BackupAccess>;
+  /** The IPv4 CIDR blocks for the managed services. */
+  managedServicesIpv4Cidrs?: string[] | Computed<string[]>;
+  /** The Amazon Resource Name (ARN) of the resource gateway. */
+  resourceGatewayArn?: string | Computed<string>;
+  /** The Amazon S3 access configuration. */
+  s3Access?: Network_ManagedServices_S3Access | Computed<Network_ManagedServices_S3Access>;
+  /** The Amazon Resource Name (ARN) of the service network. */
+  serviceNetworkArn?: string | Computed<string>;
+  /** The service network endpoint configuration. */
+  serviceNetworkEndpoint?: Network_ManagedServices_ServiceNetworkEndpoint | Computed<Network_ManagedServices_ServiceNetworkEndpoint>;
+  /** The AWS Security Token Service (STS) access configuration. */
+  stsAccess?: Network_ManagedServices_StsAccess | Computed<Network_ManagedServices_StsAccess>;
+  /** The Zero-ETL access configuration. */
+  zeroEtlAccess?: Network_ManagedServices_ZeroEtlAccess | Computed<Network_ManagedServices_ZeroEtlAccess>;
 }
 
-export interface Network_OciDnsForwardingConfigs {
-  domainName: string;
-  ociDnsListenerIp: string;
+export interface Network_Tags {
+  /** The key of a tag attached to the network resource, used as the tag's unique identifier within the resource. (AI-inferred) */
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
-export interface Network_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
-}
-
-const Network_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Network_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface NetworkConfig {
+  /** The AWS Availability Zone (AZ) where the ODB network is located. */
   availabilityZone?: string | Computed<string>;
-  availabilityZoneId: string | Computed<string>;
-  backupSubnetCidr: string | Computed<string>;
-  clientSubnetCidr: string | Computed<string>;
-  crossRegionS3RestoreSourcesAccess?: string[] | Computed<string[]>;
+  /** The AZ ID of the AZ where the ODB network is located. */
+  availabilityZoneId?: string | Computed<string>;
+  /** The CIDR range of the backup subnet in the ODB network. */
+  backupSubnetCidr?: string | Computed<string>;
+  /** The CIDR range of the client subnet in the ODB network. */
+  clientSubnetCidr?: string | Computed<string>;
+  /** The cross-Region Amazon S3 restore sources for the ODB network. */
+  crossRegionS3RestoreSources?: string[] | Computed<string[]>;
+  /** The domain name to use for the resources in the ODB network. */
   customDomainName?: string | Computed<string>;
+  /** The DNS prefix to the default DNS domain name. The default DNS domain name is oraclevcn.com. */
   defaultDnsPrefix?: string | Computed<string>;
+  /** Specifies whether to delete associated OCI networking resources along with the ODB network. */
   deleteAssociatedResources?: boolean | Computed<boolean>;
-  displayName: string | Computed<string>;
+  /** The user-friendly name of the ODB network. */
+  displayName?: string | Computed<string>;
+  /** The AWS Key Management Service (KMS) access configuration for the ODB network. */
   kmsAccess?: string | Computed<string>;
+  /** The AWS Key Management Service (KMS) policy document that defines permissions for key usage within the ODB network. */
   kmsPolicyDocument?: string | Computed<string>;
-  region?: string | Computed<string>;
-  s3Access: string | Computed<string>;
+  /** Specifies the configuration for Amazon S3 access from the ODB network. */
+  s3Access?: string | Computed<string>;
+  /** Specifies the endpoint policy for Amazon S3 access from the ODB network. */
   s3PolicyDocument?: string | Computed<string>;
+  /** The AWS Security Token Service (STS) access configuration for the ODB network. */
   stsAccess?: string | Computed<string>;
+  /** The AWS Security Token Service (STS) policy document that defines permissions for token service usage within the ODB network. */
   stsPolicyDocument?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  zeroEtlAccess: string | Computed<string>;
-  timeouts?: Network_Timeouts | Computed<Network_Timeouts>;
+  /** Tags to assign to the Odb Network. */
+  tags?: Network_Tags[] | Computed<Network_Tags[]>;
+  /** Specifies the configuration for Zero-ETL access from the ODB network. */
+  zeroEtlAccess?: string | Computed<string>;
 }
 
 export interface NetworkAttrs {
-  arn: string;
+  /** The AWS Availability Zone (AZ) where the ODB network is located. */
   availabilityZone: string;
+  /** The AZ ID of the AZ where the ODB network is located. */
   availabilityZoneId: string;
+  /** The CIDR range of the backup subnet in the ODB network. */
   backupSubnetCidr: string;
+  /** The CIDR range of the client subnet in the ODB network. */
   clientSubnetCidr: string;
-  createdAt: string;
-  crossRegionS3RestoreSourcesAccess: string[];
+  /** The cross-Region Amazon S3 restore sources for the ODB network. */
+  crossRegionS3RestoreSources: string[];
+  /** The domain name to use for the resources in the ODB network. */
   customDomainName: string;
+  /** The DNS prefix to the default DNS domain name. The default DNS domain name is oraclevcn.com. */
   defaultDnsPrefix: string;
+  /** Specifies whether to delete associated OCI networking resources along with the ODB network. */
   deleteAssociatedResources: boolean;
+  /** The user-friendly name of the ODB network. */
   displayName: string;
+  /** The list of EC2 placement group IDs associated with your ODB network. */
   ec2PlacementGroupIds: string[];
-  id: string;
+  /** The AWS Key Management Service (KMS) access configuration for the ODB network. */
   kmsAccess: string;
+  /** The AWS Key Management Service (KMS) policy document that defines permissions for key usage within the ODB network. */
   kmsPolicyDocument: string;
-  managedServices: Network_ManagedServices[];
-  ociDnsForwardingConfigs: Network_OciDnsForwardingConfigs[];
+  /** The managed services configuration for the ODB network. */
+  managedServices: Network_ManagedServices;
+  /** The unique identifier of the OCI network anchor for the ODB network. */
   ociNetworkAnchorId: string;
-  ociNetworkAnchorUrl: string;
+  /** The name of the OCI resource anchor that's associated with the ODB network. */
   ociResourceAnchorName: string;
-  ociVcnId: string;
+  /** The URL for the VCN that's associated with the ODB network. */
   ociVcnUrl: string;
-  peeredCidrs: string[];
-  percentProgress: number;
-  region: string;
+  /** The Amazon Resource Name (ARN) of the ODB network. */
+  odbNetworkArn: string;
+  /** The unique identifier of the ODB network. */
+  odbNetworkId: string;
+  /** Specifies the configuration for Amazon S3 access from the ODB network. */
   s3Access: string;
+  /** Specifies the endpoint policy for Amazon S3 access from the ODB network. */
   s3PolicyDocument: string;
-  status: string;
-  statusReason: string;
+  /** The AWS Security Token Service (STS) access configuration for the ODB network. */
   stsAccess: string;
+  /** The AWS Security Token Service (STS) policy document that defines permissions for token service usage within the ODB network. */
   stsPolicyDocument: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** Tags to assign to the Odb Network. */
+  tags: Network_Tags[];
+  /** Specifies the configuration for Zero-ETL access from the ODB network. */
   zeroEtlAccess: string;
-  timeouts: Network_Timeouts;
 }
 
 export const Network: ResourceBinding<NetworkConfig, NetworkAttrs> = {
@@ -140,24 +191,22 @@ export const Network: ResourceBinding<NetworkConfig, NetworkAttrs> = {
     availabilityZoneId: "availability_zone_id",
     backupSubnetCidr: "backup_subnet_cidr",
     clientSubnetCidr: "client_subnet_cidr",
-    crossRegionS3RestoreSourcesAccess: "cross_region_s3_restore_sources_access",
+    crossRegionS3RestoreSources: "cross_region_s3_restore_sources",
     customDomainName: "custom_domain_name",
     defaultDnsPrefix: "default_dns_prefix",
     deleteAssociatedResources: "delete_associated_resources",
     displayName: "display_name",
     kmsAccess: "kms_access",
     kmsPolicyDocument: "kms_policy_document",
-    region: "region",
     s3Access: "s3_access",
     s3PolicyDocument: "s3_policy_document",
     stsAccess: "sts_access",
     stsPolicyDocument: "sts_policy_document",
-    tags: "tags",
-    zeroEtlAccess: "zero_etl_access",
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Network_TimeoutsFields,
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Network_TagsFields,
     },
+    zeroEtlAccess: "zero_etl_access",
   },
 };

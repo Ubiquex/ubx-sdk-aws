@@ -3,39 +3,81 @@ package backup
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Vault_Timeouts struct {
-	Delete any
+type Vault_LockConfiguration struct {
+	// Specifies the number of days after the backup vault lock is applied during which the lock configuration can still be changed or removed, after which the vault lock becomes permanently immutable. (AI-inferred)
+	ChangeableForDays any
+	// Specifies the maximum number of days that the backup vault lock will retain recovery points before they are permanently deleted, enforcing an upper bound on retention for the vault. (AI-inferred)
+	MaxRetentionDays any
+	// The minimum number of days that recovery points in the backup vault must be retained, enforced by the vault lock configuration. (AI-inferred)
+	MinRetentionDays any
 }
 
-var Vault_TimeoutsFields = ubx.FieldMap{
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+type Vault_Notifications struct {
+	// Specifies the list of backup vault event types (e.g., BACKUP_JOB_STARTED, BACKUP_JOB_COMPLETED) that trigger the SNS notification to the configured topic. (AI-inferred)
+	BackupVaultEvents any
+	// The ARN of the Amazon SNS topic to which AWS Backup publishes event notifications for this backup vault, as configured for the vault's notification events. (AI-inferred)
+	SnstopicArn any
+}
+
+var Vault_LockConfigurationFields = ubx.FieldMap{
+		"ChangeableForDays": ubx.FieldSpec{WireName: "changeable_for_days"},
+		"MaxRetentionDays": ubx.FieldSpec{WireName: "max_retention_days"},
+		"MinRetentionDays": ubx.FieldSpec{WireName: "min_retention_days"},
+	}
+
+var Vault_NotificationsFields = ubx.FieldMap{
+		"BackupVaultEvents": ubx.FieldSpec{WireName: "backup_vault_events"},
+		"SnstopicArn": ubx.FieldSpec{WireName: "snstopic_arn"},
 	}
 
 type VaultConfig struct {
-	ForceDestroy any
-	Id any
-	KmsKeyArn any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
-	Timeouts any
+	// Specifies a resource-based policy (in JSON) that defines which IAM principals can perform actions on the backup vault and its recovery points, such as viewing, creating, or deleting backups. (AI-inferred)
+	AccessPolicy any
+	// The name of the backup vault, which must be unique within the account and region. (AI-inferred)
+	BackupVaultName any
+	// Specifies the tags to attach to the backup vault as key-value pairs. (AI-inferred)
+	BackupVaultTags any
+	// The ARN of the AWS KMS key used to encrypt backups stored in this backup vault. (AI-inferred)
+	EncryptionKeyArn any
+	// Specifies the configuration for AWS Backup Vault Lock, including minimum and maximum retention durations (in days) and the period (in days) during which the lock settings can still be modified, enabling an immutable backup vault. (AI-inferred)
+	LockConfiguration any
+	// Specifies the Amazon SNS topic and the backup vault events (such as BACKUP_JOB_STARTED or BACKUP_JOB_COMPLETED) that trigger notifications for this backup vault. (AI-inferred)
+	Notifications any
+}
+
+type VaultAttrs struct {
+	// Specifies a resource-based policy (in JSON) that defines which IAM principals can perform actions on the backup vault and its recovery points, such as viewing, creating, or deleting backups. (AI-inferred)
+	AccessPolicy any
+	// The Amazon Resource Name (ARN) of the backup vault, which uniquely identifies it within AWS. (AI-inferred)
+	BackupVaultArn any
+	// The name of the backup vault, which must be unique within the account and region. (AI-inferred)
+	BackupVaultName any
+	// Specifies the tags to attach to the backup vault as key-value pairs. (AI-inferred)
+	BackupVaultTags any
+	// The ARN of the AWS KMS key used to encrypt backups stored in this backup vault. (AI-inferred)
+	EncryptionKeyArn any
+	// Specifies the configuration for AWS Backup Vault Lock, including minimum and maximum retention durations (in days) and the period (in days) during which the lock settings can still be modified, enabling an immutable backup vault. (AI-inferred)
+	LockConfiguration any
+	// Specifies the Amazon SNS topic and the backup vault events (such as BACKUP_JOB_STARTED or BACKUP_JOB_COMPLETED) that trigger notifications for this backup vault. (AI-inferred)
+	Notifications any
 }
 
 var Vault = ubx.ResourceBinding{
 	WireType: "aws_backup_vault",
 	Fields: ubx.FieldMap{
-		"ForceDestroy": ubx.FieldSpec{WireName: "force_destroy"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"AccessPolicy": ubx.FieldSpec{WireName: "access_policy"},
+		"BackupVaultName": ubx.FieldSpec{WireName: "backup_vault_name"},
+		"BackupVaultTags": ubx.FieldSpec{WireName: "backup_vault_tags"},
+		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
+		"LockConfiguration": ubx.FieldSpec{
+			WireName: "lock_configuration",
 			Kind: "object",
-			Fields: Vault_TimeoutsFields,
+			Fields: Vault_LockConfigurationFields,
+		},
+		"Notifications": ubx.FieldSpec{
+			WireName: "notifications",
+			Kind: "object",
+			Fields: Vault_NotificationsFields,
 		},
 	},
 }

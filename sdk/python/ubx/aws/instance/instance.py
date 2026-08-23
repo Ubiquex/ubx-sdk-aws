@@ -7,209 +7,252 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Instance_CapacityReservationSpecification_CapacityReservationTarget:
-    capacity_reservation_id: Any = None
-    capacity_reservation_resource_group_arn: Any = None
+class Instance_BlockDeviceMappings_Ebs:
+    # Specifies whether the EBS volume should be deleted automatically when the EC2 instance is terminated. (AI-inferred)
+    delete_on_termination: Any = None
+    # Specifies whether the EBS volume created from this block device mapping should be encrypted at rest, applying AWS-managed or customer-managed KMS encryption when enabled. (AI-inferred)
+    encrypted: Any = None
+    # The number of I/O operations per second (IOPS) to provision for the EBS volume, used with io1, io2, and gp3 volume types to control performance. (AI-inferred)
+    iops: Any = None
+    # The KMS key ID used to encrypt the EBS volume specified in the block device mapping for the EC2 instance. (AI-inferred)
+    kms_key_id: Any = None
+    # Specifies the ID of the EBS snapshot to use as the source for creating the EBS volume attached to the instance via this block device mapping. (AI-inferred)
+    snapshot_id: Any = None
+    # The size of the EBS volume, in GiB, to attach to the EC2 instance via this block device mapping. (AI-inferred)
+    volume_size: Any = None
+    # Specifies the Amazon EBS volume type for the block device, such as gp2, gp3, io1, io2, st1, sc1, or standard, which determines the volume's performance and cost characteristics. (AI-inferred)
+    volume_type: Any = None
 
 @dataclasses.dataclass
-class Instance_CapacityReservationSpecification:
-    capacity_reservation_preference: Any = None
-    capacity_reservation_target: Any = None
+class Instance_BlockDeviceMappings:
+    # The device name (e.g., /dev/sda1) under which the block device is exposed inside the EC2 instance, identifying the attached EBS volume or instance-store device in the block device mapping. (AI-inferred)
+    device_name: Any = None
+    # Configures the Amazon EBS volume to attach at the specified device name for this block device mapping, including settings such as volume size, volume type, IOPS, throughput, encryption, and delete-on-termination behavior. (AI-inferred)
+    ebs: Any = None
+    # When set to true, suppresses the specified device, ensuring that the device named in the block device mapping is not exposed to the EC2 instance, effectively removing it from the mapping. (AI-inferred)
+    no_device: Any = None
+    # Specifies the virtual device name (e.g., ephemeral0) used to map an instance store volume in the block device mapping. (AI-inferred)
+    virtual_name: Any = None
 
 @dataclasses.dataclass
 class Instance_CpuOptions:
-    amd_sev_snp: Any = None
+    # The number of CPU cores to allocate for the EC2 instance, enabling a custom core count in the instance's CPU options. (AI-inferred)
     core_count: Any = None
-    nested_virtualization: Any = None
+    # Sets the number of threads per CPU core for the EC2 instance; specify 1 to disable Intel Hyper-Threading Technology or 2 to enable it. (AI-inferred)
     threads_per_core: Any = None
 
 @dataclasses.dataclass
 class Instance_CreditSpecification:
-    cpu_credits: Any = None
+    # Specifies the CPU credit option for the instance (either 'standard' or 'unlimited'), which controls whether a T2/T3/T3a instance can burst above its baseline CPU performance and how it accrues or spends CPU credits. (AI-inferred)
+    cpucredits: Any = None
 
 @dataclasses.dataclass
-class Instance_EbsBlockDevice:
-    delete_on_termination: Any = None
-    device_name: Any = None
-    encrypted: Any = None
-    iops: Any = None
-    kms_key_id: Any = None
-    snapshot_id: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    throughput: Any = None
-    volume_id: Any = None
-    volume_size: Any = None
-    volume_type: Any = None
+class Instance_ElasticGpuSpecifications:
+    # Specifies the type of Elastic GPU to attach to the instance, such as eg1.medium. (AI-inferred)
+    type: Any = None
+
+@dataclasses.dataclass
+class Instance_ElasticInferenceAccelerators:
+    # Specifies the number of Elastic Inference accelerators of the selected type to attach to the EC2 instance. (AI-inferred)
+    count: Any = None
+    # The type of the Elastic Inference accelerator (e.g., eia2.medium, eia2.large) to attach to the EC2 instance. (AI-inferred)
+    type: Any = None
 
 @dataclasses.dataclass
 class Instance_EnclaveOptions:
+    # If this parameter is set to true, the instance is enabled for AWS Nitro Enclaves; otherwise, it is not enabled for AWS Nitro Enclaves.
     enabled: Any = None
 
 @dataclasses.dataclass
-class Instance_EphemeralBlockDevice:
-    device_name: Any = None
-    no_device: Any = None
-    virtual_name: Any = None
+class Instance_HibernationOptions:
+    # If you set this parameter to true, your instance is enabled for hibernation.
+    configured: Any = None
 
 @dataclasses.dataclass
-class Instance_InstanceMarketOptions_SpotOptions:
-    instance_interruption_behavior: Any = None
-    max_price: Any = None
-    spot_instance_type: Any = None
-    valid_until: Any = None
-
-@dataclasses.dataclass
-class Instance_InstanceMarketOptions:
-    market_type: Any = None
-    spot_options: Any = None
+class Instance_Ipv6Addresses:
+    # Specifies an individual IPv6 address to associate with the EC2 instance's network interface, as one entry in the ipv6_addresses list. (AI-inferred)
+    ipv6_address: Any = None
 
 @dataclasses.dataclass
 class Instance_LaunchTemplate:
-    id: Any = None
-    name: Any = None
+    # The ID of the launch template. You must specify the LaunchTemplateName or the LaunchTemplateId, but not both.
+    launch_template_id: Any = None
+    # The name of the launch template. You must specify the LaunchTemplateName or the LaunchTemplateId, but not both.
+    launch_template_name: Any = None
+    # The version number of the launch template.
     version: Any = None
 
 @dataclasses.dataclass
-class Instance_MaintenanceOptions:
-    auto_recovery: Any = None
+class Instance_LicenseSpecifications:
+    # The Amazon Resource Name (ARN) of the AWS License Manager license configuration to associate with this EC2 instance. (AI-inferred)
+    license_configuration_arn: Any = None
 
 @dataclasses.dataclass
 class Instance_MetadataOptions:
+    # Enables or disables the HTTP metadata endpoint on your instances. If you specify a value of disabled, you cannot access your instance metadata.
     http_endpoint: Any = None
+    # Enables or disables the IPv6 endpoint for the instance metadata service. To use this option, the instance must be a Nitro-based instance launched in a subnet that supports IPv6.
     http_protocol_ipv6: Any = None
+    # The number of network hops that the metadata token can travel. Maximum is 64.
     http_put_response_hop_limit: Any = None
+    # Indicates whether IMDSv2 is required.
     http_tokens: Any = None
+    # Indicates whether tags from the instance are propagated to the EBS volumes.
     instance_metadata_tags: Any = None
 
 @dataclasses.dataclass
-class Instance_NetworkInterface:
-    delete_on_termination: Any = None
-    device_index: Any = None
-    network_card_index: Any = None
-    network_interface_id: Any = None
+class Instance_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecification:
+    # Enables or disables ENA Express (SRD) for UDP traffic on this network interface. (AI-inferred)
+    ena_srd_udp_enabled: Any = None
 
 @dataclasses.dataclass
-class Instance_PrimaryNetworkInterface:
+class Instance_NetworkInterfaces_EnaSrdSpecification:
+    # Specifies whether to enable Elastic Network Adapter (ENA) Scalable Reliable Datagram (SRD) for the network interface, which can improve network performance and reduce latency. (AI-inferred)
+    ena_srd_enabled: Any = None
+    # Configuration block for the ENA Express UDP specification on the network interface, controlling whether UDP traffic uses ENA Express to reduce latency and increase throughput. (AI-inferred)
+    ena_srd_udp_specification: Any = None
+
+@dataclasses.dataclass
+class Instance_NetworkInterfaces_PrivateIpAddresses:
+    # Specifies whether this private IP address is the primary private IP address for the network interface on the EC2 instance. (AI-inferred)
+    primary: Any = None
+    # Defines the private IPv4 address to assign to the network interface at launch, as part of the instance's network interface private IP specification, where the Primary flag determines whether it is the primary IP. (AI-inferred)
+    private_ip_address: Any = None
+
+@dataclasses.dataclass
+class Instance_NetworkInterfaces:
+    # Indicates whether to associate a carrier IP address with the network interface, enabling the instance to communicate over a carrier network in AWS Wavelength zones. (AI-inferred)
+    associate_carrier_ip_address: Any = None
+    # Indicates whether to automatically assign a public IP address to this network interface during instance launch, applicable only when the network interface is created as part of the instance's network configuration. (AI-inferred)
+    associate_public_ip_address: Any = None
+    # Controls whether the network interface attached to this EC2 instance is automatically deleted when the instance is terminated. (AI-inferred)
     delete_on_termination: Any = None
+    # Specifies a human-readable description for the elastic network interface (ENI). (AI-inferred)
+    description: Any = None
+    # The device index for the network interface, starting at 0 for the primary interface; higher values assign additional interfaces in the instance's network attachment order. (AI-inferred)
+    device_index: Any = None
+    # Configures Elastic Network Adapter (ENA) Scalable Reliable Datagram (SRD) settings for this network interface, which can improve network performance for supported instance types. (AI-inferred)
+    ena_srd_specification: Any = None
+    # The list of security group IDs to attach to the network interface of the EC2 instance. (AI-inferred)
+    group_set: Any = None
+    # The number of IPv6 addresses to assign to the network interface, which EC2 automatically selects from the subnet's IPv6 range. (AI-inferred)
+    ipv6_address_count: Any = None
+    # Specifies the list of IPv6 addresses to associate with the EC2 instance's network interface. (AI-inferred)
+    ipv6_addresses: Any = None
+    # The ID of an existing Elastic Network Interface (ENI) to attach to the EC2 instance when launched, as specified in the network_interfaces block. (AI-inferred)
     network_interface_id: Any = None
+    # The private IP address to assign to the network interface, which becomes the primary private IP address of the instance. (AI-inferred)
+    private_ip_address: Any = None
+    # Defines a list of private IP address specifications for an EC2 instance's network interface, each specifying a private IPv4 address and whether it is the primary private IP. (AI-inferred)
+    private_ip_addresses: Any = None
+    # Specifies the number of secondary private IP addresses that AWS automatically assigns to this network interface when the instance launches. (AI-inferred)
+    secondary_private_ip_address_count: Any = None
+    # Specifies the ID of the subnet in which the network interface is launched, determining the subnet placement for the EC2 instance when using custom network interface configuration. (AI-inferred)
+    subnet_id: Any = None
 
 @dataclasses.dataclass
 class Instance_PrivateDnsNameOptions:
-    enable_resource_name_dns_a_record: Any = None
-    enable_resource_name_dns_aaaa_record: Any = None
+    # Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records. For more information, see Amazon EC2 instance hostname types in the Amazon Elastic Compute Cloud User Guide.
+    enable_resource_name_dns_aaaarecord: Any = None
+    # Indicates whether to respond to DNS queries for instance hostnames with DNS A records. For more information, see Amazon EC2 instance hostname types in the Amazon Elastic Compute Cloud User Guide.
+    enable_resource_name_dns_arecord: Any = None
+    # The type of hostnames to assign to instances in the subnet at launch. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID. For more information, see Amazon EC2 instance hostname types in the Amazon Elastic Compute Cloud User Guide.
     hostname_type: Any = None
 
 @dataclasses.dataclass
-class Instance_RootBlockDevice:
-    delete_on_termination: Any = None
-    device_name: Any = None
-    encrypted: Any = None
-    iops: Any = None
-    kms_key_id: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    throughput: Any = None
+class Instance_SsmAssociations_AssociationParameters:
+    # The name of a parameter to pass to the SSM document when the association runs on the instance, such as a command or configuration parameter expected by the document. (AI-inferred)
+    key: Any = None
+    # The list of values assigned to a specific parameter key within an SSM association parameter set, which are passed to the associated SSM document when the association is applied to the EC2 instance. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class Instance_SsmAssociations:
+    # Specifies the key-value input parameters (each value a list of strings) passed to the SSM document when the association is executed on the instance. (AI-inferred)
+    association_parameters: Any = None
+    # The name of the SSM document that the association runs on the EC2 instance. (AI-inferred)
+    document_name: Any = None
+
+@dataclasses.dataclass
+class Instance_State:
+    # The state of the instance as a 16-bit unsigned integer.
+    code: Any = None
+    # The current state of the instance.
+    name: Any = None
+
+@dataclasses.dataclass
+class Instance_Tags:
+    # The key of a tag to assign to the EC2 instance, used to categorize or identify the instance. (AI-inferred)
+    key: Any = None
+    # The value of a tag applied to the EC2 instance, forming a key-value pair used for organizing, identifying, and managing the instance. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class Instance_Volumes:
+    # The device name (e.g., /dev/sdf) where the volume is exposed inside the instance. (AI-inferred)
+    device: Any = None
+    # The ID of the Amazon EBS volume to attach to the EC2 instance at launch, corresponding to the VolumeId property in the AWS::EC2::Instance Volumes list. (AI-inferred)
     volume_id: Any = None
-    volume_size: Any = None
-    volume_type: Any = None
 
-@dataclasses.dataclass
-class Instance_SecondaryNetworkInterface:
-    delete_on_termination: Any = None
-    device_index: Any = None
-    interface_type: Any = None
-    mac_address: Any = None
-    network_card_index: Any = None
-    private_ip_address_count: Any = None
-    private_ip_addresses: Any = None
-    secondary_interface_id: Any = None
-    secondary_network_id: Any = None
-    secondary_subnet_id: Any = None
-    source_dest_check: Any = None
-    status: Any = None
-
-@dataclasses.dataclass
-class Instance_Timeouts:
-    create: Any = None
-    delete: Any = None
-    read: Any = None
-    update: Any = None
-
-_Instance_CapacityReservationSpecification_CapacityReservationTargetFields = {
-    "capacity_reservation_id": ubx.FieldSpec(wire_name="capacity_reservation_id"),
-    "capacity_reservation_resource_group_arn": ubx.FieldSpec(wire_name="capacity_reservation_resource_group_arn"),
-}
-
-_Instance_CapacityReservationSpecificationFields = {
-    "capacity_reservation_preference": ubx.FieldSpec(wire_name="capacity_reservation_preference"),
-    "capacity_reservation_target": ubx.FieldSpec(
-        wire_name="capacity_reservation_target",
-        kind="list",
-        fields=_Instance_CapacityReservationSpecification_CapacityReservationTargetFields,
-    ),
-}
-
-_Instance_CpuOptionsFields = {
-    "amd_sev_snp": ubx.FieldSpec(wire_name="amd_sev_snp"),
-    "core_count": ubx.FieldSpec(wire_name="core_count"),
-    "nested_virtualization": ubx.FieldSpec(wire_name="nested_virtualization"),
-    "threads_per_core": ubx.FieldSpec(wire_name="threads_per_core"),
-}
-
-_Instance_CreditSpecificationFields = {
-    "cpu_credits": ubx.FieldSpec(wire_name="cpu_credits"),
-}
-
-_Instance_EbsBlockDeviceFields = {
+_Instance_BlockDeviceMappings_EbsFields = {
     "delete_on_termination": ubx.FieldSpec(wire_name="delete_on_termination"),
-    "device_name": ubx.FieldSpec(wire_name="device_name"),
     "encrypted": ubx.FieldSpec(wire_name="encrypted"),
     "iops": ubx.FieldSpec(wire_name="iops"),
     "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
     "snapshot_id": ubx.FieldSpec(wire_name="snapshot_id"),
-    "tags": ubx.FieldSpec(wire_name="tags"),
-    "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-    "throughput": ubx.FieldSpec(wire_name="throughput"),
-    "volume_id": ubx.FieldSpec(wire_name="volume_id"),
     "volume_size": ubx.FieldSpec(wire_name="volume_size"),
     "volume_type": ubx.FieldSpec(wire_name="volume_type"),
+}
+
+_Instance_BlockDeviceMappingsFields = {
+    "device_name": ubx.FieldSpec(wire_name="device_name"),
+    "ebs": ubx.FieldSpec(
+        wire_name="ebs",
+        kind="object",
+        fields=_Instance_BlockDeviceMappings_EbsFields,
+    ),
+    "no_device": ubx.FieldSpec(wire_name="no_device"),
+    "virtual_name": ubx.FieldSpec(wire_name="virtual_name"),
+}
+
+_Instance_CpuOptionsFields = {
+    "core_count": ubx.FieldSpec(wire_name="core_count"),
+    "threads_per_core": ubx.FieldSpec(wire_name="threads_per_core"),
+}
+
+_Instance_CreditSpecificationFields = {
+    "cpucredits": ubx.FieldSpec(wire_name="cpucredits"),
+}
+
+_Instance_ElasticGpuSpecificationsFields = {
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Instance_ElasticInferenceAcceleratorsFields = {
+    "count": ubx.FieldSpec(wire_name="count"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Instance_EnclaveOptionsFields = {
     "enabled": ubx.FieldSpec(wire_name="enabled"),
 }
 
-_Instance_EphemeralBlockDeviceFields = {
-    "device_name": ubx.FieldSpec(wire_name="device_name"),
-    "no_device": ubx.FieldSpec(wire_name="no_device"),
-    "virtual_name": ubx.FieldSpec(wire_name="virtual_name"),
+_Instance_HibernationOptionsFields = {
+    "configured": ubx.FieldSpec(wire_name="configured"),
 }
 
-_Instance_InstanceMarketOptions_SpotOptionsFields = {
-    "instance_interruption_behavior": ubx.FieldSpec(wire_name="instance_interruption_behavior"),
-    "max_price": ubx.FieldSpec(wire_name="max_price"),
-    "spot_instance_type": ubx.FieldSpec(wire_name="spot_instance_type"),
-    "valid_until": ubx.FieldSpec(wire_name="valid_until"),
-}
-
-_Instance_InstanceMarketOptionsFields = {
-    "market_type": ubx.FieldSpec(wire_name="market_type"),
-    "spot_options": ubx.FieldSpec(
-        wire_name="spot_options",
-        kind="list",
-        fields=_Instance_InstanceMarketOptions_SpotOptionsFields,
-    ),
+_Instance_Ipv6AddressesFields = {
+    "ipv6_address": ubx.FieldSpec(wire_name="ipv6_address"),
 }
 
 _Instance_LaunchTemplateFields = {
-    "id": ubx.FieldSpec(wire_name="id"),
-    "name": ubx.FieldSpec(wire_name="name"),
+    "launch_template_id": ubx.FieldSpec(wire_name="launch_template_id"),
+    "launch_template_name": ubx.FieldSpec(wire_name="launch_template_name"),
     "version": ubx.FieldSpec(wire_name="version"),
 }
 
-_Instance_MaintenanceOptionsFields = {
-    "auto_recovery": ubx.FieldSpec(wire_name="auto_recovery"),
+_Instance_LicenseSpecificationsFields = {
+    "license_configuration_arn": ubx.FieldSpec(wire_name="license_configuration_arn"),
 }
 
 _Instance_MetadataOptionsFields = {
@@ -220,235 +263,374 @@ _Instance_MetadataOptionsFields = {
     "instance_metadata_tags": ubx.FieldSpec(wire_name="instance_metadata_tags"),
 }
 
-_Instance_NetworkInterfaceFields = {
-    "delete_on_termination": ubx.FieldSpec(wire_name="delete_on_termination"),
-    "device_index": ubx.FieldSpec(wire_name="device_index"),
-    "network_card_index": ubx.FieldSpec(wire_name="network_card_index"),
-    "network_interface_id": ubx.FieldSpec(wire_name="network_interface_id"),
+_Instance_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields = {
+    "ena_srd_udp_enabled": ubx.FieldSpec(wire_name="ena_srd_udp_enabled"),
 }
 
-_Instance_PrimaryNetworkInterfaceFields = {
+_Instance_NetworkInterfaces_EnaSrdSpecificationFields = {
+    "ena_srd_enabled": ubx.FieldSpec(wire_name="ena_srd_enabled"),
+    "ena_srd_udp_specification": ubx.FieldSpec(
+        wire_name="ena_srd_udp_specification",
+        kind="object",
+        fields=_Instance_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields,
+    ),
+}
+
+_Instance_NetworkInterfaces_PrivateIpAddressesFields = {
+    "primary": ubx.FieldSpec(wire_name="primary"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+}
+
+_Instance_NetworkInterfacesFields = {
+    "associate_carrier_ip_address": ubx.FieldSpec(wire_name="associate_carrier_ip_address"),
+    "associate_public_ip_address": ubx.FieldSpec(wire_name="associate_public_ip_address"),
     "delete_on_termination": ubx.FieldSpec(wire_name="delete_on_termination"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "device_index": ubx.FieldSpec(wire_name="device_index"),
+    "ena_srd_specification": ubx.FieldSpec(
+        wire_name="ena_srd_specification",
+        kind="object",
+        fields=_Instance_NetworkInterfaces_EnaSrdSpecificationFields,
+    ),
+    "group_set": ubx.FieldSpec(wire_name="group_set"),
+    "ipv6_address_count": ubx.FieldSpec(wire_name="ipv6_address_count"),
+    "ipv6_addresses": ubx.FieldSpec(
+        wire_name="ipv6_addresses",
+        kind="list",
+        fields=_Instance_Ipv6AddressesFields,
+    ),
     "network_interface_id": ubx.FieldSpec(wire_name="network_interface_id"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "private_ip_addresses": ubx.FieldSpec(
+        wire_name="private_ip_addresses",
+        kind="list",
+        fields=_Instance_NetworkInterfaces_PrivateIpAddressesFields,
+    ),
+    "secondary_private_ip_address_count": ubx.FieldSpec(wire_name="secondary_private_ip_address_count"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Instance_PrivateDnsNameOptionsFields = {
-    "enable_resource_name_dns_a_record": ubx.FieldSpec(wire_name="enable_resource_name_dns_a_record"),
-    "enable_resource_name_dns_aaaa_record": ubx.FieldSpec(wire_name="enable_resource_name_dns_aaaa_record"),
+    "enable_resource_name_dns_aaaarecord": ubx.FieldSpec(wire_name="enable_resource_name_dns_aaaarecord"),
+    "enable_resource_name_dns_arecord": ubx.FieldSpec(wire_name="enable_resource_name_dns_arecord"),
     "hostname_type": ubx.FieldSpec(wire_name="hostname_type"),
 }
 
-_Instance_RootBlockDeviceFields = {
-    "delete_on_termination": ubx.FieldSpec(wire_name="delete_on_termination"),
-    "device_name": ubx.FieldSpec(wire_name="device_name"),
-    "encrypted": ubx.FieldSpec(wire_name="encrypted"),
-    "iops": ubx.FieldSpec(wire_name="iops"),
-    "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
-    "tags": ubx.FieldSpec(wire_name="tags"),
-    "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-    "throughput": ubx.FieldSpec(wire_name="throughput"),
+_Instance_SsmAssociations_AssociationParametersFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Instance_SsmAssociationsFields = {
+    "association_parameters": ubx.FieldSpec(
+        wire_name="association_parameters",
+        kind="list",
+        fields=_Instance_SsmAssociations_AssociationParametersFields,
+    ),
+    "document_name": ubx.FieldSpec(wire_name="document_name"),
+}
+
+_Instance_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Instance_VolumesFields = {
+    "device": ubx.FieldSpec(wire_name="device"),
     "volume_id": ubx.FieldSpec(wire_name="volume_id"),
-    "volume_size": ubx.FieldSpec(wire_name="volume_size"),
-    "volume_type": ubx.FieldSpec(wire_name="volume_type"),
-}
-
-_Instance_SecondaryNetworkInterfaceFields = {
-    "delete_on_termination": ubx.FieldSpec(wire_name="delete_on_termination"),
-    "device_index": ubx.FieldSpec(wire_name="device_index"),
-    "interface_type": ubx.FieldSpec(wire_name="interface_type"),
-    "mac_address": ubx.FieldSpec(wire_name="mac_address"),
-    "network_card_index": ubx.FieldSpec(wire_name="network_card_index"),
-    "private_ip_address_count": ubx.FieldSpec(wire_name="private_ip_address_count"),
-    "private_ip_addresses": ubx.FieldSpec(wire_name="private_ip_addresses"),
-    "secondary_interface_id": ubx.FieldSpec(wire_name="secondary_interface_id"),
-    "secondary_network_id": ubx.FieldSpec(wire_name="secondary_network_id"),
-    "secondary_subnet_id": ubx.FieldSpec(wire_name="secondary_subnet_id"),
-    "source_dest_check": ubx.FieldSpec(wire_name="source_dest_check"),
-    "status": ubx.FieldSpec(wire_name="status"),
-}
-
-_Instance_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "read": ubx.FieldSpec(wire_name="read"),
-    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
 class InstanceConfig:
-    ami: Any = None
-    associate_public_ip_address: Any = None
+    # This property is reserved for internal use. If you use it, the stack fails with this error: Bad property set: [Testing this property] (Service: AmazonEC2; Status Code: 400; Error Code: InvalidParameterCombination; Request ID: 0XXXXXX-49c7-4b40-8bcc-76885dcXXXXX).
+    additional_info: Any = None
+    # Indicates whether the instance is associated with a dedicated host. If you want the instance to always restart on the same host on which it was launched, specify host. If you want the instance to restart on any available host, but try to launch onto the last host it ran on (on a best-effort basis), specify default.
+    affinity: Any = None
+    # The Availability Zone of the instance.
     availability_zone: Any = None
-    disable_api_stop: Any = None
-    disable_api_termination: Any = None
-    ebs_optimized: Any = None
-    enable_primary_ipv6: Any = None
-    force_destroy: Any = None
-    get_password_data: Any = None
-    hibernation: Any = None
-    host_id: Any = None
-    host_resource_group_arn: Any = None
-    iam_instance_profile: Any = None
-    id: Any = None
-    instance_initiated_shutdown_behavior: Any = None
-    instance_type: Any = None
-    ipv6_address_count: Any = None
-    ipv6_addresses: Any = None
-    key_name: Any = None
-    monitoring: Any = None
-    placement_group: Any = None
-    placement_group_id: Any = None
-    placement_partition_number: Any = None
-    private_ip: Any = None
-    region: Any = None
-    secondary_private_ips: Any = None
-    security_groups: Any = None
-    source_dest_check: Any = None
-    subnet_id: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    tenancy: Any = None
-    user_data: Any = None
-    user_data_base64: Any = None
-    user_data_replace_on_change: Any = None
-    volume_tags: Any = None
-    vpc_security_group_ids: Any = None
-    capacity_reservation_specification: Any = None
+    # The block device mapping entries that defines the block devices to attach to the instance at launch.
+    block_device_mappings: Any = None
+    # The CPU options for the instance.
     cpu_options: Any = None
+    # The credit option for CPU usage of the burstable performance instance. Valid values are standard and unlimited.
     credit_specification: Any = None
-    ebs_block_device: Any = None
+    # If you set this parameter to true, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can.
+    disable_api_termination: Any = None
+    # Indicates whether the instance is optimized for Amazon EBS I/O.
+    ebs_optimized: Any = None
+    # An elastic GPU to associate with the instance. Amazon Elastic Graphics is no longer available.
+    elastic_gpu_specifications: Any = None
+    # An elastic inference accelerator to associate with the instance. Amazon Elastic Inference is no longer available.
+    elastic_inference_accelerators: Any = None
+    # Indicates whether the instance is enabled for AWS Nitro Enclaves.
     enclave_options: Any = None
-    ephemeral_block_device: Any = None
-    instance_market_options: Any = None
+    # Indicates whether an instance is enabled for hibernation.
+    hibernation_options: Any = None
+    # If you specify host for the Affinity property, the ID of a dedicated host that the instance is associated with. If you don't specify an ID, Amazon EC2 launches the instance onto any available, compatible dedicated host in your account.
+    host_id: Any = None
+    # The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN, omit the Tenancy parameter or set it to host.
+    host_resource_group_arn: Any = None
+    # The IAM instance profile.
+    iam_instance_profile: Any = None
+    # The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch template.
+    image_id: Any = None
+    # Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).
+    instance_initiated_shutdown_behavior: Any = None
+    # The instance type.
+    instance_type: Any = None
+    # [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+    ipv6_address_count: Any = None
+    # [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface.
+    ipv6_addresses: Any = None
+    # The ID of the kernel.
+    kernel_id: Any = None
+    # The name of the key pair.
+    key_name: Any = None
+    # Specifies the launch template and its version to use for configuring the instance at launch, referencing the template by ID or name. (AI-inferred)
     launch_template: Any = None
-    maintenance_options: Any = None
+    # The license configurations.
+    license_specifications: Any = None
+    # Configures the EC2 instance metadata service (IMDS), including whether the metadata endpoint is enabled, whether IMDSv2 tokens are required, the hop limit, and whether instance metadata tags are allowed. (AI-inferred)
     metadata_options: Any = None
-    network_interface: Any = None
-    primary_network_interface: Any = None
+    # Specifies whether detailed monitoring is enabled for the instance.
+    monitoring: Any = None
+    # The network interfaces to associate with the instance.
+    network_interfaces: Any = None
+    # The name of an existing placement group that you want to launch the instance into (cluster | partition | spread).
+    placement_group_name: Any = None
+    # Configures the instance's private DNS hostname behavior, such as the hostname type (resource-name or ip-name) and whether to enable DNS A and AAAA records for the resource name. (AI-inferred)
     private_dns_name_options: Any = None
-    root_block_device: Any = None
-    secondary_network_interface: Any = None
-    timeouts: Any = None
+    # [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
+    private_ip_address: Any = None
+    # Indicates whether to assign the tags from the instance to all of the volumes attached to the instance at launch. If you specify true and you assign tags to the instance, those tags are automatically assigned to all of the volumes that you attach to the instance at launch. If you specify false, those tags are not assigned to the attached volumes.
+    propagate_tags_to_volume_on_creation: Any = None
+    # The ID of the RAM disk to select.
+    ramdisk_id: Any = None
+    # The IDs of the security groups.
+    security_group_ids: Any = None
+    # the names of the security groups. For a nondefault VPC, you must use security group IDs instead.
+    security_groups: Any = None
+    # Specifies whether to enable an instance launched in a VPC to perform NAT.
+    source_dest_check: Any = None
+    # The SSM document and parameter values in AWS Systems Manager to associate with this instance.
+    ssm_associations: Any = None
+    # [EC2-VPC] The ID of the subnet to launch the instance into.
+    subnet_id: Any = None
+    # The tags to add to the instance.
+    tags: Any = None
+    # The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware.
+    tenancy: Any = None
+    # The user data to make available to the instance.
+    user_data: Any = None
+    # The volumes to attach to the instance.
+    volumes: Any = None
+
+@dataclasses.dataclass
+class InstanceAttrs:
+    # This property is reserved for internal use. If you use it, the stack fails with this error: Bad property set: [Testing this property] (Service: AmazonEC2; Status Code: 400; Error Code: InvalidParameterCombination; Request ID: 0XXXXXX-49c7-4b40-8bcc-76885dcXXXXX).
+    additional_info: Any = None
+    # Indicates whether the instance is associated with a dedicated host. If you want the instance to always restart on the same host on which it was launched, specify host. If you want the instance to restart on any available host, but try to launch onto the last host it ran on (on a best-effort basis), specify default.
+    affinity: Any = None
+    # The Availability Zone of the instance.
+    availability_zone: Any = None
+    # The block device mapping entries that defines the block devices to attach to the instance at launch.
+    block_device_mappings: Any = None
+    # The CPU options for the instance.
+    cpu_options: Any = None
+    # The credit option for CPU usage of the burstable performance instance. Valid values are standard and unlimited.
+    credit_specification: Any = None
+    # If you set this parameter to true, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can.
+    disable_api_termination: Any = None
+    # Indicates whether the instance is optimized for Amazon EBS I/O.
+    ebs_optimized: Any = None
+    # An elastic GPU to associate with the instance. Amazon Elastic Graphics is no longer available.
+    elastic_gpu_specifications: Any = None
+    # An elastic inference accelerator to associate with the instance. Amazon Elastic Inference is no longer available.
+    elastic_inference_accelerators: Any = None
+    # Indicates whether the instance is enabled for AWS Nitro Enclaves.
+    enclave_options: Any = None
+    # Indicates whether an instance is enabled for hibernation.
+    hibernation_options: Any = None
+    # If you specify host for the Affinity property, the ID of a dedicated host that the instance is associated with. If you don't specify an ID, Amazon EC2 launches the instance onto any available, compatible dedicated host in your account.
+    host_id: Any = None
+    # The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN, omit the Tenancy parameter or set it to host.
+    host_resource_group_arn: Any = None
+    # The IAM instance profile.
+    iam_instance_profile: Any = None
+    # The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch template.
+    image_id: Any = None
+    # The EC2 Instance ID.
+    instance_id: Any = None
+    # Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).
+    instance_initiated_shutdown_behavior: Any = None
+    # The instance type.
+    instance_type: Any = None
+    # [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+    ipv6_address_count: Any = None
+    # [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface.
+    ipv6_addresses: Any = None
+    # The ID of the kernel.
+    kernel_id: Any = None
+    # The name of the key pair.
+    key_name: Any = None
+    # Specifies the launch template and its version to use for configuring the instance at launch, referencing the template by ID or name. (AI-inferred)
+    launch_template: Any = None
+    # The license configurations.
+    license_specifications: Any = None
+    # Configures the EC2 instance metadata service (IMDS), including whether the metadata endpoint is enabled, whether IMDSv2 tokens are required, the hop limit, and whether instance metadata tags are allowed. (AI-inferred)
+    metadata_options: Any = None
+    # Specifies whether detailed monitoring is enabled for the instance.
+    monitoring: Any = None
+    # The network interfaces to associate with the instance.
+    network_interfaces: Any = None
+    # The name of an existing placement group that you want to launch the instance into (cluster | partition | spread).
+    placement_group_name: Any = None
+    # The private DNS name of the specified instance. For example: ip-10-24-34-0.ec2.internal.
+    private_dns_name: Any = None
+    # Configures the instance's private DNS hostname behavior, such as the hostname type (resource-name or ip-name) and whether to enable DNS A and AAAA records for the resource name. (AI-inferred)
+    private_dns_name_options: Any = None
+    # The private IP address of the specified instance. For example: 10.24.34.0.
+    private_ip: Any = None
+    # [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
+    private_ip_address: Any = None
+    # Indicates whether to assign the tags from the instance to all of the volumes attached to the instance at launch. If you specify true and you assign tags to the instance, those tags are automatically assigned to all of the volumes that you attach to the instance at launch. If you specify false, those tags are not assigned to the attached volumes.
+    propagate_tags_to_volume_on_creation: Any = None
+    # The public DNS name of the specified instance. For example: ec2-107-20-50-45.compute-1.amazonaws.com.
+    public_dns_name: Any = None
+    # The public IP address of the specified instance. For example: 192.0.2.0.
+    public_ip: Any = None
+    # The ID of the RAM disk to select.
+    ramdisk_id: Any = None
+    # The IDs of the security groups.
+    security_group_ids: Any = None
+    # the names of the security groups. For a nondefault VPC, you must use security group IDs instead.
+    security_groups: Any = None
+    # Specifies whether to enable an instance launched in a VPC to perform NAT.
+    source_dest_check: Any = None
+    # The SSM document and parameter values in AWS Systems Manager to associate with this instance.
+    ssm_associations: Any = None
+    # The current state of the instance
+    state: Any = None
+    # [EC2-VPC] The ID of the subnet to launch the instance into.
+    subnet_id: Any = None
+    # The tags to add to the instance.
+    tags: Any = None
+    # The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware.
+    tenancy: Any = None
+    # The user data to make available to the instance.
+    user_data: Any = None
+    # The volumes to attach to the instance.
+    volumes: Any = None
+    # The ID of the VPC that the instance is running in.
+    vpc_id: Any = None
 
 Instance = ubx.ResourceBinding(
     wire_type="aws_instance",
     fields={
-        "ami": ubx.FieldSpec(wire_name="ami"),
-        "associate_public_ip_address": ubx.FieldSpec(wire_name="associate_public_ip_address"),
+        "additional_info": ubx.FieldSpec(wire_name="additional_info"),
+        "affinity": ubx.FieldSpec(wire_name="affinity"),
         "availability_zone": ubx.FieldSpec(wire_name="availability_zone"),
-        "disable_api_stop": ubx.FieldSpec(wire_name="disable_api_stop"),
-        "disable_api_termination": ubx.FieldSpec(wire_name="disable_api_termination"),
-        "ebs_optimized": ubx.FieldSpec(wire_name="ebs_optimized"),
-        "enable_primary_ipv6": ubx.FieldSpec(wire_name="enable_primary_ipv6"),
-        "force_destroy": ubx.FieldSpec(wire_name="force_destroy"),
-        "get_password_data": ubx.FieldSpec(wire_name="get_password_data"),
-        "hibernation": ubx.FieldSpec(wire_name="hibernation"),
-        "host_id": ubx.FieldSpec(wire_name="host_id"),
-        "host_resource_group_arn": ubx.FieldSpec(wire_name="host_resource_group_arn"),
-        "iam_instance_profile": ubx.FieldSpec(wire_name="iam_instance_profile"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "instance_initiated_shutdown_behavior": ubx.FieldSpec(wire_name="instance_initiated_shutdown_behavior"),
-        "instance_type": ubx.FieldSpec(wire_name="instance_type"),
-        "ipv6_address_count": ubx.FieldSpec(wire_name="ipv6_address_count"),
-        "ipv6_addresses": ubx.FieldSpec(wire_name="ipv6_addresses"),
-        "key_name": ubx.FieldSpec(wire_name="key_name"),
-        "monitoring": ubx.FieldSpec(wire_name="monitoring"),
-        "placement_group": ubx.FieldSpec(wire_name="placement_group"),
-        "placement_group_id": ubx.FieldSpec(wire_name="placement_group_id"),
-        "placement_partition_number": ubx.FieldSpec(wire_name="placement_partition_number"),
-        "private_ip": ubx.FieldSpec(wire_name="private_ip"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "secondary_private_ips": ubx.FieldSpec(wire_name="secondary_private_ips"),
-        "security_groups": ubx.FieldSpec(wire_name="security_groups"),
-        "source_dest_check": ubx.FieldSpec(wire_name="source_dest_check"),
-        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "tenancy": ubx.FieldSpec(wire_name="tenancy"),
-        "user_data": ubx.FieldSpec(wire_name="user_data"),
-        "user_data_base64": ubx.FieldSpec(wire_name="user_data_base64"),
-        "user_data_replace_on_change": ubx.FieldSpec(wire_name="user_data_replace_on_change"),
-        "volume_tags": ubx.FieldSpec(wire_name="volume_tags"),
-        "vpc_security_group_ids": ubx.FieldSpec(wire_name="vpc_security_group_ids"),
-        "capacity_reservation_specification": ubx.FieldSpec(
-            wire_name="capacity_reservation_specification",
+        "block_device_mappings": ubx.FieldSpec(
+            wire_name="block_device_mappings",
             kind="list",
-            fields=_Instance_CapacityReservationSpecificationFields,
+            fields=_Instance_BlockDeviceMappingsFields,
         ),
         "cpu_options": ubx.FieldSpec(
             wire_name="cpu_options",
-            kind="list",
+            kind="object",
             fields=_Instance_CpuOptionsFields,
         ),
         "credit_specification": ubx.FieldSpec(
             wire_name="credit_specification",
-            kind="list",
+            kind="object",
             fields=_Instance_CreditSpecificationFields,
         ),
-        "ebs_block_device": ubx.FieldSpec(
-            wire_name="ebs_block_device",
-            kind="set",
-            fields=_Instance_EbsBlockDeviceFields,
+        "disable_api_termination": ubx.FieldSpec(wire_name="disable_api_termination"),
+        "ebs_optimized": ubx.FieldSpec(wire_name="ebs_optimized"),
+        "elastic_gpu_specifications": ubx.FieldSpec(
+            wire_name="elastic_gpu_specifications",
+            kind="list",
+            fields=_Instance_ElasticGpuSpecificationsFields,
+        ),
+        "elastic_inference_accelerators": ubx.FieldSpec(
+            wire_name="elastic_inference_accelerators",
+            kind="list",
+            fields=_Instance_ElasticInferenceAcceleratorsFields,
         ),
         "enclave_options": ubx.FieldSpec(
             wire_name="enclave_options",
-            kind="list",
+            kind="object",
             fields=_Instance_EnclaveOptionsFields,
         ),
-        "ephemeral_block_device": ubx.FieldSpec(
-            wire_name="ephemeral_block_device",
-            kind="set",
-            fields=_Instance_EphemeralBlockDeviceFields,
+        "hibernation_options": ubx.FieldSpec(
+            wire_name="hibernation_options",
+            kind="object",
+            fields=_Instance_HibernationOptionsFields,
         ),
-        "instance_market_options": ubx.FieldSpec(
-            wire_name="instance_market_options",
+        "host_id": ubx.FieldSpec(wire_name="host_id"),
+        "host_resource_group_arn": ubx.FieldSpec(wire_name="host_resource_group_arn"),
+        "iam_instance_profile": ubx.FieldSpec(wire_name="iam_instance_profile"),
+        "image_id": ubx.FieldSpec(wire_name="image_id"),
+        "instance_initiated_shutdown_behavior": ubx.FieldSpec(wire_name="instance_initiated_shutdown_behavior"),
+        "instance_type": ubx.FieldSpec(wire_name="instance_type"),
+        "ipv6_address_count": ubx.FieldSpec(wire_name="ipv6_address_count"),
+        "ipv6_addresses": ubx.FieldSpec(
+            wire_name="ipv6_addresses",
             kind="list",
-            fields=_Instance_InstanceMarketOptionsFields,
+            fields=_Instance_Ipv6AddressesFields,
         ),
+        "kernel_id": ubx.FieldSpec(wire_name="kernel_id"),
+        "key_name": ubx.FieldSpec(wire_name="key_name"),
         "launch_template": ubx.FieldSpec(
             wire_name="launch_template",
-            kind="list",
+            kind="object",
             fields=_Instance_LaunchTemplateFields,
         ),
-        "maintenance_options": ubx.FieldSpec(
-            wire_name="maintenance_options",
+        "license_specifications": ubx.FieldSpec(
+            wire_name="license_specifications",
             kind="list",
-            fields=_Instance_MaintenanceOptionsFields,
+            fields=_Instance_LicenseSpecificationsFields,
         ),
         "metadata_options": ubx.FieldSpec(
             wire_name="metadata_options",
-            kind="list",
+            kind="object",
             fields=_Instance_MetadataOptionsFields,
         ),
-        "network_interface": ubx.FieldSpec(
-            wire_name="network_interface",
-            kind="set",
-            fields=_Instance_NetworkInterfaceFields,
-        ),
-        "primary_network_interface": ubx.FieldSpec(
-            wire_name="primary_network_interface",
+        "monitoring": ubx.FieldSpec(wire_name="monitoring"),
+        "network_interfaces": ubx.FieldSpec(
+            wire_name="network_interfaces",
             kind="list",
-            fields=_Instance_PrimaryNetworkInterfaceFields,
+            fields=_Instance_NetworkInterfacesFields,
         ),
+        "placement_group_name": ubx.FieldSpec(wire_name="placement_group_name"),
         "private_dns_name_options": ubx.FieldSpec(
             wire_name="private_dns_name_options",
-            kind="list",
+            kind="object",
             fields=_Instance_PrivateDnsNameOptionsFields,
         ),
-        "root_block_device": ubx.FieldSpec(
-            wire_name="root_block_device",
+        "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+        "propagate_tags_to_volume_on_creation": ubx.FieldSpec(wire_name="propagate_tags_to_volume_on_creation"),
+        "ramdisk_id": ubx.FieldSpec(wire_name="ramdisk_id"),
+        "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
+        "security_groups": ubx.FieldSpec(wire_name="security_groups"),
+        "source_dest_check": ubx.FieldSpec(wire_name="source_dest_check"),
+        "ssm_associations": ubx.FieldSpec(
+            wire_name="ssm_associations",
             kind="list",
-            fields=_Instance_RootBlockDeviceFields,
+            fields=_Instance_SsmAssociationsFields,
         ),
-        "secondary_network_interface": ubx.FieldSpec(
-            wire_name="secondary_network_interface",
-            kind="set",
-            fields=_Instance_SecondaryNetworkInterfaceFields,
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Instance_TagsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Instance_TimeoutsFields,
+        "tenancy": ubx.FieldSpec(wire_name="tenancy"),
+        "user_data": ubx.FieldSpec(wire_name="user_data"),
+        "volumes": ubx.FieldSpec(
+            wire_name="volumes",
+            kind="list",
+            fields=_Instance_VolumesFields,
         ),
     },
 )

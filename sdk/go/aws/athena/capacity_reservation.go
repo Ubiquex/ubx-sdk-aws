@@ -3,37 +3,85 @@ package athena
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type CapacityReservation_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignments struct {
+	// Specifies the list of Athena workgroup names assigned to this capacity reservation for query processing. (AI-inferred)
+	WorkgroupNames any
 }
 
-var CapacityReservation_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+type CapacityReservation_CapacityAssignmentConfiguration struct {
+	// List of capacity assignments
+	CapacityAssignments any
+}
+
+type CapacityReservation_Tags struct {
+	Key any
+	// Specifies the value of an arbitrary user-defined tag key assigned to an AWS Athena capacity reservation, allowing metadata-based management and categorization of the reservation. (AI-inferred)
+	Value any
+}
+
+var CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignmentsFields = ubx.FieldMap{
+		"WorkgroupNames": ubx.FieldSpec{WireName: "workgroup_names"},
+	}
+
+var CapacityReservation_CapacityAssignmentConfigurationFields = ubx.FieldMap{
+		"CapacityAssignments": ubx.FieldSpec{
+			WireName: "capacity_assignments",
+			Kind: "list",
+			Fields: CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignmentsFields,
+		},
+	}
+
+var CapacityReservation_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type CapacityReservationConfig struct {
+	// Assignment configuration to assign workgroups to a reservation
+	CapacityAssignmentConfiguration any
+	// The reservation name.
 	Name any
-	Region any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
+	// The number of DPUs to request to be allocated to the reservation.
 	TargetDpus any
-	Timeouts any
+}
+
+type CapacityReservationAttrs struct {
+	// The number of DPUs Athena has provisioned and allocated for the reservation
+	AllocatedDpus any
+	// The Amazon Resource Name (ARN) of the specified capacity reservation
+	Arn any
+	// Assignment configuration to assign workgroups to a reservation
+	CapacityAssignmentConfiguration any
+	// The date and time the reservation was created.
+	CreationTime any
+	// The timestamp when the last successful allocated was made
+	LastSuccessfulAllocationTime any
+	// The reservation name.
+	Name any
+	// The current lifecycle state of the Athena capacity reservation (e.g., PENDING, ACTIVE, CANCELLING), updated automatically by AWS and not settable by the user. (AI-inferred)
+	Status any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// The number of DPUs to request to be allocated to the reservation.
+	TargetDpus any
 }
 
 var CapacityReservation = ubx.ResourceBinding{
 	WireType: "aws_athena_capacity_reservation",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TargetDpus": ubx.FieldSpec{WireName: "target_dpus"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"CapacityAssignmentConfiguration": ubx.FieldSpec{
+			WireName: "capacity_assignment_configuration",
 			Kind: "object",
-			Fields: CapacityReservation_TimeoutsFields,
+			Fields: CapacityReservation_CapacityAssignmentConfigurationFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: CapacityReservation_TagsFields,
+		},
+		"TargetDpus": ubx.FieldSpec{WireName: "target_dpus"},
 	},
 }

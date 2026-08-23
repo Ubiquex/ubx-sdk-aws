@@ -3,47 +3,58 @@ package ecr
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type RegistryScanningConfiguration_Rule_RepositoryFilter struct {
+type RegistryScanningConfiguration_Rules_RepositoryFilters struct {
+	// The repository name pattern (such as 'example' or 'prod/*') that the scanning rule uses to match which repositories it applies to. (AI-inferred)
 	Filter any
+	// Specifies the type of repository filter (e.g., WILDCARD) used to match repository names for the ECR scanning rule. (AI-inferred)
 	FilterType any
 }
 
-type RegistryScanningConfiguration_Rule struct {
+type RegistryScanningConfiguration_Rules struct {
+	// Defines which repositories a scanning rule applies to by listing repository filters, each with a filter pattern (e.g., a name or wildcard expression) and a filter type (WILDCARD or EXACT) that tells ECR how to match repository names. (AI-inferred)
+	RepositoryFilters any
+	// Specifies the frequency at which ECR scans images in repositories that match this rule, either on each image push (SCAN_ON_PUSH) or continuously (CONTINUOUS_SCAN). (AI-inferred)
 	ScanFrequency any
-	RepositoryFilter any
 }
 
-var RegistryScanningConfiguration_Rule_RepositoryFilterFields = ubx.FieldMap{
+var RegistryScanningConfiguration_Rules_RepositoryFiltersFields = ubx.FieldMap{
 		"Filter": ubx.FieldSpec{WireName: "filter"},
 		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
 	}
 
-var RegistryScanningConfiguration_RuleFields = ubx.FieldMap{
-		"ScanFrequency": ubx.FieldSpec{WireName: "scan_frequency"},
-		"RepositoryFilter": ubx.FieldSpec{
-			WireName: "repository_filter",
-			Kind: "set",
-			Fields: RegistryScanningConfiguration_Rule_RepositoryFilterFields,
+var RegistryScanningConfiguration_RulesFields = ubx.FieldMap{
+		"RepositoryFilters": ubx.FieldSpec{
+			WireName: "repository_filters",
+			Kind: "list",
+			Fields: RegistryScanningConfiguration_Rules_RepositoryFiltersFields,
 		},
+		"ScanFrequency": ubx.FieldSpec{WireName: "scan_frequency"},
 	}
 
 type RegistryScanningConfigurationConfig struct {
-	Id any
-	Region any
+	// The scanning rules associated with the registry. A registry scanning configuration may contain a maximum of 2 rules.
+	Rules any
+	// The type of scanning configured for the registry.
 	ScanType any
-	Rule any
+}
+
+type RegistryScanningConfigurationAttrs struct {
+	// The registry id.
+	RegistryId any
+	// The scanning rules associated with the registry. A registry scanning configuration may contain a maximum of 2 rules.
+	Rules any
+	// The type of scanning configured for the registry.
+	ScanType any
 }
 
 var RegistryScanningConfiguration = ubx.ResourceBinding{
 	WireType: "aws_ecr_registry_scanning_configuration",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ScanType": ubx.FieldSpec{WireName: "scan_type"},
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "set",
-			Fields: RegistryScanningConfiguration_RuleFields,
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: RegistryScanningConfiguration_RulesFields,
 		},
+		"ScanType": ubx.FieldSpec{WireName: "scan_type"},
 	},
 }

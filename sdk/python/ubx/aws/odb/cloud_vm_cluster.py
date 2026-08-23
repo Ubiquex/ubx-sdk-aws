@@ -8,15 +8,47 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudVmCluster_DataCollectionOptions:
+    # Indicates whether diagnostic collection is enabled for the VM cluster.
     is_diagnostics_events_enabled: Any = None
+    # Indicates whether health monitoring is enabled for the VM cluster.
     is_health_monitoring_enabled: Any = None
+    # Indicates whether incident logs are enabled for the cloud VM cluster.
     is_incident_logs_enabled: Any = None
 
 @dataclasses.dataclass
-class CloudVmCluster_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class CloudVmCluster_DbNodes_Tags:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class CloudVmCluster_DbNodes:
+    backup_ip_id: Any = None
+    # The Oracle Cloud Identifier (OCID) of the second backup virtual network interface card (VNIC) assigned to the database node in the cloud VM cluster. (AI-inferred)
+    backup_vnic2_id: Any = None
+    # Specifies the number of CPU cores allocated to each database node in the cloud VM cluster. (AI-inferred)
+    cpu_core_count: Any = None
+    db_node_arn: Any = None
+    db_node_id: Any = None
+    db_node_storage_size_in_gbs: Any = None
+    db_server_id: Any = None
+    db_system_id: Any = None
+    host_ip_id: Any = None
+    hostname: Any = None
+    # Specifies the memory size in gigabytes to allocate to each database node in the cloud VM cluster. (AI-inferred)
+    memory_size_in_gbs: Any = None
+    # For each database node in the Cloud VM Cluster, this field contains the node's Oracle Cloud Identifier (OCID), which uniquely identifies the node within Oracle Cloud Infrastructure. (AI-inferred)
+    ocid: Any = None
+    status: Any = None
+    tags: Any = None
+    # The `vnic2_id` field stores the OCID (unique identifier) of the secondary virtual network interface (VNIC) attached to the database node, providing an additional network connection for that node. (AI-inferred)
+    vnic2_id: Any = None
+    vnic_id: Any = None
+
+@dataclasses.dataclass
+class CloudVmCluster_IamRoles:
+    aws_integration: Any = None
+    iam_role_arn: Any = None
+    status: Any = None
 
 _CloudVmCluster_DataCollectionOptionsFields = {
     "is_diagnostics_events_enabled": ubx.FieldSpec(wire_name="is_diagnostics_events_enabled"),
@@ -24,71 +56,161 @@ _CloudVmCluster_DataCollectionOptionsFields = {
     "is_incident_logs_enabled": ubx.FieldSpec(wire_name="is_incident_logs_enabled"),
 }
 
-_CloudVmCluster_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_CloudVmCluster_DbNodes_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class CloudVmClusterConfig:
-    cloud_exadata_infrastructure_arn: Any = None
+    # The unique identifier of the Exadata infrastructure that this VM cluster belongs to.
     cloud_exadata_infrastructure_id: Any = None
+    # The name of the Grid Infrastructure (GI) cluster.
     cluster_name: Any = None
+    # The number of CPU cores enabled on the VM cluster.
     cpu_core_count: Any = None
-    data_storage_size_in_tbs: Any = None
-    db_node_storage_size_in_gbs: Any = None
-    db_servers: Any = None
-    display_name: Any = None
-    gi_version: Any = None
-    hostname_prefix: Any = None
-    is_local_backup_enabled: Any = None
-    is_sparse_diskgroup_enabled: Any = None
-    license_model: Any = None
-    memory_size_in_gbs: Any = None
-    odb_network_arn: Any = None
-    odb_network_id: Any = None
-    region: Any = None
-    scan_listener_port_tcp: Any = None
-    ssh_public_keys: Any = None
-    tags: Any = None
-    timezone: Any = None
+    # Information about the data collection options enabled for a VM cluster.
     data_collection_options: Any = None
-    timeouts: Any = None
+    # The size of the data disk group, in terabytes (TB), that's allocated for the VM cluster.
+    data_storage_size_in_tbs: Any = None
+    # The amount of local node storage, in gigabytes (GB), that's allocated for the VM cluster.
+    db_node_storage_size_in_gbs: Any = None
+    # The list of database servers for the VM cluster.
+    db_servers: Any = None
+    # The user-friendly name for the VM cluster.
+    display_name: Any = None
+    # The software version of the Oracle Grid Infrastructure (GI) for the VM cluster.
+    gi_version: Any = None
+    # The host name for the VM cluster.
+    hostname: Any = None
+    # Indicates whether database backups to local Exadata storage is enabled for the VM cluster.
+    is_local_backup_enabled: Any = None
+    # Indicates whether the VM cluster is configured with a sparse disk group.
+    is_sparse_diskgroup_enabled: Any = None
+    # The Oracle license model applied to the VM cluster.
+    license_model: Any = None
+    # The amount of memory, in gigabytes (GB), that's allocated for the VM cluster.
+    memory_size_in_gbs: Any = None
+    # The unique identifier of the ODB network for the VM cluster.
+    odb_network_id: Any = None
+    # Property description not available.
+    scan_listener_port_tcp: Any = None
+    # The public key portion of one or more key pairs used for SSH access to the VM cluster.
+    ssh_public_keys: Any = None
+    # The operating system version of the image chosen for the VM cluster.
+    system_version: Any = None
+    # Tags to assign to the Vm Cluster.
+    tags: Any = None
+    # The time zone of the VM cluster.
+    time_zone: Any = None
+
+@dataclasses.dataclass
+class CloudVmClusterAttrs:
+    # The unique identifier of the Exadata infrastructure that this VM cluster belongs to.
+    cloud_exadata_infrastructure_id: Any = None
+    # The Amazon Resource Name (ARN) of the VM cluster.
+    cloud_vm_cluster_arn: Any = None
+    # The unique identifier of the VM cluster.
+    cloud_vm_cluster_id: Any = None
+    # The name of the Grid Infrastructure (GI) cluster.
+    cluster_name: Any = None
+    # The OCI model compute model used when you create or clone an instance: ECPU or OCPU. An ECPU is an abstracted measure of compute resources. ECPUs are based on the number of cores elastically allocated from a pool of compute and storage servers. An OCPU is a legacy physical measure of compute resources. OCPUs are based on the physical core of a processor with hyper-threading enabled.
+    compute_model: Any = None
+    # The number of CPU cores enabled on the VM cluster.
+    cpu_core_count: Any = None
+    # Information about the data collection options enabled for a VM cluster.
+    data_collection_options: Any = None
+    # The size of the data disk group, in terabytes (TB), that's allocated for the VM cluster.
+    data_storage_size_in_tbs: Any = None
+    # The amount of local node storage, in gigabytes (GB), that's allocated for the VM cluster.
+    db_node_storage_size_in_gbs: Any = None
+    # The DB nodes that are implicitly created and managed as part of this VM Cluster.
+    db_nodes: Any = None
+    # The list of database servers for the VM cluster.
+    db_servers: Any = None
+    # The type of redundancy configured for the VM cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
+    disk_redundancy: Any = None
+    # The user-friendly name for the VM cluster.
+    display_name: Any = None
+    # The domain of the VM cluster.
+    domain: Any = None
+    # The software version of the Oracle Grid Infrastructure (GI) for the VM cluster.
+    gi_version: Any = None
+    # The host name for the VM cluster.
+    hostname: Any = None
+    # The AWS Identity and Access Management (IAM) service roles associated with the VM cluster.
+    iam_roles: Any = None
+    # Indicates whether database backups to local Exadata storage is enabled for the VM cluster.
+    is_local_backup_enabled: Any = None
+    # Indicates whether the VM cluster is configured with a sparse disk group.
+    is_sparse_diskgroup_enabled: Any = None
+    # The Oracle license model applied to the VM cluster.
+    license_model: Any = None
+    # The port number configured for the listener on the VM cluster.
+    listener_port: Any = None
+    # The amount of memory, in gigabytes (GB), that's allocated for the VM cluster.
+    memory_size_in_gbs: Any = None
+    # The number of nodes in the VM cluster.
+    node_count: Any = None
+    # The name of the OCI resource anchor for the VM cluster.
+    oci_resource_anchor_name: Any = None
+    # The HTTPS link to the VM cluster in OCI.
+    oci_url: Any = None
+    # The OCID of the VM cluster.
+    ocid: Any = None
+    # The unique identifier of the ODB network for the VM cluster.
+    odb_network_id: Any = None
+    # The FQDN of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.
+    scan_dns_name: Any = None
+    # The OCID of the SCAN IP addresses that are associated with the VM cluster.
+    scan_ip_ids: Any = None
+    # Property description not available.
+    scan_listener_port_tcp: Any = None
+    # The hardware model name of the Exadata infrastructure that's running the VM cluster.
+    shape: Any = None
+    # The public key portion of one or more key pairs used for SSH access to the VM cluster.
+    ssh_public_keys: Any = None
+    # The amount of local node storage, in gigabytes (GB), that's allocated to the VM cluster.
+    storage_size_in_gbs: Any = None
+    # The operating system version of the image chosen for the VM cluster.
+    system_version: Any = None
+    # Tags to assign to the Vm Cluster.
+    tags: Any = None
+    # The time zone of the VM cluster.
+    time_zone: Any = None
+    # The virtual IP (VIP) addresses that are associated with the VM cluster. Oracle's Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the VM cluster to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+    vip_ids: Any = None
 
 CloudVmCluster = ubx.ResourceBinding(
     wire_type="aws_odb_cloud_vm_cluster",
     fields={
-        "cloud_exadata_infrastructure_arn": ubx.FieldSpec(wire_name="cloud_exadata_infrastructure_arn"),
         "cloud_exadata_infrastructure_id": ubx.FieldSpec(wire_name="cloud_exadata_infrastructure_id"),
         "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
         "cpu_core_count": ubx.FieldSpec(wire_name="cpu_core_count"),
+        "data_collection_options": ubx.FieldSpec(
+            wire_name="data_collection_options",
+            kind="object",
+            fields=_CloudVmCluster_DataCollectionOptionsFields,
+        ),
         "data_storage_size_in_tbs": ubx.FieldSpec(wire_name="data_storage_size_in_tbs"),
         "db_node_storage_size_in_gbs": ubx.FieldSpec(wire_name="db_node_storage_size_in_gbs"),
         "db_servers": ubx.FieldSpec(wire_name="db_servers"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "gi_version": ubx.FieldSpec(wire_name="gi_version"),
-        "hostname_prefix": ubx.FieldSpec(wire_name="hostname_prefix"),
+        "hostname": ubx.FieldSpec(wire_name="hostname"),
         "is_local_backup_enabled": ubx.FieldSpec(wire_name="is_local_backup_enabled"),
         "is_sparse_diskgroup_enabled": ubx.FieldSpec(wire_name="is_sparse_diskgroup_enabled"),
         "license_model": ubx.FieldSpec(wire_name="license_model"),
         "memory_size_in_gbs": ubx.FieldSpec(wire_name="memory_size_in_gbs"),
-        "odb_network_arn": ubx.FieldSpec(wire_name="odb_network_arn"),
         "odb_network_id": ubx.FieldSpec(wire_name="odb_network_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "scan_listener_port_tcp": ubx.FieldSpec(wire_name="scan_listener_port_tcp"),
         "ssh_public_keys": ubx.FieldSpec(wire_name="ssh_public_keys"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "timezone": ubx.FieldSpec(wire_name="timezone"),
-        "data_collection_options": ubx.FieldSpec(
-            wire_name="data_collection_options",
+        "system_version": ubx.FieldSpec(wire_name="system_version"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_CloudVmCluster_DataCollectionOptionsFields,
+            fields=_CloudVmCluster_DbNodes_TagsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_CloudVmCluster_TimeoutsFields,
-        ),
+        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
     },
 )

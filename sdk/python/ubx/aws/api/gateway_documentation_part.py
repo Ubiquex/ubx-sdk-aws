@@ -8,10 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayDocumentationPart_Location:
+    # Specifies the HTTP method (e.g., GET, POST) of the API method that this documentation part applies to, used when the location type is METHOD or a method-specific entity. (AI-inferred)
     method: Any = None
+    # The name of the targeted API entity (such as an authorizer, model, path parameter, query parameter, header, or body) that this documentation part applies to, required for location types that identify a specific entity by name. (AI-inferred)
     name: Any = None
+    # The URL path of the API resource (e.g., /pets) to which this documentation part applies, used when the location type is PATH or RESOURCE. (AI-inferred)
     path: Any = None
+    # Specifies the HTTP status code (e.g., 200, 404) of the API response for which this documentation part applies, used when the location type is set to RESPONSE or RESPONSE_BODY. (AI-inferred)
     status_code: Any = None
+    # Specifies the type of API entity (such as API, METHOD, MODEL, RESOURCE, AUTHORIZER, QUERY_PARAMETER, REQUEST_BODY, or HTTP_METHOD) that the documentation part targets, determining which component of the API the documentation describes. (AI-inferred)
     type: Any = None
 
 _GatewayDocumentationPart_LocationFields = {
@@ -24,23 +29,33 @@ _GatewayDocumentationPart_LocationFields = {
 
 @dataclasses.dataclass
 class GatewayDocumentationPartConfig:
-    id: Any = None
-    properties: Any = None
-    region: Any = None
-    rest_api_id: Any = None
+    # The ``Location`` property specifies the location of the Amazon API Gateway API entity that the documentation applies to. ``Location`` is a property of the [AWS::ApiGateway::DocumentationPart](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html) resource. For more information about each property, including constraints and valid values, see [DocumentationPart](https://docs.aws.amazon.com/apigateway/latest/api/API_DocumentationPartLocation.html) in the *Amazon API Gateway REST API Reference*.
     location: Any = None
+    # The documentation content (plain text or Markdown) that describes the targeted API entity, as defined by the Location, and is displayed by API Gateway. (AI-inferred)
+    properties: Any = None
+    # The identifier of the API Gateway REST API to which this documentation part belongs. (AI-inferred)
+    rest_api_id: Any = None
+
+@dataclasses.dataclass
+class GatewayDocumentationPartAttrs:
+    # This read-only attribute contains the unique ID that Amazon API Gateway assigns to the documentation part when it is created. (AI-inferred)
+    documentation_part_id: Any = None
+    # The ``Location`` property specifies the location of the Amazon API Gateway API entity that the documentation applies to. ``Location`` is a property of the [AWS::ApiGateway::DocumentationPart](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html) resource. For more information about each property, including constraints and valid values, see [DocumentationPart](https://docs.aws.amazon.com/apigateway/latest/api/API_DocumentationPartLocation.html) in the *Amazon API Gateway REST API Reference*.
+    location: Any = None
+    # The documentation content (plain text or Markdown) that describes the targeted API entity, as defined by the Location, and is displayed by API Gateway. (AI-inferred)
+    properties: Any = None
+    # The identifier of the API Gateway REST API to which this documentation part belongs. (AI-inferred)
+    rest_api_id: Any = None
 
 GatewayDocumentationPart = ubx.ResourceBinding(
     wire_type="aws_api_gateway_documentation_part",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "properties": ubx.FieldSpec(wire_name="properties"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "rest_api_id": ubx.FieldSpec(wire_name="rest_api_id"),
         "location": ubx.FieldSpec(
             wire_name="location",
-            kind="list",
+            kind="object",
             fields=_GatewayDocumentationPart_LocationFields,
         ),
+        "properties": ubx.FieldSpec(wire_name="properties"),
+        "rest_api_id": ubx.FieldSpec(wire_name="rest_api_id"),
     },
 )

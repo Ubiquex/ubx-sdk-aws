@@ -3,31 +3,42 @@ package rekognition
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Collection_Timeouts struct {
-	Create any
+type Collection_Tags struct {
+	// The key of a user-defined tag applied to the Amazon Rekognition collection, used for organizing and managing the resource. (AI-inferred)
+	Key any
+	// The value portion of a user-defined tag attached to the Rekognition collection, used to add metadata for organizing and identifying the resource. (AI-inferred)
+	Value any
 }
 
-var Collection_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
+var Collection_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type CollectionConfig struct {
+	// The name of the collection
 	CollectionId any
-	Region any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	Timeouts any
+}
+
+type CollectionAttrs struct {
+	// The Amazon Resource Name (ARN) assigned by AWS to uniquely identify this Rekognition collection across the service. (AI-inferred)
+	Arn any
+	// The name of the collection
+	CollectionId any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Collection = ubx.ResourceBinding{
 	WireType: "aws_rekognition_collection",
 	Fields: ubx.FieldMap{
 		"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Collection_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Collection_TagsFields,
 		},
 	},
 }

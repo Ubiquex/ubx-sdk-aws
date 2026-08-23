@@ -4,79 +4,147 @@ package odb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudExadataInfrastructure_CustomerContactsToSendToOci struct {
+	// The email address of a customer contact that Oracle Cloud Infrastructure (OCI) will send notifications to regarding this Exadata infrastructure. (AI-inferred)
 	Email any
 }
 
-type CloudExadataInfrastructure_MaintenanceWindow_DaysOfWeek struct {
-	Name any
-}
-
 type CloudExadataInfrastructure_MaintenanceWindow struct {
+	// The timeout duration for custom actions in minutes.
 	CustomActionTimeoutInMins any
+	// The days of the week when maintenance can be performed.
 	DaysOfWeek any
+	// The hours of the day when maintenance can be performed.
 	HoursOfDay any
+	// Indicates whether custom action timeout is enabled.
 	IsCustomActionTimeoutEnabled any
+	// The lead time in weeks before the maintenance window.
 	LeadTimeInWeeks any
+	// The months when maintenance can be performed.
 	Months any
+	// The patching mode for the maintenance window.
 	PatchingMode any
+	// The preference for the maintenance window scheduling.
 	Preference any
+	// The weeks of the month when maintenance can be performed.
 	WeeksOfMonth any
 }
 
-type CloudExadataInfrastructure_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type CloudExadataInfrastructure_Tags struct {
+	Key any
+	Value any
 }
 
 var CloudExadataInfrastructure_CustomerContactsToSendToOciFields = ubx.FieldMap{
 		"Email": ubx.FieldSpec{WireName: "email"},
 	}
 
-var CloudExadataInfrastructure_MaintenanceWindow_DaysOfWeekFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
-
 var CloudExadataInfrastructure_MaintenanceWindowFields = ubx.FieldMap{
 		"CustomActionTimeoutInMins": ubx.FieldSpec{WireName: "custom_action_timeout_in_mins"},
-		"DaysOfWeek": ubx.FieldSpec{
-			WireName: "days_of_week",
-			Kind: "set",
-			Fields: CloudExadataInfrastructure_MaintenanceWindow_DaysOfWeekFields,
-		},
+		"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
 		"HoursOfDay": ubx.FieldSpec{WireName: "hours_of_day"},
 		"IsCustomActionTimeoutEnabled": ubx.FieldSpec{WireName: "is_custom_action_timeout_enabled"},
 		"LeadTimeInWeeks": ubx.FieldSpec{WireName: "lead_time_in_weeks"},
-		"Months": ubx.FieldSpec{
-			WireName: "months",
-			Kind: "set",
-			Fields: CloudExadataInfrastructure_MaintenanceWindow_DaysOfWeekFields,
-		},
+		"Months": ubx.FieldSpec{WireName: "months"},
 		"PatchingMode": ubx.FieldSpec{WireName: "patching_mode"},
 		"Preference": ubx.FieldSpec{WireName: "preference"},
 		"WeeksOfMonth": ubx.FieldSpec{WireName: "weeks_of_month"},
 	}
 
-var CloudExadataInfrastructure_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var CloudExadataInfrastructure_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type CloudExadataInfrastructureConfig struct {
+	// The name of the Availability Zone (AZ) where the Exadata infrastructure is located.
 	AvailabilityZone any
+	// The AZ ID of the AZ where the Exadata infrastructure is located.
 	AvailabilityZoneId any
+	// The number of database servers for the Exadata infrastructure.
 	ComputeCount any
+	// The email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure.
 	CustomerContactsToSendToOci any
+	// The database server model type of the Exadata infrastructure. For the list of valid model names, use the ListDbSystemShapes operation.
 	DatabaseServerType any
+	// The user-friendly name for the Exadata infrastructure.
 	DisplayName any
-	Region any
-	Shape any
-	StorageCount any
-	StorageServerType any
-	Tags any
+	// The scheduling details for the maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow any
-	Timeouts any
+	// The model name of the Exadata infrastructure.
+	Shape any
+	// The number of storage servers that are activated for the Exadata infrastructure.
+	StorageCount any
+	// The storage server model type of the Exadata infrastructure. For the list of valid model names, use the ListDbSystemShapes operation.
+	StorageServerType any
+	// Tags to assign to the Exadata Infrastructure.
+	Tags any
+}
+
+type CloudExadataInfrastructureAttrs struct {
+	// The number of storage servers requested for the Exadata infrastructure.
+	ActivatedStorageCount any
+	// The number of storage servers requested for the Exadata infrastructure.
+	AdditionalStorageCount any
+	// The name of the Availability Zone (AZ) where the Exadata infrastructure is located.
+	AvailabilityZone any
+	// The AZ ID of the AZ where the Exadata infrastructure is located.
+	AvailabilityZoneId any
+	// The amount of available storage, in gigabytes (GB), for the Exadata infrastructure.
+	AvailableStorageSizeInGbs any
+	// The Amazon Resource Name (ARN) for the Exadata infrastructure.
+	CloudExadataInfrastructureArn any
+	// The unique identifier for the Exadata infrastructure.
+	CloudExadataInfrastructureId any
+	// The number of database servers for the Exadata infrastructure.
+	ComputeCount any
+	// The OCI model compute model used when you create or clone an instance: ECPU or OCPU. An ECPU is an abstracted measure of compute resources. ECPUs are based on the number of cores elastically allocated from a pool of compute and storage servers. An OCPU is a legacy physical measure of compute resources. OCPUs are based on the physical core of a processor with hyper-threading enabled.
+	ComputeModel any
+	// The total number of CPU cores that are allocated to the Exadata infrastructure.
+	CpuCount any
+	// The email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure.
+	CustomerContactsToSendToOci any
+	// The size of the Exadata infrastructure's data disk group, in terabytes (TB).
+	DataStorageSizeInTbs any
+	// The database server model type of the Exadata infrastructure. For the list of valid model names, use the ListDbSystemShapes operation.
+	DatabaseServerType any
+	// The size of the Exadata infrastructure's local node storage, in gigabytes (GB).
+	DbNodeStorageSizeInGbs any
+	// The list of database server identifiers for the Exadata infrastructure.
+	DbServerIds any
+	// The software version of the database servers (dom0) in the Exadata infrastructure.
+	DbServerVersion any
+	// The user-friendly name for the Exadata infrastructure.
+	DisplayName any
+	// The scheduling details for the maintenance window. Patching and system updates take place during the maintenance window.
+	MaintenanceWindow any
+	// The total number of CPU cores available on the Exadata infrastructure.
+	MaxCpuCount any
+	// The total amount of data disk group storage, in terabytes (TB), that's available on the Exadata infrastructure.
+	MaxDataStorageInTbs any
+	// The total amount of local node storage, in gigabytes (GB), that's available on the Exadata infrastructure.
+	MaxDbNodeStorageSizeInGbs any
+	// The total amount of memory, in gigabytes (GB), that's available on the Exadata infrastructure.
+	MaxMemoryInGbs any
+	// The amount of memory, in gigabytes (GB), that's allocated on the Exadata infrastructure.
+	MemorySizeInGbs any
+	// The name of the OCI resource anchor for the Exadata infrastructure.
+	OciResourceAnchorName any
+	// The HTTPS link to the Exadata infrastructure in OCI.
+	OciUrl any
+	// The OCID of the Exadata infrastructure.
+	Ocid any
+	// The model name of the Exadata infrastructure.
+	Shape any
+	// The number of storage servers that are activated for the Exadata infrastructure.
+	StorageCount any
+	// The storage server model type of the Exadata infrastructure. For the list of valid model names, use the ListDbSystemShapes operation.
+	StorageServerType any
+	// The software version of the storage servers on the Exadata infrastructure.
+	StorageServerVersion any
+	// Tags to assign to the Exadata Infrastructure.
+	Tags any
+	// The total amount of storage, in gigabytes (GB), on the the Exadata infrastructure.
+	TotalStorageSizeInGbs any
 }
 
 var CloudExadataInfrastructure = ubx.ResourceBinding{
@@ -87,25 +155,23 @@ var CloudExadataInfrastructure = ubx.ResourceBinding{
 		"ComputeCount": ubx.FieldSpec{WireName: "compute_count"},
 		"CustomerContactsToSendToOci": ubx.FieldSpec{
 			WireName: "customer_contacts_to_send_to_oci",
-			Kind: "set",
+			Kind: "list",
 			Fields: CloudExadataInfrastructure_CustomerContactsToSendToOciFields,
 		},
 		"DatabaseServerType": ubx.FieldSpec{WireName: "database_server_type"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"MaintenanceWindow": ubx.FieldSpec{
+			WireName: "maintenance_window",
+			Kind: "object",
+			Fields: CloudExadataInfrastructure_MaintenanceWindowFields,
+		},
 		"Shape": ubx.FieldSpec{WireName: "shape"},
 		"StorageCount": ubx.FieldSpec{WireName: "storage_count"},
 		"StorageServerType": ubx.FieldSpec{WireName: "storage_server_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"MaintenanceWindow": ubx.FieldSpec{
-			WireName: "maintenance_window",
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: CloudExadataInfrastructure_MaintenanceWindowFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: CloudExadataInfrastructure_TimeoutsFields,
+			Fields: CloudExadataInfrastructure_TagsFields,
 		},
 	},
 }

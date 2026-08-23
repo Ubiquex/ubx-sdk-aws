@@ -4,23 +4,34 @@ package transfer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type User_HomeDirectoryMappings struct {
+	// For each home directory mapping of an AWS Transfer Family user, this field specifies the logical directory path that the user will see, which is paired with a target path to define the mapping. (AI-inferred)
 	Entry any
+	// Specifies the destination absolute or relative path in the Amazon S3 bucket or Amazon EFS file system to which the 'Entry' logical directory is mapped for this AWS Transfer Family user. (AI-inferred)
 	Target any
+	// Specifies whether the home directory mapping entry maps to a file ('FILE') or a directory ('DIRECTORY') in AWS Transfer Family. (AI-inferred)
+	Type any
 }
 
 type User_PosixProfile struct {
+	// Specifies the POSIX group ID (GID) that maps to the user's group on the file transfer server's backing storage, determining file ownership and access permissions for the associated AWS Transfer Family user. (AI-inferred)
 	Gid any
+	// Specifies the secondary group IDs (GIDs) for the user's POSIX profile, granting additional group memberships that affect file and folder access on the AWS Transfer server. (AI-inferred)
 	SecondaryGids any
+	// Defines the numeric POSIX user ID (UID) that AWS Transfer Family uses to set file ownership and permission checks for this user on the underlying file system (e.g., Amazon EFS). (AI-inferred)
 	Uid any
 }
 
-type User_Timeouts struct {
-	Delete any
+type User_Tags struct {
+	// The key of a user-defined tag applied to an AWS Transfer Family user, used for identifying, organizing, and managing the user resource within AWS. (AI-inferred)
+	Key any
+	// The value of a tag key-value pair applied to the AWS Transfer Family user, used for resource organization and access control. (AI-inferred)
+	Value any
 }
 
 var User_HomeDirectoryMappingsFields = ubx.FieldMap{
 		"Entry": ubx.FieldSpec{WireName: "entry"},
 		"Target": ubx.FieldSpec{WireName: "target"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
 var User_PosixProfileFields = ubx.FieldMap{
@@ -29,53 +40,83 @@ var User_PosixProfileFields = ubx.FieldMap{
 		"Uid": ubx.FieldSpec{WireName: "uid"},
 	}
 
-var User_TimeoutsFields = ubx.FieldMap{
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var User_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type UserConfig struct {
+	// The landing directory (folder) for the user when they log in to the Transfer Family server, specified as an absolute path or a virtual path that can include the {Transfer:UserName} variable. (AI-inferred)
 	HomeDirectory any
-	HomeDirectoryType any
-	Id any
-	Policy any
-	Region any
-	Role any
-	ServerId any
-	Tags any
-	TagsAll any
-	UserName any
+	// Specifies a set of logical directory mappings that translate a user's home directory path to a target S3 or EFS location, allowing different storage paths to be presented as a single virtual path. (AI-inferred)
 	HomeDirectoryMappings any
+	// Determines whether the user's home directory is defined as a logical directory (LOGICAL) or a direct file system path (PATH), with PATH being the default when this property is not specified. (AI-inferred)
+	HomeDirectoryType any
+	// A JSON string specifying an IAM scope-down policy that restricts the permissions of the AWS Transfer Family user, allowing multiple users to share the same IAM role with different access levels. (AI-inferred)
+	Policy any
+	// Specifies the POSIX user profile, including the UID, GID, and secondary group IDs, used by the AWS Transfer Family user for file system permissions and ownership when operating over SFTP, FTPS, or FTP. (AI-inferred)
 	PosixProfile any
-	Timeouts any
+	// The IAM role that AWS Transfer Family assumes to define the user's permissions for accessing the underlying storage (e.g., Amazon S3) and other resources. (AI-inferred)
+	Role any
+	// The unique identifier of the AWS Transfer Family server to which this user is associated. (AI-inferred)
+	ServerId any
+	// This represents the SSH User Public Keys for CloudFormation resource
+	SshPublicKeys any
+	// Assigns customizable metadata tags to the AWS Transfer Family user, enabling categorization, cost allocation, and access-control scoping across AWS resources. (AI-inferred)
+	Tags any
+	// Sets the unique login name for the user in the AWS Transfer Family service, which must be unique within the associated server and is used to identify and authenticate the user during file transfer sessions. (AI-inferred)
+	UserName any
+}
+
+type UserAttrs struct {
+	// The Amazon Resource Name (ARN) uniquely identifying the AWS Transfer Family user, assigned by AWS when the user is created. (AI-inferred)
+	Arn any
+	// The landing directory (folder) for the user when they log in to the Transfer Family server, specified as an absolute path or a virtual path that can include the {Transfer:UserName} variable. (AI-inferred)
+	HomeDirectory any
+	// Specifies a set of logical directory mappings that translate a user's home directory path to a target S3 or EFS location, allowing different storage paths to be presented as a single virtual path. (AI-inferred)
+	HomeDirectoryMappings any
+	// Determines whether the user's home directory is defined as a logical directory (LOGICAL) or a direct file system path (PATH), with PATH being the default when this property is not specified. (AI-inferred)
+	HomeDirectoryType any
+	// A JSON string specifying an IAM scope-down policy that restricts the permissions of the AWS Transfer Family user, allowing multiple users to share the same IAM role with different access levels. (AI-inferred)
+	Policy any
+	// Specifies the POSIX user profile, including the UID, GID, and secondary group IDs, used by the AWS Transfer Family user for file system permissions and ownership when operating over SFTP, FTPS, or FTP. (AI-inferred)
+	PosixProfile any
+	// The IAM role that AWS Transfer Family assumes to define the user's permissions for accessing the underlying storage (e.g., Amazon S3) and other resources. (AI-inferred)
+	Role any
+	// The unique identifier of the AWS Transfer Family server to which this user is associated. (AI-inferred)
+	ServerId any
+	// This represents the SSH User Public Keys for CloudFormation resource
+	SshPublicKeys any
+	// Assigns customizable metadata tags to the AWS Transfer Family user, enabling categorization, cost allocation, and access-control scoping across AWS resources. (AI-inferred)
+	Tags any
+	// Sets the unique login name for the user in the AWS Transfer Family service, which must be unique within the associated server and is used to identify and authenticate the user during file transfer sessions. (AI-inferred)
+	UserName any
 }
 
 var User = ubx.ResourceBinding{
 	WireType: "aws_transfer_user",
 	Fields: ubx.FieldMap{
 		"HomeDirectory": ubx.FieldSpec{WireName: "home_directory"},
-		"HomeDirectoryType": ubx.FieldSpec{WireName: "home_directory_type"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"ServerId": ubx.FieldSpec{WireName: "server_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
 		"HomeDirectoryMappings": ubx.FieldSpec{
 			WireName: "home_directory_mappings",
 			Kind: "list",
 			Fields: User_HomeDirectoryMappingsFields,
 		},
+		"HomeDirectoryType": ubx.FieldSpec{WireName: "home_directory_type"},
+		"Policy": ubx.FieldSpec{WireName: "policy"},
 		"PosixProfile": ubx.FieldSpec{
 			WireName: "posix_profile",
-			Kind: "list",
+			Kind: "object",
 			Fields: User_PosixProfileFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: User_TimeoutsFields,
+		"Role": ubx.FieldSpec{WireName: "role"},
+		"ServerId": ubx.FieldSpec{WireName: "server_id"},
+		"SshPublicKeys": ubx.FieldSpec{WireName: "ssh_public_keys"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: User_TagsFields,
 		},
+		"UserName": ubx.FieldSpec{WireName: "user_name"},
 	},
 }

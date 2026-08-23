@@ -7,16 +7,150 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EmailIdentity_ConfigurationSetAttributes:
+    # The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.
+    configuration_set_name: Any = None
+
+@dataclasses.dataclass
+class EmailIdentity_DkimAttributes:
+    # Sets the DKIM signing configuration for the identity. When you set this value true, then the messages that are sent from the identity are signed using DKIM. If you set this value to false, your messages are sent without DKIM signing.
+    signing_enabled: Any = None
+
+@dataclasses.dataclass
+class EmailIdentity_DkimSigningAttributes:
+    # [Bring Your Own DKIM] A private key that's used to generate a DKIM signature. The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.
+    domain_signing_private_key: Any = None
+    # [Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.
+    domain_signing_selector: Any = None
+    # [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.
+    next_signing_key_length: Any = None
+
+@dataclasses.dataclass
+class EmailIdentity_FeedbackAttributes:
+    # If the value is true, you receive email notifications when bounce or complaint events occur
+    email_forwarding_enabled: Any = None
+
+@dataclasses.dataclass
+class EmailIdentity_MailFromAttributes:
+    # The action to take if the required MX record isn't found when you send an email. When you set this value to UseDefaultValue , the mail is sent using amazonses.com as the MAIL FROM domain. When you set this value to RejectMessage , the Amazon SES API v2 returns a MailFromDomainNotVerified error, and doesn't attempt to deliver the email.
+    behavior_on_mx_failure: Any = None
+    # The custom MAIL FROM domain that you want the verified identity to use
+    mail_from_domain: Any = None
+
+@dataclasses.dataclass
+class EmailIdentity_Tags:
+    # The key of a tag applied to the SES email identity, used for organizing and managing the identity via metadata. (AI-inferred)
+    key: Any = None
+    # The value of a tag assigned to the SES email identity, used for metadata and resource management. (AI-inferred)
+    value: Any = None
+
+_EmailIdentity_ConfigurationSetAttributesFields = {
+    "configuration_set_name": ubx.FieldSpec(wire_name="configuration_set_name"),
+}
+
+_EmailIdentity_DkimAttributesFields = {
+    "signing_enabled": ubx.FieldSpec(wire_name="signing_enabled"),
+}
+
+_EmailIdentity_DkimSigningAttributesFields = {
+    "domain_signing_private_key": ubx.FieldSpec(wire_name="domain_signing_private_key"),
+    "domain_signing_selector": ubx.FieldSpec(wire_name="domain_signing_selector"),
+    "next_signing_key_length": ubx.FieldSpec(wire_name="next_signing_key_length"),
+}
+
+_EmailIdentity_FeedbackAttributesFields = {
+    "email_forwarding_enabled": ubx.FieldSpec(wire_name="email_forwarding_enabled"),
+}
+
+_EmailIdentity_MailFromAttributesFields = {
+    "behavior_on_mx_failure": ubx.FieldSpec(wire_name="behavior_on_mx_failure"),
+    "mail_from_domain": ubx.FieldSpec(wire_name="mail_from_domain"),
+}
+
+_EmailIdentity_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class EmailIdentityConfig:
-    email: Any = None
-    id: Any = None
-    region: Any = None
+    # Used to associate a configuration set with an email identity.
+    configuration_set_attributes: Any = None
+    # Used to enable or disable DKIM authentication for an email identity.
+    dkim_attributes: Any = None
+    # If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for Easy DKIM.
+    dkim_signing_attributes: Any = None
+    # The email address or domain to verify.
+    email_identity: Any = None
+    # Used to enable or disable feedback forwarding for an identity.
+    feedback_attributes: Any = None
+    # Used to enable or disable the custom Mail-From domain configuration for an email identity.
+    mail_from_attributes: Any = None
+    # The tags (keys and values) associated with the email identity.
+    tags: Any = None
+
+@dataclasses.dataclass
+class EmailIdentityAttrs:
+    # Used to associate a configuration set with an email identity.
+    configuration_set_attributes: Any = None
+    # Used to enable or disable DKIM authentication for an email identity.
+    dkim_attributes: Any = None
+    # The first CNAME record name (DKIM DNS token name) that you must publish in your DNS configuration to complete Easy DKIM setup for this Amazon SES email identity. (AI-inferred)
+    dkim_dnstoken_name1: Any = None
+    # The second of three DNS record names (CNAME route) generated for Easy DKIM, which must be added to the domain's DNS settings to complete identity verification. (AI-inferred)
+    dkim_dnstoken_name2: Any = None
+    # For the third Easy DKIM token generated for this SES identity, this is the DNS CNAME record name that you must publish in your domain's DNS settings to complete DKIM verification. (AI-inferred)
+    dkim_dnstoken_name3: Any = None
+    # This read-only value is the first of three DKIM DNS token values that must be published as a CNAME record in your DNS to enable DKIM signing for the SES email identity. (AI-inferred)
+    dkim_dnstoken_value1: Any = None
+    # The second of three DNS CNAME record values that must be published to complete Easy DKIM verification for the SES email identity. (AI-inferred)
+    dkim_dnstoken_value2: Any = None
+    # The third DKIM DNS token value, automatically generated by Amazon SES for this email identity, which is used as the record name in the CNAME record required for Easy DKIM authentication. (AI-inferred)
+    dkim_dnstoken_value3: Any = None
+    # If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for Easy DKIM.
+    dkim_signing_attributes: Any = None
+    # The email address or domain to verify.
+    email_identity: Any = None
+    # Used to enable or disable feedback forwarding for an identity.
+    feedback_attributes: Any = None
+    # Used to enable or disable the custom Mail-From domain configuration for an email identity.
+    mail_from_attributes: Any = None
+    # The tags (keys and values) associated with the email identity.
+    tags: Any = None
 
 EmailIdentity = ubx.ResourceBinding(
     wire_type="aws_ses_email_identity",
     fields={
-        "email": ubx.FieldSpec(wire_name="email"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "configuration_set_attributes": ubx.FieldSpec(
+            wire_name="configuration_set_attributes",
+            kind="object",
+            fields=_EmailIdentity_ConfigurationSetAttributesFields,
+        ),
+        "dkim_attributes": ubx.FieldSpec(
+            wire_name="dkim_attributes",
+            kind="object",
+            fields=_EmailIdentity_DkimAttributesFields,
+        ),
+        "dkim_signing_attributes": ubx.FieldSpec(
+            wire_name="dkim_signing_attributes",
+            kind="object",
+            fields=_EmailIdentity_DkimSigningAttributesFields,
+        ),
+        "email_identity": ubx.FieldSpec(wire_name="email_identity"),
+        "feedback_attributes": ubx.FieldSpec(
+            wire_name="feedback_attributes",
+            kind="object",
+            fields=_EmailIdentity_FeedbackAttributesFields,
+        ),
+        "mail_from_attributes": ubx.FieldSpec(
+            wire_name="mail_from_attributes",
+            kind="object",
+            fields=_EmailIdentity_MailFromAttributesFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_EmailIdentity_TagsFields,
+        ),
     },
 )

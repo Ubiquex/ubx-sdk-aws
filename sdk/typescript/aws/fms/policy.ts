@@ -2,55 +2,87 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Policy_ExcludeMap {
-  account: string[];
-  orgunit: string[];
+  /** The list of AWS account IDs to exclude from the Firewall Manager policy's scope. (AI-inferred) */
+  account?: string[] | Computed<string[]>;
+  /** The list of AWS Organizations organizational unit (OU) IDs to exclude from this Firewall Manager policy's scope. (AI-inferred) */
+  orgunit?: string[] | Computed<string[]>;
 }
 
-export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_IcmpTypeCode {
-  code: number;
-  type: number;
+export interface Policy_ResourceTags {
+  /** The key of a tag used to match resources that this AWS Firewall Manager policy applies to, based on the resource's tags. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The tag value, paired with the corresponding key, that Firewall Manager uses to match resources for inclusion in (or exclusion from, depending on the policy's ExcludeResourceTags setting) the policy's scope. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
-export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_PortRange {
-  from: number;
-  to: number;
+export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCode {
+  /** The numeric ICMP code value used to match specific ICMP messages in the first network ACL entry set of the common Network ACL policy, where -1 matches all ICMP codes for the given type. (AI-inferred) */
+  code?: number | Computed<number>;
+  /** The ICMP type number (e.g., 8 for echo request, 3 for destination unreachable) that the network ACL entry matches for ICMP traffic. (AI-inferred) */
+  type?: number | Computed<number>;
 }
 
-export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry {
-  cidrBlock: string;
-  egress: boolean;
-  ipv6CidrBlock: string;
-  protocol: string;
-  ruleAction: string;
-  icmpTypeCode: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_IcmpTypeCode[];
-  portRange: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_PortRange[];
+export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRange {
+  /** The inclusive lower bound of the port range that this network ACL entry applies to, used by Firewall Manager to define the starting port for allowing or denying traffic in a Network ACL policy. (AI-inferred) */
+  from?: number | Computed<number>;
+  /** The upper bound (inclusive) of the port range for this network ACL entry, defining the last port in the range allowed or denied by the entry. (AI-inferred) */
+  to?: number | Computed<number>;
+}
+
+export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries {
+  /** The IPv4 CIDR block (e.g., '10.0.0.0/16') that defines the source or destination network to which this network ACL entry applies, used for matching traffic in the Firewall Manager network ACL policy. (AI-inferred) */
+  cidrBlock?: string | Computed<string>;
+  /** Indicates whether this network ACL entry applies to outbound (egress) traffic (true) rather than inbound (ingress) traffic (false). (AI-inferred) */
+  egress?: boolean | Computed<boolean>;
+  /** Defines the ICMP type and code numbers that the Network ACL entry uses to match ICMP traffic, limiting the rule to specific ICMP message types. (AI-inferred) */
+  icmpTypeCode?: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCode | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCode>;
+  /** The IPv6 CIDR block that this network ACL entry in the first set of entries applies to for the common network ACL policy. (AI-inferred) */
+  ipv6CidrBlock?: string | Computed<string>;
+  /** Defines the inclusive range of destination ports (From and To) that this Firewall Manager network ACL entry uses to match traffic for its associated rule action. (AI-inferred) */
+  portRange?: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRange | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRange>;
+  /** Specifies the IP protocol (e.g., tcp, udp, icmp, or a protocol number) for the network ACL entry in the Firewall Manager policy. (AI-inferred) */
+  protocol?: string | Computed<string>;
+  /** Specifies the action of the network ACL entry, either 'allow' to permit matching traffic or 'deny' to block it. (AI-inferred) */
+  ruleAction?: string | Computed<string>;
 }
 
 export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet {
-  forceRemediateForFirstEntries: boolean;
-  forceRemediateForLastEntries: boolean;
-  firstEntry: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry[];
-  lastEntry: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry[];
+  /** NetworkAcl entry list. */
+  firstEntries?: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries[] | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries[]>;
+  /** When set to true, Firewall Manager automatically remediates the first entries in the target network ACL to match the policy's specified first entry, replacing non-compliant entries. (AI-inferred) */
+  forceRemediateForFirstEntries: boolean | Computed<boolean>;
+  /** Indicates whether AWS Firewall Manager will automatically remediate the last entries of the network ACL to match the policy-defined entries, such as the default deny-all rule. (AI-inferred) */
+  forceRemediateForLastEntries: boolean | Computed<boolean>;
+  /** NetworkAcl entry list. */
+  lastEntries?: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries[] | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries[]>;
 }
 
 export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy {
-  networkAclEntrySet: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet[];
+  /** Network ACL entry set. */
+  networkAclEntrySet: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet>;
 }
 
 export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicy {
-  firewallDeploymentModel: string;
+  /** Firewall deployment mode. */
+  firewallDeploymentModel: string | Computed<string>;
 }
 
 export interface Policy_SecurityServicePolicyData_PolicyOption {
-  networkAclCommonPolicy: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy[];
-  networkFirewallPolicy: Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicy[];
-  thirdPartyFirewallPolicy: Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicy[];
+  /** Network ACL common policy. */
+  networkAclCommonPolicy?: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy>;
+  /** Network firewall policy. */
+  networkFirewallPolicy?: Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicy | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicy>;
+  /** Third party firewall policy. */
+  thirdPartyFirewallPolicy?: Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicy | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicy>;
 }
 
 export interface Policy_SecurityServicePolicyData {
-  managedServiceData: string;
-  type: string;
-  policyOption: Policy_SecurityServicePolicyData_PolicyOption[];
+  /** Firewall managed service data. */
+  managedServiceData?: string | Computed<string>;
+  /** Firewall policy option. */
+  policyOption?: Policy_SecurityServicePolicyData_PolicyOption | Computed<Policy_SecurityServicePolicyData_PolicyOption>;
+  /** Firewall policy type. */
+  type: string | Computed<string>;
 }
 
 const Policy_ExcludeMapFields: FieldMap = {
@@ -58,53 +90,58 @@ const Policy_ExcludeMapFields: FieldMap = {
   orgunit: "orgunit",
 };
 
-const Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_IcmpTypeCodeFields: FieldMap = {
+const Policy_ResourceTagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
+const Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCodeFields: FieldMap = {
   code: "code",
   type: "type",
 };
 
-const Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_PortRangeFields: FieldMap = {
+const Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRangeFields: FieldMap = {
   from: "from",
   to: "to",
 };
 
-const Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntryFields: FieldMap = {
+const Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntriesFields: FieldMap = {
   cidrBlock: "cidr_block",
   egress: "egress",
-  ipv6CidrBlock: "ipv6_cidr_block",
-  protocol: "protocol",
-  ruleAction: "rule_action",
   icmpTypeCode: {
     wireName: "icmp_type_code",
-    kind: "list",
-    fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_IcmpTypeCodeFields,
+    kind: "object",
+    fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCodeFields,
   },
+  ipv6CidrBlock: "ipv6_cidr_block",
   portRange: {
     wireName: "port_range",
-    kind: "list",
-    fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_PortRangeFields,
+    kind: "object",
+    fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRangeFields,
   },
+  protocol: "protocol",
+  ruleAction: "rule_action",
 };
 
 const Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySetFields: FieldMap = {
+  firstEntries: {
+    wireName: "first_entries",
+    kind: "list",
+    fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntriesFields,
+  },
   forceRemediateForFirstEntries: "force_remediate_for_first_entries",
   forceRemediateForLastEntries: "force_remediate_for_last_entries",
-  firstEntry: {
-    wireName: "first_entry",
-    kind: "set",
-    fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntryFields,
-  },
-  lastEntry: {
-    wireName: "last_entry",
-    kind: "set",
-    fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntryFields,
+  lastEntries: {
+    wireName: "last_entries",
+    kind: "list",
+    fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntriesFields,
   },
 };
 
 const Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicyFields: FieldMap = {
   networkAclEntrySet: {
     wireName: "network_acl_entry_set",
-    kind: "list",
+    kind: "object",
     fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySetFields,
   },
 };
@@ -116,107 +153,136 @@ const Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicyFields:
 const Policy_SecurityServicePolicyData_PolicyOptionFields: FieldMap = {
   networkAclCommonPolicy: {
     wireName: "network_acl_common_policy",
-    kind: "list",
+    kind: "object",
     fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicyFields,
   },
   networkFirewallPolicy: {
     wireName: "network_firewall_policy",
-    kind: "list",
+    kind: "object",
     fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicyFields,
   },
   thirdPartyFirewallPolicy: {
     wireName: "third_party_firewall_policy",
-    kind: "list",
+    kind: "object",
     fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicyFields,
   },
 };
 
 const Policy_SecurityServicePolicyDataFields: FieldMap = {
   managedServiceData: "managed_service_data",
-  type: "type",
   policyOption: {
     wireName: "policy_option",
-    kind: "list",
+    kind: "object",
     fields: Policy_SecurityServicePolicyData_PolicyOptionFields,
   },
+  type: "type",
 };
 
 export interface PolicyConfig {
+  /** Indicates whether AWS Firewall Manager deletes all resources managed by this policy (such as AWS WAF rule groups or Shield protections) when the policy itself is deleted. (AI-inferred) */
   deleteAllPolicyResources?: boolean | Computed<boolean>;
-  deleteUnusedFmManagedResources?: boolean | Computed<boolean>;
-  description?: string | Computed<string>;
+  /** An FMS includeMap or excludeMap. */
+  excludeMap?: Policy_ExcludeMap | Computed<Policy_ExcludeMap>;
+  /** When true, the policy applies only to resources that do not have the tags specified in the associated 'resource_tags' list, thereby excluding tagged resources from the policy's scope; when false, it applies to resources that have those tags. (AI-inferred) */
   excludeResourceTags: boolean | Computed<boolean>;
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  region?: string | Computed<string>;
-  remediationEnabled?: boolean | Computed<boolean>;
+  /** An FMS includeMap or excludeMap. */
+  includeMap?: Policy_ExcludeMap | Computed<Policy_ExcludeMap>;
+  /** A description of the AWS Firewall Manager policy, used to identify the policy's purpose or scope. (AI-inferred) */
+  policyDescription?: string | Computed<string>;
+  /** The friendly name of the Firewall Manager policy, used to identify it in the AWS console and API operations. (AI-inferred) */
+  policyName: string | Computed<string>;
+  /** Indicates whether Firewall Manager automatically applies the policy's rules to noncompliant resources to remediate them. (AI-inferred) */
+  remediationEnabled: boolean | Computed<boolean>;
+  /** The list of IDs of the resource sets to which this AWS Firewall Manager policy applies. (AI-inferred) */
   resourceSetIds?: string[] | Computed<string[]>;
+  /** Specifies the logical operator (AND or OR) used to combine multiple resource tag conditions in the AWS Firewall Manager policy when determining which resources are included or excluded. (AI-inferred) */
   resourceTagLogicalOperator?: string | Computed<string>;
-  resourceTags?: Record<string, string> | Computed<Record<string, string>>;
+  /** This list of tags identifies the AWS resources to which the Firewall Manager policy applies, allowing the policy to target resources based on their associated tags. (AI-inferred) */
+  resourceTags?: Policy_ResourceTags[] | Computed<Policy_ResourceTags[]>;
+  /** An AWS resource type */
   resourceType?: string | Computed<string>;
+  /** Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred) */
   resourceTypeList?: string[] | Computed<string[]>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  excludeMap?: Policy_ExcludeMap[] | Computed<Policy_ExcludeMap[]>;
-  includeMap?: Policy_ExcludeMap[] | Computed<Policy_ExcludeMap[]>;
-  securityServicePolicyData?: Policy_SecurityServicePolicyData[] | Computed<Policy_SecurityServicePolicyData[]>;
+  resourcesCleanUp?: boolean | Computed<boolean>;
+  /** Firewall security service policy data. */
+  securityServicePolicyData: Policy_SecurityServicePolicyData | Computed<Policy_SecurityServicePolicyData>;
+  /** The tags to assign to the Firewall Manager policy, which are key-value pairs that help you identify, organize, and manage the policy, and can be used for cost allocation and access control. (AI-inferred) */
+  tags?: Policy_ResourceTags[] | Computed<Policy_ResourceTags[]>;
 }
 
 export interface PolicyAttrs {
+  /** A resource ARN. */
   arn: string;
+  /** Indicates whether AWS Firewall Manager deletes all resources managed by this policy (such as AWS WAF rule groups or Shield protections) when the policy itself is deleted. (AI-inferred) */
   deleteAllPolicyResources: boolean;
-  deleteUnusedFmManagedResources: boolean;
-  description: string;
+  /** An FMS includeMap or excludeMap. */
+  excludeMap: Policy_ExcludeMap;
+  /** When true, the policy applies only to resources that do not have the tags specified in the associated 'resource_tags' list, thereby excluding tagged resources from the policy's scope; when false, it applies to resources that have those tags. (AI-inferred) */
   excludeResourceTags: boolean;
+  /** The unique identifier (policy ID) assigned by AWS Firewall Manager to this policy. (AI-inferred) */
   id: string;
-  name: string;
-  policyUpdateToken: string;
-  region: string;
+  /** An FMS includeMap or excludeMap. */
+  includeMap: Policy_ExcludeMap;
+  /** A description of the AWS Firewall Manager policy, used to identify the policy's purpose or scope. (AI-inferred) */
+  policyDescription: string;
+  /** The friendly name of the Firewall Manager policy, used to identify it in the AWS console and API operations. (AI-inferred) */
+  policyName: string;
+  /** Indicates whether Firewall Manager automatically applies the policy's rules to noncompliant resources to remediate them. (AI-inferred) */
   remediationEnabled: boolean;
+  /** The list of IDs of the resource sets to which this AWS Firewall Manager policy applies. (AI-inferred) */
   resourceSetIds: string[];
+  /** Specifies the logical operator (AND or OR) used to combine multiple resource tag conditions in the AWS Firewall Manager policy when determining which resources are included or excluded. (AI-inferred) */
   resourceTagLogicalOperator: string;
-  resourceTags: Record<string, string>;
+  /** This list of tags identifies the AWS resources to which the Firewall Manager policy applies, allowing the policy to target resources based on their associated tags. (AI-inferred) */
+  resourceTags: Policy_ResourceTags[];
+  /** An AWS resource type */
   resourceType: string;
+  /** Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred) */
   resourceTypeList: string[];
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  excludeMap: Policy_ExcludeMap[];
-  includeMap: Policy_ExcludeMap[];
-  securityServicePolicyData: Policy_SecurityServicePolicyData[];
+  resourcesCleanUp: boolean;
+  /** Firewall security service policy data. */
+  securityServicePolicyData: Policy_SecurityServicePolicyData;
+  /** The tags to assign to the Firewall Manager policy, which are key-value pairs that help you identify, organize, and manage the policy, and can be used for cost allocation and access control. (AI-inferred) */
+  tags: Policy_ResourceTags[];
 }
 
 export const Policy: ResourceBinding<PolicyConfig, PolicyAttrs> = {
   wireType: "aws_fms_policy",
   fields: {
     deleteAllPolicyResources: "delete_all_policy_resources",
-    deleteUnusedFmManagedResources: "delete_unused_fm_managed_resources",
-    description: "description",
+    excludeMap: {
+      wireName: "exclude_map",
+      kind: "object",
+      fields: Policy_ExcludeMapFields,
+    },
     excludeResourceTags: "exclude_resource_tags",
-    id: "id",
-    name: "name",
-    region: "region",
+    includeMap: {
+      wireName: "include_map",
+      kind: "object",
+      fields: Policy_ExcludeMapFields,
+    },
+    policyDescription: "policy_description",
+    policyName: "policy_name",
     remediationEnabled: "remediation_enabled",
     resourceSetIds: "resource_set_ids",
     resourceTagLogicalOperator: "resource_tag_logical_operator",
-    resourceTags: "resource_tags",
+    resourceTags: {
+      wireName: "resource_tags",
+      kind: "list",
+      fields: Policy_ResourceTagsFields,
+    },
     resourceType: "resource_type",
     resourceTypeList: "resource_type_list",
-    tags: "tags",
-    tagsAll: "tags_all",
-    excludeMap: {
-      wireName: "exclude_map",
-      kind: "list",
-      fields: Policy_ExcludeMapFields,
-    },
-    includeMap: {
-      wireName: "include_map",
-      kind: "list",
-      fields: Policy_ExcludeMapFields,
-    },
+    resourcesCleanUp: "resources_clean_up",
     securityServicePolicyData: {
       wireName: "security_service_policy_data",
-      kind: "list",
+      kind: "object",
       fields: Policy_SecurityServicePolicyDataFields,
+    },
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Policy_ResourceTagsFields,
     },
   },
 };

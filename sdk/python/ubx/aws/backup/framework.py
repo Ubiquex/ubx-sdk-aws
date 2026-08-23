@@ -7,88 +7,115 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Framework_Control_InputParameter:
-    name: Any = None
+class Framework_FrameworkControls_ControlInputParameters:
+    # Specifies the name of an input parameter for a control in an AWS Backup framework, such as requiredRetentionDays, which is passed to the control to customize its behavior. (AI-inferred)
+    parameter_name: Any = None
+    # Specifies the value assigned to a control input parameter, customizing the framework control's behavior by providing configuration data such as thresholds, identifiers, or other control-specific settings. (AI-inferred)
+    parameter_value: Any = None
+
+@dataclasses.dataclass
+class Framework_FrameworkControls_ControlScope_Tags:
+    # The tag key used to define the resource tag scope for a backup framework control, filtering which tagged resources the control applies to. (AI-inferred)
+    key: Any = None
+    # The value of a tag used in the control scope, which restricts the framework control's evaluation to backup resources that carry that tag key-value pair. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
-class Framework_Control_Scope:
+class Framework_FrameworkControls_ControlScope:
+    # The list of resource IDs (such as ARNs) that the control scope explicitly includes for compliance evaluation in the AWS Backup framework. (AI-inferred)
     compliance_resource_ids: Any = None
+    # The list of AWS resource types (e.g., 'AWS::Backup::RecoveryPoint') to which the Backup framework control's compliance scope applies, filtering which resources are evaluated by the control. (AI-inferred)
     compliance_resource_types: Any = None
+    # Specifies the tag key-value pairs that AWS Backup uses to scope the control, so that only resources matching these tags are included in the framework's compliance evaluation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
-class Framework_Control:
-    name: Any = None
-    input_parameter: Any = None
-    scope: Any = None
+class Framework_FrameworkControls:
+    # Specifies the input parameters for a control within an AWS Backup framework, such as the retention period threshold that the control evaluates. (AI-inferred)
+    control_input_parameters: Any = None
+    # The name of the backup framework control, which identifies the specific compliance rule (for example, BACKUP_RECOVERY_POINT_MANUAL_DELETION or BACKUP_RESOURCES_PROTECTED_BY_BACKUP_PLAN) that this framework control evaluates. (AI-inferred)
+    control_name: Any = None
+    # Specifies the resource types and tags that determine which backup resources the framework control applies to. (AI-inferred)
+    control_scope: Any = None
 
-@dataclasses.dataclass
-class Framework_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+_Framework_FrameworkControls_ControlInputParametersFields = {
+    "parameter_name": ubx.FieldSpec(wire_name="parameter_name"),
+    "parameter_value": ubx.FieldSpec(wire_name="parameter_value"),
+}
 
-_Framework_Control_InputParameterFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
+_Framework_FrameworkControls_ControlScope_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
     "value": ubx.FieldSpec(wire_name="value"),
 }
 
-_Framework_Control_ScopeFields = {
+_Framework_FrameworkControls_ControlScopeFields = {
     "compliance_resource_ids": ubx.FieldSpec(wire_name="compliance_resource_ids"),
     "compliance_resource_types": ubx.FieldSpec(wire_name="compliance_resource_types"),
-    "tags": ubx.FieldSpec(wire_name="tags"),
-}
-
-_Framework_ControlFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "input_parameter": ubx.FieldSpec(
-        wire_name="input_parameter",
-        kind="set",
-        fields=_Framework_Control_InputParameterFields,
-    ),
-    "scope": ubx.FieldSpec(
-        wire_name="scope",
+    "tags": ubx.FieldSpec(
+        wire_name="tags",
         kind="list",
-        fields=_Framework_Control_ScopeFields,
+        fields=_Framework_FrameworkControls_ControlScope_TagsFields,
     ),
 }
 
-_Framework_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Framework_FrameworkControlsFields = {
+    "control_input_parameters": ubx.FieldSpec(
+        wire_name="control_input_parameters",
+        kind="list",
+        fields=_Framework_FrameworkControls_ControlInputParametersFields,
+    ),
+    "control_name": ubx.FieldSpec(wire_name="control_name"),
+    "control_scope": ubx.FieldSpec(
+        wire_name="control_scope",
+        kind="object",
+        fields=_Framework_FrameworkControls_ControlScopeFields,
+    ),
 }
 
 @dataclasses.dataclass
 class FrameworkConfig:
-    description: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    control: Any = None
-    timeouts: Any = None
+    # Contains detailed information about all of the controls of a framework. Each framework must contain at least one control.
+    framework_controls: Any = None
+    # An optional description of the framework with a maximum 1,024 characters.
+    framework_description: Any = None
+    # The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+    framework_name: Any = None
+    # Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.
+    framework_tags: Any = None
+
+@dataclasses.dataclass
+class FrameworkAttrs:
+    # The date and time that a framework is created, in ISO 8601 representation. The value of CreationTime is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.
+    creation_time: Any = None
+    # The deployment status of a framework. The statuses are: `CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED`
+    deployment_status: Any = None
+    # An Amazon Resource Name (ARN) that uniquely identifies Framework as a resource
+    framework_arn: Any = None
+    # Contains detailed information about all of the controls of a framework. Each framework must contain at least one control.
+    framework_controls: Any = None
+    # An optional description of the framework with a maximum 1,024 characters.
+    framework_description: Any = None
+    # The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+    framework_name: Any = None
+    # A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn AWS Config recording on or off for each resource. The statuses are: `ACTIVE` when recording is turned on for all resources governed by the framework. `PARTIALLY_ACTIVE` when recording is turned off for at least one resource governed by the framework. `INACTIVE` when recording is turned off for all resources governed by the framework. `UNAVAILABLE` when AWS Backup is unable to validate recording status at this time.
+    framework_status: Any = None
+    # Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.
+    framework_tags: Any = None
 
 Framework = ubx.ResourceBinding(
     wire_type="aws_backup_framework",
     fields={
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "control": ubx.FieldSpec(
-            wire_name="control",
-            kind="set",
-            fields=_Framework_ControlFields,
+        "framework_controls": ubx.FieldSpec(
+            wire_name="framework_controls",
+            kind="list",
+            fields=_Framework_FrameworkControlsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Framework_TimeoutsFields,
+        "framework_description": ubx.FieldSpec(wire_name="framework_description"),
+        "framework_name": ubx.FieldSpec(wire_name="framework_name"),
+        "framework_tags": ubx.FieldSpec(
+            wire_name="framework_tags",
+            kind="list",
+            fields=_Framework_FrameworkControls_ControlScope_TagsFields,
         ),
     },
 )

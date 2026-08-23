@@ -2,30 +2,42 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypes {
-  resourceTypes: string[];
+  /** Specifies the list of AWS resource types that will be excluded from recording by the configuration recorder. (AI-inferred) */
+  resourceTypes: string[] | Computed<string[]>;
 }
 
 export interface ConfigurationRecorder_RecordingGroup_RecordingStrategy {
-  useOnly: string;
+  /** Defines the recording strategy for the configuration recorder, with values such as ALL_SUPPORTED_RESOURCE_TYPES to record all supported resource types, INCLUDE_SPECIFIED_RESOURCE_TYPES to record only those listed in the recording group's resourceTypes, or EXCLUDE_SPECIFIED_RESOURCE_TYPES to record all except those listed. (AI-inferred) */
+  useOnly: string | Computed<string>;
 }
 
 export interface ConfigurationRecorder_RecordingGroup {
-  allSupported: boolean;
-  includeGlobalResourceTypes: boolean;
-  resourceTypes: string[];
-  exclusionByResourceTypes: ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypes[];
-  recordingStrategy: ConfigurationRecorder_RecordingGroup_RecordingStrategy[];
+  /** When set to true, AWS Config records configuration changes for all supported AWS resource types in the region. (AI-inferred) */
+  allSupported?: boolean | Computed<boolean>;
+  /** Specifies the resource types to exclude from being recorded by AWS Config, allowing you to record all supported types except those listed when allSupported is enabled. (AI-inferred) */
+  exclusionByResourceTypes?: ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypes | Computed<ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypes>;
+  /** Indicates whether AWS Config records configuration changes to global resource types (such as IAM users, groups, roles, and customer managed policies) across all regions. (AI-inferred) */
+  includeGlobalResourceTypes?: boolean | Computed<boolean>;
+  /** Defines the recording strategy for AWS Config, specifying whether to record all supported resource types, only included resource types, or all except excluded resource types. (AI-inferred) */
+  recordingStrategy?: ConfigurationRecorder_RecordingGroup_RecordingStrategy | Computed<ConfigurationRecorder_RecordingGroup_RecordingStrategy>;
+  /** Specifies the list of AWS resource types to be recorded by AWS Config; if omitted or empty, AWS Config records all supported resource types. (AI-inferred) */
+  resourceTypes?: string[] | Computed<string[]>;
 }
 
-export interface ConfigurationRecorder_RecordingMode_RecordingModeOverride {
-  description: string;
-  recordingFrequency: string;
-  resourceTypes: string[];
+export interface ConfigurationRecorder_RecordingMode_RecordingModeOverrides {
+  /** A description that you provide for this recording mode override, explaining its purpose or distinguishing it from other overrides for specific resource types. (AI-inferred) */
+  description?: string | Computed<string>;
+  /** Specifies how often AWS Config records configuration changes for the resource types in this override, either CONTINUOUS for real-time recording or DAILY for a single daily snapshot. (AI-inferred) */
+  recordingFrequency?: string | Computed<string>;
+  /** Lists the AWS resource types (e.g., 'AWS::EC2::Instance') for which this recording mode override applies, allowing a different recording frequency to be set for those specific resources. (AI-inferred) */
+  resourceTypes?: string[] | Computed<string[]>;
 }
 
 export interface ConfigurationRecorder_RecordingMode {
-  recordingFrequency: string;
-  recordingModeOverride: ConfigurationRecorder_RecordingMode_RecordingModeOverride[];
+  /** Specifies how often AWS Config records configuration changes for the resources in scope, either continuously or on a daily basis. (AI-inferred) */
+  recordingFrequency: string | Computed<string>;
+  /** Specifies a list of overrides that set the recording mode (either CONTINUOUS or RECORD_ONLY) for specific AWS resource types, allowing you to customize recording behavior on a per-resource-type basis within the configuration recorder's recording mode. (AI-inferred) */
+  recordingModeOverrides?: ConfigurationRecorder_RecordingMode_RecordingModeOverrides[] | Computed<ConfigurationRecorder_RecordingMode_RecordingModeOverrides[]>;
 }
 
 const ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypesFields: FieldMap = {
@@ -38,21 +50,21 @@ const ConfigurationRecorder_RecordingGroup_RecordingStrategyFields: FieldMap = {
 
 const ConfigurationRecorder_RecordingGroupFields: FieldMap = {
   allSupported: "all_supported",
-  includeGlobalResourceTypes: "include_global_resource_types",
-  resourceTypes: "resource_types",
   exclusionByResourceTypes: {
     wireName: "exclusion_by_resource_types",
-    kind: "list",
+    kind: "object",
     fields: ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypesFields,
   },
+  includeGlobalResourceTypes: "include_global_resource_types",
   recordingStrategy: {
     wireName: "recording_strategy",
-    kind: "list",
+    kind: "object",
     fields: ConfigurationRecorder_RecordingGroup_RecordingStrategyFields,
   },
+  resourceTypes: "resource_types",
 };
 
-const ConfigurationRecorder_RecordingMode_RecordingModeOverrideFields: FieldMap = {
+const ConfigurationRecorder_RecordingMode_RecordingModeOverridesFields: FieldMap = {
   description: "description",
   recordingFrequency: "recording_frequency",
   resourceTypes: "resource_types",
@@ -60,47 +72,51 @@ const ConfigurationRecorder_RecordingMode_RecordingModeOverrideFields: FieldMap 
 
 const ConfigurationRecorder_RecordingModeFields: FieldMap = {
   recordingFrequency: "recording_frequency",
-  recordingModeOverride: {
-    wireName: "recording_mode_override",
+  recordingModeOverrides: {
+    wireName: "recording_mode_overrides",
     kind: "list",
-    fields: ConfigurationRecorder_RecordingMode_RecordingModeOverrideFields,
+    fields: ConfigurationRecorder_RecordingMode_RecordingModeOverridesFields,
   },
 };
 
 export interface ConfigurationRecorderConfig {
-  id?: string | Computed<string>;
+  /** The name of the configuration recorder, which must be unique within the region and defaults to 'default' if not specified. (AI-inferred) */
   name?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** Specifies which AWS resource types are recorded by the configuration recorder, including whether to record all supported resource types and global resource types like IAM resources. (AI-inferred) */
+  recordingGroup?: ConfigurationRecorder_RecordingGroup | Computed<ConfigurationRecorder_RecordingGroup>;
+  /** Specifies the recording frequency (continuous or periodic) that controls how often AWS Config records configuration changes for supported resources. (AI-inferred) */
+  recordingMode?: ConfigurationRecorder_RecordingMode | Computed<ConfigurationRecorder_RecordingMode>;
+  /** The Amazon Resource Name (ARN) of the IAM role that AWS Config uses to record resource changes and deliver them to the delivery channel. (AI-inferred) */
   roleArn: string | Computed<string>;
-  recordingGroup?: ConfigurationRecorder_RecordingGroup[] | Computed<ConfigurationRecorder_RecordingGroup[]>;
-  recordingMode?: ConfigurationRecorder_RecordingMode[] | Computed<ConfigurationRecorder_RecordingMode[]>;
 }
 
 export interface ConfigurationRecorderAttrs {
+  /** The physical resource ID of the configuration recorder, which is the same as its user-defined Name. (AI-inferred) */
   id: string;
+  /** The name of the configuration recorder, which must be unique within the region and defaults to 'default' if not specified. (AI-inferred) */
   name: string;
-  region: string;
+  /** Specifies which AWS resource types are recorded by the configuration recorder, including whether to record all supported resource types and global resource types like IAM resources. (AI-inferred) */
+  recordingGroup: ConfigurationRecorder_RecordingGroup;
+  /** Specifies the recording frequency (continuous or periodic) that controls how often AWS Config records configuration changes for supported resources. (AI-inferred) */
+  recordingMode: ConfigurationRecorder_RecordingMode;
+  /** The Amazon Resource Name (ARN) of the IAM role that AWS Config uses to record resource changes and deliver them to the delivery channel. (AI-inferred) */
   roleArn: string;
-  recordingGroup: ConfigurationRecorder_RecordingGroup[];
-  recordingMode: ConfigurationRecorder_RecordingMode[];
 }
 
 export const ConfigurationRecorder: ResourceBinding<ConfigurationRecorderConfig, ConfigurationRecorderAttrs> = {
   wireType: "aws_config_configuration_recorder",
   fields: {
-    id: "id",
     name: "name",
-    region: "region",
-    roleArn: "role_arn",
     recordingGroup: {
       wireName: "recording_group",
-      kind: "list",
+      kind: "object",
       fields: ConfigurationRecorder_RecordingGroupFields,
     },
     recordingMode: {
       wireName: "recording_mode",
-      kind: "list",
+      kind: "object",
       fields: ConfigurationRecorder_RecordingModeFields,
     },
+    roleArn: "role_arn",
   },
 };

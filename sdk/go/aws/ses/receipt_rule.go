@@ -3,169 +3,241 @@ package ses
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ReceiptRule_AddHeaderAction struct {
+type ReceiptRule_Rule_Actions_AddHeaderAction struct {
+	// The name of the custom header that this action adds to the incoming email, such as 'X-Custom-Header'. (AI-inferred)
 	HeaderName any
+	// The value to be included in the custom header that the receipt rule adds to incoming email messages. (AI-inferred)
 	HeaderValue any
-	Position any
 }
 
-type ReceiptRule_BounceAction struct {
+type ReceiptRule_Rule_Actions_BounceAction struct {
+	// The message text to include in the bounce response sent to the original sender when the receipt rule's bounce action triggers. (AI-inferred)
 	Message any
-	Position any
+	// The email address that the bounce message is sent from when this bounce action is triggered. (AI-inferred)
 	Sender any
+	// Defines the three-digit SMTP reply code (e.g., '550') that SES returns to the sender when a bounce action is triggered for a received message. (AI-inferred)
 	SmtpReplyCode any
+	// The SMTP reply code to return to the sender when the email is bounced by this rule, specified as a three-digit numeric string (e.g., '550'). (AI-inferred)
 	StatusCode any
+	// The ARN of the Amazon SNS topic that SES publishes a notification to when the bounce action is applied to a received message. (AI-inferred)
 	TopicArn any
 }
 
-type ReceiptRule_LambdaAction struct {
+type ReceiptRule_Rule_Actions_ConnectAction struct {
+	// The ARN of the IAM role that Amazon SES assumes to grant access to the specified Amazon Connect instance when delivering an email through the Connect action of this receipt rule. (AI-inferred)
+	IamroleArn any
+	// The ARN of the Amazon Connect instance that the SES receipt rule's ConnectAction connects the incoming email to. (AI-inferred)
+	InstanceArn any
+}
+
+type ReceiptRule_Rule_Actions_LambdaAction struct {
+	// The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon SES invokes when the receipt rule matches an incoming email. (AI-inferred)
 	FunctionArn any
+	// Specifies whether the Lambda function is invoked asynchronously (Event) or synchronously (RequestResponse) when the SES receipt rule matches an incoming email. (AI-inferred)
 	InvocationType any
-	Position any
+	// The ARN of an Amazon SNS topic that Amazon SES notifies when the Lambda action is invoked by a receipt rule. (AI-inferred)
 	TopicArn any
 }
 
-type ReceiptRule_S3Action struct {
+type ReceiptRule_Rule_Actions_S3Action struct {
+	// The name of the Amazon S3 bucket where the received email message is stored when this S3 action is invoked. (AI-inferred)
 	BucketName any
+	// The ARN of the IAM role that Amazon SES assumes to write to the S3 bucket specified in this S3 action of the receipt rule. (AI-inferred)
 	IamRoleArn any
+	// The ARN of the AWS KMS key used to encrypt the object stored in Amazon S3 by the S3 action of this SES receipt rule; if not provided, Amazon SES uses the default AWS-managed key for the account. (AI-inferred)
 	KmsKeyArn any
+	// The key prefix to prepend to the object name when storing the received email into the S3 bucket specified by the S3 action of this receipt rule. (AI-inferred)
 	ObjectKeyPrefix any
-	Position any
+	// The ARN of an Amazon SNS topic that Amazon SES publishes a notification to when the message is successfully saved to the S3 bucket by this action. (AI-inferred)
 	TopicArn any
 }
 
-type ReceiptRule_SnsAction struct {
+type ReceiptRule_Rule_Actions_Snsaction struct {
+	// Specifies the encoding (UTF-8 or Base64) used for the email content in the Amazon SNS notification sent by this action. (AI-inferred)
 	Encoding any
-	Position any
+	// The ARN of the Amazon SNS topic to which the receipt rule publishes a notification when an incoming email matches the rule. (AI-inferred)
 	TopicArn any
 }
 
-type ReceiptRule_StopAction struct {
-	Position any
+type ReceiptRule_Rule_Actions_StopAction struct {
+	// Specifies the scope of the SES receipt rule stop action, which must be set to `RuleSet` to stop evaluating the entire receipt rule set. (AI-inferred)
 	Scope any
+	// The ARN of the Amazon SNS topic to which the SES receipt rule's stop action publishes a notification when the rule set evaluation is terminated. (AI-inferred)
 	TopicArn any
 }
 
-type ReceiptRule_WorkmailAction struct {
+type ReceiptRule_Rule_Actions_WorkmailAction struct {
+	// The ARN of the Amazon WorkMail organization that receives the email when the receipt rule's WorkMail action is invoked. (AI-inferred)
 	OrganizationArn any
-	Position any
+	// The ARN of an Amazon SNS topic to notify when the WorkMail action is triggered by a receipt rule. (AI-inferred)
 	TopicArn any
 }
 
-var ReceiptRule_AddHeaderActionFields = ubx.FieldMap{
+type ReceiptRule_Rule_Actions struct {
+	// Specifies an action that adds a header to an incoming email when the receipt rule matches, using the provided header name and value. (AI-inferred)
+	AddHeaderAction any
+	// Configures a bounce action that rejects an incoming email and sends a bounce response to the sender, with configurable message text and optional notification to an SNS topic. (AI-inferred)
+	BounceAction any
+	ConnectAction any
+	// Specifies a Lambda action that invokes an AWS Lambda function when the receipt rule matches an incoming email, with properties for the function ARN, invocation type (Event or RequestResponse), and an optional SNS topic for error notifications. (AI-inferred)
+	LambdaAction any
+	// Configures the S3 action for a receipt rule, which saves the incoming email message to an Amazon S3 bucket. (AI-inferred)
+	S3Action any
+	// Defines an SNS action that publishes the received email notification to an Amazon SNS topic when an incoming email matches the receipt rule. (AI-inferred)
+	Snsaction any
+	// Terminates the receipt rule's action chain, causing SES to stop evaluating subsequent actions and rules for the incoming email. (AI-inferred)
+	StopAction any
+	// Configures the WorkMail action for a receipt rule, specifying the Amazon WorkMail organization ARN (and optional SNS topic) that receives the incoming email. (AI-inferred)
+	WorkmailAction any
+}
+
+type ReceiptRule_Rule struct {
+	// An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.
+	Actions any
+	// If true, the receipt rule is active. The default value is false.
+	Enabled any
+	// The name of the receipt rule. The name must meet the following requirements: Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.). Start and end with a letter or number. Contain 64 characters or fewer.
+	Name any
+	// The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.
+	Recipients any
+	// If true, then messages that this receipt rule applies to are scanned for spam and viruses. The default value is false.
+	ScanEnabled any
+	// Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to Require, Amazon SES bounces emails that are not received over TLS. The default is Optional.
+	TlsPolicy any
+}
+
+var ReceiptRule_Rule_Actions_AddHeaderActionFields = ubx.FieldMap{
 		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
 		"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
-		"Position": ubx.FieldSpec{WireName: "position"},
 	}
 
-var ReceiptRule_BounceActionFields = ubx.FieldMap{
+var ReceiptRule_Rule_Actions_BounceActionFields = ubx.FieldMap{
 		"Message": ubx.FieldSpec{WireName: "message"},
-		"Position": ubx.FieldSpec{WireName: "position"},
 		"Sender": ubx.FieldSpec{WireName: "sender"},
 		"SmtpReplyCode": ubx.FieldSpec{WireName: "smtp_reply_code"},
 		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
 		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
 	}
 
-var ReceiptRule_LambdaActionFields = ubx.FieldMap{
+var ReceiptRule_Rule_Actions_ConnectActionFields = ubx.FieldMap{
+		"IamroleArn": ubx.FieldSpec{WireName: "iamrole_arn"},
+		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+	}
+
+var ReceiptRule_Rule_Actions_LambdaActionFields = ubx.FieldMap{
 		"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
 		"InvocationType": ubx.FieldSpec{WireName: "invocation_type"},
-		"Position": ubx.FieldSpec{WireName: "position"},
 		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
 	}
 
-var ReceiptRule_S3ActionFields = ubx.FieldMap{
+var ReceiptRule_Rule_Actions_S3ActionFields = ubx.FieldMap{
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
 		"ObjectKeyPrefix": ubx.FieldSpec{WireName: "object_key_prefix"},
-		"Position": ubx.FieldSpec{WireName: "position"},
 		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
 	}
 
-var ReceiptRule_SnsActionFields = ubx.FieldMap{
+var ReceiptRule_Rule_Actions_SnsactionFields = ubx.FieldMap{
 		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"Position": ubx.FieldSpec{WireName: "position"},
 		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
 	}
 
-var ReceiptRule_StopActionFields = ubx.FieldMap{
-		"Position": ubx.FieldSpec{WireName: "position"},
+var ReceiptRule_Rule_Actions_StopActionFields = ubx.FieldMap{
 		"Scope": ubx.FieldSpec{WireName: "scope"},
 		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
 	}
 
-var ReceiptRule_WorkmailActionFields = ubx.FieldMap{
+var ReceiptRule_Rule_Actions_WorkmailActionFields = ubx.FieldMap{
 		"OrganizationArn": ubx.FieldSpec{WireName: "organization_arn"},
-		"Position": ubx.FieldSpec{WireName: "position"},
 		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
 	}
 
+var ReceiptRule_Rule_ActionsFields = ubx.FieldMap{
+		"AddHeaderAction": ubx.FieldSpec{
+			WireName: "add_header_action",
+			Kind: "object",
+			Fields: ReceiptRule_Rule_Actions_AddHeaderActionFields,
+		},
+		"BounceAction": ubx.FieldSpec{
+			WireName: "bounce_action",
+			Kind: "object",
+			Fields: ReceiptRule_Rule_Actions_BounceActionFields,
+		},
+		"ConnectAction": ubx.FieldSpec{
+			WireName: "connect_action",
+			Kind: "object",
+			Fields: ReceiptRule_Rule_Actions_ConnectActionFields,
+		},
+		"LambdaAction": ubx.FieldSpec{
+			WireName: "lambda_action",
+			Kind: "object",
+			Fields: ReceiptRule_Rule_Actions_LambdaActionFields,
+		},
+		"S3Action": ubx.FieldSpec{
+			WireName: "s3_action",
+			Kind: "object",
+			Fields: ReceiptRule_Rule_Actions_S3ActionFields,
+		},
+		"Snsaction": ubx.FieldSpec{
+			WireName: "snsaction",
+			Kind: "object",
+			Fields: ReceiptRule_Rule_Actions_SnsactionFields,
+		},
+		"StopAction": ubx.FieldSpec{
+			WireName: "stop_action",
+			Kind: "object",
+			Fields: ReceiptRule_Rule_Actions_StopActionFields,
+		},
+		"WorkmailAction": ubx.FieldSpec{
+			WireName: "workmail_action",
+			Kind: "object",
+			Fields: ReceiptRule_Rule_Actions_WorkmailActionFields,
+		},
+	}
+
+var ReceiptRule_RuleFields = ubx.FieldMap{
+		"Actions": ubx.FieldSpec{
+			WireName: "actions",
+			Kind: "list",
+			Fields: ReceiptRule_Rule_ActionsFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Recipients": ubx.FieldSpec{WireName: "recipients"},
+		"ScanEnabled": ubx.FieldSpec{WireName: "scan_enabled"},
+		"TlsPolicy": ubx.FieldSpec{WireName: "tls_policy"},
+	}
+
 type ReceiptRuleConfig struct {
+	// The name of an existing rule after which the new rule is placed. If this parameter is null, the new rule is inserted at the beginning of the rule list.
 	After any
-	Enabled any
-	Id any
-	Name any
-	Recipients any
-	Region any
+	// A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.
+	Rule any
+	// The name of the rule set where the receipt rule is added.
 	RuleSetName any
-	ScanEnabled any
-	TlsPolicy any
-	AddHeaderAction any
-	BounceAction any
-	LambdaAction any
-	S3Action any
-	SnsAction any
-	StopAction any
-	WorkmailAction any
+}
+
+type ReceiptRuleAttrs struct {
+	// The name of an existing rule after which the new rule is placed. If this parameter is null, the new rule is inserted at the beginning of the rule list.
+	After any
+	// A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.
+	Rule any
+	// The name of the rule
+	RuleName any
+	// The name of the rule set where the receipt rule is added.
+	RuleSetName any
 }
 
 var ReceiptRule = ubx.ResourceBinding{
 	WireType: "aws_ses_receipt_rule",
 	Fields: ubx.FieldMap{
 		"After": ubx.FieldSpec{WireName: "after"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Recipients": ubx.FieldSpec{WireName: "recipients"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Rule": ubx.FieldSpec{
+			WireName: "rule",
+			Kind: "object",
+			Fields: ReceiptRule_RuleFields,
+		},
 		"RuleSetName": ubx.FieldSpec{WireName: "rule_set_name"},
-		"ScanEnabled": ubx.FieldSpec{WireName: "scan_enabled"},
-		"TlsPolicy": ubx.FieldSpec{WireName: "tls_policy"},
-		"AddHeaderAction": ubx.FieldSpec{
-			WireName: "add_header_action",
-			Kind: "set",
-			Fields: ReceiptRule_AddHeaderActionFields,
-		},
-		"BounceAction": ubx.FieldSpec{
-			WireName: "bounce_action",
-			Kind: "set",
-			Fields: ReceiptRule_BounceActionFields,
-		},
-		"LambdaAction": ubx.FieldSpec{
-			WireName: "lambda_action",
-			Kind: "set",
-			Fields: ReceiptRule_LambdaActionFields,
-		},
-		"S3Action": ubx.FieldSpec{
-			WireName: "s3_action",
-			Kind: "set",
-			Fields: ReceiptRule_S3ActionFields,
-		},
-		"SnsAction": ubx.FieldSpec{
-			WireName: "sns_action",
-			Kind: "set",
-			Fields: ReceiptRule_SnsActionFields,
-		},
-		"StopAction": ubx.FieldSpec{
-			WireName: "stop_action",
-			Kind: "set",
-			Fields: ReceiptRule_StopActionFields,
-		},
-		"WorkmailAction": ubx.FieldSpec{
-			WireName: "workmail_action",
-			Kind: "set",
-			Fields: ReceiptRule_WorkmailActionFields,
-		},
 	},
 }

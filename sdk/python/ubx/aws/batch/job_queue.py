@@ -8,75 +8,109 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class JobQueue_ComputeEnvironmentOrder:
+    # The Amazon Resource Name (ARN) of the compute environment that is associated with this entry in the job queue's compute environment order. (AI-inferred)
     compute_environment: Any = None
+    # Integer that determines the relative priority of the compute environment within the job queue, where lower values are attempted first. (AI-inferred)
     order: Any = None
 
 @dataclasses.dataclass
-class JobQueue_JobStateTimeLimitAction:
+class JobQueue_JobStateTimeLimitActions:
+    # The action to take when a job in the specified state exceeds the time limit, such as CANCEL or CANCEL_AND_RESTART. (AI-inferred)
     action: Any = None
+    # Specifies the maximum time in seconds that a job can remain in a given state before the associated action (such as CANCEL) is triggered for that job. (AI-inferred)
     max_time_seconds: Any = None
+    # The reason to record for the job when this state time limit action is triggered, providing context for why the action (such as cancellation) was taken after the job exceeded the maximum time in the specified state. (AI-inferred)
     reason: Any = None
+    # Specifies the job state (only RUNNABLE is valid) that triggers the time limit action when a job remains in that state longer than max_time_seconds. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
-class JobQueue_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class JobQueue_ServiceEnvironmentOrder:
+    order: Any = None
+    service_environment: Any = None
 
 _JobQueue_ComputeEnvironmentOrderFields = {
     "compute_environment": ubx.FieldSpec(wire_name="compute_environment"),
     "order": ubx.FieldSpec(wire_name="order"),
 }
 
-_JobQueue_JobStateTimeLimitActionFields = {
+_JobQueue_JobStateTimeLimitActionsFields = {
     "action": ubx.FieldSpec(wire_name="action"),
     "max_time_seconds": ubx.FieldSpec(wire_name="max_time_seconds"),
     "reason": ubx.FieldSpec(wire_name="reason"),
     "state": ubx.FieldSpec(wire_name="state"),
 }
 
-_JobQueue_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_JobQueue_ServiceEnvironmentOrderFields = {
+    "order": ubx.FieldSpec(wire_name="order"),
+    "service_environment": ubx.FieldSpec(wire_name="service_environment"),
 }
 
 @dataclasses.dataclass
 class JobQueueConfig:
-    name: Any = None
-    priority: Any = None
-    region: Any = None
-    scheduling_policy_arn: Any = None
-    state: Any = None
-    tags: Any = None
+    # Defines the ordered list of compute environments for the job queue, where each entry assigns a priority (order) to a compute environment and AWS Batch schedules jobs to the first available environment in that order. (AI-inferred)
     compute_environment_order: Any = None
-    job_state_time_limit_action: Any = None
-    timeouts: Any = None
+    # Specifies the name of the job queue, which must be unique within the AWS account and Region; if not provided, CloudFormation generates a unique name. (AI-inferred)
+    job_queue_name: Any = None
+    # Specifies the type of the job queue, either 'COMPUTE' (the default) for running jobs or 'PLAYBACK' for replaying jobs from another queue for testing/debugging. (AI-inferred)
+    job_queue_type: Any = None
+    # List of actions that automatically cancel jobs stuck in a specified state (e.g., RUNNABLE) for a configurable maximum time before they are deemed too old. (AI-inferred)
+    job_state_time_limit_actions: Any = None
+    # The priority of this job queue relative to other job queues in the same account and region, where higher values cause the queue to be considered earlier when scheduling jobs. (AI-inferred)
+    priority: Any = None
+    # The Amazon Resource Name (ARN) of the scheduling policy that controls the prioritization and placement of jobs in the AWS Batch job queue. (AI-inferred)
+    scheduling_policy_arn: Any = None
+    service_environment_order: Any = None
+    # Specifies whether the job queue is enabled to accept new jobs (ENABLED) or disabled (DISABLED), with the default being ENABLED. (AI-inferred)
+    state: Any = None
+    # A key-value pair to associate with a resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class JobQueueAttrs:
+    # Defines the ordered list of compute environments for the job queue, where each entry assigns a priority (order) to a compute environment and AWS Batch schedules jobs to the first available environment in that order. (AI-inferred)
+    compute_environment_order: Any = None
+    # The Amazon Resource Name (ARN) of the AWS Batch job queue, assigned by AWS when the queue is created. (AI-inferred)
+    job_queue_arn: Any = None
+    # Specifies the name of the job queue, which must be unique within the AWS account and Region; if not provided, CloudFormation generates a unique name. (AI-inferred)
+    job_queue_name: Any = None
+    # Specifies the type of the job queue, either 'COMPUTE' (the default) for running jobs or 'PLAYBACK' for replaying jobs from another queue for testing/debugging. (AI-inferred)
+    job_queue_type: Any = None
+    # List of actions that automatically cancel jobs stuck in a specified state (e.g., RUNNABLE) for a configurable maximum time before they are deemed too old. (AI-inferred)
+    job_state_time_limit_actions: Any = None
+    # The priority of this job queue relative to other job queues in the same account and region, where higher values cause the queue to be considered earlier when scheduling jobs. (AI-inferred)
+    priority: Any = None
+    # The Amazon Resource Name (ARN) of the scheduling policy that controls the prioritization and placement of jobs in the AWS Batch job queue. (AI-inferred)
+    scheduling_policy_arn: Any = None
+    service_environment_order: Any = None
+    # Specifies whether the job queue is enabled to accept new jobs (ENABLED) or disabled (DISABLED), with the default being ENABLED. (AI-inferred)
+    state: Any = None
+    # A key-value pair to associate with a resource.
+    tags: Any = None
 
 JobQueue = ubx.ResourceBinding(
     wire_type="aws_batch_job_queue",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
-        "priority": ubx.FieldSpec(wire_name="priority"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "scheduling_policy_arn": ubx.FieldSpec(wire_name="scheduling_policy_arn"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
         "compute_environment_order": ubx.FieldSpec(
             wire_name="compute_environment_order",
             kind="list",
             fields=_JobQueue_ComputeEnvironmentOrderFields,
         ),
-        "job_state_time_limit_action": ubx.FieldSpec(
-            wire_name="job_state_time_limit_action",
+        "job_queue_name": ubx.FieldSpec(wire_name="job_queue_name"),
+        "job_queue_type": ubx.FieldSpec(wire_name="job_queue_type"),
+        "job_state_time_limit_actions": ubx.FieldSpec(
+            wire_name="job_state_time_limit_actions",
             kind="list",
-            fields=_JobQueue_JobStateTimeLimitActionFields,
+            fields=_JobQueue_JobStateTimeLimitActionsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_JobQueue_TimeoutsFields,
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "scheduling_policy_arn": ubx.FieldSpec(wire_name="scheduling_policy_arn"),
+        "service_environment_order": ubx.FieldSpec(
+            wire_name="service_environment_order",
+            kind="list",
+            fields=_JobQueue_ServiceEnvironmentOrderFields,
         ),
+        "state": ubx.FieldSpec(wire_name="state"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
     },
 )

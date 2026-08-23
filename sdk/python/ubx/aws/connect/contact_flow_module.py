@@ -7,30 +7,86 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ContactFlowModule_ExternalInvocationConfiguration:
+    # Specifies whether the flow module resource is enabled for external invocation
+    enabled: Any = None
+
+@dataclasses.dataclass
+class ContactFlowModule_Tags:
+    # The key of a tag assigned to an Amazon Connect contact flow module for resource metadata and management. (AI-inferred)
+    key: Any = None
+    # The value of a tag applied to the Amazon Connect contact flow module, used for organizing, managing, and identifying the resource within AWS. (AI-inferred)
+    value: Any = None
+
+_ContactFlowModule_ExternalInvocationConfigurationFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+}
+
+_ContactFlowModule_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ContactFlowModuleConfig:
+    # The content of the contact flow module in JSON format.
     content: Any = None
-    content_hash: Any = None
+    # The description of the contact flow module.
     description: Any = None
-    filename: Any = None
-    id: Any = None
-    instance_id: Any = None
+    # Defines the external invocation configuration of the flow module resource
+    external_invocation_configuration: Any = None
+    # The identifier of the Amazon Connect instance (ARN).
+    instance_arn: Any = None
+    # The name of the contact flow module.
     name: Any = None
-    region: Any = None
+    # The schema of the settings for contact flow module in JSON Schema V4 format.
+    settings: Any = None
+    # The state of the contact flow module.
+    state: Any = None
+    # One or more tags.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class ContactFlowModuleAttrs:
+    # The identifier of the contact flow module (ARN).
+    contact_flow_module_arn: Any = None
+    # The content of the contact flow module in JSON format.
+    content: Any = None
+    # The description of the contact flow module.
+    description: Any = None
+    # Defines the external invocation configuration of the flow module resource
+    external_invocation_configuration: Any = None
+    # The identifier of the Amazon Connect instance (ARN).
+    instance_arn: Any = None
+    # The name of the contact flow module.
+    name: Any = None
+    # The schema of the settings for contact flow module in JSON Schema V4 format.
+    settings: Any = None
+    # The state of the contact flow module.
+    state: Any = None
+    # The status of the contact flow module.
+    status: Any = None
+    # One or more tags.
+    tags: Any = None
 
 ContactFlowModule = ubx.ResourceBinding(
     wire_type="aws_connect_contact_flow_module",
     fields={
         "content": ubx.FieldSpec(wire_name="content"),
-        "content_hash": ubx.FieldSpec(wire_name="content_hash"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "filename": ubx.FieldSpec(wire_name="filename"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "instance_id": ubx.FieldSpec(wire_name="instance_id"),
+        "external_invocation_configuration": ubx.FieldSpec(
+            wire_name="external_invocation_configuration",
+            kind="object",
+            fields=_ContactFlowModule_ExternalInvocationConfigurationFields,
+        ),
+        "instance_arn": ubx.FieldSpec(wire_name="instance_arn"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "settings": ubx.FieldSpec(wire_name="settings"),
+        "state": ubx.FieldSpec(wire_name="state"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ContactFlowModule_TagsFields,
+        ),
     },
 )

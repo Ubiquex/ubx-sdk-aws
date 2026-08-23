@@ -2,38 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface View_DataFilterExpression_Dimensions {
-  key: string;
-  values: string[];
-}
-
-export interface View_DataFilterExpression_Tags {
-  key: string;
-  values: string[];
+  /** The name of the billing dimension to filter on (for example, 'SERVICE' or 'REGION'), which along with the dimension values determines which data is included in the billing view. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** Specifies a list of dimension values (such as AWS service names or linked account IDs) that the billing view's data filter expression will match against when selecting which cost and usage data to include in the view. (AI-inferred) */
+  values?: string[] | Computed<string[]>;
 }
 
 export interface View_DataFilterExpression_TimeRange {
-  beginDateInclusive: string;
-  endDateInclusive: string;
+  /** The time in ISO 8601 format, UTC time (YYYY-MM-DDTHH:MM:SSZ). */
+  beginDateInclusive?: string | Computed<string>;
+  /** The time in ISO 8601 format, UTC time (YYYY-MM-DDTHH:MM:SSZ). */
+  endDateInclusive?: string | Computed<string>;
 }
 
 export interface View_DataFilterExpression {
-  dimensions: View_DataFilterExpression_Dimensions[];
-  tags: View_DataFilterExpression_Tags[];
-  timeRange: View_DataFilterExpression_TimeRange[];
+  /** The dimensions property of the data filter expression specifies dimension filters (such as service or region) that restrict the billing view to only include matching billing data. (AI-inferred) */
+  dimensions?: View_DataFilterExpression_Dimensions | Computed<View_DataFilterExpression_Dimensions>;
+  /** Specifies tag key-value pairs used by the data filter expression to include only resources that have those tags in the billing view. (AI-inferred) */
+  tags?: View_DataFilterExpression_Dimensions | Computed<View_DataFilterExpression_Dimensions>;
+  timeRange?: View_DataFilterExpression_TimeRange | Computed<View_DataFilterExpression_TimeRange>;
 }
 
-export interface View_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface View_Tags {
+  /** The key (name) of a tag attached to this billing view, used for cost allocation and management in AWS Billing. (AI-inferred) */
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 const View_DataFilterExpression_DimensionsFields: FieldMap = {
-  key: "key",
-  values: "values",
-};
-
-const View_DataFilterExpression_TagsFields: FieldMap = {
   key: "key",
   values: "values",
 };
@@ -46,71 +42,76 @@ const View_DataFilterExpression_TimeRangeFields: FieldMap = {
 const View_DataFilterExpressionFields: FieldMap = {
   dimensions: {
     wireName: "dimensions",
-    kind: "list",
+    kind: "object",
     fields: View_DataFilterExpression_DimensionsFields,
   },
   tags: {
     wireName: "tags",
-    kind: "list",
-    fields: View_DataFilterExpression_TagsFields,
+    kind: "object",
+    fields: View_DataFilterExpression_DimensionsFields,
   },
   timeRange: {
     wireName: "time_range",
-    kind: "list",
+    kind: "object",
     fields: View_DataFilterExpression_TimeRangeFields,
   },
 };
 
-const View_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const View_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface ViewConfig {
+  /** DataFilterExpression selects which cost and usage records are included in the billing view by specifying dimension filters such as service, region, record type, or linked account. (AI-inferred) */
+  dataFilterExpression?: View_DataFilterExpression | Computed<View_DataFilterExpression>;
+  /** An optional user-provided text that gives a human-readable explanation or context for the billing view, helping to distinguish it from other views. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of the AWS Billing view, which is required to uniquely identify the view within your account. (AI-inferred) */
   name: string | Computed<string>;
-  sourceViews?: string[] | Computed<string[]>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  dataFilterExpression?: View_DataFilterExpression[] | Computed<View_DataFilterExpression[]>;
-  timeouts?: View_Timeouts | Computed<View_Timeouts>;
+  /** An array of strings that define the billing view's source. */
+  sourceViews: string[] | Computed<string[]>;
+  /** An array of key-value pairs associated to the billing view being created. */
+  tags?: View_Tags[] | Computed<View_Tags[]>;
 }
 
 export interface ViewAttrs {
+  /** The Amazon Resource Name (ARN) that uniquely identifies this AWS Billing billing view. (AI-inferred) */
   arn: string;
   billingViewType: string;
-  createdAt: string;
-  derivedViewCount: number;
+  /** The time when the billing view was created. */
+  createdAt: number;
+  /** DataFilterExpression selects which cost and usage records are included in the billing view by specifying dimension filters such as service, region, record type, or linked account. (AI-inferred) */
+  dataFilterExpression: View_DataFilterExpression;
+  /** An optional user-provided text that gives a human-readable explanation or context for the billing view, helping to distinguish it from other views. (AI-inferred) */
   description: string;
+  /** The name of the AWS Billing view, which is required to uniquely identify the view within your account. (AI-inferred) */
   name: string;
+  /** The AWS account ID of the account that owns the billing view, which is set automatically at creation and cannot be modified. (AI-inferred) */
   ownerAccountId: string;
-  sourceAccountId: string;
-  sourceViewCount: number;
+  /** An array of strings that define the billing view's source. */
   sourceViews: string[];
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  updatedAt: string;
-  viewDefinitionLastUpdatedAt: string;
-  dataFilterExpression: View_DataFilterExpression[];
-  timeouts: View_Timeouts;
+  /** An array of key-value pairs associated to the billing view being created. */
+  tags: View_Tags[];
+  /** The time when the billing view was last updated. */
+  updatedAt: number;
 }
 
 export const View: ResourceBinding<ViewConfig, ViewAttrs> = {
   wireType: "aws_billing_view",
   fields: {
+    dataFilterExpression: {
+      wireName: "data_filter_expression",
+      kind: "object",
+      fields: View_DataFilterExpressionFields,
+    },
     description: "description",
     name: "name",
     sourceViews: "source_views",
-    tags: "tags",
-    dataFilterExpression: {
-      wireName: "data_filter_expression",
+    tags: {
+      wireName: "tags",
       kind: "list",
-      fields: View_DataFilterExpressionFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: View_TimeoutsFields,
+      fields: View_TagsFields,
     },
   },
 };

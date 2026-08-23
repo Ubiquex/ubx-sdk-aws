@@ -8,21 +8,35 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Repository_EncryptionConfiguration:
+    # The encryption type to use.
     encryption_type: Any = None
+    # If you use the KMS or KMS_DSSE encryption type, specify the CMK to use for encryption. The alias, key ID, or full ARN of the CMK can be specified. The key must exist in the same Region as the repository. If no key is specified, the default AWS managed CMK for Amazon ECR will be used.
     kms_key: Any = None
 
 @dataclasses.dataclass
 class Repository_ImageScanningConfiguration:
+    # The setting that determines whether images are scanned after being pushed to a repository.
     scan_on_push: Any = None
 
 @dataclasses.dataclass
-class Repository_ImageTagMutabilityExclusionFilter:
-    filter: Any = None
-    filter_type: Any = None
+class Repository_ImageTagMutabilityExclusionFilters:
+    # This field determines the kind of tag (ANY, TAGGED, or UNTAGGED) to which the image tag mutability exclusion filter applies, allowing certain image tags to bypass the repository's immutable tag setting. (AI-inferred)
+    image_tag_mutability_exclusion_filter_type: Any = None
+    image_tag_mutability_exclusion_filter_value: Any = None
 
 @dataclasses.dataclass
-class Repository_Timeouts:
-    delete: Any = None
+class Repository_LifecyclePolicy:
+    # The JSON repository policy text to apply to the repository.
+    lifecycle_policy_text: Any = None
+    # The AWS account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.
+    registry_id: Any = None
+
+@dataclasses.dataclass
+class Repository_Tags:
+    # The key of a user-defined tag applied to the ECR repository, used to add metadata that can be referenced by IAM policies (e.g., ecr:ResourceTag) and for cost allocation. (AI-inferred)
+    key: Any = None
+    # The value of a single tag assigned to the ECR repository, used to attach arbitrary metadata for resource identification, organization, and cost tracking. (AI-inferred)
+    value: Any = None
 
 _Repository_EncryptionConfigurationFields = {
     "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
@@ -33,58 +47,98 @@ _Repository_ImageScanningConfigurationFields = {
     "scan_on_push": ubx.FieldSpec(wire_name="scan_on_push"),
 }
 
-_Repository_ImageTagMutabilityExclusionFilterFields = {
-    "filter": ubx.FieldSpec(wire_name="filter"),
-    "filter_type": ubx.FieldSpec(wire_name="filter_type"),
+_Repository_ImageTagMutabilityExclusionFiltersFields = {
+    "image_tag_mutability_exclusion_filter_type": ubx.FieldSpec(wire_name="image_tag_mutability_exclusion_filter_type"),
+    "image_tag_mutability_exclusion_filter_value": ubx.FieldSpec(wire_name="image_tag_mutability_exclusion_filter_value"),
 }
 
-_Repository_TimeoutsFields = {
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_Repository_LifecyclePolicyFields = {
+    "lifecycle_policy_text": ubx.FieldSpec(wire_name="lifecycle_policy_text"),
+    "registry_id": ubx.FieldSpec(wire_name="registry_id"),
+}
+
+_Repository_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class RepositoryConfig:
-    force_delete: Any = None
-    id: Any = None
-    image_tag_mutability: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # If true, deleting the repository force deletes the contents of the repository. Without a force delete, you can only delete empty repositories.
+    empty_on_delete: Any = None
+    # The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest. By default, when no encryption configuration is set or the ``AES256`` encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES256 encryption algorithm. This does not require any action on your part. For more control over the encryption of the contents of your repository, you can use server-side encryption with KMSlong key stored in KMSlong (KMS) to encrypt your images. For more information, see [Amazon ECR encryption at rest](https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html) in the *Amazon Elastic Container Registry User Guide*.
     encryption_configuration: Any = None
+    # The image scanning configuration for a repository.
     image_scanning_configuration: Any = None
-    image_tag_mutability_exclusion_filter: Any = None
-    timeouts: Any = None
+    # The tag mutability setting for the repository. If this parameter is omitted, the default setting of ``MUTABLE`` will be used which will allow image tags to be overwritten. If ``IMMUTABLE`` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.
+    image_tag_mutability: Any = None
+    # A list of filters that specify which image tags are excluded from the repository's image tag mutability setting.
+    image_tag_mutability_exclusion_filters: Any = None
+    # The ``LifecyclePolicy`` property type specifies a lifecycle policy. For information about lifecycle policy syntax, see [Lifecycle policy template](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html) in the *Amazon ECR User Guide*.
+    lifecycle_policy: Any = None
+    # The name to use for the repository. The repository name may be specified on its own (such as ``nginx-web-app``) or it can be prepended with a namespace to group the repository into a category (such as ``project-a/nginx-web-app``). If you don't specify a name, CFNlong generates a unique physical ID and uses that ID for the repository name. For more information, see [Name type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens, underscores, and forward slashes. If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+    repository_name: Any = None
+    # The JSON repository policy text to apply to the repository. For more information, see [Amazon ECR repository policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) in the *Amazon Elastic Container Registry User Guide*.
+    repository_policy_text: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class RepositoryAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies this ECR repository, such as arn:aws:ecr:region:account-id:repository/repository-name. (AI-inferred)
+    arn: Any = None
+    # If true, deleting the repository force deletes the contents of the repository. Without a force delete, you can only delete empty repositories.
+    empty_on_delete: Any = None
+    # The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest. By default, when no encryption configuration is set or the ``AES256`` encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES256 encryption algorithm. This does not require any action on your part. For more control over the encryption of the contents of your repository, you can use server-side encryption with KMSlong key stored in KMSlong (KMS) to encrypt your images. For more information, see [Amazon ECR encryption at rest](https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html) in the *Amazon Elastic Container Registry User Guide*.
+    encryption_configuration: Any = None
+    # The image scanning configuration for a repository.
+    image_scanning_configuration: Any = None
+    # The tag mutability setting for the repository. If this parameter is omitted, the default setting of ``MUTABLE`` will be used which will allow image tags to be overwritten. If ``IMMUTABLE`` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.
+    image_tag_mutability: Any = None
+    # A list of filters that specify which image tags are excluded from the repository's image tag mutability setting.
+    image_tag_mutability_exclusion_filters: Any = None
+    # The ``LifecyclePolicy`` property type specifies a lifecycle policy. For information about lifecycle policy syntax, see [Lifecycle policy template](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html) in the *Amazon ECR User Guide*.
+    lifecycle_policy: Any = None
+    # The name to use for the repository. The repository name may be specified on its own (such as ``nginx-web-app``) or it can be prepended with a namespace to group the repository into a category (such as ``project-a/nginx-web-app``). If you don't specify a name, CFNlong generates a unique physical ID and uses that ID for the repository name. For more information, see [Name type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens, underscores, and forward slashes. If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+    repository_name: Any = None
+    # The JSON repository policy text to apply to the repository. For more information, see [Amazon ECR repository policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) in the *Amazon Elastic Container Registry User Guide*.
+    repository_policy_text: Any = None
+    # The URI of the Amazon ECR repository, formatted as `aws_account_id.dkr.ecr.region.amazonaws.com/repository_name`, which is used to pull and push Docker images. (AI-inferred)
+    repository_uri: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Repository = ubx.ResourceBinding(
     wire_type="aws_ecr_repository",
     fields={
-        "force_delete": ubx.FieldSpec(wire_name="force_delete"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "image_tag_mutability": ubx.FieldSpec(wire_name="image_tag_mutability"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "empty_on_delete": ubx.FieldSpec(wire_name="empty_on_delete"),
         "encryption_configuration": ubx.FieldSpec(
             wire_name="encryption_configuration",
-            kind="list",
+            kind="object",
             fields=_Repository_EncryptionConfigurationFields,
         ),
         "image_scanning_configuration": ubx.FieldSpec(
             wire_name="image_scanning_configuration",
-            kind="list",
+            kind="object",
             fields=_Repository_ImageScanningConfigurationFields,
         ),
-        "image_tag_mutability_exclusion_filter": ubx.FieldSpec(
-            wire_name="image_tag_mutability_exclusion_filter",
+        "image_tag_mutability": ubx.FieldSpec(wire_name="image_tag_mutability"),
+        "image_tag_mutability_exclusion_filters": ubx.FieldSpec(
+            wire_name="image_tag_mutability_exclusion_filters",
             kind="list",
-            fields=_Repository_ImageTagMutabilityExclusionFilterFields,
+            fields=_Repository_ImageTagMutabilityExclusionFiltersFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "lifecycle_policy": ubx.FieldSpec(
+            wire_name="lifecycle_policy",
             kind="object",
-            fields=_Repository_TimeoutsFields,
+            fields=_Repository_LifecyclePolicyFields,
+        ),
+        "repository_name": ubx.FieldSpec(wire_name="repository_name"),
+        "repository_policy_text": ubx.FieldSpec(wire_name="repository_policy_text"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Repository_TagsFields,
         ),
     },
 )

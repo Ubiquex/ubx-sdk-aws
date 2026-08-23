@@ -8,24 +8,40 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DiscoveryService_DnsConfig_DnsRecords:
+    # The time-to-live (TTL) in seconds for the DNS record, controlling how long resolvers cache it before querying AWS Cloud Map again. (AI-inferred)
     ttl: Any = None
+    # Specifies the DNS record type (A, AAAA, SRV, or CNAME) for the service's DNS records. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class DiscoveryService_DnsConfig:
-    namespace_id: Any = None
-    routing_policy: Any = None
+    # A list of DNS records associated with the service.
     dns_records: Any = None
+    # The ID of the namespace for the DNS configuration.
+    namespace_id: Any = None
+    # The routing policy to use for DNS queries.
+    routing_policy: Any = None
 
 @dataclasses.dataclass
 class DiscoveryService_HealthCheckConfig:
+    # The number of consecutive health check failures that must occur before declaring the service unhealthy.
     failure_threshold: Any = None
+    # The path to ping on the service for health checks.
     resource_path: Any = None
+    # The type of health check (e.g., HTTP, HTTPS, TCP).
     type: Any = None
 
 @dataclasses.dataclass
 class DiscoveryService_HealthCheckCustomConfig:
+    # The number of consecutive health check failures required before the service is considered unhealthy.
     failure_threshold: Any = None
+
+@dataclasses.dataclass
+class DiscoveryService_Tags:
+    # This key identifies a tag attached to the AWS Cloud Map service, allowing you to assign metadata for cost tracking, access control, or resource organization. (AI-inferred)
+    key: Any = None
+    # The value of a tag assigned to the AWS CloudFormation service discovery service, used to organize, identify, or manage the resource through key-value pairs. (AI-inferred)
+    value: Any = None
 
 _DiscoveryService_DnsConfig_DnsRecordsFields = {
     "ttl": ubx.FieldSpec(wire_name="ttl"),
@@ -33,13 +49,13 @@ _DiscoveryService_DnsConfig_DnsRecordsFields = {
 }
 
 _DiscoveryService_DnsConfigFields = {
-    "namespace_id": ubx.FieldSpec(wire_name="namespace_id"),
-    "routing_policy": ubx.FieldSpec(wire_name="routing_policy"),
     "dns_records": ubx.FieldSpec(
         wire_name="dns_records",
         kind="list",
         fields=_DiscoveryService_DnsConfig_DnsRecordsFields,
     ),
+    "namespace_id": ubx.FieldSpec(wire_name="namespace_id"),
+    "routing_policy": ubx.FieldSpec(wire_name="routing_policy"),
 }
 
 _DiscoveryService_HealthCheckConfigFields = {
@@ -52,47 +68,84 @@ _DiscoveryService_HealthCheckCustomConfigFields = {
     "failure_threshold": ubx.FieldSpec(wire_name="failure_threshold"),
 }
 
+_DiscoveryService_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 @dataclasses.dataclass
 class DiscoveryServiceConfig:
+    # A description for the service.
     description: Any = None
-    force_destroy: Any = None
-    id: Any = None
-    name: Any = None
-    namespace_id: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    type: Any = None
+    # DNS configuration settings for the service.
     dns_config: Any = None
+    # Configuration for health checks for the service.
     health_check_config: Any = None
+    # Configurations for custom health checks for the service.
     health_check_custom_config: Any = None
+    # The name of the service.
+    name: Any = None
+    # The ID of the namespace in which the service is created.
+    namespace_id: Any = None
+    # A string map that contains attributes and values for the service. You can specify a maximum of 30 key-value pairs.
+    service_attributes: Any = None
+    # An array of key-value pairs to associate with the service.
+    tags: Any = None
+    # The type of service. Supported values are HTTP or DNS.
+    type: Any = None
+
+@dataclasses.dataclass
+class DiscoveryServiceAttrs:
+    # The Amazon Resource Name (ARN) of the service.
+    arn: Any = None
+    # A description for the service.
+    description: Any = None
+    # DNS configuration settings for the service.
+    dns_config: Any = None
+    # Configuration for health checks for the service.
+    health_check_config: Any = None
+    # Configurations for custom health checks for the service.
+    health_check_custom_config: Any = None
+    # The unique identifier for the service.
+    id: Any = None
+    # The name of the service.
+    name: Any = None
+    # The ID of the namespace in which the service is created.
+    namespace_id: Any = None
+    # A string map that contains attributes and values for the service. You can specify a maximum of 30 key-value pairs.
+    service_attributes: Any = None
+    # An array of key-value pairs to associate with the service.
+    tags: Any = None
+    # The type of service. Supported values are HTTP or DNS.
+    type: Any = None
 
 DiscoveryService = ubx.ResourceBinding(
     wire_type="aws_service_discovery_service",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "force_destroy": ubx.FieldSpec(wire_name="force_destroy"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "namespace_id": ubx.FieldSpec(wire_name="namespace_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "type": ubx.FieldSpec(wire_name="type"),
         "dns_config": ubx.FieldSpec(
             wire_name="dns_config",
-            kind="list",
+            kind="object",
             fields=_DiscoveryService_DnsConfigFields,
         ),
         "health_check_config": ubx.FieldSpec(
             wire_name="health_check_config",
-            kind="list",
+            kind="object",
             fields=_DiscoveryService_HealthCheckConfigFields,
         ),
         "health_check_custom_config": ubx.FieldSpec(
             wire_name="health_check_custom_config",
-            kind="list",
+            kind="object",
             fields=_DiscoveryService_HealthCheckCustomConfigFields,
         ),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "namespace_id": ubx.FieldSpec(wire_name="namespace_id"),
+        "service_attributes": ubx.FieldSpec(wire_name="service_attributes"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_DiscoveryService_TagsFields,
+        ),
+        "type": ubx.FieldSpec(wire_name="type"),
     },
 )

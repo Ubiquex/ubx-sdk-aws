@@ -2,28 +2,37 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LocalGatewayRouteConfig {
-  destinationCidrBlock: string | Computed<string>;
-  id?: string | Computed<string>;
-  localGatewayRouteTableId: string | Computed<string>;
-  localGatewayVirtualInterfaceGroupId: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The CIDR block used for destination matches. */
+  destinationCidrBlock?: string | Computed<string>;
+  /** The ID of the local gateway route table. */
+  localGatewayRouteTableId?: string | Computed<string>;
+  /** The ID of the virtual interface group. */
+  localGatewayVirtualInterfaceGroupId?: string | Computed<string>;
+  /** The ID of the network interface. */
+  networkInterfaceId?: string | Computed<string>;
 }
 
 export interface LocalGatewayRouteAttrs {
+  /** The CIDR block used for destination matches. */
   destinationCidrBlock: string;
-  id: string;
+  /** The ID of the local gateway route table. */
   localGatewayRouteTableId: string;
+  /** The ID of the virtual interface group. */
   localGatewayVirtualInterfaceGroupId: string;
-  region: string;
+  /** The ID of the network interface. */
+  networkInterfaceId: string;
+  /** The state of the route. */
+  state: string;
+  /** The route type. */
+  type: string;
 }
 
 export const LocalGatewayRoute: ResourceBinding<LocalGatewayRouteConfig, LocalGatewayRouteAttrs> = {
   wireType: "aws_ec2_local_gateway_route",
   fields: {
     destinationCidrBlock: "destination_cidr_block",
-    id: "id",
     localGatewayRouteTableId: "local_gateway_route_table_id",
     localGatewayVirtualInterfaceGroupId: "local_gateway_virtual_interface_group_id",
-    region: "region",
+    networkInterfaceId: "network_interface_id",
   },
 };

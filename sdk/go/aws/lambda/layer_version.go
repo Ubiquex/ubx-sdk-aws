@@ -3,20 +3,54 @@ package lambda
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type LayerVersionConfig struct {
-	CompatibleArchitectures any
-	CompatibleRuntimes any
-	Description any
-	Filename any
-	Id any
-	LayerName any
-	LicenseInfo any
-	Region any
+type LayerVersion_Content struct {
+	// The Amazon S3 bucket of the layer archive.
 	S3Bucket any
+	// The Amazon S3 key of the layer archive.
 	S3Key any
+	// Specifies whether Lambda should copy the deployment package to its internal storage (COPY) or reference it directly from your S3 bucket (REFERENCE).
+	S3ObjectStorageMode any
+	// For versioned objects, the version of the layer archive object to use.
 	S3ObjectVersion any
-	SkipDestroy any
-	SourceCodeHash any
+}
+
+var LayerVersion_ContentFields = ubx.FieldMap{
+		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
+		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
+		"S3ObjectStorageMode": ubx.FieldSpec{WireName: "s3_object_storage_mode"},
+		"S3ObjectVersion": ubx.FieldSpec{WireName: "s3_object_version"},
+	}
+
+type LayerVersionConfig struct {
+	// A list of compatible instruction set architectures.
+	CompatibleArchitectures any
+	// A list of compatible function runtimes. Used for filtering with ListLayers and ListLayerVersions.
+	CompatibleRuntimes any
+	// The `content` field specifies the Amazon S3 bucket, key, and optional object version that store the Lambda layer version's deployment package. (AI-inferred)
+	Content any
+	// The description of the version.
+	Description any
+	// The name or Amazon Resource Name (ARN) of the layer.
+	LayerName any
+	// The layer's software license.
+	LicenseInfo any
+}
+
+type LayerVersionAttrs struct {
+	// A list of compatible instruction set architectures.
+	CompatibleArchitectures any
+	// A list of compatible function runtimes. Used for filtering with ListLayers and ListLayerVersions.
+	CompatibleRuntimes any
+	// The `content` field specifies the Amazon S3 bucket, key, and optional object version that store the Lambda layer version's deployment package. (AI-inferred)
+	Content any
+	// The description of the version.
+	Description any
+	// The name or Amazon Resource Name (ARN) of the layer.
+	LayerName any
+	// The Amazon Resource Name (ARN) that uniquely identifies the Lambda layer version. (AI-inferred)
+	LayerVersionArn any
+	// The layer's software license.
+	LicenseInfo any
 }
 
 var LayerVersion = ubx.ResourceBinding{
@@ -24,16 +58,13 @@ var LayerVersion = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CompatibleArchitectures": ubx.FieldSpec{WireName: "compatible_architectures"},
 		"CompatibleRuntimes": ubx.FieldSpec{WireName: "compatible_runtimes"},
+		"Content": ubx.FieldSpec{
+			WireName: "content",
+			Kind: "object",
+			Fields: LayerVersion_ContentFields,
+		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Filename": ubx.FieldSpec{WireName: "filename"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"LayerName": ubx.FieldSpec{WireName: "layer_name"},
 		"LicenseInfo": ubx.FieldSpec{WireName: "license_info"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
-		"S3ObjectVersion": ubx.FieldSpec{WireName: "s3_object_version"},
-		"SkipDestroy": ubx.FieldSpec{WireName: "skip_destroy"},
-		"SourceCodeHash": ubx.FieldSpec{WireName: "source_code_hash"},
 	},
 }

@@ -7,57 +7,72 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Distribution_CacheBehavior:
-    behavior: Any = None
-    path: Any = None
-
-@dataclasses.dataclass
 class Distribution_CacheBehaviorSettings_ForwardedCookies:
+    # The specific cookies to forward to your distribution's origin.
     cookies_allow_list: Any = None
+    # Specifies which cookies to forward to the distribution's origin for a cache behavior: all, none, or allow-list to forward only the cookies specified in the cookiesAllowList parameter.
     option: Any = None
 
 @dataclasses.dataclass
 class Distribution_CacheBehaviorSettings_ForwardedHeaders:
+    # The specific headers to forward to your distribution's origin.
     headers_allow_list: Any = None
+    # The headers that you want your distribution to forward to your origin and base caching on.
     option: Any = None
 
 @dataclasses.dataclass
 class Distribution_CacheBehaviorSettings_ForwardedQueryStrings:
+    # Indicates whether the distribution forwards and caches based on query strings.
     option: Any = None
-    query_strings_allowed_list: Any = None
+    # The specific query strings that the distribution forwards to the origin.
+    query_strings_allow_list: Any = None
 
 @dataclasses.dataclass
 class Distribution_CacheBehaviorSettings:
-    allowed_http_methods: Any = None
-    cached_http_methods: Any = None
+    # The HTTP methods that are processed and forwarded to the distribution's origin.
+    allowed_httpmethods: Any = None
+    # The HTTP method responses that are cached by your distribution.
+    cached_httpmethods: Any = None
+    # The default amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the content has been updated.
     default_ttl: Any = None
-    maximum_ttl: Any = None
-    minimum_ttl: Any = None
+    # Describes whether an Amazon Lightsail content delivery network (CDN) distribution forwards cookies to the origin and, if so, which ones.
     forwarded_cookies: Any = None
+    # Describes the request headers that a Lightsail distribution bases caching on.
     forwarded_headers: Any = None
+    # Describes the query string parameters that an Amazon Lightsail content delivery network (CDN) distribution to bases caching on.
     forwarded_query_strings: Any = None
+    # The maximum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.
+    maximum_ttl: Any = None
+    # The minimum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.
+    minimum_ttl: Any = None
+
+@dataclasses.dataclass
+class Distribution_CacheBehaviors:
+    # Specifies the cache behavior for the associated path pattern, with supported values of 'cache' or 'no-cache' indicating whether matching requests are cached. (AI-inferred)
+    behavior: Any = None
+    # The path pattern (such as `/images/*`) that determines which requests this cache behavior applies to in the Lightsail distribution. (AI-inferred)
+    path: Any = None
 
 @dataclasses.dataclass
 class Distribution_DefaultCacheBehavior:
+    # The cache behavior of the distribution.
     behavior: Any = None
 
 @dataclasses.dataclass
 class Distribution_Origin:
+    # The name of the origin resource.
     name: Any = None
+    # The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.
     protocol_policy: Any = None
+    # The AWS Region name of the origin resource.
     region_name: Any = None
-    resource_type: Any = None
 
 @dataclasses.dataclass
-class Distribution_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_Distribution_CacheBehaviorFields = {
-    "behavior": ubx.FieldSpec(wire_name="behavior"),
-    "path": ubx.FieldSpec(wire_name="path"),
-}
+class Distribution_Tags:
+    # The key of a tag to attach to the Lightsail distribution, used to identify and categorize the resource. (AI-inferred)
+    key: Any = None
+    # The value part of a tag attached to the Lightsail distribution, used to store arbitrary metadata (e.g., environment, owner) for resource organization, cost allocation, or access control. (AI-inferred)
+    value: Any = None
 
 _Distribution_CacheBehaviorSettings_ForwardedCookiesFields = {
     "cookies_allow_list": ubx.FieldSpec(wire_name="cookies_allow_list"),
@@ -71,30 +86,35 @@ _Distribution_CacheBehaviorSettings_ForwardedHeadersFields = {
 
 _Distribution_CacheBehaviorSettings_ForwardedQueryStringsFields = {
     "option": ubx.FieldSpec(wire_name="option"),
-    "query_strings_allowed_list": ubx.FieldSpec(wire_name="query_strings_allowed_list"),
+    "query_strings_allow_list": ubx.FieldSpec(wire_name="query_strings_allow_list"),
 }
 
 _Distribution_CacheBehaviorSettingsFields = {
-    "allowed_http_methods": ubx.FieldSpec(wire_name="allowed_http_methods"),
-    "cached_http_methods": ubx.FieldSpec(wire_name="cached_http_methods"),
+    "allowed_httpmethods": ubx.FieldSpec(wire_name="allowed_httpmethods"),
+    "cached_httpmethods": ubx.FieldSpec(wire_name="cached_httpmethods"),
     "default_ttl": ubx.FieldSpec(wire_name="default_ttl"),
-    "maximum_ttl": ubx.FieldSpec(wire_name="maximum_ttl"),
-    "minimum_ttl": ubx.FieldSpec(wire_name="minimum_ttl"),
     "forwarded_cookies": ubx.FieldSpec(
         wire_name="forwarded_cookies",
-        kind="list",
+        kind="object",
         fields=_Distribution_CacheBehaviorSettings_ForwardedCookiesFields,
     ),
     "forwarded_headers": ubx.FieldSpec(
         wire_name="forwarded_headers",
-        kind="list",
+        kind="object",
         fields=_Distribution_CacheBehaviorSettings_ForwardedHeadersFields,
     ),
     "forwarded_query_strings": ubx.FieldSpec(
         wire_name="forwarded_query_strings",
-        kind="list",
+        kind="object",
         fields=_Distribution_CacheBehaviorSettings_ForwardedQueryStringsFields,
     ),
+    "maximum_ttl": ubx.FieldSpec(wire_name="maximum_ttl"),
+    "minimum_ttl": ubx.FieldSpec(wire_name="minimum_ttl"),
+}
+
+_Distribution_CacheBehaviorsFields = {
+    "behavior": ubx.FieldSpec(wire_name="behavior"),
+    "path": ubx.FieldSpec(wire_name="path"),
 }
 
 _Distribution_DefaultCacheBehaviorFields = {
@@ -105,68 +125,97 @@ _Distribution_OriginFields = {
     "name": ubx.FieldSpec(wire_name="name"),
     "protocol_policy": ubx.FieldSpec(wire_name="protocol_policy"),
     "region_name": ubx.FieldSpec(wire_name="region_name"),
-    "resource_type": ubx.FieldSpec(wire_name="resource_type"),
 }
 
-_Distribution_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Distribution_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class DistributionConfig:
+    # The bundle ID to use for the distribution.
     bundle_id: Any = None
-    certificate_name: Any = None
-    id: Any = None
-    ip_address_type: Any = None
-    is_enabled: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    cache_behavior: Any = None
+    # Describes the cache settings of an Amazon Lightsail content delivery network (CDN) distribution.
     cache_behavior_settings: Any = None
+    # An array of objects that describe the per-path cache behavior for the distribution.
+    cache_behaviors: Any = None
+    # The certificate attached to the Distribution.
+    certificate_name: Any = None
+    # Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.
     default_cache_behavior: Any = None
+    # The name for the distribution.
+    distribution_name: Any = None
+    # The IP address type for the distribution.
+    ip_address_type: Any = None
+    # Indicates whether the distribution is enabled.
+    is_enabled: Any = None
+    # Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.
     origin: Any = None
-    timeouts: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class DistributionAttrs:
+    # Indicates whether the bundle that is currently applied to your distribution, specified using the distributionName parameter, can be changed to another bundle.
+    able_to_update_bundle: Any = None
+    # The bundle ID to use for the distribution.
+    bundle_id: Any = None
+    # Describes the cache settings of an Amazon Lightsail content delivery network (CDN) distribution.
+    cache_behavior_settings: Any = None
+    # An array of objects that describe the per-path cache behavior for the distribution.
+    cache_behaviors: Any = None
+    # The certificate attached to the Distribution.
+    certificate_name: Any = None
+    # Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.
+    default_cache_behavior: Any = None
+    # The Amazon Resource Name (ARN) uniquely identifying the Lightsail distribution. (AI-inferred)
+    distribution_arn: Any = None
+    # The name for the distribution.
+    distribution_name: Any = None
+    # The IP address type for the distribution.
+    ip_address_type: Any = None
+    # Indicates whether the distribution is enabled.
+    is_enabled: Any = None
+    # Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.
+    origin: Any = None
+    # The status of the distribution.
+    status: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Distribution = ubx.ResourceBinding(
     wire_type="aws_lightsail_distribution",
     fields={
         "bundle_id": ubx.FieldSpec(wire_name="bundle_id"),
-        "certificate_name": ubx.FieldSpec(wire_name="certificate_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "ip_address_type": ubx.FieldSpec(wire_name="ip_address_type"),
-        "is_enabled": ubx.FieldSpec(wire_name="is_enabled"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "cache_behavior": ubx.FieldSpec(
-            wire_name="cache_behavior",
-            kind="set",
-            fields=_Distribution_CacheBehaviorFields,
-        ),
         "cache_behavior_settings": ubx.FieldSpec(
             wire_name="cache_behavior_settings",
-            kind="list",
+            kind="object",
             fields=_Distribution_CacheBehaviorSettingsFields,
         ),
+        "cache_behaviors": ubx.FieldSpec(
+            wire_name="cache_behaviors",
+            kind="list",
+            fields=_Distribution_CacheBehaviorsFields,
+        ),
+        "certificate_name": ubx.FieldSpec(wire_name="certificate_name"),
         "default_cache_behavior": ubx.FieldSpec(
             wire_name="default_cache_behavior",
-            kind="list",
+            kind="object",
             fields=_Distribution_DefaultCacheBehaviorFields,
         ),
+        "distribution_name": ubx.FieldSpec(wire_name="distribution_name"),
+        "ip_address_type": ubx.FieldSpec(wire_name="ip_address_type"),
+        "is_enabled": ubx.FieldSpec(wire_name="is_enabled"),
         "origin": ubx.FieldSpec(
             wire_name="origin",
-            kind="list",
+            kind="object",
             fields=_Distribution_OriginFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Distribution_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Distribution_TagsFields,
         ),
     },
 )

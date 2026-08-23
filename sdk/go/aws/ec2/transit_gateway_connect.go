@@ -3,47 +3,65 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TransitGatewayConnect_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type TransitGatewayConnect_Options struct {
+	// The tunnel protocol.
+	Protocol any
 }
 
-var TransitGatewayConnect_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+type TransitGatewayConnect_Tags struct {
+	// The key of a user-defined tag assigned to the EC2 Transit Gateway Connect attachment. (AI-inferred)
+	Key any
+	Value any
+}
+
+var TransitGatewayConnect_OptionsFields = ubx.FieldMap{
+		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+	}
+
+var TransitGatewayConnect_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type TransitGatewayConnectConfig struct {
-	Id any
-	Protocol any
-	Region any
+	// Specifies the options for the Transit Gateway Connect attachment, including the required tunneling protocol (GRE) used to establish the Connect peer connection. (AI-inferred)
+	Options any
+	// The tags for the attachment.
 	Tags any
-	TagsAll any
-	TransitGatewayDefaultRouteTableAssociation any
-	TransitGatewayDefaultRouteTablePropagation any
+	// The ID of the attachment from which the Connect attachment was created.
+	TransportTransitGatewayAttachmentId any
+}
+
+type TransitGatewayConnectAttrs struct {
+	// The creation time.
+	CreationTime any
+	// Specifies the options for the Transit Gateway Connect attachment, including the required tunneling protocol (GRE) used to establish the Connect peer connection. (AI-inferred)
+	Options any
+	// The state of the attachment.
+	State any
+	// The tags for the attachment.
+	Tags any
+	// The ID of the Connect attachment.
+	TransitGatewayAttachmentId any
+	// The ID of the transit gateway.
 	TransitGatewayId any
-	TransportAttachmentId any
-	Timeouts any
+	// The ID of the attachment from which the Connect attachment was created.
+	TransportTransitGatewayAttachmentId any
 }
 
 var TransitGatewayConnect = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_connect",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"TransitGatewayDefaultRouteTableAssociation": ubx.FieldSpec{WireName: "transit_gateway_default_route_table_association"},
-		"TransitGatewayDefaultRouteTablePropagation": ubx.FieldSpec{WireName: "transit_gateway_default_route_table_propagation"},
-		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
-		"TransportAttachmentId": ubx.FieldSpec{WireName: "transport_attachment_id"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"Options": ubx.FieldSpec{
+			WireName: "options",
 			Kind: "object",
-			Fields: TransitGatewayConnect_TimeoutsFields,
+			Fields: TransitGatewayConnect_OptionsFields,
 		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: TransitGatewayConnect_TagsFields,
+		},
+		"TransportTransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transport_transit_gateway_attachment_id"},
 	},
 }

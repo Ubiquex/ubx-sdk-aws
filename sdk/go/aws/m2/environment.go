@@ -4,104 +4,100 @@ package m2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Environment_HighAvailabilityConfig struct {
+	// The desired number of instances to run in the high availability configuration of the AWS Mainframe Modernization (M2) environment. (AI-inferred)
 	DesiredCapacity any
-}
-
-type Environment_StorageConfiguration_Efs struct {
-	FileSystemId any
-	MountPoint any
-}
-
-type Environment_StorageConfiguration struct {
-	Efs any
-	Fsx any
-}
-
-type Environment_Timeouts struct {
-	Create any
-	Delete any
-	Update any
 }
 
 var Environment_HighAvailabilityConfigFields = ubx.FieldMap{
 		"DesiredCapacity": ubx.FieldSpec{WireName: "desired_capacity"},
 	}
 
-var Environment_StorageConfiguration_EfsFields = ubx.FieldMap{
-		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
-	}
-
-var Environment_StorageConfigurationFields = ubx.FieldMap{
-		"Efs": ubx.FieldSpec{
-			WireName: "efs",
-			Kind: "list",
-			Fields: Environment_StorageConfiguration_EfsFields,
-		},
-		"Fsx": ubx.FieldSpec{
-			WireName: "fsx",
-			Kind: "list",
-			Fields: Environment_StorageConfiguration_EfsFields,
-		},
-	}
-
-var Environment_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type EnvironmentConfig struct {
-	ApplyChangesDuringMaintenanceWindow any
+	// The description of the environment.
 	Description any
+	// The target platform for the environment.
 	EngineType any
+	// The version of the runtime engine for the environment.
 	EngineVersion any
-	ForceUpdate any
-	InstanceType any
-	KmsKeyId any
-	Name any
-	PreferredMaintenanceWindow any
-	PubliclyAccessible any
-	Region any
-	SecurityGroupIds any
-	SubnetIds any
-	Tags any
+	// Defines the details of a high availability configuration.
 	HighAvailabilityConfig any
-	StorageConfiguration any
-	Timeouts any
+	// The type of instance underlying the environment.
+	InstanceType any
+	// The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting environment-related resources.
+	KmsKeyId any
+	// The name of the environment.
+	Name any
+	// Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred)
+	NetworkType any
+	// Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.
+	PreferredMaintenanceWindow any
+	// Specifies whether the environment is publicly accessible.
+	PubliclyAccessible any
+	// The list of security groups for the VPC associated with this environment.
+	SecurityGroupIds any
+	// The storage configurations defined for the runtime environment.
+	StorageConfigurations any
+	// The unique identifiers of the subnets assigned to this runtime environment.
+	SubnetIds any
+	// Defines tags associated to an environment.
+	Tags any
+}
+
+type EnvironmentAttrs struct {
+	// The description of the environment.
+	Description any
+	// The target platform for the environment.
+	EngineType any
+	// The version of the runtime engine for the environment.
+	EngineVersion any
+	// The Amazon Resource Name (ARN) of the runtime environment.
+	EnvironmentArn any
+	// The unique identifier of the environment.
+	EnvironmentId any
+	// Defines the details of a high availability configuration.
+	HighAvailabilityConfig any
+	// The type of instance underlying the environment.
+	InstanceType any
+	// The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting environment-related resources.
+	KmsKeyId any
+	// The name of the environment.
+	Name any
+	// Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred)
+	NetworkType any
+	// Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.
+	PreferredMaintenanceWindow any
+	// Specifies whether the environment is publicly accessible.
+	PubliclyAccessible any
+	// The list of security groups for the VPC associated with this environment.
+	SecurityGroupIds any
+	// The storage configurations defined for the runtime environment.
+	StorageConfigurations any
+	// The unique identifiers of the subnets assigned to this runtime environment.
+	SubnetIds any
+	// Defines tags associated to an environment.
+	Tags any
 }
 
 var Environment = ubx.ResourceBinding{
 	WireType: "aws_m2_environment",
 	Fields: ubx.FieldMap{
-		"ApplyChangesDuringMaintenanceWindow": ubx.FieldSpec{WireName: "apply_changes_during_maintenance_window"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EngineType": ubx.FieldSpec{WireName: "engine_type"},
 		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"ForceUpdate": ubx.FieldSpec{WireName: "force_update"},
+		"HighAvailabilityConfig": ubx.FieldSpec{
+			WireName: "high_availability_config",
+			Kind: "object",
+			Fields: Environment_HighAvailabilityConfigFields,
+		},
 		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
+		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
 		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
 		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+		"StorageConfigurations": ubx.FieldSpec{WireName: "storage_configurations"},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"HighAvailabilityConfig": ubx.FieldSpec{
-			WireName: "high_availability_config",
-			Kind: "list",
-			Fields: Environment_HighAvailabilityConfigFields,
-		},
-		"StorageConfiguration": ubx.FieldSpec{
-			WireName: "storage_configuration",
-			Kind: "list",
-			Fields: Environment_StorageConfigurationFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Environment_TimeoutsFields,
-		},
 	},
 }

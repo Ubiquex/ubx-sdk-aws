@@ -7,38 +7,33 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class KeySigningKey_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_KeySigningKey_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
+class KeySigningKeyConfig:
+    # The unique string (ID) used to identify a hosted zone.
+    hosted_zone_id: Any = None
+    # The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management Service (KMS). The KeyManagementServiceArn must be unique for each key signing key (KSK) in a single hosted zone.
+    key_management_service_arn: Any = None
+    # An alphanumeric string used to identify a key signing key (KSK). Name must be unique for each key signing key in the same hosted zone.
+    name: Any = None
+    # A string specifying the initial status of the key signing key (KSK). You can set the value to ACTIVE or INACTIVE.
+    status: Any = None
 
 @dataclasses.dataclass
-class KeySigningKeyConfig:
+class KeySigningKeyAttrs:
+    # The unique string (ID) used to identify a hosted zone.
     hosted_zone_id: Any = None
-    id: Any = None
+    # The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management Service (KMS). The KeyManagementServiceArn must be unique for each key signing key (KSK) in a single hosted zone.
     key_management_service_arn: Any = None
+    # An alphanumeric string used to identify a key signing key (KSK). Name must be unique for each key signing key in the same hosted zone.
     name: Any = None
+    # A string specifying the initial status of the key signing key (KSK). You can set the value to ACTIVE or INACTIVE.
     status: Any = None
-    timeouts: Any = None
 
 KeySigningKey = ubx.ResourceBinding(
     wire_type="aws_route53_key_signing_key",
     fields={
         "hosted_zone_id": ubx.FieldSpec(wire_name="hosted_zone_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "key_management_service_arn": ubx.FieldSpec(wire_name="key_management_service_arn"),
         "name": ubx.FieldSpec(wire_name="name"),
         "status": ubx.FieldSpec(wire_name="status"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_KeySigningKey_TimeoutsFields,
-        ),
     },
 )

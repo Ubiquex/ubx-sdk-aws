@@ -7,54 +7,95 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Cluster_EncryptionDetails:
+    # The status of encryption for the cluster.
+    encryption_status: Any = None
+    # The type of encryption that protects data in the cluster.
+    encryption_type: Any = None
+    # The Amazon Resource Name (ARN) of the KMS key that encrypts data in the cluster.
+    kms_key_arn: Any = None
+
+@dataclasses.dataclass
 class Cluster_MultiRegionProperties:
+    # Specifies the Amazon Resource Names (ARNs) of the linked regional DSQL clusters that form the multi-region cluster. (AI-inferred)
     clusters: Any = None
+    # The witness region in a multi-region cluster.
     witness_region: Any = None
 
 @dataclasses.dataclass
-class Cluster_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Cluster_Tags:
+    # The key of a tag assigned to the DSQL cluster, used to organize and identify the cluster for management and cost allocation. (AI-inferred)
+    key: Any = None
+    # The value of a user-defined tag attached to the DSQL cluster, used for metadata and cost allocation. (AI-inferred)
+    value: Any = None
 
 _Cluster_MultiRegionPropertiesFields = {
     "clusters": ubx.FieldSpec(wire_name="clusters"),
     "witness_region": ubx.FieldSpec(wire_name="witness_region"),
 }
 
-_Cluster_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Cluster_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ClusterConfig:
+    # Whether deletion protection is enabled in this cluster.
     deletion_protection_enabled: Any = None
-    force_destroy: Any = None
+    # The KMS key that encrypts data on the cluster.
     kms_encryption_key: Any = None
-    region: Any = None
-    tags: Any = None
+    # The Multi-region properties associated to this cluster.
     multi_region_properties: Any = None
-    timeouts: Any = None
+    # The IAM policy applied to the cluster resource.
+    policy_document: Any = None
+    tags: Any = None
+
+@dataclasses.dataclass
+class ClusterAttrs:
+    # The time of when the cluster was created in ISO-8601 format.
+    creation_time: Any = None
+    # Whether deletion protection is enabled in this cluster.
+    deletion_protection_enabled: Any = None
+    # The encryption configuration details for the cluster.
+    encryption_details: Any = None
+    # The DSQL cluster endpoint.
+    endpoint: Any = None
+    # The ID of the created cluster.
+    identifier: Any = None
+    # The KMS key that encrypts data on the cluster.
+    kms_encryption_key: Any = None
+    # The Multi-region properties associated to this cluster.
+    multi_region_properties: Any = None
+    # The IAM policy applied to the cluster resource.
+    policy_document: Any = None
+    # The version number of the cluster's resource based policy
+    policy_version: Any = None
+    # The Amazon Resource Name (ARN) for the cluster.
+    resource_arn: Any = None
+    # The status of the cluster.
+    status: Any = None
+    tags: Any = None
+    # The DSQL cluster VPC endpoint.
+    vpc_endpoint: Any = None
+    # The VPC endpoint service name.
+    vpc_endpoint_service_name: Any = None
 
 Cluster = ubx.ResourceBinding(
     wire_type="aws_dsql_cluster",
     fields={
         "deletion_protection_enabled": ubx.FieldSpec(wire_name="deletion_protection_enabled"),
-        "force_destroy": ubx.FieldSpec(wire_name="force_destroy"),
         "kms_encryption_key": ubx.FieldSpec(wire_name="kms_encryption_key"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
         "multi_region_properties": ubx.FieldSpec(
             wire_name="multi_region_properties",
-            kind="list",
+            kind="object",
             fields=_Cluster_MultiRegionPropertiesFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Cluster_TimeoutsFields,
+        "policy_document": ubx.FieldSpec(wire_name="policy_document"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Cluster_TagsFields,
         ),
     },
 )

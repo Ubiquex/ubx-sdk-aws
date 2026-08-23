@@ -2,24 +2,40 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EndpointAuthorizationConfig {
+  /** The AWS account ID of the customer to be authorized to access the Redshift cluster's VPC endpoint. (AI-inferred) */
   account: string | Computed<string>;
+  /** The cluster identifier. */
   clusterIdentifier: string | Computed<string>;
-  forceDelete?: boolean | Computed<boolean>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted. */
+  force?: boolean | Computed<boolean>;
+  /** The virtual private cloud (VPC) identifiers to grant or revoke access to. */
   vpcIds?: string[] | Computed<string[]>;
 }
 
 export interface EndpointAuthorizationAttrs {
+  /** The AWS account ID of the customer to be authorized to access the Redshift cluster's VPC endpoint. (AI-inferred) */
   account: string;
+  /** Indicates whether all VPCs in the grantee account are allowed access to the cluster. */
   allowedAllVpcs: boolean;
+  /** The VPCs allowed access to the cluster. */
+  allowedVpcs: string[];
+  /** The time (UTC) when the authorization was created. */
+  authorizeTime: string;
+  /** The cluster identifier. */
   clusterIdentifier: string;
+  /** The status of the cluster. */
+  clusterStatus: string;
+  /** The number of Redshift-managed VPC endpoints created for the authorization. */
   endpointCount: number;
-  forceDelete: boolean;
+  /** Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted. */
+  force: boolean;
+  /** The AWS account ID that is granted access to the cluster's endpoint, returned as a computed read-only attribute. (AI-inferred) */
   grantee: string;
+  /** The AWS account ID of the cluster owner that grants the cross-account endpoint authorization. (AI-inferred) */
   grantor: string;
-  id: string;
-  region: string;
+  /** The status of the authorization action. */
+  status: string;
+  /** The virtual private cloud (VPC) identifiers to grant or revoke access to. */
   vpcIds: string[];
 }
 
@@ -28,9 +44,7 @@ export const EndpointAuthorization: ResourceBinding<EndpointAuthorizationConfig,
   fields: {
     account: "account",
     clusterIdentifier: "cluster_identifier",
-    forceDelete: "force_delete",
-    id: "id",
-    region: "region",
+    force: "force",
     vpcIds: "vpc_ids",
   },
 };

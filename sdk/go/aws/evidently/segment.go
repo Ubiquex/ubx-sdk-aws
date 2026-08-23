@@ -3,25 +3,51 @@ package evidently
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Segment_Tags struct {
+	Key any
+	// The value of a tag applied to the Evidently segment, used for metadata, resource organization, and cost allocation. (AI-inferred)
+	Value any
+}
+
+var Segment_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type SegmentConfig struct {
+	// A user-supplied text description of the segment, used to clarify its purpose or contents. (AI-inferred)
 	Description any
-	Id any
+	// The user-defined name of the audience segment, used to identify it within Evidently experiments and launches. (AI-inferred)
 	Name any
+	// The JSON pattern that defines the conditions under which a user matches this segment, used to target audiences for Evidently experiments and launches. (AI-inferred)
 	Pattern any
-	Region any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
+}
+
+type SegmentAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies the Evidently segment. (AI-inferred)
+	Arn any
+	// A user-supplied text description of the segment, used to clarify its purpose or contents. (AI-inferred)
+	Description any
+	// The user-defined name of the audience segment, used to identify it within Evidently experiments and launches. (AI-inferred)
+	Name any
+	// The JSON pattern that defines the conditions under which a user matches this segment, used to target audiences for Evidently experiments and launches. (AI-inferred)
+	Pattern any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Segment = ubx.ResourceBinding{
 	WireType: "aws_evidently_segment",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Segment_TagsFields,
+		},
 	},
 }

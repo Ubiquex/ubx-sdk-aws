@@ -3,20 +3,72 @@ package cur
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ReportDefinition_Tags struct {
+	// The key of a user-defined tag applied to the AWS Cost and Usage Report definition, used for resource categorization and cost allocation tracking. (AI-inferred)
+	Key any
+	Value any
+}
+
+var ReportDefinition_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ReportDefinitionConfig struct {
+	// A list of manifests that you want Amazon Web Services to create for this report.
 	AdditionalArtifacts any
+	// A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.
 	AdditionalSchemaElements any
+	// The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.
+	BillingViewArn any
+	// The compression format that AWS uses for the report.
 	Compression any
+	// The format that AWS saves the report in.
 	Format any
-	Id any
+	// Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.
 	RefreshClosedReports any
+	// The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
 	ReportName any
+	// Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.
 	ReportVersioning any
+	// The S3 bucket where AWS delivers the report.
 	S3Bucket any
+	// The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.
 	S3Prefix any
+	// The region of the S3 bucket that AWS delivers the report into.
 	S3Region any
+	// Specifies the list of tag key-value pairs to attach to the AWS Cost and Usage Report definition, enabling resource-level identification and management. (AI-inferred)
 	Tags any
-	TagsAll any
+	// The granularity of the line items in the report.
+	TimeUnit any
+}
+
+type ReportDefinitionAttrs struct {
+	// A list of manifests that you want Amazon Web Services to create for this report.
+	AdditionalArtifacts any
+	// A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.
+	AdditionalSchemaElements any
+	// The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.
+	BillingViewArn any
+	// The compression format that AWS uses for the report.
+	Compression any
+	// The format that AWS saves the report in.
+	Format any
+	// Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.
+	RefreshClosedReports any
+	// The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
+	ReportName any
+	// Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.
+	ReportVersioning any
+	// The S3 bucket where AWS delivers the report.
+	S3Bucket any
+	// The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.
+	S3Prefix any
+	// The region of the S3 bucket that AWS delivers the report into.
+	S3Region any
+	// Specifies the list of tag key-value pairs to attach to the AWS Cost and Usage Report definition, enabling resource-level identification and management. (AI-inferred)
+	Tags any
+	// The granularity of the line items in the report.
 	TimeUnit any
 }
 
@@ -25,17 +77,20 @@ var ReportDefinition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdditionalArtifacts": ubx.FieldSpec{WireName: "additional_artifacts"},
 		"AdditionalSchemaElements": ubx.FieldSpec{WireName: "additional_schema_elements"},
+		"BillingViewArn": ubx.FieldSpec{WireName: "billing_view_arn"},
 		"Compression": ubx.FieldSpec{WireName: "compression"},
 		"Format": ubx.FieldSpec{WireName: "format"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"RefreshClosedReports": ubx.FieldSpec{WireName: "refresh_closed_reports"},
 		"ReportName": ubx.FieldSpec{WireName: "report_name"},
 		"ReportVersioning": ubx.FieldSpec{WireName: "report_versioning"},
 		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
 		"S3Prefix": ubx.FieldSpec{WireName: "s3_prefix"},
 		"S3Region": ubx.FieldSpec{WireName: "s3_region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ReportDefinition_TagsFields,
+		},
 		"TimeUnit": ubx.FieldSpec{WireName: "time_unit"},
 	},
 }

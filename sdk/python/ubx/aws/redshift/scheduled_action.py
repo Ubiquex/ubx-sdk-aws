@@ -7,82 +7,57 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ScheduledAction_TargetAction_PauseCluster:
-    cluster_identifier: Any = None
-
-@dataclasses.dataclass
-class ScheduledAction_TargetAction_ResizeCluster:
-    classic: Any = None
-    cluster_identifier: Any = None
-    cluster_type: Any = None
-    node_type: Any = None
-    number_of_nodes: Any = None
-
-@dataclasses.dataclass
-class ScheduledAction_TargetAction:
-    pause_cluster: Any = None
-    resize_cluster: Any = None
-    resume_cluster: Any = None
-
-_ScheduledAction_TargetAction_PauseClusterFields = {
-    "cluster_identifier": ubx.FieldSpec(wire_name="cluster_identifier"),
-}
-
-_ScheduledAction_TargetAction_ResizeClusterFields = {
-    "classic": ubx.FieldSpec(wire_name="classic"),
-    "cluster_identifier": ubx.FieldSpec(wire_name="cluster_identifier"),
-    "cluster_type": ubx.FieldSpec(wire_name="cluster_type"),
-    "node_type": ubx.FieldSpec(wire_name="node_type"),
-    "number_of_nodes": ubx.FieldSpec(wire_name="number_of_nodes"),
-}
-
-_ScheduledAction_TargetActionFields = {
-    "pause_cluster": ubx.FieldSpec(
-        wire_name="pause_cluster",
-        kind="list",
-        fields=_ScheduledAction_TargetAction_PauseClusterFields,
-    ),
-    "resize_cluster": ubx.FieldSpec(
-        wire_name="resize_cluster",
-        kind="list",
-        fields=_ScheduledAction_TargetAction_ResizeClusterFields,
-    ),
-    "resume_cluster": ubx.FieldSpec(
-        wire_name="resume_cluster",
-        kind="list",
-        fields=_ScheduledAction_TargetAction_PauseClusterFields,
-    ),
-}
-
-@dataclasses.dataclass
 class ScheduledActionConfig:
-    description: Any = None
+    # If true, the schedule is enabled. If false, the scheduled action does not trigger.
     enable: Any = None
+    # The UTC date and time after which the scheduled action no longer runs; if omitted, the action continues indefinitely until disabled or deleted. (AI-inferred)
     end_time: Any = None
+    # The IAM role to assume to run the target action.
     iam_role: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # The schedule in `at( )` or `cron( )` format.
     schedule: Any = None
+    # The description of the scheduled action.
+    scheduled_action_description: Any = None
+    # The name of the scheduled action. The name must be unique within an account.
+    scheduled_action_name: Any = None
+    # The UTC start time when the scheduled action becomes active, specified in ISO 8601 format. (AI-inferred)
     start_time: Any = None
+    # Configures the specific Redshift cluster operation (such as resize, pause, or resume) that the scheduled action will invoke when it fires. (AI-inferred)
+    target_action: Any = None
+
+@dataclasses.dataclass
+class ScheduledActionAttrs:
+    # If true, the schedule is enabled. If false, the scheduled action does not trigger.
+    enable: Any = None
+    # The UTC date and time after which the scheduled action no longer runs; if omitted, the action continues indefinitely until disabled or deleted. (AI-inferred)
+    end_time: Any = None
+    # The IAM role to assume to run the target action.
+    iam_role: Any = None
+    # List of times when the scheduled action will run.
+    next_invocations: Any = None
+    # The schedule in `at( )` or `cron( )` format.
+    schedule: Any = None
+    # The description of the scheduled action.
+    scheduled_action_description: Any = None
+    # The name of the scheduled action. The name must be unique within an account.
+    scheduled_action_name: Any = None
+    # The UTC start time when the scheduled action becomes active, specified in ISO 8601 format. (AI-inferred)
+    start_time: Any = None
+    # The state of the scheduled action.
+    state: Any = None
+    # Configures the specific Redshift cluster operation (such as resize, pause, or resume) that the scheduled action will invoke when it fires. (AI-inferred)
     target_action: Any = None
 
 ScheduledAction = ubx.ResourceBinding(
     wire_type="aws_redshift_scheduled_action",
     fields={
-        "description": ubx.FieldSpec(wire_name="description"),
         "enable": ubx.FieldSpec(wire_name="enable"),
         "end_time": ubx.FieldSpec(wire_name="end_time"),
         "iam_role": ubx.FieldSpec(wire_name="iam_role"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "schedule": ubx.FieldSpec(wire_name="schedule"),
+        "scheduled_action_description": ubx.FieldSpec(wire_name="scheduled_action_description"),
+        "scheduled_action_name": ubx.FieldSpec(wire_name="scheduled_action_name"),
         "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "target_action": ubx.FieldSpec(
-            wire_name="target_action",
-            kind="list",
-            fields=_ScheduledAction_TargetActionFields,
-        ),
+        "target_action": ubx.FieldSpec(wire_name="target_action"),
     },
 )

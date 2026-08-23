@@ -3,83 +3,105 @@ package evidently
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Project_DataDelivery_CloudwatchLogs struct {
-	LogGroup any
+type Project_AppConfigResource struct {
+	// The application_id specifies the AWS AppConfig application ID that this Evidently project uses to store and manage its feature flag configuration. (AI-inferred)
+	ApplicationId any
+	// The ID of the AWS AppConfig environment that hosts the configuration used by this Evidently project for feature flag evaluation. (AI-inferred)
+	EnvironmentId any
 }
 
-type Project_DataDelivery_S3Destination struct {
-	Bucket any
+type Project_DataDelivery_S3 struct {
+	// The name of the S3 bucket to which Evidently delivers experiment and feature-evaluation data for this project. (AI-inferred)
+	BucketName any
+	// Specifies the S3 key prefix under which AWS Evidently will store evaluation event data for this project when data delivery is configured to an S3 bucket. (AI-inferred)
 	Prefix any
 }
 
 type Project_DataDelivery struct {
-	CloudwatchLogs any
-	S3Destination any
+	// The name of the CloudWatch Logs log group where Evidently delivers the project's data, such as evaluation events, for analysis and monitoring. (AI-inferred)
+	LogGroup any
+	// Configures the S3 bucket and optional prefix where Evidently delivers project data such as events and evaluation results. (AI-inferred)
+	S3 any
 }
 
-type Project_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Project_Tags struct {
+	// The key component of a tag attached to the Amazon Evidently project, allowing you to categorize and filter the project by user-defined labels. (AI-inferred)
+	Key any
+	// The value of a tag assigned to the Evidently project, used for organizing and identifying the resource. (AI-inferred)
+	Value any
 }
 
-var Project_DataDelivery_CloudwatchLogsFields = ubx.FieldMap{
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+var Project_AppConfigResourceFields = ubx.FieldMap{
+		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
 	}
 
-var Project_DataDelivery_S3DestinationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+var Project_DataDelivery_S3Fields = ubx.FieldMap{
+		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 		"Prefix": ubx.FieldSpec{WireName: "prefix"},
 	}
 
 var Project_DataDeliveryFields = ubx.FieldMap{
-		"CloudwatchLogs": ubx.FieldSpec{
-			WireName: "cloudwatch_logs",
-			Kind: "list",
-			Fields: Project_DataDelivery_CloudwatchLogsFields,
-		},
-		"S3Destination": ubx.FieldSpec{
-			WireName: "s3_destination",
-			Kind: "list",
-			Fields: Project_DataDelivery_S3DestinationFields,
+		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+		"S3": ubx.FieldSpec{
+			WireName: "s3",
+			Kind: "object",
+			Fields: Project_DataDelivery_S3Fields,
 		},
 	}
 
-var Project_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Project_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ProjectConfig struct {
-	Description any
-	Id any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
+	// Specifies the AWS AppConfig application and configuration profile to associate with this Evidently project, enabling the project to use AppConfig as the source for feature flag variations. (AI-inferred)
+	AppConfigResource any
+	// Destinations for data.
 	DataDelivery any
-	Timeouts any
+	// An optional free-form text field that provides a description for the Evidently project. (AI-inferred)
+	Description any
+	// The name to assign to the Evidently project, which must be unique within the AWS account and Region. (AI-inferred)
+	Name any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type ProjectAttrs struct {
+	// Specifies the AWS AppConfig application and configuration profile to associate with this Evidently project, enabling the project to use AppConfig as the source for feature flag variations. (AI-inferred)
+	AppConfigResource any
+	// The Amazon Resource Name (ARN) of the Evidently project, which uniquely identifies the project in AWS. (AI-inferred)
+	Arn any
+	// Destinations for data.
+	DataDelivery any
+	// An optional free-form text field that provides a description for the Evidently project. (AI-inferred)
+	Description any
+	// The name to assign to the Evidently project, which must be unique within the AWS account and Region. (AI-inferred)
+	Name any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Project = ubx.ResourceBinding{
 	WireType: "aws_evidently_project",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"AppConfigResource": ubx.FieldSpec{
+			WireName: "app_config_resource",
+			Kind: "object",
+			Fields: Project_AppConfigResourceFields,
+		},
 		"DataDelivery": ubx.FieldSpec{
 			WireName: "data_delivery",
-			Kind: "list",
+			Kind: "object",
 			Fields: Project_DataDeliveryFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Project_TimeoutsFields,
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Project_TagsFields,
 		},
 	},
 }

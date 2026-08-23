@@ -3,17 +3,37 @@ package inspector
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ResourceGroup_ResourceGroupTags struct {
+	// The key of a tag that, along with its value, defines an Amazon Inspector resource group, which is used to select EC2 instances for assessment. (AI-inferred)
+	Key any
+	// The value of a tag that, combined with its key, defines an Amazon Inspector resource group used to scope which EC2 instances the Inspector service targets. (AI-inferred)
+	Value any
+}
+
+var ResourceGroup_ResourceGroupTagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ResourceGroupConfig struct {
-	Id any
-	Region any
-	Tags any
+	// Defines the tag key-value pairs that identify the EC2 instances to include in this Inspector resource group, used as the basis for an assessment target. (AI-inferred)
+	ResourceGroupTags any
+}
+
+type ResourceGroupAttrs struct {
+	// The Amazon Resource Name (ARN) of the Inspector resource group. (AI-inferred)
+	Arn any
+	// Defines the tag key-value pairs that identify the EC2 instances to include in this Inspector resource group, used as the basis for an assessment target. (AI-inferred)
+	ResourceGroupTags any
 }
 
 var ResourceGroup = ubx.ResourceBinding{
 	WireType: "aws_inspector_resource_group",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"ResourceGroupTags": ubx.FieldSpec{
+			WireName: "resource_group_tags",
+			Kind: "list",
+			Fields: ResourceGroup_ResourceGroupTagsFields,
+		},
 	},
 }

@@ -2,25 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServerlessCluster_ClientAuthentication_Sasl_Iam {
-  enabled: boolean;
+  /** Enables IAM-based access control for SASL authentication on the MSK Serverless cluster. (AI-inferred) */
+  enabled: boolean | Computed<boolean>;
 }
 
 export interface ServerlessCluster_ClientAuthentication_Sasl {
-  iam: ServerlessCluster_ClientAuthentication_Sasl_Iam[];
+  /** Enables IAM access control for SASL authentication, allowing clients to authenticate to the cluster using AWS Identity and Access Management (IAM) credentials. (AI-inferred) */
+  iam: ServerlessCluster_ClientAuthentication_Sasl_Iam | Computed<ServerlessCluster_ClientAuthentication_Sasl_Iam>;
 }
 
 export interface ServerlessCluster_ClientAuthentication {
-  sasl: ServerlessCluster_ClientAuthentication_Sasl[];
+  /** Defines the SASL authentication configuration for the MSK Serverless cluster, which must include the Iam property to enable IAM-based client authentication, as serverless clusters support only IAM as the SASL mechanism. (AI-inferred) */
+  sasl: ServerlessCluster_ClientAuthentication_Sasl | Computed<ServerlessCluster_ClientAuthentication_Sasl>;
 }
 
-export interface ServerlessCluster_Timeouts {
-  create: string;
-  delete: string;
-}
-
-export interface ServerlessCluster_VpcConfig {
-  securityGroupIds: string[];
-  subnetIds: string[];
+export interface ServerlessCluster_VpcConfigs {
+  /** A list of security group IDs to associate with the MSK Serverless cluster's elastic network interfaces in the VPC. (AI-inferred) */
+  securityGroups?: string[] | Computed<string[]>;
+  /** The list of subnet IDs in the customer VPC where the MSK Serverless cluster's network interfaces and broker endpoints are provisioned. (AI-inferred) */
+  subnetIds?: string[] | Computed<string[]>;
 }
 
 const ServerlessCluster_ClientAuthentication_Sasl_IamFields: FieldMap = {
@@ -30,7 +30,7 @@ const ServerlessCluster_ClientAuthentication_Sasl_IamFields: FieldMap = {
 const ServerlessCluster_ClientAuthentication_SaslFields: FieldMap = {
   iam: {
     wireName: "iam",
-    kind: "list",
+    kind: "object",
     fields: ServerlessCluster_ClientAuthentication_Sasl_IamFields,
   },
 };
@@ -38,68 +38,54 @@ const ServerlessCluster_ClientAuthentication_SaslFields: FieldMap = {
 const ServerlessCluster_ClientAuthenticationFields: FieldMap = {
   sasl: {
     wireName: "sasl",
-    kind: "list",
+    kind: "object",
     fields: ServerlessCluster_ClientAuthentication_SaslFields,
   },
 };
 
-const ServerlessCluster_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-};
-
-const ServerlessCluster_VpcConfigFields: FieldMap = {
-  securityGroupIds: "security_group_ids",
+const ServerlessCluster_VpcConfigsFields: FieldMap = {
+  securityGroups: "security_groups",
   subnetIds: "subnet_ids",
 };
 
 export interface ServerlessClusterConfig {
+  /** Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred) */
+  clientAuthentication: ServerlessCluster_ClientAuthentication | Computed<ServerlessCluster_ClientAuthentication>;
+  /** The name to assign to the serverless Apache Kafka cluster. (AI-inferred) */
   clusterName: string | Computed<string>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  clientAuthentication?: ServerlessCluster_ClientAuthentication[] | Computed<ServerlessCluster_ClientAuthentication[]>;
-  timeouts?: ServerlessCluster_Timeouts | Computed<ServerlessCluster_Timeouts>;
-  vpcConfig?: ServerlessCluster_VpcConfig[] | Computed<ServerlessCluster_VpcConfig[]>;
+  /** A key-value pair to associate with a resource. */
+  tags?: unknown | Computed<unknown>;
+  /** Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred) */
+  vpcConfigs: ServerlessCluster_VpcConfigs[] | Computed<ServerlessCluster_VpcConfigs[]>;
 }
 
 export interface ServerlessClusterAttrs {
+  /** The Amazon Resource Name (ARN) of the serverless cluster. (AI-inferred) */
   arn: string;
-  bootstrapBrokersSaslIam: string;
+  /** Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred) */
+  clientAuthentication: ServerlessCluster_ClientAuthentication;
+  /** The name to assign to the serverless Apache Kafka cluster. (AI-inferred) */
   clusterName: string;
-  clusterUuid: string;
-  id: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  clientAuthentication: ServerlessCluster_ClientAuthentication[];
-  timeouts: ServerlessCluster_Timeouts;
-  vpcConfig: ServerlessCluster_VpcConfig[];
+  /** A key-value pair to associate with a resource. */
+  tags: unknown;
+  /** Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred) */
+  vpcConfigs: ServerlessCluster_VpcConfigs[];
 }
 
 export const ServerlessCluster: ResourceBinding<ServerlessClusterConfig, ServerlessClusterAttrs> = {
   wireType: "aws_msk_serverless_cluster",
   fields: {
-    clusterName: "cluster_name",
-    id: "id",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
     clientAuthentication: {
       wireName: "client_authentication",
-      kind: "list",
+      kind: "object",
       fields: ServerlessCluster_ClientAuthenticationFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: ServerlessCluster_TimeoutsFields,
-    },
-    vpcConfig: {
-      wireName: "vpc_config",
+    clusterName: "cluster_name",
+    tags: "tags",
+    vpcConfigs: {
+      wireName: "vpc_configs",
       kind: "list",
-      fields: ServerlessCluster_VpcConfigFields,
+      fields: ServerlessCluster_VpcConfigsFields,
     },
   },
 };

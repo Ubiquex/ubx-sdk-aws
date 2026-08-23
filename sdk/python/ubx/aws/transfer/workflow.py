@@ -7,71 +7,103 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_EfsFileLocation:
-    file_system_id: Any = None
-    path: Any = None
-
-@dataclasses.dataclass
 class Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocation:
+    # The name of the S3 bucket that serves as the destination for the file copy operation in this exception step of the Transfer Family workflow. (AI-inferred)
     bucket: Any = None
+    # Specifies the S3 object key (file path) used as the destination location for the copy step when a workflow executes in its on-exception path. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation:
-    efs_file_location: Any = None
+    # Specifies the S3 destination bucket and key prefix for the copy step within an exception handler of an AWS Transfer Family workflow, defining where the file will be copied when an error occurs. (AI-inferred)
     s3_file_location: Any = None
 
 @dataclasses.dataclass
 class Workflow_OnExceptionSteps_CopyStepDetails:
-    name: Any = None
-    overwrite_existing: Any = None
-    source_file_location: Any = None
+    # Defines the target S3 bucket/prefix or EFS path to which the file is copied when this copy step executes as part of the workflow's exception handling. (AI-inferred)
     destination_file_location: Any = None
+    # The user-defined descriptive name for this copy step in the exception handler branch of the AWS Transfer Family workflow. (AI-inferred)
+    name: Any = None
+    # Specifies whether the copy step overwrites an existing destination file (TRUE) or does not overwrite it (FALSE) when executed as part of an on_exception_steps path in an AWS Transfer Family workflow. (AI-inferred)
+    overwrite_existing: Any = None
+    # Specifies the source file path for a copy step, which can be a literal path or a workflow variable (e.g., ${original.file}) that identifies the file to copy from the source server. (AI-inferred)
+    source_file_location: Any = None
 
 @dataclasses.dataclass
 class Workflow_OnExceptionSteps_CustomStepDetails:
+    # The `name` property specifies a descriptive name for a custom step (which invokes an AWS Lambda function) in the on-exception steps of an AWS Transfer Family workflow. (AI-inferred)
     name: Any = None
+    # Specifies the source file location (relative to the user's home directory) that is used as input to this custom step in an AWS Transfer Family workflow. (AI-inferred)
     source_file_location: Any = None
+    # The ARN of the AWS Lambda function invoked by this custom step when it runs as part of the workflow's on-exception branch. (AI-inferred)
     target: Any = None
+    # The maximum time in seconds that a custom step in the exception path is allowed to run before the workflow times out. (AI-inferred)
     timeout_seconds: Any = None
 
 @dataclasses.dataclass
+class Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation_EfsFileLocation:
+    # The unique identifier of the Amazon EFS file system to which the decrypted file is written as part of the workflow step. (AI-inferred)
+    file_system_id: Any = None
+    # The EFS filesystem path (directory) to which the decrypted file is written when this decrypt step runs as part of the workflow's exception handling steps. (AI-inferred)
+    path: Any = None
+
+@dataclasses.dataclass
+class Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation:
+    # The EFS file system location (file system ID and path) where the decrypted file is written as the destination for the decrypt step. (AI-inferred)
+    efs_file_location: Any = None
+    # Specifies the Amazon S3 bucket and object key that serve as the destination location for files after the decryption step in an exception handling path of an AWS Transfer Family workflow. (AI-inferred)
+    s3_file_location: Any = None
+
+@dataclasses.dataclass
 class Workflow_OnExceptionSteps_DecryptStepDetails:
-    name: Any = None
-    overwrite_existing: Any = None
-    source_file_location: Any = None
-    type: Any = None
+    # For a decrypt step in an AWS Transfer Family workflow exception path, this object defines the destination (either an S3 bucket/prefix or an EFS file system path) where the decrypted file is written. (AI-inferred)
     destination_file_location: Any = None
+    # Sets a descriptive name for the decrypt step when it is included in the workflow's on-exception steps. (AI-inferred)
+    name: Any = None
+    # Specifies whether to overwrite an existing file with the same name or rename the existing file when the decrypted file is written to the destination. (AI-inferred)
+    overwrite_existing: Any = None
+    # Specifies the source file location (such as an S3 object key or EFS path) that the decrypt step in the workflow operates on. (AI-inferred)
+    source_file_location: Any = None
+    # Specifies the decryption type to use, such as PGP, for the file processed in this workflow step. (AI-inferred)
+    type: Any = None
 
 @dataclasses.dataclass
 class Workflow_OnExceptionSteps_DeleteStepDetails:
+    # The name field in the delete step details assigns a descriptive identifier to the delete step within the workflow's on-exception branch, used to recognize the step in logs and operational monitoring. (AI-inferred)
     name: Any = None
+    # The source file location (path) of the file to delete in the delete step, which can be a static path or a workflow variable such as ${original.file}, resolved against the user's home directory on the AWS Transfer Family server. (AI-inferred)
     source_file_location: Any = None
 
 @dataclasses.dataclass
 class Workflow_OnExceptionSteps_TagStepDetails_Tags:
+    # The key of a tag to attach to the file when this tag step runs in the on-exception branch of the Transfer Family workflow. (AI-inferred)
     key: Any = None
+    # The value of a user-defined tag to apply to the file when the tag step runs as part of the workflow's exception handler. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Workflow_OnExceptionSteps_TagStepDetails:
+    # Specifies the tag key (the name of the tag) to assign to the file when this tag step runs as part of the workflow's exception handling. (AI-inferred)
     name: Any = None
+    # Specifies the file path or workflow variable that identifies which uploaded file this tag step (on an exception branch) applies tags to, defaulting to the original file if omitted. (AI-inferred)
     source_file_location: Any = None
+    # The key-value tags that are applied to a file when a tag step runs as part of the on-exception path (exception handling) of an AWS Transfer Family workflow. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class Workflow_OnExceptionSteps:
-    type: Any = None
+    # Configures the destination Amazon S3 bucket, key prefix, and optional overwrite behavior for copying a file when this step runs as part of the workflow's on-exception path. (AI-inferred)
     copy_step_details: Any = None
+    # The custom_step_details object specifies the AWS Lambda function target and an optional name for a custom step within an exception-handling branch of an AWS Transfer Family workflow. (AI-inferred)
     custom_step_details: Any = None
+    # Specifies the decryption configuration for a copy/decrypt step in the workflow's error-handling branch, including source and destination file locations, the decryption key type (e.g., PGP), and whether to overwrite existing files. (AI-inferred)
     decrypt_step_details: Any = None
+    # Specifies the details of a delete step (such as the source file location and file name) that runs when this workflow's on-exception branch is triggered. (AI-inferred)
     delete_step_details: Any = None
+    # Specifies the tag key (Name) and value (Value) for a TAG step in the onExceptionSteps list of an AWS Transfer Family workflow, which are applied to the transferred file when a prior step in the workflow fails. (AI-inferred)
     tag_step_details: Any = None
-
-_Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_EfsFileLocationFields = {
-    "file_system_id": ubx.FieldSpec(wire_name="file_system_id"),
-    "path": ubx.FieldSpec(wire_name="path"),
-}
+    # The type of workflow step to run when an exception occurs, such as COPY, CUSTOM, DELETE, TAG, or TRANSFORM. (AI-inferred)
+    type: Any = None
 
 _Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocationFields = {
     "bucket": ubx.FieldSpec(wire_name="bucket"),
@@ -79,27 +111,22 @@ _Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocatio
 }
 
 _Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocationFields = {
-    "efs_file_location": ubx.FieldSpec(
-        wire_name="efs_file_location",
-        kind="list",
-        fields=_Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_EfsFileLocationFields,
-    ),
     "s3_file_location": ubx.FieldSpec(
         wire_name="s3_file_location",
-        kind="list",
+        kind="object",
         fields=_Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocationFields,
     ),
 }
 
 _Workflow_OnExceptionSteps_CopyStepDetailsFields = {
+    "destination_file_location": ubx.FieldSpec(
+        wire_name="destination_file_location",
+        kind="object",
+        fields=_Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocationFields,
+    ),
     "name": ubx.FieldSpec(wire_name="name"),
     "overwrite_existing": ubx.FieldSpec(wire_name="overwrite_existing"),
     "source_file_location": ubx.FieldSpec(wire_name="source_file_location"),
-    "destination_file_location": ubx.FieldSpec(
-        wire_name="destination_file_location",
-        kind="list",
-        fields=_Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocationFields,
-    ),
 }
 
 _Workflow_OnExceptionSteps_CustomStepDetailsFields = {
@@ -109,16 +136,34 @@ _Workflow_OnExceptionSteps_CustomStepDetailsFields = {
     "timeout_seconds": ubx.FieldSpec(wire_name="timeout_seconds"),
 }
 
+_Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation_EfsFileLocationFields = {
+    "file_system_id": ubx.FieldSpec(wire_name="file_system_id"),
+    "path": ubx.FieldSpec(wire_name="path"),
+}
+
+_Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocationFields = {
+    "efs_file_location": ubx.FieldSpec(
+        wire_name="efs_file_location",
+        kind="object",
+        fields=_Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation_EfsFileLocationFields,
+    ),
+    "s3_file_location": ubx.FieldSpec(
+        wire_name="s3_file_location",
+        kind="object",
+        fields=_Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocationFields,
+    ),
+}
+
 _Workflow_OnExceptionSteps_DecryptStepDetailsFields = {
+    "destination_file_location": ubx.FieldSpec(
+        wire_name="destination_file_location",
+        kind="object",
+        fields=_Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocationFields,
+    ),
     "name": ubx.FieldSpec(wire_name="name"),
     "overwrite_existing": ubx.FieldSpec(wire_name="overwrite_existing"),
     "source_file_location": ubx.FieldSpec(wire_name="source_file_location"),
     "type": ubx.FieldSpec(wire_name="type"),
-    "destination_file_location": ubx.FieldSpec(
-        wire_name="destination_file_location",
-        kind="list",
-        fields=_Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocationFields,
-    ),
 }
 
 _Workflow_OnExceptionSteps_DeleteStepDetailsFields = {
@@ -142,52 +187,64 @@ _Workflow_OnExceptionSteps_TagStepDetailsFields = {
 }
 
 _Workflow_OnExceptionStepsFields = {
-    "type": ubx.FieldSpec(wire_name="type"),
     "copy_step_details": ubx.FieldSpec(
         wire_name="copy_step_details",
-        kind="list",
+        kind="object",
         fields=_Workflow_OnExceptionSteps_CopyStepDetailsFields,
     ),
     "custom_step_details": ubx.FieldSpec(
         wire_name="custom_step_details",
-        kind="list",
+        kind="object",
         fields=_Workflow_OnExceptionSteps_CustomStepDetailsFields,
     ),
     "decrypt_step_details": ubx.FieldSpec(
         wire_name="decrypt_step_details",
-        kind="list",
+        kind="object",
         fields=_Workflow_OnExceptionSteps_DecryptStepDetailsFields,
     ),
     "delete_step_details": ubx.FieldSpec(
         wire_name="delete_step_details",
-        kind="list",
+        kind="object",
         fields=_Workflow_OnExceptionSteps_DeleteStepDetailsFields,
     ),
     "tag_step_details": ubx.FieldSpec(
         wire_name="tag_step_details",
-        kind="list",
+        kind="object",
         fields=_Workflow_OnExceptionSteps_TagStepDetailsFields,
     ),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 @dataclasses.dataclass
 class WorkflowConfig:
+    # A textual description for the workflow.
     description: Any = None
-    id: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Specifies the steps (actions) to take if any errors are encountered during execution of the workflow.
     on_exception_steps: Any = None
+    # Specifies the details for the steps that are in the specified workflow.
     steps: Any = None
+    # Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.
+    tags: Any = None
+
+@dataclasses.dataclass
+class WorkflowAttrs:
+    # Specifies the unique Amazon Resource Name (ARN) for the workflow.
+    arn: Any = None
+    # A textual description for the workflow.
+    description: Any = None
+    # Specifies the steps (actions) to take if any errors are encountered during execution of the workflow.
+    on_exception_steps: Any = None
+    # Specifies the details for the steps that are in the specified workflow.
+    steps: Any = None
+    # Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.
+    tags: Any = None
+    # A unique identifier for the workflow.
+    workflow_id: Any = None
 
 Workflow = ubx.ResourceBinding(
     wire_type="aws_transfer_workflow",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "on_exception_steps": ubx.FieldSpec(
             wire_name="on_exception_steps",
             kind="list",
@@ -197,6 +254,11 @@ Workflow = ubx.ResourceBinding(
             wire_name="steps",
             kind="list",
             fields=_Workflow_OnExceptionStepsFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Workflow_OnExceptionSteps_TagStepDetails_TagsFields,
         ),
     },
 )

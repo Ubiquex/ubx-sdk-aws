@@ -7,46 +7,64 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TransitGatewayConnect_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class TransitGatewayConnect_Options:
+    # The tunnel protocol.
+    protocol: Any = None
 
-_TransitGatewayConnect_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+@dataclasses.dataclass
+class TransitGatewayConnect_Tags:
+    # The key of a user-defined tag assigned to the EC2 Transit Gateway Connect attachment. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_TransitGatewayConnect_OptionsFields = {
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+}
+
+_TransitGatewayConnect_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class TransitGatewayConnectConfig:
-    id: Any = None
-    protocol: Any = None
-    region: Any = None
+    # Specifies the options for the Transit Gateway Connect attachment, including the required tunneling protocol (GRE) used to establish the Connect peer connection. (AI-inferred)
+    options: Any = None
+    # The tags for the attachment.
     tags: Any = None
-    tags_all: Any = None
-    transit_gateway_default_route_table_association: Any = None
-    transit_gateway_default_route_table_propagation: Any = None
+    # The ID of the attachment from which the Connect attachment was created.
+    transport_transit_gateway_attachment_id: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayConnectAttrs:
+    # The creation time.
+    creation_time: Any = None
+    # Specifies the options for the Transit Gateway Connect attachment, including the required tunneling protocol (GRE) used to establish the Connect peer connection. (AI-inferred)
+    options: Any = None
+    # The state of the attachment.
+    state: Any = None
+    # The tags for the attachment.
+    tags: Any = None
+    # The ID of the Connect attachment.
+    transit_gateway_attachment_id: Any = None
+    # The ID of the transit gateway.
     transit_gateway_id: Any = None
-    transport_attachment_id: Any = None
-    timeouts: Any = None
+    # The ID of the attachment from which the Connect attachment was created.
+    transport_transit_gateway_attachment_id: Any = None
 
 TransitGatewayConnect = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_connect",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "protocol": ubx.FieldSpec(wire_name="protocol"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "transit_gateway_default_route_table_association": ubx.FieldSpec(wire_name="transit_gateway_default_route_table_association"),
-        "transit_gateway_default_route_table_propagation": ubx.FieldSpec(wire_name="transit_gateway_default_route_table_propagation"),
-        "transit_gateway_id": ubx.FieldSpec(wire_name="transit_gateway_id"),
-        "transport_attachment_id": ubx.FieldSpec(wire_name="transport_attachment_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "options": ubx.FieldSpec(
+            wire_name="options",
             kind="object",
-            fields=_TransitGatewayConnect_TimeoutsFields,
+            fields=_TransitGatewayConnect_OptionsFields,
         ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_TransitGatewayConnect_TagsFields,
+        ),
+        "transport_transit_gateway_attachment_id": ubx.FieldSpec(wire_name="transport_transit_gateway_attachment_id"),
     },
 )

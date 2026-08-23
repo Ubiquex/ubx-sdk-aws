@@ -7,26 +7,57 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Group_Tags:
+    # The key (name) of a user-defined tag applied to the placement group, used to categorize and identify the resource in AWS. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_Group_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class GroupConfig:
-    id: Any = None
-    name: Any = None
+    # The ID of a parent placement group. Valid for strategies that support parent group linking.
+    parent_group_id: Any = None
+    # The number of partitions. Valid only when **Strategy** is set to `partition`
     partition_count: Any = None
-    region: Any = None
+    # The Spread Level of Placement Group is an enum where it accepts either host or rack when strategy is spread
     spread_level: Any = None
+    # The placement strategy.
     strategy: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class GroupAttrs:
+    # The ID of the placement group.
+    group_id: Any = None
+    # The Group Name of Placement Group.
+    group_name: Any = None
+    # The ID of a parent placement group. Valid for strategies that support parent group linking.
+    parent_group_id: Any = None
+    # The number of partitions. Valid only when **Strategy** is set to `partition`
+    partition_count: Any = None
+    # The Spread Level of Placement Group is an enum where it accepts either host or rack when strategy is spread
+    spread_level: Any = None
+    # The placement strategy.
+    strategy: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Group = ubx.ResourceBinding(
     wire_type="aws_placement_group",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
+        "parent_group_id": ubx.FieldSpec(wire_name="parent_group_id"),
         "partition_count": ubx.FieldSpec(wire_name="partition_count"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "spread_level": ubx.FieldSpec(wire_name="spread_level"),
         "strategy": ubx.FieldSpec(wire_name="strategy"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Group_TagsFields,
+        ),
     },
 )

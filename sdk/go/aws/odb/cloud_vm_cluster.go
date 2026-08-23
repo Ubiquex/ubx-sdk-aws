@@ -4,15 +4,47 @@ package odb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudVmCluster_DataCollectionOptions struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster.
 	IsDiagnosticsEventsEnabled any
+	// Indicates whether health monitoring is enabled for the VM cluster.
 	IsHealthMonitoringEnabled any
+	// Indicates whether incident logs are enabled for the cloud VM cluster.
 	IsIncidentLogsEnabled any
 }
 
-type CloudVmCluster_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type CloudVmCluster_DbNodes_Tags struct {
+	Key any
+	Value any
+}
+
+type CloudVmCluster_DbNodes struct {
+	BackupIpId any
+	// The Oracle Cloud Identifier (OCID) of the second backup virtual network interface card (VNIC) assigned to the database node in the cloud VM cluster. (AI-inferred)
+	BackupVnic2Id any
+	// Specifies the number of CPU cores allocated to each database node in the cloud VM cluster. (AI-inferred)
+	CpuCoreCount any
+	DbNodeArn any
+	DbNodeId any
+	DbNodeStorageSizeInGbs any
+	DbServerId any
+	DbSystemId any
+	HostIpId any
+	Hostname any
+	// Specifies the memory size in gigabytes to allocate to each database node in the cloud VM cluster. (AI-inferred)
+	MemorySizeInGbs any
+	// For each database node in the Cloud VM Cluster, this field contains the node's Oracle Cloud Identifier (OCID), which uniquely identifies the node within Oracle Cloud Infrastructure. (AI-inferred)
+	Ocid any
+	Status any
+	Tags any
+	// The `vnic2_id` field stores the OCID (unique identifier) of the secondary virtual network interface (VNIC) attached to the database node, providing an additional network connection for that node. (AI-inferred)
+	Vnic2Id any
+	VnicId any
+}
+
+type CloudVmCluster_IamRoles struct {
+	AwsIntegration any
+	IamRoleArn any
+	Status any
 }
 
 var CloudVmCluster_DataCollectionOptionsFields = ubx.FieldMap{
@@ -21,71 +53,161 @@ var CloudVmCluster_DataCollectionOptionsFields = ubx.FieldMap{
 		"IsIncidentLogsEnabled": ubx.FieldSpec{WireName: "is_incident_logs_enabled"},
 	}
 
-var CloudVmCluster_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var CloudVmCluster_DbNodes_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type CloudVmClusterConfig struct {
-	CloudExadataInfrastructureArn any
+	// The unique identifier of the Exadata infrastructure that this VM cluster belongs to.
 	CloudExadataInfrastructureId any
+	// The name of the Grid Infrastructure (GI) cluster.
 	ClusterName any
+	// The number of CPU cores enabled on the VM cluster.
 	CpuCoreCount any
-	DataStorageSizeInTbs any
-	DbNodeStorageSizeInGbs any
-	DbServers any
-	DisplayName any
-	GiVersion any
-	HostnamePrefix any
-	IsLocalBackupEnabled any
-	IsSparseDiskgroupEnabled any
-	LicenseModel any
-	MemorySizeInGbs any
-	OdbNetworkArn any
-	OdbNetworkId any
-	Region any
-	ScanListenerPortTcp any
-	SshPublicKeys any
-	Tags any
-	Timezone any
+	// Information about the data collection options enabled for a VM cluster.
 	DataCollectionOptions any
-	Timeouts any
+	// The size of the data disk group, in terabytes (TB), that's allocated for the VM cluster.
+	DataStorageSizeInTbs any
+	// The amount of local node storage, in gigabytes (GB), that's allocated for the VM cluster.
+	DbNodeStorageSizeInGbs any
+	// The list of database servers for the VM cluster.
+	DbServers any
+	// The user-friendly name for the VM cluster.
+	DisplayName any
+	// The software version of the Oracle Grid Infrastructure (GI) for the VM cluster.
+	GiVersion any
+	// The host name for the VM cluster.
+	Hostname any
+	// Indicates whether database backups to local Exadata storage is enabled for the VM cluster.
+	IsLocalBackupEnabled any
+	// Indicates whether the VM cluster is configured with a sparse disk group.
+	IsSparseDiskgroupEnabled any
+	// The Oracle license model applied to the VM cluster.
+	LicenseModel any
+	// The amount of memory, in gigabytes (GB), that's allocated for the VM cluster.
+	MemorySizeInGbs any
+	// The unique identifier of the ODB network for the VM cluster.
+	OdbNetworkId any
+	// Property description not available.
+	ScanListenerPortTcp any
+	// The public key portion of one or more key pairs used for SSH access to the VM cluster.
+	SshPublicKeys any
+	// The operating system version of the image chosen for the VM cluster.
+	SystemVersion any
+	// Tags to assign to the Vm Cluster.
+	Tags any
+	// The time zone of the VM cluster.
+	TimeZone any
+}
+
+type CloudVmClusterAttrs struct {
+	// The unique identifier of the Exadata infrastructure that this VM cluster belongs to.
+	CloudExadataInfrastructureId any
+	// The Amazon Resource Name (ARN) of the VM cluster.
+	CloudVmClusterArn any
+	// The unique identifier of the VM cluster.
+	CloudVmClusterId any
+	// The name of the Grid Infrastructure (GI) cluster.
+	ClusterName any
+	// The OCI model compute model used when you create or clone an instance: ECPU or OCPU. An ECPU is an abstracted measure of compute resources. ECPUs are based on the number of cores elastically allocated from a pool of compute and storage servers. An OCPU is a legacy physical measure of compute resources. OCPUs are based on the physical core of a processor with hyper-threading enabled.
+	ComputeModel any
+	// The number of CPU cores enabled on the VM cluster.
+	CpuCoreCount any
+	// Information about the data collection options enabled for a VM cluster.
+	DataCollectionOptions any
+	// The size of the data disk group, in terabytes (TB), that's allocated for the VM cluster.
+	DataStorageSizeInTbs any
+	// The amount of local node storage, in gigabytes (GB), that's allocated for the VM cluster.
+	DbNodeStorageSizeInGbs any
+	// The DB nodes that are implicitly created and managed as part of this VM Cluster.
+	DbNodes any
+	// The list of database servers for the VM cluster.
+	DbServers any
+	// The type of redundancy configured for the VM cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
+	DiskRedundancy any
+	// The user-friendly name for the VM cluster.
+	DisplayName any
+	// The domain of the VM cluster.
+	Domain any
+	// The software version of the Oracle Grid Infrastructure (GI) for the VM cluster.
+	GiVersion any
+	// The host name for the VM cluster.
+	Hostname any
+	// The AWS Identity and Access Management (IAM) service roles associated with the VM cluster.
+	IamRoles any
+	// Indicates whether database backups to local Exadata storage is enabled for the VM cluster.
+	IsLocalBackupEnabled any
+	// Indicates whether the VM cluster is configured with a sparse disk group.
+	IsSparseDiskgroupEnabled any
+	// The Oracle license model applied to the VM cluster.
+	LicenseModel any
+	// The port number configured for the listener on the VM cluster.
+	ListenerPort any
+	// The amount of memory, in gigabytes (GB), that's allocated for the VM cluster.
+	MemorySizeInGbs any
+	// The number of nodes in the VM cluster.
+	NodeCount any
+	// The name of the OCI resource anchor for the VM cluster.
+	OciResourceAnchorName any
+	// The HTTPS link to the VM cluster in OCI.
+	OciUrl any
+	// The OCID of the VM cluster.
+	Ocid any
+	// The unique identifier of the ODB network for the VM cluster.
+	OdbNetworkId any
+	// The FQDN of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.
+	ScanDnsName any
+	// The OCID of the SCAN IP addresses that are associated with the VM cluster.
+	ScanIpIds any
+	// Property description not available.
+	ScanListenerPortTcp any
+	// The hardware model name of the Exadata infrastructure that's running the VM cluster.
+	Shape any
+	// The public key portion of one or more key pairs used for SSH access to the VM cluster.
+	SshPublicKeys any
+	// The amount of local node storage, in gigabytes (GB), that's allocated to the VM cluster.
+	StorageSizeInGbs any
+	// The operating system version of the image chosen for the VM cluster.
+	SystemVersion any
+	// Tags to assign to the Vm Cluster.
+	Tags any
+	// The time zone of the VM cluster.
+	TimeZone any
+	// The virtual IP (VIP) addresses that are associated with the VM cluster. Oracle's Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the VM cluster to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+	VipIds any
 }
 
 var CloudVmCluster = ubx.ResourceBinding{
 	WireType: "aws_odb_cloud_vm_cluster",
 	Fields: ubx.FieldMap{
-		"CloudExadataInfrastructureArn": ubx.FieldSpec{WireName: "cloud_exadata_infrastructure_arn"},
 		"CloudExadataInfrastructureId": ubx.FieldSpec{WireName: "cloud_exadata_infrastructure_id"},
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
 		"CpuCoreCount": ubx.FieldSpec{WireName: "cpu_core_count"},
+		"DataCollectionOptions": ubx.FieldSpec{
+			WireName: "data_collection_options",
+			Kind: "object",
+			Fields: CloudVmCluster_DataCollectionOptionsFields,
+		},
 		"DataStorageSizeInTbs": ubx.FieldSpec{WireName: "data_storage_size_in_tbs"},
 		"DbNodeStorageSizeInGbs": ubx.FieldSpec{WireName: "db_node_storage_size_in_gbs"},
 		"DbServers": ubx.FieldSpec{WireName: "db_servers"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"GiVersion": ubx.FieldSpec{WireName: "gi_version"},
-		"HostnamePrefix": ubx.FieldSpec{WireName: "hostname_prefix"},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
 		"IsLocalBackupEnabled": ubx.FieldSpec{WireName: "is_local_backup_enabled"},
 		"IsSparseDiskgroupEnabled": ubx.FieldSpec{WireName: "is_sparse_diskgroup_enabled"},
 		"LicenseModel": ubx.FieldSpec{WireName: "license_model"},
 		"MemorySizeInGbs": ubx.FieldSpec{WireName: "memory_size_in_gbs"},
-		"OdbNetworkArn": ubx.FieldSpec{WireName: "odb_network_arn"},
 		"OdbNetworkId": ubx.FieldSpec{WireName: "odb_network_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ScanListenerPortTcp": ubx.FieldSpec{WireName: "scan_listener_port_tcp"},
 		"SshPublicKeys": ubx.FieldSpec{WireName: "ssh_public_keys"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-		"DataCollectionOptions": ubx.FieldSpec{
-			WireName: "data_collection_options",
+		"SystemVersion": ubx.FieldSpec{WireName: "system_version"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: CloudVmCluster_DataCollectionOptionsFields,
+			Fields: CloudVmCluster_DbNodes_TagsFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: CloudVmCluster_TimeoutsFields,
-		},
+		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
 	},
 }

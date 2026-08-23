@@ -3,10 +3,42 @@ package notifications
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type NotificationConfiguration_Tags struct {
+	// The key part of a tag applied to the notification configuration, used to label and categorize the AWS resource. (AI-inferred)
+	Key any
+	Value any
+}
+
+var NotificationConfiguration_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type NotificationConfigurationConfig struct {
+	// Controls how long the notification configuration collects related events before delivering them as one aggregated notification, balancing timeliness against notification volume. (AI-inferred)
 	AggregationDuration any
+	// The Description property is a required string that provides a human-readable description of the notification configuration, enabling users to identify and distinguish configurations within AWS User Notifications. (AI-inferred)
 	Description any
+	// The user-defined name for the notification configuration, used to identify and display the configuration in the AWS Management Console and APIs. (AI-inferred)
 	Name any
+	// A list of tags that are attached to the role.
+	Tags any
+}
+
+type NotificationConfigurationAttrs struct {
+	// Controls how long the notification configuration collects related events before delivering them as one aggregated notification, balancing timeliness against notification volume. (AI-inferred)
+	AggregationDuration any
+	// The Amazon Resource Name (ARN) that uniquely identifies this notification configuration. (AI-inferred)
+	Arn any
+	// The timestamp when the notification configuration was created. (AI-inferred)
+	CreationTime any
+	// The Description property is a required string that provides a human-readable description of the notification configuration, enabling users to identify and distinguish configurations within AWS User Notifications. (AI-inferred)
+	Description any
+	// The user-defined name for the notification configuration, used to identify and display the configuration in the AWS Management Console and APIs. (AI-inferred)
+	Name any
+	// The read-only status of the notification configuration, indicating whether it is active (enabled) or inactive (disabled) for delivering notifications. (AI-inferred)
+	Status any
+	// A list of tags that are attached to the role.
 	Tags any
 }
 
@@ -16,6 +48,10 @@ var NotificationConfiguration = ubx.ResourceBinding{
 		"AggregationDuration": ubx.FieldSpec{WireName: "aggregation_duration"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: NotificationConfiguration_TagsFields,
+		},
 	},
 }

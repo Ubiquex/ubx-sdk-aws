@@ -7,30 +7,73 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TrafficMirrorSession_Tags:
+    key: Any = None
+    # The value of a user-defined tag key attached to the EC2 Traffic Mirror Session, which you can use to organize, identify, and manage the resource within your AWS environment. (AI-inferred)
+    value: Any = None
+
+_TrafficMirrorSession_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class TrafficMirrorSessionConfig:
+    # The description of the Traffic Mirror session.
     description: Any = None
-    id: Any = None
+    # The ID of the source network interface.
     network_interface_id: Any = None
+    # The ID of the account that owns the Traffic Mirror session.
+    owner_id: Any = None
+    # The number of bytes in each packet to mirror.
     packet_length: Any = None
-    region: Any = None
+    # The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.
     session_number: Any = None
+    # The tags assigned to the Traffic Mirror session.
     tags: Any = None
-    tags_all: Any = None
+    # The ID of a Traffic Mirror filter.
     traffic_mirror_filter_id: Any = None
+    # The ID of a Traffic Mirror target.
     traffic_mirror_target_id: Any = None
+    # The VXLAN ID for the Traffic Mirror session.
+    virtual_network_id: Any = None
+
+@dataclasses.dataclass
+class TrafficMirrorSessionAttrs:
+    # The description of the Traffic Mirror session.
+    description: Any = None
+    # The ID of a Traffic Mirror session.
+    id: Any = None
+    # The ID of the source network interface.
+    network_interface_id: Any = None
+    # The ID of the account that owns the Traffic Mirror session.
+    owner_id: Any = None
+    # The number of bytes in each packet to mirror.
+    packet_length: Any = None
+    # The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.
+    session_number: Any = None
+    # The tags assigned to the Traffic Mirror session.
+    tags: Any = None
+    # The ID of a Traffic Mirror filter.
+    traffic_mirror_filter_id: Any = None
+    # The ID of a Traffic Mirror target.
+    traffic_mirror_target_id: Any = None
+    # The VXLAN ID for the Traffic Mirror session.
     virtual_network_id: Any = None
 
 TrafficMirrorSession = ubx.ResourceBinding(
     wire_type="aws_ec2_traffic_mirror_session",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "network_interface_id": ubx.FieldSpec(wire_name="network_interface_id"),
+        "owner_id": ubx.FieldSpec(wire_name="owner_id"),
         "packet_length": ubx.FieldSpec(wire_name="packet_length"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "session_number": ubx.FieldSpec(wire_name="session_number"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_TrafficMirrorSession_TagsFields,
+        ),
         "traffic_mirror_filter_id": ubx.FieldSpec(wire_name="traffic_mirror_filter_id"),
         "traffic_mirror_target_id": ubx.FieldSpec(wire_name="traffic_mirror_target_id"),
         "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),

@@ -3,43 +3,34 @@ package volume
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Attachment_Timeouts struct {
-	Create any
-	Delete any
+type AttachmentConfig struct {
+	// The device name
+	Device any
+	// The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.
+	EbsCardIndex any
+	// The ID of the instance to which the volume attaches
+	InstanceId any
+	// The ID of the Amazon EBS volume
+	VolumeId any
 }
 
-var Attachment_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
-type AttachmentConfig struct {
-	DeviceName any
-	ForceDetach any
-	Id any
+type AttachmentAttrs struct {
+	// The device name
+	Device any
+	// The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.
+	EbsCardIndex any
+	// The ID of the instance to which the volume attaches
 	InstanceId any
-	Region any
-	SkipDestroy any
-	StopInstanceBeforeDetaching any
+	// The ID of the Amazon EBS volume
 	VolumeId any
-	Timeouts any
 }
 
 var Attachment = ubx.ResourceBinding{
 	WireType: "aws_volume_attachment",
 	Fields: ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"ForceDetach": ubx.FieldSpec{WireName: "force_detach"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Device": ubx.FieldSpec{WireName: "device"},
+		"EbsCardIndex": ubx.FieldSpec{WireName: "ebs_card_index"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SkipDestroy": ubx.FieldSpec{WireName: "skip_destroy"},
-		"StopInstanceBeforeDetaching": ubx.FieldSpec{WireName: "stop_instance_before_detaching"},
 		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Attachment_TimeoutsFields,
-		},
 	},
 }

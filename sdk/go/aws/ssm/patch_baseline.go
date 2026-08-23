@@ -3,97 +3,196 @@ package ssm
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type PatchBaseline_ApprovalRule_PatchFilter struct {
+type PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup_PatchFilters struct {
+	// The name of the patch attribute to filter on, such as PRODUCT, CLASSIFICATION, or MSRC_SEVERITY, for the approval rule's patch filter group. (AI-inferred)
 	Key any
+	// The list of values used to match patches for the associated patch filter key (e.g., product, classification, or severity) in an AWS SSM patch baseline approval rule. (AI-inferred)
 	Values any
 }
 
-type PatchBaseline_ApprovalRule struct {
-	ApproveAfterDays any
-	ApproveUntilDate any
-	ComplianceLevel any
-	EnableNonSecurity any
-	PatchFilter any
+type PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup struct {
+	// Defines the patch filters (each with a key and values) that determine which patches this approval rule applies to, such as by product, severity, or classification. (AI-inferred)
+	PatchFilters any
 }
 
-type PatchBaseline_Source struct {
+type PatchBaseline_ApprovalRules_PatchRules struct {
+	// Specifies the number of days after a patch's release date that it is automatically approved for installation in the patch baseline. (AI-inferred)
+	ApproveAfterDays any
+	// The date (in YYYY-MM-DD format) after which the patch is no longer automatically approved for this rule. (AI-inferred)
+	ApproveUntilDate any
+	// Specifies the compliance severity level (e.g., CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, or UNSPECIFIED) assigned to patches that match this rule for reporting and compliance purposes. (AI-inferred)
+	ComplianceLevel any
+	// Indicates whether this approval rule also applies to patches that are not classified as security updates, allowing non-security patches to be approved based on the same schedule and filters. (AI-inferred)
+	EnableNonSecurity any
+	// The patch_filter_group object within a patch rule defines the set of patch filter criteria (e.g., product, severity, classification) that a patch must match for the rule to approve it, with all specified filters required to match (AND logic). (AI-inferred)
+	PatchFilterGroup any
+}
+
+type PatchBaseline_ApprovalRules struct {
+	// A list of patch rules that define which patches are approved for the baseline, including patch filters, approval delay, and compliance level. (AI-inferred)
+	PatchRules any
+}
+
+type PatchBaseline_Sources struct {
+	// Specifies the repository configuration string (such as a yum repository configuration for Amazon Linux) that defines the patch source location for this patch baseline. (AI-inferred)
 	Configuration any
+	// The name of the patch source, such as 'Amazon Linux 2' or 'Ubuntu', which identifies the repository configured for this patch baseline. (AI-inferred)
 	Name any
+	// Specifies the operating system product versions (e.g., 'AmazonLinux2012.03', 'RedhatEnterpriseLinux7') that this patch source repository applies to in the patch baseline. (AI-inferred)
 	Products any
 }
 
-var PatchBaseline_ApprovalRule_PatchFilterFields = ubx.FieldMap{
+type PatchBaseline_Tags struct {
+	// The key of a tag attached to the patch baseline, used to organize and identify the baseline for cost, environment, or operational purposes. (AI-inferred)
+	Key any
+	Value any
+}
+
+var PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup_PatchFiltersFields = ubx.FieldMap{
 		"Key": ubx.FieldSpec{WireName: "key"},
 		"Values": ubx.FieldSpec{WireName: "values"},
 	}
 
-var PatchBaseline_ApprovalRuleFields = ubx.FieldMap{
+var PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroupFields = ubx.FieldMap{
+		"PatchFilters": ubx.FieldSpec{
+			WireName: "patch_filters",
+			Kind: "list",
+			Fields: PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup_PatchFiltersFields,
+		},
+	}
+
+var PatchBaseline_ApprovalRules_PatchRulesFields = ubx.FieldMap{
 		"ApproveAfterDays": ubx.FieldSpec{WireName: "approve_after_days"},
 		"ApproveUntilDate": ubx.FieldSpec{WireName: "approve_until_date"},
 		"ComplianceLevel": ubx.FieldSpec{WireName: "compliance_level"},
 		"EnableNonSecurity": ubx.FieldSpec{WireName: "enable_non_security"},
-		"PatchFilter": ubx.FieldSpec{
-			WireName: "patch_filter",
-			Kind: "list",
-			Fields: PatchBaseline_ApprovalRule_PatchFilterFields,
+		"PatchFilterGroup": ubx.FieldSpec{
+			WireName: "patch_filter_group",
+			Kind: "object",
+			Fields: PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroupFields,
 		},
 	}
 
-var PatchBaseline_SourceFields = ubx.FieldMap{
+var PatchBaseline_ApprovalRulesFields = ubx.FieldMap{
+		"PatchRules": ubx.FieldSpec{
+			WireName: "patch_rules",
+			Kind: "list",
+			Fields: PatchBaseline_ApprovalRules_PatchRulesFields,
+		},
+	}
+
+var PatchBaseline_SourcesFields = ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{WireName: "configuration"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Products": ubx.FieldSpec{WireName: "products"},
 	}
 
+var PatchBaseline_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type PatchBaselineConfig struct {
+	// A set of rules defining the approval rules for a patch baseline.
+	ApprovalRules any
+	// A list of explicitly approved patches for the baseline.
 	ApprovedPatches any
+	// Defines the compliance level for approved patches. This means that if an approved patch is reported as missing, this is the severity of the compliance violation. The default value is UNSPECIFIED.
 	ApprovedPatchesComplianceLevel any
+	// Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. The default value is 'false'. Applies to Linux instances only.
 	ApprovedPatchesEnableNonSecurity any
+	// The compliance status for vendor recommended security updates that are not approved by this patch baseline.
 	AvailableSecurityUpdatesComplianceStatus any
+	// Set the baseline as default baseline. Only registering to default patch baseline is allowed.
+	DefaultBaseline any
+	// The description of the patch baseline.
 	Description any
-	Id any
+	// The patch filter group that defines the criteria for the rule.
+	GlobalFilters any
+	// The name of the patch baseline.
 	Name any
+	// Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
 	OperatingSystem any
-	Region any
+	// PatchGroups is used to associate instances with a specific patch baseline
+	PatchGroups any
+	// A list of explicitly rejected patches for the baseline.
 	RejectedPatches any
+	// The action for Patch Manager to take on patches included in the RejectedPackages list.
 	RejectedPatchesAction any
+	// Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.
+	Sources any
+	// Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways.
 	Tags any
-	TagsAll any
-	ApprovalRule any
-	GlobalFilter any
-	Source any
+}
+
+type PatchBaselineAttrs struct {
+	// A set of rules defining the approval rules for a patch baseline.
+	ApprovalRules any
+	// A list of explicitly approved patches for the baseline.
+	ApprovedPatches any
+	// Defines the compliance level for approved patches. This means that if an approved patch is reported as missing, this is the severity of the compliance violation. The default value is UNSPECIFIED.
+	ApprovedPatchesComplianceLevel any
+	// Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. The default value is 'false'. Applies to Linux instances only.
+	ApprovedPatchesEnableNonSecurity any
+	// The compliance status for vendor recommended security updates that are not approved by this patch baseline.
+	AvailableSecurityUpdatesComplianceStatus any
+	// Set the baseline as default baseline. Only registering to default patch baseline is allowed.
+	DefaultBaseline any
+	// The description of the patch baseline.
+	Description any
+	// The patch filter group that defines the criteria for the rule.
+	GlobalFilters any
+	// The ID of the patch baseline.
+	Id any
+	// The name of the patch baseline.
+	Name any
+	// Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+	OperatingSystem any
+	// PatchGroups is used to associate instances with a specific patch baseline
+	PatchGroups any
+	// A list of explicitly rejected patches for the baseline.
+	RejectedPatches any
+	// The action for Patch Manager to take on patches included in the RejectedPackages list.
+	RejectedPatchesAction any
+	// Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.
+	Sources any
+	// Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways.
+	Tags any
 }
 
 var PatchBaseline = ubx.ResourceBinding{
 	WireType: "aws_ssm_patch_baseline",
 	Fields: ubx.FieldMap{
+		"ApprovalRules": ubx.FieldSpec{
+			WireName: "approval_rules",
+			Kind: "object",
+			Fields: PatchBaseline_ApprovalRulesFields,
+		},
 		"ApprovedPatches": ubx.FieldSpec{WireName: "approved_patches"},
 		"ApprovedPatchesComplianceLevel": ubx.FieldSpec{WireName: "approved_patches_compliance_level"},
 		"ApprovedPatchesEnableNonSecurity": ubx.FieldSpec{WireName: "approved_patches_enable_non_security"},
 		"AvailableSecurityUpdatesComplianceStatus": ubx.FieldSpec{WireName: "available_security_updates_compliance_status"},
+		"DefaultBaseline": ubx.FieldSpec{WireName: "default_baseline"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"GlobalFilters": ubx.FieldSpec{
+			WireName: "global_filters",
+			Kind: "object",
+			Fields: PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroupFields,
+		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"PatchGroups": ubx.FieldSpec{WireName: "patch_groups"},
 		"RejectedPatches": ubx.FieldSpec{WireName: "rejected_patches"},
 		"RejectedPatchesAction": ubx.FieldSpec{WireName: "rejected_patches_action"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"ApprovalRule": ubx.FieldSpec{
-			WireName: "approval_rule",
+		"Sources": ubx.FieldSpec{
+			WireName: "sources",
 			Kind: "list",
-			Fields: PatchBaseline_ApprovalRuleFields,
+			Fields: PatchBaseline_SourcesFields,
 		},
-		"GlobalFilter": ubx.FieldSpec{
-			WireName: "global_filter",
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: PatchBaseline_ApprovalRule_PatchFilterFields,
-		},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "list",
-			Fields: PatchBaseline_SourceFields,
+			Fields: PatchBaseline_TagsFields,
 		},
 	},
 }

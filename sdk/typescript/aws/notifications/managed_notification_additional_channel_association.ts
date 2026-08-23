@@ -2,19 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagedNotificationAdditionalChannelAssociationConfig {
+  /** ARN identifier of the channel. Example: arn:aws:chatbot::123456789012:chat-configuration/slack-channel/security-ops */
   channelArn: string | Computed<string>;
-  managedNotificationArn: string | Computed<string>;
+  /** ARN identifier of the Managed Notification. Example: arn:aws:notifications::381491923782:managed-notification-configuration/category/AWS-Health/sub-category/Billing */
+  managedNotificationConfigurationArn: string | Computed<string>;
 }
 
 export interface ManagedNotificationAdditionalChannelAssociationAttrs {
+  /** ARN identifier of the channel. Example: arn:aws:chatbot::123456789012:chat-configuration/slack-channel/security-ops */
   channelArn: string;
-  managedNotificationArn: string;
+  /** ARN identifier of the Managed Notification. Example: arn:aws:notifications::381491923782:managed-notification-configuration/category/AWS-Health/sub-category/Billing */
+  managedNotificationConfigurationArn: string;
 }
 
 export const ManagedNotificationAdditionalChannelAssociation: ResourceBinding<ManagedNotificationAdditionalChannelAssociationConfig, ManagedNotificationAdditionalChannelAssociationAttrs> = {
   wireType: "aws_notifications_managed_notification_additional_channel_association",
   fields: {
     channelArn: "channel_arn",
-    managedNotificationArn: "managed_notification_arn",
+    managedNotificationConfigurationArn: "managed_notification_configuration_arn",
   },
 };

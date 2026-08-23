@@ -3,46 +3,113 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ClientVpnEndpoint_AuthenticationOptions_ActiveDirectory struct {
+	// The ID of the AWS Managed Microsoft Active Directory used for client authentication. (AI-inferred)
+	DirectoryId any
+}
+
+type ClientVpnEndpoint_AuthenticationOptions_FederatedAuthentication struct {
+	// The ARN of the IAM SAML identity provider that the Client VPN endpoint uses to authenticate users via federated SAML-based authentication. (AI-inferred)
+	SamlproviderArn any
+	// The ARN of the IAM SAML identity provider used to authenticate users accessing the self-service portal (where clients can manage their own certificates) for this AWS Client VPN endpoint. (AI-inferred)
+	SelfServiceSamlproviderArn any
+}
+
+type ClientVpnEndpoint_AuthenticationOptions_MutualAuthentication struct {
+	// The ARN of the client root certificate chain that is used for mutual authentication with the AWS Client VPN endpoint. (AI-inferred)
+	ClientRootCertificateChainArn any
+}
+
 type ClientVpnEndpoint_AuthenticationOptions struct {
-	ActiveDirectoryId any
-	RootCertificateChainArn any
-	SamlProviderArn any
-	SelfServiceSamlProviderArn any
+	// Defines the Active Directory (AWS Directory Service) authentication settings for the Client VPN endpoint, including the directory ID used to authenticate clients. (AI-inferred)
+	ActiveDirectory any
+	// Specifies the SAML-based federated authentication configuration for the Client VPN endpoint, including the IAM SAML provider ARN(s) used to authenticate users. (AI-inferred)
+	FederatedAuthentication any
+	// Configures mutual authentication (client certificate) for the Client VPN endpoint, requiring the ARN of the client root certificate chain to verify client certificates. (AI-inferred)
+	MutualAuthentication any
+	// Specifies the authentication method to use for the Client VPN endpoint, which can be one of certificate-authentication, directory-service-authentication, or federated-authentication. (AI-inferred)
 	Type any
 }
 
 type ClientVpnEndpoint_ClientConnectOptions struct {
+	// Specifies whether to enable Client Connect for the Client VPN endpoint, which allows an AWS Lambda function to handle custom authentication and authorization of client connections. (AI-inferred)
 	Enabled any
+	// The ARN of the Lambda function that handles client connection authorization for the Client VPN endpoint, used when client connect options are enabled. (AI-inferred)
 	LambdaFunctionArn any
 }
 
 type ClientVpnEndpoint_ClientLoginBannerOptions struct {
+	// The customizable text displayed in the banner on the AWS-provided client VPN client during a connection session, with a maximum length of 1400 characters. (AI-inferred)
 	BannerText any
+	// Specifies whether the Client VPN endpoint shows a customizable login banner to clients before they authenticate. (AI-inferred)
 	Enabled any
 }
 
 type ClientVpnEndpoint_ClientRouteEnforcementOptions struct {
+	// When set to true, this enforces that client traffic only uses routes advertised through the Client VPN endpoint, preventing clients from using other local network routes; when false, clients may also use their own local routes. (AI-inferred)
 	Enforced any
 }
 
 type ClientVpnEndpoint_ConnectionLogOptions struct {
+	// The name of the CloudWatch log group where AWS Client VPN publishes connection logs when connection logging is enabled. (AI-inferred)
 	CloudwatchLogGroup any
+	// The name of the CloudWatch Logs stream to which the Client VPN endpoint publishes connection logs; if not specified, a default stream under the configured log group is used. (AI-inferred)
 	CloudwatchLogStream any
+	// Specifies whether connection logging is enabled for the Client VPN endpoint, which determines if detailed logs of client connections are sent to the specified CloudWatch Logs group. (AI-inferred)
 	Enabled any
 }
 
+type ClientVpnEndpoint_TagSpecifications_Tags struct {
+	Key any
+	// The value portion of a key-value tag assigned to the AWS Client VPN endpoint, used to organize and identify the resource for management and billing purposes. (AI-inferred)
+	Value any
+}
+
+type ClientVpnEndpoint_TagSpecifications struct {
+	// Specifies the type of AWS resource the tags apply to, which must be the string `client-vpn-endpoint` for a Client VPN endpoint. (AI-inferred)
+	ResourceType any
+	// Specifies the key-value tags to attach to the resource identified by the parent tag_specifications resource_type during Client VPN endpoint creation. (AI-inferred)
+	Tags any
+}
+
 type ClientVpnEndpoint_TransitGatewayConfiguration struct {
+	// Specifies the IDs of the Availability Zones where the VPC attachment for the Client VPN endpoint is created when using a transit gateway. (AI-inferred)
 	AvailabilityZoneIds any
+	// For Client VPN endpoints that use a transit gateway, this list specifies the Availability Zones (e.g., us-east-1a) where the VPC attached to the transit gateway must have subnets, so the transit gateway attachment can route traffic. (AI-inferred)
 	AvailabilityZones any
-	TransitGatewayAttachmentId any
+	// The unique identifier of the transit gateway to which the Client VPN endpoint attaches for routing client traffic through a transit gateway. (AI-inferred)
 	TransitGatewayId any
 }
 
+var ClientVpnEndpoint_AuthenticationOptions_ActiveDirectoryFields = ubx.FieldMap{
+		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
+	}
+
+var ClientVpnEndpoint_AuthenticationOptions_FederatedAuthenticationFields = ubx.FieldMap{
+		"SamlproviderArn": ubx.FieldSpec{WireName: "samlprovider_arn"},
+		"SelfServiceSamlproviderArn": ubx.FieldSpec{WireName: "self_service_samlprovider_arn"},
+	}
+
+var ClientVpnEndpoint_AuthenticationOptions_MutualAuthenticationFields = ubx.FieldMap{
+		"ClientRootCertificateChainArn": ubx.FieldSpec{WireName: "client_root_certificate_chain_arn"},
+	}
+
 var ClientVpnEndpoint_AuthenticationOptionsFields = ubx.FieldMap{
-		"ActiveDirectoryId": ubx.FieldSpec{WireName: "active_directory_id"},
-		"RootCertificateChainArn": ubx.FieldSpec{WireName: "root_certificate_chain_arn"},
-		"SamlProviderArn": ubx.FieldSpec{WireName: "saml_provider_arn"},
-		"SelfServiceSamlProviderArn": ubx.FieldSpec{WireName: "self_service_saml_provider_arn"},
+		"ActiveDirectory": ubx.FieldSpec{
+			WireName: "active_directory",
+			Kind: "object",
+			Fields: ClientVpnEndpoint_AuthenticationOptions_ActiveDirectoryFields,
+		},
+		"FederatedAuthentication": ubx.FieldSpec{
+			WireName: "federated_authentication",
+			Kind: "object",
+			Fields: ClientVpnEndpoint_AuthenticationOptions_FederatedAuthenticationFields,
+		},
+		"MutualAuthentication": ubx.FieldSpec{
+			WireName: "mutual_authentication",
+			Kind: "object",
+			Fields: ClientVpnEndpoint_AuthenticationOptions_MutualAuthenticationFields,
+		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
@@ -66,90 +133,167 @@ var ClientVpnEndpoint_ConnectionLogOptionsFields = ubx.FieldMap{
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 	}
 
+var ClientVpnEndpoint_TagSpecifications_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var ClientVpnEndpoint_TagSpecificationsFields = ubx.FieldMap{
+		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ClientVpnEndpoint_TagSpecifications_TagsFields,
+		},
+	}
+
 var ClientVpnEndpoint_TransitGatewayConfigurationFields = ubx.FieldMap{
 		"AvailabilityZoneIds": ubx.FieldSpec{WireName: "availability_zone_ids"},
 		"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
-		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
 		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
 	}
 
 type ClientVpnEndpointConfig struct {
-	ClientCidrBlock any
-	Description any
-	DisconnectOnSessionTimeout any
-	DnsServers any
-	EndpointIpAddressType any
-	Id any
-	Region any
-	SecurityGroupIds any
-	SelfServicePortal any
-	ServerCertificateArn any
-	SessionTimeoutHours any
-	SplitTunnel any
-	Tags any
-	TagsAll any
-	TrafficIpAddressType any
-	TransportProtocol any
-	VpcId any
-	VpnPort any
+	// Specifies the authentication methods (certificate-based, directory service, or federated/SAML) that clients must use to authenticate to the Client VPN endpoint. (AI-inferred)
 	AuthenticationOptions any
+	// The IPv4 CIDR range from which client IP addresses are allocated when they connect to the VPN. (AI-inferred)
+	ClientCidrBlock any
+	// Specifies the client connect options for the Client VPN endpoint, including the Lambda function used for connection authorization and post-connection feedback. (AI-inferred)
 	ClientConnectOptions any
+	// Configures the optional client login banner for the VPN endpoint, specifying whether a banner is enabled and the banner text that clients see during authentication. (AI-inferred)
 	ClientLoginBannerOptions any
+	// Configures the automatic addition of a default route (0.0.0.0/0) for client VPN connections, controlling whether egress-only internet traffic is routed through the VPN tunnel (when set to true) or excluded (when set to false). (AI-inferred)
 	ClientRouteEnforcementOptions any
+	// Configures whether client connection logs are enabled and, if so, the CloudWatch Logs log group and log stream to which they are published. (AI-inferred)
 	ConnectionLogOptions any
+	// A user-specified description for the Client VPN endpoint, used to identify it. (AI-inferred)
+	Description any
+	// Specifies whether to disconnect a client after the session timeout period expires for the Client VPN endpoint. (AI-inferred)
+	DisconnectOnSessionTimeout any
+	// Specifies the IPv4 addresses of DNS servers that are used by clients for DNS resolution when connected to the AWS Client VPN endpoint. (AI-inferred)
+	DnsServers any
+	// Specifies whether the Client VPN endpoint uses IPv4 or IPv6 addresses, which must match the IP version of the client CIDR block. (AI-inferred)
+	EndpointIpAddressType any
+	// Specifies the IDs of the security groups to be associated with the Client VPN endpoint to control inbound and outbound traffic to the VPC. (AI-inferred)
+	SecurityGroupIds any
+	// Specifies whether the self-service portal is enabled for the Client VPN endpoint, allowing clients to request and manage their own client certificates. (AI-inferred)
+	SelfServicePortal any
+	// The ARN of the server certificate that the Client VPN endpoint uses for TLS authentication with clients. (AI-inferred)
+	ServerCertificateArn any
+	// The maximum duration in hours that a client connection can remain active before being terminated, valid values are from 1 to 24. (AI-inferred)
+	SessionTimeoutHours any
+	// Controls whether the Client VPN endpoint routes only traffic destined for the VPC through the tunnel (split-tunnel, true) or all traffic from the client (full-tunnel, false). (AI-inferred)
+	SplitTunnel any
+	// Specifies the tags to apply to the Client VPN endpoint at creation, by providing a list of tag specifications that each include a resource type (client-vpn-endpoint) and tag key-value pairs. (AI-inferred)
+	TagSpecifications any
+	// Specifies whether the Client VPN endpoint routes IPv4 or IPv6 traffic, with valid values 'ipv4' or 'ipv6'. (AI-inferred)
+	TrafficIpAddressType any
 	TransitGatewayConfiguration any
+	// Specifies the transport protocol (TCP or UDP) used by the Client VPN endpoint for the VPN session. (AI-inferred)
+	TransportProtocol any
+	// The ID of the VPC to associate with the Client VPN endpoint, which determines the VPC in which the endpoint's network interfaces are created and is needed to attach subnets via association resources. (AI-inferred)
+	VpcId any
+	// Specifies the port number (either 443 or 1194) that the Client VPN endpoint will use for the VPN tunnel, controlling whether the tunnel uses TCP (443) or UDP (1194). (AI-inferred)
+	VpnPort any
+}
+
+type ClientVpnEndpointAttrs struct {
+	// Specifies the authentication methods (certificate-based, directory service, or federated/SAML) that clients must use to authenticate to the Client VPN endpoint. (AI-inferred)
+	AuthenticationOptions any
+	// The IPv4 CIDR range from which client IP addresses are allocated when they connect to the VPN. (AI-inferred)
+	ClientCidrBlock any
+	// Specifies the client connect options for the Client VPN endpoint, including the Lambda function used for connection authorization and post-connection feedback. (AI-inferred)
+	ClientConnectOptions any
+	// Configures the optional client login banner for the VPN endpoint, specifying whether a banner is enabled and the banner text that clients see during authentication. (AI-inferred)
+	ClientLoginBannerOptions any
+	// Configures the automatic addition of a default route (0.0.0.0/0) for client VPN connections, controlling whether egress-only internet traffic is routed through the VPN tunnel (when set to true) or excluded (when set to false). (AI-inferred)
+	ClientRouteEnforcementOptions any
+	// Configures whether client connection logs are enabled and, if so, the CloudWatch Logs log group and log stream to which they are published. (AI-inferred)
+	ConnectionLogOptions any
+	// A user-specified description for the Client VPN endpoint, used to identify it. (AI-inferred)
+	Description any
+	// Specifies whether to disconnect a client after the session timeout period expires for the Client VPN endpoint. (AI-inferred)
+	DisconnectOnSessionTimeout any
+	// Specifies the IPv4 addresses of DNS servers that are used by clients for DNS resolution when connected to the AWS Client VPN endpoint. (AI-inferred)
+	DnsServers any
+	// Specifies whether the Client VPN endpoint uses IPv4 or IPv6 addresses, which must match the IP version of the client CIDR block. (AI-inferred)
+	EndpointIpAddressType any
+	// The unique AWS-assigned identifier for the Client VPN endpoint, such as cvpn-endpoint-1234567890abcdef0. (AI-inferred)
+	Id any
+	// Specifies the IDs of the security groups to be associated with the Client VPN endpoint to control inbound and outbound traffic to the VPC. (AI-inferred)
+	SecurityGroupIds any
+	// Specifies whether the self-service portal is enabled for the Client VPN endpoint, allowing clients to request and manage their own client certificates. (AI-inferred)
+	SelfServicePortal any
+	// The ARN of the server certificate that the Client VPN endpoint uses for TLS authentication with clients. (AI-inferred)
+	ServerCertificateArn any
+	// The maximum duration in hours that a client connection can remain active before being terminated, valid values are from 1 to 24. (AI-inferred)
+	SessionTimeoutHours any
+	// Controls whether the Client VPN endpoint routes only traffic destined for the VPC through the tunnel (split-tunnel, true) or all traffic from the client (full-tunnel, false). (AI-inferred)
+	SplitTunnel any
+	// Specifies the tags to apply to the Client VPN endpoint at creation, by providing a list of tag specifications that each include a resource type (client-vpn-endpoint) and tag key-value pairs. (AI-inferred)
+	TagSpecifications any
+	// Specifies whether the Client VPN endpoint routes IPv4 or IPv6 traffic, with valid values 'ipv4' or 'ipv6'. (AI-inferred)
+	TrafficIpAddressType any
+	TransitGatewayConfiguration any
+	// Specifies the transport protocol (TCP or UDP) used by the Client VPN endpoint for the VPN session. (AI-inferred)
+	TransportProtocol any
+	// The ID of the VPC to associate with the Client VPN endpoint, which determines the VPC in which the endpoint's network interfaces are created and is needed to attach subnets via association resources. (AI-inferred)
+	VpcId any
+	// Specifies the port number (either 443 or 1194) that the Client VPN endpoint will use for the VPN tunnel, controlling whether the tunnel uses TCP (443) or UDP (1194). (AI-inferred)
+	VpnPort any
 }
 
 var ClientVpnEndpoint = ubx.ResourceBinding{
 	WireType: "aws_ec2_client_vpn_endpoint",
 	Fields: ubx.FieldMap{
+		"AuthenticationOptions": ubx.FieldSpec{
+			WireName: "authentication_options",
+			Kind: "list",
+			Fields: ClientVpnEndpoint_AuthenticationOptionsFields,
+		},
 		"ClientCidrBlock": ubx.FieldSpec{WireName: "client_cidr_block"},
+		"ClientConnectOptions": ubx.FieldSpec{
+			WireName: "client_connect_options",
+			Kind: "object",
+			Fields: ClientVpnEndpoint_ClientConnectOptionsFields,
+		},
+		"ClientLoginBannerOptions": ubx.FieldSpec{
+			WireName: "client_login_banner_options",
+			Kind: "object",
+			Fields: ClientVpnEndpoint_ClientLoginBannerOptionsFields,
+		},
+		"ClientRouteEnforcementOptions": ubx.FieldSpec{
+			WireName: "client_route_enforcement_options",
+			Kind: "object",
+			Fields: ClientVpnEndpoint_ClientRouteEnforcementOptionsFields,
+		},
+		"ConnectionLogOptions": ubx.FieldSpec{
+			WireName: "connection_log_options",
+			Kind: "object",
+			Fields: ClientVpnEndpoint_ConnectionLogOptionsFields,
+		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisconnectOnSessionTimeout": ubx.FieldSpec{WireName: "disconnect_on_session_timeout"},
 		"DnsServers": ubx.FieldSpec{WireName: "dns_servers"},
 		"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
 		"SelfServicePortal": ubx.FieldSpec{WireName: "self_service_portal"},
 		"ServerCertificateArn": ubx.FieldSpec{WireName: "server_certificate_arn"},
 		"SessionTimeoutHours": ubx.FieldSpec{WireName: "session_timeout_hours"},
 		"SplitTunnel": ubx.FieldSpec{WireName: "split_tunnel"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"TagSpecifications": ubx.FieldSpec{
+			WireName: "tag_specifications",
+			Kind: "list",
+			Fields: ClientVpnEndpoint_TagSpecificationsFields,
+		},
 		"TrafficIpAddressType": ubx.FieldSpec{WireName: "traffic_ip_address_type"},
+		"TransitGatewayConfiguration": ubx.FieldSpec{
+			WireName: "transit_gateway_configuration",
+			Kind: "object",
+			Fields: ClientVpnEndpoint_TransitGatewayConfigurationFields,
+		},
 		"TransportProtocol": ubx.FieldSpec{WireName: "transport_protocol"},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 		"VpnPort": ubx.FieldSpec{WireName: "vpn_port"},
-		"AuthenticationOptions": ubx.FieldSpec{
-			WireName: "authentication_options",
-			Kind: "set",
-			Fields: ClientVpnEndpoint_AuthenticationOptionsFields,
-		},
-		"ClientConnectOptions": ubx.FieldSpec{
-			WireName: "client_connect_options",
-			Kind: "list",
-			Fields: ClientVpnEndpoint_ClientConnectOptionsFields,
-		},
-		"ClientLoginBannerOptions": ubx.FieldSpec{
-			WireName: "client_login_banner_options",
-			Kind: "list",
-			Fields: ClientVpnEndpoint_ClientLoginBannerOptionsFields,
-		},
-		"ClientRouteEnforcementOptions": ubx.FieldSpec{
-			WireName: "client_route_enforcement_options",
-			Kind: "list",
-			Fields: ClientVpnEndpoint_ClientRouteEnforcementOptionsFields,
-		},
-		"ConnectionLogOptions": ubx.FieldSpec{
-			WireName: "connection_log_options",
-			Kind: "list",
-			Fields: ClientVpnEndpoint_ConnectionLogOptionsFields,
-		},
-		"TransitGatewayConfiguration": ubx.FieldSpec{
-			WireName: "transit_gateway_configuration",
-			Kind: "list",
-			Fields: ClientVpnEndpoint_TransitGatewayConfigurationFields,
-		},
 	},
 }

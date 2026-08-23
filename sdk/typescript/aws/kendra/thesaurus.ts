@@ -2,14 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Thesaurus_SourceS3Path {
-  bucket: string;
-  key: string;
+  /** The name of the S3 bucket that contains the file. */
+  bucket: string | Computed<string>;
+  /** The name of the file. */
+  key: string | Computed<string>;
 }
 
-export interface Thesaurus_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Thesaurus_Tags {
+  /** The key of a tag attached to an AWS Kendra thesaurus, used to organize and identify the resource for management and billing. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value component of a tag entry associated with the AWS Kendra thesaurus, used for organizing and identifying the resource. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const Thesaurus_SourceS3PathFields: FieldMap = {
@@ -17,61 +20,61 @@ const Thesaurus_SourceS3PathFields: FieldMap = {
   key: "key",
 };
 
-const Thesaurus_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Thesaurus_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface ThesaurusConfig {
+  /** A description for the thesaurus. */
   description?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** The identifier of the index for the thesaurus. */
   indexId: string | Computed<string>;
+  /** A name for the thesaurus. */
   name: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** An IAM role that gives Amazon Kendra permissions to access the thesaurus file specified in SourceS3Path. */
   roleArn: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  sourceS3Path?: Thesaurus_SourceS3Path[] | Computed<Thesaurus_SourceS3Path[]>;
-  timeouts?: Thesaurus_Timeouts | Computed<Thesaurus_Timeouts>;
+  /** Information required to find a specific file in an Amazon S3 bucket. */
+  sourceS3Path: Thesaurus_SourceS3Path | Computed<Thesaurus_SourceS3Path>;
+  /** A list of key-value pairs that identify or categorize the thesaurus. */
+  tags?: Thesaurus_Tags[] | Computed<Thesaurus_Tags[]>;
 }
 
 export interface ThesaurusAttrs {
+  /** The Amazon Resource Name (ARN) of the thesaurus. */
   arn: string;
+  /** A description for the thesaurus. */
   description: string;
+  /** The identifier of the thesaurus. */
   id: string;
+  /** The identifier of the index for the thesaurus. */
   indexId: string;
+  /** A name for the thesaurus. */
   name: string;
-  region: string;
+  /** An IAM role that gives Amazon Kendra permissions to access the thesaurus file specified in SourceS3Path. */
   roleArn: string;
-  status: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  thesaurusId: string;
-  sourceS3Path: Thesaurus_SourceS3Path[];
-  timeouts: Thesaurus_Timeouts;
+  /** Information required to find a specific file in an Amazon S3 bucket. */
+  sourceS3Path: Thesaurus_SourceS3Path;
+  /** A list of key-value pairs that identify or categorize the thesaurus. */
+  tags: Thesaurus_Tags[];
 }
 
 export const Thesaurus: ResourceBinding<ThesaurusConfig, ThesaurusAttrs> = {
   wireType: "aws_kendra_thesaurus",
   fields: {
     description: "description",
-    id: "id",
     indexId: "index_id",
     name: "name",
-    region: "region",
     roleArn: "role_arn",
-    tags: "tags",
-    tagsAll: "tags_all",
     sourceS3Path: {
       wireName: "source_s3_path",
-      kind: "list",
+      kind: "object",
       fields: Thesaurus_SourceS3PathFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Thesaurus_TimeoutsFields,
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Thesaurus_TagsFields,
     },
   },
 };

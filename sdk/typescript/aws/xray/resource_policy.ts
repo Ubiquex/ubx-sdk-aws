@@ -2,20 +2,21 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResourcePolicyConfig {
+  /** A flag to indicate whether to bypass the resource policy lockout safety check */
   bypassPolicyLockoutCheck?: boolean | Computed<boolean>;
+  /** The resource policy document, which can be up to 5kb in size. */
   policyDocument: string | Computed<string>;
+  /** The name of the resource policy. Must be unique within a specific AWS account. */
   policyName: string | Computed<string>;
-  policyRevisionId?: string | Computed<string>;
-  region?: string | Computed<string>;
 }
 
 export interface ResourcePolicyAttrs {
+  /** A flag to indicate whether to bypass the resource policy lockout safety check */
   bypassPolicyLockoutCheck: boolean;
-  lastUpdatedTime: string;
+  /** The resource policy document, which can be up to 5kb in size. */
   policyDocument: string;
+  /** The name of the resource policy. Must be unique within a specific AWS account. */
   policyName: string;
-  policyRevisionId: string;
-  region: string;
 }
 
 export const ResourcePolicy: ResourceBinding<ResourcePolicyConfig, ResourcePolicyAttrs> = {
@@ -24,7 +25,5 @@ export const ResourcePolicy: ResourceBinding<ResourcePolicyConfig, ResourcePolic
     bypassPolicyLockoutCheck: "bypass_policy_lockout_check",
     policyDocument: "policy_document",
     policyName: "policy_name",
-    policyRevisionId: "policy_revision_id",
-    region: "region",
   },
 };

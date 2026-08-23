@@ -8,13 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayAccountConfig:
-    cloudwatch_role_arn: Any = None
-    region: Any = None
+    # The ARN of the IAM role that Amazon API Gateway assumes to write logs and metrics to CloudWatch. (AI-inferred)
+    cloud_watch_role_arn: Any = None
+
+@dataclasses.dataclass
+class GatewayAccountAttrs:
+    # The ARN of the IAM role that Amazon API Gateway assumes to write logs and metrics to CloudWatch. (AI-inferred)
+    cloud_watch_role_arn: Any = None
+    # The id is the AWS account ID for which the API Gateway account settings are configured. (AI-inferred)
+    id: Any = None
 
 GatewayAccount = ubx.ResourceBinding(
     wire_type="aws_api_gateway_account",
     fields={
-        "cloudwatch_role_arn": ubx.FieldSpec(wire_name="cloudwatch_role_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "cloud_watch_role_arn": ubx.FieldSpec(wire_name="cloud_watch_role_arn"),
     },
 )

@@ -7,22 +7,67 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MaintenanceWindow_Tags:
+    key: Any = None
+    # Specifies a user-defined value for a tag that can be used to categorize and manage this Systems Manager maintenance window, such as by project or environment. (AI-inferred)
+    value: Any = None
+
+_MaintenanceWindow_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class MaintenanceWindowConfig:
+    # Enables a maintenance window task to run on managed instances, even if you have not registered those instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task with the maintenance window.
     allow_unassociated_targets: Any = None
+    # The number of hours before the end of the maintenance window that AWS Systems Manager stops scheduling new tasks for execution.
     cutoff: Any = None
+    # A description of the maintenance window.
     description: Any = None
+    # The duration of the maintenance window in hours.
     duration: Any = None
-    enabled: Any = None
+    # The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.
     end_date: Any = None
-    id: Any = None
+    # The name of the maintenance window.
     name: Any = None
-    region: Any = None
+    # The schedule of the maintenance window in the form of a cron or rate expression.
     schedule: Any = None
+    # The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
     schedule_offset: Any = None
+    # The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.
     schedule_timezone: Any = None
+    # The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. StartDate allows you to delay activation of the maintenance window until the specified future date.
     start_date: Any = None
+    # Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key-value pairs). Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class MaintenanceWindowAttrs:
+    # Enables a maintenance window task to run on managed instances, even if you have not registered those instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task with the maintenance window.
+    allow_unassociated_targets: Any = None
+    # The number of hours before the end of the maintenance window that AWS Systems Manager stops scheduling new tasks for execution.
+    cutoff: Any = None
+    # A description of the maintenance window.
+    description: Any = None
+    # The duration of the maintenance window in hours.
+    duration: Any = None
+    # The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.
+    end_date: Any = None
+    # The name of the maintenance window.
+    name: Any = None
+    # The schedule of the maintenance window in the form of a cron or rate expression.
+    schedule: Any = None
+    # The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
+    schedule_offset: Any = None
+    # The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.
+    schedule_timezone: Any = None
+    # The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. StartDate allows you to delay activation of the maintenance window until the specified future date.
+    start_date: Any = None
+    # Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key-value pairs). Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in.
+    tags: Any = None
+    # The ID of the maintenance window.
+    window_id: Any = None
 
 MaintenanceWindow = ubx.ResourceBinding(
     wire_type="aws_ssm_maintenance_window",
@@ -31,16 +76,16 @@ MaintenanceWindow = ubx.ResourceBinding(
         "cutoff": ubx.FieldSpec(wire_name="cutoff"),
         "description": ubx.FieldSpec(wire_name="description"),
         "duration": ubx.FieldSpec(wire_name="duration"),
-        "enabled": ubx.FieldSpec(wire_name="enabled"),
         "end_date": ubx.FieldSpec(wire_name="end_date"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "schedule": ubx.FieldSpec(wire_name="schedule"),
         "schedule_offset": ubx.FieldSpec(wire_name="schedule_offset"),
         "schedule_timezone": ubx.FieldSpec(wire_name="schedule_timezone"),
         "start_date": ubx.FieldSpec(wire_name="start_date"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_MaintenanceWindow_TagsFields,
+        ),
     },
 )

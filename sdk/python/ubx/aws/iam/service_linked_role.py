@@ -8,21 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceLinkedRoleConfig:
-    aws_service_name: Any = None
+    # The service principal for the AWS service to which this role is attached.
+    awsservice_name: Any = None
+    # A string that you provide, which is combined with the service-provided prefix to form the complete role name.
     custom_suffix: Any = None
+    # The description of the role.
     description: Any = None
-    id: Any = None
-    tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class ServiceLinkedRoleAttrs:
+    # The service principal for the AWS service to which this role is attached.
+    awsservice_name: Any = None
+    # A string that you provide, which is combined with the service-provided prefix to form the complete role name.
+    custom_suffix: Any = None
+    # The description of the role.
+    description: Any = None
+    # The name of the role.
+    role_name: Any = None
 
 ServiceLinkedRole = ubx.ResourceBinding(
     wire_type="aws_iam_service_linked_role",
     fields={
-        "aws_service_name": ubx.FieldSpec(wire_name="aws_service_name"),
+        "awsservice_name": ubx.FieldSpec(wire_name="awsservice_name"),
         "custom_suffix": ubx.FieldSpec(wire_name="custom_suffix"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
     },
 )

@@ -7,113 +7,165 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ExpressGatewayService_NetworkConfiguration:
+class ExpressGatewayService_ActiveConfigurations_IngressPaths:
+    access_type: Any = None
+    endpoint: Any = None
+
+@dataclasses.dataclass
+class ExpressGatewayService_ActiveConfigurations_NetworkConfiguration:
     security_groups: Any = None
+    # Specifies the VPC subnets to use for the network configuration of an active configuration, controlling where the ECS Express Gateway service places its elastic network interfaces. (AI-inferred)
     subnets: Any = None
 
 @dataclasses.dataclass
-class ExpressGatewayService_ScalingTarget:
+class ExpressGatewayService_ActiveConfigurations_PrimaryContainer_AwsLogsConfiguration:
+    # The name of the CloudWatch Logs log group where container logs are delivered when using the awslogs log driver. (AI-inferred)
+    log_group: Any = None
+    # For the awslogs log driver, this prefix is prepended to the container name to define the CloudWatch log stream name, enabling organized log grouping. (AI-inferred)
+    log_stream_prefix: Any = None
+
+@dataclasses.dataclass
+class ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Environment:
+    name: Any = None
+    # Specifies the string value for an environment variable set on the primary container in the active ECS Express Gateway service configuration. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class ExpressGatewayService_ActiveConfigurations_PrimaryContainer_RepositoryCredentials:
+    # Specifies the ARN or name of the AWS Secrets Manager secret or Systems Manager parameter that stores the private repository authentication credentials for the primary container. (AI-inferred)
+    credentials_parameter: Any = None
+
+@dataclasses.dataclass
+class ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Secrets:
+    name: Any = None
+    # The ARN or full name (in the form of a Systems Manager parameter name or Secrets Manager secret ARN) of the external source that stores the secret value to be injected into the container as an environment variable or referenced in the task definition. (AI-inferred)
+    value_from: Any = None
+
+@dataclasses.dataclass
+class ExpressGatewayService_ActiveConfigurations_PrimaryContainer:
+    aws_logs_configuration: Any = None
+    command: Any = None
+    container_port: Any = None
+    environment: Any = None
+    image: Any = None
+    # Specifies the credentials used to authenticate to a private container registry, typically containing a credentialsParameter ARN that references a Secrets Manager secret or SSM parameter. (AI-inferred)
+    repository_credentials: Any = None
+    secrets: Any = None
+
+@dataclasses.dataclass
+class ExpressGatewayService_ActiveConfigurations_ScalingTarget:
     auto_scaling_metric: Any = None
     auto_scaling_target_value: Any = None
     max_task_count: Any = None
     min_task_count: Any = None
 
 @dataclasses.dataclass
-class ExpressGatewayService_PrimaryContainer_AwsLogsConfiguration:
-    log_group: Any = None
-    log_stream_prefix: Any = None
+class ExpressGatewayService_ActiveConfigurations:
+    cpu: Any = None
+    created_at: Any = None
+    execution_role_arn: Any = None
+    health_check_path: Any = None
+    ingress_paths: Any = None
+    memory: Any = None
+    network_configuration: Any = None
+    primary_container: Any = None
+    scaling_target: Any = None
+    # Uniquely identifies the version of the service configuration that is among the currently active configurations for the ECS Express Gateway service. (AI-inferred)
+    service_revision_arn: Any = None
+    task_definition_arn: Any = None
+    task_role_arn: Any = None
 
 @dataclasses.dataclass
-class ExpressGatewayService_PrimaryContainer_Environment:
-    name: Any = None
+class ExpressGatewayService_EcsmanagedResourceArns_AutoScaling:
+    application_auto_scaling_policies: Any = None
+    scalable_target: Any = None
+
+@dataclasses.dataclass
+class ExpressGatewayService_EcsmanagedResourceArns_IngressPath:
+    certificate_arn: Any = None
+    listener_arn: Any = None
+    listener_rule_arn: Any = None
+    load_balancer_arn: Any = None
+    load_balancer_security_groups: Any = None
+    target_group_arns: Any = None
+
+@dataclasses.dataclass
+class ExpressGatewayService_EcsmanagedResourceArns:
+    auto_scaling: Any = None
+    ingress_path: Any = None
+    log_groups: Any = None
+    metric_alarms: Any = None
+    service_security_groups: Any = None
+
+@dataclasses.dataclass
+class ExpressGatewayService_Status:
+    status_code: Any = None
+
+@dataclasses.dataclass
+class ExpressGatewayService_Tags:
+    key: Any = None
     value: Any = None
 
-@dataclasses.dataclass
-class ExpressGatewayService_PrimaryContainer_RepositoryCredentials:
-    credentials_parameter: Any = None
-
-@dataclasses.dataclass
-class ExpressGatewayService_PrimaryContainer_Secret:
-    name: Any = None
-    value_from: Any = None
-
-@dataclasses.dataclass
-class ExpressGatewayService_PrimaryContainer:
-    aws_logs_configuration: Any = None
-    command: Any = None
-    container_port: Any = None
-    image: Any = None
-    environment: Any = None
-    repository_credentials: Any = None
-    secret: Any = None
-
-@dataclasses.dataclass
-class ExpressGatewayService_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_ExpressGatewayService_NetworkConfigurationFields = {
+_ExpressGatewayService_ActiveConfigurations_NetworkConfigurationFields = {
     "security_groups": ubx.FieldSpec(wire_name="security_groups"),
     "subnets": ubx.FieldSpec(wire_name="subnets"),
 }
 
-_ExpressGatewayService_ScalingTargetFields = {
+_ExpressGatewayService_ActiveConfigurations_PrimaryContainer_AwsLogsConfigurationFields = {
+    "log_group": ubx.FieldSpec(wire_name="log_group"),
+    "log_stream_prefix": ubx.FieldSpec(wire_name="log_stream_prefix"),
+}
+
+_ExpressGatewayService_ActiveConfigurations_PrimaryContainer_EnvironmentFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_ExpressGatewayService_ActiveConfigurations_PrimaryContainer_RepositoryCredentialsFields = {
+    "credentials_parameter": ubx.FieldSpec(wire_name="credentials_parameter"),
+}
+
+_ExpressGatewayService_ActiveConfigurations_PrimaryContainer_SecretsFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value_from": ubx.FieldSpec(wire_name="value_from"),
+}
+
+_ExpressGatewayService_ActiveConfigurations_PrimaryContainerFields = {
+    "aws_logs_configuration": ubx.FieldSpec(
+        wire_name="aws_logs_configuration",
+        kind="object",
+        fields=_ExpressGatewayService_ActiveConfigurations_PrimaryContainer_AwsLogsConfigurationFields,
+    ),
+    "command": ubx.FieldSpec(wire_name="command"),
+    "container_port": ubx.FieldSpec(wire_name="container_port"),
+    "environment": ubx.FieldSpec(
+        wire_name="environment",
+        kind="list",
+        fields=_ExpressGatewayService_ActiveConfigurations_PrimaryContainer_EnvironmentFields,
+    ),
+    "image": ubx.FieldSpec(wire_name="image"),
+    "repository_credentials": ubx.FieldSpec(
+        wire_name="repository_credentials",
+        kind="object",
+        fields=_ExpressGatewayService_ActiveConfigurations_PrimaryContainer_RepositoryCredentialsFields,
+    ),
+    "secrets": ubx.FieldSpec(
+        wire_name="secrets",
+        kind="list",
+        fields=_ExpressGatewayService_ActiveConfigurations_PrimaryContainer_SecretsFields,
+    ),
+}
+
+_ExpressGatewayService_ActiveConfigurations_ScalingTargetFields = {
     "auto_scaling_metric": ubx.FieldSpec(wire_name="auto_scaling_metric"),
     "auto_scaling_target_value": ubx.FieldSpec(wire_name="auto_scaling_target_value"),
     "max_task_count": ubx.FieldSpec(wire_name="max_task_count"),
     "min_task_count": ubx.FieldSpec(wire_name="min_task_count"),
 }
 
-_ExpressGatewayService_PrimaryContainer_AwsLogsConfigurationFields = {
-    "log_group": ubx.FieldSpec(wire_name="log_group"),
-    "log_stream_prefix": ubx.FieldSpec(wire_name="log_stream_prefix"),
-}
-
-_ExpressGatewayService_PrimaryContainer_EnvironmentFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
+_ExpressGatewayService_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
     "value": ubx.FieldSpec(wire_name="value"),
-}
-
-_ExpressGatewayService_PrimaryContainer_RepositoryCredentialsFields = {
-    "credentials_parameter": ubx.FieldSpec(wire_name="credentials_parameter"),
-}
-
-_ExpressGatewayService_PrimaryContainer_SecretFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "value_from": ubx.FieldSpec(wire_name="value_from"),
-}
-
-_ExpressGatewayService_PrimaryContainerFields = {
-    "aws_logs_configuration": ubx.FieldSpec(
-        wire_name="aws_logs_configuration",
-        kind="list",
-        fields=_ExpressGatewayService_PrimaryContainer_AwsLogsConfigurationFields,
-    ),
-    "command": ubx.FieldSpec(wire_name="command"),
-    "container_port": ubx.FieldSpec(wire_name="container_port"),
-    "image": ubx.FieldSpec(wire_name="image"),
-    "environment": ubx.FieldSpec(
-        wire_name="environment",
-        kind="list",
-        fields=_ExpressGatewayService_PrimaryContainer_EnvironmentFields,
-    ),
-    "repository_credentials": ubx.FieldSpec(
-        wire_name="repository_credentials",
-        kind="list",
-        fields=_ExpressGatewayService_PrimaryContainer_RepositoryCredentialsFields,
-    ),
-    "secret": ubx.FieldSpec(
-        wire_name="secret",
-        kind="list",
-        fields=_ExpressGatewayService_PrimaryContainer_SecretFields,
-    ),
-}
-
-_ExpressGatewayService_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -125,14 +177,35 @@ class ExpressGatewayServiceConfig:
     infrastructure_role_arn: Any = None
     memory: Any = None
     network_configuration: Any = None
-    region: Any = None
+    primary_container: Any = None
     scaling_target: Any = None
     service_name: Any = None
     tags: Any = None
+    task_definition_arn: Any = None
     task_role_arn: Any = None
-    wait_for_steady_state: Any = None
+
+@dataclasses.dataclass
+class ExpressGatewayServiceAttrs:
+    active_configurations: Any = None
+    cluster: Any = None
+    cpu: Any = None
+    created_at: Any = None
+    ecsmanaged_resource_arns: Any = None
+    endpoint: Any = None
+    execution_role_arn: Any = None
+    health_check_path: Any = None
+    infrastructure_role_arn: Any = None
+    memory: Any = None
+    network_configuration: Any = None
     primary_container: Any = None
-    timeouts: Any = None
+    scaling_target: Any = None
+    service_arn: Any = None
+    service_name: Any = None
+    status: Any = None
+    tags: Any = None
+    task_definition_arn: Any = None
+    task_role_arn: Any = None
+    updated_at: Any = None
 
 ExpressGatewayService = ubx.ResourceBinding(
     wire_type="aws_ecs_express_gateway_service",
@@ -145,28 +218,26 @@ ExpressGatewayService = ubx.ResourceBinding(
         "memory": ubx.FieldSpec(wire_name="memory"),
         "network_configuration": ubx.FieldSpec(
             wire_name="network_configuration",
-            kind="list",
-            fields=_ExpressGatewayService_NetworkConfigurationFields,
+            kind="object",
+            fields=_ExpressGatewayService_ActiveConfigurations_NetworkConfigurationFields,
         ),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "scaling_target": ubx.FieldSpec(
-            wire_name="scaling_target",
-            kind="list",
-            fields=_ExpressGatewayService_ScalingTargetFields,
-        ),
-        "service_name": ubx.FieldSpec(wire_name="service_name"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "task_role_arn": ubx.FieldSpec(wire_name="task_role_arn"),
-        "wait_for_steady_state": ubx.FieldSpec(wire_name="wait_for_steady_state"),
         "primary_container": ubx.FieldSpec(
             wire_name="primary_container",
-            kind="list",
-            fields=_ExpressGatewayService_PrimaryContainerFields,
-        ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
             kind="object",
-            fields=_ExpressGatewayService_TimeoutsFields,
+            fields=_ExpressGatewayService_ActiveConfigurations_PrimaryContainerFields,
         ),
+        "scaling_target": ubx.FieldSpec(
+            wire_name="scaling_target",
+            kind="object",
+            fields=_ExpressGatewayService_ActiveConfigurations_ScalingTargetFields,
+        ),
+        "service_name": ubx.FieldSpec(wire_name="service_name"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ExpressGatewayService_TagsFields,
+        ),
+        "task_definition_arn": ubx.FieldSpec(wire_name="task_definition_arn"),
+        "task_role_arn": ubx.FieldSpec(wire_name="task_role_arn"),
     },
 )

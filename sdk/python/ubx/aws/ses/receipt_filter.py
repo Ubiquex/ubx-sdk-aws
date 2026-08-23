@@ -7,20 +7,52 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ReceiptFilterConfig:
+class ReceiptFilter_Filter_IpFilter:
+    # A single IP address or a range of IP addresses to block or allow, specified in CIDR notation.
     cidr: Any = None
-    id: Any = None
-    name: Any = None
+    # Indicates whether to block or allow incoming mail from the specified IP addresses.
     policy: Any = None
-    region: Any = None
+
+@dataclasses.dataclass
+class ReceiptFilter_Filter:
+    # A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.
+    ip_filter: Any = None
+    # The name of the IP address filter.
+    name: Any = None
+
+_ReceiptFilter_Filter_IpFilterFields = {
+    "cidr": ubx.FieldSpec(wire_name="cidr"),
+    "policy": ubx.FieldSpec(wire_name="policy"),
+}
+
+_ReceiptFilter_FilterFields = {
+    "ip_filter": ubx.FieldSpec(
+        wire_name="ip_filter",
+        kind="object",
+        fields=_ReceiptFilter_Filter_IpFilterFields,
+    ),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
+@dataclasses.dataclass
+class ReceiptFilterConfig:
+    # A structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.
+    filter: Any = None
+
+@dataclasses.dataclass
+class ReceiptFilterAttrs:
+    # A structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.
+    filter: Any = None
+    # The name of the SES receipt filter, which serves as the unique Terraform identifier and matches the filter's `name` attribute. (AI-inferred)
+    id: Any = None
 
 ReceiptFilter = ubx.ResourceBinding(
     wire_type="aws_ses_receipt_filter",
     fields={
-        "cidr": ubx.FieldSpec(wire_name="cidr"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "policy": ubx.FieldSpec(wire_name="policy"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "filter": ubx.FieldSpec(
+            wire_name="filter",
+            kind="object",
+            fields=_ReceiptFilter_FilterFields,
+        ),
     },
 )

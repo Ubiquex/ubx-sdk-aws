@@ -3,21 +3,42 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TransitGatewayRouteTable_Tags struct {
+	// The key of a tag to attach to the transit gateway route table, used for identifying and organizing the resource. (AI-inferred)
+	Key any
+	// The value component of a key-value tag applied to this EC2 Transit Gateway Route Table, used for identifying or categorizing the resource. (AI-inferred)
+	Value any
+}
+
+var TransitGatewayRouteTable_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type TransitGatewayRouteTableConfig struct {
-	Id any
-	Region any
+	// Tags are composed of a Key/Value pair. You can use tags to categorize and track each parameter group. The tag value null is permitted.
 	Tags any
-	TagsAll any
+	// The ID of the transit gateway.
 	TransitGatewayId any
+}
+
+type TransitGatewayRouteTableAttrs struct {
+	// Tags are composed of a Key/Value pair. You can use tags to categorize and track each parameter group. The tag value null is permitted.
+	Tags any
+	// The ID of the transit gateway.
+	TransitGatewayId any
+	// Transit Gateway Route Table primary identifier
+	TransitGatewayRouteTableId any
 }
 
 var TransitGatewayRouteTable = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_route_table",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: TransitGatewayRouteTable_TagsFields,
+		},
 		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
 	},
 }

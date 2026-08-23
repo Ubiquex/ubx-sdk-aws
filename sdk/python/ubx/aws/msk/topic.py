@@ -7,40 +7,40 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Topic_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_Topic_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
+class TopicConfig:
+    # The Amazon Resource Name (ARN) of the MSK cluster
+    cluster_arn: Any = None
+    # Base64 encoded configuration properties of the topic
+    configs: Any = None
+    # The number of partitions for the topic
+    partition_count: Any = None
+    # The replication factor for the topic
+    replication_factor: Any = None
+    # The name of the topic
+    topic_name: Any = None
 
 @dataclasses.dataclass
-class TopicConfig:
+class TopicAttrs:
+    # The Amazon Resource Name (ARN) of the MSK cluster
     cluster_arn: Any = None
+    # Base64 encoded configuration properties of the topic
     configs: Any = None
-    name: Any = None
+    # The number of partitions for the topic
     partition_count: Any = None
-    region: Any = None
+    # The replication factor for the topic
     replication_factor: Any = None
-    timeouts: Any = None
+    # The Amazon Resource Name (ARN) of the topic
+    topic_arn: Any = None
+    # The name of the topic
+    topic_name: Any = None
 
 Topic = ubx.ResourceBinding(
     wire_type="aws_msk_topic",
     fields={
         "cluster_arn": ubx.FieldSpec(wire_name="cluster_arn"),
         "configs": ubx.FieldSpec(wire_name="configs"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "partition_count": ubx.FieldSpec(wire_name="partition_count"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "replication_factor": ubx.FieldSpec(wire_name="replication_factor"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Topic_TimeoutsFields,
-        ),
+        "topic_name": ubx.FieldSpec(wire_name="topic_name"),
     },
 )

@@ -7,40 +7,58 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class RegexPatternSet_RegularExpression:
-    regex_string: Any = None
+class RegexPatternSet_Tags:
+    # The tag key, a string that identifies the tag assigned to this WAFv2 regex pattern set, used for resource organization, categorization, and access control. (AI-inferred)
+    key: Any = None
+    # The value component of a tag key-value pair attached to the AWS WAFv2 Regex Pattern Set, used to store arbitrary metadata for resource identification and cost allocation. (AI-inferred)
+    value: Any = None
 
-_RegexPatternSet_RegularExpressionFields = {
-    "regex_string": ubx.FieldSpec(wire_name="regex_string"),
+_RegexPatternSet_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class RegexPatternSetConfig:
+    # Description of the entity.
     description: Any = None
-    id: Any = None
+    # Name of the RegexPatternSet.
     name: Any = None
-    name_prefix: Any = None
-    region: Any = None
+    # The list of regular expression patterns, each as a string, that this AWS WAFv2 regex pattern set uses to match against web request content. (AI-inferred)
+    regular_expression_list: Any = None
+    # Use CLOUDFRONT for CloudFront RegexPatternSet, use REGIONAL for Application Load Balancer and API Gateway.
     scope: Any = None
+    # A list of tag objects (each containing a Key and Value) that are attached to the regex pattern set for AWS resource tagging and cost allocation. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
-    regular_expression: Any = None
+
+@dataclasses.dataclass
+class RegexPatternSetAttrs:
+    # ARN of the WAF entity.
+    arn: Any = None
+    # Description of the entity.
+    description: Any = None
+    # Id of the RegexPatternSet
+    id: Any = None
+    # Name of the RegexPatternSet.
+    name: Any = None
+    # The list of regular expression patterns, each as a string, that this AWS WAFv2 regex pattern set uses to match against web request content. (AI-inferred)
+    regular_expression_list: Any = None
+    # Use CLOUDFRONT for CloudFront RegexPatternSet, use REGIONAL for Application Load Balancer and API Gateway.
+    scope: Any = None
+    # A list of tag objects (each containing a Key and Value) that are attached to the regex pattern set for AWS resource tagging and cost allocation. (AI-inferred)
+    tags: Any = None
 
 RegexPatternSet = ubx.ResourceBinding(
     wire_type="aws_wafv2_regex_pattern_set",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "regular_expression_list": ubx.FieldSpec(wire_name="regular_expression_list"),
         "scope": ubx.FieldSpec(wire_name="scope"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "regular_expression": ubx.FieldSpec(
-            wire_name="regular_expression",
-            kind="set",
-            fields=_RegexPatternSet_RegularExpressionFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_RegexPatternSet_TagsFields,
         ),
     },
 )

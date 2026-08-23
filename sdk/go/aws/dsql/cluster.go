@@ -3,15 +3,27 @@ package dsql
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Cluster_EncryptionDetails struct {
+	// The status of encryption for the cluster.
+	EncryptionStatus any
+	// The type of encryption that protects data in the cluster.
+	EncryptionType any
+	// The Amazon Resource Name (ARN) of the KMS key that encrypts data in the cluster.
+	KmsKeyArn any
+}
+
 type Cluster_MultiRegionProperties struct {
+	// Specifies the Amazon Resource Names (ARNs) of the linked regional DSQL clusters that form the multi-region cluster. (AI-inferred)
 	Clusters any
+	// The witness region in a multi-region cluster.
 	WitnessRegion any
 }
 
-type Cluster_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Cluster_Tags struct {
+	// The key of a tag assigned to the DSQL cluster, used to organize and identify the cluster for management and cost allocation. (AI-inferred)
+	Key any
+	// The value of a user-defined tag attached to the DSQL cluster, used for metadata and cost allocation. (AI-inferred)
+	Value any
 }
 
 var Cluster_MultiRegionPropertiesFields = ubx.FieldMap{
@@ -19,39 +31,68 @@ var Cluster_MultiRegionPropertiesFields = ubx.FieldMap{
 		"WitnessRegion": ubx.FieldSpec{WireName: "witness_region"},
 	}
 
-var Cluster_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Cluster_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ClusterConfig struct {
+	// Whether deletion protection is enabled in this cluster.
 	DeletionProtectionEnabled any
-	ForceDestroy any
+	// The KMS key that encrypts data on the cluster.
 	KmsEncryptionKey any
-	Region any
-	Tags any
+	// The Multi-region properties associated to this cluster.
 	MultiRegionProperties any
-	Timeouts any
+	// The IAM policy applied to the cluster resource.
+	PolicyDocument any
+	Tags any
+}
+
+type ClusterAttrs struct {
+	// The time of when the cluster was created in ISO-8601 format.
+	CreationTime any
+	// Whether deletion protection is enabled in this cluster.
+	DeletionProtectionEnabled any
+	// The encryption configuration details for the cluster.
+	EncryptionDetails any
+	// The DSQL cluster endpoint.
+	Endpoint any
+	// The ID of the created cluster.
+	Identifier any
+	// The KMS key that encrypts data on the cluster.
+	KmsEncryptionKey any
+	// The Multi-region properties associated to this cluster.
+	MultiRegionProperties any
+	// The IAM policy applied to the cluster resource.
+	PolicyDocument any
+	// The version number of the cluster's resource based policy
+	PolicyVersion any
+	// The Amazon Resource Name (ARN) for the cluster.
+	ResourceArn any
+	// The status of the cluster.
+	Status any
+	Tags any
+	// The DSQL cluster VPC endpoint.
+	VpcEndpoint any
+	// The VPC endpoint service name.
+	VpcEndpointServiceName any
 }
 
 var Cluster = ubx.ResourceBinding{
 	WireType: "aws_dsql_cluster",
 	Fields: ubx.FieldMap{
 		"DeletionProtectionEnabled": ubx.FieldSpec{WireName: "deletion_protection_enabled"},
-		"ForceDestroy": ubx.FieldSpec{WireName: "force_destroy"},
 		"KmsEncryptionKey": ubx.FieldSpec{WireName: "kms_encryption_key"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"MultiRegionProperties": ubx.FieldSpec{
 			WireName: "multi_region_properties",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_MultiRegionPropertiesFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Cluster_TimeoutsFields,
+		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Cluster_TagsFields,
 		},
 	},
 }

@@ -7,44 +7,88 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class BeanstalkConfigurationTemplate_Setting:
-    name: Any = None
+class BeanstalkConfigurationTemplate_OptionSettings:
+    # The namespace that identifies the AWS service and configuration section (e.g., 'aws:autoscaling:asg') to which the option setting applies in the Elastic Beanstalk configuration template. (AI-inferred)
     namespace: Any = None
-    resource: Any = None
+    # The name of the configuration option being set within its namespace, identifying the specific Elastic Beanstalk setting (e.g., 'InstanceType' in the 'aws:autoscaling:launchconfiguration' namespace). (AI-inferred)
+    option_name: Any = None
+    # A unique name identifying the specific AWS resource (such as an Auto Scaling group or load balancer) within the Elastic Beanstalk environment that the configuration option applies to. (AI-inferred)
+    resource_name: Any = None
+    # The value assigned to the Elastic Beanstalk configuration option identified by the sibling OptionName within the specified Namespace. (AI-inferred)
     value: Any = None
 
-_BeanstalkConfigurationTemplate_SettingFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
+@dataclasses.dataclass
+class BeanstalkConfigurationTemplate_SourceConfiguration:
+    # The name of the application associated with the configuration.
+    application_name: Any = None
+    # The name of the configuration template.
+    template_name: Any = None
+
+_BeanstalkConfigurationTemplate_OptionSettingsFields = {
     "namespace": ubx.FieldSpec(wire_name="namespace"),
-    "resource": ubx.FieldSpec(wire_name="resource"),
+    "option_name": ubx.FieldSpec(wire_name="option_name"),
+    "resource_name": ubx.FieldSpec(wire_name="resource_name"),
     "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_BeanstalkConfigurationTemplate_SourceConfigurationFields = {
+    "application_name": ubx.FieldSpec(wire_name="application_name"),
+    "template_name": ubx.FieldSpec(wire_name="template_name"),
 }
 
 @dataclasses.dataclass
 class BeanstalkConfigurationTemplateConfig:
-    application: Any = None
+    # The name of the Elastic Beanstalk application to associate with this configuration template.
+    application_name: Any = None
+    # An optional description for this configuration.
     description: Any = None
+    # The ID of an environment whose settings you want to use to create the configuration template. You must specify EnvironmentId if you don't specify PlatformArn, SolutionStackName, or SourceConfiguration.
     environment_id: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values override the values obtained from the solution stack or the source configuration template. For a complete list of Elastic Beanstalk configuration options, see [Option Values](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html) in the AWS Elastic Beanstalk Developer Guide.
+    option_settings: Any = None
+    # The Amazon Resource Name (ARN) of the custom platform. For more information, see [Custom Platforms](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html) in the AWS Elastic Beanstalk Developer Guide.
+    platform_arn: Any = None
+    # The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example, 64bit Amazon Linux 2013.09 running Tomcat 7 Java 7. A solution stack specifies the operating system, runtime, and application server for a configuration template. It also determines the set of configuration options as well as the possible and default values. For more information, see [Supported Platforms](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html) in the AWS Elastic Beanstalk Developer Guide. You must specify SolutionStackName if you don't specify PlatformArn, EnvironmentId, or SourceConfiguration. Use the ListAvailableSolutionStacks API to obtain a list of available solution stacks.
     solution_stack_name: Any = None
-    setting: Any = None
+    # Specifies an existing Elastic Beanstalk configuration template (identified by application name and template name) whose settings are copied to create the new configuration template. (AI-inferred)
+    source_configuration: Any = None
+
+@dataclasses.dataclass
+class BeanstalkConfigurationTemplateAttrs:
+    # The name of the Elastic Beanstalk application to associate with this configuration template.
+    application_name: Any = None
+    # An optional description for this configuration.
+    description: Any = None
+    # The ID of an environment whose settings you want to use to create the configuration template. You must specify EnvironmentId if you don't specify PlatformArn, SolutionStackName, or SourceConfiguration.
+    environment_id: Any = None
+    # Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values override the values obtained from the solution stack or the source configuration template. For a complete list of Elastic Beanstalk configuration options, see [Option Values](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html) in the AWS Elastic Beanstalk Developer Guide.
+    option_settings: Any = None
+    # The Amazon Resource Name (ARN) of the custom platform. For more information, see [Custom Platforms](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html) in the AWS Elastic Beanstalk Developer Guide.
+    platform_arn: Any = None
+    # The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example, 64bit Amazon Linux 2013.09 running Tomcat 7 Java 7. A solution stack specifies the operating system, runtime, and application server for a configuration template. It also determines the set of configuration options as well as the possible and default values. For more information, see [Supported Platforms](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html) in the AWS Elastic Beanstalk Developer Guide. You must specify SolutionStackName if you don't specify PlatformArn, EnvironmentId, or SourceConfiguration. Use the ListAvailableSolutionStacks API to obtain a list of available solution stacks.
+    solution_stack_name: Any = None
+    # Specifies an existing Elastic Beanstalk configuration template (identified by application name and template name) whose settings are copied to create the new configuration template. (AI-inferred)
+    source_configuration: Any = None
+    # The name of the configuration template
+    template_name: Any = None
 
 BeanstalkConfigurationTemplate = ubx.ResourceBinding(
     wire_type="aws_elastic_beanstalk_configuration_template",
     fields={
-        "application": ubx.FieldSpec(wire_name="application"),
+        "application_name": ubx.FieldSpec(wire_name="application_name"),
         "description": ubx.FieldSpec(wire_name="description"),
         "environment_id": ubx.FieldSpec(wire_name="environment_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "option_settings": ubx.FieldSpec(
+            wire_name="option_settings",
+            kind="list",
+            fields=_BeanstalkConfigurationTemplate_OptionSettingsFields,
+        ),
+        "platform_arn": ubx.FieldSpec(wire_name="platform_arn"),
         "solution_stack_name": ubx.FieldSpec(wire_name="solution_stack_name"),
-        "setting": ubx.FieldSpec(
-            wire_name="setting",
-            kind="set",
-            fields=_BeanstalkConfigurationTemplate_SettingFields,
+        "source_configuration": ubx.FieldSpec(
+            wire_name="source_configuration",
+            kind="object",
+            fields=_BeanstalkConfigurationTemplate_SourceConfigurationFields,
         ),
     },
 )

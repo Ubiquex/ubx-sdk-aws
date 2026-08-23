@@ -7,38 +7,47 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ScheduleGroup_Timeouts:
-    create: Any = None
-    delete: Any = None
+class ScheduleGroup_Tags:
+    # The key portion of a tag attached to an AWS EventBridge Scheduler schedule group, used to identify and organize the resource. (AI-inferred)
+    key: Any = None
+    # The value component of a tag attached to the AWS EventBridge Scheduler schedule group, used to define metadata for the resource. (AI-inferred)
+    value: Any = None
 
-_ScheduleGroup_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_ScheduleGroup_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ScheduleGroupConfig:
-    id: Any = None
+    # The name of the schedule group, which must be unique within your AWS account and Region; if omitted, CloudFormation generates a unique name. (AI-inferred)
     name: Any = None
-    name_prefix: Any = None
-    region: Any = None
+    # The list of tags to associate with the schedule group.
     tags: Any = None
-    tags_all: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class ScheduleGroupAttrs:
+    # The Amazon Resource Name (ARN) of the schedule group.
+    arn: Any = None
+    # The time at which the schedule group was created.
+    creation_date: Any = None
+    # The time at which the schedule group was last modified.
+    last_modification_date: Any = None
+    # The name of the schedule group, which must be unique within your AWS account and Region; if omitted, CloudFormation generates a unique name. (AI-inferred)
+    name: Any = None
+    # Specifies the state of the schedule group.
+    state: Any = None
+    # The list of tags to associate with the schedule group.
+    tags: Any = None
 
 ScheduleGroup = ubx.ResourceBinding(
     wire_type="aws_scheduler_schedule_group",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_ScheduleGroup_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ScheduleGroup_TagsFields,
         ),
     },
 )

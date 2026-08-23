@@ -8,15 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SizeConstraintSet_SizeConstraints_FieldToMatch:
+    # The name of the HTTP header to match when the field_to_match type is HEADER; it is ignored for all other types. (AI-inferred)
     data: Any = None
+    # Determines which part of the web request (e.g., URI, query string, header, method, or body) the size constraint applies to, as specified by the WAF FieldToMatch type. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class SizeConstraintSet_SizeConstraints:
+    # Specifies the comparison operator (e.g., EQ, NE, LT, LE, GT, GE) used to compare the size of the request part against the configured threshold for this size constraint. (AI-inferred)
     comparison_operator: Any = None
-    size: Any = None
-    text_transformation: Any = None
+    # Specifies the part of a web request that the size constraint inspects, such as a header, query string, body, or URI. (AI-inferred)
     field_to_match: Any = None
+    # Specifies the size (in bytes) of the web request component (such as a query string, header, or body) that AWS WAF Regional inspects, which is compared against the defined comparison operator for this size constraint. (AI-inferred)
+    size: Any = None
+    # Specifies the text transformation to apply to the web request before evaluating the size constraint, such as NONE, CMD_LINE, HTML_ENTITY_DECODE, LOWERCASE, or URL_DECODE. (AI-inferred)
+    text_transformation: Any = None
 
 _SizeConstraintSet_SizeConstraints_FieldToMatchFields = {
     "data": ubx.FieldSpec(wire_name="data"),
@@ -25,31 +31,38 @@ _SizeConstraintSet_SizeConstraints_FieldToMatchFields = {
 
 _SizeConstraintSet_SizeConstraintsFields = {
     "comparison_operator": ubx.FieldSpec(wire_name="comparison_operator"),
-    "size": ubx.FieldSpec(wire_name="size"),
-    "text_transformation": ubx.FieldSpec(wire_name="text_transformation"),
     "field_to_match": ubx.FieldSpec(
         wire_name="field_to_match",
-        kind="list",
+        kind="object",
         fields=_SizeConstraintSet_SizeConstraints_FieldToMatchFields,
     ),
+    "size": ubx.FieldSpec(wire_name="size"),
+    "text_transformation": ubx.FieldSpec(wire_name="text_transformation"),
 }
 
 @dataclasses.dataclass
 class SizeConstraintSetConfig:
-    id: Any = None
+    # A friendly name used to identify the size constraint set in AWS WAF Regional, which must be unique within the account. (AI-inferred)
     name: Any = None
-    region: Any = None
+    # Defines the size constraints that the set enforces, where each constraint specifies a part of the request (such as a header or body), a comparison operator, a size in bytes, and an optional text transformation. (AI-inferred)
+    size_constraints: Any = None
+
+@dataclasses.dataclass
+class SizeConstraintSetAttrs:
+    # The unique AWS-assigned identifier for the WAF Regional Size Constraint Set, used to reference and manage the resource in Terraform. (AI-inferred)
+    id: Any = None
+    # A friendly name used to identify the size constraint set in AWS WAF Regional, which must be unique within the account. (AI-inferred)
+    name: Any = None
+    # Defines the size constraints that the set enforces, where each constraint specifies a part of the request (such as a header or body), a comparison operator, a size in bytes, and an optional text transformation. (AI-inferred)
     size_constraints: Any = None
 
 SizeConstraintSet = ubx.ResourceBinding(
     wire_type="aws_wafregional_size_constraint_set",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "size_constraints": ubx.FieldSpec(
             wire_name="size_constraints",
-            kind="set",
+            kind="list",
             fields=_SizeConstraintSet_SizeConstraintsFields,
         ),
     },

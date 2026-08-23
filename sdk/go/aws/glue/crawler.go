@@ -3,75 +3,145 @@ package glue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Crawler_CatalogTarget struct {
-	ConnectionName any
-	DatabaseName any
-	DlqEventQueueArn any
-	EventQueueArn any
-	Tables any
-}
-
-type Crawler_DeltaTarget struct {
-	ConnectionName any
-	CreateNativeDeltaTable any
-	DeltaTables any
-	WriteManifest any
-}
-
-type Crawler_DynamodbTarget struct {
-	Path any
-	ScanAll any
-	ScanRate any
-}
-
-type Crawler_HudiTarget struct {
-	ConnectionName any
-	Exclusions any
-	MaximumTraversalDepth any
-	Paths any
-}
-
-type Crawler_JdbcTarget struct {
-	ConnectionName any
-	EnableAdditionalMetadata any
-	Exclusions any
-	Path any
-}
-
 type Crawler_LakeFormationConfiguration struct {
+	// Required for cross account crawls. For same account crawls as the target data, this can be left as null.
 	AccountId any
+	// Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.
 	UseLakeFormationCredentials any
 }
 
-type Crawler_LineageConfiguration struct {
-	CrawlerLineageSettings any
-}
-
-type Crawler_MongodbTarget struct {
-	ConnectionName any
-	Path any
-	ScanAll any
-}
-
 type Crawler_RecrawlPolicy struct {
+	// Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run. A value of CRAWL_EVERYTHING specifies crawling the entire dataset again. A value of CRAWL_NEW_FOLDERS_ONLY specifies crawling only folders that were added since the last crawler run. A value of CRAWL_EVENT_MODE specifies crawling only the changes identified by Amazon S3 events.
 	RecrawlBehavior any
 }
 
-type Crawler_S3Target struct {
-	ConnectionName any
-	DlqEventQueueArn any
-	EventQueueArn any
-	Exclusions any
-	Path any
-	SampleSize any
+type Crawler_Schedule struct {
+	// A cron expression used to specify the schedule. For more information, see Time-Based Schedules for Jobs and Crawlers. For example, to run something every day at 12:15 UTC, specify cron(15 12 * * ? *).
+	ScheduleExpression any
 }
 
 type Crawler_SchemaChangePolicy struct {
+	// The deletion behavior when the crawler finds a deleted object. A value of LOG specifies that if a table or partition is found to no longer exist, do not delete it, only log that it was found to no longer exist. A value of DELETE_FROM_DATABASE specifies that if a table or partition is found to have been removed, delete it from the database. A value of DEPRECATE_IN_DATABASE specifies that if a table has been found to no longer exist, to add a property to the table that says 'DEPRECATED' and includes a timestamp with the time of deprecation.
 	DeleteBehavior any
+	// The update behavior when the crawler finds a changed schema. A value of LOG specifies that if a table or a partition already exists, and a change is detected, do not update it, only log that a change was detected. Add new tables and new partitions (including on existing tables). A value of UPDATE_IN_DATABASE specifies that if a table or partition already exists, and a change is detected, update it. Add new tables and partitions.
 	UpdateBehavior any
 }
 
-var Crawler_CatalogTargetFields = ubx.FieldMap{
+type Crawler_Targets_CatalogTargets struct {
+	// The name of an existing AWS Glue connection that the crawler uses to access the catalog target database when the target requires network access through a connection (for example, for a Redshift or JDBC target catalog). (AI-inferred)
+	ConnectionName any
+	// The name of the AWS Glue Data Catalog database whose tables the crawler targets when processing this catalog target. (AI-inferred)
+	DatabaseName any
+	// Specifies the ARN of the Amazon SQS dead-letter queue to use as a destination for events that fail to be processed from the event queue for this catalog target, enabling change tracking in the crawler. (AI-inferred)
+	DlqEventQueueArn any
+	// The ARN of an Amazon SQS queue that the crawler subscribes to so it can receive data catalog event notifications for the specified catalog target tables, enabling event-driven re-crawling. (AI-inferred)
+	EventQueueArn any
+	// The list of table names in the specified AWS Glue Data Catalog database that the crawler will target to update their metadata definitions. (AI-inferred)
+	Tables any
+}
+
+type Crawler_Targets_DeltaTargets struct {
+	// The connection_name field specifies the name of the AWS Glue connection used to access the Delta Lake table during crawling. (AI-inferred)
+	ConnectionName any
+	// Specifies whether the crawler creates a native Delta Lake table instead of a symlink table for the discovered Delta targets. (AI-inferred)
+	CreateNativeDeltaTable any
+	// A list of Amazon S3 paths to Delta Lake tables that the crawler will crawl. (AI-inferred)
+	DeltaTables any
+	// Specifies whether the crawler writes a manifest file for each Delta Lake table it crawls, enabling query engines like Amazon Athena and Presto to read the Delta table via the manifest. (AI-inferred)
+	WriteManifest any
+}
+
+type Crawler_Targets_DynamoDbtargets struct {
+	// Specifies the DynamoDB table name that this DynamoDB target points to, which the AWS Glue crawler scans. (AI-inferred)
+	Path any
+	// When set to true, the Glue crawler scans all items in the DynamoDB table, whereas false limits it to a sample of approximately 1,000 items. (AI-inferred)
+	ScanAll any
+	// The percentage of the DynamoDB table's provisioned read throughput that the crawler will consume while scanning, controlling scan speed and impact on the source table. (AI-inferred)
+	ScanRate any
+}
+
+type Crawler_Targets_HudiTargets struct {
+	// The name of the AWS Glue connection used by the crawler to access and catalog Hudi table metadata from the specified Hudi data store. (AI-inferred)
+	ConnectionName any
+	// Specifies a list of glob patterns that the crawler will ignore when scanning the Hudi data store, allowing specific files or directories to be excluded from the crawl. (AI-inferred)
+	Exclusions any
+	// Specifies the maximum directory depth to traverse when crawling Hudi target paths, limiting how deep the crawler will explore the data store. (AI-inferred)
+	MaximumTraversalDepth any
+	// List of Amazon S3 paths that define the root locations of Hudi datasets to be crawled by the Glue crawler. (AI-inferred)
+	Paths any
+}
+
+type Crawler_Targets_JdbcTargets struct {
+	// The name of the JDBC connection to use for this JDBC target. (AI-inferred)
+	ConnectionName any
+	// Specifies additional metadata (currently only 'COMMENTS') to be captured from JDBC data sources during the crawl, enabling table and column comments to be stored in the Data Catalog. (AI-inferred)
+	EnableAdditionalMetadata any
+	// List of glob-style path patterns (e.g., 'table_[0-9]*') that the crawler excludes from the JDBC target's scan, preventing specified tables or partitions from being cataloged. (AI-inferred)
+	Exclusions any
+	// The path of the JDBC target, identifying the database table (or tables) to crawl, typically in the form `database.table` or `schema.table` relative to the configured JDBC connection. (AI-inferred)
+	Path any
+}
+
+type Crawler_Targets_MongoDbtargets struct {
+	// The name of an AWS Glue connection that stores connection details for the MongoDB data store to crawl. (AI-inferred)
+	ConnectionName any
+	// The database and collection path (for example, database.collection) for the MongoDB target in the AWS Glue crawler. (AI-inferred)
+	Path any
+}
+
+type Crawler_Targets_S3Targets struct {
+	// The name of a Glue connection used to access this S3 target, enabling the crawler to reach S3 data inside an Amazon VPC via a VPC endpoint or similar network configuration. (AI-inferred)
+	ConnectionName any
+	// The ARN of the SQS dead-letter queue that receives failed events from the S3 event queue configured for this Glue crawler's S3 target. (AI-inferred)
+	DlqEventQueueArn any
+	// The ARN of an Amazon SQS queue that receives S3 object-created events, enabling event-based incremental crawling of the S3 target. (AI-inferred)
+	EventQueueArn any
+	// A list of glob patterns (such as '*.log') used to exclude specific S3 objects from being crawled by this crawler. (AI-inferred)
+	Exclusions any
+	// The path to the Amazon S3 location (bucket or bucket/prefix) that the Glue crawler will crawl to populate the data catalog. (AI-inferred)
+	Path any
+	// Sets the number of records sampled from the S3 target by the crawler to infer the schema. (AI-inferred)
+	SampleSize any
+}
+
+type Crawler_Targets struct {
+	// Specifies AWS Glue Data Catalog targets.
+	CatalogTargets any
+	// Specifies an array of Delta data store targets.
+	DeltaTargets any
+	// Specifies Amazon DynamoDB targets.
+	DynamoDbtargets any
+	// Specifies Apache Hudi data store targets.
+	HudiTargets any
+	// Specifies Apache Iceberg data store targets.
+	IcebergTargets any
+	// Specifies JDBC targets.
+	JdbcTargets any
+	// A list of Mongo DB targets.
+	MongoDbtargets any
+	// Specifies Amazon Simple Storage Service (Amazon S3) targets.
+	S3Targets any
+}
+
+var Crawler_LakeFormationConfigurationFields = ubx.FieldMap{
+		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"UseLakeFormationCredentials": ubx.FieldSpec{WireName: "use_lake_formation_credentials"},
+	}
+
+var Crawler_RecrawlPolicyFields = ubx.FieldMap{
+		"RecrawlBehavior": ubx.FieldSpec{WireName: "recrawl_behavior"},
+	}
+
+var Crawler_ScheduleFields = ubx.FieldMap{
+		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
+	}
+
+var Crawler_SchemaChangePolicyFields = ubx.FieldMap{
+		"DeleteBehavior": ubx.FieldSpec{WireName: "delete_behavior"},
+		"UpdateBehavior": ubx.FieldSpec{WireName: "update_behavior"},
+	}
+
+var Crawler_Targets_CatalogTargetsFields = ubx.FieldMap{
 		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
 		"DlqEventQueueArn": ubx.FieldSpec{WireName: "dlq_event_queue_arn"},
@@ -79,53 +149,39 @@ var Crawler_CatalogTargetFields = ubx.FieldMap{
 		"Tables": ubx.FieldSpec{WireName: "tables"},
 	}
 
-var Crawler_DeltaTargetFields = ubx.FieldMap{
+var Crawler_Targets_DeltaTargetsFields = ubx.FieldMap{
 		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
 		"CreateNativeDeltaTable": ubx.FieldSpec{WireName: "create_native_delta_table"},
 		"DeltaTables": ubx.FieldSpec{WireName: "delta_tables"},
 		"WriteManifest": ubx.FieldSpec{WireName: "write_manifest"},
 	}
 
-var Crawler_DynamodbTargetFields = ubx.FieldMap{
+var Crawler_Targets_DynamoDbtargetsFields = ubx.FieldMap{
 		"Path": ubx.FieldSpec{WireName: "path"},
 		"ScanAll": ubx.FieldSpec{WireName: "scan_all"},
 		"ScanRate": ubx.FieldSpec{WireName: "scan_rate"},
 	}
 
-var Crawler_HudiTargetFields = ubx.FieldMap{
+var Crawler_Targets_HudiTargetsFields = ubx.FieldMap{
 		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
 		"Exclusions": ubx.FieldSpec{WireName: "exclusions"},
 		"MaximumTraversalDepth": ubx.FieldSpec{WireName: "maximum_traversal_depth"},
 		"Paths": ubx.FieldSpec{WireName: "paths"},
 	}
 
-var Crawler_JdbcTargetFields = ubx.FieldMap{
+var Crawler_Targets_JdbcTargetsFields = ubx.FieldMap{
 		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
 		"EnableAdditionalMetadata": ubx.FieldSpec{WireName: "enable_additional_metadata"},
 		"Exclusions": ubx.FieldSpec{WireName: "exclusions"},
 		"Path": ubx.FieldSpec{WireName: "path"},
 	}
 
-var Crawler_LakeFormationConfigurationFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"UseLakeFormationCredentials": ubx.FieldSpec{WireName: "use_lake_formation_credentials"},
-	}
-
-var Crawler_LineageConfigurationFields = ubx.FieldMap{
-		"CrawlerLineageSettings": ubx.FieldSpec{WireName: "crawler_lineage_settings"},
-	}
-
-var Crawler_MongodbTargetFields = ubx.FieldMap{
+var Crawler_Targets_MongoDbtargetsFields = ubx.FieldMap{
 		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
 		"Path": ubx.FieldSpec{WireName: "path"},
-		"ScanAll": ubx.FieldSpec{WireName: "scan_all"},
 	}
 
-var Crawler_RecrawlPolicyFields = ubx.FieldMap{
-		"RecrawlBehavior": ubx.FieldSpec{WireName: "recrawl_behavior"},
-	}
-
-var Crawler_S3TargetFields = ubx.FieldMap{
+var Crawler_Targets_S3TargetsFields = ubx.FieldMap{
 		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
 		"DlqEventQueueArn": ubx.FieldSpec{WireName: "dlq_event_queue_arn"},
 		"EventQueueArn": ubx.FieldSpec{WireName: "event_queue_arn"},
@@ -134,37 +190,109 @@ var Crawler_S3TargetFields = ubx.FieldMap{
 		"SampleSize": ubx.FieldSpec{WireName: "sample_size"},
 	}
 
-var Crawler_SchemaChangePolicyFields = ubx.FieldMap{
-		"DeleteBehavior": ubx.FieldSpec{WireName: "delete_behavior"},
-		"UpdateBehavior": ubx.FieldSpec{WireName: "update_behavior"},
+var Crawler_TargetsFields = ubx.FieldMap{
+		"CatalogTargets": ubx.FieldSpec{
+			WireName: "catalog_targets",
+			Kind: "list",
+			Fields: Crawler_Targets_CatalogTargetsFields,
+		},
+		"DeltaTargets": ubx.FieldSpec{
+			WireName: "delta_targets",
+			Kind: "list",
+			Fields: Crawler_Targets_DeltaTargetsFields,
+		},
+		"DynamoDbtargets": ubx.FieldSpec{
+			WireName: "dynamo_dbtargets",
+			Kind: "list",
+			Fields: Crawler_Targets_DynamoDbtargetsFields,
+		},
+		"HudiTargets": ubx.FieldSpec{
+			WireName: "hudi_targets",
+			Kind: "list",
+			Fields: Crawler_Targets_HudiTargetsFields,
+		},
+		"IcebergTargets": ubx.FieldSpec{
+			WireName: "iceberg_targets",
+			Kind: "list",
+			Fields: Crawler_Targets_HudiTargetsFields,
+		},
+		"JdbcTargets": ubx.FieldSpec{
+			WireName: "jdbc_targets",
+			Kind: "list",
+			Fields: Crawler_Targets_JdbcTargetsFields,
+		},
+		"MongoDbtargets": ubx.FieldSpec{
+			WireName: "mongo_dbtargets",
+			Kind: "list",
+			Fields: Crawler_Targets_MongoDbtargetsFields,
+		},
+		"S3Targets": ubx.FieldSpec{
+			WireName: "s3_targets",
+			Kind: "list",
+			Fields: Crawler_Targets_S3TargetsFields,
+		},
 	}
 
 type CrawlerConfig struct {
+	// A list of UTF-8 strings that specify the names of custom classifiers that are associated with the crawler.
 	Classifiers any
+	// Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior.
 	Configuration any
+	// The name of the SecurityConfiguration structure to be used by this crawler.
+	CrawlerSecurityConfiguration any
+	// The name of the database in which the crawler's output is stored.
 	DatabaseName any
+	// A description of the crawler.
 	Description any
-	Id any
-	Name any
-	Region any
-	Role any
-	Schedule any
-	SecurityConfiguration any
-	TablePrefix any
-	Tags any
-	TagsAll any
-	CatalogTarget any
-	DeltaTarget any
-	DynamodbTarget any
-	HudiTarget any
-	IcebergTarget any
-	JdbcTarget any
+	// Specifies AWS Lake Formation configuration settings for the crawler
 	LakeFormationConfiguration any
-	LineageConfiguration any
-	MongodbTarget any
+	// The name of the crawler.
+	Name any
+	// When crawling an Amazon S3 data source after the first crawl is complete, specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run. For more information, see Incremental Crawls in AWS Glue in the developer guide.
 	RecrawlPolicy any
-	S3Target any
+	// The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.
+	Role any
+	// A scheduling object using a cron statement to schedule an event.
+	Schedule any
+	// The policy that specifies update and delete behaviors for the crawler. The policy tells the crawler what to do in the event that it detects a change in a table that already exists in the customer's database at the time of the crawl. The SchemaChangePolicy does not affect whether or how new tables and partitions are added. New tables and partitions are always created regardless of the SchemaChangePolicy on a crawler. The SchemaChangePolicy consists of two components, UpdateBehavior and DeleteBehavior.
 	SchemaChangePolicy any
+	// The prefix added to the names of tables that are created.
+	TablePrefix any
+	// The tags to use with this crawler.
+	Tags any
+	// Specifies data stores to crawl.
+	Targets any
+}
+
+type CrawlerAttrs struct {
+	// A list of UTF-8 strings that specify the names of custom classifiers that are associated with the crawler.
+	Classifiers any
+	// Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior.
+	Configuration any
+	// The name of the SecurityConfiguration structure to be used by this crawler.
+	CrawlerSecurityConfiguration any
+	// The name of the database in which the crawler's output is stored.
+	DatabaseName any
+	// A description of the crawler.
+	Description any
+	// Specifies AWS Lake Formation configuration settings for the crawler
+	LakeFormationConfiguration any
+	// The name of the crawler.
+	Name any
+	// When crawling an Amazon S3 data source after the first crawl is complete, specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run. For more information, see Incremental Crawls in AWS Glue in the developer guide.
+	RecrawlPolicy any
+	// The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.
+	Role any
+	// A scheduling object using a cron statement to schedule an event.
+	Schedule any
+	// The policy that specifies update and delete behaviors for the crawler. The policy tells the crawler what to do in the event that it detects a change in a table that already exists in the customer's database at the time of the crawl. The SchemaChangePolicy does not affect whether or how new tables and partitions are added. New tables and partitions are always created regardless of the SchemaChangePolicy on a crawler. The SchemaChangePolicy consists of two components, UpdateBehavior and DeleteBehavior.
+	SchemaChangePolicy any
+	// The prefix added to the names of tables that are created.
+	TablePrefix any
+	// The tags to use with this crawler.
+	Tags any
+	// Specifies data stores to crawl.
+	Targets any
 }
 
 var Crawler = ubx.ResourceBinding{
@@ -172,76 +300,37 @@ var Crawler = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Classifiers": ubx.FieldSpec{WireName: "classifiers"},
 		"Configuration": ubx.FieldSpec{WireName: "configuration"},
+		"CrawlerSecurityConfiguration": ubx.FieldSpec{WireName: "crawler_security_configuration"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
-		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"CatalogTarget": ubx.FieldSpec{
-			WireName: "catalog_target",
-			Kind: "list",
-			Fields: Crawler_CatalogTargetFields,
-		},
-		"DeltaTarget": ubx.FieldSpec{
-			WireName: "delta_target",
-			Kind: "list",
-			Fields: Crawler_DeltaTargetFields,
-		},
-		"DynamodbTarget": ubx.FieldSpec{
-			WireName: "dynamodb_target",
-			Kind: "list",
-			Fields: Crawler_DynamodbTargetFields,
-		},
-		"HudiTarget": ubx.FieldSpec{
-			WireName: "hudi_target",
-			Kind: "list",
-			Fields: Crawler_HudiTargetFields,
-		},
-		"IcebergTarget": ubx.FieldSpec{
-			WireName: "iceberg_target",
-			Kind: "list",
-			Fields: Crawler_HudiTargetFields,
-		},
-		"JdbcTarget": ubx.FieldSpec{
-			WireName: "jdbc_target",
-			Kind: "list",
-			Fields: Crawler_JdbcTargetFields,
-		},
 		"LakeFormationConfiguration": ubx.FieldSpec{
 			WireName: "lake_formation_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Crawler_LakeFormationConfigurationFields,
 		},
-		"LineageConfiguration": ubx.FieldSpec{
-			WireName: "lineage_configuration",
-			Kind: "list",
-			Fields: Crawler_LineageConfigurationFields,
-		},
-		"MongodbTarget": ubx.FieldSpec{
-			WireName: "mongodb_target",
-			Kind: "list",
-			Fields: Crawler_MongodbTargetFields,
-		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"RecrawlPolicy": ubx.FieldSpec{
 			WireName: "recrawl_policy",
-			Kind: "list",
+			Kind: "object",
 			Fields: Crawler_RecrawlPolicyFields,
 		},
-		"S3Target": ubx.FieldSpec{
-			WireName: "s3_target",
-			Kind: "list",
-			Fields: Crawler_S3TargetFields,
+		"Role": ubx.FieldSpec{WireName: "role"},
+		"Schedule": ubx.FieldSpec{
+			WireName: "schedule",
+			Kind: "object",
+			Fields: Crawler_ScheduleFields,
 		},
 		"SchemaChangePolicy": ubx.FieldSpec{
 			WireName: "schema_change_policy",
-			Kind: "list",
+			Kind: "object",
 			Fields: Crawler_SchemaChangePolicyFields,
+		},
+		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Targets": ubx.FieldSpec{
+			WireName: "targets",
+			Kind: "object",
+			Fields: Crawler_TargetsFields,
 		},
 	},
 }

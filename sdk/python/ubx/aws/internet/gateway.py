@@ -7,38 +7,36 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Gateway_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Gateway_Tags:
+    # The key of a user-defined tag entry in the tags map for this AWS internet gateway, used to label the gateway with custom metadata such as environment or owner. (AI-inferred)
+    key: Any = None
+    # The value component of a key-value tag attached to the Internet Gateway, used to store metadata for identification, organization, or cost allocation. (AI-inferred)
+    value: Any = None
 
-_Gateway_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Gateway_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class GatewayConfig:
-    id: Any = None
-    region: Any = None
+    # Any tags to assign to the internet gateway.
     tags: Any = None
-    tags_all: Any = None
-    vpc_id: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class GatewayAttrs:
+    # The unique identifier (e.g., `igw-...`) assigned by AWS to the internet gateway. (AI-inferred)
+    internet_gateway_id: Any = None
+    # Any tags to assign to the internet gateway.
+    tags: Any = None
 
 Gateway = ubx.ResourceBinding(
     wire_type="aws_internet_gateway",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Gateway_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Gateway_TagsFields,
         ),
     },
 )

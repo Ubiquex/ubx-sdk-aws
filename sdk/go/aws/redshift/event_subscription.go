@@ -3,31 +3,66 @@ package redshift
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type EventSubscription_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type EventSubscription_Tags struct {
+	// The key name of a tag assigned to this Redshift event subscription, used for management and identifying the resource. (AI-inferred)
+	Key any
+	// The value of a key-value tag attached to the AWS Redshift event subscription, used for identifying and managing the resource. (AI-inferred)
+	Value any
 }
 
-var EventSubscription_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var EventSubscription_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type EventSubscriptionConfig struct {
+	// A boolean value; set to true to activate the subscription, and set to false to create the subscription but not activate it.
 	Enabled any
+	// Specifies the Amazon Redshift event categories to be published by the event notification subscription.
 	EventCategories any
-	Id any
-	Name any
-	Region any
+	// Specifies the Amazon Redshift event severity to be published by the event notification subscription.
 	Severity any
+	// The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications.
 	SnsTopicArn any
+	// A list of one or more identifiers of Amazon Redshift source objects.
 	SourceIds any
+	// The type of source that will be generating the events.
 	SourceType any
+	// The name of the Amazon Redshift event notification subscription
+	SubscriptionName any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
-	Timeouts any
+}
+
+type EventSubscriptionAttrs struct {
+	// The name of the Amazon Redshift event notification subscription.
+	CustSubscriptionId any
+	// The AWS account associated with the Amazon Redshift event notification subscription.
+	CustomerAwsId any
+	// A boolean value; set to true to activate the subscription, and set to false to create the subscription but not activate it.
+	Enabled any
+	// Specifies the Amazon Redshift event categories to be published by the event notification subscription.
+	EventCategories any
+	// The list of Amazon Redshift event categories specified in the event notification subscription.
+	EventCategoriesList any
+	// Specifies the Amazon Redshift event severity to be published by the event notification subscription.
+	Severity any
+	// The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications.
+	SnsTopicArn any
+	// A list of one or more identifiers of Amazon Redshift source objects.
+	SourceIds any
+	// A list of the sources that publish events to the Amazon Redshift event notification subscription.
+	SourceIdsList any
+	// The type of source that will be generating the events.
+	SourceType any
+	// The status of the Amazon Redshift event notification subscription.
+	Status any
+	// The date and time the Amazon Redshift event notification subscription was created.
+	SubscriptionCreationTime any
+	// The name of the Amazon Redshift event notification subscription
+	SubscriptionName any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var EventSubscription = ubx.ResourceBinding{
@@ -35,19 +70,15 @@ var EventSubscription = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"EventCategories": ubx.FieldSpec{WireName: "event_categories"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"Severity": ubx.FieldSpec{WireName: "severity"},
 		"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
 		"SourceIds": ubx.FieldSpec{WireName: "source_ids"},
 		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: EventSubscription_TimeoutsFields,
+		"SubscriptionName": ubx.FieldSpec{WireName: "subscription_name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: EventSubscription_TagsFields,
 		},
 	},
 }

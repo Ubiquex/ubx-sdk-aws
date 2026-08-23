@@ -3,13 +3,78 @@ package service
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DiscoveryPrivateDnsNamespace_Properties_DnsProperties_Soa struct {
+	// Specifies the time-to-live (TTL) in seconds for the SOA (Start of Authority) record of the private DNS namespace, controlling how long DNS resolvers cache the SOA information. (AI-inferred)
+	Ttl any
+}
+
+type DiscoveryPrivateDnsNamespace_Properties_DnsProperties struct {
+	// Configures the start of authority (SOA) record settings for the private DNS namespace, allowing you to set the time-to-live (TTL) for the SOA record. (AI-inferred)
+	Soa any
+}
+
+type DiscoveryPrivateDnsNamespace_Properties struct {
+	// Defines the DNS properties for the private namespace, specifically the SOA (Start of Authority) record settings that control the default DNS behavior for the namespace. (AI-inferred)
+	DnsProperties any
+}
+
+type DiscoveryPrivateDnsNamespace_Tags struct {
+	Key any
+	Value any
+}
+
+var DiscoveryPrivateDnsNamespace_Properties_DnsProperties_SoaFields = ubx.FieldMap{
+		"Ttl": ubx.FieldSpec{WireName: "ttl"},
+	}
+
+var DiscoveryPrivateDnsNamespace_Properties_DnsPropertiesFields = ubx.FieldMap{
+		"Soa": ubx.FieldSpec{
+			WireName: "soa",
+			Kind: "object",
+			Fields: DiscoveryPrivateDnsNamespace_Properties_DnsProperties_SoaFields,
+		},
+	}
+
+var DiscoveryPrivateDnsNamespace_PropertiesFields = ubx.FieldMap{
+		"DnsProperties": ubx.FieldSpec{
+			WireName: "dns_properties",
+			Kind: "object",
+			Fields: DiscoveryPrivateDnsNamespace_Properties_DnsPropertiesFields,
+		},
+	}
+
+var DiscoveryPrivateDnsNamespace_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type DiscoveryPrivateDnsNamespaceConfig struct {
+	// A description of the namespace.
 	Description any
-	Id any
+	// The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
 	Name any
-	Region any
+	Properties any
+	// The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
 	Tags any
-	TagsAll any
+	// The ID of the Amazon VPC that you want to associate the namespace with.
+	Vpc any
+}
+
+type DiscoveryPrivateDnsNamespaceAttrs struct {
+	// The Amazon Resource Name (ARN) of the private namespace.
+	Arn any
+	// A description of the namespace.
+	Description any
+	// The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+	HostedZoneId any
+	// The ID of the private namespace.
+	Id any
+	// The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
+	Name any
+	Properties any
+	// The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+	Tags any
+	// The ID of the Amazon VPC that you want to associate the namespace with.
 	Vpc any
 }
 
@@ -17,11 +82,17 @@ var DiscoveryPrivateDnsNamespace = ubx.ResourceBinding{
 	WireType: "aws_service_discovery_private_dns_namespace",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Properties": ubx.FieldSpec{
+			WireName: "properties",
+			Kind: "object",
+			Fields: DiscoveryPrivateDnsNamespace_PropertiesFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: DiscoveryPrivateDnsNamespace_TagsFields,
+		},
 		"Vpc": ubx.FieldSpec{WireName: "vpc"},
 	},
 }

@@ -4,11 +4,37 @@ package notifications
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EventRuleConfig struct {
+	// Specifies a JSON string containing the event pattern that determines which events trigger this rule, such as matching AWS service, event type, or resource attributes. (AI-inferred)
 	EventPattern any
+	// Specifies the event type from the source AWS service that this notification rule matches (for example, a named event such as an EC2 instance state-change notification). (AI-inferred)
 	EventType any
+	// The ARN of the notification configuration to which this event rule belongs, determining the channel and settings used for delivering notifications from matched events. (AI-inferred)
 	NotificationConfigurationArn any
+	// Specifies the AWS Regions in which the event rule is active and should apply. (AI-inferred)
 	Regions any
+	// Specifies the AWS service or event source (such as aws.ec2) that the notification rule monitors for events, acting as the source of the triggering events. (AI-inferred)
 	Source any
+}
+
+type EventRuleAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies this AWS Notifications event rule, used to reference the rule in IAM policies, cross-service resource sharing, and API operations. (AI-inferred)
+	Arn any
+	// The timestamp indicating when the event rule was created, formatted as an ISO 8601 date-time string. (AI-inferred)
+	CreationTime any
+	// Specifies a JSON string containing the event pattern that determines which events trigger this rule, such as matching AWS service, event type, or resource attributes. (AI-inferred)
+	EventPattern any
+	// Specifies the event type from the source AWS service that this notification rule matches (for example, a named event such as an EC2 instance state-change notification). (AI-inferred)
+	EventType any
+	// The list of Amazon EventBridge managed rule ARNs that AWS automatically creates and manages for this notification event rule. (AI-inferred)
+	ManagedRules any
+	// The ARN of the notification configuration to which this event rule belongs, determining the channel and settings used for delivering notifications from matched events. (AI-inferred)
+	NotificationConfigurationArn any
+	// Specifies the AWS Regions in which the event rule is active and should apply. (AI-inferred)
+	Regions any
+	// Specifies the AWS service or event source (such as aws.ec2) that the notification rule monitors for events, acting as the source of the triggering events. (AI-inferred)
+	Source any
+	// This computed field provides a region-by-region summary of the event rule's status, indicating for each region whether the rule is active or has an error condition. (AI-inferred)
+	StatusSummaryByRegion any
 }
 
 var EventRule = ubx.ResourceBinding{

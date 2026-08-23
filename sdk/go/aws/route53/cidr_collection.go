@@ -3,13 +3,44 @@ package route53
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CidrCollection_Locations struct {
+	// Specifies the list of CIDR blocks (such as '192.0.2.0/24') that define the IP address ranges for this location within the Route 53 CIDR collection, which are then used for DNS routing policies. (AI-inferred)
+	CidrList any
+	// The name of the CIDR location within the CIDR collection, serving as a unique identifier for associating the location's CIDR blocks with routing rules. (AI-inferred)
+	LocationName any
+}
+
+var CidrCollection_LocationsFields = ubx.FieldMap{
+		"CidrList": ubx.FieldSpec{WireName: "cidr_list"},
+		"LocationName": ubx.FieldSpec{WireName: "location_name"},
+	}
+
 type CidrCollectionConfig struct {
+	// A complex type that contains information about the list of CIDR locations.
+	Locations any
+	// A unique name for the CIDR collection.
+	Name any
+}
+
+type CidrCollectionAttrs struct {
+	// The Amazon resource name (ARN) to uniquely identify the AWS resource.
+	Arn any
+	// UUID of the CIDR collection.
+	Id any
+	// A complex type that contains information about the list of CIDR locations.
+	Locations any
+	// A unique name for the CIDR collection.
 	Name any
 }
 
 var CidrCollection = ubx.ResourceBinding{
 	WireType: "aws_route53_cidr_collection",
 	Fields: ubx.FieldMap{
+		"Locations": ubx.FieldSpec{
+			WireName: "locations",
+			Kind: "list",
+			Fields: CidrCollection_LocationsFields,
+		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

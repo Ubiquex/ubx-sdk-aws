@@ -7,79 +7,177 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class CloudAutonomousVmCluster_MaintenanceWindow_DaysOfWeek:
-    name: Any = None
+class CloudAutonomousVmCluster_IamRoles:
+    aws_integration: Any = None
+    iam_role_arn: Any = None
+    status: Any = None
 
 @dataclasses.dataclass
 class CloudAutonomousVmCluster_MaintenanceWindow:
+    # The days of the week when maintenance can be performed.
     days_of_week: Any = None
+    # The hours of the day when maintenance can be performed.
     hours_of_day: Any = None
+    # The lead time in weeks before the maintenance window.
     lead_time_in_weeks: Any = None
+    # The months when maintenance can be performed.
     months: Any = None
+    # The preference for the maintenance window scheduling.
     preference: Any = None
+    # The weeks of the month when maintenance can be performed.
     weeks_of_month: Any = None
 
 @dataclasses.dataclass
-class CloudAutonomousVmCluster_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_CloudAutonomousVmCluster_MaintenanceWindow_DaysOfWeekFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-}
+class CloudAutonomousVmCluster_Tags:
+    key: Any = None
+    value: Any = None
 
 _CloudAutonomousVmCluster_MaintenanceWindowFields = {
-    "days_of_week": ubx.FieldSpec(
-        wire_name="days_of_week",
-        kind="set",
-        fields=_CloudAutonomousVmCluster_MaintenanceWindow_DaysOfWeekFields,
-    ),
+    "days_of_week": ubx.FieldSpec(wire_name="days_of_week"),
     "hours_of_day": ubx.FieldSpec(wire_name="hours_of_day"),
     "lead_time_in_weeks": ubx.FieldSpec(wire_name="lead_time_in_weeks"),
-    "months": ubx.FieldSpec(
-        wire_name="months",
-        kind="set",
-        fields=_CloudAutonomousVmCluster_MaintenanceWindow_DaysOfWeekFields,
-    ),
+    "months": ubx.FieldSpec(wire_name="months"),
     "preference": ubx.FieldSpec(wire_name="preference"),
     "weeks_of_month": ubx.FieldSpec(wire_name="weeks_of_month"),
 }
 
-_CloudAutonomousVmCluster_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_CloudAutonomousVmCluster_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class CloudAutonomousVmClusterConfig:
+    # The data storage size allocated for Autonomous Databases in the Autonomous VM cluster, in TB.
     autonomous_data_storage_size_in_tbs: Any = None
-    cloud_exadata_infrastructure_arn: Any = None
+    # The unique identifier of the Cloud Exadata Infrastructure containing this Autonomous VM cluster.
     cloud_exadata_infrastructure_id: Any = None
+    # The number of CPU cores enabled per node in the Autonomous VM cluster.
     cpu_core_count_per_node: Any = None
+    # The list of database servers associated with the Autonomous VM cluster.
     db_servers: Any = None
+    # The user-provided description of the Autonomous VM cluster.
     description: Any = None
+    # The display name of the Autonomous VM cluster.
     display_name: Any = None
+    # Indicates whether mutual TLS (mTLS) authentication is enabled for the Autonomous VM cluster.
     is_mtls_enabled_vm_cluster: Any = None
+    # The Oracle license model that applies to the Autonomous VM cluster. Valid values are LICENSE_INCLUDED or BRING_YOUR_OWN_LICENSE.
     license_model: Any = None
-    memory_per_oracle_compute_unit_in_gbs: Any = None
-    odb_network_arn: Any = None
-    odb_network_id: Any = None
-    region: Any = None
-    scan_listener_port_non_tls: Any = None
-    scan_listener_port_tls: Any = None
-    tags: Any = None
-    time_zone: Any = None
-    total_container_databases: Any = None
+    # The scheduling details for the maintenance window. Patching and system updates take place during the maintenance window.
     maintenance_window: Any = None
-    timeouts: Any = None
+    # The amount of memory allocated per Oracle Compute Unit, in GB.
+    memory_per_oracle_compute_unit_in_gbs: Any = None
+    # The unique identifier of the ODB network associated with this Autonomous VM cluster.
+    odb_network_id: Any = None
+    # The SCAN listener port for non-TLS (TCP) protocol. The default is 1521.
+    scan_listener_port_non_tls: Any = None
+    # The SCAN listener port for TLS (TCP) protocol. The default is 2484.
+    scan_listener_port_tls: Any = None
+    # The tags associated with the Autonomous VM cluster.
+    tags: Any = None
+    # The time zone of the Autonomous VM cluster.
+    time_zone: Any = None
+    # The total number of Autonomous Container Databases that can be created with the allocated local storage.
+    total_container_databases: Any = None
+
+@dataclasses.dataclass
+class CloudAutonomousVmClusterAttrs:
+    # The percentage of data storage currently in use for Autonomous Databases in the Autonomous VM cluster.
+    autonomous_data_storage_percentage: Any = None
+    # The data storage size allocated for Autonomous Databases in the Autonomous VM cluster, in TB.
+    autonomous_data_storage_size_in_tbs: Any = None
+    # The available data storage space for Autonomous Databases in the Autonomous VM cluster, in TB.
+    available_autonomous_data_storage_size_in_tbs: Any = None
+    # The number of Autonomous CDBs that you can create with the currently available storage.
+    available_container_databases: Any = None
+    # The number of CPU cores available for allocation to Autonomous Databases.
+    available_cpus: Any = None
+    # The Amazon Resource Name (ARN) for the Autonomous VM cluster.
+    cloud_autonomous_vm_cluster_arn: Any = None
+    # The unique identifier of the Autonomous VM cluster.
+    cloud_autonomous_vm_cluster_id: Any = None
+    # The unique identifier of the Cloud Exadata Infrastructure containing this Autonomous VM cluster.
+    cloud_exadata_infrastructure_id: Any = None
+    # The compute model of the Autonomous VM cluster: ECPU or OCPU.
+    compute_model: Any = None
+    # The total number of CPU cores in the Autonomous VM cluster.
+    cpu_core_count: Any = None
+    # The number of CPU cores enabled per node in the Autonomous VM cluster.
+    cpu_core_count_per_node: Any = None
+    # The percentage of total CPU cores currently in use in the Autonomous VM cluster.
+    cpu_percentage: Any = None
+    # The total data storage allocated to the Autonomous VM cluster, in GB.
+    data_storage_size_in_gbs: Any = None
+    # The total data storage allocated to the Autonomous VM cluster, in TB.
+    data_storage_size_in_tbs: Any = None
+    # The local node storage allocated to the Autonomous VM cluster, in gigabytes (GB).
+    db_node_storage_size_in_gbs: Any = None
+    # The list of database servers associated with the Autonomous VM cluster.
+    db_servers: Any = None
+    # The user-provided description of the Autonomous VM cluster.
+    description: Any = None
+    # The display name of the Autonomous VM cluster.
+    display_name: Any = None
+    # The domain name for the Autonomous VM cluster.
+    domain: Any = None
+    # The minimum value to which you can scale down the Exadata storage, in TB.
+    exadata_storage_in_tbs_lowest_scaled_value: Any = None
+    # The hostname for the Autonomous VM cluster.
+    hostname: Any = None
+    # The AWS Identity and Access Management (IAM) service roles associated with the Autonomous VM cluster.
+    iam_roles: Any = None
+    # Indicates whether mutual TLS (mTLS) authentication is enabled for the Autonomous VM cluster.
+    is_mtls_enabled_vm_cluster: Any = None
+    # The Oracle license model that applies to the Autonomous VM cluster. Valid values are LICENSE_INCLUDED or BRING_YOUR_OWN_LICENSE.
+    license_model: Any = None
+    # The scheduling details for the maintenance window. Patching and system updates take place during the maintenance window.
+    maintenance_window: Any = None
+    # The minimum value to which you can scale down the maximum number of Autonomous CDBs.
+    max_acds_lowest_scaled_value: Any = None
+    # The amount of memory allocated per Oracle Compute Unit, in GB.
+    memory_per_oracle_compute_unit_in_gbs: Any = None
+    # The total amount of memory allocated to the Autonomous VM cluster, in gigabytes (GB).
+    memory_size_in_gbs: Any = None
+    # The number of database server nodes in the Autonomous VM cluster.
+    node_count: Any = None
+    # The number of Autonomous CDBs that can't be provisioned because of resource constraints.
+    non_provisionable_autonomous_container_databases: Any = None
+    # The name of the OCI resource anchor associated with this Autonomous VM cluster.
+    oci_resource_anchor_name: Any = None
+    # The URL for accessing the OCI console page for this Autonomous VM cluster.
+    oci_url: Any = None
+    # The Oracle Cloud Identifier (OCID) of the Autonomous VM cluster.
+    ocid: Any = None
+    # The unique identifier of the ODB network associated with this Autonomous VM cluster.
+    odb_network_id: Any = None
+    # The number of Autonomous CDBs that can be provisioned in the Autonomous VM cluster.
+    provisionable_autonomous_container_databases: Any = None
+    # The number of Autonomous CDBs currently provisioned in the Autonomous VM cluster.
+    provisioned_autonomous_container_databases: Any = None
+    # The number of CPU cores currently provisioned in the Autonomous VM cluster.
+    provisioned_cpus: Any = None
+    # The number of CPU cores that can be reclaimed from terminated or scaled-down Autonomous Databases.
+    reclaimable_cpus: Any = None
+    # The number of CPU cores reserved for system operations and redundancy.
+    reserved_cpus: Any = None
+    # The SCAN listener port for non-TLS (TCP) protocol. The default is 1521.
+    scan_listener_port_non_tls: Any = None
+    # The SCAN listener port for TLS (TCP) protocol. The default is 2484.
+    scan_listener_port_tls: Any = None
+    # The shape of the Exadata infrastructure for the Autonomous VM cluster.
+    shape: Any = None
+    # The tags associated with the Autonomous VM cluster.
+    tags: Any = None
+    # The time zone of the Autonomous VM cluster.
+    time_zone: Any = None
+    # The total number of Autonomous Container Databases that can be created with the allocated local storage.
+    total_container_databases: Any = None
 
 CloudAutonomousVmCluster = ubx.ResourceBinding(
     wire_type="aws_odb_cloud_autonomous_vm_cluster",
     fields={
         "autonomous_data_storage_size_in_tbs": ubx.FieldSpec(wire_name="autonomous_data_storage_size_in_tbs"),
-        "cloud_exadata_infrastructure_arn": ubx.FieldSpec(wire_name="cloud_exadata_infrastructure_arn"),
         "cloud_exadata_infrastructure_id": ubx.FieldSpec(wire_name="cloud_exadata_infrastructure_id"),
         "cpu_core_count_per_node": ubx.FieldSpec(wire_name="cpu_core_count_per_node"),
         "db_servers": ubx.FieldSpec(wire_name="db_servers"),
@@ -87,24 +185,21 @@ CloudAutonomousVmCluster = ubx.ResourceBinding(
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "is_mtls_enabled_vm_cluster": ubx.FieldSpec(wire_name="is_mtls_enabled_vm_cluster"),
         "license_model": ubx.FieldSpec(wire_name="license_model"),
-        "memory_per_oracle_compute_unit_in_gbs": ubx.FieldSpec(wire_name="memory_per_oracle_compute_unit_in_gbs"),
-        "odb_network_arn": ubx.FieldSpec(wire_name="odb_network_arn"),
-        "odb_network_id": ubx.FieldSpec(wire_name="odb_network_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "scan_listener_port_non_tls": ubx.FieldSpec(wire_name="scan_listener_port_non_tls"),
-        "scan_listener_port_tls": ubx.FieldSpec(wire_name="scan_listener_port_tls"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
-        "total_container_databases": ubx.FieldSpec(wire_name="total_container_databases"),
         "maintenance_window": ubx.FieldSpec(
             wire_name="maintenance_window",
-            kind="list",
+            kind="object",
             fields=_CloudAutonomousVmCluster_MaintenanceWindowFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_CloudAutonomousVmCluster_TimeoutsFields,
+        "memory_per_oracle_compute_unit_in_gbs": ubx.FieldSpec(wire_name="memory_per_oracle_compute_unit_in_gbs"),
+        "odb_network_id": ubx.FieldSpec(wire_name="odb_network_id"),
+        "scan_listener_port_non_tls": ubx.FieldSpec(wire_name="scan_listener_port_non_tls"),
+        "scan_listener_port_tls": ubx.FieldSpec(wire_name="scan_listener_port_tls"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_CloudAutonomousVmCluster_TagsFields,
         ),
+        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+        "total_container_databases": ubx.FieldSpec(wire_name="total_container_databases"),
     },
 )

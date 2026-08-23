@@ -7,20 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class OnlyInternetGateway_Tags:
+    # The key portion of a tag attached to the egress-only internet gateway, used for identifying, organizing, and managing this VPC component in AWS. (AI-inferred)
+    key: Any = None
+    # The tag value (string) for a tag applied to the egress-only internet gateway, allowing you to categorize and manage this IPv6 outbound-only VPC component. (AI-inferred)
+    value: Any = None
+
+_OnlyInternetGateway_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class OnlyInternetGatewayConfig:
-    id: Any = None
-    region: Any = None
+    # Any tags assigned to the egress only internet gateway.
     tags: Any = None
-    tags_all: Any = None
+    # The ID of the VPC for which to create the egress-only internet gateway.
+    vpc_id: Any = None
+
+@dataclasses.dataclass
+class OnlyInternetGatewayAttrs:
+    # Service Generated ID of the EgressOnlyInternetGateway
+    id: Any = None
+    # Any tags assigned to the egress only internet gateway.
+    tags: Any = None
+    # The ID of the VPC for which to create the egress-only internet gateway.
     vpc_id: Any = None
 
 OnlyInternetGateway = ubx.ResourceBinding(
     wire_type="aws_egress_only_internet_gateway",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_OnlyInternetGateway_TagsFields,
+        ),
         "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
     },
 )

@@ -8,69 +8,117 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DocumentClassifier_InputDataConfig_AugmentedManifests:
-    annotation_data_s3_uri: Any = None
+    # Lists the attribute names (JSON keys) in each augmented manifest line that contain the document text and, optionally, the class label used as training data for the document classifier. (AI-inferred)
     attribute_names: Any = None
-    document_type: Any = None
+    # Specifies the S3 URI of the augmented manifest file that contains the labeled documents used to train the document classifier. (AI-inferred)
     s3_uri: Any = None
-    source_documents_s3_uri: Any = None
+    # The split of the augmented manifest data set, which determines whether the documents are used for training or testing the document classifier. (AI-inferred)
     split: Any = None
 
 @dataclasses.dataclass
-class DocumentClassifier_InputDataConfig:
-    data_format: Any = None
-    label_delimiter: Any = None
+class DocumentClassifier_InputDataConfig_DocumentReaderConfig:
+    # Specifies the Amazon Textract document reading action to apply to input documents, either TEXTRACT_DETECT_DOCUMENT_TEXT for text extraction or TEXTRACT_ANALYZE_DOCUMENT for extraction including forms and tables. (AI-inferred)
+    document_read_action: Any = None
+    # Specifies whether the document reader uses the service default text extraction behavior (SERVICE_DEFAULT) or forces the Textract action defined in the document reader configuration (FORCE_DOCUMENT_READ_ACTION). (AI-inferred)
+    document_read_mode: Any = None
+    # Specifies a list of feature types (such as TABLES or FORMS) that Amazon Textract should extract from input documents when the document reader processes them, allowing the document classifier to leverage those additional extracted elements. (AI-inferred)
+    feature_types: Any = None
+
+@dataclasses.dataclass
+class DocumentClassifier_InputDataConfig_Documents:
+    # The S3 URI of the training documents (e.g., a CSV or augmented manifest file) used to train the Amazon Comprehend document classifier. (AI-inferred)
     s3_uri: Any = None
+    # The S3 URI of the test documents used to evaluate the trained document classifier model. (AI-inferred)
     test_s3_uri: Any = None
+
+@dataclasses.dataclass
+class DocumentClassifier_InputDataConfig:
+    # Specifies the augmented manifest files from Amazon SageMaker Ground Truth that provide labeled training data for the document classifier. (AI-inferred)
     augmented_manifests: Any = None
+    # Specifies the format of the training data for the document classifier, either COMPREHEND_CSV (default) for a CSV file or AUGMENTED_MANIFEST for an augmented manifest file. (AI-inferred)
+    data_format: Any = None
+    # Specifies the Amazon Textract document reader settings (document read action, read mode, and feature types) used to extract text from input PDF or Word documents for the document classifier. (AI-inferred)
+    document_reader_config: Any = None
+    # Specifies the format of the training data (either COMPREHEND_CSV or AUGMENTED_MANIFEST) for the document classifier. (AI-inferred)
+    document_type: Any = None
+    # Provides the S3 URIs for the training documents (and optionally test documents) used to train the document classifier. (AI-inferred)
+    documents: Any = None
+    # The single character that separates the label from the text in each line of the training data files for the document classifier (e.g., a pipe '|'). (AI-inferred)
+    label_delimiter: Any = None
+    # The S3 URI of the bucket or folder that contains the training documents used to train the document classifier. (AI-inferred)
+    s3_uri: Any = None
+    # The S3 URI of the test dataset used to evaluate the trained document classifier. (AI-inferred)
+    test_s3_uri: Any = None
 
 @dataclasses.dataclass
 class DocumentClassifier_OutputDataConfig:
+    # The KMS key ID used to encrypt the output data stored in S3 for the document classifier. (AI-inferred)
     kms_key_id: Any = None
-    output_s3_uri: Any = None
+    # The S3 URI where the document classifier's output data, such as training metrics and evaluation results, is stored. (AI-inferred)
     s3_uri: Any = None
 
 @dataclasses.dataclass
-class DocumentClassifier_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class DocumentClassifier_Tags:
+    # The tag key (e.g., 'project') for a user-defined tag attached to the Amazon Comprehend document classifier, used for metadata, cost tracking, and access control. (AI-inferred)
+    key: Any = None
+    # The value part of a tag attached to the Amazon Comprehend document classifier, used for cost allocation or organizational categorization. (AI-inferred)
+    value: Any = None
 
 @dataclasses.dataclass
 class DocumentClassifier_VpcConfig:
+    # Specifies the list of security group IDs that the Amazon Comprehend document classifier uses when it accesses resources in your VPC, controlling inbound and outbound network traffic for training and inference operations. (AI-inferred)
     security_group_ids: Any = None
+    # The list of subnet IDs in the Amazon VPC where the document classifier runs, enabling private network access to resources such as training data in S3. (AI-inferred)
     subnets: Any = None
 
 _DocumentClassifier_InputDataConfig_AugmentedManifestsFields = {
-    "annotation_data_s3_uri": ubx.FieldSpec(wire_name="annotation_data_s3_uri"),
     "attribute_names": ubx.FieldSpec(wire_name="attribute_names"),
-    "document_type": ubx.FieldSpec(wire_name="document_type"),
     "s3_uri": ubx.FieldSpec(wire_name="s3_uri"),
-    "source_documents_s3_uri": ubx.FieldSpec(wire_name="source_documents_s3_uri"),
     "split": ubx.FieldSpec(wire_name="split"),
 }
 
+_DocumentClassifier_InputDataConfig_DocumentReaderConfigFields = {
+    "document_read_action": ubx.FieldSpec(wire_name="document_read_action"),
+    "document_read_mode": ubx.FieldSpec(wire_name="document_read_mode"),
+    "feature_types": ubx.FieldSpec(wire_name="feature_types"),
+}
+
+_DocumentClassifier_InputDataConfig_DocumentsFields = {
+    "s3_uri": ubx.FieldSpec(wire_name="s3_uri"),
+    "test_s3_uri": ubx.FieldSpec(wire_name="test_s3_uri"),
+}
+
 _DocumentClassifier_InputDataConfigFields = {
+    "augmented_manifests": ubx.FieldSpec(
+        wire_name="augmented_manifests",
+        kind="list",
+        fields=_DocumentClassifier_InputDataConfig_AugmentedManifestsFields,
+    ),
     "data_format": ubx.FieldSpec(wire_name="data_format"),
+    "document_reader_config": ubx.FieldSpec(
+        wire_name="document_reader_config",
+        kind="object",
+        fields=_DocumentClassifier_InputDataConfig_DocumentReaderConfigFields,
+    ),
+    "document_type": ubx.FieldSpec(wire_name="document_type"),
+    "documents": ubx.FieldSpec(
+        wire_name="documents",
+        kind="object",
+        fields=_DocumentClassifier_InputDataConfig_DocumentsFields,
+    ),
     "label_delimiter": ubx.FieldSpec(wire_name="label_delimiter"),
     "s3_uri": ubx.FieldSpec(wire_name="s3_uri"),
     "test_s3_uri": ubx.FieldSpec(wire_name="test_s3_uri"),
-    "augmented_manifests": ubx.FieldSpec(
-        wire_name="augmented_manifests",
-        kind="set",
-        fields=_DocumentClassifier_InputDataConfig_AugmentedManifestsFields,
-    ),
 }
 
 _DocumentClassifier_OutputDataConfigFields = {
     "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
-    "output_s3_uri": ubx.FieldSpec(wire_name="output_s3_uri"),
     "s3_uri": ubx.FieldSpec(wire_name="s3_uri"),
 }
 
-_DocumentClassifier_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_DocumentClassifier_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _DocumentClassifier_VpcConfigFields = {
@@ -80,56 +128,89 @@ _DocumentClassifier_VpcConfigFields = {
 
 @dataclasses.dataclass
 class DocumentClassifierConfig:
+    # The ARN of the IAM role that Amazon Comprehend assumes to access the training documents in the S3 bucket specified as the input data source for the document classifier. (AI-inferred)
     data_access_role_arn: Any = None
-    id: Any = None
-    language_code: Any = None
-    mode: Any = None
-    model_kms_key_id: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    version_name: Any = None
-    version_name_prefix: Any = None
-    volume_kms_key_id: Any = None
+    # The unique name of the document classifier, which identifies it within your AWS account and region. (AI-inferred)
+    document_classifier_name: Any = None
+    # Specifies the S3 location and format of the training data (documents and labels) used to train the document classifier, including the S3 URI, data format, and optional test data location. (AI-inferred)
     input_data_config: Any = None
+    # Specifies the language code of the training documents, such as 'en' for English or 'es' for Spanish, which the document classifier is trained on. (AI-inferred)
+    language_code: Any = None
+    # Specifies the classification mode for the document classifier: MULTI_CLASS for assigning a single class per document, or MULTI_LABEL for assigning multiple labels per document. (AI-inferred)
+    mode: Any = None
+    # Specifies the AWS KMS key ID used to encrypt the trained document classifier model. (AI-inferred)
+    model_kms_key_id: Any = None
+    # The model_policy field specifies a JSON-based resource policy that grants other AWS services or IAM principals permission to use the trained document classifier for inference. (AI-inferred)
+    model_policy: Any = None
+    # Specifies the Amazon S3 location (and optionally the AWS KMS key for encryption) where the document classifier training output, such as model artifacts and evaluation metrics, is stored. (AI-inferred)
     output_data_config: Any = None
-    timeouts: Any = None
+    # Specifies a list of key-value tags to attach to the document classifier resource. (AI-inferred)
+    tags: Any = None
+    # Specifies a user-defined version name for the document classifier, allowing you to manage and reference distinct versions of the same classifier within Amazon Comprehend. (AI-inferred)
+    version_name: Any = None
+    # The identifier of the AWS KMS key that Amazon Comprehend uses to encrypt the storage volume attached to the compute instance during training of the document classifier. (AI-inferred)
+    volume_kms_key_id: Any = None
+    # Configures the VPC settings (security group IDs and subnet IDs) used by the document classifier to access training data or other resources in a private VPC. (AI-inferred)
+    vpc_config: Any = None
+
+@dataclasses.dataclass
+class DocumentClassifierAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies the document classifier in Amazon Comprehend. (AI-inferred)
+    arn: Any = None
+    # The ARN of the IAM role that Amazon Comprehend assumes to access the training documents in the S3 bucket specified as the input data source for the document classifier. (AI-inferred)
+    data_access_role_arn: Any = None
+    # The unique name of the document classifier, which identifies it within your AWS account and region. (AI-inferred)
+    document_classifier_name: Any = None
+    # Specifies the S3 location and format of the training data (documents and labels) used to train the document classifier, including the S3 URI, data format, and optional test data location. (AI-inferred)
+    input_data_config: Any = None
+    # Specifies the language code of the training documents, such as 'en' for English or 'es' for Spanish, which the document classifier is trained on. (AI-inferred)
+    language_code: Any = None
+    # Specifies the classification mode for the document classifier: MULTI_CLASS for assigning a single class per document, or MULTI_LABEL for assigning multiple labels per document. (AI-inferred)
+    mode: Any = None
+    # Specifies the AWS KMS key ID used to encrypt the trained document classifier model. (AI-inferred)
+    model_kms_key_id: Any = None
+    # The model_policy field specifies a JSON-based resource policy that grants other AWS services or IAM principals permission to use the trained document classifier for inference. (AI-inferred)
+    model_policy: Any = None
+    # Specifies the Amazon S3 location (and optionally the AWS KMS key for encryption) where the document classifier training output, such as model artifacts and evaluation metrics, is stored. (AI-inferred)
+    output_data_config: Any = None
+    # Specifies a list of key-value tags to attach to the document classifier resource. (AI-inferred)
+    tags: Any = None
+    # Specifies a user-defined version name for the document classifier, allowing you to manage and reference distinct versions of the same classifier within Amazon Comprehend. (AI-inferred)
+    version_name: Any = None
+    # The identifier of the AWS KMS key that Amazon Comprehend uses to encrypt the storage volume attached to the compute instance during training of the document classifier. (AI-inferred)
+    volume_kms_key_id: Any = None
+    # Configures the VPC settings (security group IDs and subnet IDs) used by the document classifier to access training data or other resources in a private VPC. (AI-inferred)
     vpc_config: Any = None
 
 DocumentClassifier = ubx.ResourceBinding(
     wire_type="aws_comprehend_document_classifier",
     fields={
         "data_access_role_arn": ubx.FieldSpec(wire_name="data_access_role_arn"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "document_classifier_name": ubx.FieldSpec(wire_name="document_classifier_name"),
+        "input_data_config": ubx.FieldSpec(
+            wire_name="input_data_config",
+            kind="object",
+            fields=_DocumentClassifier_InputDataConfigFields,
+        ),
         "language_code": ubx.FieldSpec(wire_name="language_code"),
         "mode": ubx.FieldSpec(wire_name="mode"),
         "model_kms_key_id": ubx.FieldSpec(wire_name="model_kms_key_id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "version_name": ubx.FieldSpec(wire_name="version_name"),
-        "version_name_prefix": ubx.FieldSpec(wire_name="version_name_prefix"),
-        "volume_kms_key_id": ubx.FieldSpec(wire_name="volume_kms_key_id"),
-        "input_data_config": ubx.FieldSpec(
-            wire_name="input_data_config",
-            kind="list",
-            fields=_DocumentClassifier_InputDataConfigFields,
-        ),
+        "model_policy": ubx.FieldSpec(wire_name="model_policy"),
         "output_data_config": ubx.FieldSpec(
             wire_name="output_data_config",
-            kind="list",
+            kind="object",
             fields=_DocumentClassifier_OutputDataConfigFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_DocumentClassifier_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_DocumentClassifier_TagsFields,
         ),
+        "version_name": ubx.FieldSpec(wire_name="version_name"),
+        "volume_kms_key_id": ubx.FieldSpec(wire_name="volume_kms_key_id"),
         "vpc_config": ubx.FieldSpec(
             wire_name="vpc_config",
-            kind="list",
+            kind="object",
             fields=_DocumentClassifier_VpcConfigFields,
         ),
     },

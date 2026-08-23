@@ -7,52 +7,121 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ResourceDataSync_S3Destination_DestinationDataSharing:
-    destination_data_sharing_type: Any = None
+class ResourceDataSync_S3Destination:
+    # The name of the S3 bucket where Systems Manager Resource Data Sync stores the synced resource data. (AI-inferred)
+    bucket_name: Any = None
+    # Specifies the S3 object key prefix (path) within the destination bucket where the SSM resource data sync stores its synchronized data. (AI-inferred)
+    bucket_prefix: Any = None
+    # Specifies the AWS Region in which the S3 bucket that receives the synchronized SSM inventory data is located. (AI-inferred)
+    bucket_region: Any = None
+    # The ARN of the AWS KMS key used to encrypt data in the S3 destination bucket for the resource data sync. (AI-inferred)
+    kmskey_arn: Any = None
+    # Specifies the format for the System Manager data written to the S3 destination, with valid values of JsonSerDe or Incremental. (AI-inferred)
+    sync_format: Any = None
 
 @dataclasses.dataclass
-class ResourceDataSync_S3Destination:
-    bucket_name: Any = None
-    kms_key_arn: Any = None
-    prefix: Any = None
-    region: Any = None
-    sync_format: Any = None
-    destination_data_sharing: Any = None
+class ResourceDataSync_SyncSource_AwsOrganizationsSource:
+    # For the AWS Organizations source of an SSM Resource Data Sync, this required string specifies whether the sync applies to all accounts in the organization ('EntireOrganization') or only to accounts within specified organizational units ('OrganizationalUnits'). (AI-inferred)
+    organization_source_type: Any = None
+    # Limits the data sync to only the specified organizational units (OUs) in the AWS Organization, so resources from accounts within those OUs are included in the sync. (AI-inferred)
+    organizational_units: Any = None
 
-_ResourceDataSync_S3Destination_DestinationDataSharingFields = {
-    "destination_data_sharing_type": ubx.FieldSpec(wire_name="destination_data_sharing_type"),
-}
+@dataclasses.dataclass
+class ResourceDataSync_SyncSource:
+    # The AWS Organizations source configuration for the resource data sync, specifying the organization source type and the organizational units whose resource data will be synchronized. (AI-inferred)
+    aws_organizations_source: Any = None
+    # Indicates whether the resource data sync automatically includes new AWS Regions as they become available, allowing it to begin collecting data from those regions without additional configuration. (AI-inferred)
+    include_future_regions: Any = None
+    # Specifies the list of AWS Regions from which Systems Manager collects data for the resource data sync. (AI-inferred)
+    source_regions: Any = None
+    # Specifies the type of source that the resource data sync aggregates data from, such as S3, a single account across multiple regions, or all accounts in an AWS organization. (AI-inferred)
+    source_type: Any = None
 
 _ResourceDataSync_S3DestinationFields = {
     "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
-    "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
-    "prefix": ubx.FieldSpec(wire_name="prefix"),
-    "region": ubx.FieldSpec(wire_name="region"),
+    "bucket_prefix": ubx.FieldSpec(wire_name="bucket_prefix"),
+    "bucket_region": ubx.FieldSpec(wire_name="bucket_region"),
+    "kmskey_arn": ubx.FieldSpec(wire_name="kmskey_arn"),
     "sync_format": ubx.FieldSpec(wire_name="sync_format"),
-    "destination_data_sharing": ubx.FieldSpec(
-        wire_name="destination_data_sharing",
-        kind="list",
-        fields=_ResourceDataSync_S3Destination_DestinationDataSharingFields,
+}
+
+_ResourceDataSync_SyncSource_AwsOrganizationsSourceFields = {
+    "organization_source_type": ubx.FieldSpec(wire_name="organization_source_type"),
+    "organizational_units": ubx.FieldSpec(wire_name="organizational_units"),
+}
+
+_ResourceDataSync_SyncSourceFields = {
+    "aws_organizations_source": ubx.FieldSpec(
+        wire_name="aws_organizations_source",
+        kind="object",
+        fields=_ResourceDataSync_SyncSource_AwsOrganizationsSourceFields,
     ),
+    "include_future_regions": ubx.FieldSpec(wire_name="include_future_regions"),
+    "source_regions": ubx.FieldSpec(wire_name="source_regions"),
+    "source_type": ubx.FieldSpec(wire_name="source_type"),
 }
 
 @dataclasses.dataclass
 class ResourceDataSyncConfig:
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # The name of the S3 bucket used as the destination for the resource data sync, where Systems Manager delivers the synced configuration and inventory data. (AI-inferred)
+    bucket_name: Any = None
+    # The prefix (folder path) within the S3 bucket where Systems Manager Inventory data is delivered by this data sync. (AI-inferred)
+    bucket_prefix: Any = None
+    # The AWS Region where the S3 bucket specified as the destination for the resource data sync is located. (AI-inferred)
+    bucket_region: Any = None
+    # The ARN of an AWS KMS key that encrypts the synced data stored in the destination Amazon S3 bucket. (AI-inferred)
+    kmskey_arn: Any = None
+    # Configuration for the S3 bucket where the resource data sync stores synced operational data, including bucket name, region, optional prefix, KMS key, and sync format. (AI-inferred)
     s3_destination: Any = None
+    # Specifies the serialization format (either JsonSerDe or DelimitedText) used when writing Systems Manager data to the Amazon S3 destination for the resource data sync. (AI-inferred)
+    sync_format: Any = None
+    # The name of the resource data sync configuration, which must be unique within the AWS account and Region and is used to identify the sync. (AI-inferred)
+    sync_name: Any = None
+    # The sync_source field defines the configuration for the source of the resource data sync, specifying the source type (e.g., 'AwsOrganizations' or 'SingleAccount'), the source regions, and optionally AWS Organizations details to determine where inventory and configuration data is collected from. (AI-inferred)
+    sync_source: Any = None
+    # Determines the type of AWS Systems Manager Resource Data Sync, either 'SyncFromSource' to aggregate data from multiple AWS accounts and Regions or 'SyncToDestination' to sync data to an S3 bucket, and controls whether the configuration uses a sync source or an S3 destination. (AI-inferred)
+    sync_type: Any = None
+
+@dataclasses.dataclass
+class ResourceDataSyncAttrs:
+    # The name of the S3 bucket used as the destination for the resource data sync, where Systems Manager delivers the synced configuration and inventory data. (AI-inferred)
+    bucket_name: Any = None
+    # The prefix (folder path) within the S3 bucket where Systems Manager Inventory data is delivered by this data sync. (AI-inferred)
+    bucket_prefix: Any = None
+    # The AWS Region where the S3 bucket specified as the destination for the resource data sync is located. (AI-inferred)
+    bucket_region: Any = None
+    # The ARN of an AWS KMS key that encrypts the synced data stored in the destination Amazon S3 bucket. (AI-inferred)
+    kmskey_arn: Any = None
+    # Configuration for the S3 bucket where the resource data sync stores synced operational data, including bucket name, region, optional prefix, KMS key, and sync format. (AI-inferred)
+    s3_destination: Any = None
+    # Specifies the serialization format (either JsonSerDe or DelimitedText) used when writing Systems Manager data to the Amazon S3 destination for the resource data sync. (AI-inferred)
+    sync_format: Any = None
+    # The name of the resource data sync configuration, which must be unique within the AWS account and Region and is used to identify the sync. (AI-inferred)
+    sync_name: Any = None
+    # The sync_source field defines the configuration for the source of the resource data sync, specifying the source type (e.g., 'AwsOrganizations' or 'SingleAccount'), the source regions, and optionally AWS Organizations details to determine where inventory and configuration data is collected from. (AI-inferred)
+    sync_source: Any = None
+    # Determines the type of AWS Systems Manager Resource Data Sync, either 'SyncFromSource' to aggregate data from multiple AWS accounts and Regions or 'SyncToDestination' to sync data to an S3 bucket, and controls whether the configuration uses a sync source or an S3 destination. (AI-inferred)
+    sync_type: Any = None
 
 ResourceDataSync = ubx.ResourceBinding(
     wire_type="aws_ssm_resource_data_sync",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
+        "bucket_prefix": ubx.FieldSpec(wire_name="bucket_prefix"),
+        "bucket_region": ubx.FieldSpec(wire_name="bucket_region"),
+        "kmskey_arn": ubx.FieldSpec(wire_name="kmskey_arn"),
         "s3_destination": ubx.FieldSpec(
             wire_name="s3_destination",
-            kind="list",
+            kind="object",
             fields=_ResourceDataSync_S3DestinationFields,
         ),
+        "sync_format": ubx.FieldSpec(wire_name="sync_format"),
+        "sync_name": ubx.FieldSpec(wire_name="sync_name"),
+        "sync_source": ubx.FieldSpec(
+            wire_name="sync_source",
+            kind="object",
+            fields=_ResourceDataSync_SyncSourceFields,
+        ),
+        "sync_type": ubx.FieldSpec(wire_name="sync_type"),
     },
 )

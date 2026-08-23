@@ -4,13 +4,17 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Faq_S3Path struct {
+	// The name of the S3 bucket that contains the FAQ data file specified for the Kendra FAQ. (AI-inferred)
 	Bucket any
+	// The S3 object key (file name/path) within the bucket that points to the FAQ file used by the Kendra index. (AI-inferred)
 	Key any
 }
 
-type Faq_Timeouts struct {
-	Create any
-	Delete any
+type Faq_Tags struct {
+	// The key of a tag attached to the Kendra FAQ, used to identify and categorize the resource for management and cost allocation. (AI-inferred)
+	Key any
+	// The value component of a tag (a key-value pair) attached to the Amazon Kendra FAQ resource, used for metadata, categorization, and cost allocation. (AI-inferred)
+	Value any
 }
 
 var Faq_S3PathFields = ubx.FieldMap{
@@ -18,24 +22,51 @@ var Faq_S3PathFields = ubx.FieldMap{
 		"Key": ubx.FieldSpec{WireName: "key"},
 	}
 
-var Faq_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var Faq_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type FaqConfig struct {
+	// Description of the FAQ
 	Description any
+	// Format of the input file
 	FileFormat any
-	Id any
+	// Unique ID of Index
 	IndexId any
+	// The code for a language.
 	LanguageCode any
+	// The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred)
 	Name any
-	Region any
+	// The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred)
 	RoleArn any
-	Tags any
-	TagsAll any
+	// The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred)
 	S3Path any
-	Timeouts any
+	// List of tags
+	Tags any
+}
+
+type FaqAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies the Kendra FAQ resource. (AI-inferred)
+	Arn any
+	// Description of the FAQ
+	Description any
+	// Format of the input file
+	FileFormat any
+	// Unique ID of the FAQ
+	Id any
+	// Unique ID of Index
+	IndexId any
+	// The code for a language.
+	LanguageCode any
+	// The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred)
+	Name any
+	// The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred)
+	RoleArn any
+	// The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred)
+	S3Path any
+	// List of tags
+	Tags any
 }
 
 var Faq = ubx.ResourceBinding{
@@ -43,23 +74,19 @@ var Faq = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"FileFormat": ubx.FieldSpec{WireName: "file_format"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"IndexId": ubx.FieldSpec{WireName: "index_id"},
 		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"S3Path": ubx.FieldSpec{
 			WireName: "s3_path",
-			Kind: "list",
+			Kind: "object",
 			Fields: Faq_S3PathFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Faq_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Faq_TagsFields,
 		},
 	},
 }

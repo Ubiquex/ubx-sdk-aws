@@ -2,56 +2,58 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DataQualityRuleset_TargetTable {
-  catalogId: string;
-  databaseName: string;
-  tableName: string;
+  /** The name of the database where the AWS Glue table exists. */
+  databaseName: string | Computed<string>;
+  /** The name of the AWS Glue table. */
+  tableName: string | Computed<string>;
 }
 
 const DataQualityRuleset_TargetTableFields: FieldMap = {
-  catalogId: "catalog_id",
   databaseName: "database_name",
   tableName: "table_name",
 };
 
 export interface DataQualityRulesetConfig {
+  /** A unique token for idempotency. */
+  clientToken?: string | Computed<string>;
+  /** A description of the data quality ruleset. */
   description?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** A unique name for the data quality ruleset. */
   name: string | Computed<string>;
-  region?: string | Computed<string>;
-  ruleset: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  targetTable?: DataQualityRuleset_TargetTable[] | Computed<DataQualityRuleset_TargetTable[]>;
+  /** A Data Quality Definition Language (DQDL) ruleset. */
+  ruleset?: string | Computed<string>;
+  /** A map of key-value pairs to apply to this resource. */
+  tags?: unknown | Computed<unknown>;
+  /** An object representing an AWS Glue table. */
+  targetTable?: DataQualityRuleset_TargetTable | Computed<DataQualityRuleset_TargetTable>;
 }
 
 export interface DataQualityRulesetAttrs {
-  arn: string;
-  createdOn: string;
+  /** A unique token for idempotency. */
+  clientToken: string;
+  /** A description of the data quality ruleset. */
   description: string;
-  id: string;
-  lastModifiedOn: string;
+  /** A unique name for the data quality ruleset. */
   name: string;
-  recommendationRunId: string;
-  region: string;
+  /** A Data Quality Definition Language (DQDL) ruleset. */
   ruleset: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  targetTable: DataQualityRuleset_TargetTable[];
+  /** A map of key-value pairs to apply to this resource. */
+  tags: unknown;
+  /** An object representing an AWS Glue table. */
+  targetTable: DataQualityRuleset_TargetTable;
 }
 
 export const DataQualityRuleset: ResourceBinding<DataQualityRulesetConfig, DataQualityRulesetAttrs> = {
   wireType: "aws_glue_data_quality_ruleset",
   fields: {
+    clientToken: "client_token",
     description: "description",
-    id: "id",
     name: "name",
-    region: "region",
     ruleset: "ruleset",
     tags: "tags",
-    tagsAll: "tags_all",
     targetTable: {
       wireName: "target_table",
-      kind: "list",
+      kind: "object",
       fields: DataQualityRuleset_TargetTableFields,
     },
   },

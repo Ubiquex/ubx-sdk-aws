@@ -2,20 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Daemon_DeploymentConfiguration_Alarms {
-  alarmNames: string[];
-  enable: boolean;
+  /** The CloudWatch alarm names to monitor during a daemon deployment. */
+  alarmNames?: string[] | Computed<string[]>;
+  /** Determines whether to use the CloudWatch alarm option in the daemon deployment process. The default value is ``false``. */
+  enable?: boolean | Computed<boolean>;
 }
 
 export interface Daemon_DeploymentConfiguration {
-  bakeTimeInMinutes: number;
-  drainPercent: number;
-  alarms: Daemon_DeploymentConfiguration_Alarms[];
+  /** The CloudWatch alarm configuration for a daemon. When enabled, CloudWatch alarms determine whether a daemon deployment has failed. */
+  alarms?: Daemon_DeploymentConfiguration_Alarms | Computed<Daemon_DeploymentConfiguration_Alarms>;
+  /** The amount of time (in minutes) to wait after a successful deployment step before proceeding. This allows time to monitor for issues before continuing. The default value is 0. */
+  bakeTimeInMinutes?: number | Computed<number>;
+  /** The percentage of container instances to drain simultaneously during a daemon deployment. Valid values are between 0.0 and 100.0. */
+  drainPercent?: number | Computed<number>;
 }
 
-export interface Daemon_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Daemon_Tags {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 const Daemon_DeploymentConfiguration_AlarmsFields: FieldMap = {
@@ -24,51 +28,61 @@ const Daemon_DeploymentConfiguration_AlarmsFields: FieldMap = {
 };
 
 const Daemon_DeploymentConfigurationFields: FieldMap = {
-  bakeTimeInMinutes: "bake_time_in_minutes",
-  drainPercent: "drain_percent",
   alarms: {
     wireName: "alarms",
-    kind: "list",
+    kind: "object",
     fields: Daemon_DeploymentConfiguration_AlarmsFields,
   },
+  bakeTimeInMinutes: "bake_time_in_minutes",
+  drainPercent: "drain_percent",
 };
 
-const Daemon_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Daemon_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface DaemonConfig {
-  capacityProviderArns: string[] | Computed<string[]>;
+  /** The Amazon Resource Names (ARNs) of the capacity providers associated with the daemon. */
+  capacityProviderArns?: string[] | Computed<string[]>;
+  /** The Amazon Resource Name (ARN) of the cluster that the daemon is running in. */
   clusterArn?: string | Computed<string>;
-  daemonTaskDefinitionArn: string | Computed<string>;
-  enableEcsManagedTags?: boolean | Computed<boolean>;
+  daemonName?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the daemon task definition used by this revision. */
+  daemonTaskDefinitionArn?: string | Computed<string>;
+  /** Optional deployment parameters that control how a daemon rolls out updates across container instances. */
+  deploymentConfiguration?: Daemon_DeploymentConfiguration | Computed<Daemon_DeploymentConfiguration>;
+  /** Specifies whether Amazon ECS managed tags are turned on for the daemon tasks. */
+  enableEcsmanagedTags?: boolean | Computed<boolean>;
+  /** Specifies whether the execute command functionality is turned on for the daemon tasks. */
   enableExecuteCommand?: boolean | Computed<boolean>;
-  name: string | Computed<string>;
+  /** Specifies whether tags are propagated from the daemon to the daemon tasks. */
   propagateTags?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  deploymentConfiguration?: Daemon_DeploymentConfiguration[] | Computed<Daemon_DeploymentConfiguration[]>;
-  timeouts?: Daemon_Timeouts | Computed<Daemon_Timeouts>;
+  tags?: Daemon_Tags[] | Computed<Daemon_Tags[]>;
 }
 
 export interface DaemonAttrs {
-  arn: string;
+  /** The Amazon Resource Names (ARNs) of the capacity providers associated with the daemon. */
   capacityProviderArns: string[];
+  /** The Amazon Resource Name (ARN) of the cluster that the daemon is running in. */
   clusterArn: string;
+  createdAt: string;
+  daemonArn: string;
+  daemonName: string;
+  daemonStatus: string;
+  /** The Amazon Resource Name (ARN) of the daemon task definition used by this revision. */
   daemonTaskDefinitionArn: string;
   deploymentArn: string;
-  enableEcsManagedTags: boolean;
+  /** Optional deployment parameters that control how a daemon rolls out updates across container instances. */
+  deploymentConfiguration: Daemon_DeploymentConfiguration;
+  /** Specifies whether Amazon ECS managed tags are turned on for the daemon tasks. */
+  enableEcsmanagedTags: boolean;
+  /** Specifies whether the execute command functionality is turned on for the daemon tasks. */
   enableExecuteCommand: boolean;
-  name: string;
+  /** Specifies whether tags are propagated from the daemon to the daemon tasks. */
   propagateTags: string;
-  region: string;
-  status: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  deploymentConfiguration: Daemon_DeploymentConfiguration[];
-  timeouts: Daemon_Timeouts;
+  tags: Daemon_Tags[];
+  updatedAt: string;
 }
 
 export const Daemon: ResourceBinding<DaemonConfig, DaemonAttrs> = {
@@ -76,22 +90,20 @@ export const Daemon: ResourceBinding<DaemonConfig, DaemonAttrs> = {
   fields: {
     capacityProviderArns: "capacity_provider_arns",
     clusterArn: "cluster_arn",
+    daemonName: "daemon_name",
     daemonTaskDefinitionArn: "daemon_task_definition_arn",
-    enableEcsManagedTags: "enable_ecs_managed_tags",
-    enableExecuteCommand: "enable_execute_command",
-    name: "name",
-    propagateTags: "propagate_tags",
-    region: "region",
-    tags: "tags",
     deploymentConfiguration: {
       wireName: "deployment_configuration",
-      kind: "list",
+      kind: "object",
       fields: Daemon_DeploymentConfigurationFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Daemon_TimeoutsFields,
+    enableEcsmanagedTags: "enable_ecsmanaged_tags",
+    enableExecuteCommand: "enable_execute_command",
+    propagateTags: "propagate_tags",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Daemon_TagsFields,
     },
   },
 };

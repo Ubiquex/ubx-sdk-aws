@@ -4,14 +4,20 @@ package api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayAccountConfig struct {
-	CloudwatchRoleArn any
-	Region any
+	// The ARN of the IAM role that Amazon API Gateway assumes to write logs and metrics to CloudWatch. (AI-inferred)
+	CloudWatchRoleArn any
+}
+
+type GatewayAccountAttrs struct {
+	// The ARN of the IAM role that Amazon API Gateway assumes to write logs and metrics to CloudWatch. (AI-inferred)
+	CloudWatchRoleArn any
+	// The id is the AWS account ID for which the API Gateway account settings are configured. (AI-inferred)
+	Id any
 }
 
 var GatewayAccount = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_account",
 	Fields: ubx.FieldMap{
-		"CloudwatchRoleArn": ubx.FieldSpec{WireName: "cloudwatch_role_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"CloudWatchRoleArn": ubx.FieldSpec{WireName: "cloud_watch_role_arn"},
 	},
 }

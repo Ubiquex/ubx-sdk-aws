@@ -3,26 +3,32 @@ package msk
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Topic_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type TopicConfig struct {
+	// The Amazon Resource Name (ARN) of the MSK cluster
+	ClusterArn any
+	// Base64 encoded configuration properties of the topic
+	Configs any
+	// The number of partitions for the topic
+	PartitionCount any
+	// The replication factor for the topic
+	ReplicationFactor any
+	// The name of the topic
+	TopicName any
 }
 
-var Topic_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
-type TopicConfig struct {
+type TopicAttrs struct {
+	// The Amazon Resource Name (ARN) of the MSK cluster
 	ClusterArn any
+	// Base64 encoded configuration properties of the topic
 	Configs any
-	Name any
+	// The number of partitions for the topic
 	PartitionCount any
-	Region any
+	// The replication factor for the topic
 	ReplicationFactor any
-	Timeouts any
+	// The Amazon Resource Name (ARN) of the topic
+	TopicArn any
+	// The name of the topic
+	TopicName any
 }
 
 var Topic = ubx.ResourceBinding{
@@ -30,14 +36,8 @@ var Topic = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
 		"Configs": ubx.FieldSpec{WireName: "configs"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"PartitionCount": ubx.FieldSpec{WireName: "partition_count"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ReplicationFactor": ubx.FieldSpec{WireName: "replication_factor"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Topic_TimeoutsFields,
-		},
+		"TopicName": ubx.FieldSpec{WireName: "topic_name"},
 	},
 }

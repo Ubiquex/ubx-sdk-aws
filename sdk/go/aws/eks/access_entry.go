@@ -3,45 +3,99 @@ package eks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type AccessEntry_Timeouts struct {
-	Create any
-	Delete any
+type AccessEntry_AccessPolicies_AccessScope struct {
+	// The namespaces that the access policy applies to when the access scope type is set to 'namespace', restricting the policy's permissions to those specific Kubernetes namespaces. (AI-inferred)
+	Namespaces any
+	// Specifies whether the access policy applies to the entire EKS cluster or only to specific Kubernetes namespaces, with allowed values of 'cluster' or 'namespace'. (AI-inferred)
+	Type any
 }
 
-var AccessEntry_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+type AccessEntry_AccessPolicies struct {
+	// Defines the scope of the access policy, either for the entire cluster when the type is 'cluster' or for the specified namespaces when the type is 'namespace'. (AI-inferred)
+	AccessScope any
+	// The ARN of the IAM access policy that is associated with the access entry for the EKS cluster. (AI-inferred)
+	PolicyArn any
+}
+
+type AccessEntry_Tags struct {
+	// A user-defined key for a tag attached to the EKS access entry, used to label and categorize the entry for management and cost tracking in AWS. (AI-inferred)
+	Key any
+	// The value of a tag assigned to the EKS access entry, used to categorize or identify the resource for management and access control purposes. (AI-inferred)
+	Value any
+}
+
+var AccessEntry_AccessPolicies_AccessScopeFields = ubx.FieldMap{
+		"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
+
+var AccessEntry_AccessPoliciesFields = ubx.FieldMap{
+		"AccessScope": ubx.FieldSpec{
+			WireName: "access_scope",
+			Kind: "object",
+			Fields: AccessEntry_AccessPolicies_AccessScopeFields,
+		},
+		"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
+	}
+
+var AccessEntry_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type AccessEntryConfig struct {
+	// An array of access policies that are associated with the access entry.
+	AccessPolicies any
+	// The cluster that the access entry is created for.
 	ClusterName any
-	Id any
+	// The Kubernetes groups that the access entry is associated with.
 	KubernetesGroups any
+	// The principal ARN that the access entry is created for.
 	PrincipalArn any
-	Region any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
+	// The node type to associate with the access entry.
 	Type any
-	UserName any
-	Timeouts any
+	// The Kubernetes user that the access entry is associated with.
+	Username any
+}
+
+type AccessEntryAttrs struct {
+	// The ARN of the access entry.
+	AccessEntryArn any
+	// An array of access policies that are associated with the access entry.
+	AccessPolicies any
+	// The cluster that the access entry is created for.
+	ClusterName any
+	// The Kubernetes groups that the access entry is associated with.
+	KubernetesGroups any
+	// The principal ARN that the access entry is created for.
+	PrincipalArn any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// The node type to associate with the access entry.
+	Type any
+	// The Kubernetes user that the access entry is associated with.
+	Username any
 }
 
 var AccessEntry = ubx.ResourceBinding{
 	WireType: "aws_eks_access_entry",
 	Fields: ubx.FieldMap{
+		"AccessPolicies": ubx.FieldSpec{
+			WireName: "access_policies",
+			Kind: "list",
+			Fields: AccessEntry_AccessPoliciesFields,
+		},
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"KubernetesGroups": ubx.FieldSpec{WireName: "kubernetes_groups"},
 		"PrincipalArn": ubx.FieldSpec{WireName: "principal_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: AccessEntry_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: AccessEntry_TagsFields,
 		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"Username": ubx.FieldSpec{WireName: "username"},
 	},
 }

@@ -7,46 +7,57 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class XssMatchSet_XssMatchTuple_FieldToMatch:
+class XssMatchSet_XssMatchTuples_FieldToMatch:
+    # The value of the `field_to_match` that defines the specific part of the web request to match, such as the header name when `type` is `HEADER`; it is empty for types like `URI` or `QUERY_STRING`. (AI-inferred)
     data: Any = None
+    # Specifies the part of the web request (for example, QUERY_STRING, URI, or BODY) that AWS WAF Regional inspects for cross-site scripting (XSS) attack patterns. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
-class XssMatchSet_XssMatchTuple:
-    text_transformation: Any = None
+class XssMatchSet_XssMatchTuples:
+    # Specifies the part of a web request (such as a header, query string, or body) that AWS WAF Regional inspects for cross-site scripting attack patterns. (AI-inferred)
     field_to_match: Any = None
+    # Specifies how the text in the web request component is transformed (e.g., URL_DECODE, LOWERCASE) before the XSS match rule is evaluated. (AI-inferred)
+    text_transformation: Any = None
 
-_XssMatchSet_XssMatchTuple_FieldToMatchFields = {
+_XssMatchSet_XssMatchTuples_FieldToMatchFields = {
     "data": ubx.FieldSpec(wire_name="data"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_XssMatchSet_XssMatchTupleFields = {
-    "text_transformation": ubx.FieldSpec(wire_name="text_transformation"),
+_XssMatchSet_XssMatchTuplesFields = {
     "field_to_match": ubx.FieldSpec(
         wire_name="field_to_match",
-        kind="list",
-        fields=_XssMatchSet_XssMatchTuple_FieldToMatchFields,
+        kind="object",
+        fields=_XssMatchSet_XssMatchTuples_FieldToMatchFields,
     ),
+    "text_transformation": ubx.FieldSpec(wire_name="text_transformation"),
 }
 
 @dataclasses.dataclass
 class XssMatchSetConfig:
-    id: Any = None
+    # The friendly name or description of the XSS match set, required to create the resource in AWS WAF Regional. (AI-inferred)
     name: Any = None
-    region: Any = None
-    xss_match_tuple: Any = None
+    # Specifies the parts of web requests to inspect for cross-site scripting (XSS) attacks, each tuple defining a field to match and a text transformation. (AI-inferred)
+    xss_match_tuples: Any = None
+
+@dataclasses.dataclass
+class XssMatchSetAttrs:
+    # The unique identifier assigned by AWS to the WAF Regional XSS match set. (AI-inferred)
+    id: Any = None
+    # The friendly name or description of the XSS match set, required to create the resource in AWS WAF Regional. (AI-inferred)
+    name: Any = None
+    # Specifies the parts of web requests to inspect for cross-site scripting (XSS) attacks, each tuple defining a field to match and a text transformation. (AI-inferred)
+    xss_match_tuples: Any = None
 
 XssMatchSet = ubx.ResourceBinding(
     wire_type="aws_wafregional_xss_match_set",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "xss_match_tuple": ubx.FieldSpec(
-            wire_name="xss_match_tuple",
-            kind="set",
-            fields=_XssMatchSet_XssMatchTupleFields,
+        "xss_match_tuples": ubx.FieldSpec(
+            wire_name="xss_match_tuples",
+            kind="list",
+            fields=_XssMatchSet_XssMatchTuplesFields,
         ),
     },
 )

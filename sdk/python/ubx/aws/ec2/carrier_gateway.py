@@ -7,20 +7,43 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CarrierGateway_Tags:
+    # The key of a user-defined tag associated with this EC2 Carrier Gateway, used for identifying, organizing, and cost allocation of the resource. (AI-inferred)
+    key: Any = None
+    # The value of a tag attached to the AWS EC2 Carrier Gateway, used for metadata, organization, and cost tracking alongside its corresponding tag key. (AI-inferred)
+    value: Any = None
+
+_CarrierGateway_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class CarrierGatewayConfig:
-    id: Any = None
-    region: Any = None
     tags: Any = None
-    tags_all: Any = None
+    # The ID of the VPC.
+    vpc_id: Any = None
+
+@dataclasses.dataclass
+class CarrierGatewayAttrs:
+    # The ID of the carrier gateway.
+    carrier_gateway_id: Any = None
+    # The ID of the owner.
+    owner_id: Any = None
+    # The state of the carrier gateway.
+    state: Any = None
+    tags: Any = None
+    # The ID of the VPC.
     vpc_id: Any = None
 
 CarrierGateway = ubx.ResourceBinding(
     wire_type="aws_ec2_carrier_gateway",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_CarrierGateway_TagsFields,
+        ),
         "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
     },
 )

@@ -3,21 +3,53 @@ package ses
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ReceiptFilterConfig struct {
+type ReceiptFilter_Filter_IpFilter struct {
+	// A single IP address or a range of IP addresses to block or allow, specified in CIDR notation.
 	Cidr any
-	Id any
-	Name any
+	// Indicates whether to block or allow incoming mail from the specified IP addresses.
 	Policy any
-	Region any
+}
+
+type ReceiptFilter_Filter struct {
+	// A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.
+	IpFilter any
+	// The name of the IP address filter.
+	Name any
+}
+
+var ReceiptFilter_Filter_IpFilterFields = ubx.FieldMap{
+		"Cidr": ubx.FieldSpec{WireName: "cidr"},
+		"Policy": ubx.FieldSpec{WireName: "policy"},
+	}
+
+var ReceiptFilter_FilterFields = ubx.FieldMap{
+		"IpFilter": ubx.FieldSpec{
+			WireName: "ip_filter",
+			Kind: "object",
+			Fields: ReceiptFilter_Filter_IpFilterFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
+
+type ReceiptFilterConfig struct {
+	// A structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.
+	Filter any
+}
+
+type ReceiptFilterAttrs struct {
+	// A structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.
+	Filter any
+	// The name of the SES receipt filter, which serves as the unique Terraform identifier and matches the filter's `name` attribute. (AI-inferred)
+	Id any
 }
 
 var ReceiptFilter = ubx.ResourceBinding{
 	WireType: "aws_ses_receipt_filter",
 	Fields: ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Filter": ubx.FieldSpec{
+			WireName: "filter",
+			Kind: "object",
+			Fields: ReceiptFilter_FilterFields,
+		},
 	},
 }

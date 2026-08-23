@@ -8,24 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServerlessCluster_ClientAuthentication_Sasl_Iam:
+    # Enables IAM-based access control for SASL authentication on the MSK Serverless cluster. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class ServerlessCluster_ClientAuthentication_Sasl:
+    # Enables IAM access control for SASL authentication, allowing clients to authenticate to the cluster using AWS Identity and Access Management (IAM) credentials. (AI-inferred)
     iam: Any = None
 
 @dataclasses.dataclass
 class ServerlessCluster_ClientAuthentication:
+    # Defines the SASL authentication configuration for the MSK Serverless cluster, which must include the Iam property to enable IAM-based client authentication, as serverless clusters support only IAM as the SASL mechanism. (AI-inferred)
     sasl: Any = None
 
 @dataclasses.dataclass
-class ServerlessCluster_Timeouts:
-    create: Any = None
-    delete: Any = None
-
-@dataclasses.dataclass
-class ServerlessCluster_VpcConfig:
-    security_group_ids: Any = None
+class ServerlessCluster_VpcConfigs:
+    # A list of security group IDs to associate with the MSK Serverless cluster's elastic network interfaces in the VPC. (AI-inferred)
+    security_groups: Any = None
+    # The list of subnet IDs in the customer VPC where the MSK Serverless cluster's network interfaces and broker endpoints are provisioned. (AI-inferred)
     subnet_ids: Any = None
 
 _ServerlessCluster_ClientAuthentication_Sasl_IamFields = {
@@ -35,7 +35,7 @@ _ServerlessCluster_ClientAuthentication_Sasl_IamFields = {
 _ServerlessCluster_ClientAuthentication_SaslFields = {
     "iam": ubx.FieldSpec(
         wire_name="iam",
-        kind="list",
+        kind="object",
         fields=_ServerlessCluster_ClientAuthentication_Sasl_IamFields,
     ),
 }
@@ -43,54 +43,54 @@ _ServerlessCluster_ClientAuthentication_SaslFields = {
 _ServerlessCluster_ClientAuthenticationFields = {
     "sasl": ubx.FieldSpec(
         wire_name="sasl",
-        kind="list",
+        kind="object",
         fields=_ServerlessCluster_ClientAuthentication_SaslFields,
     ),
 }
 
-_ServerlessCluster_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-}
-
-_ServerlessCluster_VpcConfigFields = {
-    "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
+_ServerlessCluster_VpcConfigsFields = {
+    "security_groups": ubx.FieldSpec(wire_name="security_groups"),
     "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
 }
 
 @dataclasses.dataclass
 class ServerlessClusterConfig:
-    cluster_name: Any = None
-    id: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred)
     client_authentication: Any = None
-    timeouts: Any = None
-    vpc_config: Any = None
+    # The name to assign to the serverless Apache Kafka cluster. (AI-inferred)
+    cluster_name: Any = None
+    # A key-value pair to associate with a resource.
+    tags: Any = None
+    # Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred)
+    vpc_configs: Any = None
+
+@dataclasses.dataclass
+class ServerlessClusterAttrs:
+    # The Amazon Resource Name (ARN) of the serverless cluster. (AI-inferred)
+    arn: Any = None
+    # Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred)
+    client_authentication: Any = None
+    # The name to assign to the serverless Apache Kafka cluster. (AI-inferred)
+    cluster_name: Any = None
+    # A key-value pair to associate with a resource.
+    tags: Any = None
+    # Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred)
+    vpc_configs: Any = None
 
 ServerlessCluster = ubx.ResourceBinding(
     wire_type="aws_msk_serverless_cluster",
     fields={
-        "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "client_authentication": ubx.FieldSpec(
             wire_name="client_authentication",
-            kind="list",
+            kind="object",
             fields=_ServerlessCluster_ClientAuthenticationFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_ServerlessCluster_TimeoutsFields,
-        ),
-        "vpc_config": ubx.FieldSpec(
-            wire_name="vpc_config",
+        "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "vpc_configs": ubx.FieldSpec(
+            wire_name="vpc_configs",
             kind="list",
-            fields=_ServerlessCluster_VpcConfigFields,
+            fields=_ServerlessCluster_VpcConfigsFields,
         ),
     },
 )

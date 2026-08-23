@@ -2,26 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ClusterPolicyConfig {
+  /** The arn of the cluster for the resource policy. */
   clusterArn: string | Computed<string>;
-  id?: string | Computed<string>;
-  policy: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** A policy document containing permissions to add to the specified cluster. */
+  policy: unknown | Computed<unknown>;
 }
 
 export interface ClusterPolicyAttrs {
+  /** The arn of the cluster for the resource policy. */
   clusterArn: string;
+  /** The current version of the policy attached to the specified cluster */
   currentVersion: string;
-  id: string;
-  policy: string;
-  region: string;
+  /** A policy document containing permissions to add to the specified cluster. */
+  policy: unknown;
 }
 
 export const ClusterPolicy: ResourceBinding<ClusterPolicyConfig, ClusterPolicyAttrs> = {
   wireType: "aws_msk_cluster_policy",
   fields: {
     clusterArn: "cluster_arn",
-    id: "id",
     policy: "policy",
-    region: "region",
   },
 };

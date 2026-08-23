@@ -3,71 +3,115 @@ package kinesis
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Stream_StreamEncryption struct {
+	// The encryption type to use. The only valid value is KMS.
+	EncryptionType any
+	// The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias aws/kinesis.
+	KeyId any
+}
+
 type Stream_StreamModeDetails struct {
+	// The mode of the stream
 	StreamMode any
 }
 
-type Stream_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Stream_Tags struct {
+	// The key of a tag attached to the Kinesis stream, used to organize, identify, and manage access to the stream. (AI-inferred)
+	Key any
+	// Specifies the value of a user-defined tag applied to the Kinesis data stream, allowing you to associate arbitrary metadata with the resource. (AI-inferred)
+	Value any
 }
+
+type Stream_WarmThroughputObject struct {
+	// Current warm throughput in MiB/s
+	CurrentMiBps any
+	// Target warm throughput in MiB/s that a customer can write to a stream at any given time
+	TargetMiBps any
+}
+
+var Stream_StreamEncryptionFields = ubx.FieldMap{
+		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+		"KeyId": ubx.FieldSpec{WireName: "key_id"},
+	}
 
 var Stream_StreamModeDetailsFields = ubx.FieldMap{
 		"StreamMode": ubx.FieldSpec{WireName: "stream_mode"},
 	}
 
-var Stream_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Stream_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type StreamConfig struct {
-	Arn any
-	EncryptionType any
-	EnforceConsumerDeletion any
-	Id any
-	KmsKeyId any
-	MaxRecordSizeInKib any
+	// The final list of shard-level metrics
+	DesiredShardLevelMetrics any
+	// Maximum size of a data record in KiB allowed to be put into Kinesis stream.
+	MaxRecordSizeInKiB any
+	// The name of the Kinesis stream.
 	Name any
-	Region any
-	RetentionPeriod any
+	// The number of hours for the data records that are stored in shards to remain accessible.
+	RetentionPeriodHours any
+	// The number of shards that the stream uses. Required when StreamMode = PROVISIONED is passed.
 	ShardCount any
-	ShardLevelMetrics any
-	Tags any
-	TagsAll any
-	WarmThroughputMibPs any
+	// When specified, enables or updates server-side encryption using an AWS KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption.
+	StreamEncryption any
+	// When specified, enables or updates the mode of stream. Default is PROVISIONED.
 	StreamModeDetails any
-	Timeouts any
+	// An arbitrary set of tags (key-value pairs) to associate with the Kinesis stream.
+	Tags any
+	// Target warm throughput in MiB/s for the stream. This property can ONLY be set when StreamMode is ON_DEMAND.
+	WarmThroughputMiBps any
+}
+
+type StreamAttrs struct {
+	// The Amazon resource name (ARN) of the Kinesis stream
+	Arn any
+	// The final list of shard-level metrics
+	DesiredShardLevelMetrics any
+	// Maximum size of a data record in KiB allowed to be put into Kinesis stream.
+	MaxRecordSizeInKiB any
+	// The name of the Kinesis stream.
+	Name any
+	// The number of hours for the data records that are stored in shards to remain accessible.
+	RetentionPeriodHours any
+	// The number of shards that the stream uses. Required when StreamMode = PROVISIONED is passed.
+	ShardCount any
+	// When specified, enables or updates server-side encryption using an AWS KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption.
+	StreamEncryption any
+	// When specified, enables or updates the mode of stream. Default is PROVISIONED.
+	StreamModeDetails any
+	// An arbitrary set of tags (key-value pairs) to associate with the Kinesis stream.
+	Tags any
+	// Target warm throughput in MiB/s for the stream. This property can ONLY be set when StreamMode is ON_DEMAND.
+	WarmThroughputMiBps any
+	// Warm throughput configuration details for the stream. Only present for ON_DEMAND streams.
+	WarmThroughputObject any
 }
 
 var Stream = ubx.ResourceBinding{
 	WireType: "aws_kinesis_stream",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"EnforceConsumerDeletion": ubx.FieldSpec{WireName: "enforce_consumer_deletion"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"MaxRecordSizeInKib": ubx.FieldSpec{WireName: "max_record_size_in_kib"},
+		"DesiredShardLevelMetrics": ubx.FieldSpec{WireName: "desired_shard_level_metrics"},
+		"MaxRecordSizeInKiB": ubx.FieldSpec{WireName: "max_record_size_in_ki_b"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
+		"RetentionPeriodHours": ubx.FieldSpec{WireName: "retention_period_hours"},
 		"ShardCount": ubx.FieldSpec{WireName: "shard_count"},
-		"ShardLevelMetrics": ubx.FieldSpec{WireName: "shard_level_metrics"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"WarmThroughputMibPs": ubx.FieldSpec{WireName: "warm_throughput_mib_ps"},
+		"StreamEncryption": ubx.FieldSpec{
+			WireName: "stream_encryption",
+			Kind: "object",
+			Fields: Stream_StreamEncryptionFields,
+		},
 		"StreamModeDetails": ubx.FieldSpec{
 			WireName: "stream_mode_details",
-			Kind: "list",
+			Kind: "object",
 			Fields: Stream_StreamModeDetailsFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Stream_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Stream_TagsFields,
 		},
+		"WarmThroughputMiBps": ubx.FieldSpec{WireName: "warm_throughput_mi_bps"},
 	},
 }

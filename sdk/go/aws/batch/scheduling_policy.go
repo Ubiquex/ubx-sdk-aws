@@ -3,53 +3,83 @@ package batch
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type SchedulingPolicy_FairSharePolicy_ShareDistribution struct {
+type SchedulingPolicy_FairsharePolicy_ShareDistribution struct {
+	// Identifies an individual share within the fair share policy's share distribution list, used by AWS Batch to calculate each share's proportional allocation of compute resources based on its assigned weight factor. (AI-inferred)
 	ShareIdentifier any
+	// The relative weight assigned to a share in an AWS Batch fairshare scheduling policy, controlling the proportional amount of vCPUs or resources allocated to that share compared to others. (AI-inferred)
 	WeightFactor any
 }
 
-type SchedulingPolicy_FairSharePolicy struct {
+type SchedulingPolicy_FairsharePolicy struct {
+	// The percentage (0-99) of compute resources reserved for this scheduling policy's jobs, guaranteeing a minimum level of capacity even when shares are low. (AI-inferred)
 	ComputeReservation any
+	// The amount of time in seconds used to calculate the decay factor for the fair share policy, controlling how quickly the share of resources for a job family decreases over time based on its age. (AI-inferred)
 	ShareDecaySeconds any
+	// List of Share Attributes
 	ShareDistribution any
 }
 
-var SchedulingPolicy_FairSharePolicy_ShareDistributionFields = ubx.FieldMap{
+type SchedulingPolicy_QuotaSharePolicy struct {
+	IdleResourceAssignmentStrategy any
+}
+
+var SchedulingPolicy_FairsharePolicy_ShareDistributionFields = ubx.FieldMap{
 		"ShareIdentifier": ubx.FieldSpec{WireName: "share_identifier"},
 		"WeightFactor": ubx.FieldSpec{WireName: "weight_factor"},
 	}
 
-var SchedulingPolicy_FairSharePolicyFields = ubx.FieldMap{
+var SchedulingPolicy_FairsharePolicyFields = ubx.FieldMap{
 		"ComputeReservation": ubx.FieldSpec{WireName: "compute_reservation"},
 		"ShareDecaySeconds": ubx.FieldSpec{WireName: "share_decay_seconds"},
 		"ShareDistribution": ubx.FieldSpec{
 			WireName: "share_distribution",
-			Kind: "set",
-			Fields: SchedulingPolicy_FairSharePolicy_ShareDistributionFields,
+			Kind: "list",
+			Fields: SchedulingPolicy_FairsharePolicy_ShareDistributionFields,
 		},
 	}
 
+var SchedulingPolicy_QuotaSharePolicyFields = ubx.FieldMap{
+		"IdleResourceAssignmentStrategy": ubx.FieldSpec{WireName: "idle_resource_assignment_strategy"},
+	}
+
 type SchedulingPolicyConfig struct {
-	Id any
+	// Fair Share Policy for the Job Queue.
+	FairsharePolicy any
+	// Name of Scheduling Policy.
 	Name any
-	Region any
+	// Quota Share Policy for the Job Queue.
+	QuotaSharePolicy any
+	// A key-value pair to associate with a resource.
 	Tags any
-	TagsAll any
-	FairSharePolicy any
+}
+
+type SchedulingPolicyAttrs struct {
+	// ARN of the Scheduling Policy.
+	Arn any
+	// Fair Share Policy for the Job Queue.
+	FairsharePolicy any
+	// Name of Scheduling Policy.
+	Name any
+	// Quota Share Policy for the Job Queue.
+	QuotaSharePolicy any
+	// A key-value pair to associate with a resource.
+	Tags any
 }
 
 var SchedulingPolicy = ubx.ResourceBinding{
 	WireType: "aws_batch_scheduling_policy",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"FairSharePolicy": ubx.FieldSpec{
-			WireName: "fair_share_policy",
-			Kind: "list",
-			Fields: SchedulingPolicy_FairSharePolicyFields,
+		"FairsharePolicy": ubx.FieldSpec{
+			WireName: "fairshare_policy",
+			Kind: "object",
+			Fields: SchedulingPolicy_FairsharePolicyFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"QuotaSharePolicy": ubx.FieldSpec{
+			WireName: "quota_share_policy",
+			Kind: "object",
+			Fields: SchedulingPolicy_QuotaSharePolicyFields,
+		},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},
 }

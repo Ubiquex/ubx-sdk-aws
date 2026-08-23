@@ -2,21 +2,31 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReplicationConfig_ComputeConfig {
-  availabilityZone: string;
-  dnsNameServers: string;
-  kmsKeyId: string;
-  maxCapacityUnits: number;
-  minCapacityUnits: number;
-  multiAz: boolean;
-  preferredMaintenanceWindow: string;
-  replicationSubnetGroupId: string;
-  vpcSecurityGroupIds: string[];
+  /** Specifies the Availability Zone (AZ) in which the AWS DMS replication instance associated with this replication config will be provisioned. (AI-inferred) */
+  availabilityZone?: string | Computed<string>;
+  /** Specifies the custom DNS name servers (as a comma-separated list of IP addresses) that the AWS DMS replication instance uses for name resolution. (AI-inferred) */
+  dnsNameServers?: string | Computed<string>;
+  /** The ARN or ID of the AWS KMS key used to encrypt data on the storage attached to the AWS DMS replication instance. (AI-inferred) */
+  kmsKeyId?: string | Computed<string>;
+  /** The maximum number of DMS capacity units that the replication can scale to, defining the upper limit of compute capacity for the AWS DMS replication config. (AI-inferred) */
+  maxCapacityUnits: number | Computed<number>;
+  /** Sets the minimum number of DMS capacity units to provision for a serverless replication, defining the lower bound for automatic scaling of compute resources. (AI-inferred) */
+  minCapacityUnits?: number | Computed<number>;
+  /** Specifies whether to enable Multi-AZ deployment for the AWS DMS replication config's compute environment, providing high availability by provisioning a standby replica in a different Availability Zone. (AI-inferred) */
+  multiAz?: boolean | Computed<boolean>;
+  /** Specifies the preferred weekly maintenance window (in UTC, format ddd:hh24:mi-ddd:hh24:mi) during which AWS Database Migration Service can perform maintenance on the replication services associated with this replication config. (AI-inferred) */
+  preferredMaintenanceWindow?: string | Computed<string>;
+  /** The identifier of the AWS DMS replication subnet group in which the replication instance for this replication config is deployed. (AI-inferred) */
+  replicationSubnetGroupId?: string | Computed<string>;
+  /** Specifies the VPC security group IDs to associate with the compute configuration for the AWS DMS replication, controlling network access to the replication environment. (AI-inferred) */
+  vpcSecurityGroupIds?: string[] | Computed<string[]>;
 }
 
-export interface ReplicationConfig_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface ReplicationConfig_Tags {
+  /** The key of a key-value tag that can be attached to the DMS replication configuration for resource management and cost allocation. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value portion of a tag assigned to the AWS DMS replication configuration, used for metadata, identification, and cost allocation. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const ReplicationConfig_ComputeConfigFields: FieldMap = {
@@ -31,74 +41,79 @@ const ReplicationConfig_ComputeConfigFields: FieldMap = {
   vpcSecurityGroupIds: "vpc_security_group_ids",
 };
 
-const ReplicationConfig_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const ReplicationConfig_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface ReplicationConfigConfig {
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** Configuration parameters for provisioning a AWS DMS Serverless replication */
+  computeConfig: ReplicationConfig_ComputeConfig | Computed<ReplicationConfig_ComputeConfig>;
+  /** A unique identifier of replication configuration */
   replicationConfigIdentifier: string | Computed<string>;
-  replicationSettings?: string | Computed<string>;
+  /** JSON settings for Servereless replications that are provisioned using this replication configuration */
+  replicationSettings?: unknown | Computed<unknown>;
+  /** The type of AWS DMS Serverless replication to provision using this replication configuration */
   replicationType: string | Computed<string>;
+  /** A unique value or name that you get set for a given resource that can be used to construct an Amazon Resource Name (ARN) for that resource */
   resourceIdentifier?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the source endpoint for this AWS DMS Serverless replication configuration */
   sourceEndpointArn: string | Computed<string>;
-  startReplication?: boolean | Computed<boolean>;
-  supplementalSettings?: string | Computed<string>;
-  tableMappings: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** JSON settings for specifying supplemental data */
+  supplementalSettings?: unknown | Computed<unknown>;
+  /** JSON table mappings for AWS DMS Serverless replications that are provisioned using this replication configuration */
+  tableMappings: unknown | Computed<unknown>;
+  /** <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p> */
+  tags?: ReplicationConfig_Tags[] | Computed<ReplicationConfig_Tags[]>;
+  /** The Amazon Resource Name (ARN) of the target endpoint for this AWS DMS Serverless replication configuration */
   targetEndpointArn: string | Computed<string>;
-  computeConfig?: ReplicationConfig_ComputeConfig[] | Computed<ReplicationConfig_ComputeConfig[]>;
-  timeouts?: ReplicationConfig_Timeouts | Computed<ReplicationConfig_Timeouts>;
 }
 
 export interface ReplicationConfigAttrs {
-  arn: string;
-  id: string;
-  region: string;
+  /** Configuration parameters for provisioning a AWS DMS Serverless replication */
+  computeConfig: ReplicationConfig_ComputeConfig;
+  /** The Amazon Resource Name (ARN) of the Replication Config */
+  replicationConfigArn: string;
+  /** A unique identifier of replication configuration */
   replicationConfigIdentifier: string;
-  replicationSettings: string;
+  /** JSON settings for Servereless replications that are provisioned using this replication configuration */
+  replicationSettings: unknown;
+  /** The type of AWS DMS Serverless replication to provision using this replication configuration */
   replicationType: string;
+  /** A unique value or name that you get set for a given resource that can be used to construct an Amazon Resource Name (ARN) for that resource */
   resourceIdentifier: string;
+  /** The Amazon Resource Name (ARN) of the source endpoint for this AWS DMS Serverless replication configuration */
   sourceEndpointArn: string;
-  startReplication: boolean;
-  supplementalSettings: string;
-  tableMappings: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** JSON settings for specifying supplemental data */
+  supplementalSettings: unknown;
+  /** JSON table mappings for AWS DMS Serverless replications that are provisioned using this replication configuration */
+  tableMappings: unknown;
+  /** <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p> */
+  tags: ReplicationConfig_Tags[];
+  /** The Amazon Resource Name (ARN) of the target endpoint for this AWS DMS Serverless replication configuration */
   targetEndpointArn: string;
-  computeConfig: ReplicationConfig_ComputeConfig[];
-  timeouts: ReplicationConfig_Timeouts;
 }
 
 export const ReplicationConfig: ResourceBinding<ReplicationConfigConfig, ReplicationConfigAttrs> = {
   wireType: "aws_dms_replication_config",
   fields: {
-    id: "id",
-    region: "region",
+    computeConfig: {
+      wireName: "compute_config",
+      kind: "object",
+      fields: ReplicationConfig_ComputeConfigFields,
+    },
     replicationConfigIdentifier: "replication_config_identifier",
     replicationSettings: "replication_settings",
     replicationType: "replication_type",
     resourceIdentifier: "resource_identifier",
     sourceEndpointArn: "source_endpoint_arn",
-    startReplication: "start_replication",
     supplementalSettings: "supplemental_settings",
     tableMappings: "table_mappings",
-    tags: "tags",
-    tagsAll: "tags_all",
-    targetEndpointArn: "target_endpoint_arn",
-    computeConfig: {
-      wireName: "compute_config",
+    tags: {
+      wireName: "tags",
       kind: "list",
-      fields: ReplicationConfig_ComputeConfigFields,
+      fields: ReplicationConfig_TagsFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: ReplicationConfig_TimeoutsFields,
-    },
+    targetEndpointArn: "target_endpoint_arn",
   },
 };

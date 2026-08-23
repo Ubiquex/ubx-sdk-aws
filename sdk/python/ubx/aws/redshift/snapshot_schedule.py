@@ -7,28 +7,53 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SnapshotSchedule_Tags:
+    # The key (name) of a tag applied to the Redshift snapshot schedule, used to organize and identify the schedule. (AI-inferred)
+    key: Any = None
+    # The value of a tag applied to the Redshift snapshot schedule, used for resource organization and identification. (AI-inferred)
+    value: Any = None
+
+_SnapshotSchedule_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class SnapshotScheduleConfig:
-    definitions: Any = None
-    description: Any = None
-    force_destroy: Any = None
-    id: Any = None
-    identifier: Any = None
-    identifier_prefix: Any = None
-    region: Any = None
+    # The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".
+    schedule_definitions: Any = None
+    # The description of the snapshot schedule.
+    schedule_description: Any = None
+    # A unique identifier for the snapshot schedule. Only alphanumeric characters are allowed.
+    schedule_identifier: Any = None
+    # An optional set of tags for the snapshot schedule.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class SnapshotScheduleAttrs:
+    # The Amazon Resource Name (ARN) of the snapshot schedule.
+    arn: Any = None
+    # The number of clusters associated with the schedule.
+    associated_cluster_count: Any = None
+    # The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".
+    schedule_definitions: Any = None
+    # The description of the snapshot schedule.
+    schedule_description: Any = None
+    # A unique identifier for the snapshot schedule. Only alphanumeric characters are allowed.
+    schedule_identifier: Any = None
+    # An optional set of tags for the snapshot schedule.
+    tags: Any = None
 
 SnapshotSchedule = ubx.ResourceBinding(
     wire_type="aws_redshift_snapshot_schedule",
     fields={
-        "definitions": ubx.FieldSpec(wire_name="definitions"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "force_destroy": ubx.FieldSpec(wire_name="force_destroy"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "identifier": ubx.FieldSpec(wire_name="identifier"),
-        "identifier_prefix": ubx.FieldSpec(wire_name="identifier_prefix"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "schedule_definitions": ubx.FieldSpec(wire_name="schedule_definitions"),
+        "schedule_description": ubx.FieldSpec(wire_name="schedule_description"),
+        "schedule_identifier": ubx.FieldSpec(wire_name="schedule_identifier"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_SnapshotSchedule_TagsFields,
+        ),
     },
 )

@@ -7,15 +7,59 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PodIdentityAssociation_Tags:
+    # The tag key used to label the Pod Identity Association, enabling cost allocation, access control, and resource identification. (AI-inferred)
+    key: Any = None
+    # The value of a tag key-value pair attached to the EKS Pod Identity Association, used for labeling, organizing, and managing the association with custom metadata. (AI-inferred)
+    value: Any = None
+
+_PodIdentityAssociation_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class PodIdentityAssociationConfig:
+    # The cluster that the pod identity association is created for.
     cluster_name: Any = None
+    # The Disable Session Tags of the pod identity association.
     disable_session_tags: Any = None
+    # The Kubernetes namespace that the pod identity association is created for.
     namespace: Any = None
+    # The policy of the pod identity association.
     policy: Any = None
-    region: Any = None
+    # The IAM role ARN that the pod identity association is created for.
     role_arn: Any = None
+    # The Kubernetes service account that the pod identity association is created for.
     service_account: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
+    # The Target Role Arn of the pod identity association.
+    target_role_arn: Any = None
+
+@dataclasses.dataclass
+class PodIdentityAssociationAttrs:
+    # The ARN of the pod identity association.
+    association_arn: Any = None
+    # The ID of the pod identity association.
+    association_id: Any = None
+    # The cluster that the pod identity association is created for.
+    cluster_name: Any = None
+    # The Disable Session Tags of the pod identity association.
+    disable_session_tags: Any = None
+    # The External Id of the pod identity association.
+    external_id: Any = None
+    # The Kubernetes namespace that the pod identity association is created for.
+    namespace: Any = None
+    # The policy of the pod identity association.
+    policy: Any = None
+    # The IAM role ARN that the pod identity association is created for.
+    role_arn: Any = None
+    # The Kubernetes service account that the pod identity association is created for.
+    service_account: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # The Target Role Arn of the pod identity association.
     target_role_arn: Any = None
 
 PodIdentityAssociation = ubx.ResourceBinding(
@@ -25,10 +69,13 @@ PodIdentityAssociation = ubx.ResourceBinding(
         "disable_session_tags": ubx.FieldSpec(wire_name="disable_session_tags"),
         "namespace": ubx.FieldSpec(wire_name="namespace"),
         "policy": ubx.FieldSpec(wire_name="policy"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "role_arn": ubx.FieldSpec(wire_name="role_arn"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_PodIdentityAssociation_TagsFields,
+        ),
         "target_role_arn": ubx.FieldSpec(wire_name="target_role_arn"),
     },
 )

@@ -3,77 +3,259 @@ package lex
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type BotAlias_ConversationLogs_LogSettings struct {
-	Destination any
+type BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHook struct {
+	// Specifies the version of the code hook interface that the Lambda function uses, with '1.0' being the supported value for Lex V2 bots. (AI-inferred)
+	CodeHookInterfaceVersion any
+	// The Amazon Resource Name (ARN) of the Lambda function that is invoked as the code hook for the bot alias locale. (AI-inferred)
+	LambdaArn any
+}
+
+type BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification struct {
+	// The `lambda_code_hook` object specifies the Amazon Lex Lambda function and its version that is invoked as the code hook for the bot alias locale, enabling custom logic in the conversation flow. (AI-inferred)
+	LambdaCodeHook any
+}
+
+type BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting struct {
+	// Defines the Lambda code hook specification for a particular locale in the bot alias, including the Lambda ARN and code hook interface version that Lex invokes during conversation. (AI-inferred)
+	CodeHookSpecification any
+	// Whether the bot alias is enabled for the specified locale; when false, the alias is disabled and unavailable for that locale. (AI-inferred)
+	Enabled any
+}
+
+type BotAlias_BotAliasLocaleSettings struct {
+	// This object defines the alias behavior for a single locale, specifying whether the alias is enabled for that locale and optionally the Lambda code hook invoked for user interactions in that locale. (AI-inferred)
+	BotAliasLocaleSetting any
+	// The locale identifier (such as en_US or en_GB) that identifies which set of bot alias locale settings this entry applies to. (AI-inferred)
+	LocaleId any
+}
+
+type BotAlias_BotAliasTags struct {
+	// The tag key to assign to the Amazon Lex bot alias, used to categorize or identify the alias in AWS tagging systems. (AI-inferred)
+	Key any
+	// The value of a tag (a key-value pair) assigned to the Amazon Lex bot alias, used to categorize or manage the alias resource. (AI-inferred)
+	Value any
+}
+
+type BotAlias_ConversationLogSettings_AudioLogSettings_Destination_S3Bucket struct {
+	// The ARN of the AWS KMS key used to encrypt audio conversation logs delivered to the S3 bucket destination. (AI-inferred)
 	KmsKeyArn any
-	LogType any
-	ResourceArn any
-	ResourcePrefix any
+	// The prefix prepended to the S3 object keys for audio conversation logs, enabling logs to be stored under a specific folder path in the bucket. (AI-inferred)
+	LogPrefix any
+	// The ARN of the S3 bucket where Amazon Lex delivers audio conversation logs. (AI-inferred)
+	S3BucketArn any
 }
 
-type BotAlias_ConversationLogs struct {
-	IamRoleArn any
-	LogSettings any
+type BotAlias_ConversationLogSettings_AudioLogSettings_Destination struct {
+	// The Amazon S3 bucket ARN where audio conversation logs are delivered for this bot alias. (AI-inferred)
+	S3Bucket any
 }
 
-type BotAlias_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type BotAlias_ConversationLogSettings_AudioLogSettings struct {
+	// Specifies the Amazon S3 bucket configuration where audio conversation logs for this Lex bot alias are delivered. (AI-inferred)
+	Destination any
+	// Indicates whether audio conversation logs are enabled for the bot alias. (AI-inferred)
+	Enabled any
 }
 
-var BotAlias_ConversationLogs_LogSettingsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"LogType": ubx.FieldSpec{WireName: "log_type"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"ResourcePrefix": ubx.FieldSpec{WireName: "resource_prefix"},
+type BotAlias_ConversationLogSettings_TextLogSettings_Destination_CloudWatch struct {
+	// The ARN of the CloudWatch Logs log group to which text conversation logs are delivered for this Lex bot alias. (AI-inferred)
+	CloudWatchLogGroupArn any
+	// The log prefix to prepend to the names of CloudWatch Logs log streams that store text conversation logs for the Lex bot alias. (AI-inferred)
+	LogPrefix any
+}
+
+type BotAlias_ConversationLogSettings_TextLogSettings_Destination struct {
+	// Specifies the CloudWatch Logs destination for text conversation logs, including the log group ARN and the IAM role that authorizes Lex to write logs to that group. (AI-inferred)
+	CloudWatch any
+}
+
+type BotAlias_ConversationLogSettings_TextLogSettings struct {
+	// Specifies the Amazon S3 bucket where text logs are delivered, including the bucket name and ARN. (AI-inferred)
+	Destination any
+	// Determines whether text conversation logs are recorded to the specified CloudWatch Logs log group for the Lex bot alias. (AI-inferred)
+	Enabled any
+}
+
+type BotAlias_ConversationLogSettings struct {
+	// List of audio log settings
+	AudioLogSettings any
+	// List of text log settings
+	TextLogSettings any
+}
+
+type BotAlias_SentimentAnalysisSettings struct {
+	// Enable to call Amazon Comprehend for Sentiment natively within Lex
+	DetectSentiment any
+}
+
+var BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHookFields = ubx.FieldMap{
+		"CodeHookInterfaceVersion": ubx.FieldSpec{WireName: "code_hook_interface_version"},
+		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
 	}
 
-var BotAlias_ConversationLogsFields = ubx.FieldMap{
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
-		"LogSettings": ubx.FieldSpec{
-			WireName: "log_settings",
-			Kind: "set",
-			Fields: BotAlias_ConversationLogs_LogSettingsFields,
+var BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecificationFields = ubx.FieldMap{
+		"LambdaCodeHook": ubx.FieldSpec{
+			WireName: "lambda_code_hook",
+			Kind: "object",
+			Fields: BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHookFields,
 		},
 	}
 
-var BotAlias_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var BotAlias_BotAliasLocaleSettings_BotAliasLocaleSettingFields = ubx.FieldMap{
+		"CodeHookSpecification": ubx.FieldSpec{
+			WireName: "code_hook_specification",
+			Kind: "object",
+			Fields: BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecificationFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
+var BotAlias_BotAliasLocaleSettingsFields = ubx.FieldMap{
+		"BotAliasLocaleSetting": ubx.FieldSpec{
+			WireName: "bot_alias_locale_setting",
+			Kind: "object",
+			Fields: BotAlias_BotAliasLocaleSettings_BotAliasLocaleSettingFields,
+		},
+		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+	}
+
+var BotAlias_BotAliasTagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var BotAlias_ConversationLogSettings_AudioLogSettings_Destination_S3BucketFields = ubx.FieldMap{
+		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"LogPrefix": ubx.FieldSpec{WireName: "log_prefix"},
+		"S3BucketArn": ubx.FieldSpec{WireName: "s3_bucket_arn"},
+	}
+
+var BotAlias_ConversationLogSettings_AudioLogSettings_DestinationFields = ubx.FieldMap{
+		"S3Bucket": ubx.FieldSpec{
+			WireName: "s3_bucket",
+			Kind: "object",
+			Fields: BotAlias_ConversationLogSettings_AudioLogSettings_Destination_S3BucketFields,
+		},
+	}
+
+var BotAlias_ConversationLogSettings_AudioLogSettingsFields = ubx.FieldMap{
+		"Destination": ubx.FieldSpec{
+			WireName: "destination",
+			Kind: "object",
+			Fields: BotAlias_ConversationLogSettings_AudioLogSettings_DestinationFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
+var BotAlias_ConversationLogSettings_TextLogSettings_Destination_CloudWatchFields = ubx.FieldMap{
+		"CloudWatchLogGroupArn": ubx.FieldSpec{WireName: "cloud_watch_log_group_arn"},
+		"LogPrefix": ubx.FieldSpec{WireName: "log_prefix"},
+	}
+
+var BotAlias_ConversationLogSettings_TextLogSettings_DestinationFields = ubx.FieldMap{
+		"CloudWatch": ubx.FieldSpec{
+			WireName: "cloud_watch",
+			Kind: "object",
+			Fields: BotAlias_ConversationLogSettings_TextLogSettings_Destination_CloudWatchFields,
+		},
+	}
+
+var BotAlias_ConversationLogSettings_TextLogSettingsFields = ubx.FieldMap{
+		"Destination": ubx.FieldSpec{
+			WireName: "destination",
+			Kind: "object",
+			Fields: BotAlias_ConversationLogSettings_TextLogSettings_DestinationFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
+var BotAlias_ConversationLogSettingsFields = ubx.FieldMap{
+		"AudioLogSettings": ubx.FieldSpec{
+			WireName: "audio_log_settings",
+			Kind: "list",
+			Fields: BotAlias_ConversationLogSettings_AudioLogSettingsFields,
+		},
+		"TextLogSettings": ubx.FieldSpec{
+			WireName: "text_log_settings",
+			Kind: "list",
+			Fields: BotAlias_ConversationLogSettings_TextLogSettingsFields,
+		},
+	}
+
+var BotAlias_SentimentAnalysisSettingsFields = ubx.FieldMap{
+		"DetectSentiment": ubx.FieldSpec{WireName: "detect_sentiment"},
 	}
 
 type BotAliasConfig struct {
-	BotName any
+	// A list of bot alias locale settings to add to the bot alias.
+	BotAliasLocaleSettings any
+	// A unique identifier for a resource.
+	BotAliasName any
+	// A list of tags to add to the bot alias.
+	BotAliasTags any
+	// Unique ID of resource
+	BotId any
+	// The version of a bot.
 	BotVersion any
+	// Contains information about code hooks that Amazon Lex calls during a conversation.
+	ConversationLogSettings any
+	// A description of the bot alias. Use the description to help identify the bot alias in lists.
 	Description any
-	Id any
-	Name any
-	Region any
-	ConversationLogs any
-	Timeouts any
+	// Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.
+	SentimentAnalysisSettings any
+}
+
+type BotAliasAttrs struct {
+	// The Amazon Resource Name (ARN) of the bot alias.
+	Arn any
+	// Unique ID of resource
+	BotAliasId any
+	// A list of bot alias locale settings to add to the bot alias.
+	BotAliasLocaleSettings any
+	// A unique identifier for a resource.
+	BotAliasName any
+	// The current status of the bot alias, such as CREATING, READY, or FAILED, indicating whether the alias is prepared for use. (AI-inferred)
+	BotAliasStatus any
+	// A list of tags to add to the bot alias.
+	BotAliasTags any
+	// Unique ID of resource
+	BotId any
+	// The version of a bot.
+	BotVersion any
+	// Contains information about code hooks that Amazon Lex calls during a conversation.
+	ConversationLogSettings any
+	// A description of the bot alias. Use the description to help identify the bot alias in lists.
+	Description any
+	// Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.
+	SentimentAnalysisSettings any
 }
 
 var BotAlias = ubx.ResourceBinding{
 	WireType: "aws_lex_bot_alias",
 	Fields: ubx.FieldMap{
-		"BotName": ubx.FieldSpec{WireName: "bot_name"},
-		"BotVersion": ubx.FieldSpec{WireName: "bot_version"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ConversationLogs": ubx.FieldSpec{
-			WireName: "conversation_logs",
+		"BotAliasLocaleSettings": ubx.FieldSpec{
+			WireName: "bot_alias_locale_settings",
 			Kind: "list",
-			Fields: BotAlias_ConversationLogsFields,
+			Fields: BotAlias_BotAliasLocaleSettingsFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"BotAliasName": ubx.FieldSpec{WireName: "bot_alias_name"},
+		"BotAliasTags": ubx.FieldSpec{
+			WireName: "bot_alias_tags",
+			Kind: "list",
+			Fields: BotAlias_BotAliasTagsFields,
+		},
+		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotVersion": ubx.FieldSpec{WireName: "bot_version"},
+		"ConversationLogSettings": ubx.FieldSpec{
+			WireName: "conversation_log_settings",
 			Kind: "object",
-			Fields: BotAlias_TimeoutsFields,
+			Fields: BotAlias_ConversationLogSettingsFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"SentimentAnalysisSettings": ubx.FieldSpec{
+			WireName: "sentiment_analysis_settings",
+			Kind: "object",
+			Fields: BotAlias_SentimentAnalysisSettingsFields,
 		},
 	},
 }

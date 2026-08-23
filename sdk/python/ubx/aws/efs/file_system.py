@@ -7,64 +7,162 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class FileSystem_LifecyclePolicy:
+class FileSystem_BackupPolicy:
+    # Set the backup policy status for the file system. + *ENABLED* - Turns automatic backups on for the file system. + *DISABLED* - Turns automatic backups off for the file system.
+    status: Any = None
+
+@dataclasses.dataclass
+class FileSystem_FileSystemProtection:
+    # The status of the file system's replication overwrite protection. + ``ENABLED`` – The file system cannot be used as the destination file system in a replication configuration. The file system is writeable. Replication overwrite protection is ``ENABLED`` by default. + ``DISABLED`` – The file system can be used as the destination file system in a replication configuration. The file system is read-only and can only be modified by EFS replication. + ``REPLICATING`` – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is modified only by EFS replication. If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.
+    replication_overwrite_protection: Any = None
+
+@dataclasses.dataclass
+class FileSystem_FileSystemTags:
+    # The key of a tag applied to the EFS file system, used to organize and identify the resource within AWS. (AI-inferred)
+    key: Any = None
+    # The value portion of a tag assigned to the EFS file system, used for metadata, cost allocation, or access control. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class FileSystem_LifecyclePolicies:
+    # Specifies when EFS moves files to the Archive storage class (e.g., AFTER_30_DAYS) based on the number of days since last access, as part of the file system's lifecycle policy. (AI-inferred)
     transition_to_archive: Any = None
+    # Specifies the number of days (as a string such as 'AFTER_7_DAYS') after which files are transitioned to the Amazon EFS Infrequent Access (IA) storage class within this lifecycle policy. (AI-inferred)
     transition_to_ia: Any = None
+    # Specifies when EFS transitions files from the Infrequent Access storage class back to the Standard storage class, with the only valid value being AFTER_1_ACCESS, meaning a file is moved after it is accessed once. (AI-inferred)
     transition_to_primary_storage_class: Any = None
 
 @dataclasses.dataclass
-class FileSystem_Protection:
-    replication_overwrite: Any = None
+class FileSystem_ReplicationConfiguration_Destinations:
+    # Designates the Availability Zone in which the destination file system of the EFS replication configuration is created, allowing a one-zone replicated file system target; if omitted, AWS chooses an AZ for the destination. (AI-inferred)
+    availability_zone_name: Any = None
+    # The ID of the destination EFS file system that receives replicated data from the source file system in an EFS replication configuration. (AI-inferred)
+    file_system_id: Any = None
+    # The ID of the AWS KMS key used to encrypt the replicated file system data in the destination Region. (AI-inferred)
+    kms_key_id: Any = None
+    # Specifies the AWS Region of the destination EFS file system to which the source EFS file system replicates data. (AI-inferred)
+    region: Any = None
+    # The ARN of the IAM role that Amazon EFS assumes when replicating the source file system to the destination file system. (AI-inferred)
+    role_arn: Any = None
+    # The computed status of the replication destination, indicating whether replication to this file system is enabled, enabling, deleting, or in an error state. (AI-inferred)
+    status: Any = None
+    # For an Amazon EFS file system's replication destination, this string contains the descriptive message about the current replication status, such as an error reason when replication is failing. (AI-inferred)
+    status_message: Any = None
 
-_FileSystem_LifecyclePolicyFields = {
+@dataclasses.dataclass
+class FileSystem_ReplicationConfiguration:
+    # An array of destination objects. Only one destination object is supported.
+    destinations: Any = None
+
+_FileSystem_BackupPolicyFields = {
+    "status": ubx.FieldSpec(wire_name="status"),
+}
+
+_FileSystem_FileSystemProtectionFields = {
+    "replication_overwrite_protection": ubx.FieldSpec(wire_name="replication_overwrite_protection"),
+}
+
+_FileSystem_FileSystemTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_FileSystem_LifecyclePoliciesFields = {
     "transition_to_archive": ubx.FieldSpec(wire_name="transition_to_archive"),
     "transition_to_ia": ubx.FieldSpec(wire_name="transition_to_ia"),
     "transition_to_primary_storage_class": ubx.FieldSpec(wire_name="transition_to_primary_storage_class"),
 }
 
-_FileSystem_ProtectionFields = {
-    "replication_overwrite": ubx.FieldSpec(wire_name="replication_overwrite"),
-}
-
 @dataclasses.dataclass
 class FileSystemConfig:
+    # For One Zone file systems, specify the AWS Availability Zone in which to create the file system. Use the format ``us-east-1a`` to specify the Availability Zone. For more information about One Zone file systems, see [EFS file system types](https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html#file-system-type) in the *Amazon EFS User Guide*. One Zone file systems are not available in all Availability Zones in AWS-Regions where Amazon EFS is available.
     availability_zone_name: Any = None
-    creation_token: Any = None
+    # The backup policy turns automatic backups for the file system on or off.
+    backup_policy: Any = None
+    # (Optional) A boolean that specifies whether or not to bypass the ``FileSystemPolicy`` lockout safety check. The lockout safety check determines whether the policy in the request will lock out, or prevent, the IAM principal that is making the request from making future ``PutFileSystemPolicy`` requests on this file system. Set ``BypassPolicyLockoutSafetyCheck`` to ``True`` only when you intend to prevent the IAM principal that is making the request from making subsequent ``PutFileSystemPolicy`` requests on this file system. The default value is ``False``.
+    bypass_policy_lockout_safety_check: Any = None
+    # A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying a KmsKeyId for an existing kms-key-long. If you don't specify a kms-key, then the default kms-key for EFS, ``/aws/elasticfilesystem``, is used to protect the encrypted file system.
     encrypted: Any = None
-    id: Any = None
+    # The ``FileSystemPolicy`` for the EFS file system. A file system policy is an IAM resource policy used to control NFS access to an EFS file system. For more information, see [Using to control NFS access to Amazon EFS](https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html) in the *Amazon EFS User Guide*.
+    file_system_policy: Any = None
+    # Describes the protection on the file system.
+    file_system_protection: Any = None
+    # Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a ``"Key":"Name","Value":"{value}"`` key-value pair. Each key must be unique. For more information, see [Tagging resources](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) in the *General Reference Guide*.
+    file_system_tags: Any = None
+    # The ID of the kms-key-long to be used to protect the encrypted file system. This parameter is only required if you want to use a nondefault kms-key. If this parameter is not specified, the default kms-key for EFS is used. This ID can be in one of the following formats: + Key ID - A unique identifier of the key, for example ``1234abcd-12ab-34cd-56ef-1234567890ab``. + ARN - An Amazon Resource Name (ARN) for the key, for example ``arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab``. + Key alias - A previously created display name for a key, for example ``alias/projectKey1``. + Key alias ARN - An ARN for a key alias, for example ``arn:aws:kms:us-west-2:444455556666:alias/projectKey1``. If ``KmsKeyId`` is specified, the ``Encrypted`` parameter must be set to true.
     kms_key_id: Any = None
+    # An array of ``LifecyclePolicy`` objects that define the file system's ``LifecycleConfiguration`` object. A ``LifecycleConfiguration`` object informs Lifecycle management of the following: + When to move files in the file system from primary storage to IA storage. + When to move files in the file system from primary storage or IA storage to Archive storage. + When to move files that are in IA or Archive storage to primary storage. EFS requires that each ``LifecyclePolicy`` object have only a single transition. This means that in a request body, ``LifecyclePolicies`` needs to be structured as an array of ``LifecyclePolicy`` objects, one object for each transition, ``TransitionToIA``, ``TransitionToArchive````TransitionToPrimaryStorageClass``. See the example requests in the following section for more information.
+    lifecycle_policies: Any = None
+    # The performance mode of the file system. We recommend ``generalPurpose`` performance mode for all file systems. File systems using the ``maxIO`` performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created. The ``maxIO`` mode is not supported on One Zone file systems. Due to the higher per-operation latencies with Max I/O, we recommend using General Purpose performance mode for all file systems. Default is ``generalPurpose``.
     performance_mode: Any = None
+    # The throughput, measured in mebibytes per second (MiBps), that you want to provision for a file system that you're creating. Required if ``ThroughputMode`` is set to ``provisioned``. Valid values are 1-3414 MiBps, with the upper limit depending on Region. To increase this limit, contact SUP. For more information, see [Amazon EFS quotas that you can increase](https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits) in the *Amazon EFS User Guide*.
     provisioned_throughput_in_mibps: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Specifies the throughput mode for the file system. The mode can be ``bursting``, ``provisioned``, or ``elastic``. If you set ``ThroughputMode`` to ``provisioned``, you must also set a value for ``ProvisionedThroughputInMibps``. After you create the file system, you can decrease your file system's Provisioned throughput or change between the throughput modes, with certain time restrictions. For more information, see [Specifying throughput with provisioned mode](https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput) in the *Amazon EFS User Guide*. Default is ``bursting``.
     throughput_mode: Any = None
-    lifecycle_policy: Any = None
-    protection: Any = None
+
+@dataclasses.dataclass
+class FileSystemAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies this EFS file system, used to reference it in IAM policies and other AWS services. (AI-inferred)
+    arn: Any = None
+    # For One Zone file systems, specify the AWS Availability Zone in which to create the file system. Use the format ``us-east-1a`` to specify the Availability Zone. For more information about One Zone file systems, see [EFS file system types](https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html#file-system-type) in the *Amazon EFS User Guide*. One Zone file systems are not available in all Availability Zones in AWS-Regions where Amazon EFS is available.
+    availability_zone_name: Any = None
+    # The backup policy turns automatic backups for the file system on or off.
+    backup_policy: Any = None
+    # (Optional) A boolean that specifies whether or not to bypass the ``FileSystemPolicy`` lockout safety check. The lockout safety check determines whether the policy in the request will lock out, or prevent, the IAM principal that is making the request from making future ``PutFileSystemPolicy`` requests on this file system. Set ``BypassPolicyLockoutSafetyCheck`` to ``True`` only when you intend to prevent the IAM principal that is making the request from making subsequent ``PutFileSystemPolicy`` requests on this file system. The default value is ``False``.
+    bypass_policy_lockout_safety_check: Any = None
+    # A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying a KmsKeyId for an existing kms-key-long. If you don't specify a kms-key, then the default kms-key for EFS, ``/aws/elasticfilesystem``, is used to protect the encrypted file system.
+    encrypted: Any = None
+    # The unique AWS-assigned identifier (e.g., fs-12345678) for the EFS file system, returned by AWS and used to reference the file system in other resources. (AI-inferred)
+    file_system_id: Any = None
+    # The ``FileSystemPolicy`` for the EFS file system. A file system policy is an IAM resource policy used to control NFS access to an EFS file system. For more information, see [Using to control NFS access to Amazon EFS](https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html) in the *Amazon EFS User Guide*.
+    file_system_policy: Any = None
+    # Describes the protection on the file system.
+    file_system_protection: Any = None
+    # Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a ``"Key":"Name","Value":"{value}"`` key-value pair. Each key must be unique. For more information, see [Tagging resources](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) in the *General Reference Guide*.
+    file_system_tags: Any = None
+    # The ID of the kms-key-long to be used to protect the encrypted file system. This parameter is only required if you want to use a nondefault kms-key. If this parameter is not specified, the default kms-key for EFS is used. This ID can be in one of the following formats: + Key ID - A unique identifier of the key, for example ``1234abcd-12ab-34cd-56ef-1234567890ab``. + ARN - An Amazon Resource Name (ARN) for the key, for example ``arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab``. + Key alias - A previously created display name for a key, for example ``alias/projectKey1``. + Key alias ARN - An ARN for a key alias, for example ``arn:aws:kms:us-west-2:444455556666:alias/projectKey1``. If ``KmsKeyId`` is specified, the ``Encrypted`` parameter must be set to true.
+    kms_key_id: Any = None
+    # An array of ``LifecyclePolicy`` objects that define the file system's ``LifecycleConfiguration`` object. A ``LifecycleConfiguration`` object informs Lifecycle management of the following: + When to move files in the file system from primary storage to IA storage. + When to move files in the file system from primary storage or IA storage to Archive storage. + When to move files that are in IA or Archive storage to primary storage. EFS requires that each ``LifecyclePolicy`` object have only a single transition. This means that in a request body, ``LifecyclePolicies`` needs to be structured as an array of ``LifecyclePolicy`` objects, one object for each transition, ``TransitionToIA``, ``TransitionToArchive````TransitionToPrimaryStorageClass``. See the example requests in the following section for more information.
+    lifecycle_policies: Any = None
+    # The performance mode of the file system. We recommend ``generalPurpose`` performance mode for all file systems. File systems using the ``maxIO`` performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created. The ``maxIO`` mode is not supported on One Zone file systems. Due to the higher per-operation latencies with Max I/O, we recommend using General Purpose performance mode for all file systems. Default is ``generalPurpose``.
+    performance_mode: Any = None
+    # The throughput, measured in mebibytes per second (MiBps), that you want to provision for a file system that you're creating. Required if ``ThroughputMode`` is set to ``provisioned``. Valid values are 1-3414 MiBps, with the upper limit depending on Region. To increase this limit, contact SUP. For more information, see [Amazon EFS quotas that you can increase](https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits) in the *Amazon EFS User Guide*.
+    provisioned_throughput_in_mibps: Any = None
+    # Describes the replication configuration for a specific file system.
+    replication_configuration: Any = None
+    # Specifies the throughput mode for the file system. The mode can be ``bursting``, ``provisioned``, or ``elastic``. If you set ``ThroughputMode`` to ``provisioned``, you must also set a value for ``ProvisionedThroughputInMibps``. After you create the file system, you can decrease your file system's Provisioned throughput or change between the throughput modes, with certain time restrictions. For more information, see [Specifying throughput with provisioned mode](https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput) in the *Amazon EFS User Guide*. Default is ``bursting``.
+    throughput_mode: Any = None
 
 FileSystem = ubx.ResourceBinding(
     wire_type="aws_efs_file_system",
     fields={
         "availability_zone_name": ubx.FieldSpec(wire_name="availability_zone_name"),
-        "creation_token": ubx.FieldSpec(wire_name="creation_token"),
+        "backup_policy": ubx.FieldSpec(
+            wire_name="backup_policy",
+            kind="object",
+            fields=_FileSystem_BackupPolicyFields,
+        ),
+        "bypass_policy_lockout_safety_check": ubx.FieldSpec(wire_name="bypass_policy_lockout_safety_check"),
         "encrypted": ubx.FieldSpec(wire_name="encrypted"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "file_system_policy": ubx.FieldSpec(wire_name="file_system_policy"),
+        "file_system_protection": ubx.FieldSpec(
+            wire_name="file_system_protection",
+            kind="object",
+            fields=_FileSystem_FileSystemProtectionFields,
+        ),
+        "file_system_tags": ubx.FieldSpec(
+            wire_name="file_system_tags",
+            kind="list",
+            fields=_FileSystem_FileSystemTagsFields,
+        ),
         "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
+        "lifecycle_policies": ubx.FieldSpec(
+            wire_name="lifecycle_policies",
+            kind="list",
+            fields=_FileSystem_LifecyclePoliciesFields,
+        ),
         "performance_mode": ubx.FieldSpec(wire_name="performance_mode"),
         "provisioned_throughput_in_mibps": ubx.FieldSpec(wire_name="provisioned_throughput_in_mibps"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "throughput_mode": ubx.FieldSpec(wire_name="throughput_mode"),
-        "lifecycle_policy": ubx.FieldSpec(
-            wire_name="lifecycle_policy",
-            kind="list",
-            fields=_FileSystem_LifecyclePolicyFields,
-        ),
-        "protection": ubx.FieldSpec(
-            wire_name="protection",
-            kind="list",
-            fields=_FileSystem_ProtectionFields,
-        ),
     },
 )

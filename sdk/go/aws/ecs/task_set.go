@@ -4,34 +4,60 @@ package ecs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TaskSet_CapacityProviderStrategy struct {
+	// The minimum number of tasks to run on this capacity provider before the task set's weight-based scaling applies. (AI-inferred)
 	Base any
+	// The name of the capacity provider, as registered in the ECS cluster, that this task set should use for running tasks. (AI-inferred)
 	CapacityProvider any
+	// The relative weight assigned to a capacity provider in the strategy, determining what proportion of tasks from the task set are placed on that provider. (AI-inferred)
 	Weight any
 }
 
-type TaskSet_LoadBalancer struct {
+type TaskSet_LoadBalancers struct {
+	// The name of the container, as defined in the task definition, to which the load balancer routes traffic for this task set. (AI-inferred)
 	ContainerName any
+	// The container port on which the task set's containers receive traffic from the associated load balancer or target group, used to route incoming requests to the correct container port. (AI-inferred)
 	ContainerPort any
-	LoadBalancerName any
+	// The Amazon Resource Name (ARN) of the target group to which the ECS task set's tasks are registered for load balancing. (AI-inferred)
 	TargetGroupArn any
 }
 
-type TaskSet_NetworkConfiguration struct {
+type TaskSet_NetworkConfiguration_AwsVpcConfiguration struct {
+	// Whether the task's elastic network interface receives a public IP address. The default value is DISABLED.
 	AssignPublicIp any
+	// The security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used. There is a limit of 5 security groups that can be specified per AwsVpcConfiguration.
 	SecurityGroups any
+	// The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per AwsVpcConfiguration.
 	Subnets any
 }
 
+type TaskSet_NetworkConfiguration struct {
+	// The VPC subnets and security groups associated with a task. All specified subnets and security groups must be from the same VPC.
+	AwsVpcConfiguration any
+}
+
 type TaskSet_Scale struct {
+	// The unit of measure for the scale value.
 	Unit any
+	// The value, specified as a percent total of a service's desiredCount, to scale the task set. Accepted values are numbers between 0 and 100.
 	Value any
 }
 
 type TaskSet_ServiceRegistries struct {
+	// Specifies the container name from the task definition to use for the service discovery (Cloud Map) registry, and if not provided, the default container in the task definition is used. (AI-inferred)
 	ContainerName any
+	// Specifies the container port that the Amazon ECS task set's service registry uses for service discovery with AWS Cloud Map. (AI-inferred)
 	ContainerPort any
+	// The port number that the service discovery service uses for the task's registry entry, which overrides the container's port mapping if specified. (AI-inferred)
 	Port any
+	// The ARN of the AWS Cloud Map service registry in which the task set's tasks are registered for service discovery. (AI-inferred)
 	RegistryArn any
+}
+
+type TaskSet_Tags struct {
+	// The key of a tag that can be assigned to the ECS task set for organizational or identification purposes. (AI-inferred)
+	Key any
+	// Specifies the value of a user-defined tag attached to the ECS task set, which can be used for resource categorization, cost allocation, and operational management. (AI-inferred)
+	Value any
 }
 
 var TaskSet_CapacityProviderStrategyFields = ubx.FieldMap{
@@ -40,17 +66,24 @@ var TaskSet_CapacityProviderStrategyFields = ubx.FieldMap{
 		"Weight": ubx.FieldSpec{WireName: "weight"},
 	}
 
-var TaskSet_LoadBalancerFields = ubx.FieldMap{
+var TaskSet_LoadBalancersFields = ubx.FieldMap{
 		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
 		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-		"LoadBalancerName": ubx.FieldSpec{WireName: "load_balancer_name"},
 		"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
 	}
 
-var TaskSet_NetworkConfigurationFields = ubx.FieldMap{
+var TaskSet_NetworkConfiguration_AwsVpcConfigurationFields = ubx.FieldMap{
 		"AssignPublicIp": ubx.FieldSpec{WireName: "assign_public_ip"},
 		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
 		"Subnets": ubx.FieldSpec{WireName: "subnets"},
+	}
+
+var TaskSet_NetworkConfigurationFields = ubx.FieldMap{
+		"AwsVpcConfiguration": ubx.FieldSpec{
+			WireName: "aws_vpc_configuration",
+			Kind: "object",
+			Fields: TaskSet_NetworkConfiguration_AwsVpcConfigurationFields,
+		},
 	}
 
 var TaskSet_ScaleFields = ubx.FieldMap{
@@ -65,67 +98,103 @@ var TaskSet_ServiceRegistriesFields = ubx.FieldMap{
 		"RegistryArn": ubx.FieldSpec{WireName: "registry_arn"},
 	}
 
+var TaskSet_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type TaskSetConfig struct {
-	Cluster any
-	ExternalId any
-	ForceDelete any
-	Id any
-	LaunchType any
-	PlatformVersion any
-	Region any
-	Service any
-	Tags any
-	TagsAll any
-	TaskDefinition any
-	WaitUntilStable any
-	WaitUntilStableTimeout any
+	// Specifies the capacity provider strategy for the task set, defining which capacity providers to use and the weights and base values that govern how tasks are distributed among them. (AI-inferred)
 	CapacityProviderStrategy any
-	LoadBalancer any
+	// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.
+	Cluster any
+	// An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the ECS_TASK_SET_EXTERNAL_ID AWS Cloud Map attribute set to the provided value.
+	ExternalId any
+	// The launch type that new tasks in the task set will use. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html in the Amazon Elastic Container Service Developer Guide.
+	LaunchType any
+	// Configures the load balancer or target groups that route traffic to the tasks in this ECS task set, specifying the container and port to receive traffic. (AI-inferred)
+	LoadBalancers any
+	// An object representing the network configuration for a task or service.
 	NetworkConfiguration any
+	// The platform version that the tasks in the task set should use. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the LATEST platform version is used by default.
+	PlatformVersion any
+	// Specifies the scaling configuration for the task set, including the unit (e.g., PERCENT) and value that determine the target number of tasks for the task set. (AI-inferred)
 	Scale any
+	// The short name or full Amazon Resource Name (ARN) of the service to create the task set in.
+	Service any
+	// The details of the service discovery registries to assign to this task set. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html.
 	ServiceRegistries any
+	Tags any
+	// The short name or full Amazon Resource Name (ARN) of the task definition for the tasks in the task set to use.
+	TaskDefinition any
+}
+
+type TaskSetAttrs struct {
+	// Specifies the capacity provider strategy for the task set, defining which capacity providers to use and the weights and base values that govern how tasks are distributed among them. (AI-inferred)
+	CapacityProviderStrategy any
+	// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.
+	Cluster any
+	// An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the ECS_TASK_SET_EXTERNAL_ID AWS Cloud Map attribute set to the provided value.
+	ExternalId any
+	// The ID of the task set.
+	Id any
+	// The launch type that new tasks in the task set will use. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html in the Amazon Elastic Container Service Developer Guide.
+	LaunchType any
+	// Configures the load balancer or target groups that route traffic to the tasks in this ECS task set, specifying the container and port to receive traffic. (AI-inferred)
+	LoadBalancers any
+	// An object representing the network configuration for a task or service.
+	NetworkConfiguration any
+	// The platform version that the tasks in the task set should use. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the LATEST platform version is used by default.
+	PlatformVersion any
+	// Specifies the scaling configuration for the task set, including the unit (e.g., PERCENT) and value that determine the target number of tasks for the task set. (AI-inferred)
+	Scale any
+	// The short name or full Amazon Resource Name (ARN) of the service to create the task set in.
+	Service any
+	// The details of the service discovery registries to assign to this task set. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html.
+	ServiceRegistries any
+	Tags any
+	// The short name or full Amazon Resource Name (ARN) of the task definition for the tasks in the task set to use.
+	TaskDefinition any
 }
 
 var TaskSet = ubx.ResourceBinding{
 	WireType: "aws_ecs_task_set",
 	Fields: ubx.FieldMap{
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"ForceDelete": ubx.FieldSpec{WireName: "force_delete"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LaunchType": ubx.FieldSpec{WireName: "launch_type"},
-		"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"TaskDefinition": ubx.FieldSpec{WireName: "task_definition"},
-		"WaitUntilStable": ubx.FieldSpec{WireName: "wait_until_stable"},
-		"WaitUntilStableTimeout": ubx.FieldSpec{WireName: "wait_until_stable_timeout"},
 		"CapacityProviderStrategy": ubx.FieldSpec{
 			WireName: "capacity_provider_strategy",
-			Kind: "set",
+			Kind: "list",
 			Fields: TaskSet_CapacityProviderStrategyFields,
 		},
-		"LoadBalancer": ubx.FieldSpec{
-			WireName: "load_balancer",
-			Kind: "set",
-			Fields: TaskSet_LoadBalancerFields,
+		"Cluster": ubx.FieldSpec{WireName: "cluster"},
+		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
+		"LaunchType": ubx.FieldSpec{WireName: "launch_type"},
+		"LoadBalancers": ubx.FieldSpec{
+			WireName: "load_balancers",
+			Kind: "list",
+			Fields: TaskSet_LoadBalancersFields,
 		},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: TaskSet_NetworkConfigurationFields,
 		},
+		"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
 		"Scale": ubx.FieldSpec{
 			WireName: "scale",
-			Kind: "list",
+			Kind: "object",
 			Fields: TaskSet_ScaleFields,
 		},
+		"Service": ubx.FieldSpec{WireName: "service"},
 		"ServiceRegistries": ubx.FieldSpec{
 			WireName: "service_registries",
 			Kind: "list",
 			Fields: TaskSet_ServiceRegistriesFields,
 		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: TaskSet_TagsFields,
+		},
+		"TaskDefinition": ubx.FieldSpec{WireName: "task_definition"},
 	},
 }

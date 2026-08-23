@@ -7,24 +7,113 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class DiskConfig:
+class Disk_AddOns_AutoSnapshotAddOnRequest:
+    # Specifies the time of day (in 24-hour HH:00 format, e.g., '02:00') when the automatic snapshot of the disk is created for the auto snapshot add-on. (AI-inferred)
+    snapshot_time_of_day: Any = None
+
+@dataclasses.dataclass
+class Disk_AddOns:
+    # Specifies the type of add-on to enable for the Lightsail disk, such as AutoSnapshot for automatic snapshots. (AI-inferred)
+    add_on_type: Any = None
+    # Configures the automatic snapshot add-on for the Lightsail disk, including the daily time (in HH:00 format) at which the snapshot is created. (AI-inferred)
+    auto_snapshot_add_on_request: Any = None
+    # The status of the disk add-on, typically 'Enabled' or 'Disabled', indicating whether the add-on is active on the Lightsail disk. (AI-inferred)
+    status: Any = None
+
+@dataclasses.dataclass
+class Disk_Location:
+    # The Availability Zone in which to create your disk. Use the following format: us-east-2a (case sensitive). Be sure to add the include Availability Zones parameter to your request.
     availability_zone: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # The Region Name in which to create your disk.
+    region_name: Any = None
+
+@dataclasses.dataclass
+class Disk_Tags:
+    # The key of a tag to attach to the Lightsail disk, used to organize and identify the disk resource. (AI-inferred)
+    key: Any = None
+    # Specifies the tag value in a key-value pair that you attach to the Lightsail disk for metadata and resource management purposes. (AI-inferred)
+    value: Any = None
+
+_Disk_AddOns_AutoSnapshotAddOnRequestFields = {
+    "snapshot_time_of_day": ubx.FieldSpec(wire_name="snapshot_time_of_day"),
+}
+
+_Disk_AddOnsFields = {
+    "add_on_type": ubx.FieldSpec(wire_name="add_on_type"),
+    "auto_snapshot_add_on_request": ubx.FieldSpec(
+        wire_name="auto_snapshot_add_on_request",
+        kind="object",
+        fields=_Disk_AddOns_AutoSnapshotAddOnRequestFields,
+    ),
+    "status": ubx.FieldSpec(wire_name="status"),
+}
+
+_Disk_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
+class DiskConfig:
+    # An array of objects representing the add-ons to enable for the new instance.
+    add_ons: Any = None
+    # The Availability Zone in which to create your instance. Use the following format: us-east-2a (case sensitive). Be sure to add the include Availability Zones parameter to your request.
+    availability_zone: Any = None
+    # The names to use for your new Lightsail disk.
+    disk_name: Any = None
+    # Size of the Lightsail disk
     size_in_gb: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class DiskAttrs:
+    # An array of objects representing the add-ons to enable for the new instance.
+    add_ons: Any = None
+    # Name of the attached Lightsail Instance
+    attached_to: Any = None
+    # Attachment State of the Lightsail disk
+    attachment_state: Any = None
+    # The Availability Zone in which to create your instance. Use the following format: us-east-2a (case sensitive). Be sure to add the include Availability Zones parameter to your request.
+    availability_zone: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies the Lightsail disk. (AI-inferred)
+    disk_arn: Any = None
+    # The names to use for your new Lightsail disk.
+    disk_name: Any = None
+    # Iops of the Lightsail disk
+    iops: Any = None
+    # Check is Disk is attached state
+    is_attached: Any = None
+    # Location of a resource.
+    location: Any = None
+    # Path of the attached Disk
+    path: Any = None
+    # Resource type of Lightsail instance.
+    resource_type: Any = None
+    # Size of the Lightsail disk
+    size_in_gb: Any = None
+    # State of the Lightsail disk
+    state: Any = None
+    # Support code to help identify any issues
+    support_code: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Disk = ubx.ResourceBinding(
     wire_type="aws_lightsail_disk",
     fields={
+        "add_ons": ubx.FieldSpec(
+            wire_name="add_ons",
+            kind="list",
+            fields=_Disk_AddOnsFields,
+        ),
         "availability_zone": ubx.FieldSpec(wire_name="availability_zone"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "disk_name": ubx.FieldSpec(wire_name="disk_name"),
         "size_in_gb": ubx.FieldSpec(wire_name="size_in_gb"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Disk_TagsFields,
+        ),
     },
 )

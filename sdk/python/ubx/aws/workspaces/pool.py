@@ -8,28 +8,43 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Pool_ApplicationSettings:
+    # The name of the settings group that defines which application settings are persisted and applied for users of this WorkSpaces Pool. (AI-inferred)
     settings_group: Any = None
+    # The status of application settings for the WorkSpaces pool, required to be either 'ENABLED' or 'DISABLED' to control whether persistent app settings are active for users in the pool. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
-class Pool_TimeoutSettings:
-    disconnect_timeout_in_seconds: Any = None
-    idle_disconnect_timeout_in_seconds: Any = None
-    max_user_duration_in_seconds: Any = None
-
-@dataclasses.dataclass
 class Pool_Capacity:
+    # Specifies the desired number of concurrent user sessions for the WorkSpaces pool, which the service uses to determine how many instances to run to support the expected load. (AI-inferred)
     desired_user_sessions: Any = None
 
 @dataclasses.dataclass
-class Pool_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Pool_Tags:
+    key: Any = None
+    # The value of a tag attached to the WorkSpaces pool, used for categorizing, identifying, and managing the resource. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class Pool_TimeoutSettings:
+    # Specifies the maximum time in seconds a user can remain disconnected from a pool WorkSpace before AWS automatically stops the WorkSpace. (AI-inferred)
+    disconnect_timeout_in_seconds: Any = None
+    # Specifies the length of time, in seconds, that a WorkSpaces Pool session can remain idle before a user is automatically disconnected from their streaming session. (AI-inferred)
+    idle_disconnect_timeout_in_seconds: Any = None
+    # Specifies the maximum time, in seconds, that a user session can remain active before it is automatically disconnected. (AI-inferred)
+    max_user_duration_in_seconds: Any = None
 
 _Pool_ApplicationSettingsFields = {
     "settings_group": ubx.FieldSpec(wire_name="settings_group"),
     "status": ubx.FieldSpec(wire_name="status"),
+}
+
+_Pool_CapacityFields = {
+    "desired_user_sessions": ubx.FieldSpec(wire_name="desired_user_sessions"),
+}
+
+_Pool_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _Pool_TimeoutSettingsFields = {
@@ -38,59 +53,81 @@ _Pool_TimeoutSettingsFields = {
     "max_user_duration_in_seconds": ubx.FieldSpec(wire_name="max_user_duration_in_seconds"),
 }
 
-_Pool_CapacityFields = {
-    "desired_user_sessions": ubx.FieldSpec(wire_name="desired_user_sessions"),
-}
-
-_Pool_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
-
 @dataclasses.dataclass
 class PoolConfig:
+    # Determines whether persistent application settings are enabled for the pool and, if so, specifies the settings group name that stores user application preferences. (AI-inferred)
     application_settings: Any = None
+    # The unique identifier of the WorkSpaces bundle that defines the operating system, applications, and hardware configuration for the virtual desktops in the pool. (AI-inferred)
     bundle_id: Any = None
-    description: Any = None
-    directory_id: Any = None
-    pool_name: Any = None
-    region: Any = None
-    running_mode: Any = None
-    tags: Any = None
-    timeout_settings: Any = None
+    # Configures the desired and maximum number of user sessions for the WorkSpaces pool, controlling how many concurrent sessions the pool can support and its auto-scaling limits. (AI-inferred)
     capacity: Any = None
-    timeouts: Any = None
+    # Specifies a user-defined description for the WorkSpaces pool to help identify its purpose. (AI-inferred)
+    description: Any = None
+    # The identifier of the AWS Directory Service directory that the WorkSpaces pool uses for users and authentication. (AI-inferred)
+    directory_id: Any = None
+    # The name of the WorkSpaces pool, which uniquely identifies the pool within the AWS account and region. (AI-inferred)
+    pool_name: Any = None
+    # Specifies whether the WorkSpaces in the pool are always running (ALWAYS_ON) or stop automatically when not in use (AUTO_STOP). (AI-inferred)
+    running_mode: Any = None
+    # Defines the tags (key-value pairs) to associate with this WorkSpaces pool resource. (AI-inferred)
+    tags: Any = None
+    # Defines the session timeout settings for the WorkSpaces pool, including the disconnect timeout, idle disconnect timeout, and maximum user duration in seconds. (AI-inferred)
+    timeout_settings: Any = None
+
+@dataclasses.dataclass
+class PoolAttrs:
+    # Determines whether persistent application settings are enabled for the pool and, if so, specifies the settings group name that stores user application preferences. (AI-inferred)
+    application_settings: Any = None
+    # The unique identifier of the WorkSpaces bundle that defines the operating system, applications, and hardware configuration for the virtual desktops in the pool. (AI-inferred)
+    bundle_id: Any = None
+    # Configures the desired and maximum number of user sessions for the WorkSpaces pool, controlling how many concurrent sessions the pool can support and its auto-scaling limits. (AI-inferred)
+    capacity: Any = None
+    # The `created_at` attribute specifies the timestamp when the WorkSpaces pool was created. (AI-inferred)
+    created_at: Any = None
+    # Specifies a user-defined description for the WorkSpaces pool to help identify its purpose. (AI-inferred)
+    description: Any = None
+    # The identifier of the AWS Directory Service directory that the WorkSpaces pool uses for users and authentication. (AI-inferred)
+    directory_id: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies this WorkSpaces pool. (AI-inferred)
+    pool_arn: Any = None
+    # The unique identifier assigned by AWS to the WorkSpaces pool, used to reference the pool in other resources and API calls. (AI-inferred)
+    pool_id: Any = None
+    # The name of the WorkSpaces pool, which uniquely identifies the pool within the AWS account and region. (AI-inferred)
+    pool_name: Any = None
+    # Specifies whether the WorkSpaces in the pool are always running (ALWAYS_ON) or stop automatically when not in use (AUTO_STOP). (AI-inferred)
+    running_mode: Any = None
+    # Defines the tags (key-value pairs) to associate with this WorkSpaces pool resource. (AI-inferred)
+    tags: Any = None
+    # Defines the session timeout settings for the WorkSpaces pool, including the disconnect timeout, idle disconnect timeout, and maximum user duration in seconds. (AI-inferred)
+    timeout_settings: Any = None
 
 Pool = ubx.ResourceBinding(
     wire_type="aws_workspaces_pool",
     fields={
         "application_settings": ubx.FieldSpec(
             wire_name="application_settings",
-            kind="list",
+            kind="object",
             fields=_Pool_ApplicationSettingsFields,
         ),
         "bundle_id": ubx.FieldSpec(wire_name="bundle_id"),
+        "capacity": ubx.FieldSpec(
+            wire_name="capacity",
+            kind="object",
+            fields=_Pool_CapacityFields,
+        ),
         "description": ubx.FieldSpec(wire_name="description"),
         "directory_id": ubx.FieldSpec(wire_name="directory_id"),
         "pool_name": ubx.FieldSpec(wire_name="pool_name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "running_mode": ubx.FieldSpec(wire_name="running_mode"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Pool_TagsFields,
+        ),
         "timeout_settings": ubx.FieldSpec(
             wire_name="timeout_settings",
-            kind="list",
-            fields=_Pool_TimeoutSettingsFields,
-        ),
-        "capacity": ubx.FieldSpec(
-            wire_name="capacity",
-            kind="list",
-            fields=_Pool_CapacityFields,
-        ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
             kind="object",
-            fields=_Pool_TimeoutsFields,
+            fields=_Pool_TimeoutSettingsFields,
         ),
     },
 )

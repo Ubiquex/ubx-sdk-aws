@@ -4,10 +4,22 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EventStreamConfig struct {
+	// The unique identifier (ID) of the Amazon Pinpoint application that the event stream is associated with. (AI-inferred)
 	ApplicationId any
+	// The ARN of the Amazon Kinesis Data Stream or Amazon Data Firehose delivery stream that receives the Pinpoint event stream data. (AI-inferred)
 	DestinationStreamArn any
+	// The ARN of the IAM role that authorizes Amazon Pinpoint to write event data to the configured Amazon Kinesis stream. (AI-inferred)
+	RoleArn any
+}
+
+type EventStreamAttrs struct {
+	// The unique identifier (ID) of the Amazon Pinpoint application that the event stream is associated with. (AI-inferred)
+	ApplicationId any
+	// The ARN of the Amazon Kinesis Data Stream or Amazon Data Firehose delivery stream that receives the Pinpoint event stream data. (AI-inferred)
+	DestinationStreamArn any
+	// The application ID of the Amazon Pinpoint application that this event stream is associated with. (AI-inferred)
 	Id any
-	Region any
+	// The ARN of the IAM role that authorizes Amazon Pinpoint to write event data to the configured Amazon Kinesis stream. (AI-inferred)
 	RoleArn any
 }
 
@@ -16,8 +28,6 @@ var EventStream = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"DestinationStreamArn": ubx.FieldSpec{WireName: "destination_stream_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 	},
 }

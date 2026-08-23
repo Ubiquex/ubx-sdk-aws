@@ -8,15 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ReceiptRuleSetConfig:
-    id: Any = None
-    region: Any = None
+    # The name of the rule set.
+    rule_set_name: Any = None
+
+@dataclasses.dataclass
+class ReceiptRuleSetAttrs:
+    # The name of the rule set.
     rule_set_name: Any = None
 
 ReceiptRuleSet = ubx.ResourceBinding(
     wire_type="aws_ses_receipt_rule_set",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "rule_set_name": ubx.FieldSpec(wire_name="rule_set_name"),
     },
 )

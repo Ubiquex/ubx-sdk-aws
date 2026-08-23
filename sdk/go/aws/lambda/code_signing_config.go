@@ -4,48 +4,79 @@ package lambda
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeSigningConfig_AllowedPublishers struct {
+	// List of Signing profile version Arns
 	SigningProfileVersionArns any
 }
 
-type CodeSigningConfig_Policies struct {
+type CodeSigningConfig_CodeSigningPolicies struct {
+	// Indicates how Lambda operations involve updating the code artifact will operate. Default to Warn if not provided
 	UntrustedArtifactOnDeployment any
+}
+
+type CodeSigningConfig_Tags struct {
+	// The key of a tag assigned to the AWS Lambda code signing configuration, used to identify and organize the resource. (AI-inferred)
+	Key any
+	// The value of a user-defined tag applied to the AWS Lambda code signing configuration. (AI-inferred)
+	Value any
 }
 
 var CodeSigningConfig_AllowedPublishersFields = ubx.FieldMap{
 		"SigningProfileVersionArns": ubx.FieldSpec{WireName: "signing_profile_version_arns"},
 	}
 
-var CodeSigningConfig_PoliciesFields = ubx.FieldMap{
+var CodeSigningConfig_CodeSigningPoliciesFields = ubx.FieldMap{
 		"UntrustedArtifactOnDeployment": ubx.FieldSpec{WireName: "untrusted_artifact_on_deployment"},
 	}
 
+var CodeSigningConfig_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type CodeSigningConfigConfig struct {
-	Description any
-	Id any
-	Region any
-	Tags any
-	TagsAll any
+	// When the CodeSigningConfig is later on attached to a function, the function code will be expected to be signed by profiles from this list
 	AllowedPublishers any
-	Policies any
+	// Policies to control how to act if a signature is invalid
+	CodeSigningPolicies any
+	// A description of the CodeSigningConfig
+	Description any
+	// A list of tags to apply to CodeSigningConfig resource
+	Tags any
+}
+
+type CodeSigningConfigAttrs struct {
+	// When the CodeSigningConfig is later on attached to a function, the function code will be expected to be signed by profiles from this list
+	AllowedPublishers any
+	// A unique Arn for CodeSigningConfig resource
+	CodeSigningConfigArn any
+	// A unique identifier for CodeSigningConfig resource
+	CodeSigningConfigId any
+	// Policies to control how to act if a signature is invalid
+	CodeSigningPolicies any
+	// A description of the CodeSigningConfig
+	Description any
+	// A list of tags to apply to CodeSigningConfig resource
+	Tags any
 }
 
 var CodeSigningConfig = ubx.ResourceBinding{
 	WireType: "aws_lambda_code_signing_config",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"AllowedPublishers": ubx.FieldSpec{
 			WireName: "allowed_publishers",
-			Kind: "list",
+			Kind: "object",
 			Fields: CodeSigningConfig_AllowedPublishersFields,
 		},
-		"Policies": ubx.FieldSpec{
-			WireName: "policies",
+		"CodeSigningPolicies": ubx.FieldSpec{
+			WireName: "code_signing_policies",
+			Kind: "object",
+			Fields: CodeSigningConfig_CodeSigningPoliciesFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: CodeSigningConfig_PoliciesFields,
+			Fields: CodeSigningConfig_TagsFields,
 		},
 	},
 }

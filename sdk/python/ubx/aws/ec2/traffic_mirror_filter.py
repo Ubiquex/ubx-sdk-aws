@@ -7,22 +7,45 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TrafficMirrorFilter_Tags:
+    key: Any = None
+    # The value portion of a tag entry attached to the EC2 Traffic Mirror Filter, used to store arbitrary metadata for identification or categorization. (AI-inferred)
+    value: Any = None
+
+_TrafficMirrorFilter_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class TrafficMirrorFilterConfig:
+    # The description of a traffic mirror filter.
     description: Any = None
-    id: Any = None
+    # The network service that is associated with the traffic mirror filter.
     network_services: Any = None
-    region: Any = None
+    # The tags for a traffic mirror filter.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class TrafficMirrorFilterAttrs:
+    # The description of a traffic mirror filter.
+    description: Any = None
+    # The ID of a traffic mirror filter.
+    id: Any = None
+    # The network service that is associated with the traffic mirror filter.
+    network_services: Any = None
+    # The tags for a traffic mirror filter.
+    tags: Any = None
 
 TrafficMirrorFilter = ubx.ResourceBinding(
     wire_type="aws_ec2_traffic_mirror_filter",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "network_services": ubx.FieldSpec(wire_name="network_services"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_TrafficMirrorFilter_TagsFields,
+        ),
     },
 )

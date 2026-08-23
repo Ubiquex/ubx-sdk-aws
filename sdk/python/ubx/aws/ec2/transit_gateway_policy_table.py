@@ -7,20 +7,44 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TransitGatewayPolicyTable_Tags:
+    key: Any = None
+    # The value of a user-defined tag key assigned to the transit gateway policy table, used for metadata and resource identification. (AI-inferred)
+    value: Any = None
+
+_TransitGatewayPolicyTable_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class TransitGatewayPolicyTableConfig:
-    id: Any = None
-    region: Any = None
+    # Specifies a list of tags (key-value pairs) to attach to the EC2 Transit Gateway Policy Table, used for identifying and organizing the resource. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
+    # The Id of transit gateway
     transit_gateway_id: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayPolicyTableAttrs:
+    # Creation time of the transit gateway policy table
+    creation_time: Any = None
+    # State of the transit gateway policy table
+    state: Any = None
+    # Specifies a list of tags (key-value pairs) to attach to the EC2 Transit Gateway Policy Table, used for identifying and organizing the resource. (AI-inferred)
+    tags: Any = None
+    # The Id of transit gateway
+    transit_gateway_id: Any = None
+    # The Id of transit gateway policy table.
+    transit_gateway_policy_table_id: Any = None
 
 TransitGatewayPolicyTable = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_policy_table",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_TransitGatewayPolicyTable_TagsFields,
+        ),
         "transit_gateway_id": ubx.FieldSpec(wire_name="transit_gateway_id"),
     },
 )

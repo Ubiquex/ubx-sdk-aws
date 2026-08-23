@@ -3,31 +3,64 @@ package kms
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ReplicaKey_Tags struct {
+	// The key of a tag attached to the AWS KMS replica key, used as part of a key-value pair to identify, categorize, and manage the resource. (AI-inferred)
+	Key any
+	// The value component of a key-value tag that can be assigned to the AWS KMS replica key for resource identification and management. (AI-inferred)
+	Value any
+}
+
+var ReplicaKey_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ReplicaKeyConfig struct {
-	BypassPolicyLockoutSafetyCheck any
-	DeletionWindowInDays any
+	// A description of the AWS KMS key. Use a description that helps you to distinguish this AWS KMS key from others in the account, such as its intended use.
 	Description any
+	// Specifies whether the AWS KMS key is enabled. Disabled AWS KMS keys cannot be used in cryptographic operations.
 	Enabled any
-	Id any
-	Policy any
+	// The key policy that authorizes use of the AWS KMS key. The key policy must observe the following rules.
+	KeyPolicy any
+	// Specifies the number of days in the waiting period before AWS KMS deletes an AWS KMS key that has been removed from a CloudFormation stack. Enter a value between 7 and 30 days. The default value is 30 days.
+	PendingWindowInDays any
+	// Identifies the primary AWS KMS key to create a replica of. Specify the Amazon Resource Name (ARN) of the AWS KMS key. You cannot specify an alias or key ID. For help finding the ARN, see Finding the Key ID and ARN in the AWS Key Management Service Developer Guide.
 	PrimaryKeyArn any
-	Region any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
+}
+
+type ReplicaKeyAttrs struct {
+	// The Amazon Resource Name (ARN) of the replica key. (AI-inferred)
+	Arn any
+	// A description of the AWS KMS key. Use a description that helps you to distinguish this AWS KMS key from others in the account, such as its intended use.
+	Description any
+	// Specifies whether the AWS KMS key is enabled. Disabled AWS KMS keys cannot be used in cryptographic operations.
+	Enabled any
+	// The unique identifier of the replica KMS key, returned as a 32-character UUID string, which can be used to reference the key in IAM policies, aliases, and encryption operations. (AI-inferred)
+	KeyId any
+	// The key policy that authorizes use of the AWS KMS key. The key policy must observe the following rules.
+	KeyPolicy any
+	// Specifies the number of days in the waiting period before AWS KMS deletes an AWS KMS key that has been removed from a CloudFormation stack. Enter a value between 7 and 30 days. The default value is 30 days.
+	PendingWindowInDays any
+	// Identifies the primary AWS KMS key to create a replica of. Specify the Amazon Resource Name (ARN) of the AWS KMS key. You cannot specify an alias or key ID. For help finding the ARN, see Finding the Key ID and ARN in the AWS Key Management Service Developer Guide.
+	PrimaryKeyArn any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var ReplicaKey = ubx.ResourceBinding{
 	WireType: "aws_kms_replica_key",
 	Fields: ubx.FieldMap{
-		"BypassPolicyLockoutSafetyCheck": ubx.FieldSpec{WireName: "bypass_policy_lockout_safety_check"},
-		"DeletionWindowInDays": ubx.FieldSpec{WireName: "deletion_window_in_days"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"KeyPolicy": ubx.FieldSpec{WireName: "key_policy"},
+		"PendingWindowInDays": ubx.FieldSpec{WireName: "pending_window_in_days"},
 		"PrimaryKeyArn": ubx.FieldSpec{WireName: "primary_key_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ReplicaKey_TagsFields,
+		},
 	},
 }

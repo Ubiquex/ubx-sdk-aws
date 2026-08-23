@@ -3,10 +3,41 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LocalGatewayRouteTableVirtualInterfaceGroupAssociation_Tags struct {
+	// A user-defined key for a tag on this AWS Local Gateway Route Table Virtual Interface Group Association, used to categorize, organize, or filter the resource in AWS. (AI-inferred)
+	Key any
+	// The value of a tag key attached to the Local Gateway Route Table Virtual Interface Group Association, used for identifying and organizing the resource. (AI-inferred)
+	Value any
+}
+
+var LocalGatewayRouteTableVirtualInterfaceGroupAssociation_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type LocalGatewayRouteTableVirtualInterfaceGroupAssociationConfig struct {
+	// The ID of the local gateway route table.
 	LocalGatewayRouteTableId any
+	// The ID of the local gateway route table virtual interface group.
 	LocalGatewayVirtualInterfaceGroupId any
-	Region any
+	Tags any
+}
+
+type LocalGatewayRouteTableVirtualInterfaceGroupAssociationAttrs struct {
+	// The ID of the local gateway.
+	LocalGatewayId any
+	// The ARN of the local gateway route table.
+	LocalGatewayRouteTableArn any
+	// The ID of the local gateway route table.
+	LocalGatewayRouteTableId any
+	// The ID of the local gateway route table virtual interface group association.
+	LocalGatewayRouteTableVirtualInterfaceGroupAssociationId any
+	// The ID of the local gateway route table virtual interface group.
+	LocalGatewayVirtualInterfaceGroupId any
+	// The owner of the local gateway route table virtual interface group association.
+	OwnerId any
+	// The state of the local gateway route table virtual interface group association.
+	State any
 	Tags any
 }
 
@@ -15,7 +46,10 @@ var LocalGatewayRouteTableVirtualInterfaceGroupAssociation = ubx.ResourceBinding
 	Fields: ubx.FieldMap{
 		"LocalGatewayRouteTableId": ubx.FieldSpec{WireName: "local_gateway_route_table_id"},
 		"LocalGatewayVirtualInterfaceGroupId": ubx.FieldSpec{WireName: "local_gateway_virtual_interface_group_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: LocalGatewayRouteTableVirtualInterfaceGroupAssociation_TagsFields,
+		},
 	},
 }

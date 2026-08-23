@@ -7,30 +7,104 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Schema_CheckpointVersion:
+    # Indicates if the latest version needs to be updated.
+    is_latest: Any = None
+    # Indicates the version number in the schema to update.
+    version_number: Any = None
+
+@dataclasses.dataclass
+class Schema_Registry:
+    # Amazon Resource Name for the Registry.
+    arn: Any = None
+    # Name of the registry in which the schema will be created.
+    name: Any = None
+
+@dataclasses.dataclass
+class Schema_Tags:
+    key: Any = None
+    # The value of a tag attached to an AWS Glue schema, which allows you to assign custom metadata to the schema for cost tracking, access control, and operational organization. (AI-inferred)
+    value: Any = None
+
+_Schema_CheckpointVersionFields = {
+    "is_latest": ubx.FieldSpec(wire_name="is_latest"),
+    "version_number": ubx.FieldSpec(wire_name="version_number"),
+}
+
+_Schema_RegistryFields = {
+    "arn": ubx.FieldSpec(wire_name="arn"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
+_Schema_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class SchemaConfig:
+    # Specify checkpoint version for update. This is only required to update the Compatibility.
+    checkpoint_version: Any = None
+    # Compatibility setting for the schema.
     compatibility: Any = None
+    # Data format name to use for the schema. Accepted values: 'AVRO', 'JSON', 'PROTOBUF'
     data_format: Any = None
+    # A description of the schema. If description is not provided, there will not be any default value for this.
     description: Any = None
-    id: Any = None
-    region: Any = None
-    registry_arn: Any = None
+    # Name of the schema.
+    name: Any = None
+    # Identifier for the registry which the schema is part of.
+    registry: Any = None
+    # Definition for the initial schema version in plain-text.
     schema_definition: Any = None
-    schema_name: Any = None
+    # List of tags to tag the schema
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class SchemaAttrs:
+    # Amazon Resource Name for the Schema.
+    arn: Any = None
+    # Specify checkpoint version for update. This is only required to update the Compatibility.
+    checkpoint_version: Any = None
+    # Compatibility setting for the schema.
+    compatibility: Any = None
+    # Data format name to use for the schema. Accepted values: 'AVRO', 'JSON', 'PROTOBUF'
+    data_format: Any = None
+    # A description of the schema. If description is not provided, there will not be any default value for this.
+    description: Any = None
+    # Represents the version ID associated with the initial schema version.
+    initial_schema_version_id: Any = None
+    # Name of the schema.
+    name: Any = None
+    # Identifier for the registry which the schema is part of.
+    registry: Any = None
+    # Definition for the initial schema version in plain-text.
+    schema_definition: Any = None
+    # List of tags to tag the schema
+    tags: Any = None
 
 Schema = ubx.ResourceBinding(
     wire_type="aws_glue_schema",
     fields={
+        "checkpoint_version": ubx.FieldSpec(
+            wire_name="checkpoint_version",
+            kind="object",
+            fields=_Schema_CheckpointVersionFields,
+        ),
         "compatibility": ubx.FieldSpec(wire_name="compatibility"),
         "data_format": ubx.FieldSpec(wire_name="data_format"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "registry_arn": ubx.FieldSpec(wire_name="registry_arn"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "registry": ubx.FieldSpec(
+            wire_name="registry",
+            kind="object",
+            fields=_Schema_RegistryFields,
+        ),
         "schema_definition": ubx.FieldSpec(wire_name="schema_definition"),
-        "schema_name": ubx.FieldSpec(wire_name="schema_name"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Schema_TagsFields,
+        ),
     },
 )

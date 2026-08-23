@@ -8,90 +8,141 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Schedule_FlexibleTimeWindow:
+    # The maximum time window during which a schedule can be invoked.
     maximum_window_in_minutes: Any = None
+    # Determines whether the schedule is executed within a flexible time window.
     mode: Any = None
 
 @dataclasses.dataclass
 class Schedule_Target_DeadLetterConfig:
+    # The ARN of the SQS queue specified as the target for the dead-letter queue.
     arn: Any = None
 
 @dataclasses.dataclass
 class Schedule_Target_EcsParameters_CapacityProviderStrategy:
+    # The base value in the capacity provider strategy defines the minimum number of tasks that must be run on this capacity provider before the provider's weight is considered for additional task placement. (AI-inferred)
     base: Any = None
+    # The short name of the capacity provider that ECS uses for placing the task when the schedule triggers. (AI-inferred)
     capacity_provider: Any = None
+    # Specifies the relative weight of this capacity provider in the strategy, determining the proportional share of tasks placed on it compared to other capacity providers. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
-class Schedule_Target_EcsParameters_NetworkConfiguration:
+class Schedule_Target_EcsParameters_NetworkConfiguration_AwsvpcConfiguration:
+    # Specifies whether the task's elastic network interface receives a public IP address. You can specify ENABLED only when LaunchType in EcsParameters is set to FARGATE.
     assign_public_ip: Any = None
+    # Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.
     security_groups: Any = None
+    # Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.
     subnets: Any = None
 
 @dataclasses.dataclass
+class Schedule_Target_EcsParameters_NetworkConfiguration:
+    # This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.
+    awsvpc_configuration: Any = None
+
+@dataclasses.dataclass
 class Schedule_Target_EcsParameters_PlacementConstraints:
+    # The expression, such as attribute:instance-type =~ t2.*, that defines the placement constraint for the Amazon ECS task scheduled by this EventBridge Scheduler schedule. (AI-inferred)
     expression: Any = None
+    # The type of placement constraint for the ECS task, either 'distinctInstance' to place each task on a different container instance or 'memberOf' to constrain placement using a cluster query language expression. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Schedule_Target_EcsParameters_PlacementStrategy:
+    # Specifies the field (for example, `instanceId`, `host`, or an attribute expression) on which the ECS placement strategy operates, matching the ECS `PlacementStrategy.field` property. (AI-inferred)
     field: Any = None
+    # Specifies the ECS placement strategy type for the scheduler-targeted task, choosing between random, spread, or binpack to control how tasks are distributed across container instances. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Schedule_Target_EcsParameters:
-    enable_ecs_managed_tags: Any = None
-    enable_execute_command: Any = None
-    group: Any = None
-    launch_type: Any = None
-    platform_version: Any = None
-    propagate_tags: Any = None
-    reference_id: Any = None
-    tags: Any = None
-    task_count: Any = None
-    task_definition_arn: Any = None
+    # The capacity provider strategy to use for the task.
     capacity_provider_strategy: Any = None
+    # Specifies whether to enable Amazon ECS managed tags for the task. For more information, see Tagging Your Amazon ECS Resources in the Amazon Elastic Container Service Developer Guide.
+    enable_ecsmanaged_tags: Any = None
+    # Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.
+    enable_execute_command: Any = None
+    # Specifies an ECS task group for the task. The maximum length is 255 characters.
+    group: Any = None
+    # Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The FARGATE value is supported only in the Regions where AWS Fargate with Amazon ECS is supported. For more information, see AWS Fargate on Amazon ECS in the Amazon Elastic Container Service Developer Guide.
+    launch_type: Any = None
+    # This structure specifies the network configuration for an ECS task.
     network_configuration: Any = None
+    # An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).
     placement_constraints: Any = None
+    # The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.
     placement_strategy: Any = None
+    # Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as 1.1.0.
+    platform_version: Any = None
+    # Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action.
+    propagate_tags: Any = None
+    # The reference ID to use for the task.
+    reference_id: Any = None
+    # The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see RunTask in the Amazon ECS API Reference.
+    tags: Any = None
+    # The number of tasks to create based on TaskDefinition. The default is 1.
+    task_count: Any = None
+    # The ARN of the task definition to use if the event target is an Amazon ECS task.
+    task_definition_arn: Any = None
 
 @dataclasses.dataclass
-class Schedule_Target_EventbridgeParameters:
+class Schedule_Target_EventBridgeParameters:
+    # Free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.
     detail_type: Any = None
+    # The source of the event.
     source: Any = None
 
 @dataclasses.dataclass
 class Schedule_Target_KinesisParameters:
+    # The custom parameter used as the Kinesis partition key. For more information, see Amazon Kinesis Streams Key Concepts in the Amazon Kinesis Streams Developer Guide.
     partition_key: Any = None
 
 @dataclasses.dataclass
 class Schedule_Target_RetryPolicy:
+    # The maximum amount of time, in seconds, to continue to make retry attempts.
     maximum_event_age_in_seconds: Any = None
+    # The maximum number of retry attempts to make before the request fails. Retry attempts with exponential backoff continue until either the maximum number of attempts is made or until the duration of the MaximumEventAgeInSeconds is reached.
     maximum_retry_attempts: Any = None
 
 @dataclasses.dataclass
-class Schedule_Target_SagemakerPipelineParameters_PipelineParameter:
+class Schedule_Target_SageMakerPipelineParameters_PipelineParameterList:
+    # The name of the SageMaker pipeline parameter to pass to the pipeline execution when the schedule triggers the target. (AI-inferred)
     name: Any = None
+    # The value to assign to the specified SageMaker pipeline parameter when the schedule triggers the pipeline. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
-class Schedule_Target_SagemakerPipelineParameters:
-    pipeline_parameter: Any = None
+class Schedule_Target_SageMakerPipelineParameters:
+    # List of Parameter names and values for SageMaker Model Building Pipeline execution.
+    pipeline_parameter_list: Any = None
 
 @dataclasses.dataclass
 class Schedule_Target_SqsParameters:
+    # The FIFO message group ID to use as the target.
     message_group_id: Any = None
 
 @dataclasses.dataclass
 class Schedule_Target:
+    # The Amazon Resource Name (ARN) of the target.
     arn: Any = None
-    input: Any = None
-    role_arn: Any = None
+    # A DeadLetterConfig object that contains information about a dead-letter queue configuration.
     dead_letter_config: Any = None
+    # The custom parameters to be used when the target is an Amazon ECS task.
     ecs_parameters: Any = None
-    eventbridge_parameters: Any = None
+    # EventBridge PutEvent predefined target type.
+    event_bridge_parameters: Any = None
+    # The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.
+    input: Any = None
+    # The custom parameter you can use to control the shard to which EventBridge Scheduler sends the event.
     kinesis_parameters: Any = None
+    # A RetryPolicy object that includes information about the retry policy settings.
     retry_policy: Any = None
-    sagemaker_pipeline_parameters: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role to be used for this target when the schedule is triggered.
+    role_arn: Any = None
+    # These are custom parameters to use when the target is a SageMaker Model Building Pipeline that starts based on AWS EventBridge Scheduler schedules.
+    sage_maker_pipeline_parameters: Any = None
+    # Contains the message group ID to use when the target is a FIFO queue. If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.
     sqs_parameters: Any = None
 
 _Schedule_FlexibleTimeWindowFields = {
@@ -109,10 +160,18 @@ _Schedule_Target_EcsParameters_CapacityProviderStrategyFields = {
     "weight": ubx.FieldSpec(wire_name="weight"),
 }
 
-_Schedule_Target_EcsParameters_NetworkConfigurationFields = {
+_Schedule_Target_EcsParameters_NetworkConfiguration_AwsvpcConfigurationFields = {
     "assign_public_ip": ubx.FieldSpec(wire_name="assign_public_ip"),
     "security_groups": ubx.FieldSpec(wire_name="security_groups"),
     "subnets": ubx.FieldSpec(wire_name="subnets"),
+}
+
+_Schedule_Target_EcsParameters_NetworkConfigurationFields = {
+    "awsvpc_configuration": ubx.FieldSpec(
+        wire_name="awsvpc_configuration",
+        kind="object",
+        fields=_Schedule_Target_EcsParameters_NetworkConfiguration_AwsvpcConfigurationFields,
+    ),
 }
 
 _Schedule_Target_EcsParameters_PlacementConstraintsFields = {
@@ -126,39 +185,39 @@ _Schedule_Target_EcsParameters_PlacementStrategyFields = {
 }
 
 _Schedule_Target_EcsParametersFields = {
-    "enable_ecs_managed_tags": ubx.FieldSpec(wire_name="enable_ecs_managed_tags"),
+    "capacity_provider_strategy": ubx.FieldSpec(
+        wire_name="capacity_provider_strategy",
+        kind="list",
+        fields=_Schedule_Target_EcsParameters_CapacityProviderStrategyFields,
+    ),
+    "enable_ecsmanaged_tags": ubx.FieldSpec(wire_name="enable_ecsmanaged_tags"),
     "enable_execute_command": ubx.FieldSpec(wire_name="enable_execute_command"),
     "group": ubx.FieldSpec(wire_name="group"),
     "launch_type": ubx.FieldSpec(wire_name="launch_type"),
+    "network_configuration": ubx.FieldSpec(
+        wire_name="network_configuration",
+        kind="object",
+        fields=_Schedule_Target_EcsParameters_NetworkConfigurationFields,
+    ),
+    "placement_constraints": ubx.FieldSpec(
+        wire_name="placement_constraints",
+        kind="list",
+        fields=_Schedule_Target_EcsParameters_PlacementConstraintsFields,
+    ),
+    "placement_strategy": ubx.FieldSpec(
+        wire_name="placement_strategy",
+        kind="list",
+        fields=_Schedule_Target_EcsParameters_PlacementStrategyFields,
+    ),
     "platform_version": ubx.FieldSpec(wire_name="platform_version"),
     "propagate_tags": ubx.FieldSpec(wire_name="propagate_tags"),
     "reference_id": ubx.FieldSpec(wire_name="reference_id"),
     "tags": ubx.FieldSpec(wire_name="tags"),
     "task_count": ubx.FieldSpec(wire_name="task_count"),
     "task_definition_arn": ubx.FieldSpec(wire_name="task_definition_arn"),
-    "capacity_provider_strategy": ubx.FieldSpec(
-        wire_name="capacity_provider_strategy",
-        kind="set",
-        fields=_Schedule_Target_EcsParameters_CapacityProviderStrategyFields,
-    ),
-    "network_configuration": ubx.FieldSpec(
-        wire_name="network_configuration",
-        kind="list",
-        fields=_Schedule_Target_EcsParameters_NetworkConfigurationFields,
-    ),
-    "placement_constraints": ubx.FieldSpec(
-        wire_name="placement_constraints",
-        kind="set",
-        fields=_Schedule_Target_EcsParameters_PlacementConstraintsFields,
-    ),
-    "placement_strategy": ubx.FieldSpec(
-        wire_name="placement_strategy",
-        kind="set",
-        fields=_Schedule_Target_EcsParameters_PlacementStrategyFields,
-    ),
 }
 
-_Schedule_Target_EventbridgeParametersFields = {
+_Schedule_Target_EventBridgeParametersFields = {
     "detail_type": ubx.FieldSpec(wire_name="detail_type"),
     "source": ubx.FieldSpec(wire_name="source"),
 }
@@ -172,16 +231,16 @@ _Schedule_Target_RetryPolicyFields = {
     "maximum_retry_attempts": ubx.FieldSpec(wire_name="maximum_retry_attempts"),
 }
 
-_Schedule_Target_SagemakerPipelineParameters_PipelineParameterFields = {
+_Schedule_Target_SageMakerPipelineParameters_PipelineParameterListFields = {
     "name": ubx.FieldSpec(wire_name="name"),
     "value": ubx.FieldSpec(wire_name="value"),
 }
 
-_Schedule_Target_SagemakerPipelineParametersFields = {
-    "pipeline_parameter": ubx.FieldSpec(
-        wire_name="pipeline_parameter",
-        kind="set",
-        fields=_Schedule_Target_SagemakerPipelineParameters_PipelineParameterFields,
+_Schedule_Target_SageMakerPipelineParametersFields = {
+    "pipeline_parameter_list": ubx.FieldSpec(
+        wire_name="pipeline_parameter_list",
+        kind="list",
+        fields=_Schedule_Target_SageMakerPipelineParameters_PipelineParameterListFields,
     ),
 }
 
@@ -191,87 +250,117 @@ _Schedule_Target_SqsParametersFields = {
 
 _Schedule_TargetFields = {
     "arn": ubx.FieldSpec(wire_name="arn"),
-    "input": ubx.FieldSpec(wire_name="input"),
-    "role_arn": ubx.FieldSpec(wire_name="role_arn"),
     "dead_letter_config": ubx.FieldSpec(
         wire_name="dead_letter_config",
-        kind="list",
+        kind="object",
         fields=_Schedule_Target_DeadLetterConfigFields,
     ),
     "ecs_parameters": ubx.FieldSpec(
         wire_name="ecs_parameters",
-        kind="list",
+        kind="object",
         fields=_Schedule_Target_EcsParametersFields,
     ),
-    "eventbridge_parameters": ubx.FieldSpec(
-        wire_name="eventbridge_parameters",
-        kind="list",
-        fields=_Schedule_Target_EventbridgeParametersFields,
+    "event_bridge_parameters": ubx.FieldSpec(
+        wire_name="event_bridge_parameters",
+        kind="object",
+        fields=_Schedule_Target_EventBridgeParametersFields,
     ),
+    "input": ubx.FieldSpec(wire_name="input"),
     "kinesis_parameters": ubx.FieldSpec(
         wire_name="kinesis_parameters",
-        kind="list",
+        kind="object",
         fields=_Schedule_Target_KinesisParametersFields,
     ),
     "retry_policy": ubx.FieldSpec(
         wire_name="retry_policy",
-        kind="list",
+        kind="object",
         fields=_Schedule_Target_RetryPolicyFields,
     ),
-    "sagemaker_pipeline_parameters": ubx.FieldSpec(
-        wire_name="sagemaker_pipeline_parameters",
-        kind="list",
-        fields=_Schedule_Target_SagemakerPipelineParametersFields,
+    "role_arn": ubx.FieldSpec(wire_name="role_arn"),
+    "sage_maker_pipeline_parameters": ubx.FieldSpec(
+        wire_name="sage_maker_pipeline_parameters",
+        kind="object",
+        fields=_Schedule_Target_SageMakerPipelineParametersFields,
     ),
     "sqs_parameters": ubx.FieldSpec(
         wire_name="sqs_parameters",
-        kind="list",
+        kind="object",
         fields=_Schedule_Target_SqsParametersFields,
     ),
 }
 
 @dataclasses.dataclass
 class ScheduleConfig:
-    action_after_completion: Any = None
+    # The description of the schedule.
     description: Any = None
+    # The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the EndDate you specify.
     end_date: Any = None
-    group_name: Any = None
-    id: Any = None
-    kms_key_arn: Any = None
-    name: Any = None
-    name_prefix: Any = None
-    region: Any = None
-    schedule_expression: Any = None
-    schedule_expression_timezone: Any = None
-    start_date: Any = None
-    state: Any = None
+    # Flexible time window allows configuration of a window within which a schedule can be invoked
     flexible_time_window: Any = None
+    # The name of the schedule group to associate with this schedule. If you omit this, the default schedule group is used.
+    group_name: Any = None
+    # The ARN for a KMS Key that will be used to encrypt customer data.
+    kms_key_arn: Any = None
+    # Specifies the name of the Amazon EventBridge Scheduler schedule, which must be unique within a schedule group; if omitted, CloudFormation generates a unique name for the schedule. (AI-inferred)
+    name: Any = None
+    # The scheduling expression.
+    schedule_expression: Any = None
+    # The timezone in which the scheduling expression is evaluated.
+    schedule_expression_timezone: Any = None
+    # The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the StartDate you specify.
+    start_date: Any = None
+    # Specifies whether the schedule is enabled or disabled.
+    state: Any = None
+    # The schedule target.
+    target: Any = None
+
+@dataclasses.dataclass
+class ScheduleAttrs:
+    # The Amazon Resource Name (ARN) of the schedule.
+    arn: Any = None
+    # The description of the schedule.
+    description: Any = None
+    # The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the EndDate you specify.
+    end_date: Any = None
+    # Flexible time window allows configuration of a window within which a schedule can be invoked
+    flexible_time_window: Any = None
+    # The name of the schedule group to associate with this schedule. If you omit this, the default schedule group is used.
+    group_name: Any = None
+    # The ARN for a KMS Key that will be used to encrypt customer data.
+    kms_key_arn: Any = None
+    # Specifies the name of the Amazon EventBridge Scheduler schedule, which must be unique within a schedule group; if omitted, CloudFormation generates a unique name for the schedule. (AI-inferred)
+    name: Any = None
+    # The scheduling expression.
+    schedule_expression: Any = None
+    # The timezone in which the scheduling expression is evaluated.
+    schedule_expression_timezone: Any = None
+    # The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the StartDate you specify.
+    start_date: Any = None
+    # Specifies whether the schedule is enabled or disabled.
+    state: Any = None
+    # The schedule target.
     target: Any = None
 
 Schedule = ubx.ResourceBinding(
     wire_type="aws_scheduler_schedule",
     fields={
-        "action_after_completion": ubx.FieldSpec(wire_name="action_after_completion"),
         "description": ubx.FieldSpec(wire_name="description"),
         "end_date": ubx.FieldSpec(wire_name="end_date"),
+        "flexible_time_window": ubx.FieldSpec(
+            wire_name="flexible_time_window",
+            kind="object",
+            fields=_Schedule_FlexibleTimeWindowFields,
+        ),
         "group_name": ubx.FieldSpec(wire_name="group_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "schedule_expression": ubx.FieldSpec(wire_name="schedule_expression"),
         "schedule_expression_timezone": ubx.FieldSpec(wire_name="schedule_expression_timezone"),
         "start_date": ubx.FieldSpec(wire_name="start_date"),
         "state": ubx.FieldSpec(wire_name="state"),
-        "flexible_time_window": ubx.FieldSpec(
-            wire_name="flexible_time_window",
-            kind="list",
-            fields=_Schedule_FlexibleTimeWindowFields,
-        ),
         "target": ubx.FieldSpec(
             wire_name="target",
-            kind="list",
+            kind="object",
             fields=_Schedule_TargetFields,
         ),
     },

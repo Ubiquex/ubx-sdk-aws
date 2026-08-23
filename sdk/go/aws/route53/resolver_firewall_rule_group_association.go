@@ -3,15 +3,60 @@ package route53
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ResolverFirewallRuleGroupAssociation_Tags struct {
+	Key any
+	// The value part of a tag attached to the Route 53 Resolver firewall rule group association, used to attach arbitrary metadata like environment or owner for identifying and managing the association. (AI-inferred)
+	Value any
+}
+
+var ResolverFirewallRuleGroupAssociation_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ResolverFirewallRuleGroupAssociationConfig struct {
+	// FirewallRuleGroupId
 	FirewallRuleGroupId any
-	Id any
+	// MutationProtectionStatus
 	MutationProtection any
+	// FirewallRuleGroupAssociationName
 	Name any
+	// Priority
 	Priority any
-	Region any
+	// Tags
 	Tags any
-	TagsAll any
+	// VpcId
+	VpcId any
+}
+
+type ResolverFirewallRuleGroupAssociationAttrs struct {
+	// Arn
+	Arn any
+	// Rfc3339TimeString
+	CreationTime any
+	// The id of the creator request.
+	CreatorRequestId any
+	// FirewallRuleGroupId
+	FirewallRuleGroupId any
+	// Id
+	Id any
+	// ServicePrincipal
+	ManagedOwnerName any
+	// Rfc3339TimeString
+	ModificationTime any
+	// MutationProtectionStatus
+	MutationProtection any
+	// FirewallRuleGroupAssociationName
+	Name any
+	// Priority
+	Priority any
+	// ResolverFirewallRuleGroupAssociation, possible values are COMPLETE, DELETING, UPDATING, and INACTIVE_OWNER_ACCOUNT_CLOSED.
+	Status any
+	// FirewallDomainListAssociationStatus
+	StatusMessage any
+	// Tags
+	Tags any
+	// VpcId
 	VpcId any
 }
 
@@ -19,13 +64,14 @@ var ResolverFirewallRuleGroupAssociation = ubx.ResourceBinding{
 	WireType: "aws_route53_resolver_firewall_rule_group_association",
 	Fields: ubx.FieldMap{
 		"FirewallRuleGroupId": ubx.FieldSpec{WireName: "firewall_rule_group_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"MutationProtection": ubx.FieldSpec{WireName: "mutation_protection"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ResolverFirewallRuleGroupAssociation_TagsFields,
+		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

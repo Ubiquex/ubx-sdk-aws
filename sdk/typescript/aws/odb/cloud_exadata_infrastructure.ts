@@ -2,124 +2,147 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CloudExadataInfrastructure_CustomerContactsToSendToOci {
-  email: string;
-}
-
-export interface CloudExadataInfrastructure_MaintenanceWindow_DaysOfWeek {
-  name: string;
+  /** The email address of a customer contact that Oracle Cloud Infrastructure (OCI) will send notifications to regarding this Exadata infrastructure. (AI-inferred) */
+  email?: string | Computed<string>;
 }
 
 export interface CloudExadataInfrastructure_MaintenanceWindow {
-  customActionTimeoutInMins: number;
-  daysOfWeek: CloudExadataInfrastructure_MaintenanceWindow_DaysOfWeek[];
-  hoursOfDay: number[];
-  isCustomActionTimeoutEnabled: boolean;
-  leadTimeInWeeks: number;
-  months: CloudExadataInfrastructure_MaintenanceWindow_DaysOfWeek[];
-  patchingMode: string;
-  preference: string;
-  weeksOfMonth: number[];
+  /** The timeout duration for custom actions in minutes. */
+  customActionTimeoutInMins?: number | Computed<number>;
+  /** The days of the week when maintenance can be performed. */
+  daysOfWeek?: string[] | Computed<string[]>;
+  /** The hours of the day when maintenance can be performed. */
+  hoursOfDay?: number[] | Computed<number[]>;
+  /** Indicates whether custom action timeout is enabled. */
+  isCustomActionTimeoutEnabled?: boolean | Computed<boolean>;
+  /** The lead time in weeks before the maintenance window. */
+  leadTimeInWeeks?: number | Computed<number>;
+  /** The months when maintenance can be performed. */
+  months?: string[] | Computed<string[]>;
+  /** The patching mode for the maintenance window. */
+  patchingMode?: string | Computed<string>;
+  /** The preference for the maintenance window scheduling. */
+  preference?: string | Computed<string>;
+  /** The weeks of the month when maintenance can be performed. */
+  weeksOfMonth?: number[] | Computed<number[]>;
 }
 
-export interface CloudExadataInfrastructure_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface CloudExadataInfrastructure_Tags {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 const CloudExadataInfrastructure_CustomerContactsToSendToOciFields: FieldMap = {
   email: "email",
 };
 
-const CloudExadataInfrastructure_MaintenanceWindow_DaysOfWeekFields: FieldMap = {
-  name: "name",
-};
-
 const CloudExadataInfrastructure_MaintenanceWindowFields: FieldMap = {
   customActionTimeoutInMins: "custom_action_timeout_in_mins",
-  daysOfWeek: {
-    wireName: "days_of_week",
-    kind: "set",
-    fields: CloudExadataInfrastructure_MaintenanceWindow_DaysOfWeekFields,
-  },
+  daysOfWeek: "days_of_week",
   hoursOfDay: "hours_of_day",
   isCustomActionTimeoutEnabled: "is_custom_action_timeout_enabled",
   leadTimeInWeeks: "lead_time_in_weeks",
-  months: {
-    wireName: "months",
-    kind: "set",
-    fields: CloudExadataInfrastructure_MaintenanceWindow_DaysOfWeekFields,
-  },
+  months: "months",
   patchingMode: "patching_mode",
   preference: "preference",
   weeksOfMonth: "weeks_of_month",
 };
 
-const CloudExadataInfrastructure_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const CloudExadataInfrastructure_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface CloudExadataInfrastructureConfig {
+  /** The name of the Availability Zone (AZ) where the Exadata infrastructure is located. */
   availabilityZone?: string | Computed<string>;
-  availabilityZoneId: string | Computed<string>;
+  /** The AZ ID of the AZ where the Exadata infrastructure is located. */
+  availabilityZoneId?: string | Computed<string>;
+  /** The number of database servers for the Exadata infrastructure. */
   computeCount?: number | Computed<number>;
+  /** The email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. */
   customerContactsToSendToOci?: CloudExadataInfrastructure_CustomerContactsToSendToOci[] | Computed<CloudExadataInfrastructure_CustomerContactsToSendToOci[]>;
+  /** The database server model type of the Exadata infrastructure. For the list of valid model names, use the ListDbSystemShapes operation. */
   databaseServerType?: string | Computed<string>;
-  displayName: string | Computed<string>;
-  region?: string | Computed<string>;
-  shape: string | Computed<string>;
+  /** The user-friendly name for the Exadata infrastructure. */
+  displayName?: string | Computed<string>;
+  /** The scheduling details for the maintenance window. Patching and system updates take place during the maintenance window. */
+  maintenanceWindow?: CloudExadataInfrastructure_MaintenanceWindow | Computed<CloudExadataInfrastructure_MaintenanceWindow>;
+  /** The model name of the Exadata infrastructure. */
+  shape?: string | Computed<string>;
+  /** The number of storage servers that are activated for the Exadata infrastructure. */
   storageCount?: number | Computed<number>;
+  /** The storage server model type of the Exadata infrastructure. For the list of valid model names, use the ListDbSystemShapes operation. */
   storageServerType?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  maintenanceWindow?: CloudExadataInfrastructure_MaintenanceWindow[] | Computed<CloudExadataInfrastructure_MaintenanceWindow[]>;
-  timeouts?: CloudExadataInfrastructure_Timeouts | Computed<CloudExadataInfrastructure_Timeouts>;
+  /** Tags to assign to the Exadata Infrastructure. */
+  tags?: CloudExadataInfrastructure_Tags[] | Computed<CloudExadataInfrastructure_Tags[]>;
 }
 
 export interface CloudExadataInfrastructureAttrs {
+  /** The number of storage servers requested for the Exadata infrastructure. */
   activatedStorageCount: number;
+  /** The number of storage servers requested for the Exadata infrastructure. */
   additionalStorageCount: number;
-  arn: string;
+  /** The name of the Availability Zone (AZ) where the Exadata infrastructure is located. */
   availabilityZone: string;
+  /** The AZ ID of the AZ where the Exadata infrastructure is located. */
   availabilityZoneId: string;
+  /** The amount of available storage, in gigabytes (GB), for the Exadata infrastructure. */
   availableStorageSizeInGbs: number;
+  /** The Amazon Resource Name (ARN) for the Exadata infrastructure. */
+  cloudExadataInfrastructureArn: string;
+  /** The unique identifier for the Exadata infrastructure. */
+  cloudExadataInfrastructureId: string;
+  /** The number of database servers for the Exadata infrastructure. */
   computeCount: number;
+  /** The OCI model compute model used when you create or clone an instance: ECPU or OCPU. An ECPU is an abstracted measure of compute resources. ECPUs are based on the number of cores elastically allocated from a pool of compute and storage servers. An OCPU is a legacy physical measure of compute resources. OCPUs are based on the physical core of a processor with hyper-threading enabled. */
   computeModel: string;
+  /** The total number of CPU cores that are allocated to the Exadata infrastructure. */
   cpuCount: number;
-  createdAt: string;
+  /** The email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. */
   customerContactsToSendToOci: CloudExadataInfrastructure_CustomerContactsToSendToOci[];
+  /** The size of the Exadata infrastructure's data disk group, in terabytes (TB). */
   dataStorageSizeInTbs: number;
+  /** The database server model type of the Exadata infrastructure. For the list of valid model names, use the ListDbSystemShapes operation. */
   databaseServerType: string;
+  /** The size of the Exadata infrastructure's local node storage, in gigabytes (GB). */
   dbNodeStorageSizeInGbs: number;
+  /** The list of database server identifiers for the Exadata infrastructure. */
+  dbServerIds: string[];
+  /** The software version of the database servers (dom0) in the Exadata infrastructure. */
   dbServerVersion: string;
+  /** The user-friendly name for the Exadata infrastructure. */
   displayName: string;
-  id: string;
-  lastMaintenanceRunId: string;
+  /** The scheduling details for the maintenance window. Patching and system updates take place during the maintenance window. */
+  maintenanceWindow: CloudExadataInfrastructure_MaintenanceWindow;
+  /** The total number of CPU cores available on the Exadata infrastructure. */
   maxCpuCount: number;
+  /** The total amount of data disk group storage, in terabytes (TB), that's available on the Exadata infrastructure. */
   maxDataStorageInTbs: number;
+  /** The total amount of local node storage, in gigabytes (GB), that's available on the Exadata infrastructure. */
   maxDbNodeStorageSizeInGbs: number;
+  /** The total amount of memory, in gigabytes (GB), that's available on the Exadata infrastructure. */
   maxMemoryInGbs: number;
+  /** The amount of memory, in gigabytes (GB), that's allocated on the Exadata infrastructure. */
   memorySizeInGbs: number;
-  monthlyDbServerVersion: string;
-  monthlyStorageServerVersion: string;
-  nextMaintenanceRunId: string;
+  /** The name of the OCI resource anchor for the Exadata infrastructure. */
   ociResourceAnchorName: string;
+  /** The HTTPS link to the Exadata infrastructure in OCI. */
   ociUrl: string;
+  /** The OCID of the Exadata infrastructure. */
   ocid: string;
-  percentProgress: number;
-  region: string;
+  /** The model name of the Exadata infrastructure. */
   shape: string;
-  status: string;
-  statusReason: string;
+  /** The number of storage servers that are activated for the Exadata infrastructure. */
   storageCount: number;
+  /** The storage server model type of the Exadata infrastructure. For the list of valid model names, use the ListDbSystemShapes operation. */
   storageServerType: string;
+  /** The software version of the storage servers on the Exadata infrastructure. */
   storageServerVersion: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** Tags to assign to the Exadata Infrastructure. */
+  tags: CloudExadataInfrastructure_Tags[];
+  /** The total amount of storage, in gigabytes (GB), on the the Exadata infrastructure. */
   totalStorageSizeInGbs: number;
-  maintenanceWindow: CloudExadataInfrastructure_MaintenanceWindow[];
-  timeouts: CloudExadataInfrastructure_Timeouts;
 }
 
 export const CloudExadataInfrastructure: ResourceBinding<CloudExadataInfrastructureConfig, CloudExadataInfrastructureAttrs> = {
@@ -130,25 +153,23 @@ export const CloudExadataInfrastructure: ResourceBinding<CloudExadataInfrastruct
     computeCount: "compute_count",
     customerContactsToSendToOci: {
       wireName: "customer_contacts_to_send_to_oci",
-      kind: "set",
+      kind: "list",
       fields: CloudExadataInfrastructure_CustomerContactsToSendToOciFields,
     },
     databaseServerType: "database_server_type",
     displayName: "display_name",
-    region: "region",
+    maintenanceWindow: {
+      wireName: "maintenance_window",
+      kind: "object",
+      fields: CloudExadataInfrastructure_MaintenanceWindowFields,
+    },
     shape: "shape",
     storageCount: "storage_count",
     storageServerType: "storage_server_type",
-    tags: "tags",
-    maintenanceWindow: {
-      wireName: "maintenance_window",
+    tags: {
+      wireName: "tags",
       kind: "list",
-      fields: CloudExadataInfrastructure_MaintenanceWindowFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: CloudExadataInfrastructure_TimeoutsFields,
+      fields: CloudExadataInfrastructure_TagsFields,
     },
   },
 };

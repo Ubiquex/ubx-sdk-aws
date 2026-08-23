@@ -7,56 +7,52 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class EmailTemplate_EmailTemplate_Header:
-    name: Any = None
-    value: Any = None
-
-@dataclasses.dataclass
-class EmailTemplate_EmailTemplate:
-    default_substitutions: Any = None
-    description: Any = None
-    html_part: Any = None
-    recommender_id: Any = None
-    subject: Any = None
-    text_part: Any = None
-    header: Any = None
-
-_EmailTemplate_EmailTemplate_HeaderFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "value": ubx.FieldSpec(wire_name="value"),
-}
-
-_EmailTemplate_EmailTemplateFields = {
-    "default_substitutions": ubx.FieldSpec(wire_name="default_substitutions"),
-    "description": ubx.FieldSpec(wire_name="description"),
-    "html_part": ubx.FieldSpec(wire_name="html_part"),
-    "recommender_id": ubx.FieldSpec(wire_name="recommender_id"),
-    "subject": ubx.FieldSpec(wire_name="subject"),
-    "text_part": ubx.FieldSpec(wire_name="text_part"),
-    "header": ubx.FieldSpec(
-        wire_name="header",
-        kind="list",
-        fields=_EmailTemplate_EmailTemplate_HeaderFields,
-    ),
-}
-
-@dataclasses.dataclass
 class EmailTemplateConfig:
-    region: Any = None
+    # Defines a JSON object of key-value pairs that specify default values for message variables in the email template, used as fallback substitutions when a send request does not provide them. (AI-inferred)
+    default_substitutions: Any = None
+    # The HTML body of the email template, used by Amazon Pinpoint to render the email content in rich text format for recipients. (AI-inferred)
+    html_part: Any = None
+    # The subject line of the email message, which is required and appears on all emails sent using this template. (AI-inferred)
+    subject: Any = None
+    # Assigns key-value pairs to the Amazon Pinpoint email template for organizing and identifying it, with each tag consisting of a key and a value. (AI-inferred)
     tags: Any = None
+    # A user-defined description of the email template, used to document the template's purpose or content. (AI-inferred)
+    template_description: Any = None
+    # The name of the email template, used as the unique identifier for the template in Amazon Pinpoint. (AI-inferred)
     template_name: Any = None
-    email_template: Any = None
+    # The plain-text body of the email message defined by this template. (AI-inferred)
+    text_part: Any = None
+
+@dataclasses.dataclass
+class EmailTemplateAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies the AWS Pinpoint email template. (AI-inferred)
+    arn: Any = None
+    # Defines a JSON object of key-value pairs that specify default values for message variables in the email template, used as fallback substitutions when a send request does not provide them. (AI-inferred)
+    default_substitutions: Any = None
+    # The HTML body of the email template, used by Amazon Pinpoint to render the email content in rich text format for recipients. (AI-inferred)
+    html_part: Any = None
+    # The unique name assigned to the email template in Amazon Pinpoint, which identifies it within the AWS account and region. (AI-inferred)
+    id: Any = None
+    # The subject line of the email message, which is required and appears on all emails sent using this template. (AI-inferred)
+    subject: Any = None
+    # Assigns key-value pairs to the Amazon Pinpoint email template for organizing and identifying it, with each tag consisting of a key and a value. (AI-inferred)
+    tags: Any = None
+    # A user-defined description of the email template, used to document the template's purpose or content. (AI-inferred)
+    template_description: Any = None
+    # The name of the email template, used as the unique identifier for the template in Amazon Pinpoint. (AI-inferred)
+    template_name: Any = None
+    # The plain-text body of the email message defined by this template. (AI-inferred)
+    text_part: Any = None
 
 EmailTemplate = ubx.ResourceBinding(
     wire_type="aws_pinpoint_email_template",
     fields={
-        "region": ubx.FieldSpec(wire_name="region"),
+        "default_substitutions": ubx.FieldSpec(wire_name="default_substitutions"),
+        "html_part": ubx.FieldSpec(wire_name="html_part"),
+        "subject": ubx.FieldSpec(wire_name="subject"),
         "tags": ubx.FieldSpec(wire_name="tags"),
+        "template_description": ubx.FieldSpec(wire_name="template_description"),
         "template_name": ubx.FieldSpec(wire_name="template_name"),
-        "email_template": ubx.FieldSpec(
-            wire_name="email_template",
-            kind="list",
-            fields=_EmailTemplate_EmailTemplateFields,
-        ),
+        "text_part": ubx.FieldSpec(wire_name="text_part"),
     },
 )

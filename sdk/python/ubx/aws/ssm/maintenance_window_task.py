@@ -7,194 +7,271 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MaintenanceWindowTask_LoggingInfo:
+    # The AWS Region where the S3 bucket that receives the maintenance window task logs is located. (AI-inferred)
+    region: Any = None
+    # The name of the S3 bucket to which the maintenance window task's execution logs are written, as part of the LoggingInfo configuration for this AWS::SSM::MaintenanceWindowTask resource. (AI-inferred)
+    s3_bucket: Any = None
+    # The S3 key prefix (folder path) in the logging bucket where the maintenance window task's output logs are stored. (AI-inferred)
+    s3_prefix: Any = None
+
+@dataclasses.dataclass
 class MaintenanceWindowTask_Targets:
+    # The key field specifies the type of target for the maintenance window task, such as InstanceIds, ResourceGroupNames, or WindowTargetIds, determining how the corresponding values are interpreted. (AI-inferred)
     key: Any = None
+    # Specifies the values for the maintenance window task target key, such as EC2 instance IDs, resource group names, or tag values, that define which resources the task runs on. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
-class MaintenanceWindowTask_TaskInvocationParameters_AutomationParameters_Parameter:
-    name: Any = None
-    values: Any = None
-
-@dataclasses.dataclass
-class MaintenanceWindowTask_TaskInvocationParameters_AutomationParameters:
+class MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowAutomationParameters:
+    # The version of the SSM Automation document to use when the maintenance window task runs, such as a specific document version or '$LATEST'. (AI-inferred)
     document_version: Any = None
-    parameter: Any = None
+    # The parameters to pass to the AWS Systems Manager Automation runbook (SSM document) when the maintenance window task is executed, specified as a map of parameter names to one or more values. (AI-inferred)
+    parameters: Any = None
 
 @dataclasses.dataclass
-class MaintenanceWindowTask_TaskInvocationParameters_LambdaParameters:
+class MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowLambdaParameters:
+    # Base64-encoded client context data to pass to the Lambda function invoked by the maintenance window task. (AI-inferred)
     client_context: Any = None
+    # The JSON string that is passed as the input payload to the Lambda function when the maintenance window task invokes it. (AI-inferred)
     payload: Any = None
+    # The Lambda function version or alias to invoke for this maintenance window task. (AI-inferred)
     qualifier: Any = None
 
 @dataclasses.dataclass
-class MaintenanceWindowTask_TaskInvocationParameters_RunCommandParameters_CloudwatchConfig:
-    cloudwatch_log_group_name: Any = None
-    cloudwatch_output_enabled: Any = None
+class MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_CloudWatchOutputConfig:
+    # The name of the CloudWatch log group where you want to send command output.
+    cloud_watch_log_group_name: Any = None
+    # Enables Systems Manager to send command output to CloudWatch Logs.
+    cloud_watch_output_enabled: Any = None
 
 @dataclasses.dataclass
-class MaintenanceWindowTask_TaskInvocationParameters_RunCommandParameters_NotificationConfig:
+class MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_NotificationConfig:
+    # The ARN of the Amazon SNS topic that receives notifications about the status of the Run Command task executed by the maintenance window. (AI-inferred)
     notification_arn: Any = None
+    # Specifies the Run Command task events (such as Success, Failed, or TimedOut) that trigger a notification to the configured Amazon SNS topic. (AI-inferred)
     notification_events: Any = None
+    # This value indicates whether the SNS notification is for the entire command (Command) or for each instance's invocation (Invocation). (AI-inferred)
     notification_type: Any = None
 
 @dataclasses.dataclass
-class MaintenanceWindowTask_TaskInvocationParameters_RunCommandParameters:
+class MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters:
+    # Configures the destination CloudWatch Logs log group and whether the AWS Systems Manager Run Command task output is written to CloudWatch Logs. (AI-inferred)
+    cloud_watch_output_config: Any = None
+    # The user-specified comment (a friendly description) that is included with the Run Command when the maintenance window task invokes the command. (AI-inferred)
     comment: Any = None
+    # Specifies the SHA-256 hash of the content of the Systems Manager command document to be run, which SSM validates to ensure the document hasn't been altered before executing the maintenance window task. (AI-inferred)
     document_hash: Any = None
+    # Specifies the hash algorithm (either Sha256 or Sha1) used by SSM Run Command to validate the integrity of the document content referenced by the maintenance window task. (AI-inferred)
     document_hash_type: Any = None
+    # The version of the SSM document to use when the maintenance window task runs the specified command, such as '1' or '$DEFAULT' or '$LATEST'. (AI-inferred)
     document_version: Any = None
-    output_s3_bucket: Any = None
-    output_s3_key_prefix: Any = None
-    service_role_arn: Any = None
-    timeout_seconds: Any = None
-    cloudwatch_config: Any = None
+    # Specifies an Amazon SNS notification configuration for the Run Command task, including the ARN of the SNS topic, the events that trigger notifications (e.g., All, InProgress, Success, TimedOut, Cancelled, Failed), and the notification type (Command or Invocation). (AI-inferred)
     notification_config: Any = None
-    parameter: Any = None
+    # Specifies the name of the S3 bucket where the output of the Run Command will be stored for the Maintenance Window Run Command task. (AI-inferred)
+    output_s3_bucket_name: Any = None
+    # Specifies the S3 key prefix under the output S3 bucket where the Run Command invocation output is stored, acting as a subdirectory for the output files. (AI-inferred)
+    output_s3_key_prefix: Any = None
+    # A map of parameter names to values that are passed to the SSM Run Command document when the maintenance window task is executed. (AI-inferred)
+    parameters: Any = None
+    # The ARN of the IAM service role that AWS Systems Manager assumes to publish Amazon SNS notifications for the Run Command task invoked by this maintenance window. (AI-inferred)
+    service_role_arn: Any = None
+    # The maximum number of seconds the command is allowed to run before being stopped and marked as timed out. (AI-inferred)
+    timeout_seconds: Any = None
 
 @dataclasses.dataclass
-class MaintenanceWindowTask_TaskInvocationParameters_StepFunctionsParameters:
+class MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowStepFunctionsParameters:
+    # The JSON input string passed to the Step Functions state machine execution when this maintenance window task runs. (AI-inferred)
     input: Any = None
+    # The name to assign to the Step Functions execution when the maintenance window task invokes the state machine. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class MaintenanceWindowTask_TaskInvocationParameters:
-    automation_parameters: Any = None
-    lambda_parameters: Any = None
-    run_command_parameters: Any = None
-    step_functions_parameters: Any = None
+    # Specifies the information needed to run an Automation workflow as the maintenance window task, including the document version and the runtime parameters (a map of key-value pairs) that the Automation document requires. (AI-inferred)
+    maintenance_window_automation_parameters: Any = None
+    # Configures how the maintenance window invokes an AWS Lambda function, specifying optional client context, function version qualifier, and invocation payload. (AI-inferred)
+    maintenance_window_lambda_parameters: Any = None
+    # Specifies the parameters for an AWS Systems Manager Run Command task within a maintenance window, including settings like command timeout, S3 output location, IAM service role, and parameters passed to the SSM document. (AI-inferred)
+    maintenance_window_run_command_parameters: Any = None
+    # Specifies the input and execution name for a Step Functions state machine when the maintenance window task invokes a STEP_FUNCTIONS target. (AI-inferred)
+    maintenance_window_step_functions_parameters: Any = None
+
+_MaintenanceWindowTask_LoggingInfoFields = {
+    "region": ubx.FieldSpec(wire_name="region"),
+    "s3_bucket": ubx.FieldSpec(wire_name="s3_bucket"),
+    "s3_prefix": ubx.FieldSpec(wire_name="s3_prefix"),
+}
 
 _MaintenanceWindowTask_TargetsFields = {
     "key": ubx.FieldSpec(wire_name="key"),
     "values": ubx.FieldSpec(wire_name="values"),
 }
 
-_MaintenanceWindowTask_TaskInvocationParameters_AutomationParameters_ParameterFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "values": ubx.FieldSpec(wire_name="values"),
-}
-
-_MaintenanceWindowTask_TaskInvocationParameters_AutomationParametersFields = {
+_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowAutomationParametersFields = {
     "document_version": ubx.FieldSpec(wire_name="document_version"),
-    "parameter": ubx.FieldSpec(
-        wire_name="parameter",
-        kind="set",
-        fields=_MaintenanceWindowTask_TaskInvocationParameters_AutomationParameters_ParameterFields,
-    ),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
-_MaintenanceWindowTask_TaskInvocationParameters_LambdaParametersFields = {
+_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowLambdaParametersFields = {
     "client_context": ubx.FieldSpec(wire_name="client_context"),
     "payload": ubx.FieldSpec(wire_name="payload"),
     "qualifier": ubx.FieldSpec(wire_name="qualifier"),
 }
 
-_MaintenanceWindowTask_TaskInvocationParameters_RunCommandParameters_CloudwatchConfigFields = {
-    "cloudwatch_log_group_name": ubx.FieldSpec(wire_name="cloudwatch_log_group_name"),
-    "cloudwatch_output_enabled": ubx.FieldSpec(wire_name="cloudwatch_output_enabled"),
+_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_CloudWatchOutputConfigFields = {
+    "cloud_watch_log_group_name": ubx.FieldSpec(wire_name="cloud_watch_log_group_name"),
+    "cloud_watch_output_enabled": ubx.FieldSpec(wire_name="cloud_watch_output_enabled"),
 }
 
-_MaintenanceWindowTask_TaskInvocationParameters_RunCommandParameters_NotificationConfigFields = {
+_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_NotificationConfigFields = {
     "notification_arn": ubx.FieldSpec(wire_name="notification_arn"),
     "notification_events": ubx.FieldSpec(wire_name="notification_events"),
     "notification_type": ubx.FieldSpec(wire_name="notification_type"),
 }
 
-_MaintenanceWindowTask_TaskInvocationParameters_RunCommandParametersFields = {
+_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParametersFields = {
+    "cloud_watch_output_config": ubx.FieldSpec(
+        wire_name="cloud_watch_output_config",
+        kind="object",
+        fields=_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_CloudWatchOutputConfigFields,
+    ),
     "comment": ubx.FieldSpec(wire_name="comment"),
     "document_hash": ubx.FieldSpec(wire_name="document_hash"),
     "document_hash_type": ubx.FieldSpec(wire_name="document_hash_type"),
     "document_version": ubx.FieldSpec(wire_name="document_version"),
-    "output_s3_bucket": ubx.FieldSpec(wire_name="output_s3_bucket"),
-    "output_s3_key_prefix": ubx.FieldSpec(wire_name="output_s3_key_prefix"),
-    "service_role_arn": ubx.FieldSpec(wire_name="service_role_arn"),
-    "timeout_seconds": ubx.FieldSpec(wire_name="timeout_seconds"),
-    "cloudwatch_config": ubx.FieldSpec(
-        wire_name="cloudwatch_config",
-        kind="list",
-        fields=_MaintenanceWindowTask_TaskInvocationParameters_RunCommandParameters_CloudwatchConfigFields,
-    ),
     "notification_config": ubx.FieldSpec(
         wire_name="notification_config",
-        kind="list",
-        fields=_MaintenanceWindowTask_TaskInvocationParameters_RunCommandParameters_NotificationConfigFields,
+        kind="object",
+        fields=_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_NotificationConfigFields,
     ),
-    "parameter": ubx.FieldSpec(
-        wire_name="parameter",
-        kind="set",
-        fields=_MaintenanceWindowTask_TaskInvocationParameters_AutomationParameters_ParameterFields,
-    ),
+    "output_s3_bucket_name": ubx.FieldSpec(wire_name="output_s3_bucket_name"),
+    "output_s3_key_prefix": ubx.FieldSpec(wire_name="output_s3_key_prefix"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
+    "service_role_arn": ubx.FieldSpec(wire_name="service_role_arn"),
+    "timeout_seconds": ubx.FieldSpec(wire_name="timeout_seconds"),
 }
 
-_MaintenanceWindowTask_TaskInvocationParameters_StepFunctionsParametersFields = {
+_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowStepFunctionsParametersFields = {
     "input": ubx.FieldSpec(wire_name="input"),
     "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _MaintenanceWindowTask_TaskInvocationParametersFields = {
-    "automation_parameters": ubx.FieldSpec(
-        wire_name="automation_parameters",
-        kind="list",
-        fields=_MaintenanceWindowTask_TaskInvocationParameters_AutomationParametersFields,
+    "maintenance_window_automation_parameters": ubx.FieldSpec(
+        wire_name="maintenance_window_automation_parameters",
+        kind="object",
+        fields=_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowAutomationParametersFields,
     ),
-    "lambda_parameters": ubx.FieldSpec(
-        wire_name="lambda_parameters",
-        kind="list",
-        fields=_MaintenanceWindowTask_TaskInvocationParameters_LambdaParametersFields,
+    "maintenance_window_lambda_parameters": ubx.FieldSpec(
+        wire_name="maintenance_window_lambda_parameters",
+        kind="object",
+        fields=_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowLambdaParametersFields,
     ),
-    "run_command_parameters": ubx.FieldSpec(
-        wire_name="run_command_parameters",
-        kind="list",
-        fields=_MaintenanceWindowTask_TaskInvocationParameters_RunCommandParametersFields,
+    "maintenance_window_run_command_parameters": ubx.FieldSpec(
+        wire_name="maintenance_window_run_command_parameters",
+        kind="object",
+        fields=_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParametersFields,
     ),
-    "step_functions_parameters": ubx.FieldSpec(
-        wire_name="step_functions_parameters",
-        kind="list",
-        fields=_MaintenanceWindowTask_TaskInvocationParameters_StepFunctionsParametersFields,
+    "maintenance_window_step_functions_parameters": ubx.FieldSpec(
+        wire_name="maintenance_window_step_functions_parameters",
+        kind="object",
+        fields=_MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowStepFunctionsParametersFields,
     ),
 }
 
 @dataclasses.dataclass
 class MaintenanceWindowTaskConfig:
+    # The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached.
     cutoff_behavior: Any = None
+    # A description of the task.
     description: Any = None
-    id: Any = None
+    # Specifies the Amazon S3 bucket, region, and prefix where the maintenance window task execution logs are stored. (AI-inferred)
+    logging_info: Any = None
+    # The maximum number of targets this task can be run for, in parallel.
     max_concurrency: Any = None
+    # The maximum number of errors allowed before this task stops being scheduled.
     max_errors: Any = None
+    # The task name.
     name: Any = None
+    # The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.
     priority: Any = None
-    region: Any = None
+    # The Amazon Resource Name (ARN) of the IAM service role for AWS Systems Manager to assume when running a maintenance window task.
     service_role_arn: Any = None
-    task_arn: Any = None
-    task_type: Any = None
-    window_id: Any = None
+    # The targets (either instances or window target ids).
     targets: Any = None
+    # The resource that the task uses during execution.
+    task_arn: Any = None
+    # Defines the parameters that AWS Systems Manager uses to run the maintenance window task, including for Run Command, Automation, Step Functions, or Lambda invocation types. (AI-inferred)
     task_invocation_parameters: Any = None
+    # The parameters to pass to the task when it runs.
+    task_parameters: Any = None
+    # The type of task.
+    task_type: Any = None
+    # The ID of the maintenance window where the task is registered.
+    window_id: Any = None
+
+@dataclasses.dataclass
+class MaintenanceWindowTaskAttrs:
+    # The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached.
+    cutoff_behavior: Any = None
+    # A description of the task.
+    description: Any = None
+    # Specifies the Amazon S3 bucket, region, and prefix where the maintenance window task execution logs are stored. (AI-inferred)
+    logging_info: Any = None
+    # The maximum number of targets this task can be run for, in parallel.
+    max_concurrency: Any = None
+    # The maximum number of errors allowed before this task stops being scheduled.
+    max_errors: Any = None
+    # The task name.
+    name: Any = None
+    # The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.
+    priority: Any = None
+    # The Amazon Resource Name (ARN) of the IAM service role for AWS Systems Manager to assume when running a maintenance window task.
+    service_role_arn: Any = None
+    # The targets (either instances or window target ids).
+    targets: Any = None
+    # The resource that the task uses during execution.
+    task_arn: Any = None
+    # Defines the parameters that AWS Systems Manager uses to run the maintenance window task, including for Run Command, Automation, Step Functions, or Lambda invocation types. (AI-inferred)
+    task_invocation_parameters: Any = None
+    # The parameters to pass to the task when it runs.
+    task_parameters: Any = None
+    # The type of task.
+    task_type: Any = None
+    # The ID of the maintenance window where the task is registered.
+    window_id: Any = None
+    # Unique identifier of the maintenance window task.
+    window_task_id: Any = None
 
 MaintenanceWindowTask = ubx.ResourceBinding(
     wire_type="aws_ssm_maintenance_window_task",
     fields={
         "cutoff_behavior": ubx.FieldSpec(wire_name="cutoff_behavior"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "logging_info": ubx.FieldSpec(
+            wire_name="logging_info",
+            kind="object",
+            fields=_MaintenanceWindowTask_LoggingInfoFields,
+        ),
         "max_concurrency": ubx.FieldSpec(wire_name="max_concurrency"),
         "max_errors": ubx.FieldSpec(wire_name="max_errors"),
         "name": ubx.FieldSpec(wire_name="name"),
         "priority": ubx.FieldSpec(wire_name="priority"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "service_role_arn": ubx.FieldSpec(wire_name="service_role_arn"),
-        "task_arn": ubx.FieldSpec(wire_name="task_arn"),
-        "task_type": ubx.FieldSpec(wire_name="task_type"),
-        "window_id": ubx.FieldSpec(wire_name="window_id"),
         "targets": ubx.FieldSpec(
             wire_name="targets",
             kind="list",
             fields=_MaintenanceWindowTask_TargetsFields,
         ),
+        "task_arn": ubx.FieldSpec(wire_name="task_arn"),
         "task_invocation_parameters": ubx.FieldSpec(
             wire_name="task_invocation_parameters",
-            kind="list",
+            kind="object",
             fields=_MaintenanceWindowTask_TaskInvocationParametersFields,
         ),
+        "task_parameters": ubx.FieldSpec(wire_name="task_parameters"),
+        "task_type": ubx.FieldSpec(wire_name="task_type"),
+        "window_id": ubx.FieldSpec(wire_name="window_id"),
     },
 )

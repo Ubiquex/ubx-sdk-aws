@@ -4,14 +4,23 @@ package notifications
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedNotificationAdditionalChannelAssociationConfig struct {
+	// ARN identifier of the channel. Example: arn:aws:chatbot::123456789012:chat-configuration/slack-channel/security-ops
 	ChannelArn any
-	ManagedNotificationArn any
+	// ARN identifier of the Managed Notification. Example: arn:aws:notifications::381491923782:managed-notification-configuration/category/AWS-Health/sub-category/Billing
+	ManagedNotificationConfigurationArn any
+}
+
+type ManagedNotificationAdditionalChannelAssociationAttrs struct {
+	// ARN identifier of the channel. Example: arn:aws:chatbot::123456789012:chat-configuration/slack-channel/security-ops
+	ChannelArn any
+	// ARN identifier of the Managed Notification. Example: arn:aws:notifications::381491923782:managed-notification-configuration/category/AWS-Health/sub-category/Billing
+	ManagedNotificationConfigurationArn any
 }
 
 var ManagedNotificationAdditionalChannelAssociation = ubx.ResourceBinding{
 	WireType: "aws_notifications_managed_notification_additional_channel_association",
 	Fields: ubx.FieldMap{
 		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
-		"ManagedNotificationArn": ubx.FieldSpec{WireName: "managed_notification_arn"},
+		"ManagedNotificationConfigurationArn": ubx.FieldSpec{WireName: "managed_notification_configuration_arn"},
 	},
 }

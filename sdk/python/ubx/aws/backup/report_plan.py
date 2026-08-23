@@ -8,17 +8,31 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ReportPlan_ReportDeliveryChannel:
+    # A list of the format of your reports: CSV, JSON, or both. If not specified, the default format is CSV.
     formats: Any = None
+    # The unique name of the S3 bucket that receives your reports.
     s3_bucket_name: Any = None
+    # The prefix for where AWS Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path: s3://your-bucket-name/prefix/Backup/us-west-2/year/month/day/report-name. If not specified, there is no prefix.
     s3_key_prefix: Any = None
 
 @dataclasses.dataclass
+class ReportPlan_ReportPlanTags:
+    # The key of a user-defined tag attached to the AWS Backup report plan, used to categorize and manage the resource. (AI-inferred)
+    key: Any = None
+    # The value portion of a key-value tag attached to the AWS Backup report plan, used for identifying and organizing the report plan. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
 class ReportPlan_ReportSetting:
+    # The list of AWS accounts that a report covers.
     accounts: Any = None
+    # The Amazon Resource Names (ARNs) of the frameworks a report covers.
     framework_arns: Any = None
-    number_of_frameworks: Any = None
+    # The list of AWS organization units that a report covers.
     organization_units: Any = None
+    # The list of AWS regions that a report covers.
     regions: Any = None
+    # Identifies the report template for the report. Reports are built using a report template. The report templates are: `BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT`
     report_template: Any = None
 
 _ReportPlan_ReportDeliveryChannelFields = {
@@ -27,10 +41,14 @@ _ReportPlan_ReportDeliveryChannelFields = {
     "s3_key_prefix": ubx.FieldSpec(wire_name="s3_key_prefix"),
 }
 
+_ReportPlan_ReportPlanTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 _ReportPlan_ReportSettingFields = {
     "accounts": ubx.FieldSpec(wire_name="accounts"),
     "framework_arns": ubx.FieldSpec(wire_name="framework_arns"),
-    "number_of_frameworks": ubx.FieldSpec(wire_name="number_of_frameworks"),
     "organization_units": ubx.FieldSpec(wire_name="organization_units"),
     "regions": ubx.FieldSpec(wire_name="regions"),
     "report_template": ubx.FieldSpec(wire_name="report_template"),
@@ -38,32 +56,50 @@ _ReportPlan_ReportSettingFields = {
 
 @dataclasses.dataclass
 class ReportPlanConfig:
-    description: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.
     report_delivery_channel: Any = None
+    # An optional description of the report plan with a maximum of 1,024 characters.
+    report_plan_description: Any = None
+    # The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+    report_plan_name: Any = None
+    # Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.
+    report_plan_tags: Any = None
+    # Identifies the report template for the report. Reports are built using a report template.
+    report_setting: Any = None
+
+@dataclasses.dataclass
+class ReportPlanAttrs:
+    # A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.
+    report_delivery_channel: Any = None
+    # An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.
+    report_plan_arn: Any = None
+    # An optional description of the report plan with a maximum of 1,024 characters.
+    report_plan_description: Any = None
+    # The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+    report_plan_name: Any = None
+    # Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.
+    report_plan_tags: Any = None
+    # Identifies the report template for the report. Reports are built using a report template.
     report_setting: Any = None
 
 ReportPlan = ubx.ResourceBinding(
     wire_type="aws_backup_report_plan",
     fields={
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "report_delivery_channel": ubx.FieldSpec(
             wire_name="report_delivery_channel",
-            kind="list",
+            kind="object",
             fields=_ReportPlan_ReportDeliveryChannelFields,
+        ),
+        "report_plan_description": ubx.FieldSpec(wire_name="report_plan_description"),
+        "report_plan_name": ubx.FieldSpec(wire_name="report_plan_name"),
+        "report_plan_tags": ubx.FieldSpec(
+            wire_name="report_plan_tags",
+            kind="list",
+            fields=_ReportPlan_ReportPlanTagsFields,
         ),
         "report_setting": ubx.FieldSpec(
             wire_name="report_setting",
-            kind="list",
+            kind="object",
             fields=_ReportPlan_ReportSettingFields,
         ),
     },

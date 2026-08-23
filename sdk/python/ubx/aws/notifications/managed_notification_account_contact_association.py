@@ -8,7 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagedNotificationAccountContactAssociationConfig:
+    # This unique identifier for Contact
     contact_identifier: Any = None
+    # The managed notification configuration ARN, against which the account contact association will be created
+    managed_notification_configuration_arn: Any = None
+
+@dataclasses.dataclass
+class ManagedNotificationAccountContactAssociationAttrs:
+    # This unique identifier for Contact
+    contact_identifier: Any = None
+    # The managed notification configuration ARN, against which the account contact association will be created
     managed_notification_configuration_arn: Any = None
 
 ManagedNotificationAccountContactAssociation = ubx.ResourceBinding(

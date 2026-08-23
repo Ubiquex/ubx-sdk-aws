@@ -7,84 +7,140 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class QuickConnect_QuickConnectConfig_FlowConfig:
+    # The identifier of the contact flow.
+    contact_flow_arn: Any = None
+
+@dataclasses.dataclass
 class QuickConnect_QuickConnectConfig_PhoneConfig:
+    # The phone number in E.164 format.
     phone_number: Any = None
 
 @dataclasses.dataclass
 class QuickConnect_QuickConnectConfig_QueueConfig:
-    contact_flow_id: Any = None
-    queue_id: Any = None
+    # The identifier of the contact flow.
+    contact_flow_arn: Any = None
+    # The identifier for the queue.
+    queue_arn: Any = None
 
 @dataclasses.dataclass
 class QuickConnect_QuickConnectConfig_UserConfig:
-    contact_flow_id: Any = None
-    user_id: Any = None
+    # The identifier of the contact flow.
+    contact_flow_arn: Any = None
+    # The identifier of the user.
+    user_arn: Any = None
 
 @dataclasses.dataclass
 class QuickConnect_QuickConnectConfig:
-    quick_connect_type: Any = None
+    # The flow configuration. This is required only if QuickConnectType is FLOW.
+    flow_config: Any = None
+    # The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.
     phone_config: Any = None
+    # The queue configuration. This is required only if QuickConnectType is QUEUE.
     queue_config: Any = None
+    # The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+    quick_connect_type: Any = None
+    # The user configuration. This is required only if QuickConnectType is USER.
     user_config: Any = None
+
+@dataclasses.dataclass
+class QuickConnect_Tags:
+    # The key of a tag attached to the Amazon Connect quick connect resource, used to categorize and organize the resource. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_QuickConnect_QuickConnectConfig_FlowConfigFields = {
+    "contact_flow_arn": ubx.FieldSpec(wire_name="contact_flow_arn"),
+}
 
 _QuickConnect_QuickConnectConfig_PhoneConfigFields = {
     "phone_number": ubx.FieldSpec(wire_name="phone_number"),
 }
 
 _QuickConnect_QuickConnectConfig_QueueConfigFields = {
-    "contact_flow_id": ubx.FieldSpec(wire_name="contact_flow_id"),
-    "queue_id": ubx.FieldSpec(wire_name="queue_id"),
+    "contact_flow_arn": ubx.FieldSpec(wire_name="contact_flow_arn"),
+    "queue_arn": ubx.FieldSpec(wire_name="queue_arn"),
 }
 
 _QuickConnect_QuickConnectConfig_UserConfigFields = {
-    "contact_flow_id": ubx.FieldSpec(wire_name="contact_flow_id"),
-    "user_id": ubx.FieldSpec(wire_name="user_id"),
+    "contact_flow_arn": ubx.FieldSpec(wire_name="contact_flow_arn"),
+    "user_arn": ubx.FieldSpec(wire_name="user_arn"),
 }
 
 _QuickConnect_QuickConnectConfigFields = {
-    "quick_connect_type": ubx.FieldSpec(wire_name="quick_connect_type"),
+    "flow_config": ubx.FieldSpec(
+        wire_name="flow_config",
+        kind="object",
+        fields=_QuickConnect_QuickConnectConfig_FlowConfigFields,
+    ),
     "phone_config": ubx.FieldSpec(
         wire_name="phone_config",
-        kind="list",
+        kind="object",
         fields=_QuickConnect_QuickConnectConfig_PhoneConfigFields,
     ),
     "queue_config": ubx.FieldSpec(
         wire_name="queue_config",
-        kind="list",
+        kind="object",
         fields=_QuickConnect_QuickConnectConfig_QueueConfigFields,
     ),
+    "quick_connect_type": ubx.FieldSpec(wire_name="quick_connect_type"),
     "user_config": ubx.FieldSpec(
         wire_name="user_config",
-        kind="list",
+        kind="object",
         fields=_QuickConnect_QuickConnectConfig_UserConfigFields,
     ),
 }
 
+_QuickConnect_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 @dataclasses.dataclass
 class QuickConnectConfig:
+    # The description of the quick connect.
     description: Any = None
-    id: Any = None
-    instance_id: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # The name of the quick connect.
     name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Configuration settings for the quick connect.
     quick_connect_config: Any = None
+    # One or more tags.
+    tags: Any = None
+
+@dataclasses.dataclass
+class QuickConnectAttrs:
+    # The description of the quick connect.
+    description: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # The name of the quick connect.
+    name: Any = None
+    # The Amazon Resource Name (ARN) for the quick connect.
+    quick_connect_arn: Any = None
+    # Configuration settings for the quick connect.
+    quick_connect_config: Any = None
+    # The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+    quick_connect_type: Any = None
+    # One or more tags.
+    tags: Any = None
 
 QuickConnect = ubx.ResourceBinding(
     wire_type="aws_connect_quick_connect",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "instance_id": ubx.FieldSpec(wire_name="instance_id"),
+        "instance_arn": ubx.FieldSpec(wire_name="instance_arn"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "quick_connect_config": ubx.FieldSpec(
             wire_name="quick_connect_config",
-            kind="list",
+            kind="object",
             fields=_QuickConnect_QuickConnectConfigFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_QuickConnect_TagsFields,
         ),
     },
 )

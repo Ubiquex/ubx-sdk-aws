@@ -3,53 +3,60 @@ package launch
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Configuration_EbsBlockDevice struct {
+type Configuration_BlockDeviceMappings_Ebs struct {
+	// Controls whether the EBS volume defined in this block device mapping is automatically deleted when the EC2 instance terminates. (AI-inferred)
 	DeleteOnTermination any
-	DeviceName any
+	// Whether the EBS volume in this block device mapping is encrypted, using the default AWS KMS key or the one specified by kms_key_id. (AI-inferred)
 	Encrypted any
+	// The number of I/O operations per second (IOPS) to provision for the EBS volume, which is required when the volume type is `io1` (provisioned IOPS SSD) in the launch configuration's block device mapping. (AI-inferred)
 	Iops any
-	NoDevice any
+	// The ID of the snapshot to use as the source for the EBS volume in this block device mapping. (AI-inferred)
 	SnapshotId any
+	// The throughput (in MiB/s) to provision for the EBS volume, which is applicable only when the volume type is gp3. (AI-inferred)
 	Throughput any
+	// The size of the Amazon EBS volume, in GiB, for the block device mapping in the Auto Scaling launch configuration. (AI-inferred)
 	VolumeSize any
+	// Specifies the Amazon EBS volume type (e.g., gp2, gp3, io1, st1, sc1, standard) for the block device mapped in the launch configuration, affecting performance and cost. (AI-inferred)
 	VolumeType any
 }
 
-type Configuration_EphemeralBlockDevice struct {
+type Configuration_BlockDeviceMappings struct {
+	// The device name (e.g., /dev/xvda, /dev/sdb) exposed to the EC2 instance for this block device mapping in the launch configuration. (AI-inferred)
 	DeviceName any
+	// The EBS-specific settings (e.g., volume size, type, IOPS, snapshot, encryption, delete-on-termination) for the volume attached via this block device mapping in the Auto Scaling launch configuration. (AI-inferred)
+	Ebs any
+	// When set to true, suppresses the block device mapping for the specified device name, so the launch configuration does not attach that device to instances launched from it. (AI-inferred)
 	NoDevice any
+	// Specifies the virtual device name (such as ephemeral0 or ephemeral1) for an ephemeral (instance store) block device in the launch configuration's block device mapping. (AI-inferred)
 	VirtualName any
 }
 
 type Configuration_MetadataOptions struct {
+	// This parameter enables or disables the HTTP metadata endpoint on your instances.
 	HttpEndpoint any
+	// The desired HTTP PUT response hop limit for instance metadata requests.
 	HttpPutResponseHopLimit any
+	// The state of token usage for your instance metadata requests.
 	HttpTokens any
 }
 
-type Configuration_RootBlockDevice struct {
-	DeleteOnTermination any
-	Encrypted any
-	Iops any
-	Throughput any
-	VolumeSize any
-	VolumeType any
-}
-
-var Configuration_EbsBlockDeviceFields = ubx.FieldMap{
+var Configuration_BlockDeviceMappings_EbsFields = ubx.FieldMap{
 		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
 		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
 		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"NoDevice": ubx.FieldSpec{WireName: "no_device"},
 		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
 		"Throughput": ubx.FieldSpec{WireName: "throughput"},
 		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
 		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
 	}
 
-var Configuration_EphemeralBlockDeviceFields = ubx.FieldMap{
+var Configuration_BlockDeviceMappingsFields = ubx.FieldMap{
 		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+		"Ebs": ubx.FieldSpec{
+			WireName: "ebs",
+			Kind: "object",
+			Fields: Configuration_BlockDeviceMappings_EbsFields,
+		},
 		"NoDevice": ubx.FieldSpec{WireName: "no_device"},
 		"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
 	}
@@ -60,76 +67,117 @@ var Configuration_MetadataOptionsFields = ubx.FieldMap{
 		"HttpTokens": ubx.FieldSpec{WireName: "http_tokens"},
 	}
 
-var Configuration_RootBlockDeviceFields = ubx.FieldMap{
-		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
-
 type ConfigurationConfig struct {
+	// For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether to assign a public IP address to the group's instances.
 	AssociatePublicIpAddress any
+	// Specifies how block devices are exposed to the instance. You can specify virtual devices and EBS volumes.
+	BlockDeviceMappings any
+	// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+	ClassicLinkVpcid any
+	// The IDs of one or more security groups for the VPC that you specified in the ClassicLinkVPCId property.
+	ClassicLinkVpcsecurityGroups any
+	// Specifies whether the launch configuration is optimized for EBS I/O (true) or not (false).
 	EbsOptimized any
-	EnableMonitoring any
+	// Provides the name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.
 	IamInstanceProfile any
-	Id any
+	// Provides the unique ID of the Amazon Machine Image (AMI) that was assigned during registration.
 	ImageId any
+	// The ID of the Amazon EC2 instance you want to use to create the launch configuration.
+	InstanceId any
+	// Controls whether instances in this group are launched with detailed (true) or basic (false) monitoring.
+	InstanceMonitoring any
+	// Specifies the instance type of the EC2 instance.
 	InstanceType any
+	// Provides the ID of the kernel associated with the EC2 AMI.
+	KernelId any
+	// Provides the name of the EC2 key pair.
 	KeyName any
-	Name any
-	NamePrefix any
-	PlacementTenancy any
-	Region any
-	SecurityGroups any
-	SpotPrice any
-	UserData any
-	UserDataBase64 any
-	EbsBlockDevice any
-	EphemeralBlockDevice any
+	// The name of the launch configuration. This name must be unique per Region per account.
+	LaunchConfigurationName any
+	// MetadataOptions is a property of AWS::AutoScaling::LaunchConfiguration that describes metadata options for the instances.
 	MetadataOptions any
-	RootBlockDevice any
+	// The tenancy of the instance, either default or dedicated.
+	PlacementTenancy any
+	// The ID of the RAM disk to select.
+	RamDiskId any
+	// A list that contains the security groups to assign to the instances in the Auto Scaling group.
+	SecurityGroups any
+	// The maximum hourly price you are willing to pay for any Spot Instances launched to fulfill the request.
+	SpotPrice any
+	// The Base64-encoded user data to make available to the launched EC2 instances.
+	UserData any
+}
+
+type ConfigurationAttrs struct {
+	// For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether to assign a public IP address to the group's instances.
+	AssociatePublicIpAddress any
+	// Specifies how block devices are exposed to the instance. You can specify virtual devices and EBS volumes.
+	BlockDeviceMappings any
+	// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+	ClassicLinkVpcid any
+	// The IDs of one or more security groups for the VPC that you specified in the ClassicLinkVPCId property.
+	ClassicLinkVpcsecurityGroups any
+	// Specifies whether the launch configuration is optimized for EBS I/O (true) or not (false).
+	EbsOptimized any
+	// Provides the name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.
+	IamInstanceProfile any
+	// Provides the unique ID of the Amazon Machine Image (AMI) that was assigned during registration.
+	ImageId any
+	// The ID of the Amazon EC2 instance you want to use to create the launch configuration.
+	InstanceId any
+	// Controls whether instances in this group are launched with detailed (true) or basic (false) monitoring.
+	InstanceMonitoring any
+	// Specifies the instance type of the EC2 instance.
+	InstanceType any
+	// Provides the ID of the kernel associated with the EC2 AMI.
+	KernelId any
+	// Provides the name of the EC2 key pair.
+	KeyName any
+	// The name of the launch configuration. This name must be unique per Region per account.
+	LaunchConfigurationName any
+	// MetadataOptions is a property of AWS::AutoScaling::LaunchConfiguration that describes metadata options for the instances.
+	MetadataOptions any
+	// The tenancy of the instance, either default or dedicated.
+	PlacementTenancy any
+	// The ID of the RAM disk to select.
+	RamDiskId any
+	// A list that contains the security groups to assign to the instances in the Auto Scaling group.
+	SecurityGroups any
+	// The maximum hourly price you are willing to pay for any Spot Instances launched to fulfill the request.
+	SpotPrice any
+	// The Base64-encoded user data to make available to the launched EC2 instances.
+	UserData any
 }
 
 var Configuration = ubx.ResourceBinding{
 	WireType: "aws_launch_configuration",
 	Fields: ubx.FieldMap{
 		"AssociatePublicIpAddress": ubx.FieldSpec{WireName: "associate_public_ip_address"},
+		"BlockDeviceMappings": ubx.FieldSpec{
+			WireName: "block_device_mappings",
+			Kind: "list",
+			Fields: Configuration_BlockDeviceMappingsFields,
+		},
+		"ClassicLinkVpcid": ubx.FieldSpec{WireName: "classic_link_vpcid"},
+		"ClassicLinkVpcsecurityGroups": ubx.FieldSpec{WireName: "classic_link_vpcsecurity_groups"},
 		"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
-		"EnableMonitoring": ubx.FieldSpec{WireName: "enable_monitoring"},
 		"IamInstanceProfile": ubx.FieldSpec{WireName: "iam_instance_profile"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"ImageId": ubx.FieldSpec{WireName: "image_id"},
+		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceMonitoring": ubx.FieldSpec{WireName: "instance_monitoring"},
 		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+		"KernelId": ubx.FieldSpec{WireName: "kernel_id"},
 		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
+		"LaunchConfigurationName": ubx.FieldSpec{WireName: "launch_configuration_name"},
+		"MetadataOptions": ubx.FieldSpec{
+			WireName: "metadata_options",
+			Kind: "object",
+			Fields: Configuration_MetadataOptionsFields,
+		},
 		"PlacementTenancy": ubx.FieldSpec{WireName: "placement_tenancy"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"RamDiskId": ubx.FieldSpec{WireName: "ram_disk_id"},
 		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
 		"SpotPrice": ubx.FieldSpec{WireName: "spot_price"},
 		"UserData": ubx.FieldSpec{WireName: "user_data"},
-		"UserDataBase64": ubx.FieldSpec{WireName: "user_data_base64"},
-		"EbsBlockDevice": ubx.FieldSpec{
-			WireName: "ebs_block_device",
-			Kind: "set",
-			Fields: Configuration_EbsBlockDeviceFields,
-		},
-		"EphemeralBlockDevice": ubx.FieldSpec{
-			WireName: "ephemeral_block_device",
-			Kind: "set",
-			Fields: Configuration_EphemeralBlockDeviceFields,
-		},
-		"MetadataOptions": ubx.FieldSpec{
-			WireName: "metadata_options",
-			Kind: "list",
-			Fields: Configuration_MetadataOptionsFields,
-		},
-		"RootBlockDevice": ubx.FieldSpec{
-			WireName: "root_block_device",
-			Kind: "list",
-			Fields: Configuration_RootBlockDeviceFields,
-		},
 	},
 }

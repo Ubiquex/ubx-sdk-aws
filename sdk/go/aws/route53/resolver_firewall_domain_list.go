@@ -3,23 +3,67 @@ package route53
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ResolverFirewallDomainList_Tags struct {
+	// The key of a tag attached to the Route 53 Resolver firewall domain list, used to assign metadata for identifying and organizing the resource in AWS. (AI-inferred)
+	Key any
+	Value any
+}
+
+var ResolverFirewallDomainList_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ResolverFirewallDomainListConfig struct {
+	// S3 URL to import domains from.
+	DomainFileUrl any
+	// An inline list of domains to use for this domain list.
 	Domains any
-	Id any
+	// FirewallDomainListName
 	Name any
-	Region any
+	// Tags
 	Tags any
-	TagsAll any
+}
+
+type ResolverFirewallDomainListAttrs struct {
+	// Arn
+	Arn any
+	// Rfc3339TimeString
+	CreationTime any
+	// The id of the creator request.
+	CreatorRequestId any
+	// Count
+	DomainCount any
+	// S3 URL to import domains from.
+	DomainFileUrl any
+	// An inline list of domains to use for this domain list.
+	Domains any
+	// ResourceId
+	Id any
+	// ServicePrincipal
+	ManagedOwnerName any
+	// Rfc3339TimeString
+	ModificationTime any
+	// FirewallDomainListName
+	Name any
+	// ResolverFirewallDomainList, possible values are COMPLETE, DELETING, UPDATING, COMPLETE_IMPORT_FAILED, IMPORTING, and INACTIVE_OWNER_ACCOUNT_CLOSED.
+	Status any
+	// FirewallDomainListAssociationStatus
+	StatusMessage any
+	// Tags
+	Tags any
 }
 
 var ResolverFirewallDomainList = ubx.ResourceBinding{
 	WireType: "aws_route53_resolver_firewall_domain_list",
 	Fields: ubx.FieldMap{
+		"DomainFileUrl": ubx.FieldSpec{WireName: "domain_file_url"},
 		"Domains": ubx.FieldSpec{WireName: "domains"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ResolverFirewallDomainList_TagsFields,
+		},
 	},
 }

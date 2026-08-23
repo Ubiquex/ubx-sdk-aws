@@ -2,129 +2,100 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Environment_HighAvailabilityConfig {
-  desiredCapacity: number;
-}
-
-export interface Environment_StorageConfiguration_Efs {
-  fileSystemId: string;
-  mountPoint: string;
-}
-
-export interface Environment_StorageConfiguration {
-  efs: Environment_StorageConfiguration_Efs[];
-  fsx: Environment_StorageConfiguration_Efs[];
-}
-
-export interface Environment_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+  /** The desired number of instances to run in the high availability configuration of the AWS Mainframe Modernization (M2) environment. (AI-inferred) */
+  desiredCapacity: number | Computed<number>;
 }
 
 const Environment_HighAvailabilityConfigFields: FieldMap = {
   desiredCapacity: "desired_capacity",
 };
 
-const Environment_StorageConfiguration_EfsFields: FieldMap = {
-  fileSystemId: "file_system_id",
-  mountPoint: "mount_point",
-};
-
-const Environment_StorageConfigurationFields: FieldMap = {
-  efs: {
-    wireName: "efs",
-    kind: "list",
-    fields: Environment_StorageConfiguration_EfsFields,
-  },
-  fsx: {
-    wireName: "fsx",
-    kind: "list",
-    fields: Environment_StorageConfiguration_EfsFields,
-  },
-};
-
-const Environment_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
-};
-
 export interface EnvironmentConfig {
-  applyChangesDuringMaintenanceWindow?: boolean | Computed<boolean>;
+  /** The description of the environment. */
   description?: string | Computed<string>;
+  /** The target platform for the environment. */
   engineType: string | Computed<string>;
+  /** The version of the runtime engine for the environment. */
   engineVersion?: string | Computed<string>;
-  forceUpdate?: boolean | Computed<boolean>;
+  /** Defines the details of a high availability configuration. */
+  highAvailabilityConfig?: Environment_HighAvailabilityConfig | Computed<Environment_HighAvailabilityConfig>;
+  /** The type of instance underlying the environment. */
   instanceType: string | Computed<string>;
+  /** The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting environment-related resources. */
   kmsKeyId?: string | Computed<string>;
+  /** The name of the environment. */
   name: string | Computed<string>;
+  /** Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred) */
+  networkType?: string | Computed<string>;
+  /** Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned. */
   preferredMaintenanceWindow?: string | Computed<string>;
+  /** Specifies whether the environment is publicly accessible. */
   publiclyAccessible?: boolean | Computed<boolean>;
-  region?: string | Computed<string>;
+  /** The list of security groups for the VPC associated with this environment. */
   securityGroupIds?: string[] | Computed<string[]>;
+  /** The storage configurations defined for the runtime environment. */
+  storageConfigurations?: unknown[] | Computed<unknown[]>;
+  /** The unique identifiers of the subnets assigned to this runtime environment. */
   subnetIds?: string[] | Computed<string[]>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  highAvailabilityConfig?: Environment_HighAvailabilityConfig[] | Computed<Environment_HighAvailabilityConfig[]>;
-  storageConfiguration?: Environment_StorageConfiguration[] | Computed<Environment_StorageConfiguration[]>;
-  timeouts?: Environment_Timeouts | Computed<Environment_Timeouts>;
+  /** Defines tags associated to an environment. */
+  tags?: unknown | Computed<unknown>;
 }
 
 export interface EnvironmentAttrs {
-  applyChangesDuringMaintenanceWindow: boolean;
-  arn: string;
+  /** The description of the environment. */
   description: string;
+  /** The target platform for the environment. */
   engineType: string;
+  /** The version of the runtime engine for the environment. */
   engineVersion: string;
+  /** The Amazon Resource Name (ARN) of the runtime environment. */
+  environmentArn: string;
+  /** The unique identifier of the environment. */
   environmentId: string;
-  forceUpdate: boolean;
-  id: string;
+  /** Defines the details of a high availability configuration. */
+  highAvailabilityConfig: Environment_HighAvailabilityConfig;
+  /** The type of instance underlying the environment. */
   instanceType: string;
+  /** The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting environment-related resources. */
   kmsKeyId: string;
-  loadBalancerArn: string;
+  /** The name of the environment. */
   name: string;
+  /** Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred) */
+  networkType: string;
+  /** Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned. */
   preferredMaintenanceWindow: string;
+  /** Specifies whether the environment is publicly accessible. */
   publiclyAccessible: boolean;
-  region: string;
+  /** The list of security groups for the VPC associated with this environment. */
   securityGroupIds: string[];
+  /** The storage configurations defined for the runtime environment. */
+  storageConfigurations: unknown[];
+  /** The unique identifiers of the subnets assigned to this runtime environment. */
   subnetIds: string[];
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  highAvailabilityConfig: Environment_HighAvailabilityConfig[];
-  storageConfiguration: Environment_StorageConfiguration[];
-  timeouts: Environment_Timeouts;
+  /** Defines tags associated to an environment. */
+  tags: unknown;
 }
 
 export const Environment: ResourceBinding<EnvironmentConfig, EnvironmentAttrs> = {
   wireType: "aws_m2_environment",
   fields: {
-    applyChangesDuringMaintenanceWindow: "apply_changes_during_maintenance_window",
     description: "description",
     engineType: "engine_type",
     engineVersion: "engine_version",
-    forceUpdate: "force_update",
+    highAvailabilityConfig: {
+      wireName: "high_availability_config",
+      kind: "object",
+      fields: Environment_HighAvailabilityConfigFields,
+    },
     instanceType: "instance_type",
     kmsKeyId: "kms_key_id",
     name: "name",
+    networkType: "network_type",
     preferredMaintenanceWindow: "preferred_maintenance_window",
     publiclyAccessible: "publicly_accessible",
-    region: "region",
     securityGroupIds: "security_group_ids",
+    storageConfigurations: "storage_configurations",
     subnetIds: "subnet_ids",
     tags: "tags",
-    highAvailabilityConfig: {
-      wireName: "high_availability_config",
-      kind: "list",
-      fields: Environment_HighAvailabilityConfigFields,
-    },
-    storageConfiguration: {
-      wireName: "storage_configuration",
-      kind: "list",
-      fields: Environment_StorageConfigurationFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Environment_TimeoutsFields,
-    },
   },
 };

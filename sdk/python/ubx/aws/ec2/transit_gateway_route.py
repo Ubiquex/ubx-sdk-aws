@@ -8,11 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TransitGatewayRouteConfig:
+    # Indicates whether to drop traffic that matches this route.
     blackhole: Any = None
+    # The CIDR range used for destination matches. Routing decisions are based on the most specific match.
     destination_cidr_block: Any = None
-    id: Any = None
-    region: Any = None
+    # The ID of transit gateway attachment.
     transit_gateway_attachment_id: Any = None
+    # The ID of transit gateway route table.
+    transit_gateway_route_table_id: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayRouteAttrs:
+    # Indicates whether to drop traffic that matches this route.
+    blackhole: Any = None
+    # The CIDR range used for destination matches. Routing decisions are based on the most specific match.
+    destination_cidr_block: Any = None
+    # The ID of transit gateway attachment.
+    transit_gateway_attachment_id: Any = None
+    # The ID of transit gateway route table.
     transit_gateway_route_table_id: Any = None
 
 TransitGatewayRoute = ubx.ResourceBinding(
@@ -20,8 +33,6 @@ TransitGatewayRoute = ubx.ResourceBinding(
     fields={
         "blackhole": ubx.FieldSpec(wire_name="blackhole"),
         "destination_cidr_block": ubx.FieldSpec(wire_name="destination_cidr_block"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "transit_gateway_attachment_id": ubx.FieldSpec(wire_name="transit_gateway_attachment_id"),
         "transit_gateway_route_table_id": ubx.FieldSpec(wire_name="transit_gateway_route_table_id"),
     },

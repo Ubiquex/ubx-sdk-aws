@@ -3,31 +3,58 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TransitGatewayMeteringPolicyEntry_Timeouts struct {
-	Create any
-	Delete any
-}
-
-var TransitGatewayMeteringPolicyEntry_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
 type TransitGatewayMeteringPolicyEntryConfig struct {
+	// The list of IP addresses of the instances receiving traffic from the transit gateway
 	DestinationCidrBlock any
+	// The list of ports on destination instances receiving traffic from the transit gateway
 	DestinationPortRange any
+	// The ID of the source attachment through which traffic leaves a transit gateway
 	DestinationTransitGatewayAttachmentId any
 	DestinationTransitGatewayAttachmentType any
+	// The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
 	MeteredAccount any
+	// The rule number of the metering policy entry
 	PolicyRuleNumber any
+	// The protocol of the traffic
 	Protocol any
-	Region any
+	// The list of IP addresses of the instances sending traffic to the transit gateway for which the metering policy entry is applicable
 	SourceCidrBlock any
+	// The list of ports on source instances sending traffic to the transit gateway
 	SourcePortRange any
+	// The ID of the source attachment through which traffic enters a transit gateway
 	SourceTransitGatewayAttachmentId any
 	SourceTransitGatewayAttachmentType any
+	// The ID of the transit gateway metering policy for which the entry is being created
 	TransitGatewayMeteringPolicyId any
-	Timeouts any
+}
+
+type TransitGatewayMeteringPolicyEntryAttrs struct {
+	// The list of IP addresses of the instances receiving traffic from the transit gateway
+	DestinationCidrBlock any
+	// The list of ports on destination instances receiving traffic from the transit gateway
+	DestinationPortRange any
+	// The ID of the source attachment through which traffic leaves a transit gateway
+	DestinationTransitGatewayAttachmentId any
+	DestinationTransitGatewayAttachmentType any
+	// The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
+	MeteredAccount any
+	// The rule number of the metering policy entry
+	PolicyRuleNumber any
+	// The protocol of the traffic
+	Protocol any
+	// The list of IP addresses of the instances sending traffic to the transit gateway for which the metering policy entry is applicable
+	SourceCidrBlock any
+	// The list of ports on source instances sending traffic to the transit gateway
+	SourcePortRange any
+	// The ID of the source attachment through which traffic enters a transit gateway
+	SourceTransitGatewayAttachmentId any
+	SourceTransitGatewayAttachmentType any
+	// State of the transit gateway metering policy
+	State any
+	// The ID of the transit gateway metering policy for which the entry is being created
+	TransitGatewayMeteringPolicyId any
+	// The timestamp at which the latest action performed on the metering policy entry will become effective
+	UpdateEffectiveAt any
 }
 
 var TransitGatewayMeteringPolicyEntry = ubx.ResourceBinding{
@@ -40,16 +67,10 @@ var TransitGatewayMeteringPolicyEntry = ubx.ResourceBinding{
 		"MeteredAccount": ubx.FieldSpec{WireName: "metered_account"},
 		"PolicyRuleNumber": ubx.FieldSpec{WireName: "policy_rule_number"},
 		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SourceCidrBlock": ubx.FieldSpec{WireName: "source_cidr_block"},
 		"SourcePortRange": ubx.FieldSpec{WireName: "source_port_range"},
 		"SourceTransitGatewayAttachmentId": ubx.FieldSpec{WireName: "source_transit_gateway_attachment_id"},
 		"SourceTransitGatewayAttachmentType": ubx.FieldSpec{WireName: "source_transit_gateway_attachment_type"},
 		"TransitGatewayMeteringPolicyId": ubx.FieldSpec{WireName: "transit_gateway_metering_policy_id"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: TransitGatewayMeteringPolicyEntry_TimeoutsFields,
-		},
 	},
 }

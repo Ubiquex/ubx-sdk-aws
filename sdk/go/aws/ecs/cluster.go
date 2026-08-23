@@ -3,55 +3,90 @@ package ecs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Cluster_ClusterSettings struct {
+	// The name of the cluster setting, which identifies the specific setting (such as 'containerInsights') that the corresponding value applies to. (AI-inferred)
+	Name any
+	// The value for the ECS cluster setting, such as 'enabled' or 'disabled' for the common 'containerInsights' setting. (AI-inferred)
+	Value any
+}
+
 type Cluster_Configuration_ExecuteCommandConfiguration_LogConfiguration struct {
+	// Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be off.
 	CloudWatchEncryptionEnabled any
+	// The name of the CloudWatch log group to send logs to. The CloudWatch log group must already be created.
 	CloudWatchLogGroupName any
-	S3BucketEncryptionEnabled any
+	// The name of the S3 bucket to send logs to. The S3 bucket must already be created.
 	S3BucketName any
+	// Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.
+	S3EncryptionEnabled any
+	// An optional folder in the S3 bucket to place logs in.
 	S3KeyPrefix any
 }
 
 type Cluster_Configuration_ExecuteCommandConfiguration struct {
+	// Specify an KMSlong key ID to encrypt the data between the local client and the container.
 	KmsKeyId any
-	Logging any
+	// The log configuration for the results of the execute command actions. The logs can be sent to CloudWatch Logs or an Amazon S3 bucket.
 	LogConfiguration any
+	// The log setting to use for redirecting logs for your execute command results. The following log settings are available. + ``NONE``: The execute command session is not logged. + ``DEFAULT``: The ``awslogs`` configuration in the task definition is used. If no logging parameter is specified, it defaults to this value. If no ``awslogs`` log driver is configured in the task definition, the output won't be logged. + ``OVERRIDE``: Specify the logging details as a part of ``logConfiguration``. If the ``OVERRIDE`` logging option is specified, the ``logConfiguration`` is required.
+	Logging any
 }
 
 type Cluster_Configuration_ManagedStorageConfiguration struct {
+	// Specify the KMSlong key ID for Fargate ephemeral storage. When you specify a ``fargateEphemeralStorageKmsKeyId``, AWS Fargate uses the key to encrypt data at rest in ephemeral storage. For more information about Fargate ephemeral storage encryption, see [Customer managed keys for Fargate ephemeral storage for Amazon ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-storage-encryption.html) in the *Amazon Elastic Container Service Developer Guide*. The key must be a single Region key.
 	FargateEphemeralStorageKmsKeyId any
+	// Specify a KMSlong key ID to encrypt Amazon ECS managed storage. When you specify a ``kmsKeyId``, Amazon ECS uses the key to encrypt data volumes managed by Amazon ECS that are attached to tasks in the cluster. The following data volumes are managed by Amazon ECS: Amazon EBS. For more information about encryption of Amazon EBS volumes attached to Amazon ECS tasks, see [Encrypt data stored in Amazon EBS volumes for Amazon ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-kms-encryption.html) in the *Amazon Elastic Container Service Developer Guide*. The key must be a single Region key.
 	KmsKeyId any
 }
 
 type Cluster_Configuration struct {
+	// The details of the execute command configuration.
 	ExecuteCommandConfiguration any
+	// The managed storage configuration for the cluster.
 	ManagedStorageConfiguration any
 }
 
+type Cluster_DefaultCapacityProviderStrategy struct {
+	// Base specifies the minimum number of tasks that run on this capacity provider within the cluster's capacity provider strategy. (AI-inferred)
+	Base any
+	// Specifies the name of the capacity provider (such as FARGATE, FARGATE_SPOT, or a custom Auto Scaling group-based provider) to include in the default capacity provider strategy that Amazon ECS applies when running tasks without an explicit strategy. (AI-inferred)
+	CapacityProvider any
+	// Weight is the relative proportion of tasks that should be placed on this capacity provider, used for spreading tasks across providers in the cluster's default capacity provider strategy. (AI-inferred)
+	Weight any
+}
+
 type Cluster_ServiceConnectDefaults struct {
+	// The namespace name or full Amazon Resource Name (ARN) of the CMAPlong namespace that's used when you create a service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters. The name is case-sensitive. The name can't include greater than (>), less than (<), double quotation marks ("), or slash (/). If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is supported. The namespace must be in this account and this AWS Region. If you enter a new name, a CMAPlong namespace will be created. Amazon ECS creates a CMAP namespace with the "API calls" method of instance discovery only. This instance discovery method is the "HTTP" namespace type in the CLIlong. Other types of instance discovery aren't used by Service Connect. If you update the cluster with an empty string ``""`` for the namespace name, the cluster configuration for Service Connect is removed. Note that the namespace will remain in CMAP and must be deleted separately. For more information about CMAPlong, see [Working with Services](https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html) in the *Developer Guide*.
 	Namespace any
 }
 
-type Cluster_Setting struct {
-	Name any
+type Cluster_Tags struct {
+	Key any
+	// The value of an arbitrary tag assigned to the ECS cluster, used for metadata and resource organization. (AI-inferred)
 	Value any
 }
+
+var Cluster_ClusterSettingsFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var Cluster_Configuration_ExecuteCommandConfiguration_LogConfigurationFields = ubx.FieldMap{
 		"CloudWatchEncryptionEnabled": ubx.FieldSpec{WireName: "cloud_watch_encryption_enabled"},
 		"CloudWatchLogGroupName": ubx.FieldSpec{WireName: "cloud_watch_log_group_name"},
-		"S3BucketEncryptionEnabled": ubx.FieldSpec{WireName: "s3_bucket_encryption_enabled"},
 		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
+		"S3EncryptionEnabled": ubx.FieldSpec{WireName: "s3_encryption_enabled"},
 		"S3KeyPrefix": ubx.FieldSpec{WireName: "s3_key_prefix"},
 	}
 
 var Cluster_Configuration_ExecuteCommandConfigurationFields = ubx.FieldMap{
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Logging": ubx.FieldSpec{WireName: "logging"},
 		"LogConfiguration": ubx.FieldSpec{
 			WireName: "log_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_Configuration_ExecuteCommandConfiguration_LogConfigurationFields,
 		},
+		"Logging": ubx.FieldSpec{WireName: "logging"},
 	}
 
 var Cluster_Configuration_ManagedStorageConfigurationFields = ubx.FieldMap{
@@ -62,58 +97,96 @@ var Cluster_Configuration_ManagedStorageConfigurationFields = ubx.FieldMap{
 var Cluster_ConfigurationFields = ubx.FieldMap{
 		"ExecuteCommandConfiguration": ubx.FieldSpec{
 			WireName: "execute_command_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_Configuration_ExecuteCommandConfigurationFields,
 		},
 		"ManagedStorageConfiguration": ubx.FieldSpec{
 			WireName: "managed_storage_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_Configuration_ManagedStorageConfigurationFields,
 		},
+	}
+
+var Cluster_DefaultCapacityProviderStrategyFields = ubx.FieldMap{
+		"Base": ubx.FieldSpec{WireName: "base"},
+		"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
+		"Weight": ubx.FieldSpec{WireName: "weight"},
 	}
 
 var Cluster_ServiceConnectDefaultsFields = ubx.FieldMap{
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
 	}
 
-var Cluster_SettingFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+var Cluster_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ClusterConfig struct {
-	Id any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
+	// The short name of one or more capacity providers to associate with the cluster. A capacity provider must be associated with a cluster before it can be included as part of the default capacity provider strategy of the cluster or used in a capacity provider strategy when calling the [CreateService](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html) or [RunTask](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html) actions. If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not associated with another cluster. New Auto Scaling group capacity providers can be created with the [CreateCapacityProvider](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html) API operation. To use a FARGATElong capacity provider, specify either the ``FARGATE`` or ``FARGATE_SPOT`` capacity providers. The FARGATElong capacity providers are available to all accounts and only need to be associated with a cluster to be used. The [PutCapacityProvider](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html) API operation is used to update the list of available capacity providers for a cluster after the cluster is created.
+	CapacityProviders any
+	// A user-generated string that you use to identify your cluster. If you don't specify a name, CFNlong generates a unique physical ID for the name.
+	ClusterName any
+	// The settings to use when creating a cluster. This parameter is used to turn on CloudWatch Container Insights with enhanced observability or CloudWatch Container Insights for a cluster. Container Insights with enhanced observability provides all the Container Insights metrics, plus additional task and container metrics. This version supports enhanced observability for Amazon ECS clusters using the Amazon EC2 and Fargate launch types. After you configure Container Insights with enhanced observability on Amazon ECS, Container Insights auto-collects detailed infrastructure telemetry from the cluster level down to the container level in your environment and displays these critical performance data in curated dashboards removing the heavy lifting in observability set-up. For more information, see [Monitor Amazon ECS containers using Container Insights with enhanced observability](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html) in the *Amazon Elastic Container Service Developer Guide*.
+	ClusterSettings any
+	// The execute command and managed storage configuration for the cluster.
 	Configuration any
+	// The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with no launch type or capacity provider strategy specified, the default capacity provider strategy is used.
+	DefaultCapacityProviderStrategy any
+	// Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the ``enabled`` parameter to ``true`` in the ``ServiceConnectConfiguration``. You can set the namespace of each service individually in the ``ServiceConnectConfiguration`` to override this default parameter. Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see [Service Connect](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html) in the *Amazon Elastic Container Service Developer Guide*.
 	ServiceConnectDefaults any
-	Setting any
+	// The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both. The following basic restrictions apply to tags: + Maximum number of tags per resource - 50 + For each resource, each tag key must be unique, and each tag key can have only one value. + Maximum key length - 128 Unicode characters in UTF-8 + Maximum value length - 256 Unicode characters in UTF-8 + If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. + Tag keys and values are case-sensitive. + Do not use ``aws:``, ``AWS:``, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
+	Tags any
+}
+
+type ClusterAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies this ECS cluster. (AI-inferred)
+	Arn any
+	// The short name of one or more capacity providers to associate with the cluster. A capacity provider must be associated with a cluster before it can be included as part of the default capacity provider strategy of the cluster or used in a capacity provider strategy when calling the [CreateService](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html) or [RunTask](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html) actions. If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not associated with another cluster. New Auto Scaling group capacity providers can be created with the [CreateCapacityProvider](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html) API operation. To use a FARGATElong capacity provider, specify either the ``FARGATE`` or ``FARGATE_SPOT`` capacity providers. The FARGATElong capacity providers are available to all accounts and only need to be associated with a cluster to be used. The [PutCapacityProvider](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html) API operation is used to update the list of available capacity providers for a cluster after the cluster is created.
+	CapacityProviders any
+	// A user-generated string that you use to identify your cluster. If you don't specify a name, CFNlong generates a unique physical ID for the name.
+	ClusterName any
+	// The settings to use when creating a cluster. This parameter is used to turn on CloudWatch Container Insights with enhanced observability or CloudWatch Container Insights for a cluster. Container Insights with enhanced observability provides all the Container Insights metrics, plus additional task and container metrics. This version supports enhanced observability for Amazon ECS clusters using the Amazon EC2 and Fargate launch types. After you configure Container Insights with enhanced observability on Amazon ECS, Container Insights auto-collects detailed infrastructure telemetry from the cluster level down to the container level in your environment and displays these critical performance data in curated dashboards removing the heavy lifting in observability set-up. For more information, see [Monitor Amazon ECS containers using Container Insights with enhanced observability](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html) in the *Amazon Elastic Container Service Developer Guide*.
+	ClusterSettings any
+	// The execute command and managed storage configuration for the cluster.
+	Configuration any
+	// The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with no launch type or capacity provider strategy specified, the default capacity provider strategy is used.
+	DefaultCapacityProviderStrategy any
+	// Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the ``enabled`` parameter to ``true`` in the ``ServiceConnectConfiguration``. You can set the namespace of each service individually in the ``ServiceConnectConfiguration`` to override this default parameter. Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see [Service Connect](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html) in the *Amazon Elastic Container Service Developer Guide*.
+	ServiceConnectDefaults any
+	// The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both. The following basic restrictions apply to tags: + Maximum number of tags per resource - 50 + For each resource, each tag key must be unique, and each tag key can have only one value. + Maximum key length - 128 Unicode characters in UTF-8 + Maximum value length - 256 Unicode characters in UTF-8 + If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. + Tag keys and values are case-sensitive. + Do not use ``aws:``, ``AWS:``, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
+	Tags any
 }
 
 var Cluster = ubx.ResourceBinding{
 	WireType: "aws_ecs_cluster",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"CapacityProviders": ubx.FieldSpec{WireName: "capacity_providers"},
+		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+		"ClusterSettings": ubx.FieldSpec{
+			WireName: "cluster_settings",
+			Kind: "list",
+			Fields: Cluster_ClusterSettingsFields,
+		},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_ConfigurationFields,
+		},
+		"DefaultCapacityProviderStrategy": ubx.FieldSpec{
+			WireName: "default_capacity_provider_strategy",
+			Kind: "list",
+			Fields: Cluster_DefaultCapacityProviderStrategyFields,
 		},
 		"ServiceConnectDefaults": ubx.FieldSpec{
 			WireName: "service_connect_defaults",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_ServiceConnectDefaultsFields,
 		},
-		"Setting": ubx.FieldSpec{
-			WireName: "setting",
-			Kind: "set",
-			Fields: Cluster_SettingFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Cluster_TagsFields,
 		},
 	},
 }

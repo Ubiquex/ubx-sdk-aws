@@ -3,43 +3,99 @@ package elastic
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type BeanstalkApplication_AppversionLifecycle struct {
+type BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig_MaxAgeRule struct {
+	// Set to true to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.
 	DeleteSourceFromS3 any
+	// Specify true to apply the rule, or false to disable it.
+	Enabled any
+	// Specify the number of days to retain an application versions.
 	MaxAgeInDays any
-	MaxCount any
-	ServiceRole any
 }
 
-var BeanstalkApplication_AppversionLifecycleFields = ubx.FieldMap{
+type BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig_MaxCountRule struct {
+	// Set to true to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.
+	DeleteSourceFromS3 any
+	// Specify true to apply the rule, or false to disable it.
+	Enabled any
+	// Specify the maximum number of application versions to retain.
+	MaxCount any
+}
+
+type BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig struct {
+	// This object defines the rule that automatically deletes application versions older than a specified number of days, optionally deleting their source bundles from S3, for the Elastic Beanstalk application version lifecycle configuration. (AI-inferred)
+	MaxAgeRule any
+	// Specifies the max-count-based lifecycle rule for Elastic Beanstalk application versions, including whether the rule is enabled, the maximum number of versions to keep (MaxCount), and whether to delete the source bundle from S3. (AI-inferred)
+	MaxCountRule any
+}
+
+type BeanstalkApplication_ResourceLifecycleConfig struct {
+	// The ARN of an IAM service role that Elastic Beanstalk has permission to assume. The ServiceRole property is required the first time that you provide a ResourceLifecycleConfig for the application. After you provide it once, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again. You can, however, specify it in subsequent updates to change the Service Role to another value.
+	ServiceRole any
+	// Defines the lifecycle policy for application versions, including optional max count and max age rules that control how many versions are retained and how old they may become before deletion. (AI-inferred)
+	VersionLifecycleConfig any
+}
+
+var BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig_MaxAgeRuleFields = ubx.FieldMap{
 		"DeleteSourceFromS3": ubx.FieldSpec{WireName: "delete_source_from_s3"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"MaxAgeInDays": ubx.FieldSpec{WireName: "max_age_in_days"},
+	}
+
+var BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig_MaxCountRuleFields = ubx.FieldMap{
+		"DeleteSourceFromS3": ubx.FieldSpec{WireName: "delete_source_from_s3"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"MaxCount": ubx.FieldSpec{WireName: "max_count"},
+	}
+
+var BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfigFields = ubx.FieldMap{
+		"MaxAgeRule": ubx.FieldSpec{
+			WireName: "max_age_rule",
+			Kind: "object",
+			Fields: BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig_MaxAgeRuleFields,
+		},
+		"MaxCountRule": ubx.FieldSpec{
+			WireName: "max_count_rule",
+			Kind: "object",
+			Fields: BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig_MaxCountRuleFields,
+		},
+	}
+
+var BeanstalkApplication_ResourceLifecycleConfigFields = ubx.FieldMap{
 		"ServiceRole": ubx.FieldSpec{WireName: "service_role"},
+		"VersionLifecycleConfig": ubx.FieldSpec{
+			WireName: "version_lifecycle_config",
+			Kind: "object",
+			Fields: BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfigFields,
+		},
 	}
 
 type BeanstalkApplicationConfig struct {
+	// A name for the Elastic Beanstalk application. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the application name.
+	ApplicationName any
+	// Your description of the application.
 	Description any
-	Id any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
-	AppversionLifecycle any
+	// Defines how Elastic Beanstalk manages the lifecycle of application versions, including whether to delete expired versions, how long to retain them, and the service role used for cleanup. (AI-inferred)
+	ResourceLifecycleConfig any
+}
+
+type BeanstalkApplicationAttrs struct {
+	// A name for the Elastic Beanstalk application. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the application name.
+	ApplicationName any
+	// Your description of the application.
+	Description any
+	// Defines how Elastic Beanstalk manages the lifecycle of application versions, including whether to delete expired versions, how long to retain them, and the service role used for cleanup. (AI-inferred)
+	ResourceLifecycleConfig any
 }
 
 var BeanstalkApplication = ubx.ResourceBinding{
 	WireType: "aws_elastic_beanstalk_application",
 	Fields: ubx.FieldMap{
+		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"AppversionLifecycle": ubx.FieldSpec{
-			WireName: "appversion_lifecycle",
-			Kind: "list",
-			Fields: BeanstalkApplication_AppversionLifecycleFields,
+		"ResourceLifecycleConfig": ubx.FieldSpec{
+			WireName: "resource_lifecycle_config",
+			Kind: "object",
+			Fields: BeanstalkApplication_ResourceLifecycleConfigFields,
 		},
 	},
 }

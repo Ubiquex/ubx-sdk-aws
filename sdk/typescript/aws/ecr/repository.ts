@@ -2,21 +2,35 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Repository_EncryptionConfiguration {
-  encryptionType: string;
-  kmsKey: string;
+  /** The encryption type to use. */
+  encryptionType: string | Computed<string>;
+  /** If you use the KMS or KMS_DSSE encryption type, specify the CMK to use for encryption. The alias, key ID, or full ARN of the CMK can be specified. The key must exist in the same Region as the repository. If no key is specified, the default AWS managed CMK for Amazon ECR will be used. */
+  kmsKey?: string | Computed<string>;
 }
 
 export interface Repository_ImageScanningConfiguration {
-  scanOnPush: boolean;
+  /** The setting that determines whether images are scanned after being pushed to a repository. */
+  scanOnPush?: boolean | Computed<boolean>;
 }
 
-export interface Repository_ImageTagMutabilityExclusionFilter {
-  filter: string;
-  filterType: string;
+export interface Repository_ImageTagMutabilityExclusionFilters {
+  /** This field determines the kind of tag (ANY, TAGGED, or UNTAGGED) to which the image tag mutability exclusion filter applies, allowing certain image tags to bypass the repository's immutable tag setting. (AI-inferred) */
+  imageTagMutabilityExclusionFilterType?: string | Computed<string>;
+  imageTagMutabilityExclusionFilterValue?: string | Computed<string>;
 }
 
-export interface Repository_Timeouts {
-  delete: string;
+export interface Repository_LifecyclePolicy {
+  /** The JSON repository policy text to apply to the repository. */
+  lifecyclePolicyText?: string | Computed<string>;
+  /** The AWS account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed. */
+  registryId?: string | Computed<string>;
+}
+
+export interface Repository_Tags {
+  /** The key of a user-defined tag applied to the ECR repository, used to add metadata that can be referenced by IAM policies (e.g., ecr:ResourceTag) and for cost allocation. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value of a single tag assigned to the ECR repository, used to attach arbitrary metadata for resource identification, organization, and cost tracking. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const Repository_EncryptionConfigurationFields: FieldMap = {
@@ -28,75 +42,98 @@ const Repository_ImageScanningConfigurationFields: FieldMap = {
   scanOnPush: "scan_on_push",
 };
 
-const Repository_ImageTagMutabilityExclusionFilterFields: FieldMap = {
-  filter: "filter",
-  filterType: "filter_type",
+const Repository_ImageTagMutabilityExclusionFiltersFields: FieldMap = {
+  imageTagMutabilityExclusionFilterType: "image_tag_mutability_exclusion_filter_type",
+  imageTagMutabilityExclusionFilterValue: "image_tag_mutability_exclusion_filter_value",
 };
 
-const Repository_TimeoutsFields: FieldMap = {
-  delete: "delete",
+const Repository_LifecyclePolicyFields: FieldMap = {
+  lifecyclePolicyText: "lifecycle_policy_text",
+  registryId: "registry_id",
+};
+
+const Repository_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface RepositoryConfig {
-  forceDelete?: boolean | Computed<boolean>;
-  id?: string | Computed<string>;
+  /** If true, deleting the repository force deletes the contents of the repository. Without a force delete, you can only delete empty repositories. */
+  emptyOnDelete?: boolean | Computed<boolean>;
+  /** The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest. By default, when no encryption configuration is set or the ``AES256`` encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES256 encryption algorithm. This does not require any action on your part. For more control over the encryption of the contents of your repository, you can use server-side encryption with KMSlong key stored in KMSlong (KMS) to encrypt your images. For more information, see [Amazon ECR encryption at rest](https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html) in the *Amazon Elastic Container Registry User Guide*. */
+  encryptionConfiguration?: Repository_EncryptionConfiguration | Computed<Repository_EncryptionConfiguration>;
+  /** The image scanning configuration for a repository. */
+  imageScanningConfiguration?: Repository_ImageScanningConfiguration | Computed<Repository_ImageScanningConfiguration>;
+  /** The tag mutability setting for the repository. If this parameter is omitted, the default setting of ``MUTABLE`` will be used which will allow image tags to be overwritten. If ``IMMUTABLE`` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten. */
   imageTagMutability?: string | Computed<string>;
-  name: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  encryptionConfiguration?: Repository_EncryptionConfiguration[] | Computed<Repository_EncryptionConfiguration[]>;
-  imageScanningConfiguration?: Repository_ImageScanningConfiguration[] | Computed<Repository_ImageScanningConfiguration[]>;
-  imageTagMutabilityExclusionFilter?: Repository_ImageTagMutabilityExclusionFilter[] | Computed<Repository_ImageTagMutabilityExclusionFilter[]>;
-  timeouts?: Repository_Timeouts | Computed<Repository_Timeouts>;
+  /** A list of filters that specify which image tags are excluded from the repository's image tag mutability setting. */
+  imageTagMutabilityExclusionFilters?: Repository_ImageTagMutabilityExclusionFilters[] | Computed<Repository_ImageTagMutabilityExclusionFilters[]>;
+  /** The ``LifecyclePolicy`` property type specifies a lifecycle policy. For information about lifecycle policy syntax, see [Lifecycle policy template](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html) in the *Amazon ECR User Guide*. */
+  lifecyclePolicy?: Repository_LifecyclePolicy | Computed<Repository_LifecyclePolicy>;
+  /** The name to use for the repository. The repository name may be specified on its own (such as ``nginx-web-app``) or it can be prepended with a namespace to group the repository into a category (such as ``project-a/nginx-web-app``). If you don't specify a name, CFNlong generates a unique physical ID and uses that ID for the repository name. For more information, see [Name type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens, underscores, and forward slashes. If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name. */
+  repositoryName?: string | Computed<string>;
+  /** The JSON repository policy text to apply to the repository. For more information, see [Amazon ECR repository policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) in the *Amazon Elastic Container Registry User Guide*. */
+  repositoryPolicyText?: unknown | Computed<unknown>;
+  /** An array of key-value pairs to apply to this resource. */
+  tags?: Repository_Tags[] | Computed<Repository_Tags[]>;
 }
 
 export interface RepositoryAttrs {
+  /** The Amazon Resource Name (ARN) that uniquely identifies this ECR repository, such as arn:aws:ecr:region:account-id:repository/repository-name. (AI-inferred) */
   arn: string;
-  forceDelete: boolean;
-  id: string;
+  /** If true, deleting the repository force deletes the contents of the repository. Without a force delete, you can only delete empty repositories. */
+  emptyOnDelete: boolean;
+  /** The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest. By default, when no encryption configuration is set or the ``AES256`` encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES256 encryption algorithm. This does not require any action on your part. For more control over the encryption of the contents of your repository, you can use server-side encryption with KMSlong key stored in KMSlong (KMS) to encrypt your images. For more information, see [Amazon ECR encryption at rest](https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html) in the *Amazon Elastic Container Registry User Guide*. */
+  encryptionConfiguration: Repository_EncryptionConfiguration;
+  /** The image scanning configuration for a repository. */
+  imageScanningConfiguration: Repository_ImageScanningConfiguration;
+  /** The tag mutability setting for the repository. If this parameter is omitted, the default setting of ``MUTABLE`` will be used which will allow image tags to be overwritten. If ``IMMUTABLE`` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten. */
   imageTagMutability: string;
-  name: string;
-  region: string;
-  registryId: string;
-  repositoryUrl: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  encryptionConfiguration: Repository_EncryptionConfiguration[];
-  imageScanningConfiguration: Repository_ImageScanningConfiguration[];
-  imageTagMutabilityExclusionFilter: Repository_ImageTagMutabilityExclusionFilter[];
-  timeouts: Repository_Timeouts;
+  /** A list of filters that specify which image tags are excluded from the repository's image tag mutability setting. */
+  imageTagMutabilityExclusionFilters: Repository_ImageTagMutabilityExclusionFilters[];
+  /** The ``LifecyclePolicy`` property type specifies a lifecycle policy. For information about lifecycle policy syntax, see [Lifecycle policy template](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html) in the *Amazon ECR User Guide*. */
+  lifecyclePolicy: Repository_LifecyclePolicy;
+  /** The name to use for the repository. The repository name may be specified on its own (such as ``nginx-web-app``) or it can be prepended with a namespace to group the repository into a category (such as ``project-a/nginx-web-app``). If you don't specify a name, CFNlong generates a unique physical ID and uses that ID for the repository name. For more information, see [Name type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens, underscores, and forward slashes. If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name. */
+  repositoryName: string;
+  /** The JSON repository policy text to apply to the repository. For more information, see [Amazon ECR repository policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) in the *Amazon Elastic Container Registry User Guide*. */
+  repositoryPolicyText: unknown;
+  /** The URI of the Amazon ECR repository, formatted as `aws_account_id.dkr.ecr.region.amazonaws.com/repository_name`, which is used to pull and push Docker images. (AI-inferred) */
+  repositoryUri: string;
+  /** An array of key-value pairs to apply to this resource. */
+  tags: Repository_Tags[];
 }
 
 export const Repository: ResourceBinding<RepositoryConfig, RepositoryAttrs> = {
   wireType: "aws_ecr_repository",
   fields: {
-    forceDelete: "force_delete",
-    id: "id",
-    imageTagMutability: "image_tag_mutability",
-    name: "name",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
+    emptyOnDelete: "empty_on_delete",
     encryptionConfiguration: {
       wireName: "encryption_configuration",
-      kind: "list",
+      kind: "object",
       fields: Repository_EncryptionConfigurationFields,
     },
     imageScanningConfiguration: {
       wireName: "image_scanning_configuration",
-      kind: "list",
+      kind: "object",
       fields: Repository_ImageScanningConfigurationFields,
     },
-    imageTagMutabilityExclusionFilter: {
-      wireName: "image_tag_mutability_exclusion_filter",
+    imageTagMutability: "image_tag_mutability",
+    imageTagMutabilityExclusionFilters: {
+      wireName: "image_tag_mutability_exclusion_filters",
       kind: "list",
-      fields: Repository_ImageTagMutabilityExclusionFilterFields,
+      fields: Repository_ImageTagMutabilityExclusionFiltersFields,
     },
-    timeouts: {
-      wireName: "timeouts",
+    lifecyclePolicy: {
+      wireName: "lifecycle_policy",
       kind: "object",
-      fields: Repository_TimeoutsFields,
+      fields: Repository_LifecyclePolicyFields,
+    },
+    repositoryName: "repository_name",
+    repositoryPolicyText: "repository_policy_text",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Repository_TagsFields,
     },
   },
 };

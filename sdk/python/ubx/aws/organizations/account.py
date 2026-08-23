@@ -7,48 +7,68 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Account_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Account_Tags:
+    # The key portion of a key-value tag assigned to the AWS Organizations account, enabling you to categorize and manage the account for cost allocation, access control, or operational purposes. (AI-inferred)
+    key: Any = None
+    # The value of a key-value tag assigned to the AWS Organizations account. (AI-inferred)
+    value: Any = None
 
-_Account_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Account_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class AccountConfig:
-    close_on_deletion: Any = None
-    create_govcloud: Any = None
+    # The friendly name of the member account.
+    account_name: Any = None
+    # The email address of the owner to assign to the new member account.
     email: Any = None
-    iam_user_access_to_billing: Any = None
-    id: Any = None
-    name: Any = None
-    parent_id: Any = None
+    # List of parent nodes for the member account. Currently only one parent at a time is supported. Default is root.
+    parent_ids: Any = None
+    # The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. Default name is OrganizationAccountAccessRole if not specified.
     role_name: Any = None
+    # A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value.
     tags: Any = None
-    tags_all: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class AccountAttrs:
+    # If the account was created successfully, the unique identifier (ID) of the new account.
+    account_id: Any = None
+    # The friendly name of the member account.
+    account_name: Any = None
+    # The Amazon Resource Name (ARN) of the account.
+    arn: Any = None
+    # The email address of the owner to assign to the new member account.
+    email: Any = None
+    # The method by which the account joined the organization.
+    joined_method: Any = None
+    # The date the account became a part of the organization.
+    joined_timestamp: Any = None
+    # List of parent nodes for the member account. Currently only one parent at a time is supported. Default is root.
+    parent_ids: Any = None
+    # The paths in the organization where the account exists.
+    paths: Any = None
+    # The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. Default name is OrganizationAccountAccessRole if not specified.
+    role_name: Any = None
+    # The state of the account in the organization.
+    state: Any = None
+    # The status of the account in the organization.
+    status: Any = None
+    # A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value.
+    tags: Any = None
 
 Account = ubx.ResourceBinding(
     wire_type="aws_organizations_account",
     fields={
-        "close_on_deletion": ubx.FieldSpec(wire_name="close_on_deletion"),
-        "create_govcloud": ubx.FieldSpec(wire_name="create_govcloud"),
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
         "email": ubx.FieldSpec(wire_name="email"),
-        "iam_user_access_to_billing": ubx.FieldSpec(wire_name="iam_user_access_to_billing"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "parent_id": ubx.FieldSpec(wire_name="parent_id"),
+        "parent_ids": ubx.FieldSpec(wire_name="parent_ids"),
         "role_name": ubx.FieldSpec(wire_name="role_name"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Account_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Account_TagsFields,
         ),
     },
 )

@@ -8,37 +8,65 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Group_InsightsConfiguration:
+    # Set the InsightsEnabled value to true to enable insights or false to disable insights.
     insights_enabled: Any = None
+    # Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.
     notifications_enabled: Any = None
+
+@dataclasses.dataclass
+class Group_Tags:
+    # Specifies the key of a tag assigned to the AWS X-Ray group, enabling you to categorize and manage the group within your AWS environment. (AI-inferred)
+    key: Any = None
+    value: Any = None
 
 _Group_InsightsConfigurationFields = {
     "insights_enabled": ubx.FieldSpec(wire_name="insights_enabled"),
     "notifications_enabled": ubx.FieldSpec(wire_name="notifications_enabled"),
 }
 
+_Group_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 @dataclasses.dataclass
 class GroupConfig:
+    # The filter expression defining criteria by which to group traces.
     filter_expression: Any = None
+    # The case-sensitive name of the new group. Names must be unique.
     group_name: Any = None
-    id: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred)
     insights_configuration: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class GroupAttrs:
+    # The filter expression defining criteria by which to group traces.
+    filter_expression: Any = None
+    # The ARN of the group that was generated on creation.
+    group_arn: Any = None
+    # The case-sensitive name of the new group. Names must be unique.
+    group_name: Any = None
+    # Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred)
+    insights_configuration: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Group = ubx.ResourceBinding(
     wire_type="aws_xray_group",
     fields={
         "filter_expression": ubx.FieldSpec(wire_name="filter_expression"),
         "group_name": ubx.FieldSpec(wire_name="group_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "insights_configuration": ubx.FieldSpec(
             wire_name="insights_configuration",
-            kind="list",
+            kind="object",
             fields=_Group_InsightsConfigurationFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Group_TagsFields,
         ),
     },
 )

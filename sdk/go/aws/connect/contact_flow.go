@@ -3,17 +3,51 @@ package connect
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ContactFlow_Tags struct {
+	// The key portion of a tag applied to an Amazon Connect contact flow, used to categorize the resource and enforce tag-based access control in IAM policies. (AI-inferred)
+	Key any
+	// The value of an individual tag assigned to the Amazon Connect contact flow. (AI-inferred)
+	Value any
+}
+
+var ContactFlow_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ContactFlowConfig struct {
+	// The content of the contact flow in JSON format.
 	Content any
-	ContentHash any
+	// The description of the contact flow.
 	Description any
-	Filename any
-	Id any
-	InstanceId any
+	// The identifier of the Amazon Connect instance (ARN).
+	InstanceArn any
+	// The name of the contact flow.
 	Name any
-	Region any
+	// The state of the contact flow.
+	State any
+	// One or more tags.
 	Tags any
-	TagsAll any
+	// The type of the contact flow.
+	Type any
+}
+
+type ContactFlowAttrs struct {
+	// The identifier of the contact flow (ARN).
+	ContactFlowArn any
+	// The content of the contact flow in JSON format.
+	Content any
+	// The description of the contact flow.
+	Description any
+	// The identifier of the Amazon Connect instance (ARN).
+	InstanceArn any
+	// The name of the contact flow.
+	Name any
+	// The state of the contact flow.
+	State any
+	// One or more tags.
+	Tags any
+	// The type of the contact flow.
 	Type any
 }
 
@@ -21,15 +55,15 @@ var ContactFlow = ubx.ResourceBinding{
 	WireType: "aws_connect_contact_flow",
 	Fields: ubx.FieldMap{
 		"Content": ubx.FieldSpec{WireName: "content"},
-		"ContentHash": ubx.FieldSpec{WireName: "content_hash"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Filename": ubx.FieldSpec{WireName: "filename"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ContactFlow_TagsFields,
+		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

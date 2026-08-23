@@ -2,13 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Faq_S3Path {
-  bucket: string;
-  key: string;
+  /** The name of the S3 bucket that contains the FAQ data file specified for the Kendra FAQ. (AI-inferred) */
+  bucket: string | Computed<string>;
+  /** The S3 object key (file name/path) within the bucket that points to the FAQ file used by the Kendra index. (AI-inferred) */
+  key: string | Computed<string>;
 }
 
-export interface Faq_Timeouts {
-  create: string;
-  delete: string;
+export interface Faq_Tags {
+  /** The key of a tag attached to the Kendra FAQ, used to identify and categorize the resource for management and cost allocation. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value component of a tag (a key-value pair) attached to the Amazon Kendra FAQ resource, used for metadata, categorization, and cost allocation. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const Faq_S3PathFields: FieldMap = {
@@ -16,45 +20,51 @@ const Faq_S3PathFields: FieldMap = {
   key: "key",
 };
 
-const Faq_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
+const Faq_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface FaqConfig {
+  /** Description of the FAQ */
   description?: string | Computed<string>;
+  /** Format of the input file */
   fileFormat?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** Unique ID of Index */
   indexId: string | Computed<string>;
+  /** The code for a language. */
   languageCode?: string | Computed<string>;
+  /** The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred) */
   name: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred) */
   roleArn: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  s3Path?: Faq_S3Path[] | Computed<Faq_S3Path[]>;
-  timeouts?: Faq_Timeouts | Computed<Faq_Timeouts>;
+  /** The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred) */
+  s3Path: Faq_S3Path | Computed<Faq_S3Path>;
+  /** List of tags */
+  tags?: Faq_Tags[] | Computed<Faq_Tags[]>;
 }
 
 export interface FaqAttrs {
+  /** The Amazon Resource Name (ARN) that uniquely identifies the Kendra FAQ resource. (AI-inferred) */
   arn: string;
-  createdAt: string;
+  /** Description of the FAQ */
   description: string;
-  errorMessage: string;
-  faqId: string;
+  /** Format of the input file */
   fileFormat: string;
+  /** Unique ID of the FAQ */
   id: string;
+  /** Unique ID of Index */
   indexId: string;
+  /** The code for a language. */
   languageCode: string;
+  /** The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred) */
   name: string;
-  region: string;
+  /** The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred) */
   roleArn: string;
-  status: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  updatedAt: string;
-  s3Path: Faq_S3Path[];
-  timeouts: Faq_Timeouts;
+  /** The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred) */
+  s3Path: Faq_S3Path;
+  /** List of tags */
+  tags: Faq_Tags[];
 }
 
 export const Faq: ResourceBinding<FaqConfig, FaqAttrs> = {
@@ -62,23 +72,19 @@ export const Faq: ResourceBinding<FaqConfig, FaqAttrs> = {
   fields: {
     description: "description",
     fileFormat: "file_format",
-    id: "id",
     indexId: "index_id",
     languageCode: "language_code",
     name: "name",
-    region: "region",
     roleArn: "role_arn",
-    tags: "tags",
-    tagsAll: "tags_all",
     s3Path: {
       wireName: "s3_path",
-      kind: "list",
+      kind: "object",
       fields: Faq_S3PathFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Faq_TimeoutsFields,
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Faq_TagsFields,
     },
   },
 };

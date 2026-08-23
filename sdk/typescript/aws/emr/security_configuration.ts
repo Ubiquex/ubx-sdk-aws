@@ -2,29 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SecurityConfigurationConfig {
-  configuration: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** The name of the security configuration. */
   name?: string | Computed<string>;
-  namePrefix?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The security configuration details in JSON format. */
+  securityConfiguration: unknown | Computed<unknown>;
 }
 
 export interface SecurityConfigurationAttrs {
-  configuration: string;
-  creationDate: string;
-  id: string;
+  /** The name of the security configuration. */
   name: string;
-  namePrefix: string;
-  region: string;
+  /** The security configuration details in JSON format. */
+  securityConfiguration: unknown;
 }
 
 export const SecurityConfiguration: ResourceBinding<SecurityConfigurationConfig, SecurityConfigurationAttrs> = {
   wireType: "aws_emr_security_configuration",
   fields: {
-    configuration: "configuration",
-    id: "id",
     name: "name",
-    namePrefix: "name_prefix",
-    region: "region",
+    securityConfiguration: "security_configuration",
   },
 };

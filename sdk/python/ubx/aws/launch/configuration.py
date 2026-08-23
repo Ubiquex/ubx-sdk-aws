@@ -7,52 +7,59 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Configuration_EbsBlockDevice:
+class Configuration_BlockDeviceMappings_Ebs:
+    # Controls whether the EBS volume defined in this block device mapping is automatically deleted when the EC2 instance terminates. (AI-inferred)
     delete_on_termination: Any = None
-    device_name: Any = None
+    # Whether the EBS volume in this block device mapping is encrypted, using the default AWS KMS key or the one specified by kms_key_id. (AI-inferred)
     encrypted: Any = None
+    # The number of I/O operations per second (IOPS) to provision for the EBS volume, which is required when the volume type is `io1` (provisioned IOPS SSD) in the launch configuration's block device mapping. (AI-inferred)
     iops: Any = None
-    no_device: Any = None
+    # The ID of the snapshot to use as the source for the EBS volume in this block device mapping. (AI-inferred)
     snapshot_id: Any = None
+    # The throughput (in MiB/s) to provision for the EBS volume, which is applicable only when the volume type is gp3. (AI-inferred)
     throughput: Any = None
+    # The size of the Amazon EBS volume, in GiB, for the block device mapping in the Auto Scaling launch configuration. (AI-inferred)
     volume_size: Any = None
+    # Specifies the Amazon EBS volume type (e.g., gp2, gp3, io1, st1, sc1, standard) for the block device mapped in the launch configuration, affecting performance and cost. (AI-inferred)
     volume_type: Any = None
 
 @dataclasses.dataclass
-class Configuration_EphemeralBlockDevice:
+class Configuration_BlockDeviceMappings:
+    # The device name (e.g., /dev/xvda, /dev/sdb) exposed to the EC2 instance for this block device mapping in the launch configuration. (AI-inferred)
     device_name: Any = None
+    # The EBS-specific settings (e.g., volume size, type, IOPS, snapshot, encryption, delete-on-termination) for the volume attached via this block device mapping in the Auto Scaling launch configuration. (AI-inferred)
+    ebs: Any = None
+    # When set to true, suppresses the block device mapping for the specified device name, so the launch configuration does not attach that device to instances launched from it. (AI-inferred)
     no_device: Any = None
+    # Specifies the virtual device name (such as ephemeral0 or ephemeral1) for an ephemeral (instance store) block device in the launch configuration's block device mapping. (AI-inferred)
     virtual_name: Any = None
 
 @dataclasses.dataclass
 class Configuration_MetadataOptions:
+    # This parameter enables or disables the HTTP metadata endpoint on your instances.
     http_endpoint: Any = None
+    # The desired HTTP PUT response hop limit for instance metadata requests.
     http_put_response_hop_limit: Any = None
+    # The state of token usage for your instance metadata requests.
     http_tokens: Any = None
 
-@dataclasses.dataclass
-class Configuration_RootBlockDevice:
-    delete_on_termination: Any = None
-    encrypted: Any = None
-    iops: Any = None
-    throughput: Any = None
-    volume_size: Any = None
-    volume_type: Any = None
-
-_Configuration_EbsBlockDeviceFields = {
+_Configuration_BlockDeviceMappings_EbsFields = {
     "delete_on_termination": ubx.FieldSpec(wire_name="delete_on_termination"),
-    "device_name": ubx.FieldSpec(wire_name="device_name"),
     "encrypted": ubx.FieldSpec(wire_name="encrypted"),
     "iops": ubx.FieldSpec(wire_name="iops"),
-    "no_device": ubx.FieldSpec(wire_name="no_device"),
     "snapshot_id": ubx.FieldSpec(wire_name="snapshot_id"),
     "throughput": ubx.FieldSpec(wire_name="throughput"),
     "volume_size": ubx.FieldSpec(wire_name="volume_size"),
     "volume_type": ubx.FieldSpec(wire_name="volume_type"),
 }
 
-_Configuration_EphemeralBlockDeviceFields = {
+_Configuration_BlockDeviceMappingsFields = {
     "device_name": ubx.FieldSpec(wire_name="device_name"),
+    "ebs": ubx.FieldSpec(
+        wire_name="ebs",
+        kind="object",
+        fields=_Configuration_BlockDeviceMappings_EbsFields,
+    ),
     "no_device": ubx.FieldSpec(wire_name="no_device"),
     "virtual_name": ubx.FieldSpec(wire_name="virtual_name"),
 }
@@ -63,76 +70,117 @@ _Configuration_MetadataOptionsFields = {
     "http_tokens": ubx.FieldSpec(wire_name="http_tokens"),
 }
 
-_Configuration_RootBlockDeviceFields = {
-    "delete_on_termination": ubx.FieldSpec(wire_name="delete_on_termination"),
-    "encrypted": ubx.FieldSpec(wire_name="encrypted"),
-    "iops": ubx.FieldSpec(wire_name="iops"),
-    "throughput": ubx.FieldSpec(wire_name="throughput"),
-    "volume_size": ubx.FieldSpec(wire_name="volume_size"),
-    "volume_type": ubx.FieldSpec(wire_name="volume_type"),
-}
-
 @dataclasses.dataclass
 class ConfigurationConfig:
+    # For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether to assign a public IP address to the group's instances.
     associate_public_ip_address: Any = None
+    # Specifies how block devices are exposed to the instance. You can specify virtual devices and EBS volumes.
+    block_device_mappings: Any = None
+    # The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+    classic_link_vpcid: Any = None
+    # The IDs of one or more security groups for the VPC that you specified in the ClassicLinkVPCId property.
+    classic_link_vpcsecurity_groups: Any = None
+    # Specifies whether the launch configuration is optimized for EBS I/O (true) or not (false).
     ebs_optimized: Any = None
-    enable_monitoring: Any = None
+    # Provides the name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.
     iam_instance_profile: Any = None
-    id: Any = None
+    # Provides the unique ID of the Amazon Machine Image (AMI) that was assigned during registration.
     image_id: Any = None
+    # The ID of the Amazon EC2 instance you want to use to create the launch configuration.
+    instance_id: Any = None
+    # Controls whether instances in this group are launched with detailed (true) or basic (false) monitoring.
+    instance_monitoring: Any = None
+    # Specifies the instance type of the EC2 instance.
     instance_type: Any = None
+    # Provides the ID of the kernel associated with the EC2 AMI.
+    kernel_id: Any = None
+    # Provides the name of the EC2 key pair.
     key_name: Any = None
-    name: Any = None
-    name_prefix: Any = None
-    placement_tenancy: Any = None
-    region: Any = None
-    security_groups: Any = None
-    spot_price: Any = None
-    user_data: Any = None
-    user_data_base64: Any = None
-    ebs_block_device: Any = None
-    ephemeral_block_device: Any = None
+    # The name of the launch configuration. This name must be unique per Region per account.
+    launch_configuration_name: Any = None
+    # MetadataOptions is a property of AWS::AutoScaling::LaunchConfiguration that describes metadata options for the instances.
     metadata_options: Any = None
-    root_block_device: Any = None
+    # The tenancy of the instance, either default or dedicated.
+    placement_tenancy: Any = None
+    # The ID of the RAM disk to select.
+    ram_disk_id: Any = None
+    # A list that contains the security groups to assign to the instances in the Auto Scaling group.
+    security_groups: Any = None
+    # The maximum hourly price you are willing to pay for any Spot Instances launched to fulfill the request.
+    spot_price: Any = None
+    # The Base64-encoded user data to make available to the launched EC2 instances.
+    user_data: Any = None
+
+@dataclasses.dataclass
+class ConfigurationAttrs:
+    # For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether to assign a public IP address to the group's instances.
+    associate_public_ip_address: Any = None
+    # Specifies how block devices are exposed to the instance. You can specify virtual devices and EBS volumes.
+    block_device_mappings: Any = None
+    # The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+    classic_link_vpcid: Any = None
+    # The IDs of one or more security groups for the VPC that you specified in the ClassicLinkVPCId property.
+    classic_link_vpcsecurity_groups: Any = None
+    # Specifies whether the launch configuration is optimized for EBS I/O (true) or not (false).
+    ebs_optimized: Any = None
+    # Provides the name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.
+    iam_instance_profile: Any = None
+    # Provides the unique ID of the Amazon Machine Image (AMI) that was assigned during registration.
+    image_id: Any = None
+    # The ID of the Amazon EC2 instance you want to use to create the launch configuration.
+    instance_id: Any = None
+    # Controls whether instances in this group are launched with detailed (true) or basic (false) monitoring.
+    instance_monitoring: Any = None
+    # Specifies the instance type of the EC2 instance.
+    instance_type: Any = None
+    # Provides the ID of the kernel associated with the EC2 AMI.
+    kernel_id: Any = None
+    # Provides the name of the EC2 key pair.
+    key_name: Any = None
+    # The name of the launch configuration. This name must be unique per Region per account.
+    launch_configuration_name: Any = None
+    # MetadataOptions is a property of AWS::AutoScaling::LaunchConfiguration that describes metadata options for the instances.
+    metadata_options: Any = None
+    # The tenancy of the instance, either default or dedicated.
+    placement_tenancy: Any = None
+    # The ID of the RAM disk to select.
+    ram_disk_id: Any = None
+    # A list that contains the security groups to assign to the instances in the Auto Scaling group.
+    security_groups: Any = None
+    # The maximum hourly price you are willing to pay for any Spot Instances launched to fulfill the request.
+    spot_price: Any = None
+    # The Base64-encoded user data to make available to the launched EC2 instances.
+    user_data: Any = None
 
 Configuration = ubx.ResourceBinding(
     wire_type="aws_launch_configuration",
     fields={
         "associate_public_ip_address": ubx.FieldSpec(wire_name="associate_public_ip_address"),
+        "block_device_mappings": ubx.FieldSpec(
+            wire_name="block_device_mappings",
+            kind="list",
+            fields=_Configuration_BlockDeviceMappingsFields,
+        ),
+        "classic_link_vpcid": ubx.FieldSpec(wire_name="classic_link_vpcid"),
+        "classic_link_vpcsecurity_groups": ubx.FieldSpec(wire_name="classic_link_vpcsecurity_groups"),
         "ebs_optimized": ubx.FieldSpec(wire_name="ebs_optimized"),
-        "enable_monitoring": ubx.FieldSpec(wire_name="enable_monitoring"),
         "iam_instance_profile": ubx.FieldSpec(wire_name="iam_instance_profile"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "image_id": ubx.FieldSpec(wire_name="image_id"),
+        "instance_id": ubx.FieldSpec(wire_name="instance_id"),
+        "instance_monitoring": ubx.FieldSpec(wire_name="instance_monitoring"),
         "instance_type": ubx.FieldSpec(wire_name="instance_type"),
+        "kernel_id": ubx.FieldSpec(wire_name="kernel_id"),
         "key_name": ubx.FieldSpec(wire_name="key_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
+        "launch_configuration_name": ubx.FieldSpec(wire_name="launch_configuration_name"),
+        "metadata_options": ubx.FieldSpec(
+            wire_name="metadata_options",
+            kind="object",
+            fields=_Configuration_MetadataOptionsFields,
+        ),
         "placement_tenancy": ubx.FieldSpec(wire_name="placement_tenancy"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "ram_disk_id": ubx.FieldSpec(wire_name="ram_disk_id"),
         "security_groups": ubx.FieldSpec(wire_name="security_groups"),
         "spot_price": ubx.FieldSpec(wire_name="spot_price"),
         "user_data": ubx.FieldSpec(wire_name="user_data"),
-        "user_data_base64": ubx.FieldSpec(wire_name="user_data_base64"),
-        "ebs_block_device": ubx.FieldSpec(
-            wire_name="ebs_block_device",
-            kind="set",
-            fields=_Configuration_EbsBlockDeviceFields,
-        ),
-        "ephemeral_block_device": ubx.FieldSpec(
-            wire_name="ephemeral_block_device",
-            kind="set",
-            fields=_Configuration_EphemeralBlockDeviceFields,
-        ),
-        "metadata_options": ubx.FieldSpec(
-            wire_name="metadata_options",
-            kind="list",
-            fields=_Configuration_MetadataOptionsFields,
-        ),
-        "root_block_device": ubx.FieldSpec(
-            wire_name="root_block_device",
-            kind="list",
-            fields=_Configuration_RootBlockDeviceFields,
-        ),
     },
 )

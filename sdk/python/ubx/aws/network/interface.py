@@ -7,104 +7,214 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Interface_Attachment:
-    attachment_id: Any = None
-    device_index: Any = None
-    instance: Any = None
-    network_card_index: Any = None
+class Interface_ConnectionTrackingSpecification:
+    # Specifies the timeout (in seconds) for TCP established connections for the network interface's connection tracking configuration. (AI-inferred)
+    tcp_established_timeout: Any = None
+    # The timeout in seconds for UDP streams in the established state on this network interface, after which connection tracking removes the flow if no packets are seen. (AI-inferred)
+    udp_stream_timeout: Any = None
+    # Specifies the idle timeout in seconds for UDP traffic on the network interface, determining how long a UDP flow remains active in connection tracking before it expires. (AI-inferred)
+    udp_timeout: Any = None
 
 @dataclasses.dataclass
-class Interface_EnaSrdSpecification_EnaSrdUdpSpecification:
-    ena_srd_udp_enabled: Any = None
+class Interface_Ipv4Prefixes:
+    # The IPv4 prefix (CIDR block) assigned to the network interface. (AI-inferred)
+    ipv4_prefix: Any = None
 
 @dataclasses.dataclass
-class Interface_EnaSrdSpecification:
-    ena_srd_enabled: Any = None
-    ena_srd_udp_specification: Any = None
+class Interface_Ipv6Addresses:
+    # Specifies an IPv6 address from the subnet's IPv6 CIDR block to assign to the network interface. (AI-inferred)
+    ipv6_address: Any = None
 
-_Interface_AttachmentFields = {
-    "attachment_id": ubx.FieldSpec(wire_name="attachment_id"),
-    "device_index": ubx.FieldSpec(wire_name="device_index"),
-    "instance": ubx.FieldSpec(wire_name="instance"),
-    "network_card_index": ubx.FieldSpec(wire_name="network_card_index"),
+@dataclasses.dataclass
+class Interface_Ipv6Prefixes:
+    # The IPv6 prefix (CIDR block) assigned to the network interface, such as 2001:db8::/64. (AI-inferred)
+    ipv6_prefix: Any = None
+
+@dataclasses.dataclass
+class Interface_PrivateIpAddresses:
+    # Indicates whether this private IP address is the primary private IP address of the network interface. (AI-inferred)
+    primary: Any = None
+    # Specifies the private IPv4 address for a secondary IP address assignment on the network interface. (AI-inferred)
+    private_ip_address: Any = None
+
+@dataclasses.dataclass
+class Interface_PublicIpDnsNameOptions:
+    # Specifies the type of DNS hostname to assign to the public IP address of the network interface, either 'ip-name' (default) or 'resource-name'. (AI-inferred)
+    dns_hostname_type: Any = None
+    # The public_dual_stack_dns_name is the fully qualified public DNS hostname that AWS assigns to the network interface, resolving to both its public IPv4 and public IPv6 addresses when dual-stack DNS naming is enabled in the containing public IP DNS name options. (AI-inferred)
+    public_dual_stack_dns_name: Any = None
+    # The DNS name automatically assigned to the network interface's public IPv4 address (e.g., ec2-203-0-113-10.compute-1.amazonaws.com), determined by the HostnameType and DNS A record settings configured in the public_ip_dns_name_options block. (AI-inferred)
+    public_ipv4_dns_name: Any = None
+    public_ipv6_dns_name: Any = None
+
+@dataclasses.dataclass
+class Interface_Tags:
+    key: Any = None
+    # The value of a tag applied to the network interface, used for resource categorization, cost allocation, and access control. (AI-inferred)
+    value: Any = None
+
+_Interface_ConnectionTrackingSpecificationFields = {
+    "tcp_established_timeout": ubx.FieldSpec(wire_name="tcp_established_timeout"),
+    "udp_stream_timeout": ubx.FieldSpec(wire_name="udp_stream_timeout"),
+    "udp_timeout": ubx.FieldSpec(wire_name="udp_timeout"),
 }
 
-_Interface_EnaSrdSpecification_EnaSrdUdpSpecificationFields = {
-    "ena_srd_udp_enabled": ubx.FieldSpec(wire_name="ena_srd_udp_enabled"),
+_Interface_Ipv4PrefixesFields = {
+    "ipv4_prefix": ubx.FieldSpec(wire_name="ipv4_prefix"),
 }
 
-_Interface_EnaSrdSpecificationFields = {
-    "ena_srd_enabled": ubx.FieldSpec(wire_name="ena_srd_enabled"),
-    "ena_srd_udp_specification": ubx.FieldSpec(
-        wire_name="ena_srd_udp_specification",
-        kind="list",
-        fields=_Interface_EnaSrdSpecification_EnaSrdUdpSpecificationFields,
-    ),
+_Interface_Ipv6AddressesFields = {
+    "ipv6_address": ubx.FieldSpec(wire_name="ipv6_address"),
+}
+
+_Interface_Ipv6PrefixesFields = {
+    "ipv6_prefix": ubx.FieldSpec(wire_name="ipv6_prefix"),
+}
+
+_Interface_PrivateIpAddressesFields = {
+    "primary": ubx.FieldSpec(wire_name="primary"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+}
+
+_Interface_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class InterfaceConfig:
+    # Specifies the connection tracking configuration for the network interface, including idle timeout values for established TCP connections and UDP flows to control stateful traffic tracking. (AI-inferred)
+    connection_tracking_specification: Any = None
+    # A description for the network interface.
     description: Any = None
+    # If you have instances or ENIs that rely on the IPv6 address not changing, to avoid disrupting traffic to instances or ENIs, you can enable a primary IPv6 address. Enable this option to automatically assign an IPv6 associated with the ENI attached to your instance to be the primary IPv6 address. When you enable an IPv6 address to be a primary IPv6, you cannot disable it. Traffic will be routed to the primary IPv6 address until the instance is terminated or the ENI is detached. If you have multiple IPv6 addresses associated with an ENI and you enable a primary IPv6 address, the first IPv6 address associated with the ENI becomes the primary IPv6 address.
     enable_primary_ipv6: Any = None
-    id: Any = None
+    # A list of security group IDs associated with this network interface.
+    group_set: Any = None
+    # Indicates the type of network interface.
     interface_type: Any = None
+    # The number of IPv4 prefixes to assign to a network interface. When you specify a number of IPv4 prefixes, Amazon EC2 selects these prefixes from your existing subnet CIDR reservations, if available, or from free spaces in the subnet. By default, these will be /28 prefixes. You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.
     ipv4_prefix_count: Any = None
+    # Assigns a list of IPv4 prefixes to the network interface. If you want EC2 to automatically assign IPv4 prefixes, use the Ipv4PrefixCount property and do not specify this property. Presently, only /28 prefixes are supported. You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.
     ipv4_prefixes: Any = None
+    # The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. To specify specific IPv6 addresses, use the Ipv6Addresses property and don't specify this property.
     ipv6_address_count: Any = None
-    ipv6_address_list: Any = None
-    ipv6_address_list_enabled: Any = None
+    # One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet to associate with the network interface. If you're specifying a number of IPv6 addresses, use the Ipv6AddressCount property and don't specify this property.
     ipv6_addresses: Any = None
+    # The number of IPv6 prefixes to assign to a network interface. When you specify a number of IPv6 prefixes, Amazon EC2 selects these prefixes from your existing subnet CIDR reservations, if available, or from free spaces in the subnet. By default, these will be /80 prefixes. You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.
     ipv6_prefix_count: Any = None
+    # Assigns a list of IPv6 prefixes to the network interface. If you want EC2 to automatically assign IPv6 prefixes, use the Ipv6PrefixCount property and do not specify this property. Presently, only /80 prefixes are supported. You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.
     ipv6_prefixes: Any = None
-    private_ip: Any = None
-    private_ip_list: Any = None
-    private_ip_list_enabled: Any = None
-    private_ips: Any = None
-    private_ips_count: Any = None
-    region: Any = None
-    security_groups: Any = None
+    # Assigns a single private IP address to the network interface, which is used as the primary private IP address. If you want to specify multiple private IP address, use the PrivateIpAddresses property.
+    private_ip_address: Any = None
+    # Assigns a list of private IP addresses to the network interface. You can specify a primary private IP address by setting the value of the Primary property to true in the PrivateIpAddressSpecification property. If you want EC2 to automatically assign private IP addresses, use the SecondaryPrivateIpAddressCount property and do not specify this property.
+    private_ip_addresses: Any = None
+    # Public IP DNS hostname type
+    public_ip_dns_hostname_type_specification: Any = None
+    # The number of secondary private IPv4 addresses to assign to a network interface. When you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses within the subnet's IPv4 CIDR range. You can't specify this option and specify more than one private IP address using privateIpAddresses
+    secondary_private_ip_address_count: Any = None
+    # Indicates whether traffic to or from the instance is validated.
     source_dest_check: Any = None
+    # The ID of the subnet to associate with the network interface.
     subnet_id: Any = None
+    # An arbitrary set of tags (key-value pairs) for this network interface.
     tags: Any = None
-    tags_all: Any = None
-    attachment: Any = None
-    ena_srd_specification: Any = None
+
+@dataclasses.dataclass
+class InterfaceAttrs:
+    # Specifies the connection tracking configuration for the network interface, including idle timeout values for established TCP connections and UDP flows to control stateful traffic tracking. (AI-inferred)
+    connection_tracking_specification: Any = None
+    # A description for the network interface.
+    description: Any = None
+    # If you have instances or ENIs that rely on the IPv6 address not changing, to avoid disrupting traffic to instances or ENIs, you can enable a primary IPv6 address. Enable this option to automatically assign an IPv6 associated with the ENI attached to your instance to be the primary IPv6 address. When you enable an IPv6 address to be a primary IPv6, you cannot disable it. Traffic will be routed to the primary IPv6 address until the instance is terminated or the ENI is detached. If you have multiple IPv6 addresses associated with an ENI and you enable a primary IPv6 address, the first IPv6 address associated with the ENI becomes the primary IPv6 address.
+    enable_primary_ipv6: Any = None
+    # A list of security group IDs associated with this network interface.
+    group_set: Any = None
+    # Network interface id.
+    id: Any = None
+    # Indicates the type of network interface.
+    interface_type: Any = None
+    # The number of IPv4 prefixes to assign to a network interface. When you specify a number of IPv4 prefixes, Amazon EC2 selects these prefixes from your existing subnet CIDR reservations, if available, or from free spaces in the subnet. By default, these will be /28 prefixes. You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.
+    ipv4_prefix_count: Any = None
+    # Assigns a list of IPv4 prefixes to the network interface. If you want EC2 to automatically assign IPv4 prefixes, use the Ipv4PrefixCount property and do not specify this property. Presently, only /28 prefixes are supported. You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.
+    ipv4_prefixes: Any = None
+    # The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. To specify specific IPv6 addresses, use the Ipv6Addresses property and don't specify this property.
+    ipv6_address_count: Any = None
+    # One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet to associate with the network interface. If you're specifying a number of IPv6 addresses, use the Ipv6AddressCount property and don't specify this property.
+    ipv6_addresses: Any = None
+    # The number of IPv6 prefixes to assign to a network interface. When you specify a number of IPv6 prefixes, Amazon EC2 selects these prefixes from your existing subnet CIDR reservations, if available, or from free spaces in the subnet. By default, these will be /80 prefixes. You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.
+    ipv6_prefix_count: Any = None
+    # Assigns a list of IPv6 prefixes to the network interface. If you want EC2 to automatically assign IPv6 prefixes, use the Ipv6PrefixCount property and do not specify this property. Presently, only /80 prefixes are supported. You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.
+    ipv6_prefixes: Any = None
+    # The primary IPv6 address
+    primary_ipv6_address: Any = None
+    # Returns the primary private IP address of the network interface.
+    primary_private_ip_address: Any = None
+    # Assigns a single private IP address to the network interface, which is used as the primary private IP address. If you want to specify multiple private IP address, use the PrivateIpAddresses property.
+    private_ip_address: Any = None
+    # Assigns a list of private IP addresses to the network interface. You can specify a primary private IP address by setting the value of the Primary property to true in the PrivateIpAddressSpecification property. If you want EC2 to automatically assign private IP addresses, use the SecondaryPrivateIpAddressCount property and do not specify this property.
+    private_ip_addresses: Any = None
+    # Public IP DNS hostname type
+    public_ip_dns_hostname_type_specification: Any = None
+    # Describes the public hostname type options, including public hostname type, IPv4-enabled public hostname, IPv6-enabled public hostname, and dual-stack public hostname.
+    public_ip_dns_name_options: Any = None
+    # The number of secondary private IPv4 addresses to assign to a network interface. When you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses within the subnet's IPv4 CIDR range. You can't specify this option and specify more than one private IP address using privateIpAddresses
+    secondary_private_ip_address_count: Any = None
+    # Returns the secondary private IP addresses of the network interface.
+    secondary_private_ip_addresses: Any = None
+    # Indicates whether traffic to or from the instance is validated.
+    source_dest_check: Any = None
+    # The ID of the subnet to associate with the network interface.
+    subnet_id: Any = None
+    # An arbitrary set of tags (key-value pairs) for this network interface.
+    tags: Any = None
+    # The ID of the VPC
+    vpc_id: Any = None
 
 Interface = ubx.ResourceBinding(
     wire_type="aws_network_interface",
     fields={
+        "connection_tracking_specification": ubx.FieldSpec(
+            wire_name="connection_tracking_specification",
+            kind="object",
+            fields=_Interface_ConnectionTrackingSpecificationFields,
+        ),
         "description": ubx.FieldSpec(wire_name="description"),
         "enable_primary_ipv6": ubx.FieldSpec(wire_name="enable_primary_ipv6"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "group_set": ubx.FieldSpec(wire_name="group_set"),
         "interface_type": ubx.FieldSpec(wire_name="interface_type"),
         "ipv4_prefix_count": ubx.FieldSpec(wire_name="ipv4_prefix_count"),
-        "ipv4_prefixes": ubx.FieldSpec(wire_name="ipv4_prefixes"),
+        "ipv4_prefixes": ubx.FieldSpec(
+            wire_name="ipv4_prefixes",
+            kind="list",
+            fields=_Interface_Ipv4PrefixesFields,
+        ),
         "ipv6_address_count": ubx.FieldSpec(wire_name="ipv6_address_count"),
-        "ipv6_address_list": ubx.FieldSpec(wire_name="ipv6_address_list"),
-        "ipv6_address_list_enabled": ubx.FieldSpec(wire_name="ipv6_address_list_enabled"),
-        "ipv6_addresses": ubx.FieldSpec(wire_name="ipv6_addresses"),
+        "ipv6_addresses": ubx.FieldSpec(
+            wire_name="ipv6_addresses",
+            kind="list",
+            fields=_Interface_Ipv6AddressesFields,
+        ),
         "ipv6_prefix_count": ubx.FieldSpec(wire_name="ipv6_prefix_count"),
-        "ipv6_prefixes": ubx.FieldSpec(wire_name="ipv6_prefixes"),
-        "private_ip": ubx.FieldSpec(wire_name="private_ip"),
-        "private_ip_list": ubx.FieldSpec(wire_name="private_ip_list"),
-        "private_ip_list_enabled": ubx.FieldSpec(wire_name="private_ip_list_enabled"),
-        "private_ips": ubx.FieldSpec(wire_name="private_ips"),
-        "private_ips_count": ubx.FieldSpec(wire_name="private_ips_count"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "security_groups": ubx.FieldSpec(wire_name="security_groups"),
+        "ipv6_prefixes": ubx.FieldSpec(
+            wire_name="ipv6_prefixes",
+            kind="list",
+            fields=_Interface_Ipv6PrefixesFields,
+        ),
+        "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+        "private_ip_addresses": ubx.FieldSpec(
+            wire_name="private_ip_addresses",
+            kind="list",
+            fields=_Interface_PrivateIpAddressesFields,
+        ),
+        "public_ip_dns_hostname_type_specification": ubx.FieldSpec(wire_name="public_ip_dns_hostname_type_specification"),
+        "secondary_private_ip_address_count": ubx.FieldSpec(wire_name="secondary_private_ip_address_count"),
         "source_dest_check": ubx.FieldSpec(wire_name="source_dest_check"),
         "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "attachment": ubx.FieldSpec(
-            wire_name="attachment",
-            kind="set",
-            fields=_Interface_AttachmentFields,
-        ),
-        "ena_srd_specification": ubx.FieldSpec(
-            wire_name="ena_srd_specification",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_Interface_EnaSrdSpecificationFields,
+            fields=_Interface_TagsFields,
         ),
     },
 )

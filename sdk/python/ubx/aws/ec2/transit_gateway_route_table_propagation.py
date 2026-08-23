@@ -8,16 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TransitGatewayRouteTablePropagationConfig:
-    id: Any = None
-    region: Any = None
+    # The ID of transit gateway attachment.
     transit_gateway_attachment_id: Any = None
+    # The ID of transit gateway route table.
+    transit_gateway_route_table_id: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayRouteTablePropagationAttrs:
+    # The ID of transit gateway attachment.
+    transit_gateway_attachment_id: Any = None
+    # The ID of transit gateway route table.
     transit_gateway_route_table_id: Any = None
 
 TransitGatewayRouteTablePropagation = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_route_table_propagation",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "transit_gateway_attachment_id": ubx.FieldSpec(wire_name="transit_gateway_attachment_id"),
         "transit_gateway_route_table_id": ubx.FieldSpec(wire_name="transit_gateway_route_table_id"),
     },

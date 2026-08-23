@@ -4,10 +4,22 @@ package dax
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SubnetGroupConfig struct {
+	// An optional user-provided description that identifies the purpose or context of this DAX subnet group. (AI-inferred)
 	Description any
+	// The name of this DAX subnet group; if omitted, CloudFormation generates a unique name based on the logical resource ID. (AI-inferred)
+	SubnetGroupName any
+	// The list of subnet IDs in the VPC where the DAX cluster will be deployed, defining the network locations for the cluster's nodes. (AI-inferred)
+	SubnetIds any
+}
+
+type SubnetGroupAttrs struct {
+	// An optional user-provided description that identifies the purpose or context of this DAX subnet group. (AI-inferred)
+	Description any
+	// The name of the DAX subnet group, which uniquely identifies the resource within AWS. (AI-inferred)
 	Id any
-	Name any
-	Region any
+	// The name of this DAX subnet group; if omitted, CloudFormation generates a unique name based on the logical resource ID. (AI-inferred)
+	SubnetGroupName any
+	// The list of subnet IDs in the VPC where the DAX cluster will be deployed, defining the network locations for the cluster's nodes. (AI-inferred)
 	SubnetIds any
 }
 
@@ -15,9 +27,7 @@ var SubnetGroup = ubx.ResourceBinding{
 	WireType: "aws_dax_subnet_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"SubnetGroupName": ubx.FieldSpec{WireName: "subnet_group_name"},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
 	},
 }

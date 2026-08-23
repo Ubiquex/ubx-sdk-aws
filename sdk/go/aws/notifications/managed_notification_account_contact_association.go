@@ -4,7 +4,16 @@ package notifications
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedNotificationAccountContactAssociationConfig struct {
+	// This unique identifier for Contact
 	ContactIdentifier any
+	// The managed notification configuration ARN, against which the account contact association will be created
+	ManagedNotificationConfigurationArn any
+}
+
+type ManagedNotificationAccountContactAssociationAttrs struct {
+	// This unique identifier for Contact
+	ContactIdentifier any
+	// The managed notification configuration ARN, against which the account contact association will be created
 	ManagedNotificationConfigurationArn any
 }
 

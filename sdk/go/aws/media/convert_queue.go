@@ -3,29 +3,39 @@ package media
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ConvertQueue_ReservationPlanSettings struct {
-	Commitment any
-	RenewalType any
-	ReservedSlots any
+type ConvertQueueConfig struct {
+	// The maximum number of concurrent transcoding jobs that this MediaConvert queue can process at the same time. (AI-inferred)
+	ConcurrentJobs any
+	// An optional user-defined description of the MediaConvert queue, used to identify its purpose in the AWS Elemental MediaConvert console. (AI-inferred)
+	Description any
+	MaximumConcurrentFeeds any
+	// The name of the MediaConvert queue; if omitted, AWS Elemental MediaConvert automatically generates a unique queue name. (AI-inferred)
+	Name any
+	// The pricing plan for the queue, either ON_DEMAND or RESERVED, which determines how you are billed for MediaConvert jobs. (AI-inferred)
+	PricingPlan any
+	// The status of the MediaConvert queue, either ACTIVE or PAUSED, which controls whether it can accept and process new jobs. (AI-inferred)
+	Status any
+	// Assigns key-value tags to the MediaConvert queue, enabling cost allocation, access control, and resource categorization. (AI-inferred)
+	Tags any
 }
 
-var ConvertQueue_ReservationPlanSettingsFields = ubx.FieldMap{
-		"Commitment": ubx.FieldSpec{WireName: "commitment"},
-		"RenewalType": ubx.FieldSpec{WireName: "renewal_type"},
-		"ReservedSlots": ubx.FieldSpec{WireName: "reserved_slots"},
-	}
-
-type ConvertQueueConfig struct {
+type ConvertQueueAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies the AWS Elemental MediaConvert queue, assigned by AWS upon creation. (AI-inferred)
+	Arn any
+	// The maximum number of concurrent transcoding jobs that this MediaConvert queue can process at the same time. (AI-inferred)
 	ConcurrentJobs any
+	// An optional user-defined description of the MediaConvert queue, used to identify its purpose in the AWS Elemental MediaConvert console. (AI-inferred)
 	Description any
 	Id any
+	MaximumConcurrentFeeds any
+	// The name of the MediaConvert queue; if omitted, AWS Elemental MediaConvert automatically generates a unique queue name. (AI-inferred)
 	Name any
+	// The pricing plan for the queue, either ON_DEMAND or RESERVED, which determines how you are billed for MediaConvert jobs. (AI-inferred)
 	PricingPlan any
-	Region any
+	// The status of the MediaConvert queue, either ACTIVE or PAUSED, which controls whether it can accept and process new jobs. (AI-inferred)
 	Status any
+	// Assigns key-value tags to the MediaConvert queue, enabling cost allocation, access control, and resource categorization. (AI-inferred)
 	Tags any
-	TagsAll any
-	ReservationPlanSettings any
 }
 
 var ConvertQueue = ubx.ResourceBinding{
@@ -33,17 +43,10 @@ var ConvertQueue = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConcurrentJobs": ubx.FieldSpec{WireName: "concurrent_jobs"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"MaximumConcurrentFeeds": ubx.FieldSpec{WireName: "maximum_concurrent_feeds"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PricingPlan": ubx.FieldSpec{WireName: "pricing_plan"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"ReservationPlanSettings": ubx.FieldSpec{
-			WireName: "reservation_plan_settings",
-			Kind: "list",
-			Fields: ConvertQueue_ReservationPlanSettingsFields,
-		},
 	},
 }

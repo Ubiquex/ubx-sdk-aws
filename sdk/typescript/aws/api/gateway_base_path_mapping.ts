@@ -2,34 +2,33 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayBasePathMappingConfig {
-  apiId: string | Computed<string>;
+  /** Specifies the base path of the custom domain that maps to the API, such that requests to that path are routed to the associated API and stage; if not set, the API is served at the root of the domain (path '/'). (AI-inferred) */
   basePath?: string | Computed<string>;
+  /** The custom domain name (e.g., api.example.com) registered in API Gateway to which this base path mapping is attached, matching the DomainName property of an AWS::ApiGateway::DomainName resource. (AI-inferred) */
   domainName: string | Computed<string>;
-  domainNameId?: string | Computed<string>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
-  stageName?: string | Computed<string>;
+  /** The ID of the API Gateway REST API to which the base path mapping routes traffic. (AI-inferred) */
+  restApiId?: string | Computed<string>;
+  /** The name of the API Gateway stage that the base path mapping targets. (AI-inferred) */
+  stage?: string | Computed<string>;
 }
 
 export interface GatewayBasePathMappingAttrs {
-  apiId: string;
+  /** Specifies the base path of the custom domain that maps to the API, such that requests to that path are routed to the associated API and stage; if not set, the API is served at the root of the domain (path '/'). (AI-inferred) */
   basePath: string;
+  /** The custom domain name (e.g., api.example.com) registered in API Gateway to which this base path mapping is attached, matching the DomainName property of an AWS::ApiGateway::DomainName resource. (AI-inferred) */
   domainName: string;
-  domainNameId: string;
-  id: string;
-  region: string;
-  stageName: string;
+  /** The ID of the API Gateway REST API to which the base path mapping routes traffic. (AI-inferred) */
+  restApiId: string;
+  /** The name of the API Gateway stage that the base path mapping targets. (AI-inferred) */
+  stage: string;
 }
 
 export const GatewayBasePathMapping: ResourceBinding<GatewayBasePathMappingConfig, GatewayBasePathMappingAttrs> = {
   wireType: "aws_api_gateway_base_path_mapping",
   fields: {
-    apiId: "api_id",
     basePath: "base_path",
     domainName: "domain_name",
-    domainNameId: "domain_name_id",
-    id: "id",
-    region: "region",
-    stageName: "stage_name",
+    restApiId: "rest_api_id",
+    stage: "stage",
   },
 };

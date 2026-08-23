@@ -3,14 +3,69 @@ package redshift
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EndpointAccess_VpcEndpoint_NetworkInterfaces struct {
+	// Indicates the Availability Zone in which the network interface associated with the VPC endpoint is located. (AI-inferred)
+	AvailabilityZone any
+	// The unique identifier of the network interface associated with the VPC endpoint used by this Redshift endpoint access, representing the elastic network interface (ENI) that routes traffic to the Redshift cluster. (AI-inferred)
+	NetworkInterfaceId any
+	// The private IPv4 address of one of the network interfaces attached to the VPC endpoint that provides private connectivity to the Redshift cluster. (AI-inferred)
+	PrivateIpAddress any
+	// The subnet ID where the network interface of the VPC endpoint for this Redshift endpoint access is provisioned. (AI-inferred)
+	SubnetId any
+}
+
+type EndpointAccess_VpcEndpoint struct {
+	// One or more network interfaces of the endpoint. Also known as an interface endpoint.
+	NetworkInterfaces any
+	// The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.
+	VpcEndpointId any
+	// The VPC identifier that the endpoint is associated.
+	VpcId any
+}
+
+type EndpointAccess_VpcSecurityGroups struct {
+	// The current status of a VPC security group associated with the Amazon Redshift endpoint access, indicating whether the security group association is active, being authorized, or being revoked. (AI-inferred)
+	Status any
+	// The ID of a VPC security group associated with the Redshift endpoint access, used to control network access to the endpoint. (AI-inferred)
+	VpcSecurityGroupId any
+}
+
 type EndpointAccessConfig struct {
+	// A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. All alphabetical characters must be lower case, no hypens at the end, no two consecutive hyphens. Cluster name should be unique for all clusters within an AWS account
 	ClusterIdentifier any
+	// The name of the endpoint.
 	EndpointName any
-	Id any
-	Region any
+	// The AWS account ID of the owner of the cluster.
 	ResourceOwner any
+	// The subnet group name where Amazon Redshift chooses to deploy the endpoint.
 	SubnetGroupName any
+	// A list of vpc security group ids to apply to the created endpoint access.
 	VpcSecurityGroupIds any
+}
+
+type EndpointAccessAttrs struct {
+	// The DNS address of the endpoint.
+	Address any
+	// A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. All alphabetical characters must be lower case, no hypens at the end, no two consecutive hyphens. Cluster name should be unique for all clusters within an AWS account
+	ClusterIdentifier any
+	// The time (UTC) that the endpoint was created.
+	EndpointCreateTime any
+	// The name of the endpoint.
+	EndpointName any
+	// The status of the endpoint.
+	EndpointStatus any
+	// The port number on which the cluster accepts incoming connections.
+	Port any
+	// The AWS account ID of the owner of the cluster.
+	ResourceOwner any
+	// The subnet group name where Amazon Redshift chooses to deploy the endpoint.
+	SubnetGroupName any
+	// The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.
+	VpcEndpoint any
+	// A list of vpc security group ids to apply to the created endpoint access.
+	VpcSecurityGroupIds any
+	// A list of Virtual Private Cloud (VPC) security groups to be associated with the endpoint.
+	VpcSecurityGroups any
 }
 
 var EndpointAccess = ubx.ResourceBinding{
@@ -18,8 +73,6 @@ var EndpointAccess = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
 		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ResourceOwner": ubx.FieldSpec{WireName: "resource_owner"},
 		"SubnetGroupName": ubx.FieldSpec{WireName: "subnet_group_name"},
 		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},

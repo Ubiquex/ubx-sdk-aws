@@ -3,42 +3,103 @@ package amplify
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type App_AutoBranchCreationConfig struct {
-	BasicAuthCredentials any
-	BuildSpec any
-	EnableAutoBuild any
+type App_AutoBranchCreationConfig_BasicAuthConfig struct {
+	// Whether to enable basic authentication for automatically created branches, requiring a username and password to access them. (AI-inferred)
 	EnableBasicAuth any
+	// The password to use for basic authentication when automatically creating branches for this Amplify app. (AI-inferred)
+	Password any
+	// Specifies the username used for basic authentication on branches that are automatically created by Amplify. (AI-inferred)
+	Username any
+}
+
+type App_AutoBranchCreationConfig_EnvironmentVariables struct {
+	// The name of the environment variable to configure for automatically created branches in the Amplify app. (AI-inferred)
+	Name any
+	// The value of the environment variable that is automatically set for branches created via auto branch creation in the Amplify app. (AI-inferred)
+	Value any
+}
+
+type App_AutoBranchCreationConfig struct {
+	// Specifies the branch name patterns that automatically trigger creation of matching branches in the Amplify app. (AI-inferred)
+	AutoBranchCreationPatterns any
+	// Configures basic authentication credentials (username and password) that are automatically applied to branches created according to the auto branch creation patterns. (AI-inferred)
+	BasicAuthConfig any
+	// The build specification (buildspec) content, in YAML or JSON format, that AWS Amplify uses to run the build for branches created automatically via the auto branch creation configuration. (AI-inferred)
+	BuildSpec any
+	// Indicates whether Amplify automatically creates a new app branch for every branch in the connected repository that matches the configured auto branch creation patterns. (AI-inferred)
+	EnableAutoBranchCreation any
+	// Enables automated build and deployment of branches that are automatically created for this app when they match the auto-branch-creation pattern. (AI-inferred)
+	EnableAutoBuild any
+	// Enables Amplify's performance mode for automatically created branches, which applies performance optimizations such as caching to the deployed app. (AI-inferred)
 	EnablePerformanceMode any
+	// Enables pull request previews for branches that are automatically created by Amplify, allowing you to preview changes from pull requests before merging. (AI-inferred)
 	EnablePullRequestPreview any
+	// Specifies the environment variables (as key-value pairs) that are applied to branches automatically created for the Amplify app. (AI-inferred)
 	EnvironmentVariables any
+	// The framework (e.g., React, Angular, Next.js) that AWS Amplify uses to configure the build process for automatically created branches of the app. (AI-inferred)
 	Framework any
+	// Sets the name of the environment (for example, 'pr') used for pull request preview deployments in the Amplify app's automatic branch creation configuration, so that pull request branches are built and deployed to a separate preview environment. (AI-inferred)
 	PullRequestEnvironmentName any
+	// The stage (e.g., PRODUCTION, BETA, DEVELOPMENT) assigned to branches created automatically by the Amplify app's auto branch creation configuration. (AI-inferred)
 	Stage any
 }
 
 type App_CacheConfig struct {
+	// Determines whether the Amplify app uses the Amplify-managed cache (`AMPLIFY_MANAGED`) or the Amplify-managed cache without cookies (`AMPLIFY_MANAGED_NO_COOKIES`), controlling how edge cache keys are constructed for the app. (AI-inferred)
 	Type any
 }
 
-type App_CustomRule struct {
+type App_CustomRules struct {
+	// The condition expression string (e.g., a country code, IP address, or header match) that controls when this custom redirect or rewrite rule is applied. (AI-inferred)
 	Condition any
+	// The source pattern that matches incoming request URLs to trigger the custom rewrite or redirect rule. (AI-inferred)
 	Source any
+	// The HTTP status code (e.g., '200' for a rewrite, '301' for a permanent redirect, or '404' for a not-found response) that Amplify applies to this custom rewrite/redirect rule. (AI-inferred)
 	Status any
+	// The target field of a custom rule specifies the destination URL or path that requests matching the source pattern are redirected or rewritten to in an AWS Amplify app. (AI-inferred)
 	Target any
 }
 
 type App_JobConfig struct {
+	// Specifies the compute resources (size tier) for Amplify build jobs, with valid values BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, or BUILD_GENERAL1_LARGE. (AI-inferred)
 	BuildComputeType any
 }
 
-var App_AutoBranchCreationConfigFields = ubx.FieldMap{
-		"BasicAuthCredentials": ubx.FieldSpec{WireName: "basic_auth_credentials"},
-		"BuildSpec": ubx.FieldSpec{WireName: "build_spec"},
-		"EnableAutoBuild": ubx.FieldSpec{WireName: "enable_auto_build"},
+type App_Tags struct {
+	// The key of a tag assigned to the Amplify application. (AI-inferred)
+	Key any
+	// The value portion of a user-defined tag assigned to the Amplify app, used for organizing and identifying AWS resources. (AI-inferred)
+	Value any
+}
+
+var App_AutoBranchCreationConfig_BasicAuthConfigFields = ubx.FieldMap{
 		"EnableBasicAuth": ubx.FieldSpec{WireName: "enable_basic_auth"},
+		"Password": ubx.FieldSpec{WireName: "password"},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
+
+var App_AutoBranchCreationConfig_EnvironmentVariablesFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var App_AutoBranchCreationConfigFields = ubx.FieldMap{
+		"AutoBranchCreationPatterns": ubx.FieldSpec{WireName: "auto_branch_creation_patterns"},
+		"BasicAuthConfig": ubx.FieldSpec{
+			WireName: "basic_auth_config",
+			Kind: "object",
+			Fields: App_AutoBranchCreationConfig_BasicAuthConfigFields,
+		},
+		"BuildSpec": ubx.FieldSpec{WireName: "build_spec"},
+		"EnableAutoBranchCreation": ubx.FieldSpec{WireName: "enable_auto_branch_creation"},
+		"EnableAutoBuild": ubx.FieldSpec{WireName: "enable_auto_build"},
 		"EnablePerformanceMode": ubx.FieldSpec{WireName: "enable_performance_mode"},
 		"EnablePullRequestPreview": ubx.FieldSpec{WireName: "enable_pull_request_preview"},
-		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
+		"EnvironmentVariables": ubx.FieldSpec{
+			WireName: "environment_variables",
+			Kind: "list",
+			Fields: App_AutoBranchCreationConfig_EnvironmentVariablesFields,
+		},
 		"Framework": ubx.FieldSpec{WireName: "framework"},
 		"PullRequestEnvironmentName": ubx.FieldSpec{WireName: "pull_request_environment_name"},
 		"Stage": ubx.FieldSpec{WireName: "stage"},
@@ -48,7 +109,7 @@ var App_CacheConfigFields = ubx.FieldMap{
 		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
-var App_CustomRuleFields = ubx.FieldMap{
+var App_CustomRulesFields = ubx.FieldMap{
 		"Condition": ubx.FieldSpec{WireName: "condition"},
 		"Source": ubx.FieldSpec{WireName: "source"},
 		"Status": ubx.FieldSpec{WireName: "status"},
@@ -59,77 +120,145 @@ var App_JobConfigFields = ubx.FieldMap{
 		"BuildComputeType": ubx.FieldSpec{WireName: "build_compute_type"},
 	}
 
+var App_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type AppConfig struct {
+	// GitHub personal access token Amplify uses to authenticate and pull the source repository linked to this app. (AI-inferred)
 	AccessToken any
-	AutoBranchCreationPatterns any
-	BasicAuthCredentials any
-	BuildSpec any
-	ComputeRoleArn any
-	CustomHeaders any
-	Description any
-	EnableAutoBranchCreation any
-	EnableBasicAuth any
-	EnableBranchAutoBuild any
-	EnableBranchAutoDeletion any
-	EnvironmentVariables any
-	IamServiceRoleArn any
-	Id any
-	Name any
-	OauthToken any
-	Platform any
-	Region any
-	Repository any
-	Tags any
-	TagsAll any
+	// Configures which Git branches are automatically created in Amplify and the build/render settings (such as build spec, environment variables, and stage) applied to those branches. (AI-inferred)
 	AutoBranchCreationConfig any
+	// Configures basic authorization for the Amplify app, including an enable flag and the username and password used to protect access. (AI-inferred)
+	BasicAuthConfig any
+	// The build specification (buildspec) content for the Amplify app, which defines the build phases and commands used to compile and deploy the application. (AI-inferred)
+	BuildSpec any
+	// Defines the cache configuration for the Amplify app, including the cache type (`AMPLIFY_MANAGED` or `AMAZON_CLOUDFRONT`) that controls how the application's static assets are cached. (AI-inferred)
 	CacheConfig any
-	CustomRule any
+	// The ARN of the IAM service role that AWS Amplify assumes to access AWS resources on behalf of the app, used for backend deployments and resource provisioning. (AI-inferred)
+	ComputeRoleArn any
+	// Configures custom HTTP headers for the Amplify app, passed as a string containing header rules (e.g., YAML with pattern and header key-value pairs) that apply to specific path patterns. (AI-inferred)
+	CustomHeaders any
+	// Specifies a list of custom rewrite and redirect rules for the Amplify app, each defining a source pattern, target URL, HTTP status code, and optional condition for matching requests. (AI-inferred)
+	CustomRules any
+	// A user-defined description that provides additional information about the Amplify application. (AI-inferred)
+	Description any
+	// If enabled, Amplify automatically deletes the corresponding branch in the Amplify app when a branch is deleted in the connected repository. (AI-inferred)
+	EnableBranchAutoDeletion any
+	// A list of key-value pairs that define environment variables for the Amplify app, made available during build and runtime. (AI-inferred)
+	EnvironmentVariables any
+	// The ARN of the IAM service role that AWS Amplify assumes to access AWS resources on your behalf. (AI-inferred)
+	IamserviceRole any
+	// Configures an initial Amplify job that runs when the app is created, specifying the deployment branch and job type (e.g., BUILD or RELEASE). (AI-inferred)
 	JobConfig any
+	// The name of the Amplify application, which is a required human-readable identifier displayed in the Amplify console. (AI-inferred)
+	Name any
+	// The personal OAuth token from the Git provider (GitHub or Bitbucket) used to authorize AWS Amplify to access the repository associated with the app. (AI-inferred)
+	OauthToken any
+	// Sets the deployment platform for the Amplify app, with valid values including WEB, WEB_DYNAMIC, and WEB_COMPUTE, which determine how the app is built and hosted (e.g., static, dynamic, or server-side rendered). (AI-inferred)
+	Platform any
+	// The HTTPS URL of the Git repository that AWS Amplify connects to and deploys for the app; if omitted, Amplify creates a blank app with no repository connected. (AI-inferred)
+	Repository any
+	// Specifies custom tags (key-value pairs) to associate with the Amplify app, which can be used for resource-level permissions, cost allocation, and organizing the app within AWS. (AI-inferred)
+	Tags any
+}
+
+type AppAttrs struct {
+	// GitHub personal access token Amplify uses to authenticate and pull the source repository linked to this app. (AI-inferred)
+	AccessToken any
+	// The unique ID that AWS Amplify assigns to the app upon creation, used to reference the app in Amplify console and API operations. (AI-inferred)
+	AppId any
+	// The read-only name assigned to the Amplify app, which identifies the application in the Amplify console and is returned by the Amplify service. (AI-inferred)
+	AppName any
+	// The Amazon Resource Name (ARN) of the Amplify app, uniquely identifying it within AWS. (AI-inferred)
+	Arn any
+	// Configures which Git branches are automatically created in Amplify and the build/render settings (such as build spec, environment variables, and stage) applied to those branches. (AI-inferred)
+	AutoBranchCreationConfig any
+	// Configures basic authorization for the Amplify app, including an enable flag and the username and password used to protect access. (AI-inferred)
+	BasicAuthConfig any
+	// The build specification (buildspec) content for the Amplify app, which defines the build phases and commands used to compile and deploy the application. (AI-inferred)
+	BuildSpec any
+	// Defines the cache configuration for the Amplify app, including the cache type (`AMPLIFY_MANAGED` or `AMAZON_CLOUDFRONT`) that controls how the application's static assets are cached. (AI-inferred)
+	CacheConfig any
+	// The ARN of the IAM service role that AWS Amplify assumes to access AWS resources on behalf of the app, used for backend deployments and resource provisioning. (AI-inferred)
+	ComputeRoleArn any
+	// Configures custom HTTP headers for the Amplify app, passed as a string containing header rules (e.g., YAML with pattern and header key-value pairs) that apply to specific path patterns. (AI-inferred)
+	CustomHeaders any
+	// Specifies a list of custom rewrite and redirect rules for the Amplify app, each defining a source pattern, target URL, HTTP status code, and optional condition for matching requests. (AI-inferred)
+	CustomRules any
+	// The default domain automatically assigned to the Amplify app (e.g., a unique subdomain under amplifyapp.com), served as the primary URL for the app. (AI-inferred)
+	DefaultDomain any
+	// A user-defined description that provides additional information about the Amplify application. (AI-inferred)
+	Description any
+	// If enabled, Amplify automatically deletes the corresponding branch in the Amplify app when a branch is deleted in the connected repository. (AI-inferred)
+	EnableBranchAutoDeletion any
+	// A list of key-value pairs that define environment variables for the Amplify app, made available during build and runtime. (AI-inferred)
+	EnvironmentVariables any
+	// The ARN of the IAM service role that AWS Amplify assumes to access AWS resources on your behalf. (AI-inferred)
+	IamserviceRole any
+	// Configures an initial Amplify job that runs when the app is created, specifying the deployment branch and job type (e.g., BUILD or RELEASE). (AI-inferred)
+	JobConfig any
+	// The name of the Amplify application, which is a required human-readable identifier displayed in the Amplify console. (AI-inferred)
+	Name any
+	// The personal OAuth token from the Git provider (GitHub or Bitbucket) used to authorize AWS Amplify to access the repository associated with the app. (AI-inferred)
+	OauthToken any
+	// Sets the deployment platform for the Amplify app, with valid values including WEB, WEB_DYNAMIC, and WEB_COMPUTE, which determine how the app is built and hosted (e.g., static, dynamic, or server-side rendered). (AI-inferred)
+	Platform any
+	// The HTTPS URL of the Git repository that AWS Amplify connects to and deploys for the app; if omitted, Amplify creates a blank app with no repository connected. (AI-inferred)
+	Repository any
+	// Specifies custom tags (key-value pairs) to associate with the Amplify app, which can be used for resource-level permissions, cost allocation, and organizing the app within AWS. (AI-inferred)
+	Tags any
 }
 
 var App = ubx.ResourceBinding{
 	WireType: "aws_amplify_app",
 	Fields: ubx.FieldMap{
 		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"AutoBranchCreationPatterns": ubx.FieldSpec{WireName: "auto_branch_creation_patterns"},
-		"BasicAuthCredentials": ubx.FieldSpec{WireName: "basic_auth_credentials"},
+		"AutoBranchCreationConfig": ubx.FieldSpec{
+			WireName: "auto_branch_creation_config",
+			Kind: "object",
+			Fields: App_AutoBranchCreationConfigFields,
+		},
+		"BasicAuthConfig": ubx.FieldSpec{
+			WireName: "basic_auth_config",
+			Kind: "object",
+			Fields: App_AutoBranchCreationConfig_BasicAuthConfigFields,
+		},
 		"BuildSpec": ubx.FieldSpec{WireName: "build_spec"},
+		"CacheConfig": ubx.FieldSpec{
+			WireName: "cache_config",
+			Kind: "object",
+			Fields: App_CacheConfigFields,
+		},
 		"ComputeRoleArn": ubx.FieldSpec{WireName: "compute_role_arn"},
 		"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
+		"CustomRules": ubx.FieldSpec{
+			WireName: "custom_rules",
+			Kind: "list",
+			Fields: App_CustomRulesFields,
+		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnableAutoBranchCreation": ubx.FieldSpec{WireName: "enable_auto_branch_creation"},
-		"EnableBasicAuth": ubx.FieldSpec{WireName: "enable_basic_auth"},
-		"EnableBranchAutoBuild": ubx.FieldSpec{WireName: "enable_branch_auto_build"},
 		"EnableBranchAutoDeletion": ubx.FieldSpec{WireName: "enable_branch_auto_deletion"},
-		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
-		"IamServiceRoleArn": ubx.FieldSpec{WireName: "iam_service_role_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"EnvironmentVariables": ubx.FieldSpec{
+			WireName: "environment_variables",
+			Kind: "list",
+			Fields: App_AutoBranchCreationConfig_EnvironmentVariablesFields,
+		},
+		"IamserviceRole": ubx.FieldSpec{WireName: "iamservice_role"},
+		"JobConfig": ubx.FieldSpec{
+			WireName: "job_config",
+			Kind: "object",
+			Fields: App_JobConfigFields,
+		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OauthToken": ubx.FieldSpec{WireName: "oauth_token"},
 		"Platform": ubx.FieldSpec{WireName: "platform"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"Repository": ubx.FieldSpec{WireName: "repository"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"AutoBranchCreationConfig": ubx.FieldSpec{
-			WireName: "auto_branch_creation_config",
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: App_AutoBranchCreationConfigFields,
-		},
-		"CacheConfig": ubx.FieldSpec{
-			WireName: "cache_config",
-			Kind: "list",
-			Fields: App_CacheConfigFields,
-		},
-		"CustomRule": ubx.FieldSpec{
-			WireName: "custom_rule",
-			Kind: "list",
-			Fields: App_CustomRuleFields,
-		},
-		"JobConfig": ubx.FieldSpec{
-			WireName: "job_config",
-			Kind: "list",
-			Fields: App_JobConfigFields,
+			Fields: App_TagsFields,
 		},
 	},
 }

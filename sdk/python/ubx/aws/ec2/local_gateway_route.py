@@ -8,19 +8,36 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LocalGatewayRouteConfig:
+    # The CIDR block used for destination matches.
     destination_cidr_block: Any = None
-    id: Any = None
+    # The ID of the local gateway route table.
     local_gateway_route_table_id: Any = None
+    # The ID of the virtual interface group.
     local_gateway_virtual_interface_group_id: Any = None
-    region: Any = None
+    # The ID of the network interface.
+    network_interface_id: Any = None
+
+@dataclasses.dataclass
+class LocalGatewayRouteAttrs:
+    # The CIDR block used for destination matches.
+    destination_cidr_block: Any = None
+    # The ID of the local gateway route table.
+    local_gateway_route_table_id: Any = None
+    # The ID of the virtual interface group.
+    local_gateway_virtual_interface_group_id: Any = None
+    # The ID of the network interface.
+    network_interface_id: Any = None
+    # The state of the route.
+    state: Any = None
+    # The route type.
+    type: Any = None
 
 LocalGatewayRoute = ubx.ResourceBinding(
     wire_type="aws_ec2_local_gateway_route",
     fields={
         "destination_cidr_block": ubx.FieldSpec(wire_name="destination_cidr_block"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "local_gateway_route_table_id": ubx.FieldSpec(wire_name="local_gateway_route_table_id"),
         "local_gateway_virtual_interface_group_id": ubx.FieldSpec(wire_name="local_gateway_virtual_interface_group_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "network_interface_id": ubx.FieldSpec(wire_name="network_interface_id"),
     },
 )

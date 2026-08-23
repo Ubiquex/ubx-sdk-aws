@@ -8,13 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class XssMatchSet_XssMatchTuples_FieldToMatch:
+    # The name of the header or query argument that AWS WAF inspects, used when the field-to-match type is HEADER or SINGLE_QUERY_ARG. (AI-inferred)
     data: Any = None
+    # Specifies the type of web request component (such as HEADER, METHOD, QUERY_STRING, URI, or BODY) that AWS WAF inspects for cross-site scripting attacks. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class XssMatchSet_XssMatchTuples:
-    text_transformation: Any = None
+    # Specifies the part of a web request to inspect for cross-site scripting attacks, such as the URI, query string, body, or a named header, via the type and optional data subfields. (AI-inferred)
     field_to_match: Any = None
+    # Specifies how AWS WAF transforms the text component of the web request before inspection for XSS patterns, such as converting to lowercase, decoding HTML entities, or compressing white spaces. (AI-inferred)
+    text_transformation: Any = None
 
 _XssMatchSet_XssMatchTuples_FieldToMatchFields = {
     "data": ubx.FieldSpec(wire_name="data"),
@@ -22,28 +26,37 @@ _XssMatchSet_XssMatchTuples_FieldToMatchFields = {
 }
 
 _XssMatchSet_XssMatchTuplesFields = {
-    "text_transformation": ubx.FieldSpec(wire_name="text_transformation"),
     "field_to_match": ubx.FieldSpec(
         wire_name="field_to_match",
-        kind="list",
+        kind="object",
         fields=_XssMatchSet_XssMatchTuples_FieldToMatchFields,
     ),
+    "text_transformation": ubx.FieldSpec(wire_name="text_transformation"),
 }
 
 @dataclasses.dataclass
 class XssMatchSetConfig:
-    id: Any = None
+    # A friendly name or description of the XssMatchSet, which is required and cannot be changed after creation. (AI-inferred)
     name: Any = None
+    # Specifies the parts of the web request to inspect for cross-site scripting attacks and the text transformations to apply, where each tuple consists of a FieldToMatch and a TextTransformation. (AI-inferred)
+    xss_match_tuples: Any = None
+
+@dataclasses.dataclass
+class XssMatchSetAttrs:
+    # The unique identifier assigned by AWS to the XSS match set, used to reference the set in other WAF resources. (AI-inferred)
+    id: Any = None
+    # A friendly name or description of the XssMatchSet, which is required and cannot be changed after creation. (AI-inferred)
+    name: Any = None
+    # Specifies the parts of the web request to inspect for cross-site scripting attacks and the text transformations to apply, where each tuple consists of a FieldToMatch and a TextTransformation. (AI-inferred)
     xss_match_tuples: Any = None
 
 XssMatchSet = ubx.ResourceBinding(
     wire_type="aws_waf_xss_match_set",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "xss_match_tuples": ubx.FieldSpec(
             wire_name="xss_match_tuples",
-            kind="set",
+            kind="list",
             fields=_XssMatchSet_XssMatchTuplesFields,
         ),
     },

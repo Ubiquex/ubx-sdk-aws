@@ -7,20 +7,50 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class OrganizationalUnit_Tags:
+    # The user-defined key (name) of a tag attached to the organizational unit, used to identify and categorize the unit for resource management. (AI-inferred)
+    key: Any = None
+    # The value for a tag key attached to the organizational unit, used to assign metadata for management and tracking purposes. (AI-inferred)
+    value: Any = None
+
+_OrganizationalUnit_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class OrganizationalUnitConfig:
-    id: Any = None
+    # The friendly name of this OU.
     name: Any = None
+    # The unique identifier (ID) of the parent root or OU that you want to create the new OU in.
     parent_id: Any = None
+    # A list of tags that you want to attach to the newly created OU.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class OrganizationalUnitAttrs:
+    # The Amazon Resource Name (ARN) of this OU.
+    arn: Any = None
+    # The unique identifier (ID) associated with this OU.
+    id: Any = None
+    # The friendly name of this OU.
+    name: Any = None
+    # The unique identifier (ID) of the parent root or OU that you want to create the new OU in.
+    parent_id: Any = None
+    # The path in the organization where this OU exists.
+    path: Any = None
+    # A list of tags that you want to attach to the newly created OU.
+    tags: Any = None
 
 OrganizationalUnit = ubx.ResourceBinding(
     wire_type="aws_organizations_organizational_unit",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "parent_id": ubx.FieldSpec(wire_name="parent_id"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_OrganizationalUnit_TagsFields,
+        ),
     },
 )

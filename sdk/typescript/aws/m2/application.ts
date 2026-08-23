@@ -2,14 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Application_Definition {
-  content: string;
-  s3Location: string;
-}
-
-export interface Application_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+  /** The inline application definition content, specified as a string, that contains the application's definition in a format like JSON or YAML to be used for the M2 application. (AI-inferred) */
+  content?: string | Computed<string>;
+  /** The S3 URI (e.g., s3://bucket/key) that points to the application definition file stored in Amazon S3, used to specify the application definition when it is not provided inline. (AI-inferred) */
+  s3Location?: string | Computed<string>;
 }
 
 const Application_DefinitionFields: FieldMap = {
@@ -17,60 +13,57 @@ const Application_DefinitionFields: FieldMap = {
   s3Location: "s3_location",
 };
 
-const Application_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
-};
-
 export interface ApplicationConfig {
+  /** Contains the application definition for the AWS M2 mainframe modernization application, supplying the code or configuration either inline or via an S3 location. (AI-inferred) */
+  definition?: Application_Definition | Computed<Application_Definition>;
+  /** This optional string supplies a customer-defined description for the AWS Mainframe Modernization application, used to identify the application's purpose. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The engine type for the application, which determines the runtime environment (either Micro Focus or Blu Age). (AI-inferred) */
   engineType: string | Computed<string>;
+  /** The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting application-related resources. */
   kmsKeyId?: string | Computed<string>;
+  /** Specifies the required name for the AWS Mainframe Modernization application, which must be unique across all applications in your AWS account and Region and serves as the human-readable identifier in the M2 console and API. (AI-inferred) */
   name: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The ARN of the IAM role that the application assumes to access other AWS services and resources needed for its operation. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  definition?: Application_Definition[] | Computed<Application_Definition[]>;
-  timeouts?: Application_Timeouts | Computed<Application_Timeouts>;
+  /** Specifies a map of key-value tags to attach to the AWS Mainframe Modernization application for management and categorization. (AI-inferred) */
+  tags?: unknown | Computed<unknown>;
 }
 
 export interface ApplicationAttrs {
+  /** The Amazon Resource Name (ARN) uniquely identifying the AWS Mainframe Modernization (M2) application, assigned by AWS and used to reference the application in other services, IAM policies, and monitoring tools. (AI-inferred) */
+  applicationArn: string;
+  /** The unique identifier assigned by AWS to the Mainframe Modernization application when it is created. (AI-inferred) */
   applicationId: string;
-  arn: string;
-  currentVersion: number;
+  /** Contains the application definition for the AWS M2 mainframe modernization application, supplying the code or configuration either inline or via an S3 location. (AI-inferred) */
+  definition: Application_Definition;
+  /** This optional string supplies a customer-defined description for the AWS Mainframe Modernization application, used to identify the application's purpose. (AI-inferred) */
   description: string;
+  /** The engine type for the application, which determines the runtime environment (either Micro Focus or Blu Age). (AI-inferred) */
   engineType: string;
-  id: string;
+  /** The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting application-related resources. */
   kmsKeyId: string;
+  /** Specifies the required name for the AWS Mainframe Modernization application, which must be unique across all applications in your AWS account and Region and serves as the human-readable identifier in the M2 console and API. (AI-inferred) */
   name: string;
-  region: string;
+  /** The ARN of the IAM role that the application assumes to access other AWS services and resources needed for its operation. (AI-inferred) */
   roleArn: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  definition: Application_Definition[];
-  timeouts: Application_Timeouts;
+  /** Specifies a map of key-value tags to attach to the AWS Mainframe Modernization application for management and categorization. (AI-inferred) */
+  tags: unknown;
 }
 
 export const Application: ResourceBinding<ApplicationConfig, ApplicationAttrs> = {
   wireType: "aws_m2_application",
   fields: {
+    definition: {
+      wireName: "definition",
+      kind: "object",
+      fields: Application_DefinitionFields,
+    },
     description: "description",
     engineType: "engine_type",
     kmsKeyId: "kms_key_id",
     name: "name",
-    region: "region",
     roleArn: "role_arn",
     tags: "tags",
-    definition: {
-      wireName: "definition",
-      kind: "list",
-      fields: Application_DefinitionFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Application_TimeoutsFields,
-    },
   },
 };

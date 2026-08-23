@@ -3,25 +3,87 @@ package lightsail
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Bucket_AccessRules struct {
+	// A Boolean value that indicates whether the access control list (ACL) permissions that are applied to individual objects override the getObject option that is currently specified.
+	AllowPublicOverrides any
+	// Specifies the anonymous access to all objects in a bucket.
+	GetObject any
+}
+
+type Bucket_Tags struct {
+	// The key of a tag to assign to the Lightsail bucket. (AI-inferred)
+	Key any
+	// The value of a tag attached to the Lightsail bucket, used for metadata, identification, and cost allocation. (AI-inferred)
+	Value any
+}
+
+var Bucket_AccessRulesFields = ubx.FieldMap{
+		"AllowPublicOverrides": ubx.FieldSpec{WireName: "allow_public_overrides"},
+		"GetObject": ubx.FieldSpec{WireName: "get_object"},
+	}
+
+var Bucket_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type BucketConfig struct {
+	// An object that sets the public accessibility of objects in the specified bucket.
+	AccessRules any
+	// The name for the bucket.
+	BucketName any
+	// The ID of the bundle to use for the bucket.
 	BundleId any
-	ForceDelete any
-	Id any
-	Name any
-	Region any
+	// Specifies whether to enable or disable versioning of objects in the bucket.
+	ObjectVersioning any
+	// An array of strings to specify the AWS account IDs that can access the bucket.
+	ReadOnlyAccessAccounts any
+	// The names of the Lightsail resources for which to set bucket access.
+	ResourcesReceivingAccess any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
+}
+
+type BucketAttrs struct {
+	// Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle. You can update a bucket's bundle only one time within a monthly AWS billing cycle.
+	AbleToUpdateBundle any
+	// An object that sets the public accessibility of objects in the specified bucket.
+	AccessRules any
+	// The Amazon Resource Name (ARN) uniquely identifying the Lightsail bucket, such as arn:aws:lightsail:region:account-id:bucket/bucket-name. (AI-inferred)
+	BucketArn any
+	// The name for the bucket.
+	BucketName any
+	// The ID of the bundle to use for the bucket.
+	BundleId any
+	// Specifies whether to enable or disable versioning of objects in the bucket.
+	ObjectVersioning any
+	// An array of strings to specify the AWS account IDs that can access the bucket.
+	ReadOnlyAccessAccounts any
+	// The names of the Lightsail resources for which to set bucket access.
+	ResourcesReceivingAccess any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// The URL of the bucket.
+	Url any
 }
 
 var Bucket = ubx.ResourceBinding{
 	WireType: "aws_lightsail_bucket",
 	Fields: ubx.FieldMap{
+		"AccessRules": ubx.FieldSpec{
+			WireName: "access_rules",
+			Kind: "object",
+			Fields: Bucket_AccessRulesFields,
+		},
+		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
-		"ForceDelete": ubx.FieldSpec{WireName: "force_delete"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"ObjectVersioning": ubx.FieldSpec{WireName: "object_versioning"},
+		"ReadOnlyAccessAccounts": ubx.FieldSpec{WireName: "read_only_access_accounts"},
+		"ResourcesReceivingAccess": ubx.FieldSpec{WireName: "resources_receiving_access"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Bucket_TagsFields,
+		},
 	},
 }

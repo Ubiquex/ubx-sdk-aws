@@ -7,18 +7,43 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ResourcePolicy_Tags:
+    # The key of a tag attached to the AWS Organizations resource policy. (AI-inferred)
+    key: Any = None
+    # The value of a tag key-value pair attached to the AWS Organizations resource policy, used to organize and identify the policy. (AI-inferred)
+    value: Any = None
+
+_ResourcePolicy_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ResourcePolicyConfig:
+    # The policy document. For AWS CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format before submitting it.
     content: Any = None
-    id: Any = None
+    # A list of tags that you want to attach to the resource policy
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class ResourcePolicyAttrs:
+    # The Amazon Resource Name (ARN) of the resource policy.
+    arn: Any = None
+    # The policy document. For AWS CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format before submitting it.
+    content: Any = None
+    # The unique identifier (ID) associated with this resource policy.
+    id: Any = None
+    # A list of tags that you want to attach to the resource policy
+    tags: Any = None
 
 ResourcePolicy = ubx.ResourceBinding(
     wire_type="aws_organizations_resource_policy",
     fields={
         "content": ubx.FieldSpec(wire_name="content"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ResourcePolicy_TagsFields,
+        ),
     },
 )

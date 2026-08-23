@@ -3,54 +3,191 @@ package acmpca
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type CertificateAuthority_CertificateAuthorityConfiguration_Subject struct {
+type CertificateAuthority_CsrExtensions_KeyUsage struct {
+	// Indicates whether the certificate authority's certificate key can be used to sign certificate revocation lists (CRLs). (AI-inferred)
+	Crlsign any
+	// Specifies whether the DataEncipherment key usage bit is set in the certificate authority's CSR, indicating that the certificate's public key can be used to directly encrypt user data. (AI-inferred)
+	DataEncipherment any
+	// Indicates whether the CA's private key is intended to be used only for deciphering data, as specified in the KeyUsage extension of the certificate signing request. (AI-inferred)
+	DecipherOnly any
+	// Specifies whether the CA certificate's key usage extension includes the digitalSignature bit, allowing the CA's key to be used for verifying digital signatures (e.g., on certificates and CRLs). (AI-inferred)
+	DigitalSignature any
+	// When true, sets the encipherOnly flag in the key usage extension of the certificate authority's CSR, indicating the key may be used only for enciphering data. (AI-inferred)
+	EncipherOnly any
+	// Indicates whether the certificate key can be used for key agreement (e.g., Diffie-Hellman key exchange) in the KeyUsage extension of the CSR. (AI-inferred)
+	KeyAgreement any
+	// Specifies whether the key can be used to sign certificates (keyCertSign), a critical usage for a CA certificate. (AI-inferred)
+	KeyCertSign any
+	// When true, the key usage extension of the CA's certificate signing request includes the KeyEncipherment usage, indicating the CA's public key may be used for key encipherment. (AI-inferred)
+	KeyEncipherment any
+	// Whether the CA certificate's KeyUsage extension sets the nonRepudiation bit, which indicates the key may be used to verify signatures that provide non-repudiation. (AI-inferred)
+	NonRepudiation any
+}
+
+type CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryName_CustomAttributes struct {
+	// The object identifier (OID) that identifies the attribute type of a custom attribute within the distinguished name (directoryName) used as the access location for a subject information access extension in the certificate signing request for the private CA certificate. (AI-inferred)
+	ObjectIdentifier any
+	// The value of a custom attribute (such as an organization name or email address) within the X.500 directory name used in the subject information access extension of the certificate authority's certificate signing request. (AI-inferred)
+	Value any
+}
+
+type CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryName struct {
+	// Specifies the common name (CN) component of the X.500 distinguished name that identifies the directory name in the access location for a subject information access (SIA) extension of the private CA certificate. (AI-inferred)
 	CommonName any
+	// Specifies the two-letter country code (C attribute) of the X.500 distinguished name used as the access location for the Subject Information Access (SIA) extension in the certificate authority's certificate signing request. (AI-inferred)
 	Country any
+	// Specifies a list of custom attribute objects (each containing an object identifier and value) to include in the X.500 directory name used for the subject information access access location in the CA certificate signing request. (AI-inferred)
+	CustomAttributes any
+	// Specifies the distinguished name qualifier (DNQ) component of the X.500 directory name used as the access location for the subject information access (SIA) extension in the certificate signing request (CSR) for the certificate authority. (AI-inferred)
 	DistinguishedNameQualifier any
+	// Specifies the generation qualifier (e.g., 'Jr.', 'Sr.') component of the X.500 distinguished name for the directory name that serves as an access location in the Subject Information Access CSR extension of an ACM Private CA certificate authority. (AI-inferred)
 	GenerationQualifier any
+	// Specifies the given name (first name) component of the distinguished name used as the access location in the subject information access extension of the private CA's CSR. (AI-inferred)
 	GivenName any
+	// The subject's initials, used as part of the X.500 distinguished name when a directory name is specified as the access location in the subject information access extension of the certificate authority's certificate signing request. (AI-inferred)
 	Initials any
+	// The locality component (such as city) of the X.500 distinguished name used in the access location for the Subject Information Access (SIA) extension in the certificate authority's CSR. (AI-inferred)
 	Locality any
+	// Specifies the organization (O) attribute of the X.500 distinguished name used as the directory name access location in the Subject Information Access extension of the certificate signing request. (AI-inferred)
 	Organization any
+	// The organizational unit (OU) attribute of the X.500 distinguished name used as the directory name for an access location in the Subject Information Access (SIA) extension of the certificate authority's certificate signing request. (AI-inferred)
 	OrganizationalUnit any
+	// Sets the pseudonym attribute (X.500 distinguished name component) of the directory name used as the access location in a Subject Information Access extension within the certificate authority's CSR extensions. (AI-inferred)
 	Pseudonym any
+	// Sets the serialNumber attribute of the X.500 distinguished name used as the directoryName access location in the Subject Information Access extension of the certificate authority's CSR. (AI-inferred)
+	SerialNumber any
+	// Specifies the state or province component of the X.500 distinguished name used in the directory name for an access location in the Subject Information Access extension of the certificate authority's CSR. (AI-inferred)
 	State any
+	// Specifies the surname (SN) attribute of an X.500 directory name in the access location of the Subject Information Access (SIA) extension for the private CA certificate. (AI-inferred)
 	Surname any
+	// The Title attribute in the directory name of a subject information access entry, specifying the job title of the entity identified by that X.509 distinguished name within the CSR's SubjectInformationAccess extension. (AI-inferred)
 	Title any
 }
 
-type CertificateAuthority_CertificateAuthorityConfiguration struct {
-	KeyAlgorithm any
-	SigningAlgorithm any
-	Subject any
+type CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_EdiPartyName struct {
+	// Specifies the name assigner for the EDI party name in the subject information access extension of the certificate authority's certificate signing request (CSR), identifying the entity that assigned the party name. (AI-inferred)
+	NameAssigner any
+	// The party name component of the EDI party name access location in the Subject Information Access (SIA) extension of the certificate signing request, identifying the EDI party associated with the subject. (AI-inferred)
+	PartyName any
+}
+
+type CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_OtherName struct {
+	// Specifies the object identifier (OID) that identifies the type of name in the otherName field of the access location used in the subject information access extension of the CSR. (AI-inferred)
+	TypeId any
+	// The value of the otherName object in the Subject Information Access extension, which holds the actual string data (such as a URI or identifier) associated with the given TypeOid for the certificate authority's CSR. (AI-inferred)
+	Value any
+}
+
+type CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation struct {
+	// Specifies the X.500 distinguished name of the access location for the Subject Information Access extension in the certificate authority's certificate signing request (CSR). (AI-inferred)
+	DirectoryName any
+	// The DNS name of the GeneralName structure that specifies the access location in a Subject Information Access extension, indicating the host where information about the issuing certificate authority can be retrieved. (AI-inferred)
+	DnsName any
+	// Specifies the EDI (Electronic Data Interchange) party name within an access location for the Subject Information Access extension of the certificate authority's CSR, containing the NameAssigner and PartyName fields. (AI-inferred)
+	EdiPartyName any
+	// The IP address of the access location (GeneralName) for the Subject Information Access extension in the certificate signing request, specified in dotted decimal notation (e.g., 192.168.0.1). (AI-inferred)
+	IpAddress any
+	// Specifies the OtherName variant of the GeneralName for the access location, which consists of an object identifier (OID) and a string value, as used in the Subject Information Access extension of the certificate authority's CSR. (AI-inferred)
+	OtherName any
+	// Specifies the registered ID (object identifier) that serves as the access location in a subject information access entry, enabling the CSR extension to reference an OID-based general name for the certificate authority. (AI-inferred)
+	RegisteredId any
+	// The RFC 822 email address used as the access location in a Subject Information Access extension for the certificate authority's certificate signing request, indicating where to find additional subject information. (AI-inferred)
+	Rfc822Name any
+	// Specifies the uniform resource identifier (URI) that identifies the network location of the access information, such as an OCSP responder or CA issuer endpoint, for the subject information access extension in the CA's certificate request. (AI-inferred)
+	UniformResourceIdentifier any
+}
+
+type CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessMethod struct {
+	// Specifies the predefined access method type for an entry in the Subject Information Access (SIA) extension of the CA certificate, which can be one of CA_REPOSITORY, RESOURCE_PKI_MANIFEST, or RESOURCE_PKI_CRL. (AI-inferred)
+	AccessMethodType any
+	// Specifies a custom object identifier (OID) in dotted-decimal notation that identifies the access method for the Subject Information Access extension in the certificate authority's CSR. (AI-inferred)
+	CustomObjectIdentifier any
+}
+
+type CertificateAuthority_CsrExtensions_SubjectInformationAccess struct {
+	// Specifies the GeneralName (such as a URI, DNS name, or IP address) that provides the access location for a Subject Information Access method, for example the URL of an OCSP responder. (AI-inferred)
+	AccessLocation any
+	// Specifies the access method (a predefined type such as CA_REPOSITORY or a custom object identifier) that is included in a Subject Information Access extension entry in the certificate authority's CSR. (AI-inferred)
+	AccessMethod any
+}
+
+type CertificateAuthority_CsrExtensions struct {
+	// Structure that contains X.509 KeyUsage information.
+	KeyUsage any
+	// Array of X.509 AccessDescription.
+	SubjectInformationAccess any
+}
+
+type CertificateAuthority_RevocationConfiguration_CrlConfiguration_CrlDistributionPointExtensionConfiguration struct {
+	// Determines whether the CRL distribution point extension is omitted from certificates issued by this certificate authority, with true meaning the extension is not included. (AI-inferred)
+	OmitExtension any
 }
 
 type CertificateAuthority_RevocationConfiguration_CrlConfiguration struct {
+	// Configures the default behavior of the CRL Distribution Point extension for certificates issued by your certificate authority
+	CrlDistributionPointExtensionConfiguration any
+	// Specifies the type of certificate revocation list (CRL) to generate: COMPLETE for a single CRL covering all unexpired certificates, or PARTITIONED for multiple CRLs partitioned by serial number range. (AI-inferred)
+	CrlType any
+	// Specifies the custom CNAME (fully qualified domain name) that overrides the default S3 URL in the CRL distribution point included in certificates issued by this private CA. (AI-inferred)
 	CustomCname any
+	// Specifies the file path in the S3 bucket where the certificate revocation list (CRL) is published, beginning with a slash (e.g., '/crl') and limited to 512 characters. (AI-inferred)
 	CustomPath any
+	// Specifies whether a certificate revocation list (CRL) is enabled for the certificate authority. (AI-inferred)
 	Enabled any
+	// The number of days before the certificate revocation list (CRL) expires, after which AWS Private CA generates a new CRL. (AI-inferred)
 	ExpirationInDays any
+	// The name of the S3 bucket where the certificate revocation list (CRL) is published or stored for the private certificate authority. (AI-inferred)
 	S3BucketName any
+	// This field specifies the canned access control list (ACL) that AWS Private CA applies to the certificate revocation list (CRL) object when it writes the CRL to the configured S3 bucket, commonly set to PUBLIC_READ or BUCKET_OWNER_FULL_CONTROL. (AI-inferred)
 	S3ObjectAcl any
 }
 
 type CertificateAuthority_RevocationConfiguration_OcspConfiguration struct {
+	// Enables or disables the Online Certificate Status Protocol (OCSP) responder for the certificate authority, allowing clients to query the OCSP endpoint for real-time certificate revocation status. (AI-inferred)
 	Enabled any
+	// Specifies a custom CNAME (fully qualified domain name) that ACM Private CA uses for the OCSP responder URL, overriding the default responder endpoint. (AI-inferred)
 	OcspCustomCname any
 }
 
 type CertificateAuthority_RevocationConfiguration struct {
+	// Your certificate authority can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates that have been revoked.
 	CrlConfiguration any
+	// Helps to configure online certificate status protocol (OCSP) responder for your certificate authority
 	OcspConfiguration any
 }
 
-type CertificateAuthority_Timeouts struct {
-	Create any
+type CertificateAuthority_Tags struct {
+	// The key part of a tag that you can attach to an AWS Private CA certificate authority to help identify and organize the resource. (AI-inferred)
+	Key any
+	// The value part of a key-value tag attached to the certificate authority, used to categorize, organize, or control access to the resource (paired with the corresponding tag key). (AI-inferred)
+	Value any
 }
 
-var CertificateAuthority_CertificateAuthorityConfiguration_SubjectFields = ubx.FieldMap{
+var CertificateAuthority_CsrExtensions_KeyUsageFields = ubx.FieldMap{
+		"Crlsign": ubx.FieldSpec{WireName: "crlsign"},
+		"DataEncipherment": ubx.FieldSpec{WireName: "data_encipherment"},
+		"DecipherOnly": ubx.FieldSpec{WireName: "decipher_only"},
+		"DigitalSignature": ubx.FieldSpec{WireName: "digital_signature"},
+		"EncipherOnly": ubx.FieldSpec{WireName: "encipher_only"},
+		"KeyAgreement": ubx.FieldSpec{WireName: "key_agreement"},
+		"KeyCertSign": ubx.FieldSpec{WireName: "key_cert_sign"},
+		"KeyEncipherment": ubx.FieldSpec{WireName: "key_encipherment"},
+		"NonRepudiation": ubx.FieldSpec{WireName: "non_repudiation"},
+	}
+
+var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryName_CustomAttributesFields = ubx.FieldMap{
+		"ObjectIdentifier": ubx.FieldSpec{WireName: "object_identifier"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryNameFields = ubx.FieldMap{
 		"CommonName": ubx.FieldSpec{WireName: "common_name"},
 		"Country": ubx.FieldSpec{WireName: "country"},
+		"CustomAttributes": ubx.FieldSpec{
+			WireName: "custom_attributes",
+			Kind: "list",
+			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryName_CustomAttributesFields,
+		},
 		"DistinguishedNameQualifier": ubx.FieldSpec{WireName: "distinguished_name_qualifier"},
 		"GenerationQualifier": ubx.FieldSpec{WireName: "generation_qualifier"},
 		"GivenName": ubx.FieldSpec{WireName: "given_name"},
@@ -59,22 +196,87 @@ var CertificateAuthority_CertificateAuthorityConfiguration_SubjectFields = ubx.F
 		"Organization": ubx.FieldSpec{WireName: "organization"},
 		"OrganizationalUnit": ubx.FieldSpec{WireName: "organizational_unit"},
 		"Pseudonym": ubx.FieldSpec{WireName: "pseudonym"},
+		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
 		"State": ubx.FieldSpec{WireName: "state"},
 		"Surname": ubx.FieldSpec{WireName: "surname"},
 		"Title": ubx.FieldSpec{WireName: "title"},
 	}
 
-var CertificateAuthority_CertificateAuthorityConfigurationFields = ubx.FieldMap{
-		"KeyAlgorithm": ubx.FieldSpec{WireName: "key_algorithm"},
-		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
-		"Subject": ubx.FieldSpec{
-			WireName: "subject",
-			Kind: "list",
-			Fields: CertificateAuthority_CertificateAuthorityConfiguration_SubjectFields,
+var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_EdiPartyNameFields = ubx.FieldMap{
+		"NameAssigner": ubx.FieldSpec{WireName: "name_assigner"},
+		"PartyName": ubx.FieldSpec{WireName: "party_name"},
+	}
+
+var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_OtherNameFields = ubx.FieldMap{
+		"TypeId": ubx.FieldSpec{WireName: "type_id"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocationFields = ubx.FieldMap{
+		"DirectoryName": ubx.FieldSpec{
+			WireName: "directory_name",
+			Kind: "object",
+			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryNameFields,
+		},
+		"DnsName": ubx.FieldSpec{WireName: "dns_name"},
+		"EdiPartyName": ubx.FieldSpec{
+			WireName: "edi_party_name",
+			Kind: "object",
+			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_EdiPartyNameFields,
+		},
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"OtherName": ubx.FieldSpec{
+			WireName: "other_name",
+			Kind: "object",
+			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_OtherNameFields,
+		},
+		"RegisteredId": ubx.FieldSpec{WireName: "registered_id"},
+		"Rfc822Name": ubx.FieldSpec{WireName: "rfc822_name"},
+		"UniformResourceIdentifier": ubx.FieldSpec{WireName: "uniform_resource_identifier"},
+	}
+
+var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessMethodFields = ubx.FieldMap{
+		"AccessMethodType": ubx.FieldSpec{WireName: "access_method_type"},
+		"CustomObjectIdentifier": ubx.FieldSpec{WireName: "custom_object_identifier"},
+	}
+
+var CertificateAuthority_CsrExtensions_SubjectInformationAccessFields = ubx.FieldMap{
+		"AccessLocation": ubx.FieldSpec{
+			WireName: "access_location",
+			Kind: "object",
+			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocationFields,
+		},
+		"AccessMethod": ubx.FieldSpec{
+			WireName: "access_method",
+			Kind: "object",
+			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessMethodFields,
 		},
 	}
 
+var CertificateAuthority_CsrExtensionsFields = ubx.FieldMap{
+		"KeyUsage": ubx.FieldSpec{
+			WireName: "key_usage",
+			Kind: "object",
+			Fields: CertificateAuthority_CsrExtensions_KeyUsageFields,
+		},
+		"SubjectInformationAccess": ubx.FieldSpec{
+			WireName: "subject_information_access",
+			Kind: "list",
+			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccessFields,
+		},
+	}
+
+var CertificateAuthority_RevocationConfiguration_CrlConfiguration_CrlDistributionPointExtensionConfigurationFields = ubx.FieldMap{
+		"OmitExtension": ubx.FieldSpec{WireName: "omit_extension"},
+	}
+
 var CertificateAuthority_RevocationConfiguration_CrlConfigurationFields = ubx.FieldMap{
+		"CrlDistributionPointExtensionConfiguration": ubx.FieldSpec{
+			WireName: "crl_distribution_point_extension_configuration",
+			Kind: "object",
+			Fields: CertificateAuthority_RevocationConfiguration_CrlConfiguration_CrlDistributionPointExtensionConfigurationFields,
+		},
+		"CrlType": ubx.FieldSpec{WireName: "crl_type"},
 		"CustomCname": ubx.FieldSpec{WireName: "custom_cname"},
 		"CustomPath": ubx.FieldSpec{WireName: "custom_path"},
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
@@ -91,61 +293,92 @@ var CertificateAuthority_RevocationConfiguration_OcspConfigurationFields = ubx.F
 var CertificateAuthority_RevocationConfigurationFields = ubx.FieldMap{
 		"CrlConfiguration": ubx.FieldSpec{
 			WireName: "crl_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: CertificateAuthority_RevocationConfiguration_CrlConfigurationFields,
 		},
 		"OcspConfiguration": ubx.FieldSpec{
 			WireName: "ocsp_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: CertificateAuthority_RevocationConfiguration_OcspConfigurationFields,
 		},
 	}
 
-var CertificateAuthority_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
+var CertificateAuthority_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type CertificateAuthorityConfig struct {
-	Enabled any
-	Id any
+	// Structure that contains CSR pass though extensions information.
+	CsrExtensions any
+	// Public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate.
+	KeyAlgorithm any
+	// KeyStorageSecurityStadard defines a cryptographic key management compliance standard used for handling CA keys.
 	KeyStorageSecurityStandard any
-	PermanentDeletionTimeInDays any
-	Region any
-	Tags any
-	TagsAll any
-	Type any
-	UsageMode any
-	CertificateAuthorityConfiguration any
+	// Certificate Authority revocation information.
 	RevocationConfiguration any
-	Timeouts any
+	// Algorithm your CA uses to sign certificate requests.
+	SigningAlgorithm any
+	// Structure that contains X.500 distinguished name information for your CA.
+	Subject any
+	Tags any
+	// The type of the certificate authority.
+	Type any
+	// Usage mode of the ceritificate authority.
+	UsageMode any
+}
+
+type CertificateAuthorityAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies the certificate authority within AWS. (AI-inferred)
+	Arn any
+	// The base64 PEM-encoded certificate signing request (CSR) for your certificate authority certificate.
+	CertificateSigningRequest any
+	// Structure that contains CSR pass though extensions information.
+	CsrExtensions any
+	// Public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate.
+	KeyAlgorithm any
+	// KeyStorageSecurityStadard defines a cryptographic key management compliance standard used for handling CA keys.
+	KeyStorageSecurityStandard any
+	// Certificate Authority revocation information.
+	RevocationConfiguration any
+	// Algorithm your CA uses to sign certificate requests.
+	SigningAlgorithm any
+	// Structure that contains X.500 distinguished name information for your CA.
+	Subject any
+	Tags any
+	// The type of the certificate authority.
+	Type any
+	// Usage mode of the ceritificate authority.
+	UsageMode any
 }
 
 var CertificateAuthority = ubx.ResourceBinding{
 	WireType: "aws_acmpca_certificate_authority",
 	Fields: ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"KeyStorageSecurityStandard": ubx.FieldSpec{WireName: "key_storage_security_standard"},
-		"PermanentDeletionTimeInDays": ubx.FieldSpec{WireName: "permanent_deletion_time_in_days"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UsageMode": ubx.FieldSpec{WireName: "usage_mode"},
-		"CertificateAuthorityConfiguration": ubx.FieldSpec{
-			WireName: "certificate_authority_configuration",
-			Kind: "list",
-			Fields: CertificateAuthority_CertificateAuthorityConfigurationFields,
+		"CsrExtensions": ubx.FieldSpec{
+			WireName: "csr_extensions",
+			Kind: "object",
+			Fields: CertificateAuthority_CsrExtensionsFields,
 		},
+		"KeyAlgorithm": ubx.FieldSpec{WireName: "key_algorithm"},
+		"KeyStorageSecurityStandard": ubx.FieldSpec{WireName: "key_storage_security_standard"},
 		"RevocationConfiguration": ubx.FieldSpec{
 			WireName: "revocation_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: CertificateAuthority_RevocationConfigurationFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
+		"Subject": ubx.FieldSpec{
+			WireName: "subject",
 			Kind: "object",
-			Fields: CertificateAuthority_TimeoutsFields,
+			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryNameFields,
 		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: CertificateAuthority_TagsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"UsageMode": ubx.FieldSpec{WireName: "usage_mode"},
 	},
 }

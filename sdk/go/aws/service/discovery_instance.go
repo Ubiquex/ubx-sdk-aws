@@ -4,20 +4,25 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryInstanceConfig struct {
-	Attributes any
-	Id any
+	// This field is a required map of key-value pairs that define the instance's attributes for AWS Cloud Map service discovery, including standard keys like AWS_INSTANCE_IPV4, AWS_INSTANCE_IPV6, and AWS_INSTANCE_PORT, as well as any custom attributes you need to associate with the instance. (AI-inferred)
+	InstanceAttributes any
+	// The ID of the AWS Cloud Map service that this instance is registered with, used as the parent service for the instance's health and discovery configuration. (AI-inferred)
+	ServiceId any
+}
+
+type DiscoveryInstanceAttrs struct {
+	// This field is a required map of key-value pairs that define the instance's attributes for AWS Cloud Map service discovery, including standard keys like AWS_INSTANCE_IPV4, AWS_INSTANCE_IPV6, and AWS_INSTANCE_PORT, as well as any custom attributes you need to associate with the instance. (AI-inferred)
+	InstanceAttributes any
+	// The unique identifier assigned by AWS Cloud Map to the instance when it is registered within the service. (AI-inferred)
 	InstanceId any
-	Region any
+	// The ID of the AWS Cloud Map service that this instance is registered with, used as the parent service for the instance's health and discovery configuration. (AI-inferred)
 	ServiceId any
 }
 
 var DiscoveryInstance = ubx.ResourceBinding{
 	WireType: "aws_service_discovery_instance",
 	Fields: ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"InstanceAttributes": ubx.FieldSpec{WireName: "instance_attributes"},
 		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
 	},
 }

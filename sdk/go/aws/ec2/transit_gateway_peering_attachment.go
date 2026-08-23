@@ -3,41 +3,70 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TransitGatewayPeeringAttachment_Options struct {
-	DynamicRouting any
+type TransitGatewayPeeringAttachment_Status struct {
+	// The status code.
+	Code any
+	// The status message, if applicable.
+	Message any
 }
 
-var TransitGatewayPeeringAttachment_OptionsFields = ubx.FieldMap{
-		"DynamicRouting": ubx.FieldSpec{WireName: "dynamic_routing"},
+type TransitGatewayPeeringAttachment_Tags struct {
+	// The key of a tag to attach to the transit gateway peering attachment. (AI-inferred)
+	Key any
+	// The value of a tag assigned to the transit gateway peering attachment, used to identify or organize the resource. (AI-inferred)
+	Value any
+}
+
+var TransitGatewayPeeringAttachment_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type TransitGatewayPeeringAttachmentConfig struct {
-	Id any
+	// The ID of the peer account
 	PeerAccountId any
+	// Peer Region
 	PeerRegion any
+	// The ID of the peer transit gateway.
 	PeerTransitGatewayId any
-	Region any
+	// The tags for the transit gateway peering attachment.
 	Tags any
-	TagsAll any
+	// The ID of the transit gateway.
 	TransitGatewayId any
-	Options any
+}
+
+type TransitGatewayPeeringAttachmentAttrs struct {
+	// The time the transit gateway peering attachment was created.
+	CreationTime any
+	// The ID of the peer account
+	PeerAccountId any
+	// Peer Region
+	PeerRegion any
+	// The ID of the peer transit gateway.
+	PeerTransitGatewayId any
+	// The state of the transit gateway peering attachment. Note that the initiating state has been deprecated.
+	State any
+	// The current status of the transit gateway peering attachment, reported as an object containing a code (e.g., available or deleted) and a message describing the state in more detail. (AI-inferred)
+	Status any
+	// The tags for the transit gateway peering attachment.
+	Tags any
+	// The ID of the transit gateway peering attachment.
+	TransitGatewayAttachmentId any
+	// The ID of the transit gateway.
+	TransitGatewayId any
 }
 
 var TransitGatewayPeeringAttachment = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_peering_attachment",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"PeerAccountId": ubx.FieldSpec{WireName: "peer_account_id"},
 		"PeerRegion": ubx.FieldSpec{WireName: "peer_region"},
 		"PeerTransitGatewayId": ubx.FieldSpec{WireName: "peer_transit_gateway_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: TransitGatewayPeeringAttachment_OptionsFields,
+			Fields: TransitGatewayPeeringAttachment_TagsFields,
 		},
+		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
 	},
 }

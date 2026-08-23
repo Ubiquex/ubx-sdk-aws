@@ -3,37 +3,42 @@ package rekognition
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Project_Timeouts struct {
-	Create any
-	Delete any
+type Project_Tags struct {
+	// The key of a user-defined tag attached to the AWS Rekognition project, used for organizing and identifying the resource. (AI-inferred)
+	Key any
+	// Specifies the value of a user-defined tag attached to the Amazon Rekognition project, enabling you to categorize, search, and manage the project within AWS. (AI-inferred)
+	Value any
 }
 
-var Project_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var Project_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ProjectConfig struct {
-	AutoUpdate any
-	Feature any
-	Name any
-	Region any
+	// The name of the project
+	ProjectName any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	Timeouts any
+}
+
+type ProjectAttrs struct {
+	// The Amazon Resource Name (ARN) of the Rekognition project, uniquely identifying it across AWS. (AI-inferred)
+	Arn any
+	// The name of the project
+	ProjectName any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Project = ubx.ResourceBinding{
 	WireType: "aws_rekognition_project",
 	Fields: ubx.FieldMap{
-		"AutoUpdate": ubx.FieldSpec{WireName: "auto_update"},
-		"Feature": ubx.FieldSpec{WireName: "feature"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Project_TimeoutsFields,
+		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Project_TagsFields,
 		},
 	},
 }

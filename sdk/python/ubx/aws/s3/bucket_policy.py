@@ -8,17 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BucketPolicyConfig:
+    # The name of the Amazon S3 bucket to which the policy applies.
     bucket: Any = None
-    id: Any = None
-    policy: Any = None
-    region: Any = None
+    # A policy document containing permissions to add to the specified bucket. In IAM, you must provide policy documents in JSON format. However, in CloudFormation you can provide the policy in JSON or YAML format because CloudFormation converts YAML to JSON before submitting it to IAM. For more information, see the AWS::IAM::Policy [PolicyDocument](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policydocument) resource description in this guide and [Access Policy Language Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-language-overview.html) in the *Amazon S3 User Guide*.
+    policy_document: Any = None
+
+@dataclasses.dataclass
+class BucketPolicyAttrs:
+    # The name of the Amazon S3 bucket to which the policy applies.
+    bucket: Any = None
+    # A policy document containing permissions to add to the specified bucket. In IAM, you must provide policy documents in JSON format. However, in CloudFormation you can provide the policy in JSON or YAML format because CloudFormation converts YAML to JSON before submitting it to IAM. For more information, see the AWS::IAM::Policy [PolicyDocument](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policydocument) resource description in this guide and [Access Policy Language Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-language-overview.html) in the *Amazon S3 User Guide*.
+    policy_document: Any = None
 
 BucketPolicy = ubx.ResourceBinding(
     wire_type="aws_s3_bucket_policy",
     fields={
         "bucket": ubx.FieldSpec(wire_name="bucket"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "policy": ubx.FieldSpec(wire_name="policy"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "policy_document": ubx.FieldSpec(wire_name="policy_document"),
     },
 )

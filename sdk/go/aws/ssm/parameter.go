@@ -4,44 +4,60 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ParameterConfig struct {
+	// A regular expression used to validate the parameter value. For example, for ``String`` types with values restricted to numbers, you can specify the following: ``AllowedPattern=^\d+$``
 	AllowedPattern any
-	Arn any
+	// The data type of the parameter, such as ``text`` or ``aws:ec2:image``. The default is ``text``.
 	DataType any
+	// Information about the parameter.
 	Description any
-	Id any
-	InsecureValue any
-	KeyId any
+	// The name of the parameter. The reported maximum length of 2048 characters for a parameter name includes 1037 characters that are reserved for internal use by SYS. The maximum length for a parameter name that you specify is 1011 characters. This count of 1011 characters includes the characters in the ARN that precede the name you specify. This ARN length will vary depending on your partition and Region. For example, the following 45 characters count toward the 1011 character maximum for a parameter created in the US East (Ohio) Region: ``arn:aws:ssm:us-east-2:111122223333:parameter/``.
 	Name any
-	Overwrite any
-	Region any
+	// Information about the policies assigned to a parameter. [Assigning parameter policies](https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html) in the *User Guide*.
+	Policies any
+	// Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key-value pairs). Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a SYS parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter.
 	Tags any
-	TagsAll any
+	// The parameter tier.
 	Tier any
+	// The type of parameter. Parameters of type ``SecureString`` are not supported by CFNlong.
 	Type any
+	// The parameter value. If type is ``StringList``, the system returns a comma-separated string with no spaces between commas in the ``Value`` field.
 	Value any
-	ValueWo any
-	ValueWoVersion any
+}
+
+type ParameterAttrs struct {
+	// A regular expression used to validate the parameter value. For example, for ``String`` types with values restricted to numbers, you can specify the following: ``AllowedPattern=^\d+$``
+	AllowedPattern any
+	// The Amazon Resource Name (ARN) assigned to the parameter, which uniquely identifies it within AWS. (AI-inferred)
+	Arn any
+	// The data type of the parameter, such as ``text`` or ``aws:ec2:image``. The default is ``text``.
+	DataType any
+	// Information about the parameter.
+	Description any
+	// The name of the parameter. The reported maximum length of 2048 characters for a parameter name includes 1037 characters that are reserved for internal use by SYS. The maximum length for a parameter name that you specify is 1011 characters. This count of 1011 characters includes the characters in the ARN that precede the name you specify. This ARN length will vary depending on your partition and Region. For example, the following 45 characters count toward the 1011 character maximum for a parameter created in the US East (Ohio) Region: ``arn:aws:ssm:us-east-2:111122223333:parameter/``.
+	Name any
+	// Information about the policies assigned to a parameter. [Assigning parameter policies](https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html) in the *User Guide*.
+	Policies any
+	// Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key-value pairs). Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a SYS parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter.
+	Tags any
+	// The parameter tier.
+	Tier any
+	// The type of parameter. Parameters of type ``SecureString`` are not supported by CFNlong.
+	Type any
+	// The parameter value. If type is ``StringList``, the system returns a comma-separated string with no spaces between commas in the ``Value`` field.
+	Value any
 }
 
 var Parameter = ubx.ResourceBinding{
 	WireType: "aws_ssm_parameter",
 	Fields: ubx.FieldMap{
 		"AllowedPattern": ubx.FieldSpec{WireName: "allowed_pattern"},
-		"Arn": ubx.FieldSpec{WireName: "arn"},
 		"DataType": ubx.FieldSpec{WireName: "data_type"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InsecureValue": ubx.FieldSpec{WireName: "insecure_value"},
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Overwrite": ubx.FieldSpec{WireName: "overwrite"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Policies": ubx.FieldSpec{WireName: "policies"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"Tier": ubx.FieldSpec{WireName: "tier"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"Value": ubx.FieldSpec{WireName: "value"},
-		"ValueWo": ubx.FieldSpec{WireName: "value_wo"},
-		"ValueWoVersion": ubx.FieldSpec{WireName: "value_wo_version"},
 	},
 }

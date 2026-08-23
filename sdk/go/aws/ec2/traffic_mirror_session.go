@@ -3,17 +3,58 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TrafficMirrorSession_Tags struct {
+	Key any
+	// The value of a user-defined tag key attached to the EC2 Traffic Mirror Session, which you can use to organize, identify, and manage the resource within your AWS environment. (AI-inferred)
+	Value any
+}
+
+var TrafficMirrorSession_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type TrafficMirrorSessionConfig struct {
+	// The description of the Traffic Mirror session.
 	Description any
-	Id any
+	// The ID of the source network interface.
 	NetworkInterfaceId any
+	// The ID of the account that owns the Traffic Mirror session.
+	OwnerId any
+	// The number of bytes in each packet to mirror.
 	PacketLength any
-	Region any
+	// The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.
 	SessionNumber any
+	// The tags assigned to the Traffic Mirror session.
 	Tags any
-	TagsAll any
+	// The ID of a Traffic Mirror filter.
 	TrafficMirrorFilterId any
+	// The ID of a Traffic Mirror target.
 	TrafficMirrorTargetId any
+	// The VXLAN ID for the Traffic Mirror session.
+	VirtualNetworkId any
+}
+
+type TrafficMirrorSessionAttrs struct {
+	// The description of the Traffic Mirror session.
+	Description any
+	// The ID of a Traffic Mirror session.
+	Id any
+	// The ID of the source network interface.
+	NetworkInterfaceId any
+	// The ID of the account that owns the Traffic Mirror session.
+	OwnerId any
+	// The number of bytes in each packet to mirror.
+	PacketLength any
+	// The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.
+	SessionNumber any
+	// The tags assigned to the Traffic Mirror session.
+	Tags any
+	// The ID of a Traffic Mirror filter.
+	TrafficMirrorFilterId any
+	// The ID of a Traffic Mirror target.
+	TrafficMirrorTargetId any
+	// The VXLAN ID for the Traffic Mirror session.
 	VirtualNetworkId any
 }
 
@@ -21,13 +62,15 @@ var TrafficMirrorSession = ubx.ResourceBinding{
 	WireType: "aws_ec2_traffic_mirror_session",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
+		"OwnerId": ubx.FieldSpec{WireName: "owner_id"},
 		"PacketLength": ubx.FieldSpec{WireName: "packet_length"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SessionNumber": ubx.FieldSpec{WireName: "session_number"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: TrafficMirrorSession_TagsFields,
+		},
 		"TrafficMirrorFilterId": ubx.FieldSpec{WireName: "traffic_mirror_filter_id"},
 		"TrafficMirrorTargetId": ubx.FieldSpec{WireName: "traffic_mirror_target_id"},
 		"VirtualNetworkId": ubx.FieldSpec{WireName: "virtual_network_id"},

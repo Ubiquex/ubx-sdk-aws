@@ -7,12 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Rule_Predicate:
+class Rule_Predicates:
+    # The unique identifier of the AWS WAF Regional resource (such as a ByteMatchSet, IPSet, or SqlInjectionMatchSet) that this predicate references for match evaluation. (AI-inferred)
     data_id: Any = None
+    # Specifies whether to negate the condition defined by the referenced rule, causing the WAF rule to match when that underlying condition is false. (AI-inferred)
     negated: Any = None
+    # Specifies the type of the WAF Regional rule predicate, indicating the kind of match condition being evaluated, such as IPMatch, ByteMatch, SqlInjectionMatch, XssMatch, SizeConstraint, GeoMatch, or RegexMatch. (AI-inferred)
     type: Any = None
 
-_Rule_PredicateFields = {
+_Rule_PredicatesFields = {
     "data_id": ubx.FieldSpec(wire_name="data_id"),
     "negated": ubx.FieldSpec(wire_name="negated"),
     "type": ubx.FieldSpec(wire_name="type"),
@@ -20,27 +23,33 @@ _Rule_PredicateFields = {
 
 @dataclasses.dataclass
 class RuleConfig:
-    id: Any = None
+    # The CloudWatch metric name associated with the rule, which is required and must be unique within the region for monitoring rule-level metrics. (AI-inferred)
     metric_name: Any = None
+    # The friendly name for the WAF Regional rule, which is required at creation and cannot be changed after creation, used to identify the rule. (AI-inferred)
     name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    predicate: Any = None
+    # A list of predicates that define the conditions under which the rule matches requests, each specifying the match type, the data ID of the associated AWS WAF Regional object, and whether the match condition is negated. (AI-inferred)
+    predicates: Any = None
+
+@dataclasses.dataclass
+class RuleAttrs:
+    # The unique rule ID assigned by AWS WAF Regional when the rule is created, used to reference the rule in other resources such as WebACL rules. (AI-inferred)
+    id: Any = None
+    # The CloudWatch metric name associated with the rule, which is required and must be unique within the region for monitoring rule-level metrics. (AI-inferred)
+    metric_name: Any = None
+    # The friendly name for the WAF Regional rule, which is required at creation and cannot be changed after creation, used to identify the rule. (AI-inferred)
+    name: Any = None
+    # A list of predicates that define the conditions under which the rule matches requests, each specifying the match type, the data ID of the associated AWS WAF Regional object, and whether the match condition is negated. (AI-inferred)
+    predicates: Any = None
 
 Rule = ubx.ResourceBinding(
     wire_type="aws_wafregional_rule",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "metric_name": ubx.FieldSpec(wire_name="metric_name"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "predicate": ubx.FieldSpec(
-            wire_name="predicate",
-            kind="set",
-            fields=_Rule_PredicateFields,
+        "predicates": ubx.FieldSpec(
+            wire_name="predicates",
+            kind="list",
+            fields=_Rule_PredicatesFields,
         ),
     },
 )

@@ -7,40 +7,69 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TransitGatewayPeeringAttachment_Options:
-    dynamic_routing: Any = None
+class TransitGatewayPeeringAttachment_Status:
+    # The status code.
+    code: Any = None
+    # The status message, if applicable.
+    message: Any = None
 
-_TransitGatewayPeeringAttachment_OptionsFields = {
-    "dynamic_routing": ubx.FieldSpec(wire_name="dynamic_routing"),
+@dataclasses.dataclass
+class TransitGatewayPeeringAttachment_Tags:
+    # The key of a tag to attach to the transit gateway peering attachment. (AI-inferred)
+    key: Any = None
+    # The value of a tag assigned to the transit gateway peering attachment, used to identify or organize the resource. (AI-inferred)
+    value: Any = None
+
+_TransitGatewayPeeringAttachment_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class TransitGatewayPeeringAttachmentConfig:
-    id: Any = None
+    # The ID of the peer account
     peer_account_id: Any = None
+    # Peer Region
     peer_region: Any = None
+    # The ID of the peer transit gateway.
     peer_transit_gateway_id: Any = None
-    region: Any = None
+    # The tags for the transit gateway peering attachment.
     tags: Any = None
-    tags_all: Any = None
+    # The ID of the transit gateway.
     transit_gateway_id: Any = None
-    options: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayPeeringAttachmentAttrs:
+    # The time the transit gateway peering attachment was created.
+    creation_time: Any = None
+    # The ID of the peer account
+    peer_account_id: Any = None
+    # Peer Region
+    peer_region: Any = None
+    # The ID of the peer transit gateway.
+    peer_transit_gateway_id: Any = None
+    # The state of the transit gateway peering attachment. Note that the initiating state has been deprecated.
+    state: Any = None
+    # The current status of the transit gateway peering attachment, reported as an object containing a code (e.g., available or deleted) and a message describing the state in more detail. (AI-inferred)
+    status: Any = None
+    # The tags for the transit gateway peering attachment.
+    tags: Any = None
+    # The ID of the transit gateway peering attachment.
+    transit_gateway_attachment_id: Any = None
+    # The ID of the transit gateway.
+    transit_gateway_id: Any = None
 
 TransitGatewayPeeringAttachment = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_peering_attachment",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "peer_account_id": ubx.FieldSpec(wire_name="peer_account_id"),
         "peer_region": ubx.FieldSpec(wire_name="peer_region"),
         "peer_transit_gateway_id": ubx.FieldSpec(wire_name="peer_transit_gateway_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "transit_gateway_id": ubx.FieldSpec(wire_name="transit_gateway_id"),
-        "options": ubx.FieldSpec(
-            wire_name="options",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_TransitGatewayPeeringAttachment_OptionsFields,
+            fields=_TransitGatewayPeeringAttachment_TagsFields,
         ),
+        "transit_gateway_id": ubx.FieldSpec(wire_name="transit_gateway_id"),
     },
 )

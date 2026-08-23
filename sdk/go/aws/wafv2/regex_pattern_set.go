@@ -3,41 +3,59 @@ package wafv2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type RegexPatternSet_RegularExpression struct {
-	RegexString any
+type RegexPatternSet_Tags struct {
+	// The tag key, a string that identifies the tag assigned to this WAFv2 regex pattern set, used for resource organization, categorization, and access control. (AI-inferred)
+	Key any
+	// The value component of a tag key-value pair attached to the AWS WAFv2 Regex Pattern Set, used to store arbitrary metadata for resource identification and cost allocation. (AI-inferred)
+	Value any
 }
 
-var RegexPatternSet_RegularExpressionFields = ubx.FieldMap{
-		"RegexString": ubx.FieldSpec{WireName: "regex_string"},
+var RegexPatternSet_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type RegexPatternSetConfig struct {
+	// Description of the entity.
 	Description any
-	Id any
+	// Name of the RegexPatternSet.
 	Name any
-	NamePrefix any
-	Region any
+	// The list of regular expression patterns, each as a string, that this AWS WAFv2 regex pattern set uses to match against web request content. (AI-inferred)
+	RegularExpressionList any
+	// Use CLOUDFRONT for CloudFront RegexPatternSet, use REGIONAL for Application Load Balancer and API Gateway.
 	Scope any
+	// A list of tag objects (each containing a Key and Value) that are attached to the regex pattern set for AWS resource tagging and cost allocation. (AI-inferred)
 	Tags any
-	TagsAll any
-	RegularExpression any
+}
+
+type RegexPatternSetAttrs struct {
+	// ARN of the WAF entity.
+	Arn any
+	// Description of the entity.
+	Description any
+	// Id of the RegexPatternSet
+	Id any
+	// Name of the RegexPatternSet.
+	Name any
+	// The list of regular expression patterns, each as a string, that this AWS WAFv2 regex pattern set uses to match against web request content. (AI-inferred)
+	RegularExpressionList any
+	// Use CLOUDFRONT for CloudFront RegexPatternSet, use REGIONAL for Application Load Balancer and API Gateway.
+	Scope any
+	// A list of tag objects (each containing a Key and Value) that are attached to the regex pattern set for AWS resource tagging and cost allocation. (AI-inferred)
+	Tags any
 }
 
 var RegexPatternSet = ubx.ResourceBinding{
 	WireType: "aws_wafv2_regex_pattern_set",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"RegularExpressionList": ubx.FieldSpec{WireName: "regular_expression_list"},
 		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"RegularExpression": ubx.FieldSpec{
-			WireName: "regular_expression",
-			Kind: "set",
-			Fields: RegexPatternSet_RegularExpressionFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: RegexPatternSet_TagsFields,
 		},
 	},
 }

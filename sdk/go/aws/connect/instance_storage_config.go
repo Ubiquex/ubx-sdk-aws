@@ -3,115 +3,135 @@ package connect
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type InstanceStorageConfig_StorageConfig_KinesisFirehoseConfig struct {
+type InstanceStorageConfig_KinesisFirehoseConfig struct {
+	// An ARN is a unique AWS resource identifier.
 	FirehoseArn any
 }
 
-type InstanceStorageConfig_StorageConfig_KinesisStreamConfig struct {
+type InstanceStorageConfig_KinesisStreamConfig struct {
+	// An ARN is a unique AWS resource identifier.
 	StreamArn any
 }
 
-type InstanceStorageConfig_StorageConfig_KinesisVideoStreamConfig_EncryptionConfig struct {
+type InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfig struct {
+	// Specifies default encryption using AWS KMS-Managed Keys
 	EncryptionType any
+	// Specifies the encryption key id
 	KeyId any
 }
 
-type InstanceStorageConfig_StorageConfig_KinesisVideoStreamConfig struct {
+type InstanceStorageConfig_KinesisVideoStreamConfig struct {
+	// Specifies the encryption configuration for the Kinesis Video Stream data storage, including the encryption type (KMS) and the KMS key ID used to encrypt the stream. (AI-inferred)
+	EncryptionConfig any
+	// Prefixes are used to infer logical hierarchy
 	Prefix any
+	// Number of hours
 	RetentionPeriodHours any
-	EncryptionConfig any
 }
 
-type InstanceStorageConfig_StorageConfig_S3Config struct {
+type InstanceStorageConfig_S3Config struct {
+	// A name for the S3 Bucket
 	BucketName any
+	// Prefixes are used to infer logical hierarchy
 	BucketPrefix any
+	// Specifies the encryption configuration for the S3 bucket, including the AWS KMS key ID used to encrypt data at rest. (AI-inferred)
 	EncryptionConfig any
 }
 
-type InstanceStorageConfig_StorageConfig struct {
-	StorageType any
-	KinesisFirehoseConfig any
-	KinesisStreamConfig any
-	KinesisVideoStreamConfig any
-	S3Config any
-}
-
-var InstanceStorageConfig_StorageConfig_KinesisFirehoseConfigFields = ubx.FieldMap{
+var InstanceStorageConfig_KinesisFirehoseConfigFields = ubx.FieldMap{
 		"FirehoseArn": ubx.FieldSpec{WireName: "firehose_arn"},
 	}
 
-var InstanceStorageConfig_StorageConfig_KinesisStreamConfigFields = ubx.FieldMap{
+var InstanceStorageConfig_KinesisStreamConfigFields = ubx.FieldMap{
 		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
 	}
 
-var InstanceStorageConfig_StorageConfig_KinesisVideoStreamConfig_EncryptionConfigFields = ubx.FieldMap{
+var InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfigFields = ubx.FieldMap{
 		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
 		"KeyId": ubx.FieldSpec{WireName: "key_id"},
 	}
 
-var InstanceStorageConfig_StorageConfig_KinesisVideoStreamConfigFields = ubx.FieldMap{
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"RetentionPeriodHours": ubx.FieldSpec{WireName: "retention_period_hours"},
+var InstanceStorageConfig_KinesisVideoStreamConfigFields = ubx.FieldMap{
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "list",
-			Fields: InstanceStorageConfig_StorageConfig_KinesisVideoStreamConfig_EncryptionConfigFields,
+			Kind: "object",
+			Fields: InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfigFields,
 		},
+		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"RetentionPeriodHours": ubx.FieldSpec{WireName: "retention_period_hours"},
 	}
 
-var InstanceStorageConfig_StorageConfig_S3ConfigFields = ubx.FieldMap{
+var InstanceStorageConfig_S3ConfigFields = ubx.FieldMap{
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "list",
-			Fields: InstanceStorageConfig_StorageConfig_KinesisVideoStreamConfig_EncryptionConfigFields,
-		},
-	}
-
-var InstanceStorageConfig_StorageConfigFields = ubx.FieldMap{
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
-		"KinesisFirehoseConfig": ubx.FieldSpec{
-			WireName: "kinesis_firehose_config",
-			Kind: "list",
-			Fields: InstanceStorageConfig_StorageConfig_KinesisFirehoseConfigFields,
-		},
-		"KinesisStreamConfig": ubx.FieldSpec{
-			WireName: "kinesis_stream_config",
-			Kind: "list",
-			Fields: InstanceStorageConfig_StorageConfig_KinesisStreamConfigFields,
-		},
-		"KinesisVideoStreamConfig": ubx.FieldSpec{
-			WireName: "kinesis_video_stream_config",
-			Kind: "list",
-			Fields: InstanceStorageConfig_StorageConfig_KinesisVideoStreamConfigFields,
-		},
-		"S3Config": ubx.FieldSpec{
-			WireName: "s3_config",
-			Kind: "list",
-			Fields: InstanceStorageConfig_StorageConfig_S3ConfigFields,
+			Kind: "object",
+			Fields: InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfigFields,
 		},
 	}
 
 type InstanceStorageConfigConfig struct {
-	Id any
-	InstanceId any
-	Region any
+	// Connect Instance ID with which the storage config will be associated
+	InstanceArn any
+	// Configures an Amazon Kinesis Data Firehose delivery stream as the storage destination, requiring the Firehose stream ARN to be specified. (AI-inferred)
+	KinesisFirehoseConfig any
+	// Defines the Kinesis Data Stream settings (stream ARN and optional encryption) for the storage config when the storage type is set to Kinesis Stream. (AI-inferred)
+	KinesisStreamConfig any
+	// Specifies the Kinesis Video Stream configuration for storing Amazon Connect instance data, including the stream ARN and encryption settings. (AI-inferred)
+	KinesisVideoStreamConfig any
+	// Specifies the type of storage resource available for the instance
 	ResourceType any
-	StorageConfig any
+	// Configures Amazon S3 as the storage destination for Amazon Connect instance data, specifying the bucket name (and optional prefix) where objects are written. (AI-inferred)
+	S3Config any
+	// Specifies the storage type to be associated with the instance
+	StorageType any
+}
+
+type InstanceStorageConfigAttrs struct {
+	// An associationID is automatically generated when a storage config is associated with an instance
+	AssociationId any
+	// Connect Instance ID with which the storage config will be associated
+	InstanceArn any
+	// Configures an Amazon Kinesis Data Firehose delivery stream as the storage destination, requiring the Firehose stream ARN to be specified. (AI-inferred)
+	KinesisFirehoseConfig any
+	// Defines the Kinesis Data Stream settings (stream ARN and optional encryption) for the storage config when the storage type is set to Kinesis Stream. (AI-inferred)
+	KinesisStreamConfig any
+	// Specifies the Kinesis Video Stream configuration for storing Amazon Connect instance data, including the stream ARN and encryption settings. (AI-inferred)
+	KinesisVideoStreamConfig any
+	// Specifies the type of storage resource available for the instance
+	ResourceType any
+	// Configures Amazon S3 as the storage destination for Amazon Connect instance data, specifying the bucket name (and optional prefix) where objects are written. (AI-inferred)
+	S3Config any
+	// Specifies the storage type to be associated with the instance
+	StorageType any
 }
 
 var InstanceStorageConfig = ubx.ResourceBinding{
 	WireType: "aws_connect_instance_storage_config",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"StorageConfig": ubx.FieldSpec{
-			WireName: "storage_config",
-			Kind: "list",
-			Fields: InstanceStorageConfig_StorageConfigFields,
+		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+		"KinesisFirehoseConfig": ubx.FieldSpec{
+			WireName: "kinesis_firehose_config",
+			Kind: "object",
+			Fields: InstanceStorageConfig_KinesisFirehoseConfigFields,
 		},
+		"KinesisStreamConfig": ubx.FieldSpec{
+			WireName: "kinesis_stream_config",
+			Kind: "object",
+			Fields: InstanceStorageConfig_KinesisStreamConfigFields,
+		},
+		"KinesisVideoStreamConfig": ubx.FieldSpec{
+			WireName: "kinesis_video_stream_config",
+			Kind: "object",
+			Fields: InstanceStorageConfig_KinesisVideoStreamConfigFields,
+		},
+		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"S3Config": ubx.FieldSpec{
+			WireName: "s3_config",
+			Kind: "object",
+			Fields: InstanceStorageConfig_S3ConfigFields,
+		},
+		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
 	},
 }

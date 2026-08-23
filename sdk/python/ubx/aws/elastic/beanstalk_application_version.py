@@ -7,32 +7,45 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BeanstalkApplicationVersion_SourceBundle:
+    # The Amazon S3 bucket where the data is located.
+    s3_bucket: Any = None
+    # The Amazon S3 key where the data is located.
+    s3_key: Any = None
+
+_BeanstalkApplicationVersion_SourceBundleFields = {
+    "s3_bucket": ubx.FieldSpec(wire_name="s3_bucket"),
+    "s3_key": ubx.FieldSpec(wire_name="s3_key"),
+}
+
+@dataclasses.dataclass
 class BeanstalkApplicationVersionConfig:
-    application: Any = None
-    bucket: Any = None
+    # The name of the Elastic Beanstalk application that is associated with this application version.
+    application_name: Any = None
+    # A description of this application version.
     description: Any = None
-    force_delete: Any = None
+    # The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred)
+    source_bundle: Any = None
+
+@dataclasses.dataclass
+class BeanstalkApplicationVersionAttrs:
+    # The name of the Elastic Beanstalk application that is associated with this application version.
+    application_name: Any = None
+    # A description of this application version.
+    description: Any = None
     id: Any = None
-    key: Any = None
-    name: Any = None
-    process: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred)
+    source_bundle: Any = None
 
 BeanstalkApplicationVersion = ubx.ResourceBinding(
     wire_type="aws_elastic_beanstalk_application_version",
     fields={
-        "application": ubx.FieldSpec(wire_name="application"),
-        "bucket": ubx.FieldSpec(wire_name="bucket"),
+        "application_name": ubx.FieldSpec(wire_name="application_name"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "force_delete": ubx.FieldSpec(wire_name="force_delete"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "key": ubx.FieldSpec(wire_name="key"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "process": ubx.FieldSpec(wire_name="process"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "source_bundle": ubx.FieldSpec(
+            wire_name="source_bundle",
+            kind="object",
+            fields=_BeanstalkApplicationVersion_SourceBundleFields,
+        ),
     },
 )

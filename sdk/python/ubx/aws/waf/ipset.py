@@ -7,30 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Ipset_IpSetDescriptors:
+class Ipset_IpsetDescriptors:
+    # Specifies the IP address version (either IPV4 or IPV6) for the CIDR value in this IPSet descriptor. (AI-inferred)
     type: Any = None
+    # The IP address or CIDR range to include in the WAF IPSet, such as 192.0.2.0/24 or 10.0.0.1. (AI-inferred)
     value: Any = None
 
-_Ipset_IpSetDescriptorsFields = {
+_Ipset_IpsetDescriptorsFields = {
     "type": ubx.FieldSpec(wire_name="type"),
     "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class IpsetConfig:
-    id: Any = None
+    # Defines the list of IP addresses or CIDR ranges for the IPSet, where each descriptor object specifies an IP version (IPv4 or IPv6) and a value representing the address or range. (AI-inferred)
+    ipset_descriptors: Any = None
+    # The friendly name of the IP set, which cannot be changed after the IP set is created. (AI-inferred)
     name: Any = None
-    ip_set_descriptors: Any = None
+
+@dataclasses.dataclass
+class IpsetAttrs:
+    # Defines the list of IP addresses or CIDR ranges for the IPSet, where each descriptor object specifies an IP version (IPv4 or IPv6) and a value representing the address or range. (AI-inferred)
+    ipset_descriptors: Any = None
+    # The unique identifier assigned by AWS to this IP set, used to reference it when associating with AWS WAF rules or updating the set. (AI-inferred)
+    id: Any = None
+    # The friendly name of the IP set, which cannot be changed after the IP set is created. (AI-inferred)
+    name: Any = None
 
 Ipset = ubx.ResourceBinding(
     wire_type="aws_waf_ipset",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "ip_set_descriptors": ubx.FieldSpec(
-            wire_name="ip_set_descriptors",
-            kind="set",
-            fields=_Ipset_IpSetDescriptorsFields,
+        "ipset_descriptors": ubx.FieldSpec(
+            wire_name="ipset_descriptors",
+            kind="list",
+            fields=_Ipset_IpsetDescriptorsFields,
         ),
+        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

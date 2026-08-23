@@ -2,24 +2,40 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DiscoveryService_DnsConfig_DnsRecords {
-  ttl: number;
-  type: string;
+  /** The time-to-live (TTL) in seconds for the DNS record, controlling how long resolvers cache it before querying AWS Cloud Map again. (AI-inferred) */
+  ttl?: number | Computed<number>;
+  /** Specifies the DNS record type (A, AAAA, SRV, or CNAME) for the service's DNS records. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
 export interface DiscoveryService_DnsConfig {
-  namespaceId: string;
-  routingPolicy: string;
-  dnsRecords: DiscoveryService_DnsConfig_DnsRecords[];
+  /** A list of DNS records associated with the service. */
+  dnsRecords: DiscoveryService_DnsConfig_DnsRecords[] | Computed<DiscoveryService_DnsConfig_DnsRecords[]>;
+  /** The ID of the namespace for the DNS configuration. */
+  namespaceId?: string | Computed<string>;
+  /** The routing policy to use for DNS queries. */
+  routingPolicy?: string | Computed<string>;
 }
 
 export interface DiscoveryService_HealthCheckConfig {
-  failureThreshold: number;
-  resourcePath: string;
-  type: string;
+  /** The number of consecutive health check failures that must occur before declaring the service unhealthy. */
+  failureThreshold?: number | Computed<number>;
+  /** The path to ping on the service for health checks. */
+  resourcePath?: string | Computed<string>;
+  /** The type of health check (e.g., HTTP, HTTPS, TCP). */
+  type: string | Computed<string>;
 }
 
 export interface DiscoveryService_HealthCheckCustomConfig {
-  failureThreshold: number;
+  /** The number of consecutive health check failures required before the service is considered unhealthy. */
+  failureThreshold?: number | Computed<number>;
+}
+
+export interface DiscoveryService_Tags {
+  /** This key identifies a tag attached to the AWS Cloud Map service, allowing you to assign metadata for cost tracking, access control, or resource organization. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value of a tag assigned to the AWS CloudFormation service discovery service, used to organize, identify, or manage the resource through key-value pairs. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const DiscoveryService_DnsConfig_DnsRecordsFields: FieldMap = {
@@ -28,13 +44,13 @@ const DiscoveryService_DnsConfig_DnsRecordsFields: FieldMap = {
 };
 
 const DiscoveryService_DnsConfigFields: FieldMap = {
-  namespaceId: "namespace_id",
-  routingPolicy: "routing_policy",
   dnsRecords: {
     wireName: "dns_records",
     kind: "list",
     fields: DiscoveryService_DnsConfig_DnsRecordsFields,
   },
+  namespaceId: "namespace_id",
+  routingPolicy: "routing_policy",
 };
 
 const DiscoveryService_HealthCheckConfigFields: FieldMap = {
@@ -47,63 +63,84 @@ const DiscoveryService_HealthCheckCustomConfigFields: FieldMap = {
   failureThreshold: "failure_threshold",
 };
 
+const DiscoveryService_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
 export interface DiscoveryServiceConfig {
+  /** A description for the service. */
   description?: string | Computed<string>;
-  forceDestroy?: boolean | Computed<boolean>;
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
+  /** DNS configuration settings for the service. */
+  dnsConfig?: DiscoveryService_DnsConfig | Computed<DiscoveryService_DnsConfig>;
+  /** Configuration for health checks for the service. */
+  healthCheckConfig?: DiscoveryService_HealthCheckConfig | Computed<DiscoveryService_HealthCheckConfig>;
+  /** Configurations for custom health checks for the service. */
+  healthCheckCustomConfig?: DiscoveryService_HealthCheckCustomConfig | Computed<DiscoveryService_HealthCheckCustomConfig>;
+  /** The name of the service. */
+  name?: string | Computed<string>;
+  /** The ID of the namespace in which the service is created. */
   namespaceId?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** A string map that contains attributes and values for the service. You can specify a maximum of 30 key-value pairs. */
+  serviceAttributes?: unknown | Computed<unknown>;
+  /** An array of key-value pairs to associate with the service. */
+  tags?: DiscoveryService_Tags[] | Computed<DiscoveryService_Tags[]>;
+  /** The type of service. Supported values are HTTP or DNS. */
   type?: string | Computed<string>;
-  dnsConfig?: DiscoveryService_DnsConfig[] | Computed<DiscoveryService_DnsConfig[]>;
-  healthCheckConfig?: DiscoveryService_HealthCheckConfig[] | Computed<DiscoveryService_HealthCheckConfig[]>;
-  healthCheckCustomConfig?: DiscoveryService_HealthCheckCustomConfig[] | Computed<DiscoveryService_HealthCheckCustomConfig[]>;
 }
 
 export interface DiscoveryServiceAttrs {
+  /** The Amazon Resource Name (ARN) of the service. */
   arn: string;
+  /** A description for the service. */
   description: string;
-  forceDestroy: boolean;
+  /** DNS configuration settings for the service. */
+  dnsConfig: DiscoveryService_DnsConfig;
+  /** Configuration for health checks for the service. */
+  healthCheckConfig: DiscoveryService_HealthCheckConfig;
+  /** Configurations for custom health checks for the service. */
+  healthCheckCustomConfig: DiscoveryService_HealthCheckCustomConfig;
+  /** The unique identifier for the service. */
   id: string;
+  /** The name of the service. */
   name: string;
+  /** The ID of the namespace in which the service is created. */
   namespaceId: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** A string map that contains attributes and values for the service. You can specify a maximum of 30 key-value pairs. */
+  serviceAttributes: unknown;
+  /** An array of key-value pairs to associate with the service. */
+  tags: DiscoveryService_Tags[];
+  /** The type of service. Supported values are HTTP or DNS. */
   type: string;
-  dnsConfig: DiscoveryService_DnsConfig[];
-  healthCheckConfig: DiscoveryService_HealthCheckConfig[];
-  healthCheckCustomConfig: DiscoveryService_HealthCheckCustomConfig[];
 }
 
 export const DiscoveryService: ResourceBinding<DiscoveryServiceConfig, DiscoveryServiceAttrs> = {
   wireType: "aws_service_discovery_service",
   fields: {
     description: "description",
-    forceDestroy: "force_destroy",
-    id: "id",
-    name: "name",
-    namespaceId: "namespace_id",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
-    type: "type",
     dnsConfig: {
       wireName: "dns_config",
-      kind: "list",
+      kind: "object",
       fields: DiscoveryService_DnsConfigFields,
     },
     healthCheckConfig: {
       wireName: "health_check_config",
-      kind: "list",
+      kind: "object",
       fields: DiscoveryService_HealthCheckConfigFields,
     },
     healthCheckCustomConfig: {
       wireName: "health_check_custom_config",
-      kind: "list",
+      kind: "object",
       fields: DiscoveryService_HealthCheckCustomConfigFields,
     },
+    name: "name",
+    namespaceId: "namespace_id",
+    serviceAttributes: "service_attributes",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: DiscoveryService_TagsFields,
+    },
+    type: "type",
   },
 };

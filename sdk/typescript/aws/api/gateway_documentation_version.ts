@@ -2,28 +2,28 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayDocumentationVersionConfig {
+  /** Provides a human-readable description for the documentation version snapshot, typically indicating the changes or purpose of that version. (AI-inferred) */
   description?: string | Computed<string>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The version identifier of the API documentation snapshot that this documentation version represents. (AI-inferred) */
+  documentationVersion: string | Computed<string>;
+  /** The identifier of the REST API to which this documentation version is attached. (AI-inferred) */
   restApiId: string | Computed<string>;
-  version: string | Computed<string>;
 }
 
 export interface GatewayDocumentationVersionAttrs {
+  /** Provides a human-readable description for the documentation version snapshot, typically indicating the changes or purpose of that version. (AI-inferred) */
   description: string;
-  id: string;
-  region: string;
+  /** The version identifier of the API documentation snapshot that this documentation version represents. (AI-inferred) */
+  documentationVersion: string;
+  /** The identifier of the REST API to which this documentation version is attached. (AI-inferred) */
   restApiId: string;
-  version: string;
 }
 
 export const GatewayDocumentationVersion: ResourceBinding<GatewayDocumentationVersionConfig, GatewayDocumentationVersionAttrs> = {
   wireType: "aws_api_gateway_documentation_version",
   fields: {
     description: "description",
-    id: "id",
-    region: "region",
+    documentationVersion: "documentation_version",
     restApiId: "rest_api_id",
-    version: "version",
   },
 };

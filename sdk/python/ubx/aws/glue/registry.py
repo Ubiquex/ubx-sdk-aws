@@ -7,22 +7,46 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Registry_Tags:
+    # The tag key part of a key-value pair used to tag an AWS Glue registry, enabling you to categorize and filter the resource. (AI-inferred)
+    key: Any = None
+    # The value portion of a user-defined tag attached to this AWS Glue registry, used to categorize, identify, or manage the registry. (AI-inferred)
+    value: Any = None
+
+_Registry_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class RegistryConfig:
+    # A description of the registry. If description is not provided, there will not be any default value for this.
     description: Any = None
-    id: Any = None
-    region: Any = None
-    registry_name: Any = None
+    # Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.
+    name: Any = None
+    # List of tags to tag the Registry
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class RegistryAttrs:
+    # Amazon Resource Name for the created Registry.
+    arn: Any = None
+    # A description of the registry. If description is not provided, there will not be any default value for this.
+    description: Any = None
+    # Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.
+    name: Any = None
+    # List of tags to tag the Registry
+    tags: Any = None
 
 Registry = ubx.ResourceBinding(
     wire_type="aws_glue_registry",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "registry_name": ubx.FieldSpec(wire_name="registry_name"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Registry_TagsFields,
+        ),
     },
 )

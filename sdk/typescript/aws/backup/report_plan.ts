@@ -2,18 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReportPlan_ReportDeliveryChannel {
-  formats: string[];
-  s3BucketName: string;
-  s3KeyPrefix: string;
+  /** A list of the format of your reports: CSV, JSON, or both. If not specified, the default format is CSV. */
+  formats?: string[] | Computed<string[]>;
+  /** The unique name of the S3 bucket that receives your reports. */
+  s3BucketName: string | Computed<string>;
+  /** The prefix for where AWS Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path: s3://your-bucket-name/prefix/Backup/us-west-2/year/month/day/report-name. If not specified, there is no prefix. */
+  s3KeyPrefix?: string | Computed<string>;
+}
+
+export interface ReportPlan_ReportPlanTags {
+  /** The key of a user-defined tag attached to the AWS Backup report plan, used to categorize and manage the resource. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value portion of a key-value tag attached to the AWS Backup report plan, used for identifying and organizing the report plan. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 export interface ReportPlan_ReportSetting {
-  accounts: string[];
-  frameworkArns: string[];
-  numberOfFrameworks: number;
-  organizationUnits: string[];
-  regions: string[];
-  reportTemplate: string;
+  /** The list of AWS accounts that a report covers. */
+  accounts?: string[] | Computed<string[]>;
+  /** The Amazon Resource Names (ARNs) of the frameworks a report covers. */
+  frameworkArns?: string[] | Computed<string[]>;
+  /** The list of AWS organization units that a report covers. */
+  organizationUnits?: string[] | Computed<string[]>;
+  /** The list of AWS regions that a report covers. */
+  regions?: string[] | Computed<string[]>;
+  /** Identifies the report template for the report. Reports are built using a report template. The report templates are: `BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT` */
+  reportTemplate: string | Computed<string>;
 }
 
 const ReportPlan_ReportDeliveryChannelFields: FieldMap = {
@@ -22,57 +36,65 @@ const ReportPlan_ReportDeliveryChannelFields: FieldMap = {
   s3KeyPrefix: "s3_key_prefix",
 };
 
+const ReportPlan_ReportPlanTagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
 const ReportPlan_ReportSettingFields: FieldMap = {
   accounts: "accounts",
   frameworkArns: "framework_arns",
-  numberOfFrameworks: "number_of_frameworks",
   organizationUnits: "organization_units",
   regions: "regions",
   reportTemplate: "report_template",
 };
 
 export interface ReportPlanConfig {
-  description?: string | Computed<string>;
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  reportDeliveryChannel?: ReportPlan_ReportDeliveryChannel[] | Computed<ReportPlan_ReportDeliveryChannel[]>;
-  reportSetting?: ReportPlan_ReportSetting[] | Computed<ReportPlan_ReportSetting[]>;
+  /** A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports. */
+  reportDeliveryChannel: ReportPlan_ReportDeliveryChannel | Computed<ReportPlan_ReportDeliveryChannel>;
+  /** An optional description of the report plan with a maximum of 1,024 characters. */
+  reportPlanDescription?: string | Computed<string>;
+  /** The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_). */
+  reportPlanName?: string | Computed<string>;
+  /** Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair. */
+  reportPlanTags?: ReportPlan_ReportPlanTags[] | Computed<ReportPlan_ReportPlanTags[]>;
+  /** Identifies the report template for the report. Reports are built using a report template. */
+  reportSetting: ReportPlan_ReportSetting | Computed<ReportPlan_ReportSetting>;
 }
 
 export interface ReportPlanAttrs {
-  arn: string;
-  creationTime: string;
-  deploymentStatus: string;
-  description: string;
-  id: string;
-  name: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  reportDeliveryChannel: ReportPlan_ReportDeliveryChannel[];
-  reportSetting: ReportPlan_ReportSetting[];
+  /** A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports. */
+  reportDeliveryChannel: ReportPlan_ReportDeliveryChannel;
+  /** An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type. */
+  reportPlanArn: string;
+  /** An optional description of the report plan with a maximum of 1,024 characters. */
+  reportPlanDescription: string;
+  /** The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_). */
+  reportPlanName: string;
+  /** Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair. */
+  reportPlanTags: ReportPlan_ReportPlanTags[];
+  /** Identifies the report template for the report. Reports are built using a report template. */
+  reportSetting: ReportPlan_ReportSetting;
 }
 
 export const ReportPlan: ResourceBinding<ReportPlanConfig, ReportPlanAttrs> = {
   wireType: "aws_backup_report_plan",
   fields: {
-    description: "description",
-    id: "id",
-    name: "name",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
     reportDeliveryChannel: {
       wireName: "report_delivery_channel",
-      kind: "list",
+      kind: "object",
       fields: ReportPlan_ReportDeliveryChannelFields,
+    },
+    reportPlanDescription: "report_plan_description",
+    reportPlanName: "report_plan_name",
+    reportPlanTags: {
+      wireName: "report_plan_tags",
+      kind: "list",
+      fields: ReportPlan_ReportPlanTagsFields,
     },
     reportSetting: {
       wireName: "report_setting",
-      kind: "list",
+      kind: "object",
       fields: ReportPlan_ReportSettingFields,
     },
   },

@@ -7,218 +7,502 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class DataSource_Configuration_S3Configuration_AccessControlListConfiguration:
-    key_path: Any = None
-
-@dataclasses.dataclass
-class DataSource_Configuration_S3Configuration_DocumentsMetadataConfiguration:
-    s3_prefix: Any = None
-
-@dataclasses.dataclass
-class DataSource_Configuration_S3Configuration:
-    bucket_name: Any = None
-    exclusion_patterns: Any = None
-    inclusion_patterns: Any = None
-    inclusion_prefixes: Any = None
-    access_control_list_configuration: Any = None
-    documents_metadata_configuration: Any = None
-
-@dataclasses.dataclass
-class DataSource_Configuration_TemplateConfiguration:
-    template: Any = None
-
-@dataclasses.dataclass
-class DataSource_Configuration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthentication:
-    credentials: Any = None
-    host: Any = None
-    port: Any = None
-
-@dataclasses.dataclass
-class DataSource_Configuration_WebCrawlerConfiguration_AuthenticationConfiguration:
-    basic_authentication: Any = None
-
-@dataclasses.dataclass
-class DataSource_Configuration_WebCrawlerConfiguration_Urls_SeedUrlConfiguration:
-    seed_urls: Any = None
-    web_crawler_mode: Any = None
-
-@dataclasses.dataclass
-class DataSource_Configuration_WebCrawlerConfiguration_Urls_SiteMapsConfiguration:
-    site_maps: Any = None
-
-@dataclasses.dataclass
-class DataSource_Configuration_WebCrawlerConfiguration_Urls:
-    seed_url_configuration: Any = None
-    site_maps_configuration: Any = None
-
-@dataclasses.dataclass
-class DataSource_Configuration_WebCrawlerConfiguration:
-    crawl_depth: Any = None
-    max_content_size_per_page_in_mega_bytes: Any = None
-    max_links_per_page: Any = None
-    max_urls_per_minute_crawl_rate: Any = None
-    url_exclusion_patterns: Any = None
-    url_inclusion_patterns: Any = None
-    authentication_configuration: Any = None
-    proxy_configuration: Any = None
-    urls: Any = None
-
-@dataclasses.dataclass
-class DataSource_Configuration:
-    s3_configuration: Any = None
-    template_configuration: Any = None
-    web_crawler_configuration: Any = None
-
-@dataclasses.dataclass
 class DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValue:
+    # Specifies the date, as an ISO 8601 string, that is used as the value to compare against the document attribute in the enrichment condition. (AI-inferred)
     date_value: Any = None
+    # The numeric value used as the expected value when evaluating a document metadata attribute as part of a condition that determines whether inline custom document enrichment actions are applied. (AI-inferred)
     long_value: Any = None
+    # Specifies the list of string values that serves as the condition's comparison value when the condition_on_value type is set to StringList, determining whether a Kendra custom document enrichment inline configuration applies based on a match against this list. (AI-inferred)
     string_list_value: Any = None
+    # The string value that a document attribute is compared against in the condition, used when condition_on_value is of string type during custom document enrichment. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass
 class DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition:
+    # The name (key) of the document metadata attribute whose value is evaluated in this condition for a custom document enrichment inline configuration. (AI-inferred)
     condition_document_attribute_key: Any = None
-    operator: Any = None
+    # Specifies the value that the document attribute (identified by condition_document_attribute_key) is compared against when evaluating the enrichment condition, allowing you to define the match criteria for the data source's custom document enrichment. (AI-inferred)
     condition_on_value: Any = None
+    # Defines the comparison operator (e.g., Equals, Contains, GreaterThan) used to evaluate the configured document attribute against a value in the condition, controlling when the inline custom document enrichment action is applied. (AI-inferred)
+    operator: Any = None
 
 @dataclasses.dataclass
 class DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Target:
+    # The name (key) of the document attribute that the inline custom document enrichment configuration will set, modify, or delete in the Amazon Kendra data source's index. (AI-inferred)
     target_document_attribute_key: Any = None
-    target_document_attribute_value_deletion: Any = None
+    # Specifies the value to assign to the target document attribute key in an inline custom document enrichment configuration, where the value object can hold a string, string list, long, or date as defined by the Kendra DocumentAttributeValue type. (AI-inferred)
     target_document_attribute_value: Any = None
+    # When set to true, deletes the target document attribute's value during inline custom document enrichment, instead of setting or updating it. (AI-inferred)
+    target_document_attribute_value_deletion: Any = None
 
 @dataclasses.dataclass
 class DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations:
-    document_content_deletion: Any = None
+    # Defines the document attribute condition that must evaluate to true for the inline custom document enrichment action to be applied during data source ingestion. (AI-inferred)
     condition: Any = None
+    # When set to true, this inline configuration deletes the document content (body text) for documents that match the associated condition, making the content unsearchable. (AI-inferred)
+    document_content_deletion: Any = None
+    # Configures the document attribute to be modified by the inline enrichment rule, including the attribute key, the value to set, or whether to delete the attribute. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfiguration:
-    lambda_arn: Any = None
-    s3_bucket: Any = None
+    # A condition on document attributes that must be met for the post-extraction hook to be invoked, such as checking that a specific attribute matches a value. (AI-inferred)
     invocation_condition: Any = None
+    # ARN of the Lambda function that AWS Kendra invokes to process documents after the extraction step in the custom document enrichment workflow. (AI-inferred)
+    lambda_arn: Any = None
+    # The name of the S3 bucket that stores the document to be processed by the post-extraction Lambda hook for custom document enrichment in this Kendra data source. (AI-inferred)
+    s3_bucket: Any = None
 
 @dataclasses.dataclass
 class DataSource_CustomDocumentEnrichmentConfiguration:
-    role_arn: Any = None
+    # List of InlineCustomDocumentEnrichmentConfigurations
     inline_configurations: Any = None
+    # Specifies the AWS Lambda function, IAM role, and optional S3 bucket that Kendra invokes after extracting documents from the data source, enabling custom enrichment before indexing. (AI-inferred)
     post_extraction_hook_configuration: Any = None
+    # Specifies the AWS Lambda function and associated settings (such as the function ARN, S3 bucket, and IAM role) that Kendra invokes before extracting text from documents during a data source sync, enabling custom pre-processing for document enrichment. (AI-inferred)
     pre_extraction_hook_configuration: Any = None
+    # Role ARN
+    role_arn: Any = None
 
 @dataclasses.dataclass
-class DataSource_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings:
+    # The name of the Confluence attachment field (e.g., title, author) to map from the Confluence data source to an Amazon Kendra index field. (AI-inferred)
+    data_source_field_name: Any = None
+    # The date_field_format specifies the date format (e.g., yyyy/MM/dd) that Kendra uses to parse the Confluence attachment's date field when mapping it to an index field. (AI-inferred)
+    date_field_format: Any = None
+    # Specifies the name of the Amazon Kendra index field that the Confluence attachment field (defined in the mapping's data source field name) is mapped to. (AI-inferred)
+    index_field_name: Any = None
 
-_DataSource_Configuration_S3Configuration_AccessControlListConfigurationFields = {
-    "key_path": ubx.FieldSpec(wire_name="key_path"),
-}
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration:
+    # Specifies mappings between Confluence attachment fields and Amazon Kendra index fields, enabling you to control how attachment metadata such as attachment title, author, and file type is indexed. (AI-inferred)
+    attachment_field_mappings: Any = None
+    # Whether to crawl and index attachments from Confluence pages in addition to the page content. (AI-inferred)
+    crawl_attachments: Any = None
 
-_DataSource_Configuration_S3Configuration_DocumentsMetadataConfigurationFields = {
-    "s3_prefix": ubx.FieldSpec(wire_name="s3_prefix"),
-}
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_ConfluenceConfiguration_BlogConfiguration:
+    # Maps Confluence blog fields to Amazon Kendra index fields, enabling customized indexing of blog content from Confluence. (AI-inferred)
+    blog_field_mappings: Any = None
 
-_DataSource_Configuration_S3ConfigurationFields = {
-    "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
-    "exclusion_patterns": ubx.FieldSpec(wire_name="exclusion_patterns"),
-    "inclusion_patterns": ubx.FieldSpec(wire_name="inclusion_patterns"),
-    "inclusion_prefixes": ubx.FieldSpec(wire_name="inclusion_prefixes"),
-    "access_control_list_configuration": ubx.FieldSpec(
-        wire_name="access_control_list_configuration",
-        kind="list",
-        fields=_DataSource_Configuration_S3Configuration_AccessControlListConfigurationFields,
-    ),
-    "documents_metadata_configuration": ubx.FieldSpec(
-        wire_name="documents_metadata_configuration",
-        kind="list",
-        fields=_DataSource_Configuration_S3Configuration_DocumentsMetadataConfigurationFields,
-    ),
-}
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_ConfluenceConfiguration_PageConfiguration:
+    # Maps Confluence page fields to Amazon Kendra index fields, defining which page attributes are crawled and how they are stored in the index. (AI-inferred)
+    page_field_mappings: Any = None
 
-_DataSource_Configuration_TemplateConfigurationFields = {
-    "template": ubx.FieldSpec(wire_name="template"),
-}
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_ConfluenceConfiguration_SpaceConfiguration:
+    # Determines whether AWS Kendra indexes content from archived Confluence spaces when crawling the configured Confluence data source. (AI-inferred)
+    crawl_archived_spaces: Any = None
+    # Specifies whether to crawl personal spaces in the Confluence environment when indexing content for Amazon Kendra. (AI-inferred)
+    crawl_personal_spaces: Any = None
+    # Specifies the keys of Confluence spaces that are excluded from the data source, preventing their content from being indexed. (AI-inferred)
+    exclude_spaces: Any = None
+    # Specifies the list of Confluence space keys to include in the crawl, so only content from these spaces is indexed by Amazon Kendra. (AI-inferred)
+    include_spaces: Any = None
+    # Defines mappings from Confluence space attributes (like SPACE_KEY, URL, DISPLAY_URL) to custom Amazon Kendra index fields, letting space metadata be included in search results. (AI-inferred)
+    space_field_mappings: Any = None
 
-_DataSource_Configuration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthenticationFields = {
-    "credentials": ubx.FieldSpec(wire_name="credentials"),
-    "host": ubx.FieldSpec(wire_name="host"),
-    "port": ubx.FieldSpec(wire_name="port"),
-}
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfiguration:
+    # A list of security group IDs that the AWS Kendra Confluence data source uses in its VPC configuration to control network access to Confluence resources within the VPC. (AI-inferred)
+    security_group_ids: Any = None
+    # The subnet IDs (list of strings) that specify the subnets in the Amazon Virtual Private Cloud (VPC) where the Confluence data source will run, allowing it to access resources in a private VPC. (AI-inferred)
+    subnet_ids: Any = None
 
-_DataSource_Configuration_WebCrawlerConfiguration_AuthenticationConfigurationFields = {
-    "basic_authentication": ubx.FieldSpec(
-        wire_name="basic_authentication",
-        kind="set",
-        fields=_DataSource_Configuration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthenticationFields,
-    ),
-}
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_ConfluenceConfiguration:
+    # Specifies whether to extract Confluence attachments and how to map attachment fields to Kendra index fields. (AI-inferred)
+    attachment_configuration: Any = None
+    # Specifies how AWS Kendra indexes Confluence blog posts, including field mappings that define which blog attributes are captured and mapped to Kendra index fields. (AI-inferred)
+    blog_configuration: Any = None
+    # Specifies the list of regular expression patterns that exclude matching Confluence content from being indexed by the data source. (AI-inferred)
+    exclusion_patterns: Any = None
+    # A list of regular expression patterns that define which Confluence content items (e.g., pages, attachments) are included in the Amazon Kendra index for this data source. (AI-inferred)
+    inclusion_patterns: Any = None
+    # This object defines how Confluence pages are crawled by specifying field mappings from Confluence page fields to Amazon Kendra index fields, enabling those page attributes to be searchable. (AI-inferred)
+    page_configuration: Any = None
+    # The ARN of an AWS Secrets Manager secret that stores the credentials used to authenticate with the Confluence instance for the Kendra data source. (AI-inferred)
+    secret_arn: Any = None
+    # The base URL of the Confluence instance that Amazon Kendra connects to for indexing documents. (AI-inferred)
+    server_url: Any = None
+    # Specifies which Confluence spaces to crawl, with options to crawl all spaces, only a specified list, or exclude a specified list from the data source. (AI-inferred)
+    space_configuration: Any = None
+    # The version of the Confluence instance, either CLOUD or SERVER, which determines the endpoint and authentication method used when connecting to the data source. (AI-inferred)
+    version: Any = None
+    # Specifies the VPC configuration, including subnets and security group IDs, that the Kendra Confluence data source uses to connect to a Confluence instance inside a VPC. (AI-inferred)
+    vpc_configuration: Any = None
 
-_DataSource_Configuration_WebCrawlerConfiguration_Urls_SeedUrlConfigurationFields = {
-    "seed_urls": ubx.FieldSpec(wire_name="seed_urls"),
-    "web_crawler_mode": ubx.FieldSpec(wire_name="web_crawler_mode"),
-}
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_DatabaseConfiguration_AclConfiguration:
+    # Specifies the column name in the database table that contains the group names allowed to access the documents indexed by this Kendra data source. (AI-inferred)
+    allowed_groups_column_name: Any = None
 
-_DataSource_Configuration_WebCrawlerConfiguration_Urls_SiteMapsConfigurationFields = {
-    "site_maps": ubx.FieldSpec(wire_name="site_maps"),
-}
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_DatabaseConfiguration_ColumnConfiguration:
+    # The list of column names in the database table that Amazon Kendra uses to detect when a row has been added or updated, enabling incremental indexing of the data source. (AI-inferred)
+    change_detecting_columns: Any = None
+    # The name of the database column that contains the actual document content to be indexed by Amazon Kendra. (AI-inferred)
+    document_data_column_name: Any = None
+    # The name of the column in the database table that contains the unique identifier for each document, which Amazon Kendra uses as the document ID for indexing. (AI-inferred)
+    document_id_column_name: Any = None
+    # The name of the column in the database table that contains the document's title, which Amazon Kendra uses as the title when indexing the document. (AI-inferred)
+    document_title_column_name: Any = None
+    # Maps database columns from the data source's column configuration to Amazon Kendra index fields by specifying the column name and the corresponding index field name and data type. (AI-inferred)
+    field_mappings: Any = None
 
-_DataSource_Configuration_WebCrawlerConfiguration_UrlsFields = {
-    "seed_url_configuration": ubx.FieldSpec(
-        wire_name="seed_url_configuration",
-        kind="list",
-        fields=_DataSource_Configuration_WebCrawlerConfiguration_Urls_SeedUrlConfigurationFields,
-    ),
-    "site_maps_configuration": ubx.FieldSpec(
-        wire_name="site_maps_configuration",
-        kind="list",
-        fields=_DataSource_Configuration_WebCrawlerConfiguration_Urls_SiteMapsConfigurationFields,
-    ),
-}
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_DatabaseConfiguration_ConnectionConfiguration:
+    # The host name or IP address of the database server that Amazon Kendra connects to. (AI-inferred)
+    database_host: Any = None
+    # The name of the database that contains the data to be indexed by Amazon Kendra for this database data source, used in the connection configuration. (AI-inferred)
+    database_name: Any = None
+    # The TCP port number on which the database server listens for connections. (AI-inferred)
+    database_port: Any = None
+    # The ARN of an AWS Secrets Manager secret that contains the database credentials used by the Kendra data source to connect to the database. (AI-inferred)
+    secret_arn: Any = None
+    # The name of the database table that Amazon Kendra reads from as its data source when using the database connector. (AI-inferred)
+    table_name: Any = None
 
-_DataSource_Configuration_WebCrawlerConfigurationFields = {
-    "crawl_depth": ubx.FieldSpec(wire_name="crawl_depth"),
-    "max_content_size_per_page_in_mega_bytes": ubx.FieldSpec(wire_name="max_content_size_per_page_in_mega_bytes"),
-    "max_links_per_page": ubx.FieldSpec(wire_name="max_links_per_page"),
-    "max_urls_per_minute_crawl_rate": ubx.FieldSpec(wire_name="max_urls_per_minute_crawl_rate"),
-    "url_exclusion_patterns": ubx.FieldSpec(wire_name="url_exclusion_patterns"),
-    "url_inclusion_patterns": ubx.FieldSpec(wire_name="url_inclusion_patterns"),
-    "authentication_configuration": ubx.FieldSpec(
-        wire_name="authentication_configuration",
-        kind="list",
-        fields=_DataSource_Configuration_WebCrawlerConfiguration_AuthenticationConfigurationFields,
-    ),
-    "proxy_configuration": ubx.FieldSpec(
-        wire_name="proxy_configuration",
-        kind="list",
-        fields=_DataSource_Configuration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthenticationFields,
-    ),
-    "urls": ubx.FieldSpec(
-        wire_name="urls",
-        kind="list",
-        fields=_DataSource_Configuration_WebCrawlerConfiguration_UrlsFields,
-    ),
-}
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_DatabaseConfiguration_SqlConfiguration:
+    # Specifies whether SQL identifiers (e.g., table and column names) are enclosed in double quotes when querying the database, with accepted values 'DOUBLE_QUOTES' or 'NO_ENCLOSING'. (AI-inferred)
+    query_identifiers_enclosing_option: Any = None
 
-_DataSource_ConfigurationFields = {
-    "s3_configuration": ubx.FieldSpec(
-        wire_name="s3_configuration",
-        kind="list",
-        fields=_DataSource_Configuration_S3ConfigurationFields,
-    ),
-    "template_configuration": ubx.FieldSpec(
-        wire_name="template_configuration",
-        kind="list",
-        fields=_DataSource_Configuration_TemplateConfigurationFields,
-    ),
-    "web_crawler_configuration": ubx.FieldSpec(
-        wire_name="web_crawler_configuration",
-        kind="list",
-        fields=_DataSource_Configuration_WebCrawlerConfigurationFields,
-    ),
-}
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_DatabaseConfiguration:
+    # Defines the column in the database table that stores the access control lists (ACL) for documents, used to enforce user permissions in Amazon Kendra indexes. (AI-inferred)
+    acl_configuration: Any = None
+    # Maps columns from the database table to Kendra document fields, specifying which column holds the document ID, document data, document title, and defining additional field mappings to the index. (AI-inferred)
+    column_configuration: Any = None
+    # Defines the connection settings for the database, including the host, port, credentials, and SSL configuration, used by the Kendra data source to access the database. (AI-inferred)
+    connection_configuration: Any = None
+    # The type of database engine for the Kendra database data source, such as RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, or RDS_POSTGRESQL. (AI-inferred)
+    database_engine_type: Any = None
+    # Defines SQL query execution settings for the Kendra database data source, specifically using the QueryIdentifier property to indicate that extraction runs as a direct query (DIRECT_QUERY). (AI-inferred)
+    sql_configuration: Any = None
+    # This optional object specifies the VPC subnets and security group IDs that AWS Kendra uses to connect to the database (e.g., RDS or Aurora) within your virtual private cloud. (AI-inferred)
+    vpc_configuration: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_GoogleDriveConfiguration:
+    # Specifies a list of MIME types (e.g., application/pdf) to exclude from indexing when syncing documents from Google Drive. (AI-inferred)
+    exclude_mime_types: Any = None
+    # A list of Google Drive shared drive identifiers that Amazon Kendra excludes from the data source so documents in those shared drives are not indexed. (AI-inferred)
+    exclude_shared_drives: Any = None
+    # Specifies a list of Google Drive user accounts whose files or documents should be excluded from indexing by Amazon Kendra. (AI-inferred)
+    exclude_user_accounts: Any = None
+    # A list of regular expression patterns that define which Google Drive files or folders to exclude from the indexed content. (AI-inferred)
+    exclusion_patterns: Any = None
+    # Configures the mapping of Google Drive source fields to Amazon Kendra index fields, allowing you to define which Google Drive attributes (such as title, author, content) are indexed and how they are stored in the corresponding index field names. (AI-inferred)
+    field_mappings: Any = None
+    # Specifies regular expression patterns to include only files in Google Drive that match the patterns in the Amazon Kendra data source, with exclusion patterns taking precedence over inclusions. (AI-inferred)
+    inclusion_patterns: Any = None
+    # The ARN of the AWS Secrets Manager secret that stores the Google Drive OAuth credentials (client ID and client secret) used to authenticate and authorize the Kendra data source to access the configured Google Drive account. (AI-inferred)
+    secret_arn: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3Path:
+    # The name of the S3 bucket that stores the OneDrive user's documents, used to map that user to the S3 content specified in the one_drive_user_s3_path. (AI-inferred)
+    bucket: Any = None
+    # Specifies the S3 object key prefix within the given S3 bucket where the OneDrive user's crawled documents are stored during the Kendra data source indexing process. (AI-inferred)
+    key: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers:
+    # The list of OneDrive user accounts (email addresses or user principal names) whose drive content is indexed by this Kendra data source when users are specified directly in the configuration. (AI-inferred)
+    one_drive_user_list: Any = None
+    # The S3 bucket and object key prefix under which the documents belonging to the associated OneDrive user are stored for Kendra to index. (AI-inferred)
+    one_drive_user_s3_path: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_OneDriveConfiguration:
+    # When set to true, this flag disables the synchronization and use of local groups (groups defined directly in OneDrive) for document access control, so only groups from the connected directory (e.g., Microsoft 365) are considered. (AI-inferred)
+    disable_local_groups: Any = None
+    # A list of regular expression patterns that define which file paths or folder paths within OneDrive should be excluded from being crawled and indexed by the Kendra data source. (AI-inferred)
+    exclusion_patterns: Any = None
+    # Specifies the mapping of OneDrive data source fields to Amazon Kendra index fields, allowing you to customize which fields are indexed and how they are named in the index. (AI-inferred)
+    field_mappings: Any = None
+    # Specifies a list of regular expression patterns for including files and folders from OneDrive in the Amazon Kendra index. (AI-inferred)
+    inclusion_patterns: Any = None
+    # Defines the set of OneDrive users (by user principal or email) whose files and documents are included in the Kendra data source index. (AI-inferred)
+    one_drive_users: Any = None
+    # The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that stores the application credentials (client ID and client secret) used to authenticate with Microsoft OneDrive for this Kendra data source. (AI-inferred)
+    secret_arn: Any = None
+    # The domain of the Office 365 tenant hosting the OneDrive for Business site (e.g., `tenant.onmicrosoft.com`), which Kendra uses to connect to the data source. (AI-inferred)
+    tenant_domain: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_S3Configuration_AccessControlListConfiguration:
+    # The S3 path to the access control list (ACL) file that defines user and group access permissions for the indexed documents in the S3 data source. (AI-inferred)
+    key_path: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_S3Configuration_DocumentsMetadataConfiguration:
+    # Sets the S3 object key prefix that Kendra uses to locate and filter the document metadata files within the S3 bucket when processing documents for the data source. (AI-inferred)
+    s3_prefix: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_S3Configuration:
+    # Specifies the S3 object that contains the access control list (ACL) data for documents in the S3 data source, including the bucket and key path to that object. (AI-inferred)
+    access_control_list_configuration: Any = None
+    # The name of the S3 bucket that contains the documents to be indexed by the Kendra data source. (AI-inferred)
+    bucket_name: Any = None
+    # Specifies the configuration for document metadata files in the S3 data source, including the S3 prefix where AWS Kendra looks for metadata files to enrich document attributes. (AI-inferred)
+    documents_metadata_configuration: Any = None
+    # A list of regular-expression patterns for S3 file paths to exclude from being indexed by Amazon Kendra. (AI-inferred)
+    exclusion_patterns: Any = None
+    # Regular expression patterns that define which object keys in the S3 bucket are included in the data source, with only files matching at least one pattern being indexed. (AI-inferred)
+    inclusion_patterns: Any = None
+    # Specifies the S3 object key prefixes that should be included in the Amazon Kendra index, filtering out objects that do not start with these prefixes. (AI-inferred)
+    inclusion_prefixes: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_SalesforceConfiguration_ChatterFeedConfiguration:
+    # The name of the Salesforce field that contains the content of the chatter feed item to be indexed by Kendra. (AI-inferred)
+    document_data_field_name: Any = None
+    # The name of the field in the Salesforce Chatter feed that contains the document title, used to map that field to the document title for indexing by Amazon Kendra. (AI-inferred)
+    document_title_field_name: Any = None
+    # Maps Salesforce Chatter feed source fields to Amazon Kendra index fields for the Chatter feed data source. (AI-inferred)
+    field_mappings: Any = None
+    # Filters the type of Salesforce chatter feed items (such as ACTIVE or RESOLVED) that are included when indexing, so only matching items are crawled. (AI-inferred)
+    include_filter_types: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurations:
+    # Specifies the name of the Salesforce field that holds the body/content for custom knowledge article types indexed by Kendra. (AI-inferred)
+    document_data_field_name: Any = None
+    # Specifies the name of the field in the custom knowledge article type that maps to the document title for indexing in Amazon Kendra. (AI-inferred)
+    document_title_field_name: Any = None
+    # Specifies how fields from a custom Salesforce knowledge article type are mapped to Amazon Kendra index fields. (AI-inferred)
+    field_mappings: Any = None
+    # The name of the custom Salesforce knowledge article type in Salesforce that this configuration defines mappings and title field for. (AI-inferred)
+    name: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_StandardKnowledgeArticleTypeConfiguration:
+    # Specifies the name of the Salesforce field that contains the knowledge article's content (body) to be indexed by Amazon Kendra. (AI-inferred)
+    document_data_field_name: Any = None
+    # The name of the Salesforce field whose value is used as the document title when indexing standard knowledge articles in Amazon Kendra. (AI-inferred)
+    document_title_field_name: Any = None
+    # Maps Salesforce knowledge article fields to Amazon Kendra index fields, allowing specific article attributes to be indexed. (AI-inferred)
+    field_mappings: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration:
+    # Defines the list of custom Salesforce knowledge article types to crawl, each with a name, document status field, and field mappings that map source fields to Kendra index fields. (AI-inferred)
+    custom_knowledge_article_type_configurations: Any = None
+    # Specifies which Salesforce knowledge article states (e.g., DRAFT, PUBLISHED, ARCHIVED) Kendra includes when indexing articles from the connected Salesforce instance. (AI-inferred)
+    included_states: Any = None
+    # Specifies the indexing configuration for standard Salesforce knowledge articles, including field mappings to Kendra document attributes and the article field used as the document title. (AI-inferred)
+    standard_knowledge_article_type_configuration: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_SalesforceConfiguration_StandardObjectAttachmentConfiguration:
+    # Specifies the name of the field within the Salesforce standard object attachment that contains the document title, used by Kendra as the title for the indexed attachment. (AI-inferred)
+    document_title_field_name: Any = None
+    # Defines the list of mappings that map fields from Salesforce standard object attachments (such as case or account attachments) to Amazon Kendra index fields, controlling how attachment metadata is indexed. (AI-inferred)
+    field_mappings: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_SalesforceConfiguration:
+    # Configures how Amazon Kendra indexes Salesforce Chatter feeds, allowing you to specify the data field to use as the document content and map additional Salesforce fields to Kendra attributes. (AI-inferred)
+    chatter_feed_configuration: Any = None
+    # Specifies whether to crawl and index attachments (files) associated with Salesforce objects in addition to the standard objects during a data source sync. (AI-inferred)
+    crawl_attachments: Any = None
+    # A list of regular expression patterns that match Salesforce attachment file names to exclude from being indexed by Kendra. (AI-inferred)
+    exclude_attachment_file_patterns: Any = None
+    # A list of regular expression patterns that determine which Salesforce attachment file names are included in the index; matching attachments are indexed. (AI-inferred)
+    include_attachment_file_patterns: Any = None
+    # Configures how Salesforce knowledge articles are ingested, including which article states (e.g., DRAFT or PUBLISHED) are indexed and how article fields map to Kendra index fields. (AI-inferred)
+    knowledge_article_configuration: Any = None
+    # The ARN of the AWS Secrets Manager secret that stores the authentication credentials (e.g., username, password, or OAuth token) for connecting to Salesforce. (AI-inferred)
+    secret_arn: Any = None
+    # The URL of the Salesforce instance that contains the data to index. (AI-inferred)
+    server_url: Any = None
+    # This object specifies how attachments to standard Salesforce objects are indexed in Amazon Kendra, including the document title field name and optional field mappings for metadata extraction. (AI-inferred)
+    standard_object_attachment_configuration: Any = None
+    # Specifies the list of standard Salesforce objects (for example, Account, Contact, or Opportunity) that Amazon Kendra crawls from your Salesforce instance, with each object optionally defining field mappings to index its data. (AI-inferred)
+    standard_object_configurations: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_ServiceNowConfiguration_KnowledgeArticleConfiguration:
+    # Indicates whether to crawl attachments to ServiceNow knowledge articles when indexing them from the ServiceNow data source. (AI-inferred)
+    crawl_attachments: Any = None
+    # Specifies the name of the field in the ServiceNow knowledge article table (such as 'text' or 'html') that contains the article body, which Kendra uses as the document data for indexing. (AI-inferred)
+    document_data_field_name: Any = None
+    # The name of the ServiceNow field that contains the title of a knowledge article, which Amazon Kendra uses as the document title when indexing the article. (AI-inferred)
+    document_title_field_name: Any = None
+    # Specifies file patterns (such as file extensions or regex patterns) used to exclude attachment files from being indexed when crawling ServiceNow knowledge articles. (AI-inferred)
+    exclude_attachment_file_patterns: Any = None
+    # Specifies the mapping of ServiceNow knowledge article attributes (such as title, body, or custom fields) to Amazon Kendra index fields, allowing those attributes to be indexed and searched. (AI-inferred)
+    field_mappings: Any = None
+    # Specifies a query used to filter which ServiceNow knowledge articles are ingested into the index. (AI-inferred)
+    filter_query: Any = None
+    # Specifies the file name patterns that determine which attachment files of ServiceNow knowledge articles are included for indexing. (AI-inferred)
+    include_attachment_file_patterns: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_ServiceNowConfiguration_ServiceCatalogConfiguration:
+    # Determines whether Amazon Kendra crawls attachments associated with ServiceNow service catalog items. (AI-inferred)
+    crawl_attachments: Any = None
+    # The name of the ServiceNow field that holds the body or content of the service catalog item, which Kendra uses as the document text to index. (AI-inferred)
+    document_data_field_name: Any = None
+    # Specifies the name of the field in ServiceNow service catalog items that Amazon Kendra uses as the document title when indexing those items. (AI-inferred)
+    document_title_field_name: Any = None
+    # A list of regular expression patterns used to exclude attachment file names from an indexed ServiceNow service catalog item's attachments in the Kendra data source. (AI-inferred)
+    exclude_attachment_file_patterns: Any = None
+    # Maps ServiceNow Service Catalog source fields to Amazon Kendra index fields for the Kendra data source's ServiceNow connector, allowing customization of how catalog data is indexed. (AI-inferred)
+    field_mappings: Any = None
+    # A list of file name patterns that determine which attachment files in ServiceNow service catalog items are included for indexing by Amazon Kendra. (AI-inferred)
+    include_attachment_file_patterns: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_ServiceNowConfiguration:
+    # Specifies the authentication type used to connect to the ServiceNow instance, such as HTTP_BASIC or OAUTH2. (AI-inferred)
+    authentication_type: Any = None
+    # The base URL of the ServiceNow instance to index, such as https://yourinstance.service-now.com. (AI-inferred)
+    host_url: Any = None
+    # Configures how Amazon Kendra indexes ServiceNow knowledge articles for the data source, including the document title field to use, the source template for article URLs, and optional attachment file pattern filters. (AI-inferred)
+    knowledge_article_configuration: Any = None
+    # The ARN of an AWS Secrets Manager secret that stores the credentials (user name and password) used to authenticate with the ServiceNow instance. (AI-inferred)
+    secret_arn: Any = None
+    # Configures the crawling and indexing behavior for ServiceNow service catalog items within the Kendra data source, including attachment processing and document field mappings. (AI-inferred)
+    service_catalog_configuration: Any = None
+    # Specifies the ServiceNow build version (such as LONDON or OTHERS) that Amazon Kendra uses to determine the correct data extraction and indexing behavior for the connected ServiceNow instance. (AI-inferred)
+    service_now_build_version: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_SharePointConfiguration:
+    # When true, AWS Kendra includes file attachments associated with SharePoint items during the crawl; when false, it only indexes the SharePoint items themselves. (AI-inferred)
+    crawl_attachments: Any = None
+    # When set to true, prevents AWS Kendra from indexing local SharePoint groups, which reduces the number of access control entries synchronized into the index. (AI-inferred)
+    disable_local_groups: Any = None
+    # The name of the SharePoint column that holds the document title, which Amazon Kendra uses to populate the title attribute for indexed documents and search results. (AI-inferred)
+    document_title_field_name: Any = None
+    # Defines a list of regular expression patterns that identify SharePoint document URLs or paths to exclude from being indexed by Amazon Kendra. (AI-inferred)
+    exclusion_patterns: Any = None
+    # Defines how SharePoint columns or metadata attributes are mapped to Amazon Kendra index fields, including the source field name and the target index field name and type for ingestion. (AI-inferred)
+    field_mappings: Any = None
+    # Specifies regular expression patterns that define which SharePoint document URLs are included in the Amazon Kendra index, so only documents whose URL matches any of these patterns are crawled and indexed. (AI-inferred)
+    inclusion_patterns: Any = None
+    # The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that stores the SharePoint authentication credentials used by Kendra to connect to the SharePoint site. (AI-inferred)
+    secret_arn: Any = None
+    # Specifies the SharePoint deployment version (e.g., SHAREPOINT_ONLINE or SHAREPOINT_2019) that the Kendra data source connects to, determining the valid connection URL and authentication requirements. (AI-inferred)
+    share_point_version: Any = None
+    # Specifies the S3 location (bucket and key) of the SSL certificate used to securely connect to the SharePoint server when it uses a self-signed certificate. (AI-inferred)
+    ssl_certificate_s3_path: Any = None
+    # The list of SharePoint site URLs (paths to SharePoint sites) that this Amazon Kendra data source will crawl to index documents and content. (AI-inferred)
+    urls: Any = None
+    # Indicates whether to use the SharePoint change log to identify documents that need updating, enabling incremental synchronization instead of a full crawl of the site. (AI-inferred)
+    use_change_log: Any = None
+    # Specifies the VPC configuration (subnets and security group IDs) that Amazon Kendra uses to connect to your SharePoint data source when the SharePoint site is inside a VPC. (AI-inferred)
+    vpc_configuration: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_TemplateConfiguration:
+    # The JSON or YAML template that defines the connection, authentication, and schema configuration for a custom Kendra data source using the TEMPLATE type. (AI-inferred)
+    template: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthentication:
+    # The ARN of an AWS Secrets Manager secret that stores the basic authentication credentials (username and password) used by the Kendra web crawler to access the specified host. (AI-inferred)
+    credentials: Any = None
+    # The hostname of the website that requires this basic authentication, used by the Kendra web crawler to apply the associated credentials when accessing that site. (AI-inferred)
+    host: Any = None
+    # The port number of the web server to authenticate with when the web crawler accesses the host for basic authentication. (AI-inferred)
+    port: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration:
+    # Specifies the list of basic authentication credentials (host and secret ARN) that the Amazon Kendra web crawler uses to authenticate with websites requiring HTTP basic authentication. (AI-inferred)
+    basic_authentication: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SeedUrlConfiguration:
+    # A list of seed URLs that the web crawler uses as starting points to crawl and index web pages. (AI-inferred)
+    seed_urls: Any = None
+    # Specifies whether the web crawler crawls only the seed URL's host or also its subdomains, with allowed values HOST_ONLY and SUBDOMAINS. (AI-inferred)
+    web_crawler_mode: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SiteMapsConfiguration:
+    # Specifies the list of sitemap URLs that the web crawler uses to discover pages to index for the Kendra data source. (AI-inferred)
+    site_maps: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls:
+    # Defines the seed URLs that the Amazon Kendra web crawler uses as starting points, along with optional crawl depth and URL processing limits. (AI-inferred)
+    seed_url_configuration: Any = None
+    # Defines the sitemap configuration for the web crawler, specifying a list of sitemap URLs that Amazon Kendra uses to discover web pages to index. (AI-inferred)
+    site_maps_configuration: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_WebCrawlerConfiguration:
+    # Specifies the authentication configuration used to access websites when crawling with the web crawler, including basic authentication and custom authentication using a secret in AWS Secrets Manager. (AI-inferred)
+    authentication_configuration: Any = None
+    # Specifies the maximum number of link levels from the seed URLs that the web crawler will traverse, controlling how deep into the site's hierarchy the crawler goes. (AI-inferred)
+    crawl_depth: Any = None
+    # Sets the maximum size in megabytes of a web page that the Kendra web crawler will process; pages larger than this limit are skipped. (AI-inferred)
+    max_content_size_per_page_in_mega_bytes: Any = None
+    # Limits the number of outbound links that the Amazon Kendra web crawler follows from each webpage, preventing excessive crawling of large link-heavy pages. (AI-inferred)
+    max_links_per_page: Any = None
+    # The maximum number of URLs the web crawler can crawl per minute, used to rate-limit the crawl and avoid overloading the target site. (AI-inferred)
+    max_urls_per_minute_crawl_rate: Any = None
+    # Specifies the proxy configuration, including host, port, and optional credentials, that the web crawler uses to connect to the internet when indexing web pages. (AI-inferred)
+    proxy_configuration: Any = None
+    # A list of regular expression patterns that exclude matching URLs from being crawled by the Amazon Kendra web crawler data source. (AI-inferred)
+    url_exclusion_patterns: Any = None
+    # Specifies the regular expression patterns that determine which URLs the web crawler includes for indexing, so only pages matching at least one inclusion pattern are crawled. (AI-inferred)
+    url_inclusion_patterns: Any = None
+    # The URLs configuration for the web crawler, specifying the seed URLs (starting points) and site maps used to discover and crawl pages. (AI-inferred)
+    urls: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration_WorkDocsConfiguration:
+    # Determines whether comments from Amazon WorkDocs documents are crawled and included in the index. (AI-inferred)
+    crawl_comments: Any = None
+    # A list of regular expression patterns to exclude documents or folders from being indexed by the WorkDocs data source. (AI-inferred)
+    exclusion_patterns: Any = None
+    # Maps WorkDocs document source fields to Amazon Kendra index fields, defining how document metadata is indexed and stored in the Kendra index. (AI-inferred)
+    field_mappings: Any = None
+    # A list of regular expression patterns that match WorkDocs document names to include in the Kendra index; only documents matching at least one pattern are indexed. (AI-inferred)
+    inclusion_patterns: Any = None
+    # Specifies the identifier of the AWS WorkDocs organization (directory) that contains the documents to be indexed by this Kendra data source. (AI-inferred)
+    organization_id: Any = None
+    # Specifies whether to use the WorkDocs change log to identify and update only documents that have changed since the last crawl, rather than scanning the entire repository. (AI-inferred)
+    use_change_log: Any = None
+
+@dataclasses.dataclass
+class DataSource_DataSourceConfiguration:
+    # Defines the connection settings and crawl scope for indexing content from a Confluence server, including authentication, URL, and which Confluence entities (spaces, blogs, attachments, etc.) to include. (AI-inferred)
+    confluence_configuration: Any = None
+    # Specifies the connection and indexing settings for a database data source, including the database engine type, connection credentials, VPC configuration, column mappings, and SQL query used to extract documents into Amazon Kendra. (AI-inferred)
+    database_configuration: Any = None
+    # Configures the connector to a Google Drive repository, specifying the AWS Secrets Manager secret for OAuth authentication and the drive path to be indexed. (AI-inferred)
+    google_drive_configuration: Any = None
+    # This object defines the settings required to connect Amazon Kendra to a Microsoft OneDrive for Business account, including the tenant domain, the AWS Secrets Manager secret containing OAuth credentials, and optional inclusion/exclusion patterns to control which documents are indexed. (AI-inferred)
+    one_drive_configuration: Any = None
+    # S3 data source configuration
+    s3_configuration: Any = None
+    # Defines the connection settings for a Salesforce data source, including the AWS Secrets Manager secret with OAuth credentials, standard object configurations to index, and optional knowledge article sync settings. (AI-inferred)
+    salesforce_configuration: Any = None
+    # Configuration for connecting Amazon Kendra to a ServiceNow instance, including authentication details, host URL, and options for indexing knowledge articles and service catalogs. (AI-inferred)
+    service_now_configuration: Any = None
+    # SharePoint configuration
+    share_point_configuration: Any = None
+    # Provides a JSON template that defines the configuration for a Kendra data source when the data source type is TEMPLATE, enabling custom data source parameters to be specified with the template. (AI-inferred)
+    template_configuration: Any = None
+    # Defines the configuration for crawling web pages, such as seed URLs, crawl depth, and link-following behavior, for the Kendra data source when it is of type `WEBCRAWLER`. (AI-inferred)
+    web_crawler_configuration: Any = None
+    # Configuration for an Amazon WorkDocs data source, specifying the WorkDocs organization ID, whether to crawl comments and shared documents, and which files to include or exclude via patterns. (AI-inferred)
+    work_docs_configuration: Any = None
+
+@dataclasses.dataclass
+class DataSource_Tags:
+    # The key of a key-value tag attached to the Kendra data source. (AI-inferred)
+    key: Any = None
+    value: Any = None
 
 _DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValueFields = {
     "date_value": ubx.FieldSpec(wire_name="date_value"),
@@ -229,118 +513,644 @@ _DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition
 
 _DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields = {
     "condition_document_attribute_key": ubx.FieldSpec(wire_name="condition_document_attribute_key"),
-    "operator": ubx.FieldSpec(wire_name="operator"),
     "condition_on_value": ubx.FieldSpec(
         wire_name="condition_on_value",
-        kind="list",
+        kind="object",
         fields=_DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValueFields,
     ),
+    "operator": ubx.FieldSpec(wire_name="operator"),
 }
 
 _DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_TargetFields = {
     "target_document_attribute_key": ubx.FieldSpec(wire_name="target_document_attribute_key"),
-    "target_document_attribute_value_deletion": ubx.FieldSpec(wire_name="target_document_attribute_value_deletion"),
     "target_document_attribute_value": ubx.FieldSpec(
         wire_name="target_document_attribute_value",
-        kind="list",
+        kind="object",
         fields=_DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValueFields,
     ),
+    "target_document_attribute_value_deletion": ubx.FieldSpec(wire_name="target_document_attribute_value_deletion"),
 }
 
 _DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurationsFields = {
-    "document_content_deletion": ubx.FieldSpec(wire_name="document_content_deletion"),
     "condition": ubx.FieldSpec(
         wire_name="condition",
-        kind="list",
+        kind="object",
         fields=_DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields,
     ),
+    "document_content_deletion": ubx.FieldSpec(wire_name="document_content_deletion"),
     "target": ubx.FieldSpec(
         wire_name="target",
-        kind="list",
+        kind="object",
         fields=_DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_TargetFields,
     ),
 }
 
 _DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields = {
-    "lambda_arn": ubx.FieldSpec(wire_name="lambda_arn"),
-    "s3_bucket": ubx.FieldSpec(wire_name="s3_bucket"),
     "invocation_condition": ubx.FieldSpec(
         wire_name="invocation_condition",
-        kind="list",
+        kind="object",
         fields=_DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields,
     ),
+    "lambda_arn": ubx.FieldSpec(wire_name="lambda_arn"),
+    "s3_bucket": ubx.FieldSpec(wire_name="s3_bucket"),
 }
 
 _DataSource_CustomDocumentEnrichmentConfigurationFields = {
-    "role_arn": ubx.FieldSpec(wire_name="role_arn"),
     "inline_configurations": ubx.FieldSpec(
         wire_name="inline_configurations",
-        kind="set",
+        kind="list",
         fields=_DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurationsFields,
     ),
     "post_extraction_hook_configuration": ubx.FieldSpec(
         wire_name="post_extraction_hook_configuration",
-        kind="list",
+        kind="object",
         fields=_DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields,
     ),
     "pre_extraction_hook_configuration": ubx.FieldSpec(
         wire_name="pre_extraction_hook_configuration",
-        kind="list",
+        kind="object",
         fields=_DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields,
+    ),
+    "role_arn": ubx.FieldSpec(wire_name="role_arn"),
+}
+
+_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields = {
+    "data_source_field_name": ubx.FieldSpec(wire_name="data_source_field_name"),
+    "date_field_format": ubx.FieldSpec(wire_name="date_field_format"),
+    "index_field_name": ubx.FieldSpec(wire_name="index_field_name"),
+}
+
+_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfigurationFields = {
+    "attachment_field_mappings": ubx.FieldSpec(
+        wire_name="attachment_field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+    "crawl_attachments": ubx.FieldSpec(wire_name="crawl_attachments"),
+}
+
+_DataSource_DataSourceConfiguration_ConfluenceConfiguration_BlogConfigurationFields = {
+    "blog_field_mappings": ubx.FieldSpec(
+        wire_name="blog_field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
     ),
 }
 
-_DataSource_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_DataSource_DataSourceConfiguration_ConfluenceConfiguration_PageConfigurationFields = {
+    "page_field_mappings": ubx.FieldSpec(
+        wire_name="page_field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_ConfluenceConfiguration_SpaceConfigurationFields = {
+    "crawl_archived_spaces": ubx.FieldSpec(wire_name="crawl_archived_spaces"),
+    "crawl_personal_spaces": ubx.FieldSpec(wire_name="crawl_personal_spaces"),
+    "exclude_spaces": ubx.FieldSpec(wire_name="exclude_spaces"),
+    "include_spaces": ubx.FieldSpec(wire_name="include_spaces"),
+    "space_field_mappings": ubx.FieldSpec(
+        wire_name="space_field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfigurationFields = {
+    "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
+    "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
+}
+
+_DataSource_DataSourceConfiguration_ConfluenceConfigurationFields = {
+    "attachment_configuration": ubx.FieldSpec(
+        wire_name="attachment_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfigurationFields,
+    ),
+    "blog_configuration": ubx.FieldSpec(
+        wire_name="blog_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_BlogConfigurationFields,
+    ),
+    "exclusion_patterns": ubx.FieldSpec(wire_name="exclusion_patterns"),
+    "inclusion_patterns": ubx.FieldSpec(wire_name="inclusion_patterns"),
+    "page_configuration": ubx.FieldSpec(
+        wire_name="page_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_PageConfigurationFields,
+    ),
+    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
+    "server_url": ubx.FieldSpec(wire_name="server_url"),
+    "space_configuration": ubx.FieldSpec(
+        wire_name="space_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_SpaceConfigurationFields,
+    ),
+    "version": ubx.FieldSpec(wire_name="version"),
+    "vpc_configuration": ubx.FieldSpec(
+        wire_name="vpc_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfigurationFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_DatabaseConfiguration_AclConfigurationFields = {
+    "allowed_groups_column_name": ubx.FieldSpec(wire_name="allowed_groups_column_name"),
+}
+
+_DataSource_DataSourceConfiguration_DatabaseConfiguration_ColumnConfigurationFields = {
+    "change_detecting_columns": ubx.FieldSpec(wire_name="change_detecting_columns"),
+    "document_data_column_name": ubx.FieldSpec(wire_name="document_data_column_name"),
+    "document_id_column_name": ubx.FieldSpec(wire_name="document_id_column_name"),
+    "document_title_column_name": ubx.FieldSpec(wire_name="document_title_column_name"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_DatabaseConfiguration_ConnectionConfigurationFields = {
+    "database_host": ubx.FieldSpec(wire_name="database_host"),
+    "database_name": ubx.FieldSpec(wire_name="database_name"),
+    "database_port": ubx.FieldSpec(wire_name="database_port"),
+    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
+    "table_name": ubx.FieldSpec(wire_name="table_name"),
+}
+
+_DataSource_DataSourceConfiguration_DatabaseConfiguration_SqlConfigurationFields = {
+    "query_identifiers_enclosing_option": ubx.FieldSpec(wire_name="query_identifiers_enclosing_option"),
+}
+
+_DataSource_DataSourceConfiguration_DatabaseConfigurationFields = {
+    "acl_configuration": ubx.FieldSpec(
+        wire_name="acl_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_DatabaseConfiguration_AclConfigurationFields,
+    ),
+    "column_configuration": ubx.FieldSpec(
+        wire_name="column_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_DatabaseConfiguration_ColumnConfigurationFields,
+    ),
+    "connection_configuration": ubx.FieldSpec(
+        wire_name="connection_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_DatabaseConfiguration_ConnectionConfigurationFields,
+    ),
+    "database_engine_type": ubx.FieldSpec(wire_name="database_engine_type"),
+    "sql_configuration": ubx.FieldSpec(
+        wire_name="sql_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_DatabaseConfiguration_SqlConfigurationFields,
+    ),
+    "vpc_configuration": ubx.FieldSpec(
+        wire_name="vpc_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfigurationFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_GoogleDriveConfigurationFields = {
+    "exclude_mime_types": ubx.FieldSpec(wire_name="exclude_mime_types"),
+    "exclude_shared_drives": ubx.FieldSpec(wire_name="exclude_shared_drives"),
+    "exclude_user_accounts": ubx.FieldSpec(wire_name="exclude_user_accounts"),
+    "exclusion_patterns": ubx.FieldSpec(wire_name="exclusion_patterns"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+    "inclusion_patterns": ubx.FieldSpec(wire_name="inclusion_patterns"),
+    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
+}
+
+_DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3PathFields = {
+    "bucket": ubx.FieldSpec(wire_name="bucket"),
+    "key": ubx.FieldSpec(wire_name="key"),
+}
+
+_DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsersFields = {
+    "one_drive_user_list": ubx.FieldSpec(wire_name="one_drive_user_list"),
+    "one_drive_user_s3_path": ubx.FieldSpec(
+        wire_name="one_drive_user_s3_path",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3PathFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_OneDriveConfigurationFields = {
+    "disable_local_groups": ubx.FieldSpec(wire_name="disable_local_groups"),
+    "exclusion_patterns": ubx.FieldSpec(wire_name="exclusion_patterns"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+    "inclusion_patterns": ubx.FieldSpec(wire_name="inclusion_patterns"),
+    "one_drive_users": ubx.FieldSpec(
+        wire_name="one_drive_users",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsersFields,
+    ),
+    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
+    "tenant_domain": ubx.FieldSpec(wire_name="tenant_domain"),
+}
+
+_DataSource_DataSourceConfiguration_S3Configuration_AccessControlListConfigurationFields = {
+    "key_path": ubx.FieldSpec(wire_name="key_path"),
+}
+
+_DataSource_DataSourceConfiguration_S3Configuration_DocumentsMetadataConfigurationFields = {
+    "s3_prefix": ubx.FieldSpec(wire_name="s3_prefix"),
+}
+
+_DataSource_DataSourceConfiguration_S3ConfigurationFields = {
+    "access_control_list_configuration": ubx.FieldSpec(
+        wire_name="access_control_list_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_S3Configuration_AccessControlListConfigurationFields,
+    ),
+    "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
+    "documents_metadata_configuration": ubx.FieldSpec(
+        wire_name="documents_metadata_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_S3Configuration_DocumentsMetadataConfigurationFields,
+    ),
+    "exclusion_patterns": ubx.FieldSpec(wire_name="exclusion_patterns"),
+    "inclusion_patterns": ubx.FieldSpec(wire_name="inclusion_patterns"),
+    "inclusion_prefixes": ubx.FieldSpec(wire_name="inclusion_prefixes"),
+}
+
+_DataSource_DataSourceConfiguration_SalesforceConfiguration_ChatterFeedConfigurationFields = {
+    "document_data_field_name": ubx.FieldSpec(wire_name="document_data_field_name"),
+    "document_title_field_name": ubx.FieldSpec(wire_name="document_title_field_name"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+    "include_filter_types": ubx.FieldSpec(wire_name="include_filter_types"),
+}
+
+_DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurationsFields = {
+    "document_data_field_name": ubx.FieldSpec(wire_name="document_data_field_name"),
+    "document_title_field_name": ubx.FieldSpec(wire_name="document_title_field_name"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
+_DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_StandardKnowledgeArticleTypeConfigurationFields = {
+    "document_data_field_name": ubx.FieldSpec(wire_name="document_data_field_name"),
+    "document_title_field_name": ubx.FieldSpec(wire_name="document_title_field_name"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfigurationFields = {
+    "custom_knowledge_article_type_configurations": ubx.FieldSpec(
+        wire_name="custom_knowledge_article_type_configurations",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurationsFields,
+    ),
+    "included_states": ubx.FieldSpec(wire_name="included_states"),
+    "standard_knowledge_article_type_configuration": ubx.FieldSpec(
+        wire_name="standard_knowledge_article_type_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_StandardKnowledgeArticleTypeConfigurationFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_SalesforceConfiguration_StandardObjectAttachmentConfigurationFields = {
+    "document_title_field_name": ubx.FieldSpec(wire_name="document_title_field_name"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_SalesforceConfigurationFields = {
+    "chatter_feed_configuration": ubx.FieldSpec(
+        wire_name="chatter_feed_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_SalesforceConfiguration_ChatterFeedConfigurationFields,
+    ),
+    "crawl_attachments": ubx.FieldSpec(wire_name="crawl_attachments"),
+    "exclude_attachment_file_patterns": ubx.FieldSpec(wire_name="exclude_attachment_file_patterns"),
+    "include_attachment_file_patterns": ubx.FieldSpec(wire_name="include_attachment_file_patterns"),
+    "knowledge_article_configuration": ubx.FieldSpec(
+        wire_name="knowledge_article_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfigurationFields,
+    ),
+    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
+    "server_url": ubx.FieldSpec(wire_name="server_url"),
+    "standard_object_attachment_configuration": ubx.FieldSpec(
+        wire_name="standard_object_attachment_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_SalesforceConfiguration_StandardObjectAttachmentConfigurationFields,
+    ),
+    "standard_object_configurations": ubx.FieldSpec(
+        wire_name="standard_object_configurations",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurationsFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_ServiceNowConfiguration_KnowledgeArticleConfigurationFields = {
+    "crawl_attachments": ubx.FieldSpec(wire_name="crawl_attachments"),
+    "document_data_field_name": ubx.FieldSpec(wire_name="document_data_field_name"),
+    "document_title_field_name": ubx.FieldSpec(wire_name="document_title_field_name"),
+    "exclude_attachment_file_patterns": ubx.FieldSpec(wire_name="exclude_attachment_file_patterns"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+    "filter_query": ubx.FieldSpec(wire_name="filter_query"),
+    "include_attachment_file_patterns": ubx.FieldSpec(wire_name="include_attachment_file_patterns"),
+}
+
+_DataSource_DataSourceConfiguration_ServiceNowConfiguration_ServiceCatalogConfigurationFields = {
+    "crawl_attachments": ubx.FieldSpec(wire_name="crawl_attachments"),
+    "document_data_field_name": ubx.FieldSpec(wire_name="document_data_field_name"),
+    "document_title_field_name": ubx.FieldSpec(wire_name="document_title_field_name"),
+    "exclude_attachment_file_patterns": ubx.FieldSpec(wire_name="exclude_attachment_file_patterns"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+    "include_attachment_file_patterns": ubx.FieldSpec(wire_name="include_attachment_file_patterns"),
+}
+
+_DataSource_DataSourceConfiguration_ServiceNowConfigurationFields = {
+    "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
+    "host_url": ubx.FieldSpec(wire_name="host_url"),
+    "knowledge_article_configuration": ubx.FieldSpec(
+        wire_name="knowledge_article_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_ServiceNowConfiguration_KnowledgeArticleConfigurationFields,
+    ),
+    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
+    "service_catalog_configuration": ubx.FieldSpec(
+        wire_name="service_catalog_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_ServiceNowConfiguration_ServiceCatalogConfigurationFields,
+    ),
+    "service_now_build_version": ubx.FieldSpec(wire_name="service_now_build_version"),
+}
+
+_DataSource_DataSourceConfiguration_SharePointConfigurationFields = {
+    "crawl_attachments": ubx.FieldSpec(wire_name="crawl_attachments"),
+    "disable_local_groups": ubx.FieldSpec(wire_name="disable_local_groups"),
+    "document_title_field_name": ubx.FieldSpec(wire_name="document_title_field_name"),
+    "exclusion_patterns": ubx.FieldSpec(wire_name="exclusion_patterns"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+    "inclusion_patterns": ubx.FieldSpec(wire_name="inclusion_patterns"),
+    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
+    "share_point_version": ubx.FieldSpec(wire_name="share_point_version"),
+    "ssl_certificate_s3_path": ubx.FieldSpec(
+        wire_name="ssl_certificate_s3_path",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3PathFields,
+    ),
+    "urls": ubx.FieldSpec(wire_name="urls"),
+    "use_change_log": ubx.FieldSpec(wire_name="use_change_log"),
+    "vpc_configuration": ubx.FieldSpec(
+        wire_name="vpc_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfigurationFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_TemplateConfigurationFields = {
+    "template": ubx.FieldSpec(wire_name="template"),
+}
+
+_DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthenticationFields = {
+    "credentials": ubx.FieldSpec(wire_name="credentials"),
+    "host": ubx.FieldSpec(wire_name="host"),
+    "port": ubx.FieldSpec(wire_name="port"),
+}
+
+_DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfigurationFields = {
+    "basic_authentication": ubx.FieldSpec(
+        wire_name="basic_authentication",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthenticationFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SeedUrlConfigurationFields = {
+    "seed_urls": ubx.FieldSpec(wire_name="seed_urls"),
+    "web_crawler_mode": ubx.FieldSpec(wire_name="web_crawler_mode"),
+}
+
+_DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SiteMapsConfigurationFields = {
+    "site_maps": ubx.FieldSpec(wire_name="site_maps"),
+}
+
+_DataSource_DataSourceConfiguration_WebCrawlerConfiguration_UrlsFields = {
+    "seed_url_configuration": ubx.FieldSpec(
+        wire_name="seed_url_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SeedUrlConfigurationFields,
+    ),
+    "site_maps_configuration": ubx.FieldSpec(
+        wire_name="site_maps_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SiteMapsConfigurationFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_WebCrawlerConfigurationFields = {
+    "authentication_configuration": ubx.FieldSpec(
+        wire_name="authentication_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfigurationFields,
+    ),
+    "crawl_depth": ubx.FieldSpec(wire_name="crawl_depth"),
+    "max_content_size_per_page_in_mega_bytes": ubx.FieldSpec(wire_name="max_content_size_per_page_in_mega_bytes"),
+    "max_links_per_page": ubx.FieldSpec(wire_name="max_links_per_page"),
+    "max_urls_per_minute_crawl_rate": ubx.FieldSpec(wire_name="max_urls_per_minute_crawl_rate"),
+    "proxy_configuration": ubx.FieldSpec(
+        wire_name="proxy_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthenticationFields,
+    ),
+    "url_exclusion_patterns": ubx.FieldSpec(wire_name="url_exclusion_patterns"),
+    "url_inclusion_patterns": ubx.FieldSpec(wire_name="url_inclusion_patterns"),
+    "urls": ubx.FieldSpec(
+        wire_name="urls",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_WebCrawlerConfiguration_UrlsFields,
+    ),
+}
+
+_DataSource_DataSourceConfiguration_WorkDocsConfigurationFields = {
+    "crawl_comments": ubx.FieldSpec(wire_name="crawl_comments"),
+    "exclusion_patterns": ubx.FieldSpec(wire_name="exclusion_patterns"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+    ),
+    "inclusion_patterns": ubx.FieldSpec(wire_name="inclusion_patterns"),
+    "organization_id": ubx.FieldSpec(wire_name="organization_id"),
+    "use_change_log": ubx.FieldSpec(wire_name="use_change_log"),
+}
+
+_DataSource_DataSourceConfigurationFields = {
+    "confluence_configuration": ubx.FieldSpec(
+        wire_name="confluence_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_ConfluenceConfigurationFields,
+    ),
+    "database_configuration": ubx.FieldSpec(
+        wire_name="database_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_DatabaseConfigurationFields,
+    ),
+    "google_drive_configuration": ubx.FieldSpec(
+        wire_name="google_drive_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_GoogleDriveConfigurationFields,
+    ),
+    "one_drive_configuration": ubx.FieldSpec(
+        wire_name="one_drive_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_OneDriveConfigurationFields,
+    ),
+    "s3_configuration": ubx.FieldSpec(
+        wire_name="s3_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_S3ConfigurationFields,
+    ),
+    "salesforce_configuration": ubx.FieldSpec(
+        wire_name="salesforce_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_SalesforceConfigurationFields,
+    ),
+    "service_now_configuration": ubx.FieldSpec(
+        wire_name="service_now_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_ServiceNowConfigurationFields,
+    ),
+    "share_point_configuration": ubx.FieldSpec(
+        wire_name="share_point_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_SharePointConfigurationFields,
+    ),
+    "template_configuration": ubx.FieldSpec(
+        wire_name="template_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_TemplateConfigurationFields,
+    ),
+    "web_crawler_configuration": ubx.FieldSpec(
+        wire_name="web_crawler_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_WebCrawlerConfigurationFields,
+    ),
+    "work_docs_configuration": ubx.FieldSpec(
+        wire_name="work_docs_configuration",
+        kind="object",
+        fields=_DataSource_DataSourceConfiguration_WorkDocsConfigurationFields,
+    ),
+}
+
+_DataSource_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class DataSourceConfig:
-    description: Any = None
-    id: Any = None
-    index_id: Any = None
-    language_code: Any = None
-    name: Any = None
-    region: Any = None
-    role_arn: Any = None
-    schedule: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    type: Any = None
-    configuration: Any = None
+    # Configures custom document enrichment for the data source, allowing you to apply inline transformations or invoke Lambda-based pre- and post-extraction hooks to modify document metadata and content before indexing. (AI-inferred)
     custom_document_enrichment_configuration: Any = None
-    timeouts: Any = None
+    # Defines the type-specific configuration for the data source, such as connection details, document extraction settings, and metadata mapping for repositories like Amazon S3, databases, or web crawlers. (AI-inferred)
+    data_source_configuration: Any = None
+    # Description of data source
+    description: Any = None
+    # ID of Index
+    index_id: Any = None
+    # The code for a language.
+    language_code: Any = None
+    # Name of data source
+    name: Any = None
+    # Role ARN
+    role_arn: Any = None
+    # Schedule
+    schedule: Any = None
+    # List of tags
+    tags: Any = None
+    # Data source type
+    type: Any = None
+
+@dataclasses.dataclass
+class DataSourceAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies this Kendra data source in AWS. (AI-inferred)
+    arn: Any = None
+    # Configures custom document enrichment for the data source, allowing you to apply inline transformations or invoke Lambda-based pre- and post-extraction hooks to modify document metadata and content before indexing. (AI-inferred)
+    custom_document_enrichment_configuration: Any = None
+    # Defines the type-specific configuration for the data source, such as connection details, document extraction settings, and metadata mapping for repositories like Amazon S3, databases, or web crawlers. (AI-inferred)
+    data_source_configuration: Any = None
+    # Description of data source
+    description: Any = None
+    # ID of data source
+    id: Any = None
+    # ID of Index
+    index_id: Any = None
+    # The code for a language.
+    language_code: Any = None
+    # Name of data source
+    name: Any = None
+    # Role ARN
+    role_arn: Any = None
+    # Schedule
+    schedule: Any = None
+    # List of tags
+    tags: Any = None
+    # Data source type
+    type: Any = None
 
 DataSource = ubx.ResourceBinding(
     wire_type="aws_kendra_data_source",
     fields={
+        "custom_document_enrichment_configuration": ubx.FieldSpec(
+            wire_name="custom_document_enrichment_configuration",
+            kind="object",
+            fields=_DataSource_CustomDocumentEnrichmentConfigurationFields,
+        ),
+        "data_source_configuration": ubx.FieldSpec(
+            wire_name="data_source_configuration",
+            kind="object",
+            fields=_DataSource_DataSourceConfigurationFields,
+        ),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "index_id": ubx.FieldSpec(wire_name="index_id"),
         "language_code": ubx.FieldSpec(wire_name="language_code"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "role_arn": ubx.FieldSpec(wire_name="role_arn"),
         "schedule": ubx.FieldSpec(wire_name="schedule"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_DataSource_TagsFields,
+        ),
         "type": ubx.FieldSpec(wire_name="type"),
-        "configuration": ubx.FieldSpec(
-            wire_name="configuration",
-            kind="list",
-            fields=_DataSource_ConfigurationFields,
-        ),
-        "custom_document_enrichment_configuration": ubx.FieldSpec(
-            wire_name="custom_document_enrichment_configuration",
-            kind="list",
-            fields=_DataSource_CustomDocumentEnrichmentConfigurationFields,
-        ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_DataSource_TimeoutsFields,
-        ),
     },
 )

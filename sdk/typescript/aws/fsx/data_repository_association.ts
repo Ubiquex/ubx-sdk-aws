@@ -2,18 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DataRepositoryAssociation_S3_AutoExportPolicy {
-  events: string[];
+  /** Specifies the file system event types (NEW, CHANGED, DELETED) that trigger automatic export of file data from the FSx for Lustre file system to the linked S3 bucket. (AI-inferred) */
+  events: string[] | Computed<string[]>;
 }
 
 export interface DataRepositoryAssociation_S3 {
-  autoExportPolicy: DataRepositoryAssociation_S3_AutoExportPolicy[];
-  autoImportPolicy: DataRepositoryAssociation_S3_AutoExportPolicy[];
+  /** Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket. */
+  autoExportPolicy?: DataRepositoryAssociation_S3_AutoExportPolicy | Computed<DataRepositoryAssociation_S3_AutoExportPolicy>;
+  /** Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system. */
+  autoImportPolicy?: DataRepositoryAssociation_S3_AutoExportPolicy | Computed<DataRepositoryAssociation_S3_AutoExportPolicy>;
 }
 
-export interface DataRepositoryAssociation_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface DataRepositoryAssociation_Tags {
+  /** The key of a tag attached to the Amazon FSx data repository association, used to identify and categorize the resource. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value portion of a tag key-value pair attached to the FSx data repository association, used to assign custom metadata for organizational and identification purposes. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const DataRepositoryAssociation_S3_AutoExportPolicyFields: FieldMap = {
@@ -23,52 +27,57 @@ const DataRepositoryAssociation_S3_AutoExportPolicyFields: FieldMap = {
 const DataRepositoryAssociation_S3Fields: FieldMap = {
   autoExportPolicy: {
     wireName: "auto_export_policy",
-    kind: "list",
+    kind: "object",
     fields: DataRepositoryAssociation_S3_AutoExportPolicyFields,
   },
   autoImportPolicy: {
     wireName: "auto_import_policy",
-    kind: "list",
+    kind: "object",
     fields: DataRepositoryAssociation_S3_AutoExportPolicyFields,
   },
 };
 
-const DataRepositoryAssociation_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const DataRepositoryAssociation_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface DataRepositoryAssociationConfig {
+  /** A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to true. */
   batchImportMetaDataOnCreate?: boolean | Computed<boolean>;
+  /** The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format s3://myBucket/myPrefix/ . This path specifies where in the S3 data repository files will be imported from or exported to. */
   dataRepositoryPath: string | Computed<string>;
-  deleteDataInFilesystem?: boolean | Computed<boolean>;
+  /** The globally unique ID of the file system, assigned by Amazon FSx. */
   fileSystemId: string | Computed<string>;
+  /** This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory. */
   fileSystemPath: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system. */
   importedFileChunkSize?: number | Computed<number>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  s3?: DataRepositoryAssociation_S3[] | Computed<DataRepositoryAssociation_S3[]>;
-  timeouts?: DataRepositoryAssociation_Timeouts | Computed<DataRepositoryAssociation_Timeouts>;
+  /** The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository. */
+  s3?: DataRepositoryAssociation_S3 | Computed<DataRepositoryAssociation_S3>;
+  /** A list of Tag values, with a maximum of 50 elements. */
+  tags?: DataRepositoryAssociation_Tags[] | Computed<DataRepositoryAssociation_Tags[]>;
 }
 
 export interface DataRepositoryAssociationAttrs {
-  arn: string;
+  /** The system-generated, unique ID of the data repository association. */
   associationId: string;
+  /** A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to true. */
   batchImportMetaDataOnCreate: boolean;
+  /** The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format s3://myBucket/myPrefix/ . This path specifies where in the S3 data repository files will be imported from or exported to. */
   dataRepositoryPath: string;
-  deleteDataInFilesystem: boolean;
+  /** The globally unique ID of the file system, assigned by Amazon FSx. */
   fileSystemId: string;
+  /** This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory. */
   fileSystemPath: string;
-  id: string;
+  /** For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system. */
   importedFileChunkSize: number;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  s3: DataRepositoryAssociation_S3[];
-  timeouts: DataRepositoryAssociation_Timeouts;
+  /** The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see Amazon Resource Names (ARNs) in the Amazon Web Services General Reference. */
+  resourceArn: string;
+  /** The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository. */
+  s3: DataRepositoryAssociation_S3;
+  /** A list of Tag values, with a maximum of 50 elements. */
+  tags: DataRepositoryAssociation_Tags[];
 }
 
 export const DataRepositoryAssociation: ResourceBinding<DataRepositoryAssociationConfig, DataRepositoryAssociationAttrs> = {
@@ -76,23 +85,18 @@ export const DataRepositoryAssociation: ResourceBinding<DataRepositoryAssociatio
   fields: {
     batchImportMetaDataOnCreate: "batch_import_meta_data_on_create",
     dataRepositoryPath: "data_repository_path",
-    deleteDataInFilesystem: "delete_data_in_filesystem",
     fileSystemId: "file_system_id",
     fileSystemPath: "file_system_path",
-    id: "id",
     importedFileChunkSize: "imported_file_chunk_size",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
     s3: {
       wireName: "s3",
-      kind: "list",
+      kind: "object",
       fields: DataRepositoryAssociation_S3Fields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: DataRepositoryAssociation_TimeoutsFields,
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: DataRepositoryAssociation_TagsFields,
     },
   },
 };

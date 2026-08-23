@@ -7,28 +7,50 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class GlobalCluster_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class GlobalCluster_Tags:
+    # The user-defined key of a key-value pair tag applied to the AWS::Neptune::GlobalCluster resource. (AI-inferred)
+    key: Any = None
+    # The user-defined value associated with a tag key on the Neptune global cluster, used for metadata and resource categorization. (AI-inferred)
+    value: Any = None
 
-_GlobalCluster_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_GlobalCluster_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class GlobalClusterConfig:
+    # Whether deletion protection is enabled.
     deletion_protection: Any = None
+    # The name of the database engine.
     engine: Any = None
+    # The version number of the database engine.
     engine_version: Any = None
+    # The cluster identifier of the global database cluster.
     global_cluster_identifier: Any = None
-    id: Any = None
-    region: Any = None
-    source_db_cluster_identifier: Any = None
+    # The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.
+    source_dbcluster_identifier: Any = None
+    # Whether the global database cluster is storage encrypted.
     storage_encrypted: Any = None
-    timeouts: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class GlobalClusterAttrs:
+    # Whether deletion protection is enabled.
+    deletion_protection: Any = None
+    # The name of the database engine.
+    engine: Any = None
+    # The version number of the database engine.
+    engine_version: Any = None
+    # The cluster identifier of the global database cluster.
+    global_cluster_identifier: Any = None
+    # The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.
+    source_dbcluster_identifier: Any = None
+    # Whether the global database cluster is storage encrypted.
+    storage_encrypted: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 GlobalCluster = ubx.ResourceBinding(
     wire_type="aws_neptune_global_cluster",
@@ -37,14 +59,12 @@ GlobalCluster = ubx.ResourceBinding(
         "engine": ubx.FieldSpec(wire_name="engine"),
         "engine_version": ubx.FieldSpec(wire_name="engine_version"),
         "global_cluster_identifier": ubx.FieldSpec(wire_name="global_cluster_identifier"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "source_db_cluster_identifier": ubx.FieldSpec(wire_name="source_db_cluster_identifier"),
+        "source_dbcluster_identifier": ubx.FieldSpec(wire_name="source_dbcluster_identifier"),
         "storage_encrypted": ubx.FieldSpec(wire_name="storage_encrypted"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_GlobalCluster_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_GlobalCluster_TagsFields,
         ),
     },
 )

@@ -7,30 +7,112 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Agreement_CustomDirectories:
+    # Specifies a location to store the failed files for an AS2 message.
+    failed_files_directory: Any = None
+    # Specifies a location to store the MDN file for an AS2 message.
+    mdn_files_directory: Any = None
+    # Specifies a location to store the payload file for an AS2 message.
+    payload_files_directory: Any = None
+    # Specifies a location to store the status file for an AS2 message.
+    status_files_directory: Any = None
+    # Specifies a location to store the temporary processing file for an AS2 message.
+    temporary_files_directory: Any = None
+
+@dataclasses.dataclass
+class Agreement_Tags:
+    # The key of a tag attached to an AWS Transfer Family agreement, used to categorize or identify the resource. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_Agreement_CustomDirectoriesFields = {
+    "failed_files_directory": ubx.FieldSpec(wire_name="failed_files_directory"),
+    "mdn_files_directory": ubx.FieldSpec(wire_name="mdn_files_directory"),
+    "payload_files_directory": ubx.FieldSpec(wire_name="payload_files_directory"),
+    "status_files_directory": ubx.FieldSpec(wire_name="status_files_directory"),
+    "temporary_files_directory": ubx.FieldSpec(wire_name="temporary_files_directory"),
+}
+
+_Agreement_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class AgreementConfig:
+    # Specifies the access role for the agreement.
     access_role: Any = None
+    # Specifies the base directory for the agreement.
     base_directory: Any = None
+    # Specifies a separate directory for each type of file to store for an AS2 message.
+    custom_directories: Any = None
+    # A textual description for the agreement.
     description: Any = None
-    id: Any = None
+    # Specifies whether to enforce an AS2 message is signed for this agreement.
+    enforce_message_signing: Any = None
+    # A unique identifier for the local profile.
     local_profile_id: Any = None
+    # A unique identifier for the partner profile.
     partner_profile_id: Any = None
-    region: Any = None
+    # Specifies whether to preserve the filename received for this agreement.
+    preserve_filename: Any = None
+    # A unique identifier for the server.
     server_id: Any = None
+    # Specifies the status of the agreement.
+    status: Any = None
+    # Key-value pairs that can be used to group and search for agreements. Tags are metadata attached to agreements for any purpose.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class AgreementAttrs:
+    # Specifies the access role for the agreement.
+    access_role: Any = None
+    # A unique identifier for the agreement.
+    agreement_id: Any = None
+    # Specifies the unique Amazon Resource Name (ARN) for the agreement.
+    arn: Any = None
+    # Specifies the base directory for the agreement.
+    base_directory: Any = None
+    # Specifies a separate directory for each type of file to store for an AS2 message.
+    custom_directories: Any = None
+    # A textual description for the agreement.
+    description: Any = None
+    # Specifies whether to enforce an AS2 message is signed for this agreement.
+    enforce_message_signing: Any = None
+    # A unique identifier for the local profile.
+    local_profile_id: Any = None
+    # A unique identifier for the partner profile.
+    partner_profile_id: Any = None
+    # Specifies whether to preserve the filename received for this agreement.
+    preserve_filename: Any = None
+    # A unique identifier for the server.
+    server_id: Any = None
+    # Specifies the status of the agreement.
+    status: Any = None
+    # Key-value pairs that can be used to group and search for agreements. Tags are metadata attached to agreements for any purpose.
+    tags: Any = None
 
 Agreement = ubx.ResourceBinding(
     wire_type="aws_transfer_agreement",
     fields={
         "access_role": ubx.FieldSpec(wire_name="access_role"),
         "base_directory": ubx.FieldSpec(wire_name="base_directory"),
+        "custom_directories": ubx.FieldSpec(
+            wire_name="custom_directories",
+            kind="object",
+            fields=_Agreement_CustomDirectoriesFields,
+        ),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "enforce_message_signing": ubx.FieldSpec(wire_name="enforce_message_signing"),
         "local_profile_id": ubx.FieldSpec(wire_name="local_profile_id"),
         "partner_profile_id": ubx.FieldSpec(wire_name="partner_profile_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "preserve_filename": ubx.FieldSpec(wire_name="preserve_filename"),
         "server_id": ubx.FieldSpec(wire_name="server_id"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "status": ubx.FieldSpec(wire_name="status"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Agreement_TagsFields,
+        ),
     },
 )

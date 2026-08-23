@@ -2,86 +2,108 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Application_AutoStartConfiguration {
-  enabled: boolean;
+  /** If set to true, the Application will automatically start. Defaults to true. */
+  enabled?: boolean | Computed<boolean>;
 }
 
 export interface Application_AutoStopConfiguration {
-  enabled: boolean;
-  idleTimeoutMinutes: number;
+  /** If set to true, the Application will automatically stop after being idle. Defaults to true. */
+  enabled?: boolean | Computed<boolean>;
+  /** The amount of time [in minutes] to wait before auto stopping the Application when idle. Defaults to 15 minutes. */
+  idleTimeoutMinutes?: number | Computed<number>;
+}
+
+export interface Application_IdentityCenterConfiguration {
+  /** The IAM IdentityCenter instance arn */
+  identityCenterInstanceArn?: string | Computed<string>;
 }
 
 export interface Application_ImageConfiguration {
-  imageUri: string;
+  /** The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration. */
+  imageUri?: string | Computed<string>;
 }
 
-export interface Application_InitialCapacity_InitialCapacityConfig_WorkerConfiguration {
-  cpu: string;
-  disk: string;
-  memory: string;
+export interface Application_InitialCapacity_Value_WorkerConfiguration {
+  /** The number of vCPUs allocated to each worker in the initial capacity configuration of the EMR Serverless application. (AI-inferred) */
+  cpu?: string | Computed<string>;
+  /** Specifies the disk size in GB for the worker in the initial capacity configuration of the EMR Serverless application. (AI-inferred) */
+  disk?: string | Computed<string>;
+  /** The disk type (e.g., SSD or HDD) for the storage attached to each worker instance in the initial capacity configuration of the EMR Serverless application. (AI-inferred) */
+  diskType?: string | Computed<string>;
+  /** Defines the memory size (in MB) allocated per worker for the initial capacity of the EMR Serverless application. (AI-inferred) */
+  memory?: string | Computed<string>;
 }
 
-export interface Application_InitialCapacity_InitialCapacityConfig {
-  workerCount: number;
-  workerConfiguration: Application_InitialCapacity_InitialCapacityConfig_WorkerConfiguration[];
+export interface Application_InitialCapacity_Value {
+  /** Specifies the CPU, memory, and disk configuration for workers allocated as the initial capacity of the EMR Serverless application. (AI-inferred) */
+  workerConfiguration?: Application_InitialCapacity_Value_WorkerConfiguration | Computed<Application_InitialCapacity_Value_WorkerConfiguration>;
+  /** The number of workers of the specified worker type (the key in the initial capacity map) to provision for the EMR Serverless application at startup. (AI-inferred) */
+  workerCount?: number | Computed<number>;
 }
 
 export interface Application_InitialCapacity {
-  initialCapacityType: string;
-  initialCapacityConfig: Application_InitialCapacity_InitialCapacityConfig[];
+  /** Specifies the name of the worker type (for example, driver or executor) for which to define the initial capacity configuration in an AWS EMR Serverless application. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** Defines the initial capacity configuration for a given worker type (e.g., Driver or Executor) in the serverless application, specifying the number of workers and their CPU/memory resources via the workerCount and workerConfiguration properties. (AI-inferred) */
+  value?: Application_InitialCapacity_Value | Computed<Application_InitialCapacity_Value>;
 }
 
 export interface Application_InteractiveConfiguration {
-  livyEndpointEnabled: boolean;
-  studioEnabled: boolean;
+  /** Enables an Apache Livy endpoint that you can connect to and run interactive jobs */
+  livyEndpointEnabled?: boolean | Computed<boolean>;
+  /** Enables interactive sessions on the application */
+  sessionEnabled?: boolean | Computed<boolean>;
+  /** Enabled you to connect an Application to Amazon EMR Studio to run interactive workloads in a notebook */
+  studioEnabled?: boolean | Computed<boolean>;
 }
 
-export interface Application_MonitoringConfiguration_CloudwatchLoggingConfiguration_LogTypes {
-  name: string;
-  values: string[];
-}
-
-export interface Application_MonitoringConfiguration_CloudwatchLoggingConfiguration {
-  enabled: boolean;
-  encryptionKeyArn: string;
-  logGroupName: string;
-  logStreamNamePrefix: string;
-  logTypes: Application_MonitoringConfiguration_CloudwatchLoggingConfiguration_LogTypes[];
-}
-
-export interface Application_MonitoringConfiguration_ManagedPersistenceMonitoringConfiguration {
-  enabled: boolean;
-  encryptionKeyArn: string;
-}
-
-export interface Application_MonitoringConfiguration_PrometheusMonitoringConfiguration {
-  remoteWriteUrl: string;
-}
-
-export interface Application_MonitoringConfiguration_S3MonitoringConfiguration {
-  encryptionKeyArn: string;
-  logUri: string;
+export interface Application_MaximumCapacity {
+  /** Per worker CPU resource. vCPU is the only supported unit and specifying vCPU is optional. */
+  cpu: string | Computed<string>;
+  /** Per worker Disk resource. GB is the only supported unit and specifying GB is optional */
+  disk?: string | Computed<string>;
+  /** Per worker memory resource. GB is the only supported unit and specifying GB is optional. */
+  memory: string | Computed<string>;
 }
 
 export interface Application_MonitoringConfiguration {
-  cloudwatchLoggingConfiguration: Application_MonitoringConfiguration_CloudwatchLoggingConfiguration[];
-  managedPersistenceMonitoringConfiguration: Application_MonitoringConfiguration_ManagedPersistenceMonitoringConfiguration[];
-  prometheusMonitoringConfiguration: Application_MonitoringConfiguration_PrometheusMonitoringConfiguration[];
-  s3MonitoringConfiguration: Application_MonitoringConfiguration_S3MonitoringConfiguration[];
+  /** Specifies the CloudWatch Logs group, log stream name prefix, and optional encryption key ARN that the EMR Serverless application uses to deliver its runtime logs to Amazon CloudWatch. (AI-inferred) */
+  cloudWatchLoggingConfiguration?: unknown | Computed<unknown>;
+  /** This field specifies the managed persistence monitoring configuration, controlling whether Spark event logs are persisted and the S3 location where they are stored for the EMR Serverless application. (AI-inferred) */
+  managedPersistenceMonitoringConfiguration?: unknown | Computed<unknown>;
+  /** Configures the Prometheus monitoring endpoint for the EMR Serverless application by specifying the remote write URL where application metrics are sent. (AI-inferred) */
+  prometheusMonitoringConfiguration?: unknown | Computed<unknown>;
+  /** This nested block configures the S3 monitoring destination for the EMR Serverless application, specifying the S3 URI (log_uri) where logs are delivered and optionally a KMS key ARN (encryption_key_arn) for encrypting the logs. (AI-inferred) */
+  s3MonitoringConfiguration?: unknown | Computed<unknown>;
 }
 
 export interface Application_NetworkConfiguration {
-  securityGroupIds: string[];
-  subnetIds: string[];
+  /** The ID of the security groups in the VPC to which you want to connect your job or application. */
+  securityGroupIds?: string[] | Computed<string[]>;
+  /** The ID of the subnets in the VPC to which you want to connect your job or application. */
+  subnetIds?: string[] | Computed<string[]>;
 }
 
 export interface Application_RuntimeConfiguration {
-  classification: string;
-  properties: Record<string, string>;
+  /** Specifies the classification name (e.g., spark-defaults) for the runtime configuration, which defines the set of properties that apply to the EMR Serverless application. (AI-inferred) */
+  classification?: string | Computed<string>;
+  /** Specifies a list of sub-configurations for a given runtime configuration classification, allowing nested engine-specific settings (such as Spark or Hive properties) to be applied to the EMR Serverless application. (AI-inferred) */
+  configurations?: unknown[] | Computed<unknown[]>;
+  /** Specifies a map of additional key-value pairs to apply as runtime configuration settings for the EMR Serverless application, extending the configuration defined by the parent runtime configuration's key and value fields. (AI-inferred) */
+  properties?: unknown | Computed<unknown>;
 }
 
 export interface Application_SchedulerConfiguration {
-  maxConcurrentRuns: number;
-  queueTimeoutMinutes: number;
+  /** The maximum concurrent job runs on this application. If scheduler configuration is enabled on your application, the default value is 15. The valid range is 1 to 1000. */
+  maxConcurrentRuns?: number | Computed<number>;
+  /** The maximum duration in minutes for the job in QUEUED state. If scheduler configuration is enabled on your application, the default value is 360 minutes (6 hours). The valid range is from 15 to 720. */
+  queueTimeoutMinutes?: number | Computed<number>;
+}
+
+export interface Application_Tags {
+  key?: string | Computed<string>;
+  /** The value component of a key-value tag applied to the EMR Serverless application, which can be any string and is used for resource metadata, filtering, and cost allocation. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const Application_AutoStartConfigurationFields: FieldMap = {
@@ -93,91 +115,56 @@ const Application_AutoStopConfigurationFields: FieldMap = {
   idleTimeoutMinutes: "idle_timeout_minutes",
 };
 
+const Application_IdentityCenterConfigurationFields: FieldMap = {
+  identityCenterInstanceArn: "identity_center_instance_arn",
+};
+
 const Application_ImageConfigurationFields: FieldMap = {
   imageUri: "image_uri",
 };
 
-const Application_InitialCapacity_InitialCapacityConfig_WorkerConfigurationFields: FieldMap = {
+const Application_InitialCapacity_Value_WorkerConfigurationFields: FieldMap = {
   cpu: "cpu",
   disk: "disk",
+  diskType: "disk_type",
   memory: "memory",
 };
 
-const Application_InitialCapacity_InitialCapacityConfigFields: FieldMap = {
-  workerCount: "worker_count",
+const Application_InitialCapacity_ValueFields: FieldMap = {
   workerConfiguration: {
     wireName: "worker_configuration",
-    kind: "list",
-    fields: Application_InitialCapacity_InitialCapacityConfig_WorkerConfigurationFields,
+    kind: "object",
+    fields: Application_InitialCapacity_Value_WorkerConfigurationFields,
   },
+  workerCount: "worker_count",
 };
 
 const Application_InitialCapacityFields: FieldMap = {
-  initialCapacityType: "initial_capacity_type",
-  initialCapacityConfig: {
-    wireName: "initial_capacity_config",
-    kind: "list",
-    fields: Application_InitialCapacity_InitialCapacityConfigFields,
+  key: "key",
+  value: {
+    wireName: "value",
+    kind: "object",
+    fields: Application_InitialCapacity_ValueFields,
   },
 };
 
 const Application_InteractiveConfigurationFields: FieldMap = {
   livyEndpointEnabled: "livy_endpoint_enabled",
+  sessionEnabled: "session_enabled",
   studioEnabled: "studio_enabled",
 };
 
-const Application_MonitoringConfiguration_CloudwatchLoggingConfiguration_LogTypesFields: FieldMap = {
-  name: "name",
-  values: "values",
-};
-
-const Application_MonitoringConfiguration_CloudwatchLoggingConfigurationFields: FieldMap = {
-  enabled: "enabled",
-  encryptionKeyArn: "encryption_key_arn",
-  logGroupName: "log_group_name",
-  logStreamNamePrefix: "log_stream_name_prefix",
-  logTypes: {
-    wireName: "log_types",
-    kind: "set",
-    fields: Application_MonitoringConfiguration_CloudwatchLoggingConfiguration_LogTypesFields,
-  },
-};
-
-const Application_MonitoringConfiguration_ManagedPersistenceMonitoringConfigurationFields: FieldMap = {
-  enabled: "enabled",
-  encryptionKeyArn: "encryption_key_arn",
-};
-
-const Application_MonitoringConfiguration_PrometheusMonitoringConfigurationFields: FieldMap = {
-  remoteWriteUrl: "remote_write_url",
-};
-
-const Application_MonitoringConfiguration_S3MonitoringConfigurationFields: FieldMap = {
-  encryptionKeyArn: "encryption_key_arn",
-  logUri: "log_uri",
+const Application_MaximumCapacityFields: FieldMap = {
+  cpu: "cpu",
+  disk: "disk",
+  memory: "memory",
 };
 
 const Application_MonitoringConfigurationFields: FieldMap = {
-  cloudwatchLoggingConfiguration: {
-    wireName: "cloudwatch_logging_configuration",
-    kind: "list",
-    fields: Application_MonitoringConfiguration_CloudwatchLoggingConfigurationFields,
-  },
-  managedPersistenceMonitoringConfiguration: {
-    wireName: "managed_persistence_monitoring_configuration",
-    kind: "list",
-    fields: Application_MonitoringConfiguration_ManagedPersistenceMonitoringConfigurationFields,
-  },
-  prometheusMonitoringConfiguration: {
-    wireName: "prometheus_monitoring_configuration",
-    kind: "list",
-    fields: Application_MonitoringConfiguration_PrometheusMonitoringConfigurationFields,
-  },
-  s3MonitoringConfiguration: {
-    wireName: "s3_monitoring_configuration",
-    kind: "list",
-    fields: Application_MonitoringConfiguration_S3MonitoringConfigurationFields,
-  },
+  cloudWatchLoggingConfiguration: "cloud_watch_logging_configuration",
+  managedPersistenceMonitoringConfiguration: "managed_persistence_monitoring_configuration",
+  prometheusMonitoringConfiguration: "prometheus_monitoring_configuration",
+  s3MonitoringConfiguration: "s3_monitoring_configuration",
 };
 
 const Application_NetworkConfigurationFields: FieldMap = {
@@ -187,6 +174,7 @@ const Application_NetworkConfigurationFields: FieldMap = {
 
 const Application_RuntimeConfigurationFields: FieldMap = {
   classification: "classification",
+  configurations: "configurations",
   properties: "properties",
 };
 
@@ -195,107 +183,140 @@ const Application_SchedulerConfigurationFields: FieldMap = {
   queueTimeoutMinutes: "queue_timeout_minutes",
 };
 
+const Application_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
 export interface ApplicationConfig {
+  /** The cpu architecture of an application. */
   architecture?: string | Computed<string>;
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  region?: string | Computed<string>;
-  releaseLabel: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  type: string | Computed<string>;
-  autoStartConfiguration?: Application_AutoStartConfiguration[] | Computed<Application_AutoStartConfiguration[]>;
-  autoStopConfiguration?: Application_AutoStopConfiguration[] | Computed<Application_AutoStopConfiguration[]>;
-  imageConfiguration?: Application_ImageConfiguration[] | Computed<Application_ImageConfiguration[]>;
+  /** Configuration for Auto Start of Application */
+  autoStartConfiguration?: Application_AutoStartConfiguration | Computed<Application_AutoStartConfiguration>;
+  /** Configuration for Auto Stop of Application */
+  autoStopConfiguration?: Application_AutoStopConfiguration | Computed<Application_AutoStopConfiguration>;
+  /** The IAM IdentityCenter configuration for trusted-identity-propagation on this application. Supported with release labels emr-7.8.0 and above. */
+  identityCenterConfiguration?: Application_IdentityCenterConfiguration | Computed<Application_IdentityCenterConfiguration>;
+  /** The image configuration. */
+  imageConfiguration?: Application_ImageConfiguration | Computed<Application_ImageConfiguration>;
+  /** Configures the initial capacity for each worker type (e.g., driver, executor) of the EMR Serverless application, specifying the worker count and the CPU/memory allocated for that type. (AI-inferred) */
   initialCapacity?: Application_InitialCapacity[] | Computed<Application_InitialCapacity[]>;
-  interactiveConfiguration?: Application_InteractiveConfiguration[] | Computed<Application_InteractiveConfiguration[]>;
-  jobLevelCostAllocationConfiguration?: Application_AutoStartConfiguration[] | Computed<Application_AutoStartConfiguration[]>;
-  maximumCapacity?: Application_InitialCapacity_InitialCapacityConfig_WorkerConfiguration[] | Computed<Application_InitialCapacity_InitialCapacityConfig_WorkerConfiguration[]>;
-  monitoringConfiguration?: Application_MonitoringConfiguration[] | Computed<Application_MonitoringConfiguration[]>;
-  networkConfiguration?: Application_NetworkConfiguration[] | Computed<Application_NetworkConfiguration[]>;
+  /** Configures interactive capabilities for the EMR Serverless application, including enabling the Livy endpoint and EMR Studio integration. (AI-inferred) */
+  interactiveConfiguration?: Application_InteractiveConfiguration | Computed<Application_InteractiveConfiguration>;
+  /** The maximum capacity limits (CPU, memory, and optional disk) that the EMR Serverless application is allowed to use, defined as a MaximumAllowedResources object that caps the application's total resource usage. (AI-inferred) */
+  maximumCapacity?: Application_MaximumCapacity | Computed<Application_MaximumCapacity>;
+  /** Monitoring configuration for batch and interactive JobRun. */
+  monitoringConfiguration?: Application_MonitoringConfiguration | Computed<Application_MonitoringConfiguration>;
+  /** User friendly Application name. */
+  name?: string | Computed<string>;
+  /** Specifies the VPC subnets and security group IDs that the EMR Serverless application uses to run jobs within a private network. (AI-inferred) */
+  networkConfiguration?: Application_NetworkConfiguration | Computed<Application_NetworkConfiguration>;
+  /** EMR release label. */
+  releaseLabel: string | Computed<string>;
+  /** Runtime configuration for batch and interactive JobRun. */
   runtimeConfiguration?: Application_RuntimeConfiguration[] | Computed<Application_RuntimeConfiguration[]>;
-  schedulerConfiguration?: Application_SchedulerConfiguration[] | Computed<Application_SchedulerConfiguration[]>;
+  /** The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above. */
+  schedulerConfiguration?: Application_SchedulerConfiguration | Computed<Application_SchedulerConfiguration>;
+  /** Tag map with key and value */
+  tags?: Application_Tags[] | Computed<Application_Tags[]>;
+  /** The type of the application */
+  type: string | Computed<string>;
+  /** Defines CPU and memory specifications for each worker type (e.g., Driver or Executor) in the EMR Serverless application, allowing per-worker-type resource overrides. (AI-inferred) */
+  workerTypeSpecifications?: unknown | Computed<unknown>;
 }
 
 export interface ApplicationAttrs {
+  /** The ID of the EMR Serverless Application. */
+  applicationId: string;
+  /** The cpu architecture of an application. */
   architecture: string;
+  /** The Amazon Resource Name (ARN) of the EMR Serverless Application. */
   arn: string;
-  id: string;
-  name: string;
-  region: string;
-  releaseLabel: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  type: string;
-  autoStartConfiguration: Application_AutoStartConfiguration[];
-  autoStopConfiguration: Application_AutoStopConfiguration[];
-  imageConfiguration: Application_ImageConfiguration[];
+  /** Configuration for Auto Start of Application */
+  autoStartConfiguration: Application_AutoStartConfiguration;
+  /** Configuration for Auto Stop of Application */
+  autoStopConfiguration: Application_AutoStopConfiguration;
+  /** The IAM IdentityCenter configuration for trusted-identity-propagation on this application. Supported with release labels emr-7.8.0 and above. */
+  identityCenterConfiguration: Application_IdentityCenterConfiguration;
+  /** The image configuration. */
+  imageConfiguration: Application_ImageConfiguration;
+  /** Configures the initial capacity for each worker type (e.g., driver, executor) of the EMR Serverless application, specifying the worker count and the CPU/memory allocated for that type. (AI-inferred) */
   initialCapacity: Application_InitialCapacity[];
-  interactiveConfiguration: Application_InteractiveConfiguration[];
-  jobLevelCostAllocationConfiguration: Application_AutoStartConfiguration[];
-  maximumCapacity: Application_InitialCapacity_InitialCapacityConfig_WorkerConfiguration[];
-  monitoringConfiguration: Application_MonitoringConfiguration[];
-  networkConfiguration: Application_NetworkConfiguration[];
+  /** Configures interactive capabilities for the EMR Serverless application, including enabling the Livy endpoint and EMR Studio integration. (AI-inferred) */
+  interactiveConfiguration: Application_InteractiveConfiguration;
+  /** The maximum capacity limits (CPU, memory, and optional disk) that the EMR Serverless application is allowed to use, defined as a MaximumAllowedResources object that caps the application's total resource usage. (AI-inferred) */
+  maximumCapacity: Application_MaximumCapacity;
+  /** Monitoring configuration for batch and interactive JobRun. */
+  monitoringConfiguration: Application_MonitoringConfiguration;
+  /** User friendly Application name. */
+  name: string;
+  /** Specifies the VPC subnets and security group IDs that the EMR Serverless application uses to run jobs within a private network. (AI-inferred) */
+  networkConfiguration: Application_NetworkConfiguration;
+  /** EMR release label. */
+  releaseLabel: string;
+  /** Runtime configuration for batch and interactive JobRun. */
   runtimeConfiguration: Application_RuntimeConfiguration[];
-  schedulerConfiguration: Application_SchedulerConfiguration[];
+  /** The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above. */
+  schedulerConfiguration: Application_SchedulerConfiguration;
+  /** Tag map with key and value */
+  tags: Application_Tags[];
+  /** The type of the application */
+  type: string;
+  /** Defines CPU and memory specifications for each worker type (e.g., Driver or Executor) in the EMR Serverless application, allowing per-worker-type resource overrides. (AI-inferred) */
+  workerTypeSpecifications: unknown;
 }
 
 export const Application: ResourceBinding<ApplicationConfig, ApplicationAttrs> = {
   wireType: "aws_emrserverless_application",
   fields: {
     architecture: "architecture",
-    id: "id",
-    name: "name",
-    region: "region",
-    releaseLabel: "release_label",
-    tags: "tags",
-    tagsAll: "tags_all",
-    type: "type",
     autoStartConfiguration: {
       wireName: "auto_start_configuration",
-      kind: "list",
+      kind: "object",
       fields: Application_AutoStartConfigurationFields,
     },
     autoStopConfiguration: {
       wireName: "auto_stop_configuration",
-      kind: "list",
+      kind: "object",
       fields: Application_AutoStopConfigurationFields,
+    },
+    identityCenterConfiguration: {
+      wireName: "identity_center_configuration",
+      kind: "object",
+      fields: Application_IdentityCenterConfigurationFields,
     },
     imageConfiguration: {
       wireName: "image_configuration",
-      kind: "list",
+      kind: "object",
       fields: Application_ImageConfigurationFields,
     },
     initialCapacity: {
       wireName: "initial_capacity",
-      kind: "set",
+      kind: "list",
       fields: Application_InitialCapacityFields,
     },
     interactiveConfiguration: {
       wireName: "interactive_configuration",
-      kind: "list",
+      kind: "object",
       fields: Application_InteractiveConfigurationFields,
-    },
-    jobLevelCostAllocationConfiguration: {
-      wireName: "job_level_cost_allocation_configuration",
-      kind: "list",
-      fields: Application_AutoStartConfigurationFields,
     },
     maximumCapacity: {
       wireName: "maximum_capacity",
-      kind: "list",
-      fields: Application_InitialCapacity_InitialCapacityConfig_WorkerConfigurationFields,
+      kind: "object",
+      fields: Application_MaximumCapacityFields,
     },
     monitoringConfiguration: {
       wireName: "monitoring_configuration",
-      kind: "list",
+      kind: "object",
       fields: Application_MonitoringConfigurationFields,
     },
+    name: "name",
     networkConfiguration: {
       wireName: "network_configuration",
-      kind: "list",
+      kind: "object",
       fields: Application_NetworkConfigurationFields,
     },
+    releaseLabel: "release_label",
     runtimeConfiguration: {
       wireName: "runtime_configuration",
       kind: "list",
@@ -303,8 +324,15 @@ export const Application: ResourceBinding<ApplicationConfig, ApplicationAttrs> =
     },
     schedulerConfiguration: {
       wireName: "scheduler_configuration",
-      kind: "list",
+      kind: "object",
       fields: Application_SchedulerConfigurationFields,
     },
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Application_TagsFields,
+    },
+    type: "type",
+    workerTypeSpecifications: "worker_type_specifications",
   },
 };

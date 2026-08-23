@@ -7,36 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Project_Timeouts:
-    create: Any = None
-    delete: Any = None
+class Project_Tags:
+    # The key of a user-defined tag attached to the AWS Rekognition project, used for organizing and identifying the resource. (AI-inferred)
+    key: Any = None
+    # Specifies the value of a user-defined tag attached to the Amazon Rekognition project, enabling you to categorize, search, and manage the project within AWS. (AI-inferred)
+    value: Any = None
 
-_Project_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_Project_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ProjectConfig:
-    auto_update: Any = None
-    feature: Any = None
-    name: Any = None
-    region: Any = None
+    # The name of the project
+    project_name: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class ProjectAttrs:
+    # The Amazon Resource Name (ARN) of the Rekognition project, uniquely identifying it across AWS. (AI-inferred)
+    arn: Any = None
+    # The name of the project
+    project_name: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Project = ubx.ResourceBinding(
     wire_type="aws_rekognition_project",
     fields={
-        "auto_update": ubx.FieldSpec(wire_name="auto_update"),
-        "feature": ubx.FieldSpec(wire_name="feature"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Project_TimeoutsFields,
+        "project_name": ubx.FieldSpec(wire_name="project_name"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Project_TagsFields,
         ),
     },
 )

@@ -8,16 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TransitGatewayPolicyTableAssociationConfig:
-    id: Any = None
-    region: Any = None
+    # The ID of transit gateway attachment.
     transit_gateway_attachment_id: Any = None
+    # The ID of transit gateway policy table.
+    transit_gateway_policy_table_id: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayPolicyTableAssociationAttrs:
+    # The state of the transit gateway policy table association.
+    state: Any = None
+    # The ID of transit gateway attachment.
+    transit_gateway_attachment_id: Any = None
+    # The ID of transit gateway policy table.
     transit_gateway_policy_table_id: Any = None
 
 TransitGatewayPolicyTableAssociation = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_policy_table_association",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "transit_gateway_attachment_id": ubx.FieldSpec(wire_name="transit_gateway_attachment_id"),
         "transit_gateway_policy_table_id": ubx.FieldSpec(wire_name="transit_gateway_policy_table_id"),
     },

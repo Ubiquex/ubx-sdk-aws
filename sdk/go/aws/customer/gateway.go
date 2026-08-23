@@ -3,16 +3,51 @@ package customer
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Gateway_Tags struct {
+	// The key for a tag assigned to the AWS Customer Gateway resource, used for identification and resource management. (AI-inferred)
+	Key any
+	// The value portion of a tag assigned to the customer gateway, used for arbitrary metadata. (AI-inferred)
+	Value any
+}
+
+var Gateway_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type GatewayConfig struct {
+	// For customer gateway devices that support BGP, specify the device's ASN. You must specify either ``BgpAsn`` or ``BgpAsnExtended`` when creating the customer gateway. If the ASN is larger than ``2,147,483,647``, you must use ``BgpAsnExtended``. Default: 65000 Valid values: ``1`` to ``2,147,483,647``
 	BgpAsn any
+	// For customer gateway devices that support BGP, specify the device's ASN. You must specify either ``BgpAsn`` or ``BgpAsnExtended`` when creating the customer gateway. If the ASN is larger than ``2,147,483,647``, you must use ``BgpAsnExtended``. Valid values: ``2,147,483,648`` to ``4,294,967,295``
 	BgpAsnExtended any
+	// The Amazon Resource Name (ARN) for the customer gateway certificate.
 	CertificateArn any
+	// The name of customer gateway device.
 	DeviceName any
-	Id any
+	// The IP address for the customer gateway device's outside interface. The address must be static. If ``OutsideIpAddressType`` in your VPN connection options is set to ``PrivateIpv4``, you can use an RFC6598 or RFC1918 private IPv4 address. If ``OutsideIpAddressType`` is set to ``Ipv6``, you can use an IPv6 address.
 	IpAddress any
-	Region any
+	// One or more tags for the customer gateway.
 	Tags any
-	TagsAll any
+	// The type of VPN connection that this customer gateway supports (``ipsec.1``).
+	Type any
+}
+
+type GatewayAttrs struct {
+	// For customer gateway devices that support BGP, specify the device's ASN. You must specify either ``BgpAsn`` or ``BgpAsnExtended`` when creating the customer gateway. If the ASN is larger than ``2,147,483,647``, you must use ``BgpAsnExtended``. Default: 65000 Valid values: ``1`` to ``2,147,483,647``
+	BgpAsn any
+	// For customer gateway devices that support BGP, specify the device's ASN. You must specify either ``BgpAsn`` or ``BgpAsnExtended`` when creating the customer gateway. If the ASN is larger than ``2,147,483,647``, you must use ``BgpAsnExtended``. Valid values: ``2,147,483,648`` to ``4,294,967,295``
+	BgpAsnExtended any
+	// The Amazon Resource Name (ARN) for the customer gateway certificate.
+	CertificateArn any
+	// The unique identifier assigned by AWS to the customer gateway, such as cgw-0a1b2c3d4e5f6g7h8. (AI-inferred)
+	CustomerGatewayId any
+	// The name of customer gateway device.
+	DeviceName any
+	// The IP address for the customer gateway device's outside interface. The address must be static. If ``OutsideIpAddressType`` in your VPN connection options is set to ``PrivateIpv4``, you can use an RFC6598 or RFC1918 private IPv4 address. If ``OutsideIpAddressType`` is set to ``Ipv6``, you can use an IPv6 address.
+	IpAddress any
+	// One or more tags for the customer gateway.
+	Tags any
+	// The type of VPN connection that this customer gateway supports (``ipsec.1``).
 	Type any
 }
 
@@ -23,11 +58,12 @@ var Gateway = ubx.ResourceBinding{
 		"BgpAsnExtended": ubx.FieldSpec{WireName: "bgp_asn_extended"},
 		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
 		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Gateway_TagsFields,
+		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

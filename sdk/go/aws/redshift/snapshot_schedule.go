@@ -3,29 +3,54 @@ package redshift
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SnapshotSchedule_Tags struct {
+	// The key (name) of a tag applied to the Redshift snapshot schedule, used to organize and identify the schedule. (AI-inferred)
+	Key any
+	// The value of a tag applied to the Redshift snapshot schedule, used for resource organization and identification. (AI-inferred)
+	Value any
+}
+
+var SnapshotSchedule_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type SnapshotScheduleConfig struct {
-	Definitions any
-	Description any
-	ForceDestroy any
-	Id any
-	Identifier any
-	IdentifierPrefix any
-	Region any
+	// The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".
+	ScheduleDefinitions any
+	// The description of the snapshot schedule.
+	ScheduleDescription any
+	// A unique identifier for the snapshot schedule. Only alphanumeric characters are allowed.
+	ScheduleIdentifier any
+	// An optional set of tags for the snapshot schedule.
 	Tags any
-	TagsAll any
+}
+
+type SnapshotScheduleAttrs struct {
+	// The Amazon Resource Name (ARN) of the snapshot schedule.
+	Arn any
+	// The number of clusters associated with the schedule.
+	AssociatedClusterCount any
+	// The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".
+	ScheduleDefinitions any
+	// The description of the snapshot schedule.
+	ScheduleDescription any
+	// A unique identifier for the snapshot schedule. Only alphanumeric characters are allowed.
+	ScheduleIdentifier any
+	// An optional set of tags for the snapshot schedule.
+	Tags any
 }
 
 var SnapshotSchedule = ubx.ResourceBinding{
 	WireType: "aws_redshift_snapshot_schedule",
 	Fields: ubx.FieldMap{
-		"Definitions": ubx.FieldSpec{WireName: "definitions"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ForceDestroy": ubx.FieldSpec{WireName: "force_destroy"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"IdentifierPrefix": ubx.FieldSpec{WireName: "identifier_prefix"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"ScheduleDefinitions": ubx.FieldSpec{WireName: "schedule_definitions"},
+		"ScheduleDescription": ubx.FieldSpec{WireName: "schedule_description"},
+		"ScheduleIdentifier": ubx.FieldSpec{WireName: "schedule_identifier"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: SnapshotSchedule_TagsFields,
+		},
 	},
 }

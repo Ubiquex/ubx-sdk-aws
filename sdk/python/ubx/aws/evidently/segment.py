@@ -7,24 +7,50 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Segment_Tags:
+    key: Any = None
+    # The value of a tag applied to the Evidently segment, used for metadata, resource organization, and cost allocation. (AI-inferred)
+    value: Any = None
+
+_Segment_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class SegmentConfig:
+    # A user-supplied text description of the segment, used to clarify its purpose or contents. (AI-inferred)
     description: Any = None
-    id: Any = None
+    # The user-defined name of the audience segment, used to identify it within Evidently experiments and launches. (AI-inferred)
     name: Any = None
+    # The JSON pattern that defines the conditions under which a user matches this segment, used to target audiences for Evidently experiments and launches. (AI-inferred)
     pattern: Any = None
-    region: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class SegmentAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies the Evidently segment. (AI-inferred)
+    arn: Any = None
+    # A user-supplied text description of the segment, used to clarify its purpose or contents. (AI-inferred)
+    description: Any = None
+    # The user-defined name of the audience segment, used to identify it within Evidently experiments and launches. (AI-inferred)
+    name: Any = None
+    # The JSON pattern that defines the conditions under which a user matches this segment, used to target audiences for Evidently experiments and launches. (AI-inferred)
+    pattern: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Segment = ubx.ResourceBinding(
     wire_type="aws_evidently_segment",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "pattern": ubx.FieldSpec(wire_name="pattern"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Segment_TagsFields,
+        ),
     },
 )

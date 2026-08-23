@@ -7,24 +7,64 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AnomalyMonitor_ResourceTags:
+    # The tag key for a resource tag applied to the Cost Explorer anomaly monitor, used for identifying and organizing the monitor among AWS resources. (AI-inferred)
+    key: Any = None
+    # The value of a resource tag attached to the AWS Cost Explorer anomaly monitor, used for tagging and cost allocation. (AI-inferred)
+    value: Any = None
+
+_AnomalyMonitor_ResourceTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class AnomalyMonitorConfig:
-    id: Any = None
+    # The dimensions to evaluate
     monitor_dimension: Any = None
+    # The name of the monitor.
+    monitor_name: Any = None
+    # A JSON-formatted string that defines the custom monitoring criteria for the cost anomaly monitor, such as filtering by services, linked accounts, or cost categories, used when the monitor type is CUSTOM. (AI-inferred)
     monitor_specification: Any = None
+    # Specifies whether the anomaly monitor is a DIMENSIONAL monitor (which watches a specific dimension like service or linked account) or a CUSTOM monitor (which uses a custom threshold on the anomaly score). (AI-inferred)
     monitor_type: Any = None
-    name: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Tags to assign to monitor.
+    resource_tags: Any = None
+
+@dataclasses.dataclass
+class AnomalyMonitorAttrs:
+    # The date when the monitor was created.
+    creation_date: Any = None
+    # The value for evaluated dimensions.
+    dimensional_value_count: Any = None
+    # The date when the monitor last evaluated for anomalies.
+    last_evaluated_date: Any = None
+    # The date when the monitor was last updated.
+    last_updated_date: Any = None
+    # Monitor ARN
+    monitor_arn: Any = None
+    # The dimensions to evaluate
+    monitor_dimension: Any = None
+    # The name of the monitor.
+    monitor_name: Any = None
+    # A JSON-formatted string that defines the custom monitoring criteria for the cost anomaly monitor, such as filtering by services, linked accounts, or cost categories, used when the monitor type is CUSTOM. (AI-inferred)
+    monitor_specification: Any = None
+    # Specifies whether the anomaly monitor is a DIMENSIONAL monitor (which watches a specific dimension like service or linked account) or a CUSTOM monitor (which uses a custom threshold on the anomaly score). (AI-inferred)
+    monitor_type: Any = None
+    # Tags to assign to monitor.
+    resource_tags: Any = None
 
 AnomalyMonitor = ubx.ResourceBinding(
     wire_type="aws_ce_anomaly_monitor",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "monitor_dimension": ubx.FieldSpec(wire_name="monitor_dimension"),
+        "monitor_name": ubx.FieldSpec(wire_name="monitor_name"),
         "monitor_specification": ubx.FieldSpec(wire_name="monitor_specification"),
         "monitor_type": ubx.FieldSpec(wire_name="monitor_type"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "resource_tags": ubx.FieldSpec(
+            wire_name="resource_tags",
+            kind="list",
+            fields=_AnomalyMonitor_ResourceTagsFields,
+        ),
     },
 )

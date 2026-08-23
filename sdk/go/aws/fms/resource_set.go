@@ -3,59 +3,57 @@ package fms
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ResourceSet_ResourceSet struct {
-	Description any
-	Id any
-	LastUpdateTime any
-	Name any
-	ResourceSetStatus any
-	ResourceTypeList any
-	UpdateToken any
+type ResourceSet_Tags struct {
+	// The key of a tag attached to an AWS Firewall Manager resource set, used for organizing, identifying, and filtering the resource set in AWS. (AI-inferred)
+	Key any
+	// The value of a tag associated with this AWS Firewall Manager resource set, enabling cost allocation and resource metadata management. (AI-inferred)
+	Value any
 }
 
-type ResourceSet_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
-
-var ResourceSet_ResourceSetFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LastUpdateTime": ubx.FieldSpec{WireName: "last_update_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceSetStatus": ubx.FieldSpec{WireName: "resource_set_status"},
-		"ResourceTypeList": ubx.FieldSpec{WireName: "resource_type_list"},
-		"UpdateToken": ubx.FieldSpec{WireName: "update_token"},
-	}
-
-var ResourceSet_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var ResourceSet_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ResourceSetConfig struct {
-	Region any
+	// An optional, user-defined text field that describes the purpose or contents of the AWS Firewall Manager resource set, aiding in identification and management. (AI-inferred)
+	Description any
+	// The name of the Firewall Manager resource set, which must be unique within the account and is used to identify the resource set in AWS Firewall Manager. (AI-inferred)
+	Name any
+	// Specifies the list of AWS resource types (such as AWS::S3::Bucket or AWS::EC2::Instance) that are included in the resource set, which Firewall Manager uses to identify the resources to apply policies to. (AI-inferred)
+	ResourceTypeList any
+	// Specifies the list of resource identifiers (such as ARNs) that make up this Firewall Manager resource set, which can then be associated with a Firewall Manager policy. (AI-inferred)
+	Resources any
+	// The list of key-value tag objects to attach to the AWS FMS resource set, used for organizing, identifying, and managing the resource set in AWS Firewall Manager. (AI-inferred)
 	Tags any
-	ResourceSet any
-	Timeouts any
+}
+
+type ResourceSetAttrs struct {
+	// An optional, user-defined text field that describes the purpose or contents of the AWS Firewall Manager resource set, aiding in identification and management. (AI-inferred)
+	Description any
+	// A Base62 ID
+	Id any
+	// The name of the Firewall Manager resource set, which must be unique within the account and is used to identify the resource set in AWS Firewall Manager. (AI-inferred)
+	Name any
+	// Specifies the list of AWS resource types (such as AWS::S3::Bucket or AWS::EC2::Instance) that are included in the resource set, which Firewall Manager uses to identify the resources to apply policies to. (AI-inferred)
+	ResourceTypeList any
+	// Specifies the list of resource identifiers (such as ARNs) that make up this Firewall Manager resource set, which can then be associated with a Firewall Manager policy. (AI-inferred)
+	Resources any
+	// The list of key-value tag objects to attach to the AWS FMS resource set, used for organizing, identifying, and managing the resource set in AWS Firewall Manager. (AI-inferred)
+	Tags any
 }
 
 var ResourceSet = ubx.ResourceBinding{
 	WireType: "aws_fms_resource_set",
 	Fields: ubx.FieldMap{
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"ResourceSet": ubx.FieldSpec{
-			WireName: "resource_set",
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ResourceTypeList": ubx.FieldSpec{WireName: "resource_type_list"},
+		"Resources": ubx.FieldSpec{WireName: "resources"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: ResourceSet_ResourceSetFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: ResourceSet_TimeoutsFields,
+			Fields: ResourceSet_TagsFields,
 		},
 	},
 }

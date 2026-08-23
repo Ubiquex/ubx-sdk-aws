@@ -7,28 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class NotificationHub_Timeouts:
-    create: Any = None
-    delete: Any = None
-
-_NotificationHub_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-}
+class NotificationHub_NotificationHubStatusSummary:
+    notification_hub_status: Any = None
+    # A human-readable explanation accompanying the hub's status that provides additional context when the notification hub is not fully active, such as a reason for an inactive or pending state. (AI-inferred)
+    notification_hub_status_reason: Any = None
 
 @dataclasses.dataclass
 class NotificationHubConfig:
-    notification_hub_region: Any = None
-    timeouts: Any = None
+    # Region that NotificationHub is present in.
+    region: Any = None
+
+@dataclasses.dataclass
+class NotificationHubAttrs:
+    # The date and time when the notification hub was created, typically returned as a string in ISO 8601 format. (AI-inferred)
+    creation_time: Any = None
+    # Returns a summary of the current status of the notification hub in each region where it is enabled, with each entry specifying the region and its operational status (such as ACTIVE). (AI-inferred)
+    notification_hub_status_summary: Any = None
+    # Region that NotificationHub is present in.
+    region: Any = None
 
 NotificationHub = ubx.ResourceBinding(
     wire_type="aws_notifications_notification_hub",
     fields={
-        "notification_hub_region": ubx.FieldSpec(wire_name="notification_hub_region"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_NotificationHub_TimeoutsFields,
-        ),
+        "region": ubx.FieldSpec(wire_name="region"),
     },
 )

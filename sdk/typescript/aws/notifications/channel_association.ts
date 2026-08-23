@@ -2,12 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ChannelAssociationConfig {
+  /** ARN identifier of the channel. Example: arn:aws:chatbot::123456789012:chat-configuration/slack-channel/security-ops */
   arn: string | Computed<string>;
+  /** ARN identifier of the NotificationConfiguration. Example: arn:aws:notifications::123456789012:configuration/a01jes88qxwkbj05xv9c967pgm1 */
   notificationConfigurationArn: string | Computed<string>;
 }
 
 export interface ChannelAssociationAttrs {
+  /** ARN identifier of the channel. Example: arn:aws:chatbot::123456789012:chat-configuration/slack-channel/security-ops */
   arn: string;
+  /** ARN identifier of the NotificationConfiguration. Example: arn:aws:notifications::123456789012:configuration/a01jes88qxwkbj05xv9c967pgm1 */
   notificationConfigurationArn: string;
 }
 

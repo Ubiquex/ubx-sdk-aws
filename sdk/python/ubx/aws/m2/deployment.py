@@ -7,26 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Deployment_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_Deployment_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
+class DeploymentConfig:
+    # The application ID.
+    application_id: Any = None
+    # The version number of the application to deploy
+    application_version: Any = None
+    # The environment ID.
+    environment_id: Any = None
 
 @dataclasses.dataclass
-class DeploymentConfig:
+class DeploymentAttrs:
+    # The application ID.
     application_id: Any = None
+    # The version number of the application to deploy
     application_version: Any = None
+    # The deployment ID.
+    deployment_id: Any = None
+    # The environment ID.
     environment_id: Any = None
-    force_stop: Any = None
-    region: Any = None
-    start: Any = None
-    timeouts: Any = None
+    # The status of the deployment.
+    status: Any = None
 
 Deployment = ubx.ResourceBinding(
     wire_type="aws_m2_deployment",
@@ -34,13 +34,5 @@ Deployment = ubx.ResourceBinding(
         "application_id": ubx.FieldSpec(wire_name="application_id"),
         "application_version": ubx.FieldSpec(wire_name="application_version"),
         "environment_id": ubx.FieldSpec(wire_name="environment_id"),
-        "force_stop": ubx.FieldSpec(wire_name="force_stop"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "start": ubx.FieldSpec(wire_name="start"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Deployment_TimeoutsFields,
-        ),
     },
 )

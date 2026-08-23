@@ -8,51 +8,104 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TrafficMirrorFilterRule_DestinationPortRange:
+    # The first port in the Traffic Mirror port range.
     from_port: Any = None
+    # The last port in the Traffic Mirror port range.
     to_port: Any = None
+
+@dataclasses.dataclass
+class TrafficMirrorFilterRule_Tags:
+    key: Any = None
+    # The value of a tag key-value pair assigned to the traffic mirror filter rule, used to organize and identify the rule. (AI-inferred)
+    value: Any = None
 
 _TrafficMirrorFilterRule_DestinationPortRangeFields = {
     "from_port": ubx.FieldSpec(wire_name="from_port"),
     "to_port": ubx.FieldSpec(wire_name="to_port"),
 }
 
+_TrafficMirrorFilterRule_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 @dataclasses.dataclass
 class TrafficMirrorFilterRuleConfig:
+    # The description of the Traffic Mirror Filter rule.
     description: Any = None
+    # The destination CIDR block to assign to the Traffic Mirror rule.
     destination_cidr_block: Any = None
-    id: Any = None
-    protocol: Any = None
-    region: Any = None
-    rule_action: Any = None
-    rule_number: Any = None
-    source_cidr_block: Any = None
-    traffic_direction: Any = None
-    traffic_mirror_filter_id: Any = None
+    # Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred)
     destination_port_range: Any = None
+    # The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule.
+    protocol: Any = None
+    # The action to take on the filtered traffic.
+    rule_action: Any = None
+    # The number of the Traffic Mirror rule.
+    rule_number: Any = None
+    # The source CIDR block to assign to the Traffic Mirror Filter rule.
+    source_cidr_block: Any = None
+    # The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred)
     source_port_range: Any = None
+    # Any tags assigned to the Traffic Mirror Filter rule.
+    tags: Any = None
+    # The type of traffic.
+    traffic_direction: Any = None
+    # The ID of the filter that this rule is associated with.
+    traffic_mirror_filter_id: Any = None
+
+@dataclasses.dataclass
+class TrafficMirrorFilterRuleAttrs:
+    # The description of the Traffic Mirror Filter rule.
+    description: Any = None
+    # The destination CIDR block to assign to the Traffic Mirror rule.
+    destination_cidr_block: Any = None
+    # Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred)
+    destination_port_range: Any = None
+    # The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule.
+    protocol: Any = None
+    # The action to take on the filtered traffic.
+    rule_action: Any = None
+    # The number of the Traffic Mirror rule.
+    rule_number: Any = None
+    # The source CIDR block to assign to the Traffic Mirror Filter rule.
+    source_cidr_block: Any = None
+    # The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred)
+    source_port_range: Any = None
+    # Any tags assigned to the Traffic Mirror Filter rule.
+    tags: Any = None
+    # The type of traffic.
+    traffic_direction: Any = None
+    # The ID of the filter that this rule is associated with.
+    traffic_mirror_filter_id: Any = None
+    # The ID of the Traffic Mirror Filter rule.
+    traffic_mirror_filter_rule_id: Any = None
 
 TrafficMirrorFilterRule = ubx.ResourceBinding(
     wire_type="aws_ec2_traffic_mirror_filter_rule",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
         "destination_cidr_block": ubx.FieldSpec(wire_name="destination_cidr_block"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "destination_port_range": ubx.FieldSpec(
+            wire_name="destination_port_range",
+            kind="object",
+            fields=_TrafficMirrorFilterRule_DestinationPortRangeFields,
+        ),
         "protocol": ubx.FieldSpec(wire_name="protocol"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "rule_action": ubx.FieldSpec(wire_name="rule_action"),
         "rule_number": ubx.FieldSpec(wire_name="rule_number"),
         "source_cidr_block": ubx.FieldSpec(wire_name="source_cidr_block"),
-        "traffic_direction": ubx.FieldSpec(wire_name="traffic_direction"),
-        "traffic_mirror_filter_id": ubx.FieldSpec(wire_name="traffic_mirror_filter_id"),
-        "destination_port_range": ubx.FieldSpec(
-            wire_name="destination_port_range",
-            kind="list",
-            fields=_TrafficMirrorFilterRule_DestinationPortRangeFields,
-        ),
         "source_port_range": ubx.FieldSpec(
             wire_name="source_port_range",
-            kind="list",
+            kind="object",
             fields=_TrafficMirrorFilterRule_DestinationPortRangeFields,
         ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_TrafficMirrorFilterRule_TagsFields,
+        ),
+        "traffic_direction": ubx.FieldSpec(wire_name="traffic_direction"),
+        "traffic_mirror_filter_id": ubx.FieldSpec(wire_name="traffic_mirror_filter_id"),
     },
 )

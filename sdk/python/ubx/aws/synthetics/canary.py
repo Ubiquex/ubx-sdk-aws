@@ -8,37 +8,115 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Canary_ArtifactConfig_S3Encryption:
+    # Encryption mode for encrypting artifacts when uploading to S3. Valid values: SSE_S3 and SSE_KMS.
     encryption_mode: Any = None
+    # KMS key Arn for encrypting artifacts when uploading to S3. You must specify KMS key Arn for SSE_KMS encryption mode only.
     kms_key_arn: Any = None
 
 @dataclasses.dataclass
 class Canary_ArtifactConfig:
+    # Specifies the S3 encryption settings (SSE-S3 or SSE-KMS, including the KMS key ARN) applied to the artifacts the canary writes to its S3 bucket. (AI-inferred)
     s3_encryption: Any = None
 
 @dataclasses.dataclass
+class Canary_BrowserConfigs:
+    # Sets the browser engine (such as Chrome or Firefox) that the canary uses to run its browser-based test scripts. (AI-inferred)
+    browser_type: Any = None
+
+@dataclasses.dataclass
+class Canary_Code_Dependencies:
+    reference: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Canary_Code:
+    blueprint_types: Any = None
+    # List of Lambda layers to attach to the canary
+    dependencies: Any = None
+    # The name of the JavaScript handler function within the canary script that AWS Synthetics invokes when the canary runs. (AI-inferred)
+    handler: Any = None
+    # The name of the S3 bucket that contains the canary script to be executed. (AI-inferred)
+    s3_bucket: Any = None
+    # The S3 object key (path to the script or zip file) in the bucket specified by `code.s3_bucket`, used to retrieve the canary's source code. (AI-inferred)
+    s3_key: Any = None
+    # Specifies the version ID of the S3 object that contains the canary script, allowing you to reference a specific version of the script when multiple versions exist. (AI-inferred)
+    s3_object_version: Any = None
+    # The inline script (Python or Node.js) that the canary runs to perform synthetic monitoring checks, defining the exact steps and assertions for each run. (AI-inferred)
+    script: Any = None
+    # Provides the ARN of a Lambda layer version that contains the canary's script, as an alternative to inline script or S3 bucket/key properties. (AI-inferred)
+    source_location_arn: Any = None
+
+@dataclasses.dataclass
+class Canary_Replicas_ReplicationStatus:
+    state: Any = None
+
+@dataclasses.dataclass
+class Canary_Replicas_Tags:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class Canary_Replicas_VpcConfig:
+    # Set to true to allow the canary replica's VPC configuration to support IPv6 in dual-stack subnets, enabling the canary to use IPv6 addresses alongside IPv4 when running in the replica's VPC. (AI-inferred)
+    ipv6_allowed_for_dual_stack: Any = None
+    # The security group IDs applied to the canary's VPC configuration, which control network traffic for the Synthetics canary when it runs in your virtual private cloud. (AI-inferred)
+    security_group_ids: Any = None
+    subnet_ids: Any = None
+    vpc_id: Any = None
+
+@dataclasses.dataclass
+class Canary_Replicas:
+    canary_state: Any = None
+    kms_key_arn: Any = None
+    # In an AWS Synthetics canary, this numeric field records the last modification timestamp (Unix time) of a canary replica, which is a copy of the canary deployed to another AWS Region. (AI-inferred)
+    last_modified: Any = None
+    location: Any = None
+    replication_status: Any = None
+    resources_to_replicate_tags: Any = None
+    tags: Any = None
+    vpc_config: Any = None
+
+@dataclasses.dataclass
 class Canary_RunConfig:
+    # Enable active tracing if set to true
     active_tracing: Any = None
+    # Environment variable key-value pairs.
     environment_variables: Any = None
+    # Provide ephemeralStorage available for canary in MB
     ephemeral_storage: Any = None
+    # Provide maximum memory available for canary in MB
     memory_in_mb: Any = None
+    # Provide maximum canary timeout per run in seconds
     timeout_in_seconds: Any = None
 
 @dataclasses.dataclass
 class Canary_Schedule_RetryConfig:
+    # maximum times the canary will be retried upon the scheduled run failure
     max_retries: Any = None
 
 @dataclasses.dataclass
 class Canary_Schedule:
+    # Defines how long (in seconds) the canary is allowed to run for each execution before it is stopped, allowing you to override the default timeout. (AI-inferred)
     duration_in_seconds: Any = None
+    # The rate or cron expression (e.g., 'rate(5 minutes)' or 'cron(...)') that defines how frequently the canary runs its test script. (AI-inferred)
     expression: Any = None
+    # Configures the number of retry attempts for a canary run after a failure, before the run is marked as failed. (AI-inferred)
     retry_config: Any = None
 
 @dataclasses.dataclass
-class Canary_VpcConfig:
-    ipv6_allowed_for_dual_stack: Any = None
-    security_group_ids: Any = None
-    subnet_ids: Any = None
-    vpc_id: Any = None
+class Canary_VisualReference_BaseScreenshots:
+    # Specifies a list of screenshot coordinates (as comma-separated x,y string values) that are excluded from the visual comparison against the baseline screenshot. (AI-inferred)
+    ignore_coordinates: Any = None
+    # Specifies the name of a baseline screenshot that the canary uses as a reference for visual regression testing. (AI-inferred)
+    screenshot_name: Any = None
+
+@dataclasses.dataclass
+class Canary_VisualReference:
+    # Canary run id to be used as base reference for visual testing
+    base_canary_run_id: Any = None
+    # List of screenshots used as base reference for visual testing
+    base_screenshots: Any = None
+    browser_type: Any = None
 
 _Canary_ArtifactConfig_S3EncryptionFields = {
     "encryption_mode": ubx.FieldSpec(wire_name="encryption_mode"),
@@ -48,9 +126,13 @@ _Canary_ArtifactConfig_S3EncryptionFields = {
 _Canary_ArtifactConfigFields = {
     "s3_encryption": ubx.FieldSpec(
         wire_name="s3_encryption",
-        kind="list",
+        kind="object",
         fields=_Canary_ArtifactConfig_S3EncryptionFields,
     ),
+}
+
+_Canary_BrowserConfigsFields = {
+    "browser_type": ubx.FieldSpec(wire_name="browser_type"),
 }
 
 _Canary_RunConfigFields = {
@@ -70,81 +152,186 @@ _Canary_ScheduleFields = {
     "expression": ubx.FieldSpec(wire_name="expression"),
     "retry_config": ubx.FieldSpec(
         wire_name="retry_config",
-        kind="list",
+        kind="object",
         fields=_Canary_Schedule_RetryConfigFields,
     ),
 }
 
-_Canary_VpcConfigFields = {
+_Canary_Replicas_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Canary_Replicas_VpcConfigFields = {
     "ipv6_allowed_for_dual_stack": ubx.FieldSpec(wire_name="ipv6_allowed_for_dual_stack"),
     "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
     "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
     "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
 }
 
+_Canary_VisualReference_BaseScreenshotsFields = {
+    "ignore_coordinates": ubx.FieldSpec(wire_name="ignore_coordinates"),
+    "screenshot_name": ubx.FieldSpec(wire_name="screenshot_name"),
+}
+
+_Canary_VisualReferenceFields = {
+    "base_canary_run_id": ubx.FieldSpec(wire_name="base_canary_run_id"),
+    "base_screenshots": ubx.FieldSpec(
+        wire_name="base_screenshots",
+        kind="list",
+        fields=_Canary_VisualReference_BaseScreenshotsFields,
+    ),
+    "browser_type": ubx.FieldSpec(wire_name="browser_type"),
+}
+
 @dataclasses.dataclass
 class CanaryConfig:
-    artifact_s3_location: Any = None
-    delete_lambda: Any = None
-    execution_role_arn: Any = None
-    failure_retention_period: Any = None
-    handler: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
-    runtime_version: Any = None
-    s3_bucket: Any = None
-    s3_key: Any = None
-    s3_version: Any = None
-    start_canary: Any = None
-    success_retention_period: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    zip_file: Any = None
+    # Specifies the S3 encryption configuration for artifacts generated by the canary, such as screenshots, logs, and HAR files. (AI-inferred)
     artifact_config: Any = None
+    # Provide the s3 bucket output location for test results
+    artifact_s3_location: Any = None
+    # List of browser configurations for the canary
+    browser_configs: Any = None
+    # Deletes associated lambda resources created by Synthetics if set to True. Default is False
+    delete_lambda_resources_on_canary_deletion: Any = None
+    # Setting to control if UpdateCanary will perform a DryRun and validate it is PASSING before performing the Update. Default is FALSE.
+    dry_run_and_update: Any = None
+    # Lambda Execution role used to run your canaries
+    execution_role_arn: Any = None
+    # Retention period of failed canary runs represented in number of days
+    failure_retention_period: Any = None
+    # KMS key ARN for encrypting the canary's Lambda function environment variables at rest. If omitted, Lambda uses an AWS-managed key.
+    kms_key_arn: Any = None
+    # Name of the canary.
+    name: Any = None
+    # Setting to control if provisioned resources created by Synthetics are deleted alongside the canary. Default is AUTOMATIC.
+    provisioned_resource_cleanup: Any = None
+    # List of resources which canary tags should be replicated to.
+    resources_to_replicate_tags: Any = None
+    # Configure the canary's execution settings, including the amount of memory allotted, the timeout duration for each run, and environment variables passed to the canary script. (AI-inferred)
     run_config: Any = None
+    # Runtime version of Synthetics Library
+    runtime_version: Any = None
+    # Specifies how often the canary runs, using a rate or cron expression and optionally a fixed duration in seconds for the run window. (AI-inferred)
     schedule: Any = None
-    vpc_config: Any = None
+    # Runs canary if set to True. Default is False
+    start_canary_after_creation: Any = None
+    # Retention period of successful canary runs represented in number of days
+    success_retention_period: Any = None
+    # A list of key-value pairs that are attached to the Synthetics canary to help manage, identify, and categorize the resource in AWS. (AI-inferred)
+    tags: Any = None
+    # Configures the canary to run inside a customer-managed VPC by specifying the subnet and security group IDs, which enables the canary to access resources in a private network. (AI-inferred)
+    vpcconfig: Any = None
+    # Configuration for visual monitoring, which captures screenshots of the canary's UI and compares them against baseline images to detect visual regressions. (AI-inferred)
+    visual_reference: Any = None
+    # List of visual references for the canary
+    visual_references: Any = None
+
+@dataclasses.dataclass
+class CanaryAttrs:
+    # Specifies the S3 encryption configuration for artifacts generated by the canary, such as screenshots, logs, and HAR files. (AI-inferred)
+    artifact_config: Any = None
+    # Provide the s3 bucket output location for test results
+    artifact_s3_location: Any = None
+    # List of browser configurations for the canary
+    browser_configs: Any = None
+    # The `code` attribute provides the details of the canary's script, including the handler and the source location as an S3 bucket/key/version or an inline zip file. (AI-inferred)
+    code: Any = None
+    # Deletes associated lambda resources created by Synthetics if set to True. Default is False
+    delete_lambda_resources_on_canary_deletion: Any = None
+    # Setting to control if UpdateCanary will perform a DryRun and validate it is PASSING before performing the Update. Default is FALSE.
+    dry_run_and_update: Any = None
+    # Lambda Execution role used to run your canaries
+    execution_role_arn: Any = None
+    # Retention period of failed canary runs represented in number of days
+    failure_retention_period: Any = None
+    # Id of the canary
+    id: Any = None
+    # KMS key ARN for encrypting the canary's Lambda function environment variables at rest. If omitted, Lambda uses an AWS-managed key.
+    kms_key_arn: Any = None
+    # Name of the canary.
+    name: Any = None
+    # Setting to control if provisioned resources created by Synthetics are deleted alongside the canary. Default is AUTOMATIC.
+    provisioned_resource_cleanup: Any = None
+    # List of replica locations for multi-location canary execution
+    replicas: Any = None
+    # List of resources which canary tags should be replicated to.
+    resources_to_replicate_tags: Any = None
+    # Configure the canary's execution settings, including the amount of memory allotted, the timeout duration for each run, and environment variables passed to the canary script. (AI-inferred)
+    run_config: Any = None
+    # Runtime version of Synthetics Library
+    runtime_version: Any = None
+    # Specifies how often the canary runs, using a rate or cron expression and optionally a fixed duration in seconds for the run window. (AI-inferred)
+    schedule: Any = None
+    # Runs canary if set to True. Default is False
+    start_canary_after_creation: Any = None
+    # State of the canary
+    state: Any = None
+    # Retention period of successful canary runs represented in number of days
+    success_retention_period: Any = None
+    # A list of key-value pairs that are attached to the Synthetics canary to help manage, identify, and categorize the resource in AWS. (AI-inferred)
+    tags: Any = None
+    # Configures the canary to run inside a customer-managed VPC by specifying the subnet and security group IDs, which enables the canary to access resources in a private network. (AI-inferred)
+    vpcconfig: Any = None
+    # Configuration for visual monitoring, which captures screenshots of the canary's UI and compares them against baseline images to detect visual regressions. (AI-inferred)
+    visual_reference: Any = None
+    # List of visual references for the canary
+    visual_references: Any = None
 
 Canary = ubx.ResourceBinding(
     wire_type="aws_synthetics_canary",
     fields={
-        "artifact_s3_location": ubx.FieldSpec(wire_name="artifact_s3_location"),
-        "delete_lambda": ubx.FieldSpec(wire_name="delete_lambda"),
-        "execution_role_arn": ubx.FieldSpec(wire_name="execution_role_arn"),
-        "failure_retention_period": ubx.FieldSpec(wire_name="failure_retention_period"),
-        "handler": ubx.FieldSpec(wire_name="handler"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "runtime_version": ubx.FieldSpec(wire_name="runtime_version"),
-        "s3_bucket": ubx.FieldSpec(wire_name="s3_bucket"),
-        "s3_key": ubx.FieldSpec(wire_name="s3_key"),
-        "s3_version": ubx.FieldSpec(wire_name="s3_version"),
-        "start_canary": ubx.FieldSpec(wire_name="start_canary"),
-        "success_retention_period": ubx.FieldSpec(wire_name="success_retention_period"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "zip_file": ubx.FieldSpec(wire_name="zip_file"),
         "artifact_config": ubx.FieldSpec(
             wire_name="artifact_config",
-            kind="list",
+            kind="object",
             fields=_Canary_ArtifactConfigFields,
         ),
+        "artifact_s3_location": ubx.FieldSpec(wire_name="artifact_s3_location"),
+        "browser_configs": ubx.FieldSpec(
+            wire_name="browser_configs",
+            kind="list",
+            fields=_Canary_BrowserConfigsFields,
+        ),
+        "delete_lambda_resources_on_canary_deletion": ubx.FieldSpec(wire_name="delete_lambda_resources_on_canary_deletion"),
+        "dry_run_and_update": ubx.FieldSpec(wire_name="dry_run_and_update"),
+        "execution_role_arn": ubx.FieldSpec(wire_name="execution_role_arn"),
+        "failure_retention_period": ubx.FieldSpec(wire_name="failure_retention_period"),
+        "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "provisioned_resource_cleanup": ubx.FieldSpec(wire_name="provisioned_resource_cleanup"),
+        "resources_to_replicate_tags": ubx.FieldSpec(wire_name="resources_to_replicate_tags"),
         "run_config": ubx.FieldSpec(
             wire_name="run_config",
-            kind="list",
+            kind="object",
             fields=_Canary_RunConfigFields,
         ),
+        "runtime_version": ubx.FieldSpec(wire_name="runtime_version"),
         "schedule": ubx.FieldSpec(
             wire_name="schedule",
-            kind="list",
+            kind="object",
             fields=_Canary_ScheduleFields,
         ),
-        "vpc_config": ubx.FieldSpec(
-            wire_name="vpc_config",
+        "start_canary_after_creation": ubx.FieldSpec(wire_name="start_canary_after_creation"),
+        "success_retention_period": ubx.FieldSpec(wire_name="success_retention_period"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_Canary_VpcConfigFields,
+            fields=_Canary_Replicas_TagsFields,
+        ),
+        "vpcconfig": ubx.FieldSpec(
+            wire_name="vpcconfig",
+            kind="object",
+            fields=_Canary_Replicas_VpcConfigFields,
+        ),
+        "visual_reference": ubx.FieldSpec(
+            wire_name="visual_reference",
+            kind="object",
+            fields=_Canary_VisualReferenceFields,
+        ),
+        "visual_references": ubx.FieldSpec(
+            wire_name="visual_references",
+            kind="list",
+            fields=_Canary_VisualReferenceFields,
         ),
     },
 )

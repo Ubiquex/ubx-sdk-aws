@@ -7,44 +7,62 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Integration_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Integration_Tags:
+    # The key portion of a user-defined tag attached to the AWS Redshift Integration resource, used for organization, cost tracking, and access control. (AI-inferred)
+    key: Any = None
+    value: Any = None
 
-_Integration_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Integration_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class IntegrationConfig:
+    # An optional set of non-secret key–value pairs that contains additional contextual information about the data.
     additional_encryption_context: Any = None
-    description: Any = None
+    # The name of the integration.
     integration_name: Any = None
-    kms_key_id: Any = None
-    region: Any = None
+    # An KMS key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, the default AWS owned KMS key is used.
+    kmskey_id: Any = None
+    # The Amazon Resource Name (ARN) of the database to use as the source for replication
     source_arn: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
+    # The Amazon Resource Name (ARN) of the Redshift data warehouse to use as the target for replication
     target_arn: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class IntegrationAttrs:
+    # An optional set of non-secret key–value pairs that contains additional contextual information about the data.
+    additional_encryption_context: Any = None
+    # The time (UTC) when the integration was created.
+    create_time: Any = None
+    # The Amazon Resource Name (ARN) of the integration.
+    integration_arn: Any = None
+    # The name of the integration.
+    integration_name: Any = None
+    # An KMS key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, the default AWS owned KMS key is used.
+    kmskey_id: Any = None
+    # The Amazon Resource Name (ARN) of the database to use as the source for replication
+    source_arn: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # The Amazon Resource Name (ARN) of the Redshift data warehouse to use as the target for replication
+    target_arn: Any = None
 
 Integration = ubx.ResourceBinding(
     wire_type="aws_redshift_integration",
     fields={
         "additional_encryption_context": ubx.FieldSpec(wire_name="additional_encryption_context"),
-        "description": ubx.FieldSpec(wire_name="description"),
         "integration_name": ubx.FieldSpec(wire_name="integration_name"),
-        "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "kmskey_id": ubx.FieldSpec(wire_name="kmskey_id"),
         "source_arn": ubx.FieldSpec(wire_name="source_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "target_arn": ubx.FieldSpec(wire_name="target_arn"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Integration_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Integration_TagsFields,
         ),
+        "target_arn": ubx.FieldSpec(wire_name="target_arn"),
     },
 )

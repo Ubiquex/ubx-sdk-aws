@@ -3,65 +3,92 @@ package eks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IdentityProviderConfig_Oidc_RequiredClaims struct {
+	// Specifies the name of an OIDC claim that must be present in the token issued by the identity provider for authentication to be considered valid. (AI-inferred)
+	Key any
+	// The expected value for a required claim in the OIDC identity provider's token, where the map key is the claim name and this value must match the claim's value in the token for authentication to succeed. (AI-inferred)
+	Value any
+}
+
 type IdentityProviderConfig_Oidc struct {
+	// This is also known as audience. The ID for the client application that makes authentication requests to the OpenID identity provider.
 	ClientId any
+	// The JWT claim that the provider uses to return your groups.
 	GroupsClaim any
+	// The prefix that is prepended to group claims to prevent clashes with existing names (such as system: groups).
 	GroupsPrefix any
-	IdentityProviderConfigName any
+	// The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens.
 	IssuerUrl any
+	// Specifies the list of required claims (each a key-value pair) that must be present in the OIDC identity token with matching values for authentication to succeed. (AI-inferred)
 	RequiredClaims any
+	// The JSON Web Token (JWT) claim to use as the username. The default is sub, which is expected to be a unique identifier of the end user. You can choose other claims, such as email or name, depending on the OpenID identity provider. Claims other than email are prefixed with the issuer URL to prevent naming clashes with other plug-ins.
 	UsernameClaim any
+	// The prefix that is prepended to username claims to prevent clashes with existing names. If you do not provide this field, and username is a value other than email, the prefix defaults to issuerurl#. You can use the value - to disable all prefixing.
 	UsernamePrefix any
 }
 
-type IdentityProviderConfig_Timeouts struct {
-	Create any
-	Delete any
-}
+var IdentityProviderConfig_Oidc_RequiredClaimsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var IdentityProviderConfig_OidcFields = ubx.FieldMap{
 		"ClientId": ubx.FieldSpec{WireName: "client_id"},
 		"GroupsClaim": ubx.FieldSpec{WireName: "groups_claim"},
 		"GroupsPrefix": ubx.FieldSpec{WireName: "groups_prefix"},
-		"IdentityProviderConfigName": ubx.FieldSpec{WireName: "identity_provider_config_name"},
 		"IssuerUrl": ubx.FieldSpec{WireName: "issuer_url"},
-		"RequiredClaims": ubx.FieldSpec{WireName: "required_claims"},
+		"RequiredClaims": ubx.FieldSpec{
+			WireName: "required_claims",
+			Kind: "list",
+			Fields: IdentityProviderConfig_Oidc_RequiredClaimsFields,
+		},
 		"UsernameClaim": ubx.FieldSpec{WireName: "username_claim"},
 		"UsernamePrefix": ubx.FieldSpec{WireName: "username_prefix"},
 	}
 
-var IdentityProviderConfig_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
 type IdentityProviderConfigConfig struct {
+	// The name of the identity provider configuration.
 	ClusterName any
-	Id any
-	Region any
-	Tags any
-	TagsAll any
+	// The name of the OIDC provider configuration.
+	IdentityProviderConfigName any
+	// An object representing an OpenID Connect (OIDC) configuration.
 	Oidc any
-	Timeouts any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// The type of the identity provider configuration.
+	Type any
+}
+
+type IdentityProviderConfigAttrs struct {
+	// The name of the identity provider configuration.
+	ClusterName any
+	// The ARN of the configuration.
+	IdentityProviderConfigArn any
+	// The name of the OIDC provider configuration.
+	IdentityProviderConfigName any
+	// An object representing an OpenID Connect (OIDC) configuration.
+	Oidc any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// The type of the identity provider configuration.
+	Type any
 }
 
 var IdentityProviderConfig = ubx.ResourceBinding{
 	WireType: "aws_eks_identity_provider_config",
 	Fields: ubx.FieldMap{
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"IdentityProviderConfigName": ubx.FieldSpec{WireName: "identity_provider_config_name"},
 		"Oidc": ubx.FieldSpec{
 			WireName: "oidc",
-			Kind: "list",
+			Kind: "object",
 			Fields: IdentityProviderConfig_OidcFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: IdentityProviderConfig_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: IdentityProviderConfig_Oidc_RequiredClaimsFields,
 		},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

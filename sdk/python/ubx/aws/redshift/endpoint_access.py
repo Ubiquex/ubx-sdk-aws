@@ -7,22 +7,75 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EndpointAccess_VpcEndpoint_NetworkInterfaces:
+    # Indicates the Availability Zone in which the network interface associated with the VPC endpoint is located. (AI-inferred)
+    availability_zone: Any = None
+    # The unique identifier of the network interface associated with the VPC endpoint used by this Redshift endpoint access, representing the elastic network interface (ENI) that routes traffic to the Redshift cluster. (AI-inferred)
+    network_interface_id: Any = None
+    # The private IPv4 address of one of the network interfaces attached to the VPC endpoint that provides private connectivity to the Redshift cluster. (AI-inferred)
+    private_ip_address: Any = None
+    # The subnet ID where the network interface of the VPC endpoint for this Redshift endpoint access is provisioned. (AI-inferred)
+    subnet_id: Any = None
+
+@dataclasses.dataclass
+class EndpointAccess_VpcEndpoint:
+    # One or more network interfaces of the endpoint. Also known as an interface endpoint.
+    network_interfaces: Any = None
+    # The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.
+    vpc_endpoint_id: Any = None
+    # The VPC identifier that the endpoint is associated.
+    vpc_id: Any = None
+
+@dataclasses.dataclass
+class EndpointAccess_VpcSecurityGroups:
+    # The current status of a VPC security group associated with the Amazon Redshift endpoint access, indicating whether the security group association is active, being authorized, or being revoked. (AI-inferred)
+    status: Any = None
+    # The ID of a VPC security group associated with the Redshift endpoint access, used to control network access to the endpoint. (AI-inferred)
+    vpc_security_group_id: Any = None
+
+@dataclasses.dataclass
 class EndpointAccessConfig:
+    # A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. All alphabetical characters must be lower case, no hypens at the end, no two consecutive hyphens. Cluster name should be unique for all clusters within an AWS account
     cluster_identifier: Any = None
+    # The name of the endpoint.
     endpoint_name: Any = None
-    id: Any = None
-    region: Any = None
+    # The AWS account ID of the owner of the cluster.
     resource_owner: Any = None
+    # The subnet group name where Amazon Redshift chooses to deploy the endpoint.
     subnet_group_name: Any = None
+    # A list of vpc security group ids to apply to the created endpoint access.
     vpc_security_group_ids: Any = None
+
+@dataclasses.dataclass
+class EndpointAccessAttrs:
+    # The DNS address of the endpoint.
+    address: Any = None
+    # A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. All alphabetical characters must be lower case, no hypens at the end, no two consecutive hyphens. Cluster name should be unique for all clusters within an AWS account
+    cluster_identifier: Any = None
+    # The time (UTC) that the endpoint was created.
+    endpoint_create_time: Any = None
+    # The name of the endpoint.
+    endpoint_name: Any = None
+    # The status of the endpoint.
+    endpoint_status: Any = None
+    # The port number on which the cluster accepts incoming connections.
+    port: Any = None
+    # The AWS account ID of the owner of the cluster.
+    resource_owner: Any = None
+    # The subnet group name where Amazon Redshift chooses to deploy the endpoint.
+    subnet_group_name: Any = None
+    # The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.
+    vpc_endpoint: Any = None
+    # A list of vpc security group ids to apply to the created endpoint access.
+    vpc_security_group_ids: Any = None
+    # A list of Virtual Private Cloud (VPC) security groups to be associated with the endpoint.
+    vpc_security_groups: Any = None
 
 EndpointAccess = ubx.ResourceBinding(
     wire_type="aws_redshift_endpoint_access",
     fields={
         "cluster_identifier": ubx.FieldSpec(wire_name="cluster_identifier"),
         "endpoint_name": ubx.FieldSpec(wire_name="endpoint_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "resource_owner": ubx.FieldSpec(wire_name="resource_owner"),
         "subnet_group_name": ubx.FieldSpec(wire_name="subnet_group_name"),
         "vpc_security_group_ids": ubx.FieldSpec(wire_name="vpc_security_group_ids"),

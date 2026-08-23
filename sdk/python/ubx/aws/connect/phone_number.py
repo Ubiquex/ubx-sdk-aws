@@ -7,46 +7,66 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class PhoneNumber_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class PhoneNumber_Tags:
+    key: Any = None
+    value: Any = None
 
-_PhoneNumber_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_PhoneNumber_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class PhoneNumberConfig:
+    # The phone number country code.
     country_code: Any = None
+    # The description of the phone number.
     description: Any = None
-    id: Any = None
+    # The phone number prefix.
     prefix: Any = None
-    region: Any = None
+    # The source phone number arn.
+    source_phone_number_arn: Any = None
+    # One or more tags.
     tags: Any = None
-    tags_all: Any = None
+    # The ARN of the target the phone number is claimed to.
     target_arn: Any = None
+    # The phone number type
     type: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class PhoneNumberAttrs:
+    # The phone number e164 address.
+    address: Any = None
+    # The phone number country code.
+    country_code: Any = None
+    # The description of the phone number.
+    description: Any = None
+    # The phone number ARN
+    phone_number_arn: Any = None
+    # The phone number prefix.
+    prefix: Any = None
+    # The source phone number arn.
+    source_phone_number_arn: Any = None
+    # One or more tags.
+    tags: Any = None
+    # The ARN of the target the phone number is claimed to.
+    target_arn: Any = None
+    # The phone number type
+    type: Any = None
 
 PhoneNumber = ubx.ResourceBinding(
     wire_type="aws_connect_phone_number",
     fields={
         "country_code": ubx.FieldSpec(wire_name="country_code"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "prefix": ubx.FieldSpec(wire_name="prefix"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "source_phone_number_arn": ubx.FieldSpec(wire_name="source_phone_number_arn"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_PhoneNumber_TagsFields,
+        ),
         "target_arn": ubx.FieldSpec(wire_name="target_arn"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_PhoneNumber_TimeoutsFields,
-        ),
     },
 )

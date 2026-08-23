@@ -4,13 +4,31 @@ package athena
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NamedQueryConfig struct {
+	// The database to which the query belongs.
 	Database any
+	// The query description.
 	Description any
-	Id any
+	// The query name.
 	Name any
-	Query any
-	Region any
-	Workgroup any
+	// The contents of the query with all query statements.
+	QueryString any
+	// The name of the workgroup that contains the named query.
+	WorkGroup any
+}
+
+type NamedQueryAttrs struct {
+	// The database to which the query belongs.
+	Database any
+	// The query description.
+	Description any
+	// The query name.
+	Name any
+	// The unique ID of the query.
+	NamedQueryId any
+	// The contents of the query with all query statements.
+	QueryString any
+	// The name of the workgroup that contains the named query.
+	WorkGroup any
 }
 
 var NamedQuery = ubx.ResourceBinding{
@@ -18,10 +36,8 @@ var NamedQuery = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Database": ubx.FieldSpec{WireName: "database"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Workgroup": ubx.FieldSpec{WireName: "workgroup"},
+		"QueryString": ubx.FieldSpec{WireName: "query_string"},
+		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
 	},
 }

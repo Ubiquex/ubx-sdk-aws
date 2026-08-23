@@ -8,27 +8,39 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PolicyConfig:
-    delay_after_policy_creation_in_ms: Any = None
-    description: Any = None
+    # The name of the group to associate the policy with. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-.
+    groups: Any = None
+    # The policy document. You must provide policies in JSON format in IAM. However, for CFN templates formatted in YAML, you can provide the policy in JSON or YAML format. CFN always converts a YAML policy to JSON format before submitting it to IAM. The [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex) used to validate this parameter is a string of characters consisting of the following: + Any printable ASCII character ranging from the space character (``\u0020``) through the end of the ASCII character range + The printable characters in the Basic Latin and Latin-1 Supplement character set (through ``\u00FF``) + The special characters tab (``\u0009``), line feed (``\u000A``), and carriage return (``\u000D``)
+    policy_document: Any = None
+    # The name of the policy document. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+    policy_name: Any = None
+    # The name of the role to associate the policy with. This parameter allows (per its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@- If an external policy (such as ``AWS::IAM::Policy`` or ``AWS::IAM::ManagedPolicy``) has a ``Ref`` to a role and if a resource (such as ``AWS::ECS::Service``) also has a ``Ref`` to the same role, add a ``DependsOn`` attribute to the resource to make the resource depend on the external policy. This dependency ensures that the role's policy is available throughout the resource's lifecycle. For example, when you delete a stack with an ``AWS::ECS::Service`` resource, the ``DependsOn`` attribute ensures that CFN deletes the ``AWS::ECS::Service`` resource before deleting its role's policy.
+    roles: Any = None
+    # The name of the user to associate the policy with. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+    users: Any = None
+
+@dataclasses.dataclass
+class PolicyAttrs:
+    # The name of the group to associate the policy with. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-.
+    groups: Any = None
+    # The id is the Amazon Resource Name (ARN) of the IAM policy, uniquely identifying it within AWS. (AI-inferred)
     id: Any = None
-    name: Any = None
-    name_prefix: Any = None
-    path: Any = None
-    policy: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # The policy document. You must provide policies in JSON format in IAM. However, for CFN templates formatted in YAML, you can provide the policy in JSON or YAML format. CFN always converts a YAML policy to JSON format before submitting it to IAM. The [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex) used to validate this parameter is a string of characters consisting of the following: + Any printable ASCII character ranging from the space character (``\u0020``) through the end of the ASCII character range + The printable characters in the Basic Latin and Latin-1 Supplement character set (through ``\u00FF``) + The special characters tab (``\u0009``), line feed (``\u000A``), and carriage return (``\u000D``)
+    policy_document: Any = None
+    # The name of the policy document. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+    policy_name: Any = None
+    # The name of the role to associate the policy with. This parameter allows (per its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@- If an external policy (such as ``AWS::IAM::Policy`` or ``AWS::IAM::ManagedPolicy``) has a ``Ref`` to a role and if a resource (such as ``AWS::ECS::Service``) also has a ``Ref`` to the same role, add a ``DependsOn`` attribute to the resource to make the resource depend on the external policy. This dependency ensures that the role's policy is available throughout the resource's lifecycle. For example, when you delete a stack with an ``AWS::ECS::Service`` resource, the ``DependsOn`` attribute ensures that CFN deletes the ``AWS::ECS::Service`` resource before deleting its role's policy.
+    roles: Any = None
+    # The name of the user to associate the policy with. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+    users: Any = None
 
 Policy = ubx.ResourceBinding(
     wire_type="aws_iam_policy",
     fields={
-        "delay_after_policy_creation_in_ms": ubx.FieldSpec(wire_name="delay_after_policy_creation_in_ms"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "path": ubx.FieldSpec(wire_name="path"),
-        "policy": ubx.FieldSpec(wire_name="policy"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "groups": ubx.FieldSpec(wire_name="groups"),
+        "policy_document": ubx.FieldSpec(wire_name="policy_document"),
+        "policy_name": ubx.FieldSpec(wire_name="policy_name"),
+        "roles": ubx.FieldSpec(wire_name="roles"),
+        "users": ubx.FieldSpec(wire_name="users"),
     },
 )

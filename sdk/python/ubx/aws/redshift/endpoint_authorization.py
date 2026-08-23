@@ -8,11 +8,40 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndpointAuthorizationConfig:
+    # The AWS account ID of the customer to be authorized to access the Redshift cluster's VPC endpoint. (AI-inferred)
     account: Any = None
+    # The cluster identifier.
     cluster_identifier: Any = None
-    force_delete: Any = None
-    id: Any = None
-    region: Any = None
+    # Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.
+    force: Any = None
+    # The virtual private cloud (VPC) identifiers to grant or revoke access to.
+    vpc_ids: Any = None
+
+@dataclasses.dataclass
+class EndpointAuthorizationAttrs:
+    # The AWS account ID of the customer to be authorized to access the Redshift cluster's VPC endpoint. (AI-inferred)
+    account: Any = None
+    # Indicates whether all VPCs in the grantee account are allowed access to the cluster.
+    allowed_all_vpcs: Any = None
+    # The VPCs allowed access to the cluster.
+    allowed_vpcs: Any = None
+    # The time (UTC) when the authorization was created.
+    authorize_time: Any = None
+    # The cluster identifier.
+    cluster_identifier: Any = None
+    # The status of the cluster.
+    cluster_status: Any = None
+    # The number of Redshift-managed VPC endpoints created for the authorization.
+    endpoint_count: Any = None
+    # Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.
+    force: Any = None
+    # The AWS account ID that is granted access to the cluster's endpoint, returned as a computed read-only attribute. (AI-inferred)
+    grantee: Any = None
+    # The AWS account ID of the cluster owner that grants the cross-account endpoint authorization. (AI-inferred)
+    grantor: Any = None
+    # The status of the authorization action.
+    status: Any = None
+    # The virtual private cloud (VPC) identifiers to grant or revoke access to.
     vpc_ids: Any = None
 
 EndpointAuthorization = ubx.ResourceBinding(
@@ -20,9 +49,7 @@ EndpointAuthorization = ubx.ResourceBinding(
     fields={
         "account": ubx.FieldSpec(wire_name="account"),
         "cluster_identifier": ubx.FieldSpec(wire_name="cluster_identifier"),
-        "force_delete": ubx.FieldSpec(wire_name="force_delete"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "force": ubx.FieldSpec(wire_name="force"),
         "vpc_ids": ubx.FieldSpec(wire_name="vpc_ids"),
     },
 )

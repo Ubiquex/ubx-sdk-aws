@@ -4,16 +4,20 @@ package ecr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegistryPolicyConfig struct {
-	Id any
-	Policy any
-	Region any
+	// The JSON policy text for your registry.
+	PolicyText any
+}
+
+type RegistryPolicyAttrs struct {
+	// The JSON policy text for your registry.
+	PolicyText any
+	// The registry id.
+	RegistryId any
 }
 
 var RegistryPolicy = ubx.ResourceBinding{
 	WireType: "aws_ecr_registry_policy",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"PolicyText": ubx.FieldSpec{WireName: "policy_text"},
 	},
 }

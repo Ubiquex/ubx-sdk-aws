@@ -2,23 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegistryPolicyConfig {
-  id?: string | Computed<string>;
-  policy: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The JSON policy text for your registry. */
+  policyText: unknown | Computed<unknown>;
 }
 
 export interface RegistryPolicyAttrs {
-  id: string;
-  policy: string;
-  region: string;
+  /** The JSON policy text for your registry. */
+  policyText: unknown;
+  /** The registry id. */
   registryId: string;
 }
 
 export const RegistryPolicy: ResourceBinding<RegistryPolicyConfig, RegistryPolicyAttrs> = {
   wireType: "aws_ecr_registry_policy",
   fields: {
-    id: "id",
-    policy: "policy",
-    region: "region",
+    policyText: "policy_text",
   },
 };

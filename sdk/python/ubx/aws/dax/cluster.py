@@ -7,45 +7,85 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Cluster_ServerSideEncryption:
-    enabled: Any = None
+class Cluster_Ssespecification:
+    # Enables or disables server-side encryption (SSE) for the DAX cluster, using AWS KMS to protect data at rest when enabled. (AI-inferred)
+    sseenabled: Any = None
 
-@dataclasses.dataclass
-class Cluster_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_Cluster_ServerSideEncryptionFields = {
-    "enabled": ubx.FieldSpec(wire_name="enabled"),
-}
-
-_Cluster_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Cluster_SsespecificationFields = {
+    "sseenabled": ubx.FieldSpec(wire_name="sseenabled"),
 }
 
 @dataclasses.dataclass
 class ClusterConfig:
+    # Specifies the Availability Zones in which the DAX cluster's nodes are placed, allowing you to distribute nodes across multiple AZs for high availability. (AI-inferred)
     availability_zones: Any = None
+    # Specifies whether client traffic to the DAX cluster endpoint is encrypted with TLS (valid values: TLS or NONE). (AI-inferred)
     cluster_endpoint_encryption_type: Any = None
+    # The name of the DAX cluster, which is used as the cluster identifier; if not provided, AWS CloudFormation generates a unique name. (AI-inferred)
     cluster_name: Any = None
+    # Provides a description of the DAX cluster. (AI-inferred)
     description: Any = None
-    iam_role_arn: Any = None
-    id: Any = None
-    maintenance_window: Any = None
+    # Specifies the Amazon Resource Name (ARN) of the IAM role that the DAX cluster uses to access DynamoDB and other required AWS services. (AI-inferred)
+    iamrole_arn: Any = None
+    # Specifies the network type for the DAX cluster, such as IPV4 or DUALSTACK, determining whether the cluster uses IPv4 only or supports both IPv4 and IPv6 addressing. (AI-inferred)
+    network_type: Any = None
+    # The compute instance type (e.g., dax.r4.large) used for each node in the DAX cluster, determining the memory and CPU capacity of the cluster's cache nodes. (AI-inferred)
     node_type: Any = None
+    # The ARN of an Amazon SNS topic to which DAX cluster notifications (such as maintenance events) are sent. (AI-inferred)
     notification_topic_arn: Any = None
+    # The name of the DAX parameter group that applies cluster-wide settings such as query caching and TTL behavior for this DynamoDB Accelerator cluster. (AI-inferred)
     parameter_group_name: Any = None
-    region: Any = None
+    # Specifies the daily time range in UTC during which AWS DAX performs maintenance on the cluster, using the format ddd:hh24:mi-ddd:hh24:mi. (AI-inferred)
+    preferred_maintenance_window: Any = None
+    # The total number of nodes (including the primary node) in the DAX cluster, which determines the cluster's read capacity and high availability. (AI-inferred)
     replication_factor: Any = None
+    # Specifies whether server-side encryption is enabled for the DAX cluster by setting an Enabled flag in the SSESpecification object. (AI-inferred)
+    ssespecification: Any = None
+    # The list of VPC security group IDs to associate with the DAX cluster, controlling network access to the cluster. (AI-inferred)
     security_group_ids: Any = None
+    # The name of the subnet group that defines the VPC subnets in which the DAX cluster nodes are launched. (AI-inferred)
     subnet_group_name: Any = None
     tags: Any = None
-    tags_all: Any = None
-    server_side_encryption: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class ClusterAttrs:
+    # The ARN (Amazon Resource Name) of the DynamoDB Accelerator (DAX) cluster. (AI-inferred)
+    arn: Any = None
+    # Specifies the Availability Zones in which the DAX cluster's nodes are placed, allowing you to distribute nodes across multiple AZs for high availability. (AI-inferred)
+    availability_zones: Any = None
+    # The endpoint URL (ClusterDiscoveryEndpoint) that DAX client applications use to connect to the cluster, automatically assigned by AWS when the DAX cluster is created. (AI-inferred)
+    cluster_discovery_endpoint: Any = None
+    # The URL of the cluster discovery endpoint that DAX clients use to connect to the cluster. (AI-inferred)
+    cluster_discovery_endpoint_url: Any = None
+    # Specifies whether client traffic to the DAX cluster endpoint is encrypted with TLS (valid values: TLS or NONE). (AI-inferred)
+    cluster_endpoint_encryption_type: Any = None
+    # The name of the DAX cluster, which is used as the cluster identifier; if not provided, AWS CloudFormation generates a unique name. (AI-inferred)
+    cluster_name: Any = None
+    # Provides a description of the DAX cluster. (AI-inferred)
+    description: Any = None
+    # Specifies the Amazon Resource Name (ARN) of the IAM role that the DAX cluster uses to access DynamoDB and other required AWS services. (AI-inferred)
+    iamrole_arn: Any = None
+    # The unique identifier for the DAX cluster, set to the cluster name. (AI-inferred)
+    id: Any = None
+    # Specifies the network type for the DAX cluster, such as IPV4 or DUALSTACK, determining whether the cluster uses IPv4 only or supports both IPv4 and IPv6 addressing. (AI-inferred)
+    network_type: Any = None
+    # The compute instance type (e.g., dax.r4.large) used for each node in the DAX cluster, determining the memory and CPU capacity of the cluster's cache nodes. (AI-inferred)
+    node_type: Any = None
+    # The ARN of an Amazon SNS topic to which DAX cluster notifications (such as maintenance events) are sent. (AI-inferred)
+    notification_topic_arn: Any = None
+    # The name of the DAX parameter group that applies cluster-wide settings such as query caching and TTL behavior for this DynamoDB Accelerator cluster. (AI-inferred)
+    parameter_group_name: Any = None
+    # Specifies the daily time range in UTC during which AWS DAX performs maintenance on the cluster, using the format ddd:hh24:mi-ddd:hh24:mi. (AI-inferred)
+    preferred_maintenance_window: Any = None
+    # The total number of nodes (including the primary node) in the DAX cluster, which determines the cluster's read capacity and high availability. (AI-inferred)
+    replication_factor: Any = None
+    # Specifies whether server-side encryption is enabled for the DAX cluster by setting an Enabled flag in the SSESpecification object. (AI-inferred)
+    ssespecification: Any = None
+    # The list of VPC security group IDs to associate with the DAX cluster, controlling network access to the cluster. (AI-inferred)
+    security_group_ids: Any = None
+    # The name of the subnet group that defines the VPC subnets in which the DAX cluster nodes are launched. (AI-inferred)
+    subnet_group_name: Any = None
+    tags: Any = None
 
 Cluster = ubx.ResourceBinding(
     wire_type="aws_dax_cluster",
@@ -54,27 +94,20 @@ Cluster = ubx.ResourceBinding(
         "cluster_endpoint_encryption_type": ubx.FieldSpec(wire_name="cluster_endpoint_encryption_type"),
         "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "iam_role_arn": ubx.FieldSpec(wire_name="iam_role_arn"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "maintenance_window": ubx.FieldSpec(wire_name="maintenance_window"),
+        "iamrole_arn": ubx.FieldSpec(wire_name="iamrole_arn"),
+        "network_type": ubx.FieldSpec(wire_name="network_type"),
         "node_type": ubx.FieldSpec(wire_name="node_type"),
         "notification_topic_arn": ubx.FieldSpec(wire_name="notification_topic_arn"),
         "parameter_group_name": ubx.FieldSpec(wire_name="parameter_group_name"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "preferred_maintenance_window": ubx.FieldSpec(wire_name="preferred_maintenance_window"),
         "replication_factor": ubx.FieldSpec(wire_name="replication_factor"),
+        "ssespecification": ubx.FieldSpec(
+            wire_name="ssespecification",
+            kind="object",
+            fields=_Cluster_SsespecificationFields,
+        ),
         "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
         "subnet_group_name": ubx.FieldSpec(wire_name="subnet_group_name"),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "server_side_encryption": ubx.FieldSpec(
-            wire_name="server_side_encryption",
-            kind="list",
-            fields=_Cluster_ServerSideEncryptionFields,
-        ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Cluster_TimeoutsFields,
-        ),
     },
 )

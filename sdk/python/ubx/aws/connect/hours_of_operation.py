@@ -7,15 +7,73 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class HoursOfOperation_ChildHoursOfOperations:
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class HoursOfOperation_Config_EndTime:
+    # Specifies the hour (0-23) in 24-hour format at which the operating hours end for the configured day. (AI-inferred)
     hours: Any = None
+    # The minutes component of the time of day when the hours of operation configuration ends, used together with the end_time hour to define the daily closing time. (AI-inferred)
     minutes: Any = None
 
 @dataclasses.dataclass
 class HoursOfOperation_Config:
+    # Specifies the day of the week (e.g., MONDAY, TUESDAY) that this hours of operation configuration applies to in the AWS Connect HoursOfOperation resource. (AI-inferred)
     day: Any = None
+    # The time at which the hours of operation end for a given day, specified as an object with hours and minutes in a 24-hour format. (AI-inferred)
     end_time: Any = None
+    # The start_time field specifies the time in HH:MM format (24-hour) when the hours of operation begin for the configured day. (AI-inferred)
     start_time: Any = None
+
+@dataclasses.dataclass
+class HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig_RecurrencePattern:
+    # Specifies the months (1-12) during which this hours-of-operation override recurrence pattern is active, used in combination with other recurrence fields to define a monthly scheduling rule. (AI-inferred)
+    by_month: Any = None
+    # Defines the days of the month (1-31) on which the hours-of-operation override recurs, used when the recurrence pattern is set to a monthly interval. (AI-inferred)
+    by_month_day: Any = None
+    # Specifies the occurrence(s) of the weekdays within a month (e.g., 1 for first, 2 for second, -1 for last) on which this hours of operation override recurrence applies. (AI-inferred)
+    by_weekday_occurrence: Any = None
+    # The frequency unit for the recurrence pattern of this override (e.g., daily, weekly, or monthly), defining how often the override schedule repeats. (AI-inferred)
+    frequency: Any = None
+    # The number of time units (e.g., weeks or months, based on the recurrence pattern's frequency) between each occurrence of the recurring hours of operation override, such as 2 for every other week. (AI-inferred)
+    interval: Any = None
+
+@dataclasses.dataclass
+class HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig:
+    # Configures the recurrence pattern (e.g., daily, weekly, or monthly interval and specific days) for applying the hours-of-operation override across a repeating schedule defined in the recurrence configuration. (AI-inferred)
+    recurrence_pattern: Any = None
+
+@dataclasses.dataclass
+class HoursOfOperation_HoursOfOperationOverrides:
+    # Specifies the starting timestamp (in ISO 8601 format) from which this hours of operation override takes effect. (AI-inferred)
+    effective_from: Any = None
+    # Specifies the end date and time (in ISO 8601 format) for which this hours of operation override remains in effect, after which the standard hours of operation schedule applies. (AI-inferred)
+    effective_till: Any = None
+    # This field provides a unique, user-defined identifier for a specific hours of operation override entry within the hours_of_operation_overrides list, allowing each override to be individually referenced and managed. (AI-inferred)
+    hours_of_operation_override_id: Any = None
+    # The override config defines the alternative schedule of days and times that overrides the default hours of operation during a specified date/time window. (AI-inferred)
+    override_config: Any = None
+    # Provides a human-readable description for an hours of operation override, enabling administrators to label special schedules such as holidays or one-off events. (AI-inferred)
+    override_description: Any = None
+    # The display name assigned to a specific date override (e.g., a holiday) within an Amazon Connect hours of operation configuration, used to identify the custom schedule for that date. (AI-inferred)
+    override_name: Any = None
+    # Indicates the type of override, either HOLIDAY or OVERRIDE, determining how the specific-date hours override the weekly configuration. (AI-inferred)
+    override_type: Any = None
+    recurrence_config: Any = None
+
+@dataclasses.dataclass
+class HoursOfOperation_Tags:
+    # The key part of a tag for the Amazon Connect hours of operation, used to organize and identify the resource. (AI-inferred)
+    key: Any = None
+    # The value part of a tag key-value pair attached to the Amazon Connect hours of operation resource, used for resource categorization and management. (AI-inferred)
+    value: Any = None
+
+_HoursOfOperation_ChildHoursOfOperationsFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
 
 _HoursOfOperation_Config_EndTimeFields = {
     "hours": ubx.FieldSpec(wire_name="hours"),
@@ -26,43 +84,131 @@ _HoursOfOperation_ConfigFields = {
     "day": ubx.FieldSpec(wire_name="day"),
     "end_time": ubx.FieldSpec(
         wire_name="end_time",
-        kind="list",
+        kind="object",
         fields=_HoursOfOperation_Config_EndTimeFields,
     ),
     "start_time": ubx.FieldSpec(
         wire_name="start_time",
-        kind="list",
+        kind="object",
         fields=_HoursOfOperation_Config_EndTimeFields,
     ),
 }
 
+_HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig_RecurrencePatternFields = {
+    "by_month": ubx.FieldSpec(wire_name="by_month"),
+    "by_month_day": ubx.FieldSpec(wire_name="by_month_day"),
+    "by_weekday_occurrence": ubx.FieldSpec(wire_name="by_weekday_occurrence"),
+    "frequency": ubx.FieldSpec(wire_name="frequency"),
+    "interval": ubx.FieldSpec(wire_name="interval"),
+}
+
+_HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfigFields = {
+    "recurrence_pattern": ubx.FieldSpec(
+        wire_name="recurrence_pattern",
+        kind="object",
+        fields=_HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig_RecurrencePatternFields,
+    ),
+}
+
+_HoursOfOperation_HoursOfOperationOverridesFields = {
+    "effective_from": ubx.FieldSpec(wire_name="effective_from"),
+    "effective_till": ubx.FieldSpec(wire_name="effective_till"),
+    "hours_of_operation_override_id": ubx.FieldSpec(wire_name="hours_of_operation_override_id"),
+    "override_config": ubx.FieldSpec(
+        wire_name="override_config",
+        kind="list",
+        fields=_HoursOfOperation_ConfigFields,
+    ),
+    "override_description": ubx.FieldSpec(wire_name="override_description"),
+    "override_name": ubx.FieldSpec(wire_name="override_name"),
+    "override_type": ubx.FieldSpec(wire_name="override_type"),
+    "recurrence_config": ubx.FieldSpec(
+        wire_name="recurrence_config",
+        kind="object",
+        fields=_HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfigFields,
+    ),
+}
+
+_HoursOfOperation_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 @dataclasses.dataclass
 class HoursOfOperationConfig:
-    description: Any = None
-    id: Any = None
-    instance_id: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    time_zone: Any = None
+    # List of child hours of operations.
+    child_hours_of_operations: Any = None
+    # Configuration information for the hours of operation: day, start time, and end time.
     config: Any = None
+    # The description of the hours of operation.
+    description: Any = None
+    # One or more hours of operation overrides assigned to an hour of operation.
+    hours_of_operation_overrides: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # The name of the hours of operation.
+    name: Any = None
+    # List of parent hours of operations.
+    parent_hours_of_operations: Any = None
+    # One or more tags.
+    tags: Any = None
+    # The time zone of the hours of operation.
+    time_zone: Any = None
+
+@dataclasses.dataclass
+class HoursOfOperationAttrs:
+    # List of child hours of operations.
+    child_hours_of_operations: Any = None
+    # Configuration information for the hours of operation: day, start time, and end time.
+    config: Any = None
+    # The description of the hours of operation.
+    description: Any = None
+    # The Amazon Resource Name (ARN) for the hours of operation.
+    hours_of_operation_arn: Any = None
+    # One or more hours of operation overrides assigned to an hour of operation.
+    hours_of_operation_overrides: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # The name of the hours of operation.
+    name: Any = None
+    # List of parent hours of operations.
+    parent_hours_of_operations: Any = None
+    # One or more tags.
+    tags: Any = None
+    # The time zone of the hours of operation.
+    time_zone: Any = None
 
 HoursOfOperation = ubx.ResourceBinding(
     wire_type="aws_connect_hours_of_operation",
     fields={
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "instance_id": ubx.FieldSpec(wire_name="instance_id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+        "child_hours_of_operations": ubx.FieldSpec(
+            wire_name="child_hours_of_operations",
+            kind="list",
+            fields=_HoursOfOperation_ChildHoursOfOperationsFields,
+        ),
         "config": ubx.FieldSpec(
             wire_name="config",
-            kind="set",
+            kind="list",
             fields=_HoursOfOperation_ConfigFields,
         ),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "hours_of_operation_overrides": ubx.FieldSpec(
+            wire_name="hours_of_operation_overrides",
+            kind="list",
+            fields=_HoursOfOperation_HoursOfOperationOverridesFields,
+        ),
+        "instance_arn": ubx.FieldSpec(wire_name="instance_arn"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parent_hours_of_operations": ubx.FieldSpec(
+            wire_name="parent_hours_of_operations",
+            kind="list",
+            fields=_HoursOfOperation_ChildHoursOfOperationsFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_HoursOfOperation_TagsFields,
+        ),
+        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
     },
 )

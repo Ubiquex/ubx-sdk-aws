@@ -4,38 +4,55 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkInsightsAccessScope_ExcludePaths_Destination_PacketHeaderStatement struct {
+	// Specifies the destination IP addresses or CIDR ranges that a packet must match to be considered part of the excluded path's destination traffic, used as filters in the packet header statement. (AI-inferred)
 	DestinationAddresses any
+	// Specifies the destination ports or port ranges (e.g., '80' or '1000-1024') that a packet must match for its path to be considered for exclusion in the network access scope. (AI-inferred)
 	DestinationPorts any
+	// For the excluded path's destination component, this list specifies the destination prefix list IDs (e.g., pl-0123456789abcdef0) that the packet header statement matches, causing traffic destined to any of these prefix lists to be excluded from the access scope. (AI-inferred)
 	DestinationPrefixLists any
+	// Specifies the list of network protocols (e.g., tcp, udp, icmp) that the destination packet header statement matches for traffic to be excluded from the access scope. (AI-inferred)
 	Protocols any
+	// The list of source IP address CIDR ranges that the packet header statement matches for the destination of an exclusion path in the Network Insights access scope. (AI-inferred)
 	SourceAddresses any
+	// Specifies the source port or port ranges (e.g., '80' or '1-1024') that the packet header statement matches on to define excluded traffic in the Network Insights Access Scope. (AI-inferred)
 	SourcePorts any
+	// The source prefix list IDs used to match traffic in the packet header statement for the destination of an exclude path in a Network Insights access scope. (AI-inferred)
 	SourcePrefixLists any
 }
 
 type NetworkInsightsAccessScope_ExcludePaths_Destination_ResourceStatement struct {
+	// Specifies the AWS resource types (e.g., AWS::EC2::Instance) that the destination resource statement matches in an exclusion path for the Network Insights Access Scope. (AI-inferred)
 	ResourceTypes any
+	// Specifies the list of destination resources (by resource ID or ARN) that define the excluded path's destination in the network insights access scope. (AI-inferred)
 	Resources any
 }
 
 type NetworkInsightsAccessScope_ExcludePaths_Destination struct {
+	// Specifies the packet header fields (such as source/destination IP addresses, ports, and protocols) that the destination of an excluded path must match in the Network Insights Access Scope. (AI-inferred)
 	PacketHeaderStatement any
+	// Specifies the destination resources to exclude from the network insights access scope, identified by ARN, resource type, or tags. (AI-inferred)
 	ResourceStatement any
 }
 
 type NetworkInsightsAccessScope_ExcludePaths_ThroughResources struct {
+	// The resource_statement object specifies which AWS resources (by ARN or resource type) are matched for this hop in the exclude path, determining the network paths that are excluded from the access scope analysis. (AI-inferred)
 	ResourceStatement any
 }
 
 type NetworkInsightsAccessScope_ExcludePaths struct {
+	// Specifies the destination endpoint (such as an IP address, resource ID, or ARN) of a network path that is excluded from the access scope. (AI-inferred)
 	Destination any
+	// Defines the source of a path to exclude from the access scope, using a path statement that can specify resources like VPCs, subnets, or security groups, as well as packet header conditions. (AI-inferred)
 	Source any
+	// Specifies the intermediate resources through which traffic must pass for each excluded path, as a list of resource statements that match by ARN or resource type. (AI-inferred)
 	ThroughResources any
 }
 
-type NetworkInsightsAccessScope_MatchPaths struct {
-	Destination any
-	Source any
+type NetworkInsightsAccessScope_Tags struct {
+	// The key of a tag applied to the EC2 Network Insights Access Scope, used to assign custom metadata for identifying, organizing, and managing the access scope. (AI-inferred)
+	Key any
+	// The value of a tag key-value pair attached to the AWS EC2 Network Insights Access Scope resource, used to categorize and manage the resource. (AI-inferred)
+	Value any
 }
 
 var NetworkInsightsAccessScope_ExcludePaths_Destination_PacketHeaderStatementFields = ubx.FieldMap{
@@ -56,12 +73,12 @@ var NetworkInsightsAccessScope_ExcludePaths_Destination_ResourceStatementFields 
 var NetworkInsightsAccessScope_ExcludePaths_DestinationFields = ubx.FieldMap{
 		"PacketHeaderStatement": ubx.FieldSpec{
 			WireName: "packet_header_statement",
-			Kind: "list",
+			Kind: "object",
 			Fields: NetworkInsightsAccessScope_ExcludePaths_Destination_PacketHeaderStatementFields,
 		},
 		"ResourceStatement": ubx.FieldSpec{
 			WireName: "resource_statement",
-			Kind: "list",
+			Kind: "object",
 			Fields: NetworkInsightsAccessScope_ExcludePaths_Destination_ResourceStatementFields,
 		},
 	}
@@ -69,7 +86,7 @@ var NetworkInsightsAccessScope_ExcludePaths_DestinationFields = ubx.FieldMap{
 var NetworkInsightsAccessScope_ExcludePaths_ThroughResourcesFields = ubx.FieldMap{
 		"ResourceStatement": ubx.FieldSpec{
 			WireName: "resource_statement",
-			Kind: "list",
+			Kind: "object",
 			Fields: NetworkInsightsAccessScope_ExcludePaths_Destination_ResourceStatementFields,
 		},
 	}
@@ -77,12 +94,12 @@ var NetworkInsightsAccessScope_ExcludePaths_ThroughResourcesFields = ubx.FieldMa
 var NetworkInsightsAccessScope_ExcludePathsFields = ubx.FieldMap{
 		"Destination": ubx.FieldSpec{
 			WireName: "destination",
-			Kind: "list",
+			Kind: "object",
 			Fields: NetworkInsightsAccessScope_ExcludePaths_DestinationFields,
 		},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "list",
+			Kind: "object",
 			Fields: NetworkInsightsAccessScope_ExcludePaths_DestinationFields,
 		},
 		"ThroughResources": ubx.FieldSpec{
@@ -92,31 +109,40 @@ var NetworkInsightsAccessScope_ExcludePathsFields = ubx.FieldMap{
 		},
 	}
 
-var NetworkInsightsAccessScope_MatchPathsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "list",
-			Fields: NetworkInsightsAccessScope_ExcludePaths_DestinationFields,
-		},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "list",
-			Fields: NetworkInsightsAccessScope_ExcludePaths_DestinationFields,
-		},
+var NetworkInsightsAccessScope_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type NetworkInsightsAccessScopeConfig struct {
-	Region any
-	Tags any
+	// Specifies a list of network path statements to exclude from the access scope, so that traffic matching any of these paths is not analyzed. (AI-inferred)
 	ExcludePaths any
+	// Specifies the list of network paths to match, where each path defines a source, destination, and optional intermediate resources that the access scope applies to. (AI-inferred)
 	MatchPaths any
+	// A list of key-value tags to associate with this EC2 Network Insights Access Scope, used to categorize and manage the resource in AWS. (AI-inferred)
+	Tags any
+}
+
+type NetworkInsightsAccessScopeAttrs struct {
+	// The ISO 8601 formatted timestamp when the network insights access scope was created. (AI-inferred)
+	CreatedDate any
+	// Specifies a list of network path statements to exclude from the access scope, so that traffic matching any of these paths is not analyzed. (AI-inferred)
+	ExcludePaths any
+	// Specifies the list of network paths to match, where each path defines a source, destination, and optional intermediate resources that the access scope applies to. (AI-inferred)
+	MatchPaths any
+	// The Amazon Resource Name (ARN) of the Network Insights Access Scope, which uniquely identifies it in AWS. (AI-inferred)
+	NetworkInsightsAccessScopeArn any
+	// The unique identifier assigned by AWS when the Network Insights Access Scope is created. (AI-inferred)
+	NetworkInsightsAccessScopeId any
+	// A list of key-value tags to associate with this EC2 Network Insights Access Scope, used to categorize and manage the resource in AWS. (AI-inferred)
+	Tags any
+	// The date and time when the network insights access scope was last updated. (AI-inferred)
+	UpdatedDate any
 }
 
 var NetworkInsightsAccessScope = ubx.ResourceBinding{
 	WireType: "aws_ec2_network_insights_access_scope",
 	Fields: ubx.FieldMap{
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"ExcludePaths": ubx.FieldSpec{
 			WireName: "exclude_paths",
 			Kind: "list",
@@ -125,7 +151,12 @@ var NetworkInsightsAccessScope = ubx.ResourceBinding{
 		"MatchPaths": ubx.FieldSpec{
 			WireName: "match_paths",
 			Kind: "list",
-			Fields: NetworkInsightsAccessScope_MatchPathsFields,
+			Fields: NetworkInsightsAccessScope_ExcludePathsFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: NetworkInsightsAccessScope_TagsFields,
 		},
 	},
 }

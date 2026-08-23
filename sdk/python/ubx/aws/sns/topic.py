@@ -7,72 +7,134 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Topic_DeliveryStatusLogging:
+    # The IAM role ARN that Amazon SNS assumes to write delivery status logs for failed message deliveries to CloudWatch Logs. (AI-inferred)
+    failure_feedback_role_arn: Any = None
+    # Specifies the protocol (e.g., http, https, sqs, lambda) for which this delivery status logging configuration applies in the SNS topic subscription delivery status logging settings. (AI-inferred)
+    protocol: Any = None
+    # Specifies the ARN of an IAM role that Amazon SNS uses to write CloudWatch Logs for messages that were successfully delivered to subscribed endpoints for this topic. (AI-inferred)
+    success_feedback_role_arn: Any = None
+    # The percentage of successfully delivered messages (0-100, as a string) that Amazon SNS samples for delivery status logging to CloudWatch Logs. (AI-inferred)
+    success_feedback_sample_rate: Any = None
+
+@dataclasses.dataclass
+class Topic_Subscription:
+    # The endpoint that receives notifications from the SNS topic, such as an email address, phone number, or URL, depending on the subscription protocol. (AI-inferred)
+    endpoint: Any = None
+    # The protocol specifies the type of endpoint that will receive messages from the topic, such as http, https, email, sqs, lambda, etc. (AI-inferred)
+    protocol: Any = None
+
+@dataclasses.dataclass
+class Topic_Tags:
+    # The tag key that, together with the corresponding tag value, assigns a user-defined metadata label to the SNS topic for purposes such as cost allocation and access control. (AI-inferred)
+    key: Any = None
+    # The value of a tag attached to the SNS topic, used for metadata and cost allocation. (AI-inferred)
+    value: Any = None
+
+_Topic_DeliveryStatusLoggingFields = {
+    "failure_feedback_role_arn": ubx.FieldSpec(wire_name="failure_feedback_role_arn"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "success_feedback_role_arn": ubx.FieldSpec(wire_name="success_feedback_role_arn"),
+    "success_feedback_sample_rate": ubx.FieldSpec(wire_name="success_feedback_sample_rate"),
+}
+
+_Topic_SubscriptionFields = {
+    "endpoint": ubx.FieldSpec(wire_name="endpoint"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+}
+
+_Topic_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class TopicConfig:
-    application_failure_feedback_role_arn: Any = None
-    application_success_feedback_role_arn: Any = None
-    application_success_feedback_sample_rate: Any = None
+    # The ``ArchivePolicy`` determines the number of days SNS retains messages in FIFO topics. You can set a retention period ranging from 1 to 365 days. This property is only applicable to FIFO topics; attempting to use it with standard topics will result in a creation failure.
     archive_policy: Any = None
+    # ``ContentBasedDeduplication`` enables deduplication of messages based on their content for FIFO topics. By default, this property is set to false. If you create a FIFO topic with ``ContentBasedDeduplication`` set to false, you must provide a ``MessageDeduplicationId`` for each ``Publish`` action. When set to true, SNS automatically generates a ``MessageDeduplicationId`` using a SHA-256 hash of the message body (excluding message attributes). You can optionally override this generated value by specifying a ``MessageDeduplicationId`` in the ``Publish`` action. Note that this property only applies to FIFO topics; using it with standard topics will cause the creation to fail.
     content_based_deduplication: Any = None
-    delivery_policy: Any = None
+    # The body of the policy document you want to use for this topic. You can only add one policy per topic. The policy must be in JSON string format. Length Constraints: Maximum length of 30,720.
+    data_protection_policy: Any = None
+    # The ``DeliveryStatusLogging`` configuration enables you to log the delivery status of messages sent from your Amazon SNS topic to subscribed endpoints with the following supported delivery protocols: + HTTP + Amazon Kinesis Data Firehose + AWS Lambda + Platform application endpoint + Amazon Simple Queue Service Once configured, log entries are sent to Amazon CloudWatch Logs.
+    delivery_status_logging: Any = None
+    # The display name to use for an SNS topic with SMS subscriptions. The display name must be maximum 100 characters long, including hyphens (-), underscores (_), spaces, and tabs.
     display_name: Any = None
+    # Specifies the throughput quota and deduplication behavior to apply for the FIFO topic. Valid values are ``Topic`` or ``MessageGroup``.
     fifo_throughput_scope: Any = None
+    # Set to true to create a FIFO topic.
     fifo_topic: Any = None
-    firehose_failure_feedback_role_arn: Any = None
-    firehose_success_feedback_role_arn: Any = None
-    firehose_success_feedback_sample_rate: Any = None
-    http_failure_feedback_role_arn: Any = None
-    http_success_feedback_role_arn: Any = None
-    http_success_feedback_sample_rate: Any = None
-    id: Any = None
+    # The ID of an AWS managed customer master key (CMK) for SNS or a custom CMK. For more information, see [Key terms](https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms). For more examples, see ``KeyId`` in the *API Reference*. This property applies only to [server-side-encryption](https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html).
     kms_master_key_id: Any = None
-    lambda_failure_feedback_role_arn: Any = None
-    lambda_success_feedback_role_arn: Any = None
-    lambda_success_feedback_sample_rate: Any = None
-    name: Any = None
-    name_prefix: Any = None
-    policy: Any = None
-    region: Any = None
+    # The signature version corresponds to the hashing algorithm used while creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By default, ``SignatureVersion`` is set to ``1``.
     signature_version: Any = None
-    sqs_failure_feedback_role_arn: Any = None
-    sqs_success_feedback_role_arn: Any = None
-    sqs_success_feedback_sample_rate: Any = None
+    # The SNS subscriptions (endpoints) for this topic. If you specify the ``Subscription`` property in the ``AWS::SNS::Topic`` resource and it creates an associated subscription resource, the associated subscription is not deleted when the ``AWS::SNS::Topic`` resource is deleted.
+    subscription: Any = None
+    # The list of tags to add to a new topic. To be able to tag a topic on creation, you must have the ``sns:CreateTopic`` and ``sns:TagResource`` permissions.
     tags: Any = None
-    tags_all: Any = None
+    # The name of the topic you want to create. Topic names must include only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long. FIFO topic names must end with ``.fifo``. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the topic name. For more information, see [Name type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+    topic_name: Any = None
+    # Tracing mode of an SNS topic. By default ``TracingConfig`` is set to ``PassThrough``, and the topic passes through the tracing header it receives from an SNS publisher to its subscriptions. If set to ``Active``, SNS will vend X-Ray segment data to topic owner account if the sampled flag in the tracing header is true.
+    tracing_config: Any = None
+
+@dataclasses.dataclass
+class TopicAttrs:
+    # The ``ArchivePolicy`` determines the number of days SNS retains messages in FIFO topics. You can set a retention period ranging from 1 to 365 days. This property is only applicable to FIFO topics; attempting to use it with standard topics will result in a creation failure.
+    archive_policy: Any = None
+    # ``ContentBasedDeduplication`` enables deduplication of messages based on their content for FIFO topics. By default, this property is set to false. If you create a FIFO topic with ``ContentBasedDeduplication`` set to false, you must provide a ``MessageDeduplicationId`` for each ``Publish`` action. When set to true, SNS automatically generates a ``MessageDeduplicationId`` using a SHA-256 hash of the message body (excluding message attributes). You can optionally override this generated value by specifying a ``MessageDeduplicationId`` in the ``Publish`` action. Note that this property only applies to FIFO topics; using it with standard topics will cause the creation to fail.
+    content_based_deduplication: Any = None
+    # The body of the policy document you want to use for this topic. You can only add one policy per topic. The policy must be in JSON string format. Length Constraints: Maximum length of 30,720.
+    data_protection_policy: Any = None
+    # The ``DeliveryStatusLogging`` configuration enables you to log the delivery status of messages sent from your Amazon SNS topic to subscribed endpoints with the following supported delivery protocols: + HTTP + Amazon Kinesis Data Firehose + AWS Lambda + Platform application endpoint + Amazon Simple Queue Service Once configured, log entries are sent to Amazon CloudWatch Logs.
+    delivery_status_logging: Any = None
+    # The display name to use for an SNS topic with SMS subscriptions. The display name must be maximum 100 characters long, including hyphens (-), underscores (_), spaces, and tabs.
+    display_name: Any = None
+    # Specifies the throughput quota and deduplication behavior to apply for the FIFO topic. Valid values are ``Topic`` or ``MessageGroup``.
+    fifo_throughput_scope: Any = None
+    # Set to true to create a FIFO topic.
+    fifo_topic: Any = None
+    # The ID of an AWS managed customer master key (CMK) for SNS or a custom CMK. For more information, see [Key terms](https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms). For more examples, see ``KeyId`` in the *API Reference*. This property applies only to [server-side-encryption](https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html).
+    kms_master_key_id: Any = None
+    # The signature version corresponds to the hashing algorithm used while creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By default, ``SignatureVersion`` is set to ``1``.
+    signature_version: Any = None
+    # The SNS subscriptions (endpoints) for this topic. If you specify the ``Subscription`` property in the ``AWS::SNS::Topic`` resource and it creates an associated subscription resource, the associated subscription is not deleted when the ``AWS::SNS::Topic`` resource is deleted.
+    subscription: Any = None
+    # The list of tags to add to a new topic. To be able to tag a topic on creation, you must have the ``sns:CreateTopic`` and ``sns:TagResource`` permissions.
+    tags: Any = None
+    # The Amazon Resource Name (ARN) of the SNS topic, automatically assigned by AWS when the topic is created and used to reference the topic in other services. (AI-inferred)
+    topic_arn: Any = None
+    # The name of the topic you want to create. Topic names must include only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long. FIFO topic names must end with ``.fifo``. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the topic name. For more information, see [Name type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+    topic_name: Any = None
+    # Tracing mode of an SNS topic. By default ``TracingConfig`` is set to ``PassThrough``, and the topic passes through the tracing header it receives from an SNS publisher to its subscriptions. If set to ``Active``, SNS will vend X-Ray segment data to topic owner account if the sampled flag in the tracing header is true.
     tracing_config: Any = None
 
 Topic = ubx.ResourceBinding(
     wire_type="aws_sns_topic",
     fields={
-        "application_failure_feedback_role_arn": ubx.FieldSpec(wire_name="application_failure_feedback_role_arn"),
-        "application_success_feedback_role_arn": ubx.FieldSpec(wire_name="application_success_feedback_role_arn"),
-        "application_success_feedback_sample_rate": ubx.FieldSpec(wire_name="application_success_feedback_sample_rate"),
         "archive_policy": ubx.FieldSpec(wire_name="archive_policy"),
         "content_based_deduplication": ubx.FieldSpec(wire_name="content_based_deduplication"),
-        "delivery_policy": ubx.FieldSpec(wire_name="delivery_policy"),
+        "data_protection_policy": ubx.FieldSpec(wire_name="data_protection_policy"),
+        "delivery_status_logging": ubx.FieldSpec(
+            wire_name="delivery_status_logging",
+            kind="list",
+            fields=_Topic_DeliveryStatusLoggingFields,
+        ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "fifo_throughput_scope": ubx.FieldSpec(wire_name="fifo_throughput_scope"),
         "fifo_topic": ubx.FieldSpec(wire_name="fifo_topic"),
-        "firehose_failure_feedback_role_arn": ubx.FieldSpec(wire_name="firehose_failure_feedback_role_arn"),
-        "firehose_success_feedback_role_arn": ubx.FieldSpec(wire_name="firehose_success_feedback_role_arn"),
-        "firehose_success_feedback_sample_rate": ubx.FieldSpec(wire_name="firehose_success_feedback_sample_rate"),
-        "http_failure_feedback_role_arn": ubx.FieldSpec(wire_name="http_failure_feedback_role_arn"),
-        "http_success_feedback_role_arn": ubx.FieldSpec(wire_name="http_success_feedback_role_arn"),
-        "http_success_feedback_sample_rate": ubx.FieldSpec(wire_name="http_success_feedback_sample_rate"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "kms_master_key_id": ubx.FieldSpec(wire_name="kms_master_key_id"),
-        "lambda_failure_feedback_role_arn": ubx.FieldSpec(wire_name="lambda_failure_feedback_role_arn"),
-        "lambda_success_feedback_role_arn": ubx.FieldSpec(wire_name="lambda_success_feedback_role_arn"),
-        "lambda_success_feedback_sample_rate": ubx.FieldSpec(wire_name="lambda_success_feedback_sample_rate"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "policy": ubx.FieldSpec(wire_name="policy"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "signature_version": ubx.FieldSpec(wire_name="signature_version"),
-        "sqs_failure_feedback_role_arn": ubx.FieldSpec(wire_name="sqs_failure_feedback_role_arn"),
-        "sqs_success_feedback_role_arn": ubx.FieldSpec(wire_name="sqs_success_feedback_role_arn"),
-        "sqs_success_feedback_sample_rate": ubx.FieldSpec(wire_name="sqs_success_feedback_sample_rate"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "subscription": ubx.FieldSpec(
+            wire_name="subscription",
+            kind="list",
+            fields=_Topic_SubscriptionFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Topic_TagsFields,
+        ),
+        "topic_name": ubx.FieldSpec(wire_name="topic_name"),
         "tracing_config": ubx.FieldSpec(wire_name="tracing_config"),
     },
 )

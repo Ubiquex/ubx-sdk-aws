@@ -3,23 +3,64 @@ package ses
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Template_Tags struct {
+	// The key of a tag applied to the Amazon SES email template. (AI-inferred)
+	Key any
+	// The value part of a tag assigned to the SES email template, used for metadata organization and cost allocation in AWS. (AI-inferred)
+	Value any
+}
+
+type Template_Template struct {
+	// The HTML body of the email.
+	HtmlPart any
+	// The subject line of the email.
+	SubjectPart any
+	// The name of the template.
+	TemplateName any
+	// The email body that is visible to recipients whose email clients do not display HTML content.
+	TextPart any
+}
+
+var Template_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Template_TemplateFields = ubx.FieldMap{
+		"HtmlPart": ubx.FieldSpec{WireName: "html_part"},
+		"SubjectPart": ubx.FieldSpec{WireName: "subject_part"},
+		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+		"TextPart": ubx.FieldSpec{WireName: "text_part"},
+	}
+
 type TemplateConfig struct {
-	Html any
+	// The tags (keys and values) associated with the email template.
+	Tags any
+	// The content of the email, composed of a subject line, an HTML part, and a text-only part
+	Template any
+}
+
+type TemplateAttrs struct {
+	// The id of the aws_ses_template resource is the template name, which uniquely identifies the SES template within the AWS region. (AI-inferred)
 	Id any
-	Name any
-	Region any
-	Subject any
-	Text any
+	// The tags (keys and values) associated with the email template.
+	Tags any
+	// The content of the email, composed of a subject line, an HTML part, and a text-only part
+	Template any
 }
 
 var Template = ubx.ResourceBinding{
 	WireType: "aws_ses_template",
 	Fields: ubx.FieldMap{
-		"Html": ubx.FieldSpec{WireName: "html"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-		"Text": ubx.FieldSpec{WireName: "text"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Template_TagsFields,
+		},
+		"Template": ubx.FieldSpec{
+			WireName: "template",
+			Kind: "object",
+			Fields: Template_TemplateFields,
+		},
 	},
 }

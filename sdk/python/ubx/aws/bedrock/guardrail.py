@@ -7,104 +7,175 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Guardrail_ContentPolicyConfig_TierConfig:
+class Guardrail_AutomatedReasoningPolicyConfig:
+    # The confidence threshold for triggering guardrail actions based on Automated Reasoning policy violations.
+    confidence_threshold: Any = None
+    # The list of Automated Reasoning policy ARNs to include in the guardrail configuration
+    policies: Any = None
+
+@dataclasses.dataclass
+class Guardrail_ContentPolicyConfig_ContentFiltersTierConfig:
+    # Tier name for tier configuration in content filters policy
     tier_name: Any = None
 
 @dataclasses.dataclass
 class Guardrail_ContentPolicyConfig_FiltersConfig:
+    # Specifies whether the guardrail's content filter blocks or allows the matched content type in user input prompts, accepting values like 'BLOCK' or 'NONE'. (AI-inferred)
     input_action: Any = None
+    # Specifies whether this content filter is enabled for user inputs (prompts) processed by the guardrail. (AI-inferred)
     input_enabled: Any = None
+    # Specifies the input modalities (e.g., TEXT or IMAGE) that the content filter applies to, allowing the filter to target specific types of content entering the guardrail. (AI-inferred)
     input_modalities: Any = None
+    # Specifies the strength of the content filter applied to user input prompts, controlling how aggressively the guardrail filters content for the input direction (e.g., NONE, LOW, MEDIUM, HIGH). (AI-inferred)
     input_strength: Any = None
+    # Determines whether content matching the filter category is blocked (BLOCK) or allowed (NONE) when it appears in model-generated output. (AI-inferred)
     output_action: Any = None
+    # Determines whether the content policy filter applies to generated model outputs, enabling or disabling the evaluation and filtering of the guardrail's responses for the specified filter category. (AI-inferred)
     output_enabled: Any = None
+    # Specifies the output modalities (such as TEXT or IMAGE) to which this content filter applies for generated responses. (AI-inferred)
     output_modalities: Any = None
+    # The strength (e.g., NONE, LOW, MEDIUM, HIGH) applied when filtering the model's generated (output) content for the specified content policy filter type, determining how aggressively the guardrail blocks or moderates that content. (AI-inferred)
     output_strength: Any = None
+    # The category of harmful content that this guardrail filter targets, such as SEXUAL, VIOLENCE, HATE, INSULTS, MISCONDUCT, or PROMPT_ATTACK. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Guardrail_ContentPolicyConfig:
-    tier_config: Any = None
+    # Guardrail tier config for content policy
+    content_filters_tier_config: Any = None
+    # List of content filter configs in content policy.
     filters_config: Any = None
 
 @dataclasses.dataclass
 class Guardrail_ContextualGroundingPolicyConfig_FiltersConfig:
+    # Specifies whether the contextual grounding filter blocks the request (BLOCK) or allows it (NONE) when the filter's check fails. (AI-inferred)
+    action: Any = None
+    # Boolean that enables or disables this specific contextual grounding filter (e.g., grounding or relevance) within the guardrail's contextual grounding policy. (AI-inferred)
+    enabled: Any = None
+    # The confidence threshold (between 0 and 1) for a contextual grounding filter (of type GROUNDING or RELEVANCE), which sets the minimum score the model's response must meet to be considered grounded or relevant, and responses scoring below this threshold are blocked. (AI-inferred)
     threshold: Any = None
+    # The type of the contextual grounding filter, which must be either GROUNDING or RELEVANCE, controlling whether the filter checks factual grounding or query relevance. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Guardrail_ContextualGroundingPolicyConfig:
+    # List of contextual grounding filter configs.
     filters_config: Any = None
 
 @dataclasses.dataclass
 class Guardrail_CrossRegionConfig:
-    guardrail_profile_identifier: Any = None
+    # The Amazon Resource Name (ARN) of the guardrail profile
+    guardrail_profile_arn: Any = None
 
 @dataclasses.dataclass
 class Guardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfig:
+    # In an AWS Bedrock Guardrail's sensitive information policy, the `action` property for each PII entity config determines the enforcement response when that type of personally identifiable information is detected, with valid values such as `BLOCK` to deny the input or output, or `ANONYMIZE` to replace it with a placeholder. (AI-inferred)
     action: Any = None
+    # Defines how the guardrail responds to detected personally identifiable information (PII) in an end-user prompt, allowing values like 'BLOCK' to deny the request or 'ANONYMIZE' to replace the PII with a placeholder before processing. (AI-inferred)
     input_action: Any = None
+    # Indicates whether the PII filter for this entity type is enabled on input (prompt) text in the guardrail's sensitive information policy. (AI-inferred)
     input_enabled: Any = None
+    # Specifies the action (e.g., BLOCK or ANONYMIZE) the guardrail applies when the configured PII entity type is detected in the model's output. (AI-inferred)
     output_action: Any = None
     output_enabled: Any = None
+    # Specifies the type of PII entity (e.g., EMAIL, PHONE, SSN) to be filtered by the guardrail's sensitive information policy. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Guardrail_SensitiveInformationPolicyConfig_RegexesConfig:
+    # Determines whether a regex-pattern match triggers blocking (BLOCK) or anonymization/masking (ANONYMIZE) of the detected sensitive information in guarded content. (AI-inferred)
     action: Any = None
+    # A user-defined textual description that explains the purpose or context of this custom regex pattern in the guardrail's sensitive information policy. (AI-inferred)
     description: Any = None
+    # Defines the action (BLOCK or ANONYMIZE) the guardrail takes when a regex pattern in this configuration matches sensitive information in the prompt (input). (AI-inferred)
     input_action: Any = None
+    # Indicates whether this regex pattern in the guardrail's sensitive information policy is applied to model inputs (prompts) as opposed to only model outputs (responses). (AI-inferred)
     input_enabled: Any = None
+    # The name of the custom regex pattern defined in the guardrail's sensitive information policy, used to identify and reference the regex-based filter. (AI-inferred)
     name: Any = None
+    # Specifies whether a matched regex pattern in the model's output is blocked or anonymized when detected by the Bedrock guardrail. (AI-inferred)
     output_action: Any = None
+    # Indicates whether the regex pattern for this sensitive information filter is enabled on model output; when false, the pattern is only applied to input. (AI-inferred)
     output_enabled: Any = None
+    # The regular expression pattern used to detect sensitive information in the guardrail's sensitive information policy. (AI-inferred)
     pattern: Any = None
 
 @dataclasses.dataclass
 class Guardrail_SensitiveInformationPolicyConfig:
+    # List of entities.
     pii_entities_config: Any = None
+    # List of regex.
     regexes_config: Any = None
 
 @dataclasses.dataclass
-class Guardrail_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Guardrail_Tags:
+    # The key of a tag to apply to the Bedrock guardrail, used for organizing and identifying the resource. (AI-inferred)
+    key: Any = None
+    value: Any = None
 
 @dataclasses.dataclass
 class Guardrail_TopicPolicyConfig_TopicsConfig:
+    # In the topic policy of an Amazon Bedrock guardrail, each topic's definition provides a natural-language description of the specific subject matter that the guardrail should identify and block or deny in model responses. (AI-inferred)
     definition: Any = None
+    # Specifies a list of sample phrases that illustrate the topic, used to improve the accuracy of the guardrail's detection of the topic. (AI-inferred)
     examples: Any = None
+    # Specifies the action the guardrail takes when user input matches this topic, such as BLOCK or ALLOW. (AI-inferred)
+    input_action: Any = None
+    input_enabled: Any = None
+    # The user-defined name of a topic configured in the guardrail's topic policy, used to identify a specific subject (e.g., 'investment advice') that the model is instructed to avoid discussing. (AI-inferred)
     name: Any = None
+    # Specifies the action taken on the output when a user query or model response matches the topic, with allowed values 'BLOCK' to deny the content and 'NONE' to allow it. (AI-inferred)
+    output_action: Any = None
+    output_enabled: Any = None
+    # Specifies whether the topic is defined as a denied (DENY) or allowed (ALLOW) topic in the guardrail's topic policy. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Guardrail_TopicPolicyConfig:
-    tier_config: Any = None
+    # List of topic configs in topic policy.
     topics_config: Any = None
+    # Guardrail tier config for topic policy
+    topics_tier_config: Any = None
 
 @dataclasses.dataclass
 class Guardrail_WordPolicyConfig_ManagedWordListsConfig:
+    # Determines the action applied to the input when a word from the managed word list is detected, with values such as BLOCK to block the input or NONE to allow it. (AI-inferred)
     input_action: Any = None
+    # Enables or disables the managed word list (e.g., profanity) filter for user input prompts in the guardrail. (AI-inferred)
     input_enabled: Any = None
+    # For each managed word list configured in the guardrail's word policy, this field determines the action taken when a word from that list is detected, with allowed values of 'BLOCK' (block the content) or 'NONE' (allow the content). (AI-inferred)
     output_action: Any = None
+    # Indicates whether the managed word list (e.g., profanity) is applied to filter the model's output text. (AI-inferred)
     output_enabled: Any = None
+    # Specifies the managed word list category to apply to the guardrail, with the supported value PROFANITY for filtering profane language. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Guardrail_WordPolicyConfig_WordsConfig:
+    # Determines whether a word in this list is blocked when it appears in the user prompt (input) text, with `BLOCK` filtering it out and `NONE` permitting it. (AI-inferred)
     input_action: Any = None
+    # Indicates whether this custom word in the word policy is filtered from the input (user prompt) traffic, as opposed to output (model response) traffic. (AI-inferred)
     input_enabled: Any = None
+    # Specifies the action the guardrail takes when a model output contains the configured word, with BLOCKED causing the word to be blocked and NONE allowing it to pass through. (AI-inferred)
     output_action: Any = None
+    # Indicates whether the word is enabled for output filtering, meaning that when true, the guardrail prevents the word from appearing in model-generated responses. (AI-inferred)
     output_enabled: Any = None
+    # The word or phrase that the guardrail's word policy will filter or block in model responses. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Guardrail_WordPolicyConfig:
+    # A config for the list of managed words.
     managed_word_lists_config: Any = None
+    # List of custom word configs.
     words_config: Any = None
 
-_Guardrail_ContentPolicyConfig_TierConfigFields = {
+_Guardrail_AutomatedReasoningPolicyConfigFields = {
+    "confidence_threshold": ubx.FieldSpec(wire_name="confidence_threshold"),
+    "policies": ubx.FieldSpec(wire_name="policies"),
+}
+
+_Guardrail_ContentPolicyConfig_ContentFiltersTierConfigFields = {
     "tier_name": ubx.FieldSpec(wire_name="tier_name"),
 }
 
@@ -121,19 +192,21 @@ _Guardrail_ContentPolicyConfig_FiltersConfigFields = {
 }
 
 _Guardrail_ContentPolicyConfigFields = {
-    "tier_config": ubx.FieldSpec(
-        wire_name="tier_config",
-        kind="list",
-        fields=_Guardrail_ContentPolicyConfig_TierConfigFields,
+    "content_filters_tier_config": ubx.FieldSpec(
+        wire_name="content_filters_tier_config",
+        kind="object",
+        fields=_Guardrail_ContentPolicyConfig_ContentFiltersTierConfigFields,
     ),
     "filters_config": ubx.FieldSpec(
         wire_name="filters_config",
-        kind="set",
+        kind="list",
         fields=_Guardrail_ContentPolicyConfig_FiltersConfigFields,
     ),
 }
 
 _Guardrail_ContextualGroundingPolicyConfig_FiltersConfigFields = {
+    "action": ubx.FieldSpec(wire_name="action"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
     "threshold": ubx.FieldSpec(wire_name="threshold"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
@@ -147,7 +220,7 @@ _Guardrail_ContextualGroundingPolicyConfigFields = {
 }
 
 _Guardrail_CrossRegionConfigFields = {
-    "guardrail_profile_identifier": ubx.FieldSpec(wire_name="guardrail_profile_identifier"),
+    "guardrail_profile_arn": ubx.FieldSpec(wire_name="guardrail_profile_arn"),
 }
 
 _Guardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfigFields = {
@@ -183,29 +256,32 @@ _Guardrail_SensitiveInformationPolicyConfigFields = {
     ),
 }
 
-_Guardrail_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Guardrail_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _Guardrail_TopicPolicyConfig_TopicsConfigFields = {
     "definition": ubx.FieldSpec(wire_name="definition"),
     "examples": ubx.FieldSpec(wire_name="examples"),
+    "input_action": ubx.FieldSpec(wire_name="input_action"),
+    "input_enabled": ubx.FieldSpec(wire_name="input_enabled"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "output_action": ubx.FieldSpec(wire_name="output_action"),
+    "output_enabled": ubx.FieldSpec(wire_name="output_enabled"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Guardrail_TopicPolicyConfigFields = {
-    "tier_config": ubx.FieldSpec(
-        wire_name="tier_config",
-        kind="list",
-        fields=_Guardrail_ContentPolicyConfig_TierConfigFields,
-    ),
     "topics_config": ubx.FieldSpec(
         wire_name="topics_config",
         kind="list",
         fields=_Guardrail_TopicPolicyConfig_TopicsConfigFields,
+    ),
+    "topics_tier_config": ubx.FieldSpec(
+        wire_name="topics_tier_config",
+        kind="object",
+        fields=_Guardrail_ContentPolicyConfig_ContentFiltersTierConfigFields,
     ),
 }
 
@@ -240,64 +316,124 @@ _Guardrail_WordPolicyConfigFields = {
 
 @dataclasses.dataclass
 class GuardrailConfig:
+    # Optional configuration for integrating Automated Reasoning policies with the guardrail.
+    automated_reasoning_policy_config: Any = None
+    # Messaging for when violations are detected in text
     blocked_input_messaging: Any = None
+    # Messaging for when violations are detected in text
     blocked_outputs_messaging: Any = None
-    description: Any = None
-    kms_key_arn: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
+    # Content policy config for a guardrail.
     content_policy_config: Any = None
+    # Contextual grounding policy config for a guardrail.
     contextual_grounding_policy_config: Any = None
+    # The system-defined guardrail profile that you’re using with your guardrail
     cross_region_config: Any = None
+    # Description of the guardrail or its version
+    description: Any = None
+    # The KMS key with which the guardrail was encrypted at rest
+    kms_key_arn: Any = None
+    # Name of the guardrail
+    name: Any = None
+    # Sensitive information policy config for a guardrail.
     sensitive_information_policy_config: Any = None
-    timeouts: Any = None
+    # List of Tags
+    tags: Any = None
+    # Topic policy config for a guardrail.
     topic_policy_config: Any = None
+    # Word policy config for a guardrail.
+    word_policy_config: Any = None
+
+@dataclasses.dataclass
+class GuardrailAttrs:
+    # Optional configuration for integrating Automated Reasoning policies with the guardrail.
+    automated_reasoning_policy_config: Any = None
+    # Messaging for when violations are detected in text
+    blocked_input_messaging: Any = None
+    # Messaging for when violations are detected in text
+    blocked_outputs_messaging: Any = None
+    # Content policy config for a guardrail.
+    content_policy_config: Any = None
+    # Contextual grounding policy config for a guardrail.
+    contextual_grounding_policy_config: Any = None
+    # Time Stamp
+    created_at: Any = None
+    # The system-defined guardrail profile that you’re using with your guardrail
+    cross_region_config: Any = None
+    # Description of the guardrail or its version
+    description: Any = None
+    # List of failure recommendations
+    failure_recommendations: Any = None
+    # Arn representation for the guardrail
+    guardrail_arn: Any = None
+    # Unique id for the guardrail
+    guardrail_id: Any = None
+    # The KMS key with which the guardrail was encrypted at rest
+    kms_key_arn: Any = None
+    # Name of the guardrail
+    name: Any = None
+    # Sensitive information policy config for a guardrail.
+    sensitive_information_policy_config: Any = None
+    # Status of the guardrail
+    status: Any = None
+    # List of status reasons
+    status_reasons: Any = None
+    # List of Tags
+    tags: Any = None
+    # Topic policy config for a guardrail.
+    topic_policy_config: Any = None
+    # Time Stamp
+    updated_at: Any = None
+    # Guardrail version
+    version: Any = None
+    # Word policy config for a guardrail.
     word_policy_config: Any = None
 
 Guardrail = ubx.ResourceBinding(
     wire_type="aws_bedrock_guardrail",
     fields={
+        "automated_reasoning_policy_config": ubx.FieldSpec(
+            wire_name="automated_reasoning_policy_config",
+            kind="object",
+            fields=_Guardrail_AutomatedReasoningPolicyConfigFields,
+        ),
         "blocked_input_messaging": ubx.FieldSpec(wire_name="blocked_input_messaging"),
         "blocked_outputs_messaging": ubx.FieldSpec(wire_name="blocked_outputs_messaging"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
         "content_policy_config": ubx.FieldSpec(
             wire_name="content_policy_config",
-            kind="list",
+            kind="object",
             fields=_Guardrail_ContentPolicyConfigFields,
         ),
         "contextual_grounding_policy_config": ubx.FieldSpec(
             wire_name="contextual_grounding_policy_config",
-            kind="list",
+            kind="object",
             fields=_Guardrail_ContextualGroundingPolicyConfigFields,
         ),
         "cross_region_config": ubx.FieldSpec(
             wire_name="cross_region_config",
-            kind="list",
+            kind="object",
             fields=_Guardrail_CrossRegionConfigFields,
         ),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
+        "name": ubx.FieldSpec(wire_name="name"),
         "sensitive_information_policy_config": ubx.FieldSpec(
             wire_name="sensitive_information_policy_config",
-            kind="list",
+            kind="object",
             fields=_Guardrail_SensitiveInformationPolicyConfigFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Guardrail_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Guardrail_TagsFields,
         ),
         "topic_policy_config": ubx.FieldSpec(
             wire_name="topic_policy_config",
-            kind="list",
+            kind="object",
             fields=_Guardrail_TopicPolicyConfigFields,
         ),
         "word_policy_config": ubx.FieldSpec(
             wire_name="word_policy_config",
-            kind="list",
+            kind="object",
             fields=_Guardrail_WordPolicyConfigFields,
         ),
     },

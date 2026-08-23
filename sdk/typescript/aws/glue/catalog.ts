@@ -2,150 +2,125 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Catalog_CatalogProperties_DataLakeAccessProperties {
-  catalogType: string;
-  dataLakeAccess: boolean;
-  dataTransferRole: string;
-  kmsKey: string;
-  managedWorkgroupName: string;
-  managedWorkgroupStatus: string;
-  redshiftDatabaseName: string;
-  statusMessage: string;
-}
-
-export interface Catalog_CatalogProperties_IcebergOptimizationProperties {
-  compaction: Record<string, string>;
-  orphanFileDeletion: Record<string, string>;
-  retention: Record<string, string>;
-  roleArn: string;
+  /** Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation. */
+  allowFullTableExternalDataAccess?: string | Computed<string>;
+  /** Specifies a federated catalog type for the native catalog resource. */
+  catalogType?: string | Computed<string>;
+  /** Turns on or off data lake access for Apache Spark applications that access Amazon Redshift databases in the Data Catalog from any non-Redshift engine. */
+  dataLakeAccess?: boolean | Computed<boolean>;
+  /** A role that will be assumed by Glue for transferring data into/out of the staging bucket during a query. */
+  dataTransferRole?: string | Computed<string>;
+  /** An encryption key that will be used for the staging bucket that will be created along with the catalog. */
+  kmsKey?: string | Computed<string>;
+  /** The name of the managed workgroup associated with the catalog. */
+  managedWorkgroupName?: string | Computed<string>;
+  /** The status of the managed workgroup. */
+  managedWorkgroupStatus?: string | Computed<string>;
+  /** The name of the Redshift database. */
+  redshiftDatabaseName?: string | Computed<string>;
 }
 
 export interface Catalog_CatalogProperties {
-  customProperties: Record<string, string>;
-  dataLakeAccessProperties: Catalog_CatalogProperties_DataLakeAccessProperties[];
-  icebergOptimizationProperties: Catalog_CatalogProperties_IcebergOptimizationProperties[];
+  /** Additional key-value properties for the catalog. */
+  customProperties?: unknown | Computed<unknown>;
+  /** Data lake access properties for the catalog. */
+  dataLakeAccessProperties?: Catalog_CatalogProperties_DataLakeAccessProperties | Computed<Catalog_CatalogProperties_DataLakeAccessProperties>;
 }
 
 export interface Catalog_CreateDatabaseDefaultPermissions_Principal {
-  dataLakePrincipalIdentifier: string;
+  /** The unique identifier (such as an IAM role ARN, IAM user ARN, or AWS account ID) of the Data Lake principal that receives the default permissions for databases created in the Glue catalog. (AI-inferred) */
+  dataLakePrincipalIdentifier?: string | Computed<string>;
 }
 
 export interface Catalog_CreateDatabaseDefaultPermissions {
-  permissions: string[];
-  principal: Catalog_CreateDatabaseDefaultPermissions_Principal[];
+  /** The list of AWS Glue permissions (e.g., 'ALL' or 'CREATE_TABLE') granted by default to the specified principal on newly created databases in the Data Catalog. (AI-inferred) */
+  permissions?: string[] | Computed<string[]>;
+  /** Defines the principal (IAM user, role, or all users) that the Glue database's default permissions are granted to, via its Data Lake principal identifier. (AI-inferred) */
+  principal?: Catalog_CreateDatabaseDefaultPermissions_Principal | Computed<Catalog_CreateDatabaseDefaultPermissions_Principal>;
 }
 
 export interface Catalog_FederatedCatalog {
-  connectionName: string;
-  connectionType: string;
-  identifier: string;
+  /** The name of the connection to an external data source. */
+  connectionName?: string | Computed<string>;
+  /** A unique identifier for the federated catalog. */
+  identifier?: string | Computed<string>;
+}
+
+export interface Catalog_Tags {
+  key?: string | Computed<string>;
+  /** The value of a tag key in the Tags property of the AWS Glue Catalog, used to attach custom metadata to the Glue Data Catalog for identification and resource management. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 export interface Catalog_TargetRedshiftCatalog {
-  catalogArn: string;
+  /** The Amazon Resource Name (ARN) of the catalog resource. */
+  catalogArn: string | Computed<string>;
 }
-
-export interface Catalog_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
-}
-
-const Catalog_CatalogProperties_DataLakeAccessPropertiesFields: FieldMap = {
-  catalogType: "catalog_type",
-  dataLakeAccess: "data_lake_access",
-  dataTransferRole: "data_transfer_role",
-  kmsKey: "kms_key",
-  managedWorkgroupName: "managed_workgroup_name",
-  managedWorkgroupStatus: "managed_workgroup_status",
-  redshiftDatabaseName: "redshift_database_name",
-  statusMessage: "status_message",
-};
-
-const Catalog_CatalogProperties_IcebergOptimizationPropertiesFields: FieldMap = {
-  compaction: "compaction",
-  orphanFileDeletion: "orphan_file_deletion",
-  retention: "retention",
-  roleArn: "role_arn",
-};
-
-const Catalog_CatalogPropertiesFields: FieldMap = {
-  customProperties: "custom_properties",
-  dataLakeAccessProperties: {
-    wireName: "data_lake_access_properties",
-    kind: "list",
-    fields: Catalog_CatalogProperties_DataLakeAccessPropertiesFields,
-  },
-  icebergOptimizationProperties: {
-    wireName: "iceberg_optimization_properties",
-    kind: "list",
-    fields: Catalog_CatalogProperties_IcebergOptimizationPropertiesFields,
-  },
-};
-
-const Catalog_CreateDatabaseDefaultPermissions_PrincipalFields: FieldMap = {
-  dataLakePrincipalIdentifier: "data_lake_principal_identifier",
-};
-
-const Catalog_CreateDatabaseDefaultPermissionsFields: FieldMap = {
-  permissions: "permissions",
-  principal: {
-    wireName: "principal",
-    kind: "list",
-    fields: Catalog_CreateDatabaseDefaultPermissions_PrincipalFields,
-  },
-};
 
 const Catalog_FederatedCatalogFields: FieldMap = {
   connectionName: "connection_name",
-  connectionType: "connection_type",
   identifier: "identifier",
+};
+
+const Catalog_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 const Catalog_TargetRedshiftCatalogFields: FieldMap = {
   catalogArn: "catalog_arn",
 };
 
-const Catalog_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
-};
-
 export interface CatalogConfig {
+  /** Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation. */
   allowFullTableExternalDataAccess?: string | Computed<string>;
+  /** A description of the catalog. */
   description?: string | Computed<string>;
+  /** A FederatedCatalog structure that references an entity outside the Glue Data Catalog. */
+  federatedCatalog?: Catalog_FederatedCatalog | Computed<Catalog_FederatedCatalog>;
+  /** The name of the catalog to create. */
   name: string | Computed<string>;
+  /** Specifies whether to overwrite child resource permissions with the default permissions. */
   overwriteChildResourcePermissionsWithDefault?: string | Computed<string>;
-  parameters?: Record<string, string> | Computed<Record<string, string>>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  catalogProperties?: Catalog_CatalogProperties[] | Computed<Catalog_CatalogProperties[]>;
-  createDatabaseDefaultPermissions?: Catalog_CreateDatabaseDefaultPermissions[] | Computed<Catalog_CreateDatabaseDefaultPermissions[]>;
-  createTableDefaultPermissions?: Catalog_CreateDatabaseDefaultPermissions[] | Computed<Catalog_CreateDatabaseDefaultPermissions[]>;
-  federatedCatalog?: Catalog_FederatedCatalog[] | Computed<Catalog_FederatedCatalog[]>;
-  targetRedshiftCatalog?: Catalog_TargetRedshiftCatalog[] | Computed<Catalog_TargetRedshiftCatalog[]>;
-  timeouts?: Catalog_Timeouts | Computed<Catalog_Timeouts>;
+  /** A map of key-value pairs that define parameters and properties of the catalog. */
+  parameters?: unknown | Computed<unknown>;
+  /** An array of key-value pairs to apply to this resource. */
+  tags?: Catalog_Tags[] | Computed<Catalog_Tags[]>;
+  /** A structure that describes a target catalog for resource linking. */
+  targetRedshiftCatalog?: Catalog_TargetRedshiftCatalog | Computed<Catalog_TargetRedshiftCatalog>;
 }
 
 export interface CatalogAttrs {
+  /** Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation. */
   allowFullTableExternalDataAccess: string;
-  arn: string;
+  /** The ID of the catalog. */
   catalogId: string;
-  createTime: string;
-  description: string;
-  name: string;
-  overwriteChildResourcePermissionsWithDefault: string;
-  parameters: Record<string, string>;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  updateTime: string;
-  catalogProperties: Catalog_CatalogProperties[];
+  /** A structure that specifies data lake access properties and other custom properties. */
+  catalogProperties: Catalog_CatalogProperties;
+  /** An array of PrincipalPermissions objects for default database permissions. */
   createDatabaseDefaultPermissions: Catalog_CreateDatabaseDefaultPermissions[];
+  /** An array of PrincipalPermissions objects for default table permissions. */
   createTableDefaultPermissions: Catalog_CreateDatabaseDefaultPermissions[];
-  federatedCatalog: Catalog_FederatedCatalog[];
-  targetRedshiftCatalog: Catalog_TargetRedshiftCatalog[];
-  timeouts: Catalog_Timeouts;
+  /** The time at which the catalog was created. */
+  createTime: number;
+  /** A description of the catalog. */
+  description: string;
+  /** A FederatedCatalog structure that references an entity outside the Glue Data Catalog. */
+  federatedCatalog: Catalog_FederatedCatalog;
+  /** The name of the catalog to create. */
+  name: string;
+  /** Specifies whether to overwrite child resource permissions with the default permissions. */
+  overwriteChildResourcePermissionsWithDefault: string;
+  /** A map of key-value pairs that define parameters and properties of the catalog. */
+  parameters: unknown;
+  /** The Amazon Resource Name (ARN) of the catalog. */
+  resourceArn: string;
+  /** An array of key-value pairs to apply to this resource. */
+  tags: Catalog_Tags[];
+  /** A structure that describes a target catalog for resource linking. */
+  targetRedshiftCatalog: Catalog_TargetRedshiftCatalog;
+  /** The time at which the catalog was last updated. */
+  updateTime: number;
 }
 
 export const Catalog: ResourceBinding<CatalogConfig, CatalogAttrs> = {
@@ -153,40 +128,23 @@ export const Catalog: ResourceBinding<CatalogConfig, CatalogAttrs> = {
   fields: {
     allowFullTableExternalDataAccess: "allow_full_table_external_data_access",
     description: "description",
+    federatedCatalog: {
+      wireName: "federated_catalog",
+      kind: "object",
+      fields: Catalog_FederatedCatalogFields,
+    },
     name: "name",
     overwriteChildResourcePermissionsWithDefault: "overwrite_child_resource_permissions_with_default",
     parameters: "parameters",
-    region: "region",
-    tags: "tags",
-    catalogProperties: {
-      wireName: "catalog_properties",
+    tags: {
+      wireName: "tags",
       kind: "list",
-      fields: Catalog_CatalogPropertiesFields,
-    },
-    createDatabaseDefaultPermissions: {
-      wireName: "create_database_default_permissions",
-      kind: "list",
-      fields: Catalog_CreateDatabaseDefaultPermissionsFields,
-    },
-    createTableDefaultPermissions: {
-      wireName: "create_table_default_permissions",
-      kind: "list",
-      fields: Catalog_CreateDatabaseDefaultPermissionsFields,
-    },
-    federatedCatalog: {
-      wireName: "federated_catalog",
-      kind: "list",
-      fields: Catalog_FederatedCatalogFields,
+      fields: Catalog_TagsFields,
     },
     targetRedshiftCatalog: {
       wireName: "target_redshift_catalog",
-      kind: "list",
-      fields: Catalog_TargetRedshiftCatalogFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
       kind: "object",
-      fields: Catalog_TimeoutsFields,
+      fields: Catalog_TargetRedshiftCatalogFields,
     },
   },
 };

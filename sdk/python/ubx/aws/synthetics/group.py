@@ -7,20 +7,46 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Group_Tags:
+    # The key part of a key-value tag, used to assign metadata to the canary group for identification and resource management. (AI-inferred)
+    key: Any = None
+    # The value of a tag attached to the Synthetics canary group, which is a user-defined string that helps manage and identify the group. (AI-inferred)
+    value: Any = None
+
+_Group_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class GroupConfig:
-    id: Any = None
+    # Name of the group.
     name: Any = None
-    region: Any = None
+    # Specifies the ARNs of the Synthetics canaries to associate with this group, making them members of the group. (AI-inferred)
+    resource_arns: Any = None
+    # Tags are metadata labels (key-value pairs) that you can assign to the Synthetics group to help organize, identify, and manage it, with each tag defined by a key and optional value. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class GroupAttrs:
+    # Id of the group.
+    id: Any = None
+    # Name of the group.
+    name: Any = None
+    # Specifies the ARNs of the Synthetics canaries to associate with this group, making them members of the group. (AI-inferred)
+    resource_arns: Any = None
+    # Tags are metadata labels (key-value pairs) that you can assign to the Synthetics group to help organize, identify, and manage it, with each tag defined by a key and optional value. (AI-inferred)
+    tags: Any = None
 
 Group = ubx.ResourceBinding(
     wire_type="aws_synthetics_group",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "resource_arns": ubx.FieldSpec(wire_name="resource_arns"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Group_TagsFields,
+        ),
     },
 )

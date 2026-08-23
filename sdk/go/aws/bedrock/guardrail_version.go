@@ -3,35 +3,30 @@ package bedrock
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type GuardrailVersion_Timeouts struct {
-	Create any
-	Delete any
+type GuardrailVersionConfig struct {
+	// Description of the Guardrail version
+	Description any
+	// Identifier (GuardrailId or GuardrailArn) for the guardrail
+	GuardrailIdentifier any
 }
 
-var GuardrailVersion_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
-type GuardrailVersionConfig struct {
+type GuardrailVersionAttrs struct {
+	// Description of the Guardrail version
 	Description any
+	// Arn representation for the guardrail
 	GuardrailArn any
-	Region any
-	SkipDestroy any
-	Timeouts any
+	// Unique id for the guardrail
+	GuardrailId any
+	// Identifier (GuardrailId or GuardrailArn) for the guardrail
+	GuardrailIdentifier any
+	// Guardrail version
+	Version any
 }
 
 var GuardrailVersion = ubx.ResourceBinding{
 	WireType: "aws_bedrock_guardrail_version",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"GuardrailArn": ubx.FieldSpec{WireName: "guardrail_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SkipDestroy": ubx.FieldSpec{WireName: "skip_destroy"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: GuardrailVersion_TimeoutsFields,
-		},
+		"GuardrailIdentifier": ubx.FieldSpec{WireName: "guardrail_identifier"},
 	},
 }

@@ -7,80 +7,40 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Table_Route:
-    carrier_gateway_id: Any = None
-    cidr_block: Any = None
-    core_network_arn: Any = None
-    destination_prefix_list_id: Any = None
-    egress_only_gateway_id: Any = None
-    gateway_id: Any = None
-    ipv6_cidr_block: Any = None
-    local_gateway_id: Any = None
-    nat_gateway_id: Any = None
-    network_interface_id: Any = None
-    odb_network_arn: Any = None
-    transit_gateway_id: Any = None
-    vpc_endpoint_id: Any = None
-    vpc_peering_connection_id: Any = None
+class Table_Tags:
+    key: Any = None
+    # The value of a user-defined tag key associated with the route table, used to organize and identify the route table within AWS. (AI-inferred)
+    value: Any = None
 
-@dataclasses.dataclass
-class Table_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_Table_RouteFields = {
-    "carrier_gateway_id": ubx.FieldSpec(wire_name="carrier_gateway_id"),
-    "cidr_block": ubx.FieldSpec(wire_name="cidr_block"),
-    "core_network_arn": ubx.FieldSpec(wire_name="core_network_arn"),
-    "destination_prefix_list_id": ubx.FieldSpec(wire_name="destination_prefix_list_id"),
-    "egress_only_gateway_id": ubx.FieldSpec(wire_name="egress_only_gateway_id"),
-    "gateway_id": ubx.FieldSpec(wire_name="gateway_id"),
-    "ipv6_cidr_block": ubx.FieldSpec(wire_name="ipv6_cidr_block"),
-    "local_gateway_id": ubx.FieldSpec(wire_name="local_gateway_id"),
-    "nat_gateway_id": ubx.FieldSpec(wire_name="nat_gateway_id"),
-    "network_interface_id": ubx.FieldSpec(wire_name="network_interface_id"),
-    "odb_network_arn": ubx.FieldSpec(wire_name="odb_network_arn"),
-    "transit_gateway_id": ubx.FieldSpec(wire_name="transit_gateway_id"),
-    "vpc_endpoint_id": ubx.FieldSpec(wire_name="vpc_endpoint_id"),
-    "vpc_peering_connection_id": ubx.FieldSpec(wire_name="vpc_peering_connection_id"),
-}
-
-_Table_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Table_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class TableConfig:
-    id: Any = None
-    propagating_vgws: Any = None
-    region: Any = None
-    route: Any = None
+    # Any tags assigned to the route table.
     tags: Any = None
-    tags_all: Any = None
+    # The ID of the VPC.
     vpc_id: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class TableAttrs:
+    # The unique identifier of the route table, assigned by AWS (e.g., rtb-xxxxxxxx). (AI-inferred)
+    route_table_id: Any = None
+    # Any tags assigned to the route table.
+    tags: Any = None
+    # The ID of the VPC.
+    vpc_id: Any = None
 
 Table = ubx.ResourceBinding(
     wire_type="aws_route_table",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "propagating_vgws": ubx.FieldSpec(wire_name="propagating_vgws"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "route": ubx.FieldSpec(
-            wire_name="route",
-            kind="set",
-            fields=_Table_RouteFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Table_TagsFields,
         ),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Table_TimeoutsFields,
-        ),
     },
 )

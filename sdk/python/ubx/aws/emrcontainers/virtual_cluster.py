@@ -8,21 +8,28 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VirtualCluster_ContainerProvider_Info_EksInfo:
+    # The Kubernetes namespace in the Amazon EKS cluster where the virtual cluster's resources are deployed. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
 class VirtualCluster_ContainerProvider_Info:
+    # Specifies the Amazon EKS cluster information for the container provider, including the Kubernetes namespace where the virtual cluster runs. (AI-inferred)
     eks_info: Any = None
 
 @dataclasses.dataclass
 class VirtualCluster_ContainerProvider:
+    # The ID of the container cluster
     id: Any = None
-    type: Any = None
+    # The info object inside container_provider contains provider-specific details, specifically the Amazon EKS namespace in which the virtual cluster runs. (AI-inferred)
     info: Any = None
+    # The type of the container provider
+    type: Any = None
 
 @dataclasses.dataclass
-class VirtualCluster_Timeouts:
-    delete: Any = None
+class VirtualCluster_Tags:
+    key: Any = None
+    # The value portion of a tag attached to the EMR Containers virtual cluster. (AI-inferred)
+    value: Any = None
 
 _VirtualCluster_ContainerProvider_Info_EksInfoFields = {
     "namespace": ubx.FieldSpec(wire_name="namespace"),
@@ -31,52 +38,71 @@ _VirtualCluster_ContainerProvider_Info_EksInfoFields = {
 _VirtualCluster_ContainerProvider_InfoFields = {
     "eks_info": ubx.FieldSpec(
         wire_name="eks_info",
-        kind="list",
+        kind="object",
         fields=_VirtualCluster_ContainerProvider_Info_EksInfoFields,
     ),
 }
 
 _VirtualCluster_ContainerProviderFields = {
     "id": ubx.FieldSpec(wire_name="id"),
-    "type": ubx.FieldSpec(wire_name="type"),
     "info": ubx.FieldSpec(
         wire_name="info",
-        kind="list",
+        kind="object",
         fields=_VirtualCluster_ContainerProvider_InfoFields,
     ),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_VirtualCluster_TimeoutsFields = {
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_VirtualCluster_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class VirtualClusterConfig:
-    id: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # The container provider configuration that defines the underlying container platform (e.g., Amazon EKS) on which the virtual cluster runs, including the provider type and the Amazon EKS cluster information. (AI-inferred)
     container_provider: Any = None
-    timeouts: Any = None
+    # Name of the virtual cluster.
+    name: Any = None
+    # The ID of the security configuration.
+    security_configuration_id: Any = None
+    # Whether the virtual cluster is session-enabled for Spark Connect.
+    session_enabled: Any = None
+    # An array of key-value pairs to apply to this virtual cluster.
+    tags: Any = None
+
+@dataclasses.dataclass
+class VirtualClusterAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies the EMR Containers virtual cluster in AWS. (AI-inferred)
+    arn: Any = None
+    # The container provider configuration that defines the underlying container platform (e.g., Amazon EKS) on which the virtual cluster runs, including the provider type and the Amazon EKS cluster information. (AI-inferred)
+    container_provider: Any = None
+    # Id of the virtual cluster.
+    id: Any = None
+    # Name of the virtual cluster.
+    name: Any = None
+    # The ID of the security configuration.
+    security_configuration_id: Any = None
+    # Whether the virtual cluster is session-enabled for Spark Connect.
+    session_enabled: Any = None
+    # An array of key-value pairs to apply to this virtual cluster.
+    tags: Any = None
 
 VirtualCluster = ubx.ResourceBinding(
     wire_type="aws_emrcontainers_virtual_cluster",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "container_provider": ubx.FieldSpec(
             wire_name="container_provider",
-            kind="list",
+            kind="object",
             fields=_VirtualCluster_ContainerProviderFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_VirtualCluster_TimeoutsFields,
+        "name": ubx.FieldSpec(wire_name="name"),
+        "security_configuration_id": ubx.FieldSpec(wire_name="security_configuration_id"),
+        "session_enabled": ubx.FieldSpec(wire_name="session_enabled"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_VirtualCluster_TagsFields,
         ),
     },
 )

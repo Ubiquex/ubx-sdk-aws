@@ -3,137 +3,402 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Fleet_FleetInstanceSet struct {
-	InstanceIds any
-	InstanceType any
-	Lifecycle any
-	Platform any
-}
-
-type Fleet_LaunchTemplateConfig_LaunchTemplateSpecification struct {
+type Fleet_LaunchTemplateConfigs_LaunchTemplateSpecification struct {
+	// Specifies the ID of the EC2 launch template that defines the instance configuration (such as AMI, instance type, and network settings) for the instances launched by the EC2 Fleet from this launch template config. (AI-inferred)
 	LaunchTemplateId any
+	// The name of the EC2 launch template to use for instances launched in this fleet's launch template configuration. (AI-inferred)
 	LaunchTemplateName any
+	LaunchTemplateSpecificationUserData any
+	// The version of the launch template (e.g., a specific version number, $Latest, or $Default) that the EC2 Fleet uses when launching instances for this launch template configuration. (AI-inferred)
 	Version any
 }
 
-type Fleet_LaunchTemplateConfig_Override_InstanceRequirements_AcceleratorCount struct {
+type Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappings_Ebs struct {
+	// Indicates whether the EBS volume created by this block device mapping is automatically deleted when the EC2 instance terminates. (AI-inferred)
+	DeleteOnTermination any
+	// Specifies whether the EBS volume for this block device mapping in the EC2 Fleet launch template override should be encrypted, allowing enforcement of encryption on launched instances. (AI-inferred)
+	Encrypted any
+	// Specifies the provisioned IOPS (I/O operations per second) for the EBS volume in a launch template override's block device mapping, used when configuring an EC2 Fleet with volume types that support custom IOPS (io1, io2, or gp3). (AI-inferred)
+	Iops any
+	// The ID or ARN of the AWS KMS key used to encrypt the EBS volume created by this block device mapping override in the EC2 Fleet launch template configuration. (AI-inferred)
+	KmsKeyId any
+	// The ID of the snapshot from which to create the EBS volume, used to initialize the volume with the data from that snapshot. (AI-inferred)
+	SnapshotId any
+	// Specifies the size of the EBS volume in GiB for the block device mapping override in the EC2 Fleet launch template configuration. (AI-inferred)
+	VolumeSize any
+	// Specifies the EBS volume type (e.g., gp2, gp3, io1) to use for the block device in the launch template override when the EC2 Fleet launches instances. (AI-inferred)
+	VolumeType any
+}
+
+type Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappings struct {
+	// The device name (e.g., /dev/xvda or /dev/sdh) exposed to the instance for a block device mapping override applied to a launch template configuration in the EC2 Fleet, determining where the attached volume or instance store volume appears within the guest OS. (AI-inferred)
+	DeviceName any
+	// Specifies the EBS volume settings (e.g., volume size, type, IOPS, encryption, and delete-on-termination behavior) for a block device in an EC2 Fleet launch template override. (AI-inferred)
+	Ebs any
+	// Indicates that the specified device name should not be mapped to a block device on the launched instance, effectively suppressing that device from the instance's block device mapping. (AI-inferred)
+	NoDevice any
+	// Specifies the virtual device name (e.g., ephemeral0) for an ephemeral instance store volume in the block device mapping of a launch template override used by the EC2 Fleet. (AI-inferred)
+	VirtualName any
+}
+
+type Fleet_LaunchTemplateConfigs_Overrides_IamInstanceProfile struct {
+	// The ARN of the IAM instance profile to associate with the instances launched from this EC2 Fleet override. (AI-inferred)
+	Arn any
+	// Specifies the name of the IAM instance profile assigned to instances launched from this fleet override, providing them with the permissions of the associated IAM role. (AI-inferred)
+	Name any
+}
+
+type Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCount struct {
+	// The maximum number of accelerators (such as GPUs or FPGAs) that an instance type can have in order to match the instance requirements for the EC2 Fleet override. (AI-inferred)
 	Max any
+	// The minimum number of accelerators (such as GPUs) that an instance type must have to satisfy the instance requirements for the EC2 Fleet. (AI-inferred)
 	Min any
 }
 
-type Fleet_LaunchTemplateConfig_Override_InstanceRequirements struct {
-	AcceleratorManufacturers any
-	AcceleratorNames any
-	AcceleratorTypes any
-	AllowedInstanceTypes any
-	BareMetal any
-	BurstablePerformance any
-	CpuManufacturers any
-	ExcludedInstanceTypes any
-	InstanceGenerations any
-	LocalStorage any
-	LocalStorageTypes any
-	MaxSpotPriceAsPercentageOfOptimalOnDemandPrice any
-	OnDemandMaxPricePercentageOverLowestPrice any
-	RequireHibernateSupport any
-	SpotMaxPricePercentageOverLowestPrice any
+type Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu_References struct {
+	// The instance family name (e.g., c5, m5) used as a baseline CPU performance reference when specifying instance requirements for the EC2 Fleet. (AI-inferred)
+	InstanceFamily any
+}
+
+type Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu struct {
+	// A list of CPU performance factor references, each defining an instance family (e.g., m5, c5) that serves as the baseline for CPU performance when selecting instance types for the EC2 Fleet. (AI-inferred)
+	References any
+}
+
+type Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors struct {
+	// Specifies the CPU baseline performance factor, which uses a set of reference instance families to define the minimum expected CPU performance that instance types must meet for the fleet's launch configuration overrides. (AI-inferred)
+	Cpu any
+}
+
+type Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements struct {
+	// Specifies the minimum and maximum number of accelerators (such as GPUs) that an instance must have to be considered for the fleet. (AI-inferred)
 	AcceleratorCount any
-	AcceleratorTotalMemoryMib any
+	// Defines which accelerator (GPU) manufacturers are acceptable for instance types that match this launch template override, filtering by vendors such as NVIDIA or AMD. (AI-inferred)
+	AcceleratorManufacturers any
+	// Lists the accelerator names (e.g., 'a100', 'v100') that instance types must have, so the EC2 Fleet only selects instances with those accelerators when using this launch template override. (AI-inferred)
+	AcceleratorNames any
+	// Defines the minimum and maximum total memory (in MiB) required for accelerators (such as GPUs) on instance types that the EC2 Fleet can launch. (AI-inferred)
+	AcceleratorTotalMemoryMiB any
+	// Specifies the types of hardware accelerators (such as GPU, FPGA, or inference) that instances must have to meet the instance requirements, filtering which instance types are eligible for the EC2 Fleet. (AI-inferred)
+	AcceleratorTypes any
+	// Specifies a list of instance types that are allowed for the fleet to use, ensuring that the fleet launches instances only on these permitted types. (AI-inferred)
+	AllowedInstanceTypes any
+	// Specifies whether the instance type must be a bare metal instance, with allowed values included, excluded, or required. (AI-inferred)
+	BareMetal any
+	// Specifies the minimum and maximum baseline EBS bandwidth (in Mbps) that an instance type must meet to be eligible for the EC2 Fleet. (AI-inferred)
 	BaselineEbsBandwidthMbps any
-	MemoryGibPerVcpu any
-	MemoryMib any
+	// Specifies the baseline performance requirements for CPU and memory of instance types that the EC2 Fleet can launch, enabling filtering based on a minimum performance threshold. (AI-inferred)
+	BaselinePerformanceFactors any
+	// Specifies whether to include, require, or exclude burstable performance instance types (such as T3, T4g) in the EC2 Fleet's instance requirements, with valid values 'included', 'required', or 'excluded'. (AI-inferred)
+	BurstablePerformance any
+	// A list of CPU manufacturers (such as Intel, AMD, and Amazon Web Services) that the instance requirements will accept when selecting instance types for the EC2 Fleet to launch. (AI-inferred)
+	CpuManufacturers any
+	// List of EC2 instance types that are explicitly excluded from consideration when the fleet launches instances under these instance requirements. (AI-inferred)
+	ExcludedInstanceTypes any
+	// Specifies the list of instance generations (for example, 'current' or 'previous') that the instance types must belong to in order to be used for this fleet's launch template override. (AI-inferred)
+	InstanceGenerations any
+	// Specifies whether the instance types selected for the fleet must have local storage (such as NVMe) or not, with values like `required`, `preferred`, or `excluded`. (AI-inferred)
+	LocalStorage any
+	// Filters candidate instances for the fleet to those whose local storage type matches the specified values (hdd and/or ssd), so only instances with that kind of local storage are considered. (AI-inferred)
+	LocalStorageTypes any
+	// Specifies the maximum Spot Instance price you are willing to pay as a percentage of the optimal On-Demand price for that instance type, used as a price protection threshold to filter candidate instance types in the fleet's instance requirements. (AI-inferred)
+	MaxSpotPriceAsPercentageOfOptimalOnDemandPrice any
+	// Specifies the minimum and maximum memory in GiB per vCPU for an instance type to be considered when fulfilling the fleet's launch template overrides. (AI-inferred)
+	MemoryGiBperVcpu any
+	// Defines the range of memory (in MiB) for instance types that the EC2 Fleet can select, with minimum and maximum values. (AI-inferred)
+	MemoryMiB any
+	// Defines the minimum and maximum network bandwidth in gigabits per second (Gbps) that an instance type must offer to be considered a match for the EC2 Fleet's overrides. (AI-inferred)
 	NetworkBandwidthGbps any
+	// Specifies the minimum and maximum number of network interfaces that an instance must have to satisfy the instance requirements for an EC2 Fleet launch template override. (AI-inferred)
 	NetworkInterfaceCount any
+	// Sets the maximum price for On-Demand instances as a percentage above the lowest-priced instance type that meets the specified requirements, used to control costs when EC2 Fleet selects instance types. (AI-inferred)
+	OnDemandMaxPricePercentageOverLowestPrice any
+	// When set to true, only instance types that support encryption in transit are considered when fulfilling the fleet's launch template overrides. (AI-inferred)
+	RequireEncryptionInTransit any
+	// Indicates whether the instance types must support hibernation; when set to true, only instance types that can hibernate are considered for the fleet. (AI-inferred)
+	RequireHibernateSupport any
+	// Specifies the maximum price you are willing to pay for a Spot Instance as a percentage above the lowest Spot price among the eligible instance types, used within a launch template override's instance requirements to control Spot selection in the fleet. (AI-inferred)
+	SpotMaxPricePercentageOverLowestPrice any
+	// Defines the minimum and maximum amount of local storage (in GB) that an instance type must provide for the fleet to consider it, filtering candidate instance types. (AI-inferred)
 	TotalLocalStorageGb any
+	// Defines the minimum and maximum number of vCPUs that an instance type must have to be eligible for the EC2 Fleet. (AI-inferred)
 	VcpuCount any
 }
 
-type Fleet_LaunchTemplateConfig_Override struct {
-	AvailabilityZone any
-	InstanceType any
-	MaxPrice any
-	Priority any
-	SubnetId any
-	WeightedCapacity any
-	InstanceRequirements any
+type Fleet_LaunchTemplateConfigs_Overrides_MetadataOptions struct {
+	// Indicates whether the IPv4 instance metadata endpoint (enabled or disabled) is enabled for instances launched from this launch template override in the EC2 Fleet. (AI-inferred)
+	HttpEndpoint any
+	HttpPutResponseHopLimit any
+	// Determines whether HTTP tokens are required for accessing the instance metadata service for instances launched with this override, enforcing the use of IMDSv2 when set to 'required'. (AI-inferred)
+	HttpTokens any
 }
 
-type Fleet_LaunchTemplateConfig struct {
+type Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_Ipv6Addresses struct {
+	// The specific IPv6 address to assign to the network interface for the EC2 Fleet instance override, enabling a static address from the subnet's IPv6 range. (AI-inferred)
+	Ipv6Address any
+}
+
+type Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_PrivateIpAddresses struct {
+	// Indicates whether the specified private IP address is the primary private IP address for the network interface. (AI-inferred)
+	Primary any
+	// The private IPv4 address to assign to a network interface in the EC2 Fleet launch template override, where each entry in the private_ip_addresses list specifies one such address. (AI-inferred)
+	PrivateIpAddress any
+}
+
+type Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces struct {
+	// Indicates whether to automatically assign a public IPv4 address to the primary network interface of an instance launched using this launch template override. (AI-inferred)
+	AssociatePublicIpAddress any
+	// Indicates whether this network interface is deleted when the EC2 instance is terminated. (AI-inferred)
+	DeleteOnTermination any
+	// Provides a text description for the network interface created for the fleet's instances, overriding the description in the launch template if provided. (AI-inferred)
+	Description any
+	// The zero-based position of the network interface on the instance (e.g., 0 for the primary interface) for this launch template override, which determines the attachment order when multiple interfaces are specified. (AI-inferred)
+	DeviceIndex any
+	// The list of security group IDs to attach to the network interface defined by this override in the EC2 Fleet launch template configuration. (AI-inferred)
+	Groups any
+	// Specifies the type of network interface for the override, with valid values being 'interface' for a standard VPC network interface, 'efa' for an Elastic Fabric Adapter, or 'trunk' for a trunk network interface. (AI-inferred)
+	InterfaceType any
+	// Specifies the number of IPv6 addresses to assign to the network interface for instances launched using this EC2 Fleet launch template override. (AI-inferred)
+	Ipv6AddressCount any
+	// The IPv6 addresses to assign to the network interface when overridden for a launch template configuration in the EC2 Fleet. (AI-inferred)
+	Ipv6Addresses any
+	// The index of the network card on the instance, which associates the network interface with a specific network card for instance types that support multiple network cards. (AI-inferred)
+	NetworkCardIndex any
+	// The ID of an existing Elastic Network Interface (ENI) that overrides the network interface configuration from the launch template for instances launched by this fleet override. (AI-inferred)
+	NetworkInterfaceId any
+	// Specifies the primary private IPv4 address to assign to the network interface; if omitted, AWS automatically selects an available address from the subnet's range. (AI-inferred)
+	PrivateIpAddress any
+	// Defines private IPv4 addresses to assign to the network interface for instances launched by the EC2 Fleet, where each entry specifies the IP address and whether it is the primary private IP. (AI-inferred)
+	PrivateIpAddresses any
+	// Sets the number of secondary private IPv4 addresses to automatically assign to the network interface when an EC2 Fleet instance is launched with this launch template override. (AI-inferred)
+	SecondaryPrivateIpAddressCount any
+	// The ID of the subnet in which the instances will be launched when applying this network interface override. (AI-inferred)
+	SubnetId any
+}
+
+type Fleet_LaunchTemplateConfigs_Overrides_Placement struct {
+	// The affinity setting (such as 'host' or 'default') that determines whether instances launched with this placement override are associated with a dedicated host in the EC2 Fleet's launch template configuration. (AI-inferred)
+	Affinity any
+	// Specifies the Availability Zone in which to launch the instances for this fleet override, overriding the placement setting from the launch template. (AI-inferred)
+	AvailabilityZone any
+	// The name of the placement group in which to launch the instances for this fleet launch template override. (AI-inferred)
+	GroupName any
+	// The ID of the Dedicated Host on which to launch the instances in this fleet override. (AI-inferred)
+	HostId any
+	// The ARN of the host resource group in which to launch the instances, used to place instances on a group of dedicated hosts for the EC2 Fleet. (AI-inferred)
+	HostResourceGroupArn any
+	// Specifies the partition number within a partition placement group where the instances launched from this launch template override should be placed. (AI-inferred)
+	PartitionNumber any
+	// Specifies a specific spread domain within a spread placement group for the instance overrides, controlling which fault-isolated partition the fleet-launched instances are placed into. (AI-inferred)
+	SpreadDomain any
+	// Specifies the tenancy (default, dedicated, or host) for instances launched using this placement override in the EC2 Fleet. (AI-inferred)
+	Tenancy any
+}
+
+type Fleet_LaunchTemplateConfigs_Overrides struct {
+	// Specifies the Availability Zone in which to launch the instances for this fleet, overriding the placement specified in the launch template. (AI-inferred)
+	AvailabilityZone any
+	// Specifies the ID of the Availability Zone (e.g., use1-az1) in which the EC2 Fleet launches instances for this override, replacing any Availability Zone from the launch template. (AI-inferred)
+	AvailabilityZoneId any
+	// Defines the block device mapping overrides applied to instances launched using this launch template override, such as attaching additional EBS volumes or modifying root volume settings. (AI-inferred)
+	BlockDeviceMappings any
+	// Specifies the IAM instance profile to associate with instances launched according to this launch template override, which overrides any IAM instance profile set in the launch template. (AI-inferred)
+	IamInstanceProfile any
+	// Defines the hardware requirements (such as vCPU count and memory) that an instance type must meet for EC2 Fleet to select it for this launch template override. (AI-inferred)
+	InstanceRequirements any
+	// The EC2 instance type to launch in this override of the launch template configuration for the EC2 Fleet. (AI-inferred)
+	InstanceType any
+	// Specifies the EC2 key pair name to associate with instances launched by this launch template override. (AI-inferred)
+	KeyName any
+	// The maximum price per unit hour that you are willing to pay for a Spot Instance in this EC2 Fleet, which overrides the max price set in the associated launch template. (AI-inferred)
+	MaxPrice any
+	// Sets the instance metadata service (IMDS) options—such as requiring token usage with HttpTokens and controlling the HTTP endpoint with HttpEndpoint—for EC2 instances launched by this specific fleet override. (AI-inferred)
+	MetadataOptions any
+	NetworkInterfaces any
+	// Overrides the EC2 placement settings (e.g., Availability Zone, Affinity, Tenancy) for instances launched with this launch template override in the EC2 Fleet. (AI-inferred)
+	Placement any
+	// Defines the order in which EC2 Fleet prioritizes this instance type override when fulfilling capacity, where lower numbers indicate higher priority. (AI-inferred)
+	Priority any
+	// The ID of the subnet in which to launch the instances, overriding any subnet specified in the associated launch template. (AI-inferred)
+	SubnetId any
+	// The number of capacity units that each instance of this instance type contributes to the fleet's target capacity, enabling instance weighting for mixed instance types in the EC2 Fleet. (AI-inferred)
+	WeightedCapacity any
+}
+
+type Fleet_LaunchTemplateConfigs struct {
+	// Specifies the launch template ID or name and its version, which the EC2 Fleet uses as the base configuration for launching instances in this fleet. (AI-inferred)
 	LaunchTemplateSpecification any
-	Override any
+	// Specifies the instance types, subnets, and other parameters that override the associated launch template when EC2 Fleet selects them for launching instances. (AI-inferred)
+	Overrides any
 }
 
 type Fleet_OnDemandOptions_CapacityReservationOptions struct {
+	// Determines whether the EC2 Fleet uses unused Capacity Reservations first to fulfill On-Demand capacity before launching new On-Demand Instances, with the only valid value being 'use-capacity-reservations-first'. (AI-inferred)
 	UsageStrategy any
 }
 
 type Fleet_OnDemandOptions struct {
+	// Determines the order in which On-Demand Instances are launched across instance types in the fleet, with 'lowest-price' selecting the lowest-priced type first (default) and 'prioritized' following the priority order defined in the launch template. (AI-inferred)
 	AllocationStrategy any
-	MaxTotalPrice any
-	MinTargetCapacity any
-	SingleAvailabilityZone any
-	SingleInstanceType any
+	// Specifies whether to use unused Capacity Reservations to fulfill On-Demand Instance capacity in the EC2 Fleet, including the usage strategy (e.g., use-capacity-reservations-first). (AI-inferred)
 	CapacityReservationOptions any
+	// Specifies the maximum amount per hour (in USD) you are willing to pay for all On-Demand Instances launched by the EC2 Fleet. (AI-inferred)
+	MaxTotalPrice any
+	// The minimum number of On-Demand Instances that the EC2 Fleet must maintain, ensuring a baseline of On-Demand capacity within the fleet's total target capacity. (AI-inferred)
+	MinTargetCapacity any
+	// Indicates whether the fleet launches all On-Demand Instances into a single Availability Zone. (AI-inferred)
+	SingleAvailabilityZone any
+	// When enabled, this makes the On-Demand portion of the EC2 Fleet launch only a single instance type (as specified in the launch template or its overrides) rather than multiple types chosen by the allocation strategy. (AI-inferred)
+	SingleInstanceType any
+}
+
+type Fleet_ReservedCapacityOptions struct {
+	// Specifies the types of reserved capacity (e.g., capacity-reservation or capacity-block) that the EC2 Fleet can use to fulfill On-Demand capacity. (AI-inferred)
+	ReservationTypes any
 }
 
 type Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalance struct {
+	// Determines whether EC2 Fleet launches a replacement Spot Instance when the current instance is at risk of interruption (launch) or launches a replacement before terminating the current instance (launch-before-terminate). (AI-inferred)
 	ReplacementStrategy any
+	// The number of minutes to wait after receiving a Spot Instance rebalance notification before terminating the instance, allowing proactive replacement during capacity rebalancing. (AI-inferred)
 	TerminationDelay any
 }
 
 type Fleet_SpotOptions_MaintenanceStrategies struct {
+	// Configures the capacity rebalance behavior for the fleet's Spot Instances, allowing EC2 Fleet to attempt to launch a replacement instance before an existing Spot Instance is interrupted, with a configurable replacement strategy. (AI-inferred)
 	CapacityRebalance any
 }
 
 type Fleet_SpotOptions struct {
+	// Determines how the EC2 Fleet allocates Spot Instance capacity across Spot pools, using strategies such as lowest-price, diversified, or capacity-optimized. (AI-inferred)
 	AllocationStrategy any
+	// Controls the behavior of Spot Instances in the fleet when they are interrupted by EC2, allowing values such as 'terminate', 'stop', or 'hibernate' to specify whether instances are terminated, stopped, or hibernated. (AI-inferred)
 	InstanceInterruptionBehavior any
+	// Specifies the number of Spot capacity pools across which the EC2 Fleet distributes its target Spot capacity, and is only used when the Spot allocation strategy is set to 'lowestPrice'. (AI-inferred)
 	InstancePoolsToUseCount any
-	MaxTotalPrice any
-	MinTargetCapacity any
-	SingleAvailabilityZone any
-	SingleInstanceType any
+	// Specifies the maintenance strategies for the Spot Instances in the fleet, such as enabling capacity rebalancing to automatically replace instances that are at risk of interruption. (AI-inferred)
 	MaintenanceStrategies any
+	// The maximum hourly price you are willing to pay for Spot Instances in the EC2 Fleet, specified as a string representing a dollar amount (e.g., '0.50'). (AI-inferred)
+	MaxTotalPrice any
+	// Specifies the minimum target capacity for Spot Instances in the fleet; if the fleet cannot reach this capacity, it launches no instances. (AI-inferred)
+	MinTargetCapacity any
+	// When set to true, the Spot Fleet launches all instances in the same single Availability Zone, instead of potentially spreading across multiple, to keep them co-located for low latency. (AI-inferred)
+	SingleAvailabilityZone any
+	// Indicates whether the Spot Fleet will launch a single instance type to fulfill the entire target capacity, rather than diversifying across multiple instance types. (AI-inferred)
+	SingleInstanceType any
+}
+
+type Fleet_TagSpecifications_Tags struct {
+	// The tag key (e.g., 'Name') of a tag to apply to EC2 instances that the fleet launches, as defined in this tag specification. (AI-inferred)
+	Key any
+	// Specifies the value of a tag assigned to the EC2 Fleet, used to categorize and identify the fleet among your AWS resources. (AI-inferred)
+	Value any
+}
+
+type Fleet_TagSpecifications struct {
+	// Specifies the type of resource to tag, such as an instance or the fleet itself, within a tag specification for the EC2 Fleet. (AI-inferred)
+	ResourceType any
+	// Specifies the list of tags (key-value pairs) to apply to the fleet's launched resources, such as instances or volumes, as part of the parent tag specification. (AI-inferred)
+	Tags any
 }
 
 type Fleet_TargetCapacitySpecification struct {
+	// Sets the default purchase type (on-demand or spot) for the EC2 Fleet's target capacity when individual capacity types are not otherwise specified. (AI-inferred)
 	DefaultTargetCapacityType any
+	// The number of On-Demand units to request as the target capacity for the EC2 Fleet. (AI-inferred)
 	OnDemandTargetCapacity any
+	// Specifies the number of units to request for Spot Instance capacity in the EC2 Fleet's overall target capacity. (AI-inferred)
 	SpotTargetCapacity any
+	// The unit of measure for the target capacity of the EC2 Fleet, either 'vcpu' or 'memory-mib'. (AI-inferred)
 	TargetCapacityUnitType any
+	// The total number of capacity units (instances or other units) that the EC2 Fleet aims to launch and maintain across all specified capacity reservation and instance type options. (AI-inferred)
 	TotalTargetCapacity any
 }
 
-type Fleet_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
-
-var Fleet_FleetInstanceSetFields = ubx.FieldMap{
-		"InstanceIds": ubx.FieldSpec{WireName: "instance_ids"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"Lifecycle": ubx.FieldSpec{WireName: "lifecycle"},
-		"Platform": ubx.FieldSpec{WireName: "platform"},
-	}
-
-var Fleet_LaunchTemplateConfig_LaunchTemplateSpecificationFields = ubx.FieldMap{
+var Fleet_LaunchTemplateConfigs_LaunchTemplateSpecificationFields = ubx.FieldMap{
 		"LaunchTemplateId": ubx.FieldSpec{WireName: "launch_template_id"},
 		"LaunchTemplateName": ubx.FieldSpec{WireName: "launch_template_name"},
+		"LaunchTemplateSpecificationUserData": ubx.FieldSpec{WireName: "launch_template_specification_user_data"},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	}
 
-var Fleet_LaunchTemplateConfig_Override_InstanceRequirements_AcceleratorCountFields = ubx.FieldMap{
+var Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappings_EbsFields = ubx.FieldMap{
+		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
+		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
+		"Iops": ubx.FieldSpec{WireName: "iops"},
+		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
+		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
+		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
+	}
+
+var Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappingsFields = ubx.FieldMap{
+		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+		"Ebs": ubx.FieldSpec{
+			WireName: "ebs",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappings_EbsFields,
+		},
+		"NoDevice": ubx.FieldSpec{WireName: "no_device"},
+		"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
+	}
+
+var Fleet_LaunchTemplateConfigs_Overrides_IamInstanceProfileFields = ubx.FieldMap{
+		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
+
+var Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields = ubx.FieldMap{
 		"Max": ubx.FieldSpec{WireName: "max"},
 		"Min": ubx.FieldSpec{WireName: "min"},
 	}
 
-var Fleet_LaunchTemplateConfig_Override_InstanceRequirementsFields = ubx.FieldMap{
+var Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields = ubx.FieldMap{
+		"InstanceFamily": ubx.FieldSpec{WireName: "instance_family"},
+	}
+
+var Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_CpuFields = ubx.FieldMap{
+		"References": ubx.FieldSpec{
+			WireName: "references",
+			Kind: "list",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields,
+		},
+	}
+
+var Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactorsFields = ubx.FieldMap{
+		"Cpu": ubx.FieldSpec{
+			WireName: "cpu",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_CpuFields,
+		},
+	}
+
+var Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirementsFields = ubx.FieldMap{
+		"AcceleratorCount": ubx.FieldSpec{
+			WireName: "accelerator_count",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+		},
 		"AcceleratorManufacturers": ubx.FieldSpec{WireName: "accelerator_manufacturers"},
 		"AcceleratorNames": ubx.FieldSpec{WireName: "accelerator_names"},
+		"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
+			WireName: "accelerator_total_memory_mi_b",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+		},
 		"AcceleratorTypes": ubx.FieldSpec{WireName: "accelerator_types"},
 		"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
 		"BareMetal": ubx.FieldSpec{WireName: "bare_metal"},
+		"BaselineEbsBandwidthMbps": ubx.FieldSpec{
+			WireName: "baseline_ebs_bandwidth_mbps",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+		},
+		"BaselinePerformanceFactors": ubx.FieldSpec{
+			WireName: "baseline_performance_factors",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactorsFields,
+		},
 		"BurstablePerformance": ubx.FieldSpec{WireName: "burstable_performance"},
 		"CpuManufacturers": ubx.FieldSpec{WireName: "cpu_manufacturers"},
 		"ExcludedInstanceTypes": ubx.FieldSpec{WireName: "excluded_instance_types"},
@@ -141,80 +406,144 @@ var Fleet_LaunchTemplateConfig_Override_InstanceRequirementsFields = ubx.FieldMa
 		"LocalStorage": ubx.FieldSpec{WireName: "local_storage"},
 		"LocalStorageTypes": ubx.FieldSpec{WireName: "local_storage_types"},
 		"MaxSpotPriceAsPercentageOfOptimalOnDemandPrice": ubx.FieldSpec{WireName: "max_spot_price_as_percentage_of_optimal_on_demand_price"},
-		"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
-		"RequireHibernateSupport": ubx.FieldSpec{WireName: "require_hibernate_support"},
-		"SpotMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
-		"AcceleratorCount": ubx.FieldSpec{
-			WireName: "accelerator_count",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_Override_InstanceRequirements_AcceleratorCountFields,
+		"MemoryGiBperVcpu": ubx.FieldSpec{
+			WireName: "memory_gi_bper_vcpu",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
 		},
-		"AcceleratorTotalMemoryMib": ubx.FieldSpec{
-			WireName: "accelerator_total_memory_mib",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_Override_InstanceRequirements_AcceleratorCountFields,
-		},
-		"BaselineEbsBandwidthMbps": ubx.FieldSpec{
-			WireName: "baseline_ebs_bandwidth_mbps",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_Override_InstanceRequirements_AcceleratorCountFields,
-		},
-		"MemoryGibPerVcpu": ubx.FieldSpec{
-			WireName: "memory_gib_per_vcpu",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_Override_InstanceRequirements_AcceleratorCountFields,
-		},
-		"MemoryMib": ubx.FieldSpec{
-			WireName: "memory_mib",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_Override_InstanceRequirements_AcceleratorCountFields,
+		"MemoryMiB": ubx.FieldSpec{
+			WireName: "memory_mi_b",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
 		},
 		"NetworkBandwidthGbps": ubx.FieldSpec{
 			WireName: "network_bandwidth_gbps",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_Override_InstanceRequirements_AcceleratorCountFields,
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
 		},
 		"NetworkInterfaceCount": ubx.FieldSpec{
 			WireName: "network_interface_count",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_Override_InstanceRequirements_AcceleratorCountFields,
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
 		},
+		"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
+		"RequireEncryptionInTransit": ubx.FieldSpec{WireName: "require_encryption_in_transit"},
+		"RequireHibernateSupport": ubx.FieldSpec{WireName: "require_hibernate_support"},
+		"SpotMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
 		"TotalLocalStorageGb": ubx.FieldSpec{
 			WireName: "total_local_storage_gb",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_Override_InstanceRequirements_AcceleratorCountFields,
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
 		},
 		"VcpuCount": ubx.FieldSpec{
 			WireName: "vcpu_count",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_Override_InstanceRequirements_AcceleratorCountFields,
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
 		},
 	}
 
-var Fleet_LaunchTemplateConfig_OverrideFields = ubx.FieldMap{
+var Fleet_LaunchTemplateConfigs_Overrides_MetadataOptionsFields = ubx.FieldMap{
+		"HttpEndpoint": ubx.FieldSpec{WireName: "http_endpoint"},
+		"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
+		"HttpTokens": ubx.FieldSpec{WireName: "http_tokens"},
+	}
+
+var Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_Ipv6AddressesFields = ubx.FieldMap{
+		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
+	}
+
+var Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_PrivateIpAddressesFields = ubx.FieldMap{
+		"Primary": ubx.FieldSpec{WireName: "primary"},
+		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
+	}
+
+var Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfacesFields = ubx.FieldMap{
+		"AssociatePublicIpAddress": ubx.FieldSpec{WireName: "associate_public_ip_address"},
+		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DeviceIndex": ubx.FieldSpec{WireName: "device_index"},
+		"Groups": ubx.FieldSpec{WireName: "groups"},
+		"InterfaceType": ubx.FieldSpec{WireName: "interface_type"},
+		"Ipv6AddressCount": ubx.FieldSpec{WireName: "ipv6_address_count"},
+		"Ipv6Addresses": ubx.FieldSpec{
+			WireName: "ipv6_addresses",
+			Kind: "list",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_Ipv6AddressesFields,
+		},
+		"NetworkCardIndex": ubx.FieldSpec{WireName: "network_card_index"},
+		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
+		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
+		"PrivateIpAddresses": ubx.FieldSpec{
+			WireName: "private_ip_addresses",
+			Kind: "list",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_PrivateIpAddressesFields,
+		},
+		"SecondaryPrivateIpAddressCount": ubx.FieldSpec{WireName: "secondary_private_ip_address_count"},
+		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+	}
+
+var Fleet_LaunchTemplateConfigs_Overrides_PlacementFields = ubx.FieldMap{
+		"Affinity": ubx.FieldSpec{WireName: "affinity"},
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+		"GroupName": ubx.FieldSpec{WireName: "group_name"},
+		"HostId": ubx.FieldSpec{WireName: "host_id"},
+		"HostResourceGroupArn": ubx.FieldSpec{WireName: "host_resource_group_arn"},
+		"PartitionNumber": ubx.FieldSpec{WireName: "partition_number"},
+		"SpreadDomain": ubx.FieldSpec{WireName: "spread_domain"},
+		"Tenancy": ubx.FieldSpec{WireName: "tenancy"},
+	}
+
+var Fleet_LaunchTemplateConfigs_OverridesFields = ubx.FieldMap{
+		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
+		"BlockDeviceMappings": ubx.FieldSpec{
+			WireName: "block_device_mappings",
+			Kind: "list",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappingsFields,
+		},
+		"IamInstanceProfile": ubx.FieldSpec{
+			WireName: "iam_instance_profile",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_IamInstanceProfileFields,
+		},
+		"InstanceRequirements": ubx.FieldSpec{
+			WireName: "instance_requirements",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirementsFields,
+		},
 		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+		"KeyName": ubx.FieldSpec{WireName: "key_name"},
 		"MaxPrice": ubx.FieldSpec{WireName: "max_price"},
+		"MetadataOptions": ubx.FieldSpec{
+			WireName: "metadata_options",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_MetadataOptionsFields,
+		},
+		"NetworkInterfaces": ubx.FieldSpec{
+			WireName: "network_interfaces",
+			Kind: "list",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfacesFields,
+		},
+		"Placement": ubx.FieldSpec{
+			WireName: "placement",
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_Overrides_PlacementFields,
+		},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
 		"WeightedCapacity": ubx.FieldSpec{WireName: "weighted_capacity"},
-		"InstanceRequirements": ubx.FieldSpec{
-			WireName: "instance_requirements",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_Override_InstanceRequirementsFields,
-		},
 	}
 
-var Fleet_LaunchTemplateConfigFields = ubx.FieldMap{
+var Fleet_LaunchTemplateConfigsFields = ubx.FieldMap{
 		"LaunchTemplateSpecification": ubx.FieldSpec{
 			WireName: "launch_template_specification",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_LaunchTemplateSpecificationFields,
+			Kind: "object",
+			Fields: Fleet_LaunchTemplateConfigs_LaunchTemplateSpecificationFields,
 		},
-		"Override": ubx.FieldSpec{
-			WireName: "override",
+		"Overrides": ubx.FieldSpec{
+			WireName: "overrides",
 			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfig_OverrideFields,
+			Fields: Fleet_LaunchTemplateConfigs_OverridesFields,
 		},
 	}
 
@@ -224,15 +553,19 @@ var Fleet_OnDemandOptions_CapacityReservationOptionsFields = ubx.FieldMap{
 
 var Fleet_OnDemandOptionsFields = ubx.FieldMap{
 		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
+		"CapacityReservationOptions": ubx.FieldSpec{
+			WireName: "capacity_reservation_options",
+			Kind: "object",
+			Fields: Fleet_OnDemandOptions_CapacityReservationOptionsFields,
+		},
 		"MaxTotalPrice": ubx.FieldSpec{WireName: "max_total_price"},
 		"MinTargetCapacity": ubx.FieldSpec{WireName: "min_target_capacity"},
 		"SingleAvailabilityZone": ubx.FieldSpec{WireName: "single_availability_zone"},
 		"SingleInstanceType": ubx.FieldSpec{WireName: "single_instance_type"},
-		"CapacityReservationOptions": ubx.FieldSpec{
-			WireName: "capacity_reservation_options",
-			Kind: "list",
-			Fields: Fleet_OnDemandOptions_CapacityReservationOptionsFields,
-		},
+	}
+
+var Fleet_ReservedCapacityOptionsFields = ubx.FieldMap{
+		"ReservationTypes": ubx.FieldSpec{WireName: "reservation_types"},
 	}
 
 var Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalanceFields = ubx.FieldMap{
@@ -243,7 +576,7 @@ var Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalanceFields = ubx.FieldM
 var Fleet_SpotOptions_MaintenanceStrategiesFields = ubx.FieldMap{
 		"CapacityRebalance": ubx.FieldSpec{
 			WireName: "capacity_rebalance",
-			Kind: "list",
+			Kind: "object",
 			Fields: Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalanceFields,
 		},
 	}
@@ -252,14 +585,28 @@ var Fleet_SpotOptionsFields = ubx.FieldMap{
 		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
 		"InstanceInterruptionBehavior": ubx.FieldSpec{WireName: "instance_interruption_behavior"},
 		"InstancePoolsToUseCount": ubx.FieldSpec{WireName: "instance_pools_to_use_count"},
+		"MaintenanceStrategies": ubx.FieldSpec{
+			WireName: "maintenance_strategies",
+			Kind: "object",
+			Fields: Fleet_SpotOptions_MaintenanceStrategiesFields,
+		},
 		"MaxTotalPrice": ubx.FieldSpec{WireName: "max_total_price"},
 		"MinTargetCapacity": ubx.FieldSpec{WireName: "min_target_capacity"},
 		"SingleAvailabilityZone": ubx.FieldSpec{WireName: "single_availability_zone"},
 		"SingleInstanceType": ubx.FieldSpec{WireName: "single_instance_type"},
-		"MaintenanceStrategies": ubx.FieldSpec{
-			WireName: "maintenance_strategies",
+	}
+
+var Fleet_TagSpecifications_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Fleet_TagSpecificationsFields = ubx.FieldMap{
+		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: Fleet_SpotOptions_MaintenanceStrategiesFields,
+			Fields: Fleet_TagSpecifications_TagsFields,
 		},
 	}
 
@@ -271,34 +618,62 @@ var Fleet_TargetCapacitySpecificationFields = ubx.FieldMap{
 		"TotalTargetCapacity": ubx.FieldSpec{WireName: "total_target_capacity"},
 	}
 
-var Fleet_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type FleetConfig struct {
+	// The `context` field specifies a string that AWS reserves for future use in the EC2 Fleet, and it does not currently alter fleet behavior. (AI-inferred)
 	Context any
+	// Controls whether excess instances are terminated when the EC2 Fleet's target capacity is reduced below its current running capacity, accepting values 'termination' (default) or 'no-termination'. (AI-inferred)
 	ExcessCapacityTerminationPolicy any
-	FleetState any
-	FulfilledCapacity any
-	FulfilledOnDemandCapacity any
-	Id any
-	Region any
-	ReplaceUnhealthyInstances any
-	Tags any
-	TagsAll any
-	TerminateInstances any
-	TerminateInstancesWithExpiration any
-	Type any
-	ValidFrom any
-	ValidUntil any
-	FleetInstanceSet any
-	LaunchTemplateConfig any
+	// Specifies the launch template configurations (including launch template ID/name and overrides for instance type, subnet, etc.) that the EC2 Fleet uses to launch instances. (AI-inferred)
+	LaunchTemplateConfigs any
+	// Specifies the allocation strategy and other options for On-Demand Instances in the EC2 Fleet, such as how capacity is prioritized and whether to use capacity reservations. (AI-inferred)
 	OnDemandOptions any
+	// Indicates whether EC2 Fleet automatically replaces instances that become unhealthy, launching new instances to maintain the fleet's target capacity. (AI-inferred)
+	ReplaceUnhealthyInstances any
+	ReservedCapacityOptions any
+	// Configures the Spot Instance purchasing behavior for the fleet, including allocation strategy, instance interruption behavior, and maximum price per hour. (AI-inferred)
 	SpotOptions any
+	// The list of tag specifications that define the tags to apply to the EC2 Fleet resource itself, typically using the resource type 'fleet'. (AI-inferred)
+	TagSpecifications any
+	// Configures the overall target capacity for the EC2 Fleet, including total, On-Demand, and Spot capacity values, the default capacity type for provisioning, and the unit type (instances or vCPU) used for measurement. (AI-inferred)
 	TargetCapacitySpecification any
-	Timeouts any
+	// Indicates whether running instances should be terminated when the EC2 Fleet reaches its expiration time (validUntil); if false, instances continue to run beyond expiration. (AI-inferred)
+	TerminateInstancesWithExpiration any
+	// Specifies the type of EC2 Fleet (maintain, request, or instant), which controls whether the fleet maintains a target capacity over time, fulfills a one-time request, or launches the capacity immediately. (AI-inferred)
+	Type any
+	// The timestamp (in UTC) at which the EC2 Fleet request becomes valid, after which the fleet can begin launching instances. (AI-inferred)
+	ValidFrom any
+	// The date and time when the EC2 Fleet request expires, and after which AWS will not launch any new instances for the fleet. (AI-inferred)
+	ValidUntil any
+}
+
+type FleetAttrs struct {
+	// The `context` field specifies a string that AWS reserves for future use in the EC2 Fleet, and it does not currently alter fleet behavior. (AI-inferred)
+	Context any
+	// Controls whether excess instances are terminated when the EC2 Fleet's target capacity is reduced below its current running capacity, accepting values 'termination' (default) or 'no-termination'. (AI-inferred)
+	ExcessCapacityTerminationPolicy any
+	// The unique identifier assigned by AWS to the EC2 Fleet, used to reference the fleet in API calls and other resources. (AI-inferred)
+	FleetId any
+	// Specifies the launch template configurations (including launch template ID/name and overrides for instance type, subnet, etc.) that the EC2 Fleet uses to launch instances. (AI-inferred)
+	LaunchTemplateConfigs any
+	// Specifies the allocation strategy and other options for On-Demand Instances in the EC2 Fleet, such as how capacity is prioritized and whether to use capacity reservations. (AI-inferred)
+	OnDemandOptions any
+	// Indicates whether EC2 Fleet automatically replaces instances that become unhealthy, launching new instances to maintain the fleet's target capacity. (AI-inferred)
+	ReplaceUnhealthyInstances any
+	ReservedCapacityOptions any
+	// Configures the Spot Instance purchasing behavior for the fleet, including allocation strategy, instance interruption behavior, and maximum price per hour. (AI-inferred)
+	SpotOptions any
+	// The list of tag specifications that define the tags to apply to the EC2 Fleet resource itself, typically using the resource type 'fleet'. (AI-inferred)
+	TagSpecifications any
+	// Configures the overall target capacity for the EC2 Fleet, including total, On-Demand, and Spot capacity values, the default capacity type for provisioning, and the unit type (instances or vCPU) used for measurement. (AI-inferred)
+	TargetCapacitySpecification any
+	// Indicates whether running instances should be terminated when the EC2 Fleet reaches its expiration time (validUntil); if false, instances continue to run beyond expiration. (AI-inferred)
+	TerminateInstancesWithExpiration any
+	// Specifies the type of EC2 Fleet (maintain, request, or instant), which controls whether the fleet maintains a target capacity over time, fulfills a one-time request, or launches the capacity immediately. (AI-inferred)
+	Type any
+	// The timestamp (in UTC) at which the EC2 Fleet request becomes valid, after which the fleet can begin launching instances. (AI-inferred)
+	ValidFrom any
+	// The date and time when the EC2 Fleet request expires, and after which AWS will not launch any new instances for the fleet. (AI-inferred)
+	ValidUntil any
 }
 
 var Fleet = ubx.ResourceBinding{
@@ -306,48 +681,40 @@ var Fleet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Context": ubx.FieldSpec{WireName: "context"},
 		"ExcessCapacityTerminationPolicy": ubx.FieldSpec{WireName: "excess_capacity_termination_policy"},
-		"FleetState": ubx.FieldSpec{WireName: "fleet_state"},
-		"FulfilledCapacity": ubx.FieldSpec{WireName: "fulfilled_capacity"},
-		"FulfilledOnDemandCapacity": ubx.FieldSpec{WireName: "fulfilled_on_demand_capacity"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"LaunchTemplateConfigs": ubx.FieldSpec{
+			WireName: "launch_template_configs",
+			Kind: "list",
+			Fields: Fleet_LaunchTemplateConfigsFields,
+		},
+		"OnDemandOptions": ubx.FieldSpec{
+			WireName: "on_demand_options",
+			Kind: "object",
+			Fields: Fleet_OnDemandOptionsFields,
+		},
 		"ReplaceUnhealthyInstances": ubx.FieldSpec{WireName: "replace_unhealthy_instances"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"TerminateInstances": ubx.FieldSpec{WireName: "terminate_instances"},
+		"ReservedCapacityOptions": ubx.FieldSpec{
+			WireName: "reserved_capacity_options",
+			Kind: "object",
+			Fields: Fleet_ReservedCapacityOptionsFields,
+		},
+		"SpotOptions": ubx.FieldSpec{
+			WireName: "spot_options",
+			Kind: "object",
+			Fields: Fleet_SpotOptionsFields,
+		},
+		"TagSpecifications": ubx.FieldSpec{
+			WireName: "tag_specifications",
+			Kind: "list",
+			Fields: Fleet_TagSpecificationsFields,
+		},
+		"TargetCapacitySpecification": ubx.FieldSpec{
+			WireName: "target_capacity_specification",
+			Kind: "object",
+			Fields: Fleet_TargetCapacitySpecificationFields,
+		},
 		"TerminateInstancesWithExpiration": ubx.FieldSpec{WireName: "terminate_instances_with_expiration"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"ValidFrom": ubx.FieldSpec{WireName: "valid_from"},
 		"ValidUntil": ubx.FieldSpec{WireName: "valid_until"},
-		"FleetInstanceSet": ubx.FieldSpec{
-			WireName: "fleet_instance_set",
-			Kind: "list",
-			Fields: Fleet_FleetInstanceSetFields,
-		},
-		"LaunchTemplateConfig": ubx.FieldSpec{
-			WireName: "launch_template_config",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfigFields,
-		},
-		"OnDemandOptions": ubx.FieldSpec{
-			WireName: "on_demand_options",
-			Kind: "list",
-			Fields: Fleet_OnDemandOptionsFields,
-		},
-		"SpotOptions": ubx.FieldSpec{
-			WireName: "spot_options",
-			Kind: "list",
-			Fields: Fleet_SpotOptionsFields,
-		},
-		"TargetCapacitySpecification": ubx.FieldSpec{
-			WireName: "target_capacity_specification",
-			Kind: "list",
-			Fields: Fleet_TargetCapacitySpecificationFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Fleet_TimeoutsFields,
-		},
 	},
 }

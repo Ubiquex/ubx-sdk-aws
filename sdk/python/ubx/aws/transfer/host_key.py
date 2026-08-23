@@ -7,22 +7,57 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class HostKey_Tags:
+    key: Any = None
+    value: Any = None
+
+_HostKey_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class HostKeyConfig:
+    # The text description for this host key.
     description: Any = None
+    # The private key portion of an SSH key pair. Transfer Family accepts RSA, ECDSA, and ED25519 keys.
     host_key_body: Any = None
-    host_key_body_wo: Any = None
-    region: Any = None
+    # The identifier of the server that contains the host key.
     server_id: Any = None
+    # Key-value pairs that can be used to group and search for host keys.
     tags: Any = None
+
+@dataclasses.dataclass
+class HostKeyAttrs:
+    # The unique Amazon Resource Name (ARN) for the host key.
+    arn: Any = None
+    # The date on which the host key was added to the server.
+    date_imported: Any = None
+    # The text description for this host key.
+    description: Any = None
+    # The private key portion of an SSH key pair. Transfer Family accepts RSA, ECDSA, and ED25519 keys.
+    host_key_body: Any = None
+    # The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.
+    host_key_fingerprint: Any = None
+    # A unique identifier for the host key.
+    host_key_id: Any = None
+    # The identifier of the server that contains the host key.
+    server_id: Any = None
+    # Key-value pairs that can be used to group and search for host keys.
+    tags: Any = None
+    # The encryption algorithm that is used for the host key.
+    type: Any = None
 
 HostKey = ubx.ResourceBinding(
     wire_type="aws_transfer_host_key",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
         "host_key_body": ubx.FieldSpec(wire_name="host_key_body"),
-        "host_key_body_wo": ubx.FieldSpec(wire_name="host_key_body_wo"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "server_id": ubx.FieldSpec(wire_name="server_id"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_HostKey_TagsFields,
+        ),
     },
 )
