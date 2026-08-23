@@ -7,42 +7,33 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Attachment_Timeouts:
-    create: Any = None
-    delete: Any = None
-
-_Attachment_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-}
+class AttachmentConfig:
+    # The device name
+    device: Any = None
+    # The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.
+    ebs_card_index: Any = None
+    # The ID of the instance to which the volume attaches
+    instance_id: Any = None
+    # The ID of the Amazon EBS volume
+    volume_id: Any = None
 
 @dataclasses.dataclass
-class AttachmentConfig:
-    device_name: Any = None
-    force_detach: Any = None
-    id: Any = None
+class AttachmentAttrs:
+    # The device name
+    device: Any = None
+    # The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.
+    ebs_card_index: Any = None
+    # The ID of the instance to which the volume attaches
     instance_id: Any = None
-    region: Any = None
-    skip_destroy: Any = None
-    stop_instance_before_detaching: Any = None
+    # The ID of the Amazon EBS volume
     volume_id: Any = None
-    timeouts: Any = None
 
 Attachment = ubx.ResourceBinding(
     wire_type="aws_volume_attachment",
     fields={
-        "device_name": ubx.FieldSpec(wire_name="device_name"),
-        "force_detach": ubx.FieldSpec(wire_name="force_detach"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "device": ubx.FieldSpec(wire_name="device"),
+        "ebs_card_index": ubx.FieldSpec(wire_name="ebs_card_index"),
         "instance_id": ubx.FieldSpec(wire_name="instance_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "skip_destroy": ubx.FieldSpec(wire_name="skip_destroy"),
-        "stop_instance_before_detaching": ubx.FieldSpec(wire_name="stop_instance_before_detaching"),
         "volume_id": ubx.FieldSpec(wire_name="volume_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Attachment_TimeoutsFields,
-        ),
     },
 )

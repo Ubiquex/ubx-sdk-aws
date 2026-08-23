@@ -4,18 +4,25 @@ package inspector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssessmentTargetConfig struct {
-	Id any
-	Name any
-	Region any
+	// The user-defined name for the Amazon Inspector assessment target, used to identify the collection of EC2 instances being assessed. (AI-inferred)
+	AssessmentTargetName any
+	// The ARN of an AWS Resource Groups group that defines the set of EC2 instances to include in this Inspector assessment target. (AI-inferred)
+	ResourceGroupArn any
+}
+
+type AssessmentTargetAttrs struct {
+	// The Amazon Resource Name (ARN) of this Inspector assessment target, used as a reference when creating Inspector assessment templates. (AI-inferred)
+	Arn any
+	// The user-defined name for the Amazon Inspector assessment target, used to identify the collection of EC2 instances being assessed. (AI-inferred)
+	AssessmentTargetName any
+	// The ARN of an AWS Resource Groups group that defines the set of EC2 instances to include in this Inspector assessment target. (AI-inferred)
 	ResourceGroupArn any
 }
 
 var AssessmentTarget = ubx.ResourceBinding{
 	WireType: "aws_inspector_assessment_target",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"AssessmentTargetName": ubx.FieldSpec{WireName: "assessment_target_name"},
 		"ResourceGroupArn": ubx.FieldSpec{WireName: "resource_group_arn"},
 	},
 }

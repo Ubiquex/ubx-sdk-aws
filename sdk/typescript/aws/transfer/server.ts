@@ -2,32 +2,65 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Server_EndpointDetails {
-  addressAllocationIds: string[];
-  securityGroupIds: string[];
-  subnetIds: string[];
-  vpcEndpointId: string;
-  vpcId: string;
+  /** Specifies the list of Elastic IP allocation IDs to associate with the server's VPC endpoint, allowing the Transfer server to have static IP addresses for its endpoint when the endpoint type is VPC. (AI-inferred) */
+  addressAllocationIds?: string[] | Computed<string[]>;
+  /** Specifies the security group IDs attached to the VPC endpoint used by the AWS Transfer Family server, controlling the network traffic allowed to and from the endpoint. (AI-inferred) */
+  securityGroupIds?: string[] | Computed<string[]>;
+  /** Specifies the subnets in your VPC where the AWS Transfer Family server's endpoint is deployed (for VPC or VPC_ENDPOINT endpoint types), allowing the server to be accessed from within your private network. (AI-inferred) */
+  subnetIds?: string[] | Computed<string[]>;
+  /** The ID of the VPC endpoint that the AWS Transfer Family server is associated with when the server's endpoint type is set to VPC. (AI-inferred) */
+  vpcEndpointId?: string | Computed<string>;
+  /** The ID of the VPC in which the AWS Transfer Family server's endpoint is hosted when the endpoint type is set to VPC. (AI-inferred) */
+  vpcId?: string | Computed<string>;
+}
+
+export interface Server_IdentityProviderDetails {
+  /** The identifier of the AWS Directory Service directory used as the identity provider for this AWS Transfer Family server, required only when the identity provider type is AWS_DIRECTORY_SERVICE. (AI-inferred) */
+  directoryId?: string | Computed<string>;
+  /** The ARN of the AWS Lambda function that AWS Transfer Family invokes for user authentication and authorization when using the AWS Lambda identity provider type. (AI-inferred) */
+  function?: string | Computed<string>;
+  /** The IAM role that AWS Transfer Family assumes to invoke the Lambda function for user identity management when using a custom identity provider. (AI-inferred) */
+  invocationRole?: string | Computed<string>;
+  /** Configures which SFTP authentication methods (such as PASSWORD and PUBLIC_KEY) are permitted for the AWS Transfer Family server when using the specified identity provider details. (AI-inferred) */
+  sftpAuthenticationMethods?: string | Computed<string>;
+  /** The URL of the identity provider endpoint that the Transfer server invokes to authenticate users, such as an API Gateway invocation URL or a ServiceNow instance URL. (AI-inferred) */
+  url?: string | Computed<string>;
 }
 
 export interface Server_ProtocolDetails {
-  as2Transports: string[];
-  passiveIp: string;
-  setStatOption: string;
-  tlsSessionResumptionMode: string;
+  /** Specifies which transport protocols (HTTP, HTTPS, or both) are supported for AS2 message exchange on an AWS Transfer Family server, controlling the network paths allowed for AS2 traffic. (AI-inferred) */
+  as2Transports?: string[] | Computed<string[]>;
+  /** The IP address that the AWS Transfer Family server advertises for passive (PASV/EPSV) FTP connections when using FTPS. (AI-inferred) */
+  passiveIp?: string | Computed<string>;
+  /** Controls whether the SFTP server performs the SETSTAT operation on the client's behalf (DEFAULT) or responds with a success without actually changing file attributes (ENABLE_NO_OP), affecting how file modification times and permissions are handled during SFTP transfers. (AI-inferred) */
+  setStatOption?: string | Computed<string>;
+  /** Controls whether TLS session resumption is enforced, enabled, or disabled for FTPS connections to the Transfer Family server, with allowed values ENFORCED, ENABLED, and DISABLED. (AI-inferred) */
+  tlsSessionResumptionMode?: string | Computed<string>;
 }
 
 export interface Server_S3StorageOptions {
-  directoryListingOptimization: string;
+  /** Indicates whether optimization to directory listing on S3 servers is used. Disabled by default for compatibility. */
+  directoryListingOptimization?: string | Computed<string>;
+}
+
+export interface Server_Tags {
+  /** The key of a user-defined tag attached to the AWS Transfer Family server, used for resource organization and cost tracking. (AI-inferred) */
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 export interface Server_WorkflowDetails_OnPartialUpload {
-  executionRole: string;
-  workflowId: string;
+  /** The IAM role ARN that AWS Transfer Family assumes to execute the workflow steps when a file transfer is only partially uploaded (e.g., when the upload session ends before the file is fully received). (AI-inferred) */
+  executionRole?: string | Computed<string>;
+  /** The unique identifier of the AWS Transfer Family workflow to execute when a file upload is partially completed. (AI-inferred) */
+  workflowId?: string | Computed<string>;
 }
 
 export interface Server_WorkflowDetails {
-  onPartialUpload: Server_WorkflowDetails_OnPartialUpload[];
-  onUpload: Server_WorkflowDetails_OnPartialUpload[];
+  /** A list of workflow steps that AWS Transfer Family executes when a file upload to the server fails partway through, allowing you to run custom actions like copying, tagging, or deleting the partially uploaded file. (AI-inferred) */
+  onPartialUpload?: Server_WorkflowDetails_OnPartialUpload[] | Computed<Server_WorkflowDetails_OnPartialUpload[]>;
+  /** A list of workflow details that specify the workflows to run when a file is uploaded to the server, each containing a workflow ID and execution role. (AI-inferred) */
+  onUpload?: Server_WorkflowDetails_OnPartialUpload[] | Computed<Server_WorkflowDetails_OnPartialUpload[]>;
 }
 
 const Server_EndpointDetailsFields: FieldMap = {
@@ -36,6 +69,14 @@ const Server_EndpointDetailsFields: FieldMap = {
   subnetIds: "subnet_ids",
   vpcEndpointId: "vpc_endpoint_id",
   vpcId: "vpc_id",
+};
+
+const Server_IdentityProviderDetailsFields: FieldMap = {
+  directoryId: "directory_id",
+  function: "function",
+  invocationRole: "invocation_role",
+  sftpAuthenticationMethods: "sftp_authentication_methods",
+  url: "url",
 };
 
 const Server_ProtocolDetailsFields: FieldMap = {
@@ -47,6 +88,11 @@ const Server_ProtocolDetailsFields: FieldMap = {
 
 const Server_S3StorageOptionsFields: FieldMap = {
   directoryListingOptimization: "directory_listing_optimization",
+};
+
+const Server_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 const Server_WorkflowDetails_OnPartialUploadFields: FieldMap = {
@@ -68,109 +114,129 @@ const Server_WorkflowDetailsFields: FieldMap = {
 };
 
 export interface ServerConfig {
+  /** The ARN of an AWS Certificate Manager (ACM) certificate used to secure FTPS connections for the AWS Transfer Family server. (AI-inferred) */
   certificate?: string | Computed<string>;
-  directoryId?: string | Computed<string>;
+  /** The storage service (S3 or EFS) that this AWS Transfer Family server is configured to use for file storage and management. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** Specifies the endpoint configuration for the Transfer Family server, including the endpoint type (PUBLIC, VPC, or VPC_ENDPOINT) and VPC-related settings such as subnet IDs, security group IDs, and Elastic IP allocation IDs. (AI-inferred) */
+  endpointDetails?: Server_EndpointDetails | Computed<Server_EndpointDetails>;
+  /** Specifies the type of endpoint for the AWS Transfer Family server, which can be PUBLIC (default), VPC, or VPC_ENDPOINT, determining how clients connect to the server. (AI-inferred) */
   endpointType?: string | Computed<string>;
-  forceDestroy?: boolean | Computed<boolean>;
-  function?: string | Computed<string>;
-  hostKey?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** Specifies the configuration details for the identity provider that AWS Transfer Family uses to authenticate users on this server, including the invocation role ARN and either the API Gateway URL, AWS Lambda function, or AWS Directory Service directory ID. (AI-inferred) */
+  identityProviderDetails?: Server_IdentityProviderDetails | Computed<Server_IdentityProviderDetails>;
+  /** Specifies the type of identity provider for the Transfer Family server, such as SERVICE_MANAGED, API_GATEWAY, AWS_DIRECTORY_SERVICE, or AWS_LAMBDA, which determines how user authentication is handled. (AI-inferred) */
   identityProviderType?: string | Computed<string>;
-  invocationRole?: string | Computed<string>;
+  /** Specifies whether the Transfer server uses a public IP address or a private IP address within a VPC, with allowed values PUBLIC and VPC. (AI-inferred) */
   ipAddressType?: string | Computed<string>;
+  /** The ARN of the IAM role that grants AWS Transfer Family permission to write logs for this server to Amazon CloudWatch Logs. (AI-inferred) */
   loggingRole?: string | Computed<string>;
+  /** This field specifies the text of a banner that is displayed to users after they successfully authenticate to the AWS Transfer Family server, appearing after the login process completes. (AI-inferred) */
   postAuthenticationLoginBanner?: string | Computed<string>;
+  /** A text banner that AWS Transfer Family displays to users before they authenticate to the server, used for security or informational messages. (AI-inferred) */
   preAuthenticationLoginBanner?: string | Computed<string>;
+  /** Specifies protocol-specific settings for the AWS Transfer server, including options such as passive IP, TLS session resumption mode, and AS2 transport settings. (AI-inferred) */
+  protocolDetails?: Server_ProtocolDetails | Computed<Server_ProtocolDetails>;
+  /** Specifies the list of file transfer protocols (SFTP, FTP, FTPS) that the AWS Transfer Family server will support. (AI-inferred) */
   protocols?: string[] | Computed<string[]>;
-  region?: string | Computed<string>;
+  /** Configures S3 storage options for the Transfer Family server, including the directory listing optimization setting that controls whether the server uses optimized directory listing for large S3 directories. (AI-inferred) */
+  s3StorageOptions?: Server_S3StorageOptions | Computed<Server_S3StorageOptions>;
+  /** The name of the security policy that defines the TLS protocol versions and cipher suites used to secure SFTP connections to the server. (AI-inferred) */
   securityPolicyName?: string | Computed<string>;
-  sftpAuthenticationMethods?: string | Computed<string>;
+  /** Specifies the list of Amazon Resource Names (ARNs) of destinations, such as Amazon CloudWatch Logs log groups or Amazon S3 buckets, where structured logs from the AWS Transfer Family server are delivered. (AI-inferred) */
   structuredLogDestinations?: string[] | Computed<string[]>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  url?: string | Computed<string>;
-  endpointDetails?: Server_EndpointDetails[] | Computed<Server_EndpointDetails[]>;
-  protocolDetails?: Server_ProtocolDetails[] | Computed<Server_ProtocolDetails[]>;
-  s3StorageOptions?: Server_S3StorageOptions[] | Computed<Server_S3StorageOptions[]>;
-  workflowDetails?: Server_WorkflowDetails[] | Computed<Server_WorkflowDetails[]>;
+  /** Tags are custom key-value labels that you can assign to the AWS Transfer Family server to help organize, identify, and manage it, and they can also be used in resource-level IAM policies to control access to the server. (AI-inferred) */
+  tags?: Server_Tags[] | Computed<Server_Tags[]>;
+  /** The workflow_details field configures the AWS Transfer Family workflows to execute when files are uploaded to the server, including the on-upload and on-partial-upload workflow steps. (AI-inferred) */
+  workflowDetails?: Server_WorkflowDetails | Computed<Server_WorkflowDetails>;
 }
 
 export interface ServerAttrs {
+  /** The Amazon Resource Name (ARN) assigned to the Transfer Family server, which uniquely identifies it across AWS. (AI-inferred) */
   arn: string;
+  /** The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs. These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well. */
+  as2ServiceManagedEgressIpAddresses: string[];
+  /** The ARN of an AWS Certificate Manager (ACM) certificate used to secure FTPS connections for the AWS Transfer Family server. (AI-inferred) */
   certificate: string;
-  directoryId: string;
+  /** The storage service (S3 or EFS) that this AWS Transfer Family server is configured to use for file storage and management. (AI-inferred) */
   domain: string;
-  endpoint: string;
+  /** Specifies the endpoint configuration for the Transfer Family server, including the endpoint type (PUBLIC, VPC, or VPC_ENDPOINT) and VPC-related settings such as subnet IDs, security group IDs, and Elastic IP allocation IDs. (AI-inferred) */
+  endpointDetails: Server_EndpointDetails;
+  /** Specifies the type of endpoint for the AWS Transfer Family server, which can be PUBLIC (default), VPC, or VPC_ENDPOINT, determining how clients connect to the server. (AI-inferred) */
   endpointType: string;
-  forceDestroy: boolean;
-  function: string;
-  hostKey: string;
-  hostKeyFingerprint: string;
-  id: string;
+  /** Specifies the configuration details for the identity provider that AWS Transfer Family uses to authenticate users on this server, including the invocation role ARN and either the API Gateway URL, AWS Lambda function, or AWS Directory Service directory ID. (AI-inferred) */
+  identityProviderDetails: Server_IdentityProviderDetails;
+  /** Specifies the type of identity provider for the Transfer Family server, such as SERVICE_MANAGED, API_GATEWAY, AWS_DIRECTORY_SERVICE, or AWS_LAMBDA, which determines how user authentication is handled. (AI-inferred) */
   identityProviderType: string;
-  invocationRole: string;
+  /** Specifies whether the Transfer server uses a public IP address or a private IP address within a VPC, with allowed values PUBLIC and VPC. (AI-inferred) */
   ipAddressType: string;
+  /** The ARN of the IAM role that grants AWS Transfer Family permission to write logs for this server to Amazon CloudWatch Logs. (AI-inferred) */
   loggingRole: string;
+  /** This field specifies the text of a banner that is displayed to users after they successfully authenticate to the AWS Transfer Family server, appearing after the login process completes. (AI-inferred) */
   postAuthenticationLoginBanner: string;
+  /** A text banner that AWS Transfer Family displays to users before they authenticate to the server, used for security or informational messages. (AI-inferred) */
   preAuthenticationLoginBanner: string;
+  /** Specifies protocol-specific settings for the AWS Transfer server, including options such as passive IP, TLS session resumption mode, and AS2 transport settings. (AI-inferred) */
+  protocolDetails: Server_ProtocolDetails;
+  /** Specifies the list of file transfer protocols (SFTP, FTP, FTPS) that the AWS Transfer Family server will support. (AI-inferred) */
   protocols: string[];
-  region: string;
+  /** Configures S3 storage options for the Transfer Family server, including the directory listing optimization setting that controls whether the server uses optimized directory listing for large S3 directories. (AI-inferred) */
+  s3StorageOptions: Server_S3StorageOptions;
+  /** The name of the security policy that defines the TLS protocol versions and cipher suites used to secure SFTP connections to the server. (AI-inferred) */
   securityPolicyName: string;
-  sftpAuthenticationMethods: string;
+  /** The unique server identifier assigned by AWS for this Transfer Family server (e.g., s-1234567890abcdef), used to reference the server in API calls and other resources. (AI-inferred) */
+  serverId: string;
+  /** The state of the AWS Transfer Family server, such as ONLINE or OFFLINE, indicating its lifecycle status. (AI-inferred) */
+  state: string;
+  /** Specifies the list of Amazon Resource Names (ARNs) of destinations, such as Amazon CloudWatch Logs log groups or Amazon S3 buckets, where structured logs from the AWS Transfer Family server are delivered. (AI-inferred) */
   structuredLogDestinations: string[];
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  url: string;
-  endpointDetails: Server_EndpointDetails[];
-  protocolDetails: Server_ProtocolDetails[];
-  s3StorageOptions: Server_S3StorageOptions[];
-  workflowDetails: Server_WorkflowDetails[];
+  /** Tags are custom key-value labels that you can assign to the AWS Transfer Family server to help organize, identify, and manage it, and they can also be used in resource-level IAM policies to control access to the server. (AI-inferred) */
+  tags: Server_Tags[];
+  /** The workflow_details field configures the AWS Transfer Family workflows to execute when files are uploaded to the server, including the on-upload and on-partial-upload workflow steps. (AI-inferred) */
+  workflowDetails: Server_WorkflowDetails;
 }
 
 export const Server: ResourceBinding<ServerConfig, ServerAttrs> = {
   wireType: "aws_transfer_server",
   fields: {
     certificate: "certificate",
-    directoryId: "directory_id",
     domain: "domain",
+    endpointDetails: {
+      wireName: "endpoint_details",
+      kind: "object",
+      fields: Server_EndpointDetailsFields,
+    },
     endpointType: "endpoint_type",
-    forceDestroy: "force_destroy",
-    function: "function",
-    hostKey: "host_key",
-    id: "id",
+    identityProviderDetails: {
+      wireName: "identity_provider_details",
+      kind: "object",
+      fields: Server_IdentityProviderDetailsFields,
+    },
     identityProviderType: "identity_provider_type",
-    invocationRole: "invocation_role",
     ipAddressType: "ip_address_type",
     loggingRole: "logging_role",
     postAuthenticationLoginBanner: "post_authentication_login_banner",
     preAuthenticationLoginBanner: "pre_authentication_login_banner",
-    protocols: "protocols",
-    region: "region",
-    securityPolicyName: "security_policy_name",
-    sftpAuthenticationMethods: "sftp_authentication_methods",
-    structuredLogDestinations: "structured_log_destinations",
-    tags: "tags",
-    tagsAll: "tags_all",
-    url: "url",
-    endpointDetails: {
-      wireName: "endpoint_details",
-      kind: "list",
-      fields: Server_EndpointDetailsFields,
-    },
     protocolDetails: {
       wireName: "protocol_details",
-      kind: "list",
+      kind: "object",
       fields: Server_ProtocolDetailsFields,
     },
+    protocols: "protocols",
     s3StorageOptions: {
       wireName: "s3_storage_options",
-      kind: "list",
+      kind: "object",
       fields: Server_S3StorageOptionsFields,
+    },
+    securityPolicyName: "security_policy_name",
+    structuredLogDestinations: "structured_log_destinations",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Server_TagsFields,
     },
     workflowDetails: {
       wireName: "workflow_details",
-      kind: "list",
+      kind: "object",
       fields: Server_WorkflowDetailsFields,
     },
   },

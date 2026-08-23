@@ -3,47 +3,58 @@ package wafregional
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type XssMatchSet_XssMatchTuple_FieldToMatch struct {
+type XssMatchSet_XssMatchTuples_FieldToMatch struct {
+	// The value of the `field_to_match` that defines the specific part of the web request to match, such as the header name when `type` is `HEADER`; it is empty for types like `URI` or `QUERY_STRING`. (AI-inferred)
 	Data any
+	// Specifies the part of the web request (for example, QUERY_STRING, URI, or BODY) that AWS WAF Regional inspects for cross-site scripting (XSS) attack patterns. (AI-inferred)
 	Type any
 }
 
-type XssMatchSet_XssMatchTuple struct {
-	TextTransformation any
+type XssMatchSet_XssMatchTuples struct {
+	// Specifies the part of a web request (such as a header, query string, or body) that AWS WAF Regional inspects for cross-site scripting attack patterns. (AI-inferred)
 	FieldToMatch any
+	// Specifies how the text in the web request component is transformed (e.g., URL_DECODE, LOWERCASE) before the XSS match rule is evaluated. (AI-inferred)
+	TextTransformation any
 }
 
-var XssMatchSet_XssMatchTuple_FieldToMatchFields = ubx.FieldMap{
+var XssMatchSet_XssMatchTuples_FieldToMatchFields = ubx.FieldMap{
 		"Data": ubx.FieldSpec{WireName: "data"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
-var XssMatchSet_XssMatchTupleFields = ubx.FieldMap{
-		"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
+var XssMatchSet_XssMatchTuplesFields = ubx.FieldMap{
 		"FieldToMatch": ubx.FieldSpec{
 			WireName: "field_to_match",
-			Kind: "list",
-			Fields: XssMatchSet_XssMatchTuple_FieldToMatchFields,
+			Kind: "object",
+			Fields: XssMatchSet_XssMatchTuples_FieldToMatchFields,
 		},
+		"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
 	}
 
 type XssMatchSetConfig struct {
-	Id any
+	// The friendly name or description of the XSS match set, required to create the resource in AWS WAF Regional. (AI-inferred)
 	Name any
-	Region any
-	XssMatchTuple any
+	// Specifies the parts of web requests to inspect for cross-site scripting (XSS) attacks, each tuple defining a field to match and a text transformation. (AI-inferred)
+	XssMatchTuples any
+}
+
+type XssMatchSetAttrs struct {
+	// The unique identifier assigned by AWS to the WAF Regional XSS match set. (AI-inferred)
+	Id any
+	// The friendly name or description of the XSS match set, required to create the resource in AWS WAF Regional. (AI-inferred)
+	Name any
+	// Specifies the parts of web requests to inspect for cross-site scripting (XSS) attacks, each tuple defining a field to match and a text transformation. (AI-inferred)
+	XssMatchTuples any
 }
 
 var XssMatchSet = ubx.ResourceBinding{
 	WireType: "aws_wafregional_xss_match_set",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"XssMatchTuple": ubx.FieldSpec{
-			WireName: "xss_match_tuple",
-			Kind: "set",
-			Fields: XssMatchSet_XssMatchTupleFields,
+		"XssMatchTuples": ubx.FieldSpec{
+			WireName: "xss_match_tuples",
+			Kind: "list",
+			Fields: XssMatchSet_XssMatchTuplesFields,
 		},
 	},
 }

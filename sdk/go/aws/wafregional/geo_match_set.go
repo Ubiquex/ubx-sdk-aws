@@ -3,33 +3,42 @@ package wafregional
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type GeoMatchSet_GeoMatchConstraint struct {
+type GeoMatchSet_GeoMatchConstraints struct {
+	// Specifies the type of geographic constraint, currently only supporting the value 'Country' for a WAF Regional geo match set. (AI-inferred)
 	Type any
+	// The two-letter ISO 3166-1 alpha-2 country code (e.g., 'US' for United States) that the geographic match constraint matches when the constraint's type is 'Country'. (AI-inferred)
 	Value any
 }
 
-var GeoMatchSet_GeoMatchConstraintFields = ubx.FieldMap{
+var GeoMatchSet_GeoMatchConstraintsFields = ubx.FieldMap{
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type GeoMatchSetConfig struct {
-	Id any
+	// Defines the list of geographical constraints (country codes) that this WAF Regional geo match set matches against, with each constraint specifying a country to include in the match set. (AI-inferred)
+	GeoMatchConstraints any
+	// A friendly name for the geo match set, used as a unique identifier when referencing it in AWS WAF Regional. (AI-inferred)
 	Name any
-	Region any
-	GeoMatchConstraint any
+}
+
+type GeoMatchSetAttrs struct {
+	// Defines the list of geographical constraints (country codes) that this WAF Regional geo match set matches against, with each constraint specifying a country to include in the match set. (AI-inferred)
+	GeoMatchConstraints any
+	// The unique identifier (ID) of the WAF Regional Geo Match Set, as assigned by AWS when the set is created. (AI-inferred)
+	Id any
+	// A friendly name for the geo match set, used as a unique identifier when referencing it in AWS WAF Regional. (AI-inferred)
+	Name any
 }
 
 var GeoMatchSet = ubx.ResourceBinding{
 	WireType: "aws_wafregional_geo_match_set",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"GeoMatchConstraint": ubx.FieldSpec{
-			WireName: "geo_match_constraint",
-			Kind: "set",
-			Fields: GeoMatchSet_GeoMatchConstraintFields,
+		"GeoMatchConstraints": ubx.FieldSpec{
+			WireName: "geo_match_constraints",
+			Kind: "list",
+			Fields: GeoMatchSet_GeoMatchConstraintsFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

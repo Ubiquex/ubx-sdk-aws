@@ -8,89 +8,201 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cluster_AccessConfig:
+    # Specify the authentication mode that should be used to create your cluster.
     authentication_mode: Any = None
+    # Set this value to false to avoid creating a default cluster admin Access Entry using the IAM principal used to create the cluster.
     bootstrap_cluster_creator_admin_permissions: Any = None
 
 @dataclasses.dataclass
+class Cluster_CertificateAuthority_Active:
+    # Indicates whether the active certificate authority was activated by EKS or by the customer.
+    activated_by: Any = None
+    # The ID of the active (signing) certificate authority.
+    id: Any = None
+
+@dataclasses.dataclass
+class Cluster_CertificateAuthority:
+    # Identifies the certificate authority currently signing certificates for the cluster.
+    active: Any = None
+    # The base64-encoded certificate-authority trust bundle for the cluster (all trusted CAs).
+    data: Any = None
+
+@dataclasses.dataclass
 class Cluster_ComputeConfig:
+    # Todo: add description
     enabled: Any = None
+    # Todo: add description
     node_pools: Any = None
+    # Todo: add description
     node_role_arn: Any = None
 
 @dataclasses.dataclass
 class Cluster_ControlPlaneScalingConfig:
+    # The scaling tier for the provisioned control plane.
     tier: Any = None
 
 @dataclasses.dataclass
 class Cluster_EncryptionConfig_Provider:
+    # The ARN of the AWS KMS key used to encrypt Kubernetes secrets in the EKS cluster. (AI-inferred)
     key_arn: Any = None
 
 @dataclasses.dataclass
 class Cluster_EncryptionConfig:
-    resources: Any = None
+    # Specifies the AWS KMS customer master key (CMK) ARN used to encrypt Kubernetes secrets for the EKS cluster. (AI-inferred)
     provider: Any = None
+    # Specifies the Kubernetes resource types (such as 'secrets') that are encrypted with the KMS key configured in this encryption configuration for the EKS cluster. (AI-inferred)
+    resources: Any = None
+
+@dataclasses.dataclass
+class Cluster_KubeApiServerConfig_ServiceNodePortRange:
+    # The maximum port number in the range.
+    max_port: Any = None
+    # The minimum port number in the range.
+    min_port: Any = None
+
+@dataclasses.dataclass
+class Cluster_KubeApiServerConfig:
+    # The duration that Kubernetes events are retained (e.g., 30m, 1h).
+    event_ttl: Any = None
+    # The port range for Kubernetes NodePort services.
+    service_node_port_range: Any = None
+
+@dataclasses.dataclass
+class Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfig:
+    # The interval between each sync of the horizontal pod autoscaler (e.g., 15s, 1m).
+    horizontal_pod_autoscaler_sync_period: Any = None
+
+@dataclasses.dataclass
+class Cluster_KubeControllerManagerConfig:
+    # The horizontal pod autoscaler controller configuration.
+    horizontal_pod_autoscaler_controller_config: Any = None
+
+@dataclasses.dataclass
+class Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategy_Resources:
+    name: Any = None
+    weight: Any = None
+
+@dataclasses.dataclass
+class Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategy:
+    # The resource weights used for scoring nodes.
+    resources: Any = None
+    # The scoring strategy type (LeastAllocated or MostAllocated).
+    type: Any = None
+
+@dataclasses.dataclass
+class Cluster_KubeSchedulerConfig_NodeResourcesFit:
+    # The scoring strategy configuration for the NodeResourcesFit scheduler plugin.
+    scoring_strategy: Any = None
+
+@dataclasses.dataclass
+class Cluster_KubeSchedulerConfig:
+    # The NodeResourcesFit plugin configuration for the Kubernetes scheduler.
+    node_resources_fit: Any = None
 
 @dataclasses.dataclass
 class Cluster_KubernetesNetworkConfig_ElasticLoadBalancing:
+    # Todo: add description
     enabled: Any = None
 
 @dataclasses.dataclass
 class Cluster_KubernetesNetworkConfig:
-    ip_family: Any = None
-    service_ipv4_cidr: Any = None
-    service_ipv6_cidr: Any = None
+    # Todo: add description
     elastic_load_balancing: Any = None
+    # Ipv4 or Ipv6. You can only specify ipv6 for 1.21 and later clusters that use version 1.10.1 or later of the Amazon VPC CNI add-on
+    ip_family: Any = None
+    # The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC.
+    service_ipv4_cidr: Any = None
+    # The CIDR block to assign Kubernetes service IP addresses from.
+    service_ipv6_cidr: Any = None
+
+@dataclasses.dataclass
+class Cluster_Logging_ClusterLogging_EnabledTypes:
+    # Specifies one Kubernetes control plane log type (such as api, audit, authenticator, controllerManager, or scheduler) to enable for the EKS cluster. (AI-inferred)
+    type: Any = None
+
+@dataclasses.dataclass
+class Cluster_Logging_ClusterLogging:
+    # Enable control plane logs for your cluster, all log types will be disabled if the array is empty
+    enabled_types: Any = None
+
+@dataclasses.dataclass
+class Cluster_Logging:
+    # The cluster control plane logging configuration for your cluster.
+    cluster_logging: Any = None
 
 @dataclasses.dataclass
 class Cluster_OutpostConfig_ControlPlanePlacement:
+    # The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation.
     group_name: Any = None
+    # Optional parameter to specify the placement group spread level for control plane instances. If not provided, EKS will deploy control plane instances without a placement group.
     spread_level: Any = None
 
 @dataclasses.dataclass
 class Cluster_OutpostConfig_EtcdPlacement:
+    # Optional parameter to specify the placement group spread level for etcd instances. If not provided, EKS will deploy etcd instances without a placement group.
     spread_level: Any = None
 
 @dataclasses.dataclass
 class Cluster_OutpostConfig:
+    # The EC2 instance type for the Kubernetes control plane instances of your local Amazon EKS cluster on AWS Outposts. This instance type applies to all control plane instances and cannot be changed after cluster creation.
     control_plane_instance_type: Any = None
-    etcd_instance_type: Any = None
-    outpost_arns: Any = None
+    # The placement configuration for all the control plane instances of your local Amazon EKS cluster on an AWS Outpost.
     control_plane_placement: Any = None
+    # The EC2 instance type for etcd instances of your local Amazon EKS cluster on AWS Outposts. This instance type applies to all etcd instances and cannot be changed after cluster creation.
+    etcd_instance_type: Any = None
+    # The placement configuration for the etcd instances of your local Amazon EKS cluster on an AWS Outpost.
     etcd_placement: Any = None
+    # The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.
+    outpost_arns: Any = None
 
 @dataclasses.dataclass
 class Cluster_RemoteNetworkConfig_RemoteNodeNetworks:
+    # Defines the list of CIDR blocks for the remote node networks, specifying the IP address ranges used by remote (hybrid) nodes in the EKS cluster. (AI-inferred)
     cidrs: Any = None
 
 @dataclasses.dataclass
 class Cluster_RemoteNetworkConfig:
+    # Network configuration of nodes run on-premises with EKS Hybrid Nodes.
     remote_node_networks: Any = None
+    # Network configuration of pods run on-premises with EKS Hybrid Nodes.
     remote_pod_networks: Any = None
 
 @dataclasses.dataclass
+class Cluster_ResourcesVpcConfig:
+    # Specify the egress mode for the cluster control plane. If you set this to CUSTOMER_ROUTED, the control plane routes traffic through your VPC subnets instead of using AWS managed networking.
+    control_plane_egress_mode: Any = None
+    # Set this value to true to enable private access for your cluster's Kubernetes API server endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC use the private VPC endpoint. The default value for this parameter is false, which disables private access for your Kubernetes API server. If you disable private access and you have nodes or AWS Fargate pods in the cluster, then ensure that publicAccessCidrs includes the necessary CIDR blocks for communication with the nodes or Fargate pods.
+    endpoint_private_access: Any = None
+    # Set this value to false to disable public access to your cluster's Kubernetes API server endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests from within the cluster VPC. The default value for this parameter is true, which enables public access for your Kubernetes API server.
+    endpoint_public_access: Any = None
+    # The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to the endpoint from addresses outside of the CIDR blocks that you specify is denied. The default value is 0.0.0.0/0. If you've disabled private endpoint access and you have nodes or AWS Fargate pods in the cluster, then ensure that you specify the necessary CIDR blocks.
+    public_access_cidrs: Any = None
+    # Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a security group, the default security group for your VPC is used.
+    security_group_ids: Any = None
+    # Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your nodes and the Kubernetes control plane.
+    subnet_ids: Any = None
+
+@dataclasses.dataclass
+class Cluster_RollbackConfig:
+    # The timeout in minutes for the version rollback operation. If not specified, defaults to 720 minutes (12 hours).
+    timeout_minutes: Any = None
+
+@dataclasses.dataclass
 class Cluster_StorageConfig:
+    # Todo: add description
     block_storage: Any = None
 
 @dataclasses.dataclass
-class Cluster_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Cluster_Tags:
+    # The key of a user-defined tag attached to the AWS EKS cluster, which must be unique within the cluster's tag set and is used to categorize or filter the cluster. (AI-inferred)
+    key: Any = None
+    # The value of a user-defined tag assigned to the EKS cluster, used for metadata such as cost centers or environment identification. (AI-inferred)
+    value: Any = None
 
 @dataclasses.dataclass
 class Cluster_UpgradePolicy:
+    # Specify the support type for your cluster.
     support_type: Any = None
-
-@dataclasses.dataclass
-class Cluster_VpcConfig:
-    cluster_security_group_id: Any = None
-    control_plane_egress_mode: Any = None
-    endpoint_private_access: Any = None
-    endpoint_public_access: Any = None
-    public_access_cidrs: Any = None
-    security_group_ids: Any = None
-    subnet_ids: Any = None
-    vpc_id: Any = None
 
 _Cluster_AccessConfigFields = {
     "authentication_mode": ubx.FieldSpec(wire_name="authentication_mode"),
@@ -112,26 +224,87 @@ _Cluster_EncryptionConfig_ProviderFields = {
 }
 
 _Cluster_EncryptionConfigFields = {
-    "resources": ubx.FieldSpec(wire_name="resources"),
     "provider": ubx.FieldSpec(
         wire_name="provider",
-        kind="list",
+        kind="object",
         fields=_Cluster_EncryptionConfig_ProviderFields,
+    ),
+    "resources": ubx.FieldSpec(wire_name="resources"),
+}
+
+_Cluster_KubeApiServerConfig_ServiceNodePortRangeFields = {
+    "max_port": ubx.FieldSpec(wire_name="max_port"),
+    "min_port": ubx.FieldSpec(wire_name="min_port"),
+}
+
+_Cluster_KubeApiServerConfigFields = {
+    "event_ttl": ubx.FieldSpec(wire_name="event_ttl"),
+    "service_node_port_range": ubx.FieldSpec(
+        wire_name="service_node_port_range",
+        kind="object",
+        fields=_Cluster_KubeApiServerConfig_ServiceNodePortRangeFields,
     ),
 }
 
-_Cluster_KubernetesNetworkConfig_ElasticLoadBalancingFields = {
-    "enabled": ubx.FieldSpec(wire_name="enabled"),
+_Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfigFields = {
+    "horizontal_pod_autoscaler_sync_period": ubx.FieldSpec(wire_name="horizontal_pod_autoscaler_sync_period"),
 }
 
-_Cluster_KubernetesNetworkConfigFields = {
-    "ip_family": ubx.FieldSpec(wire_name="ip_family"),
-    "service_ipv4_cidr": ubx.FieldSpec(wire_name="service_ipv4_cidr"),
-    "service_ipv6_cidr": ubx.FieldSpec(wire_name="service_ipv6_cidr"),
-    "elastic_load_balancing": ubx.FieldSpec(
-        wire_name="elastic_load_balancing",
+_Cluster_KubeControllerManagerConfigFields = {
+    "horizontal_pod_autoscaler_controller_config": ubx.FieldSpec(
+        wire_name="horizontal_pod_autoscaler_controller_config",
+        kind="object",
+        fields=_Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfigFields,
+    ),
+}
+
+_Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategy_ResourcesFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "weight": ubx.FieldSpec(wire_name="weight"),
+}
+
+_Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategyFields = {
+    "resources": ubx.FieldSpec(
+        wire_name="resources",
         kind="list",
-        fields=_Cluster_KubernetesNetworkConfig_ElasticLoadBalancingFields,
+        fields=_Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategy_ResourcesFields,
+    ),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Cluster_KubeSchedulerConfig_NodeResourcesFitFields = {
+    "scoring_strategy": ubx.FieldSpec(
+        wire_name="scoring_strategy",
+        kind="object",
+        fields=_Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategyFields,
+    ),
+}
+
+_Cluster_KubeSchedulerConfigFields = {
+    "node_resources_fit": ubx.FieldSpec(
+        wire_name="node_resources_fit",
+        kind="object",
+        fields=_Cluster_KubeSchedulerConfig_NodeResourcesFitFields,
+    ),
+}
+
+_Cluster_Logging_ClusterLogging_EnabledTypesFields = {
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Cluster_Logging_ClusterLoggingFields = {
+    "enabled_types": ubx.FieldSpec(
+        wire_name="enabled_types",
+        kind="list",
+        fields=_Cluster_Logging_ClusterLogging_EnabledTypesFields,
+    ),
+}
+
+_Cluster_LoggingFields = {
+    "cluster_logging": ubx.FieldSpec(
+        wire_name="cluster_logging",
+        kind="object",
+        fields=_Cluster_Logging_ClusterLoggingFields,
     ),
 }
 
@@ -146,18 +319,18 @@ _Cluster_OutpostConfig_EtcdPlacementFields = {
 
 _Cluster_OutpostConfigFields = {
     "control_plane_instance_type": ubx.FieldSpec(wire_name="control_plane_instance_type"),
-    "etcd_instance_type": ubx.FieldSpec(wire_name="etcd_instance_type"),
-    "outpost_arns": ubx.FieldSpec(wire_name="outpost_arns"),
     "control_plane_placement": ubx.FieldSpec(
         wire_name="control_plane_placement",
-        kind="list",
+        kind="object",
         fields=_Cluster_OutpostConfig_ControlPlanePlacementFields,
     ),
+    "etcd_instance_type": ubx.FieldSpec(wire_name="etcd_instance_type"),
     "etcd_placement": ubx.FieldSpec(
         wire_name="etcd_placement",
-        kind="list",
+        kind="object",
         fields=_Cluster_OutpostConfig_EtcdPlacementFields,
     ),
+    "outpost_arns": ubx.FieldSpec(wire_name="outpost_arns"),
 }
 
 _Cluster_RemoteNetworkConfig_RemoteNodeNetworksFields = {
@@ -177,133 +350,244 @@ _Cluster_RemoteNetworkConfigFields = {
     ),
 }
 
-_Cluster_StorageConfigFields = {
-    "block_storage": ubx.FieldSpec(
-        wire_name="block_storage",
-        kind="list",
-        fields=_Cluster_KubernetesNetworkConfig_ElasticLoadBalancingFields,
-    ),
-}
-
-_Cluster_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
-
-_Cluster_UpgradePolicyFields = {
-    "support_type": ubx.FieldSpec(wire_name="support_type"),
-}
-
-_Cluster_VpcConfigFields = {
-    "cluster_security_group_id": ubx.FieldSpec(wire_name="cluster_security_group_id"),
+_Cluster_ResourcesVpcConfigFields = {
     "control_plane_egress_mode": ubx.FieldSpec(wire_name="control_plane_egress_mode"),
     "endpoint_private_access": ubx.FieldSpec(wire_name="endpoint_private_access"),
     "endpoint_public_access": ubx.FieldSpec(wire_name="endpoint_public_access"),
     "public_access_cidrs": ubx.FieldSpec(wire_name="public_access_cidrs"),
     "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
     "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
-    "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
+}
+
+_Cluster_RollbackConfigFields = {
+    "timeout_minutes": ubx.FieldSpec(wire_name="timeout_minutes"),
+}
+
+_Cluster_KubernetesNetworkConfig_ElasticLoadBalancingFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+}
+
+_Cluster_StorageConfigFields = {
+    "block_storage": ubx.FieldSpec(
+        wire_name="block_storage",
+        kind="object",
+        fields=_Cluster_KubernetesNetworkConfig_ElasticLoadBalancingFields,
+    ),
+}
+
+_Cluster_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Cluster_UpgradePolicyFields = {
+    "support_type": ubx.FieldSpec(wire_name="support_type"),
 }
 
 @dataclasses.dataclass
 class ClusterConfig:
-    bootstrap_self_managed_addons: Any = None
-    deletion_protection: Any = None
-    enabled_cluster_log_types: Any = None
-    force_update_version: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
-    role_arn: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    version: Any = None
+    # An object representing the Access Config to use for the cluster.
     access_config: Any = None
+    # The ID of the certificate authority to activate as the cluster's signing CA. Setting or changing this value activates the specified CA (the previously active CA becomes trusted).
+    active_certificate_authority_id: Any = None
+    # Set this value to false to avoid creating the default networking add-ons when the cluster is created.
+    bootstrap_self_managed_addons: Any = None
+    # Todo: add description
     compute_config: Any = None
+    # Configuration for provisioned control plane scaling.
     control_plane_scaling_config: Any = None
+    # Set this value to true to enable deletion protection for the cluster.
+    deletion_protection: Any = None
+    # Specifies the AWS KMS key ARN and the Kubernetes resources (like secrets) to enable envelope encryption for the EKS cluster. (AI-inferred)
     encryption_config: Any = None
-    kubernetes_network_config: Any = None
+    # Force cluster version update
+    force: Any = None
+    # The configuration for the Kubernetes API server on an Amazon EKS cluster.
+    kube_api_server_config: Any = None
+    # The configuration for the Kubernetes controller manager on an Amazon EKS cluster.
+    kube_controller_manager_config: Any = None
+    # The configuration for the Kubernetes scheduler on an Amazon EKS cluster.
+    kube_scheduler_config: Any = None
+    # Enable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs based on log types. By default, cluster control plane logs aren't exported to CloudWatch Logs.
+    logging: Any = None
+    # The unique name to give to your cluster.
+    name: Any = None
+    # An object representing the Outpost configuration to use for AWS EKS outpost cluster.
     outpost_config: Any = None
+    # Configuration fields for specifying on-premises node and pod CIDRs that are external to the VPC passed during cluster creation.
     remote_network_config: Any = None
+    # An object representing the VPC configuration to use for an Amazon EKS cluster.
+    resources_vpc_config: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.
+    role_arn: Any = None
+    # The rollback configuration to use for the cluster version rollback.
+    rollback_config: Any = None
+    # Todo: add description
     storage_config: Any = None
-    timeouts: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # An object representing the Upgrade Policy to use for the cluster.
     upgrade_policy: Any = None
-    vpc_config: Any = None
+    # The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.
+    version: Any = None
+    # The current zonal shift configuration to use for the cluster.
+    zonal_shift_config: Any = None
+
+@dataclasses.dataclass
+class ClusterAttrs:
+    # An object representing the Access Config to use for the cluster.
+    access_config: Any = None
+    # The ID of the certificate authority to activate as the cluster's signing CA. Setting or changing this value activates the specified CA (the previously active CA becomes trusted).
+    active_certificate_authority_id: Any = None
+    # The ARN of the cluster, such as arn:aws:eks:us-west-2:666666666666:cluster/prod.
+    arn: Any = None
+    # Set this value to false to avoid creating the default networking add-ons when the cluster is created.
+    bootstrap_self_managed_addons: Any = None
+    # The certificate authority information for the cluster, including the trust bundle and the currently active signing certificate authority.
+    certificate_authority: Any = None
+    # The certificate-authority-data for your cluster.
+    certificate_authority_data: Any = None
+    # The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security group for control plane to data plane communication.
+    cluster_security_group_id: Any = None
+    # Todo: add description
+    compute_config: Any = None
+    # Configuration for provisioned control plane scaling.
+    control_plane_scaling_config: Any = None
+    # Set this value to true to enable deletion protection for the cluster.
+    deletion_protection: Any = None
+    # Specifies the AWS KMS key ARN and the Kubernetes resources (like secrets) to enable envelope encryption for the EKS cluster. (AI-inferred)
+    encryption_config: Any = None
+    # Amazon Resource Name (ARN) or alias of the customer master key (CMK).
+    encryption_config_key_arn: Any = None
+    # The endpoint for your Kubernetes API server, such as https://5E1D0CEXAMPLEA591B746AFC5AB30262.yl4.us-west-2.eks.amazonaws.com.
+    endpoint: Any = None
+    # Force cluster version update
+    force: Any = None
+    # The unique ID given to your cluster.
+    id: Any = None
+    # The configuration for the Kubernetes API server on an Amazon EKS cluster.
+    kube_api_server_config: Any = None
+    # The configuration for the Kubernetes controller manager on an Amazon EKS cluster.
+    kube_controller_manager_config: Any = None
+    # The configuration for the Kubernetes scheduler on an Amazon EKS cluster.
+    kube_scheduler_config: Any = None
+    # The Kubernetes network configuration for the cluster.
+    kubernetes_network_config: Any = None
+    # Enable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs based on log types. By default, cluster control plane logs aren't exported to CloudWatch Logs.
+    logging: Any = None
+    # The unique name to give to your cluster.
+    name: Any = None
+    # The issuer URL for the cluster's OIDC identity provider, such as https://oidc.eks.us-west-2.amazonaws.com/id/EXAMPLED539D4633E53DE1B716D3041E. If you need to remove https:// from this output value, you can include the following code in your template.
+    open_id_connect_issuer_url: Any = None
+    # An object representing the Outpost configuration to use for AWS EKS outpost cluster.
+    outpost_config: Any = None
+    # Configuration fields for specifying on-premises node and pod CIDRs that are external to the VPC passed during cluster creation.
+    remote_network_config: Any = None
+    # An object representing the VPC configuration to use for an Amazon EKS cluster.
+    resources_vpc_config: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.
+    role_arn: Any = None
+    # The rollback configuration to use for the cluster version rollback.
+    rollback_config: Any = None
+    # Todo: add description
+    storage_config: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # An object representing the Upgrade Policy to use for the cluster.
+    upgrade_policy: Any = None
+    # The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.
+    version: Any = None
+    # The current zonal shift configuration to use for the cluster.
     zonal_shift_config: Any = None
 
 Cluster = ubx.ResourceBinding(
     wire_type="aws_eks_cluster",
     fields={
-        "bootstrap_self_managed_addons": ubx.FieldSpec(wire_name="bootstrap_self_managed_addons"),
-        "deletion_protection": ubx.FieldSpec(wire_name="deletion_protection"),
-        "enabled_cluster_log_types": ubx.FieldSpec(wire_name="enabled_cluster_log_types"),
-        "force_update_version": ubx.FieldSpec(wire_name="force_update_version"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "role_arn": ubx.FieldSpec(wire_name="role_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "version": ubx.FieldSpec(wire_name="version"),
         "access_config": ubx.FieldSpec(
             wire_name="access_config",
-            kind="list",
+            kind="object",
             fields=_Cluster_AccessConfigFields,
         ),
+        "active_certificate_authority_id": ubx.FieldSpec(wire_name="active_certificate_authority_id"),
+        "bootstrap_self_managed_addons": ubx.FieldSpec(wire_name="bootstrap_self_managed_addons"),
         "compute_config": ubx.FieldSpec(
             wire_name="compute_config",
-            kind="list",
+            kind="object",
             fields=_Cluster_ComputeConfigFields,
         ),
         "control_plane_scaling_config": ubx.FieldSpec(
             wire_name="control_plane_scaling_config",
-            kind="list",
+            kind="object",
             fields=_Cluster_ControlPlaneScalingConfigFields,
         ),
+        "deletion_protection": ubx.FieldSpec(wire_name="deletion_protection"),
         "encryption_config": ubx.FieldSpec(
             wire_name="encryption_config",
             kind="list",
             fields=_Cluster_EncryptionConfigFields,
         ),
-        "kubernetes_network_config": ubx.FieldSpec(
-            wire_name="kubernetes_network_config",
-            kind="list",
-            fields=_Cluster_KubernetesNetworkConfigFields,
+        "force": ubx.FieldSpec(wire_name="force"),
+        "kube_api_server_config": ubx.FieldSpec(
+            wire_name="kube_api_server_config",
+            kind="object",
+            fields=_Cluster_KubeApiServerConfigFields,
         ),
+        "kube_controller_manager_config": ubx.FieldSpec(
+            wire_name="kube_controller_manager_config",
+            kind="object",
+            fields=_Cluster_KubeControllerManagerConfigFields,
+        ),
+        "kube_scheduler_config": ubx.FieldSpec(
+            wire_name="kube_scheduler_config",
+            kind="object",
+            fields=_Cluster_KubeSchedulerConfigFields,
+        ),
+        "logging": ubx.FieldSpec(
+            wire_name="logging",
+            kind="object",
+            fields=_Cluster_LoggingFields,
+        ),
+        "name": ubx.FieldSpec(wire_name="name"),
         "outpost_config": ubx.FieldSpec(
             wire_name="outpost_config",
-            kind="list",
+            kind="object",
             fields=_Cluster_OutpostConfigFields,
         ),
         "remote_network_config": ubx.FieldSpec(
             wire_name="remote_network_config",
-            kind="list",
+            kind="object",
             fields=_Cluster_RemoteNetworkConfigFields,
+        ),
+        "resources_vpc_config": ubx.FieldSpec(
+            wire_name="resources_vpc_config",
+            kind="object",
+            fields=_Cluster_ResourcesVpcConfigFields,
+        ),
+        "role_arn": ubx.FieldSpec(wire_name="role_arn"),
+        "rollback_config": ubx.FieldSpec(
+            wire_name="rollback_config",
+            kind="object",
+            fields=_Cluster_RollbackConfigFields,
         ),
         "storage_config": ubx.FieldSpec(
             wire_name="storage_config",
-            kind="list",
+            kind="object",
             fields=_Cluster_StorageConfigFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Cluster_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Cluster_TagsFields,
         ),
         "upgrade_policy": ubx.FieldSpec(
             wire_name="upgrade_policy",
-            kind="list",
+            kind="object",
             fields=_Cluster_UpgradePolicyFields,
         ),
-        "vpc_config": ubx.FieldSpec(
-            wire_name="vpc_config",
-            kind="list",
-            fields=_Cluster_VpcConfigFields,
-        ),
+        "version": ubx.FieldSpec(wire_name="version"),
         "zonal_shift_config": ubx.FieldSpec(
             wire_name="zonal_shift_config",
-            kind="list",
+            kind="object",
             fields=_Cluster_KubernetesNetworkConfig_ElasticLoadBalancingFields,
         ),
     },

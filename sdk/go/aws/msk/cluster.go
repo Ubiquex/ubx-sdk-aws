@@ -4,148 +4,218 @@ package msk
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_BrokerNodeGroupInfo_ConnectivityInfo_PublicAccess struct {
+	// Specifies the public access mode for the MSK cluster brokers, with allowed values DISABLED (no public access) or SERVICE_PROVIDED_EIPS (brokers are assigned public Elastic IP addresses). (AI-inferred)
 	Type any
 }
 
+type Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_Iam struct {
+	// When set to true, enables IAM-based SASL authentication for clients connecting to the cluster through VPC connectivity. (AI-inferred)
+	Enabled any
+}
+
 type Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl struct {
+	// Specifies whether AWS Identity and Access Management (IAM) is enabled for SASL authentication for clients connecting via VPC connectivity. (AI-inferred)
 	Iam any
+	// Specifies the SCRAM authentication settings for MSK cluster VPC connectivity, including an Enabled flag to turn on SASL/SCRAM username-password authentication for clients. (AI-inferred)
 	Scram any
 }
 
 type Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication struct {
-	Tls any
+	// Configures SASL authentication (enabling IAM, SCRAM, or both) for clients connecting to the cluster via VPC connectivity. (AI-inferred)
 	Sasl any
+	// Specifies the TLS client authentication settings for clients using VPC connectivity, allowing you to enable or disable mutual TLS authentication for the cluster. (AI-inferred)
+	Tls any
 }
 
 type Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity struct {
+	// Specifies the client authentication methods (SASL/SCRAM, SASL/IAM, and TLS) that clients must use when connecting to the MSK cluster brokers through VPC connectivity. (AI-inferred)
 	ClientAuthentication any
 }
 
 type Cluster_BrokerNodeGroupInfo_ConnectivityInfo struct {
+	// Specifies the network type for the broker nodes, either 'VPC' for private VPC-only access or 'PUBLIC' for public internet access. (AI-inferred)
 	NetworkType any
+	// Defines public accessibility for the cluster brokers by setting a type, such as DISABLED (no public access) or SERVICE_PROVIDED_EIPS (public access via Elastic IP addresses). (AI-inferred)
 	PublicAccess any
+	// Configures VPC connectivity for the cluster's broker nodes, specifying client authentication methods (TLS and SASL) for clients accessing the cluster over VPC. (AI-inferred)
 	VpcConnectivity any
 }
 
-type Cluster_BrokerNodeGroupInfo_StorageInfo_EbsStorageInfo_ProvisionedThroughput struct {
+type Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfo_ProvisionedThroughput struct {
+	// Indicates whether to enable provisioned throughput on the EBS storage attached to the broker nodes. (AI-inferred)
 	Enabled any
+	// Sets the target provisioned throughput in MiB/s for the EBS volumes attached to the Kafka broker nodes. (AI-inferred)
 	VolumeThroughput any
 }
 
-type Cluster_BrokerNodeGroupInfo_StorageInfo_EbsStorageInfo struct {
-	VolumeSize any
+type Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfo struct {
+	// This object configures provisioned I/O throughput for the EBS storage volumes attached to the MSK broker nodes, allowing you to specify a higher throughput than the baseline for performance-critical workloads. (AI-inferred)
 	ProvisionedThroughput any
+	// Specifies the size in GiB of the EBS storage volume for each broker node in the MSK cluster, determining the total storage capacity available for Kafka data. (AI-inferred)
+	VolumeSize any
 }
 
 type Cluster_BrokerNodeGroupInfo_StorageInfo struct {
-	EbsStorageInfo any
+	// Configures the size and optional provisioned throughput of the Amazon EBS storage volumes attached to each broker node of the MSK cluster. (AI-inferred)
+	EbsstorageInfo any
 }
 
 type Cluster_BrokerNodeGroupInfo struct {
-	AzDistribution any
+	// Defines how broker nodes are distributed across Availability Zones for the MSK cluster, with `DEFAULT` distributing them evenly and `USE_DEFAULT_AVAILABILITY_ZONES` using the cluster's default AZ configuration. (AI-inferred)
+	BrokerAzdistribution any
+	// The list of subnets in the VPC where the Apache Kafka broker nodes are deployed, determining their Availability Zone placement and network reachability for clients. (AI-inferred)
 	ClientSubnets any
-	InstanceType any
-	SecurityGroups any
+	// Configures VPC connectivity and public access settings for the broker nodes in the MSK cluster. (AI-inferred)
 	ConnectivityInfo any
+	// The EC2 instance type for the broker nodes, such as kafka.m5.large, which determines the compute and memory capacity of each broker. (AI-inferred)
+	InstanceType any
+	// One or more security group IDs to attach to the cluster's broker nodes, controlling inbound and outbound network traffic to the Apache Kafka brokers. (AI-inferred)
+	SecurityGroups any
+	// Specifies the EBS storage configuration for the broker nodes, including the volume size and optional provisioned throughput settings. (AI-inferred)
 	StorageInfo any
 }
 
 type Cluster_ClientAuthentication_Tls struct {
-	CertificateAuthorityArns any
+	// A list of AWS Private Certificate Authority (ACM PCA) ARNs used to validate client certificates for mutual TLS authentication in the MSK cluster. (AI-inferred)
+	CertificateAuthorityArnList any
+	// Controls whether TLS-based client authentication (mutual TLS) is enabled for the MSK cluster, requiring clients to present valid certificates when connecting. (AI-inferred)
+	Enabled any
 }
 
 type Cluster_ClientAuthentication struct {
-	Unauthenticated any
+	// Configures the SASL authentication mechanisms (e.g., SCRAM or IAM) enabled for clients connecting to this MSK cluster. (AI-inferred)
 	Sasl any
+	// Enables TLS mutual authentication for clients connecting to the MSK cluster by specifying the Certificate Authority (CA) ARNs used to issue and verify client certificates. (AI-inferred)
 	Tls any
+	// This is a boolean flag that enables or disables unauthenticated (anonymous) access to the Apache Kafka brokers in the MSK cluster, allowing clients to connect without SASL/SCRAM or IAM authentication when set to true. (AI-inferred)
+	Unauthenticated any
 }
 
 type Cluster_ConfigurationInfo struct {
+	// The Amazon Resource Name (ARN) of the MSK cluster configuration that the cluster is associated with. (AI-inferred)
 	Arn any
+	// The revision number of the Amazon MSK configuration to apply to the cluster. (AI-inferred)
 	Revision any
 }
 
+type Cluster_EncryptionInfo_EncryptionAtRest struct {
+	// The ARN or ID of the AWS KMS key used to encrypt data at rest on the broker volume(s) of the MSK cluster. (AI-inferred)
+	DataVolumeKmskeyId any
+}
+
 type Cluster_EncryptionInfo_EncryptionInTransit struct {
+	// Specifies the encryption setting for client-to-broker communication, with valid values TLS, TLS_PLAINTEXT, or PLAINTEXT. (AI-inferred)
 	ClientBroker any
+	// Indicates whether data encryption among broker nodes in the Amazon MSK cluster is enabled (default true). (AI-inferred)
 	InCluster any
 }
 
 type Cluster_EncryptionInfo struct {
-	EncryptionAtRestKmsKeyArn any
+	// Configures encryption of data at rest for the MSK cluster's broker volumes, including the AWS KMS key used for encryption. (AI-inferred)
+	EncryptionAtRest any
+	// Specifies in-transit encryption settings for the MSK cluster, including the client broker encryption mode (TLS, TLS_PLAINTEXT, or PLAINTEXT) and whether communication between brokers within the cluster is encrypted. (AI-inferred)
 	EncryptionInTransit any
 }
 
-type Cluster_LoggingInfo_BrokerLogs_CloudwatchLogs struct {
+type Cluster_LoggingInfo_AuthorizerLogs_CloudWatchLogs struct {
+	// When true, enables delivery of Amazon MSK authorizer logs to the configured CloudWatch Logs log group. (AI-inferred)
 	Enabled any
+	// The name of the CloudWatch Logs log group where MSK delivers authorizer logs (records of client authentication and authorization attempts). (AI-inferred)
 	LogGroup any
 }
 
-type Cluster_LoggingInfo_BrokerLogs_Firehose struct {
+type Cluster_LoggingInfo_AuthorizerLogs_Firehose struct {
+	// The name of the Amazon Kinesis Data Firehose delivery stream that the MSK cluster's authorizer logs are sent to when Firehose logging is enabled. (AI-inferred)
 	DeliveryStream any
+	// Whether to enable delivering Amazon MSK authorizer logs to the specified Amazon Data Firehose delivery stream. (AI-inferred)
 	Enabled any
 }
 
-type Cluster_LoggingInfo_BrokerLogs_S3 struct {
+type Cluster_LoggingInfo_AuthorizerLogs_S3 struct {
+	// The name of the S3 bucket where Amazon MSK sends authorizer logs for the cluster. (AI-inferred)
 	Bucket any
+	// Whether to enable delivery of Amazon MSK authorizer logs to the specified Amazon S3 bucket. (AI-inferred)
 	Enabled any
+	// Specifies the S3 key prefix under which authorizer logs are stored in the destination bucket. (AI-inferred)
 	Prefix any
 }
 
-type Cluster_LoggingInfo_BrokerLogs struct {
-	CloudwatchLogs any
+type Cluster_LoggingInfo_AuthorizerLogs struct {
+	// Configures the destination and enablement for streaming the cluster's authorizer logs (from the AWS IAM access control) to Amazon CloudWatch Logs, specifying the log group to which MSK delivers them. (AI-inferred)
+	CloudWatchLogs any
+	// Configures the delivery of Amazon MSK authorizer logs (Kafka authentication and authorization events) to an Amazon Kinesis Data Firehose delivery stream, including whether delivery is enabled and the name of the destination delivery stream. (AI-inferred)
 	Firehose any
+	// Configures delivery of MSK authorizer logs to an Amazon S3 bucket, including whether delivery is enabled, the destination bucket name, and an optional key prefix. (AI-inferred)
 	S3 any
 }
 
 type Cluster_LoggingInfo struct {
+	// Defines the destinations and settings for delivering Amazon MSK authorizer logs, which contain details about authentication and authorization requests for the cluster's IAM access control. (AI-inferred)
+	AuthorizerLogs any
+	// Configures delivery of the cluster's Apache Kafka broker logs to one or more supported destinations (CloudWatch Logs, Amazon S3, or Kinesis Data Firehose), including whether each destination is enabled. (AI-inferred)
 	BrokerLogs any
 }
 
 type Cluster_OpenMonitoring_Prometheus_JmxExporter struct {
+	// Indicates whether to enable the JMX Exporter on the Apache Kafka broker nodes to expose JMX metrics to Prometheus for open monitoring. (AI-inferred)
 	EnabledInBroker any
 }
 
 type Cluster_OpenMonitoring_Prometheus struct {
+	// Configures the JMX Exporter settings for the cluster's Prometheus open monitoring, including whether the exporter is enabled on the brokers. (AI-inferred)
 	JmxExporter any
+	// Specifies the Node Exporter configuration for the cluster's Prometheus monitoring, including the flag that enables or disables the Node Exporter on the broker nodes. (AI-inferred)
 	NodeExporter any
 }
 
 type Cluster_OpenMonitoring struct {
+	// Specifies the Prometheus exporter configuration for the MSK cluster's open monitoring, with nested settings for the JMX and node exporters. (AI-inferred)
 	Prometheus any
 }
 
 type Cluster_Rebalancing struct {
+	// Determines whether automatic partition rebalancing is enabled (ENABLED) or disabled (DISABLED) for the MSK cluster. (AI-inferred)
 	Status any
-}
-
-type Cluster_Timeouts struct {
-	Create any
-	Delete any
-	Update any
 }
 
 var Cluster_BrokerNodeGroupInfo_ConnectivityInfo_PublicAccessFields = ubx.FieldMap{
 		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
+var Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields = ubx.FieldMap{
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
 var Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_SaslFields = ubx.FieldMap{
-		"Iam": ubx.FieldSpec{WireName: "iam"},
-		"Scram": ubx.FieldSpec{WireName: "scram"},
+		"Iam": ubx.FieldSpec{
+			WireName: "iam",
+			Kind: "object",
+			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
+		},
+		"Scram": ubx.FieldSpec{
+			WireName: "scram",
+			Kind: "object",
+			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
+		},
 	}
 
 var Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthenticationFields = ubx.FieldMap{
-		"Tls": ubx.FieldSpec{WireName: "tls"},
 		"Sasl": ubx.FieldSpec{
 			WireName: "sasl",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_SaslFields,
+		},
+		"Tls": ubx.FieldSpec{
+			WireName: "tls",
+			Kind: "object",
+			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
 		},
 	}
 
 var Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivityFields = ubx.FieldMap{
 		"ClientAuthentication": ubx.FieldSpec{
 			WireName: "client_authentication",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthenticationFields,
 		},
 	}
@@ -154,70 +224,75 @@ var Cluster_BrokerNodeGroupInfo_ConnectivityInfoFields = ubx.FieldMap{
 		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
 		"PublicAccess": ubx.FieldSpec{
 			WireName: "public_access",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_PublicAccessFields,
 		},
 		"VpcConnectivity": ubx.FieldSpec{
 			WireName: "vpc_connectivity",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivityFields,
 		},
 	}
 
-var Cluster_BrokerNodeGroupInfo_StorageInfo_EbsStorageInfo_ProvisionedThroughputFields = ubx.FieldMap{
+var Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfo_ProvisionedThroughputFields = ubx.FieldMap{
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"VolumeThroughput": ubx.FieldSpec{WireName: "volume_throughput"},
 	}
 
-var Cluster_BrokerNodeGroupInfo_StorageInfo_EbsStorageInfoFields = ubx.FieldMap{
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
+var Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfoFields = ubx.FieldMap{
 		"ProvisionedThroughput": ubx.FieldSpec{
 			WireName: "provisioned_throughput",
-			Kind: "list",
-			Fields: Cluster_BrokerNodeGroupInfo_StorageInfo_EbsStorageInfo_ProvisionedThroughputFields,
+			Kind: "object",
+			Fields: Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfo_ProvisionedThroughputFields,
 		},
+		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
 	}
 
 var Cluster_BrokerNodeGroupInfo_StorageInfoFields = ubx.FieldMap{
-		"EbsStorageInfo": ubx.FieldSpec{
-			WireName: "ebs_storage_info",
-			Kind: "list",
-			Fields: Cluster_BrokerNodeGroupInfo_StorageInfo_EbsStorageInfoFields,
+		"EbsstorageInfo": ubx.FieldSpec{
+			WireName: "ebsstorage_info",
+			Kind: "object",
+			Fields: Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfoFields,
 		},
 	}
 
 var Cluster_BrokerNodeGroupInfoFields = ubx.FieldMap{
-		"AzDistribution": ubx.FieldSpec{WireName: "az_distribution"},
+		"BrokerAzdistribution": ubx.FieldSpec{WireName: "broker_azdistribution"},
 		"ClientSubnets": ubx.FieldSpec{WireName: "client_subnets"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
 		"ConnectivityInfo": ubx.FieldSpec{
 			WireName: "connectivity_info",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfoFields,
 		},
+		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
 		"StorageInfo": ubx.FieldSpec{
 			WireName: "storage_info",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_BrokerNodeGroupInfo_StorageInfoFields,
 		},
 	}
 
 var Cluster_ClientAuthentication_TlsFields = ubx.FieldMap{
-		"CertificateAuthorityArns": ubx.FieldSpec{WireName: "certificate_authority_arns"},
+		"CertificateAuthorityArnList": ubx.FieldSpec{WireName: "certificate_authority_arn_list"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 	}
 
 var Cluster_ClientAuthenticationFields = ubx.FieldMap{
-		"Unauthenticated": ubx.FieldSpec{WireName: "unauthenticated"},
 		"Sasl": ubx.FieldSpec{
 			WireName: "sasl",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_SaslFields,
 		},
 		"Tls": ubx.FieldSpec{
 			WireName: "tls",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_ClientAuthentication_TlsFields,
+		},
+		"Unauthenticated": ubx.FieldSpec{
+			WireName: "unauthenticated",
+			Kind: "object",
+			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
 		},
 	}
 
@@ -226,59 +301,72 @@ var Cluster_ConfigurationInfoFields = ubx.FieldMap{
 		"Revision": ubx.FieldSpec{WireName: "revision"},
 	}
 
+var Cluster_EncryptionInfo_EncryptionAtRestFields = ubx.FieldMap{
+		"DataVolumeKmskeyId": ubx.FieldSpec{WireName: "data_volume_kmskey_id"},
+	}
+
 var Cluster_EncryptionInfo_EncryptionInTransitFields = ubx.FieldMap{
 		"ClientBroker": ubx.FieldSpec{WireName: "client_broker"},
 		"InCluster": ubx.FieldSpec{WireName: "in_cluster"},
 	}
 
 var Cluster_EncryptionInfoFields = ubx.FieldMap{
-		"EncryptionAtRestKmsKeyArn": ubx.FieldSpec{WireName: "encryption_at_rest_kms_key_arn"},
+		"EncryptionAtRest": ubx.FieldSpec{
+			WireName: "encryption_at_rest",
+			Kind: "object",
+			Fields: Cluster_EncryptionInfo_EncryptionAtRestFields,
+		},
 		"EncryptionInTransit": ubx.FieldSpec{
 			WireName: "encryption_in_transit",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_EncryptionInfo_EncryptionInTransitFields,
 		},
 	}
 
-var Cluster_LoggingInfo_BrokerLogs_CloudwatchLogsFields = ubx.FieldMap{
+var Cluster_LoggingInfo_AuthorizerLogs_CloudWatchLogsFields = ubx.FieldMap{
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
 	}
 
-var Cluster_LoggingInfo_BrokerLogs_FirehoseFields = ubx.FieldMap{
+var Cluster_LoggingInfo_AuthorizerLogs_FirehoseFields = ubx.FieldMap{
 		"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 	}
 
-var Cluster_LoggingInfo_BrokerLogs_S3Fields = ubx.FieldMap{
+var Cluster_LoggingInfo_AuthorizerLogs_S3Fields = ubx.FieldMap{
 		"Bucket": ubx.FieldSpec{WireName: "bucket"},
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"Prefix": ubx.FieldSpec{WireName: "prefix"},
 	}
 
-var Cluster_LoggingInfo_BrokerLogsFields = ubx.FieldMap{
-		"CloudwatchLogs": ubx.FieldSpec{
-			WireName: "cloudwatch_logs",
-			Kind: "list",
-			Fields: Cluster_LoggingInfo_BrokerLogs_CloudwatchLogsFields,
+var Cluster_LoggingInfo_AuthorizerLogsFields = ubx.FieldMap{
+		"CloudWatchLogs": ubx.FieldSpec{
+			WireName: "cloud_watch_logs",
+			Kind: "object",
+			Fields: Cluster_LoggingInfo_AuthorizerLogs_CloudWatchLogsFields,
 		},
 		"Firehose": ubx.FieldSpec{
 			WireName: "firehose",
-			Kind: "list",
-			Fields: Cluster_LoggingInfo_BrokerLogs_FirehoseFields,
+			Kind: "object",
+			Fields: Cluster_LoggingInfo_AuthorizerLogs_FirehoseFields,
 		},
 		"S3": ubx.FieldSpec{
 			WireName: "s3",
-			Kind: "list",
-			Fields: Cluster_LoggingInfo_BrokerLogs_S3Fields,
+			Kind: "object",
+			Fields: Cluster_LoggingInfo_AuthorizerLogs_S3Fields,
 		},
 	}
 
 var Cluster_LoggingInfoFields = ubx.FieldMap{
+		"AuthorizerLogs": ubx.FieldSpec{
+			WireName: "authorizer_logs",
+			Kind: "object",
+			Fields: Cluster_LoggingInfo_AuthorizerLogsFields,
+		},
 		"BrokerLogs": ubx.FieldSpec{
 			WireName: "broker_logs",
-			Kind: "list",
-			Fields: Cluster_LoggingInfo_BrokerLogsFields,
+			Kind: "object",
+			Fields: Cluster_LoggingInfo_AuthorizerLogsFields,
 		},
 	}
 
@@ -289,12 +377,12 @@ var Cluster_OpenMonitoring_Prometheus_JmxExporterFields = ubx.FieldMap{
 var Cluster_OpenMonitoring_PrometheusFields = ubx.FieldMap{
 		"JmxExporter": ubx.FieldSpec{
 			WireName: "jmx_exporter",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_OpenMonitoring_Prometheus_JmxExporterFields,
 		},
 		"NodeExporter": ubx.FieldSpec{
 			WireName: "node_exporter",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_OpenMonitoring_Prometheus_JmxExporterFields,
 		},
 	}
@@ -302,7 +390,7 @@ var Cluster_OpenMonitoring_PrometheusFields = ubx.FieldMap{
 var Cluster_OpenMonitoringFields = ubx.FieldMap{
 		"Prometheus": ubx.FieldSpec{
 			WireName: "prometheus",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_OpenMonitoring_PrometheusFields,
 		},
 	}
@@ -311,83 +399,118 @@ var Cluster_RebalancingFields = ubx.FieldMap{
 		"Status": ubx.FieldSpec{WireName: "status"},
 	}
 
-var Cluster_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type ClusterConfig struct {
-	ClusterName any
-	EnhancedMonitoring any
-	Id any
-	KafkaVersion any
-	NumberOfBrokerNodes any
-	Region any
-	StorageMode any
-	Tags any
-	TagsAll any
+	// Configures the compute and networking resources for the Apache Kafka broker nodes, including instance type, number of brokers, subnets, and EBS storage settings. (AI-inferred)
 	BrokerNodeGroupInfo any
+	// Defines client authentication methods for the MSK cluster, such as TLS, SASL/SCRAM, IAM, or unauthenticated access, via the nested `sasl`, `tls`, and `unauthenticated` properties. (AI-inferred)
 	ClientAuthentication any
+	// A unique, user-friendly name for the MSK cluster, which must be unique within the AWS account and Region and is used as the cluster's identifier in the AWS Management Console and API calls. (AI-inferred)
+	ClusterName any
+	// Specifies the Amazon MSK configuration (ARN and revision) to use for the cluster. (AI-inferred)
 	ConfigurationInfo any
+	// Specifies the encryption configuration for the MSK cluster, including encryption at rest using a KMS key and encryption in transit for client and broker communication. (AI-inferred)
 	EncryptionInfo any
+	// Determines the granularity of Amazon CloudWatch metrics for the MSK cluster, with valid values including DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. (AI-inferred)
+	EnhancedMonitoring any
+	// The version of Apache Kafka to use for the cluster, such as '2.8.1'. (AI-inferred)
+	KafkaVersion any
+	// Specifies the broker log delivery configuration for the MSK cluster, including destinations such as CloudWatch Logs, Amazon S3, and Amazon Kinesis Data Firehose. (AI-inferred)
 	LoggingInfo any
+	// The number of broker nodes to be provisioned in the Amazon MSK cluster. (AI-inferred)
+	NumberOfBrokerNodes any
+	// Configures open monitoring settings for the MSK cluster, including Prometheus exporter settings for JMX and node metrics. (AI-inferred)
 	OpenMonitoring any
+	// Specifies the rebalancing settings for the MSK cluster, which control how the cluster automatically reassigns partition leaders and replicas among brokers during topology changes. (AI-inferred)
 	Rebalancing any
-	Timeouts any
+	// Specifies the storage mode for the MSK cluster, either LOCAL for local EBS storage only or TIERED to enable tiered storage that automatically moves older data to Amazon S3. (AI-inferred)
+	StorageMode any
+	// A key-value pair to associate with a resource.
+	Tags any
+	ZookeeperAccess any
+}
+
+type ClusterAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster. (AI-inferred)
+	Arn any
+	// Configures the compute and networking resources for the Apache Kafka broker nodes, including instance type, number of brokers, subnets, and EBS storage settings. (AI-inferred)
+	BrokerNodeGroupInfo any
+	// Defines client authentication methods for the MSK cluster, such as TLS, SASL/SCRAM, IAM, or unauthenticated access, via the nested `sasl`, `tls`, and `unauthenticated` properties. (AI-inferred)
+	ClientAuthentication any
+	// A unique, user-friendly name for the MSK cluster, which must be unique within the AWS account and Region and is used as the cluster's identifier in the AWS Management Console and API calls. (AI-inferred)
+	ClusterName any
+	// Specifies the Amazon MSK configuration (ARN and revision) to use for the cluster. (AI-inferred)
+	ConfigurationInfo any
+	// The current version of the MSK cluster
+	CurrentVersion any
+	// Specifies the encryption configuration for the MSK cluster, including encryption at rest using a KMS key and encryption in transit for client and broker communication. (AI-inferred)
+	EncryptionInfo any
+	// Determines the granularity of Amazon CloudWatch metrics for the MSK cluster, with valid values including DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. (AI-inferred)
+	EnhancedMonitoring any
+	// The version of Apache Kafka to use for the cluster, such as '2.8.1'. (AI-inferred)
+	KafkaVersion any
+	// Specifies the broker log delivery configuration for the MSK cluster, including destinations such as CloudWatch Logs, Amazon S3, and Amazon Kinesis Data Firehose. (AI-inferred)
+	LoggingInfo any
+	// The number of broker nodes to be provisioned in the Amazon MSK cluster. (AI-inferred)
+	NumberOfBrokerNodes any
+	// Configures open monitoring settings for the MSK cluster, including Prometheus exporter settings for JMX and node metrics. (AI-inferred)
+	OpenMonitoring any
+	// Specifies the rebalancing settings for the MSK cluster, which control how the cluster automatically reassigns partition leaders and replicas among brokers during topology changes. (AI-inferred)
+	Rebalancing any
+	// Specifies the storage mode for the MSK cluster, either LOCAL for local EBS storage only or TIERED to enable tiered storage that automatically moves older data to Amazon S3. (AI-inferred)
+	StorageMode any
+	// A key-value pair to associate with a resource.
+	Tags any
+	ZookeeperAccess any
 }
 
 var Cluster = ubx.ResourceBinding{
 	WireType: "aws_msk_cluster",
 	Fields: ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"EnhancedMonitoring": ubx.FieldSpec{WireName: "enhanced_monitoring"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"KafkaVersion": ubx.FieldSpec{WireName: "kafka_version"},
-		"NumberOfBrokerNodes": ubx.FieldSpec{WireName: "number_of_broker_nodes"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"StorageMode": ubx.FieldSpec{WireName: "storage_mode"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"BrokerNodeGroupInfo": ubx.FieldSpec{
 			WireName: "broker_node_group_info",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_BrokerNodeGroupInfoFields,
 		},
 		"ClientAuthentication": ubx.FieldSpec{
 			WireName: "client_authentication",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_ClientAuthenticationFields,
 		},
+		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
 		"ConfigurationInfo": ubx.FieldSpec{
 			WireName: "configuration_info",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_ConfigurationInfoFields,
 		},
 		"EncryptionInfo": ubx.FieldSpec{
 			WireName: "encryption_info",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_EncryptionInfoFields,
 		},
+		"EnhancedMonitoring": ubx.FieldSpec{WireName: "enhanced_monitoring"},
+		"KafkaVersion": ubx.FieldSpec{WireName: "kafka_version"},
 		"LoggingInfo": ubx.FieldSpec{
 			WireName: "logging_info",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_LoggingInfoFields,
 		},
+		"NumberOfBrokerNodes": ubx.FieldSpec{WireName: "number_of_broker_nodes"},
 		"OpenMonitoring": ubx.FieldSpec{
 			WireName: "open_monitoring",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_OpenMonitoringFields,
 		},
 		"Rebalancing": ubx.FieldSpec{
 			WireName: "rebalancing",
-			Kind: "list",
+			Kind: "object",
 			Fields: Cluster_RebalancingFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"StorageMode": ubx.FieldSpec{WireName: "storage_mode"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"ZookeeperAccess": ubx.FieldSpec{
+			WireName: "zookeeper_access",
 			Kind: "object",
-			Fields: Cluster_TimeoutsFields,
+			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
 		},
 	},
 }

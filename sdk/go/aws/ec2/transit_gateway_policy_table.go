@@ -3,21 +3,45 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TransitGatewayPolicyTable_Tags struct {
+	Key any
+	// The value of a user-defined tag key assigned to the transit gateway policy table, used for metadata and resource identification. (AI-inferred)
+	Value any
+}
+
+var TransitGatewayPolicyTable_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type TransitGatewayPolicyTableConfig struct {
-	Id any
-	Region any
+	// Specifies a list of tags (key-value pairs) to attach to the EC2 Transit Gateway Policy Table, used for identifying and organizing the resource. (AI-inferred)
 	Tags any
-	TagsAll any
+	// The Id of transit gateway
 	TransitGatewayId any
+}
+
+type TransitGatewayPolicyTableAttrs struct {
+	// Creation time of the transit gateway policy table
+	CreationTime any
+	// State of the transit gateway policy table
+	State any
+	// Specifies a list of tags (key-value pairs) to attach to the EC2 Transit Gateway Policy Table, used for identifying and organizing the resource. (AI-inferred)
+	Tags any
+	// The Id of transit gateway
+	TransitGatewayId any
+	// The Id of transit gateway policy table.
+	TransitGatewayPolicyTableId any
 }
 
 var TransitGatewayPolicyTable = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_policy_table",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: TransitGatewayPolicyTable_TagsFields,
+		},
 		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
 	},
 }

@@ -2,19 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PullTimeUpdateExclusionConfig {
+  /** Principal arn that should not update image pull times. */
   principalArn: string | Computed<string>;
-  region?: string | Computed<string>;
 }
 
 export interface PullTimeUpdateExclusionAttrs {
+  /** Principal arn that should not update image pull times. */
   principalArn: string;
-  region: string;
 }
 
 export const PullTimeUpdateExclusion: ResourceBinding<PullTimeUpdateExclusionConfig, PullTimeUpdateExclusionAttrs> = {
   wireType: "aws_ecr_pull_time_update_exclusion",
   fields: {
     principalArn: "principal_arn",
-    region: "region",
   },
 };

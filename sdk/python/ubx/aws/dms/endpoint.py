@@ -7,161 +7,574 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Endpoint_ElasticsearchSettings:
-    endpoint_uri: Any = None
-    error_retry_duration: Any = None
-    full_load_error_percentage: Any = None
+class Endpoint_DocDbSettings:
+    # Indicates the number of documents to preview to determine the document organization. Use this setting when NestingLevel is set to "one".
+    docs_to_investigate: Any = None
+    # Specifies the document ID. Use this setting when NestingLevel is set to "none"
+    extract_doc_id: Any = None
+    # Specifies either document or table mode.
+    nesting_level: Any = None
+    # The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the required permissions to access the value in SecretsManagerSecret. The role must allow the iam:PassRole action. SecretsManagerSecret has the value of the AWS Secrets Manager secret that allows access to the DocumentDB endpoint.
+    secrets_manager_access_role_arn: Any = None
+    # The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the required permissions to access the value in SecretsManagerSecret. The role must allow the iam:PassRole action. SecretsManagerSecret has the value of the AWS Secrets Manager secret that allows access to the DocumentDB endpoint.
+    secrets_manager_secret_id: Any = None
+
+@dataclasses.dataclass
+class Endpoint_DynamoDbSettings:
+    # The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the iam:PassRole action.
     service_access_role_arn: Any = None
-    use_new_mapping_type: Any = None
+
+@dataclasses.dataclass
+class Endpoint_ElasticsearchSettings:
+    # The endpoint for the OpenSearch cluster. AWS DMS uses HTTPS if a transport protocol (either HTTP or HTTPS) isn't specified.
+    endpoint_uri: Any = None
+    # The maximum number of seconds for which DMS retries failed API requests to the OpenSearch cluster.
+    error_retry_duration: Any = None
+    # The maximum percentage of records that can fail to be written before a full load operation stops.
+    full_load_error_percentage: Any = None
+    # The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the iam:PassRole action.
+    service_access_role_arn: Any = None
+
+@dataclasses.dataclass
+class Endpoint_GcpMySqlsettings:
+    # Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.
+    after_connect_script: Any = None
+    # Adjusts the behavior of AWS DMS when migrating from an SQL Server source database that is hosted as part of an Always On availability group cluster. If you need AWS DMS to poll all the nodes in the Always On cluster for transaction backups, set this attribute to false.
+    clean_source_metadata_on_mismatch: Any = None
+    # Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database using the DatabaseName request parameter on either the CreateEndpoint or ModifyEndpoint API call. Specifying DatabaseName when you create or modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the AWS DMS task.
+    database_name: Any = None
+    # Specifies how often to check the binary log for new changes/events when the database is idle. The default is five seconds.
+    events_poll_interval: Any = None
+    # Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.
+    max_file_size: Any = None
+    # Improves performance when loading data into the MySQL-compatible target database. Specifies how many threads to use to load the data into the MySQL-compatible target database. Setting a large number of threads can have an adverse effect on database performance, because a separate connection is required for each thread. The default is one.
+    parallel_load_threads: Any = None
+    # Endpoint connection password.
+    password: Any = None
+    # The port used by the endpoint database.
+    port: Any = None
+    # The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the required permissions to access the value in SecretsManagerSecret. The role must allow the iam:PassRole action. SecretsManagerSecret has the value of the AWS Secrets Manager secret that allows access to the MySQL endpoint.
+    secrets_manager_access_role_arn: Any = None
+    # The full ARN, partial ARN, or display name of the SecretsManagerSecret that contains the MySQL endpoint connection details.
+    secrets_manager_secret_id: Any = None
+    # The MySQL host name.
+    server_name: Any = None
+    # Specifies the time zone for the source MySQL database. Don't enclose time zones in single quotation marks.
+    server_timezone: Any = None
+    # Specifies the time zone for the source MySQL database. Don't enclose time zones in single quotation marks.
+    username: Any = None
+
+@dataclasses.dataclass
+class Endpoint_IbmDb2Settings:
+    # For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the replication to start.
+    current_lsn: Any = None
+    # If true, AWS DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these files for analysis and troubleshooting.
+    keep_csv_files: Any = None
+    # The amount of time (in milliseconds) before AWS DMS times out operations performed by DMS on the Db2 target. The default value is 1200 (20 minutes).
+    load_timeout: Any = None
+    # Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.
+    max_file_size: Any = None
+    # Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.
+    max_kbytes_per_read: Any = None
+    # The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the required permissions to access the value in SecretsManagerSecret. The role must allow the iam:PassRole action. SecretsManagerSecret has the value ofthe AWS Secrets Manager secret that allows access to the Db2 LUW endpoint.
+    secrets_manager_access_role_arn: Any = None
+    # The full ARN, partial ARN, or display name of the SecretsManagerSecret that contains the IBMDB2 endpoint connection details.
+    secrets_manager_secret_id: Any = None
+    # Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
+    set_data_capture_changes: Any = None
+    # The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on the DMS replication instance. The default value is 1024 (1 MB).
+    write_buffer_size: Any = None
 
 @dataclasses.dataclass
 class Endpoint_KafkaSettings:
+    # A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form broker-hostname-or-ip:port
     broker: Any = None
+    # Shows detailed control information for table definition, column definition, and table and column changes in the Kafka message output. The default is false.
     include_control_details: Any = None
+    # Include NULL and empty columns for records migrated to the endpoint. The default is false.
     include_null_and_empty: Any = None
+    # Shows the partition value within the Kafka message output unless the partition type is schema-table-type. The default is false.
     include_partition_value: Any = None
+    # Includes any data definition language (DDL) operations that change the table in the control data, such as rename-table, drop-table, add-column, drop-column, and rename-column. The default is false.
     include_table_alter_operations: Any = None
+    # Provides detailed transaction information from the source database. This information includes a commit timestamp, a log position, and values for transaction_id, previous transaction_id, and transaction_record_id (the record offset within a transaction). The default is false.
     include_transaction_details: Any = None
+    # The output format for the records created on the endpoint. The message format is JSON (default) or JSON_UNFORMATTED (a single line with no tab).
     message_format: Any = None
+    # The maximum size in bytes for records created on the endpoint The default is 1,000,000.
     message_max_bytes: Any = None
+    # Set this optional parameter to true to avoid adding a '0x' prefix to raw data in hexadecimal format. For example, by default, AWS DMS adds a '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle source to a Kafka target. Use the NoHexPrefix endpoint setting to enable migration of RAW data type columns without adding the '0x' prefix.
     no_hex_prefix: Any = None
+    # Prefixes schema and table names to partition values, when the partition type is primary-key-type.
     partition_include_schema_table: Any = None
-    sasl_mechanism: Any = None
+    # The secure password that you created when you first set up your Amazon MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.
     sasl_password: Any = None
-    sasl_username: Any = None
+    # The secure user name you created when you first set up your Amazon MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.
+    sasl_user_name: Any = None
+    # Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include ssl-encryption, ssl-authentication, and sasl-ssl. sasl-ssl requires SaslUsername and SaslPassword.
     security_protocol: Any = None
+    # The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that AWS DMS uses to securely connect to your Kafka target endpoint.
     ssl_ca_certificate_arn: Any = None
+    # The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.
     ssl_client_certificate_arn: Any = None
+    # The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.
     ssl_client_key_arn: Any = None
+    # The password for the client private key used to securely connect to a Kafka target endpoint.
     ssl_client_key_password: Any = None
+    # The topic to which you migrate the data. If you don't specify a topic, AWS DMS specifies "kafka-default-topic" as the migration topic.
     topic: Any = None
 
 @dataclasses.dataclass
 class Endpoint_KinesisSettings:
+    # Shows detailed control information for table definition, column definition, and table and column changes in the Kinesis message output. The default is false.
     include_control_details: Any = None
+    # Include NULL and empty columns for records migrated to the endpoint. The default is false.
     include_null_and_empty: Any = None
+    # Shows the partition value within the Kinesis message output, unless the partition type is schema-table-type. The default is false.
     include_partition_value: Any = None
+    # Includes any data definition language (DDL) operations that change the table in the control data, such as rename-table, drop-table, add-column, drop-column, and rename-column. The default is false.
     include_table_alter_operations: Any = None
+    # Provides detailed transaction information from the source database.
     include_transaction_details: Any = None
+    # The output format for the records created on the endpoint. The message format is JSON (default) or JSON_UNFORMATTED (a single line with no tab).
     message_format: Any = None
+    # Set this optional parameter to true to avoid adding a '0x' prefix to raw data in hexadecimal format.
+    no_hex_prefix: Any = None
+    # Prefixes schema and table names to partition values, when the partition type is primary-key-type.
     partition_include_schema_table: Any = None
+    # The Amazon Resource Name (ARN) for the IAM role that AWS DMS uses to write to the Kinesis data stream. The role must allow the iam:PassRole action.
     service_access_role_arn: Any = None
+    # The Amazon Resource Name (ARN) for the Amazon Kinesis Data Streams endpoint.
     stream_arn: Any = None
-    use_large_integer_value: Any = None
 
 @dataclasses.dataclass
-class Endpoint_MongodbSettings:
+class Endpoint_MicrosoftSqlServerSettings:
+    # The maximum size of the packets (in bytes) used to transfer data using BCP.
+    bcp_packet_size: Any = None
+    # Specifies a file group for the AWS DMS internal tables.
+    control_tables_file_group: Any = None
+    # Database name for the endpoint.
+    database_name: Any = None
+    # Forces LOB lookup on inline LOB.
+    force_lob_lookup: Any = None
+    # Endpoint connection password.
+    password: Any = None
+    # Endpoint TCP port.
+    port: Any = None
+    # Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An example is a situation where running an alter DDL statement on a table might result in different information about the table cached in the replication instance.
+    query_single_always_on_node: Any = None
+    # When this attribute is set to Y, AWS DMS only reads changes from transaction log backups and doesn't read from the active transaction log file during ongoing replication. Setting this parameter to Y enables you to control active transaction log file growth during full load and ongoing replication tasks. However, it can add some source latency to ongoing replication.
+    read_backup_only: Any = None
+    # Use this attribute to minimize the need to access the backup log and enable AWS DMS to prevent truncation using one of the following two methods.
+    safeguard_policy: Any = None
+    # The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the required permissions to access the value in SecretsManagerSecret
+    secrets_manager_access_role_arn: Any = None
+    # The full ARN, partial ARN, or display name of the SecretsManagerSecret that contains the MicrosoftSQLServer endpoint connection details.
+    secrets_manager_secret_id: Any = None
+    # Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of DescribeDBInstances, in the Endpoint.Address field.
+    server_name: Any = None
+    # Indicates the mode used to fetch CDC data.
+    tlog_access_mode: Any = None
+    # Use the TrimSpaceInChar source endpoint setting to right-trim data on CHAR and NCHAR data types during migration. Setting TrimSpaceInChar does not left-trim data. The default value is true.
+    trim_space_in_char: Any = None
+    # Use this to attribute to transfer data for full-load operations using BCP. When the target table contains an identity column that does not exist in the source table, you must disable the use BCP for loading table option.
+    use_bcp_full_load: Any = None
+    # When this attribute is set to Y, DMS processes third-party transaction log backups if they are created in native format.
+    use_third_party_backup_device: Any = None
+    # Endpoint connection user name.
+    username: Any = None
+
+@dataclasses.dataclass
+class Endpoint_MongoDbSettings:
+    # The authentication mechanism you use to access the MongoDB source endpoint.
     auth_mechanism: Any = None
+    # The MongoDB database name. This setting isn't used when AuthType is set to "no".
     auth_source: Any = None
+    # The authentication type you use to access the MongoDB source endpoint.
     auth_type: Any = None
+    # The database name on the MongoDB source endpoint.
+    database_name: Any = None
+    # Indicates the number of documents to preview to determine the document organization. Use this setting when NestingLevel is set to "one".
     docs_to_investigate: Any = None
+    # Specifies the document ID. Use this setting when NestingLevel is set to "none".
     extract_doc_id: Any = None
+    # Specifies either document or table mode.
     nesting_level: Any = None
-    use_update_lookup: Any = None
+    # The password for the user account you use to access the MongoDB source endpoint.
+    password: Any = None
+    # The port value for the MongoDB source endpoint.
+    port: Any = None
+    # The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the required permissions to access the value in SecretsManagerSecret
+    secrets_manager_access_role_arn: Any = None
+    # The full ARN, partial ARN, or display name of the SecretsManagerSecret that contains the MongoDB endpoint connection details.
+    secrets_manager_secret_id: Any = None
+    # The name of the server on the MongoDB source endpoint.
+    server_name: Any = None
+    # The user name you use to access the MongoDB source endpoint.
+    username: Any = None
 
 @dataclasses.dataclass
-class Endpoint_MysqlSettings:
+class Endpoint_MySqlSettings:
+    # Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.
     after_connect_script: Any = None
-    authentication_method: Any = None
+    # Cleans and recreates table metadata information on the replication instance when a mismatch occurs.
     clean_source_metadata_on_mismatch: Any = None
+    # Specifies how often to check the binary log for new changes/events when the database is idle. The default is five seconds.
     events_poll_interval: Any = None
-    execute_timeout: Any = None
+    # Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.
     max_file_size: Any = None
+    # Improves performance when loading data into the MySQL-compatible target database. Specifies how many threads to use to load the data into the MySQL-compatible target database.
     parallel_load_threads: Any = None
+    # The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the required permissions to access the value in SecretsManagerSecret.
+    secrets_manager_access_role_arn: Any = None
+    # The full ARN, partial ARN, or display name of the SecretsManagerSecret that contains the MySQL endpoint connection details.
+    secrets_manager_secret_id: Any = None
+    # Specifies the time zone for the source MySQL database.
     server_timezone: Any = None
-    service_access_role_arn: Any = None
+    # Specifies where to migrate source tables on the target, either to a single database or multiple databases.
     target_db_type: Any = None
 
 @dataclasses.dataclass
+class Endpoint_NeptuneSettings:
+    # The number of milliseconds for AWS DMS to wait to retry a bulk-load of migrated graph data to the Neptune target database before raising an error. The default is 250.
+    error_retry_duration: Any = None
+    # If you want IAM authorization enabled for this endpoint, set this parameter to true.
+    iam_auth_enabled: Any = None
+    # The maximum size in kilobytes of migrated graph data stored in a .csv file before AWS DMS bulk-loads the data to the Neptune target database.
+    max_file_size: Any = None
+    # The number of times for AWS DMS to retry a bulk load of migrated graph data to the Neptune target database before raising an error. The default is 5.
+    max_retry_count: Any = None
+    # A folder path where you want AWS DMS to store migrated graph data in the S3 bucket specified by S3BucketName
+    s3_bucket_folder: Any = None
+    # The name of the Amazon S3 bucket where AWS DMS can temporarily store migrated graph data in .csv files before bulk-loading it to the Neptune target database.
+    s3_bucket_name: Any = None
+    # The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the iam:PassRole action.
+    service_access_role_arn: Any = None
+
+@dataclasses.dataclass
 class Endpoint_OracleSettings:
+    # Set this attribute to false in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source.
     access_alternate_directly: Any = None
+    # Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables PRIMARY KEY supplemental logging on all tables selected for a migration task.
     add_supplemental_logging: Any = None
+    # Set this attribute with ArchivedLogDestId in a primary/ standby setup
     additional_archived_log_dest_id: Any = None
-    allow_selected_nested_tables: Any = None
+    # Set this attribute to true to enable replication of Oracle tables containing columns that are nested tables or defined types.
+    allow_select_nested_tables: Any = None
+    # Specifies the ID of the destination for the archived redo logs.
     archived_log_dest_id: Any = None
+    # When this field is set to True, AWS DMS only accesses the archived redo logs
     archived_logs_only: Any = None
+    # For an Oracle source endpoint, your Oracle Automatic Storage Management (ASM) password.
     asm_password: Any = None
+    # For an Oracle source endpoint, your ASM server address.
     asm_server: Any = None
+    # For an Oracle source endpoint, your ASM user name.
     asm_user: Any = None
-    authentication_method: Any = None
+    # Specifies whether the length of a character column is in bytes or in characters.
     char_length_semantics: Any = None
-    convert_timestamp_with_zone_to_utc: Any = None
+    # When set to true, this attribute helps to increase the commit rate on the Oracle target database by writing directly to tables and not writing a trail to database logs.
     direct_path_no_log: Any = None
+    # When set to true, this attribute specifies a parallel load when useDirectPathFullLoad is set to Y.
     direct_path_parallel_load: Any = None
+    # Set this attribute to enable homogenous tablespace replication and create existing tables or indexes under the same tablespace on the target.
     enable_homogenous_tablespace: Any = None
+    # Specifies the IDs of one more destinations for one or more archived redo logs.
     extra_archived_log_dest_ids: Any = None
-    fail_task_on_lob_truncation: Any = None
+    # When set to true, this attribute causes a task to fail if the actual size of an LOB column is greater than the specified LobMaxSize.
+    fail_tasks_on_lob_truncation: Any = None
+    # Specifies the number scale. You can select a scale up to 38, or you can select FLOAT. By default, the NUMBER data type is converted to precision 38, scale 10.
     number_datatype_scale: Any = None
-    open_transaction_window: Any = None
+    # Set this string attribute to the required value in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source.
     oracle_path_prefix: Any = None
+    # Set this attribute to change the number of threads that DMS configures to perform a change data capture (CDC) load using Oracle Automatic Storage Management (ASM).
     parallel_asm_read_threads: Any = None
+    # Set this attribute to change the number of read-ahead blocks that DMS configures to perform a change data capture (CDC) load using Oracle Automatic Storage Management (ASM).
     read_ahead_blocks: Any = None
+    # When set to true, this attribute supports tablespace replication.
     read_table_space_name: Any = None
+    # Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source.
     replace_path_prefix: Any = None
+    # Specifies the number of seconds that the system waits before resending a query.
     retry_interval: Any = None
+    # The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the required permissions to access the value in SecretsManagerSecret.
+    secrets_manager_access_role_arn: Any = None
+    # Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
     secrets_manager_oracle_asm_access_role_arn: Any = None
+    # Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
     secrets_manager_oracle_asm_secret_id: Any = None
+    # The full ARN, partial ARN, or display name of the SecretsManagerSecret that contains the Oracle endpoint connection details.
+    secrets_manager_secret_id: Any = None
+    # For an Oracle source endpoint, the transparent data encryption (TDE) password required by AWM DMS to access Oracle redo logs encrypted by TDE using Binary Reader.
     security_db_encryption: Any = None
+    # For an Oracle source endpoint, the name of a key used for the transparent data encryption (TDE) of the columns and tablespaces in an Oracle source database that is encrypted using TDE.
     security_db_encryption_name: Any = None
+    # Use this attribute to convert SDO_GEOMETRY to GEOJSON format. By default, DMS calls the SDO2GEOJSON custom function if present and accessible. Or you can create your own custom function that mimics the operation of SDOGEOJSON and set SpatialDataOptionToGeoJsonFunctionName to call it instead.
     spatial_data_option_to_geo_json_function_name: Any = None
+    # Use this attribute to specify a time in minutes for the delay in standby sync.
     standby_delay_time: Any = None
-    trim_space_in_char: Any = None
+    # Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source
     use_alternate_folder_for_online: Any = None
+    # Set this attribute to True to capture change data using the Binary Reader utility.
     use_bfile: Any = None
+    # Set this attribute to True to have AWS DMS use a direct path full load.
     use_direct_path_full_load: Any = None
+    # Set this attribute to True to capture change data using the Oracle LogMiner utility (the default).
     use_logminer_reader: Any = None
+    # Set this string attribute to the required value in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source.
     use_path_prefix: Any = None
 
 @dataclasses.dataclass
-class Endpoint_PostgresSettings:
+class Endpoint_PostgreSqlSettings:
+    # For use with change data capture (CDC) only, this attribute has AWS DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.
     after_connect_script: Any = None
-    authentication_method: Any = None
+    # The Babelfish for Aurora PostgreSQL database name for the endpoint.
     babelfish_database_name: Any = None
+    # To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database when the task starts. You can later remove these artifacts.
     capture_ddls: Any = None
+    # Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require some additional configuration, such as Babelfish endpoints.
     database_mode: Any = None
+    # The schema in which the operational DDL database artifacts are created.
     ddl_artifacts_schema: Any = None
+    # Sets the client statement timeout for the PostgreSQL instance, in seconds. The default value is 60 seconds.
     execute_timeout: Any = None
+    # When set to true, this value causes a task to fail if the actual size of a LOB column is greater than the specified LobMaxSize.
     fail_tasks_on_lob_truncation: Any = None
+    # The write-ahead log (WAL) heartbeat feature mimics a dummy transaction.
     heartbeat_enable: Any = None
+    # Sets the WAL heartbeat frequency (in minutes).
     heartbeat_frequency: Any = None
+    # Sets the schema in which the heartbeat artifacts are created.
     heartbeat_schema: Any = None
+    # When true, lets PostgreSQL migrate the boolean type as boolean.
     map_boolean_as_boolean: Any = None
-    map_jsonb_as_clob: Any = None
-    map_long_varchar_as: Any = None
+    # Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.
     max_file_size: Any = None
+    # Specifies the plugin to use to create a replication slot.
     plugin_name: Any = None
-    service_access_role_arn: Any = None
+    # The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the required permissions to access the value in SecretsManagerSecret.
+    secrets_manager_access_role_arn: Any = None
+    # The full ARN, partial ARN, or display name of the SecretsManagerSecret that contains the PostgreSQL endpoint connection details.
+    secrets_manager_secret_id: Any = None
+    # Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance.
     slot_name: Any = None
 
 @dataclasses.dataclass
 class Endpoint_RedisSettings:
+    # The password provided with the auth-role and auth-token options of the AuthType setting for a Redis target endpoint.
     auth_password: Any = None
+    # The type of authentication to perform when connecting to a Redis target.
     auth_type: Any = None
+    # The user name provided with the auth-role option of the AuthType setting for a Redis target endpoint.
     auth_user_name: Any = None
+    # Transmission Control Protocol (TCP) port for the endpoint.
     port: Any = None
+    # Fully qualified domain name of the endpoint.
     server_name: Any = None
+    # The Amazon Resource Name (ARN) for the certificate authority (CA) that DMS uses to connect to your Redis target endpoint.
     ssl_ca_certificate_arn: Any = None
+    # The connection to a Redis target endpoint using Transport Layer Security (TLS). Valid values include plaintext and ssl-encryption.
     ssl_security_protocol: Any = None
 
 @dataclasses.dataclass
 class Endpoint_RedshiftSettings:
+    # A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose true or false (the default).
+    accept_any_date: Any = None
+    # Code to run after connecting. This parameter should contain the code itself, not the name of a file containing the code.
+    after_connect_script: Any = None
+    # An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster.
     bucket_folder: Any = None
+    # The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.
     bucket_name: Any = None
+    # If Amazon Redshift is configured to support case sensitive schema names, set CaseSensitiveNames to true. The default is false.
+    case_sensitive_names: Any = None
+    # If you set CompUpdate to true Amazon Redshift applies automatic compression if the table is empty.
+    comp_update: Any = None
+    # A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you initially establish a connection.
+    connection_timeout: Any = None
+    # The date format that you are using.
+    date_format: Any = None
+    # A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of true sets empty CHAR and VARCHAR fields to null. The default is false.
+    empty_as_null: Any = None
+    # The type of server-side encryption that you want to use for your data.
     encryption_mode: Any = None
+    # This setting is only valid for a full-load migration task. Set ExplicitIds to true to have tables with IDENTITY columns override their auto-generated values with explicit values loaded from the source data files used to populate the tables. The default is false.
+    explicit_ids: Any = None
+    # The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.
+    file_transfer_upload_streams: Any = None
+    # The amount of time to wait (in milliseconds) before timing out of operations performed by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
+    load_timeout: Any = None
+    # When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as varchar(1). You must set this setting on both the source and target endpoints for it to take effect.
+    map_boolean_as_boolean: Any = None
+    # The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon Redshift. It defaults to 1048576KB (1 GB).
+    max_file_size: Any = None
+    # A value that specifies to remove surrounding quotation marks from strings in the incoming data.
+    remove_quotes: Any = None
+    # A value that specifies to replaces the invalid characters specified in ReplaceInvalidChars, substituting the specified characters instead. The default is "?".
+    replace_chars: Any = None
+    # A list of characters that you want to replace. Use with ReplaceChars.
+    replace_invalid_chars: Any = None
+    # The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the required permissions to access the value in SecretsManagerSecret.
+    secrets_manager_access_role_arn: Any = None
+    # The full ARN, partial ARN, or display name of the SecretsManagerSecret that contains the Amazon Redshift endpoint connection details.
+    secrets_manager_secret_id: Any = None
+    # The AWS KMS key ID. If you are using SSE_KMS for the EncryptionMode, provide this key ID.
     server_side_encryption_kms_key_id: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service. The role must allow the iam:PassRole action.
     service_access_role_arn: Any = None
+    # The time format that you want to use. Valid values are auto (case-sensitive), 'timeformat_string', 'epochsecs', or 'epochmillisecs'.
+    time_format: Any = None
+    # A value that specifies to remove the trailing white space characters from a VARCHAR string.
+    trim_blanks: Any = None
+    # A value that specifies to truncate data in columns to the appropriate number of characters, so that the data fits in the column.
+    truncate_columns: Any = None
+    # The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at the DMS replication instance. The default value is 1000 (buffer size is 1000KB).
+    write_buffer_size: Any = None
 
 @dataclasses.dataclass
-class Endpoint_Timeouts:
-    create: Any = None
-    delete: Any = None
+class Endpoint_S3Settings:
+    # An optional parameter that, when set to true or y, you can use to add column name information to the .csv output file.
+    add_column_name: Any = None
+    # Use the S3 target endpoint setting AddTrailingPaddingCharacter to add padding on string data. The default value is false.
+    add_trailing_padding_character: Any = None
+    # An optional parameter to set a folder name in the S3 bucket.
+    bucket_folder: Any = None
+    # The name of the S3 bucket.
+    bucket_name: Any = None
+    # A value that enables AWS DMS to specify a predefined (canned) access control list (ACL) for objects created in an Amazon S3 bucket as .csv or .parquet files.
+    canned_acl_for_objects: Any = None
+    # A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet (columnar storage) output files.
+    cdc_inserts_and_updates: Any = None
+    # A value that enables a change data capture (CDC) load to write only INSERT operations to .csv or columnar storage (.parquet) output files. By default (the false setting), the first field in a .csv or .parquet record contains the letter I (INSERT), U (UPDATE), or D (DELETE). These values indicate whether the row was inserted, updated, or deleted at the source database for a CDC load to the target.
+    cdc_inserts_only: Any = None
+    # Maximum length of the interval, defined in seconds, after which to output a file to Amazon S3.
+    cdc_max_batch_interval: Any = None
+    # Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.
+    cdc_min_file_size: Any = None
+    # Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures change data; otherwise, it's optional.
+    cdc_path: Any = None
+    # An optional parameter. When set to GZIP it enables the service to compress the target files.
+    compression_type: Any = None
+    # The delimiter used to separate columns in the .csv file for both source and target. The default is a comma.
+    csv_delimiter: Any = None
+    # This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in .csv format.
+    csv_no_sup_value: Any = None
+    # An optional parameter that specifies how AWS DMS treats null values.
+    csv_null_value: Any = None
+    # The delimiter used to separate rows in the .csv file for both source and target.
+    csv_row_delimiter: Any = None
+    # The format of the data that you want to use for output.
+    data_format: Any = None
+    # The size of one data page in bytes. This parameter defaults to 1024 * 1024 bytes (1 MiB). This number is used for .parquet file format only.
+    data_page_size: Any = None
+    # Specifies a date separating delimiter to use during folder partitioning. The default value is SLASH. Use this parameter when DatePartitionedEnabled is set to true.
+    date_partition_delimiter: Any = None
+    # When set to true, this parameter partitions S3 bucket folders based on transaction commit dates. The default value is false.
+    date_partition_enabled: Any = None
+    # Identifies the sequence of the date format to use during folder partitioning. The default value is YYYYMMDD. Use this parameter when DatePartitionedEnabled is set to true.
+    date_partition_sequence: Any = None
+    # When creating an S3 target endpoint, set DatePartitionTimezone to convert the current UTC time into a specified time zone.
+    date_partition_timezone: Any = None
+    # The maximum size of an encoded dictionary page of a column
+    dict_page_size_limit: Any = None
+    # A value that enables statistics for Parquet pages and row groups.
+    enable_statistics: Any = None
+    # The type of encoding that you're using.
+    encoding_type: Any = None
+    # The type of server-side encryption that you want to use for your data.
+    encryption_mode: Any = None
+    # To specify a bucket owner and prevent sniping, you can use the ExpectedBucketOwner endpoint setting.
+    expected_bucket_owner: Any = None
+    # The external table definition.
+    external_table_definition: Any = None
+    # When true, allows AWS Glue to catalog your S3 bucket. Creating an AWS Glue catalog lets you use Athena to query your data.
+    glue_catalog_generation: Any = None
+    # When this value is set to 1, AWS DMS ignores the first row header in a .csv file. A value of 1 turns on the feature; a value of 0 turns off the feature.
+    ignore_header_rows: Any = None
+    # A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output files only to indicate how the rows were added to the source database.
+    include_op_for_full_load: Any = None
+    # A value that specifies the maximum size (in KB) of any .csv file to be created while migrating to an S3 target during full load.
+    max_file_size: Any = None
+    # A value that specifies the precision of any TIMESTAMP column values that are written to an Amazon S3 object file in .parquet format.
+    parquet_timestamp_in_millisecond: Any = None
+    # The version of the Apache Parquet format that you want to use: parquet_1_0 (the default) or parquet_2_0.
+    parquet_version: Any = None
+    # If this setting is set to true, AWS DMS saves the transaction order for a change data capture (CDC) load on the Amazon S3 target specified by CdcPath.
+    preserve_transactions: Any = None
+    # For an S3 source, when this value is set to true or y, each leading double quotation mark has to be followed by an ending double quotation mark.
+    rfc4180: Any = None
+    # The number of rows in a row group.
+    row_group_length: Any = None
+    # If you are using SSE_KMS for the EncryptionMode, provide the AWS KMS key ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.
+    server_side_encryption_kms_key_id: Any = None
+    # A required parameter that specifies the Amazon Resource Name (ARN) used by the service to access the IAM role.
+    service_access_role_arn: Any = None
+    # A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data for an Amazon S3 target.
+    timestamp_column_name: Any = None
+    # This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format. If this setting is set to true for columns not included in the supplemental log, AWS DMS uses the value specified by CsvNoSupValue. If this setting isn't set or is set to false, AWS DMS uses the null value for these columns.
+    use_csv_no_sup_value: Any = None
+    # When set to true, this parameter uses the task start time as the timestamp column value instead of the time data is written to target
+    use_task_start_time_for_full_load_timestamp: Any = None
+
+@dataclasses.dataclass
+class Endpoint_SybaseSettings:
+    # The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the required permissions to access the value in SecretsManagerSecret
+    secrets_manager_access_role_arn: Any = None
+    # The full ARN, partial ARN, or display name of the SecretsManagerSecret that contains the SAP SAE endpoint connection details.
+    secrets_manager_secret_id: Any = None
+
+@dataclasses.dataclass
+class Endpoint_Tags:
+    # The key portion of a user-defined tag attached to the DMS endpoint, used for identifying and organizing the resource within AWS. (AI-inferred)
+    key: Any = None
+    # Specifies the value of a user-defined tag attached to the AWS DMS endpoint. (AI-inferred)
+    value: Any = None
+
+_Endpoint_DocDbSettingsFields = {
+    "docs_to_investigate": ubx.FieldSpec(wire_name="docs_to_investigate"),
+    "extract_doc_id": ubx.FieldSpec(wire_name="extract_doc_id"),
+    "nesting_level": ubx.FieldSpec(wire_name="nesting_level"),
+    "secrets_manager_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_access_role_arn"),
+    "secrets_manager_secret_id": ubx.FieldSpec(wire_name="secrets_manager_secret_id"),
+}
+
+_Endpoint_DynamoDbSettingsFields = {
+    "service_access_role_arn": ubx.FieldSpec(wire_name="service_access_role_arn"),
+}
 
 _Endpoint_ElasticsearchSettingsFields = {
     "endpoint_uri": ubx.FieldSpec(wire_name="endpoint_uri"),
     "error_retry_duration": ubx.FieldSpec(wire_name="error_retry_duration"),
     "full_load_error_percentage": ubx.FieldSpec(wire_name="full_load_error_percentage"),
     "service_access_role_arn": ubx.FieldSpec(wire_name="service_access_role_arn"),
-    "use_new_mapping_type": ubx.FieldSpec(wire_name="use_new_mapping_type"),
+}
+
+_Endpoint_GcpMySqlsettingsFields = {
+    "after_connect_script": ubx.FieldSpec(wire_name="after_connect_script"),
+    "clean_source_metadata_on_mismatch": ubx.FieldSpec(wire_name="clean_source_metadata_on_mismatch"),
+    "database_name": ubx.FieldSpec(wire_name="database_name"),
+    "events_poll_interval": ubx.FieldSpec(wire_name="events_poll_interval"),
+    "max_file_size": ubx.FieldSpec(wire_name="max_file_size"),
+    "parallel_load_threads": ubx.FieldSpec(wire_name="parallel_load_threads"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "secrets_manager_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_access_role_arn"),
+    "secrets_manager_secret_id": ubx.FieldSpec(wire_name="secrets_manager_secret_id"),
+    "server_name": ubx.FieldSpec(wire_name="server_name"),
+    "server_timezone": ubx.FieldSpec(wire_name="server_timezone"),
+    "username": ubx.FieldSpec(wire_name="username"),
+}
+
+_Endpoint_IbmDb2SettingsFields = {
+    "current_lsn": ubx.FieldSpec(wire_name="current_lsn"),
+    "keep_csv_files": ubx.FieldSpec(wire_name="keep_csv_files"),
+    "load_timeout": ubx.FieldSpec(wire_name="load_timeout"),
+    "max_file_size": ubx.FieldSpec(wire_name="max_file_size"),
+    "max_kbytes_per_read": ubx.FieldSpec(wire_name="max_kbytes_per_read"),
+    "secrets_manager_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_access_role_arn"),
+    "secrets_manager_secret_id": ubx.FieldSpec(wire_name="secrets_manager_secret_id"),
+    "set_data_capture_changes": ubx.FieldSpec(wire_name="set_data_capture_changes"),
+    "write_buffer_size": ubx.FieldSpec(wire_name="write_buffer_size"),
 }
 
 _Endpoint_KafkaSettingsFields = {
@@ -175,9 +588,8 @@ _Endpoint_KafkaSettingsFields = {
     "message_max_bytes": ubx.FieldSpec(wire_name="message_max_bytes"),
     "no_hex_prefix": ubx.FieldSpec(wire_name="no_hex_prefix"),
     "partition_include_schema_table": ubx.FieldSpec(wire_name="partition_include_schema_table"),
-    "sasl_mechanism": ubx.FieldSpec(wire_name="sasl_mechanism"),
     "sasl_password": ubx.FieldSpec(wire_name="sasl_password"),
-    "sasl_username": ubx.FieldSpec(wire_name="sasl_username"),
+    "sasl_user_name": ubx.FieldSpec(wire_name="sasl_user_name"),
     "security_protocol": ubx.FieldSpec(wire_name="security_protocol"),
     "ssl_ca_certificate_arn": ubx.FieldSpec(wire_name="ssl_ca_certificate_arn"),
     "ssl_client_certificate_arn": ubx.FieldSpec(wire_name="ssl_client_certificate_arn"),
@@ -193,68 +605,101 @@ _Endpoint_KinesisSettingsFields = {
     "include_table_alter_operations": ubx.FieldSpec(wire_name="include_table_alter_operations"),
     "include_transaction_details": ubx.FieldSpec(wire_name="include_transaction_details"),
     "message_format": ubx.FieldSpec(wire_name="message_format"),
+    "no_hex_prefix": ubx.FieldSpec(wire_name="no_hex_prefix"),
     "partition_include_schema_table": ubx.FieldSpec(wire_name="partition_include_schema_table"),
     "service_access_role_arn": ubx.FieldSpec(wire_name="service_access_role_arn"),
     "stream_arn": ubx.FieldSpec(wire_name="stream_arn"),
-    "use_large_integer_value": ubx.FieldSpec(wire_name="use_large_integer_value"),
 }
 
-_Endpoint_MongodbSettingsFields = {
+_Endpoint_MicrosoftSqlServerSettingsFields = {
+    "bcp_packet_size": ubx.FieldSpec(wire_name="bcp_packet_size"),
+    "control_tables_file_group": ubx.FieldSpec(wire_name="control_tables_file_group"),
+    "database_name": ubx.FieldSpec(wire_name="database_name"),
+    "force_lob_lookup": ubx.FieldSpec(wire_name="force_lob_lookup"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "query_single_always_on_node": ubx.FieldSpec(wire_name="query_single_always_on_node"),
+    "read_backup_only": ubx.FieldSpec(wire_name="read_backup_only"),
+    "safeguard_policy": ubx.FieldSpec(wire_name="safeguard_policy"),
+    "secrets_manager_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_access_role_arn"),
+    "secrets_manager_secret_id": ubx.FieldSpec(wire_name="secrets_manager_secret_id"),
+    "server_name": ubx.FieldSpec(wire_name="server_name"),
+    "tlog_access_mode": ubx.FieldSpec(wire_name="tlog_access_mode"),
+    "trim_space_in_char": ubx.FieldSpec(wire_name="trim_space_in_char"),
+    "use_bcp_full_load": ubx.FieldSpec(wire_name="use_bcp_full_load"),
+    "use_third_party_backup_device": ubx.FieldSpec(wire_name="use_third_party_backup_device"),
+    "username": ubx.FieldSpec(wire_name="username"),
+}
+
+_Endpoint_MongoDbSettingsFields = {
     "auth_mechanism": ubx.FieldSpec(wire_name="auth_mechanism"),
     "auth_source": ubx.FieldSpec(wire_name="auth_source"),
     "auth_type": ubx.FieldSpec(wire_name="auth_type"),
+    "database_name": ubx.FieldSpec(wire_name="database_name"),
     "docs_to_investigate": ubx.FieldSpec(wire_name="docs_to_investigate"),
     "extract_doc_id": ubx.FieldSpec(wire_name="extract_doc_id"),
     "nesting_level": ubx.FieldSpec(wire_name="nesting_level"),
-    "use_update_lookup": ubx.FieldSpec(wire_name="use_update_lookup"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "secrets_manager_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_access_role_arn"),
+    "secrets_manager_secret_id": ubx.FieldSpec(wire_name="secrets_manager_secret_id"),
+    "server_name": ubx.FieldSpec(wire_name="server_name"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
-_Endpoint_MysqlSettingsFields = {
+_Endpoint_MySqlSettingsFields = {
     "after_connect_script": ubx.FieldSpec(wire_name="after_connect_script"),
-    "authentication_method": ubx.FieldSpec(wire_name="authentication_method"),
     "clean_source_metadata_on_mismatch": ubx.FieldSpec(wire_name="clean_source_metadata_on_mismatch"),
     "events_poll_interval": ubx.FieldSpec(wire_name="events_poll_interval"),
-    "execute_timeout": ubx.FieldSpec(wire_name="execute_timeout"),
     "max_file_size": ubx.FieldSpec(wire_name="max_file_size"),
     "parallel_load_threads": ubx.FieldSpec(wire_name="parallel_load_threads"),
+    "secrets_manager_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_access_role_arn"),
+    "secrets_manager_secret_id": ubx.FieldSpec(wire_name="secrets_manager_secret_id"),
     "server_timezone": ubx.FieldSpec(wire_name="server_timezone"),
-    "service_access_role_arn": ubx.FieldSpec(wire_name="service_access_role_arn"),
     "target_db_type": ubx.FieldSpec(wire_name="target_db_type"),
+}
+
+_Endpoint_NeptuneSettingsFields = {
+    "error_retry_duration": ubx.FieldSpec(wire_name="error_retry_duration"),
+    "iam_auth_enabled": ubx.FieldSpec(wire_name="iam_auth_enabled"),
+    "max_file_size": ubx.FieldSpec(wire_name="max_file_size"),
+    "max_retry_count": ubx.FieldSpec(wire_name="max_retry_count"),
+    "s3_bucket_folder": ubx.FieldSpec(wire_name="s3_bucket_folder"),
+    "s3_bucket_name": ubx.FieldSpec(wire_name="s3_bucket_name"),
+    "service_access_role_arn": ubx.FieldSpec(wire_name="service_access_role_arn"),
 }
 
 _Endpoint_OracleSettingsFields = {
     "access_alternate_directly": ubx.FieldSpec(wire_name="access_alternate_directly"),
     "add_supplemental_logging": ubx.FieldSpec(wire_name="add_supplemental_logging"),
     "additional_archived_log_dest_id": ubx.FieldSpec(wire_name="additional_archived_log_dest_id"),
-    "allow_selected_nested_tables": ubx.FieldSpec(wire_name="allow_selected_nested_tables"),
+    "allow_select_nested_tables": ubx.FieldSpec(wire_name="allow_select_nested_tables"),
     "archived_log_dest_id": ubx.FieldSpec(wire_name="archived_log_dest_id"),
     "archived_logs_only": ubx.FieldSpec(wire_name="archived_logs_only"),
     "asm_password": ubx.FieldSpec(wire_name="asm_password"),
     "asm_server": ubx.FieldSpec(wire_name="asm_server"),
     "asm_user": ubx.FieldSpec(wire_name="asm_user"),
-    "authentication_method": ubx.FieldSpec(wire_name="authentication_method"),
     "char_length_semantics": ubx.FieldSpec(wire_name="char_length_semantics"),
-    "convert_timestamp_with_zone_to_utc": ubx.FieldSpec(wire_name="convert_timestamp_with_zone_to_utc"),
     "direct_path_no_log": ubx.FieldSpec(wire_name="direct_path_no_log"),
     "direct_path_parallel_load": ubx.FieldSpec(wire_name="direct_path_parallel_load"),
     "enable_homogenous_tablespace": ubx.FieldSpec(wire_name="enable_homogenous_tablespace"),
     "extra_archived_log_dest_ids": ubx.FieldSpec(wire_name="extra_archived_log_dest_ids"),
-    "fail_task_on_lob_truncation": ubx.FieldSpec(wire_name="fail_task_on_lob_truncation"),
+    "fail_tasks_on_lob_truncation": ubx.FieldSpec(wire_name="fail_tasks_on_lob_truncation"),
     "number_datatype_scale": ubx.FieldSpec(wire_name="number_datatype_scale"),
-    "open_transaction_window": ubx.FieldSpec(wire_name="open_transaction_window"),
     "oracle_path_prefix": ubx.FieldSpec(wire_name="oracle_path_prefix"),
     "parallel_asm_read_threads": ubx.FieldSpec(wire_name="parallel_asm_read_threads"),
     "read_ahead_blocks": ubx.FieldSpec(wire_name="read_ahead_blocks"),
     "read_table_space_name": ubx.FieldSpec(wire_name="read_table_space_name"),
     "replace_path_prefix": ubx.FieldSpec(wire_name="replace_path_prefix"),
     "retry_interval": ubx.FieldSpec(wire_name="retry_interval"),
+    "secrets_manager_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_access_role_arn"),
     "secrets_manager_oracle_asm_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_oracle_asm_access_role_arn"),
     "secrets_manager_oracle_asm_secret_id": ubx.FieldSpec(wire_name="secrets_manager_oracle_asm_secret_id"),
+    "secrets_manager_secret_id": ubx.FieldSpec(wire_name="secrets_manager_secret_id"),
     "security_db_encryption": ubx.FieldSpec(wire_name="security_db_encryption"),
     "security_db_encryption_name": ubx.FieldSpec(wire_name="security_db_encryption_name"),
     "spatial_data_option_to_geo_json_function_name": ubx.FieldSpec(wire_name="spatial_data_option_to_geo_json_function_name"),
     "standby_delay_time": ubx.FieldSpec(wire_name="standby_delay_time"),
-    "trim_space_in_char": ubx.FieldSpec(wire_name="trim_space_in_char"),
     "use_alternate_folder_for_online": ubx.FieldSpec(wire_name="use_alternate_folder_for_online"),
     "use_bfile": ubx.FieldSpec(wire_name="use_bfile"),
     "use_direct_path_full_load": ubx.FieldSpec(wire_name="use_direct_path_full_load"),
@@ -262,9 +707,8 @@ _Endpoint_OracleSettingsFields = {
     "use_path_prefix": ubx.FieldSpec(wire_name="use_path_prefix"),
 }
 
-_Endpoint_PostgresSettingsFields = {
+_Endpoint_PostgreSqlSettingsFields = {
     "after_connect_script": ubx.FieldSpec(wire_name="after_connect_script"),
-    "authentication_method": ubx.FieldSpec(wire_name="authentication_method"),
     "babelfish_database_name": ubx.FieldSpec(wire_name="babelfish_database_name"),
     "capture_ddls": ubx.FieldSpec(wire_name="capture_ddls"),
     "database_mode": ubx.FieldSpec(wire_name="database_mode"),
@@ -275,11 +719,10 @@ _Endpoint_PostgresSettingsFields = {
     "heartbeat_frequency": ubx.FieldSpec(wire_name="heartbeat_frequency"),
     "heartbeat_schema": ubx.FieldSpec(wire_name="heartbeat_schema"),
     "map_boolean_as_boolean": ubx.FieldSpec(wire_name="map_boolean_as_boolean"),
-    "map_jsonb_as_clob": ubx.FieldSpec(wire_name="map_jsonb_as_clob"),
-    "map_long_varchar_as": ubx.FieldSpec(wire_name="map_long_varchar_as"),
     "max_file_size": ubx.FieldSpec(wire_name="max_file_size"),
     "plugin_name": ubx.FieldSpec(wire_name="plugin_name"),
-    "service_access_role_arn": ubx.FieldSpec(wire_name="service_access_role_arn"),
+    "secrets_manager_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_access_role_arn"),
+    "secrets_manager_secret_id": ubx.FieldSpec(wire_name="secrets_manager_secret_id"),
     "slot_name": ubx.FieldSpec(wire_name="slot_name"),
 }
 
@@ -294,123 +737,327 @@ _Endpoint_RedisSettingsFields = {
 }
 
 _Endpoint_RedshiftSettingsFields = {
+    "accept_any_date": ubx.FieldSpec(wire_name="accept_any_date"),
+    "after_connect_script": ubx.FieldSpec(wire_name="after_connect_script"),
     "bucket_folder": ubx.FieldSpec(wire_name="bucket_folder"),
     "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
+    "case_sensitive_names": ubx.FieldSpec(wire_name="case_sensitive_names"),
+    "comp_update": ubx.FieldSpec(wire_name="comp_update"),
+    "connection_timeout": ubx.FieldSpec(wire_name="connection_timeout"),
+    "date_format": ubx.FieldSpec(wire_name="date_format"),
+    "empty_as_null": ubx.FieldSpec(wire_name="empty_as_null"),
     "encryption_mode": ubx.FieldSpec(wire_name="encryption_mode"),
+    "explicit_ids": ubx.FieldSpec(wire_name="explicit_ids"),
+    "file_transfer_upload_streams": ubx.FieldSpec(wire_name="file_transfer_upload_streams"),
+    "load_timeout": ubx.FieldSpec(wire_name="load_timeout"),
+    "map_boolean_as_boolean": ubx.FieldSpec(wire_name="map_boolean_as_boolean"),
+    "max_file_size": ubx.FieldSpec(wire_name="max_file_size"),
+    "remove_quotes": ubx.FieldSpec(wire_name="remove_quotes"),
+    "replace_chars": ubx.FieldSpec(wire_name="replace_chars"),
+    "replace_invalid_chars": ubx.FieldSpec(wire_name="replace_invalid_chars"),
+    "secrets_manager_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_access_role_arn"),
+    "secrets_manager_secret_id": ubx.FieldSpec(wire_name="secrets_manager_secret_id"),
     "server_side_encryption_kms_key_id": ubx.FieldSpec(wire_name="server_side_encryption_kms_key_id"),
     "service_access_role_arn": ubx.FieldSpec(wire_name="service_access_role_arn"),
+    "time_format": ubx.FieldSpec(wire_name="time_format"),
+    "trim_blanks": ubx.FieldSpec(wire_name="trim_blanks"),
+    "truncate_columns": ubx.FieldSpec(wire_name="truncate_columns"),
+    "write_buffer_size": ubx.FieldSpec(wire_name="write_buffer_size"),
 }
 
-_Endpoint_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_Endpoint_S3SettingsFields = {
+    "add_column_name": ubx.FieldSpec(wire_name="add_column_name"),
+    "add_trailing_padding_character": ubx.FieldSpec(wire_name="add_trailing_padding_character"),
+    "bucket_folder": ubx.FieldSpec(wire_name="bucket_folder"),
+    "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
+    "canned_acl_for_objects": ubx.FieldSpec(wire_name="canned_acl_for_objects"),
+    "cdc_inserts_and_updates": ubx.FieldSpec(wire_name="cdc_inserts_and_updates"),
+    "cdc_inserts_only": ubx.FieldSpec(wire_name="cdc_inserts_only"),
+    "cdc_max_batch_interval": ubx.FieldSpec(wire_name="cdc_max_batch_interval"),
+    "cdc_min_file_size": ubx.FieldSpec(wire_name="cdc_min_file_size"),
+    "cdc_path": ubx.FieldSpec(wire_name="cdc_path"),
+    "compression_type": ubx.FieldSpec(wire_name="compression_type"),
+    "csv_delimiter": ubx.FieldSpec(wire_name="csv_delimiter"),
+    "csv_no_sup_value": ubx.FieldSpec(wire_name="csv_no_sup_value"),
+    "csv_null_value": ubx.FieldSpec(wire_name="csv_null_value"),
+    "csv_row_delimiter": ubx.FieldSpec(wire_name="csv_row_delimiter"),
+    "data_format": ubx.FieldSpec(wire_name="data_format"),
+    "data_page_size": ubx.FieldSpec(wire_name="data_page_size"),
+    "date_partition_delimiter": ubx.FieldSpec(wire_name="date_partition_delimiter"),
+    "date_partition_enabled": ubx.FieldSpec(wire_name="date_partition_enabled"),
+    "date_partition_sequence": ubx.FieldSpec(wire_name="date_partition_sequence"),
+    "date_partition_timezone": ubx.FieldSpec(wire_name="date_partition_timezone"),
+    "dict_page_size_limit": ubx.FieldSpec(wire_name="dict_page_size_limit"),
+    "enable_statistics": ubx.FieldSpec(wire_name="enable_statistics"),
+    "encoding_type": ubx.FieldSpec(wire_name="encoding_type"),
+    "encryption_mode": ubx.FieldSpec(wire_name="encryption_mode"),
+    "expected_bucket_owner": ubx.FieldSpec(wire_name="expected_bucket_owner"),
+    "external_table_definition": ubx.FieldSpec(wire_name="external_table_definition"),
+    "glue_catalog_generation": ubx.FieldSpec(wire_name="glue_catalog_generation"),
+    "ignore_header_rows": ubx.FieldSpec(wire_name="ignore_header_rows"),
+    "include_op_for_full_load": ubx.FieldSpec(wire_name="include_op_for_full_load"),
+    "max_file_size": ubx.FieldSpec(wire_name="max_file_size"),
+    "parquet_timestamp_in_millisecond": ubx.FieldSpec(wire_name="parquet_timestamp_in_millisecond"),
+    "parquet_version": ubx.FieldSpec(wire_name="parquet_version"),
+    "preserve_transactions": ubx.FieldSpec(wire_name="preserve_transactions"),
+    "rfc4180": ubx.FieldSpec(wire_name="rfc4180"),
+    "row_group_length": ubx.FieldSpec(wire_name="row_group_length"),
+    "server_side_encryption_kms_key_id": ubx.FieldSpec(wire_name="server_side_encryption_kms_key_id"),
+    "service_access_role_arn": ubx.FieldSpec(wire_name="service_access_role_arn"),
+    "timestamp_column_name": ubx.FieldSpec(wire_name="timestamp_column_name"),
+    "use_csv_no_sup_value": ubx.FieldSpec(wire_name="use_csv_no_sup_value"),
+    "use_task_start_time_for_full_load_timestamp": ubx.FieldSpec(wire_name="use_task_start_time_for_full_load_timestamp"),
+}
+
+_Endpoint_SybaseSettingsFields = {
+    "secrets_manager_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_access_role_arn"),
+    "secrets_manager_secret_id": ubx.FieldSpec(wire_name="secrets_manager_secret_id"),
+}
+
+_Endpoint_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class EndpointConfig:
+    # The Amazon Resource Name (ARN) for the certificate.
     certificate_arn: Any = None
+    # The name of the endpoint database. For a MySQL source or target endpoint, don't specify DatabaseName. To migrate to a specific database, use this setting and targetDbType.
     database_name: Any = None
-    endpoint_id: Any = None
-    endpoint_type: Any = None
-    engine_name: Any = None
-    extra_connection_attributes: Any = None
-    id: Any = None
-    kms_key_arn: Any = None
-    password: Any = None
-    pause_replication_tasks: Any = None
-    port: Any = None
-    region: Any = None
-    secrets_manager_access_role_arn: Any = None
-    secrets_manager_arn: Any = None
-    server_name: Any = None
-    service_access_role: Any = None
-    ssl_mode: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    username: Any = None
+    # Provides information that defines a DocumentDB endpoint.
+    doc_db_settings: Any = None
+    # Provides information, including the Amazon Resource Name (ARN) of the IAM role used to define an Amazon DynamoDB target endpoint.
+    dynamo_db_settings: Any = None
+    # Provides information that defines an OpenSearch endpoint.
     elasticsearch_settings: Any = None
+    # The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.
+    endpoint_identifier: Any = None
+    # The type of endpoint. Valid values are source and target.
+    endpoint_type: Any = None
+    # The type of engine for the endpoint, depending on the EndpointType value.
+    engine_name: Any = None
+    # Additional attributes associated with the connection
+    extra_connection_attributes: Any = None
+    # Provides information that defines a GCP MySQL endpoint.
+    gcp_my_sqlsettings: Any = None
+    # Provides information that defines an IBMDB2 endpoint.
+    ibm_db2_settings: Any = None
+    # Provides information that describes an Apache Kafka endpoint.
     kafka_settings: Any = None
+    # Provides information that describes an Amazon Kinesis Data Stream endpoint.
     kinesis_settings: Any = None
-    mongodb_settings: Any = None
-    mysql_settings: Any = None
+    # An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.If you don't specify a value for the KmsKeyId parameter, AWS DMS uses your default encryption key.
+    kms_key_id: Any = None
+    # Provides information that defines a Microsoft SQL Server endpoint.
+    microsoft_sql_server_settings: Any = None
+    # Provides information that defines a MongoDB endpoint.
+    mongo_db_settings: Any = None
+    # Provides information that defines a MySQL endpoint.
+    my_sql_settings: Any = None
+    # Provides information that defines an Amazon Neptune endpoint
+    neptune_settings: Any = None
+    # Provides information that defines an Oracle endpoint
     oracle_settings: Any = None
-    postgres_settings: Any = None
+    # The password to be used to log in to the endpoint database.
+    password: Any = None
+    # The port used by the endpoint database.
+    port: Any = None
+    # Provides information that defines a PostgreSQL endpoint
+    postgre_sql_settings: Any = None
+    # Provides information that defines a Redis target endpoint.
     redis_settings: Any = None
+    # Provides information that defines an Amazon Redshift endpoint.
     redshift_settings: Any = None
-    timeouts: Any = None
+    # A display name for the resource identifier at the end of the EndpointArn response parameter that is returned in the created Endpoint object.
+    resource_identifier: Any = None
+    # Provides information that defines an Amazon S3 endpoint.
+    s3_settings: Any = None
+    # The name of the server where the endpoint database resides.
+    server_name: Any = None
+    # The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is none.
+    ssl_mode: Any = None
+    # Provides information that defines a SAP ASE endpoint.
+    sybase_settings: Any = None
+    # One or more tags to be assigned to the endpoint.
+    tags: Any = None
+    # The user name to be used to log in to the endpoint database.
+    username: Any = None
+
+@dataclasses.dataclass
+class EndpointAttrs:
+    # The Amazon Resource Name (ARN) for the certificate.
+    certificate_arn: Any = None
+    # The name of the endpoint database. For a MySQL source or target endpoint, don't specify DatabaseName. To migrate to a specific database, use this setting and targetDbType.
+    database_name: Any = None
+    # Provides information that defines a DocumentDB endpoint.
+    doc_db_settings: Any = None
+    # Provides information, including the Amazon Resource Name (ARN) of the IAM role used to define an Amazon DynamoDB target endpoint.
+    dynamo_db_settings: Any = None
+    # Provides information that defines an OpenSearch endpoint.
+    elasticsearch_settings: Any = None
+    # The endpoint ARN.
+    endpoint_arn: Any = None
+    # The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.
+    endpoint_identifier: Any = None
+    # The type of endpoint. Valid values are source and target.
+    endpoint_type: Any = None
+    # The type of engine for the endpoint, depending on the EndpointType value.
+    engine_name: Any = None
+    # A value that can be used for cross-account validation.
+    external_id: Any = None
+    # Additional attributes associated with the connection
+    extra_connection_attributes: Any = None
+    # Provides information that defines a GCP MySQL endpoint.
+    gcp_my_sqlsettings: Any = None
+    # Provides information that defines an IBMDB2 endpoint.
+    ibm_db2_settings: Any = None
+    # Provides information that describes an Apache Kafka endpoint.
+    kafka_settings: Any = None
+    # Provides information that describes an Amazon Kinesis Data Stream endpoint.
+    kinesis_settings: Any = None
+    # An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.If you don't specify a value for the KmsKeyId parameter, AWS DMS uses your default encryption key.
+    kms_key_id: Any = None
+    # Provides information that defines a Microsoft SQL Server endpoint.
+    microsoft_sql_server_settings: Any = None
+    # Provides information that defines a MongoDB endpoint.
+    mongo_db_settings: Any = None
+    # Provides information that defines a MySQL endpoint.
+    my_sql_settings: Any = None
+    # Provides information that defines an Amazon Neptune endpoint
+    neptune_settings: Any = None
+    # Provides information that defines an Oracle endpoint
+    oracle_settings: Any = None
+    # The password to be used to log in to the endpoint database.
+    password: Any = None
+    # The port used by the endpoint database.
+    port: Any = None
+    # Provides information that defines a PostgreSQL endpoint
+    postgre_sql_settings: Any = None
+    # Provides information that defines a Redis target endpoint.
+    redis_settings: Any = None
+    # Provides information that defines an Amazon Redshift endpoint.
+    redshift_settings: Any = None
+    # A display name for the resource identifier at the end of the EndpointArn response parameter that is returned in the created Endpoint object.
+    resource_identifier: Any = None
+    # Provides information that defines an Amazon S3 endpoint.
+    s3_settings: Any = None
+    # The name of the server where the endpoint database resides.
+    server_name: Any = None
+    # The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is none.
+    ssl_mode: Any = None
+    # Provides information that defines a SAP ASE endpoint.
+    sybase_settings: Any = None
+    # One or more tags to be assigned to the endpoint.
+    tags: Any = None
+    # The user name to be used to log in to the endpoint database.
+    username: Any = None
 
 Endpoint = ubx.ResourceBinding(
     wire_type="aws_dms_endpoint",
     fields={
         "certificate_arn": ubx.FieldSpec(wire_name="certificate_arn"),
         "database_name": ubx.FieldSpec(wire_name="database_name"),
-        "endpoint_id": ubx.FieldSpec(wire_name="endpoint_id"),
+        "doc_db_settings": ubx.FieldSpec(
+            wire_name="doc_db_settings",
+            kind="object",
+            fields=_Endpoint_DocDbSettingsFields,
+        ),
+        "dynamo_db_settings": ubx.FieldSpec(
+            wire_name="dynamo_db_settings",
+            kind="object",
+            fields=_Endpoint_DynamoDbSettingsFields,
+        ),
+        "elasticsearch_settings": ubx.FieldSpec(
+            wire_name="elasticsearch_settings",
+            kind="object",
+            fields=_Endpoint_ElasticsearchSettingsFields,
+        ),
+        "endpoint_identifier": ubx.FieldSpec(wire_name="endpoint_identifier"),
         "endpoint_type": ubx.FieldSpec(wire_name="endpoint_type"),
         "engine_name": ubx.FieldSpec(wire_name="engine_name"),
         "extra_connection_attributes": ubx.FieldSpec(wire_name="extra_connection_attributes"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
-        "password": ubx.FieldSpec(wire_name="password"),
-        "pause_replication_tasks": ubx.FieldSpec(wire_name="pause_replication_tasks"),
-        "port": ubx.FieldSpec(wire_name="port"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "secrets_manager_access_role_arn": ubx.FieldSpec(wire_name="secrets_manager_access_role_arn"),
-        "secrets_manager_arn": ubx.FieldSpec(wire_name="secrets_manager_arn"),
-        "server_name": ubx.FieldSpec(wire_name="server_name"),
-        "service_access_role": ubx.FieldSpec(wire_name="service_access_role"),
-        "ssl_mode": ubx.FieldSpec(wire_name="ssl_mode"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "username": ubx.FieldSpec(wire_name="username"),
-        "elasticsearch_settings": ubx.FieldSpec(
-            wire_name="elasticsearch_settings",
-            kind="list",
-            fields=_Endpoint_ElasticsearchSettingsFields,
+        "gcp_my_sqlsettings": ubx.FieldSpec(
+            wire_name="gcp_my_sqlsettings",
+            kind="object",
+            fields=_Endpoint_GcpMySqlsettingsFields,
+        ),
+        "ibm_db2_settings": ubx.FieldSpec(
+            wire_name="ibm_db2_settings",
+            kind="object",
+            fields=_Endpoint_IbmDb2SettingsFields,
         ),
         "kafka_settings": ubx.FieldSpec(
             wire_name="kafka_settings",
-            kind="list",
+            kind="object",
             fields=_Endpoint_KafkaSettingsFields,
         ),
         "kinesis_settings": ubx.FieldSpec(
             wire_name="kinesis_settings",
-            kind="list",
+            kind="object",
             fields=_Endpoint_KinesisSettingsFields,
         ),
-        "mongodb_settings": ubx.FieldSpec(
-            wire_name="mongodb_settings",
-            kind="list",
-            fields=_Endpoint_MongodbSettingsFields,
+        "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
+        "microsoft_sql_server_settings": ubx.FieldSpec(
+            wire_name="microsoft_sql_server_settings",
+            kind="object",
+            fields=_Endpoint_MicrosoftSqlServerSettingsFields,
         ),
-        "mysql_settings": ubx.FieldSpec(
-            wire_name="mysql_settings",
-            kind="list",
-            fields=_Endpoint_MysqlSettingsFields,
+        "mongo_db_settings": ubx.FieldSpec(
+            wire_name="mongo_db_settings",
+            kind="object",
+            fields=_Endpoint_MongoDbSettingsFields,
+        ),
+        "my_sql_settings": ubx.FieldSpec(
+            wire_name="my_sql_settings",
+            kind="object",
+            fields=_Endpoint_MySqlSettingsFields,
+        ),
+        "neptune_settings": ubx.FieldSpec(
+            wire_name="neptune_settings",
+            kind="object",
+            fields=_Endpoint_NeptuneSettingsFields,
         ),
         "oracle_settings": ubx.FieldSpec(
             wire_name="oracle_settings",
-            kind="list",
+            kind="object",
             fields=_Endpoint_OracleSettingsFields,
         ),
-        "postgres_settings": ubx.FieldSpec(
-            wire_name="postgres_settings",
-            kind="list",
-            fields=_Endpoint_PostgresSettingsFields,
+        "password": ubx.FieldSpec(wire_name="password"),
+        "port": ubx.FieldSpec(wire_name="port"),
+        "postgre_sql_settings": ubx.FieldSpec(
+            wire_name="postgre_sql_settings",
+            kind="object",
+            fields=_Endpoint_PostgreSqlSettingsFields,
         ),
         "redis_settings": ubx.FieldSpec(
             wire_name="redis_settings",
-            kind="list",
+            kind="object",
             fields=_Endpoint_RedisSettingsFields,
         ),
         "redshift_settings": ubx.FieldSpec(
             wire_name="redshift_settings",
-            kind="list",
+            kind="object",
             fields=_Endpoint_RedshiftSettingsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "resource_identifier": ubx.FieldSpec(wire_name="resource_identifier"),
+        "s3_settings": ubx.FieldSpec(
+            wire_name="s3_settings",
             kind="object",
-            fields=_Endpoint_TimeoutsFields,
+            fields=_Endpoint_S3SettingsFields,
         ),
+        "server_name": ubx.FieldSpec(wire_name="server_name"),
+        "ssl_mode": ubx.FieldSpec(wire_name="ssl_mode"),
+        "sybase_settings": ubx.FieldSpec(
+            wire_name="sybase_settings",
+            kind="object",
+            fields=_Endpoint_SybaseSettingsFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Endpoint_TagsFields,
+        ),
+        "username": ubx.FieldSpec(wire_name="username"),
     },
 )

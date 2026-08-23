@@ -4,40 +4,50 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Trigger_Actions_NotificationProperty struct {
+	// Specifies the number of minutes to wait after a job run completes before sending a notification for this Glue trigger action. (AI-inferred)
 	NotifyDelayAfter any
 }
 
 type Trigger_Actions struct {
+	// The set of key-value pairs that are passed as arguments to the referenced Glue job when this trigger action runs. (AI-inferred)
 	Arguments any
+	// The name of the AWS Glue crawler to start when this trigger action is invoked, used for crawler-based trigger actions. (AI-inferred)
 	CrawlerName any
+	// The name of the AWS Glue job that will be started when the trigger fires, as defined in the Actions property of the Glue trigger. (AI-inferred)
 	JobName any
-	SecurityConfiguration any
-	Timeout any
+	// Defines the notification settings for a Glue trigger action, specifically the number of minutes after a job run starts before a job run delay notification is sent (NotifyDelayAfter). (AI-inferred)
 	NotificationProperty any
+	// The name of the AWS Glue security configuration that encrypts the job run's data and connections when this trigger action starts a job. (AI-inferred)
+	SecurityConfiguration any
+	// The job run timeout in minutes for the action, overriding the timeout value of the associated job. (AI-inferred)
+	Timeout any
 }
 
 type Trigger_EventBatchingCondition struct {
+	// Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.
 	BatchSize any
+	// Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.
 	BatchWindow any
 }
 
 type Trigger_Predicate_Conditions struct {
+	// The crawl state (e.g., SUCCEEDED, FAILED, RUNNING) that the crawler referenced in this condition must reach for the trigger predicate to evaluate as true. (AI-inferred)
 	CrawlState any
+	// The name of the AWS Glue crawler that must reach the specified crawl state (e.g., COMPLETED) to satisfy the trigger condition. (AI-inferred)
 	CrawlerName any
+	// The name of the AWS Glue job whose run state (e.g., SUCCEEDED, FAILED, TIMEOUT) this predicate condition evaluates to determine whether the trigger fires. (AI-inferred)
 	JobName any
+	// Specifies the logical operator (AND or OR) that combines this condition with the previous condition in the trigger's predicate, defaulting to AND when not specified. (AI-inferred)
 	LogicalOperator any
+	// The state (e.g., SUCCEEDED, FAILED) that the referenced job or crawler must be in for this condition to be met within the trigger's predicate. (AI-inferred)
 	State any
 }
 
 type Trigger_Predicate struct {
-	Logical any
+	// A list of the conditions that determine when the trigger will fire.
 	Conditions any
-}
-
-type Trigger_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+	// An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.
+	Logical any
 }
 
 var Trigger_Actions_NotificationPropertyFields = ubx.FieldMap{
@@ -48,13 +58,13 @@ var Trigger_ActionsFields = ubx.FieldMap{
 		"Arguments": ubx.FieldSpec{WireName: "arguments"},
 		"CrawlerName": ubx.FieldSpec{WireName: "crawler_name"},
 		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
 		"NotificationProperty": ubx.FieldSpec{
 			WireName: "notification_property",
-			Kind: "list",
+			Kind: "object",
 			Fields: Trigger_Actions_NotificationPropertyFields,
 		},
+		"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
+		"Timeout": ubx.FieldSpec{WireName: "timeout"},
 	}
 
 var Trigger_EventBatchingConditionFields = ubx.FieldMap{
@@ -71,71 +81,84 @@ var Trigger_Predicate_ConditionsFields = ubx.FieldMap{
 	}
 
 var Trigger_PredicateFields = ubx.FieldMap{
-		"Logical": ubx.FieldSpec{WireName: "logical"},
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
 			Kind: "list",
 			Fields: Trigger_Predicate_ConditionsFields,
 		},
-	}
-
-var Trigger_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+		"Logical": ubx.FieldSpec{WireName: "logical"},
 	}
 
 type TriggerConfig struct {
-	Description any
-	Enabled any
-	Id any
-	Name any
-	Region any
-	Schedule any
-	StartOnCreation any
-	Tags any
-	TagsAll any
-	Type any
-	WorkflowName any
+	// The actions initiated by this trigger.
 	Actions any
+	// A description of this trigger.
+	Description any
+	// Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.
 	EventBatchingCondition any
+	// The name of the trigger.
+	Name any
+	// The predicate of this trigger, which defines when it will fire.
 	Predicate any
-	Timeouts any
+	// A cron expression used to specify the schedule.
+	Schedule any
+	// Set to true to start SCHEDULED and CONDITIONAL triggers when created. True is not supported for ON_DEMAND triggers.
+	StartOnCreation any
+	// The tags to use with this trigger.
+	Tags any
+	// The type of trigger that this is.
+	Type any
+	// The name of the workflow associated with the trigger.
+	WorkflowName any
+}
+
+type TriggerAttrs struct {
+	// The actions initiated by this trigger.
+	Actions any
+	// A description of this trigger.
+	Description any
+	// Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.
+	EventBatchingCondition any
+	// The name of the trigger.
+	Name any
+	// The predicate of this trigger, which defines when it will fire.
+	Predicate any
+	// A cron expression used to specify the schedule.
+	Schedule any
+	// Set to true to start SCHEDULED and CONDITIONAL triggers when created. True is not supported for ON_DEMAND triggers.
+	StartOnCreation any
+	// The tags to use with this trigger.
+	Tags any
+	// The type of trigger that this is.
+	Type any
+	// The name of the workflow associated with the trigger.
+	WorkflowName any
 }
 
 var Trigger = ubx.ResourceBinding{
 	WireType: "aws_glue_trigger",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"StartOnCreation": ubx.FieldSpec{WireName: "start_on_creation"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
 			Kind: "list",
 			Fields: Trigger_ActionsFields,
 		},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"EventBatchingCondition": ubx.FieldSpec{
 			WireName: "event_batching_condition",
-			Kind: "list",
+			Kind: "object",
 			Fields: Trigger_EventBatchingConditionFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Predicate": ubx.FieldSpec{
 			WireName: "predicate",
-			Kind: "list",
+			Kind: "object",
 			Fields: Trigger_PredicateFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Trigger_TimeoutsFields,
-		},
+		"Schedule": ubx.FieldSpec{WireName: "schedule"},
+		"StartOnCreation": ubx.FieldSpec{WireName: "start_on_creation"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
 	},
 }

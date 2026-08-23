@@ -3,21 +3,105 @@ package rum
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitions struct {
+	// A list of event attribute names (dimension keys) from the RUM event JSON that are used as dimensions for the custom metric defined in this metric definition. (AI-inferred)
+	DimensionKeys any
+	// The JSON event pattern that filters which RUM application events are included in this metric definition, used to match event attributes for extracting metric values. (AI-inferred)
+	EventPattern any
+	// The name assigned to this metric definition, which is used as the metric name when the extracted value is sent to the configured CloudWatch destination. (AI-inferred)
+	Name any
+	// The CloudWatch namespace where the extracted metric is published, defaulting to 'AWS/RUM' if not specified. (AI-inferred)
+	Namespace any
+	// Defines the unit label (e.g., 'Milliseconds' or 'Count') that CloudWatch RUM attaches to the metric generated from this metric definition when it is sent to the destination. (AI-inferred)
+	UnitLabel any
+	// The value_key property specifies the key in the event data that CloudWatch RUM uses to extract the numerical value for the custom metric defined by this metric definition. (AI-inferred)
+	ValueKey any
+}
+
+type AppMonitor_AppMonitorConfiguration_MetricDestinations struct {
+	// The destination service to which CloudWatch RUM sends the extracted metrics, such as CloudWatch or Evidently. (AI-inferred)
+	Destination any
+	// The ARN of the CloudWatch Logs log group or Evidently project that receives the metrics, used when metric destinations are configured for the app monitor. (AI-inferred)
+	DestinationArn any
+	// The ARN of an IAM role that grants CloudWatch RUM permission to publish metrics to the destination specified in this metric destination definition. (AI-inferred)
+	IamRoleArn any
+	// Specifies the list of metric definitions for a metric destination, each defining a metric name and the value expression (such as a JSONPath or regex) used to extract the metric value from RUM event data. (AI-inferred)
+	MetricDefinitions any
+}
+
 type AppMonitor_AppMonitorConfiguration struct {
+	// If you set this to true, the RUM web client sets two cookies, a session cookie and a user cookie. The cookies allow the RUM web client to collect data relating to the number of users an application has and the behavior of the application across a sequence of events. Cookies are stored in the top-level domain of the current page.
 	AllowCookies any
+	// If you set this to true, RUM enables xray tracing for the user sessions that RUM samples. RUM adds an xray trace header to allowed HTTP requests. It also records an xray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the xray console and the CW ServiceLens console.
 	EnableXray any
+	// List of url pages
 	ExcludedPages any
+	// List of favorite pages
 	FavoritePages any
+	// Resource ARN
 	GuestRoleArn any
+	// The ID of the identity pool that is used to authorize the sending of data to RUM.
 	IdentityPoolId any
+	// List of url pages
 	IncludedPages any
+	// An array of structures which define the destinations and the metrics that you want to send.
+	MetricDestinations any
+	// Specifies the percentage of user sessions to use for RUM data collection. Choosing a higher percentage gives you more data but also incurs more costs. The number you specify is the percentage of user sessions that will be used. If you omit this parameter, the default of 10 is used.
 	SessionSampleRate any
+	// An array that lists the types of telemetry data that this app monitor is to collect.
 	Telemetries any
 }
 
 type AppMonitor_CustomEvents struct {
+	// Determines whether custom event collection is enabled or disabled for the app monitor, with allowed values 'ENABLED' and 'DISABLED'. (AI-inferred)
 	Status any
 }
+
+type AppMonitor_DeobfuscationConfiguration_JavaScriptSourceMaps struct {
+	// The S3Uri of the bucket or folder that stores the source map files. It is required if status is ENABLED.
+	S3Uri any
+	// Specifies whether JavaScript error stack traces should be unminified for this app monitor. The default is for JavaScript error stack trace unminification to be DISABLED
+	Status any
+}
+
+type AppMonitor_DeobfuscationConfiguration struct {
+	// A structure that contains the configuration for how an app monitor can unminify JavaScript error stack traces using source maps.
+	JavaScriptSourceMaps any
+}
+
+type AppMonitor_ResourcePolicy struct {
+	// The JSON to use as the resource policy. The document can be up to 4 KB in size.
+	PolicyDocument any
+	// A string value that you can use to conditionally update your policy. You can provide the revision ID of your existing policy to make mutating requests against that policy. When you assign a policy revision ID, then later requests about that policy will be rejected with an InvalidPolicyRevisionIdException error if they don't provide the correct current revision ID.
+	PolicyRevisionId any
+}
+
+type AppMonitor_Tags struct {
+	// The tag key, which is the name of the tag used to categorize and manage the CloudWatch RUM app monitor resource. (AI-inferred)
+	Key any
+	// Specifies the value for a tag key in the map of tags associated with the AWS RUM app monitor resource. (AI-inferred)
+	Value any
+}
+
+var AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitionsFields = ubx.FieldMap{
+		"DimensionKeys": ubx.FieldSpec{WireName: "dimension_keys"},
+		"EventPattern": ubx.FieldSpec{WireName: "event_pattern"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+		"UnitLabel": ubx.FieldSpec{WireName: "unit_label"},
+		"ValueKey": ubx.FieldSpec{WireName: "value_key"},
+	}
+
+var AppMonitor_AppMonitorConfiguration_MetricDestinationsFields = ubx.FieldMap{
+		"Destination": ubx.FieldSpec{WireName: "destination"},
+		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
+		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
+		"MetricDefinitions": ubx.FieldSpec{
+			WireName: "metric_definitions",
+			Kind: "list",
+			Fields: AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitionsFields,
+		},
+	}
 
 var AppMonitor_AppMonitorConfigurationFields = ubx.FieldMap{
 		"AllowCookies": ubx.FieldSpec{WireName: "allow_cookies"},
@@ -27,6 +111,11 @@ var AppMonitor_AppMonitorConfigurationFields = ubx.FieldMap{
 		"GuestRoleArn": ubx.FieldSpec{WireName: "guest_role_arn"},
 		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
 		"IncludedPages": ubx.FieldSpec{WireName: "included_pages"},
+		"MetricDestinations": ubx.FieldSpec{
+			WireName: "metric_destinations",
+			Kind: "list",
+			Fields: AppMonitor_AppMonitorConfiguration_MetricDestinationsFields,
+		},
 		"SessionSampleRate": ubx.FieldSpec{WireName: "session_sample_rate"},
 		"Telemetries": ubx.FieldSpec{WireName: "telemetries"},
 	}
@@ -35,39 +124,109 @@ var AppMonitor_CustomEventsFields = ubx.FieldMap{
 		"Status": ubx.FieldSpec{WireName: "status"},
 	}
 
+var AppMonitor_DeobfuscationConfiguration_JavaScriptSourceMapsFields = ubx.FieldMap{
+		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+	}
+
+var AppMonitor_DeobfuscationConfigurationFields = ubx.FieldMap{
+		"JavaScriptSourceMaps": ubx.FieldSpec{
+			WireName: "java_script_source_maps",
+			Kind: "object",
+			Fields: AppMonitor_DeobfuscationConfiguration_JavaScriptSourceMapsFields,
+		},
+	}
+
+var AppMonitor_ResourcePolicyFields = ubx.FieldMap{
+		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+		"PolicyRevisionId": ubx.FieldSpec{WireName: "policy_revision_id"},
+	}
+
+var AppMonitor_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type AppMonitorConfig struct {
-	CwLogEnabled any
-	Domain any
-	DomainList any
-	Id any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
+	// AppMonitor configuration
 	AppMonitorConfiguration any
+	// AppMonitor custom events configuration
 	CustomEvents any
+	// Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to CWLlong in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur CWLlong charges. If you omit this parameter, the default is false
+	CwLogEnabled any
+	// A structure that contains the configuration for how an app monitor can deobfuscate stack traces.
+	DeobfuscationConfiguration any
+	// The top-level internet domain name for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.
+	Domain any
+	// The top-level internet domain names for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.
+	DomainList any
+	// A name for the app monitor
+	Name any
+	// Specifies the application platform for the app monitor, such as 'Browser' or 'Mobile', which determines how client-side telemetry is collected. (AI-inferred)
+	Platform any
+	// A structure that defines resource policy attached to your app monitor.
+	ResourcePolicy any
+	// Assigns one or more tags (key-value pairs) to the app monitor. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.You can associate as many as 50 tags with an app monitor.
+	Tags any
+}
+
+type AppMonitorAttrs struct {
+	// AppMonitor configuration
+	AppMonitorConfiguration any
+	// AppMonitor custom events configuration
+	CustomEvents any
+	// Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to CWLlong in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur CWLlong charges. If you omit this parameter, the default is false
+	CwLogEnabled any
+	// A structure that contains the configuration for how an app monitor can deobfuscate stack traces.
+	DeobfuscationConfiguration any
+	// The top-level internet domain name for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.
+	Domain any
+	// The top-level internet domain names for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.
+	DomainList any
+	// The unique ID of the new app monitor.
+	Id any
+	// A name for the app monitor
+	Name any
+	// Specifies the application platform for the app monitor, such as 'Browser' or 'Mobile', which determines how client-side telemetry is collected. (AI-inferred)
+	Platform any
+	// A structure that defines resource policy attached to your app monitor.
+	ResourcePolicy any
+	// Assigns one or more tags (key-value pairs) to the app monitor. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.You can associate as many as 50 tags with an app monitor.
+	Tags any
 }
 
 var AppMonitor = ubx.ResourceBinding{
 	WireType: "aws_rum_app_monitor",
 	Fields: ubx.FieldMap{
-		"CwLogEnabled": ubx.FieldSpec{WireName: "cw_log_enabled"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DomainList": ubx.FieldSpec{WireName: "domain_list"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"AppMonitorConfiguration": ubx.FieldSpec{
 			WireName: "app_monitor_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: AppMonitor_AppMonitorConfigurationFields,
 		},
 		"CustomEvents": ubx.FieldSpec{
 			WireName: "custom_events",
-			Kind: "list",
+			Kind: "object",
 			Fields: AppMonitor_CustomEventsFields,
+		},
+		"CwLogEnabled": ubx.FieldSpec{WireName: "cw_log_enabled"},
+		"DeobfuscationConfiguration": ubx.FieldSpec{
+			WireName: "deobfuscation_configuration",
+			Kind: "object",
+			Fields: AppMonitor_DeobfuscationConfigurationFields,
+		},
+		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"DomainList": ubx.FieldSpec{WireName: "domain_list"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Platform": ubx.FieldSpec{WireName: "platform"},
+		"ResourcePolicy": ubx.FieldSpec{
+			WireName: "resource_policy",
+			Kind: "object",
+			Fields: AppMonitor_ResourcePolicyFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: AppMonitor_TagsFields,
 		},
 	},
 }

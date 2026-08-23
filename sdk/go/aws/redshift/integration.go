@@ -3,45 +3,63 @@ package redshift
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Integration_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Integration_Tags struct {
+	// The key portion of a user-defined tag attached to the AWS Redshift Integration resource, used for organization, cost tracking, and access control. (AI-inferred)
+	Key any
+	Value any
 }
 
-var Integration_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Integration_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type IntegrationConfig struct {
+	// An optional set of non-secret key–value pairs that contains additional contextual information about the data.
 	AdditionalEncryptionContext any
-	Description any
+	// The name of the integration.
 	IntegrationName any
-	KmsKeyId any
-	Region any
+	// An KMS key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, the default AWS owned KMS key is used.
+	KmskeyId any
+	// The Amazon Resource Name (ARN) of the database to use as the source for replication
 	SourceArn any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
+	// The Amazon Resource Name (ARN) of the Redshift data warehouse to use as the target for replication
 	TargetArn any
-	Timeouts any
+}
+
+type IntegrationAttrs struct {
+	// An optional set of non-secret key–value pairs that contains additional contextual information about the data.
+	AdditionalEncryptionContext any
+	// The time (UTC) when the integration was created.
+	CreateTime any
+	// The Amazon Resource Name (ARN) of the integration.
+	IntegrationArn any
+	// The name of the integration.
+	IntegrationName any
+	// An KMS key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, the default AWS owned KMS key is used.
+	KmskeyId any
+	// The Amazon Resource Name (ARN) of the database to use as the source for replication
+	SourceArn any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// The Amazon Resource Name (ARN) of the Redshift data warehouse to use as the target for replication
+	TargetArn any
 }
 
 var Integration = ubx.ResourceBinding{
 	WireType: "aws_redshift_integration",
 	Fields: ubx.FieldMap{
 		"AdditionalEncryptionContext": ubx.FieldSpec{WireName: "additional_encryption_context"},
-		"Description": ubx.FieldSpec{WireName: "description"},
 		"IntegrationName": ubx.FieldSpec{WireName: "integration_name"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"KmskeyId": ubx.FieldSpec{WireName: "kmskey_id"},
 		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Integration_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Integration_TagsFields,
 		},
+		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
 	},
 }

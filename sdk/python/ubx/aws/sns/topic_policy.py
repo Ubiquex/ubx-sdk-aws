@@ -8,17 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TopicPolicyConfig:
-    arn: Any = None
+    # A policy document that contains permissions to add to the specified SNS topics.
+    policy_document: Any = None
+    # The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SNS::Topic`` resource.
+    topics: Any = None
+
+@dataclasses.dataclass
+class TopicPolicyAttrs:
+    # The ARN of the SNS topic that this policy is attached to, which serves as the unique identifier for the aws_sns_topic_policy resource. (AI-inferred)
     id: Any = None
-    policy: Any = None
-    region: Any = None
+    # A policy document that contains permissions to add to the specified SNS topics.
+    policy_document: Any = None
+    # The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SNS::Topic`` resource.
+    topics: Any = None
 
 TopicPolicy = ubx.ResourceBinding(
     wire_type="aws_sns_topic_policy",
     fields={
-        "arn": ubx.FieldSpec(wire_name="arn"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "policy": ubx.FieldSpec(wire_name="policy"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "policy_document": ubx.FieldSpec(wire_name="policy_document"),
+        "topics": ubx.FieldSpec(wire_name="topics"),
     },
 )

@@ -2,23 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReceiptRuleSetConfig {
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
-  ruleSetName: string | Computed<string>;
+  /** The name of the rule set. */
+  ruleSetName?: string | Computed<string>;
 }
 
 export interface ReceiptRuleSetAttrs {
-  arn: string;
-  id: string;
-  region: string;
+  /** The name of the rule set. */
   ruleSetName: string;
 }
 
 export const ReceiptRuleSet: ResourceBinding<ReceiptRuleSetConfig, ReceiptRuleSetAttrs> = {
   wireType: "aws_ses_receipt_rule_set",
   fields: {
-    id: "id",
-    region: "region",
     ruleSetName: "rule_set_name",
   },
 };

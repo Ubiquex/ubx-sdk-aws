@@ -3,45 +3,72 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TransitGatewayConnectPeer_Timeouts struct {
-	Create any
-	Delete any
+type TransitGatewayConnectPeer_ConnectPeerConfiguration_BgpConfigurations struct {
+	// BGP status of the Connect Peer's BGP session, indicating whether the Border Gateway Protocol session is up or down. (AI-inferred)
+	BgpStatus any
+	// The IP address of the BGP peer used for establishing BGP sessions with the Transit Gateway Connect Peer. (AI-inferred)
+	PeerAddress any
+	// Specifies the autonomous system number (ASN) of the BGP peer for the Connect peer, which is used to configure BGP peering between the transit gateway and the Connect attachment. (AI-inferred)
+	PeerAsn any
+	// Specifies the IP address on the Transit Gateway side that will be used as the local endpoint for the BGP session with the Connect peer. (AI-inferred)
+	TransitGatewayAddress any
+	// The autonomous system number (ASN) that the transit gateway uses for the BGP session with the Connect peer. (AI-inferred)
+	TransitGatewayAsn any
 }
 
-var TransitGatewayConnectPeer_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+type TransitGatewayConnectPeer_ConnectPeerConfiguration struct {
+	// The BGP configuration details.
+	BgpConfigurations any
+	// The range of interior BGP peer IP addresses.
+	InsideCidrBlocks any
+	// The peer IP address (GRE outer IP address) on the appliance side of the Connect peer.
+	PeerAddress any
+	// The tunnel protocol.
+	Protocol any
+	// The Connect peer IP address on the transit gateway side of the tunnel.
+	TransitGatewayAddress any
+}
+
+type TransitGatewayConnectPeer_Tags struct {
+	Key any
+	Value any
+}
+
+var TransitGatewayConnectPeer_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type TransitGatewayConnectPeerConfig struct {
-	BgpAsn any
-	Id any
-	InsideCidrBlocks any
-	PeerAddress any
-	Region any
+	// The tags for the Connect Peer.
 	Tags any
-	TagsAll any
-	TransitGatewayAddress any
+	// The ID of the Connect attachment.
 	TransitGatewayAttachmentId any
-	Timeouts any
+}
+
+type TransitGatewayConnectPeerAttrs struct {
+	// The computed configuration of the transit gateway Connect peer, including the tunnel protocol, inside CIDR blocks, the transit gateway and peer addresses, and BGP configuration options. (AI-inferred)
+	ConnectPeerConfiguration any
+	// The creation time.
+	CreationTime any
+	// The state of the Connect peer.
+	State any
+	// The tags for the Connect Peer.
+	Tags any
+	// The ID of the Connect attachment.
+	TransitGatewayAttachmentId any
+	// The ID of the Connect peer.
+	TransitGatewayConnectPeerId any
 }
 
 var TransitGatewayConnectPeer = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_connect_peer",
 	Fields: ubx.FieldMap{
-		"BgpAsn": ubx.FieldSpec{WireName: "bgp_asn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InsideCidrBlocks": ubx.FieldSpec{WireName: "inside_cidr_blocks"},
-		"PeerAddress": ubx.FieldSpec{WireName: "peer_address"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"TransitGatewayAddress": ubx.FieldSpec{WireName: "transit_gateway_address"},
-		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: TransitGatewayConnectPeer_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: TransitGatewayConnectPeer_TagsFields,
 		},
+		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
 	},
 }

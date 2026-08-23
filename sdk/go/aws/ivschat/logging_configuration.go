@@ -3,31 +3,38 @@ package ivschat
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type LoggingConfiguration_DestinationConfiguration_CloudwatchLogs struct {
+type LoggingConfiguration_DestinationConfiguration_CloudWatchLogs struct {
+	// Name of the Amazon CloudWatch Logs log group where chat activity will be logged.
 	LogGroupName any
 }
 
 type LoggingConfiguration_DestinationConfiguration_Firehose struct {
+	// Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.
 	DeliveryStreamName any
 }
 
 type LoggingConfiguration_DestinationConfiguration_S3 struct {
+	// Name of the Amazon S3 bucket where chat activity will be logged.
 	BucketName any
 }
 
 type LoggingConfiguration_DestinationConfiguration struct {
-	CloudwatchLogs any
+	// CloudWatch destination configuration for IVS Chat logging.
+	CloudWatchLogs any
+	// Kinesis Firehose destination configuration for IVS Chat logging.
 	Firehose any
+	// S3 destination configuration for IVS Chat logging.
 	S3 any
 }
 
-type LoggingConfiguration_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type LoggingConfiguration_Tags struct {
+	// Specifies the key of a tag to attach to the IVS Chat Logging Configuration, enabling you to organize, identify, and manage the resource for purposes such as cost allocation or access control. (AI-inferred)
+	Key any
+	// The value of a tag attached to the IVS Chat logging configuration, used to assign arbitrary metadata for resource organization, cost allocation, or access control. (AI-inferred)
+	Value any
 }
 
-var LoggingConfiguration_DestinationConfiguration_CloudwatchLogsFields = ubx.FieldMap{
+var LoggingConfiguration_DestinationConfiguration_CloudWatchLogsFields = ubx.FieldMap{
 		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
 	}
 
@@ -40,56 +47,65 @@ var LoggingConfiguration_DestinationConfiguration_S3Fields = ubx.FieldMap{
 	}
 
 var LoggingConfiguration_DestinationConfigurationFields = ubx.FieldMap{
-		"CloudwatchLogs": ubx.FieldSpec{
-			WireName: "cloudwatch_logs",
-			Kind: "list",
-			Fields: LoggingConfiguration_DestinationConfiguration_CloudwatchLogsFields,
+		"CloudWatchLogs": ubx.FieldSpec{
+			WireName: "cloud_watch_logs",
+			Kind: "object",
+			Fields: LoggingConfiguration_DestinationConfiguration_CloudWatchLogsFields,
 		},
 		"Firehose": ubx.FieldSpec{
 			WireName: "firehose",
-			Kind: "list",
+			Kind: "object",
 			Fields: LoggingConfiguration_DestinationConfiguration_FirehoseFields,
 		},
 		"S3": ubx.FieldSpec{
 			WireName: "s3",
-			Kind: "list",
+			Kind: "object",
 			Fields: LoggingConfiguration_DestinationConfiguration_S3Fields,
 		},
 	}
 
-var LoggingConfiguration_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var LoggingConfiguration_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type LoggingConfigurationConfig struct {
-	Id any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
+	// Destination configuration for IVS Chat logging.
 	DestinationConfiguration any
-	Timeouts any
+	// The name of the logging configuration. The value does not need to be unique.
+	Name any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type LoggingConfigurationAttrs struct {
+	// LoggingConfiguration ARN is automatically generated on creation and assigned as the unique identifier.
+	Arn any
+	// Destination configuration for IVS Chat logging.
+	DestinationConfiguration any
+	// The system-generated ID of the logging configuration.
+	Id any
+	// The name of the logging configuration. The value does not need to be unique.
+	Name any
+	// The state of the logging configuration. When the state is ACTIVE, the configuration is ready to log chat content.
+	State any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var LoggingConfiguration = ubx.ResourceBinding{
 	WireType: "aws_ivschat_logging_configuration",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"DestinationConfiguration": ubx.FieldSpec{
 			WireName: "destination_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: LoggingConfiguration_DestinationConfigurationFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: LoggingConfiguration_TimeoutsFields,
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: LoggingConfiguration_TagsFields,
 		},
 	},
 }

@@ -4,29 +4,29 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Job_Command struct {
+	// The name of the job command
 	Name any
+	// The Python version being used to execute a Python shell job.
 	PythonVersion any
+	// Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment
 	Runtime any
+	// Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job
 	ScriptLocation any
 }
 
+type Job_Connections struct {
+	// A list of connections used by the job.
+	Connections any
+}
+
 type Job_ExecutionProperty struct {
+	// The maximum number of concurrent runs allowed for the job.
 	MaxConcurrentRuns any
 }
 
 type Job_NotificationProperty struct {
+	// It is the number of minutes to wait before sending a job run delay notification after a job run starts
 	NotifyDelayAfter any
-}
-
-type Job_SourceControlDetails struct {
-	AuthStrategy any
-	AuthToken any
-	Branch any
-	Folder any
-	LastCommitId any
-	Owner any
-	Provider any
-	Repository any
 }
 
 var Job_CommandFields = ubx.FieldMap{
@@ -34,6 +34,10 @@ var Job_CommandFields = ubx.FieldMap{
 		"PythonVersion": ubx.FieldSpec{WireName: "python_version"},
 		"Runtime": ubx.FieldSpec{WireName: "runtime"},
 		"ScriptLocation": ubx.FieldSpec{WireName: "script_location"},
+	}
+
+var Job_ConnectionsFields = ubx.FieldMap{
+		"Connections": ubx.FieldSpec{WireName: "connections"},
 	}
 
 var Job_ExecutionPropertyFields = ubx.FieldMap{
@@ -44,88 +48,145 @@ var Job_NotificationPropertyFields = ubx.FieldMap{
 		"NotifyDelayAfter": ubx.FieldSpec{WireName: "notify_delay_after"},
 	}
 
-var Job_SourceControlDetailsFields = ubx.FieldMap{
-		"AuthStrategy": ubx.FieldSpec{WireName: "auth_strategy"},
-		"AuthToken": ubx.FieldSpec{WireName: "auth_token"},
-		"Branch": ubx.FieldSpec{WireName: "branch"},
-		"Folder": ubx.FieldSpec{WireName: "folder"},
-		"LastCommitId": ubx.FieldSpec{WireName: "last_commit_id"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
-
 type JobConfig struct {
-	Connections any
-	DefaultArguments any
-	Description any
-	ExecutionClass any
-	GlueVersion any
-	Id any
-	JobMode any
-	JobRunQueuingEnabled any
-	MaintenanceWindow any
-	MaxCapacity any
-	MaxRetries any
-	Name any
-	NonOverridableArguments any
-	NumberOfWorkers any
-	Region any
-	RoleArn any
-	SecurityConfiguration any
-	Tags any
-	TagsAll any
-	Timeout any
-	WorkerType any
+	// The number of capacity units that are allocated to this job.
+	AllocatedCapacity any
+	// Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred)
 	Command any
+	// Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred)
+	Connections any
+	// The default arguments for this job, specified as name-value pairs.
+	DefaultArguments any
+	// A description of the job.
+	Description any
+	// Indicates whether the job is run with a standard or flexible execution class.
+	ExecutionClass any
+	// Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred)
 	ExecutionProperty any
+	// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+	GlueVersion any
+	// Property description not available.
+	JobMode any
+	// Property description not available.
+	JobRunQueuingEnabled any
+	// This field is reserved for future use.
+	LogUri any
+	// Property description not available.
+	MaintenanceWindow any
+	// The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs.
+	MaxCapacity any
+	// The maximum number of times to retry this job after a JobRun fails
+	MaxRetries any
+	// The name you assign to the job definition
+	Name any
+	// Non-overridable arguments for this job, specified as name-value pairs.
+	NonOverridableArguments any
+	// Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred)
 	NotificationProperty any
-	SourceControlDetails any
+	// The number of workers of a defined workerType that are allocated when a job runs.
+	NumberOfWorkers any
+	// The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
+	Role any
+	// The name of the SecurityConfiguration structure to be used with this job.
+	SecurityConfiguration any
+	// The tags to use with this job.
+	Tags any
+	// The maximum time that a job run can consume resources before it is terminated and enters TIMEOUT status.
+	Timeout any
+	// TThe type of predefined worker that is allocated when a job runs.
+	WorkerType any
+}
+
+type JobAttrs struct {
+	// The number of capacity units that are allocated to this job.
+	AllocatedCapacity any
+	// Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred)
+	Command any
+	// Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred)
+	Connections any
+	// The default arguments for this job, specified as name-value pairs.
+	DefaultArguments any
+	// A description of the job.
+	Description any
+	// Indicates whether the job is run with a standard or flexible execution class.
+	ExecutionClass any
+	// Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred)
+	ExecutionProperty any
+	// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+	GlueVersion any
+	// Property description not available.
+	JobMode any
+	// Property description not available.
+	JobRunQueuingEnabled any
+	// This field is reserved for future use.
+	LogUri any
+	// Property description not available.
+	MaintenanceWindow any
+	// The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs.
+	MaxCapacity any
+	// The maximum number of times to retry this job after a JobRun fails
+	MaxRetries any
+	// The name you assign to the job definition
+	Name any
+	// Non-overridable arguments for this job, specified as name-value pairs.
+	NonOverridableArguments any
+	// Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred)
+	NotificationProperty any
+	// The number of workers of a defined workerType that are allocated when a job runs.
+	NumberOfWorkers any
+	// The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
+	Role any
+	// The name of the SecurityConfiguration structure to be used with this job.
+	SecurityConfiguration any
+	// The tags to use with this job.
+	Tags any
+	// The maximum time that a job run can consume resources before it is terminated and enters TIMEOUT status.
+	Timeout any
+	// TThe type of predefined worker that is allocated when a job runs.
+	WorkerType any
 }
 
 var Job = ubx.ResourceBinding{
 	WireType: "aws_glue_job",
 	Fields: ubx.FieldMap{
-		"Connections": ubx.FieldSpec{WireName: "connections"},
+		"AllocatedCapacity": ubx.FieldSpec{WireName: "allocated_capacity"},
+		"Command": ubx.FieldSpec{
+			WireName: "command",
+			Kind: "object",
+			Fields: Job_CommandFields,
+		},
+		"Connections": ubx.FieldSpec{
+			WireName: "connections",
+			Kind: "object",
+			Fields: Job_ConnectionsFields,
+		},
 		"DefaultArguments": ubx.FieldSpec{WireName: "default_arguments"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExecutionClass": ubx.FieldSpec{WireName: "execution_class"},
+		"ExecutionProperty": ubx.FieldSpec{
+			WireName: "execution_property",
+			Kind: "object",
+			Fields: Job_ExecutionPropertyFields,
+		},
 		"GlueVersion": ubx.FieldSpec{WireName: "glue_version"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"JobMode": ubx.FieldSpec{WireName: "job_mode"},
 		"JobRunQueuingEnabled": ubx.FieldSpec{WireName: "job_run_queuing_enabled"},
+		"LogUri": ubx.FieldSpec{WireName: "log_uri"},
 		"MaintenanceWindow": ubx.FieldSpec{WireName: "maintenance_window"},
 		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
 		"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NonOverridableArguments": ubx.FieldSpec{WireName: "non_overridable_arguments"},
-		"NumberOfWorkers": ubx.FieldSpec{WireName: "number_of_workers"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"WorkerType": ubx.FieldSpec{WireName: "worker_type"},
-		"Command": ubx.FieldSpec{
-			WireName: "command",
-			Kind: "list",
-			Fields: Job_CommandFields,
-		},
-		"ExecutionProperty": ubx.FieldSpec{
-			WireName: "execution_property",
-			Kind: "list",
-			Fields: Job_ExecutionPropertyFields,
-		},
 		"NotificationProperty": ubx.FieldSpec{
 			WireName: "notification_property",
-			Kind: "list",
+			Kind: "object",
 			Fields: Job_NotificationPropertyFields,
 		},
-		"SourceControlDetails": ubx.FieldSpec{
-			WireName: "source_control_details",
-			Kind: "list",
-			Fields: Job_SourceControlDetailsFields,
-		},
+		"NumberOfWorkers": ubx.FieldSpec{WireName: "number_of_workers"},
+		"Role": ubx.FieldSpec{WireName: "role"},
+		"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Timeout": ubx.FieldSpec{WireName: "timeout"},
+		"WorkerType": ubx.FieldSpec{WireName: "worker_type"},
 	},
 }

@@ -3,53 +3,93 @@ package dms
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ReplicationInstance_KerberosAuthenticationSettings struct {
-	KeyCacheSecretIamArn any
-	KeyCacheSecretId any
-	Krb5FileContents any
+type ReplicationInstance_Tags struct {
+	Key any
+	// The value of a tag assigned to the AWS DMS replication instance, used to associate arbitrary metadata (e.g., environment, owner, or cost center) with the resource for management and cost allocation purposes. (AI-inferred)
+	Value any
 }
 
-type ReplicationInstance_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
-
-var ReplicationInstance_KerberosAuthenticationSettingsFields = ubx.FieldMap{
-		"KeyCacheSecretIamArn": ubx.FieldSpec{WireName: "key_cache_secret_iam_arn"},
-		"KeyCacheSecretId": ubx.FieldSpec{WireName: "key_cache_secret_id"},
-		"Krb5FileContents": ubx.FieldSpec{WireName: "krb5_file_contents"},
-	}
-
-var ReplicationInstance_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var ReplicationInstance_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ReplicationInstanceConfig struct {
+	// Specifies the amount of storage (in gigabytes) to allocate for the AWS DMS replication instance. (AI-inferred)
 	AllocatedStorage any
+	// Indicates whether major version upgrades are allowed for the replication instance, and must be set to true to permit such upgrades when the engine version is changed. (AI-inferred)
 	AllowMajorVersionUpgrade any
-	ApplyImmediately any
+	// Indicates whether minor engine version upgrades are applied automatically to the replication instance during the maintenance window. (AI-inferred)
 	AutoMinorVersionUpgrade any
+	// Specifies the Availability Zone (AZ) in which the AWS DMS replication instance is created, influencing placement and failover behavior for Multi-AZ deployments. (AI-inferred)
 	AvailabilityZone any
+	// Specifies a comma-separated list of DNS name servers that the AWS DMS replication instance uses to resolve domain names for source and target endpoints. (AI-inferred)
 	DnsNameServers any
+	// Specifies the DMS engine version number to use for the replication instance, such as '3.4.4'. (AI-inferred)
 	EngineVersion any
-	Id any
-	KmsKeyArn any
+	// This field specifies the Amazon Resource Name (ARN) or ID of an AWS KMS customer master key (CMK) used to encrypt the storage and data on the DMS replication instance, instead of the default AWS-managed key. (AI-inferred)
+	KmsKeyId any
+	// Specifies whether the replication instance is deployed across multiple Availability Zones for high availability. (AI-inferred)
 	MultiAz any
+	// Specifies whether the replication instance uses IPv4 only (ipv4) or dual-stack IPv4 and IPv6 (dual) for network connectivity. (AI-inferred)
 	NetworkType any
+	// Specifies the preferred time window (in the format ddd:hh24:mi-ddd:hh24:mi, e.g., 'sun:01:00-sun:02:00') during which AWS may perform maintenance on the replication instance. (AI-inferred)
 	PreferredMaintenanceWindow any
+	// Whether the DMS replication instance is publicly accessible, meaning it receives a public IP address and can be reached from the internet, as opposed to being private within the VPC. (AI-inferred)
 	PubliclyAccessible any
-	Region any
+	// The compute and memory capacity class for the replication instance, such as dms.t2.small or dms.c4.large, which determines the performance and cost of the instance. (AI-inferred)
 	ReplicationInstanceClass any
-	ReplicationInstanceId any
-	ReplicationSubnetGroupId any
+	// Specifies a user-defined name for the replication instance, which must be unique within the AWS account and region and can include letters, numbers, and hyphens. (AI-inferred)
+	ReplicationInstanceIdentifier any
+	// The identifier of an existing DMS replication subnet group that determines the VPC and subnets where the replication instance's network interfaces are placed. (AI-inferred)
+	ReplicationSubnetGroupIdentifier any
+	ResourceIdentifier any
+	// Specifies the tags (key-value pairs) to associate with the DMS replication instance, which are used for cost allocation, access control, and identifying the resource in AWS. (AI-inferred)
 	Tags any
-	TagsAll any
+	// Specifies the VPC security group IDs to be associated with the DMS replication instance. (AI-inferred)
 	VpcSecurityGroupIds any
-	KerberosAuthenticationSettings any
-	Timeouts any
+}
+
+type ReplicationInstanceAttrs struct {
+	// Specifies the amount of storage (in gigabytes) to allocate for the AWS DMS replication instance. (AI-inferred)
+	AllocatedStorage any
+	// Indicates whether major version upgrades are allowed for the replication instance, and must be set to true to permit such upgrades when the engine version is changed. (AI-inferred)
+	AllowMajorVersionUpgrade any
+	// Indicates whether minor engine version upgrades are applied automatically to the replication instance during the maintenance window. (AI-inferred)
+	AutoMinorVersionUpgrade any
+	// Specifies the Availability Zone (AZ) in which the AWS DMS replication instance is created, influencing placement and failover behavior for Multi-AZ deployments. (AI-inferred)
+	AvailabilityZone any
+	// Specifies a comma-separated list of DNS name servers that the AWS DMS replication instance uses to resolve domain names for source and target endpoints. (AI-inferred)
+	DnsNameServers any
+	// Specifies the DMS engine version number to use for the replication instance, such as '3.4.4'. (AI-inferred)
+	EngineVersion any
+	// The Amazon Resource Name (ARN) of the DMS replication instance, generated by AWS and used as the unique Terraform resource identifier. (AI-inferred)
+	Id any
+	// This field specifies the Amazon Resource Name (ARN) or ID of an AWS KMS customer master key (CMK) used to encrypt the storage and data on the DMS replication instance, instead of the default AWS-managed key. (AI-inferred)
+	KmsKeyId any
+	// Specifies whether the replication instance is deployed across multiple Availability Zones for high availability. (AI-inferred)
+	MultiAz any
+	// Specifies whether the replication instance uses IPv4 only (ipv4) or dual-stack IPv4 and IPv6 (dual) for network connectivity. (AI-inferred)
+	NetworkType any
+	// Specifies the preferred time window (in the format ddd:hh24:mi-ddd:hh24:mi, e.g., 'sun:01:00-sun:02:00') during which AWS may perform maintenance on the replication instance. (AI-inferred)
+	PreferredMaintenanceWindow any
+	// Whether the DMS replication instance is publicly accessible, meaning it receives a public IP address and can be reached from the internet, as opposed to being private within the VPC. (AI-inferred)
+	PubliclyAccessible any
+	// The compute and memory capacity class for the replication instance, such as dms.t2.small or dms.c4.large, which determines the performance and cost of the instance. (AI-inferred)
+	ReplicationInstanceClass any
+	// Specifies a user-defined name for the replication instance, which must be unique within the AWS account and region and can include letters, numbers, and hyphens. (AI-inferred)
+	ReplicationInstanceIdentifier any
+	// The list of private IP addresses assigned to the AWS Database Migration Service replication instance. (AI-inferred)
+	ReplicationInstancePrivateIpAddresses any
+	// The public IP addresses assigned to the DMS replication instance when it is configured for public accessibility. (AI-inferred)
+	ReplicationInstancePublicIpAddresses any
+	// The identifier of an existing DMS replication subnet group that determines the VPC and subnets where the replication instance's network interfaces are placed. (AI-inferred)
+	ReplicationSubnetGroupIdentifier any
+	ResourceIdentifier any
+	// Specifies the tags (key-value pairs) to associate with the DMS replication instance, which are used for cost allocation, access control, and identifying the resource in AWS. (AI-inferred)
+	Tags any
+	// Specifies the VPC security group IDs to be associated with the DMS replication instance. (AI-inferred)
+	VpcSecurityGroupIds any
 }
 
 var ReplicationInstance = ubx.ResourceBinding{
@@ -57,33 +97,24 @@ var ReplicationInstance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllocatedStorage": ubx.FieldSpec{WireName: "allocated_storage"},
 		"AllowMajorVersionUpgrade": ubx.FieldSpec{WireName: "allow_major_version_upgrade"},
-		"ApplyImmediately": ubx.FieldSpec{WireName: "apply_immediately"},
 		"AutoMinorVersionUpgrade": ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
 		"DnsNameServers": ubx.FieldSpec{WireName: "dns_name_servers"},
 		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 		"MultiAz": ubx.FieldSpec{WireName: "multi_az"},
 		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
 		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
 		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ReplicationInstanceClass": ubx.FieldSpec{WireName: "replication_instance_class"},
-		"ReplicationInstanceId": ubx.FieldSpec{WireName: "replication_instance_id"},
-		"ReplicationSubnetGroupId": ubx.FieldSpec{WireName: "replication_subnet_group_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
-		"KerberosAuthenticationSettings": ubx.FieldSpec{
-			WireName: "kerberos_authentication_settings",
+		"ReplicationInstanceIdentifier": ubx.FieldSpec{WireName: "replication_instance_identifier"},
+		"ReplicationSubnetGroupIdentifier": ubx.FieldSpec{WireName: "replication_subnet_group_identifier"},
+		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: ReplicationInstance_KerberosAuthenticationSettingsFields,
+			Fields: ReplicationInstance_TagsFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: ReplicationInstance_TimeoutsFields,
-		},
+		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
 	},
 }

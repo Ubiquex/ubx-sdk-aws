@@ -8,7 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OrganizationalUnitAssociationConfig:
+    # ARN identifier of the NotificationConfiguration. Example: arn:aws:notifications::123456789012:configuration/a01jes88qxwkbj05xv9c967pgm1
     notification_configuration_arn: Any = None
+    # The ID of the organizational unit.
+    organizational_unit_id: Any = None
+
+@dataclasses.dataclass
+class OrganizationalUnitAssociationAttrs:
+    # ARN identifier of the NotificationConfiguration. Example: arn:aws:notifications::123456789012:configuration/a01jes88qxwkbj05xv9c967pgm1
+    notification_configuration_arn: Any = None
+    # The ID of the organizational unit.
     organizational_unit_id: Any = None
 
 OrganizationalUnitAssociation = ubx.ResourceBinding(

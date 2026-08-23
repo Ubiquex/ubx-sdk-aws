@@ -7,16 +7,36 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ResourceGroup_ResourceGroupTags:
+    # The key of a tag that, along with its value, defines an Amazon Inspector resource group, which is used to select EC2 instances for assessment. (AI-inferred)
+    key: Any = None
+    # The value of a tag that, combined with its key, defines an Amazon Inspector resource group used to scope which EC2 instances the Inspector service targets. (AI-inferred)
+    value: Any = None
+
+_ResourceGroup_ResourceGroupTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ResourceGroupConfig:
-    id: Any = None
-    region: Any = None
-    tags: Any = None
+    # Defines the tag key-value pairs that identify the EC2 instances to include in this Inspector resource group, used as the basis for an assessment target. (AI-inferred)
+    resource_group_tags: Any = None
+
+@dataclasses.dataclass
+class ResourceGroupAttrs:
+    # The Amazon Resource Name (ARN) of the Inspector resource group. (AI-inferred)
+    arn: Any = None
+    # Defines the tag key-value pairs that identify the EC2 instances to include in this Inspector resource group, used as the basis for an assessment target. (AI-inferred)
+    resource_group_tags: Any = None
 
 ResourceGroup = ubx.ResourceBinding(
     wire_type="aws_inspector_resource_group",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
+        "resource_group_tags": ubx.FieldSpec(
+            wire_name="resource_group_tags",
+            kind="list",
+            fields=_ResourceGroup_ResourceGroupTagsFields,
+        ),
     },
 )

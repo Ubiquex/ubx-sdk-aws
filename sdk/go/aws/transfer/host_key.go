@@ -3,13 +3,46 @@ package transfer
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type HostKey_Tags struct {
+	Key any
+	Value any
+}
+
+var HostKey_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type HostKeyConfig struct {
+	// The text description for this host key.
 	Description any
+	// The private key portion of an SSH key pair. Transfer Family accepts RSA, ECDSA, and ED25519 keys.
 	HostKeyBody any
-	HostKeyBodyWo any
-	Region any
+	// The identifier of the server that contains the host key.
 	ServerId any
+	// Key-value pairs that can be used to group and search for host keys.
 	Tags any
+}
+
+type HostKeyAttrs struct {
+	// The unique Amazon Resource Name (ARN) for the host key.
+	Arn any
+	// The date on which the host key was added to the server.
+	DateImported any
+	// The text description for this host key.
+	Description any
+	// The private key portion of an SSH key pair. Transfer Family accepts RSA, ECDSA, and ED25519 keys.
+	HostKeyBody any
+	// The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.
+	HostKeyFingerprint any
+	// A unique identifier for the host key.
+	HostKeyId any
+	// The identifier of the server that contains the host key.
+	ServerId any
+	// Key-value pairs that can be used to group and search for host keys.
+	Tags any
+	// The encryption algorithm that is used for the host key.
+	Type any
 }
 
 var HostKey = ubx.ResourceBinding{
@@ -17,9 +50,11 @@ var HostKey = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"HostKeyBody": ubx.FieldSpec{WireName: "host_key_body"},
-		"HostKeyBodyWo": ubx.FieldSpec{WireName: "host_key_body_wo"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ServerId": ubx.FieldSpec{WireName: "server_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: HostKey_TagsFields,
+		},
 	},
 }

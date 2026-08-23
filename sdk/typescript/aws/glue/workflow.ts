@@ -2,26 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WorkflowConfig {
-  defaultRunProperties?: Record<string, string> | Computed<Record<string, string>>;
+  /** A collection of properties to be used as part of each execution of the workflow */
+  defaultRunProperties?: unknown | Computed<unknown>;
+  /** A description of the workflow */
   description?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs. */
   maxConcurrentRuns?: number | Computed<number>;
+  /** The name of the workflow representing the flow */
   name?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** The tags to use with this workflow. */
+  tags?: unknown | Computed<unknown>;
 }
 
 export interface WorkflowAttrs {
-  arn: string;
-  defaultRunProperties: Record<string, string>;
+  /** A collection of properties to be used as part of each execution of the workflow */
+  defaultRunProperties: unknown;
+  /** A description of the workflow */
   description: string;
-  id: string;
+  /** You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs. */
   maxConcurrentRuns: number;
+  /** The name of the workflow representing the flow */
   name: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** The tags to use with this workflow. */
+  tags: unknown;
 }
 
 export const Workflow: ResourceBinding<WorkflowConfig, WorkflowAttrs> = {
@@ -29,11 +32,8 @@ export const Workflow: ResourceBinding<WorkflowConfig, WorkflowAttrs> = {
   fields: {
     defaultRunProperties: "default_run_properties",
     description: "description",
-    id: "id",
     maxConcurrentRuns: "max_concurrent_runs",
     name: "name",
-    region: "region",
     tags: "tags",
-    tagsAll: "tags_all",
   },
 };

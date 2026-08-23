@@ -8,59 +8,78 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class QuerySuggestionsBlockList_SourceS3Path:
+    # The name of the S3 bucket that contains the file.
     bucket: Any = None
+    # The name of the file.
     key: Any = None
 
 @dataclasses.dataclass
-class QuerySuggestionsBlockList_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class QuerySuggestionsBlockList_Tags:
+    # The tag key for a tag assigned to the query suggestions block list, used to organize, categorize, and identify the resource within your AWS environment. (AI-inferred)
+    key: Any = None
+    # tags.value represents the value component of a user-defined tag attached to the Amazon Kendra query suggestions block list, enabling you to assign metadata such as environment, project, or cost center for resource organization and management. (AI-inferred)
+    value: Any = None
 
 _QuerySuggestionsBlockList_SourceS3PathFields = {
     "bucket": ubx.FieldSpec(wire_name="bucket"),
     "key": ubx.FieldSpec(wire_name="key"),
 }
 
-_QuerySuggestionsBlockList_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_QuerySuggestionsBlockList_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class QuerySuggestionsBlockListConfig:
+    # A description for the block list.
     description: Any = None
-    id: Any = None
+    # The identifier of the index for the block list.
     index_id: Any = None
+    # The name of the block list.
     name: Any = None
-    region: Any = None
+    # The Amazon Resource Name (ARN) of an IAM role with permission to access the S3 bucket that contains the block list text file.
     role_arn: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Information required to find a specific file in an Amazon S3 bucket.
     source_s3_path: Any = None
-    timeouts: Any = None
+    # A list of key-value pairs that identify or categorize the block list.
+    tags: Any = None
+
+@dataclasses.dataclass
+class QuerySuggestionsBlockListAttrs:
+    # The Amazon Resource Name (ARN) of the query suggestions block list.
+    arn: Any = None
+    # A description for the block list.
+    description: Any = None
+    # The identifier of the block list.
+    id: Any = None
+    # The identifier of the index for the block list.
+    index_id: Any = None
+    # The name of the block list.
+    name: Any = None
+    # The Amazon Resource Name (ARN) of an IAM role with permission to access the S3 bucket that contains the block list text file.
+    role_arn: Any = None
+    # Information required to find a specific file in an Amazon S3 bucket.
+    source_s3_path: Any = None
+    # A list of key-value pairs that identify or categorize the block list.
+    tags: Any = None
 
 QuerySuggestionsBlockList = ubx.ResourceBinding(
     wire_type="aws_kendra_query_suggestions_block_list",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "index_id": ubx.FieldSpec(wire_name="index_id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "role_arn": ubx.FieldSpec(wire_name="role_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "source_s3_path": ubx.FieldSpec(
             wire_name="source_s3_path",
-            kind="list",
+            kind="object",
             fields=_QuerySuggestionsBlockList_SourceS3PathFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_QuerySuggestionsBlockList_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_QuerySuggestionsBlockList_TagsFields,
         ),
     },
 )

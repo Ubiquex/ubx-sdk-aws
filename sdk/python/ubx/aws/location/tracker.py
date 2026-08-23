@@ -7,26 +7,82 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Tracker_Tags:
+    # The key of a tag assigned to the Amazon Location Service tracker, used to organize and identify the resource. (AI-inferred)
+    key: Any = None
+    # The value portion of a tag assigned to the AWS Location Service tracker, used to identify and organize tracker resources. (AI-inferred)
+    value: Any = None
+
+_Tracker_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class TrackerConfig:
+    # The optional description string for the AWS Location Service tracker, allowing users to attach a human-readable note to the resource. (AI-inferred)
     description: Any = None
-    id: Any = None
+    # Specifies whether the tracker publishes geofence and location events to Amazon EventBridge for downstream processing. (AI-inferred)
+    event_bridge_enabled: Any = None
+    # When set to true, enables the tracker to encrypt and perform geospatial queries (e.g., search by polygon) using the specified AWS KMS key, rather than only simple positional updates. (AI-inferred)
+    kms_key_enable_geospatial_queries: Any = None
+    # The ID of an AWS KMS customer-managed key used to encrypt the tracker's location data; if not specified, an AWS-owned key encrypts the data. (AI-inferred)
     kms_key_id: Any = None
+    # Specifies how incoming device position updates are filtered for storage, with valid values being TimeBased, DistanceBased, or AccuracyBased. (AI-inferred)
     position_filtering: Any = None
-    region: Any = None
+    # Specifies the pricing plan for the tracker, which determines the billing rate and feature set, with valid values such as 'RequestBasedUsage', 'MobileAssetTracking', and 'MobileAssetManagement'. (AI-inferred)
+    pricing_plan: Any = None
+    # This shape is deprecated since 2022-02-01: Deprecated. No longer allowed.
+    pricing_plan_data_source: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+    # A unique name for the tracker resource, used as its identifier and required when creating the tracker in Amazon Location Service. (AI-inferred)
     tracker_name: Any = None
+
+@dataclasses.dataclass
+class TrackerAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies the Location Service tracker, assigned by AWS when the tracker is created. (AI-inferred)
+    arn: Any = None
+    # The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
+    create_time: Any = None
+    # The optional description string for the AWS Location Service tracker, allowing users to attach a human-readable note to the resource. (AI-inferred)
+    description: Any = None
+    # Specifies whether the tracker publishes geofence and location events to Amazon EventBridge for downstream processing. (AI-inferred)
+    event_bridge_enabled: Any = None
+    # When set to true, enables the tracker to encrypt and perform geospatial queries (e.g., search by polygon) using the specified AWS KMS key, rather than only simple positional updates. (AI-inferred)
+    kms_key_enable_geospatial_queries: Any = None
+    # The ID of an AWS KMS customer-managed key used to encrypt the tracker's location data; if not specified, an AWS-owned key encrypts the data. (AI-inferred)
+    kms_key_id: Any = None
+    # Specifies how incoming device position updates are filtered for storage, with valid values being TimeBased, DistanceBased, or AccuracyBased. (AI-inferred)
+    position_filtering: Any = None
+    # Specifies the pricing plan for the tracker, which determines the billing rate and feature set, with valid values such as 'RequestBasedUsage', 'MobileAssetTracking', and 'MobileAssetManagement'. (AI-inferred)
+    pricing_plan: Any = None
+    # This shape is deprecated since 2022-02-01: Deprecated. No longer allowed.
+    pricing_plan_data_source: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # The Amazon Resource Name (ARN) of the AWS Location Service tracker, which uniquely identifies the tracker resource. (AI-inferred)
+    tracker_arn: Any = None
+    # A unique name for the tracker resource, used as its identifier and required when creating the tracker in Amazon Location Service. (AI-inferred)
+    tracker_name: Any = None
+    # The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
+    update_time: Any = None
 
 Tracker = ubx.ResourceBinding(
     wire_type="aws_location_tracker",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "event_bridge_enabled": ubx.FieldSpec(wire_name="event_bridge_enabled"),
+        "kms_key_enable_geospatial_queries": ubx.FieldSpec(wire_name="kms_key_enable_geospatial_queries"),
         "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
         "position_filtering": ubx.FieldSpec(wire_name="position_filtering"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "pricing_plan": ubx.FieldSpec(wire_name="pricing_plan"),
+        "pricing_plan_data_source": ubx.FieldSpec(wire_name="pricing_plan_data_source"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Tracker_TagsFields,
+        ),
         "tracker_name": ubx.FieldSpec(wire_name="tracker_name"),
     },
 )

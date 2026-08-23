@@ -8,13 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccessPoint_PublicAccessBlockConfiguration:
+    # Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to TRUE causes the following behavior: - PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public. - PUT Object calls fail if the request includes a public ACL. . - PUT Bucket calls fail if the request includes a public ACL. Enabling this setting doesn't affect existing policies or ACLs.
     block_public_acls: Any = None
+    # Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to TRUE causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. Enabling this setting doesn't affect existing bucket policies.
     block_public_policy: Any = None
+    # Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to TRUE causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.
     ignore_public_acls: Any = None
+    # Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to TRUE restricts access to this bucket to only AWS services and authorized users within this account if the bucket has a public policy. Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.
     restrict_public_buckets: Any = None
 
 @dataclasses.dataclass
+class AccessPoint_Tags:
+    key: Any = None
+    # The value of a tag key-value pair attached to the S3 access point, used for metadata, cost allocation, and tag-based access control through IAM policies. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
 class AccessPoint_VpcConfiguration:
+    # If this field is specified, this access point will only allow connections from the specified VPC ID.
     vpc_id: Any = None
 
 _AccessPoint_PublicAccessBlockConfigurationFields = {
@@ -24,44 +35,75 @@ _AccessPoint_PublicAccessBlockConfigurationFields = {
     "restrict_public_buckets": ubx.FieldSpec(wire_name="restrict_public_buckets"),
 }
 
+_AccessPoint_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 _AccessPoint_VpcConfigurationFields = {
     "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
 }
 
 @dataclasses.dataclass
 class AccessPointConfig:
-    account_id: Any = None
+    # The name of the bucket that you want to associate this Access Point with.
     bucket: Any = None
+    # The AWS account ID associated with the S3 bucket associated with this access point.
     bucket_account_id: Any = None
-    id: Any = None
+    # The name you want to assign to this Access Point. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the access point name.
     name: Any = None
+    # The Access Point Policy you want to apply to this access point.
     policy: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Configuration block that specifies the public access block settings for this S3 access point, controlling whether public ACLs and public bucket policies are blocked and whether the access point can be accessed by public buckets. (AI-inferred)
     public_access_block_configuration: Any = None
+    # An arbitrary set of tags (key-value pairs) for this S3 Access Point.
+    tags: Any = None
+    # The Virtual Private Cloud (VPC) configuration for a bucket access point.
+    vpc_configuration: Any = None
+
+@dataclasses.dataclass
+class AccessPointAttrs:
+    # The alias of this Access Point. This alias can be used for compatibility purposes with other AWS services and third-party applications.
+    alias: Any = None
+    # the Amazon Resource Name (ARN) of the specified accesspoint.
+    arn: Any = None
+    # The name of the bucket that you want to associate this Access Point with.
+    bucket: Any = None
+    # The AWS account ID associated with the S3 bucket associated with this access point.
+    bucket_account_id: Any = None
+    # The name you want to assign to this Access Point. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the access point name.
+    name: Any = None
+    # Indicates whether this Access Point allows access from the public Internet. If VpcConfiguration is specified for this Access Point, then NetworkOrigin is VPC, and the Access Point doesn't allow access from the public Internet. Otherwise, NetworkOrigin is Internet, and the Access Point allows access from the public Internet, subject to the Access Point and bucket access policies.
+    network_origin: Any = None
+    # The Access Point Policy you want to apply to this access point.
+    policy: Any = None
+    # Configuration block that specifies the public access block settings for this S3 access point, controlling whether public ACLs and public bucket policies are blocked and whether the access point can be accessed by public buckets. (AI-inferred)
+    public_access_block_configuration: Any = None
+    # An arbitrary set of tags (key-value pairs) for this S3 Access Point.
+    tags: Any = None
+    # The Virtual Private Cloud (VPC) configuration for a bucket access point.
     vpc_configuration: Any = None
 
 AccessPoint = ubx.ResourceBinding(
     wire_type="aws_s3_access_point",
     fields={
-        "account_id": ubx.FieldSpec(wire_name="account_id"),
         "bucket": ubx.FieldSpec(wire_name="bucket"),
         "bucket_account_id": ubx.FieldSpec(wire_name="bucket_account_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "policy": ubx.FieldSpec(wire_name="policy"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "public_access_block_configuration": ubx.FieldSpec(
             wire_name="public_access_block_configuration",
-            kind="list",
+            kind="object",
             fields=_AccessPoint_PublicAccessBlockConfigurationFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_AccessPoint_TagsFields,
         ),
         "vpc_configuration": ubx.FieldSpec(
             wire_name="vpc_configuration",
-            kind="list",
+            kind="object",
             fields=_AccessPoint_VpcConfigurationFields,
         ),
     },

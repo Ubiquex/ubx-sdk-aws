@@ -7,16 +7,69 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class DomainConfig:
-    domain_name: Any = None
+class Domain_DomainEntries:
     id: Any = None
-    region: Any = None
+    # Indicates whether the domain entry is an alias record that routes traffic to an AWS resource such as a load balancer or distribution, rather than a standard DNS record with a literal target. (AI-inferred)
+    is_alias: Any = None
+    # The subdomain or hostname for the DNS record, such as 'www' or '@' for the root domain, that this domain entry defines. (AI-inferred)
+    name: Any = None
+    # The destination value that this Lightsail domain DNS record resolves to, such as an IPv4 address for an A record or a hostname for a CNAME record. (AI-inferred)
+    target: Any = None
+    # The DNS record type for this domain entry, such as A, CNAME, MX, or TXT. (AI-inferred)
+    type: Any = None
+
+@dataclasses.dataclass
+class Domain_Location:
+    # The Availability Zone.
+    availability_zone: Any = None
+    # The AWS Region name.
+    region_name: Any = None
+
+@dataclasses.dataclass
+class Domain_Tags:
+    # The key of a tag that can be assigned to a Lightsail domain, enabling you to categorize, manage, and control access to the domain. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_Domain_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
+class DomainConfig:
+    # The name of the domain to manage in Lightsail.
+    domain_name: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class DomainAttrs:
+    # The Amazon Resource Name (ARN) of the domain (read-only).
+    arn: Any = None
+    # The timestamp when the domain was created (read-only).
+    created_at: Any = None
+    # An array of key-value pairs containing information about the domain entries.
+    domain_entries: Any = None
+    # The name of the domain to manage in Lightsail.
+    domain_name: Any = None
+    # The AWS Region and Availability Zone where the domain was created (read-only).
+    location: Any = None
+    # The Lightsail resource type (read-only).
+    resource_type: Any = None
+    # The support code. Include this code in your email to support when you have questions (read-only).
+    support_code: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Domain = ubx.ResourceBinding(
     wire_type="aws_lightsail_domain",
     fields={
         "domain_name": ubx.FieldSpec(wire_name="domain_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Domain_TagsFields,
+        ),
     },
 )

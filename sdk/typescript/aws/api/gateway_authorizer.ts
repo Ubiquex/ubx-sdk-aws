@@ -2,46 +2,64 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayAuthorizerConfig {
+  /** Specifies the required authentication type (such as 'oauth' or 'openid') for the custom authorizer, which is optional and only relevant when the authorizer type is 'CUSTOM'. (AI-inferred) */
+  authType?: string | Computed<string>;
+  /** Specifies the ARN of an IAM role that Amazon API Gateway assumes when invoking the authorizer, used to grant permissions for the authorizer's backend (such as a Lambda function) to be called. (AI-inferred) */
   authorizerCredentials?: string | Computed<string>;
+  /** The number of seconds that API Gateway caches the authorizer result before re-invoking the authorizer Lambda function. (AI-inferred) */
   authorizerResultTtlInSeconds?: number | Computed<number>;
+  /** The URI of the Lambda function that serves as the custom authorizer, typically formatted as arn:aws:apigateway:{region}:lambda:path/2015-03-31/functions/{lambda-arn}/invocations. (AI-inferred) */
   authorizerUri?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** Defines the request parameter (e.g., method.request.header.Authorization) from which API Gateway extracts the caller's identity token for the custom or token authorizer. (AI-inferred) */
   identitySource?: string | Computed<string>;
+  /** Specifies a regular expression that AWS API Gateway uses to validate the incoming identity (such as a bearer token) for the authorizer; if the identity does not match the expression, API Gateway rejects the request with a 401 response. (AI-inferred) */
   identityValidationExpression?: string | Computed<string>;
+  /** The name of the custom authorizer, which must be unique within the API Gateway REST API. (AI-inferred) */
   name: string | Computed<string>;
+  /** The list of Amazon Cognito user pool ARNs that this API Gateway authorizer uses to validate tokens for a COGNITO_USER_POOLS authorizer type. (AI-inferred) */
   providerArns?: string[] | Computed<string[]>;
-  region?: string | Computed<string>;
+  /** The unique identifier or reference (typically the logical ID of an aws_api_gateway_rest_api resource) of the REST API in API Gateway that this custom authorizer is associated with. (AI-inferred) */
   restApiId: string | Computed<string>;
-  type?: string | Computed<string>;
+  /** Specifies the authorizer type, which determines the authorization mechanism for API Gateway requests: valid values are TOKEN, REQUEST, or COGNITO_USER_POOLS, corresponding to Lambda token authorizers, Lambda request authorizers, and Amazon Cognito user pool authorizers respectively. (AI-inferred) */
+  type: string | Computed<string>;
 }
 
 export interface GatewayAuthorizerAttrs {
-  arn: string;
+  /** Specifies the required authentication type (such as 'oauth' or 'openid') for the custom authorizer, which is optional and only relevant when the authorizer type is 'CUSTOM'. (AI-inferred) */
+  authType: string;
+  /** Specifies the ARN of an IAM role that Amazon API Gateway assumes when invoking the authorizer, used to grant permissions for the authorizer's backend (such as a Lambda function) to be called. (AI-inferred) */
   authorizerCredentials: string;
+  /** The unique identifier assigned by Amazon API Gateway to the authorizer when it is created. (AI-inferred) */
+  authorizerId: string;
+  /** The number of seconds that API Gateway caches the authorizer result before re-invoking the authorizer Lambda function. (AI-inferred) */
   authorizerResultTtlInSeconds: number;
+  /** The URI of the Lambda function that serves as the custom authorizer, typically formatted as arn:aws:apigateway:{region}:lambda:path/2015-03-31/functions/{lambda-arn}/invocations. (AI-inferred) */
   authorizerUri: string;
-  id: string;
+  /** Defines the request parameter (e.g., method.request.header.Authorization) from which API Gateway extracts the caller's identity token for the custom or token authorizer. (AI-inferred) */
   identitySource: string;
+  /** Specifies a regular expression that AWS API Gateway uses to validate the incoming identity (such as a bearer token) for the authorizer; if the identity does not match the expression, API Gateway rejects the request with a 401 response. (AI-inferred) */
   identityValidationExpression: string;
+  /** The name of the custom authorizer, which must be unique within the API Gateway REST API. (AI-inferred) */
   name: string;
+  /** The list of Amazon Cognito user pool ARNs that this API Gateway authorizer uses to validate tokens for a COGNITO_USER_POOLS authorizer type. (AI-inferred) */
   providerArns: string[];
-  region: string;
+  /** The unique identifier or reference (typically the logical ID of an aws_api_gateway_rest_api resource) of the REST API in API Gateway that this custom authorizer is associated with. (AI-inferred) */
   restApiId: string;
+  /** Specifies the authorizer type, which determines the authorization mechanism for API Gateway requests: valid values are TOKEN, REQUEST, or COGNITO_USER_POOLS, corresponding to Lambda token authorizers, Lambda request authorizers, and Amazon Cognito user pool authorizers respectively. (AI-inferred) */
   type: string;
 }
 
 export const GatewayAuthorizer: ResourceBinding<GatewayAuthorizerConfig, GatewayAuthorizerAttrs> = {
   wireType: "aws_api_gateway_authorizer",
   fields: {
+    authType: "auth_type",
     authorizerCredentials: "authorizer_credentials",
     authorizerResultTtlInSeconds: "authorizer_result_ttl_in_seconds",
     authorizerUri: "authorizer_uri",
-    id: "id",
     identitySource: "identity_source",
     identityValidationExpression: "identity_validation_expression",
     name: "name",
     providerArns: "provider_arns",
-    region: "region",
     restApiId: "rest_api_id",
     type: "type",
   },

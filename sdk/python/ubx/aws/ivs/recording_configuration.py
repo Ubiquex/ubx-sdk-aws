@@ -8,21 +8,37 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecordingConfiguration_DestinationConfiguration_S3:
+    # The name of the Amazon S3 bucket where AWS IVS stores the recorded video segments for this recording configuration. (AI-inferred)
     bucket_name: Any = None
 
 @dataclasses.dataclass
 class RecordingConfiguration_DestinationConfiguration:
+    # Recording S3 Destination Configuration.
     s3: Any = None
 
 @dataclasses.dataclass
-class RecordingConfiguration_ThumbnailConfiguration:
-    recording_mode: Any = None
-    target_interval_seconds: Any = None
+class RecordingConfiguration_RenditionConfiguration:
+    # Resolution Selection indicates which set of renditions are recorded for a stream.
+    rendition_selection: Any = None
+    # Renditions indicates which renditions are recorded for a stream.
+    renditions: Any = None
 
 @dataclasses.dataclass
-class RecordingConfiguration_Timeouts:
-    create: Any = None
-    delete: Any = None
+class RecordingConfiguration_Tags:
+    key: Any = None
+    # The value of a tag attached to an AWS IVS recording configuration, used to organize, categorize, and manage the resource. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class RecordingConfiguration_ThumbnailConfiguration:
+    # Thumbnail Recording Mode, which determines whether thumbnails are recorded at an interval or are disabled.
+    recording_mode: Any = None
+    # Resolution indicates the desired resolution of recorded thumbnails.
+    resolution: Any = None
+    # Storage indicates the format in which thumbnails are recorded.
+    storage: Any = None
+    # Target Interval Seconds defines the interval at which thumbnails are recorded. This field is required if RecordingMode is INTERVAL.
+    target_interval_seconds: Any = None
 
 _RecordingConfiguration_DestinationConfiguration_S3Fields = {
     "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
@@ -31,56 +47,86 @@ _RecordingConfiguration_DestinationConfiguration_S3Fields = {
 _RecordingConfiguration_DestinationConfigurationFields = {
     "s3": ubx.FieldSpec(
         wire_name="s3",
-        kind="list",
+        kind="object",
         fields=_RecordingConfiguration_DestinationConfiguration_S3Fields,
     ),
 }
 
-_RecordingConfiguration_ThumbnailConfigurationFields = {
-    "recording_mode": ubx.FieldSpec(wire_name="recording_mode"),
-    "target_interval_seconds": ubx.FieldSpec(wire_name="target_interval_seconds"),
+_RecordingConfiguration_RenditionConfigurationFields = {
+    "rendition_selection": ubx.FieldSpec(wire_name="rendition_selection"),
+    "renditions": ubx.FieldSpec(wire_name="renditions"),
 }
 
-_RecordingConfiguration_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_RecordingConfiguration_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_RecordingConfiguration_ThumbnailConfigurationFields = {
+    "recording_mode": ubx.FieldSpec(wire_name="recording_mode"),
+    "resolution": ubx.FieldSpec(wire_name="resolution"),
+    "storage": ubx.FieldSpec(wire_name="storage"),
+    "target_interval_seconds": ubx.FieldSpec(wire_name="target_interval_seconds"),
 }
 
 @dataclasses.dataclass
 class RecordingConfigurationConfig:
-    id: Any = None
-    name: Any = None
-    recording_reconnect_window_seconds: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Recording Destination Configuration.
     destination_configuration: Any = None
+    # Recording Configuration Name.
+    name: Any = None
+    # Recording Reconnect Window Seconds. (0 means disabled)
+    recording_reconnect_window_seconds: Any = None
+    # Rendition Configuration describes which renditions should be recorded for a stream.
+    rendition_configuration: Any = None
+    # A list of key-value pairs that contain metadata for the asset model.
+    tags: Any = None
+    # Recording Thumbnail Configuration.
     thumbnail_configuration: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class RecordingConfigurationAttrs:
+    # Recording Configuration ARN is automatically generated on creation and assigned as the unique identifier.
+    arn: Any = None
+    # Recording Destination Configuration.
+    destination_configuration: Any = None
+    # Recording Configuration Name.
+    name: Any = None
+    # Recording Reconnect Window Seconds. (0 means disabled)
+    recording_reconnect_window_seconds: Any = None
+    # Rendition Configuration describes which renditions should be recorded for a stream.
+    rendition_configuration: Any = None
+    # Recording Configuration State.
+    state: Any = None
+    # A list of key-value pairs that contain metadata for the asset model.
+    tags: Any = None
+    # Recording Thumbnail Configuration.
+    thumbnail_configuration: Any = None
 
 RecordingConfiguration = ubx.ResourceBinding(
     wire_type="aws_ivs_recording_configuration",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "recording_reconnect_window_seconds": ubx.FieldSpec(wire_name="recording_reconnect_window_seconds"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "destination_configuration": ubx.FieldSpec(
             wire_name="destination_configuration",
-            kind="list",
+            kind="object",
             fields=_RecordingConfiguration_DestinationConfigurationFields,
+        ),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "recording_reconnect_window_seconds": ubx.FieldSpec(wire_name="recording_reconnect_window_seconds"),
+        "rendition_configuration": ubx.FieldSpec(
+            wire_name="rendition_configuration",
+            kind="object",
+            fields=_RecordingConfiguration_RenditionConfigurationFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_RecordingConfiguration_TagsFields,
         ),
         "thumbnail_configuration": ubx.FieldSpec(
             wire_name="thumbnail_configuration",
-            kind="list",
-            fields=_RecordingConfiguration_ThumbnailConfigurationFields,
-        ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
             kind="object",
-            fields=_RecordingConfiguration_TimeoutsFields,
+            fields=_RecordingConfiguration_ThumbnailConfigurationFields,
         ),
     },
 )

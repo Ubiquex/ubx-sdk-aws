@@ -7,199 +7,411 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Template_BlockDeviceMappings_Ebs:
+class Template_LaunchTemplateData_BlockDeviceMappings_Ebs:
+    # Indicates whether the EBS volume is deleted when the associated EC2 instance is terminated, controlling the lifecycle persistence of the volume. (AI-inferred)
     delete_on_termination: Any = None
+    # The index of the EBS card on the Nitro System instance to which this EBS volume is attached, used to specify the EBS card for instances with multiple EBS cards. (AI-inferred)
+    ebs_card_index: Any = None
+    # Indicates whether the EBS volume is encrypted. (AI-inferred)
     encrypted: Any = None
+    # The number of I/O operations per second (IOPS) to provision for the EBS volume, used for Provisioned IOPS volumes (io1/io2) or configurable for gp3 volumes in the launch template's block device mapping. (AI-inferred)
     iops: Any = None
+    # The ARN of the AWS KMS key used to encrypt the EBS volume in this block device mapping; if omitted, the default EBS encryption key is used. (AI-inferred)
     kms_key_id: Any = None
+    # The ID of the Amazon EBS snapshot to use as the source for the EBS volume created by this block device mapping in the launch template. (AI-inferred)
     snapshot_id: Any = None
+    # Specifies the throughput (in MiB/s) to provision for a gp3 EBS volume in the launch template's block device mapping. (AI-inferred)
     throughput: Any = None
+    # Specifies the initialization rate for an EBS volume created from a snapshot, controlling the speed at which the volume is populated and made ready for use. (AI-inferred)
     volume_initialization_rate: Any = None
+    # The size of the EBS volume in GiB to attach to the instance when the block device mapping is applied. (AI-inferred)
     volume_size: Any = None
+    # Specifies the Amazon EBS volume type (e.g., gp2, gp3, io1, io2, sc1, st1, standard) for the block device mapping defined in the EC2 launch template's LaunchTemplateData. (AI-inferred)
     volume_type: Any = None
 
 @dataclasses.dataclass
-class Template_BlockDeviceMappings:
+class Template_LaunchTemplateData_BlockDeviceMappings:
+    # Specifies the device name (for example, /dev/xvda) for the block device as exposed to the EC2 instance, used to identify the volume within the launch template's block device mapping. (AI-inferred)
     device_name: Any = None
-    no_device: Any = None
-    virtual_name: Any = None
+    # Specifies the Amazon EBS volume configuration for the block device mapping, including volume size, type, IOPS, throughput, encryption, delete-on-termination, and snapshot-based settings for the attached EBS volume. (AI-inferred)
     ebs: Any = None
+    # Indicates whether to suppress the device mapping for the device specified by the corresponding `device_name`, effectively preventing that device from being attached to the instance. (AI-inferred)
+    no_device: Any = None
+    # The virtual device name (e.g., ephemeral0) for an instance store volume in the block device mapping, used when the mapping is for an ephemeral device rather than an EBS volume. (AI-inferred)
+    virtual_name: Any = None
 
 @dataclasses.dataclass
-class Template_CapacityReservationSpecification_CapacityReservationTarget:
+class Template_LaunchTemplateData_CapacityReservationSpecification_CapacityReservationTarget:
+    # The ID of the Capacity Reservation in which to run the instance.
     capacity_reservation_id: Any = None
+    # The ARN of the Capacity Reservation resource group in which to run the instance.
     capacity_reservation_resource_group_arn: Any = None
 
 @dataclasses.dataclass
-class Template_CapacityReservationSpecification:
+class Template_LaunchTemplateData_CapacityReservationSpecification:
+    # Indicates the instance's Capacity Reservation preferences. Possible preferences include: + ``capacity-reservations-only`` - The instance will only run in a Capacity Reservation or Capacity Reservation group. If capacity isn't available, the instance will fail to launch. + ``open`` - The instance can run in any ``open`` Capacity Reservation that has matching attributes (instance type, platform, Availability Zone, tenancy). + ``none`` - The instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.
     capacity_reservation_preference: Any = None
+    # Specifies a target Capacity Reservation. ``CapacityReservationTarget`` is a property of the [Amazon EC2 LaunchTemplate LaunchTemplateData](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html) property type.
     capacity_reservation_target: Any = None
 
 @dataclasses.dataclass
-class Template_CpuOptions:
+class Template_LaunchTemplateData_CpuOptions:
+    # Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only. For more information, see [AMD SEV-SNP for Amazon EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html).
     amd_sev_snp: Any = None
+    # The number of CPU cores for the instance.
     core_count: Any = None
+    # Indicates whether the instance is enabled for nested virtualization.
     nested_virtualization: Any = None
+    # The number of threads per CPU core. To disable multithreading for the instance, specify a value of ``1``. Otherwise, specify the default value of ``2``.
     threads_per_core: Any = None
 
 @dataclasses.dataclass
-class Template_CreditSpecification:
+class Template_LaunchTemplateData_CreditSpecification:
+    # The credit option for CPU usage of a T instance. Valid values: ``standard`` | ``unlimited``
     cpu_credits: Any = None
 
 @dataclasses.dataclass
-class Template_EnclaveOptions:
+class Template_LaunchTemplateData_EnclaveOptions:
+    # If this parameter is set to ``true``, the instance is enabled for AWS Nitro Enclaves; otherwise, it is not enabled for AWS Nitro Enclaves.
     enabled: Any = None
 
 @dataclasses.dataclass
-class Template_HibernationOptions:
+class Template_LaunchTemplateData_HibernationOptions:
+    # If you set this parameter to ``true``, the instance is enabled for hibernation. Default: ``false``
     configured: Any = None
 
 @dataclasses.dataclass
-class Template_IamInstanceProfile:
+class Template_LaunchTemplateData_IamInstanceProfile:
+    # The Amazon Resource Name (ARN) of the instance profile.
     arn: Any = None
+    # The name of the instance profile.
     name: Any = None
 
 @dataclasses.dataclass
-class Template_InstanceMarketOptions_SpotOptions:
+class Template_LaunchTemplateData_InstanceMarketOptions_SpotOptions:
+    # Deprecated.
     block_duration_minutes: Any = None
+    # The behavior when a Spot Instance is interrupted. The default is ``terminate``.
     instance_interruption_behavior: Any = None
+    # The maximum hourly price you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price. If you do specify this parameter, it must be more than USD $0.001. Specifying a value below USD $0.001 will result in an ``InvalidParameterValue`` error message when the launch template is used to launch an instance. If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.
     max_price: Any = None
+    # The Spot Instance request type. If you are using Spot Instances with an Auto Scaling group, use ``one-time`` requests, as the ASlong service handles requesting new Spot Instances whenever the group is below its desired capacity.
     spot_instance_type: Any = None
+    # The end date of the request, in UTC format (*YYYY-MM-DD*T*HH:MM:SS*Z). Supported only for persistent requests. + For a persistent request, the request remains active until the ``ValidUntil`` date and time is reached. Otherwise, the request remains active until you cancel it. + For a one-time request, ``ValidUntil`` is not supported. The request remains active until all instances launch or you cancel the request. Default: 7 days from the current date
     valid_until: Any = None
 
 @dataclasses.dataclass
-class Template_InstanceMarketOptions:
+class Template_LaunchTemplateData_InstanceMarketOptions:
+    # The market type.
     market_type: Any = None
+    # Specifies options for Spot Instances. ``SpotOptions`` is a property of [AWS::EC2::LaunchTemplate InstanceMarketOptions](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions.html).
     spot_options: Any = None
 
 @dataclasses.dataclass
-class Template_InstanceRequirements_AcceleratorCount:
+class Template_LaunchTemplateData_InstanceRequirements_AcceleratorCount:
+    # The maximum number of accelerators. To specify no maximum limit, omit this parameter. To exclude accelerator-enabled instance types, set ``Max`` to ``0``.
     max: Any = None
+    # The minimum number of accelerators. To specify no minimum limit, omit this parameter.
     min: Any = None
 
 @dataclasses.dataclass
-class Template_InstanceRequirements:
-    accelerator_manufacturers: Any = None
-    accelerator_names: Any = None
-    accelerator_types: Any = None
-    allowed_instance_types: Any = None
-    bare_metal: Any = None
-    burstable_performance: Any = None
-    cpu_manufacturers: Any = None
-    excluded_instance_types: Any = None
-    instance_generations: Any = None
-    local_storage: Any = None
-    local_storage_types: Any = None
-    max_spot_price_as_percentage_of_optimal_on_demand_price: Any = None
-    on_demand_max_price_percentage_over_lowest_price: Any = None
-    require_hibernate_support: Any = None
-    spot_max_price_percentage_over_lowest_price: Any = None
+class Template_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_Cpu_References:
+    # The instance family (e.g., 'c5', 'm5') that serves as a CPU baseline reference when defining baseline performance factors for the launch template's instance requirements. (AI-inferred)
+    instance_family: Any = None
+
+@dataclasses.dataclass
+class Template_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_Cpu:
+    # A list of references to be used as baseline for the CPU performance. Currently, you can only specify a single reference across different instance type variations such as CPU manufacturers, architectures etc.
+    references: Any = None
+
+@dataclasses.dataclass
+class Template_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors:
+    # Specifies the CPU performance to consider when using an instance family as the baseline reference.
+    cpu: Any = None
+
+@dataclasses.dataclass
+class Template_LaunchTemplateData_InstanceRequirements:
+    # The minimum and maximum number of accelerators (GPUs, FPGAs, or AWS Inferentia chips) on an instance.
     accelerator_count: Any = None
-    accelerator_total_memory_mib: Any = None
+    # Indicates whether instance types must have accelerators by specific manufacturers. + For instance types with AWS devices, specify ``amazon-web-services``. + For instance types with AMD devices, specify ``amd``. + For instance types with Habana devices, specify ``habana``. + For instance types with NVIDIA devices, specify ``nvidia``. + For instance types with Xilinx devices, specify ``xilinx``. Default: Any manufacturer
+    accelerator_manufacturers: Any = None
+    # The accelerators that must be on the instance type. + For instance types with NVIDIA A10G GPUs, specify ``a10g``. + For instance types with NVIDIA A100 GPUs, specify ``a100``. + For instance types with NVIDIA H100 GPUs, specify ``h100``. + For instance types with AWS Inferentia chips, specify ``inferentia``. + For instance types with AWS Inferentia2 chips, specify ``inferentia2``. + For instance types with Habana Gaudi HL-205 GPUs, specify ``gaudi-hl-205``. + For instance types with NVIDIA GRID K520 GPUs, specify ``k520``. + For instance types with NVIDIA K80 GPUs, specify ``k80``. + For instance types with NVIDIA L4 GPUs, specify ``l4``. + For instance types with NVIDIA L40S GPUs, specify ``l40s``. + For instance types with NVIDIA M60 GPUs, specify ``m60``. + For instance types with AMD Radeon Pro V520 GPUs, specify ``radeon-pro-v520``. + For instance types with AWS Trainium chips, specify ``trainium``. + For instance types with AWS Trainium2 chips, specify ``trainium2``. + For instance types with NVIDIA T4 GPUs, specify ``t4``. + For instance types with NVIDIA T4G GPUs, specify ``t4g``. + For instance types with Xilinx U30 cards, specify ``u30``. + For instance types with Xilinx VU9P FPGAs, specify ``vu9p``. + For instance types with NVIDIA V100 GPUs, specify ``v100``. Default: Any accelerator
+    accelerator_names: Any = None
+    # The minimum and maximum amount of total accelerator memory, in MiB.
+    accelerator_total_memory_mi_b: Any = None
+    # The accelerator types that must be on the instance type. + For instance types with FPGA accelerators, specify ``fpga``. + For instance types with GPU accelerators, specify ``gpu``. + For instance types with Inference accelerators, specify ``inference``. + For instance types with Media accelerators, specify ``media``. Default: Any accelerator type
+    accelerator_types: Any = None
+    # The instance types to apply your specified attributes against. All other instance types are ignored, even if they match your specified attributes. You can use strings with one or more wild cards, represented by an asterisk (``*``), to allow an instance type, size, or generation. The following are examples: ``m5.8xlarge``, ``c5*.*``, ``m5a.*``, ``r*``, ``*3*``. For example, if you specify ``c5*``,Amazon EC2 will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify ``m5a.*``, Amazon EC2 will allow all the M5a instance types, but not the M5n instance types. If you specify ``AllowedInstanceTypes``, you can't specify ``ExcludedInstanceTypes``. Default: All instance types
+    allowed_instance_types: Any = None
+    # Indicates whether bare metal instance types must be included, excluded, or required. + To include bare metal instance types, specify ``included``. + To require only bare metal instance types, specify ``required``. + To exclude bare metal instance types, specify ``excluded``. Default: ``excluded``
+    bare_metal: Any = None
+    # The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more information, see [Amazon EBS–optimized instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) in the *Amazon EC2 User Guide*.
     baseline_ebs_bandwidth_mbps: Any = None
-    memory_gib_per_vcpu: Any = None
-    memory_mib: Any = None
+    # The baseline performance to consider, using an instance family as a baseline reference. The instance family establishes the lowest acceptable level of performance. Amazon EC2 uses this baseline to guide instance type selection, but there is no guarantee that the selected instance types will always exceed the baseline for every application. Currently, this parameter only supports CPU performance as a baseline performance factor. For example, specifying ``c6i`` would use the CPU performance of the ``c6i`` family as the baseline reference.
+    baseline_performance_factors: Any = None
+    # Indicates whether burstable performance T instance types are included, excluded, or required. For more information, see [Burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html). + To include burstable performance instance types, specify ``included``. + To require only burstable performance instance types, specify ``required``. + To exclude burstable performance instance types, specify ``excluded``. Default: ``excluded``
+    burstable_performance: Any = None
+    # The CPU manufacturers to include. + For instance types with Intel CPUs, specify ``intel``. + For instance types with AMD CPUs, specify ``amd``. + For instance types with AWS CPUs, specify ``amazon-web-services``. + For instance types with Apple CPUs, specify ``apple``. Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template. Default: Any manufacturer
+    cpu_manufacturers: Any = None
+    # The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (``*``), to exclude an instance type, size, or generation. The following are examples: ``m5.8xlarge``, ``c5*.*``, ``m5a.*``, ``r*``, ``*3*``. For example, if you specify ``c5*``,Amazon EC2 will exclude the entire C5 instance family, which includes all C5a and C5n instance types. If you specify ``m5a.*``, Amazon EC2 will exclude all the M5a instance types, but not the M5n instance types. If you specify ``ExcludedInstanceTypes``, you can't specify ``AllowedInstanceTypes``. Default: No excluded instance types
+    excluded_instance_types: Any = None
+    # Indicates whether current or previous generation instance types are included. The current generation instance types are recommended for use. Current generation instance types are typically the latest two to three generations in each instance family. For more information, see [Instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide*. For current generation instance types, specify ``current``. For previous generation instance types, specify ``previous``. Default: Current and previous generation instance types
+    instance_generations: Any = None
+    # Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, [Amazon EC2 instance store](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html) in the *Amazon EC2 User Guide*. + To include instance types with instance store volumes, specify ``included``. + To require only instance types with instance store volumes, specify ``required``. + To exclude instance types with instance store volumes, specify ``excluded``. Default: ``included``
+    local_storage: Any = None
+    # The type of local storage that is required. + For instance types with hard disk drive (HDD) storage, specify ``hdd``. + For instance types with solid state drive (SSD) storage, specify ``ssd``. Default: ``hdd`` and ``ssd``
+    local_storage_types: Any = None
+    # [Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from the lowest priced current generation instance types, and failing that, from the lowest priced previous generation instance types that match your attributes. When Amazon EC2 selects instance types with your attributes, it will exclude instance types whose price exceeds your specified threshold. The parameter accepts an integer, which Amazon EC2 interprets as a percentage. If you set ``TargetCapacityUnitType`` to ``vcpu`` or ``memory-mib``, the price protection threshold is based on the per vCPU or per memory price instead of the per instance price. Only one of ``SpotMaxPricePercentageOverLowestPrice`` or ``MaxSpotPriceAsPercentageOfOptimalOnDemandPrice`` can be specified. If you don't specify either, Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types that match your attributes, include one of these parameters and specify a high value, such as ``999999``.
+    max_spot_price_as_percentage_of_optimal_on_demand_price: Any = None
+    # The minimum and maximum amount of memory per vCPU, in GiB.
+    memory_gi_bper_vcpu: Any = None
+    # The minimum and maximum amount of memory, in MiB.
+    memory_mi_b: Any = None
+    # The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps). Setting the minimum bandwidth does not guarantee that your instance will achieve the minimum bandwidth. Amazon EC2 will identify instance types that support the specified minimum bandwidth, but the actual bandwidth of your instance might go below the specified minimum at times. For more information, see [Available instance bandwidth](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html#available-instance-bandwidth) in the *Amazon EC2 User Guide*.
     network_bandwidth_gbps: Any = None
+    # The minimum and maximum number of network interfaces.
     network_interface_count: Any = None
+    # [Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it will exclude instance types whose price exceeds your specified threshold. The parameter accepts an integer, which Amazon EC2 interprets as a percentage. To turn off price protection, specify a high value, such as ``999999``. This parameter is not supported for [GetSpotPlacementScores](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html) and [GetInstanceTypesFromInstanceRequirements](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html). If you set ``TargetCapacityUnitType`` to ``vcpu`` or ``memory-mib``, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price. Default: ``20``
+    on_demand_max_price_percentage_over_lowest_price: Any = None
+    # Indicates whether instance types must support hibernation for On-Demand Instances. This parameter is not supported for [GetSpotPlacementScores](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html). Default: ``false``
+    require_hibernate_support: Any = None
+    # [Price protection] The price protection threshold for Spot Instances, as a percentage higher than an identified Spot price. The identified Spot price is the Spot price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified Spot price is from the lowest priced current generation instance types, and failing that, from the lowest priced previous generation instance types that match your attributes. When Amazon EC2 selects instance types with your attributes, it will exclude instance types whose Spot price exceeds your specified threshold. The parameter accepts an integer, which Amazon EC2 interprets as a percentage. If you set ``TargetCapacityUnitType`` to ``vcpu`` or ``memory-mib``, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price. This parameter is not supported for [GetSpotPlacementScores](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html) and [GetInstanceTypesFromInstanceRequirements](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html). Only one of ``SpotMaxPricePercentageOverLowestPrice`` or ``MaxSpotPriceAsPercentageOfOptimalOnDemandPrice`` can be specified. If you don't specify either, Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types that match your attributes, include one of these parameters and specify a high value, such as ``999999``. Default: ``100``
+    spot_max_price_percentage_over_lowest_price: Any = None
+    # The minimum and maximum amount of total local storage, in GB.
     total_local_storage_gb: Any = None
+    # The minimum and maximum number of vCPUs.
     vcpu_count: Any = None
 
 @dataclasses.dataclass
-class Template_LicenseSpecification:
+class Template_LaunchTemplateData_LicenseSpecifications:
+    # The Amazon Resource Name (ARN) of the AWS License Manager license configuration to associate with instances launched from this launch template. (AI-inferred)
     license_configuration_arn: Any = None
 
 @dataclasses.dataclass
-class Template_MaintenanceOptions:
+class Template_LaunchTemplateData_MaintenanceOptions:
+    # Disables the automatic recovery behavior of your instance or sets it to default.
     auto_recovery: Any = None
 
 @dataclasses.dataclass
-class Template_MetadataOptions:
+class Template_LaunchTemplateData_MetadataOptions:
+    # Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is ``enabled``. If you specify a value of ``disabled``, you will not be able to access your instance metadata.
     http_endpoint: Any = None
+    # Enables or disables the IPv6 endpoint for the instance metadata service. Default: ``disabled``
     http_protocol_ipv6: Any = None
+    # The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. Default: ``1`` Possible values: Integers from 1 to 64
     http_put_response_hop_limit: Any = None
+    # Indicates whether IMDSv2 is required. + ``optional`` - IMDSv2 is optional. You can choose whether to send a session token in your instance metadata retrieval requests. If you retrieve IAM role credentials without a session token, you receive the IMDSv1 role credentials. If you retrieve IAM role credentials using a valid session token, you receive the IMDSv2 role credentials. + ``required`` - IMDSv2 is required. You must send a session token in your instance metadata retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available. Default: If the value of ``ImdsSupport`` for the Amazon Machine Image (AMI) for your instance is ``v2.0``, the default is ``required``.
     http_tokens: Any = None
+    # Set to ``enabled`` to allow access to instance tags from the instance metadata. Set to ``disabled`` to turn off access to instance tags from the instance metadata. For more information, see [View tags for your EC2 instances using instance metadata](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html). Default: ``disabled``
     instance_metadata_tags: Any = None
 
 @dataclasses.dataclass
-class Template_NetworkInterfaces_ConnectionTrackingSpecification:
+class Template_LaunchTemplateData_NetworkInterfaces_ConnectionTrackingSpecification:
+    # The timeout in seconds for established TCP connections tracked on the network interface, as part of the connection tracking specification in the AWS EC2 launch template. (AI-inferred)
     tcp_established_timeout: Any = None
+    # Specifies the timeout in seconds for an established UDP stream (a bidirectional flow) tracked on the network interface, after which the flow is considered inactive and removed from the connection tracking table. (AI-inferred)
     udp_stream_timeout: Any = None
+    # Specifies the timeout (in seconds) for UDP flows tracked by connection tracking on the network interface. (AI-inferred)
     udp_timeout: Any = None
 
 @dataclasses.dataclass
-class Template_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecification:
+class Template_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecification:
+    # Indicates whether ENA SRD (Scalable Reliable Datagram) is enabled for UDP traffic on this network interface. (AI-inferred)
     ena_srd_udp_enabled: Any = None
 
 @dataclasses.dataclass
-class Template_NetworkInterfaces_EnaSrdSpecification:
+class Template_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecification:
+    # Indicates whether Elastic Network Adapter (ENA) Scale Reliable Datagrams (SRD) is enabled for this network interface in the launch template. (AI-inferred)
     ena_srd_enabled: Any = None
+    # Specifies whether UDP traffic over the network interface can use ENA SRD, containing a boolean EnaSrdUdpEnabled setting. (AI-inferred)
     ena_srd_udp_specification: Any = None
 
 @dataclasses.dataclass
-class Template_NetworkInterfaces:
-    associate_carrier_ip_address: Any = None
-    associate_public_ip_address: Any = None
-    delete_on_termination: Any = None
-    description: Any = None
-    device_index: Any = None
-    ena_queue_count: Any = None
-    interface_type: Any = None
-    ipv4_address_count: Any = None
-    ipv4_addresses: Any = None
-    ipv4_prefix_count: Any = None
-    ipv4_prefixes: Any = None
-    ipv6_address_count: Any = None
-    ipv6_addresses: Any = None
-    ipv6_prefix_count: Any = None
-    ipv6_prefixes: Any = None
-    network_card_index: Any = None
-    network_interface_id: Any = None
-    primary_ipv6: Any = None
-    private_ip_address: Any = None
-    security_groups: Any = None
-    subnet_id: Any = None
-    connection_tracking_specification: Any = None
-    ena_srd_specification: Any = None
+class Template_LaunchTemplateData_NetworkInterfaces_Ipv4Prefixes:
+    # The specific IPv4 CIDR prefix (e.g., 10.0.0.0/28) assigned to the network interface, enabling it to use a block of IPv4 addresses from that prefix. (AI-inferred)
+    ipv4_prefix: Any = None
 
 @dataclasses.dataclass
-class Template_NetworkPerformanceOptions:
+class Template_LaunchTemplateData_NetworkInterfaces_Ipv6Addresses:
+    # Specifies an IPv6 address to assign to the network interface when the instance launches. (AI-inferred)
+    ipv6_address: Any = None
+
+@dataclasses.dataclass
+class Template_LaunchTemplateData_NetworkInterfaces_Ipv6Prefixes:
+    # Specifies an IPv6 prefix (CIDR) to be assigned to the network interface when the instance is launched using this launch template. (AI-inferred)
+    ipv6_prefix: Any = None
+
+@dataclasses.dataclass
+class Template_LaunchTemplateData_NetworkInterfaces_PrivateIpAddresses:
+    # Indicates whether the specified private IP address is the primary private IP address for the network interface. (AI-inferred)
+    primary: Any = None
+    # Defines the specific private IPv4 address to assign to the network interface, used in the list of private IP address specifications for the EC2 launch template's network interface configuration. (AI-inferred)
+    private_ip_address: Any = None
+
+@dataclasses.dataclass
+class Template_LaunchTemplateData_NetworkInterfaces:
+    # Indicates whether to associate a Carrier IP address with the network interface (eth0) for instances launched in AWS Wavelength zones using this launch template. (AI-inferred)
+    associate_carrier_ip_address: Any = None
+    # Indicates whether to associate a public IPv4 address with the network interface for instances launched from this launch template. (AI-inferred)
+    associate_public_ip_address: Any = None
+    # Specifies the connection tracking idle timeout values (in seconds) for TCP established connections and UDP flows on the network interface, allowing you to tune how long connection states are retained after no activity. (AI-inferred)
+    connection_tracking_specification: Any = None
+    # Indicates whether the network interface is deleted when the associated EC2 instance terminates. (AI-inferred)
+    delete_on_termination: Any = None
+    # The human-readable description assigned to the network interface, used to identify the purpose or context of the interface within the launch template. (AI-inferred)
+    description: Any = None
+    # The index of the network interface within the launch template, starting at 0, which determines the order in which interfaces are attached to the instance. (AI-inferred)
+    device_index: Any = None
+    # The number of Elastic Network Adapter (ENA) queues to enable for the network interface, which influences the network throughput and packet processing performance of the attached EC2 instance. (AI-inferred)
+    ena_queue_count: Any = None
+    # Configures Elastic Network Adapter (ENA) Scalable Reliable Datagram (SRD) settings for the network interface, including whether SRD is enabled and optional UDP-specific SRD configuration. (AI-inferred)
+    ena_srd_specification: Any = None
+    # The IDs of the security groups to attach to this network interface when instances are launched using the launch template. (AI-inferred)
+    groups: Any = None
+    # Determines the type of network interface to create, where "interface" denotes a standard Elastic Network Interface (ENI) and "efa" enables an Elastic Fabric Adapter for high-throughput HPC workloads. (AI-inferred)
+    interface_type: Any = None
+    # Specifies the number of IPv4 prefixes to automatically assign to the network interface, enabling the allocation of multiple private IPv4 addresses via CIDR prefixes. (AI-inferred)
+    ipv4_prefix_count: Any = None
+    # Specifies the IPv4 prefixes to assign to the network interface, where each entry provides a CIDR prefix (and optional description) for an IPv4 prefix to be associated with the interface. (AI-inferred)
+    ipv4_prefixes: Any = None
+    # The number of IPv6 addresses to assign to the network interface in the launch template. (AI-inferred)
+    ipv6_address_count: Any = None
+    # Specifies one or more specific IPv6 addresses to assign to the network interface of the EC2 instance when launched using this launch template. (AI-inferred)
+    ipv6_addresses: Any = None
+    # The number of IPv6 prefixes to assign to the network interface, enabling automatic allocation of /56 IPv6 address blocks for the instance's network configuration. (AI-inferred)
+    ipv6_prefix_count: Any = None
+    # Specifies one or more IPv6 prefix CIDR blocks to assign to the network interface, where each entry is an object that defines an IPv6 prefix for the interface. (AI-inferred)
+    ipv6_prefixes: Any = None
+    # Specifies the index of the network card for this network interface, used on instance types that support multiple network cards (default is 0, and the primary interface must use card index 0). (AI-inferred)
+    network_card_index: Any = None
+    # The ID of an existing elastic network interface (ENI) to attach to the instance when launched using this launch template. (AI-inferred)
+    network_interface_id: Any = None
+    # When set to true, EC2 automatically assigns a primary IPv6 address to the network interface; you cannot specify an explicit IPv6 address in the same network interface when this flag is enabled. (AI-inferred)
+    primary_ipv6: Any = None
+    # The primary private IPv4 address to assign to the network interface; if omitted, AWS automatically selects an available address from the subnet. (AI-inferred)
+    private_ip_address: Any = None
+    # Defines the private IP addresses to assign to the network interface, where each item can specify the IP address and whether it is the primary private IP address. (AI-inferred)
+    private_ip_addresses: Any = None
+    # Specifies the number of secondary private IP addresses to assign to the network interface for an EC2 instance launched from this launch template. (AI-inferred)
+    secondary_private_ip_address_count: Any = None
+    # Specifies the ID of the subnet in which the network interface is launched, allowing the instance to be placed into a specific VPC subnet. (AI-inferred)
+    subnet_id: Any = None
+
+@dataclasses.dataclass
+class Template_LaunchTemplateData_NetworkPerformanceOptions:
+    # Specify the bandwidth weighting option to boost the associated type of baseline bandwidth, as follows: + default This option uses the standard bandwidth configuration for your instance type. + vpc-1 This option boosts your networking baseline bandwidth and reduces your EBS baseline bandwidth. + ebs-1 This option boosts your EBS baseline bandwidth and reduces your networking baseline bandwidth.
     bandwidth_weighting: Any = None
 
 @dataclasses.dataclass
-class Template_Placement:
+class Template_LaunchTemplateData_Placement:
+    # The affinity setting for an instance on a Dedicated Host.
     affinity: Any = None
+    # The Availability Zone for the instance. Either ``AvailabilityZone`` or ``AvailabilityZoneId`` can be specified, but not both
     availability_zone: Any = None
+    # The Group Id of a placement group. You must specify the Placement Group *Group Id* to launch an instance in a shared placement group.
     group_id: Any = None
+    # The name of the placement group for the instance.
     group_name: Any = None
+    # The ID of the Dedicated Host for the instance.
     host_id: Any = None
+    # The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN, omit the *Tenancy* parameter or set it to ``host``.
     host_resource_group_arn: Any = None
+    # The number of the partition the instance should launch in. Valid only if the placement group strategy is set to ``partition``.
     partition_number: Any = None
+    # Reserved for future use.
     spread_domain: Any = None
+    # The tenancy of the instance. An instance with a tenancy of dedicated runs on single-tenant hardware.
     tenancy: Any = None
 
 @dataclasses.dataclass
-class Template_PrivateDnsNameOptions:
-    enable_resource_name_dns_a_record: Any = None
-    enable_resource_name_dns_aaaa_record: Any = None
+class Template_LaunchTemplateData_PrivateDnsNameOptions:
+    # Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.
+    enable_resource_name_dns_aaaarecord: Any = None
+    # Indicates whether to respond to DNS queries for instance hostnames with DNS A records.
+    enable_resource_name_dns_arecord: Any = None
+    # The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID. For more information, see [Amazon EC2 instance hostname types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html) in the *User Guide*.
     hostname_type: Any = None
 
 @dataclasses.dataclass
-class Template_SecondaryInterfaces:
-    delete_on_termination: Any = None
-    device_index: Any = None
-    interface_type: Any = None
-    network_card_index: Any = None
-    private_ip_address_count: Any = None
-    private_ip_addresses: Any = None
-    secondary_subnet_id: Any = None
+class Template_LaunchTemplateData_TagSpecifications_Tags:
+    # The key of the tag to apply to the resource type specified in the tag specification, used to identify and categorize AWS resources launched from the template. (AI-inferred)
+    key: Any = None
+    # The tag value string to associate with the corresponding tag key for the specified resource type in the launch template's tag specifications. (AI-inferred)
+    value: Any = None
 
 @dataclasses.dataclass
-class Template_TagSpecifications:
+class Template_LaunchTemplateData_TagSpecifications:
+    # The type of resource to apply the tags to, such as 'instance' or 'volume'. (AI-inferred)
     resource_type: Any = None
+    # A list of key-value pairs that define the tags to apply to the resource type specified by the containing tag specification, such as EC2 instances or volumes launched from this launch template. (AI-inferred)
     tags: Any = None
 
-_Template_BlockDeviceMappings_EbsFields = {
+@dataclasses.dataclass
+class Template_LaunchTemplateData:
+    # The block device mapping.
+    block_device_mappings: Any = None
+    # Specifies an instance's Capacity Reservation targeting option. You can specify only one option at a time. ``CapacityReservationSpecification`` is a property of [AWS::EC2::LaunchTemplate LaunchTemplateData](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html).
+    capacity_reservation_specification: Any = None
+    # Specifies the CPU options for an instance. For more information, see [Optimize CPU options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html) in the *User Guide*. ``CpuOptions`` is a property of [AWS::EC2::LaunchTemplate LaunchTemplateData](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html).
+    cpu_options: Any = None
+    # Specifies the credit option for CPU usage of a T2, T3, or T3a instance. ``CreditSpecification`` is a property of [AWS::EC2::LaunchTemplate LaunchTemplateData](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html).
+    credit_specification: Any = None
+    # Indicates whether to enable the instance for stop protection. For more information, see [Enable stop protection for your EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html) in the *Amazon EC2 User Guide*.
+    disable_api_stop: Any = None
+    # Indicates whether termination protection is enabled for the instance. The default is ``false``, which means that you can terminate the instance using the Amazon EC2 console, command line tools, or API. You can enable termination protection when you launch an instance, while the instance is running, or while the instance is stopped.
+    disable_api_termination: Any = None
+    # Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
+    ebs_optimized: Any = None
+    # Indicates whether the instance is enabled for AWS Nitro Enclaves.
+    enclave_options: Any = None
+    # Specifies whether your instance is configured for hibernation. This parameter is valid only if the instance meets the [hibernation prerequisites](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites). For more information, see [Hibernate Your Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html) in the *Amazon EC2 User Guide*. ``HibernationOptions`` is a property of [AWS::EC2::LaunchTemplate LaunchTemplateData](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html).
+    hibernation_options: Any = None
+    # Specifies an IAM instance profile, which is a container for an IAM role for your instance. You can use an IAM role to distribute your AWS credentials to your instances. If you are creating the launch template for use with an ASlong group, you can specify either the name or the ARN of the instance profile, but not both. ``IamInstanceProfile`` is a property of [AWS::EC2::LaunchTemplate LaunchTemplateData](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html).
+    iam_instance_profile: Any = None
+    # The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch. Valid formats: + ``ami-0ac394d6a3example`` + ``resolve:ssm:parameter-name`` + ``resolve:ssm:parameter-name:version-number`` + ``resolve:ssm:parameter-name:label`` For more information, see [Use a Systems Manager parameter to find an AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI) in the *Amazon Elastic Compute Cloud User Guide*.
+    image_id: Any = None
+    # Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown). Default: ``stop``
+    instance_initiated_shutdown_behavior: Any = None
+    # Specifies the market (purchasing) option for an instance. ``InstanceMarketOptions`` is a property of the [AWS::EC2::LaunchTemplate LaunchTemplateData](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html).
+    instance_market_options: Any = None
+    # The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes. You must specify ``VCpuCount`` and ``MemoryMiB``. All other attributes are optional. Any unspecified optional attribute is set to its default. When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you specify multiple values for an attribute, you get instance types that satisfy any of the specified values. To limit the list of instance types from which Amazon EC2 can identify matching instance types, you can use one of the following parameters, but not both in the same request: + ``AllowedInstanceTypes`` - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes. + ``ExcludedInstanceTypes`` - The instance types to exclude from the list, even if they match your specified attributes. If you specify ``InstanceRequirements``, you can't specify ``InstanceType``. Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch template in the [launch instance wizard](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html), or with the [RunInstances](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html) API or [AWS::EC2::Instance](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html)AWS CloudFormation resource, you can't specify ``InstanceRequirements``. For more information, see [Specify attributes for instance type selection for EC2 Fleet or Spot Fleet](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html) and [Spot placement score](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html) in the *Amazon EC2 User Guide*.
+    instance_requirements: Any = None
+    # The instance type. For more information, see [Amazon EC2 instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide*. If you specify ``InstanceType``, you can't specify ``InstanceRequirements``.
+    instance_type: Any = None
+    # The ID of the kernel. We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see [User Provided Kernels](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html) in the *Amazon EC2 User Guide*.
+    kernel_id: Any = None
+    # The name of the key pair. You can create a key pair using [CreateKeyPair](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html) or [ImportKeyPair](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html). If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is configured to allow users another way to log in.
+    key_name: Any = None
+    # The license configurations.
+    license_specifications: Any = None
+    # The maintenance options of your instance.
+    maintenance_options: Any = None
+    # The metadata options for the instance. For more information, see [Instance metadata and user data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html) in the *Amazon EC2 User Guide*. ``MetadataOptions`` is a property of [AWS::EC2::LaunchTemplate LaunchTemplateData](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html).
+    metadata_options: Any = None
+    # Specifies whether detailed monitoring is enabled for an instance. For more information about detailed monitoring, see [Enable or turn off detailed monitoring for your instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html) in the *User Guide*. ``Monitoring`` is a property of [AWS::EC2::LaunchTemplate LaunchTemplateData](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html).
+    monitoring: Any = None
+    # The network interfaces for the instance.
+    network_interfaces: Any = None
+    # Contains settings for the network performance options for the instance.
+    network_performance_options: Any = None
+    # Specifies the placement of an instance. ``Placement`` is a property of [AWS::EC2::LaunchTemplate LaunchTemplateData](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html).
+    placement: Any = None
+    # The hostname type for EC2 instances launched into this subnet and how DNS A and AAAA record queries should be handled. For more information, see [Amazon EC2 instance hostname types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html) in the *User Guide*.
+    private_dns_name_options: Any = None
+    # The ID of the RAM disk. We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see [User provided kernels](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html) in the *Amazon EC2 User Guide*.
+    ram_disk_id: Any = None
+    # The IDs of the security groups. You can specify the IDs of existing security groups and references to resources created by the stack template. If you specify a network interface, you must specify any security groups as part of the network interface instead.
+    security_group_ids: Any = None
+    # The names of the security groups. For a nondefault VPC, you must use security group IDs instead. If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.
+    security_groups: Any = None
+    # The tags to apply to resources that are created during instance launch. To tag the launch template itself, use [TagSpecifications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-tagspecifications).
+    tag_specifications: Any = None
+    # The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see [Run commands when you launch an EC2 instance with user data input](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) in the *Amazon EC2 User Guide*. If you are creating the launch template for use with BATCH, the user data must be provided in the [MIME multi-part archive format](https://docs.aws.amazon.com/https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive). For more information, see [Amazon EC2 user data in launch templates](https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html#lt-user-data) in the *User Guide*.
+    user_data: Any = None
+
+_Template_LaunchTemplateData_BlockDeviceMappings_EbsFields = {
     "delete_on_termination": ubx.FieldSpec(wire_name="delete_on_termination"),
+    "ebs_card_index": ubx.FieldSpec(wire_name="ebs_card_index"),
     "encrypted": ubx.FieldSpec(wire_name="encrypted"),
     "iops": ubx.FieldSpec(wire_name="iops"),
     "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
@@ -210,56 +422,56 @@ _Template_BlockDeviceMappings_EbsFields = {
     "volume_type": ubx.FieldSpec(wire_name="volume_type"),
 }
 
-_Template_BlockDeviceMappingsFields = {
+_Template_LaunchTemplateData_BlockDeviceMappingsFields = {
     "device_name": ubx.FieldSpec(wire_name="device_name"),
-    "no_device": ubx.FieldSpec(wire_name="no_device"),
-    "virtual_name": ubx.FieldSpec(wire_name="virtual_name"),
     "ebs": ubx.FieldSpec(
         wire_name="ebs",
-        kind="list",
-        fields=_Template_BlockDeviceMappings_EbsFields,
+        kind="object",
+        fields=_Template_LaunchTemplateData_BlockDeviceMappings_EbsFields,
     ),
+    "no_device": ubx.FieldSpec(wire_name="no_device"),
+    "virtual_name": ubx.FieldSpec(wire_name="virtual_name"),
 }
 
-_Template_CapacityReservationSpecification_CapacityReservationTargetFields = {
+_Template_LaunchTemplateData_CapacityReservationSpecification_CapacityReservationTargetFields = {
     "capacity_reservation_id": ubx.FieldSpec(wire_name="capacity_reservation_id"),
     "capacity_reservation_resource_group_arn": ubx.FieldSpec(wire_name="capacity_reservation_resource_group_arn"),
 }
 
-_Template_CapacityReservationSpecificationFields = {
+_Template_LaunchTemplateData_CapacityReservationSpecificationFields = {
     "capacity_reservation_preference": ubx.FieldSpec(wire_name="capacity_reservation_preference"),
     "capacity_reservation_target": ubx.FieldSpec(
         wire_name="capacity_reservation_target",
-        kind="list",
-        fields=_Template_CapacityReservationSpecification_CapacityReservationTargetFields,
+        kind="object",
+        fields=_Template_LaunchTemplateData_CapacityReservationSpecification_CapacityReservationTargetFields,
     ),
 }
 
-_Template_CpuOptionsFields = {
+_Template_LaunchTemplateData_CpuOptionsFields = {
     "amd_sev_snp": ubx.FieldSpec(wire_name="amd_sev_snp"),
     "core_count": ubx.FieldSpec(wire_name="core_count"),
     "nested_virtualization": ubx.FieldSpec(wire_name="nested_virtualization"),
     "threads_per_core": ubx.FieldSpec(wire_name="threads_per_core"),
 }
 
-_Template_CreditSpecificationFields = {
+_Template_LaunchTemplateData_CreditSpecificationFields = {
     "cpu_credits": ubx.FieldSpec(wire_name="cpu_credits"),
 }
 
-_Template_EnclaveOptionsFields = {
+_Template_LaunchTemplateData_EnclaveOptionsFields = {
     "enabled": ubx.FieldSpec(wire_name="enabled"),
 }
 
-_Template_HibernationOptionsFields = {
+_Template_LaunchTemplateData_HibernationOptionsFields = {
     "configured": ubx.FieldSpec(wire_name="configured"),
 }
 
-_Template_IamInstanceProfileFields = {
+_Template_LaunchTemplateData_IamInstanceProfileFields = {
     "arn": ubx.FieldSpec(wire_name="arn"),
     "name": ubx.FieldSpec(wire_name="name"),
 }
 
-_Template_InstanceMarketOptions_SpotOptionsFields = {
+_Template_LaunchTemplateData_InstanceMarketOptions_SpotOptionsFields = {
     "block_duration_minutes": ubx.FieldSpec(wire_name="block_duration_minutes"),
     "instance_interruption_behavior": ubx.FieldSpec(wire_name="instance_interruption_behavior"),
     "max_price": ubx.FieldSpec(wire_name="max_price"),
@@ -267,26 +479,66 @@ _Template_InstanceMarketOptions_SpotOptionsFields = {
     "valid_until": ubx.FieldSpec(wire_name="valid_until"),
 }
 
-_Template_InstanceMarketOptionsFields = {
+_Template_LaunchTemplateData_InstanceMarketOptionsFields = {
     "market_type": ubx.FieldSpec(wire_name="market_type"),
     "spot_options": ubx.FieldSpec(
         wire_name="spot_options",
-        kind="list",
-        fields=_Template_InstanceMarketOptions_SpotOptionsFields,
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceMarketOptions_SpotOptionsFields,
     ),
 }
 
-_Template_InstanceRequirements_AcceleratorCountFields = {
+_Template_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields = {
     "max": ubx.FieldSpec(wire_name="max"),
     "min": ubx.FieldSpec(wire_name="min"),
 }
 
-_Template_InstanceRequirementsFields = {
+_Template_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields = {
+    "instance_family": ubx.FieldSpec(wire_name="instance_family"),
+}
+
+_Template_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_CpuFields = {
+    "references": ubx.FieldSpec(
+        wire_name="references",
+        kind="list",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields,
+    ),
+}
+
+_Template_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactorsFields = {
+    "cpu": ubx.FieldSpec(
+        wire_name="cpu",
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_CpuFields,
+    ),
+}
+
+_Template_LaunchTemplateData_InstanceRequirementsFields = {
+    "accelerator_count": ubx.FieldSpec(
+        wire_name="accelerator_count",
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+    ),
     "accelerator_manufacturers": ubx.FieldSpec(wire_name="accelerator_manufacturers"),
     "accelerator_names": ubx.FieldSpec(wire_name="accelerator_names"),
+    "accelerator_total_memory_mi_b": ubx.FieldSpec(
+        wire_name="accelerator_total_memory_mi_b",
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+    ),
     "accelerator_types": ubx.FieldSpec(wire_name="accelerator_types"),
     "allowed_instance_types": ubx.FieldSpec(wire_name="allowed_instance_types"),
     "bare_metal": ubx.FieldSpec(wire_name="bare_metal"),
+    "baseline_ebs_bandwidth_mbps": ubx.FieldSpec(
+        wire_name="baseline_ebs_bandwidth_mbps",
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+    ),
+    "baseline_performance_factors": ubx.FieldSpec(
+        wire_name="baseline_performance_factors",
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactorsFields,
+    ),
     "burstable_performance": ubx.FieldSpec(wire_name="burstable_performance"),
     "cpu_manufacturers": ubx.FieldSpec(wire_name="cpu_manufacturers"),
     "excluded_instance_types": ubx.FieldSpec(wire_name="excluded_instance_types"),
@@ -294,65 +546,50 @@ _Template_InstanceRequirementsFields = {
     "local_storage": ubx.FieldSpec(wire_name="local_storage"),
     "local_storage_types": ubx.FieldSpec(wire_name="local_storage_types"),
     "max_spot_price_as_percentage_of_optimal_on_demand_price": ubx.FieldSpec(wire_name="max_spot_price_as_percentage_of_optimal_on_demand_price"),
-    "on_demand_max_price_percentage_over_lowest_price": ubx.FieldSpec(wire_name="on_demand_max_price_percentage_over_lowest_price"),
-    "require_hibernate_support": ubx.FieldSpec(wire_name="require_hibernate_support"),
-    "spot_max_price_percentage_over_lowest_price": ubx.FieldSpec(wire_name="spot_max_price_percentage_over_lowest_price"),
-    "accelerator_count": ubx.FieldSpec(
-        wire_name="accelerator_count",
-        kind="list",
-        fields=_Template_InstanceRequirements_AcceleratorCountFields,
+    "memory_gi_bper_vcpu": ubx.FieldSpec(
+        wire_name="memory_gi_bper_vcpu",
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
     ),
-    "accelerator_total_memory_mib": ubx.FieldSpec(
-        wire_name="accelerator_total_memory_mib",
-        kind="list",
-        fields=_Template_InstanceRequirements_AcceleratorCountFields,
-    ),
-    "baseline_ebs_bandwidth_mbps": ubx.FieldSpec(
-        wire_name="baseline_ebs_bandwidth_mbps",
-        kind="list",
-        fields=_Template_InstanceRequirements_AcceleratorCountFields,
-    ),
-    "memory_gib_per_vcpu": ubx.FieldSpec(
-        wire_name="memory_gib_per_vcpu",
-        kind="list",
-        fields=_Template_InstanceRequirements_AcceleratorCountFields,
-    ),
-    "memory_mib": ubx.FieldSpec(
-        wire_name="memory_mib",
-        kind="list",
-        fields=_Template_InstanceRequirements_AcceleratorCountFields,
+    "memory_mi_b": ubx.FieldSpec(
+        wire_name="memory_mi_b",
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
     ),
     "network_bandwidth_gbps": ubx.FieldSpec(
         wire_name="network_bandwidth_gbps",
-        kind="list",
-        fields=_Template_InstanceRequirements_AcceleratorCountFields,
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
     ),
     "network_interface_count": ubx.FieldSpec(
         wire_name="network_interface_count",
-        kind="list",
-        fields=_Template_InstanceRequirements_AcceleratorCountFields,
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
     ),
+    "on_demand_max_price_percentage_over_lowest_price": ubx.FieldSpec(wire_name="on_demand_max_price_percentage_over_lowest_price"),
+    "require_hibernate_support": ubx.FieldSpec(wire_name="require_hibernate_support"),
+    "spot_max_price_percentage_over_lowest_price": ubx.FieldSpec(wire_name="spot_max_price_percentage_over_lowest_price"),
     "total_local_storage_gb": ubx.FieldSpec(
         wire_name="total_local_storage_gb",
-        kind="list",
-        fields=_Template_InstanceRequirements_AcceleratorCountFields,
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
     ),
     "vcpu_count": ubx.FieldSpec(
         wire_name="vcpu_count",
-        kind="list",
-        fields=_Template_InstanceRequirements_AcceleratorCountFields,
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
     ),
 }
 
-_Template_LicenseSpecificationFields = {
+_Template_LaunchTemplateData_LicenseSpecificationsFields = {
     "license_configuration_arn": ubx.FieldSpec(wire_name="license_configuration_arn"),
 }
 
-_Template_MaintenanceOptionsFields = {
+_Template_LaunchTemplateData_MaintenanceOptionsFields = {
     "auto_recovery": ubx.FieldSpec(wire_name="auto_recovery"),
 }
 
-_Template_MetadataOptionsFields = {
+_Template_LaunchTemplateData_MetadataOptionsFields = {
     "http_endpoint": ubx.FieldSpec(wire_name="http_endpoint"),
     "http_protocol_ipv6": ubx.FieldSpec(wire_name="http_protocol_ipv6"),
     "http_put_response_hop_limit": ubx.FieldSpec(wire_name="http_put_response_hop_limit"),
@@ -360,64 +597,97 @@ _Template_MetadataOptionsFields = {
     "instance_metadata_tags": ubx.FieldSpec(wire_name="instance_metadata_tags"),
 }
 
-_Template_NetworkInterfaces_ConnectionTrackingSpecificationFields = {
+_Template_LaunchTemplateData_NetworkInterfaces_ConnectionTrackingSpecificationFields = {
     "tcp_established_timeout": ubx.FieldSpec(wire_name="tcp_established_timeout"),
     "udp_stream_timeout": ubx.FieldSpec(wire_name="udp_stream_timeout"),
     "udp_timeout": ubx.FieldSpec(wire_name="udp_timeout"),
 }
 
-_Template_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields = {
+_Template_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields = {
     "ena_srd_udp_enabled": ubx.FieldSpec(wire_name="ena_srd_udp_enabled"),
 }
 
-_Template_NetworkInterfaces_EnaSrdSpecificationFields = {
+_Template_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecificationFields = {
     "ena_srd_enabled": ubx.FieldSpec(wire_name="ena_srd_enabled"),
     "ena_srd_udp_specification": ubx.FieldSpec(
         wire_name="ena_srd_udp_specification",
-        kind="list",
-        fields=_Template_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields,
+        kind="object",
+        fields=_Template_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields,
     ),
 }
 
-_Template_NetworkInterfacesFields = {
+_Template_LaunchTemplateData_NetworkInterfaces_Ipv4PrefixesFields = {
+    "ipv4_prefix": ubx.FieldSpec(wire_name="ipv4_prefix"),
+}
+
+_Template_LaunchTemplateData_NetworkInterfaces_Ipv6AddressesFields = {
+    "ipv6_address": ubx.FieldSpec(wire_name="ipv6_address"),
+}
+
+_Template_LaunchTemplateData_NetworkInterfaces_Ipv6PrefixesFields = {
+    "ipv6_prefix": ubx.FieldSpec(wire_name="ipv6_prefix"),
+}
+
+_Template_LaunchTemplateData_NetworkInterfaces_PrivateIpAddressesFields = {
+    "primary": ubx.FieldSpec(wire_name="primary"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+}
+
+_Template_LaunchTemplateData_NetworkInterfacesFields = {
     "associate_carrier_ip_address": ubx.FieldSpec(wire_name="associate_carrier_ip_address"),
     "associate_public_ip_address": ubx.FieldSpec(wire_name="associate_public_ip_address"),
+    "connection_tracking_specification": ubx.FieldSpec(
+        wire_name="connection_tracking_specification",
+        kind="object",
+        fields=_Template_LaunchTemplateData_NetworkInterfaces_ConnectionTrackingSpecificationFields,
+    ),
     "delete_on_termination": ubx.FieldSpec(wire_name="delete_on_termination"),
     "description": ubx.FieldSpec(wire_name="description"),
     "device_index": ubx.FieldSpec(wire_name="device_index"),
     "ena_queue_count": ubx.FieldSpec(wire_name="ena_queue_count"),
+    "ena_srd_specification": ubx.FieldSpec(
+        wire_name="ena_srd_specification",
+        kind="object",
+        fields=_Template_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecificationFields,
+    ),
+    "groups": ubx.FieldSpec(wire_name="groups"),
     "interface_type": ubx.FieldSpec(wire_name="interface_type"),
-    "ipv4_address_count": ubx.FieldSpec(wire_name="ipv4_address_count"),
-    "ipv4_addresses": ubx.FieldSpec(wire_name="ipv4_addresses"),
     "ipv4_prefix_count": ubx.FieldSpec(wire_name="ipv4_prefix_count"),
-    "ipv4_prefixes": ubx.FieldSpec(wire_name="ipv4_prefixes"),
+    "ipv4_prefixes": ubx.FieldSpec(
+        wire_name="ipv4_prefixes",
+        kind="list",
+        fields=_Template_LaunchTemplateData_NetworkInterfaces_Ipv4PrefixesFields,
+    ),
     "ipv6_address_count": ubx.FieldSpec(wire_name="ipv6_address_count"),
-    "ipv6_addresses": ubx.FieldSpec(wire_name="ipv6_addresses"),
+    "ipv6_addresses": ubx.FieldSpec(
+        wire_name="ipv6_addresses",
+        kind="list",
+        fields=_Template_LaunchTemplateData_NetworkInterfaces_Ipv6AddressesFields,
+    ),
     "ipv6_prefix_count": ubx.FieldSpec(wire_name="ipv6_prefix_count"),
-    "ipv6_prefixes": ubx.FieldSpec(wire_name="ipv6_prefixes"),
+    "ipv6_prefixes": ubx.FieldSpec(
+        wire_name="ipv6_prefixes",
+        kind="list",
+        fields=_Template_LaunchTemplateData_NetworkInterfaces_Ipv6PrefixesFields,
+    ),
     "network_card_index": ubx.FieldSpec(wire_name="network_card_index"),
     "network_interface_id": ubx.FieldSpec(wire_name="network_interface_id"),
     "primary_ipv6": ubx.FieldSpec(wire_name="primary_ipv6"),
     "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
-    "security_groups": ubx.FieldSpec(wire_name="security_groups"),
+    "private_ip_addresses": ubx.FieldSpec(
+        wire_name="private_ip_addresses",
+        kind="list",
+        fields=_Template_LaunchTemplateData_NetworkInterfaces_PrivateIpAddressesFields,
+    ),
+    "secondary_private_ip_address_count": ubx.FieldSpec(wire_name="secondary_private_ip_address_count"),
     "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
-    "connection_tracking_specification": ubx.FieldSpec(
-        wire_name="connection_tracking_specification",
-        kind="list",
-        fields=_Template_NetworkInterfaces_ConnectionTrackingSpecificationFields,
-    ),
-    "ena_srd_specification": ubx.FieldSpec(
-        wire_name="ena_srd_specification",
-        kind="list",
-        fields=_Template_NetworkInterfaces_EnaSrdSpecificationFields,
-    ),
 }
 
-_Template_NetworkPerformanceOptionsFields = {
+_Template_LaunchTemplateData_NetworkPerformanceOptionsFields = {
     "bandwidth_weighting": ubx.FieldSpec(wire_name="bandwidth_weighting"),
 }
 
-_Template_PlacementFields = {
+_Template_LaunchTemplateData_PlacementFields = {
     "affinity": ubx.FieldSpec(wire_name="affinity"),
     "availability_zone": ubx.FieldSpec(wire_name="availability_zone"),
     "group_id": ubx.FieldSpec(wire_name="group_id"),
@@ -429,188 +699,173 @@ _Template_PlacementFields = {
     "tenancy": ubx.FieldSpec(wire_name="tenancy"),
 }
 
-_Template_PrivateDnsNameOptionsFields = {
-    "enable_resource_name_dns_a_record": ubx.FieldSpec(wire_name="enable_resource_name_dns_a_record"),
-    "enable_resource_name_dns_aaaa_record": ubx.FieldSpec(wire_name="enable_resource_name_dns_aaaa_record"),
+_Template_LaunchTemplateData_PrivateDnsNameOptionsFields = {
+    "enable_resource_name_dns_aaaarecord": ubx.FieldSpec(wire_name="enable_resource_name_dns_aaaarecord"),
+    "enable_resource_name_dns_arecord": ubx.FieldSpec(wire_name="enable_resource_name_dns_arecord"),
     "hostname_type": ubx.FieldSpec(wire_name="hostname_type"),
 }
 
-_Template_SecondaryInterfacesFields = {
-    "delete_on_termination": ubx.FieldSpec(wire_name="delete_on_termination"),
-    "device_index": ubx.FieldSpec(wire_name="device_index"),
-    "interface_type": ubx.FieldSpec(wire_name="interface_type"),
-    "network_card_index": ubx.FieldSpec(wire_name="network_card_index"),
-    "private_ip_address_count": ubx.FieldSpec(wire_name="private_ip_address_count"),
-    "private_ip_addresses": ubx.FieldSpec(wire_name="private_ip_addresses"),
-    "secondary_subnet_id": ubx.FieldSpec(wire_name="secondary_subnet_id"),
+_Template_LaunchTemplateData_TagSpecifications_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
-_Template_TagSpecificationsFields = {
+_Template_LaunchTemplateData_TagSpecificationsFields = {
     "resource_type": ubx.FieldSpec(wire_name="resource_type"),
-    "tags": ubx.FieldSpec(wire_name="tags"),
+    "tags": ubx.FieldSpec(
+        wire_name="tags",
+        kind="list",
+        fields=_Template_LaunchTemplateData_TagSpecifications_TagsFields,
+    ),
+}
+
+_Template_LaunchTemplateDataFields = {
+    "block_device_mappings": ubx.FieldSpec(
+        wire_name="block_device_mappings",
+        kind="list",
+        fields=_Template_LaunchTemplateData_BlockDeviceMappingsFields,
+    ),
+    "capacity_reservation_specification": ubx.FieldSpec(
+        wire_name="capacity_reservation_specification",
+        kind="object",
+        fields=_Template_LaunchTemplateData_CapacityReservationSpecificationFields,
+    ),
+    "cpu_options": ubx.FieldSpec(
+        wire_name="cpu_options",
+        kind="object",
+        fields=_Template_LaunchTemplateData_CpuOptionsFields,
+    ),
+    "credit_specification": ubx.FieldSpec(
+        wire_name="credit_specification",
+        kind="object",
+        fields=_Template_LaunchTemplateData_CreditSpecificationFields,
+    ),
+    "disable_api_stop": ubx.FieldSpec(wire_name="disable_api_stop"),
+    "disable_api_termination": ubx.FieldSpec(wire_name="disable_api_termination"),
+    "ebs_optimized": ubx.FieldSpec(wire_name="ebs_optimized"),
+    "enclave_options": ubx.FieldSpec(
+        wire_name="enclave_options",
+        kind="object",
+        fields=_Template_LaunchTemplateData_EnclaveOptionsFields,
+    ),
+    "hibernation_options": ubx.FieldSpec(
+        wire_name="hibernation_options",
+        kind="object",
+        fields=_Template_LaunchTemplateData_HibernationOptionsFields,
+    ),
+    "iam_instance_profile": ubx.FieldSpec(
+        wire_name="iam_instance_profile",
+        kind="object",
+        fields=_Template_LaunchTemplateData_IamInstanceProfileFields,
+    ),
+    "image_id": ubx.FieldSpec(wire_name="image_id"),
+    "instance_initiated_shutdown_behavior": ubx.FieldSpec(wire_name="instance_initiated_shutdown_behavior"),
+    "instance_market_options": ubx.FieldSpec(
+        wire_name="instance_market_options",
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceMarketOptionsFields,
+    ),
+    "instance_requirements": ubx.FieldSpec(
+        wire_name="instance_requirements",
+        kind="object",
+        fields=_Template_LaunchTemplateData_InstanceRequirementsFields,
+    ),
+    "instance_type": ubx.FieldSpec(wire_name="instance_type"),
+    "kernel_id": ubx.FieldSpec(wire_name="kernel_id"),
+    "key_name": ubx.FieldSpec(wire_name="key_name"),
+    "license_specifications": ubx.FieldSpec(
+        wire_name="license_specifications",
+        kind="list",
+        fields=_Template_LaunchTemplateData_LicenseSpecificationsFields,
+    ),
+    "maintenance_options": ubx.FieldSpec(
+        wire_name="maintenance_options",
+        kind="object",
+        fields=_Template_LaunchTemplateData_MaintenanceOptionsFields,
+    ),
+    "metadata_options": ubx.FieldSpec(
+        wire_name="metadata_options",
+        kind="object",
+        fields=_Template_LaunchTemplateData_MetadataOptionsFields,
+    ),
+    "monitoring": ubx.FieldSpec(
+        wire_name="monitoring",
+        kind="object",
+        fields=_Template_LaunchTemplateData_EnclaveOptionsFields,
+    ),
+    "network_interfaces": ubx.FieldSpec(
+        wire_name="network_interfaces",
+        kind="list",
+        fields=_Template_LaunchTemplateData_NetworkInterfacesFields,
+    ),
+    "network_performance_options": ubx.FieldSpec(
+        wire_name="network_performance_options",
+        kind="object",
+        fields=_Template_LaunchTemplateData_NetworkPerformanceOptionsFields,
+    ),
+    "placement": ubx.FieldSpec(
+        wire_name="placement",
+        kind="object",
+        fields=_Template_LaunchTemplateData_PlacementFields,
+    ),
+    "private_dns_name_options": ubx.FieldSpec(
+        wire_name="private_dns_name_options",
+        kind="object",
+        fields=_Template_LaunchTemplateData_PrivateDnsNameOptionsFields,
+    ),
+    "ram_disk_id": ubx.FieldSpec(wire_name="ram_disk_id"),
+    "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
+    "security_groups": ubx.FieldSpec(wire_name="security_groups"),
+    "tag_specifications": ubx.FieldSpec(
+        wire_name="tag_specifications",
+        kind="list",
+        fields=_Template_LaunchTemplateData_TagSpecificationsFields,
+    ),
+    "user_data": ubx.FieldSpec(wire_name="user_data"),
 }
 
 @dataclasses.dataclass
 class TemplateConfig:
-    default_version: Any = None
-    description: Any = None
-    disable_api_stop: Any = None
-    disable_api_termination: Any = None
-    ebs_optimized: Any = None
-    id: Any = None
-    image_id: Any = None
-    instance_initiated_shutdown_behavior: Any = None
-    instance_type: Any = None
-    kernel_id: Any = None
-    key_name: Any = None
-    name: Any = None
-    name_prefix: Any = None
-    ram_disk_id: Any = None
-    region: Any = None
-    security_group_names: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    update_default_version: Any = None
-    user_data: Any = None
-    vpc_security_group_ids: Any = None
-    block_device_mappings: Any = None
-    capacity_reservation_specification: Any = None
-    cpu_options: Any = None
-    credit_specification: Any = None
-    enclave_options: Any = None
-    hibernation_options: Any = None
-    iam_instance_profile: Any = None
-    instance_market_options: Any = None
-    instance_requirements: Any = None
-    license_specification: Any = None
-    maintenance_options: Any = None
-    metadata_options: Any = None
-    monitoring: Any = None
-    network_interfaces: Any = None
-    network_performance_options: Any = None
-    placement: Any = None
-    private_dns_name_options: Any = None
-    secondary_interfaces: Any = None
+    # The information to include in the launch template. You must specify at least one parameter for the launch template data.
+    launch_template_data: Any = None
+    # A name for the launch template.
+    launch_template_name: Any = None
+    # The tags to apply to the launch template on creation. To tag the launch template, the resource type must be ``launch-template``. To specify the tags for resources that are created during instance launch, use [TagSpecifications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications).
     tag_specifications: Any = None
+    # A description for the first version of the launch template.
+    version_description: Any = None
+
+@dataclasses.dataclass
+class TemplateAttrs:
+    # The version number of the launch template that is currently designated as the default, used when no specific version is requested. (AI-inferred)
+    default_version_number: Any = None
+    # The current latest version number of the launch template, automatically assigned and incremented by AWS when the template is created or modified. (AI-inferred)
+    latest_version_number: Any = None
+    # The information to include in the launch template. You must specify at least one parameter for the launch template data.
+    launch_template_data: Any = None
+    # The unique identifier assigned by AWS to the EC2 launch template. (AI-inferred)
+    launch_template_id: Any = None
+    # A name for the launch template.
+    launch_template_name: Any = None
+    # The tags to apply to the launch template on creation. To tag the launch template, the resource type must be ``launch-template``. To specify the tags for resources that are created during instance launch, use [TagSpecifications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications).
+    tag_specifications: Any = None
+    # A description for the first version of the launch template.
+    version_description: Any = None
 
 Template = ubx.ResourceBinding(
     wire_type="aws_launch_template",
     fields={
-        "default_version": ubx.FieldSpec(wire_name="default_version"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "disable_api_stop": ubx.FieldSpec(wire_name="disable_api_stop"),
-        "disable_api_termination": ubx.FieldSpec(wire_name="disable_api_termination"),
-        "ebs_optimized": ubx.FieldSpec(wire_name="ebs_optimized"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "image_id": ubx.FieldSpec(wire_name="image_id"),
-        "instance_initiated_shutdown_behavior": ubx.FieldSpec(wire_name="instance_initiated_shutdown_behavior"),
-        "instance_type": ubx.FieldSpec(wire_name="instance_type"),
-        "kernel_id": ubx.FieldSpec(wire_name="kernel_id"),
-        "key_name": ubx.FieldSpec(wire_name="key_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "ram_disk_id": ubx.FieldSpec(wire_name="ram_disk_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "security_group_names": ubx.FieldSpec(wire_name="security_group_names"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "update_default_version": ubx.FieldSpec(wire_name="update_default_version"),
-        "user_data": ubx.FieldSpec(wire_name="user_data"),
-        "vpc_security_group_ids": ubx.FieldSpec(wire_name="vpc_security_group_ids"),
-        "block_device_mappings": ubx.FieldSpec(
-            wire_name="block_device_mappings",
-            kind="list",
-            fields=_Template_BlockDeviceMappingsFields,
+        "launch_template_data": ubx.FieldSpec(
+            wire_name="launch_template_data",
+            kind="object",
+            fields=_Template_LaunchTemplateDataFields,
         ),
-        "capacity_reservation_specification": ubx.FieldSpec(
-            wire_name="capacity_reservation_specification",
-            kind="list",
-            fields=_Template_CapacityReservationSpecificationFields,
-        ),
-        "cpu_options": ubx.FieldSpec(
-            wire_name="cpu_options",
-            kind="list",
-            fields=_Template_CpuOptionsFields,
-        ),
-        "credit_specification": ubx.FieldSpec(
-            wire_name="credit_specification",
-            kind="list",
-            fields=_Template_CreditSpecificationFields,
-        ),
-        "enclave_options": ubx.FieldSpec(
-            wire_name="enclave_options",
-            kind="list",
-            fields=_Template_EnclaveOptionsFields,
-        ),
-        "hibernation_options": ubx.FieldSpec(
-            wire_name="hibernation_options",
-            kind="list",
-            fields=_Template_HibernationOptionsFields,
-        ),
-        "iam_instance_profile": ubx.FieldSpec(
-            wire_name="iam_instance_profile",
-            kind="list",
-            fields=_Template_IamInstanceProfileFields,
-        ),
-        "instance_market_options": ubx.FieldSpec(
-            wire_name="instance_market_options",
-            kind="list",
-            fields=_Template_InstanceMarketOptionsFields,
-        ),
-        "instance_requirements": ubx.FieldSpec(
-            wire_name="instance_requirements",
-            kind="list",
-            fields=_Template_InstanceRequirementsFields,
-        ),
-        "license_specification": ubx.FieldSpec(
-            wire_name="license_specification",
-            kind="set",
-            fields=_Template_LicenseSpecificationFields,
-        ),
-        "maintenance_options": ubx.FieldSpec(
-            wire_name="maintenance_options",
-            kind="list",
-            fields=_Template_MaintenanceOptionsFields,
-        ),
-        "metadata_options": ubx.FieldSpec(
-            wire_name="metadata_options",
-            kind="list",
-            fields=_Template_MetadataOptionsFields,
-        ),
-        "monitoring": ubx.FieldSpec(
-            wire_name="monitoring",
-            kind="list",
-            fields=_Template_EnclaveOptionsFields,
-        ),
-        "network_interfaces": ubx.FieldSpec(
-            wire_name="network_interfaces",
-            kind="list",
-            fields=_Template_NetworkInterfacesFields,
-        ),
-        "network_performance_options": ubx.FieldSpec(
-            wire_name="network_performance_options",
-            kind="list",
-            fields=_Template_NetworkPerformanceOptionsFields,
-        ),
-        "placement": ubx.FieldSpec(
-            wire_name="placement",
-            kind="list",
-            fields=_Template_PlacementFields,
-        ),
-        "private_dns_name_options": ubx.FieldSpec(
-            wire_name="private_dns_name_options",
-            kind="list",
-            fields=_Template_PrivateDnsNameOptionsFields,
-        ),
-        "secondary_interfaces": ubx.FieldSpec(
-            wire_name="secondary_interfaces",
-            kind="list",
-            fields=_Template_SecondaryInterfacesFields,
-        ),
+        "launch_template_name": ubx.FieldSpec(wire_name="launch_template_name"),
         "tag_specifications": ubx.FieldSpec(
             wire_name="tag_specifications",
             kind="list",
-            fields=_Template_TagSpecificationsFields,
+            fields=_Template_LaunchTemplateData_TagSpecificationsFields,
         ),
+        "version_description": ubx.FieldSpec(wire_name="version_description"),
     },
 )

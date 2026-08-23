@@ -2,32 +2,64 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Pipeline_BufferOptions {
-  persistentBufferEnabled: boolean;
+  /** Whether persistent buffering should be enabled. */
+  persistentBufferEnabled: boolean | Computed<boolean>;
 }
 
 export interface Pipeline_EncryptionAtRestOptions {
-  kmsKeyArn: string;
+  /** The KMS key to use for encrypting data. By default an AWS owned key is used */
+  kmsKeyArn: string | Computed<string>;
 }
 
-export interface Pipeline_LogPublishingOptions_CloudwatchLogDestination {
-  logGroup: string;
+export interface Pipeline_LogPublishingOptions_CloudWatchLogDestination {
+  /** The name of the CloudWatch Logs log group where the OpenSearch Ingestion pipeline publishes logs. (AI-inferred) */
+  logGroup: string | Computed<string>;
 }
 
 export interface Pipeline_LogPublishingOptions {
-  isLoggingEnabled: boolean;
-  cloudwatchLogDestination: Pipeline_LogPublishingOptions_CloudwatchLogDestination[];
+  /** The destination for OpenSearch Ingestion Service logs sent to Amazon CloudWatch. */
+  cloudWatchLogDestination?: Pipeline_LogPublishingOptions_CloudWatchLogDestination | Computed<Pipeline_LogPublishingOptions_CloudWatchLogDestination>;
+  /** Whether logs should be published. */
+  isLoggingEnabled?: boolean | Computed<boolean>;
 }
 
-export interface Pipeline_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Pipeline_ResourcePolicy {
+  /** The `policy` field specifies the JSON resource-based policy document that defines permissions for the OpenSearch Ingestion pipeline to access specified AWS resources, such as the source and sink data stores. (AI-inferred) */
+  policy: unknown | Computed<unknown>;
 }
 
-export interface Pipeline_VpcOptions {
-  securityGroupIds: string[];
-  subnetIds: string[];
-  vpcEndpointManagement: string;
+export interface Pipeline_Tags {
+  /** The key of a user-defined tag to attach to the OpenSearch Ingestion pipeline. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value of a tag attached to the OpenSearch Ingestion pipeline, used to store metadata such as environment, owner, or cost center for resource identification and management. (AI-inferred) */
+  value?: string | Computed<string>;
+}
+
+export interface Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptions {
+  /** Indicates whether the OpenSearch Ingestion pipeline's VPC endpoint is attached to a VPC, enabling the pipeline to access resources within that VPC when set to true. (AI-inferred) */
+  attachToVpc?: boolean | Computed<boolean>;
+  /** The CIDR block (e.g., 10.0.0.0/16) that defines the IP address range for the VPC attachment of the OpenSearch Ingestion pipeline's VPC endpoint. (AI-inferred) */
+  cidrBlock?: string | Computed<string>;
+}
+
+export interface Pipeline_VpcEndpoints_VpcOptions {
+  /** Specifies the security group IDs to attach to the VPC endpoint for the OpenSearch Ingestion pipeline, controlling network traffic to and from the endpoint within the VPC. (AI-inferred) */
+  securityGroupIds?: string[] | Computed<string[]>;
+  /** Specifies the subnet IDs within the VPC where the OpenSearch Ingestion pipeline's VPC endpoint will be provisioned. (AI-inferred) */
+  subnetIds?: string[] | Computed<string[]>;
+  /** Configures VPC attachment options for the OpenSearch Ingestion pipeline's VPC endpoint, including whether to attach to a VPC endpoint service and the IAM role used for that attachment. (AI-inferred) */
+  vpcAttachmentOptions?: Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptions | Computed<Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptions>;
+  /** Indicates whether the VPC endpoint for this OpenSearch Ingestion pipeline is managed by the customer ('CUSTOMER') or by the AWS service ('SERVICE') in the pipeline's VPC options. (AI-inferred) */
+  vpcEndpointManagement?: string | Computed<string>;
+}
+
+export interface Pipeline_VpcEndpoints {
+  /** The unique identifier of a VPC endpoint that clients can use to access the OpenSearch Ingestion pipeline within its VPC. (AI-inferred) */
+  vpcEndpointId?: string | Computed<string>;
+  /** The ID of the VPC in which the VPC endpoint for the OpenSearch Ingestion pipeline is automatically created, allowing the pipeline to be accessed within that VPC. (AI-inferred) */
+  vpcId?: string | Computed<string>;
+  /** VPC configuration for a VPC endpoint, specifying the subnet IDs and security group IDs associated with the endpoint in the pipeline's VPC. (AI-inferred) */
+  vpcOptions?: Pipeline_VpcEndpoints_VpcOptions | Computed<Pipeline_VpcEndpoints_VpcOptions>;
 }
 
 const Pipeline_BufferOptionsFields: FieldMap = {
@@ -38,99 +70,139 @@ const Pipeline_EncryptionAtRestOptionsFields: FieldMap = {
   kmsKeyArn: "kms_key_arn",
 };
 
-const Pipeline_LogPublishingOptions_CloudwatchLogDestinationFields: FieldMap = {
+const Pipeline_LogPublishingOptions_CloudWatchLogDestinationFields: FieldMap = {
   logGroup: "log_group",
 };
 
 const Pipeline_LogPublishingOptionsFields: FieldMap = {
-  isLoggingEnabled: "is_logging_enabled",
-  cloudwatchLogDestination: {
-    wireName: "cloudwatch_log_destination",
-    kind: "list",
-    fields: Pipeline_LogPublishingOptions_CloudwatchLogDestinationFields,
+  cloudWatchLogDestination: {
+    wireName: "cloud_watch_log_destination",
+    kind: "object",
+    fields: Pipeline_LogPublishingOptions_CloudWatchLogDestinationFields,
   },
+  isLoggingEnabled: "is_logging_enabled",
 };
 
-const Pipeline_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Pipeline_ResourcePolicyFields: FieldMap = {
+  policy: "policy",
 };
 
-const Pipeline_VpcOptionsFields: FieldMap = {
+const Pipeline_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
+const Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptionsFields: FieldMap = {
+  attachToVpc: "attach_to_vpc",
+  cidrBlock: "cidr_block",
+};
+
+const Pipeline_VpcEndpoints_VpcOptionsFields: FieldMap = {
   securityGroupIds: "security_group_ids",
   subnetIds: "subnet_ids",
+  vpcAttachmentOptions: {
+    wireName: "vpc_attachment_options",
+    kind: "object",
+    fields: Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptionsFields,
+  },
   vpcEndpointManagement: "vpc_endpoint_management",
 };
 
 export interface PipelineConfig {
+  /** Key-value pairs to configure buffering. */
+  bufferOptions?: Pipeline_BufferOptions | Computed<Pipeline_BufferOptions>;
+  /** Key-value pairs to configure encryption at rest. */
+  encryptionAtRestOptions?: Pipeline_EncryptionAtRestOptions | Computed<Pipeline_EncryptionAtRestOptions>;
+  /** Key-value pairs to configure log publishing. */
+  logPublishingOptions?: Pipeline_LogPublishingOptions | Computed<Pipeline_LogPublishingOptions>;
+  /** The maximum pipeline capacity, in Ingestion OpenSearch Compute Units (OCUs). */
   maxUnits: number | Computed<number>;
+  /** The minimum pipeline capacity, in Ingestion OpenSearch Compute Units (OCUs). */
   minUnits: number | Computed<number>;
+  /** The Data Prepper pipeline configuration. */
   pipelineConfigurationBody: string | Computed<string>;
+  /** Name of the OpenSearch Ingestion Service pipeline to create. Pipeline names are unique across the pipelines owned by an account within an AWS Region. */
   pipelineName: string | Computed<string>;
+  /** The Pipeline Role (ARN) for the pipeline. */
   pipelineRoleArn?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  bufferOptions?: Pipeline_BufferOptions[] | Computed<Pipeline_BufferOptions[]>;
-  encryptionAtRestOptions?: Pipeline_EncryptionAtRestOptions[] | Computed<Pipeline_EncryptionAtRestOptions[]>;
-  logPublishingOptions?: Pipeline_LogPublishingOptions[] | Computed<Pipeline_LogPublishingOptions[]>;
-  timeouts?: Pipeline_Timeouts | Computed<Pipeline_Timeouts>;
-  vpcOptions?: Pipeline_VpcOptions[] | Computed<Pipeline_VpcOptions[]>;
+  /** The IAM resource policy that grants other AWS services permissions to send messages or data to the OpenSearch Ingestion pipeline. (AI-inferred) */
+  resourcePolicy?: Pipeline_ResourcePolicy | Computed<Pipeline_ResourcePolicy>;
+  /** An array of key-value pairs to apply to this resource. */
+  tags?: Pipeline_Tags[] | Computed<Pipeline_Tags[]>;
+  /** Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion Service creates the pipeline with a public endpoint. */
+  vpcOptions?: Pipeline_VpcEndpoints_VpcOptions | Computed<Pipeline_VpcEndpoints_VpcOptions>;
 }
 
 export interface PipelineAttrs {
-  id: string;
+  /** Key-value pairs to configure buffering. */
+  bufferOptions: Pipeline_BufferOptions;
+  /** Key-value pairs to configure encryption at rest. */
+  encryptionAtRestOptions: Pipeline_EncryptionAtRestOptions;
+  /** A list of endpoints that can be used for ingesting data into a pipeline */
   ingestEndpointUrls: string[];
+  /** Key-value pairs to configure log publishing. */
+  logPublishingOptions: Pipeline_LogPublishingOptions;
+  /** The maximum pipeline capacity, in Ingestion OpenSearch Compute Units (OCUs). */
   maxUnits: number;
+  /** The minimum pipeline capacity, in Ingestion OpenSearch Compute Units (OCUs). */
   minUnits: number;
+  /** The Amazon Resource Name (ARN) of the pipeline. */
   pipelineArn: string;
+  /** The Data Prepper pipeline configuration. */
   pipelineConfigurationBody: string;
+  /** Name of the OpenSearch Ingestion Service pipeline to create. Pipeline names are unique across the pipelines owned by an account within an AWS Region. */
   pipelineName: string;
+  /** The Pipeline Role (ARN) for the pipeline. */
   pipelineRoleArn: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  bufferOptions: Pipeline_BufferOptions[];
-  encryptionAtRestOptions: Pipeline_EncryptionAtRestOptions[];
-  logPublishingOptions: Pipeline_LogPublishingOptions[];
-  timeouts: Pipeline_Timeouts;
-  vpcOptions: Pipeline_VpcOptions[];
+  /** The IAM resource policy that grants other AWS services permissions to send messages or data to the OpenSearch Ingestion pipeline. (AI-inferred) */
+  resourcePolicy: Pipeline_ResourcePolicy;
+  /** An array of key-value pairs to apply to this resource. */
+  tags: Pipeline_Tags[];
+  /** The VPC endpoint service name for the pipeline. */
+  vpcEndpointService: string;
+  /** The VPC interface endpoints that have access to the pipeline. */
+  vpcEndpoints: Pipeline_VpcEndpoints[];
+  /** Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion Service creates the pipeline with a public endpoint. */
+  vpcOptions: Pipeline_VpcEndpoints_VpcOptions;
 }
 
 export const Pipeline: ResourceBinding<PipelineConfig, PipelineAttrs> = {
   wireType: "aws_osis_pipeline",
   fields: {
+    bufferOptions: {
+      wireName: "buffer_options",
+      kind: "object",
+      fields: Pipeline_BufferOptionsFields,
+    },
+    encryptionAtRestOptions: {
+      wireName: "encryption_at_rest_options",
+      kind: "object",
+      fields: Pipeline_EncryptionAtRestOptionsFields,
+    },
+    logPublishingOptions: {
+      wireName: "log_publishing_options",
+      kind: "object",
+      fields: Pipeline_LogPublishingOptionsFields,
+    },
     maxUnits: "max_units",
     minUnits: "min_units",
     pipelineConfigurationBody: "pipeline_configuration_body",
     pipelineName: "pipeline_name",
     pipelineRoleArn: "pipeline_role_arn",
-    region: "region",
-    tags: "tags",
-    bufferOptions: {
-      wireName: "buffer_options",
-      kind: "list",
-      fields: Pipeline_BufferOptionsFields,
-    },
-    encryptionAtRestOptions: {
-      wireName: "encryption_at_rest_options",
-      kind: "list",
-      fields: Pipeline_EncryptionAtRestOptionsFields,
-    },
-    logPublishingOptions: {
-      wireName: "log_publishing_options",
-      kind: "list",
-      fields: Pipeline_LogPublishingOptionsFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
+    resourcePolicy: {
+      wireName: "resource_policy",
       kind: "object",
-      fields: Pipeline_TimeoutsFields,
+      fields: Pipeline_ResourcePolicyFields,
+    },
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Pipeline_TagsFields,
     },
     vpcOptions: {
       wireName: "vpc_options",
-      kind: "list",
-      fields: Pipeline_VpcOptionsFields,
+      kind: "object",
+      fields: Pipeline_VpcEndpoints_VpcOptionsFields,
     },
   },
 };

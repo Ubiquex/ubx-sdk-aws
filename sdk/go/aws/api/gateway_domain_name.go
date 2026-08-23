@@ -4,18 +4,22 @@ package api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayDomainName_EndpointConfiguration struct {
+	// Determines the IP address version (IPv4 or IPv6) used by the regional API Gateway custom domain name when the endpoint type is REGIONAL. (AI-inferred)
 	IpAddressType any
+	// Specifies the list of endpoint types (EDGE, REGIONAL, or PRIVATE) that determine how the API Gateway domain name is exposed and routed across AWS regions and VPCs. (AI-inferred)
 	Types any
 }
 
 type GatewayDomainName_MutualTlsAuthentication struct {
+	// The Amazon S3 URI of the truststore containing the trusted CA certificates used for mutual TLS authentication on the API Gateway domain name. (AI-inferred)
 	TruststoreUri any
+	// The version of the S3 object that contains the truststore for mutual TLS authentication. (AI-inferred)
 	TruststoreVersion any
 }
 
-type GatewayDomainName_Timeouts struct {
-	Create any
-	Update any
+type GatewayDomainName_Tags struct {
+	Key any
+	Value any
 }
 
 var GatewayDomainName_EndpointConfigurationFields = ubx.FieldMap{
@@ -28,68 +32,89 @@ var GatewayDomainName_MutualTlsAuthenticationFields = ubx.FieldMap{
 		"TruststoreVersion": ubx.FieldSpec{WireName: "truststore_version"},
 	}
 
-var GatewayDomainName_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var GatewayDomainName_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type GatewayDomainNameConfig struct {
+	// The ARN of an AWS Certificate Manager (ACM) certificate used to secure the edge-optimized domain name's TLS/SSL connections. (AI-inferred)
 	CertificateArn any
-	CertificateBody any
-	CertificateChain any
-	CertificateName any
-	CertificatePrivateKey any
+	// The custom domain name (e.g., api.example.com) that API Gateway serves for this domain name resource, which must be registered and associated with an ACM certificate. (AI-inferred)
 	DomainName any
+	// This field sets the endpoint access mode for the API Gateway custom domain name, either PUBLIC for internet access or PRIVATE to restrict access to private VPC endpoints. (AI-inferred)
 	EndpointAccessMode any
-	Id any
-	OwnershipVerificationCertificateArn any
-	Policy any
-	Region any
-	RegionalCertificateArn any
-	RegionalCertificateName any
-	RoutingMode any
-	SecurityPolicy any
-	Tags any
-	TagsAll any
+	// The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of an Amazon API Gateway domain name. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::DomainName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html) resource.
 	EndpointConfiguration any
+	// Configures mutual TLS (mTLS) for the API Gateway domain name by providing the truststore URI and version used to validate client certificates. (AI-inferred)
 	MutualTlsAuthentication any
-	Timeouts any
+	// The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the RegionalCertificateArn.
+	OwnershipVerificationCertificateArn any
+	// Specifies the ARN of an AWS Certificate Manager (ACM) certificate to use for the domain name's regional API endpoint, which serves requests for a specific AWS region. (AI-inferred)
+	RegionalCertificateArn any
+	RoutingMode any
+	// Specifies the minimum TLS version (e.g., 'TLS_1_0' or 'TLS_1_2') that API Gateway uses for the custom domain name's HTTPS connections. (AI-inferred)
+	SecurityPolicy any
+	// Specifies the list of key-value tags to attach to the API Gateway domain name. (AI-inferred)
+	Tags any
+}
+
+type GatewayDomainNameAttrs struct {
+	// The ARN of an AWS Certificate Manager (ACM) certificate used to secure the edge-optimized domain name's TLS/SSL connections. (AI-inferred)
+	CertificateArn any
+	// The CloudFront distribution domain name that API Gateway assigns to the custom domain name, used as the target for a Route 53 alias record or CNAME to point the custom domain to the API endpoints. (AI-inferred)
+	DistributionDomainName any
+	// The Route 53 hosted zone ID of the CloudFront distribution associated with this API Gateway custom domain name (used for edge-optimized endpoints). (AI-inferred)
+	DistributionHostedZoneId any
+	// The custom domain name (e.g., api.example.com) that API Gateway serves for this domain name resource, which must be registered and associated with an ACM certificate. (AI-inferred)
+	DomainName any
+	// The Amazon Resource Name (ARN) of the API Gateway domain name. (AI-inferred)
+	DomainNameArn any
+	// This field sets the endpoint access mode for the API Gateway custom domain name, either PUBLIC for internet access or PRIVATE to restrict access to private VPC endpoints. (AI-inferred)
+	EndpointAccessMode any
+	// The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of an Amazon API Gateway domain name. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::DomainName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html) resource.
+	EndpointConfiguration any
+	// Configures mutual TLS (mTLS) for the API Gateway domain name by providing the truststore URI and version used to validate client certificates. (AI-inferred)
+	MutualTlsAuthentication any
+	// The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the RegionalCertificateArn.
+	OwnershipVerificationCertificateArn any
+	// Specifies the ARN of an AWS Certificate Manager (ACM) certificate to use for the domain name's regional API endpoint, which serves requests for a specific AWS region. (AI-inferred)
+	RegionalCertificateArn any
+	// The auto-generated regional domain name (e.g., d-xxxxxxxx.execute-api.region.amazonaws.com) that API Gateway assigns to this custom domain name when configured for a regional endpoint, which is used as the DNS target for routing traffic to API Gateway. (AI-inferred)
+	RegionalDomainName any
+	// The Route 53 hosted zone ID for the regional API Gateway endpoint, used to configure DNS alias records pointing to the regional domain name. (AI-inferred)
+	RegionalHostedZoneId any
+	RoutingMode any
+	// Specifies the minimum TLS version (e.g., 'TLS_1_0' or 'TLS_1_2') that API Gateway uses for the custom domain name's HTTPS connections. (AI-inferred)
+	SecurityPolicy any
+	// Specifies the list of key-value tags to attach to the API Gateway domain name. (AI-inferred)
+	Tags any
 }
 
 var GatewayDomainName = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_domain_name",
 	Fields: ubx.FieldMap{
 		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"CertificateBody": ubx.FieldSpec{WireName: "certificate_body"},
-		"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
-		"CertificateName": ubx.FieldSpec{WireName: "certificate_name"},
-		"CertificatePrivateKey": ubx.FieldSpec{WireName: "certificate_private_key"},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"EndpointAccessMode": ubx.FieldSpec{WireName: "endpoint_access_mode"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"OwnershipVerificationCertificateArn": ubx.FieldSpec{WireName: "ownership_verification_certificate_arn"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RegionalCertificateArn": ubx.FieldSpec{WireName: "regional_certificate_arn"},
-		"RegionalCertificateName": ubx.FieldSpec{WireName: "regional_certificate_name"},
-		"RoutingMode": ubx.FieldSpec{WireName: "routing_mode"},
-		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"EndpointConfiguration": ubx.FieldSpec{
 			WireName: "endpoint_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: GatewayDomainName_EndpointConfigurationFields,
 		},
 		"MutualTlsAuthentication": ubx.FieldSpec{
 			WireName: "mutual_tls_authentication",
-			Kind: "list",
+			Kind: "object",
 			Fields: GatewayDomainName_MutualTlsAuthenticationFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: GatewayDomainName_TimeoutsFields,
+		"OwnershipVerificationCertificateArn": ubx.FieldSpec{WireName: "ownership_verification_certificate_arn"},
+		"RegionalCertificateArn": ubx.FieldSpec{WireName: "regional_certificate_arn"},
+		"RoutingMode": ubx.FieldSpec{WireName: "routing_mode"},
+		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: GatewayDomainName_TagsFields,
 		},
 	},
 }

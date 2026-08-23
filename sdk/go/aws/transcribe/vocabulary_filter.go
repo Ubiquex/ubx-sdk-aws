@@ -3,25 +3,60 @@ package transcribe
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type VocabularyFilter_Tags struct {
+	// The key name for a tag assigned to this Amazon Transcribe vocabulary filter, allowing you to categorize and manage the resource by purpose, owner, or environment. (AI-inferred)
+	Key any
+	// The value component of a key-value tag attached to the Amazon Transcribe vocabulary filter for organizing and managing the resource. (AI-inferred)
+	Value any
+}
+
+var VocabularyFilter_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type VocabularyFilterConfig struct {
-	Id any
+	// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files.
+	DataAccessRoleArn any
+	// The language code that represents the language of the entries in your vocabulary filter.
 	LanguageCode any
-	Region any
+	// Tags associated with the vocabulary filter.
 	Tags any
-	TagsAll any
+	// The Amazon S3 location of the text file that contains your custom vocabulary filter terms.
 	VocabularyFilterFileUri any
+	// A unique name, chosen by you, for your custom vocabulary filter.
 	VocabularyFilterName any
+	// Use this parameter if you want to create your custom vocabulary filter by including all desired terms, as comma-separated values, within your request.
+	Words any
+}
+
+type VocabularyFilterAttrs struct {
+	// The Amazon Resource Name (ARN) of the vocabulary filter.
+	Arn any
+	// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files.
+	DataAccessRoleArn any
+	// The language code that represents the language of the entries in your vocabulary filter.
+	LanguageCode any
+	// Tags associated with the vocabulary filter.
+	Tags any
+	// The Amazon S3 location of the text file that contains your custom vocabulary filter terms.
+	VocabularyFilterFileUri any
+	// A unique name, chosen by you, for your custom vocabulary filter.
+	VocabularyFilterName any
+	// Use this parameter if you want to create your custom vocabulary filter by including all desired terms, as comma-separated values, within your request.
 	Words any
 }
 
 var VocabularyFilter = ubx.ResourceBinding{
 	WireType: "aws_transcribe_vocabulary_filter",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"DataAccessRoleArn": ubx.FieldSpec{WireName: "data_access_role_arn"},
 		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: VocabularyFilter_TagsFields,
+		},
 		"VocabularyFilterFileUri": ubx.FieldSpec{WireName: "vocabulary_filter_file_uri"},
 		"VocabularyFilterName": ubx.FieldSpec{WireName: "vocabulary_filter_name"},
 		"Words": ubx.FieldSpec{WireName: "words"},

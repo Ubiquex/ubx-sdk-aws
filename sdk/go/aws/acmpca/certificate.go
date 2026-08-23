@@ -3,10 +3,307 @@ package acmpca
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Certificate_Validity struct {
-	Type any
+type Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiers_Qualifier struct {
+	// The URI of the Certification Practice Statement (CPS) for the certificate policy qualifier, specifying where the CA's practices are published. (AI-inferred)
+	CpsUri any
+}
+
+type Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiers struct {
+	// The OID identifying the type of certificate policy qualifier (id-qt-cps for a CPS pointer or id-qt-unotice for a user notice). (AI-inferred)
+	PolicyQualifierId any
+	// For a certificate policy qualifier, the Qualifier object carries the CPS URI (a Uniform Resource Identifier pointing to the Certification Practice Statement) as required by RFC 5280. (AI-inferred)
+	Qualifier any
+}
+
+type Certificate_ApiPassthrough_Extensions_CertificatePolicies struct {
+	// The object identifier (OID) of a certificate policy, as used in the CertificatePolicies X.509 extension (RFC 5280), which identifies the policy under which the certificate is issued. (AI-inferred)
+	CertPolicyId any
+	// A list of policy qualifiers that provide additional information, such as a certification practice statement (CPS) URI, for each certificate policy extension in the certificate. (AI-inferred)
+	PolicyQualifiers any
+}
+
+type Certificate_ApiPassthrough_Extensions_CustomExtensions struct {
+	// Indicates whether the custom extension is marked as critical in the X.509 certificate, as defined by RFC 5280. (AI-inferred)
+	Critical any
+	// The object identifier (OID) for the custom X.509 extension, which is included in the certificate's extensions when using API passthrough in AWS Certificate Manager Private Certificate Authority. (AI-inferred)
+	ObjectIdentifier any
+	// The string value of the custom X.509 extension, containing the extension's data (often ASN.1 encoded) to be placed in the certificate. (AI-inferred)
 	Value any
 }
+
+type Certificate_ApiPassthrough_Extensions_ExtendedKeyUsage struct {
+	// Specifies a custom object identifier (OID) for the ExtendedKeyUsage extension, allowing a non-standard extended key usage value instead of a predefined ExtendedKeyUsageType. (AI-inferred)
+	ExtendedKeyUsageObjectIdentifier any
+	// Specifies a standard extended key usage type (such as SERVER_AUTH, CLIENT_AUTH, CODE_SIGNING, or EMAIL_PROTECTION) to include in the certificate's ExtendedKeyUsage extension via the api_passthrough structure. (AI-inferred)
+	ExtendedKeyUsageType any
+}
+
+type Certificate_ApiPassthrough_Extensions_KeyUsage struct {
+	// Key can be used to sign CRLs.
+	Crlsign any
+	// Key can be used to decipher data.
+	DataEncipherment any
+	// Key can be used only to decipher data.
+	DecipherOnly any
+	// Key can be used for digital signing.
+	DigitalSignature any
+	// Key can be used only to encipher data.
+	EncipherOnly any
+	// Key can be used in a key-agreement protocol.
+	KeyAgreement any
+	// Key can be used to sign certificates.
+	KeyCertSign any
+	// Key can be used to encipher data.
+	KeyEncipherment any
+	// Key can be used for non-repudiation.
+	NonRepudiation any
+}
+
+type Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryName_CustomAttributes struct {
+	// The dotted decimal object identifier (OID) that identifies the attribute type in a custom DirectoryName attribute within a subject alternative name extension of an AWS Private CA certificate. (AI-inferred)
+	ObjectIdentifier any
+	// The value of a custom attribute within an X.500 distinguished name (DN) that is used as a subject alternative name (DirectoryName) in the certificate's API passthrough extensions. (AI-inferred)
+	Value any
+}
+
+type Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryName struct {
+	// The Common Name (CN) component of a directory name (X.500 distinguished name) used as a subject alternative name in the certificate's X.509 extensions, passed through to the ACM Private CA API via the ApiPassthrough structure. (AI-inferred)
+	CommonName any
+	// The two-letter ISO 3166 country code in the directoryName form of the SubjectAlternativeName extension when passing X.509 extensions through the ACM Private CA certificate API. (AI-inferred)
+	Country any
+	// A list of custom attribute (OID/value) pairs that further qualify the X.500 directory name in the subject alternative names extension of the certificate, passed through to the private CA. (AI-inferred)
+	CustomAttributes any
+	// Specifies the distinguished name qualifier (DNQ) to include in the directoryName entry of the Subject Alternative Name extension for the certificate, an optional X.520 attribute that helps disambiguate otherwise identical distinguished names. (AI-inferred)
+	DistinguishedNameQualifier any
+	// Specifies the generation qualifier (e.g., Jr., III) for a DirectoryName subject alternative name in the API passthrough configuration for an AWS Private CA certificate. (AI-inferred)
+	GenerationQualifier any
+	// Specifies the given name (first name) attribute of the X.500 distinguished name used as a directory-name subject alternative name in the certificate issued by the private CA. (AI-inferred)
+	GivenName any
+	// Specifies the initials attribute of an X.500 distinguished name used in the directoryName entry of a SubjectAlternativeNames extension in the certificate's ApiPassthrough configuration. (AI-inferred)
+	Initials any
+	// Specifies the locality (L) attribute of a directory name in the subject alternative names extension, indicating the city or place for that certificate subject. (AI-inferred)
+	Locality any
+	// The organization (O) attribute of a directory name used as a subject alternative name, specifying the organization to which the certificate subject belongs. (AI-inferred)
+	Organization any
+	// Specifies the organizational unit (OU) component of the X.500 directory name in a subject alternative name extension, used to identify the entity associated with the certificate. (AI-inferred)
+	OrganizationalUnit any
+	// Specifies the pseudonym attribute (an X.520 name component) of an X.509 directory name used as a subject alternative name, passed through to ACM Private CA's certificate API as part of the extensions. (AI-inferred)
+	Pseudonym any
+	// The serial number attribute of the X.500 distinguished name in a directoryName subject alternative name, used to identify the subject within the directory namespace (not the certificate's serial number). (AI-inferred)
+	SerialNumber any
+	// The state or province attribute of the directory name (DN) in a subject alternative name extension for the certificate, as provided via the API passthrough. (AI-inferred)
+	State any
+	// Specifies the surname (family name) component of the distinguished name used as a directoryName entry in the subject alternative names extension of the certificate. (AI-inferred)
+	Surname any
+	// Specifies the title attribute (e.g., 'Dr.', 'Esq.') of the X.500 directory name used as a subject alternative name in the certificate. (AI-inferred)
+	Title any
+}
+
+type Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_EdiPartyName struct {
+	// Specifies the name assigner element of an EDI party name included in the Subject Alternative Name extension, identifying the organization that assigned the EDI party name, passed through to the private CA for certificate issuance. (AI-inferred)
+	NameAssigner any
+	// Specifies the name of the EDI (Electronic Data Interchange) party, typically an organization or individual, used in the subject alternative name extension of the certificate to identify the certificate holder for EDI messaging purposes. (AI-inferred)
+	PartyName any
+}
+
+type Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_OtherName struct {
+	// Specifies the object identifier (OID) that defines the type of the 'other name' in a SubjectAlternativeName extension within the certificate's ApiPassthrough, as per RFC 5280. (AI-inferred)
+	TypeId any
+	// The value of the OtherName subject alternative name, carrying the actual data (such as a user principal name or a custom string) for the name type identified by the corresponding TypeId OID. (AI-inferred)
+	Value any
+}
+
+type Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames struct {
+	// This field specifies a directory name (a distinguished name) to be included as a subject alternative name in the certificate, representing the ASN.1 `directoryName` general name type in the SubjectAlternativeNames extension via the ACM PCA API passthrough. (AI-inferred)
+	DirectoryName any
+	// The DNS name to include in the Subject Alternative Name extension of the certificate, passed through via the API passthrough. (AI-inferred)
+	DnsName any
+	// Configures an EDI (Electronic Data Interchange) party name to be included as an entry in the certificate's Subject Alternative Name extension, with fields for the party name and the optional name assigner (the organization that assigned it). (AI-inferred)
+	EdiPartyName any
+	// The IP address (IPv4 or IPv6) to include as a subject alternative name extension in the certificate issued by the private CA. (AI-inferred)
+	IpAddress any
+	// Specifies an otherName subject alternative name, which consists of an object identifier (type_id) and a string-encoded value, for the certificate's Subject Alternative Name extension. (AI-inferred)
+	OtherName any
+	// Holds the object identifier (OID) string for a subject alternative name of type REGISTERED_ID, which can be included in the certificate's Subject Alternative Name extension to specify a custom registered identifier. (AI-inferred)
+	RegisteredId any
+	// The RFC 822 email address to include as a subject alternative name on the certificate. (AI-inferred)
+	Rfc822Name any
+	// Specifies a uniform resource identifier (URI) to include as a subject alternative name (SAN) in the certificate's subjectAlternativeName extension. (AI-inferred)
+	UniformResourceIdentifier any
+}
+
+type Certificate_ApiPassthrough_Extensions struct {
+	// Specifies the certificate policies extension to include in the issued certificate, where each object contains a policy OID and optional policy qualifiers under the API passthrough extensions. (AI-inferred)
+	CertificatePolicies any
+	// Array of X.509 extensions for a certificate.
+	CustomExtensions any
+	// Sets the ExtendedKeyUsage extension in the certificate's X.509 extensions (as pass-through to ACM Private CA), listing permitted usages such as server authentication, client authentication, code signing, or custom OID-based purposes. (AI-inferred)
+	ExtendedKeyUsage any
+	// Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.
+	KeyUsage any
+	// Specifies one or more subject alternative names (SANs) to include in the certificate's subjectAltName extension, such as DNS names, IP addresses, or email addresses. (AI-inferred)
+	SubjectAlternativeNames any
+}
+
+type Certificate_ApiPassthrough struct {
+	// Contains X.509 extension information for a certificate.
+	Extensions any
+	// Contains information about the certificate subject. The ``Subject`` field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The ``Subject``must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.
+	Subject any
+}
+
+type Certificate_Validity struct {
+	// Specifies whether the ``Value`` parameter represents days, months, or years.
+	Type any
+	// A long integer interpreted according to the value of ``Type``, below.
+	Value any
+}
+
+var Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiers_QualifierFields = ubx.FieldMap{
+		"CpsUri": ubx.FieldSpec{WireName: "cps_uri"},
+	}
+
+var Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiersFields = ubx.FieldMap{
+		"PolicyQualifierId": ubx.FieldSpec{WireName: "policy_qualifier_id"},
+		"Qualifier": ubx.FieldSpec{
+			WireName: "qualifier",
+			Kind: "object",
+			Fields: Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiers_QualifierFields,
+		},
+	}
+
+var Certificate_ApiPassthrough_Extensions_CertificatePoliciesFields = ubx.FieldMap{
+		"CertPolicyId": ubx.FieldSpec{WireName: "cert_policy_id"},
+		"PolicyQualifiers": ubx.FieldSpec{
+			WireName: "policy_qualifiers",
+			Kind: "list",
+			Fields: Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiersFields,
+		},
+	}
+
+var Certificate_ApiPassthrough_Extensions_CustomExtensionsFields = ubx.FieldMap{
+		"Critical": ubx.FieldSpec{WireName: "critical"},
+		"ObjectIdentifier": ubx.FieldSpec{WireName: "object_identifier"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Certificate_ApiPassthrough_Extensions_ExtendedKeyUsageFields = ubx.FieldMap{
+		"ExtendedKeyUsageObjectIdentifier": ubx.FieldSpec{WireName: "extended_key_usage_object_identifier"},
+		"ExtendedKeyUsageType": ubx.FieldSpec{WireName: "extended_key_usage_type"},
+	}
+
+var Certificate_ApiPassthrough_Extensions_KeyUsageFields = ubx.FieldMap{
+		"Crlsign": ubx.FieldSpec{WireName: "crlsign"},
+		"DataEncipherment": ubx.FieldSpec{WireName: "data_encipherment"},
+		"DecipherOnly": ubx.FieldSpec{WireName: "decipher_only"},
+		"DigitalSignature": ubx.FieldSpec{WireName: "digital_signature"},
+		"EncipherOnly": ubx.FieldSpec{WireName: "encipher_only"},
+		"KeyAgreement": ubx.FieldSpec{WireName: "key_agreement"},
+		"KeyCertSign": ubx.FieldSpec{WireName: "key_cert_sign"},
+		"KeyEncipherment": ubx.FieldSpec{WireName: "key_encipherment"},
+		"NonRepudiation": ubx.FieldSpec{WireName: "non_repudiation"},
+	}
+
+var Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryName_CustomAttributesFields = ubx.FieldMap{
+		"ObjectIdentifier": ubx.FieldSpec{WireName: "object_identifier"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryNameFields = ubx.FieldMap{
+		"CommonName": ubx.FieldSpec{WireName: "common_name"},
+		"Country": ubx.FieldSpec{WireName: "country"},
+		"CustomAttributes": ubx.FieldSpec{
+			WireName: "custom_attributes",
+			Kind: "list",
+			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryName_CustomAttributesFields,
+		},
+		"DistinguishedNameQualifier": ubx.FieldSpec{WireName: "distinguished_name_qualifier"},
+		"GenerationQualifier": ubx.FieldSpec{WireName: "generation_qualifier"},
+		"GivenName": ubx.FieldSpec{WireName: "given_name"},
+		"Initials": ubx.FieldSpec{WireName: "initials"},
+		"Locality": ubx.FieldSpec{WireName: "locality"},
+		"Organization": ubx.FieldSpec{WireName: "organization"},
+		"OrganizationalUnit": ubx.FieldSpec{WireName: "organizational_unit"},
+		"Pseudonym": ubx.FieldSpec{WireName: "pseudonym"},
+		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"Surname": ubx.FieldSpec{WireName: "surname"},
+		"Title": ubx.FieldSpec{WireName: "title"},
+	}
+
+var Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_EdiPartyNameFields = ubx.FieldMap{
+		"NameAssigner": ubx.FieldSpec{WireName: "name_assigner"},
+		"PartyName": ubx.FieldSpec{WireName: "party_name"},
+	}
+
+var Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_OtherNameFields = ubx.FieldMap{
+		"TypeId": ubx.FieldSpec{WireName: "type_id"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Certificate_ApiPassthrough_Extensions_SubjectAlternativeNamesFields = ubx.FieldMap{
+		"DirectoryName": ubx.FieldSpec{
+			WireName: "directory_name",
+			Kind: "object",
+			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryNameFields,
+		},
+		"DnsName": ubx.FieldSpec{WireName: "dns_name"},
+		"EdiPartyName": ubx.FieldSpec{
+			WireName: "edi_party_name",
+			Kind: "object",
+			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_EdiPartyNameFields,
+		},
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"OtherName": ubx.FieldSpec{
+			WireName: "other_name",
+			Kind: "object",
+			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_OtherNameFields,
+		},
+		"RegisteredId": ubx.FieldSpec{WireName: "registered_id"},
+		"Rfc822Name": ubx.FieldSpec{WireName: "rfc822_name"},
+		"UniformResourceIdentifier": ubx.FieldSpec{WireName: "uniform_resource_identifier"},
+	}
+
+var Certificate_ApiPassthrough_ExtensionsFields = ubx.FieldMap{
+		"CertificatePolicies": ubx.FieldSpec{
+			WireName: "certificate_policies",
+			Kind: "list",
+			Fields: Certificate_ApiPassthrough_Extensions_CertificatePoliciesFields,
+		},
+		"CustomExtensions": ubx.FieldSpec{
+			WireName: "custom_extensions",
+			Kind: "list",
+			Fields: Certificate_ApiPassthrough_Extensions_CustomExtensionsFields,
+		},
+		"ExtendedKeyUsage": ubx.FieldSpec{
+			WireName: "extended_key_usage",
+			Kind: "list",
+			Fields: Certificate_ApiPassthrough_Extensions_ExtendedKeyUsageFields,
+		},
+		"KeyUsage": ubx.FieldSpec{
+			WireName: "key_usage",
+			Kind: "object",
+			Fields: Certificate_ApiPassthrough_Extensions_KeyUsageFields,
+		},
+		"SubjectAlternativeNames": ubx.FieldSpec{
+			WireName: "subject_alternative_names",
+			Kind: "list",
+			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNamesFields,
+		},
+	}
+
+var Certificate_ApiPassthroughFields = ubx.FieldMap{
+		"Extensions": ubx.FieldSpec{
+			WireName: "extensions",
+			Kind: "object",
+			Fields: Certificate_ApiPassthrough_ExtensionsFields,
+		},
+		"Subject": ubx.FieldSpec{
+			WireName: "subject",
+			Kind: "object",
+			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryNameFields,
+		},
+	}
 
 var Certificate_ValidityFields = ubx.FieldMap{
 		"Type": ubx.FieldSpec{WireName: "type"},
@@ -14,29 +311,63 @@ var Certificate_ValidityFields = ubx.FieldMap{
 	}
 
 type CertificateConfig struct {
+	// Contains X.509 certificate information to be placed in an issued certificate. An ``APIPassthrough`` or ``APICSRPassthrough`` template variant must be selected, or else this parameter is ignored. If conflicting or duplicate certificate information is supplied from other sources, AWS Private CA applies [order of operation rules](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations) to determine what information is used.
 	ApiPassthrough any
+	// The Amazon Resource Name (ARN) of the private certificate authority (CA) that issues the certificate. (AI-inferred)
 	CertificateAuthorityArn any
+	// The certificate signing request (CSR) for the certificate.
 	CertificateSigningRequest any
-	Id any
-	Region any
+	// The name of the algorithm that will be used to sign the certificate to be issued. This parameter should not be confused with the ``SigningAlgorithm`` parameter used to sign a CSR in the ``CreateCertificateAuthority`` action. The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.
 	SigningAlgorithm any
+	// Specifies the ARN of the certificate template that determines the certificate type (such as end-entity or subordinate CA) and its extensions for the issued certificate. (AI-inferred)
 	TemplateArn any
+	// Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the ``IssueCertificate`` operation.
 	Validity any
+	// Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the ``IssueCertificate`` operation.
+	ValidityNotBefore any
+}
+
+type CertificateAttrs struct {
+	// Contains X.509 certificate information to be placed in an issued certificate. An ``APIPassthrough`` or ``APICSRPassthrough`` template variant must be selected, or else this parameter is ignored. If conflicting or duplicate certificate information is supplied from other sources, AWS Private CA applies [order of operation rules](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations) to determine what information is used.
+	ApiPassthrough any
+	// The Amazon Resource Name (ARN) of the issued certificate, uniquely identifying it within the AWS account and region. (AI-inferred)
+	Arn any
+	// The PEM-encoded certificate issued by the private CA for the requested certificate signing request. (AI-inferred)
+	Certificate any
+	// The Amazon Resource Name (ARN) of the private certificate authority (CA) that issues the certificate. (AI-inferred)
+	CertificateAuthorityArn any
+	// The certificate signing request (CSR) for the certificate.
+	CertificateSigningRequest any
+	// The name of the algorithm that will be used to sign the certificate to be issued. This parameter should not be confused with the ``SigningAlgorithm`` parameter used to sign a CSR in the ``CreateCertificateAuthority`` action. The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.
+	SigningAlgorithm any
+	// Specifies the ARN of the certificate template that determines the certificate type (such as end-entity or subordinate CA) and its extensions for the issued certificate. (AI-inferred)
+	TemplateArn any
+	// Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the ``IssueCertificate`` operation.
+	Validity any
+	// Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the ``IssueCertificate`` operation.
+	ValidityNotBefore any
 }
 
 var Certificate = ubx.ResourceBinding{
 	WireType: "aws_acmpca_certificate",
 	Fields: ubx.FieldMap{
-		"ApiPassthrough": ubx.FieldSpec{WireName: "api_passthrough"},
+		"ApiPassthrough": ubx.FieldSpec{
+			WireName: "api_passthrough",
+			Kind: "object",
+			Fields: Certificate_ApiPassthroughFields,
+		},
 		"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
 		"CertificateSigningRequest": ubx.FieldSpec{WireName: "certificate_signing_request"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
 		"TemplateArn": ubx.FieldSpec{WireName: "template_arn"},
 		"Validity": ubx.FieldSpec{
 			WireName: "validity",
-			Kind: "list",
+			Kind: "object",
+			Fields: Certificate_ValidityFields,
+		},
+		"ValidityNotBefore": ubx.FieldSpec{
+			WireName: "validity_not_before",
+			Kind: "object",
 			Fields: Certificate_ValidityFields,
 		},
 	},

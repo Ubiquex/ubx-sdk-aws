@@ -7,10 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LocalGatewayRouteTableVirtualInterfaceGroupAssociation_Tags:
+    # A user-defined key for a tag on this AWS Local Gateway Route Table Virtual Interface Group Association, used to categorize, organize, or filter the resource in AWS. (AI-inferred)
+    key: Any = None
+    # The value of a tag key attached to the Local Gateway Route Table Virtual Interface Group Association, used for identifying and organizing the resource. (AI-inferred)
+    value: Any = None
+
+_LocalGatewayRouteTableVirtualInterfaceGroupAssociation_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class LocalGatewayRouteTableVirtualInterfaceGroupAssociationConfig:
+    # The ID of the local gateway route table.
     local_gateway_route_table_id: Any = None
+    # The ID of the local gateway route table virtual interface group.
     local_gateway_virtual_interface_group_id: Any = None
-    region: Any = None
+    tags: Any = None
+
+@dataclasses.dataclass
+class LocalGatewayRouteTableVirtualInterfaceGroupAssociationAttrs:
+    # The ID of the local gateway.
+    local_gateway_id: Any = None
+    # The ARN of the local gateway route table.
+    local_gateway_route_table_arn: Any = None
+    # The ID of the local gateway route table.
+    local_gateway_route_table_id: Any = None
+    # The ID of the local gateway route table virtual interface group association.
+    local_gateway_route_table_virtual_interface_group_association_id: Any = None
+    # The ID of the local gateway route table virtual interface group.
+    local_gateway_virtual_interface_group_id: Any = None
+    # The owner of the local gateway route table virtual interface group association.
+    owner_id: Any = None
+    # The state of the local gateway route table virtual interface group association.
+    state: Any = None
     tags: Any = None
 
 LocalGatewayRouteTableVirtualInterfaceGroupAssociation = ubx.ResourceBinding(
@@ -18,7 +49,10 @@ LocalGatewayRouteTableVirtualInterfaceGroupAssociation = ubx.ResourceBinding(
     fields={
         "local_gateway_route_table_id": ubx.FieldSpec(wire_name="local_gateway_route_table_id"),
         "local_gateway_virtual_interface_group_id": ubx.FieldSpec(wire_name="local_gateway_virtual_interface_group_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_LocalGatewayRouteTableVirtualInterfaceGroupAssociation_TagsFields,
+        ),
     },
 )

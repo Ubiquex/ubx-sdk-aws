@@ -7,36 +7,46 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TransitGatewayMeteringPolicy_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class TransitGatewayMeteringPolicy_Tags:
+    key: Any = None
+    value: Any = None
 
-_TransitGatewayMeteringPolicy_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_TransitGatewayMeteringPolicy_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class TransitGatewayMeteringPolicyConfig:
+    # Middle box attachment Ids
     middlebox_attachment_ids: Any = None
-    region: Any = None
     tags: Any = None
+    # The Id of transit gateway
     transit_gateway_id: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayMeteringPolicyAttrs:
+    # Middle box attachment Ids
+    middlebox_attachment_ids: Any = None
+    # State of the transit gateway metering policy
+    state: Any = None
+    tags: Any = None
+    # The Id of transit gateway
+    transit_gateway_id: Any = None
+    # The Id of the transit gateway metering policy
+    transit_gateway_metering_policy_id: Any = None
+    # The timestamp at which the latest action performed on the metering policy will become effective
+    update_effective_at: Any = None
 
 TransitGatewayMeteringPolicy = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_metering_policy",
     fields={
         "middlebox_attachment_ids": ubx.FieldSpec(wire_name="middlebox_attachment_ids"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "transit_gateway_id": ubx.FieldSpec(wire_name="transit_gateway_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_TransitGatewayMeteringPolicy_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_TransitGatewayMeteringPolicy_TagsFields,
         ),
+        "transit_gateway_id": ubx.FieldSpec(wire_name="transit_gateway_id"),
     },
 )

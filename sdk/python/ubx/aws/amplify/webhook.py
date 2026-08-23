@@ -7,12 +7,42 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Webhook_Tags:
+    key: Any = None
+    value: Any = None
+
+_Webhook_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class WebhookConfig:
+    # The unique ID for an Amplify app.
     app_id: Any = None
+    # The name for a branch that is part of an Amplify app.
     branch_name: Any = None
+    # The description for a webhook.
     description: Any = None
-    id: Any = None
-    region: Any = None
+    # Tags for the webhook.
+    tags: Any = None
+
+@dataclasses.dataclass
+class WebhookAttrs:
+    # The unique ID for an Amplify app.
+    app_id: Any = None
+    # The Amazon Resource Name (ARN) for the webhook.
+    arn: Any = None
+    # The name for a branch that is part of an Amplify app.
+    branch_name: Any = None
+    # The description for a webhook.
+    description: Any = None
+    # Tags for the webhook.
+    tags: Any = None
+    # The unique ID for a webhook.
+    webhook_id: Any = None
+    # The URL of the webhook.
+    webhook_url: Any = None
 
 Webhook = ubx.ResourceBinding(
     wire_type="aws_amplify_webhook",
@@ -20,7 +50,10 @@ Webhook = ubx.ResourceBinding(
         "app_id": ubx.FieldSpec(wire_name="app_id"),
         "branch_name": ubx.FieldSpec(wire_name="branch_name"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Webhook_TagsFields,
+        ),
     },
 )

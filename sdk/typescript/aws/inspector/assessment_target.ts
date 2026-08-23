@@ -2,26 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AssessmentTargetConfig {
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The user-defined name for the Amazon Inspector assessment target, used to identify the collection of EC2 instances being assessed. (AI-inferred) */
+  assessmentTargetName?: string | Computed<string>;
+  /** The ARN of an AWS Resource Groups group that defines the set of EC2 instances to include in this Inspector assessment target. (AI-inferred) */
   resourceGroupArn?: string | Computed<string>;
 }
 
 export interface AssessmentTargetAttrs {
+  /** The Amazon Resource Name (ARN) of this Inspector assessment target, used as a reference when creating Inspector assessment templates. (AI-inferred) */
   arn: string;
-  id: string;
-  name: string;
-  region: string;
+  /** The user-defined name for the Amazon Inspector assessment target, used to identify the collection of EC2 instances being assessed. (AI-inferred) */
+  assessmentTargetName: string;
+  /** The ARN of an AWS Resource Groups group that defines the set of EC2 instances to include in this Inspector assessment target. (AI-inferred) */
   resourceGroupArn: string;
 }
 
 export const AssessmentTarget: ResourceBinding<AssessmentTargetConfig, AssessmentTargetAttrs> = {
   wireType: "aws_inspector_assessment_target",
   fields: {
-    id: "id",
-    name: "name",
-    region: "region",
+    assessmentTargetName: "assessment_target_name",
     resourceGroupArn: "resource_group_arn",
   },
 };

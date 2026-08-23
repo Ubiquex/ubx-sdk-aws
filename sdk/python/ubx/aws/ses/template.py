@@ -7,22 +7,63 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Template_Tags:
+    # The key of a tag applied to the Amazon SES email template. (AI-inferred)
+    key: Any = None
+    # The value part of a tag assigned to the SES email template, used for metadata organization and cost allocation in AWS. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class Template_Template:
+    # The HTML body of the email.
+    html_part: Any = None
+    # The subject line of the email.
+    subject_part: Any = None
+    # The name of the template.
+    template_name: Any = None
+    # The email body that is visible to recipients whose email clients do not display HTML content.
+    text_part: Any = None
+
+_Template_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Template_TemplateFields = {
+    "html_part": ubx.FieldSpec(wire_name="html_part"),
+    "subject_part": ubx.FieldSpec(wire_name="subject_part"),
+    "template_name": ubx.FieldSpec(wire_name="template_name"),
+    "text_part": ubx.FieldSpec(wire_name="text_part"),
+}
+
+@dataclasses.dataclass
 class TemplateConfig:
-    html: Any = None
+    # The tags (keys and values) associated with the email template.
+    tags: Any = None
+    # The content of the email, composed of a subject line, an HTML part, and a text-only part
+    template: Any = None
+
+@dataclasses.dataclass
+class TemplateAttrs:
+    # The id of the aws_ses_template resource is the template name, which uniquely identifies the SES template within the AWS region. (AI-inferred)
     id: Any = None
-    name: Any = None
-    region: Any = None
-    subject: Any = None
-    text: Any = None
+    # The tags (keys and values) associated with the email template.
+    tags: Any = None
+    # The content of the email, composed of a subject line, an HTML part, and a text-only part
+    template: Any = None
 
 Template = ubx.ResourceBinding(
     wire_type="aws_ses_template",
     fields={
-        "html": ubx.FieldSpec(wire_name="html"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "subject": ubx.FieldSpec(wire_name="subject"),
-        "text": ubx.FieldSpec(wire_name="text"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Template_TagsFields,
+        ),
+        "template": ubx.FieldSpec(
+            wire_name="template",
+            kind="object",
+            fields=_Template_TemplateFields,
+        ),
     },
 )

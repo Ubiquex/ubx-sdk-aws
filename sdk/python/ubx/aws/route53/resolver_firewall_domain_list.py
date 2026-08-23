@@ -7,22 +7,66 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ResolverFirewallDomainList_Tags:
+    # The key of a tag attached to the Route 53 Resolver firewall domain list, used to assign metadata for identifying and organizing the resource in AWS. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_ResolverFirewallDomainList_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ResolverFirewallDomainListConfig:
+    # S3 URL to import domains from.
+    domain_file_url: Any = None
+    # An inline list of domains to use for this domain list.
     domains: Any = None
-    id: Any = None
+    # FirewallDomainListName
     name: Any = None
-    region: Any = None
+    # Tags
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class ResolverFirewallDomainListAttrs:
+    # Arn
+    arn: Any = None
+    # Rfc3339TimeString
+    creation_time: Any = None
+    # The id of the creator request.
+    creator_request_id: Any = None
+    # Count
+    domain_count: Any = None
+    # S3 URL to import domains from.
+    domain_file_url: Any = None
+    # An inline list of domains to use for this domain list.
+    domains: Any = None
+    # ResourceId
+    id: Any = None
+    # ServicePrincipal
+    managed_owner_name: Any = None
+    # Rfc3339TimeString
+    modification_time: Any = None
+    # FirewallDomainListName
+    name: Any = None
+    # ResolverFirewallDomainList, possible values are COMPLETE, DELETING, UPDATING, COMPLETE_IMPORT_FAILED, IMPORTING, and INACTIVE_OWNER_ACCOUNT_CLOSED.
+    status: Any = None
+    # FirewallDomainListAssociationStatus
+    status_message: Any = None
+    # Tags
+    tags: Any = None
 
 ResolverFirewallDomainList = ubx.ResourceBinding(
     wire_type="aws_route53_resolver_firewall_domain_list",
     fields={
+        "domain_file_url": ubx.FieldSpec(wire_name="domain_file_url"),
         "domains": ubx.FieldSpec(wire_name="domains"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ResolverFirewallDomainList_TagsFields,
+        ),
     },
 )

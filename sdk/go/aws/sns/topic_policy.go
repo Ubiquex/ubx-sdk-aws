@@ -4,18 +4,25 @@ package sns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TopicPolicyConfig struct {
-	Arn any
+	// A policy document that contains permissions to add to the specified SNS topics.
+	PolicyDocument any
+	// The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SNS::Topic`` resource.
+	Topics any
+}
+
+type TopicPolicyAttrs struct {
+	// The ARN of the SNS topic that this policy is attached to, which serves as the unique identifier for the aws_sns_topic_policy resource. (AI-inferred)
 	Id any
-	Policy any
-	Region any
+	// A policy document that contains permissions to add to the specified SNS topics.
+	PolicyDocument any
+	// The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SNS::Topic`` resource.
+	Topics any
 }
 
 var TopicPolicy = ubx.ResourceBinding{
 	WireType: "aws_sns_topic_policy",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+		"Topics": ubx.FieldSpec{WireName: "topics"},
 	},
 }

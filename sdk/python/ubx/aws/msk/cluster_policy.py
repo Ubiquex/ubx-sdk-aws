@@ -8,17 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ClusterPolicyConfig:
+    # The arn of the cluster for the resource policy.
     cluster_arn: Any = None
-    id: Any = None
+    # A policy document containing permissions to add to the specified cluster.
     policy: Any = None
-    region: Any = None
+
+@dataclasses.dataclass
+class ClusterPolicyAttrs:
+    # The arn of the cluster for the resource policy.
+    cluster_arn: Any = None
+    # The current version of the policy attached to the specified cluster
+    current_version: Any = None
+    # A policy document containing permissions to add to the specified cluster.
+    policy: Any = None
 
 ClusterPolicy = ubx.ResourceBinding(
     wire_type="aws_msk_cluster_policy",
     fields={
         "cluster_arn": ubx.FieldSpec(wire_name="cluster_arn"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "policy": ubx.FieldSpec(wire_name="policy"),
-        "region": ubx.FieldSpec(wire_name="region"),
     },
 )

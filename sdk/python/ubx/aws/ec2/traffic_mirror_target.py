@@ -7,26 +7,54 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TrafficMirrorTarget_Tags:
+    key: Any = None
+    value: Any = None
+
+_TrafficMirrorTarget_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class TrafficMirrorTargetConfig:
+    # The description of the Traffic Mirror target.
     description: Any = None
+    # The ID of the Gateway Load Balancer endpoint.
     gateway_load_balancer_endpoint_id: Any = None
-    id: Any = None
+    # The network interface ID that is associated with the target.
     network_interface_id: Any = None
+    # The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.
     network_load_balancer_arn: Any = None
-    region: Any = None
+    # The tags to assign to the Traffic Mirror target.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class TrafficMirrorTargetAttrs:
+    # The description of the Traffic Mirror target.
+    description: Any = None
+    # The ID of the Gateway Load Balancer endpoint.
+    gateway_load_balancer_endpoint_id: Any = None
+    # The unique AWS-assigned identifier for the traffic mirror target, typically formatted as tmt- followed by alphanumeric characters. (AI-inferred)
+    id: Any = None
+    # The network interface ID that is associated with the target.
+    network_interface_id: Any = None
+    # The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.
+    network_load_balancer_arn: Any = None
+    # The tags to assign to the Traffic Mirror target.
+    tags: Any = None
 
 TrafficMirrorTarget = ubx.ResourceBinding(
     wire_type="aws_ec2_traffic_mirror_target",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
         "gateway_load_balancer_endpoint_id": ubx.FieldSpec(wire_name="gateway_load_balancer_endpoint_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "network_interface_id": ubx.FieldSpec(wire_name="network_interface_id"),
         "network_load_balancer_arn": ubx.FieldSpec(wire_name="network_load_balancer_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_TrafficMirrorTarget_TagsFields,
+        ),
     },
 )

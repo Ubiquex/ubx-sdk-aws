@@ -3,222 +3,858 @@ package s3
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Bucket_CorsRule struct {
-	AllowedHeaders any
-	AllowedMethods any
-	AllowedOrigins any
-	ExposeHeaders any
-	MaxAgeSeconds any
+type Bucket_AccelerateConfiguration struct {
+	// Specifies the transfer acceleration status of the bucket.
+	AccelerationStatus any
 }
 
-type Bucket_Grant struct {
-	Id any
-	Permissions any
-	Type any
-	Uri any
-}
-
-type Bucket_LifecycleRule_Expiration struct {
-	Date any
-	Days any
-	ExpiredObjectDeleteMarker any
-}
-
-type Bucket_LifecycleRule_NoncurrentVersionExpiration struct {
-	Days any
-}
-
-type Bucket_LifecycleRule_NoncurrentVersionTransition struct {
-	Days any
-	StorageClass any
-}
-
-type Bucket_LifecycleRule_Transition struct {
-	Date any
-	Days any
-	StorageClass any
-}
-
-type Bucket_LifecycleRule struct {
-	AbortIncompleteMultipartUploadDays any
-	Enabled any
-	Id any
+type Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport_Destination struct {
+	// The AWS account ID of the destination bucket that receives the storage-class analysis data export, which is the account that owns the destination bucket for cross-account exports. (AI-inferred)
+	BucketAccountId any
+	// The Amazon Resource Name (ARN) of the S3 bucket where the S3 analytics data export file is delivered. (AI-inferred)
+	BucketArn any
+	// Specifies the file format of the exported storage class analysis data to the destination S3 bucket, with the only supported value being 'CSV'. (AI-inferred)
+	Format any
+	// The prefix used to store the storage class analysis data export files in the destination S3 bucket. (AI-inferred)
 	Prefix any
-	Tags any
-	Expiration any
-	NoncurrentVersionExpiration any
-	NoncurrentVersionTransition any
-	Transition any
 }
 
-type Bucket_Logging struct {
-	TargetBucket any
-	TargetPrefix any
+type Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport struct {
+	// Specifies the destination S3 bucket (with its ARN, account ID, prefix, and format) to which the storage class analysis data export is delivered. (AI-inferred)
+	Destination any
+	// Defines the version of the output schema used when S3 exports storage class analysis results to the configured destination, with the only supported value being 'V_1'. (AI-inferred)
+	OutputSchemaVersion any
+}
+
+type Bucket_AnalyticsConfigurations_StorageClassAnalysis struct {
+	// Configuration for exporting the results of S3 Storage Class Analysis, defining the destination S3 bucket and the output format (e.g., CSV) for the analysis data. (AI-inferred)
+	DataExport any
+}
+
+type Bucket_AnalyticsConfigurations_TagFilters struct {
+	// The tag key that defines which objects are included in the S3 analytics configuration's tag-based filter. (AI-inferred)
+	Key any
+	// Specifies the tag value used to filter objects for the S3 analytics configuration; objects with this tag value are included in the analytics export. (AI-inferred)
+	Value any
+}
+
+type Bucket_AnalyticsConfigurations struct {
+	// A unique identifier for the S3 bucket analytics configuration, used to distinguish it from other analytics configurations on the same bucket. (AI-inferred)
+	Id any
+	// The object key prefix used to filter which objects in the bucket are included in this S3 analytics configuration, so only objects with keys starting with this prefix are analyzed. (AI-inferred)
+	Prefix any
+	// Specifies the data export configuration for storage class analysis, defining where and how the analytics results are delivered (destination bucket, prefix, and output format). (AI-inferred)
+	StorageClassAnalysis any
+	// The tag filters that specify which objects with matching tag key-value pairs are included in the S3 analytics export configuration. (AI-inferred)
+	TagFilters any
+}
+
+type Bucket_BucketEncryption_ServerSideEncryptionConfiguration_BlockedEncryptionTypes struct {
+	EncryptionType any
+}
+
+type Bucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefault struct {
+	// Specifies the AWS KMS key ID (or ARN) that Amazon S3 uses to encrypt objects by default when the default server-side encryption is set to aws:kms for this bucket. (AI-inferred)
+	KmsmasterKeyId any
+	// Specifies the default server-side encryption algorithm applied to objects written to the S3 bucket, accepting values like AES256, aws:kms, or aws:kms:dsse. (AI-inferred)
+	Ssealgorithm any
+}
+
+type Bucket_BucketEncryption_ServerSideEncryptionConfiguration struct {
+	BlockedEncryptionTypes any
+	// Whether to enable an S3 Bucket Key for the SSE-KMS encryption rule, which uses a bucket-level key to reduce KMS request costs for all objects encrypted under this bucket. (AI-inferred)
+	BucketKeyEnabled any
+	// Specifies the default server-side encryption method applied to objects uploaded to the S3 bucket, including the encryption algorithm (e.g., AES256 or aws:kms) and optional AWS KMS key ID. (AI-inferred)
+	ServerSideEncryptionByDefault any
+}
+
+type Bucket_BucketEncryption struct {
+	// Specifies the default server-side-encryption configuration.
+	ServerSideEncryptionConfiguration any
+}
+
+type Bucket_CorsConfiguration_CorsRules struct {
+	// Specifies the HTTP headers that are allowed in a request to the S3 bucket from a cross-origin origin; each entry can be a specific header name (e.g., 'x-amz-date') or the wildcard '*' to allow all headers. (AI-inferred)
+	AllowedHeaders any
+	// Specifies the list of HTTP methods (such as GET, PUT, POST, DELETE, HEAD) that are allowed for cross-origin requests to the S3 bucket. (AI-inferred)
+	AllowedMethods any
+	// Specifies the origins (scheme, host, and port) that are allowed to make cross-origin requests to the bucket. (AI-inferred)
+	AllowedOrigins any
+	// Specifies the response headers that are exposed to the client (browser) in the actual S3 CORS response, allowing client-side scripts to access them. (AI-inferred)
+	ExposedHeaders any
+	// The ID is an optional unique identifier for this CORS rule, up to 255 characters, used to identify the rule within the CORS configuration. (AI-inferred)
+	Id any
+	// Specifies the time in seconds that the browser caches the response to a preflight (OPTIONS) request. (AI-inferred)
+	MaxAge any
+}
+
+type Bucket_CorsConfiguration struct {
+	// A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.
+	CorsRules any
+}
+
+type Bucket_IntelligentTieringConfigurations_Tierings struct {
+	// The access tier (either ARCHIVE_ACCESS or DEEP_ARCHIVE_ACCESS) to which objects are transitioned after the specified number of days in this Intelligent-Tiering configuration. (AI-inferred)
+	AccessTier any
+	// The number of days after object creation when S3 Intelligent-Tiering moves the object to the specified access tier (e.g., ARCHIVE_ACCESS or DEEP_ARCHIVE_ACCESS). (AI-inferred)
+	Days any
+}
+
+type Bucket_IntelligentTieringConfigurations struct {
+	// A unique identifier for this S3 Intelligent-Tiering configuration, used to distinguish it from other configurations on the same bucket. (AI-inferred)
+	Id any
+	// Specifies an object key name prefix that identifies the subset of objects to which this S3 Intelligent-Tiering configuration applies, so only objects with keys beginning with this prefix are included. (AI-inferred)
+	Prefix any
+	// Indicates whether the S3 Intelligent-Tiering configuration is enabled or disabled, with allowed values 'Enabled' and 'Disabled'. (AI-inferred)
+	Status any
+	// Defines the tag filters (key and value pairs) that determine which objects are eligible for this S3 Intelligent-Tiering configuration, so that only objects with matching tags are included in the tiering behavior. (AI-inferred)
+	TagFilters any
+	// Defines each S3 Intelligent-Tiering tier (ARCHIVE_ACCESS or DEEP_ARCHIVE_ACCESS) and the number of days after which objects are moved to that tier. (AI-inferred)
+	Tierings any
+}
+
+type Bucket_InventoryConfigurations struct {
+	// The destination configuration for an S3 inventory report, specifying where the inventory list is delivered (e.g., the target S3 bucket ARN, optional prefix, and output format). (AI-inferred)
+	Destination any
+	// Indicates whether the inventory configuration is enabled for the S3 bucket. (AI-inferred)
+	Enabled any
+	// The unique identifier for this S3 inventory configuration, used to distinguish it from other inventory configurations on the bucket. (AI-inferred)
+	Id any
+	// Determines whether the inventory report includes all versions of each object ('All') or only the current version ('Current'). (AI-inferred)
+	IncludedObjectVersions any
+	// Specifies the list of additional object metadata fields (such as Size, LastModifiedDate, StorageClass, ETag) to be included in the S3 inventory output for the bucket, in addition to the mandatory fields (bucket name and object key). (AI-inferred)
+	OptionalFields any
+	// Filters the inventory to only include objects whose keys begin with the specified prefix, such as 'documents/' or 'logs/'. (AI-inferred)
+	Prefix any
+	// Specifies how often the S3 inventory report is generated, either Daily or Weekly. (AI-inferred)
+	ScheduleFrequency any
+}
+
+type Bucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUpload struct {
+	// Specifies the number of days after a multipart upload is initiated that S3 will abort the incomplete multipart upload, based on the upload's initiation date. (AI-inferred)
+	DaysAfterInitiation any
+}
+
+type Bucket_LifecycleConfiguration_Rules_NoncurrentVersionExpiration struct {
+	// The number of newer noncurrent versions of an object to preserve before the oldest noncurrent version becomes eligible for expiration, enabling you to retain a specified number of recent versions while expiring older ones. (AI-inferred)
+	NewerNoncurrentVersions any
+	// The number of days after which a noncurrent version of an object is expired and permanently deleted in the S3 lifecycle rule. (AI-inferred)
+	NoncurrentDays any
+}
+
+type Bucket_LifecycleConfiguration_Rules_NoncurrentVersionTransition struct {
+	// The number of newer noncurrent versions to retain before this lifecycle transition applies, allowing the action to skip recent noncurrent versions and only affect older ones. (AI-inferred)
+	NewerNoncurrentVersions any
+	// The storage class that noncurrent object versions are transitioned to, such as GLACIER, DEEP_ARCHIVE, or STANDARD_IA, as defined in the S3 lifecycle noncurrent version transition rule. (AI-inferred)
+	StorageClass any
+	// The number of days from when an object version becomes noncurrent to when it is transitioned to the storage class specified in the lifecycle rule's noncurrent version transition. (AI-inferred)
+	TransitionInDays any
+}
+
+type Bucket_LifecycleConfiguration_Rules_Transition struct {
+	// The S3 storage class to which the objects are transitioned when the lifecycle rule's transition action triggers (for example, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, or DEEP_ARCHIVE). (AI-inferred)
+	StorageClass any
+	// Specifies the date (in ISO 8601 format) when objects in the bucket are transitioned to the storage class defined by the same transition object, and is mutually exclusive with the 'days' property. (AI-inferred)
+	TransitionDate any
+	// Specifies the number of days after object creation when the lifecycle transition action (to a specified storage class) takes effect for objects in the S3 bucket. (AI-inferred)
+	TransitionInDays any
+}
+
+type Bucket_LifecycleConfiguration_Rules struct {
+	// Specifies the number of days after a multipart upload is initiated that the upload must be aborted, as part of an S3 lifecycle rule. (AI-inferred)
+	AbortIncompleteMultipartUpload any
+	// Specifies the exact date (in ISO 8601 format) on which Amazon S3 permanently deletes objects matching this lifecycle rule, used as an alternative to specifying a number of days. (AI-inferred)
+	ExpirationDate any
+	// The number of days after object creation when Amazon S3 permanently deletes objects that match this lifecycle rule. (AI-inferred)
+	ExpirationInDays any
+	// Indicates whether Amazon S3 removes expired object delete markers when enforcing this lifecycle rule's expiration action. (AI-inferred)
+	ExpiredObjectDeleteMarker any
+	// A unique identifier for the S3 lifecycle rule, used to distinguish it from other rules in the same bucket's lifecycle configuration. (AI-inferred)
+	Id any
+	// Specifies the expiration behavior for noncurrent versions of objects in the S3 bucket, including the number of days to keep them and optionally how many newer versions to retain. (AI-inferred)
+	NoncurrentVersionExpiration any
+	// Specifies the number of days after which an object version that is no longer current is automatically deleted by the lifecycle rule. (AI-inferred)
+	NoncurrentVersionExpirationInDays any
+	// Specifies when noncurrent versions of an object transition to a different storage class, including the number of days after becoming noncurrent and the target storage class. (AI-inferred)
+	NoncurrentVersionTransition any
+	// Defines the transition actions for noncurrent versions of objects in an S3 lifecycle rule, specifying when to move them to a different storage class and how many newer versions to consider. (AI-inferred)
+	NoncurrentVersionTransitions any
+	// Specifies the minimum object size in bytes for which the lifecycle rule applies to objects. (AI-inferred)
+	ObjectSizeGreaterThan any
+	// Specifies the maximum object size (in bytes) for which the lifecycle rule applies, meaning only objects smaller than this value are eligible for the rule's actions. (AI-inferred)
+	ObjectSizeLessThan any
+	// Specifies the object key prefix that this lifecycle rule applies to, limiting the rule's effect to objects with keys that begin with this string. (AI-inferred)
+	Prefix any
+	// Whether the lifecycle rule is currently active, with allowed values 'Enabled' or 'Disabled', controlling whether Amazon S3 executes the rule's expiration, transition, or other actions on matching objects. (AI-inferred)
+	Status any
+	// Defines tag key-value pairs that must match an object's tags for the lifecycle rule to apply, thereby scoping the rule to a subset of objects. (AI-inferred)
+	TagFilters any
+	// Defines a lifecycle transition action that moves objects to a specified storage class after a specified number of days or on a specific date. (AI-inferred)
+	Transition any
+	// Defines a lifecycle transition, specifying when objects should transition to a different storage class (such as STANDARD_IA or GLACIER) based on age in days or a specific date. (AI-inferred)
+	Transitions any
+}
+
+type Bucket_LifecycleConfiguration struct {
+	// A lifecycle rule for individual objects in an Amazon S3 bucket.
+	Rules any
+	// Indicates which default minimum object size behavior is applied to the lifecycle configuration. This parameter applies to general purpose buckets only. It isn't supported for directory bucket lifecycle configurations. + ``all_storage_classes_128K`` - Objects smaller than 128 KB will not transition to any storage class by default. + ``varies_by_storage_class`` - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB. To customize the minimum object size for any transition you can add a filter that specifies a custom ``ObjectSizeGreaterThan`` or ``ObjectSizeLessThan`` in the body of your transition rule. Custom filters always take precedence over the default transition behavior.
+	TransitionDefaultMinimumObjectSize any
+}
+
+type Bucket_LoggingConfiguration struct {
+	// The name of the bucket where Amazon S3 should store server access log files. You can store log files in any bucket that you own. By default, logs are stored in the bucket where the ``LoggingConfiguration`` property is defined.
+	DestinationBucketName any
+	// A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.
+	LogFilePrefix any
+	// Describes the key format for server access log file in the target bucket. You can choose between SimplePrefix and PartitionedPrefix.
+	TargetObjectKeyFormat any
+}
+
+type Bucket_MetadataConfiguration_AnnotationTableConfiguration_EncryptionConfiguration struct {
+	// If server-side encryption with KMSlong (KMS) keys (SSE-KMS) is specified, you must also specify the KMS key Amazon Resource Name (ARN). You must specify a customer-managed KMS key that's located in the same Region as the general purpose bucket that corresponds to the metadata table configuration.
+	KmsKeyArn any
+	// The encryption type specified for a metadata table. To specify server-side encryption with KMSlong (KMS) keys (SSE-KMS), use the ``aws:kms`` value. To specify server-side encryption with Amazon S3 managed keys (SSE-S3), use the ``AES256`` value.
+	SseAlgorithm any
+}
+
+type Bucket_MetadataConfiguration_AnnotationTableConfiguration struct {
+	// Specifies whether the annotation table configuration is enabled or disabled.
+	ConfigurationState any
+	// The encryption settings for an S3 Metadata journal table or inventory table configuration.
+	EncryptionConfiguration any
+	// The ARN of the IAM role that grants Amazon S3 Metadata permission to read annotations from your bucket.
+	Role any
+	// The Amazon Resource Name (ARN) for the annotation table.
+	TableArn any
+	// The name of the annotation table.
+	TableName any
+}
+
+type Bucket_MetadataConfiguration_Destination struct {
+	// The Amazon Resource Name (ARN) of the table bucket where the metadata configuration is stored.
+	TableBucketArn any
+	// The type of the table bucket where the metadata configuration is stored. The ``aws`` value indicates an AWS managed table bucket, and the ``customer`` value indicates a customer-managed table bucket. V2 metadata configurations are stored in AWS managed table buckets, and V1 metadata configurations are stored in customer-managed table buckets.
+	TableBucketType any
+	// The namespace in the table bucket where the metadata tables for a metadata configuration are stored.
+	TableNamespace any
+}
+
+type Bucket_MetadataConfiguration_InventoryTableConfiguration struct {
+	// The configuration state of the inventory table, indicating whether the inventory table is enabled or disabled.
+	ConfigurationState any
+	// The encryption settings for an S3 Metadata journal table or inventory table configuration.
+	EncryptionConfiguration any
+	// The Amazon Resource Name (ARN) for the inventory table.
+	TableArn any
+	// The name of the inventory table.
+	TableName any
+}
+
+type Bucket_MetadataConfiguration_JournalTableConfiguration_RecordExpiration struct {
+	// If you enable journal table record expiration, you can set the number of days to retain your journal table records. Journal table records must be retained for a minimum of 7 days. To set this value, specify any whole number from ``7`` to ``2147483647``. For example, to retain your journal table records for one year, set this value to ``365``.
+	Days any
+	// Specifies whether journal table record expiration is enabled or disabled.
+	Expiration any
+}
+
+type Bucket_MetadataConfiguration_JournalTableConfiguration struct {
+	// The encryption settings for an S3 Metadata journal table or inventory table configuration.
+	EncryptionConfiguration any
+	// The journal table record expiration settings for a journal table in an S3 Metadata configuration.
+	RecordExpiration any
+	// The Amazon Resource Name (ARN) for the journal table.
+	TableArn any
+	// The name of the journal table.
+	TableName any
+}
+
+type Bucket_MetadataConfiguration struct {
+	// The annotation table configuration for an S3 Metadata configuration. The annotation table tracks all annotations on objects in your bucket so that you can query annotation data at scale. If you've disabled your annotation table configuration and now want to re-enable it, you must first manually delete the old annotation table from your AWS managed table bucket. Otherwise, the newly re-enabled annotation table configuration will enter a failed state because the annotation table already exists in the table bucket.
+	AnnotationTableConfiguration any
+	// The destination information for the S3 Metadata configuration.
+	Destination any
+	// The inventory table configuration for an S3 Metadata configuration. If you've disabled your inventory table configuration and now want to re-enable it, you must first manually delete the old inventory table from your AWS managed table bucket. Otherwise, the newly re-enabled inventory table configuration will enter a failed state because the inventory table already exists in the table bucket.
+	InventoryTableConfiguration any
+	// The journal table configuration for an S3 Metadata configuration. The journal table is required for each metadata table configuration and cannot be disabled. The journal configuration will enter a failed state if a journal table already exists in the table bucket. The journal table of a previous configuration must be deleted before a new journal table can be created successfully.
+	JournalTableConfiguration any
+}
+
+type Bucket_MetadataTableConfiguration_S3TablesDestination struct {
+	// The Amazon Resource Name (ARN) for the metadata table in the metadata table configuration. The specified metadata table name must be unique within the ``aws_s3_metadata`` namespace in the destination table bucket.
+	TableArn any
+	// The Amazon Resource Name (ARN) for the table bucket that's specified as the destination in the metadata table configuration. The destination table bucket must be in the same Region and AWS-account as the general purpose bucket.
+	TableBucketArn any
+	// The name for the metadata table in your metadata table configuration. The specified metadata table name must be unique within the ``aws_s3_metadata`` namespace in the destination table bucket.
+	TableName any
+	// The table bucket namespace for the metadata table in your metadata table configuration. This value is always ``aws_s3_metadata``.
+	TableNamespace any
+}
+
+type Bucket_MetadataTableConfiguration struct {
+	// The destination information for a V1 S3 Metadata configuration. The destination table bucket must be in the same Region and AWS-account as the general purpose bucket. The specified metadata table name must be unique within the ``aws_s3_metadata`` namespace in the destination table bucket.
+	S3TablesDestination any
+}
+
+type Bucket_MetricsConfigurations struct {
+	// The ARN of the S3 access point whose requests are filtered into this metrics configuration, restricting CloudWatch request metrics to that access point. (AI-inferred)
+	AccessPointArn any
+	// The unique identifier for this S3 metrics configuration, used to reference or manage the configuration. (AI-inferred)
+	Id any
+	// The object key prefix that filters the objects included in the S3 metrics configuration, so metrics are collected only for objects whose keys begin with this prefix. (AI-inferred)
+	Prefix any
+	// Defines the tag key-value pairs that filter which objects are included in this S3 bucket metrics configuration, so metrics are only collected for objects matching all specified tags. (AI-inferred)
+	TagFilters any
+}
+
+type Bucket_NotificationConfiguration_EventBridgeConfiguration struct {
+	// Enables delivery of events to Amazon EventBridge.
+	EventBridgeEnabled any
+}
+
+type Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3Key_Rules struct {
+	// Specifies whether the filter rule matches the object key by prefix or suffix, with allowed values of 'prefix' or 'suffix'. (AI-inferred)
+	Name any
+	// The value of a filter rule in an S3 bucket's notification configuration that specifies a prefix or suffix pattern which object key names must match to trigger the Lambda function. (AI-inferred)
+	Value any
+}
+
+type Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3Key struct {
+	// A list of S3 key filter rules (each specifying a Name of 'prefix' or 'suffix' and a Value) that determine which object key names trigger the Lambda function notification for this configuration. (AI-inferred)
+	Rules any
+}
+
+type Bucket_NotificationConfiguration_LambdaConfigurations_Filter struct {
+	// Specifies the S3 object key filter rules (prefix or suffix) that determine which objects trigger the Lambda function notification. (AI-inferred)
+	S3Key any
+}
+
+type Bucket_NotificationConfiguration_LambdaConfigurations struct {
+	// The S3 event type (e.g., s3:ObjectCreated:*) that triggers the Lambda function for this notification configuration. (AI-inferred)
+	Event any
+	// Defines the object key name prefix and/or suffix filters that determine which S3 object events trigger the associated Lambda function notification. (AI-inferred)
+	Filter any
+	// The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3 invokes when the specified event type occurs for this filter. (AI-inferred)
+	Function any
+}
+
+type Bucket_NotificationConfiguration_QueueConfigurations struct {
+	// The S3 event type (e.g., s3:ObjectCreated:*) that triggers the notification to the SQS queue. (AI-inferred)
+	Event any
+	// Defines the object key name filter criteria (prefix and/or suffix rules) that determine which S3 objects trigger the notification to the configured queue. (AI-inferred)
+	Filter any
+	// The ARN of the Amazon SQS queue to which the S3 bucket sends event notifications for this queue configuration. (AI-inferred)
+	Queue any
+}
+
+type Bucket_NotificationConfiguration_TopicConfigurations struct {
+	// The S3 event type (e.g., s3:ObjectCreated:* or s3:ObjectRemoved:*) that triggers the notification to the SNS topic. (AI-inferred)
+	Event any
+	// Configures the S3KeyFilter for this SNS topic notification, restricting which object key names (by prefix and/or suffix) trigger the event. (AI-inferred)
+	Filter any
+	// The Amazon Resource Name (ARN) of the SNS topic that S3 publishes event notifications to for this topic configuration. (AI-inferred)
+	Topic any
+}
+
+type Bucket_NotificationConfiguration struct {
+	// Amazon S3 can send events to Amazon EventBridge whenever certain events happen in your bucket, see [Using EventBridge](https://docs.aws.amazon.com/AmazonS3/latest/userguide/EventBridge.html) in the *Amazon S3 User Guide*. Unlike other destinations, delivery of events to EventBridge can be either enabled or disabled for a bucket. If enabled, all events will be sent to EventBridge and you can use EventBridge rules to route events to additional targets. For more information, see [What Is Amazon EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html) in the *Amazon EventBridge User Guide*
+	EventBridgeConfiguration any
+	// Describes the LAMlong functions to invoke and the events for which to invoke them.
+	LambdaConfigurations any
+	// The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.
+	QueueConfigurations any
+	// The topic to which notifications are sent and the events for which notifications are generated.
+	TopicConfigurations any
 }
 
 type Bucket_ObjectLockConfiguration_Rule_DefaultRetention struct {
+	// The number of days that you want to specify for the default retention period. If Object Lock is turned on, you must specify ``Mode`` and specify either ``Days`` or ``Years``.
 	Days any
+	// The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. If Object Lock is turned on, you must specify ``Mode`` and specify either ``Days`` or ``Years``.
 	Mode any
+	// The number of years that you want to specify for the default retention period. If Object Lock is turned on, you must specify ``Mode`` and specify either ``Days`` or ``Years``.
 	Years any
 }
 
 type Bucket_ObjectLockConfiguration_Rule struct {
+	// The container element for optionally specifying the default Object Lock retention settings for new objects placed in the specified bucket. + The ``DefaultRetention`` settings require both a mode and a period. + The ``DefaultRetention`` period can be either ``Days`` or ``Years`` but you must select one. You cannot specify ``Days`` and ``Years`` at the same time.
 	DefaultRetention any
 }
 
 type Bucket_ObjectLockConfiguration struct {
+	// Indicates whether this bucket has an Object Lock configuration enabled. Enable ``ObjectLockEnabled`` when you apply ``ObjectLockConfiguration`` to a bucket.
 	ObjectLockEnabled any
+	// Specifies the Object Lock rule for the specified object. Enable the this rule when you apply ``ObjectLockConfiguration`` to a bucket.
 	Rule any
 }
 
-type Bucket_ReplicationConfiguration_Rules_Destination_AccessControlTranslation struct {
-	Owner any
+type Bucket_OwnershipControls_Rules struct {
+	// Specifies the object ownership rule applied to new objects in the S3 bucket, with valid values including BucketOwnerPreferred, ObjectWriter, and BucketOwnerEnforced. (AI-inferred)
+	ObjectOwnership any
 }
 
-type Bucket_ReplicationConfiguration_Rules_Destination_Metrics struct {
-	Minutes any
+type Bucket_OwnershipControls struct {
+	// Specifies the container element for Object Ownership rules.
+	Rules any
+}
+
+type Bucket_PublicAccessBlockConfiguration struct {
+	// Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to ``TRUE`` causes the following behavior: + PUT Bucket ACL and PUT Object ACL calls fail if the specified ACL is public. + PUT Object calls fail if the request includes a public ACL. + PUT Bucket calls fail if the request includes a public ACL. Enabling this setting doesn't affect existing policies or ACLs.
+	BlockPublicAcls any
+	// Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to ``TRUE`` causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. Enabling this setting doesn't affect existing bucket policies.
+	BlockPublicPolicy any
+	// Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to ``TRUE`` causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket. Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.
+	IgnorePublicAcls any
+	// Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to ``TRUE`` restricts access to this bucket to only AWS-service principals and authorized users within this account if the bucket has a public policy. Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.
+	RestrictPublicBuckets any
+}
+
+type Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplication struct {
+	// Specifies whether S3 replicates delete markers created in the source bucket to the destination bucket; set to Enabled to replicate them or Disabled to prevent replication. (AI-inferred)
 	Status any
 }
 
-type Bucket_ReplicationConfiguration_Rules_Destination struct {
-	AccountId any
-	Bucket any
+type Bucket_ReplicationConfiguration_Rules_Destination_AccessControlTranslation struct {
+	// Overrides the replica owner to the destination bucket owner by specifying `Destination`, required when replicating objects across AWS accounts. (AI-inferred)
+	Owner any
+}
+
+type Bucket_ReplicationConfiguration_Rules_Destination_EncryptionConfiguration struct {
+	// Specifies the AWS KMS key ID (or ARN) used by Amazon S3 to encrypt the replicated objects in the destination bucket when the destination uses SSE-KMS encryption. (AI-inferred)
 	ReplicaKmsKeyId any
-	StorageClass any
+}
+
+type Bucket_ReplicationConfiguration_Rules_Destination_Metrics_EventThreshold struct {
+	// The number of minutes after which S3 emits a replication metrics event, used as the event threshold for replication time control (RTC) metrics in the destination bucket. (AI-inferred)
+	Minutes any
+}
+
+type Bucket_ReplicationConfiguration_Rules_Destination_Metrics struct {
+	// Specifies the minimum replication time threshold in minutes (via the 'Minutes' property) that an object must meet for the replication event to be counted and reported in the S3 replication metrics for this destination. (AI-inferred)
+	EventThreshold any
+	// Specifies whether replication metrics are enabled for this destination bucket, with valid values 'Enabled' or 'Disabled'. (AI-inferred)
+	Status any
+}
+
+type Bucket_ReplicationConfiguration_Rules_Destination_ReplicationTime struct {
+	// Indicates whether S3 Replication Time Control (RTC) is enabled for the replication destination, with valid values 'Enabled' or 'Disabled'. (AI-inferred)
+	Status any
+	// Specifies the time threshold for S3 Replication Time Control (RTC), defining the number of minutes within which the replicated object is expected to be available in the destination bucket. (AI-inferred)
+	Time any
+}
+
+type Bucket_ReplicationConfiguration_Rules_Destination struct {
+	// Specifies the access control translation settings that change the ownership of replicated objects to the destination bucket's AWS account, used when replicating across different AWS accounts (cross-account replication). (AI-inferred)
 	AccessControlTranslation any
+	// The AWS account ID of the destination bucket's owner, required when replicating objects into a bucket in a different AWS account. (AI-inferred)
+	Account any
+	// The Amazon Resource Name (ARN) of the S3 bucket to which objects are replicated as part of this replication rule. (AI-inferred)
+	Bucket any
+	// Specifies the encryption configuration for objects replicated to the destination bucket, including the KMS key ID used to encrypt the replicas. (AI-inferred)
+	EncryptionConfiguration any
+	// Specifies the replication metrics configuration for the destination bucket, including whether S3 emits metrics (Status) and the event threshold in minutes (EventThreshold) after which replication events are emitted. (AI-inferred)
 	Metrics any
+	// Configures S3 Replication Time Control (RTC) for the destination bucket, including whether RTC is enabled and the replication time threshold in minutes. (AI-inferred)
 	ReplicationTime any
+	// The storage class to assign to objects replicated to the destination bucket, overriding the default storage class of the destination bucket; for example, STANDARD, STANDARD_IA, or GLACIER. (AI-inferred)
+	StorageClass any
+}
+
+type Bucket_ReplicationConfiguration_Rules_Filter_And struct {
+	// The object key name prefix that must match for objects to be included in an S3 replication rule when the rule's filter uses an AND combination of predicates, typically paired with at least one tag condition. (AI-inferred)
+	Prefix any
+	// Specifies a list of tag key-value pairs that an object must include for the replication rule's filter 'and' condition to match, limiting replication to objects that have all of the specified tags. (AI-inferred)
+	TagFilters any
 }
 
 type Bucket_ReplicationConfiguration_Rules_Filter struct {
+	// Specifies a logical AND combination of filter predicates (typically a prefix and one or more tags) that S3 applies when deciding which objects match the replication rule, requiring all specified criteria to be true. (AI-inferred)
+	And any
+	// The object key prefix that identifies which objects the replication rule applies to, used as a filter condition in an S3 replication rule. (AI-inferred)
 	Prefix any
-	Tags any
-}
-
-type Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteria_SseKmsEncryptedObjects struct {
-	Enabled any
+	// This field specifies the tag key and value (as nested Key and Value properties) that an object must have for the S3 replication rule's filter to apply, defining the tag-based criteria for selecting objects to replicate. (AI-inferred)
+	TagFilter any
 }
 
 type Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteria struct {
+	// Specifies whether Amazon S3 should replicate objects that are modified after being replicated to the destination bucket, using a Status property (Enabled or Disabled) to control the behavior. (AI-inferred)
+	ReplicaModifications any
+	// A filter that, when its Status is 'Enabled', tells S3 replication to replicate source objects encrypted with SSE-KMS, and when 'Disabled', excludes them from replication. (AI-inferred)
 	SseKmsEncryptedObjects any
 }
 
 type Bucket_ReplicationConfiguration_Rules struct {
-	DeleteMarkerReplicationStatus any
-	Id any
-	Prefix any
-	Priority any
-	Status any
+	// Specifies whether delete markers created in the source bucket are replicated to the destination bucket, with Status set to Enabled to replicate them or Disabled to skip them. (AI-inferred)
+	DeleteMarkerReplication any
+	// The destination configuration for a replication rule, specifying the target S3 bucket and optional settings such as storage class, account, encryption, access control translation, metrics, and replication time. (AI-inferred)
 	Destination any
+	// The filter that defines the object key prefix, tag, or logical AND combination of conditions that determine which objects in the source bucket are replicated by this replication rule. (AI-inferred)
 	Filter any
+	// A unique identifier for the replication rule, used to distinguish it from other rules within the same bucket's replication configuration. (AI-inferred)
+	Id any
+	// Specifies the object key prefix in the source bucket that identifies which objects this replication rule applies to, with an empty or omitted prefix matching all objects. (AI-inferred)
+	Prefix any
+	// The numeric priority for this replication rule, where higher values take precedence when multiple rules match an object, and it is required when multiple rules exist with filters. (AI-inferred)
+	Priority any
+	// Specifies additional source selection criteria for the replication rule, such as whether to replicate objects encrypted with SSE-KMS. (AI-inferred)
 	SourceSelectionCriteria any
+	// Specifies whether the replication rule is enabled (Enabled) or disabled (Disabled). (AI-inferred)
+	Status any
 }
 
 type Bucket_ReplicationConfiguration struct {
+	// The Amazon Resource Name (ARN) of the IAMlong (IAM) role that Amazon S3 assumes when replicating objects. For more information, see [How to Set Up Replication](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html) in the *Amazon S3 User Guide*.
 	Role any
+	// A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules.
 	Rules any
 }
 
-type Bucket_ServerSideEncryptionConfiguration_Rule_ApplyServerSideEncryptionByDefault struct {
-	KmsMasterKeyId any
-	SseAlgorithm any
+type Bucket_WebsiteConfiguration_RedirectAllRequestsTo struct {
+	// Name of the host where requests are redirected.
+	HostName any
+	// Protocol to use when redirecting requests. The default is the protocol that is used in the original request.
+	Protocol any
 }
 
-type Bucket_ServerSideEncryptionConfiguration_Rule struct {
-	BucketKeyEnabled any
-	ApplyServerSideEncryptionByDefault any
+type Bucket_WebsiteConfiguration_RoutingRules_RedirectRule struct {
+	// Specifies the host name to use in the redirect request for a routing rule in the S3 website configuration; for example, if the rule matches, requests are redirected to this host instead of the original bucket's website endpoint. (AI-inferred)
+	HostName any
+	// Specifies the HTTP redirect code (such as 301, 302, or 307) that S3 returns in the redirect response when this routing rule matches, overriding the default 301. (AI-inferred)
+	HttpRedirectCode any
+	// Specifies the protocol (http or https) to use in the redirect location for requests that match the routing rule's condition. (AI-inferred)
+	Protocol any
+	// Specifies the object key prefix to use in the redirect request, replacing the matched prefix from the original request. (AI-inferred)
+	ReplaceKeyPrefixWith any
+	// Specifies the object key name to use in the redirect request, replacing the entire original key for requests that match the routing rule. (AI-inferred)
+	ReplaceKeyWith any
 }
 
-type Bucket_ServerSideEncryptionConfiguration struct {
-	Rule any
+type Bucket_WebsiteConfiguration_RoutingRules_RoutingRuleCondition struct {
+	// The HTTP error code (e.g., '404') that the origin must return in order for this routing rule condition to apply. (AI-inferred)
+	HttpErrorCodeReturnedEquals any
+	// Specifies the object key prefix that must match for the routing rule condition to apply when S3 serves requests from the website endpoint. (AI-inferred)
+	KeyPrefixEquals any
 }
 
-type Bucket_Timeouts struct {
-	Create any
-	Delete any
-	Read any
-	Update any
+type Bucket_WebsiteConfiguration_RoutingRules struct {
+	// Specifies the redirect behavior for a routing rule, including protocol, host name, port, key replacement, and HTTP redirect code, applied when the rule's condition is met. (AI-inferred)
+	RedirectRule any
+	// Defines the condition (such as a specific HTTP error code or a key prefix) that must be matched for the S3 website routing rule to take effect. (AI-inferred)
+	RoutingRuleCondition any
 }
 
-type Bucket_Versioning struct {
-	Enabled any
-	MfaDelete any
-}
-
-type Bucket_Website struct {
+type Bucket_WebsiteConfiguration struct {
+	// The name of the error document for the website.
 	ErrorDocument any
+	// The name of the index document for the website.
 	IndexDocument any
+	// Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.
 	RedirectAllRequestsTo any
+	// Rules that define when a redirect is applied and the redirect behavior.
 	RoutingRules any
 }
 
-var Bucket_CorsRuleFields = ubx.FieldMap{
+var Bucket_AccelerateConfigurationFields = ubx.FieldMap{
+		"AccelerationStatus": ubx.FieldSpec{WireName: "acceleration_status"},
+	}
+
+var Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport_DestinationFields = ubx.FieldMap{
+		"BucketAccountId": ubx.FieldSpec{WireName: "bucket_account_id"},
+		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
+		"Format": ubx.FieldSpec{WireName: "format"},
+		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+	}
+
+var Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExportFields = ubx.FieldMap{
+		"Destination": ubx.FieldSpec{
+			WireName: "destination",
+			Kind: "object",
+			Fields: Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport_DestinationFields,
+		},
+		"OutputSchemaVersion": ubx.FieldSpec{WireName: "output_schema_version"},
+	}
+
+var Bucket_AnalyticsConfigurations_StorageClassAnalysisFields = ubx.FieldMap{
+		"DataExport": ubx.FieldSpec{
+			WireName: "data_export",
+			Kind: "object",
+			Fields: Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExportFields,
+		},
+	}
+
+var Bucket_AnalyticsConfigurations_TagFiltersFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Bucket_AnalyticsConfigurationsFields = ubx.FieldMap{
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"StorageClassAnalysis": ubx.FieldSpec{
+			WireName: "storage_class_analysis",
+			Kind: "object",
+			Fields: Bucket_AnalyticsConfigurations_StorageClassAnalysisFields,
+		},
+		"TagFilters": ubx.FieldSpec{
+			WireName: "tag_filters",
+			Kind: "list",
+			Fields: Bucket_AnalyticsConfigurations_TagFiltersFields,
+		},
+	}
+
+var Bucket_BucketEncryption_ServerSideEncryptionConfiguration_BlockedEncryptionTypesFields = ubx.FieldMap{
+		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	}
+
+var Bucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefaultFields = ubx.FieldMap{
+		"KmsmasterKeyId": ubx.FieldSpec{WireName: "kmsmaster_key_id"},
+		"Ssealgorithm": ubx.FieldSpec{WireName: "ssealgorithm"},
+	}
+
+var Bucket_BucketEncryption_ServerSideEncryptionConfigurationFields = ubx.FieldMap{
+		"BlockedEncryptionTypes": ubx.FieldSpec{
+			WireName: "blocked_encryption_types",
+			Kind: "object",
+			Fields: Bucket_BucketEncryption_ServerSideEncryptionConfiguration_BlockedEncryptionTypesFields,
+		},
+		"BucketKeyEnabled": ubx.FieldSpec{WireName: "bucket_key_enabled"},
+		"ServerSideEncryptionByDefault": ubx.FieldSpec{
+			WireName: "server_side_encryption_by_default",
+			Kind: "object",
+			Fields: Bucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefaultFields,
+		},
+	}
+
+var Bucket_BucketEncryptionFields = ubx.FieldMap{
+		"ServerSideEncryptionConfiguration": ubx.FieldSpec{
+			WireName: "server_side_encryption_configuration",
+			Kind: "list",
+			Fields: Bucket_BucketEncryption_ServerSideEncryptionConfigurationFields,
+		},
+	}
+
+var Bucket_CorsConfiguration_CorsRulesFields = ubx.FieldMap{
 		"AllowedHeaders": ubx.FieldSpec{WireName: "allowed_headers"},
 		"AllowedMethods": ubx.FieldSpec{WireName: "allowed_methods"},
 		"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
-		"ExposeHeaders": ubx.FieldSpec{WireName: "expose_headers"},
-		"MaxAgeSeconds": ubx.FieldSpec{WireName: "max_age_seconds"},
-	}
-
-var Bucket_GrantFields = ubx.FieldMap{
+		"ExposedHeaders": ubx.FieldSpec{WireName: "exposed_headers"},
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
+		"MaxAge": ubx.FieldSpec{WireName: "max_age"},
 	}
 
-var Bucket_LifecycleRule_ExpirationFields = ubx.FieldMap{
-		"Date": ubx.FieldSpec{WireName: "date"},
+var Bucket_CorsConfigurationFields = ubx.FieldMap{
+		"CorsRules": ubx.FieldSpec{
+			WireName: "cors_rules",
+			Kind: "list",
+			Fields: Bucket_CorsConfiguration_CorsRulesFields,
+		},
+	}
+
+var Bucket_IntelligentTieringConfigurations_TieringsFields = ubx.FieldMap{
+		"AccessTier": ubx.FieldSpec{WireName: "access_tier"},
 		"Days": ubx.FieldSpec{WireName: "days"},
-		"ExpiredObjectDeleteMarker": ubx.FieldSpec{WireName: "expired_object_delete_marker"},
 	}
 
-var Bucket_LifecycleRule_NoncurrentVersionExpirationFields = ubx.FieldMap{
-		"Days": ubx.FieldSpec{WireName: "days"},
-	}
-
-var Bucket_LifecycleRule_NoncurrentVersionTransitionFields = ubx.FieldMap{
-		"Days": ubx.FieldSpec{WireName: "days"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-	}
-
-var Bucket_LifecycleRule_TransitionFields = ubx.FieldMap{
-		"Date": ubx.FieldSpec{WireName: "date"},
-		"Days": ubx.FieldSpec{WireName: "days"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-	}
-
-var Bucket_LifecycleRuleFields = ubx.FieldMap{
-		"AbortIncompleteMultipartUploadDays": ubx.FieldSpec{WireName: "abort_incomplete_multipart_upload_days"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+var Bucket_IntelligentTieringConfigurationsFields = ubx.FieldMap{
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Expiration": ubx.FieldSpec{
-			WireName: "expiration",
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"TagFilters": ubx.FieldSpec{
+			WireName: "tag_filters",
 			Kind: "list",
-			Fields: Bucket_LifecycleRule_ExpirationFields,
+			Fields: Bucket_AnalyticsConfigurations_TagFiltersFields,
 		},
+		"Tierings": ubx.FieldSpec{
+			WireName: "tierings",
+			Kind: "list",
+			Fields: Bucket_IntelligentTieringConfigurations_TieringsFields,
+		},
+	}
+
+var Bucket_InventoryConfigurationsFields = ubx.FieldMap{
+		"Destination": ubx.FieldSpec{
+			WireName: "destination",
+			Kind: "object",
+			Fields: Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport_DestinationFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"IncludedObjectVersions": ubx.FieldSpec{WireName: "included_object_versions"},
+		"OptionalFields": ubx.FieldSpec{WireName: "optional_fields"},
+		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"ScheduleFrequency": ubx.FieldSpec{WireName: "schedule_frequency"},
+	}
+
+var Bucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUploadFields = ubx.FieldMap{
+		"DaysAfterInitiation": ubx.FieldSpec{WireName: "days_after_initiation"},
+	}
+
+var Bucket_LifecycleConfiguration_Rules_NoncurrentVersionExpirationFields = ubx.FieldMap{
+		"NewerNoncurrentVersions": ubx.FieldSpec{WireName: "newer_noncurrent_versions"},
+		"NoncurrentDays": ubx.FieldSpec{WireName: "noncurrent_days"},
+	}
+
+var Bucket_LifecycleConfiguration_Rules_NoncurrentVersionTransitionFields = ubx.FieldMap{
+		"NewerNoncurrentVersions": ubx.FieldSpec{WireName: "newer_noncurrent_versions"},
+		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
+		"TransitionInDays": ubx.FieldSpec{WireName: "transition_in_days"},
+	}
+
+var Bucket_LifecycleConfiguration_Rules_TransitionFields = ubx.FieldMap{
+		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
+		"TransitionDate": ubx.FieldSpec{WireName: "transition_date"},
+		"TransitionInDays": ubx.FieldSpec{WireName: "transition_in_days"},
+	}
+
+var Bucket_LifecycleConfiguration_RulesFields = ubx.FieldMap{
+		"AbortIncompleteMultipartUpload": ubx.FieldSpec{
+			WireName: "abort_incomplete_multipart_upload",
+			Kind: "object",
+			Fields: Bucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUploadFields,
+		},
+		"ExpirationDate": ubx.FieldSpec{WireName: "expiration_date"},
+		"ExpirationInDays": ubx.FieldSpec{WireName: "expiration_in_days"},
+		"ExpiredObjectDeleteMarker": ubx.FieldSpec{WireName: "expired_object_delete_marker"},
+		"Id": ubx.FieldSpec{WireName: "id"},
 		"NoncurrentVersionExpiration": ubx.FieldSpec{
 			WireName: "noncurrent_version_expiration",
-			Kind: "list",
-			Fields: Bucket_LifecycleRule_NoncurrentVersionExpirationFields,
+			Kind: "object",
+			Fields: Bucket_LifecycleConfiguration_Rules_NoncurrentVersionExpirationFields,
 		},
+		"NoncurrentVersionExpirationInDays": ubx.FieldSpec{WireName: "noncurrent_version_expiration_in_days"},
 		"NoncurrentVersionTransition": ubx.FieldSpec{
 			WireName: "noncurrent_version_transition",
-			Kind: "set",
-			Fields: Bucket_LifecycleRule_NoncurrentVersionTransitionFields,
+			Kind: "object",
+			Fields: Bucket_LifecycleConfiguration_Rules_NoncurrentVersionTransitionFields,
+		},
+		"NoncurrentVersionTransitions": ubx.FieldSpec{
+			WireName: "noncurrent_version_transitions",
+			Kind: "list",
+			Fields: Bucket_LifecycleConfiguration_Rules_NoncurrentVersionTransitionFields,
+		},
+		"ObjectSizeGreaterThan": ubx.FieldSpec{WireName: "object_size_greater_than"},
+		"ObjectSizeLessThan": ubx.FieldSpec{WireName: "object_size_less_than"},
+		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"TagFilters": ubx.FieldSpec{
+			WireName: "tag_filters",
+			Kind: "list",
+			Fields: Bucket_AnalyticsConfigurations_TagFiltersFields,
 		},
 		"Transition": ubx.FieldSpec{
 			WireName: "transition",
-			Kind: "set",
-			Fields: Bucket_LifecycleRule_TransitionFields,
+			Kind: "object",
+			Fields: Bucket_LifecycleConfiguration_Rules_TransitionFields,
+		},
+		"Transitions": ubx.FieldSpec{
+			WireName: "transitions",
+			Kind: "list",
+			Fields: Bucket_LifecycleConfiguration_Rules_TransitionFields,
 		},
 	}
 
-var Bucket_LoggingFields = ubx.FieldMap{
-		"TargetBucket": ubx.FieldSpec{WireName: "target_bucket"},
-		"TargetPrefix": ubx.FieldSpec{WireName: "target_prefix"},
+var Bucket_LifecycleConfigurationFields = ubx.FieldMap{
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: Bucket_LifecycleConfiguration_RulesFields,
+		},
+		"TransitionDefaultMinimumObjectSize": ubx.FieldSpec{WireName: "transition_default_minimum_object_size"},
+	}
+
+var Bucket_LoggingConfigurationFields = ubx.FieldMap{
+		"DestinationBucketName": ubx.FieldSpec{WireName: "destination_bucket_name"},
+		"LogFilePrefix": ubx.FieldSpec{WireName: "log_file_prefix"},
+		"TargetObjectKeyFormat": ubx.FieldSpec{WireName: "target_object_key_format"},
+	}
+
+var Bucket_MetricsConfigurationsFields = ubx.FieldMap{
+		"AccessPointArn": ubx.FieldSpec{WireName: "access_point_arn"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"TagFilters": ubx.FieldSpec{
+			WireName: "tag_filters",
+			Kind: "list",
+			Fields: Bucket_AnalyticsConfigurations_TagFiltersFields,
+		},
+	}
+
+var Bucket_NotificationConfiguration_EventBridgeConfigurationFields = ubx.FieldMap{
+		"EventBridgeEnabled": ubx.FieldSpec{WireName: "event_bridge_enabled"},
+	}
+
+var Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3Key_RulesFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3KeyFields = ubx.FieldMap{
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3Key_RulesFields,
+		},
+	}
+
+var Bucket_NotificationConfiguration_LambdaConfigurations_FilterFields = ubx.FieldMap{
+		"S3Key": ubx.FieldSpec{
+			WireName: "s3_key",
+			Kind: "object",
+			Fields: Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3KeyFields,
+		},
+	}
+
+var Bucket_NotificationConfiguration_LambdaConfigurationsFields = ubx.FieldMap{
+		"Event": ubx.FieldSpec{WireName: "event"},
+		"Filter": ubx.FieldSpec{
+			WireName: "filter",
+			Kind: "object",
+			Fields: Bucket_NotificationConfiguration_LambdaConfigurations_FilterFields,
+		},
+		"Function": ubx.FieldSpec{WireName: "function"},
+	}
+
+var Bucket_NotificationConfiguration_QueueConfigurationsFields = ubx.FieldMap{
+		"Event": ubx.FieldSpec{WireName: "event"},
+		"Filter": ubx.FieldSpec{
+			WireName: "filter",
+			Kind: "object",
+			Fields: Bucket_NotificationConfiguration_LambdaConfigurations_FilterFields,
+		},
+		"Queue": ubx.FieldSpec{WireName: "queue"},
+	}
+
+var Bucket_NotificationConfiguration_TopicConfigurationsFields = ubx.FieldMap{
+		"Event": ubx.FieldSpec{WireName: "event"},
+		"Filter": ubx.FieldSpec{
+			WireName: "filter",
+			Kind: "object",
+			Fields: Bucket_NotificationConfiguration_LambdaConfigurations_FilterFields,
+		},
+		"Topic": ubx.FieldSpec{WireName: "topic"},
+	}
+
+var Bucket_NotificationConfigurationFields = ubx.FieldMap{
+		"EventBridgeConfiguration": ubx.FieldSpec{
+			WireName: "event_bridge_configuration",
+			Kind: "object",
+			Fields: Bucket_NotificationConfiguration_EventBridgeConfigurationFields,
+		},
+		"LambdaConfigurations": ubx.FieldSpec{
+			WireName: "lambda_configurations",
+			Kind: "list",
+			Fields: Bucket_NotificationConfiguration_LambdaConfigurationsFields,
+		},
+		"QueueConfigurations": ubx.FieldSpec{
+			WireName: "queue_configurations",
+			Kind: "list",
+			Fields: Bucket_NotificationConfiguration_QueueConfigurationsFields,
+		},
+		"TopicConfigurations": ubx.FieldSpec{
+			WireName: "topic_configurations",
+			Kind: "list",
+			Fields: Bucket_NotificationConfiguration_TopicConfigurationsFields,
+		},
 	}
 
 var Bucket_ObjectLockConfiguration_Rule_DefaultRetentionFields = ubx.FieldMap{
@@ -230,7 +866,7 @@ var Bucket_ObjectLockConfiguration_Rule_DefaultRetentionFields = ubx.FieldMap{
 var Bucket_ObjectLockConfiguration_RuleFields = ubx.FieldMap{
 		"DefaultRetention": ubx.FieldSpec{
 			WireName: "default_retention",
-			Kind: "list",
+			Kind: "object",
 			Fields: Bucket_ObjectLockConfiguration_Rule_DefaultRetentionFields,
 		},
 	}
@@ -239,223 +875,411 @@ var Bucket_ObjectLockConfigurationFields = ubx.FieldMap{
 		"ObjectLockEnabled": ubx.FieldSpec{WireName: "object_lock_enabled"},
 		"Rule": ubx.FieldSpec{
 			WireName: "rule",
-			Kind: "list",
+			Kind: "object",
 			Fields: Bucket_ObjectLockConfiguration_RuleFields,
 		},
+	}
+
+var Bucket_OwnershipControls_RulesFields = ubx.FieldMap{
+		"ObjectOwnership": ubx.FieldSpec{WireName: "object_ownership"},
+	}
+
+var Bucket_OwnershipControlsFields = ubx.FieldMap{
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: Bucket_OwnershipControls_RulesFields,
+		},
+	}
+
+var Bucket_PublicAccessBlockConfigurationFields = ubx.FieldMap{
+		"BlockPublicAcls": ubx.FieldSpec{WireName: "block_public_acls"},
+		"BlockPublicPolicy": ubx.FieldSpec{WireName: "block_public_policy"},
+		"IgnorePublicAcls": ubx.FieldSpec{WireName: "ignore_public_acls"},
+		"RestrictPublicBuckets": ubx.FieldSpec{WireName: "restrict_public_buckets"},
+	}
+
+var Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplicationFields = ubx.FieldMap{
+		"Status": ubx.FieldSpec{WireName: "status"},
 	}
 
 var Bucket_ReplicationConfiguration_Rules_Destination_AccessControlTranslationFields = ubx.FieldMap{
 		"Owner": ubx.FieldSpec{WireName: "owner"},
 	}
 
-var Bucket_ReplicationConfiguration_Rules_Destination_MetricsFields = ubx.FieldMap{
+var Bucket_ReplicationConfiguration_Rules_Destination_EncryptionConfigurationFields = ubx.FieldMap{
+		"ReplicaKmsKeyId": ubx.FieldSpec{WireName: "replica_kms_key_id"},
+	}
+
+var Bucket_ReplicationConfiguration_Rules_Destination_Metrics_EventThresholdFields = ubx.FieldMap{
 		"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	}
+
+var Bucket_ReplicationConfiguration_Rules_Destination_MetricsFields = ubx.FieldMap{
+		"EventThreshold": ubx.FieldSpec{
+			WireName: "event_threshold",
+			Kind: "object",
+			Fields: Bucket_ReplicationConfiguration_Rules_Destination_Metrics_EventThresholdFields,
+		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 	}
 
+var Bucket_ReplicationConfiguration_Rules_Destination_ReplicationTimeFields = ubx.FieldMap{
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"Time": ubx.FieldSpec{
+			WireName: "time",
+			Kind: "object",
+			Fields: Bucket_ReplicationConfiguration_Rules_Destination_Metrics_EventThresholdFields,
+		},
+	}
+
 var Bucket_ReplicationConfiguration_Rules_DestinationFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"ReplicaKmsKeyId": ubx.FieldSpec{WireName: "replica_kms_key_id"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
 		"AccessControlTranslation": ubx.FieldSpec{
 			WireName: "access_control_translation",
-			Kind: "list",
+			Kind: "object",
 			Fields: Bucket_ReplicationConfiguration_Rules_Destination_AccessControlTranslationFields,
+		},
+		"Account": ubx.FieldSpec{WireName: "account"},
+		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"EncryptionConfiguration": ubx.FieldSpec{
+			WireName: "encryption_configuration",
+			Kind: "object",
+			Fields: Bucket_ReplicationConfiguration_Rules_Destination_EncryptionConfigurationFields,
 		},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
+			Kind: "object",
 			Fields: Bucket_ReplicationConfiguration_Rules_Destination_MetricsFields,
 		},
 		"ReplicationTime": ubx.FieldSpec{
 			WireName: "replication_time",
+			Kind: "object",
+			Fields: Bucket_ReplicationConfiguration_Rules_Destination_ReplicationTimeFields,
+		},
+		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
+	}
+
+var Bucket_ReplicationConfiguration_Rules_Filter_AndFields = ubx.FieldMap{
+		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"TagFilters": ubx.FieldSpec{
+			WireName: "tag_filters",
 			Kind: "list",
-			Fields: Bucket_ReplicationConfiguration_Rules_Destination_MetricsFields,
+			Fields: Bucket_AnalyticsConfigurations_TagFiltersFields,
 		},
 	}
 
 var Bucket_ReplicationConfiguration_Rules_FilterFields = ubx.FieldMap{
+		"And": ubx.FieldSpec{
+			WireName: "and",
+			Kind: "object",
+			Fields: Bucket_ReplicationConfiguration_Rules_Filter_AndFields,
+		},
 		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
-
-var Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteria_SseKmsEncryptedObjectsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"TagFilter": ubx.FieldSpec{
+			WireName: "tag_filter",
+			Kind: "object",
+			Fields: Bucket_AnalyticsConfigurations_TagFiltersFields,
+		},
 	}
 
 var Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteriaFields = ubx.FieldMap{
+		"ReplicaModifications": ubx.FieldSpec{
+			WireName: "replica_modifications",
+			Kind: "object",
+			Fields: Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplicationFields,
+		},
 		"SseKmsEncryptedObjects": ubx.FieldSpec{
 			WireName: "sse_kms_encrypted_objects",
-			Kind: "list",
-			Fields: Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteria_SseKmsEncryptedObjectsFields,
+			Kind: "object",
+			Fields: Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplicationFields,
 		},
 	}
 
 var Bucket_ReplicationConfiguration_RulesFields = ubx.FieldMap{
-		"DeleteMarkerReplicationStatus": ubx.FieldSpec{WireName: "delete_marker_replication_status"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"DeleteMarkerReplication": ubx.FieldSpec{
+			WireName: "delete_marker_replication",
+			Kind: "object",
+			Fields: Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplicationFields,
+		},
 		"Destination": ubx.FieldSpec{
 			WireName: "destination",
-			Kind: "list",
+			Kind: "object",
 			Fields: Bucket_ReplicationConfiguration_Rules_DestinationFields,
 		},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "list",
+			Kind: "object",
 			Fields: Bucket_ReplicationConfiguration_Rules_FilterFields,
 		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"SourceSelectionCriteria": ubx.FieldSpec{
 			WireName: "source_selection_criteria",
-			Kind: "list",
+			Kind: "object",
 			Fields: Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteriaFields,
 		},
+		"Status": ubx.FieldSpec{WireName: "status"},
 	}
 
 var Bucket_ReplicationConfigurationFields = ubx.FieldMap{
 		"Role": ubx.FieldSpec{WireName: "role"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "set",
+			Kind: "list",
 			Fields: Bucket_ReplicationConfiguration_RulesFields,
 		},
 	}
 
-var Bucket_ServerSideEncryptionConfiguration_Rule_ApplyServerSideEncryptionByDefaultFields = ubx.FieldMap{
-		"KmsMasterKeyId": ubx.FieldSpec{WireName: "kms_master_key_id"},
-		"SseAlgorithm": ubx.FieldSpec{WireName: "sse_algorithm"},
+var Bucket_WebsiteConfiguration_RedirectAllRequestsToFields = ubx.FieldMap{
+		"HostName": ubx.FieldSpec{WireName: "host_name"},
+		"Protocol": ubx.FieldSpec{WireName: "protocol"},
 	}
 
-var Bucket_ServerSideEncryptionConfiguration_RuleFields = ubx.FieldMap{
-		"BucketKeyEnabled": ubx.FieldSpec{WireName: "bucket_key_enabled"},
-		"ApplyServerSideEncryptionByDefault": ubx.FieldSpec{
-			WireName: "apply_server_side_encryption_by_default",
-			Kind: "list",
-			Fields: Bucket_ServerSideEncryptionConfiguration_Rule_ApplyServerSideEncryptionByDefaultFields,
+var Bucket_WebsiteConfiguration_RoutingRules_RedirectRuleFields = ubx.FieldMap{
+		"HostName": ubx.FieldSpec{WireName: "host_name"},
+		"HttpRedirectCode": ubx.FieldSpec{WireName: "http_redirect_code"},
+		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"ReplaceKeyPrefixWith": ubx.FieldSpec{WireName: "replace_key_prefix_with"},
+		"ReplaceKeyWith": ubx.FieldSpec{WireName: "replace_key_with"},
+	}
+
+var Bucket_WebsiteConfiguration_RoutingRules_RoutingRuleConditionFields = ubx.FieldMap{
+		"HttpErrorCodeReturnedEquals": ubx.FieldSpec{WireName: "http_error_code_returned_equals"},
+		"KeyPrefixEquals": ubx.FieldSpec{WireName: "key_prefix_equals"},
+	}
+
+var Bucket_WebsiteConfiguration_RoutingRulesFields = ubx.FieldMap{
+		"RedirectRule": ubx.FieldSpec{
+			WireName: "redirect_rule",
+			Kind: "object",
+			Fields: Bucket_WebsiteConfiguration_RoutingRules_RedirectRuleFields,
+		},
+		"RoutingRuleCondition": ubx.FieldSpec{
+			WireName: "routing_rule_condition",
+			Kind: "object",
+			Fields: Bucket_WebsiteConfiguration_RoutingRules_RoutingRuleConditionFields,
 		},
 	}
 
-var Bucket_ServerSideEncryptionConfigurationFields = ubx.FieldMap{
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "list",
-			Fields: Bucket_ServerSideEncryptionConfiguration_RuleFields,
-		},
-	}
-
-var Bucket_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Read": ubx.FieldSpec{WireName: "read"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
-var Bucket_VersioningFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MfaDelete": ubx.FieldSpec{WireName: "mfa_delete"},
-	}
-
-var Bucket_WebsiteFields = ubx.FieldMap{
+var Bucket_WebsiteConfigurationFields = ubx.FieldMap{
 		"ErrorDocument": ubx.FieldSpec{WireName: "error_document"},
 		"IndexDocument": ubx.FieldSpec{WireName: "index_document"},
-		"RedirectAllRequestsTo": ubx.FieldSpec{WireName: "redirect_all_requests_to"},
-		"RoutingRules": ubx.FieldSpec{WireName: "routing_rules"},
+		"RedirectAllRequestsTo": ubx.FieldSpec{
+			WireName: "redirect_all_requests_to",
+			Kind: "object",
+			Fields: Bucket_WebsiteConfiguration_RedirectAllRequestsToFields,
+		},
+		"RoutingRules": ubx.FieldSpec{
+			WireName: "routing_rules",
+			Kind: "list",
+			Fields: Bucket_WebsiteConfiguration_RoutingRulesFields,
+		},
 	}
 
 type BucketConfig struct {
-	AccelerationStatus any
-	Acl any
-	Bucket any
+	// The ABAC status of the general purpose bucket. When ABAC is enabled for the general purpose bucket, you can use tags to manage access to the general purpose buckets as well as for cost tracking purposes. When ABAC is disabled for the general purpose buckets, you can only use tags for cost tracking purposes. For more information, see [Using tags with S3 general purpose buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html).
+	AbacStatus any
+	// Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see [Amazon S3 Transfer Acceleration](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html) in the *Amazon S3 User Guide*.
+	AccelerateConfiguration any
+	// This is a legacy property, and it is not recommended for most use cases. A majority of modern use cases in Amazon S3 no longer require the use of ACLs, and we recommend that you keep ACLs disabled. For more information, see [Controlling object ownership](https://docs.aws.amazon.com//AmazonS3/latest/userguide/about-object-ownership.html) in the *Amazon S3 User Guide*. A canned access control list (ACL) that grants predefined permissions to the bucket. For more information about canned ACLs, see [Canned ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl) in the *Amazon S3 User Guide*. S3 buckets are created with ACLs disabled by default. Therefore, unless you explicitly set the [AWS::S3::OwnershipControls](https://docs.aws.amazon.com//AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ownershipcontrols.html) property to enable ACLs, your resource will fail to deploy with any value other than Private. Use cases requiring ACLs are uncommon. The majority of access control configurations can be successfully and more easily achieved with bucket policies. For more information, see [AWS::S3::BucketPolicy](https://docs.aws.amazon.com//AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html). For examples of common policy configurations, including S3 Server Access Logs buckets and more, see [Bucket policy examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html) in the *Amazon S3 User Guide*.
+	AccessControl any
+	// Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
+	AnalyticsConfigurations any
+	// Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3), AWS KMS-managed keys (SSE-KMS), or dual-layer server-side encryption with KMS-managed keys (DSSE-KMS). For information about the Amazon S3 default encryption feature, see [Amazon S3 Default Encryption for S3 Buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html) in the *Amazon S3 User Guide*.
+	BucketEncryption any
+	// A name for the bucket. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the bucket name. The bucket name must contain only lowercase letters, numbers, periods (.), and dashes (-) and must follow [Amazon S3 bucket restrictions and limitations](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html). For more information, see [Rules for naming Amazon S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) in the *Amazon S3 User Guide*. If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you need to replace the resource, specify a new name.
+	BucketName any
+	// This prefix is used to generate a unique S3 bucket name by combining the specified prefix with a random suffix, ensuring the bucket name is globally unique. (AI-inferred)
+	BucketNamePrefix any
 	BucketNamespace any
-	BucketPrefix any
-	ForceDestroy any
-	Id any
-	ObjectLockEnabled any
-	Policy any
-	Region any
-	RequestPayer any
-	Tags any
-	TagsAll any
-	CorsRule any
-	Grant any
-	LifecycleRule any
-	Logging any
+	// Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [Enabling Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html) in the *Amazon S3 User Guide*.
+	CorsConfiguration any
+	// Defines how Amazon S3 handles Intelligent-Tiering storage.
+	IntelligentTieringConfigurations any
+	// Specifies the S3 Inventory configuration for an Amazon S3 bucket. For more information, see [GET Bucket inventory](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html) in the *Amazon S3 API Reference*.
+	InventoryConfigurations any
+	// Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see [Object Lifecycle Management](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html) in the *Amazon S3 User Guide*.
+	LifecycleConfiguration any
+	// Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For examples and more information, see [PUT Bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html) in the *Amazon S3 API Reference*. To successfully complete the ``AWS::S3::Bucket LoggingConfiguration`` request, you must have ``s3:PutObject`` and ``s3:PutObjectAcl`` in your IAM permissions.
+	LoggingConfiguration any
+	// Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see [PutBucketMetricsConfiguration](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html).
+	MetricsConfigurations any
+	// Describes the notification configuration for an Amazon S3 bucket. If you create the target resource and related permissions in the same template, you might have a circular dependency. For example, you might use the ``AWS::Lambda::Permission`` resource to grant the bucket permission to invoke an AWS Lambda function. However, AWS CloudFormation can't create the bucket until the bucket has permission to invoke the function (AWS CloudFormation checks whether the bucket can invoke the function). If you're using Refs to pass the bucket name, this leads to a circular dependency. To avoid this dependency, you can create all resources without specifying the notification configuration. Then, update the stack with a notification configuration. For more information on permissions, see [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html) and [Granting Permissions to Publish Event Notification Messages to a Destination](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html#grant-destinations-permissions-to-s3).
+	NotificationConfiguration any
+	// Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see [Locking Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html).
 	ObjectLockConfiguration any
+	// Indicates whether this bucket has an Object Lock configuration enabled. Enable ``ObjectLockEnabled`` when you apply ``ObjectLockConfiguration`` to a bucket.
+	ObjectLockEnabled any
+	// Specifies the container element for Object Ownership rules. S3 Object Ownership is an Amazon S3 bucket-level setting that you can use to disable access control lists (ACLs) and take ownership of every object in your bucket, simplifying access management for data stored in Amazon S3. For more information, see [Controlling ownership of objects and disabling ACLs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html) in the *Amazon S3 User Guide*.
+	OwnershipControls any
+	// The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. Bucket-level settings work alongside account-level settings (which may inherit from organization-level policies). For more information about when Amazon S3 considers a bucket or object public, see [The Meaning of "Public"](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status) in the *Amazon S3 User Guide*.
+	PublicAccessBlockConfiguration any
+	// A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB. The latest version of the replication configuration XML is V2. For more information about XML V2 replication configurations, see [Replication configuration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-add-config.html) in the *Amazon S3 User Guide*.
 	ReplicationConfiguration any
-	ServerSideEncryptionConfiguration any
-	Timeouts any
-	Versioning any
-	Website any
+	// An arbitrary set of tags (key-value pairs) for this S3 bucket.
+	Tags any
+	// Describes the versioning state of an Amazon S3 bucket. For more information, see [PUT Bucket versioning](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html) in the *Amazon S3 API Reference*. Keep the following timing in mind when enabling, suspending, or transitioning between versioning states: + *Enabling versioning* - Changes may take up to 15 minutes to propagate across all AWS regions for full consistency. + *Suspending versioning* - Takes effect immediately with no propagation delay. + *Transitioning between states* - Any change from Suspended to Enabled has a 15-minute delay.
+	VersioningConfiguration any
+	// Specifies website configuration parameters for an Amazon S3 bucket.
+	WebsiteConfiguration any
+}
+
+type BucketAttrs struct {
+	// The ABAC status of the general purpose bucket. When ABAC is enabled for the general purpose bucket, you can use tags to manage access to the general purpose buckets as well as for cost tracking purposes. When ABAC is disabled for the general purpose buckets, you can only use tags for cost tracking purposes. For more information, see [Using tags with S3 general purpose buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html).
+	AbacStatus any
+	// Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see [Amazon S3 Transfer Acceleration](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html) in the *Amazon S3 User Guide*.
+	AccelerateConfiguration any
+	// This is a legacy property, and it is not recommended for most use cases. A majority of modern use cases in Amazon S3 no longer require the use of ACLs, and we recommend that you keep ACLs disabled. For more information, see [Controlling object ownership](https://docs.aws.amazon.com//AmazonS3/latest/userguide/about-object-ownership.html) in the *Amazon S3 User Guide*. A canned access control list (ACL) that grants predefined permissions to the bucket. For more information about canned ACLs, see [Canned ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl) in the *Amazon S3 User Guide*. S3 buckets are created with ACLs disabled by default. Therefore, unless you explicitly set the [AWS::S3::OwnershipControls](https://docs.aws.amazon.com//AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ownershipcontrols.html) property to enable ACLs, your resource will fail to deploy with any value other than Private. Use cases requiring ACLs are uncommon. The majority of access control configurations can be successfully and more easily achieved with bucket policies. For more information, see [AWS::S3::BucketPolicy](https://docs.aws.amazon.com//AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html). For examples of common policy configurations, including S3 Server Access Logs buckets and more, see [Bucket policy examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html) in the *Amazon S3 User Guide*.
+	AccessControl any
+	// Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
+	AnalyticsConfigurations any
+	// the Amazon Resource Name (ARN) of the specified bucket.
+	Arn any
+	// Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3), AWS KMS-managed keys (SSE-KMS), or dual-layer server-side encryption with KMS-managed keys (DSSE-KMS). For information about the Amazon S3 default encryption feature, see [Amazon S3 Default Encryption for S3 Buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html) in the *Amazon S3 User Guide*.
+	BucketEncryption any
+	// A name for the bucket. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the bucket name. The bucket name must contain only lowercase letters, numbers, periods (.), and dashes (-) and must follow [Amazon S3 bucket restrictions and limitations](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html). For more information, see [Rules for naming Amazon S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) in the *Amazon S3 User Guide*. If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you need to replace the resource, specify a new name.
+	BucketName any
+	// This prefix is used to generate a unique S3 bucket name by combining the specified prefix with a random suffix, ensuring the bucket name is globally unique. (AI-inferred)
+	BucketNamePrefix any
+	BucketNamespace any
+	// Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [Enabling Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html) in the *Amazon S3 User Guide*.
+	CorsConfiguration any
+	// The bucket's DNS domain name, which is the global S3 endpoint of the form `<bucket-name>.s3.amazonaws.com`, exposed as a computed attribute for resource references. (AI-inferred)
+	DomainName any
+	// The dual-stack domain name for the S3 bucket, which is the automatically generated endpoint that supports both IPv4 and IPv6 connections, typically in the format bucket-name.s3.dualstack.region.amazonaws.com. (AI-inferred)
+	DualStackDomainName any
+	// Defines how Amazon S3 handles Intelligent-Tiering storage.
+	IntelligentTieringConfigurations any
+	// Specifies the S3 Inventory configuration for an Amazon S3 bucket. For more information, see [GET Bucket inventory](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html) in the *Amazon S3 API Reference*.
+	InventoryConfigurations any
+	// Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see [Object Lifecycle Management](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html) in the *Amazon S3 User Guide*.
+	LifecycleConfiguration any
+	// Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For examples and more information, see [PUT Bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html) in the *Amazon S3 API Reference*. To successfully complete the ``AWS::S3::Bucket LoggingConfiguration`` request, you must have ``s3:PutObject`` and ``s3:PutObjectAcl`` in your IAM permissions.
+	LoggingConfiguration any
+	// Creates a V2 S3 Metadata configuration of a general purpose bucket. For more information, see [Accelerating data discovery with S3 Metadata](https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html) in the *Amazon S3 User Guide*.
+	MetadataConfiguration any
+	// We recommend that you create your S3 Metadata configurations by using the V2 [MetadataConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-s3-bucket-metadataconfiguration.html) resource type. We no longer recommend using the V1 ``MetadataTableConfiguration`` resource type. If you created your S3 Metadata configuration before July 15, 2025, we recommend that you delete and re-create your configuration by using the [MetadataConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-s3-bucket-metadataconfiguration.html) resource type so that you can expire journal table records and create a live inventory table. Creates a V1 S3 Metadata configuration for a general purpose bucket. For more information, see [Accelerating data discovery with S3 Metadata](https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html) in the *Amazon S3 User Guide*.
+	MetadataTableConfiguration any
+	// Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see [PutBucketMetricsConfiguration](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html).
+	MetricsConfigurations any
+	// Describes the notification configuration for an Amazon S3 bucket. If you create the target resource and related permissions in the same template, you might have a circular dependency. For example, you might use the ``AWS::Lambda::Permission`` resource to grant the bucket permission to invoke an AWS Lambda function. However, AWS CloudFormation can't create the bucket until the bucket has permission to invoke the function (AWS CloudFormation checks whether the bucket can invoke the function). If you're using Refs to pass the bucket name, this leads to a circular dependency. To avoid this dependency, you can create all resources without specifying the notification configuration. Then, update the stack with a notification configuration. For more information on permissions, see [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html) and [Granting Permissions to Publish Event Notification Messages to a Destination](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html#grant-destinations-permissions-to-s3).
+	NotificationConfiguration any
+	// Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see [Locking Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html).
+	ObjectLockConfiguration any
+	// Indicates whether this bucket has an Object Lock configuration enabled. Enable ``ObjectLockEnabled`` when you apply ``ObjectLockConfiguration`` to a bucket.
+	ObjectLockEnabled any
+	// Specifies the container element for Object Ownership rules. S3 Object Ownership is an Amazon S3 bucket-level setting that you can use to disable access control lists (ACLs) and take ownership of every object in your bucket, simplifying access management for data stored in Amazon S3. For more information, see [Controlling ownership of objects and disabling ACLs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html) in the *Amazon S3 User Guide*.
+	OwnershipControls any
+	// The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. Bucket-level settings work alongside account-level settings (which may inherit from organization-level policies). For more information about when Amazon S3 considers a bucket or object public, see [The Meaning of "Public"](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status) in the *Amazon S3 User Guide*.
+	PublicAccessBlockConfiguration any
+	// The AWS S3 bucket's regional domain name, e.g., 'my-bucket.s3.us-west-2.amazonaws.com', which is a constructed endpoint for accessing the bucket in the region where it was created. (AI-inferred)
+	RegionalDomainName any
+	// A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB. The latest version of the replication configuration XML is V2. For more information about XML V2 replication configurations, see [Replication configuration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-add-config.html) in the *Amazon S3 User Guide*.
+	ReplicationConfiguration any
+	// An arbitrary set of tags (key-value pairs) for this S3 bucket.
+	Tags any
+	// Describes the versioning state of an Amazon S3 bucket. For more information, see [PUT Bucket versioning](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html) in the *Amazon S3 API Reference*. Keep the following timing in mind when enabling, suspending, or transitioning between versioning states: + *Enabling versioning* - Changes may take up to 15 minutes to propagate across all AWS regions for full consistency. + *Suspending versioning* - Takes effect immediately with no propagation delay. + *Transitioning between states* - Any change from Suspended to Enabled has a 15-minute delay.
+	VersioningConfiguration any
+	// Specifies website configuration parameters for an Amazon S3 bucket.
+	WebsiteConfiguration any
+	// The website URL endpoint for the S3 bucket when static website hosting is configured, such as http://bucket-name.s3-website-region.amazonaws.com. (AI-inferred)
+	WebsiteUrl any
 }
 
 var Bucket = ubx.ResourceBinding{
 	WireType: "aws_s3_bucket",
 	Fields: ubx.FieldMap{
-		"AccelerationStatus": ubx.FieldSpec{WireName: "acceleration_status"},
-		"Acl": ubx.FieldSpec{WireName: "acl"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"AbacStatus": ubx.FieldSpec{WireName: "abac_status"},
+		"AccelerateConfiguration": ubx.FieldSpec{
+			WireName: "accelerate_configuration",
+			Kind: "object",
+			Fields: Bucket_AccelerateConfigurationFields,
+		},
+		"AccessControl": ubx.FieldSpec{WireName: "access_control"},
+		"AnalyticsConfigurations": ubx.FieldSpec{
+			WireName: "analytics_configurations",
+			Kind: "list",
+			Fields: Bucket_AnalyticsConfigurationsFields,
+		},
+		"BucketEncryption": ubx.FieldSpec{
+			WireName: "bucket_encryption",
+			Kind: "object",
+			Fields: Bucket_BucketEncryptionFields,
+		},
+		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+		"BucketNamePrefix": ubx.FieldSpec{WireName: "bucket_name_prefix"},
 		"BucketNamespace": ubx.FieldSpec{WireName: "bucket_namespace"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"ForceDestroy": ubx.FieldSpec{WireName: "force_destroy"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ObjectLockEnabled": ubx.FieldSpec{WireName: "object_lock_enabled"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RequestPayer": ubx.FieldSpec{WireName: "request_payer"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"CorsRule": ubx.FieldSpec{
-			WireName: "cors_rule",
-			Kind: "list",
-			Fields: Bucket_CorsRuleFields,
+		"CorsConfiguration": ubx.FieldSpec{
+			WireName: "cors_configuration",
+			Kind: "object",
+			Fields: Bucket_CorsConfigurationFields,
 		},
-		"Grant": ubx.FieldSpec{
-			WireName: "grant",
-			Kind: "set",
-			Fields: Bucket_GrantFields,
-		},
-		"LifecycleRule": ubx.FieldSpec{
-			WireName: "lifecycle_rule",
+		"IntelligentTieringConfigurations": ubx.FieldSpec{
+			WireName: "intelligent_tiering_configurations",
 			Kind: "list",
-			Fields: Bucket_LifecycleRuleFields,
+			Fields: Bucket_IntelligentTieringConfigurationsFields,
 		},
-		"Logging": ubx.FieldSpec{
-			WireName: "logging",
+		"InventoryConfigurations": ubx.FieldSpec{
+			WireName: "inventory_configurations",
 			Kind: "list",
-			Fields: Bucket_LoggingFields,
+			Fields: Bucket_InventoryConfigurationsFields,
+		},
+		"LifecycleConfiguration": ubx.FieldSpec{
+			WireName: "lifecycle_configuration",
+			Kind: "object",
+			Fields: Bucket_LifecycleConfigurationFields,
+		},
+		"LoggingConfiguration": ubx.FieldSpec{
+			WireName: "logging_configuration",
+			Kind: "object",
+			Fields: Bucket_LoggingConfigurationFields,
+		},
+		"MetricsConfigurations": ubx.FieldSpec{
+			WireName: "metrics_configurations",
+			Kind: "list",
+			Fields: Bucket_MetricsConfigurationsFields,
+		},
+		"NotificationConfiguration": ubx.FieldSpec{
+			WireName: "notification_configuration",
+			Kind: "object",
+			Fields: Bucket_NotificationConfigurationFields,
 		},
 		"ObjectLockConfiguration": ubx.FieldSpec{
 			WireName: "object_lock_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Bucket_ObjectLockConfigurationFields,
+		},
+		"ObjectLockEnabled": ubx.FieldSpec{WireName: "object_lock_enabled"},
+		"OwnershipControls": ubx.FieldSpec{
+			WireName: "ownership_controls",
+			Kind: "object",
+			Fields: Bucket_OwnershipControlsFields,
+		},
+		"PublicAccessBlockConfiguration": ubx.FieldSpec{
+			WireName: "public_access_block_configuration",
+			Kind: "object",
+			Fields: Bucket_PublicAccessBlockConfigurationFields,
 		},
 		"ReplicationConfiguration": ubx.FieldSpec{
 			WireName: "replication_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Bucket_ReplicationConfigurationFields,
 		},
-		"ServerSideEncryptionConfiguration": ubx.FieldSpec{
-			WireName: "server_side_encryption_configuration",
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: Bucket_ServerSideEncryptionConfigurationFields,
+			Fields: Bucket_AnalyticsConfigurations_TagFiltersFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"VersioningConfiguration": ubx.FieldSpec{
+			WireName: "versioning_configuration",
 			Kind: "object",
-			Fields: Bucket_TimeoutsFields,
+			Fields: Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplicationFields,
 		},
-		"Versioning": ubx.FieldSpec{
-			WireName: "versioning",
-			Kind: "list",
-			Fields: Bucket_VersioningFields,
-		},
-		"Website": ubx.FieldSpec{
-			WireName: "website",
-			Kind: "list",
-			Fields: Bucket_WebsiteFields,
+		"WebsiteConfiguration": ubx.FieldSpec{
+			WireName: "website_configuration",
+			Kind: "object",
+			Fields: Bucket_WebsiteConfigurationFields,
 		},
 	},
 }

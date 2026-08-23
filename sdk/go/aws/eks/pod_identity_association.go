@@ -3,15 +3,59 @@ package eks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PodIdentityAssociation_Tags struct {
+	// The tag key used to label the Pod Identity Association, enabling cost allocation, access control, and resource identification. (AI-inferred)
+	Key any
+	// The value of a tag key-value pair attached to the EKS Pod Identity Association, used for labeling, organizing, and managing the association with custom metadata. (AI-inferred)
+	Value any
+}
+
+var PodIdentityAssociation_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type PodIdentityAssociationConfig struct {
+	// The cluster that the pod identity association is created for.
 	ClusterName any
+	// The Disable Session Tags of the pod identity association.
 	DisableSessionTags any
+	// The Kubernetes namespace that the pod identity association is created for.
 	Namespace any
+	// The policy of the pod identity association.
 	Policy any
-	Region any
+	// The IAM role ARN that the pod identity association is created for.
 	RoleArn any
+	// The Kubernetes service account that the pod identity association is created for.
 	ServiceAccount any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
+	// The Target Role Arn of the pod identity association.
+	TargetRoleArn any
+}
+
+type PodIdentityAssociationAttrs struct {
+	// The ARN of the pod identity association.
+	AssociationArn any
+	// The ID of the pod identity association.
+	AssociationId any
+	// The cluster that the pod identity association is created for.
+	ClusterName any
+	// The Disable Session Tags of the pod identity association.
+	DisableSessionTags any
+	// The External Id of the pod identity association.
+	ExternalId any
+	// The Kubernetes namespace that the pod identity association is created for.
+	Namespace any
+	// The policy of the pod identity association.
+	Policy any
+	// The IAM role ARN that the pod identity association is created for.
+	RoleArn any
+	// The Kubernetes service account that the pod identity association is created for.
+	ServiceAccount any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// The Target Role Arn of the pod identity association.
 	TargetRoleArn any
 }
 
@@ -22,10 +66,13 @@ var PodIdentityAssociation = ubx.ResourceBinding{
 		"DisableSessionTags": ubx.FieldSpec{WireName: "disable_session_tags"},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
 		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: PodIdentityAssociation_TagsFields,
+		},
 		"TargetRoleArn": ubx.FieldSpec{WireName: "target_role_arn"},
 	},
 }

@@ -2,29 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayResourceConfig {
-  id?: string | Computed<string>;
+  /** The identifier of the parent Resource in this REST API's resource hierarchy, determining the path of this resource relative to the API's root resource. (AI-inferred) */
   parentId: string | Computed<string>;
+  /** The URL path segment (e.g., 'users' or a path parameter like '{userId}') that defines this resource's location in the API's URL hierarchy, appended to the parent resource's path to form the full resource path. (AI-inferred) */
   pathPart: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The ID of the parent RestApi in API Gateway to which this resource belongs. (AI-inferred) */
   restApiId: string | Computed<string>;
 }
 
 export interface GatewayResourceAttrs {
-  id: string;
+  /** The identifier of the parent Resource in this REST API's resource hierarchy, determining the path of this resource relative to the API's root resource. (AI-inferred) */
   parentId: string;
-  path: string;
+  /** The URL path segment (e.g., 'users' or a path parameter like '{userId}') that defines this resource's location in the API's URL hierarchy, appended to the parent resource's path to form the full resource path. (AI-inferred) */
   pathPart: string;
-  region: string;
+  /** The unique identifier assigned to this API Gateway resource by the service, used to reference the resource in method and integration configurations within the same REST API. (AI-inferred) */
+  resourceId: string;
+  /** The ID of the parent RestApi in API Gateway to which this resource belongs. (AI-inferred) */
   restApiId: string;
 }
 
 export const GatewayResource: ResourceBinding<GatewayResourceConfig, GatewayResourceAttrs> = {
   wireType: "aws_api_gateway_resource",
   fields: {
-    id: "id",
     parentId: "parent_id",
     pathPart: "path_part",
-    region: "region",
     restApiId: "rest_api_id",
   },
 };

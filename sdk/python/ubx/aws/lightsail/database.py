@@ -7,46 +7,140 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Database_RelationalDatabaseParameters:
+    # Specifies the allowed values for the relational database parameter, such as a range or list of valid options, as defined by the Lightsail database engine. (AI-inferred)
+    allowed_values: Any = None
+    # Specifies whether the parameter change is applied immediately or after the database reboots (pending-reboot). (AI-inferred)
+    apply_method: Any = None
+    # Indicates whether the parameter is dynamic (applied immediately without a reboot) or static (requires a database reboot to take effect). (AI-inferred)
+    apply_type: Any = None
+    # The data type of the relational database parameter, such as 'string', 'integer', or 'boolean'. (AI-inferred)
+    data_type: Any = None
+    # Provides a descriptive text explaining the purpose or meaning of the relational database parameter in the AWS Lightsail database. (AI-inferred)
+    description: Any = None
+    # Indicates whether the specified relational database parameter can be modified from its default value. (AI-inferred)
+    is_modifiable: Any = None
+    # The name of the database parameter (e.g., `max_connections`) that this entry in the relational database parameter list refers to, used to identify which parameter's value is being specified or modified. (AI-inferred)
+    parameter_name: Any = None
+    # The value to assign to the specified relational database parameter (identified by its parameter_name) in the Lightsail database, used for configuring engine-level settings such as MySQL or PostgreSQL parameters. (AI-inferred)
+    parameter_value: Any = None
+
+@dataclasses.dataclass
+class Database_Tags:
+    # The key of a tag attached to the Lightsail database, which identifies the tag for organizing and managing the database resource in AWS. (AI-inferred)
+    key: Any = None
+    # The value component of a key-value tag attached to the Lightsail database, which holds the metadata string that accompanies the tag key. (AI-inferred)
+    value: Any = None
+
+_Database_RelationalDatabaseParametersFields = {
+    "allowed_values": ubx.FieldSpec(wire_name="allowed_values"),
+    "apply_method": ubx.FieldSpec(wire_name="apply_method"),
+    "apply_type": ubx.FieldSpec(wire_name="apply_type"),
+    "data_type": ubx.FieldSpec(wire_name="data_type"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "is_modifiable": ubx.FieldSpec(wire_name="is_modifiable"),
+    "parameter_name": ubx.FieldSpec(wire_name="parameter_name"),
+    "parameter_value": ubx.FieldSpec(wire_name="parameter_value"),
+}
+
+_Database_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class DatabaseConfig:
-    apply_immediately: Any = None
+    # The Availability Zone in which to create your new database. Use the us-east-2a case-sensitive format.
     availability_zone: Any = None
-    backup_retention_enabled: Any = None
-    blueprint_id: Any = None
-    bundle_id: Any = None
-    final_snapshot_name: Any = None
-    id: Any = None
+    # When true, enables automated backup retention for your database. Updates are applied during the next maintenance window because this can result in an outage.
+    backup_retention: Any = None
+    # Indicates the certificate that needs to be associated with the database.
+    ca_certificate_identifier: Any = None
+    # The name of the database to create when the Lightsail database resource is created. For MySQL, if this parameter isn't specified, no database is created in the database resource. For PostgreSQL, if this parameter isn't specified, a database named postgres is created in the database resource.
     master_database_name: Any = None
-    master_password: Any = None
+    # The password for the master user. The password can include any printable ASCII character except "/", """, or "@". It cannot contain spaces.
+    master_user_password: Any = None
+    # The name for the master user.
     master_username: Any = None
+    # The daily time range during which automated backups are created for your new database if automated backups are enabled.
     preferred_backup_window: Any = None
+    # The weekly time range during which system maintenance can occur on your new database.
     preferred_maintenance_window: Any = None
+    # Specifies the accessibility options for your new database. A value of true specifies a database that is available to resources outside of your Lightsail account. A value of false specifies a database that is available only to your Lightsail resources in the same region as your database.
     publicly_accessible: Any = None
-    region: Any = None
+    # The blueprint ID for your new database. A blueprint describes the major engine version of a database.
+    relational_database_blueprint_id: Any = None
+    # The bundle ID for your new database. A bundle describes the performance specifications for your database.
+    relational_database_bundle_id: Any = None
+    # The name to use for your new Lightsail database resource.
     relational_database_name: Any = None
-    skip_final_snapshot: Any = None
+    # Update one or more parameters of the relational database.
+    relational_database_parameters: Any = None
+    # When true, the master user password is changed to a new strong password generated by Lightsail. Use the get relational database master user password operation to get the new password.
+    rotate_master_user_password: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class DatabaseAttrs:
+    # The Availability Zone in which to create your new database. Use the us-east-2a case-sensitive format.
+    availability_zone: Any = None
+    # When true, enables automated backup retention for your database. Updates are applied during the next maintenance window because this can result in an outage.
+    backup_retention: Any = None
+    # Indicates the certificate that needs to be associated with the database.
+    ca_certificate_identifier: Any = None
+    # The Amazon Resource Name (ARN) uniquely identifying the Lightsail database, assigned by AWS upon creation. (AI-inferred)
+    database_arn: Any = None
+    # The name of the database to create when the Lightsail database resource is created. For MySQL, if this parameter isn't specified, no database is created in the database resource. For PostgreSQL, if this parameter isn't specified, a database named postgres is created in the database resource.
+    master_database_name: Any = None
+    # The password for the master user. The password can include any printable ASCII character except "/", """, or "@". It cannot contain spaces.
+    master_user_password: Any = None
+    # The name for the master user.
+    master_username: Any = None
+    # The daily time range during which automated backups are created for your new database if automated backups are enabled.
+    preferred_backup_window: Any = None
+    # The weekly time range during which system maintenance can occur on your new database.
+    preferred_maintenance_window: Any = None
+    # Specifies the accessibility options for your new database. A value of true specifies a database that is available to resources outside of your Lightsail account. A value of false specifies a database that is available only to your Lightsail resources in the same region as your database.
+    publicly_accessible: Any = None
+    # The blueprint ID for your new database. A blueprint describes the major engine version of a database.
+    relational_database_blueprint_id: Any = None
+    # The bundle ID for your new database. A bundle describes the performance specifications for your database.
+    relational_database_bundle_id: Any = None
+    # The name to use for your new Lightsail database resource.
+    relational_database_name: Any = None
+    # Update one or more parameters of the relational database.
+    relational_database_parameters: Any = None
+    # When true, the master user password is changed to a new strong password generated by Lightsail. Use the get relational database master user password operation to get the new password.
+    rotate_master_user_password: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Database = ubx.ResourceBinding(
     wire_type="aws_lightsail_database",
     fields={
-        "apply_immediately": ubx.FieldSpec(wire_name="apply_immediately"),
         "availability_zone": ubx.FieldSpec(wire_name="availability_zone"),
-        "backup_retention_enabled": ubx.FieldSpec(wire_name="backup_retention_enabled"),
-        "blueprint_id": ubx.FieldSpec(wire_name="blueprint_id"),
-        "bundle_id": ubx.FieldSpec(wire_name="bundle_id"),
-        "final_snapshot_name": ubx.FieldSpec(wire_name="final_snapshot_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "backup_retention": ubx.FieldSpec(wire_name="backup_retention"),
+        "ca_certificate_identifier": ubx.FieldSpec(wire_name="ca_certificate_identifier"),
         "master_database_name": ubx.FieldSpec(wire_name="master_database_name"),
-        "master_password": ubx.FieldSpec(wire_name="master_password"),
+        "master_user_password": ubx.FieldSpec(wire_name="master_user_password"),
         "master_username": ubx.FieldSpec(wire_name="master_username"),
         "preferred_backup_window": ubx.FieldSpec(wire_name="preferred_backup_window"),
         "preferred_maintenance_window": ubx.FieldSpec(wire_name="preferred_maintenance_window"),
         "publicly_accessible": ubx.FieldSpec(wire_name="publicly_accessible"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "relational_database_blueprint_id": ubx.FieldSpec(wire_name="relational_database_blueprint_id"),
+        "relational_database_bundle_id": ubx.FieldSpec(wire_name="relational_database_bundle_id"),
         "relational_database_name": ubx.FieldSpec(wire_name="relational_database_name"),
-        "skip_final_snapshot": ubx.FieldSpec(wire_name="skip_final_snapshot"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "relational_database_parameters": ubx.FieldSpec(
+            wire_name="relational_database_parameters",
+            kind="list",
+            fields=_Database_RelationalDatabaseParametersFields,
+        ),
+        "rotate_master_user_password": ubx.FieldSpec(wire_name="rotate_master_user_password"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Database_TagsFields,
+        ),
     },
 )

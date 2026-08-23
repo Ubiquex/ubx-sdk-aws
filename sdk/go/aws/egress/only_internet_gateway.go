@@ -3,21 +3,42 @@ package egress
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type OnlyInternetGateway_Tags struct {
+	// The key portion of a tag attached to the egress-only internet gateway, used for identifying, organizing, and managing this VPC component in AWS. (AI-inferred)
+	Key any
+	// The tag value (string) for a tag applied to the egress-only internet gateway, allowing you to categorize and manage this IPv6 outbound-only VPC component. (AI-inferred)
+	Value any
+}
+
+var OnlyInternetGateway_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type OnlyInternetGatewayConfig struct {
-	Id any
-	Region any
+	// Any tags assigned to the egress only internet gateway.
 	Tags any
-	TagsAll any
+	// The ID of the VPC for which to create the egress-only internet gateway.
+	VpcId any
+}
+
+type OnlyInternetGatewayAttrs struct {
+	// Service Generated ID of the EgressOnlyInternetGateway
+	Id any
+	// Any tags assigned to the egress only internet gateway.
+	Tags any
+	// The ID of the VPC for which to create the egress-only internet gateway.
 	VpcId any
 }
 
 var OnlyInternetGateway = ubx.ResourceBinding{
 	WireType: "aws_egress_only_internet_gateway",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: OnlyInternetGateway_TagsFields,
+		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

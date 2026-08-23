@@ -3,43 +3,71 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TransitGatewayMulticastDomain_Timeouts struct {
-	Create any
-	Delete any
+type TransitGatewayMulticastDomain_Options struct {
+	// Indicates whether to automatically cross-account subnet associations that are associated with the transit gateway multicast domain. Valid Values: enable | disable
+	AutoAcceptSharedAssociations any
+	// Indicates whether Internet Group Management Protocol (IGMP) version 2 is turned on for the transit gateway multicast domain. Valid Values: enable | disable
+	Igmpv2Support any
+	// Indicates whether support for statically configuring transit gateway multicast group sources is turned on. Valid Values: enable | disable
+	StaticSourcesSupport any
 }
 
-var TransitGatewayMulticastDomain_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+type TransitGatewayMulticastDomain_Tags struct {
+	Key any
+	// The value of a tag key-value pair attached to the transit gateway multicast domain, used to assign arbitrary metadata for identification and management. (AI-inferred)
+	Value any
+}
+
+var TransitGatewayMulticastDomain_OptionsFields = ubx.FieldMap{
+		"AutoAcceptSharedAssociations": ubx.FieldSpec{WireName: "auto_accept_shared_associations"},
+		"Igmpv2Support": ubx.FieldSpec{WireName: "igmpv2_support"},
+		"StaticSourcesSupport": ubx.FieldSpec{WireName: "static_sources_support"},
+	}
+
+var TransitGatewayMulticastDomain_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type TransitGatewayMulticastDomainConfig struct {
-	AutoAcceptSharedAssociations any
-	Id any
-	Igmpv2Support any
-	Region any
-	StaticSourcesSupport any
+	// The options for the transit gateway multicast domain.
+	Options any
+	// The tags for the transit gateway multicast domain.
 	Tags any
-	TagsAll any
+	// The ID of the transit gateway.
 	TransitGatewayId any
-	Timeouts any
+}
+
+type TransitGatewayMulticastDomainAttrs struct {
+	// The time the transit gateway multicast domain was created.
+	CreationTime any
+	// The options for the transit gateway multicast domain.
+	Options any
+	// The state of the transit gateway multicast domain.
+	State any
+	// The tags for the transit gateway multicast domain.
+	Tags any
+	// The ID of the transit gateway.
+	TransitGatewayId any
+	// The Amazon Resource Name (ARN) of the transit gateway multicast domain.
+	TransitGatewayMulticastDomainArn any
+	// The ID of the transit gateway multicast domain.
+	TransitGatewayMulticastDomainId any
 }
 
 var TransitGatewayMulticastDomain = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_multicast_domain",
 	Fields: ubx.FieldMap{
-		"AutoAcceptSharedAssociations": ubx.FieldSpec{WireName: "auto_accept_shared_associations"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Igmpv2Support": ubx.FieldSpec{WireName: "igmpv2_support"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"StaticSourcesSupport": ubx.FieldSpec{WireName: "static_sources_support"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"Options": ubx.FieldSpec{
+			WireName: "options",
 			Kind: "object",
-			Fields: TransitGatewayMulticastDomain_TimeoutsFields,
+			Fields: TransitGatewayMulticastDomain_OptionsFields,
 		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: TransitGatewayMulticastDomain_TagsFields,
+		},
+		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
 	},
 }

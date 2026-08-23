@@ -3,43 +3,46 @@ package efs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type MountTarget_Timeouts struct {
-	Create any
-	Delete any
+type MountTargetConfig struct {
+	// The ID of the file system for which to create the mount target.
+	FileSystemId any
+	// If the ``IpAddressType`` for the mount target is IPv4 ( ``IPV4_ONLY`` or ``DUAL_STACK``), then specify the IPv4 address to use. If you do not specify an ``IpAddress``, then Amazon EFS selects an unused IP address from the subnet specified for ``SubnetId``.
+	IpAddress any
+	// The IP address type for the mount target. The possible values are ``IPV4_ONLY`` (only IPv4 addresses), ``IPV6_ONLY`` (only IPv6 addresses), and ``DUAL_STACK`` (dual-stack, both IPv4 and IPv6 addresses). If you don’t specify an ``IpAddressType``, then ``IPV4_ONLY`` is used. The ``IPAddressType`` must match the IP type of the subnet. Additionally, the ``IPAddressType`` parameter overrides the value set as the default IP address for the subnet in the VPC. For example, if the ``IPAddressType`` is ``IPV4_ONLY`` and ``AssignIpv6AddressOnCreation`` is ``true``, then IPv4 is used for the mount target. For more information, see [Modify the IP addressing attributes of your subnet](https://docs.aws.amazon.com/vpc/latest/userguide/subnet-public-ip.html).
+	IpAddressType any
+	// If the ``IPAddressType`` for the mount target is IPv6 (``IPV6_ONLY`` or ``DUAL_STACK``), then specify the IPv6 address to use. If you do not specify an ``Ipv6Address``, then Amazon EFS selects an unused IP address from the subnet specified for ``SubnetId``.
+	Ipv6Address any
+	// VPC security group IDs, of the form ``sg-xxxxxxxx``. These must be for the same VPC as the subnet specified. The maximum number of security groups depends on account quota. For more information, see [Amazon VPC Quotas](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html) in the *Amazon VPC User Guide* (see the *Security Groups* table). If you don't specify a security group, then Amazon EFS uses the default security group for the subnet's VPC.
+	SecurityGroups any
+	// The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone. The subnet type must be the same type as the ``IpAddressType``.
+	SubnetId any
 }
 
-var MountTarget_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
-type MountTargetConfig struct {
+type MountTargetAttrs struct {
+	// The ID of the file system for which to create the mount target.
 	FileSystemId any
+	// The unique identifier of the EFS mount target, typically the mount target ID (e.g., fsmt-12345678), used to reference the mount target in other resources. (AI-inferred)
 	Id any
+	// If the ``IpAddressType`` for the mount target is IPv4 ( ``IPV4_ONLY`` or ``DUAL_STACK``), then specify the IPv4 address to use. If you do not specify an ``IpAddress``, then Amazon EFS selects an unused IP address from the subnet specified for ``SubnetId``.
 	IpAddress any
+	// The IP address type for the mount target. The possible values are ``IPV4_ONLY`` (only IPv4 addresses), ``IPV6_ONLY`` (only IPv6 addresses), and ``DUAL_STACK`` (dual-stack, both IPv4 and IPv6 addresses). If you don’t specify an ``IpAddressType``, then ``IPV4_ONLY`` is used. The ``IPAddressType`` must match the IP type of the subnet. Additionally, the ``IPAddressType`` parameter overrides the value set as the default IP address for the subnet in the VPC. For example, if the ``IPAddressType`` is ``IPV4_ONLY`` and ``AssignIpv6AddressOnCreation`` is ``true``, then IPv4 is used for the mount target. For more information, see [Modify the IP addressing attributes of your subnet](https://docs.aws.amazon.com/vpc/latest/userguide/subnet-public-ip.html).
 	IpAddressType any
+	// If the ``IPAddressType`` for the mount target is IPv6 (``IPV6_ONLY`` or ``DUAL_STACK``), then specify the IPv6 address to use. If you do not specify an ``Ipv6Address``, then Amazon EFS selects an unused IP address from the subnet specified for ``SubnetId``.
 	Ipv6Address any
-	Region any
+	// VPC security group IDs, of the form ``sg-xxxxxxxx``. These must be for the same VPC as the subnet specified. The maximum number of security groups depends on account quota. For more information, see [Amazon VPC Quotas](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html) in the *Amazon VPC User Guide* (see the *Security Groups* table). If you don't specify a security group, then Amazon EFS uses the default security group for the subnet's VPC.
 	SecurityGroups any
+	// The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone. The subnet type must be the same type as the ``IpAddressType``.
 	SubnetId any
-	Timeouts any
 }
 
 var MountTarget = ubx.ResourceBinding{
 	WireType: "aws_efs_mount_target",
 	Fields: ubx.FieldMap{
 		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
 		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
 		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
 		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: MountTarget_TimeoutsFields,
-		},
 	},
 }

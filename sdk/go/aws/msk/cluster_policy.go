@@ -4,18 +4,25 @@ package msk
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterPolicyConfig struct {
+	// The arn of the cluster for the resource policy.
 	ClusterArn any
-	Id any
+	// A policy document containing permissions to add to the specified cluster.
 	Policy any
-	Region any
+}
+
+type ClusterPolicyAttrs struct {
+	// The arn of the cluster for the resource policy.
+	ClusterArn any
+	// The current version of the policy attached to the specified cluster
+	CurrentVersion any
+	// A policy document containing permissions to add to the specified cluster.
+	Policy any
 }
 
 var ClusterPolicy = ubx.ResourceBinding{
 	WireType: "aws_msk_cluster_policy",
 	Fields: ubx.FieldMap{
 		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 	},
 }

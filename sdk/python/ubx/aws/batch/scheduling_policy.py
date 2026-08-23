@@ -7,52 +7,82 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class SchedulingPolicy_FairSharePolicy_ShareDistribution:
+class SchedulingPolicy_FairsharePolicy_ShareDistribution:
+    # Identifies an individual share within the fair share policy's share distribution list, used by AWS Batch to calculate each share's proportional allocation of compute resources based on its assigned weight factor. (AI-inferred)
     share_identifier: Any = None
+    # The relative weight assigned to a share in an AWS Batch fairshare scheduling policy, controlling the proportional amount of vCPUs or resources allocated to that share compared to others. (AI-inferred)
     weight_factor: Any = None
 
 @dataclasses.dataclass
-class SchedulingPolicy_FairSharePolicy:
+class SchedulingPolicy_FairsharePolicy:
+    # The percentage (0-99) of compute resources reserved for this scheduling policy's jobs, guaranteeing a minimum level of capacity even when shares are low. (AI-inferred)
     compute_reservation: Any = None
+    # The amount of time in seconds used to calculate the decay factor for the fair share policy, controlling how quickly the share of resources for a job family decreases over time based on its age. (AI-inferred)
     share_decay_seconds: Any = None
+    # List of Share Attributes
     share_distribution: Any = None
 
-_SchedulingPolicy_FairSharePolicy_ShareDistributionFields = {
+@dataclasses.dataclass
+class SchedulingPolicy_QuotaSharePolicy:
+    idle_resource_assignment_strategy: Any = None
+
+_SchedulingPolicy_FairsharePolicy_ShareDistributionFields = {
     "share_identifier": ubx.FieldSpec(wire_name="share_identifier"),
     "weight_factor": ubx.FieldSpec(wire_name="weight_factor"),
 }
 
-_SchedulingPolicy_FairSharePolicyFields = {
+_SchedulingPolicy_FairsharePolicyFields = {
     "compute_reservation": ubx.FieldSpec(wire_name="compute_reservation"),
     "share_decay_seconds": ubx.FieldSpec(wire_name="share_decay_seconds"),
     "share_distribution": ubx.FieldSpec(
         wire_name="share_distribution",
-        kind="set",
-        fields=_SchedulingPolicy_FairSharePolicy_ShareDistributionFields,
+        kind="list",
+        fields=_SchedulingPolicy_FairsharePolicy_ShareDistributionFields,
     ),
+}
+
+_SchedulingPolicy_QuotaSharePolicyFields = {
+    "idle_resource_assignment_strategy": ubx.FieldSpec(wire_name="idle_resource_assignment_strategy"),
 }
 
 @dataclasses.dataclass
 class SchedulingPolicyConfig:
-    id: Any = None
+    # Fair Share Policy for the Job Queue.
+    fairshare_policy: Any = None
+    # Name of Scheduling Policy.
     name: Any = None
-    region: Any = None
+    # Quota Share Policy for the Job Queue.
+    quota_share_policy: Any = None
+    # A key-value pair to associate with a resource.
     tags: Any = None
-    tags_all: Any = None
-    fair_share_policy: Any = None
+
+@dataclasses.dataclass
+class SchedulingPolicyAttrs:
+    # ARN of the Scheduling Policy.
+    arn: Any = None
+    # Fair Share Policy for the Job Queue.
+    fairshare_policy: Any = None
+    # Name of Scheduling Policy.
+    name: Any = None
+    # Quota Share Policy for the Job Queue.
+    quota_share_policy: Any = None
+    # A key-value pair to associate with a resource.
+    tags: Any = None
 
 SchedulingPolicy = ubx.ResourceBinding(
     wire_type="aws_batch_scheduling_policy",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "fair_share_policy": ubx.FieldSpec(
-            wire_name="fair_share_policy",
-            kind="list",
-            fields=_SchedulingPolicy_FairSharePolicyFields,
+        "fairshare_policy": ubx.FieldSpec(
+            wire_name="fairshare_policy",
+            kind="object",
+            fields=_SchedulingPolicy_FairsharePolicyFields,
         ),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "quota_share_policy": ubx.FieldSpec(
+            wire_name="quota_share_policy",
+            kind="object",
+            fields=_SchedulingPolicy_QuotaSharePolicyFields,
+        ),
+        "tags": ubx.FieldSpec(wire_name="tags"),
     },
 )

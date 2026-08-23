@@ -7,58 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Acl_Egress:
-    action: Any = None
-    cidr_block: Any = None
-    from_port: Any = None
-    icmp_code: Any = None
-    icmp_type: Any = None
-    ipv6_cidr_block: Any = None
-    protocol: Any = None
-    rule_no: Any = None
-    to_port: Any = None
+class Acl_Tags:
+    # The key of a tag attached to the network ACL, used to label and organize the resource for identification and management within AWS. (AI-inferred)
+    key: Any = None
+    # The value portion of a key-value tag applied to the network ACL, used to assign metadata such as purpose or ownership to the ACL. (AI-inferred)
+    value: Any = None
 
-_Acl_EgressFields = {
-    "action": ubx.FieldSpec(wire_name="action"),
-    "cidr_block": ubx.FieldSpec(wire_name="cidr_block"),
-    "from_port": ubx.FieldSpec(wire_name="from_port"),
-    "icmp_code": ubx.FieldSpec(wire_name="icmp_code"),
-    "icmp_type": ubx.FieldSpec(wire_name="icmp_type"),
-    "ipv6_cidr_block": ubx.FieldSpec(wire_name="ipv6_cidr_block"),
-    "protocol": ubx.FieldSpec(wire_name="protocol"),
-    "rule_no": ubx.FieldSpec(wire_name="rule_no"),
-    "to_port": ubx.FieldSpec(wire_name="to_port"),
+_Acl_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class AclConfig:
-    egress: Any = None
-    id: Any = None
-    ingress: Any = None
-    region: Any = None
-    subnet_ids: Any = None
+    # The tags for the network ACL.
     tags: Any = None
-    tags_all: Any = None
+    # The ID of the VPC for the network ACL.
+    vpc_id: Any = None
+
+@dataclasses.dataclass
+class AclAttrs:
+    # The AWS-assigned identifier for the network ACL, which uses the format acl-xxxxxxxx. (AI-inferred)
+    id: Any = None
+    # The tags for the network ACL.
+    tags: Any = None
+    # The ID of the VPC for the network ACL.
     vpc_id: Any = None
 
 Acl = ubx.ResourceBinding(
     wire_type="aws_network_acl",
     fields={
-        "egress": ubx.FieldSpec(
-            wire_name="egress",
-            kind="set",
-            fields=_Acl_EgressFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Acl_TagsFields,
         ),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "ingress": ubx.FieldSpec(
-            wire_name="ingress",
-            kind="set",
-            fields=_Acl_EgressFields,
-        ),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
     },
 )

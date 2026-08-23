@@ -7,20 +7,40 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class GatewayClientCertificate_Tags:
+    key: Any = None
+    # The value of an individual tag assigned to the API Gateway client certificate, used for metadata and cost allocation. (AI-inferred)
+    value: Any = None
+
+_GatewayClientCertificate_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class GatewayClientCertificateConfig:
+    # A user-provided description for the client certificate, used to annotate or identify it. (AI-inferred)
     description: Any = None
-    id: Any = None
-    region: Any = None
+    # Associates a list of key-value tag pairs with the API Gateway client certificate, enabling cost allocation, access control, and resource categorization. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class GatewayClientCertificateAttrs:
+    # The unique identifier assigned by Amazon API Gateway to the client certificate, used to reference this certificate in other API Gateway resources (e.g., domain names) and returned automatically upon creation. (AI-inferred)
+    client_certificate_id: Any = None
+    # A user-provided description for the client certificate, used to annotate or identify it. (AI-inferred)
+    description: Any = None
+    # Associates a list of key-value tag pairs with the API Gateway client certificate, enabling cost allocation, access control, and resource categorization. (AI-inferred)
+    tags: Any = None
 
 GatewayClientCertificate = ubx.ResourceBinding(
     wire_type="aws_api_gateway_client_certificate",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_GatewayClientCertificate_TagsFields,
+        ),
     },
 )

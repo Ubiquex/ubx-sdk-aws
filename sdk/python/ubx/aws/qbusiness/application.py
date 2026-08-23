@@ -8,67 +8,189 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Application_AttachmentsConfiguration:
+    # Determines whether users can use attachments in the application's chat sessions, with a required value of either ENABLED or DISABLED. (AI-inferred)
     attachments_control_mode: Any = None
 
 @dataclasses.dataclass
+class Application_AutoSubscriptionConfiguration:
+    # Determines whether AWS Q Business automatically subscribes new users to a default subscription tier (e.g., Q Business Lite or Pro) configured via the default_subscription_type field, with allowed values ENABLED or DISABLED. (AI-inferred)
+    auto_subscribe: Any = None
+    # Specifies the default subscription type (either 'PLUS' or 'ENTERPRISE') that AWS QBusiness automatically assigns to users when auto-subscription is enabled for the application. (AI-inferred)
+    default_subscription_type: Any = None
+
+@dataclasses.dataclass
 class Application_EncryptionConfiguration:
+    # Specifies the AWS KMS key used to encrypt application data at rest, provided as a key ID or ARN. (AI-inferred)
     kms_key_id: Any = None
 
 @dataclasses.dataclass
-class Application_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Application_PersonalizationConfiguration:
+    # Controls whether personalization is enabled for the Amazon Q Business application, accepting values such as 'ENABLED' or 'DISABLED' to turn the feature on or off. (AI-inferred)
+    personalization_control_mode: Any = None
+
+@dataclasses.dataclass
+class Application_QappsConfiguration:
+    # Controls whether Q Apps are enabled or disabled for the Amazon Q Business application, with valid values ENABLED or DISABLED. (AI-inferred)
+    qapps_control_mode: Any = None
+
+@dataclasses.dataclass
+class Application_QuickSightConfiguration:
+    # The Amazon QuickSight namespace (e.g., 'default') that the Amazon Q Business application uses to access QuickSight data and assets. (AI-inferred)
+    client_namespace: Any = None
+
+@dataclasses.dataclass
+class Application_Tags:
+    key: Any = None
+    value: Any = None
 
 _Application_AttachmentsConfigurationFields = {
     "attachments_control_mode": ubx.FieldSpec(wire_name="attachments_control_mode"),
+}
+
+_Application_AutoSubscriptionConfigurationFields = {
+    "auto_subscribe": ubx.FieldSpec(wire_name="auto_subscribe"),
+    "default_subscription_type": ubx.FieldSpec(wire_name="default_subscription_type"),
 }
 
 _Application_EncryptionConfigurationFields = {
     "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
 }
 
-_Application_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Application_PersonalizationConfigurationFields = {
+    "personalization_control_mode": ubx.FieldSpec(wire_name="personalization_control_mode"),
+}
+
+_Application_QappsConfigurationFields = {
+    "qapps_control_mode": ubx.FieldSpec(wire_name="qapps_control_mode"),
+}
+
+_Application_QuickSightConfigurationFields = {
+    "client_namespace": ubx.FieldSpec(wire_name="client_namespace"),
+}
+
+_Application_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ApplicationConfig:
-    description: Any = None
-    display_name: Any = None
-    iam_service_role_arn: Any = None
-    identity_center_instance_arn: Any = None
-    region: Any = None
-    tags: Any = None
+    # Configures whether users can attach files to conversations in the Q Business application, controlled by the AttachmentsControlMode setting (either ENABLED or DISABLED). (AI-inferred)
     attachments_configuration: Any = None
+    # Determines whether new users are automatically subscribed to the Amazon Q Business application and, if enabled, specifies the default subscription type (ENTERPRISE or STARTER) assigned to them. (AI-inferred)
+    auto_subscription_configuration: Any = None
+    # Specifies the list of OAuth 2.0 client IDs that an Amazon Q Business application accepts from its OIDC identity provider for authenticating users. (AI-inferred)
+    client_ids_for_oidc: Any = None
+    # Specifies a user-provided description for the Amazon Q Business application, used to convey its purpose or context to administrators. (AI-inferred)
+    description: Any = None
+    # The display name for the Amazon Q Business application, which is a user-friendly identifier shown in the AWS Management Console and used when referencing the application. (AI-inferred)
+    display_name: Any = None
+    # Specifies the encryption configuration for the Q Business application, including whether to use a customer-managed KMS key and which key to use, for encrypting data at rest. (AI-inferred)
     encryption_configuration: Any = None
-    timeouts: Any = None
+    # The ARN of the IAM identity provider used by Amazon Q Business to authenticate federated users and authorize their access to the application. (AI-inferred)
+    iam_identity_provider_arn: Any = None
+    # The ARN of the AWS IAM Identity Center instance that this Q Business application uses for user provisioning and single sign-on. (AI-inferred)
+    identity_center_instance_arn: Any = None
+    # Specifies the identity provider protocol used by the QBusiness application to authenticate users, with allowed values including AWS_IAM, SAML, and OIDC. (AI-inferred)
+    identity_type: Any = None
+    # Configures whether Amazon Q Business personalization is enabled for the application, with a PersonalizationControlMode setting that turns personalization on or off. (AI-inferred)
+    personalization_configuration: Any = None
+    # Configures whether Q Apps are enabled for the Amazon Q Business application by specifying the QAppsControlMode as ENABLED or DISABLED. (AI-inferred)
+    qapps_configuration: Any = None
+    # Specifies the Amazon QuickSight integration configuration for the QBusiness application, including the QuickSight client namespace used for user groups. (AI-inferred)
+    quick_sight_configuration: Any = None
+    # The Amazon Resource Name (ARN) of an IAM role that the QBusiness application assumes to access and manage AWS resources and data sources on the customer's behalf. (AI-inferred)
+    role_arn: Any = None
+    # The tags field specifies a list of key-value pairs attached to the Amazon Q Business application for resource organization, cost tracking, and access control. (AI-inferred)
+    tags: Any = None
+
+@dataclasses.dataclass
+class ApplicationAttrs:
+    # The Amazon Resource Name (ARN) of the Q Business application, assigned by AWS when the application is created. (AI-inferred)
+    application_arn: Any = None
+    # The unique identifier that AWS QBusiness automatically assigns to the application when it is created. (AI-inferred)
+    application_id: Any = None
+    # Configures whether users can attach files to conversations in the Q Business application, controlled by the AttachmentsControlMode setting (either ENABLED or DISABLED). (AI-inferred)
+    attachments_configuration: Any = None
+    # Determines whether new users are automatically subscribed to the Amazon Q Business application and, if enabled, specifies the default subscription type (ENTERPRISE or STARTER) assigned to them. (AI-inferred)
+    auto_subscription_configuration: Any = None
+    # Specifies the list of OAuth 2.0 client IDs that an Amazon Q Business application accepts from its OIDC identity provider for authenticating users. (AI-inferred)
+    client_ids_for_oidc: Any = None
+    # The timestamp of when the QBusiness application was created, computed by AWS. (AI-inferred)
+    created_at: Any = None
+    # Specifies a user-provided description for the Amazon Q Business application, used to convey its purpose or context to administrators. (AI-inferred)
+    description: Any = None
+    # The display name for the Amazon Q Business application, which is a user-friendly identifier shown in the AWS Management Console and used when referencing the application. (AI-inferred)
+    display_name: Any = None
+    # Specifies the encryption configuration for the Q Business application, including whether to use a customer-managed KMS key and which key to use, for encrypting data at rest. (AI-inferred)
+    encryption_configuration: Any = None
+    # The ARN of the IAM identity provider used by Amazon Q Business to authenticate federated users and authorize their access to the application. (AI-inferred)
+    iam_identity_provider_arn: Any = None
+    # The ARN of the AWS IAM Identity Center application that is automatically created and associated with this Amazon Q Business application when identity center integration is enabled. (AI-inferred)
+    identity_center_application_arn: Any = None
+    # The ARN of the AWS IAM Identity Center instance that this Q Business application uses for user provisioning and single sign-on. (AI-inferred)
+    identity_center_instance_arn: Any = None
+    # Specifies the identity provider protocol used by the QBusiness application to authenticate users, with allowed values including AWS_IAM, SAML, and OIDC. (AI-inferred)
+    identity_type: Any = None
+    # Configures whether Amazon Q Business personalization is enabled for the application, with a PersonalizationControlMode setting that turns personalization on or off. (AI-inferred)
+    personalization_configuration: Any = None
+    # Configures whether Q Apps are enabled for the Amazon Q Business application by specifying the QAppsControlMode as ENABLED or DISABLED. (AI-inferred)
+    qapps_configuration: Any = None
+    # Specifies the Amazon QuickSight integration configuration for the QBusiness application, including the QuickSight client namespace used for user groups. (AI-inferred)
+    quick_sight_configuration: Any = None
+    # The Amazon Resource Name (ARN) of an IAM role that the QBusiness application assumes to access and manage AWS resources and data sources on the customer's behalf. (AI-inferred)
+    role_arn: Any = None
+    # The current lifecycle status of the QBusiness application (e.g., CREATING, ACTIVE, UPDATING, FAILED), set by the service and read-only. (AI-inferred)
+    status: Any = None
+    # The tags field specifies a list of key-value pairs attached to the Amazon Q Business application for resource organization, cost tracking, and access control. (AI-inferred)
+    tags: Any = None
+    # The timestamp indicating when the Amazon Q Business application was last updated. (AI-inferred)
+    updated_at: Any = None
 
 Application = ubx.ResourceBinding(
     wire_type="aws_qbusiness_application",
     fields={
-        "description": ubx.FieldSpec(wire_name="description"),
-        "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "iam_service_role_arn": ubx.FieldSpec(wire_name="iam_service_role_arn"),
-        "identity_center_instance_arn": ubx.FieldSpec(wire_name="identity_center_instance_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
         "attachments_configuration": ubx.FieldSpec(
             wire_name="attachments_configuration",
-            kind="list",
+            kind="object",
             fields=_Application_AttachmentsConfigurationFields,
         ),
+        "auto_subscription_configuration": ubx.FieldSpec(
+            wire_name="auto_subscription_configuration",
+            kind="object",
+            fields=_Application_AutoSubscriptionConfigurationFields,
+        ),
+        "client_ids_for_oidc": ubx.FieldSpec(wire_name="client_ids_for_oidc"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_configuration": ubx.FieldSpec(
             wire_name="encryption_configuration",
-            kind="list",
+            kind="object",
             fields=_Application_EncryptionConfigurationFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "iam_identity_provider_arn": ubx.FieldSpec(wire_name="iam_identity_provider_arn"),
+        "identity_center_instance_arn": ubx.FieldSpec(wire_name="identity_center_instance_arn"),
+        "identity_type": ubx.FieldSpec(wire_name="identity_type"),
+        "personalization_configuration": ubx.FieldSpec(
+            wire_name="personalization_configuration",
             kind="object",
-            fields=_Application_TimeoutsFields,
+            fields=_Application_PersonalizationConfigurationFields,
+        ),
+        "qapps_configuration": ubx.FieldSpec(
+            wire_name="qapps_configuration",
+            kind="object",
+            fields=_Application_QappsConfigurationFields,
+        ),
+        "quick_sight_configuration": ubx.FieldSpec(
+            wire_name="quick_sight_configuration",
+            kind="object",
+            fields=_Application_QuickSightConfigurationFields,
+        ),
+        "role_arn": ubx.FieldSpec(wire_name="role_arn"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Application_TagsFields,
         ),
     },
 )

@@ -7,94 +7,142 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class WebApp_WebAppUnits:
-    provisioned: Any = None
-
-@dataclasses.dataclass
 class WebApp_EndpointDetails_Vpc:
+    # The IP address type for the VPC endpoint used by the web app.
+    ip_address_type: Any = None
+    # List of security group IDs applied to the VPC endpoint for the web app, controlling inbound and outbound traffic to the endpoint. (AI-inferred)
     security_group_ids: Any = None
+    # Specifies the subnets within the VPC where the AWS Transfer Family web app's endpoint is deployed, defining the network locations for private accessibility. (AI-inferred)
     subnet_ids: Any = None
-    vpc_endpoint_id: Any = None
+    # The ID of the VPC to which the Transfer Family web app endpoint is attached, used when the endpoint is VPC-backed rather than public. (AI-inferred)
     vpc_id: Any = None
 
 @dataclasses.dataclass
 class WebApp_EndpointDetails:
+    # You can provide a structure that contains the details for the VPC endpoint to use with your web app.
     vpc: Any = None
 
 @dataclasses.dataclass
-class WebApp_IdentityProviderDetails_IdentityCenterConfig:
+class WebApp_IdentityProviderDetails:
+    # The ARN of the AWS Directory Service directory that serves as the identity provider for user authentication for this AWS Transfer Family web app. (AI-inferred)
     application_arn: Any = None
+    # The Amazon Resource Name (ARN) for the IAM Identity Center used for the web app.
     instance_arn: Any = None
+    # The IAM role in IAM Identity Center used for the web app.
     role: Any = None
 
 @dataclasses.dataclass
-class WebApp_IdentityProviderDetails:
-    identity_center_config: Any = None
+class WebApp_Tags:
+    key: Any = None
+    # The user-defined value of a key-value tag attached to the AWS Transfer Family web app, used for metadata such as cost allocation or environment identification. (AI-inferred)
+    value: Any = None
 
-_WebApp_WebAppUnitsFields = {
-    "provisioned": ubx.FieldSpec(wire_name="provisioned"),
-}
+@dataclasses.dataclass
+class WebApp_WebAppCustomization:
+    # Specifies a favicon to display in the browser tab.
+    favicon_file: Any = None
+    # Specifies a logo to display on the web app.
+    logo_file: Any = None
+    # Specifies a title to display on the web app.
+    title: Any = None
+
+@dataclasses.dataclass
+class WebApp_WebAppUnits:
+    # The number of provisioned web app units for this AWS Transfer Family web app, which determines the capacity and concurrency of the web app's endpoints. (AI-inferred)
+    provisioned: Any = None
 
 _WebApp_EndpointDetails_VpcFields = {
+    "ip_address_type": ubx.FieldSpec(wire_name="ip_address_type"),
     "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
     "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
-    "vpc_endpoint_id": ubx.FieldSpec(wire_name="vpc_endpoint_id"),
     "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
 }
 
 _WebApp_EndpointDetailsFields = {
     "vpc": ubx.FieldSpec(
         wire_name="vpc",
-        kind="list",
+        kind="object",
         fields=_WebApp_EndpointDetails_VpcFields,
     ),
 }
 
-_WebApp_IdentityProviderDetails_IdentityCenterConfigFields = {
-    "application_arn": ubx.FieldSpec(wire_name="application_arn"),
-    "instance_arn": ubx.FieldSpec(wire_name="instance_arn"),
-    "role": ubx.FieldSpec(wire_name="role"),
+_WebApp_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
-_WebApp_IdentityProviderDetailsFields = {
-    "identity_center_config": ubx.FieldSpec(
-        wire_name="identity_center_config",
-        kind="list",
-        fields=_WebApp_IdentityProviderDetails_IdentityCenterConfigFields,
-    ),
+_WebApp_WebAppCustomizationFields = {
+    "favicon_file": ubx.FieldSpec(wire_name="favicon_file"),
+    "logo_file": ubx.FieldSpec(wire_name="logo_file"),
+    "title": ubx.FieldSpec(wire_name="title"),
+}
+
+_WebApp_WebAppUnitsFields = {
+    "provisioned": ubx.FieldSpec(wire_name="provisioned"),
 }
 
 @dataclasses.dataclass
 class WebAppConfig:
+    # The AccessEndpoint is the URL that you provide to your users for them to interact with the Transfer Family web app. You can specify a custom URL or use the default value.
     access_endpoint: Any = None
-    region: Any = None
-    tags: Any = None
-    web_app_endpoint_policy: Any = None
-    web_app_units: Any = None
+    # Specifies the configuration for the web app's endpoint, including whether it is public or hosted within a VPC and the associated network settings such as VPC ID, subnets, and security groups. (AI-inferred)
     endpoint_details: Any = None
+    # Key-value pairs that can be used to group and search for web apps.
+    tags: Any = None
+    # Customizes the branding of the AWS Transfer Family web app by specifying an optional logo and title for the web app's interface. (AI-inferred)
+    web_app_customization: Any = None
+    # Specifies a JSON endpoint policy that controls access to the web application's endpoint, allowing you to restrict access to specific IP addresses or VPC endpoints. (AI-inferred)
+    web_app_endpoint_policy: Any = None
+    # Determines the scaling capacity of the AWS Transfer Family web app by specifying the number of provisioned web app units (via its 'Provisioned' sub-property), which affects the application's performance and concurrency limits. (AI-inferred)
+    web_app_units: Any = None
+
+@dataclasses.dataclass
+class WebAppAttrs:
+    # The AccessEndpoint is the URL that you provide to your users for them to interact with the Transfer Family web app. You can specify a custom URL or use the default value.
+    access_endpoint: Any = None
+    # Specifies the unique Amazon Resource Name (ARN) for the web app.
+    arn: Any = None
+    # Specifies the configuration for the web app's endpoint, including whether it is public or hosted within a VPC and the associated network settings such as VPC ID, subnets, and security groups. (AI-inferred)
+    endpoint_details: Any = None
+    # You can provide a structure that contains the details for the identity provider to use with your web app.
     identity_provider_details: Any = None
+    # Key-value pairs that can be used to group and search for web apps.
+    tags: Any = None
+    # The unique identifier of the VPC endpoint that the web app is associated with, used when the web app is deployed within a VPC. (AI-inferred)
+    vpc_endpoint_id: Any = None
+    # Customizes the branding of the AWS Transfer Family web app by specifying an optional logo and title for the web app's interface. (AI-inferred)
+    web_app_customization: Any = None
+    # Specifies a JSON endpoint policy that controls access to the web application's endpoint, allowing you to restrict access to specific IP addresses or VPC endpoints. (AI-inferred)
+    web_app_endpoint_policy: Any = None
+    # A unique identifier for the web app.
+    web_app_id: Any = None
+    # Determines the scaling capacity of the AWS Transfer Family web app by specifying the number of provisioned web app units (via its 'Provisioned' sub-property), which affects the application's performance and concurrency limits. (AI-inferred)
+    web_app_units: Any = None
 
 WebApp = ubx.ResourceBinding(
     wire_type="aws_transfer_web_app",
     fields={
         "access_endpoint": ubx.FieldSpec(wire_name="access_endpoint"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
+        "endpoint_details": ubx.FieldSpec(
+            wire_name="endpoint_details",
+            kind="object",
+            fields=_WebApp_EndpointDetailsFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_WebApp_TagsFields,
+        ),
+        "web_app_customization": ubx.FieldSpec(
+            wire_name="web_app_customization",
+            kind="object",
+            fields=_WebApp_WebAppCustomizationFields,
+        ),
         "web_app_endpoint_policy": ubx.FieldSpec(wire_name="web_app_endpoint_policy"),
         "web_app_units": ubx.FieldSpec(
             wire_name="web_app_units",
-            kind="list",
+            kind="object",
             fields=_WebApp_WebAppUnitsFields,
-        ),
-        "endpoint_details": ubx.FieldSpec(
-            wire_name="endpoint_details",
-            kind="list",
-            fields=_WebApp_EndpointDetailsFields,
-        ),
-        "identity_provider_details": ubx.FieldSpec(
-            wire_name="identity_provider_details",
-            kind="list",
-            fields=_WebApp_IdentityProviderDetailsFields,
         ),
     },
 )

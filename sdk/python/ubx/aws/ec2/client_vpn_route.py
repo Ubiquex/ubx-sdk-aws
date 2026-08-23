@@ -7,24 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ClientVpnRoute_Timeouts:
-    create: Any = None
-    delete: Any = None
-
-_ClientVpnRoute_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-}
+class ClientVpnRouteConfig:
+    # The ID of the Client VPN endpoint to which this route is associated. (AI-inferred)
+    client_vpn_endpoint_id: Any = None
+    # A user-defined description for the route, often used to identify its purpose or destination in the Client VPN endpoint. (AI-inferred)
+    description: Any = None
+    # The IPv4 CIDR block (e.g., 10.0.0.0/16) of the destination network that this Client VPN route forwards traffic through the VPN tunnel. (AI-inferred)
+    destination_cidr_block: Any = None
+    # The ID of the VPC subnet to which the Client VPN endpoint routes traffic for the destination CIDR block. (AI-inferred)
+    target_vpc_subnet_id: Any = None
 
 @dataclasses.dataclass
-class ClientVpnRouteConfig:
+class ClientVpnRouteAttrs:
+    # The ID of the Client VPN endpoint to which this route is associated. (AI-inferred)
     client_vpn_endpoint_id: Any = None
+    # A user-defined description for the route, often used to identify its purpose or destination in the Client VPN endpoint. (AI-inferred)
     description: Any = None
+    # The IPv4 CIDR block (e.g., 10.0.0.0/16) of the destination network that this Client VPN route forwards traffic through the VPN tunnel. (AI-inferred)
     destination_cidr_block: Any = None
+    # The computed unique identifier for the Client VPN route, formatted as the client VPN endpoint ID, destination CIDR block, and target subnet ID separated by colons. (AI-inferred)
     id: Any = None
-    region: Any = None
+    # The ID of the VPC subnet to which the Client VPN endpoint routes traffic for the destination CIDR block. (AI-inferred)
     target_vpc_subnet_id: Any = None
-    timeouts: Any = None
 
 ClientVpnRoute = ubx.ResourceBinding(
     wire_type="aws_ec2_client_vpn_route",
@@ -32,13 +36,6 @@ ClientVpnRoute = ubx.ResourceBinding(
         "client_vpn_endpoint_id": ubx.FieldSpec(wire_name="client_vpn_endpoint_id"),
         "description": ubx.FieldSpec(wire_name="description"),
         "destination_cidr_block": ubx.FieldSpec(wire_name="destination_cidr_block"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "target_vpc_subnet_id": ubx.FieldSpec(wire_name="target_vpc_subnet_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_ClientVpnRoute_TimeoutsFields,
-        ),
     },
 )

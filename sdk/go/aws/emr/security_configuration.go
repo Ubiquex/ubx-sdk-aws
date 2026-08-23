@@ -4,20 +4,23 @@ package emr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityConfigurationConfig struct {
-	Configuration any
-	Id any
+	// The name of the security configuration.
 	Name any
-	NamePrefix any
-	Region any
+	// The security configuration details in JSON format.
+	SecurityConfiguration any
+}
+
+type SecurityConfigurationAttrs struct {
+	// The name of the security configuration.
+	Name any
+	// The security configuration details in JSON format.
+	SecurityConfiguration any
 }
 
 var SecurityConfiguration = ubx.ResourceBinding{
 	WireType: "aws_emr_security_configuration",
 	Fields: ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{WireName: "configuration"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
 	},
 }

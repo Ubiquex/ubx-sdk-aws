@@ -3,21 +3,44 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CarrierGateway_Tags struct {
+	// The key of a user-defined tag associated with this EC2 Carrier Gateway, used for identifying, organizing, and cost allocation of the resource. (AI-inferred)
+	Key any
+	// The value of a tag attached to the AWS EC2 Carrier Gateway, used for metadata, organization, and cost tracking alongside its corresponding tag key. (AI-inferred)
+	Value any
+}
+
+var CarrierGateway_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type CarrierGatewayConfig struct {
-	Id any
-	Region any
 	Tags any
-	TagsAll any
+	// The ID of the VPC.
+	VpcId any
+}
+
+type CarrierGatewayAttrs struct {
+	// The ID of the carrier gateway.
+	CarrierGatewayId any
+	// The ID of the owner.
+	OwnerId any
+	// The state of the carrier gateway.
+	State any
+	Tags any
+	// The ID of the VPC.
 	VpcId any
 }
 
 var CarrierGateway = ubx.ResourceBinding{
 	WireType: "aws_ec2_carrier_gateway",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: CarrierGateway_TagsFields,
+		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

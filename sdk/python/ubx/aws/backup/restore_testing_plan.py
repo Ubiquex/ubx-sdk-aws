@@ -8,11 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RestoreTestingPlan_RecoveryPointSelection:
+    # Specifies the algorithm used to select recovery points for restore testing, where `LATEST_WITHIN_WINDOW` picks the most recent recovery point within the selection window and `RANDOM_WITHIN_WINDOW` picks a random recovery point from that window. (AI-inferred)
     algorithm: Any = None
+    # Specifies the names of backup vaults whose recovery points are excluded from the restore testing plan selection, preventing those vaults' recovery points from being used in restore tests. (AI-inferred)
     exclude_vaults: Any = None
+    # Specifies the names of backup vaults to include in the recovery point selection, so that only recovery points from these vaults are considered for restore testing. (AI-inferred)
     include_vaults: Any = None
+    # Specifies the types of backup recovery points to include in the restore testing plan, such as 'CONTINUOUS' or 'SNAPSHOT', determining which recovery points are eligible for testing. (AI-inferred)
     recovery_point_types: Any = None
+    # Specifies the number of days prior to the current date from which recovery points are eligible for selection in the restore testing plan, restricting tests to recently created recovery points. (AI-inferred)
     selection_window_days: Any = None
+
+@dataclasses.dataclass
+class RestoreTestingPlan_Tags:
+    # The key of a tag attached to the AWS Backup restore testing plan, used for organizing, identifying, and managing the resource. (AI-inferred)
+    key: Any = None
+    value: Any = None
 
 _RestoreTestingPlan_RecoveryPointSelectionFields = {
     "algorithm": ubx.FieldSpec(wire_name="algorithm"),
@@ -22,29 +33,59 @@ _RestoreTestingPlan_RecoveryPointSelectionFields = {
     "selection_window_days": ubx.FieldSpec(wire_name="selection_window_days"),
 }
 
+_RestoreTestingPlan_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 @dataclasses.dataclass
 class RestoreTestingPlanConfig:
-    name: Any = None
-    region: Any = None
-    schedule_expression: Any = None
-    schedule_expression_timezone: Any = None
-    start_window_hours: Any = None
-    tags: Any = None
+    # Defines the recovery point selection criteria for the restore testing plan, including the selection algorithm (e.g., latest or random within a window) and optional filters on resource types and backup vault names to narrow which recovery points are tested. (AI-inferred)
     recovery_point_selection: Any = None
+    # The name of the restore testing plan, which must be unique within your AWS account and is used to identify the plan in AWS Backup. (AI-inferred)
+    restore_testing_plan_name: Any = None
+    # Defines the cron or rate expression that determines when the restore testing plan automatically initiates restore tests, such as 'cron(0 12 * * ? *)' or 'rate(1 day)'. (AI-inferred)
+    schedule_expression: Any = None
+    # Specifies the IANA timezone (in Area/Location format, e.g., 'America/New_York') used to evaluate the restore testing plan's schedule expression, enabling the test schedule to run at a local time. (AI-inferred)
+    schedule_expression_timezone: Any = None
+    # Defines the number of hours after the scheduled time that the restore testing plan is allowed to begin its restore test, providing a time buffer for the test to start within that window. (AI-inferred)
+    start_window_hours: Any = None
+    # A list of key-value pairs that assign tags to the AWS Backup restore testing plan, used for organizing, identifying, and managing the plan through cost allocation and access control. (AI-inferred)
+    tags: Any = None
+
+@dataclasses.dataclass
+class RestoreTestingPlanAttrs:
+    # Defines the recovery point selection criteria for the restore testing plan, including the selection algorithm (e.g., latest or random within a window) and optional filters on resource types and backup vault names to narrow which recovery points are tested. (AI-inferred)
+    recovery_point_selection: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies the restore testing plan, assigned by AWS when the plan is created. (AI-inferred)
+    restore_testing_plan_arn: Any = None
+    # The name of the restore testing plan, which must be unique within your AWS account and is used to identify the plan in AWS Backup. (AI-inferred)
+    restore_testing_plan_name: Any = None
+    # Defines the cron or rate expression that determines when the restore testing plan automatically initiates restore tests, such as 'cron(0 12 * * ? *)' or 'rate(1 day)'. (AI-inferred)
+    schedule_expression: Any = None
+    # Specifies the IANA timezone (in Area/Location format, e.g., 'America/New_York') used to evaluate the restore testing plan's schedule expression, enabling the test schedule to run at a local time. (AI-inferred)
+    schedule_expression_timezone: Any = None
+    # Defines the number of hours after the scheduled time that the restore testing plan is allowed to begin its restore test, providing a time buffer for the test to start within that window. (AI-inferred)
+    start_window_hours: Any = None
+    # A list of key-value pairs that assign tags to the AWS Backup restore testing plan, used for organizing, identifying, and managing the plan through cost allocation and access control. (AI-inferred)
+    tags: Any = None
 
 RestoreTestingPlan = ubx.ResourceBinding(
     wire_type="aws_backup_restore_testing_plan",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "recovery_point_selection": ubx.FieldSpec(
+            wire_name="recovery_point_selection",
+            kind="object",
+            fields=_RestoreTestingPlan_RecoveryPointSelectionFields,
+        ),
+        "restore_testing_plan_name": ubx.FieldSpec(wire_name="restore_testing_plan_name"),
         "schedule_expression": ubx.FieldSpec(wire_name="schedule_expression"),
         "schedule_expression_timezone": ubx.FieldSpec(wire_name="schedule_expression_timezone"),
         "start_window_hours": ubx.FieldSpec(wire_name="start_window_hours"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "recovery_point_selection": ubx.FieldSpec(
-            wire_name="recovery_point_selection",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_RestoreTestingPlan_RecoveryPointSelectionFields,
+            fields=_RestoreTestingPlan_TagsFields,
         ),
     },
 )

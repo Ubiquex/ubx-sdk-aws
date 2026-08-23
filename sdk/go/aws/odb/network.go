@@ -3,38 +3,187 @@ package odb
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Network_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Network_ManagedServices_CrossRegionS3RestoreSourcesAccess struct {
+	Ipv4Addresses any
+	// Specifies the AWS region where the S3 bucket serving as a cross-region restore source is located. (AI-inferred)
+	Region any
+	Status any
 }
 
-var Network_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+type Network_ManagedServices_KmsAccess struct {
+	// The domain name for the AWS KMS access.
+	DomainName any
+	// The IPv4 addresses for the AWS KMS access.
+	Ipv4Addresses any
+	// The endpoint policy for the AWS KMS access.
+	KmsPolicyDocument any
+	// The status of the managed resource access.
+	Status any
+}
+
+type Network_ManagedServices_ManagedS3BackupAccess struct {
+	// The IPv4 addresses for the managed Amazon S3 backup access.
+	Ipv4Addresses any
+	// The status of the managed resource access.
+	Status any
+}
+
+type Network_ManagedServices_S3Access struct {
+	// The domain name for the Amazon S3 access.
+	DomainName any
+	// The IPv4 addresses for the Amazon S3 access.
+	Ipv4Addresses any
+	// The endpoint policy for the Amazon S3 access.
+	S3PolicyDocument any
+	// The status of the managed resource access.
+	Status any
+}
+
+type Network_ManagedServices_ServiceNetworkEndpoint struct {
+	// The identifier of the VPC endpoint.
+	VpcEndpointId any
+	// The type of the VPC endpoint.
+	VpcEndpointType any
+}
+
+type Network_ManagedServices_StsAccess struct {
+	// The domain name for the AWS STS access.
+	DomainName any
+	// The IPv4 addresses for the AWS STS access.
+	Ipv4Addresses any
+	// The status of the managed resource access.
+	Status any
+	// The endpoint policy for the AWS STS access.
+	StsPolicyDocument any
+}
+
+type Network_ManagedServices_ZeroEtlAccess struct {
+	// The CIDR block for the Zero-ETL access.
+	Cidr any
+	// The status of the managed resource access.
+	Status any
+}
+
+type Network_ManagedServices struct {
+	// The access configuration for the cross-Region Amazon S3 database restore source.
+	CrossRegionS3RestoreSourcesAccess any
+	// The AWS Key Management Service (KMS) access configuration.
+	KmsAccess any
+	// The managed Amazon S3 backup access configuration.
+	ManagedS3BackupAccess any
+	// The IPv4 CIDR blocks for the managed services.
+	ManagedServicesIpv4Cidrs any
+	// The Amazon Resource Name (ARN) of the resource gateway.
+	ResourceGatewayArn any
+	// The Amazon S3 access configuration.
+	S3Access any
+	// The Amazon Resource Name (ARN) of the service network.
+	ServiceNetworkArn any
+	// The service network endpoint configuration.
+	ServiceNetworkEndpoint any
+	// The AWS Security Token Service (STS) access configuration.
+	StsAccess any
+	// The Zero-ETL access configuration.
+	ZeroEtlAccess any
+}
+
+type Network_Tags struct {
+	// The key of a tag attached to the network resource, used as the tag's unique identifier within the resource. (AI-inferred)
+	Key any
+	Value any
+}
+
+var Network_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type NetworkConfig struct {
+	// The AWS Availability Zone (AZ) where the ODB network is located.
 	AvailabilityZone any
+	// The AZ ID of the AZ where the ODB network is located.
 	AvailabilityZoneId any
+	// The CIDR range of the backup subnet in the ODB network.
 	BackupSubnetCidr any
+	// The CIDR range of the client subnet in the ODB network.
 	ClientSubnetCidr any
-	CrossRegionS3RestoreSourcesAccess any
+	// The cross-Region Amazon S3 restore sources for the ODB network.
+	CrossRegionS3RestoreSources any
+	// The domain name to use for the resources in the ODB network.
 	CustomDomainName any
+	// The DNS prefix to the default DNS domain name. The default DNS domain name is oraclevcn.com.
 	DefaultDnsPrefix any
+	// Specifies whether to delete associated OCI networking resources along with the ODB network.
 	DeleteAssociatedResources any
+	// The user-friendly name of the ODB network.
 	DisplayName any
+	// The AWS Key Management Service (KMS) access configuration for the ODB network.
 	KmsAccess any
+	// The AWS Key Management Service (KMS) policy document that defines permissions for key usage within the ODB network.
 	KmsPolicyDocument any
-	Region any
+	// Specifies the configuration for Amazon S3 access from the ODB network.
 	S3Access any
+	// Specifies the endpoint policy for Amazon S3 access from the ODB network.
 	S3PolicyDocument any
+	// The AWS Security Token Service (STS) access configuration for the ODB network.
 	StsAccess any
+	// The AWS Security Token Service (STS) policy document that defines permissions for token service usage within the ODB network.
 	StsPolicyDocument any
+	// Tags to assign to the Odb Network.
 	Tags any
+	// Specifies the configuration for Zero-ETL access from the ODB network.
 	ZeroEtlAccess any
-	Timeouts any
+}
+
+type NetworkAttrs struct {
+	// The AWS Availability Zone (AZ) where the ODB network is located.
+	AvailabilityZone any
+	// The AZ ID of the AZ where the ODB network is located.
+	AvailabilityZoneId any
+	// The CIDR range of the backup subnet in the ODB network.
+	BackupSubnetCidr any
+	// The CIDR range of the client subnet in the ODB network.
+	ClientSubnetCidr any
+	// The cross-Region Amazon S3 restore sources for the ODB network.
+	CrossRegionS3RestoreSources any
+	// The domain name to use for the resources in the ODB network.
+	CustomDomainName any
+	// The DNS prefix to the default DNS domain name. The default DNS domain name is oraclevcn.com.
+	DefaultDnsPrefix any
+	// Specifies whether to delete associated OCI networking resources along with the ODB network.
+	DeleteAssociatedResources any
+	// The user-friendly name of the ODB network.
+	DisplayName any
+	// The list of EC2 placement group IDs associated with your ODB network.
+	Ec2PlacementGroupIds any
+	// The AWS Key Management Service (KMS) access configuration for the ODB network.
+	KmsAccess any
+	// The AWS Key Management Service (KMS) policy document that defines permissions for key usage within the ODB network.
+	KmsPolicyDocument any
+	// The managed services configuration for the ODB network.
+	ManagedServices any
+	// The unique identifier of the OCI network anchor for the ODB network.
+	OciNetworkAnchorId any
+	// The name of the OCI resource anchor that's associated with the ODB network.
+	OciResourceAnchorName any
+	// The URL for the VCN that's associated with the ODB network.
+	OciVcnUrl any
+	// The Amazon Resource Name (ARN) of the ODB network.
+	OdbNetworkArn any
+	// The unique identifier of the ODB network.
+	OdbNetworkId any
+	// Specifies the configuration for Amazon S3 access from the ODB network.
+	S3Access any
+	// Specifies the endpoint policy for Amazon S3 access from the ODB network.
+	S3PolicyDocument any
+	// The AWS Security Token Service (STS) access configuration for the ODB network.
+	StsAccess any
+	// The AWS Security Token Service (STS) policy document that defines permissions for token service usage within the ODB network.
+	StsPolicyDocument any
+	// Tags to assign to the Odb Network.
+	Tags any
+	// Specifies the configuration for Zero-ETL access from the ODB network.
+	ZeroEtlAccess any
 }
 
 var Network = ubx.ResourceBinding{
@@ -44,24 +193,22 @@ var Network = ubx.ResourceBinding{
 		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
 		"BackupSubnetCidr": ubx.FieldSpec{WireName: "backup_subnet_cidr"},
 		"ClientSubnetCidr": ubx.FieldSpec{WireName: "client_subnet_cidr"},
-		"CrossRegionS3RestoreSourcesAccess": ubx.FieldSpec{WireName: "cross_region_s3_restore_sources_access"},
+		"CrossRegionS3RestoreSources": ubx.FieldSpec{WireName: "cross_region_s3_restore_sources"},
 		"CustomDomainName": ubx.FieldSpec{WireName: "custom_domain_name"},
 		"DefaultDnsPrefix": ubx.FieldSpec{WireName: "default_dns_prefix"},
 		"DeleteAssociatedResources": ubx.FieldSpec{WireName: "delete_associated_resources"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"KmsAccess": ubx.FieldSpec{WireName: "kms_access"},
 		"KmsPolicyDocument": ubx.FieldSpec{WireName: "kms_policy_document"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"S3Access": ubx.FieldSpec{WireName: "s3_access"},
 		"S3PolicyDocument": ubx.FieldSpec{WireName: "s3_policy_document"},
 		"StsAccess": ubx.FieldSpec{WireName: "sts_access"},
 		"StsPolicyDocument": ubx.FieldSpec{WireName: "sts_policy_document"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"ZeroEtlAccess": ubx.FieldSpec{WireName: "zero_etl_access"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Network_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Network_TagsFields,
 		},
+		"ZeroEtlAccess": ubx.FieldSpec{WireName: "zero_etl_access"},
 	},
 }

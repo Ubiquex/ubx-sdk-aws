@@ -4,90 +4,156 @@ package ecs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CapacityProvider_AutoScalingGroupProvider_ManagedScaling struct {
+	// Sets the number of seconds that a newly launched EC2 instance must warm up before its capacity counts toward the managed scaling target of the capacity provider, allowing it to initialize and start accepting tasks. (AI-inferred)
 	InstanceWarmupPeriod any
+	// The maximum number of container instances that can be added to or removed from the Auto Scaling group during a single managed scaling activity for the ECS capacity provider. (AI-inferred)
 	MaximumScalingStepSize any
+	// Specifies the minimum number of instances that the managed scaling operation can add or remove in a single scaling activity for the Auto Scaling group used by this capacity provider. (AI-inferred)
 	MinimumScalingStepSize any
+	// Specifies whether managed scaling for the Auto Scaling Group is enabled or disabled, controlling ECS's automatic adjustment of the group's capacity. (AI-inferred)
 	Status any
+	// The target capacity percentage for the Auto Scaling group, used by managed scaling to determine when to scale out or in, with a default of 100. (AI-inferred)
 	TargetCapacity any
 }
 
 type CapacityProvider_AutoScalingGroupProvider struct {
+	// The Amazon Resource Name (ARN) of the Auto Scaling group that this ECS capacity provider manages to supply container instances for the cluster. (AI-inferred)
 	AutoScalingGroupArn any
+	// Indicates whether Amazon ECS automatically manages draining of the Auto Scaling group instances during scale-in events, allowing tasks to stop gracefully before instance termination. (AI-inferred)
 	ManagedDraining any
-	ManagedTerminationProtection any
+	// The managed scaling settings for the Auto Scaling group capacity provider.
 	ManagedScaling any
+	// Enables or disables ECS-managed termination protection for the Auto Scaling group, which prevents ECS-managed instances from being terminated during scale-in events. (AI-inferred)
+	ManagedTerminationProtection any
+}
+
+type CapacityProvider_ManagedInstancesProvider_AutoRepairConfiguration struct {
+	ActionsStatus any
 }
 
 type CapacityProvider_ManagedInstancesProvider_InfrastructureOptimization struct {
+	// This parameter defines the number of seconds Amazon ECS Managed Instances waits before optimizing EC2 instances that have become idle or underutilized. A longer delay increases the likelihood of placing new tasks on idle instances, reducing startup time. A shorter delay helps reduce infrastructure costs by optimizing idle instances more quickly. Valid values are: Not set (null) - Uses the default optimization behavior, `-1` - Disables automatic infrastructure optimization, `0` to `3600` (inclusive) - Specifies the number of seconds to wait before optimizing instances.
 	ScaleInAfter any
 }
 
 type CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_CapacityReservations struct {
+	// The ARN of the EC2 Capacity Reservation Group that the launch template targets, ensuring instances launched by the capacity provider use capacity from that reservation group. (AI-inferred)
 	ReservationGroupArn any
+	// Specifies the capacity reservation preference for the instance launch template, with valid values 'open' (automatically match any open Capacity Reservation) and 'none' (do not use Capacity Reservations). (AI-inferred)
 	ReservationPreference any
 }
 
 type CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCount struct {
+	// Specifies the maximum number of GPU accelerators (e.g., GPUs) that an instance must have to be selected for the capacity provider's managed instance fleet. (AI-inferred)
 	Max any
+	// Specifies the minimum number of accelerators (such as GPUs) that an instance must have to satisfy the instance requirements for the capacity provider's managed instance launch template. (AI-inferred)
 	Min any
 }
 
 type CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements struct {
-	AcceleratorManufacturers any
-	AcceleratorNames any
-	AcceleratorTypes any
-	AllowedInstanceTypes any
-	BareMetal any
-	BurstablePerformance any
-	CpuManufacturers any
-	ExcludedInstanceTypes any
-	InstanceGenerations any
-	LocalStorage any
-	LocalStorageTypes any
-	MaxSpotPriceAsPercentageOfOptimalOnDemandPrice any
-	OnDemandMaxPricePercentageOverLowestPrice any
-	RequireHibernateSupport any
-	SpotMaxPricePercentageOverLowestPrice any
+	// Specifies the minimum and maximum number of GPU accelerators (e.g., for compute-intensive workloads) that instances must have to match the instance requirements for the Auto Scaling group used by this ECS capacity provider. (AI-inferred)
 	AcceleratorCount any
-	AcceleratorTotalMemoryMib any
+	// Specifies the acceptable manufacturers of hardware accelerators (GPUs) for the EC2 instance types that the capacity provider's managed instances can launch, restricting eligible instance types to those with accelerators from the listed manufacturers. (AI-inferred)
+	AcceleratorManufacturers any
+	// Specifies the names of GPU accelerators (e.g., 'a100', 'v100') that the instance types must have to be considered for the capacity provider's managed instances. (AI-inferred)
+	AcceleratorNames any
+	// Specifies the minimum and maximum total memory (in MiB) across all accelerators (e.g., GPUs) that an instance type must have to be eligible for use in the managed Auto Scaling group for this ECS capacity provider, filtering the instance types that can be launched. (AI-inferred)
+	AcceleratorTotalMemoryMiB any
+	// Specifies the types of hardware accelerators (such as gpu, fpga, or inference) that the EC2 instances must have when using instance requirements to select instance types for the capacity provider's managed instances. (AI-inferred)
+	AcceleratorTypes any
+	// Restricts the eligible EC2 instance types for the capacity provider's managed instances to the explicitly listed instance types within the launch template's instance requirements. (AI-inferred)
+	AllowedInstanceTypes any
+	// Specifies whether the launch template's instance requirements must target bare metal instances, with values `included`, `excluded`, or `required` to indicate whether bare metal instance types are allowed, disallowed, or required. (AI-inferred)
+	BareMetal any
+	// Specifies the minimum baseline EBS bandwidth in Mbps that an instance type must offer for the capacity provider's managed EC2 instances, used as part of the instance requirements to filter eligible instance types. (AI-inferred)
 	BaselineEbsBandwidthMbps any
-	MemoryGibPerVcpu any
-	MemoryMib any
+	// Specifies whether instances with burstable performance (e.g., T2, T3 families) are included or excluded when the capacity provider selects instance types for its managed instances. (AI-inferred)
+	BurstablePerformance any
+	// Restricts the EC2 instance types eligible for the capacity provider's managed instances to those with a CPU manufacturer listed (e.g., 'intel', 'amd', or 'amazon-web-services' for AWS Graviton processors). (AI-inferred)
+	CpuManufacturers any
+	// Specifies a list of EC2 instance types to explicitly exclude from the capacity provider's managed Auto Scaling group when instance requirements are used to automatically select compute resources. (AI-inferred)
+	ExcludedInstanceTypes any
+	// Specifies the instance generations (e.g., '5' for fifth-generation instances) that are allowed when selecting eligible EC2 instance types under the instance requirements. (AI-inferred)
+	InstanceGenerations any
+	// Specifies whether the instance types used by the ECS capacity provider's Auto Scaling group must include local instance storage, with allowed values of included, excluded, or required. (AI-inferred)
+	LocalStorage any
+	// Specifies the local storage types (e.g., hdd or ssd) that an instance must support to be eligible for the capacity provider's managed instance fleet, as defined in the instance requirements of the launch template. (AI-inferred)
+	LocalStorageTypes any
+	// The maximum spot price as a percentage of the optimal On-Demand price for the instance, used to set a ceiling on Spot Instance pricing within the Auto Scaling group managed by the ECS capacity provider. (AI-inferred)
+	MaxSpotPriceAsPercentageOfOptimalOnDemandPrice any
+	// Defines the minimum and maximum amount of memory (in GiB) per vCPU that the EC2 instances used by the capacity provider's managed instance launch template must have. (AI-inferred)
+	MemoryGiBperVcpu any
+	// Specifies the minimum and maximum memory (in MiB) that instances must have to be selected for the capacity provider, using the min and max sub-fields of this object. (AI-inferred)
+	MemoryMiB any
+	// Specifies the minimum and maximum network bandwidth (in gigabits per second) that an instance must meet when the capacity provider launches managed instances, used to filter eligible EC2 instance types. (AI-inferred)
 	NetworkBandwidthGbps any
+	// The minimum and maximum number of network interfaces that an instance type must support, used to filter eligible instance types when the capacity provider launches instances. (AI-inferred)
 	NetworkInterfaceCount any
+	// For the managed EC2 Auto Scaling group behind this ECS capacity provider, this sets the maximum price you are willing to pay for On-Demand instances as a percentage above the lowest On-Demand price among the instance types that meet the specified requirements, influencing instance selection. (AI-inferred)
+	OnDemandMaxPricePercentageOverLowestPrice any
+	// Indicates whether the ECS capacity provider's managed instances must be of a type that supports EC2 hibernation. (AI-inferred)
+	RequireHibernateSupport any
+	// Sets the maximum price you are willing to pay for a Spot Instance as a percentage of the lowest-priced Spot Instance, allowing you to bid above the baseline Spot price to increase the chance of instance fulfillment. (AI-inferred)
+	SpotMaxPricePercentageOverLowestPrice any
+	// Configures the minimum and maximum total local storage (in GiB) that an instance type must have for the capacity provider's managed instance launch template. (AI-inferred)
 	TotalLocalStorageGb any
+	// Specifies the minimum and maximum number of vCPUs that the instance type must have, used to filter EC2 instances for the capacity provider's managed instance fleet. (AI-inferred)
 	VcpuCount any
 }
 
 type CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_LocalStorageConfiguration struct {
+	// Indicates whether to enable the use of local ephemeral storage on the managed EC2 instances for tasks running in this ECS capacity provider. (AI-inferred)
 	UseLocalStorage any
 }
 
 type CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_NetworkConfiguration struct {
+	// The list of security group IDs to assign to the EC2 instances launched by the managed instance provider's instance launch template, used as part of the network configuration for the ECS capacity provider. (AI-inferred)
 	SecurityGroups any
+	// The list of subnet IDs in which the ECS capacity provider's container instances are launched, specified within the network configuration of the instance launch template. (AI-inferred)
 	Subnets any
 }
 
 type CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_StorageConfiguration struct {
-	StorageSizeGib any
+	StorageSizeGiB any
 }
 
 type CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate struct {
+	// Determines whether the capacity provider launches On-Demand or Spot instances for the managed instances using this launch template. (AI-inferred)
 	CapacityOptionType any
-	Ec2InstanceProfileArn any
-	Monitoring any
 	CapacityReservations any
+	// The ARN of the IAM instance profile that the EC2 instances launched by this capacity provider's managed instances will use to interact with AWS services. (AI-inferred)
+	Ec2InstanceProfileArn any
+	// Boolean flag that enables FIPS 140-2 validated cryptographic modules on the container instances launched using this capacity provider's managed instance launch template. (AI-inferred)
+	FipsEnabled any
+	// Controls whether instance tags are propagated to the instance metadata service (IMDS) on EC2 instances launched from the launch template specified in the managed instances provider of the ECS capacity provider. (AI-inferred)
+	InstanceMetadataTagsPropagation any
+	// Defines the instance requirements (e.g., vCPU count, memory, and other attributes) that the Auto Scaling group uses to automatically select EC2 instance types for the managed instances of the ECS capacity provider. (AI-inferred)
 	InstanceRequirements any
 	LocalStorageConfiguration any
+	Monitoring any
+	// Specifies the VPC networking configuration for the EC2 instances launched by the capacity provider, including subnets, security groups, and whether to assign a public IP address, as part of the instance launch template in the managed instances provider. (AI-inferred)
 	NetworkConfiguration any
 	StorageConfiguration any
 }
 
 type CapacityProvider_ManagedInstancesProvider struct {
-	InfrastructureRoleArn any
-	PropagateTags any
+	// Configuration that enables or disables automatic repair (replacement) of unhealthy managed EC2 instances for the ECS capacity provider, controlled by the nested 'enabled' flag. (AI-inferred)
+	AutoRepairConfiguration any
+	// Defines how Amazon ECS Managed Instances optimizes the infrastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle EC2 instances optimization delay.
 	InfrastructureOptimization any
+	// The ARN of the IAM role that Amazon ECS uses to manage the EC2 instances in the Auto Scaling group associated with this capacity provider. (AI-inferred)
+	InfrastructureRoleArn any
+	// Specifies the EC2 launch template that the capacity provider uses to launch instances into the Auto Scaling group it manages. (AI-inferred)
 	InstanceLaunchTemplate any
+	// Determines whether tags from the Auto Scaling group are propagated to the container instances launched by the capacity provider's managed instance provider; accepts values like `TAG_FROM_AUTO_SCALING_GROUP` and `NONE`. (AI-inferred)
+	PropagateTags any
+}
+
+type CapacityProvider_Tags struct {
+	// Specifies the key for a user-defined tag attached to the ECS capacity provider, which can be used for cost allocation, resource organization, and IAM-based access control. (AI-inferred)
+	Key any
+	// Specifies the value of a user-defined tag applied to the ECS capacity provider, used for metadata organization and cost tracking. (AI-inferred)
+	Value any
 }
 
 var CapacityProvider_AutoScalingGroupProvider_ManagedScalingFields = ubx.FieldMap{
@@ -101,12 +167,16 @@ var CapacityProvider_AutoScalingGroupProvider_ManagedScalingFields = ubx.FieldMa
 var CapacityProvider_AutoScalingGroupProviderFields = ubx.FieldMap{
 		"AutoScalingGroupArn": ubx.FieldSpec{WireName: "auto_scaling_group_arn"},
 		"ManagedDraining": ubx.FieldSpec{WireName: "managed_draining"},
-		"ManagedTerminationProtection": ubx.FieldSpec{WireName: "managed_termination_protection"},
 		"ManagedScaling": ubx.FieldSpec{
 			WireName: "managed_scaling",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_AutoScalingGroupProvider_ManagedScalingFields,
 		},
+		"ManagedTerminationProtection": ubx.FieldSpec{WireName: "managed_termination_protection"},
+	}
+
+var CapacityProvider_ManagedInstancesProvider_AutoRepairConfigurationFields = ubx.FieldMap{
+		"ActionsStatus": ubx.FieldSpec{WireName: "actions_status"},
 	}
 
 var CapacityProvider_ManagedInstancesProvider_InfrastructureOptimizationFields = ubx.FieldMap{
@@ -124,11 +194,26 @@ var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceReq
 	}
 
 var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirementsFields = ubx.FieldMap{
+		"AcceleratorCount": ubx.FieldSpec{
+			WireName: "accelerator_count",
+			Kind: "object",
+			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+		},
 		"AcceleratorManufacturers": ubx.FieldSpec{WireName: "accelerator_manufacturers"},
 		"AcceleratorNames": ubx.FieldSpec{WireName: "accelerator_names"},
+		"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
+			WireName: "accelerator_total_memory_mi_b",
+			Kind: "object",
+			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+		},
 		"AcceleratorTypes": ubx.FieldSpec{WireName: "accelerator_types"},
 		"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
 		"BareMetal": ubx.FieldSpec{WireName: "bare_metal"},
+		"BaselineEbsBandwidthMbps": ubx.FieldSpec{
+			WireName: "baseline_ebs_bandwidth_mbps",
+			Kind: "object",
+			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+		},
 		"BurstablePerformance": ubx.FieldSpec{WireName: "burstable_performance"},
 		"CpuManufacturers": ubx.FieldSpec{WireName: "cpu_manufacturers"},
 		"ExcludedInstanceTypes": ubx.FieldSpec{WireName: "excluded_instance_types"},
@@ -136,52 +221,37 @@ var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceReq
 		"LocalStorage": ubx.FieldSpec{WireName: "local_storage"},
 		"LocalStorageTypes": ubx.FieldSpec{WireName: "local_storage_types"},
 		"MaxSpotPriceAsPercentageOfOptimalOnDemandPrice": ubx.FieldSpec{WireName: "max_spot_price_as_percentage_of_optimal_on_demand_price"},
-		"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
-		"RequireHibernateSupport": ubx.FieldSpec{WireName: "require_hibernate_support"},
-		"SpotMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
-		"AcceleratorCount": ubx.FieldSpec{
-			WireName: "accelerator_count",
-			Kind: "list",
+		"MemoryGiBperVcpu": ubx.FieldSpec{
+			WireName: "memory_gi_bper_vcpu",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
 		},
-		"AcceleratorTotalMemoryMib": ubx.FieldSpec{
-			WireName: "accelerator_total_memory_mib",
-			Kind: "list",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-		"BaselineEbsBandwidthMbps": ubx.FieldSpec{
-			WireName: "baseline_ebs_bandwidth_mbps",
-			Kind: "list",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-		"MemoryGibPerVcpu": ubx.FieldSpec{
-			WireName: "memory_gib_per_vcpu",
-			Kind: "list",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-		"MemoryMib": ubx.FieldSpec{
-			WireName: "memory_mib",
-			Kind: "list",
+		"MemoryMiB": ubx.FieldSpec{
+			WireName: "memory_mi_b",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
 		},
 		"NetworkBandwidthGbps": ubx.FieldSpec{
 			WireName: "network_bandwidth_gbps",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
 		},
 		"NetworkInterfaceCount": ubx.FieldSpec{
 			WireName: "network_interface_count",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
 		},
+		"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
+		"RequireHibernateSupport": ubx.FieldSpec{WireName: "require_hibernate_support"},
+		"SpotMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
 		"TotalLocalStorageGb": ubx.FieldSpec{
 			WireName: "total_local_storage_gb",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
 		},
 		"VcpuCount": ubx.FieldSpec{
 			WireName: "vcpu_count",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
 		},
 	}
@@ -196,84 +266,108 @@ var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_NetworkConf
 	}
 
 var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_StorageConfigurationFields = ubx.FieldMap{
-		"StorageSizeGib": ubx.FieldSpec{WireName: "storage_size_gib"},
+		"StorageSizeGiB": ubx.FieldSpec{WireName: "storage_size_gi_b"},
 	}
 
 var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplateFields = ubx.FieldMap{
 		"CapacityOptionType": ubx.FieldSpec{WireName: "capacity_option_type"},
-		"Ec2InstanceProfileArn": ubx.FieldSpec{WireName: "ec2_instance_profile_arn"},
-		"Monitoring": ubx.FieldSpec{WireName: "monitoring"},
 		"CapacityReservations": ubx.FieldSpec{
 			WireName: "capacity_reservations",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_CapacityReservationsFields,
 		},
+		"Ec2InstanceProfileArn": ubx.FieldSpec{WireName: "ec2_instance_profile_arn"},
+		"FipsEnabled": ubx.FieldSpec{WireName: "fips_enabled"},
+		"InstanceMetadataTagsPropagation": ubx.FieldSpec{WireName: "instance_metadata_tags_propagation"},
 		"InstanceRequirements": ubx.FieldSpec{
 			WireName: "instance_requirements",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirementsFields,
 		},
 		"LocalStorageConfiguration": ubx.FieldSpec{
 			WireName: "local_storage_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_LocalStorageConfigurationFields,
 		},
+		"Monitoring": ubx.FieldSpec{WireName: "monitoring"},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_NetworkConfigurationFields,
 		},
 		"StorageConfiguration": ubx.FieldSpec{
 			WireName: "storage_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_StorageConfigurationFields,
 		},
 	}
 
 var CapacityProvider_ManagedInstancesProviderFields = ubx.FieldMap{
-		"InfrastructureRoleArn": ubx.FieldSpec{WireName: "infrastructure_role_arn"},
-		"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
+		"AutoRepairConfiguration": ubx.FieldSpec{
+			WireName: "auto_repair_configuration",
+			Kind: "object",
+			Fields: CapacityProvider_ManagedInstancesProvider_AutoRepairConfigurationFields,
+		},
 		"InfrastructureOptimization": ubx.FieldSpec{
 			WireName: "infrastructure_optimization",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InfrastructureOptimizationFields,
 		},
+		"InfrastructureRoleArn": ubx.FieldSpec{WireName: "infrastructure_role_arn"},
 		"InstanceLaunchTemplate": ubx.FieldSpec{
 			WireName: "instance_launch_template",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplateFields,
 		},
+		"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
+	}
+
+var CapacityProvider_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type CapacityProviderConfig struct {
-	Cluster any
-	Id any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
+	// Configures the Auto Scaling group that backs this ECS capacity provider, including its ARN, optional managed scaling parameters, and managed termination protection settings. (AI-inferred)
 	AutoScalingGroupProvider any
+	ClusterName any
 	ManagedInstancesProvider any
+	// Specifies the name of the capacity provider, which must be unique within the account and Region and contain only letters, numbers, underscores, and hyphens (up to 255 characters); if omitted, CloudFormation generates a unique name. (AI-inferred)
+	Name any
+	// Specifies the metadata tags (key-value pairs) to attach to the ECS capacity provider for identifying, organizing, and managing the resource. (AI-inferred)
+	Tags any
+}
+
+type CapacityProviderAttrs struct {
+	// Configures the Auto Scaling group that backs this ECS capacity provider, including its ARN, optional managed scaling parameters, and managed termination protection settings. (AI-inferred)
+	AutoScalingGroupProvider any
+	ClusterName any
+	ManagedInstancesProvider any
+	// Specifies the name of the capacity provider, which must be unique within the account and Region and contain only letters, numbers, underscores, and hyphens (up to 255 characters); if omitted, CloudFormation generates a unique name. (AI-inferred)
+	Name any
+	// Specifies the metadata tags (key-value pairs) to attach to the ECS capacity provider for identifying, organizing, and managing the resource. (AI-inferred)
+	Tags any
 }
 
 var CapacityProvider = ubx.ResourceBinding{
 	WireType: "aws_ecs_capacity_provider",
 	Fields: ubx.FieldMap{
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"AutoScalingGroupProvider": ubx.FieldSpec{
 			WireName: "auto_scaling_group_provider",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_AutoScalingGroupProviderFields,
 		},
+		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
 		"ManagedInstancesProvider": ubx.FieldSpec{
 			WireName: "managed_instances_provider",
-			Kind: "list",
+			Kind: "object",
 			Fields: CapacityProvider_ManagedInstancesProviderFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: CapacityProvider_TagsFields,
 		},
 	},
 }

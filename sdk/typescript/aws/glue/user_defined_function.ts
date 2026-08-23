@@ -2,8 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserDefinedFunction_ResourceUris {
-  resourceType: string;
-  uri: string;
+  /** Specifies the type of resource stored at the URI, such as 'JAR', 'FILE', or 'ARCHIVE', for the user-defined function's resource URIs. (AI-inferred) */
+  resourceType?: string | Computed<string>;
+  /** The URI (typically an S3 path or similar location) of the resource (e.g., jar, archive, or file) associated with the user-defined function. (AI-inferred) */
+  uri?: string | Computed<string>;
 }
 
 const UserDefinedFunction_ResourceUrisFields: FieldMap = {
@@ -12,45 +14,53 @@ const UserDefinedFunction_ResourceUrisFields: FieldMap = {
 };
 
 export interface UserDefinedFunctionConfig {
-  catalogId?: string | Computed<string>;
-  className: string | Computed<string>;
+  /** The Java class that contains the function code. */
+  className?: string | Computed<string>;
+  /** The name of the catalog database in which the function is located. */
   databaseName: string | Computed<string>;
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  ownerName: string | Computed<string>;
-  ownerType: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The name of the function. */
+  functionName: string | Computed<string>;
+  /** The type of the function. */
+  functionType?: string | Computed<string>;
+  /** The owner of the function. */
+  ownerName?: string | Computed<string>;
+  /** The owner type. */
+  ownerType?: string | Computed<string>;
+  /** The resource URIs for the function. */
   resourceUris?: UserDefinedFunction_ResourceUris[] | Computed<UserDefinedFunction_ResourceUris[]>;
 }
 
 export interface UserDefinedFunctionAttrs {
+  /** The Amazon Resource Name (ARN) of the user-defined function. */
   arn: string;
-  catalogId: string;
+  /** The Java class that contains the function code. */
   className: string;
-  createTime: string;
+  /** The name of the catalog database in which the function is located. */
   databaseName: string;
-  id: string;
-  name: string;
+  /** The name of the function. */
+  functionName: string;
+  /** The type of the function. */
+  functionType: string;
+  /** The owner of the function. */
   ownerName: string;
+  /** The owner type. */
   ownerType: string;
-  region: string;
+  /** The resource URIs for the function. */
   resourceUris: UserDefinedFunction_ResourceUris[];
 }
 
 export const UserDefinedFunction: ResourceBinding<UserDefinedFunctionConfig, UserDefinedFunctionAttrs> = {
   wireType: "aws_glue_user_defined_function",
   fields: {
-    catalogId: "catalog_id",
     className: "class_name",
     databaseName: "database_name",
-    id: "id",
-    name: "name",
+    functionName: "function_name",
+    functionType: "function_type",
     ownerName: "owner_name",
     ownerType: "owner_type",
-    region: "region",
     resourceUris: {
       wireName: "resource_uris",
-      kind: "set",
+      kind: "list",
       fields: UserDefinedFunction_ResourceUrisFields,
     },
   },

@@ -3,51 +3,138 @@ package connect
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Queue_OutboundCallerConfig struct {
-	OutboundCallerIdName any
-	OutboundCallerIdNumberId any
-	OutboundFlowId any
+type Queue_AdditionalEmailAddresses struct {
+	// Specifies the ARN of an additional email address to associate with the Amazon Connect queue, enabling the queue to handle email contacts from multiple addresses. (AI-inferred)
+	EmailAddressArn any
 }
+
+type Queue_OutboundCallerConfig struct {
+	// The caller ID name.
+	OutboundCallerIdName any
+	// The caller ID number.
+	OutboundCallerIdNumberArn any
+	// The outbound whisper flow to be used during an outbound call.
+	OutboundFlowArn any
+}
+
+type Queue_OutboundEmailConfig struct {
+	// The email address connect resource ID.
+	OutboundEmailAddressId any
+}
+
+type Queue_Tags struct {
+	// The key of a tag assigned to the Amazon Connect queue, used for metadata and resource filtering. (AI-inferred)
+	Key any
+	// The value of a tag attached to the Amazon Connect queue. (AI-inferred)
+	Value any
+}
+
+var Queue_AdditionalEmailAddressesFields = ubx.FieldMap{
+		"EmailAddressArn": ubx.FieldSpec{WireName: "email_address_arn"},
+	}
 
 var Queue_OutboundCallerConfigFields = ubx.FieldMap{
 		"OutboundCallerIdName": ubx.FieldSpec{WireName: "outbound_caller_id_name"},
-		"OutboundCallerIdNumberId": ubx.FieldSpec{WireName: "outbound_caller_id_number_id"},
-		"OutboundFlowId": ubx.FieldSpec{WireName: "outbound_flow_id"},
+		"OutboundCallerIdNumberArn": ubx.FieldSpec{WireName: "outbound_caller_id_number_arn"},
+		"OutboundFlowArn": ubx.FieldSpec{WireName: "outbound_flow_arn"},
+	}
+
+var Queue_OutboundEmailConfigFields = ubx.FieldMap{
+		"OutboundEmailAddressId": ubx.FieldSpec{WireName: "outbound_email_address_id"},
+	}
+
+var Queue_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type QueueConfig struct {
+	// The email addresses that agents can use when replying to or initiating email contacts
+	AdditionalEmailAddresses any
+	// The description of the queue.
 	Description any
-	HoursOfOperationId any
-	Id any
-	InstanceId any
+	// The identifier for the hours of operation.
+	HoursOfOperationArn any
+	// The identifier of the Amazon Connect instance.
+	InstanceArn any
+	// The maximum number of contacts that can be in the queue before it is considered full.
 	MaxContacts any
+	// The name of the queue.
 	Name any
-	QuickConnectIds any
-	Region any
-	Status any
-	Tags any
-	TagsAll any
+	// The outbound caller ID name, number, and outbound whisper flow.
 	OutboundCallerConfig any
+	// The outbound email address ID.
+	OutboundEmailConfig any
+	// The quick connects available to agents who are working the queue.
+	QuickConnectArns any
+	// The status of the queue.
+	Status any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type QueueAttrs struct {
+	// The email addresses that agents can use when replying to or initiating email contacts
+	AdditionalEmailAddresses any
+	// The description of the queue.
+	Description any
+	// The identifier for the hours of operation.
+	HoursOfOperationArn any
+	// The identifier of the Amazon Connect instance.
+	InstanceArn any
+	// The AWS Region where this resource was last modified.
+	LastModifiedRegion any
+	// The timestamp when this resource was last modified.
+	LastModifiedTime any
+	// The maximum number of contacts that can be in the queue before it is considered full.
+	MaxContacts any
+	// The name of the queue.
+	Name any
+	// The outbound caller ID name, number, and outbound whisper flow.
+	OutboundCallerConfig any
+	// The outbound email address ID.
+	OutboundEmailConfig any
+	// The Amazon Resource Name (ARN) for the queue.
+	QueueArn any
+	// The quick connects available to agents who are working the queue.
+	QuickConnectArns any
+	// The status of the queue.
+	Status any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// The type of queue.
+	Type any
 }
 
 var Queue = ubx.ResourceBinding{
 	WireType: "aws_connect_queue",
 	Fields: ubx.FieldMap{
+		"AdditionalEmailAddresses": ubx.FieldSpec{
+			WireName: "additional_email_addresses",
+			Kind: "list",
+			Fields: Queue_AdditionalEmailAddressesFields,
+		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"HoursOfOperationId": ubx.FieldSpec{WireName: "hours_of_operation_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"HoursOfOperationArn": ubx.FieldSpec{WireName: "hours_of_operation_arn"},
+		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
 		"MaxContacts": ubx.FieldSpec{WireName: "max_contacts"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"QuickConnectIds": ubx.FieldSpec{WireName: "quick_connect_ids"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"OutboundCallerConfig": ubx.FieldSpec{
 			WireName: "outbound_caller_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: Queue_OutboundCallerConfigFields,
+		},
+		"OutboundEmailConfig": ubx.FieldSpec{
+			WireName: "outbound_email_config",
+			Kind: "object",
+			Fields: Queue_OutboundEmailConfigFields,
+		},
+		"QuickConnectArns": ubx.FieldSpec{WireName: "quick_connect_arns"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Queue_TagsFields,
 		},
 	},
 }

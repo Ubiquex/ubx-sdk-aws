@@ -2,36 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceLinkedRoleConfig {
-  awsServiceName: string | Computed<string>;
+  /** The service principal for the AWS service to which this role is attached. */
+  awsserviceName?: string | Computed<string>;
+  /** A string that you provide, which is combined with the service-provided prefix to form the complete role name. */
   customSuffix?: string | Computed<string>;
+  /** The description of the role. */
   description?: string | Computed<string>;
-  id?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface ServiceLinkedRoleAttrs {
-  arn: string;
-  awsServiceName: string;
-  createDate: string;
+  /** The service principal for the AWS service to which this role is attached. */
+  awsserviceName: string;
+  /** A string that you provide, which is combined with the service-provided prefix to form the complete role name. */
   customSuffix: string;
+  /** The description of the role. */
   description: string;
-  id: string;
-  name: string;
-  path: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  uniqueId: string;
+  /** The name of the role. */
+  roleName: string;
 }
 
 export const ServiceLinkedRole: ResourceBinding<ServiceLinkedRoleConfig, ServiceLinkedRoleAttrs> = {
   wireType: "aws_iam_service_linked_role",
   fields: {
-    awsServiceName: "aws_service_name",
+    awsserviceName: "awsservice_name",
     customSuffix: "custom_suffix",
     description: "description",
-    id: "id",
-    tags: "tags",
-    tagsAll: "tags_all",
   },
 };

@@ -2,105 +2,118 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Domain_AdvancedSecurityOptions_MasterUserOptions {
-  masterUserArn: string;
-  masterUserName: string;
-  masterUserPassword: string;
+  /** The ARN of the IAM identity (IAM user or role) that serves as the master user for fine-grained access control in the Amazon Elasticsearch Service domain. (AI-inferred) */
+  masterUserArn?: string | Computed<string>;
+  /** The username for the master user, used to authenticate with fine-grained access control when advanced security is enabled on the Elasticsearch domain. (AI-inferred) */
+  masterUserName?: string | Computed<string>;
+  /** Sets the password for the master user used with fine-grained access control (advanced security) in the Amazon Elasticsearch domain, required when specifying a master user name for the internal user database. (AI-inferred) */
+  masterUserPassword?: string | Computed<string>;
 }
 
 export interface Domain_AdvancedSecurityOptions {
-  enabled: boolean;
-  internalUserDatabaseEnabled: boolean;
-  masterUserOptions: Domain_AdvancedSecurityOptions_MasterUserOptions[];
-}
-
-export interface Domain_AutoTuneOptions_MaintenanceSchedule_Duration {
-  unit: string;
-  value: number;
-}
-
-export interface Domain_AutoTuneOptions_MaintenanceSchedule {
-  cronExpressionForRecurrence: string;
-  startAt: string;
-  duration: Domain_AutoTuneOptions_MaintenanceSchedule_Duration[];
-}
-
-export interface Domain_AutoTuneOptions {
-  desiredState: string;
-  rollbackOnDisable: string;
-  maintenanceSchedule: Domain_AutoTuneOptions_MaintenanceSchedule[];
-}
-
-export interface Domain_ClusterConfig_ColdStorageOptions {
-  enabled: boolean;
-}
-
-export interface Domain_ClusterConfig_ZoneAwarenessConfig {
-  availabilityZoneCount: number;
-}
-
-export interface Domain_ClusterConfig {
-  dedicatedMasterCount: number;
-  dedicatedMasterEnabled: boolean;
-  dedicatedMasterType: string;
-  instanceCount: number;
-  instanceType: string;
-  warmCount: number;
-  warmEnabled: boolean;
-  warmType: string;
-  zoneAwarenessEnabled: boolean;
-  coldStorageOptions: Domain_ClusterConfig_ColdStorageOptions[];
-  zoneAwarenessConfig: Domain_ClusterConfig_ZoneAwarenessConfig[];
+  /** Enables anonymous (unauthenticated) access to the Elasticsearch domain's endpoints, allowing requests without credentials. (AI-inferred) */
+  anonymousAuthEnabled?: boolean | Computed<boolean>;
+  /** Indicates whether advanced security options (fine-grained access control, user authentication, and authorization) are enabled for the Amazon Elasticsearch domain. (AI-inferred) */
+  enabled?: boolean | Computed<boolean>;
+  /** Enables the internal user database for fine-grained access control in Amazon Elasticsearch Service, allowing users to be managed within the domain. (AI-inferred) */
+  internalUserDatabaseEnabled?: boolean | Computed<boolean>;
+  /** Specifies the master user for the Elasticsearch domain when advanced security is enabled, defining either an IAM role ARN (MasterUserARN) or internal user credentials (MasterUserName and MasterUserPassword) for fine-grained access control. (AI-inferred) */
+  masterUserOptions?: Domain_AdvancedSecurityOptions_MasterUserOptions | Computed<Domain_AdvancedSecurityOptions_MasterUserOptions>;
 }
 
 export interface Domain_CognitoOptions {
-  enabled: boolean;
-  identityPoolId: string;
-  roleArn: string;
-  userPoolId: string;
+  /** Specifies whether Amazon Cognito authentication for Kibana is enabled, and when true the accompanying user_pool_id, identity_pool_id, and role_arn are used to authenticate users. (AI-inferred) */
+  enabled?: boolean | Computed<boolean>;
+  /** The ID of the Amazon Cognito identity pool that is used for authentication to the Elasticsearch domain. (AI-inferred) */
+  identityPoolId?: string | Computed<string>;
+  /** The ARN of the IAM role that Amazon Cognito assumes to access the user pool and identity pool, enabling authenticated Kibana/OpenSearch Dashboards via Cognito for the domain. (AI-inferred) */
+  roleArn?: string | Computed<string>;
+  /** The ID of the Amazon Cognito user pool that is used to authenticate users to Kibana for this Elasticsearch domain. (AI-inferred) */
+  userPoolId?: string | Computed<string>;
 }
 
 export interface Domain_DomainEndpointOptions {
-  customEndpoint: string;
-  customEndpointCertificateArn: string;
-  customEndpointEnabled: boolean;
-  enforceHttps: boolean;
-  tlsSecurityPolicy: string;
+  /** The fully qualified domain name to use as the custom endpoint for the Elasticsearch domain. (AI-inferred) */
+  customEndpoint?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate to use for the custom endpoint for the Elasticsearch domain. (AI-inferred) */
+  customEndpointCertificateArn?: string | Computed<string>;
+  /** Enables a custom endpoint for the Elasticsearch domain, allowing you to use a custom domain name instead of the default endpoint. (AI-inferred) */
+  customEndpointEnabled?: boolean | Computed<boolean>;
+  /** Whether to require HTTPS for all traffic to the domain, disabling plain HTTP access. (AI-inferred) */
+  enforceHttps?: boolean | Computed<boolean>;
+  /** The TLS security policy for the Elasticsearch domain endpoint, specifying the minimum TLS version required for connections (e.g., 'Policy-Min-TLS-1-0-2019-07' or 'Policy-Min-TLS-1-2-2019-07'). (AI-inferred) */
+  tlssecurityPolicy?: string | Computed<string>;
 }
 
-export interface Domain_EbsOptions {
-  ebsEnabled: boolean;
-  iops: number;
-  throughput: number;
-  volumeSize: number;
-  volumeType: string;
+export interface Domain_Ebsoptions {
+  /** Enables EBS volumes on the Elasticsearch domain's data nodes, allowing storage configuration when set to true. (AI-inferred) */
+  ebsenabled?: boolean | Computed<boolean>;
+  /** The provisioned IOPS (I/O operations per second) for the EBS volume attached to the Elasticsearch domain, applicable when the volume type is provisioned IOPS (io1). (AI-inferred) */
+  iops?: number | Computed<number>;
+  /** The size in GiB of the EBS volume attached to each data node in the Elasticsearch domain. (AI-inferred) */
+  volumeSize?: number | Computed<number>;
+  /** The EBS volume type (e.g., 'standard', 'gp2', 'io1') to provision for the Amazon Elasticsearch Service domain's data nodes. (AI-inferred) */
+  volumeType?: string | Computed<string>;
 }
 
-export interface Domain_EncryptAtRest {
-  enabled: boolean;
-  kmsKeyId: string;
+export interface Domain_ElasticsearchClusterConfig_ColdStorageOptions {
+  /** Enables or disables the cold storage tier for the Amazon Elasticsearch (OpenSearch) domain, allowing data to be moved to low-cost cold storage. (AI-inferred) */
+  enabled?: boolean | Computed<boolean>;
 }
 
-export interface Domain_LogPublishingOptions {
-  cloudwatchLogGroupArn: string;
-  enabled: boolean;
-  logType: string;
+export interface Domain_ElasticsearchClusterConfig_ZoneAwarenessConfig {
+  /** Number of availability zones across which the Elasticsearch domain's nodes are distributed when zone awareness is enabled (must be 2 or 3). (AI-inferred) */
+  availabilityZoneCount?: number | Computed<number>;
+}
+
+export interface Domain_ElasticsearchClusterConfig {
+  /** Defines settings for cold storage in the Elasticsearch cluster, including an `enabled` flag to turn on cold storage for the domain. (AI-inferred) */
+  coldStorageOptions?: Domain_ElasticsearchClusterConfig_ColdStorageOptions | Computed<Domain_ElasticsearchClusterConfig_ColdStorageOptions>;
+  /** Sets the number of dedicated master nodes for the Amazon Elasticsearch Service domain, which improves cluster stability and reliability by separating master from data nodes. (AI-inferred) */
+  dedicatedMasterCount?: number | Computed<number>;
+  /** Enables dedicated master nodes for the Elasticsearch cluster, which run the cluster management tasks separately from data nodes to improve cluster stability. (AI-inferred) */
+  dedicatedMasterEnabled?: boolean | Computed<boolean>;
+  /** Specifies the instance type to use for dedicated master nodes in the Elasticsearch cluster, such as 'm3.medium.elasticsearch'. (AI-inferred) */
+  dedicatedMasterType?: string | Computed<string>;
+  /** The number of data nodes (instances) in the Elasticsearch cluster, determining the cluster's capacity and performance. (AI-inferred) */
+  instanceCount?: number | Computed<number>;
+  /** The EC2 instance type used for the data nodes in the Elasticsearch cluster, such as 't2.small.elasticsearch' or 'm5.large.elasticsearch'. (AI-inferred) */
+  instanceType?: string | Computed<string>;
+  /** Number of UltraWarm nodes to allocate for the Elasticsearch domain's warm storage tier, used for infrequently accessed data. (AI-inferred) */
+  warmCount?: number | Computed<number>;
+  /** Enables Amazon Elasticsearch Service UltraWarm storage, which allows the domain to use a warm tier of larger, lower-cost instances for read-only data that is accessed less frequently. (AI-inferred) */
+  warmEnabled?: boolean | Computed<boolean>;
+  /** Specifies the instance type used for UltraWarm nodes in the Elasticsearch cluster configuration, required when warm storage is enabled (e.g., 'ultrawarm1.medium.elasticsearch'). (AI-inferred) */
+  warmType?: string | Computed<string>;
+  /** Configures the number of availability zones (availability_zone_count) used for the Elasticsearch domain when zone awareness is enabled, allowing multi-AZ deployment for high availability. (AI-inferred) */
+  zoneAwarenessConfig?: Domain_ElasticsearchClusterConfig_ZoneAwarenessConfig | Computed<Domain_ElasticsearchClusterConfig_ZoneAwarenessConfig>;
+  /** Enables or disables the distribution of Elasticsearch nodes across multiple Availability Zones to improve cluster availability. (AI-inferred) */
+  zoneAwarenessEnabled?: boolean | Computed<boolean>;
+}
+
+export interface Domain_EncryptionAtRestOptions {
+  /** Turns on encryption of data at rest for the Amazon Elasticsearch domain using AWS KMS encryption keys, which must be specified in the same encryption-at-rest options if a customer-managed key is desired. (AI-inferred) */
+  enabled?: boolean | Computed<boolean>;
+  /** The KMS key ID or ARN used to encrypt the domain's data at rest, defaulting to the AWS-managed key for Amazon Elasticsearch Service if not specified. (AI-inferred) */
+  kmsKeyId?: string | Computed<string>;
 }
 
 export interface Domain_SnapshotOptions {
-  automatedSnapshotStartHour: number;
+  /** Specifies the hour (0-23, UTC) at which the daily automated snapshot is taken for the Amazon Elasticsearch Service domain. (AI-inferred) */
+  automatedSnapshotStartHour?: number | Computed<number>;
 }
 
-export interface Domain_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Domain_Tags {
+  /** The key of a tag attached to the Elasticsearch domain, which is a user-defined label used for resource organization and cost allocation. (AI-inferred) */
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
-export interface Domain_VpcOptions {
-  availabilityZones: string[];
-  securityGroupIds: string[];
-  subnetIds: string[];
-  vpcId: string;
+export interface Domain_Vpcoptions {
+  /** The list of security group IDs to associate with the Elasticsearch domain's VPC endpoints, controlling inbound network access when the domain is deployed inside a VPC. (AI-inferred) */
+  securityGroupIds?: string[] | Computed<string[]>;
+  /** The list of subnet IDs in which the Elasticsearch domain's VPC endpoints are placed, used when the domain is launched inside a VPC. (AI-inferred) */
+  subnetIds?: string[] | Computed<string[]>;
 }
 
 const Domain_AdvancedSecurityOptions_MasterUserOptionsFields: FieldMap = {
@@ -110,67 +123,13 @@ const Domain_AdvancedSecurityOptions_MasterUserOptionsFields: FieldMap = {
 };
 
 const Domain_AdvancedSecurityOptionsFields: FieldMap = {
+  anonymousAuthEnabled: "anonymous_auth_enabled",
   enabled: "enabled",
   internalUserDatabaseEnabled: "internal_user_database_enabled",
   masterUserOptions: {
     wireName: "master_user_options",
-    kind: "list",
+    kind: "object",
     fields: Domain_AdvancedSecurityOptions_MasterUserOptionsFields,
-  },
-};
-
-const Domain_AutoTuneOptions_MaintenanceSchedule_DurationFields: FieldMap = {
-  unit: "unit",
-  value: "value",
-};
-
-const Domain_AutoTuneOptions_MaintenanceScheduleFields: FieldMap = {
-  cronExpressionForRecurrence: "cron_expression_for_recurrence",
-  startAt: "start_at",
-  duration: {
-    wireName: "duration",
-    kind: "list",
-    fields: Domain_AutoTuneOptions_MaintenanceSchedule_DurationFields,
-  },
-};
-
-const Domain_AutoTuneOptionsFields: FieldMap = {
-  desiredState: "desired_state",
-  rollbackOnDisable: "rollback_on_disable",
-  maintenanceSchedule: {
-    wireName: "maintenance_schedule",
-    kind: "set",
-    fields: Domain_AutoTuneOptions_MaintenanceScheduleFields,
-  },
-};
-
-const Domain_ClusterConfig_ColdStorageOptionsFields: FieldMap = {
-  enabled: "enabled",
-};
-
-const Domain_ClusterConfig_ZoneAwarenessConfigFields: FieldMap = {
-  availabilityZoneCount: "availability_zone_count",
-};
-
-const Domain_ClusterConfigFields: FieldMap = {
-  dedicatedMasterCount: "dedicated_master_count",
-  dedicatedMasterEnabled: "dedicated_master_enabled",
-  dedicatedMasterType: "dedicated_master_type",
-  instanceCount: "instance_count",
-  instanceType: "instance_type",
-  warmCount: "warm_count",
-  warmEnabled: "warm_enabled",
-  warmType: "warm_type",
-  zoneAwarenessEnabled: "zone_awareness_enabled",
-  coldStorageOptions: {
-    wireName: "cold_storage_options",
-    kind: "list",
-    fields: Domain_ClusterConfig_ColdStorageOptionsFields,
-  },
-  zoneAwarenessConfig: {
-    wireName: "zone_awareness_config",
-    kind: "list",
-    fields: Domain_ClusterConfig_ZoneAwarenessConfigFields,
   },
 };
 
@@ -186,93 +145,137 @@ const Domain_DomainEndpointOptionsFields: FieldMap = {
   customEndpointCertificateArn: "custom_endpoint_certificate_arn",
   customEndpointEnabled: "custom_endpoint_enabled",
   enforceHttps: "enforce_https",
-  tlsSecurityPolicy: "tls_security_policy",
+  tlssecurityPolicy: "tlssecurity_policy",
 };
 
-const Domain_EbsOptionsFields: FieldMap = {
-  ebsEnabled: "ebs_enabled",
+const Domain_EbsoptionsFields: FieldMap = {
+  ebsenabled: "ebsenabled",
   iops: "iops",
-  throughput: "throughput",
   volumeSize: "volume_size",
   volumeType: "volume_type",
 };
 
-const Domain_EncryptAtRestFields: FieldMap = {
+const Domain_ElasticsearchClusterConfig_ColdStorageOptionsFields: FieldMap = {
   enabled: "enabled",
-  kmsKeyId: "kms_key_id",
 };
 
-const Domain_LogPublishingOptionsFields: FieldMap = {
-  cloudwatchLogGroupArn: "cloudwatch_log_group_arn",
+const Domain_ElasticsearchClusterConfig_ZoneAwarenessConfigFields: FieldMap = {
+  availabilityZoneCount: "availability_zone_count",
+};
+
+const Domain_ElasticsearchClusterConfigFields: FieldMap = {
+  coldStorageOptions: {
+    wireName: "cold_storage_options",
+    kind: "object",
+    fields: Domain_ElasticsearchClusterConfig_ColdStorageOptionsFields,
+  },
+  dedicatedMasterCount: "dedicated_master_count",
+  dedicatedMasterEnabled: "dedicated_master_enabled",
+  dedicatedMasterType: "dedicated_master_type",
+  instanceCount: "instance_count",
+  instanceType: "instance_type",
+  warmCount: "warm_count",
+  warmEnabled: "warm_enabled",
+  warmType: "warm_type",
+  zoneAwarenessConfig: {
+    wireName: "zone_awareness_config",
+    kind: "object",
+    fields: Domain_ElasticsearchClusterConfig_ZoneAwarenessConfigFields,
+  },
+  zoneAwarenessEnabled: "zone_awareness_enabled",
+};
+
+const Domain_EncryptionAtRestOptionsFields: FieldMap = {
   enabled: "enabled",
-  logType: "log_type",
+  kmsKeyId: "kms_key_id",
 };
 
 const Domain_SnapshotOptionsFields: FieldMap = {
   automatedSnapshotStartHour: "automated_snapshot_start_hour",
 };
 
-const Domain_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Domain_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
-const Domain_VpcOptionsFields: FieldMap = {
-  availabilityZones: "availability_zones",
+const Domain_VpcoptionsFields: FieldMap = {
   securityGroupIds: "security_group_ids",
   subnetIds: "subnet_ids",
-  vpcId: "vpc_id",
 };
 
 export interface DomainConfig {
-  accessPolicies?: string | Computed<string>;
-  advancedOptions?: Record<string, string> | Computed<Record<string, string>>;
-  domainName: string | Computed<string>;
+  /** The access_policies field specifies the IAM policy document in JSON format that controls access to the Amazon Elasticsearch domain, defining which principals can perform allowed actions on the domain. (AI-inferred) */
+  accessPolicies?: unknown | Computed<unknown>;
+  /** Sets domain-specific advanced Elasticsearch parameters, such as whether explicit index names are allowed in REST requests. (AI-inferred) */
+  advancedOptions?: unknown | Computed<unknown>;
+  /** Configures fine-grained access control for the Elasticsearch domain, including enabling the feature, setting up the internal user database, defining master user credentials, and optionally configuring SAML authentication. (AI-inferred) */
+  advancedSecurityOptions?: Domain_AdvancedSecurityOptions | Computed<Domain_AdvancedSecurityOptions>;
+  /** Configures Amazon Cognito authentication for Kibana on the Elasticsearch domain, including the enabled flag, Cognito user pool ID, identity pool ID, and the IAM role ARN that grants access. (AI-inferred) */
+  cognitoOptions?: Domain_CognitoOptions | Computed<Domain_CognitoOptions>;
+  /** Configures the domain endpoint for the Amazon Elasticsearch Service domain, including enforcing HTTPS, specifying the TLS security policy, and optionally enabling a custom endpoint with its certificate ARN. (AI-inferred) */
+  domainEndpointOptions?: Domain_DomainEndpointOptions | Computed<Domain_DomainEndpointOptions>;
+  /** The name of the Elasticsearch domain, which must be unique within the AWS account and region and is used as the domain identifier in the endpoint URL. (AI-inferred) */
+  domainName?: string | Computed<string>;
+  /** Configures the Amazon EBS volumes attached to the data nodes of the Elasticsearch domain, including whether EBS is enabled, volume type, size, and IOPS. (AI-inferred) */
+  ebsoptions?: Domain_Ebsoptions | Computed<Domain_Ebsoptions>;
+  /** Defines the Elasticsearch cluster configuration, including instance type, instance count, dedicated master nodes, zone awareness, and warm storage settings. (AI-inferred) */
+  elasticsearchClusterConfig?: Domain_ElasticsearchClusterConfig | Computed<Domain_ElasticsearchClusterConfig>;
+  /** Specifies the Elasticsearch version to run on the domain (e.g., '7.10' or '6.8'), which determines available features and engine behavior. (AI-inferred) */
   elasticsearchVersion?: string | Computed<string>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  advancedSecurityOptions?: Domain_AdvancedSecurityOptions[] | Computed<Domain_AdvancedSecurityOptions[]>;
-  autoTuneOptions?: Domain_AutoTuneOptions[] | Computed<Domain_AutoTuneOptions[]>;
-  clusterConfig?: Domain_ClusterConfig[] | Computed<Domain_ClusterConfig[]>;
-  cognitoOptions?: Domain_CognitoOptions[] | Computed<Domain_CognitoOptions[]>;
-  domainEndpointOptions?: Domain_DomainEndpointOptions[] | Computed<Domain_DomainEndpointOptions[]>;
-  ebsOptions?: Domain_EbsOptions[] | Computed<Domain_EbsOptions[]>;
-  encryptAtRest?: Domain_EncryptAtRest[] | Computed<Domain_EncryptAtRest[]>;
-  logPublishingOptions?: Domain_LogPublishingOptions[] | Computed<Domain_LogPublishingOptions[]>;
-  nodeToNodeEncryption?: Domain_ClusterConfig_ColdStorageOptions[] | Computed<Domain_ClusterConfig_ColdStorageOptions[]>;
-  snapshotOptions?: Domain_SnapshotOptions[] | Computed<Domain_SnapshotOptions[]>;
-  timeouts?: Domain_Timeouts | Computed<Domain_Timeouts>;
-  vpcOptions?: Domain_VpcOptions[] | Computed<Domain_VpcOptions[]>;
+  /** encryption_at_rest_options is a nested block that configures encryption at rest for the Elasticsearch domain, letting you enable or disable encryption and specify the AWS KMS key ID used to encrypt the domain's data. (AI-inferred) */
+  encryptionAtRestOptions?: Domain_EncryptionAtRestOptions | Computed<Domain_EncryptionAtRestOptions>;
+  /** Defines the log publishing options for the Elasticsearch domain, mapping log types (such as SEARCH_SLOW_LOGS, INDEX_SLOW_LOGS, and AUDIT_LOGS) to CloudWatch Logs destinations with an enabled flag. (AI-inferred) */
+  logPublishingOptions?: unknown | Computed<unknown>;
+  /** Configures node-to-node encryption for the Amazon Elasticsearch domain, where the nested 'enabled' attribute determines whether encryption between nodes is turned on. (AI-inferred) */
+  nodeToNodeEncryptionOptions?: Domain_ElasticsearchClusterConfig_ColdStorageOptions | Computed<Domain_ElasticsearchClusterConfig_ColdStorageOptions>;
+  /** Configures the automated snapshot settings for the Elasticsearch domain, specifically the hour of the day when daily automated snapshots are taken. (AI-inferred) */
+  snapshotOptions?: Domain_SnapshotOptions | Computed<Domain_SnapshotOptions>;
+  /** Defines a list of key-value pairs to tag the Amazon Elasticsearch Service domain, used for metadata, cost tracking, and access control. (AI-inferred) */
+  tags?: Domain_Tags[] | Computed<Domain_Tags[]>;
+  /** Specifies the VPC configuration for the Elasticsearch domain, including the subnets and security groups that place the domain endpoints inside a VPC. (AI-inferred) */
+  vpcoptions?: Domain_Vpcoptions | Computed<Domain_Vpcoptions>;
 }
 
 export interface DomainAttrs {
-  accessPolicies: string;
-  advancedOptions: Record<string, string>;
+  /** The access_policies field specifies the IAM policy document in JSON format that controls access to the Amazon Elasticsearch domain, defining which principals can perform allowed actions on the domain. (AI-inferred) */
+  accessPolicies: unknown;
+  /** Sets domain-specific advanced Elasticsearch parameters, such as whether explicit index names are allowed in REST requests. (AI-inferred) */
+  advancedOptions: unknown;
+  /** Configures fine-grained access control for the Elasticsearch domain, including enabling the feature, setting up the internal user database, defining master user credentials, and optionally configuring SAML authentication. (AI-inferred) */
+  advancedSecurityOptions: Domain_AdvancedSecurityOptions;
+  /** The Amazon Resource Name (ARN) that uniquely identifies the Elasticsearch domain. (AI-inferred) */
   arn: string;
-  domainId: string;
+  /** Configures Amazon Cognito authentication for Kibana on the Elasticsearch domain, including the enabled flag, Cognito user pool ID, identity pool ID, and the IAM role ARN that grants access. (AI-inferred) */
+  cognitoOptions: Domain_CognitoOptions;
+  /** The Amazon Resource Name (ARN) that uniquely identifies the Elasticsearch domain. (AI-inferred) */
+  domainArn: string;
+  /** The fully qualified domain endpoint (e.g., https://search-<domain-name>-<unique-id>.<region>.es.amazonaws.com) automatically assigned to the Elasticsearch domain after creation. (AI-inferred) */
+  domainEndpoint: string;
+  /** Configures the domain endpoint for the Amazon Elasticsearch Service domain, including enforcing HTTPS, specifying the TLS security policy, and optionally enabling a custom endpoint with its certificate ARN. (AI-inferred) */
+  domainEndpointOptions: Domain_DomainEndpointOptions;
+  /** The name of the Elasticsearch domain, which must be unique within the AWS account and region and is used as the domain identifier in the endpoint URL. (AI-inferred) */
   domainName: string;
+  /** Configures the Amazon EBS volumes attached to the data nodes of the Elasticsearch domain, including whether EBS is enabled, volume type, size, and IOPS. (AI-inferred) */
+  ebsoptions: Domain_Ebsoptions;
+  /** Defines the Elasticsearch cluster configuration, including instance type, instance count, dedicated master nodes, zone awareness, and warm storage settings. (AI-inferred) */
+  elasticsearchClusterConfig: Domain_ElasticsearchClusterConfig;
+  /** Specifies the Elasticsearch version to run on the domain (e.g., '7.10' or '6.8'), which determines available features and engine behavior. (AI-inferred) */
   elasticsearchVersion: string;
-  endpoint: string;
+  /** encryption_at_rest_options is a nested block that configures encryption at rest for the Elasticsearch domain, letting you enable or disable encryption and specify the AWS KMS key ID used to encrypt the domain's data. (AI-inferred) */
+  encryptionAtRestOptions: Domain_EncryptionAtRestOptions;
+  /** The unique identifier of the Elasticsearch domain, which is its domain name. (AI-inferred) */
   id: string;
-  kibanaEndpoint: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  advancedSecurityOptions: Domain_AdvancedSecurityOptions[];
-  autoTuneOptions: Domain_AutoTuneOptions[];
-  clusterConfig: Domain_ClusterConfig[];
-  cognitoOptions: Domain_CognitoOptions[];
-  domainEndpointOptions: Domain_DomainEndpointOptions[];
-  ebsOptions: Domain_EbsOptions[];
-  encryptAtRest: Domain_EncryptAtRest[];
-  logPublishingOptions: Domain_LogPublishingOptions[];
-  nodeToNodeEncryption: Domain_ClusterConfig_ColdStorageOptions[];
-  snapshotOptions: Domain_SnapshotOptions[];
-  timeouts: Domain_Timeouts;
-  vpcOptions: Domain_VpcOptions[];
+  /** Defines the log publishing options for the Elasticsearch domain, mapping log types (such as SEARCH_SLOW_LOGS, INDEX_SLOW_LOGS, and AUDIT_LOGS) to CloudWatch Logs destinations with an enabled flag. (AI-inferred) */
+  logPublishingOptions: unknown;
+  /** Configures node-to-node encryption for the Amazon Elasticsearch domain, where the nested 'enabled' attribute determines whether encryption between nodes is turned on. (AI-inferred) */
+  nodeToNodeEncryptionOptions: Domain_ElasticsearchClusterConfig_ColdStorageOptions;
+  /** Configures the automated snapshot settings for the Elasticsearch domain, specifically the hour of the day when daily automated snapshots are taken. (AI-inferred) */
+  snapshotOptions: Domain_SnapshotOptions;
+  /** Defines a list of key-value pairs to tag the Amazon Elasticsearch Service domain, used for metadata, cost tracking, and access control. (AI-inferred) */
+  tags: Domain_Tags[];
+  /** Specifies the VPC configuration for the Elasticsearch domain, including the subnets and security groups that place the domain endpoints inside a VPC. (AI-inferred) */
+  vpcoptions: Domain_Vpcoptions;
 }
 
 export const Domain: ResourceBinding<DomainConfig, DomainAttrs> = {
@@ -280,71 +283,58 @@ export const Domain: ResourceBinding<DomainConfig, DomainAttrs> = {
   fields: {
     accessPolicies: "access_policies",
     advancedOptions: "advanced_options",
-    domainName: "domain_name",
-    elasticsearchVersion: "elasticsearch_version",
-    id: "id",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
     advancedSecurityOptions: {
       wireName: "advanced_security_options",
-      kind: "list",
+      kind: "object",
       fields: Domain_AdvancedSecurityOptionsFields,
-    },
-    autoTuneOptions: {
-      wireName: "auto_tune_options",
-      kind: "list",
-      fields: Domain_AutoTuneOptionsFields,
-    },
-    clusterConfig: {
-      wireName: "cluster_config",
-      kind: "list",
-      fields: Domain_ClusterConfigFields,
     },
     cognitoOptions: {
       wireName: "cognito_options",
-      kind: "list",
+      kind: "object",
       fields: Domain_CognitoOptionsFields,
     },
     domainEndpointOptions: {
       wireName: "domain_endpoint_options",
-      kind: "list",
+      kind: "object",
       fields: Domain_DomainEndpointOptionsFields,
     },
-    ebsOptions: {
-      wireName: "ebs_options",
-      kind: "list",
-      fields: Domain_EbsOptionsFields,
+    domainName: "domain_name",
+    ebsoptions: {
+      wireName: "ebsoptions",
+      kind: "object",
+      fields: Domain_EbsoptionsFields,
     },
-    encryptAtRest: {
-      wireName: "encrypt_at_rest",
-      kind: "list",
-      fields: Domain_EncryptAtRestFields,
+    elasticsearchClusterConfig: {
+      wireName: "elasticsearch_cluster_config",
+      kind: "object",
+      fields: Domain_ElasticsearchClusterConfigFields,
     },
-    logPublishingOptions: {
-      wireName: "log_publishing_options",
-      kind: "set",
-      fields: Domain_LogPublishingOptionsFields,
+    elasticsearchVersion: "elasticsearch_version",
+    encryptionAtRestOptions: {
+      wireName: "encryption_at_rest_options",
+      kind: "object",
+      fields: Domain_EncryptionAtRestOptionsFields,
     },
-    nodeToNodeEncryption: {
-      wireName: "node_to_node_encryption",
-      kind: "list",
-      fields: Domain_ClusterConfig_ColdStorageOptionsFields,
+    logPublishingOptions: "log_publishing_options",
+    nodeToNodeEncryptionOptions: {
+      wireName: "node_to_node_encryption_options",
+      kind: "object",
+      fields: Domain_ElasticsearchClusterConfig_ColdStorageOptionsFields,
     },
     snapshotOptions: {
       wireName: "snapshot_options",
-      kind: "list",
+      kind: "object",
       fields: Domain_SnapshotOptionsFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Domain_TimeoutsFields,
-    },
-    vpcOptions: {
-      wireName: "vpc_options",
+    tags: {
+      wireName: "tags",
       kind: "list",
-      fields: Domain_VpcOptionsFields,
+      fields: Domain_TagsFields,
+    },
+    vpcoptions: {
+      wireName: "vpcoptions",
+      kind: "object",
+      fields: Domain_VpcoptionsFields,
     },
   },
 };

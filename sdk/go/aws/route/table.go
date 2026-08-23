@@ -3,81 +3,41 @@ package route
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Table_Route struct {
-	CarrierGatewayId any
-	CidrBlock any
-	CoreNetworkArn any
-	DestinationPrefixListId any
-	EgressOnlyGatewayId any
-	GatewayId any
-	Ipv6CidrBlock any
-	LocalGatewayId any
-	NatGatewayId any
-	NetworkInterfaceId any
-	OdbNetworkArn any
-	TransitGatewayId any
-	VpcEndpointId any
-	VpcPeeringConnectionId any
+type Table_Tags struct {
+	Key any
+	// The value of a user-defined tag key associated with the route table, used to organize and identify the route table within AWS. (AI-inferred)
+	Value any
 }
 
-type Table_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
-
-var Table_RouteFields = ubx.FieldMap{
-		"CarrierGatewayId": ubx.FieldSpec{WireName: "carrier_gateway_id"},
-		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
-		"CoreNetworkArn": ubx.FieldSpec{WireName: "core_network_arn"},
-		"DestinationPrefixListId": ubx.FieldSpec{WireName: "destination_prefix_list_id"},
-		"EgressOnlyGatewayId": ubx.FieldSpec{WireName: "egress_only_gateway_id"},
-		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
-		"Ipv6CidrBlock": ubx.FieldSpec{WireName: "ipv6_cidr_block"},
-		"LocalGatewayId": ubx.FieldSpec{WireName: "local_gateway_id"},
-		"NatGatewayId": ubx.FieldSpec{WireName: "nat_gateway_id"},
-		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
-		"OdbNetworkArn": ubx.FieldSpec{WireName: "odb_network_arn"},
-		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
-		"VpcEndpointId": ubx.FieldSpec{WireName: "vpc_endpoint_id"},
-		"VpcPeeringConnectionId": ubx.FieldSpec{WireName: "vpc_peering_connection_id"},
-	}
-
-var Table_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Table_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type TableConfig struct {
-	Id any
-	PropagatingVgws any
-	Region any
-	Route any
+	// Any tags assigned to the route table.
 	Tags any
-	TagsAll any
+	// The ID of the VPC.
 	VpcId any
-	Timeouts any
+}
+
+type TableAttrs struct {
+	// The unique identifier of the route table, assigned by AWS (e.g., rtb-xxxxxxxx). (AI-inferred)
+	RouteTableId any
+	// Any tags assigned to the route table.
+	Tags any
+	// The ID of the VPC.
+	VpcId any
 }
 
 var Table = ubx.ResourceBinding{
 	WireType: "aws_route_table",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"PropagatingVgws": ubx.FieldSpec{WireName: "propagating_vgws"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Route": ubx.FieldSpec{
-			WireName: "route",
-			Kind: "set",
-			Fields: Table_RouteFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Table_TagsFields,
 		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Table_TimeoutsFields,
-		},
 	},
 }

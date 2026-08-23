@@ -8,23 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InstanceProfileConfig:
-    id: Any = None
-    name: Any = None
-    name_prefix: Any = None
+    # The name of the instance profile to create. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+    instance_profile_name: Any = None
+    # The path to the instance profile. For more information about paths, see [IAM Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html) in the *IAM User Guide*. This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (``\u0021``) through the DEL character (``\u007F``), including most punctuation characters, digits, and upper and lowercased letters.
     path: Any = None
-    role: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # The name of the role to associate with the instance profile. Only one role can be assigned to an EC2 instance at a time, and all applications on the instance share the same role and permissions.
+    roles: Any = None
+
+@dataclasses.dataclass
+class InstanceProfileAttrs:
+    # The ARN of the IAM instance profile, which uniquely identifies the profile across AWS and is used when attaching the profile to an EC2 instance or referencing it in IAM policies. (AI-inferred)
+    arn: Any = None
+    # The name of the instance profile to create. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+    instance_profile_name: Any = None
+    # The path to the instance profile. For more information about paths, see [IAM Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html) in the *IAM User Guide*. This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (``\u0021``) through the DEL character (``\u007F``), including most punctuation characters, digits, and upper and lowercased letters.
+    path: Any = None
+    # The name of the role to associate with the instance profile. Only one role can be assigned to an EC2 instance at a time, and all applications on the instance share the same role and permissions.
+    roles: Any = None
 
 InstanceProfile = ubx.ResourceBinding(
     wire_type="aws_iam_instance_profile",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
+        "instance_profile_name": ubx.FieldSpec(wire_name="instance_profile_name"),
         "path": ubx.FieldSpec(wire_name="path"),
-        "role": ubx.FieldSpec(wire_name="role"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "roles": ubx.FieldSpec(wire_name="roles"),
     },
 )

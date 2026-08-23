@@ -2,12 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagedNotificationAccountContactAssociationConfig {
+  /** This unique identifier for Contact */
   contactIdentifier: string | Computed<string>;
+  /** The managed notification configuration ARN, against which the account contact association will be created */
   managedNotificationConfigurationArn: string | Computed<string>;
 }
 
 export interface ManagedNotificationAccountContactAssociationAttrs {
+  /** This unique identifier for Contact */
   contactIdentifier: string;
+  /** The managed notification configuration ARN, against which the account contact association will be created */
   managedNotificationConfigurationArn: string;
 }
 

@@ -3,21 +3,45 @@ package ram
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Permission_Timeouts struct {
-	Delete any
+type Permission_Tags struct {
+	// The key of a tag to attach to the AWS Resource Access Manager (RAM) permission, used for organizing and filtering the permission in AWS. (AI-inferred)
+	Key any
+	Value any
 }
 
-var Permission_TimeoutsFields = ubx.FieldMap{
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var Permission_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type PermissionConfig struct {
+	// The name of the permission.
 	Name any
+	// Policy template for the permission.
 	PolicyTemplate any
-	Region any
+	// The resource type this permission can be used with.
 	ResourceType any
+	// A list of key-value pairs to associate with the custom RAM permission, used for tagging and categorizing the permission in AWS Resource Access Manager. (AI-inferred)
 	Tags any
-	Timeouts any
+}
+
+type PermissionAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies this AWS Resource Access Manager permission, including the AWS account, region, permission name, and version (e.g., arn:aws:ram:us-east-1:123456789012:permission/MyPermission/1). (AI-inferred)
+	Arn any
+	// Set to true to use this as the default permission.
+	IsResourceTypeDefault any
+	// The name of the permission.
+	Name any
+	// Indicates whether the RAM permission is AWS-managed or customer-managed. (AI-inferred)
+	PermissionType any
+	// Policy template for the permission.
+	PolicyTemplate any
+	// The resource type this permission can be used with.
+	ResourceType any
+	// A list of key-value pairs to associate with the custom RAM permission, used for tagging and categorizing the permission in AWS Resource Access Manager. (AI-inferred)
+	Tags any
+	// Version of the permission.
+	Version any
 }
 
 var Permission = ubx.ResourceBinding{
@@ -25,13 +49,11 @@ var Permission = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PolicyTemplate": ubx.FieldSpec{WireName: "policy_template"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Permission_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Permission_TagsFields,
 		},
 	},
 }

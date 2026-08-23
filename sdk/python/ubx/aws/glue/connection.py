@@ -7,156 +7,215 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Connection_AuthenticationConfiguration_BasicAuthenticationCredentials:
+class Connection_ConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentials:
+    # The password component of the basic authentication credentials used to authenticate to the data source for this AWS Glue connection. (AI-inferred)
     password: Any = None
+    # Specifies the username for basic authentication when connecting to the data source using this AWS Glue connection. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
-class Connection_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodeProperties:
+class Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodeProperties:
+    # In an AWS Glue connection's OAuth2 authentication configuration for the authorization code grant flow, this field supplies the authorization code returned by the identity provider, which Glue exchanges for access and refresh tokens. (AI-inferred)
     authorization_code: Any = None
+    # The redirect URI to which the OAuth2 authorization server sends the user after authorization, used in the authorization code flow for the Glue connection's authentication configuration. (AI-inferred)
     redirect_uri: Any = None
 
 @dataclasses.dataclass
-class Connection_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplication:
-    aws_managed_client_application_reference: Any = None
+class Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplication:
+    # Specifies the reference to an AWS managed OAuth2 client application (e.g., an AWS-supported SaaS application) used for OAuth2 authentication in the Glue connection. (AI-inferred)
+    awsmanaged_client_application_reference: Any = None
+    # The client ID of the user-managed OAuth2 client application used in the OAuth2 authentication configuration for the Glue connection. (AI-inferred)
     user_managed_client_application_client_id: Any = None
 
 @dataclasses.dataclass
-class Connection_AuthenticationConfiguration_Oauth2Properties_Oauth2Credentials:
+class Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2Credentials:
+    # The OAuth2 access token used by the Glue connection to authenticate with the external data source as part of its OAuth2 authentication flow. (AI-inferred)
     access_token: Any = None
+    # The JSON Web Token (JWT) used as the OAuth2 credential for authenticating to the data source in this AWS Glue connection. (AI-inferred)
     jwt_token: Any = None
+    # The refresh token that is used to obtain a new OAuth2 access token when the current access token expires. (AI-inferred)
     refresh_token: Any = None
+    # The OAuth2 client secret associated with the user-managed client application used for authentication in this AWS Glue connection. (AI-inferred)
     user_managed_client_application_client_secret: Any = None
 
 @dataclasses.dataclass
-class Connection_AuthenticationConfiguration_Oauth2Properties:
-    oauth2_grant_type: Any = None
-    token_url: Any = None
-    token_url_parameters_map: Any = None
+class Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties:
+    # Defines the OAuth2 authorization code grant parameters (such as authorization code and redirect URI) used in the authentication configuration of an AWS Glue connection. (AI-inferred)
     authorization_code_properties: Any = None
+    # Specifies the OAuth2 client application for the Glue connection's authentication configuration, either referencing an AWS-managed client application or supplying the client ID for a user-managed application. (AI-inferred)
     oauth2_client_application: Any = None
+    # Configures the OAuth2 client credentials (such as authorization code and refresh token) required to authenticate the Glue connection to the data source via OAuth2. (AI-inferred)
     oauth2_credentials: Any = None
+    # Specifies the OAuth 2.0 grant type (e.g., AUTHORIZATION_CODE, CLIENT_CREDENTIALS) that determines the authorization flow Glue uses to obtain access tokens for this connection. (AI-inferred)
+    oauth2_grant_type: Any = None
+    # The OAuth2 token endpoint URL where the connection requests access tokens for authentication. (AI-inferred)
+    token_url: Any = None
+    # Defines a map of additional query parameters (key-value pairs) to be appended to the OAuth2 token endpoint URL when retrieving an access token for the Glue connection. (AI-inferred)
+    token_url_parameters_map: Any = None
 
 @dataclasses.dataclass
-class Connection_AuthenticationConfiguration:
+class Connection_ConnectionInput_AuthenticationConfiguration:
+    # Specifies whether the connection authenticates using basic inline credentials (username and password) or by referencing a secret in AWS Secrets Manager. (AI-inferred)
     authentication_type: Any = None
-    custom_authentication_credentials: Any = None
-    kms_key_arn: Any = None
-    secret_arn: Any = None
+    # Specifies the username and password used for basic authentication when connecting to the data source for this AWS Glue connection. (AI-inferred)
     basic_authentication_credentials: Any = None
+    # Specifies a JSON object of custom authentication key-value pairs for the Glue connection, used when the authentication type is CUSTOM to pass connector-specific credential parameters. (AI-inferred)
+    custom_authentication_credentials: Any = None
+    # The ARN of the AWS KMS key used to encrypt the credentials or secret associated with this Glue connection's authentication configuration. (AI-inferred)
+    kms_key_arn: Any = None
+    # Specifies the OAuth2 authentication parameters (such as client ID, client secret, token URL, and grant type) for the Glue connection. (AI-inferred)
     oauth2_properties: Any = None
+    # The ARN of the AWS Secrets Manager secret that stores the credentials for the Glue connection's authentication configuration. (AI-inferred)
+    secret_arn: Any = None
 
 @dataclasses.dataclass
-class Connection_PhysicalConnectionRequirements:
+class Connection_ConnectionInput_PhysicalConnectionRequirements:
+    # The Availability Zone (AZ) of the subnet to use when the Glue connection is attached to a VPC, typically required for JDBC and other physical connections. (AI-inferred)
     availability_zone: Any = None
+    # The list of VPC security group IDs that AWS Glue uses when establishing a connection to resources in a private network, controlling inbound and outbound traffic for the connection. (AI-inferred)
     security_group_id_list: Any = None
+    # The ID of the subnet within the VPC where the Glue connection's network interface will be placed. (AI-inferred)
     subnet_id: Any = None
 
-_Connection_AuthenticationConfiguration_BasicAuthenticationCredentialsFields = {
+@dataclasses.dataclass
+class Connection_ConnectionInput:
+    # A map of key-value pairs that define the Athena connection properties (e.g., workgroup and catalog) used when the connection type is ATHENA. (AI-inferred)
+    athena_properties: Any = None
+    # Configures OAuth-based authentication details (such as client credentials and token endpoint) for Glue connection types that require OAuth, like Salesforce or ServiceNow. (AI-inferred)
+    authentication_configuration: Any = None
+    # A dynamic map of connection type-specific key-value pairs, such as JDBC_CONNECTION_URL, USERNAME, and PASSWORD for JDBC connections, or KAFKA_BOOTSTRAP_SERVERS and security settings for Kafka connections. (AI-inferred)
+    connection_properties: Any = None
+    # The type of the connection, such as JDBC, SFTP, MONGODB, KAFKA, or NETWORK, which determines the connector and connection parameters used by AWS Glue. (AI-inferred)
+    connection_type: Any = None
+    # Specifies the user-defined description for the Glue connection, providing additional context about the connection's purpose or configuration. (AI-inferred)
+    description: Any = None
+    # Specifies a list of match criteria that AWS Glue uses to decide whether this connection should be selected for a given resource, often matching network identifiers such as subnet IDs or security group names. (AI-inferred)
+    match_criteria: Any = None
+    # Specifies the name of the Glue connection, which must be unique in the AWS account and Region and is used to identify the connection when referencing it in Glue jobs. (AI-inferred)
+    name: Any = None
+    # Specifies the VPC network configuration (subnet ID, security group IDs, and availability zone) needed to establish a physical connection to a data source such as a JDBC database. (AI-inferred)
+    physical_connection_requirements: Any = None
+    python_properties: Any = None
+    # Specifies a map of key-value pairs for Spark-specific connection properties, such as Spark options like 'spark.sql.autoBroadcastJoinThreshold', used when the Glue connection is consumed by an Apache Spark job. (AI-inferred)
+    spark_properties: Any = None
+    # Indicates whether AWS Glue should validate the connection's credentials by attempting to connect to the data store during creation, defaulting to false. (AI-inferred)
+    validate_credentials: Any = None
+    # Specifies the list of compute environments (for example, SPARK or ATHENA) against which the connection is validated when the connection is created or updated. (AI-inferred)
+    validate_for_compute_environments: Any = None
+
+_Connection_ConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentialsFields = {
     "password": ubx.FieldSpec(wire_name="password"),
     "username": ubx.FieldSpec(wire_name="username"),
 }
 
-_Connection_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodePropertiesFields = {
+_Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodePropertiesFields = {
     "authorization_code": ubx.FieldSpec(wire_name="authorization_code"),
     "redirect_uri": ubx.FieldSpec(wire_name="redirect_uri"),
 }
 
-_Connection_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplicationFields = {
-    "aws_managed_client_application_reference": ubx.FieldSpec(wire_name="aws_managed_client_application_reference"),
+_Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplicationFields = {
+    "awsmanaged_client_application_reference": ubx.FieldSpec(wire_name="awsmanaged_client_application_reference"),
     "user_managed_client_application_client_id": ubx.FieldSpec(wire_name="user_managed_client_application_client_id"),
 }
 
-_Connection_AuthenticationConfiguration_Oauth2Properties_Oauth2CredentialsFields = {
+_Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2CredentialsFields = {
     "access_token": ubx.FieldSpec(wire_name="access_token"),
     "jwt_token": ubx.FieldSpec(wire_name="jwt_token"),
     "refresh_token": ubx.FieldSpec(wire_name="refresh_token"),
     "user_managed_client_application_client_secret": ubx.FieldSpec(wire_name="user_managed_client_application_client_secret"),
 }
 
-_Connection_AuthenticationConfiguration_Oauth2PropertiesFields = {
-    "oauth2_grant_type": ubx.FieldSpec(wire_name="oauth2_grant_type"),
-    "token_url": ubx.FieldSpec(wire_name="token_url"),
-    "token_url_parameters_map": ubx.FieldSpec(wire_name="token_url_parameters_map"),
+_Connection_ConnectionInput_AuthenticationConfiguration_Oauth2PropertiesFields = {
     "authorization_code_properties": ubx.FieldSpec(
         wire_name="authorization_code_properties",
-        kind="list",
-        fields=_Connection_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodePropertiesFields,
+        kind="object",
+        fields=_Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodePropertiesFields,
     ),
     "oauth2_client_application": ubx.FieldSpec(
         wire_name="oauth2_client_application",
-        kind="list",
-        fields=_Connection_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplicationFields,
+        kind="object",
+        fields=_Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplicationFields,
     ),
     "oauth2_credentials": ubx.FieldSpec(
         wire_name="oauth2_credentials",
-        kind="list",
-        fields=_Connection_AuthenticationConfiguration_Oauth2Properties_Oauth2CredentialsFields,
+        kind="object",
+        fields=_Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2CredentialsFields,
     ),
+    "oauth2_grant_type": ubx.FieldSpec(wire_name="oauth2_grant_type"),
+    "token_url": ubx.FieldSpec(wire_name="token_url"),
+    "token_url_parameters_map": ubx.FieldSpec(wire_name="token_url_parameters_map"),
 }
 
-_Connection_AuthenticationConfigurationFields = {
+_Connection_ConnectionInput_AuthenticationConfigurationFields = {
     "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
-    "custom_authentication_credentials": ubx.FieldSpec(wire_name="custom_authentication_credentials"),
-    "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
-    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
     "basic_authentication_credentials": ubx.FieldSpec(
         wire_name="basic_authentication_credentials",
-        kind="list",
-        fields=_Connection_AuthenticationConfiguration_BasicAuthenticationCredentialsFields,
+        kind="object",
+        fields=_Connection_ConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentialsFields,
     ),
+    "custom_authentication_credentials": ubx.FieldSpec(wire_name="custom_authentication_credentials"),
+    "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
     "oauth2_properties": ubx.FieldSpec(
         wire_name="oauth2_properties",
-        kind="list",
-        fields=_Connection_AuthenticationConfiguration_Oauth2PropertiesFields,
+        kind="object",
+        fields=_Connection_ConnectionInput_AuthenticationConfiguration_Oauth2PropertiesFields,
     ),
+    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
 }
 
-_Connection_PhysicalConnectionRequirementsFields = {
+_Connection_ConnectionInput_PhysicalConnectionRequirementsFields = {
     "availability_zone": ubx.FieldSpec(wire_name="availability_zone"),
     "security_group_id_list": ubx.FieldSpec(wire_name="security_group_id_list"),
     "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
+_Connection_ConnectionInputFields = {
+    "athena_properties": ubx.FieldSpec(wire_name="athena_properties"),
+    "authentication_configuration": ubx.FieldSpec(
+        wire_name="authentication_configuration",
+        kind="object",
+        fields=_Connection_ConnectionInput_AuthenticationConfigurationFields,
+    ),
+    "connection_properties": ubx.FieldSpec(wire_name="connection_properties"),
+    "connection_type": ubx.FieldSpec(wire_name="connection_type"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "match_criteria": ubx.FieldSpec(wire_name="match_criteria"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "physical_connection_requirements": ubx.FieldSpec(
+        wire_name="physical_connection_requirements",
+        kind="object",
+        fields=_Connection_ConnectionInput_PhysicalConnectionRequirementsFields,
+    ),
+    "python_properties": ubx.FieldSpec(wire_name="python_properties"),
+    "spark_properties": ubx.FieldSpec(wire_name="spark_properties"),
+    "validate_credentials": ubx.FieldSpec(wire_name="validate_credentials"),
+    "validate_for_compute_environments": ubx.FieldSpec(wire_name="validate_for_compute_environments"),
+}
+
 @dataclasses.dataclass
 class ConnectionConfig:
-    athena_properties: Any = None
+    # The identifier of the AWS Data Catalog (typically the AWS account ID) in which the Glue connection is stored or referenced. (AI-inferred)
     catalog_id: Any = None
-    connection_properties: Any = None
-    connection_type: Any = None
-    description: Any = None
+    # Configuration object that defines the properties of an AWS Glue connection, including connection type, connection properties, and physical connection requirements for the target data store. (AI-inferred)
+    connection_input: Any = None
+
+@dataclasses.dataclass
+class ConnectionAttrs:
+    # The identifier of the AWS Data Catalog (typically the AWS account ID) in which the Glue connection is stored or referenced. (AI-inferred)
+    catalog_id: Any = None
+    # Configuration object that defines the properties of an AWS Glue connection, including connection type, connection properties, and physical connection requirements for the target data store. (AI-inferred)
+    connection_input: Any = None
+    # The name of the Glue connection, serving as its unique resource identifier. (AI-inferred)
     id: Any = None
-    match_criteria: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    authentication_configuration: Any = None
-    physical_connection_requirements: Any = None
 
 Connection = ubx.ResourceBinding(
     wire_type="aws_glue_connection",
     fields={
-        "athena_properties": ubx.FieldSpec(wire_name="athena_properties"),
         "catalog_id": ubx.FieldSpec(wire_name="catalog_id"),
-        "connection_properties": ubx.FieldSpec(wire_name="connection_properties"),
-        "connection_type": ubx.FieldSpec(wire_name="connection_type"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "match_criteria": ubx.FieldSpec(wire_name="match_criteria"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "authentication_configuration": ubx.FieldSpec(
-            wire_name="authentication_configuration",
-            kind="list",
-            fields=_Connection_AuthenticationConfigurationFields,
-        ),
-        "physical_connection_requirements": ubx.FieldSpec(
-            wire_name="physical_connection_requirements",
-            kind="list",
-            fields=_Connection_PhysicalConnectionRequirementsFields,
+        "connection_input": ubx.FieldSpec(
+            wire_name="connection_input",
+            kind="object",
+            fields=_Connection_ConnectionInputFields,
         ),
     },
 )

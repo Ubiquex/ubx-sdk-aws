@@ -7,50 +7,202 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Instance_AddOn:
-    snapshot_time: Any = None
-    status: Any = None
-    type: Any = None
+class Instance_AddOns_AutoSnapshotAddOnRequest:
+    # Specifies the time of day (in 24-hour HH:00 format) at which the automatic snapshot is taken for the Lightsail instance when the Auto Snapshot add-on is enabled. (AI-inferred)
+    snapshot_time_of_day: Any = None
 
-_Instance_AddOnFields = {
-    "snapshot_time": ubx.FieldSpec(wire_name="snapshot_time"),
+@dataclasses.dataclass
+class Instance_AddOns:
+    # Specifies the type of add-on to attach to the Lightsail instance, with the only supported value being `AutoSnapshot` to enable automatic daily snapshots of the instance. (AI-inferred)
+    add_on_type: Any = None
+    # Configures the automatic snapshot add-on for the Lightsail instance, specifying the daily time of day for the snapshot to be created. (AI-inferred)
+    auto_snapshot_add_on_request: Any = None
+    # Indicates whether the add-on is enabled or disabled, with values such as 'Enabled' or 'Disabled' for a Lightsail instance add-on. (AI-inferred)
+    status: Any = None
+
+@dataclasses.dataclass
+class Instance_Hardware_Disks:
+    # The name of the Lightsail instance to which the disk is attached, which for a disk in an instance's hardware list is typically the instance itself. (AI-inferred)
+    attached_to: Any = None
+    # Indicates whether the disk is currently attached to the instance, typically with values such as 'attached' or 'detached'. (AI-inferred)
+    attachment_state: Any = None
+    # The unique name of the disk attached to the Lightsail instance, used to identify the disk within the instance's hardware configuration. (AI-inferred)
+    disk_name: Any = None
+    # The provisioned input/output operations per second (IOPS) for the block storage disk attached to the Lightsail instance, defining its performance level. (AI-inferred)
+    iops: Any = None
+    # Indicates whether this disk is the system (boot) disk for the AWS Lightsail instance. (AI-inferred)
+    is_system_disk: Any = None
+    # The device path (e.g., /dev/sda1) for the attached block storage disk on the Lightsail instance, used to identify the disk within the operating system. (AI-inferred)
+    path: Any = None
+    # The size of the disk in gigabytes for a block storage disk attached to the Lightsail instance, as specified in the hardware.disks list. (AI-inferred)
+    size_in_gb: Any = None
+
+@dataclasses.dataclass
+class Instance_Hardware:
+    # CPU count of the Instance.
+    cpu_count: Any = None
+    # Disks attached to the Instance.
+    disks: Any = None
+    # RAM Size of the Instance.
+    ram_size_in_gb: Any = None
+
+@dataclasses.dataclass
+class Instance_Location:
+    # The Availability Zone in which to create your instance. Use the following format: us-east-2a (case sensitive). Be sure to add the include Availability Zones parameter to your request.
+    availability_zone: Any = None
+    # The Region Name in which to create your instance.
+    region_name: Any = None
+
+@dataclasses.dataclass
+class Instance_Networking_MonthlyTransfer:
+    # GbPerMonthAllocated of the Instance.
+    gb_per_month_allocated: Any = None
+
+@dataclasses.dataclass
+class Instance_Networking_Ports:
+    # Specifies whether the port rule applies to inbound or outbound traffic, with values 'inbound' or 'outbound'. (AI-inferred)
+    access_direction: Any = None
+    # The source IP address or CIDR range that is allowed to access the specified port on the Lightsail instance. (AI-inferred)
+    access_from: Any = None
+    # Specifies whether the port is open to the public internet (Public) or restricted to private access within the Lightsail network (Private). (AI-inferred)
+    access_type: Any = None
+    # Lists named CIDR aliases (e.g., 'myIp', 'amazon') whose defined IP ranges are used as the allowed source addresses for this port rule in the instance's networking firewall. (AI-inferred)
+    cidr_list_aliases: Any = None
+    # The list of IPv4 CIDR blocks that are allowed to access the instance via the associated port. (AI-inferred)
+    cidrs: Any = None
+    # Specifies the common name (e.g., SSH, RDP, HTTP) associated with the port, providing a human-readable label for the port's purpose. (AI-inferred)
+    common_name: Any = None
+    # The starting port number of a range to open in the Lightsail instance's firewall rules. (AI-inferred)
+    from_port: Any = None
+    # The list of IPv6 CIDR blocks that are allowed to access the port in the Lightsail instance networking configuration. (AI-inferred)
+    ipv6_cidrs: Any = None
+    # Specifies the network protocol (such as TCP, UDP, or ICMP) that the firewall rule applies to for the Lightsail instance's networking port mapping. (AI-inferred)
+    protocol: Any = None
+    # The inclusive end of the port range for this Lightsail instance networking rule, paired with the port set in fromPort to define which ports are opened. (AI-inferred)
+    to_port: Any = None
+
+@dataclasses.dataclass
+class Instance_Networking:
+    # Monthly Transfer of the Instance.
+    monthly_transfer: Any = None
+    # Ports to the Instance.
+    ports: Any = None
+
+@dataclasses.dataclass
+class Instance_State:
+    # Status code of the Instance.
+    code: Any = None
+    # Status code of the Instance.
+    name: Any = None
+
+@dataclasses.dataclass
+class Instance_Tags:
+    # The key of the tag to associate with the Lightsail instance. (AI-inferred)
+    key: Any = None
+    # The user-defined value paired with a tag key on the Lightsail instance, used for identifying and organizing the resource. (AI-inferred)
+    value: Any = None
+
+_Instance_AddOns_AutoSnapshotAddOnRequestFields = {
+    "snapshot_time_of_day": ubx.FieldSpec(wire_name="snapshot_time_of_day"),
+}
+
+_Instance_AddOnsFields = {
+    "add_on_type": ubx.FieldSpec(wire_name="add_on_type"),
+    "auto_snapshot_add_on_request": ubx.FieldSpec(
+        wire_name="auto_snapshot_add_on_request",
+        kind="object",
+        fields=_Instance_AddOns_AutoSnapshotAddOnRequestFields,
+    ),
     "status": ubx.FieldSpec(wire_name="status"),
-    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Instance_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class InstanceConfig:
+    # An array of objects representing the add-ons to enable for the new instance.
+    add_ons: Any = None
+    # The Availability Zone in which to create your instance. Use the following format: us-east-2a (case sensitive). Be sure to add the include Availability Zones parameter to your request.
     availability_zone: Any = None
+    # The ID for a virtual private server image (e.g., app_wordpress_4_4 or app_lamp_7_0 ). Use the get blueprints operation to return a list of available images (or blueprints ).
     blueprint_id: Any = None
+    # The bundle of specification information for your virtual private server (or instance ), including the pricing plan (e.g., micro_1_0 ).
     bundle_id: Any = None
-    id: Any = None
-    ip_address_type: Any = None
+    # The names to use for your new Lightsail instance.
+    instance_name: Any = None
+    # The name of your key pair.
     key_pair_name: Any = None
-    name: Any = None
-    region: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+    # A launch script you can create that configures a server with additional user data. For example, you might want to run apt-get -y update.
     user_data: Any = None
-    add_on: Any = None
+
+@dataclasses.dataclass
+class InstanceAttrs:
+    # An array of objects representing the add-ons to enable for the new instance.
+    add_ons: Any = None
+    # The Availability Zone in which to create your instance. Use the following format: us-east-2a (case sensitive). Be sure to add the include Availability Zones parameter to your request.
+    availability_zone: Any = None
+    # The ID for a virtual private server image (e.g., app_wordpress_4_4 or app_lamp_7_0 ). Use the get blueprints operation to return a list of available images (or blueprints ).
+    blueprint_id: Any = None
+    # The bundle of specification information for your virtual private server (or instance ), including the pricing plan (e.g., micro_1_0 ).
+    bundle_id: Any = None
+    # Hardware of the Instance.
+    hardware: Any = None
+    # The Amazon Resource Name (ARN) uniquely identifying the Lightsail instance across AWS. (AI-inferred)
+    instance_arn: Any = None
+    # The names to use for your new Lightsail instance.
+    instance_name: Any = None
+    # IPv6 addresses of the instance
+    ipv6_addresses: Any = None
+    # Is the IP Address of the Instance is the static IP
+    is_static_ip: Any = None
+    # The name of your key pair.
+    key_pair_name: Any = None
+    # Location of a resource.
+    location: Any = None
+    # Networking of the Instance.
+    networking: Any = None
+    # Private IP Address of the Instance
+    private_ip_address: Any = None
+    # Public IP Address of the Instance
+    public_ip_address: Any = None
+    # Resource type of Lightsail instance.
+    resource_type: Any = None
+    # SSH Key Name of the Lightsail instance.
+    ssh_key_name: Any = None
+    # Current State of the Instance.
+    state: Any = None
+    # Support code to help identify any issues
+    support_code: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # A launch script you can create that configures a server with additional user data. For example, you might want to run apt-get -y update.
+    user_data: Any = None
+    # Username of the Lightsail instance.
+    user_name: Any = None
 
 Instance = ubx.ResourceBinding(
     wire_type="aws_lightsail_instance",
     fields={
+        "add_ons": ubx.FieldSpec(
+            wire_name="add_ons",
+            kind="list",
+            fields=_Instance_AddOnsFields,
+        ),
         "availability_zone": ubx.FieldSpec(wire_name="availability_zone"),
         "blueprint_id": ubx.FieldSpec(wire_name="blueprint_id"),
         "bundle_id": ubx.FieldSpec(wire_name="bundle_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "ip_address_type": ubx.FieldSpec(wire_name="ip_address_type"),
+        "instance_name": ubx.FieldSpec(wire_name="instance_name"),
         "key_pair_name": ubx.FieldSpec(wire_name="key_pair_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "user_data": ubx.FieldSpec(wire_name="user_data"),
-        "add_on": ubx.FieldSpec(
-            wire_name="add_on",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_Instance_AddOnFields,
+            fields=_Instance_TagsFields,
         ),
+        "user_data": ubx.FieldSpec(wire_name="user_data"),
     },
 )

@@ -7,26 +7,68 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DataCatalog_Tags:
+    key: Any = None
+    # The value string of a user-defined tag attached to the Athena data catalog, used for resource organization and access control. (AI-inferred)
+    value: Any = None
+
+_DataCatalog_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class DataCatalogConfig:
+    # The type of connection for a FEDERATED data catalog
+    connection_type: Any = None
+    # A description of the data catalog to be created.
     description: Any = None
-    id: Any = None
+    # Text of the error that occurred during data catalog creation or deletion.
+    error: Any = None
+    # The name of the data catalog to create. The catalog name must be unique for the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
     name: Any = None
+    # Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type.
     parameters: Any = None
-    region: Any = None
+    # The status of the creation or deletion of the data catalog. LAMBDA, GLUE, and HIVE data catalog types are created synchronously. Their status is either CREATE_COMPLETE or CREATE_FAILED. The FEDERATED data catalog type is created asynchronously.
+    status: Any = None
+    # Specifies the key-value tags to attach to the Athena data catalog for metadata management, cost allocation, and access control. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
+    # The type of data catalog to create: LAMBDA for a federated catalog, GLUE for AWS Glue Catalog, or HIVE for an external hive metastore. FEDERATED is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.
+    type: Any = None
+
+@dataclasses.dataclass
+class DataCatalogAttrs:
+    # The type of connection for a FEDERATED data catalog
+    connection_type: Any = None
+    # A description of the data catalog to be created.
+    description: Any = None
+    # Text of the error that occurred during data catalog creation or deletion.
+    error: Any = None
+    # The name of the data catalog to create. The catalog name must be unique for the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.
+    name: Any = None
+    # Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type.
+    parameters: Any = None
+    # The status of the creation or deletion of the data catalog. LAMBDA, GLUE, and HIVE data catalog types are created synchronously. Their status is either CREATE_COMPLETE or CREATE_FAILED. The FEDERATED data catalog type is created asynchronously.
+    status: Any = None
+    # Specifies the key-value tags to attach to the Athena data catalog for metadata management, cost allocation, and access control. (AI-inferred)
+    tags: Any = None
+    # The type of data catalog to create: LAMBDA for a federated catalog, GLUE for AWS Glue Catalog, or HIVE for an external hive metastore. FEDERATED is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.
     type: Any = None
 
 DataCatalog = ubx.ResourceBinding(
     wire_type="aws_athena_data_catalog",
     fields={
+        "connection_type": ubx.FieldSpec(wire_name="connection_type"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "error": ubx.FieldSpec(wire_name="error"),
         "name": ubx.FieldSpec(wire_name="name"),
         "parameters": ubx.FieldSpec(wire_name="parameters"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "status": ubx.FieldSpec(wire_name="status"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_DataCatalog_TagsFields,
+        ),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

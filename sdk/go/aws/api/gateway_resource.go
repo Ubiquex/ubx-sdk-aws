@@ -4,20 +4,30 @@ package api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayResourceConfig struct {
-	Id any
+	// The identifier of the parent Resource in this REST API's resource hierarchy, determining the path of this resource relative to the API's root resource. (AI-inferred)
 	ParentId any
+	// The URL path segment (e.g., 'users' or a path parameter like '{userId}') that defines this resource's location in the API's URL hierarchy, appended to the parent resource's path to form the full resource path. (AI-inferred)
 	PathPart any
-	Region any
+	// The ID of the parent RestApi in API Gateway to which this resource belongs. (AI-inferred)
+	RestApiId any
+}
+
+type GatewayResourceAttrs struct {
+	// The identifier of the parent Resource in this REST API's resource hierarchy, determining the path of this resource relative to the API's root resource. (AI-inferred)
+	ParentId any
+	// The URL path segment (e.g., 'users' or a path parameter like '{userId}') that defines this resource's location in the API's URL hierarchy, appended to the parent resource's path to form the full resource path. (AI-inferred)
+	PathPart any
+	// The unique identifier assigned to this API Gateway resource by the service, used to reference the resource in method and integration configurations within the same REST API. (AI-inferred)
+	ResourceId any
+	// The ID of the parent RestApi in API Gateway to which this resource belongs. (AI-inferred)
 	RestApiId any
 }
 
 var GatewayResource = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_resource",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"ParentId": ubx.FieldSpec{WireName: "parent_id"},
 		"PathPart": ubx.FieldSpec{WireName: "path_part"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

@@ -2,21 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PermissionConfig {
+  /** The actions that the specified AWS service principal can use. Actions IssueCertificate, GetCertificate and ListPermissions must be provided. */
   actions: string[] | Computed<string[]>;
+  /** The Amazon Resource Name (ARN) of the Private Certificate Authority that grants the permission. */
   certificateAuthorityArn: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** The AWS service or identity that receives the permission. At this time, the only valid principal is acm.amazonaws.com. */
   principal: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The ID of the calling account. */
   sourceAccount?: string | Computed<string>;
 }
 
 export interface PermissionAttrs {
+  /** The actions that the specified AWS service principal can use. Actions IssueCertificate, GetCertificate and ListPermissions must be provided. */
   actions: string[];
+  /** The Amazon Resource Name (ARN) of the Private Certificate Authority that grants the permission. */
   certificateAuthorityArn: string;
-  id: string;
-  policy: string;
+  /** The AWS service or identity that receives the permission. At this time, the only valid principal is acm.amazonaws.com. */
   principal: string;
-  region: string;
+  /** The ID of the calling account. */
   sourceAccount: string;
 }
 
@@ -25,9 +28,7 @@ export const Permission: ResourceBinding<PermissionConfig, PermissionAttrs> = {
   fields: {
     actions: "actions",
     certificateAuthorityArn: "certificate_authority_arn",
-    id: "id",
     principal: "principal",
-    region: "region",
     sourceAccount: "source_account",
   },
 };

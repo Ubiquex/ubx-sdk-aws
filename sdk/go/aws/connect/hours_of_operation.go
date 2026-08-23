@@ -3,16 +3,74 @@ package connect
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type HoursOfOperation_ChildHoursOfOperations struct {
+	Id any
+	Name any
+}
+
 type HoursOfOperation_Config_EndTime struct {
+	// Specifies the hour (0-23) in 24-hour format at which the operating hours end for the configured day. (AI-inferred)
 	Hours any
+	// The minutes component of the time of day when the hours of operation configuration ends, used together with the end_time hour to define the daily closing time. (AI-inferred)
 	Minutes any
 }
 
 type HoursOfOperation_Config struct {
+	// Specifies the day of the week (e.g., MONDAY, TUESDAY) that this hours of operation configuration applies to in the AWS Connect HoursOfOperation resource. (AI-inferred)
 	Day any
+	// The time at which the hours of operation end for a given day, specified as an object with hours and minutes in a 24-hour format. (AI-inferred)
 	EndTime any
+	// The start_time field specifies the time in HH:MM format (24-hour) when the hours of operation begin for the configured day. (AI-inferred)
 	StartTime any
 }
+
+type HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig_RecurrencePattern struct {
+	// Specifies the months (1-12) during which this hours-of-operation override recurrence pattern is active, used in combination with other recurrence fields to define a monthly scheduling rule. (AI-inferred)
+	ByMonth any
+	// Defines the days of the month (1-31) on which the hours-of-operation override recurs, used when the recurrence pattern is set to a monthly interval. (AI-inferred)
+	ByMonthDay any
+	// Specifies the occurrence(s) of the weekdays within a month (e.g., 1 for first, 2 for second, -1 for last) on which this hours of operation override recurrence applies. (AI-inferred)
+	ByWeekdayOccurrence any
+	// The frequency unit for the recurrence pattern of this override (e.g., daily, weekly, or monthly), defining how often the override schedule repeats. (AI-inferred)
+	Frequency any
+	// The number of time units (e.g., weeks or months, based on the recurrence pattern's frequency) between each occurrence of the recurring hours of operation override, such as 2 for every other week. (AI-inferred)
+	Interval any
+}
+
+type HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig struct {
+	// Configures the recurrence pattern (e.g., daily, weekly, or monthly interval and specific days) for applying the hours-of-operation override across a repeating schedule defined in the recurrence configuration. (AI-inferred)
+	RecurrencePattern any
+}
+
+type HoursOfOperation_HoursOfOperationOverrides struct {
+	// Specifies the starting timestamp (in ISO 8601 format) from which this hours of operation override takes effect. (AI-inferred)
+	EffectiveFrom any
+	// Specifies the end date and time (in ISO 8601 format) for which this hours of operation override remains in effect, after which the standard hours of operation schedule applies. (AI-inferred)
+	EffectiveTill any
+	// This field provides a unique, user-defined identifier for a specific hours of operation override entry within the hours_of_operation_overrides list, allowing each override to be individually referenced and managed. (AI-inferred)
+	HoursOfOperationOverrideId any
+	// The override config defines the alternative schedule of days and times that overrides the default hours of operation during a specified date/time window. (AI-inferred)
+	OverrideConfig any
+	// Provides a human-readable description for an hours of operation override, enabling administrators to label special schedules such as holidays or one-off events. (AI-inferred)
+	OverrideDescription any
+	// The display name assigned to a specific date override (e.g., a holiday) within an Amazon Connect hours of operation configuration, used to identify the custom schedule for that date. (AI-inferred)
+	OverrideName any
+	// Indicates the type of override, either HOLIDAY or OVERRIDE, determining how the specific-date hours override the weekly configuration. (AI-inferred)
+	OverrideType any
+	RecurrenceConfig any
+}
+
+type HoursOfOperation_Tags struct {
+	// The key part of a tag for the Amazon Connect hours of operation, used to organize and identify the resource. (AI-inferred)
+	Key any
+	// The value part of a tag key-value pair attached to the Amazon Connect hours of operation resource, used for resource categorization and management. (AI-inferred)
+	Value any
+}
+
+var HoursOfOperation_ChildHoursOfOperationsFields = ubx.FieldMap{
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var HoursOfOperation_Config_EndTimeFields = ubx.FieldMap{
 		"Hours": ubx.FieldSpec{WireName: "hours"},
@@ -23,43 +81,131 @@ var HoursOfOperation_ConfigFields = ubx.FieldMap{
 		"Day": ubx.FieldSpec{WireName: "day"},
 		"EndTime": ubx.FieldSpec{
 			WireName: "end_time",
-			Kind: "list",
+			Kind: "object",
 			Fields: HoursOfOperation_Config_EndTimeFields,
 		},
 		"StartTime": ubx.FieldSpec{
 			WireName: "start_time",
-			Kind: "list",
+			Kind: "object",
 			Fields: HoursOfOperation_Config_EndTimeFields,
 		},
 	}
 
+var HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig_RecurrencePatternFields = ubx.FieldMap{
+		"ByMonth": ubx.FieldSpec{WireName: "by_month"},
+		"ByMonthDay": ubx.FieldSpec{WireName: "by_month_day"},
+		"ByWeekdayOccurrence": ubx.FieldSpec{WireName: "by_weekday_occurrence"},
+		"Frequency": ubx.FieldSpec{WireName: "frequency"},
+		"Interval": ubx.FieldSpec{WireName: "interval"},
+	}
+
+var HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfigFields = ubx.FieldMap{
+		"RecurrencePattern": ubx.FieldSpec{
+			WireName: "recurrence_pattern",
+			Kind: "object",
+			Fields: HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig_RecurrencePatternFields,
+		},
+	}
+
+var HoursOfOperation_HoursOfOperationOverridesFields = ubx.FieldMap{
+		"EffectiveFrom": ubx.FieldSpec{WireName: "effective_from"},
+		"EffectiveTill": ubx.FieldSpec{WireName: "effective_till"},
+		"HoursOfOperationOverrideId": ubx.FieldSpec{WireName: "hours_of_operation_override_id"},
+		"OverrideConfig": ubx.FieldSpec{
+			WireName: "override_config",
+			Kind: "list",
+			Fields: HoursOfOperation_ConfigFields,
+		},
+		"OverrideDescription": ubx.FieldSpec{WireName: "override_description"},
+		"OverrideName": ubx.FieldSpec{WireName: "override_name"},
+		"OverrideType": ubx.FieldSpec{WireName: "override_type"},
+		"RecurrenceConfig": ubx.FieldSpec{
+			WireName: "recurrence_config",
+			Kind: "object",
+			Fields: HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfigFields,
+		},
+	}
+
+var HoursOfOperation_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type HoursOfOperationConfig struct {
-	Description any
-	Id any
-	InstanceId any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
-	TimeZone any
+	// List of child hours of operations.
+	ChildHoursOfOperations any
+	// Configuration information for the hours of operation: day, start time, and end time.
 	Config any
+	// The description of the hours of operation.
+	Description any
+	// One or more hours of operation overrides assigned to an hour of operation.
+	HoursOfOperationOverrides any
+	// The identifier of the Amazon Connect instance.
+	InstanceArn any
+	// The name of the hours of operation.
+	Name any
+	// List of parent hours of operations.
+	ParentHoursOfOperations any
+	// One or more tags.
+	Tags any
+	// The time zone of the hours of operation.
+	TimeZone any
+}
+
+type HoursOfOperationAttrs struct {
+	// List of child hours of operations.
+	ChildHoursOfOperations any
+	// Configuration information for the hours of operation: day, start time, and end time.
+	Config any
+	// The description of the hours of operation.
+	Description any
+	// The Amazon Resource Name (ARN) for the hours of operation.
+	HoursOfOperationArn any
+	// One or more hours of operation overrides assigned to an hour of operation.
+	HoursOfOperationOverrides any
+	// The identifier of the Amazon Connect instance.
+	InstanceArn any
+	// The name of the hours of operation.
+	Name any
+	// List of parent hours of operations.
+	ParentHoursOfOperations any
+	// One or more tags.
+	Tags any
+	// The time zone of the hours of operation.
+	TimeZone any
 }
 
 var HoursOfOperation = ubx.ResourceBinding{
 	WireType: "aws_connect_hours_of_operation",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+		"ChildHoursOfOperations": ubx.FieldSpec{
+			WireName: "child_hours_of_operations",
+			Kind: "list",
+			Fields: HoursOfOperation_ChildHoursOfOperationsFields,
+		},
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "set",
+			Kind: "list",
 			Fields: HoursOfOperation_ConfigFields,
 		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"HoursOfOperationOverrides": ubx.FieldSpec{
+			WireName: "hours_of_operation_overrides",
+			Kind: "list",
+			Fields: HoursOfOperation_HoursOfOperationOverridesFields,
+		},
+		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ParentHoursOfOperations": ubx.FieldSpec{
+			WireName: "parent_hours_of_operations",
+			Kind: "list",
+			Fields: HoursOfOperation_ChildHoursOfOperationsFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: HoursOfOperation_TagsFields,
+		},
+		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
 	},
 }

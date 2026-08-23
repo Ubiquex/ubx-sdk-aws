@@ -7,48 +7,248 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ConfigurationSet_ArchivingOptions:
+    # The ARN of the MailManager archive to associate with the configuration set.
+    archive_arn: Any = None
+
+@dataclasses.dataclass
 class ConfigurationSet_DeliveryOptions:
+    # Specifies the maximum time until which SES will retry sending emails
+    max_delivery_seconds: Any = None
+    # The name of the dedicated IP pool to associate with the configuration set.
+    sending_pool_name: Any = None
+    # Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is Require , messages are only delivered if a TLS connection can be established. If the value is Optional , messages can be delivered in plain text if a TLS connection can't be established.
     tls_policy: Any = None
 
 @dataclasses.dataclass
+class ConfigurationSet_ReputationOptions:
+    # If true , tracking of reputation metrics is enabled for the configuration set. If false , tracking of reputation metrics is disabled for the configuration set.
+    reputation_metrics_enabled: Any = None
+
+@dataclasses.dataclass
+class ConfigurationSet_SendingOptions:
+    # Indicates whether email sending is enabled for the configuration set. (AI-inferred)
+    sending_enabled: Any = None
+
+@dataclasses.dataclass
+class ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThreshold_OverallConfidenceThreshold:
+    # The confidence verdict threshold level.
+    confidence_verdict_threshold: Any = None
+
+@dataclasses.dataclass
+class ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThreshold:
+    # Whether the condition threshold is enabled or disabled.
+    condition_threshold_enabled: Any = None
+    # The overall confidence threshold settings.
+    overall_confidence_threshold: Any = None
+
+@dataclasses.dataclass
+class ConfigurationSet_SuppressionOptions_ValidationOptions:
+    # The condition threshold settings for suppression validation.
+    condition_threshold: Any = None
+
+@dataclasses.dataclass
+class ConfigurationSet_SuppressionOptions:
+    # A list that contains the reasons that email addresses are automatically added to the suppression list for your account.
+    suppressed_reasons: Any = None
+    # An object that contains information about the validation options for your account.
+    validation_options: Any = None
+
+@dataclasses.dataclass
+class ConfigurationSet_Tags:
+    # The key of a tag attached to the Amazon SES configuration set. (AI-inferred)
+    key: Any = None
+    # Specifies the value part of a tag assigned to the SES configuration set, used for metadata and resource management. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
 class ConfigurationSet_TrackingOptions:
+    # The domain to use for tracking open and click events.
     custom_redirect_domain: Any = None
+    # The https policy to use for tracking open and click events.
+    https_policy: Any = None
+
+@dataclasses.dataclass
+class ConfigurationSet_VdmOptions_DashboardOptions:
+    # Whether emails sent with this configuration set have engagement tracking enabled.
+    engagement_metrics: Any = None
+
+@dataclasses.dataclass
+class ConfigurationSet_VdmOptions_GuardianOptions:
+    # Whether emails sent with this configuration set have optimized delivery algorithm enabled.
+    optimized_shared_delivery: Any = None
+
+@dataclasses.dataclass
+class ConfigurationSet_VdmOptions:
+    # Preferences regarding the Dashboard feature.
+    dashboard_options: Any = None
+    # Preferences regarding the Guardian feature.
+    guardian_options: Any = None
+
+_ConfigurationSet_ArchivingOptionsFields = {
+    "archive_arn": ubx.FieldSpec(wire_name="archive_arn"),
+}
 
 _ConfigurationSet_DeliveryOptionsFields = {
+    "max_delivery_seconds": ubx.FieldSpec(wire_name="max_delivery_seconds"),
+    "sending_pool_name": ubx.FieldSpec(wire_name="sending_pool_name"),
     "tls_policy": ubx.FieldSpec(wire_name="tls_policy"),
+}
+
+_ConfigurationSet_ReputationOptionsFields = {
+    "reputation_metrics_enabled": ubx.FieldSpec(wire_name="reputation_metrics_enabled"),
+}
+
+_ConfigurationSet_SendingOptionsFields = {
+    "sending_enabled": ubx.FieldSpec(wire_name="sending_enabled"),
+}
+
+_ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThreshold_OverallConfidenceThresholdFields = {
+    "confidence_verdict_threshold": ubx.FieldSpec(wire_name="confidence_verdict_threshold"),
+}
+
+_ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThresholdFields = {
+    "condition_threshold_enabled": ubx.FieldSpec(wire_name="condition_threshold_enabled"),
+    "overall_confidence_threshold": ubx.FieldSpec(
+        wire_name="overall_confidence_threshold",
+        kind="object",
+        fields=_ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThreshold_OverallConfidenceThresholdFields,
+    ),
+}
+
+_ConfigurationSet_SuppressionOptions_ValidationOptionsFields = {
+    "condition_threshold": ubx.FieldSpec(
+        wire_name="condition_threshold",
+        kind="object",
+        fields=_ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThresholdFields,
+    ),
+}
+
+_ConfigurationSet_SuppressionOptionsFields = {
+    "suppressed_reasons": ubx.FieldSpec(wire_name="suppressed_reasons"),
+    "validation_options": ubx.FieldSpec(
+        wire_name="validation_options",
+        kind="object",
+        fields=_ConfigurationSet_SuppressionOptions_ValidationOptionsFields,
+    ),
+}
+
+_ConfigurationSet_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _ConfigurationSet_TrackingOptionsFields = {
     "custom_redirect_domain": ubx.FieldSpec(wire_name="custom_redirect_domain"),
+    "https_policy": ubx.FieldSpec(wire_name="https_policy"),
+}
+
+_ConfigurationSet_VdmOptions_DashboardOptionsFields = {
+    "engagement_metrics": ubx.FieldSpec(wire_name="engagement_metrics"),
+}
+
+_ConfigurationSet_VdmOptions_GuardianOptionsFields = {
+    "optimized_shared_delivery": ubx.FieldSpec(wire_name="optimized_shared_delivery"),
+}
+
+_ConfigurationSet_VdmOptionsFields = {
+    "dashboard_options": ubx.FieldSpec(
+        wire_name="dashboard_options",
+        kind="object",
+        fields=_ConfigurationSet_VdmOptions_DashboardOptionsFields,
+    ),
+    "guardian_options": ubx.FieldSpec(
+        wire_name="guardian_options",
+        kind="object",
+        fields=_ConfigurationSet_VdmOptions_GuardianOptionsFields,
+    ),
 }
 
 @dataclasses.dataclass
 class ConfigurationSetConfig:
-    id: Any = None
-    name: Any = None
-    region: Any = None
-    reputation_metrics_enabled: Any = None
-    sending_enabled: Any = None
+    # An object that defines a MailManager archive that is used to preserve emails that you send using the configuration set.
+    archiving_options: Any = None
+    # An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.
     delivery_options: Any = None
+    # The name of the configuration set.
+    name: Any = None
+    # An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.
+    reputation_options: Any = None
+    # An object that defines whether or not Amazon SES can send email that you send using the configuration set.
+    sending_options: Any = None
+    # An object that contains information about the suppression list preferences for your account.
+    suppression_options: Any = None
+    # The tags (keys and values) associated with the contact list.
+    tags: Any = None
+    # An object that defines the open and click tracking options for emails that you send using the configuration set.
     tracking_options: Any = None
+    # An object that contains Virtual Deliverability Manager (VDM) settings for this configuration set.
+    vdm_options: Any = None
+
+@dataclasses.dataclass
+class ConfigurationSetAttrs:
+    # An object that defines a MailManager archive that is used to preserve emails that you send using the configuration set.
+    archiving_options: Any = None
+    # An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.
+    delivery_options: Any = None
+    # The name of the configuration set.
+    name: Any = None
+    # An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.
+    reputation_options: Any = None
+    # An object that defines whether or not Amazon SES can send email that you send using the configuration set.
+    sending_options: Any = None
+    # An object that contains information about the suppression list preferences for your account.
+    suppression_options: Any = None
+    # The tags (keys and values) associated with the contact list.
+    tags: Any = None
+    # An object that defines the open and click tracking options for emails that you send using the configuration set.
+    tracking_options: Any = None
+    # An object that contains Virtual Deliverability Manager (VDM) settings for this configuration set.
+    vdm_options: Any = None
 
 ConfigurationSet = ubx.ResourceBinding(
     wire_type="aws_ses_configuration_set",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "reputation_metrics_enabled": ubx.FieldSpec(wire_name="reputation_metrics_enabled"),
-        "sending_enabled": ubx.FieldSpec(wire_name="sending_enabled"),
+        "archiving_options": ubx.FieldSpec(
+            wire_name="archiving_options",
+            kind="object",
+            fields=_ConfigurationSet_ArchivingOptionsFields,
+        ),
         "delivery_options": ubx.FieldSpec(
             wire_name="delivery_options",
-            kind="list",
+            kind="object",
             fields=_ConfigurationSet_DeliveryOptionsFields,
+        ),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "reputation_options": ubx.FieldSpec(
+            wire_name="reputation_options",
+            kind="object",
+            fields=_ConfigurationSet_ReputationOptionsFields,
+        ),
+        "sending_options": ubx.FieldSpec(
+            wire_name="sending_options",
+            kind="object",
+            fields=_ConfigurationSet_SendingOptionsFields,
+        ),
+        "suppression_options": ubx.FieldSpec(
+            wire_name="suppression_options",
+            kind="object",
+            fields=_ConfigurationSet_SuppressionOptionsFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ConfigurationSet_TagsFields,
         ),
         "tracking_options": ubx.FieldSpec(
             wire_name="tracking_options",
-            kind="list",
+            kind="object",
             fields=_ConfigurationSet_TrackingOptionsFields,
+        ),
+        "vdm_options": ubx.FieldSpec(
+            wire_name="vdm_options",
+            kind="object",
+            fields=_ConfigurationSet_VdmOptionsFields,
         ),
     },
 )

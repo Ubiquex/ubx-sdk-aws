@@ -3,41 +3,34 @@ package athena
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type PreparedStatement_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type PreparedStatementConfig struct {
+	// The description of the prepared statement.
+	Description any
+	// The query string for the prepared statement.
+	QueryStatement any
+	// The name of the prepared statement.
+	StatementName any
+	// The name of the workgroup to which the prepared statement belongs.
+	WorkGroup any
 }
 
-var PreparedStatement_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
-type PreparedStatementConfig struct {
+type PreparedStatementAttrs struct {
+	// The description of the prepared statement.
 	Description any
-	Id any
-	Name any
+	// The query string for the prepared statement.
 	QueryStatement any
-	Region any
-	Workgroup any
-	Timeouts any
+	// The name of the prepared statement.
+	StatementName any
+	// The name of the workgroup to which the prepared statement belongs.
+	WorkGroup any
 }
 
 var PreparedStatement = ubx.ResourceBinding{
 	WireType: "aws_athena_prepared_statement",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"QueryStatement": ubx.FieldSpec{WireName: "query_statement"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Workgroup": ubx.FieldSpec{WireName: "workgroup"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: PreparedStatement_TimeoutsFields,
-		},
+		"StatementName": ubx.FieldSpec{WireName: "statement_name"},
+		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
 	},
 }

@@ -7,60 +7,159 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class CapacityReservation_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class CapacityReservation_CapacityAllocationSet:
+    # Indicates whether the allocated capacity is for 'used' (currently running instances) or 'future' (reserved but not yet running) usage, with allowed values of 'used' or 'future'. (AI-inferred)
+    allocation_type: Any = None
+    # The number of EC2 instances of the specified instance type to reserve in this capacity reservation allocation. (AI-inferred)
+    count: Any = None
 
-_CapacityReservation_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+@dataclasses.dataclass
+class CapacityReservation_CommitmentInfo:
+    # The timestamp indicating when the committed term of the EC2 Capacity Reservation ends, marking the expiration of a reserved capacity commitment. (AI-inferred)
+    commitment_end_date: Any = None
+    # The number of EC2 instances you are committed to running as part of this Capacity Reservation's commitment, which underpins the capacity reservation's usage commitment and corresponding billing discount. (AI-inferred)
+    committed_instance_count: Any = None
+
+@dataclasses.dataclass
+class CapacityReservation_TagSpecifications_Tags:
+    # The key of a tag to apply to the EC2 Capacity Reservation. (AI-inferred)
+    key: Any = None
+    # The value of a tag to assign to the EC2 Capacity Reservation, used to categorize or identify the reservation. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class CapacityReservation_TagSpecifications:
+    # Specifies the type of resource to tag, which for an EC2 Capacity Reservation must be set to `capacity-reservation` to apply the associated tags to that reservation. (AI-inferred)
+    resource_type: Any = None
+    # The list of tags to associate with the EC2 Capacity Reservation, as part of the tag specifications for the resource. (AI-inferred)
+    tags: Any = None
+
+_CapacityReservation_TagSpecifications_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_CapacityReservation_TagSpecificationsFields = {
+    "resource_type": ubx.FieldSpec(wire_name="resource_type"),
+    "tags": ubx.FieldSpec(
+        wire_name="tags",
+        kind="list",
+        fields=_CapacityReservation_TagSpecifications_TagsFields,
+    ),
 }
 
 @dataclasses.dataclass
 class CapacityReservationConfig:
+    # The Availability Zone where the capacity reservation is created, used to reserve compute capacity in that specific zone for EC2 instances. (AI-inferred)
     availability_zone: Any = None
+    # Specifies the ID of the Availability Zone (such as use1-az1) in which to create the Capacity Reservation, serving as an alternative to specifying the Availability Zone by name. (AI-inferred)
+    availability_zone_id: Any = None
+    # Indicates whether the capacity reservation is EBS-optimized, which provides dedicated throughput for Amazon EBS I/O. (AI-inferred)
     ebs_optimized: Any = None
+    # The date and time (in ISO 8601 format) when the Capacity Reservation expires, after which the reserved capacity is released and any instances running in the reservation are automatically stopped or terminated. (AI-inferred)
     end_date: Any = None
+    # Determines whether the Capacity Reservation has a specific end date/time (limited) or persists indefinitely (unlimited). (AI-inferred)
     end_date_type: Any = None
+    # A Boolean value indicating whether the Capacity Reservation supports instances that use ephemeral (instance store) storage. (AI-inferred)
     ephemeral_storage: Any = None
-    id: Any = None
+    # The number of instances for which to reserve capacity in the Capacity Reservation. (AI-inferred)
     instance_count: Any = None
+    # Determines how the capacity reservation matches instances: 'open' allows any matching instance to use the reservation automatically, while 'targeted' requires instances to explicitly specify the reservation ID to use it. (AI-inferred)
     instance_match_criteria: Any = None
+    # Specifies the operating system platform (e.g., Linux/UNIX, Windows, Red Hat Enterprise Linux, SUSE Linux) that the capacity reservation will support, matching the platform of the AMI used to launch instances. (AI-inferred)
     instance_platform: Any = None
+    # The EC2 instance type for which to reserve capacity, such as m5.large or c5.xlarge. (AI-inferred)
     instance_type: Any = None
-    outpost_arn: Any = None
+    # The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation. (AI-inferred)
+    out_post_arn: Any = None
+    # The ARN of the cluster placement group in which to create the capacity reservation. (AI-inferred)
     placement_group_arn: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Specifies one or more tag specifications, each defining a resource type (such as 'capacity-reservation') and a set of tags to apply to the capacity reservation. (AI-inferred)
+    tag_specifications: Any = None
+    # The tenancy of the Capacity Reservation, either 'default' for shared hardware or 'dedicated' for a single physical server. (AI-inferred)
     tenancy: Any = None
-    timeouts: Any = None
+    # Specifies the AWS account ID that will be billed for unused capacity in this EC2 Capacity Reservation. (AI-inferred)
+    unused_reservation_billing_owner_id: Any = None
+
+@dataclasses.dataclass
+class CapacityReservationAttrs:
+    # The Availability Zone where the capacity reservation is created, used to reserve compute capacity in that specific zone for EC2 instances. (AI-inferred)
+    availability_zone: Any = None
+    # Specifies the ID of the Availability Zone (such as use1-az1) in which to create the Capacity Reservation, serving as an alternative to specifying the Availability Zone by name. (AI-inferred)
+    availability_zone_id: Any = None
+    # The number of instances that remain available for use in the Capacity Reservation, reflecting unused capacity that can still be used to launch instances. (AI-inferred)
+    available_instance_count: Any = None
+    # A computed list of objects that describes how the total instance capacity of the reservation is allocated among different allocation types (e.g., 'used' or 'future'), as reported by the EC2 DescribeCapacityReservations API. (AI-inferred)
+    capacity_allocation_set: Any = None
+    # The Amazon Resource Name (ARN) of the EC2 Capacity Reservation, used to uniquely identify the reservation across AWS services. (AI-inferred)
+    capacity_reservation_arn: Any = None
+    # The ID of the Capacity Reservation Fleet that this capacity reservation belongs to, if it was created as part of a fleet; this value is only set when the reservation is managed by a fleet. (AI-inferred)
+    capacity_reservation_fleet_id: Any = None
+    # commitment_info is a computed object that exposes the commitment duration and commitment end date for this EC2 Capacity Reservation, reflecting the reserved capacity's committed term details. (AI-inferred)
+    commitment_info: Any = None
+    # The date and time at which the Capacity Reservation was created. (AI-inferred)
+    create_date: Any = None
+    delivery_preference: Any = None
+    # Indicates whether the capacity reservation is EBS-optimized, which provides dedicated throughput for Amazon EBS I/O. (AI-inferred)
+    ebs_optimized: Any = None
+    # The date and time (in ISO 8601 format) when the Capacity Reservation expires, after which the reserved capacity is released and any instances running in the reservation are automatically stopped or terminated. (AI-inferred)
+    end_date: Any = None
+    # Determines whether the Capacity Reservation has a specific end date/time (limited) or persists indefinitely (unlimited). (AI-inferred)
+    end_date_type: Any = None
+    # A Boolean value indicating whether the Capacity Reservation supports instances that use ephemeral (instance store) storage. (AI-inferred)
+    ephemeral_storage: Any = None
+    # The unique capacity reservation identifier (e.g., cr-1234567890abcdef0) assigned by AWS when the reservation is created, used to reference this reservation in API calls and other resources. (AI-inferred)
+    id: Any = None
+    # The number of instances for which to reserve capacity in the Capacity Reservation. (AI-inferred)
+    instance_count: Any = None
+    # Determines how the capacity reservation matches instances: 'open' allows any matching instance to use the reservation automatically, while 'targeted' requires instances to explicitly specify the reservation ID to use it. (AI-inferred)
+    instance_match_criteria: Any = None
+    # Specifies the operating system platform (e.g., Linux/UNIX, Windows, Red Hat Enterprise Linux, SUSE Linux) that the capacity reservation will support, matching the platform of the AMI used to launch instances. (AI-inferred)
+    instance_platform: Any = None
+    # The EC2 instance type for which to reserve capacity, such as m5.large or c5.xlarge. (AI-inferred)
+    instance_type: Any = None
+    # The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation. (AI-inferred)
+    out_post_arn: Any = None
+    # The ID of the AWS account that owns the Capacity Reservation. (AI-inferred)
+    owner_id: Any = None
+    # The ARN of the cluster placement group in which to create the capacity reservation. (AI-inferred)
+    placement_group_arn: Any = None
+    # The type of the Capacity Reservation, either 'default' for on-demand reservations or 'capacity-block' for future-dated reservations. (AI-inferred)
+    reservation_type: Any = None
+    # The date and time at which the capacity reservation was started, as reported by the AWS EC2 API. (AI-inferred)
+    start_date: Any = None
+    # The current lifecycle state of the capacity reservation, such as 'active', 'pending', 'failed', 'expired', or 'cancelled', as reported by AWS. (AI-inferred)
+    state: Any = None
+    # Specifies one or more tag specifications, each defining a resource type (such as 'capacity-reservation') and a set of tags to apply to the capacity reservation. (AI-inferred)
+    tag_specifications: Any = None
+    # The tenancy of the Capacity Reservation, either 'default' for shared hardware or 'dedicated' for a single physical server. (AI-inferred)
+    tenancy: Any = None
+    # The total number of instances for which this Capacity Reservation reserves capacity, reported by EC2 as a read-only attribute that cannot be modified. (AI-inferred)
+    total_instance_count: Any = None
+    # Specifies the AWS account ID that will be billed for unused capacity in this EC2 Capacity Reservation. (AI-inferred)
+    unused_reservation_billing_owner_id: Any = None
 
 CapacityReservation = ubx.ResourceBinding(
     wire_type="aws_ec2_capacity_reservation",
     fields={
         "availability_zone": ubx.FieldSpec(wire_name="availability_zone"),
+        "availability_zone_id": ubx.FieldSpec(wire_name="availability_zone_id"),
         "ebs_optimized": ubx.FieldSpec(wire_name="ebs_optimized"),
         "end_date": ubx.FieldSpec(wire_name="end_date"),
         "end_date_type": ubx.FieldSpec(wire_name="end_date_type"),
         "ephemeral_storage": ubx.FieldSpec(wire_name="ephemeral_storage"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "instance_count": ubx.FieldSpec(wire_name="instance_count"),
         "instance_match_criteria": ubx.FieldSpec(wire_name="instance_match_criteria"),
         "instance_platform": ubx.FieldSpec(wire_name="instance_platform"),
         "instance_type": ubx.FieldSpec(wire_name="instance_type"),
-        "outpost_arn": ubx.FieldSpec(wire_name="outpost_arn"),
+        "out_post_arn": ubx.FieldSpec(wire_name="out_post_arn"),
         "placement_group_arn": ubx.FieldSpec(wire_name="placement_group_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "tenancy": ubx.FieldSpec(wire_name="tenancy"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_CapacityReservation_TimeoutsFields,
+        "tag_specifications": ubx.FieldSpec(
+            wire_name="tag_specifications",
+            kind="list",
+            fields=_CapacityReservation_TagSpecificationsFields,
         ),
+        "tenancy": ubx.FieldSpec(wire_name="tenancy"),
+        "unused_reservation_billing_owner_id": ubx.FieldSpec(wire_name="unused_reservation_billing_owner_id"),
     },
 )

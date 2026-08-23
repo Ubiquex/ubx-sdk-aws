@@ -4,24 +4,33 @@ package api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayBasePathMappingConfig struct {
-	ApiId any
+	// Specifies the base path of the custom domain that maps to the API, such that requests to that path are routed to the associated API and stage; if not set, the API is served at the root of the domain (path '/'). (AI-inferred)
 	BasePath any
+	// The custom domain name (e.g., api.example.com) registered in API Gateway to which this base path mapping is attached, matching the DomainName property of an AWS::ApiGateway::DomainName resource. (AI-inferred)
 	DomainName any
-	DomainNameId any
-	Id any
-	Region any
-	StageName any
+	// The ID of the API Gateway REST API to which the base path mapping routes traffic. (AI-inferred)
+	RestApiId any
+	// The name of the API Gateway stage that the base path mapping targets. (AI-inferred)
+	Stage any
+}
+
+type GatewayBasePathMappingAttrs struct {
+	// Specifies the base path of the custom domain that maps to the API, such that requests to that path are routed to the associated API and stage; if not set, the API is served at the root of the domain (path '/'). (AI-inferred)
+	BasePath any
+	// The custom domain name (e.g., api.example.com) registered in API Gateway to which this base path mapping is attached, matching the DomainName property of an AWS::ApiGateway::DomainName resource. (AI-inferred)
+	DomainName any
+	// The ID of the API Gateway REST API to which the base path mapping routes traffic. (AI-inferred)
+	RestApiId any
+	// The name of the API Gateway stage that the base path mapping targets. (AI-inferred)
+	Stage any
 }
 
 var GatewayBasePathMapping = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_base_path_mapping",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
 		"BasePath": ubx.FieldSpec{WireName: "base_path"},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"DomainNameId": ubx.FieldSpec{WireName: "domain_name_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"StageName": ubx.FieldSpec{WireName: "stage_name"},
+		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+		"Stage": ubx.FieldSpec{WireName: "stage"},
 	},
 }

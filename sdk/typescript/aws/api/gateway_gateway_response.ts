@@ -2,30 +2,36 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayGatewayResponseConfig {
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
-  responseParameters?: Record<string, string> | Computed<Record<string, string>>;
-  responseTemplates?: Record<string, string> | Computed<Record<string, string>>;
+  /** Specifies a map of response parameters (such as headers) to customize the API Gateway response, where each key is a parameter name and the value indicates whether the parameter is enabled. (AI-inferred) */
+  responseParameters?: unknown | Computed<unknown>;
+  /** Maps MIME content types to Velocity templates that generate the response body for this API Gateway gateway response. (AI-inferred) */
+  responseTemplates?: unknown | Computed<unknown>;
+  /** Specifies the type of API Gateway response to customize (e.g., MISSING_AUTHENTICATION_TOKEN, RESOURCE_NOT_FOUND, DEFAULT_4XX), which must be one of the predefined gateway response types. (AI-inferred) */
   responseType: string | Computed<string>;
+  /** The identifier of the REST API to which this gateway response is attached. (AI-inferred) */
   restApiId: string | Computed<string>;
+  /** Specifies the HTTP status code that API Gateway returns for this gateway response, allowing you to override the default status code for the corresponding error type. (AI-inferred) */
   statusCode?: string | Computed<string>;
 }
 
 export interface GatewayGatewayResponseAttrs {
+  /** The unique physical resource id of the gateway response, formed as a composite of the associated REST API ID and the response type (for example, 'restApiId/DEFAULT_4XX') separated by a slash. (AI-inferred) */
   id: string;
-  region: string;
-  responseParameters: Record<string, string>;
-  responseTemplates: Record<string, string>;
+  /** Specifies a map of response parameters (such as headers) to customize the API Gateway response, where each key is a parameter name and the value indicates whether the parameter is enabled. (AI-inferred) */
+  responseParameters: unknown;
+  /** Maps MIME content types to Velocity templates that generate the response body for this API Gateway gateway response. (AI-inferred) */
+  responseTemplates: unknown;
+  /** Specifies the type of API Gateway response to customize (e.g., MISSING_AUTHENTICATION_TOKEN, RESOURCE_NOT_FOUND, DEFAULT_4XX), which must be one of the predefined gateway response types. (AI-inferred) */
   responseType: string;
+  /** The identifier of the REST API to which this gateway response is attached. (AI-inferred) */
   restApiId: string;
+  /** Specifies the HTTP status code that API Gateway returns for this gateway response, allowing you to override the default status code for the corresponding error type. (AI-inferred) */
   statusCode: string;
 }
 
 export const GatewayGatewayResponse: ResourceBinding<GatewayGatewayResponseConfig, GatewayGatewayResponseAttrs> = {
   wireType: "aws_api_gateway_gateway_response",
   fields: {
-    id: "id",
-    region: "region",
     responseParameters: "response_parameters",
     responseTemplates: "response_templates",
     responseType: "response_type",

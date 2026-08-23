@@ -3,25 +3,54 @@ package lightsail
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Certificate_Tags struct {
+	// The key of a tag assigned to the Lightsail certificate, used to categorize and identify the certificate in the Lightsail console and API. (AI-inferred)
+	Key any
+	// The value portion of a tag assigned to the AWS Lightsail certificate, used to label, organize, and support cost allocation for the certificate. (AI-inferred)
+	Value any
+}
+
+var Certificate_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type CertificateConfig struct {
+	// The name for the certificate.
+	CertificateName any
+	// The domain name (e.g., example.com ) for the certificate.
 	DomainName any
-	Id any
-	Name any
-	Region any
+	// An array of strings that specify the alternate domains (e.g., example2.com) and subdomains (e.g., blog.example.com) for the certificate.
 	SubjectAlternativeNames any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
+}
+
+type CertificateAttrs struct {
+	// The Amazon Resource Name (ARN) of the Lightsail certificate, assigned by AWS when the certificate is created. (AI-inferred)
+	CertificateArn any
+	// The name for the certificate.
+	CertificateName any
+	// The domain name (e.g., example.com ) for the certificate.
+	DomainName any
+	// The validation status of the certificate.
+	Status any
+	// An array of strings that specify the alternate domains (e.g., example2.com) and subdomains (e.g., blog.example.com) for the certificate.
+	SubjectAlternativeNames any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Certificate = ubx.ResourceBinding{
 	WireType: "aws_lightsail_certificate",
 	Fields: ubx.FieldMap{
+		"CertificateName": ubx.FieldSpec{WireName: "certificate_name"},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SubjectAlternativeNames": ubx.FieldSpec{WireName: "subject_alternative_names"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Certificate_TagsFields,
+		},
 	},
 }

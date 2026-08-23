@@ -2,23 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResourcePolicyConfig {
-  policy: string | Computed<string>;
-  region?: string | Computed<string>;
-  resourceArn: string | Computed<string>;
+  /** The ARN of the AWS Kinesis resource to which the policy applies. */
+  resourceArn: unknown | Computed<unknown>;
+  /** A policy document containing permissions to add to the specified resource. In IAM, you must provide policy documents in JSON format. However, in CloudFormation you can provide the policy in JSON or YAML format because CloudFormation converts YAML to JSON before submitting it to IAM. */
+  resourcePolicy: unknown | Computed<unknown>;
 }
 
 export interface ResourcePolicyAttrs {
-  id: string;
-  policy: string;
-  region: string;
-  resourceArn: string;
+  /** The ARN of the AWS Kinesis resource to which the policy applies. */
+  resourceArn: unknown;
+  /** A policy document containing permissions to add to the specified resource. In IAM, you must provide policy documents in JSON format. However, in CloudFormation you can provide the policy in JSON or YAML format because CloudFormation converts YAML to JSON before submitting it to IAM. */
+  resourcePolicy: unknown;
 }
 
 export const ResourcePolicy: ResourceBinding<ResourcePolicyConfig, ResourcePolicyAttrs> = {
   wireType: "aws_kinesis_resource_policy",
   fields: {
-    policy: "policy",
-    region: "region",
     resourceArn: "resource_arn",
+    resourcePolicy: "resource_policy",
   },
 };

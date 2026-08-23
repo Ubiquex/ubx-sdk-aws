@@ -7,44 +7,98 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class AccessEntry_Timeouts:
-    create: Any = None
-    delete: Any = None
+class AccessEntry_AccessPolicies_AccessScope:
+    # The namespaces that the access policy applies to when the access scope type is set to 'namespace', restricting the policy's permissions to those specific Kubernetes namespaces. (AI-inferred)
+    namespaces: Any = None
+    # Specifies whether the access policy applies to the entire EKS cluster or only to specific Kubernetes namespaces, with allowed values of 'cluster' or 'namespace'. (AI-inferred)
+    type: Any = None
 
-_AccessEntry_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+@dataclasses.dataclass
+class AccessEntry_AccessPolicies:
+    # Defines the scope of the access policy, either for the entire cluster when the type is 'cluster' or for the specified namespaces when the type is 'namespace'. (AI-inferred)
+    access_scope: Any = None
+    # The ARN of the IAM access policy that is associated with the access entry for the EKS cluster. (AI-inferred)
+    policy_arn: Any = None
+
+@dataclasses.dataclass
+class AccessEntry_Tags:
+    # A user-defined key for a tag attached to the EKS access entry, used to label and categorize the entry for management and cost tracking in AWS. (AI-inferred)
+    key: Any = None
+    # The value of a tag assigned to the EKS access entry, used to categorize or identify the resource for management and access control purposes. (AI-inferred)
+    value: Any = None
+
+_AccessEntry_AccessPolicies_AccessScopeFields = {
+    "namespaces": ubx.FieldSpec(wire_name="namespaces"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_AccessEntry_AccessPoliciesFields = {
+    "access_scope": ubx.FieldSpec(
+        wire_name="access_scope",
+        kind="object",
+        fields=_AccessEntry_AccessPolicies_AccessScopeFields,
+    ),
+    "policy_arn": ubx.FieldSpec(wire_name="policy_arn"),
+}
+
+_AccessEntry_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class AccessEntryConfig:
+    # An array of access policies that are associated with the access entry.
+    access_policies: Any = None
+    # The cluster that the access entry is created for.
     cluster_name: Any = None
-    id: Any = None
+    # The Kubernetes groups that the access entry is associated with.
     kubernetes_groups: Any = None
+    # The principal ARN that the access entry is created for.
     principal_arn: Any = None
-    region: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+    # The node type to associate with the access entry.
     type: Any = None
-    user_name: Any = None
-    timeouts: Any = None
+    # The Kubernetes user that the access entry is associated with.
+    username: Any = None
+
+@dataclasses.dataclass
+class AccessEntryAttrs:
+    # The ARN of the access entry.
+    access_entry_arn: Any = None
+    # An array of access policies that are associated with the access entry.
+    access_policies: Any = None
+    # The cluster that the access entry is created for.
+    cluster_name: Any = None
+    # The Kubernetes groups that the access entry is associated with.
+    kubernetes_groups: Any = None
+    # The principal ARN that the access entry is created for.
+    principal_arn: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # The node type to associate with the access entry.
+    type: Any = None
+    # The Kubernetes user that the access entry is associated with.
+    username: Any = None
 
 AccessEntry = ubx.ResourceBinding(
     wire_type="aws_eks_access_entry",
     fields={
+        "access_policies": ubx.FieldSpec(
+            wire_name="access_policies",
+            kind="list",
+            fields=_AccessEntry_AccessPoliciesFields,
+        ),
         "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "kubernetes_groups": ubx.FieldSpec(wire_name="kubernetes_groups"),
         "principal_arn": ubx.FieldSpec(wire_name="principal_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "type": ubx.FieldSpec(wire_name="type"),
-        "user_name": ubx.FieldSpec(wire_name="user_name"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_AccessEntry_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_AccessEntry_TagsFields,
         ),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "username": ubx.FieldSpec(wire_name="username"),
     },
 )

@@ -2,25 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface QueuePolicyConfig {
-  id?: string | Computed<string>;
-  policy: string | Computed<string>;
-  queueUrl: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** A policy document that contains the permissions for the specified SQS queues. For more information about SQS policies, see [Using custom policies with the access policy language](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html) in the *Developer Guide*. */
+  policyDocument: unknown | Computed<unknown>;
+  /** The URLs of the queues to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SQS::Queue`` resource. */
+  queues: string[] | Computed<string[]>;
 }
 
 export interface QueuePolicyAttrs {
+  /** The ID of the SQS queue policy is the URL of the queue to which the policy is attached. (AI-inferred) */
   id: string;
-  policy: string;
-  queueUrl: string;
-  region: string;
+  /** A policy document that contains the permissions for the specified SQS queues. For more information about SQS policies, see [Using custom policies with the access policy language](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html) in the *Developer Guide*. */
+  policyDocument: unknown;
+  /** The URLs of the queues to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SQS::Queue`` resource. */
+  queues: string[];
 }
 
 export const QueuePolicy: ResourceBinding<QueuePolicyConfig, QueuePolicyAttrs> = {
   wireType: "aws_sqs_queue_policy",
   fields: {
-    id: "id",
-    policy: "policy",
-    queueUrl: "queue_url",
-    region: "region",
+    policyDocument: "policy_document",
+    queues: "queues",
   },
 };

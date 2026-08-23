@@ -3,25 +3,114 @@ package lightsail
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type DiskConfig struct {
+type Disk_AddOns_AutoSnapshotAddOnRequest struct {
+	// Specifies the time of day (in 24-hour HH:00 format, e.g., '02:00') when the automatic snapshot of the disk is created for the auto snapshot add-on. (AI-inferred)
+	SnapshotTimeOfDay any
+}
+
+type Disk_AddOns struct {
+	// Specifies the type of add-on to enable for the Lightsail disk, such as AutoSnapshot for automatic snapshots. (AI-inferred)
+	AddOnType any
+	// Configures the automatic snapshot add-on for the Lightsail disk, including the daily time (in HH:00 format) at which the snapshot is created. (AI-inferred)
+	AutoSnapshotAddOnRequest any
+	// The status of the disk add-on, typically 'Enabled' or 'Disabled', indicating whether the add-on is active on the Lightsail disk. (AI-inferred)
+	Status any
+}
+
+type Disk_Location struct {
+	// The Availability Zone in which to create your disk. Use the following format: us-east-2a (case sensitive). Be sure to add the include Availability Zones parameter to your request.
 	AvailabilityZone any
-	Id any
-	Name any
-	Region any
+	// The Region Name in which to create your disk.
+	RegionName any
+}
+
+type Disk_Tags struct {
+	// The key of a tag to attach to the Lightsail disk, used to organize and identify the disk resource. (AI-inferred)
+	Key any
+	// Specifies the tag value in a key-value pair that you attach to the Lightsail disk for metadata and resource management purposes. (AI-inferred)
+	Value any
+}
+
+var Disk_AddOns_AutoSnapshotAddOnRequestFields = ubx.FieldMap{
+		"SnapshotTimeOfDay": ubx.FieldSpec{WireName: "snapshot_time_of_day"},
+	}
+
+var Disk_AddOnsFields = ubx.FieldMap{
+		"AddOnType": ubx.FieldSpec{WireName: "add_on_type"},
+		"AutoSnapshotAddOnRequest": ubx.FieldSpec{
+			WireName: "auto_snapshot_add_on_request",
+			Kind: "object",
+			Fields: Disk_AddOns_AutoSnapshotAddOnRequestFields,
+		},
+		"Status": ubx.FieldSpec{WireName: "status"},
+	}
+
+var Disk_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+type DiskConfig struct {
+	// An array of objects representing the add-ons to enable for the new instance.
+	AddOns any
+	// The Availability Zone in which to create your instance. Use the following format: us-east-2a (case sensitive). Be sure to add the include Availability Zones parameter to your request.
+	AvailabilityZone any
+	// The names to use for your new Lightsail disk.
+	DiskName any
+	// Size of the Lightsail disk
 	SizeInGb any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
+}
+
+type DiskAttrs struct {
+	// An array of objects representing the add-ons to enable for the new instance.
+	AddOns any
+	// Name of the attached Lightsail Instance
+	AttachedTo any
+	// Attachment State of the Lightsail disk
+	AttachmentState any
+	// The Availability Zone in which to create your instance. Use the following format: us-east-2a (case sensitive). Be sure to add the include Availability Zones parameter to your request.
+	AvailabilityZone any
+	// The Amazon Resource Name (ARN) that uniquely identifies the Lightsail disk. (AI-inferred)
+	DiskArn any
+	// The names to use for your new Lightsail disk.
+	DiskName any
+	// Iops of the Lightsail disk
+	Iops any
+	// Check is Disk is attached state
+	IsAttached any
+	// Location of a resource.
+	Location any
+	// Path of the attached Disk
+	Path any
+	// Resource type of Lightsail instance.
+	ResourceType any
+	// Size of the Lightsail disk
+	SizeInGb any
+	// State of the Lightsail disk
+	State any
+	// Support code to help identify any issues
+	SupportCode any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Disk = ubx.ResourceBinding{
 	WireType: "aws_lightsail_disk",
 	Fields: ubx.FieldMap{
+		"AddOns": ubx.FieldSpec{
+			WireName: "add_ons",
+			Kind: "list",
+			Fields: Disk_AddOnsFields,
+		},
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"DiskName": ubx.FieldSpec{WireName: "disk_name"},
 		"SizeInGb": ubx.FieldSpec{WireName: "size_in_gb"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Disk_TagsFields,
+		},
 	},
 }

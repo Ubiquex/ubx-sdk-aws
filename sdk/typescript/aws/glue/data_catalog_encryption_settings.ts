@@ -2,23 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryption {
-  awsKmsKeyId: string;
-  returnConnectionPasswordEncrypted: boolean;
+  /** An AWS KMS key that is used to encrypt the connection password. */
+  kmsKeyId?: string | Computed<string>;
+  /** When the ReturnConnectionPasswordEncrypted flag is set to 'true', passwords remain encrypted in the responses of GetConnection and GetConnections. This encryption takes effect independently from catalog encryption. */
+  returnConnectionPasswordEncrypted?: boolean | Computed<boolean>;
 }
 
 export interface DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRest {
-  catalogEncryptionMode: string;
-  catalogEncryptionServiceRole: string;
-  sseAwsKmsKeyId: string;
+  /** The encryption-at-rest mode for encrypting Data Catalog data. */
+  catalogEncryptionMode?: string | Computed<string>;
+  /** The role that AWS Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf. */
+  catalogEncryptionServiceRole?: string | Computed<string>;
+  /** The ID of the AWS KMS key to use for encryption at rest. */
+  sseAwsKmsKeyId?: string | Computed<string>;
 }
 
 export interface DataCatalogEncryptionSettings_DataCatalogEncryptionSettings {
-  connectionPasswordEncryption: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryption[];
-  encryptionAtRest: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRest[];
+  /** When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of CreateConnection or UpdateConnection and store it in the ENCRYPTED_PASSWORD field in the connection properties. You can enable catalog encryption or only password encryption. */
+  connectionPasswordEncryption?: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryption | Computed<DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryption>;
+  /** Specifies the encryption-at-rest configuration for the Data Catalog. */
+  encryptionAtRest?: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRest | Computed<DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRest>;
 }
 
 const DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryptionFields: FieldMap = {
-  awsKmsKeyId: "aws_kms_key_id",
+  kmsKeyId: "kms_key_id",
   returnConnectionPasswordEncrypted: "return_connection_password_encrypted",
 };
 
@@ -31,39 +38,37 @@ const DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRe
 const DataCatalogEncryptionSettings_DataCatalogEncryptionSettingsFields: FieldMap = {
   connectionPasswordEncryption: {
     wireName: "connection_password_encryption",
-    kind: "list",
+    kind: "object",
     fields: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryptionFields,
   },
   encryptionAtRest: {
     wireName: "encryption_at_rest",
-    kind: "list",
+    kind: "object",
     fields: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRestFields,
   },
 };
 
 export interface DataCatalogEncryptionSettingsConfig {
-  catalogId?: string | Computed<string>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
-  dataCatalogEncryptionSettings?: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings[] | Computed<DataCatalogEncryptionSettings_DataCatalogEncryptionSettings[]>;
+  /** The ID of the Data Catalog in which the settings are created. */
+  catalogId: string | Computed<string>;
+  /** Contains configuration information for maintaining Data Catalog security. */
+  dataCatalogEncryptionSettings: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings | Computed<DataCatalogEncryptionSettings_DataCatalogEncryptionSettings>;
 }
 
 export interface DataCatalogEncryptionSettingsAttrs {
+  /** The ID of the Data Catalog in which the settings are created. */
   catalogId: string;
-  id: string;
-  region: string;
-  dataCatalogEncryptionSettings: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings[];
+  /** Contains configuration information for maintaining Data Catalog security. */
+  dataCatalogEncryptionSettings: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings;
 }
 
 export const DataCatalogEncryptionSettings: ResourceBinding<DataCatalogEncryptionSettingsConfig, DataCatalogEncryptionSettingsAttrs> = {
   wireType: "aws_glue_data_catalog_encryption_settings",
   fields: {
     catalogId: "catalog_id",
-    id: "id",
-    region: "region",
     dataCatalogEncryptionSettings: {
       wireName: "data_catalog_encryption_settings",
-      kind: "list",
+      kind: "object",
       fields: DataCatalogEncryptionSettings_DataCatalogEncryptionSettingsFields,
     },
   },

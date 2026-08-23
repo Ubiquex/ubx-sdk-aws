@@ -3,11 +3,37 @@ package api
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type GatewayDomainNameAccessAssociation_Tags struct {
+	Key any
+	Value any
+}
+
+var GatewayDomainNameAccessAssociation_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type GatewayDomainNameAccessAssociationConfig struct {
+	// The source of the domain name access association resource.
 	AccessAssociationSource any
+	// The source type of the domain name access association resource.
 	AccessAssociationSourceType any
+	// The amazon resource name (ARN) of the domain name resource.
 	DomainNameArn any
-	Region any
+	// An array of arbitrary tags (key-value pairs) to associate with the domainname access association.
+	Tags any
+}
+
+type GatewayDomainNameAccessAssociationAttrs struct {
+	// The source of the domain name access association resource.
+	AccessAssociationSource any
+	// The source type of the domain name access association resource.
+	AccessAssociationSourceType any
+	// The amazon resource name (ARN) of the domain name access association resource.
+	DomainNameAccessAssociationArn any
+	// The amazon resource name (ARN) of the domain name resource.
+	DomainNameArn any
+	// An array of arbitrary tags (key-value pairs) to associate with the domainname access association.
 	Tags any
 }
 
@@ -17,7 +43,10 @@ var GatewayDomainNameAccessAssociation = ubx.ResourceBinding{
 		"AccessAssociationSource": ubx.FieldSpec{WireName: "access_association_source"},
 		"AccessAssociationSourceType": ubx.FieldSpec{WireName: "access_association_source_type"},
 		"DomainNameArn": ubx.FieldSpec{WireName: "domain_name_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: GatewayDomainNameAccessAssociation_TagsFields,
+		},
 	},
 }

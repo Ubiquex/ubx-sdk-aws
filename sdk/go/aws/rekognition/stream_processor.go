@@ -3,219 +3,210 @@ package rekognition
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type StreamProcessor_DataSharingPreference struct {
-	OptIn any
-}
-
-type StreamProcessor_Input_KinesisVideoStream struct {
-	Arn any
-}
-
-type StreamProcessor_Input struct {
-	KinesisVideoStream any
-}
-
-type StreamProcessor_NotificationChannel struct {
-	SnsTopicArn any
-}
-
-type StreamProcessor_Output_S3Destination struct {
-	Bucket any
-	KeyPrefix any
-}
-
-type StreamProcessor_Output struct {
-	KinesisDataStream any
-	S3Destination any
-}
-
-type StreamProcessor_RegionsOfInterest_BoundingBox struct {
+type StreamProcessor_BoundingBoxRegionsOfInterest struct {
+	// Height of the bounding box region of interest, expressed as a ratio of the overall video frame height (between 0.0 and 1.0). (AI-inferred)
 	Height any
+	// The normalized left (X) coordinate of the bounding box within the video frame that defines the region of interest, in the range 0 to 1. (AI-inferred)
 	Left any
+	// The normalized Y-coordinate of the top-left corner of the bounding box that defines this region of interest in a video frame, measured as a value from 0 (top edge) to 1 (bottom edge). (AI-inferred)
 	Top any
+	// Width of the bounding box that defines a region of interest in the video stream, specified as a normalized fraction of the overall frame width (0.0 to 1.0). (AI-inferred)
 	Width any
 }
 
-type StreamProcessor_RegionsOfInterest_Polygon struct {
+type StreamProcessor_ConnectedHomeSettings struct {
+	// List of labels that need to be detected in the video stream. Current supported values are PERSON, PET, PACKAGE, ALL.
+	Labels any
+	// Minimum object class match confidence score that must be met to return a result for a recognized object.
+	MinConfidence any
+}
+
+type StreamProcessor_DataSharingPreference struct {
+	// Flag to enable data-sharing
+	OptIn any
+}
+
+type StreamProcessor_FaceSearchSettings struct {
+	// The ID of a collection that contains faces that you want to search for.
+	CollectionId any
+	// Minimum face match confidence score percentage that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted.
+	FaceMatchThreshold any
+}
+
+type StreamProcessor_KinesisDataStream struct {
+	// ARN of the Kinesis Data Stream stream.
+	Arn any
+}
+
+type StreamProcessor_PolygonRegionsOfInterest struct {
 	X any
 	Y any
 }
 
-type StreamProcessor_RegionsOfInterest struct {
-	BoundingBox any
-	Polygon any
+type StreamProcessor_S3Destination struct {
+	// Name of the S3 bucket.
+	BucketName any
+	// The object key prefix path where the results will be stored. Default is no prefix path
+	ObjectKeyPrefix any
 }
 
-type StreamProcessor_Settings_ConnectedHome struct {
-	Labels any
-	MinConfidence any
+type StreamProcessor_Tags struct {
+	// The key of a tag attached to the Amazon Rekognition stream processor, used to assign metadata for identifying, organizing, and managing the resource. (AI-inferred)
+	Key any
+	// The value portion of a key-value tag attached to the Rekognition stream processor, used to store arbitrary metadata such as cost-center or environment identifiers for resource management. (AI-inferred)
+	Value any
 }
 
-type StreamProcessor_Settings_FaceSearch struct {
-	CollectionId any
-	FaceMatchThreshold any
-}
-
-type StreamProcessor_Settings struct {
-	ConnectedHome any
-	FaceSearch any
-}
-
-type StreamProcessor_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
-
-var StreamProcessor_DataSharingPreferenceFields = ubx.FieldMap{
-		"OptIn": ubx.FieldSpec{WireName: "opt_in"},
-	}
-
-var StreamProcessor_Input_KinesisVideoStreamFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
-
-var StreamProcessor_InputFields = ubx.FieldMap{
-		"KinesisVideoStream": ubx.FieldSpec{
-			WireName: "kinesis_video_stream",
-			Kind: "list",
-			Fields: StreamProcessor_Input_KinesisVideoStreamFields,
-		},
-	}
-
-var StreamProcessor_NotificationChannelFields = ubx.FieldMap{
-		"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
-	}
-
-var StreamProcessor_Output_S3DestinationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
-	}
-
-var StreamProcessor_OutputFields = ubx.FieldMap{
-		"KinesisDataStream": ubx.FieldSpec{
-			WireName: "kinesis_data_stream",
-			Kind: "list",
-			Fields: StreamProcessor_Input_KinesisVideoStreamFields,
-		},
-		"S3Destination": ubx.FieldSpec{
-			WireName: "s3_destination",
-			Kind: "list",
-			Fields: StreamProcessor_Output_S3DestinationFields,
-		},
-	}
-
-var StreamProcessor_RegionsOfInterest_BoundingBoxFields = ubx.FieldMap{
+var StreamProcessor_BoundingBoxRegionsOfInterestFields = ubx.FieldMap{
 		"Height": ubx.FieldSpec{WireName: "height"},
 		"Left": ubx.FieldSpec{WireName: "left"},
 		"Top": ubx.FieldSpec{WireName: "top"},
 		"Width": ubx.FieldSpec{WireName: "width"},
 	}
 
-var StreamProcessor_RegionsOfInterest_PolygonFields = ubx.FieldMap{
-		"X": ubx.FieldSpec{WireName: "x"},
-		"Y": ubx.FieldSpec{WireName: "y"},
-	}
-
-var StreamProcessor_RegionsOfInterestFields = ubx.FieldMap{
-		"BoundingBox": ubx.FieldSpec{
-			WireName: "bounding_box",
-			Kind: "list",
-			Fields: StreamProcessor_RegionsOfInterest_BoundingBoxFields,
-		},
-		"Polygon": ubx.FieldSpec{
-			WireName: "polygon",
-			Kind: "list",
-			Fields: StreamProcessor_RegionsOfInterest_PolygonFields,
-		},
-	}
-
-var StreamProcessor_Settings_ConnectedHomeFields = ubx.FieldMap{
+var StreamProcessor_ConnectedHomeSettingsFields = ubx.FieldMap{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MinConfidence": ubx.FieldSpec{WireName: "min_confidence"},
 	}
 
-var StreamProcessor_Settings_FaceSearchFields = ubx.FieldMap{
+var StreamProcessor_DataSharingPreferenceFields = ubx.FieldMap{
+		"OptIn": ubx.FieldSpec{WireName: "opt_in"},
+	}
+
+var StreamProcessor_FaceSearchSettingsFields = ubx.FieldMap{
 		"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
 		"FaceMatchThreshold": ubx.FieldSpec{WireName: "face_match_threshold"},
 	}
 
-var StreamProcessor_SettingsFields = ubx.FieldMap{
-		"ConnectedHome": ubx.FieldSpec{
-			WireName: "connected_home",
-			Kind: "list",
-			Fields: StreamProcessor_Settings_ConnectedHomeFields,
-		},
-		"FaceSearch": ubx.FieldSpec{
-			WireName: "face_search",
-			Kind: "list",
-			Fields: StreamProcessor_Settings_FaceSearchFields,
-		},
+var StreamProcessor_KinesisDataStreamFields = ubx.FieldMap{
+		"Arn": ubx.FieldSpec{WireName: "arn"},
 	}
 
-var StreamProcessor_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var StreamProcessor_S3DestinationFields = ubx.FieldMap{
+		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+		"ObjectKeyPrefix": ubx.FieldSpec{WireName: "object_key_prefix"},
+	}
+
+var StreamProcessor_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type StreamProcessorConfig struct {
-	KmsKeyId any
-	Name any
-	Region any
-	RoleArn any
-	Tags any
+	// The BoundingBoxRegionsOfInterest specifies an array of bounding boxes of interest in the video frames to analyze, as part of connected home feature. If an object is partially in a region of interest, Rekognition will tag it as detected if the overlap of the object with the region-of-interest is greater than 20%.
+	BoundingBoxRegionsOfInterest any
+	// Connected home settings to use on a streaming video. Note that either ConnectedHomeSettings or FaceSearchSettings should be set. Not both
+	ConnectedHomeSettings any
+	// Indicates whether Rekognition is allowed to store the video stream data for model-training.
 	DataSharingPreference any
-	Input any
+	// Face search settings to use on a streaming video. Note that either FaceSearchSettings or ConnectedHomeSettings should be set. Not both
+	FaceSearchSettings any
+	// The Amazon Kinesis Data Stream stream to which the Amazon Rekognition stream processor streams the analysis results, as part of face search feature.
+	KinesisDataStream any
+	// The Kinesis Video Stream that streams the source video.
+	KinesisVideoStream any
+	// The KMS key that is used by Rekognition to encrypt any intermediate customer metadata and store in the customer's S3 bucket.
+	KmsKeyId any
+	// Name of the stream processor. It's an identifier you assign to the stream processor. You can use it to manage the stream processor.
+	Name any
+	// The ARN of the SNS notification channel where events of interests are published, as part of connected home feature.
 	NotificationChannel any
-	Output any
-	RegionsOfInterest any
-	Settings any
-	Timeouts any
+	// The PolygonRegionsOfInterest specifies a set of polygon areas of interest in the video frames to analyze, as part of connected home feature. Each polygon is in turn, an ordered list of Point
+	PolygonRegionsOfInterest any
+	// ARN of the IAM role that allows access to the stream processor, and provides Rekognition read permissions for KVS stream and write permissions to S3 bucket and SNS topic.
+	RoleArn any
+	// The S3 location in customer's account where inference output & artifacts are stored, as part of connected home feature.
+	S3Destination any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type StreamProcessorAttrs struct {
+	// The ARN of the stream processor
+	Arn any
+	// The BoundingBoxRegionsOfInterest specifies an array of bounding boxes of interest in the video frames to analyze, as part of connected home feature. If an object is partially in a region of interest, Rekognition will tag it as detected if the overlap of the object with the region-of-interest is greater than 20%.
+	BoundingBoxRegionsOfInterest any
+	// Connected home settings to use on a streaming video. Note that either ConnectedHomeSettings or FaceSearchSettings should be set. Not both
+	ConnectedHomeSettings any
+	// Indicates whether Rekognition is allowed to store the video stream data for model-training.
+	DataSharingPreference any
+	// Face search settings to use on a streaming video. Note that either FaceSearchSettings or ConnectedHomeSettings should be set. Not both
+	FaceSearchSettings any
+	// The Amazon Kinesis Data Stream stream to which the Amazon Rekognition stream processor streams the analysis results, as part of face search feature.
+	KinesisDataStream any
+	// The Kinesis Video Stream that streams the source video.
+	KinesisVideoStream any
+	// The KMS key that is used by Rekognition to encrypt any intermediate customer metadata and store in the customer's S3 bucket.
+	KmsKeyId any
+	// Name of the stream processor. It's an identifier you assign to the stream processor. You can use it to manage the stream processor.
+	Name any
+	// The ARN of the SNS notification channel where events of interests are published, as part of connected home feature.
+	NotificationChannel any
+	// The PolygonRegionsOfInterest specifies a set of polygon areas of interest in the video frames to analyze, as part of connected home feature. Each polygon is in turn, an ordered list of Point
+	PolygonRegionsOfInterest any
+	// ARN of the IAM role that allows access to the stream processor, and provides Rekognition read permissions for KVS stream and write permissions to S3 bucket and SNS topic.
+	RoleArn any
+	// The S3 location in customer's account where inference output & artifacts are stored, as part of connected home feature.
+	S3Destination any
+	// Current status of the stream processor.
+	Status any
+	// Detailed status message about the stream processor.
+	StatusMessage any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var StreamProcessor = ubx.ResourceBinding{
 	WireType: "aws_rekognition_stream_processor",
 	Fields: ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"BoundingBoxRegionsOfInterest": ubx.FieldSpec{
+			WireName: "bounding_box_regions_of_interest",
+			Kind: "list",
+			Fields: StreamProcessor_BoundingBoxRegionsOfInterestFields,
+		},
+		"ConnectedHomeSettings": ubx.FieldSpec{
+			WireName: "connected_home_settings",
+			Kind: "object",
+			Fields: StreamProcessor_ConnectedHomeSettingsFields,
+		},
 		"DataSharingPreference": ubx.FieldSpec{
 			WireName: "data_sharing_preference",
-			Kind: "list",
+			Kind: "object",
 			Fields: StreamProcessor_DataSharingPreferenceFields,
 		},
-		"Input": ubx.FieldSpec{
-			WireName: "input",
-			Kind: "list",
-			Fields: StreamProcessor_InputFields,
+		"FaceSearchSettings": ubx.FieldSpec{
+			WireName: "face_search_settings",
+			Kind: "object",
+			Fields: StreamProcessor_FaceSearchSettingsFields,
 		},
+		"KinesisDataStream": ubx.FieldSpec{
+			WireName: "kinesis_data_stream",
+			Kind: "object",
+			Fields: StreamProcessor_KinesisDataStreamFields,
+		},
+		"KinesisVideoStream": ubx.FieldSpec{
+			WireName: "kinesis_video_stream",
+			Kind: "object",
+			Fields: StreamProcessor_KinesisDataStreamFields,
+		},
+		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NotificationChannel": ubx.FieldSpec{
 			WireName: "notification_channel",
-			Kind: "list",
-			Fields: StreamProcessor_NotificationChannelFields,
-		},
-		"Output": ubx.FieldSpec{
-			WireName: "output",
-			Kind: "list",
-			Fields: StreamProcessor_OutputFields,
-		},
-		"RegionsOfInterest": ubx.FieldSpec{
-			WireName: "regions_of_interest",
-			Kind: "list",
-			Fields: StreamProcessor_RegionsOfInterestFields,
-		},
-		"Settings": ubx.FieldSpec{
-			WireName: "settings",
-			Kind: "list",
-			Fields: StreamProcessor_SettingsFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
 			Kind: "object",
-			Fields: StreamProcessor_TimeoutsFields,
+			Fields: StreamProcessor_KinesisDataStreamFields,
+		},
+		"PolygonRegionsOfInterest": ubx.FieldSpec{WireName: "polygon_regions_of_interest"},
+		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"S3Destination": ubx.FieldSpec{
+			WireName: "s3_destination",
+			Kind: "object",
+			Fields: StreamProcessor_S3DestinationFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: StreamProcessor_TagsFields,
 		},
 	},
 }

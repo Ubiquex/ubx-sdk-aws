@@ -7,20 +7,104 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitions:
+    # A list of event attribute names (dimension keys) from the RUM event JSON that are used as dimensions for the custom metric defined in this metric definition. (AI-inferred)
+    dimension_keys: Any = None
+    # The JSON event pattern that filters which RUM application events are included in this metric definition, used to match event attributes for extracting metric values. (AI-inferred)
+    event_pattern: Any = None
+    # The name assigned to this metric definition, which is used as the metric name when the extracted value is sent to the configured CloudWatch destination. (AI-inferred)
+    name: Any = None
+    # The CloudWatch namespace where the extracted metric is published, defaulting to 'AWS/RUM' if not specified. (AI-inferred)
+    namespace: Any = None
+    # Defines the unit label (e.g., 'Milliseconds' or 'Count') that CloudWatch RUM attaches to the metric generated from this metric definition when it is sent to the destination. (AI-inferred)
+    unit_label: Any = None
+    # The value_key property specifies the key in the event data that CloudWatch RUM uses to extract the numerical value for the custom metric defined by this metric definition. (AI-inferred)
+    value_key: Any = None
+
+@dataclasses.dataclass
+class AppMonitor_AppMonitorConfiguration_MetricDestinations:
+    # The destination service to which CloudWatch RUM sends the extracted metrics, such as CloudWatch or Evidently. (AI-inferred)
+    destination: Any = None
+    # The ARN of the CloudWatch Logs log group or Evidently project that receives the metrics, used when metric destinations are configured for the app monitor. (AI-inferred)
+    destination_arn: Any = None
+    # The ARN of an IAM role that grants CloudWatch RUM permission to publish metrics to the destination specified in this metric destination definition. (AI-inferred)
+    iam_role_arn: Any = None
+    # Specifies the list of metric definitions for a metric destination, each defining a metric name and the value expression (such as a JSONPath or regex) used to extract the metric value from RUM event data. (AI-inferred)
+    metric_definitions: Any = None
+
+@dataclasses.dataclass
 class AppMonitor_AppMonitorConfiguration:
+    # If you set this to true, the RUM web client sets two cookies, a session cookie and a user cookie. The cookies allow the RUM web client to collect data relating to the number of users an application has and the behavior of the application across a sequence of events. Cookies are stored in the top-level domain of the current page.
     allow_cookies: Any = None
+    # If you set this to true, RUM enables xray tracing for the user sessions that RUM samples. RUM adds an xray trace header to allowed HTTP requests. It also records an xray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the xray console and the CW ServiceLens console.
     enable_xray: Any = None
+    # List of url pages
     excluded_pages: Any = None
+    # List of favorite pages
     favorite_pages: Any = None
+    # Resource ARN
     guest_role_arn: Any = None
+    # The ID of the identity pool that is used to authorize the sending of data to RUM.
     identity_pool_id: Any = None
+    # List of url pages
     included_pages: Any = None
+    # An array of structures which define the destinations and the metrics that you want to send.
+    metric_destinations: Any = None
+    # Specifies the percentage of user sessions to use for RUM data collection. Choosing a higher percentage gives you more data but also incurs more costs. The number you specify is the percentage of user sessions that will be used. If you omit this parameter, the default of 10 is used.
     session_sample_rate: Any = None
+    # An array that lists the types of telemetry data that this app monitor is to collect.
     telemetries: Any = None
 
 @dataclasses.dataclass
 class AppMonitor_CustomEvents:
+    # Determines whether custom event collection is enabled or disabled for the app monitor, with allowed values 'ENABLED' and 'DISABLED'. (AI-inferred)
     status: Any = None
+
+@dataclasses.dataclass
+class AppMonitor_DeobfuscationConfiguration_JavaScriptSourceMaps:
+    # The S3Uri of the bucket or folder that stores the source map files. It is required if status is ENABLED.
+    s3_uri: Any = None
+    # Specifies whether JavaScript error stack traces should be unminified for this app monitor. The default is for JavaScript error stack trace unminification to be DISABLED
+    status: Any = None
+
+@dataclasses.dataclass
+class AppMonitor_DeobfuscationConfiguration:
+    # A structure that contains the configuration for how an app monitor can unminify JavaScript error stack traces using source maps.
+    java_script_source_maps: Any = None
+
+@dataclasses.dataclass
+class AppMonitor_ResourcePolicy:
+    # The JSON to use as the resource policy. The document can be up to 4 KB in size.
+    policy_document: Any = None
+    # A string value that you can use to conditionally update your policy. You can provide the revision ID of your existing policy to make mutating requests against that policy. When you assign a policy revision ID, then later requests about that policy will be rejected with an InvalidPolicyRevisionIdException error if they don't provide the correct current revision ID.
+    policy_revision_id: Any = None
+
+@dataclasses.dataclass
+class AppMonitor_Tags:
+    # The tag key, which is the name of the tag used to categorize and manage the CloudWatch RUM app monitor resource. (AI-inferred)
+    key: Any = None
+    # Specifies the value for a tag key in the map of tags associated with the AWS RUM app monitor resource. (AI-inferred)
+    value: Any = None
+
+_AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitionsFields = {
+    "dimension_keys": ubx.FieldSpec(wire_name="dimension_keys"),
+    "event_pattern": ubx.FieldSpec(wire_name="event_pattern"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "namespace": ubx.FieldSpec(wire_name="namespace"),
+    "unit_label": ubx.FieldSpec(wire_name="unit_label"),
+    "value_key": ubx.FieldSpec(wire_name="value_key"),
+}
+
+_AppMonitor_AppMonitorConfiguration_MetricDestinationsFields = {
+    "destination": ubx.FieldSpec(wire_name="destination"),
+    "destination_arn": ubx.FieldSpec(wire_name="destination_arn"),
+    "iam_role_arn": ubx.FieldSpec(wire_name="iam_role_arn"),
+    "metric_definitions": ubx.FieldSpec(
+        wire_name="metric_definitions",
+        kind="list",
+        fields=_AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitionsFields,
+    ),
+}
 
 _AppMonitor_AppMonitorConfigurationFields = {
     "allow_cookies": ubx.FieldSpec(wire_name="allow_cookies"),
@@ -30,6 +114,11 @@ _AppMonitor_AppMonitorConfigurationFields = {
     "guest_role_arn": ubx.FieldSpec(wire_name="guest_role_arn"),
     "identity_pool_id": ubx.FieldSpec(wire_name="identity_pool_id"),
     "included_pages": ubx.FieldSpec(wire_name="included_pages"),
+    "metric_destinations": ubx.FieldSpec(
+        wire_name="metric_destinations",
+        kind="list",
+        fields=_AppMonitor_AppMonitorConfiguration_MetricDestinationsFields,
+    ),
     "session_sample_rate": ubx.FieldSpec(wire_name="session_sample_rate"),
     "telemetries": ubx.FieldSpec(wire_name="telemetries"),
 }
@@ -38,39 +127,109 @@ _AppMonitor_CustomEventsFields = {
     "status": ubx.FieldSpec(wire_name="status"),
 }
 
+_AppMonitor_DeobfuscationConfiguration_JavaScriptSourceMapsFields = {
+    "s3_uri": ubx.FieldSpec(wire_name="s3_uri"),
+    "status": ubx.FieldSpec(wire_name="status"),
+}
+
+_AppMonitor_DeobfuscationConfigurationFields = {
+    "java_script_source_maps": ubx.FieldSpec(
+        wire_name="java_script_source_maps",
+        kind="object",
+        fields=_AppMonitor_DeobfuscationConfiguration_JavaScriptSourceMapsFields,
+    ),
+}
+
+_AppMonitor_ResourcePolicyFields = {
+    "policy_document": ubx.FieldSpec(wire_name="policy_document"),
+    "policy_revision_id": ubx.FieldSpec(wire_name="policy_revision_id"),
+}
+
+_AppMonitor_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 @dataclasses.dataclass
 class AppMonitorConfig:
-    cw_log_enabled: Any = None
-    domain: Any = None
-    domain_list: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # AppMonitor configuration
     app_monitor_configuration: Any = None
+    # AppMonitor custom events configuration
     custom_events: Any = None
+    # Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to CWLlong in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur CWLlong charges. If you omit this parameter, the default is false
+    cw_log_enabled: Any = None
+    # A structure that contains the configuration for how an app monitor can deobfuscate stack traces.
+    deobfuscation_configuration: Any = None
+    # The top-level internet domain name for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.
+    domain: Any = None
+    # The top-level internet domain names for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.
+    domain_list: Any = None
+    # A name for the app monitor
+    name: Any = None
+    # Specifies the application platform for the app monitor, such as 'Browser' or 'Mobile', which determines how client-side telemetry is collected. (AI-inferred)
+    platform: Any = None
+    # A structure that defines resource policy attached to your app monitor.
+    resource_policy: Any = None
+    # Assigns one or more tags (key-value pairs) to the app monitor. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.You can associate as many as 50 tags with an app monitor.
+    tags: Any = None
+
+@dataclasses.dataclass
+class AppMonitorAttrs:
+    # AppMonitor configuration
+    app_monitor_configuration: Any = None
+    # AppMonitor custom events configuration
+    custom_events: Any = None
+    # Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to CWLlong in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur CWLlong charges. If you omit this parameter, the default is false
+    cw_log_enabled: Any = None
+    # A structure that contains the configuration for how an app monitor can deobfuscate stack traces.
+    deobfuscation_configuration: Any = None
+    # The top-level internet domain name for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.
+    domain: Any = None
+    # The top-level internet domain names for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.
+    domain_list: Any = None
+    # The unique ID of the new app monitor.
+    id: Any = None
+    # A name for the app monitor
+    name: Any = None
+    # Specifies the application platform for the app monitor, such as 'Browser' or 'Mobile', which determines how client-side telemetry is collected. (AI-inferred)
+    platform: Any = None
+    # A structure that defines resource policy attached to your app monitor.
+    resource_policy: Any = None
+    # Assigns one or more tags (key-value pairs) to the app monitor. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.You can associate as many as 50 tags with an app monitor.
+    tags: Any = None
 
 AppMonitor = ubx.ResourceBinding(
     wire_type="aws_rum_app_monitor",
     fields={
-        "cw_log_enabled": ubx.FieldSpec(wire_name="cw_log_enabled"),
-        "domain": ubx.FieldSpec(wire_name="domain"),
-        "domain_list": ubx.FieldSpec(wire_name="domain_list"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "app_monitor_configuration": ubx.FieldSpec(
             wire_name="app_monitor_configuration",
-            kind="list",
+            kind="object",
             fields=_AppMonitor_AppMonitorConfigurationFields,
         ),
         "custom_events": ubx.FieldSpec(
             wire_name="custom_events",
-            kind="list",
+            kind="object",
             fields=_AppMonitor_CustomEventsFields,
+        ),
+        "cw_log_enabled": ubx.FieldSpec(wire_name="cw_log_enabled"),
+        "deobfuscation_configuration": ubx.FieldSpec(
+            wire_name="deobfuscation_configuration",
+            kind="object",
+            fields=_AppMonitor_DeobfuscationConfigurationFields,
+        ),
+        "domain": ubx.FieldSpec(wire_name="domain"),
+        "domain_list": ubx.FieldSpec(wire_name="domain_list"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "platform": ubx.FieldSpec(wire_name="platform"),
+        "resource_policy": ubx.FieldSpec(
+            wire_name="resource_policy",
+            kind="object",
+            fields=_AppMonitor_ResourcePolicyFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_AppMonitor_TagsFields,
         ),
     },
 )

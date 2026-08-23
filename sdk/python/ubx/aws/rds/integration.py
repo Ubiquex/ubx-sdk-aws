@@ -7,44 +7,72 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Integration_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Integration_Tags:
+    key: Any = None
+    # The value component of a resource tag attached to the AWS RDS integration, used to categorize or identify the integration for cost allocation and management. (AI-inferred)
+    value: Any = None
 
-_Integration_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Integration_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class IntegrationConfig:
+    # An optional set of non-secret key–value pairs that contains additional contextual information about the data.
     additional_encryption_context: Any = None
+    # Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.
     data_filter: Any = None
+    # A description of the integration.
+    description: Any = None
+    # The name of the integration.
     integration_name: Any = None
-    kms_key_id: Any = None
-    region: Any = None
+    # The AWS Key Management System (AWS KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default AWS owned key.
+    kmskey_id: Any = None
+    # The Amazon Resource Name (ARN) of the database to use as the source for replication.
     source_arn: Any = None
+    # A list of tags. For more information, see [Tagging Amazon RDS Resources](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html) in the *Amazon RDS User Guide.*.
     tags: Any = None
+    # The ARN of the Redshift data warehouse to use as the target for replication.
     target_arn: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class IntegrationAttrs:
+    # An optional set of non-secret key–value pairs that contains additional contextual information about the data.
+    additional_encryption_context: Any = None
+    # The time the integration was created, in ISO 8601 format (e.g., 2023-01-01T00:00:00Z). (AI-inferred)
+    create_time: Any = None
+    # Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.
+    data_filter: Any = None
+    # A description of the integration.
+    description: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies this RDS integration, returned by AWS after creation. (AI-inferred)
+    integration_arn: Any = None
+    # The name of the integration.
+    integration_name: Any = None
+    # The AWS Key Management System (AWS KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default AWS owned key.
+    kmskey_id: Any = None
+    # The Amazon Resource Name (ARN) of the database to use as the source for replication.
+    source_arn: Any = None
+    # A list of tags. For more information, see [Tagging Amazon RDS Resources](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html) in the *Amazon RDS User Guide.*.
+    tags: Any = None
+    # The ARN of the Redshift data warehouse to use as the target for replication.
+    target_arn: Any = None
 
 Integration = ubx.ResourceBinding(
     wire_type="aws_rds_integration",
     fields={
         "additional_encryption_context": ubx.FieldSpec(wire_name="additional_encryption_context"),
         "data_filter": ubx.FieldSpec(wire_name="data_filter"),
+        "description": ubx.FieldSpec(wire_name="description"),
         "integration_name": ubx.FieldSpec(wire_name="integration_name"),
-        "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "kmskey_id": ubx.FieldSpec(wire_name="kmskey_id"),
         "source_arn": ubx.FieldSpec(wire_name="source_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "target_arn": ubx.FieldSpec(wire_name="target_arn"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Integration_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Integration_TagsFields,
         ),
+        "target_arn": ubx.FieldSpec(wire_name="target_arn"),
     },
 )

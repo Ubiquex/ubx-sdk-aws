@@ -4,21 +4,37 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecordingConfiguration_DestinationConfiguration_S3 struct {
+	// The name of the Amazon S3 bucket where AWS IVS stores the recorded video segments for this recording configuration. (AI-inferred)
 	BucketName any
 }
 
 type RecordingConfiguration_DestinationConfiguration struct {
+	// Recording S3 Destination Configuration.
 	S3 any
 }
 
-type RecordingConfiguration_ThumbnailConfiguration struct {
-	RecordingMode any
-	TargetIntervalSeconds any
+type RecordingConfiguration_RenditionConfiguration struct {
+	// Resolution Selection indicates which set of renditions are recorded for a stream.
+	RenditionSelection any
+	// Renditions indicates which renditions are recorded for a stream.
+	Renditions any
 }
 
-type RecordingConfiguration_Timeouts struct {
-	Create any
-	Delete any
+type RecordingConfiguration_Tags struct {
+	Key any
+	// The value of a tag attached to an AWS IVS recording configuration, used to organize, categorize, and manage the resource. (AI-inferred)
+	Value any
+}
+
+type RecordingConfiguration_ThumbnailConfiguration struct {
+	// Thumbnail Recording Mode, which determines whether thumbnails are recorded at an interval or are disabled.
+	RecordingMode any
+	// Resolution indicates the desired resolution of recorded thumbnails.
+	Resolution any
+	// Storage indicates the format in which thumbnails are recorded.
+	Storage any
+	// Target Interval Seconds defines the interval at which thumbnails are recorded. This field is required if RecordingMode is INTERVAL.
+	TargetIntervalSeconds any
 }
 
 var RecordingConfiguration_DestinationConfiguration_S3Fields = ubx.FieldMap{
@@ -28,56 +44,86 @@ var RecordingConfiguration_DestinationConfiguration_S3Fields = ubx.FieldMap{
 var RecordingConfiguration_DestinationConfigurationFields = ubx.FieldMap{
 		"S3": ubx.FieldSpec{
 			WireName: "s3",
-			Kind: "list",
+			Kind: "object",
 			Fields: RecordingConfiguration_DestinationConfiguration_S3Fields,
 		},
 	}
 
+var RecordingConfiguration_RenditionConfigurationFields = ubx.FieldMap{
+		"RenditionSelection": ubx.FieldSpec{WireName: "rendition_selection"},
+		"Renditions": ubx.FieldSpec{WireName: "renditions"},
+	}
+
+var RecordingConfiguration_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 var RecordingConfiguration_ThumbnailConfigurationFields = ubx.FieldMap{
 		"RecordingMode": ubx.FieldSpec{WireName: "recording_mode"},
+		"Resolution": ubx.FieldSpec{WireName: "resolution"},
+		"Storage": ubx.FieldSpec{WireName: "storage"},
 		"TargetIntervalSeconds": ubx.FieldSpec{WireName: "target_interval_seconds"},
 	}
 
-var RecordingConfiguration_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
 type RecordingConfigurationConfig struct {
-	Id any
-	Name any
-	RecordingReconnectWindowSeconds any
-	Region any
-	Tags any
-	TagsAll any
+	// Recording Destination Configuration.
 	DestinationConfiguration any
+	// Recording Configuration Name.
+	Name any
+	// Recording Reconnect Window Seconds. (0 means disabled)
+	RecordingReconnectWindowSeconds any
+	// Rendition Configuration describes which renditions should be recorded for a stream.
+	RenditionConfiguration any
+	// A list of key-value pairs that contain metadata for the asset model.
+	Tags any
+	// Recording Thumbnail Configuration.
 	ThumbnailConfiguration any
-	Timeouts any
+}
+
+type RecordingConfigurationAttrs struct {
+	// Recording Configuration ARN is automatically generated on creation and assigned as the unique identifier.
+	Arn any
+	// Recording Destination Configuration.
+	DestinationConfiguration any
+	// Recording Configuration Name.
+	Name any
+	// Recording Reconnect Window Seconds. (0 means disabled)
+	RecordingReconnectWindowSeconds any
+	// Rendition Configuration describes which renditions should be recorded for a stream.
+	RenditionConfiguration any
+	// Recording Configuration State.
+	State any
+	// A list of key-value pairs that contain metadata for the asset model.
+	Tags any
+	// Recording Thumbnail Configuration.
+	ThumbnailConfiguration any
 }
 
 var RecordingConfiguration = ubx.ResourceBinding{
 	WireType: "aws_ivs_recording_configuration",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RecordingReconnectWindowSeconds": ubx.FieldSpec{WireName: "recording_reconnect_window_seconds"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"DestinationConfiguration": ubx.FieldSpec{
 			WireName: "destination_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: RecordingConfiguration_DestinationConfigurationFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"RecordingReconnectWindowSeconds": ubx.FieldSpec{WireName: "recording_reconnect_window_seconds"},
+		"RenditionConfiguration": ubx.FieldSpec{
+			WireName: "rendition_configuration",
+			Kind: "object",
+			Fields: RecordingConfiguration_RenditionConfigurationFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: RecordingConfiguration_TagsFields,
 		},
 		"ThumbnailConfiguration": ubx.FieldSpec{
 			WireName: "thumbnail_configuration",
-			Kind: "list",
-			Fields: RecordingConfiguration_ThumbnailConfigurationFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
 			Kind: "object",
-			Fields: RecordingConfiguration_TimeoutsFields,
+			Fields: RecordingConfiguration_ThumbnailConfigurationFields,
 		},
 	},
 }

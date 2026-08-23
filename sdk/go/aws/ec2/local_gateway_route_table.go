@@ -3,22 +3,43 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type LocalGatewayRouteTable_Timeouts struct {
-	Create any
-	Delete any
+type LocalGatewayRouteTable_Tags struct {
+	// The key of a user-defined tag that can be attached to an EC2 Local Gateway Route Table for resource identification and management. (AI-inferred)
+	Key any
+	Value any
 }
 
-var LocalGatewayRouteTable_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var LocalGatewayRouteTable_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type LocalGatewayRouteTableConfig struct {
+	// The ID of the local gateway.
 	LocalGatewayId any
+	// The mode of the local gateway route table.
 	Mode any
-	Region any
+	// A list of key-value pairs to associate with the local gateway route table for identification and categorization, where each object consists of a Key and a Value string. (AI-inferred)
 	Tags any
-	Timeouts any
+}
+
+type LocalGatewayRouteTableAttrs struct {
+	// The ID of the local gateway.
+	LocalGatewayId any
+	// The ARN of the local gateway route table.
+	LocalGatewayRouteTableArn any
+	// The ID of the local gateway route table.
+	LocalGatewayRouteTableId any
+	// The mode of the local gateway route table.
+	Mode any
+	// The ARN of the outpost.
+	OutpostArn any
+	// The owner of the local gateway route table.
+	OwnerId any
+	// The state of the local gateway route table.
+	State any
+	// A list of key-value pairs to associate with the local gateway route table for identification and categorization, where each object consists of a Key and a Value string. (AI-inferred)
+	Tags any
 }
 
 var LocalGatewayRouteTable = ubx.ResourceBinding{
@@ -26,12 +47,10 @@ var LocalGatewayRouteTable = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"LocalGatewayId": ubx.FieldSpec{WireName: "local_gateway_id"},
 		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: LocalGatewayRouteTable_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: LocalGatewayRouteTable_TagsFields,
 		},
 	},
 }

@@ -7,24 +7,59 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class VocabularyFilter_Tags:
+    # The key name for a tag assigned to this Amazon Transcribe vocabulary filter, allowing you to categorize and manage the resource by purpose, owner, or environment. (AI-inferred)
+    key: Any = None
+    # The value component of a key-value tag attached to the Amazon Transcribe vocabulary filter for organizing and managing the resource. (AI-inferred)
+    value: Any = None
+
+_VocabularyFilter_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class VocabularyFilterConfig:
-    id: Any = None
+    # The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files.
+    data_access_role_arn: Any = None
+    # The language code that represents the language of the entries in your vocabulary filter.
     language_code: Any = None
-    region: Any = None
+    # Tags associated with the vocabulary filter.
     tags: Any = None
-    tags_all: Any = None
+    # The Amazon S3 location of the text file that contains your custom vocabulary filter terms.
     vocabulary_filter_file_uri: Any = None
+    # A unique name, chosen by you, for your custom vocabulary filter.
     vocabulary_filter_name: Any = None
+    # Use this parameter if you want to create your custom vocabulary filter by including all desired terms, as comma-separated values, within your request.
+    words: Any = None
+
+@dataclasses.dataclass
+class VocabularyFilterAttrs:
+    # The Amazon Resource Name (ARN) of the vocabulary filter.
+    arn: Any = None
+    # The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files.
+    data_access_role_arn: Any = None
+    # The language code that represents the language of the entries in your vocabulary filter.
+    language_code: Any = None
+    # Tags associated with the vocabulary filter.
+    tags: Any = None
+    # The Amazon S3 location of the text file that contains your custom vocabulary filter terms.
+    vocabulary_filter_file_uri: Any = None
+    # A unique name, chosen by you, for your custom vocabulary filter.
+    vocabulary_filter_name: Any = None
+    # Use this parameter if you want to create your custom vocabulary filter by including all desired terms, as comma-separated values, within your request.
     words: Any = None
 
 VocabularyFilter = ubx.ResourceBinding(
     wire_type="aws_transcribe_vocabulary_filter",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
+        "data_access_role_arn": ubx.FieldSpec(wire_name="data_access_role_arn"),
         "language_code": ubx.FieldSpec(wire_name="language_code"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_VocabularyFilter_TagsFields,
+        ),
         "vocabulary_filter_file_uri": ubx.FieldSpec(wire_name="vocabulary_filter_file_uri"),
         "vocabulary_filter_name": ubx.FieldSpec(wire_name="vocabulary_filter_name"),
         "words": ubx.FieldSpec(wire_name="words"),

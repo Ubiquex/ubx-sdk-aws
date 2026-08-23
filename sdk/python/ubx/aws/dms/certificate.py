@@ -8,23 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CertificateConfig:
-    certificate_id: Any = None
+    # The certificate Identifier
+    certificate_identifier: Any = None
+    # The certificate Pem
     certificate_pem: Any = None
+    # The certificate Wallet
     certificate_wallet: Any = None
-    id: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class CertificateAttrs:
+    # The certificate Arn
+    certificate_arn: Any = None
+    # The certificate Identifier
+    certificate_identifier: Any = None
+    # The certificate Pem
+    certificate_pem: Any = None
+    # The certificate Wallet
+    certificate_wallet: Any = None
 
 Certificate = ubx.ResourceBinding(
     wire_type="aws_dms_certificate",
     fields={
-        "certificate_id": ubx.FieldSpec(wire_name="certificate_id"),
+        "certificate_identifier": ubx.FieldSpec(wire_name="certificate_identifier"),
         "certificate_pem": ubx.FieldSpec(wire_name="certificate_pem"),
         "certificate_wallet": ubx.FieldSpec(wire_name="certificate_wallet"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
     },
 )

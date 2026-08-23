@@ -4,105 +4,118 @@ package elasticsearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domain_AdvancedSecurityOptions_MasterUserOptions struct {
+	// The ARN of the IAM identity (IAM user or role) that serves as the master user for fine-grained access control in the Amazon Elasticsearch Service domain. (AI-inferred)
 	MasterUserArn any
+	// The username for the master user, used to authenticate with fine-grained access control when advanced security is enabled on the Elasticsearch domain. (AI-inferred)
 	MasterUserName any
+	// Sets the password for the master user used with fine-grained access control (advanced security) in the Amazon Elasticsearch domain, required when specifying a master user name for the internal user database. (AI-inferred)
 	MasterUserPassword any
 }
 
 type Domain_AdvancedSecurityOptions struct {
+	// Enables anonymous (unauthenticated) access to the Elasticsearch domain's endpoints, allowing requests without credentials. (AI-inferred)
+	AnonymousAuthEnabled any
+	// Indicates whether advanced security options (fine-grained access control, user authentication, and authorization) are enabled for the Amazon Elasticsearch domain. (AI-inferred)
 	Enabled any
+	// Enables the internal user database for fine-grained access control in Amazon Elasticsearch Service, allowing users to be managed within the domain. (AI-inferred)
 	InternalUserDatabaseEnabled any
+	// Specifies the master user for the Elasticsearch domain when advanced security is enabled, defining either an IAM role ARN (MasterUserARN) or internal user credentials (MasterUserName and MasterUserPassword) for fine-grained access control. (AI-inferred)
 	MasterUserOptions any
 }
 
-type Domain_AutoTuneOptions_MaintenanceSchedule_Duration struct {
-	Unit any
-	Value any
-}
-
-type Domain_AutoTuneOptions_MaintenanceSchedule struct {
-	CronExpressionForRecurrence any
-	StartAt any
-	Duration any
-}
-
-type Domain_AutoTuneOptions struct {
-	DesiredState any
-	RollbackOnDisable any
-	MaintenanceSchedule any
-}
-
-type Domain_ClusterConfig_ColdStorageOptions struct {
-	Enabled any
-}
-
-type Domain_ClusterConfig_ZoneAwarenessConfig struct {
-	AvailabilityZoneCount any
-}
-
-type Domain_ClusterConfig struct {
-	DedicatedMasterCount any
-	DedicatedMasterEnabled any
-	DedicatedMasterType any
-	InstanceCount any
-	InstanceType any
-	WarmCount any
-	WarmEnabled any
-	WarmType any
-	ZoneAwarenessEnabled any
-	ColdStorageOptions any
-	ZoneAwarenessConfig any
-}
-
 type Domain_CognitoOptions struct {
+	// Specifies whether Amazon Cognito authentication for Kibana is enabled, and when true the accompanying user_pool_id, identity_pool_id, and role_arn are used to authenticate users. (AI-inferred)
 	Enabled any
+	// The ID of the Amazon Cognito identity pool that is used for authentication to the Elasticsearch domain. (AI-inferred)
 	IdentityPoolId any
+	// The ARN of the IAM role that Amazon Cognito assumes to access the user pool and identity pool, enabling authenticated Kibana/OpenSearch Dashboards via Cognito for the domain. (AI-inferred)
 	RoleArn any
+	// The ID of the Amazon Cognito user pool that is used to authenticate users to Kibana for this Elasticsearch domain. (AI-inferred)
 	UserPoolId any
 }
 
 type Domain_DomainEndpointOptions struct {
+	// The fully qualified domain name to use as the custom endpoint for the Elasticsearch domain. (AI-inferred)
 	CustomEndpoint any
+	// The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate to use for the custom endpoint for the Elasticsearch domain. (AI-inferred)
 	CustomEndpointCertificateArn any
+	// Enables a custom endpoint for the Elasticsearch domain, allowing you to use a custom domain name instead of the default endpoint. (AI-inferred)
 	CustomEndpointEnabled any
+	// Whether to require HTTPS for all traffic to the domain, disabling plain HTTP access. (AI-inferred)
 	EnforceHttps any
-	TlsSecurityPolicy any
+	// The TLS security policy for the Elasticsearch domain endpoint, specifying the minimum TLS version required for connections (e.g., 'Policy-Min-TLS-1-0-2019-07' or 'Policy-Min-TLS-1-2-2019-07'). (AI-inferred)
+	TlssecurityPolicy any
 }
 
-type Domain_EbsOptions struct {
-	EbsEnabled any
+type Domain_Ebsoptions struct {
+	// Enables EBS volumes on the Elasticsearch domain's data nodes, allowing storage configuration when set to true. (AI-inferred)
+	Ebsenabled any
+	// The provisioned IOPS (I/O operations per second) for the EBS volume attached to the Elasticsearch domain, applicable when the volume type is provisioned IOPS (io1). (AI-inferred)
 	Iops any
-	Throughput any
+	// The size in GiB of the EBS volume attached to each data node in the Elasticsearch domain. (AI-inferred)
 	VolumeSize any
+	// The EBS volume type (e.g., 'standard', 'gp2', 'io1') to provision for the Amazon Elasticsearch Service domain's data nodes. (AI-inferred)
 	VolumeType any
 }
 
-type Domain_EncryptAtRest struct {
+type Domain_ElasticsearchClusterConfig_ColdStorageOptions struct {
+	// Enables or disables the cold storage tier for the Amazon Elasticsearch (OpenSearch) domain, allowing data to be moved to low-cost cold storage. (AI-inferred)
 	Enabled any
+}
+
+type Domain_ElasticsearchClusterConfig_ZoneAwarenessConfig struct {
+	// Number of availability zones across which the Elasticsearch domain's nodes are distributed when zone awareness is enabled (must be 2 or 3). (AI-inferred)
+	AvailabilityZoneCount any
+}
+
+type Domain_ElasticsearchClusterConfig struct {
+	// Defines settings for cold storage in the Elasticsearch cluster, including an `enabled` flag to turn on cold storage for the domain. (AI-inferred)
+	ColdStorageOptions any
+	// Sets the number of dedicated master nodes for the Amazon Elasticsearch Service domain, which improves cluster stability and reliability by separating master from data nodes. (AI-inferred)
+	DedicatedMasterCount any
+	// Enables dedicated master nodes for the Elasticsearch cluster, which run the cluster management tasks separately from data nodes to improve cluster stability. (AI-inferred)
+	DedicatedMasterEnabled any
+	// Specifies the instance type to use for dedicated master nodes in the Elasticsearch cluster, such as 'm3.medium.elasticsearch'. (AI-inferred)
+	DedicatedMasterType any
+	// The number of data nodes (instances) in the Elasticsearch cluster, determining the cluster's capacity and performance. (AI-inferred)
+	InstanceCount any
+	// The EC2 instance type used for the data nodes in the Elasticsearch cluster, such as 't2.small.elasticsearch' or 'm5.large.elasticsearch'. (AI-inferred)
+	InstanceType any
+	// Number of UltraWarm nodes to allocate for the Elasticsearch domain's warm storage tier, used for infrequently accessed data. (AI-inferred)
+	WarmCount any
+	// Enables Amazon Elasticsearch Service UltraWarm storage, which allows the domain to use a warm tier of larger, lower-cost instances for read-only data that is accessed less frequently. (AI-inferred)
+	WarmEnabled any
+	// Specifies the instance type used for UltraWarm nodes in the Elasticsearch cluster configuration, required when warm storage is enabled (e.g., 'ultrawarm1.medium.elasticsearch'). (AI-inferred)
+	WarmType any
+	// Configures the number of availability zones (availability_zone_count) used for the Elasticsearch domain when zone awareness is enabled, allowing multi-AZ deployment for high availability. (AI-inferred)
+	ZoneAwarenessConfig any
+	// Enables or disables the distribution of Elasticsearch nodes across multiple Availability Zones to improve cluster availability. (AI-inferred)
+	ZoneAwarenessEnabled any
+}
+
+type Domain_EncryptionAtRestOptions struct {
+	// Turns on encryption of data at rest for the Amazon Elasticsearch domain using AWS KMS encryption keys, which must be specified in the same encryption-at-rest options if a customer-managed key is desired. (AI-inferred)
+	Enabled any
+	// The KMS key ID or ARN used to encrypt the domain's data at rest, defaulting to the AWS-managed key for Amazon Elasticsearch Service if not specified. (AI-inferred)
 	KmsKeyId any
 }
 
-type Domain_LogPublishingOptions struct {
-	CloudwatchLogGroupArn any
-	Enabled any
-	LogType any
-}
-
 type Domain_SnapshotOptions struct {
+	// Specifies the hour (0-23, UTC) at which the daily automated snapshot is taken for the Amazon Elasticsearch Service domain. (AI-inferred)
 	AutomatedSnapshotStartHour any
 }
 
-type Domain_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Domain_Tags struct {
+	// The key of a tag attached to the Elasticsearch domain, which is a user-defined label used for resource organization and cost allocation. (AI-inferred)
+	Key any
+	Value any
 }
 
-type Domain_VpcOptions struct {
-	AvailabilityZones any
+type Domain_Vpcoptions struct {
+	// The list of security group IDs to associate with the Elasticsearch domain's VPC endpoints, controlling inbound network access when the domain is deployed inside a VPC. (AI-inferred)
 	SecurityGroupIds any
+	// The list of subnet IDs in which the Elasticsearch domain's VPC endpoints are placed, used when the domain is launched inside a VPC. (AI-inferred)
 	SubnetIds any
-	VpcId any
 }
 
 var Domain_AdvancedSecurityOptions_MasterUserOptionsFields = ubx.FieldMap{
@@ -112,67 +125,13 @@ var Domain_AdvancedSecurityOptions_MasterUserOptionsFields = ubx.FieldMap{
 	}
 
 var Domain_AdvancedSecurityOptionsFields = ubx.FieldMap{
+		"AnonymousAuthEnabled": ubx.FieldSpec{WireName: "anonymous_auth_enabled"},
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"InternalUserDatabaseEnabled": ubx.FieldSpec{WireName: "internal_user_database_enabled"},
 		"MasterUserOptions": ubx.FieldSpec{
 			WireName: "master_user_options",
-			Kind: "list",
+			Kind: "object",
 			Fields: Domain_AdvancedSecurityOptions_MasterUserOptionsFields,
-		},
-	}
-
-var Domain_AutoTuneOptions_MaintenanceSchedule_DurationFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
-
-var Domain_AutoTuneOptions_MaintenanceScheduleFields = ubx.FieldMap{
-		"CronExpressionForRecurrence": ubx.FieldSpec{WireName: "cron_expression_for_recurrence"},
-		"StartAt": ubx.FieldSpec{WireName: "start_at"},
-		"Duration": ubx.FieldSpec{
-			WireName: "duration",
-			Kind: "list",
-			Fields: Domain_AutoTuneOptions_MaintenanceSchedule_DurationFields,
-		},
-	}
-
-var Domain_AutoTuneOptionsFields = ubx.FieldMap{
-		"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
-		"RollbackOnDisable": ubx.FieldSpec{WireName: "rollback_on_disable"},
-		"MaintenanceSchedule": ubx.FieldSpec{
-			WireName: "maintenance_schedule",
-			Kind: "set",
-			Fields: Domain_AutoTuneOptions_MaintenanceScheduleFields,
-		},
-	}
-
-var Domain_ClusterConfig_ColdStorageOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
-
-var Domain_ClusterConfig_ZoneAwarenessConfigFields = ubx.FieldMap{
-		"AvailabilityZoneCount": ubx.FieldSpec{WireName: "availability_zone_count"},
-	}
-
-var Domain_ClusterConfigFields = ubx.FieldMap{
-		"DedicatedMasterCount": ubx.FieldSpec{WireName: "dedicated_master_count"},
-		"DedicatedMasterEnabled": ubx.FieldSpec{WireName: "dedicated_master_enabled"},
-		"DedicatedMasterType": ubx.FieldSpec{WireName: "dedicated_master_type"},
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"WarmCount": ubx.FieldSpec{WireName: "warm_count"},
-		"WarmEnabled": ubx.FieldSpec{WireName: "warm_enabled"},
-		"WarmType": ubx.FieldSpec{WireName: "warm_type"},
-		"ZoneAwarenessEnabled": ubx.FieldSpec{WireName: "zone_awareness_enabled"},
-		"ColdStorageOptions": ubx.FieldSpec{
-			WireName: "cold_storage_options",
-			Kind: "list",
-			Fields: Domain_ClusterConfig_ColdStorageOptionsFields,
-		},
-		"ZoneAwarenessConfig": ubx.FieldSpec{
-			WireName: "zone_awareness_config",
-			Kind: "list",
-			Fields: Domain_ClusterConfig_ZoneAwarenessConfigFields,
 		},
 	}
 
@@ -188,66 +147,137 @@ var Domain_DomainEndpointOptionsFields = ubx.FieldMap{
 		"CustomEndpointCertificateArn": ubx.FieldSpec{WireName: "custom_endpoint_certificate_arn"},
 		"CustomEndpointEnabled": ubx.FieldSpec{WireName: "custom_endpoint_enabled"},
 		"EnforceHttps": ubx.FieldSpec{WireName: "enforce_https"},
-		"TlsSecurityPolicy": ubx.FieldSpec{WireName: "tls_security_policy"},
+		"TlssecurityPolicy": ubx.FieldSpec{WireName: "tlssecurity_policy"},
 	}
 
-var Domain_EbsOptionsFields = ubx.FieldMap{
-		"EbsEnabled": ubx.FieldSpec{WireName: "ebs_enabled"},
+var Domain_EbsoptionsFields = ubx.FieldMap{
+		"Ebsenabled": ubx.FieldSpec{WireName: "ebsenabled"},
 		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
 		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
 		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
 	}
 
-var Domain_EncryptAtRestFields = ubx.FieldMap{
+var Domain_ElasticsearchClusterConfig_ColdStorageOptionsFields = ubx.FieldMap{
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 	}
 
-var Domain_LogPublishingOptionsFields = ubx.FieldMap{
-		"CloudwatchLogGroupArn": ubx.FieldSpec{WireName: "cloudwatch_log_group_arn"},
+var Domain_ElasticsearchClusterConfig_ZoneAwarenessConfigFields = ubx.FieldMap{
+		"AvailabilityZoneCount": ubx.FieldSpec{WireName: "availability_zone_count"},
+	}
+
+var Domain_ElasticsearchClusterConfigFields = ubx.FieldMap{
+		"ColdStorageOptions": ubx.FieldSpec{
+			WireName: "cold_storage_options",
+			Kind: "object",
+			Fields: Domain_ElasticsearchClusterConfig_ColdStorageOptionsFields,
+		},
+		"DedicatedMasterCount": ubx.FieldSpec{WireName: "dedicated_master_count"},
+		"DedicatedMasterEnabled": ubx.FieldSpec{WireName: "dedicated_master_enabled"},
+		"DedicatedMasterType": ubx.FieldSpec{WireName: "dedicated_master_type"},
+		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
+		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+		"WarmCount": ubx.FieldSpec{WireName: "warm_count"},
+		"WarmEnabled": ubx.FieldSpec{WireName: "warm_enabled"},
+		"WarmType": ubx.FieldSpec{WireName: "warm_type"},
+		"ZoneAwarenessConfig": ubx.FieldSpec{
+			WireName: "zone_awareness_config",
+			Kind: "object",
+			Fields: Domain_ElasticsearchClusterConfig_ZoneAwarenessConfigFields,
+		},
+		"ZoneAwarenessEnabled": ubx.FieldSpec{WireName: "zone_awareness_enabled"},
+	}
+
+var Domain_EncryptionAtRestOptionsFields = ubx.FieldMap{
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LogType": ubx.FieldSpec{WireName: "log_type"},
+		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 	}
 
 var Domain_SnapshotOptionsFields = ubx.FieldMap{
 		"AutomatedSnapshotStartHour": ubx.FieldSpec{WireName: "automated_snapshot_start_hour"},
 	}
 
-var Domain_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Domain_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
-var Domain_VpcOptionsFields = ubx.FieldMap{
-		"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
+var Domain_VpcoptionsFields = ubx.FieldMap{
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	}
 
 type DomainConfig struct {
+	// The access_policies field specifies the IAM policy document in JSON format that controls access to the Amazon Elasticsearch domain, defining which principals can perform allowed actions on the domain. (AI-inferred)
 	AccessPolicies any
+	// Sets domain-specific advanced Elasticsearch parameters, such as whether explicit index names are allowed in REST requests. (AI-inferred)
 	AdvancedOptions any
-	DomainName any
-	ElasticsearchVersion any
-	Id any
-	Region any
-	Tags any
-	TagsAll any
+	// Configures fine-grained access control for the Elasticsearch domain, including enabling the feature, setting up the internal user database, defining master user credentials, and optionally configuring SAML authentication. (AI-inferred)
 	AdvancedSecurityOptions any
-	AutoTuneOptions any
-	ClusterConfig any
+	// Configures Amazon Cognito authentication for Kibana on the Elasticsearch domain, including the enabled flag, Cognito user pool ID, identity pool ID, and the IAM role ARN that grants access. (AI-inferred)
 	CognitoOptions any
+	// Configures the domain endpoint for the Amazon Elasticsearch Service domain, including enforcing HTTPS, specifying the TLS security policy, and optionally enabling a custom endpoint with its certificate ARN. (AI-inferred)
 	DomainEndpointOptions any
-	EbsOptions any
-	EncryptAtRest any
+	// The name of the Elasticsearch domain, which must be unique within the AWS account and region and is used as the domain identifier in the endpoint URL. (AI-inferred)
+	DomainName any
+	// Configures the Amazon EBS volumes attached to the data nodes of the Elasticsearch domain, including whether EBS is enabled, volume type, size, and IOPS. (AI-inferred)
+	Ebsoptions any
+	// Defines the Elasticsearch cluster configuration, including instance type, instance count, dedicated master nodes, zone awareness, and warm storage settings. (AI-inferred)
+	ElasticsearchClusterConfig any
+	// Specifies the Elasticsearch version to run on the domain (e.g., '7.10' or '6.8'), which determines available features and engine behavior. (AI-inferred)
+	ElasticsearchVersion any
+	// encryption_at_rest_options is a nested block that configures encryption at rest for the Elasticsearch domain, letting you enable or disable encryption and specify the AWS KMS key ID used to encrypt the domain's data. (AI-inferred)
+	EncryptionAtRestOptions any
+	// Defines the log publishing options for the Elasticsearch domain, mapping log types (such as SEARCH_SLOW_LOGS, INDEX_SLOW_LOGS, and AUDIT_LOGS) to CloudWatch Logs destinations with an enabled flag. (AI-inferred)
 	LogPublishingOptions any
-	NodeToNodeEncryption any
+	// Configures node-to-node encryption for the Amazon Elasticsearch domain, where the nested 'enabled' attribute determines whether encryption between nodes is turned on. (AI-inferred)
+	NodeToNodeEncryptionOptions any
+	// Configures the automated snapshot settings for the Elasticsearch domain, specifically the hour of the day when daily automated snapshots are taken. (AI-inferred)
 	SnapshotOptions any
-	Timeouts any
-	VpcOptions any
+	// Defines a list of key-value pairs to tag the Amazon Elasticsearch Service domain, used for metadata, cost tracking, and access control. (AI-inferred)
+	Tags any
+	// Specifies the VPC configuration for the Elasticsearch domain, including the subnets and security groups that place the domain endpoints inside a VPC. (AI-inferred)
+	Vpcoptions any
+}
+
+type DomainAttrs struct {
+	// The access_policies field specifies the IAM policy document in JSON format that controls access to the Amazon Elasticsearch domain, defining which principals can perform allowed actions on the domain. (AI-inferred)
+	AccessPolicies any
+	// Sets domain-specific advanced Elasticsearch parameters, such as whether explicit index names are allowed in REST requests. (AI-inferred)
+	AdvancedOptions any
+	// Configures fine-grained access control for the Elasticsearch domain, including enabling the feature, setting up the internal user database, defining master user credentials, and optionally configuring SAML authentication. (AI-inferred)
+	AdvancedSecurityOptions any
+	// The Amazon Resource Name (ARN) that uniquely identifies the Elasticsearch domain. (AI-inferred)
+	Arn any
+	// Configures Amazon Cognito authentication for Kibana on the Elasticsearch domain, including the enabled flag, Cognito user pool ID, identity pool ID, and the IAM role ARN that grants access. (AI-inferred)
+	CognitoOptions any
+	// The Amazon Resource Name (ARN) that uniquely identifies the Elasticsearch domain. (AI-inferred)
+	DomainArn any
+	// The fully qualified domain endpoint (e.g., https://search-<domain-name>-<unique-id>.<region>.es.amazonaws.com) automatically assigned to the Elasticsearch domain after creation. (AI-inferred)
+	DomainEndpoint any
+	// Configures the domain endpoint for the Amazon Elasticsearch Service domain, including enforcing HTTPS, specifying the TLS security policy, and optionally enabling a custom endpoint with its certificate ARN. (AI-inferred)
+	DomainEndpointOptions any
+	// The name of the Elasticsearch domain, which must be unique within the AWS account and region and is used as the domain identifier in the endpoint URL. (AI-inferred)
+	DomainName any
+	// Configures the Amazon EBS volumes attached to the data nodes of the Elasticsearch domain, including whether EBS is enabled, volume type, size, and IOPS. (AI-inferred)
+	Ebsoptions any
+	// Defines the Elasticsearch cluster configuration, including instance type, instance count, dedicated master nodes, zone awareness, and warm storage settings. (AI-inferred)
+	ElasticsearchClusterConfig any
+	// Specifies the Elasticsearch version to run on the domain (e.g., '7.10' or '6.8'), which determines available features and engine behavior. (AI-inferred)
+	ElasticsearchVersion any
+	// encryption_at_rest_options is a nested block that configures encryption at rest for the Elasticsearch domain, letting you enable or disable encryption and specify the AWS KMS key ID used to encrypt the domain's data. (AI-inferred)
+	EncryptionAtRestOptions any
+	// The unique identifier of the Elasticsearch domain, which is its domain name. (AI-inferred)
+	Id any
+	// Defines the log publishing options for the Elasticsearch domain, mapping log types (such as SEARCH_SLOW_LOGS, INDEX_SLOW_LOGS, and AUDIT_LOGS) to CloudWatch Logs destinations with an enabled flag. (AI-inferred)
+	LogPublishingOptions any
+	// Configures node-to-node encryption for the Amazon Elasticsearch domain, where the nested 'enabled' attribute determines whether encryption between nodes is turned on. (AI-inferred)
+	NodeToNodeEncryptionOptions any
+	// Configures the automated snapshot settings for the Elasticsearch domain, specifically the hour of the day when daily automated snapshots are taken. (AI-inferred)
+	SnapshotOptions any
+	// Defines a list of key-value pairs to tag the Amazon Elasticsearch Service domain, used for metadata, cost tracking, and access control. (AI-inferred)
+	Tags any
+	// Specifies the VPC configuration for the Elasticsearch domain, including the subnets and security groups that place the domain endpoints inside a VPC. (AI-inferred)
+	Vpcoptions any
 }
 
 var Domain = ubx.ResourceBinding{
@@ -255,71 +285,58 @@ var Domain = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessPolicies": ubx.FieldSpec{WireName: "access_policies"},
 		"AdvancedOptions": ubx.FieldSpec{WireName: "advanced_options"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"ElasticsearchVersion": ubx.FieldSpec{WireName: "elasticsearch_version"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"AdvancedSecurityOptions": ubx.FieldSpec{
 			WireName: "advanced_security_options",
-			Kind: "list",
+			Kind: "object",
 			Fields: Domain_AdvancedSecurityOptionsFields,
-		},
-		"AutoTuneOptions": ubx.FieldSpec{
-			WireName: "auto_tune_options",
-			Kind: "list",
-			Fields: Domain_AutoTuneOptionsFields,
-		},
-		"ClusterConfig": ubx.FieldSpec{
-			WireName: "cluster_config",
-			Kind: "list",
-			Fields: Domain_ClusterConfigFields,
 		},
 		"CognitoOptions": ubx.FieldSpec{
 			WireName: "cognito_options",
-			Kind: "list",
+			Kind: "object",
 			Fields: Domain_CognitoOptionsFields,
 		},
 		"DomainEndpointOptions": ubx.FieldSpec{
 			WireName: "domain_endpoint_options",
-			Kind: "list",
+			Kind: "object",
 			Fields: Domain_DomainEndpointOptionsFields,
 		},
-		"EbsOptions": ubx.FieldSpec{
-			WireName: "ebs_options",
-			Kind: "list",
-			Fields: Domain_EbsOptionsFields,
+		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"Ebsoptions": ubx.FieldSpec{
+			WireName: "ebsoptions",
+			Kind: "object",
+			Fields: Domain_EbsoptionsFields,
 		},
-		"EncryptAtRest": ubx.FieldSpec{
-			WireName: "encrypt_at_rest",
-			Kind: "list",
-			Fields: Domain_EncryptAtRestFields,
+		"ElasticsearchClusterConfig": ubx.FieldSpec{
+			WireName: "elasticsearch_cluster_config",
+			Kind: "object",
+			Fields: Domain_ElasticsearchClusterConfigFields,
 		},
-		"LogPublishingOptions": ubx.FieldSpec{
-			WireName: "log_publishing_options",
-			Kind: "set",
-			Fields: Domain_LogPublishingOptionsFields,
+		"ElasticsearchVersion": ubx.FieldSpec{WireName: "elasticsearch_version"},
+		"EncryptionAtRestOptions": ubx.FieldSpec{
+			WireName: "encryption_at_rest_options",
+			Kind: "object",
+			Fields: Domain_EncryptionAtRestOptionsFields,
 		},
-		"NodeToNodeEncryption": ubx.FieldSpec{
-			WireName: "node_to_node_encryption",
-			Kind: "list",
-			Fields: Domain_ClusterConfig_ColdStorageOptionsFields,
+		"LogPublishingOptions": ubx.FieldSpec{WireName: "log_publishing_options"},
+		"NodeToNodeEncryptionOptions": ubx.FieldSpec{
+			WireName: "node_to_node_encryption_options",
+			Kind: "object",
+			Fields: Domain_ElasticsearchClusterConfig_ColdStorageOptionsFields,
 		},
 		"SnapshotOptions": ubx.FieldSpec{
 			WireName: "snapshot_options",
-			Kind: "list",
+			Kind: "object",
 			Fields: Domain_SnapshotOptionsFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Domain_TimeoutsFields,
-		},
-		"VpcOptions": ubx.FieldSpec{
-			WireName: "vpc_options",
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: Domain_VpcOptionsFields,
+			Fields: Domain_TagsFields,
+		},
+		"Vpcoptions": ubx.FieldSpec{
+			WireName: "vpcoptions",
+			Kind: "object",
+			Fields: Domain_VpcoptionsFields,
 		},
 	},
 }

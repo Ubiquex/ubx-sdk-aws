@@ -4,94 +4,129 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Classifier_CsvClassifier struct {
+	// Enables the processing of files that contain only one column.
 	AllowSingleColumn any
+	// Indicates whether the CSV file contains custom data types.
+	ContainsCustomDatatype any
+	// Indicates whether the CSV file contains a header. A value of UNKNOWN specifies that the classifier will detect whether the CSV file contains headings. A value of PRESENT specifies that the CSV file contains headings. A value of ABSENT specifies that the CSV file does not contain headings.
 	ContainsHeader any
+	// Enables the configuration of custom data types.
 	CustomDatatypeConfigured any
-	CustomDatatypes any
+	// A custom symbol to denote what separates each column entry in the row.
 	Delimiter any
+	// Specifies not to trim values before identifying the type of column values. The default value is true.
 	DisableValueTrimming any
+	// A list of strings representing column names.
 	Header any
+	// The name of the classifier.
+	Name any
+	// A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.
 	QuoteSymbol any
-	Serde any
 }
 
 type Classifier_GrokClassifier struct {
+	// An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.
 	Classification any
+	// Optional custom grok patterns defined by this classifier.
 	CustomPatterns any
+	// The grok pattern applied to a data store by this classifier.
 	GrokPattern any
+	// The name of the classifier.
+	Name any
 }
 
 type Classifier_JsonClassifier struct {
+	// A JsonPath string defining the JSON data for the classifier to classify. AWS Glue supports a subset of JsonPath, as described in Writing JsonPath Custom Classifiers.
 	JsonPath any
+	// The name of the classifier.
+	Name any
 }
 
-type Classifier_XmlClassifier struct {
+type Classifier_Xmlclassifier struct {
+	// An identifier of the data format that the classifier matches.
 	Classification any
+	// The name of the classifier.
+	Name any
+	// The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by />). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <row item_a="A" item_b="B"></row> is okay, but <row item_a="A" item_b="B" /> is not).
 	RowTag any
 }
 
 var Classifier_CsvClassifierFields = ubx.FieldMap{
 		"AllowSingleColumn": ubx.FieldSpec{WireName: "allow_single_column"},
+		"ContainsCustomDatatype": ubx.FieldSpec{WireName: "contains_custom_datatype"},
 		"ContainsHeader": ubx.FieldSpec{WireName: "contains_header"},
 		"CustomDatatypeConfigured": ubx.FieldSpec{WireName: "custom_datatype_configured"},
-		"CustomDatatypes": ubx.FieldSpec{WireName: "custom_datatypes"},
 		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
 		"DisableValueTrimming": ubx.FieldSpec{WireName: "disable_value_trimming"},
 		"Header": ubx.FieldSpec{WireName: "header"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"QuoteSymbol": ubx.FieldSpec{WireName: "quote_symbol"},
-		"Serde": ubx.FieldSpec{WireName: "serde"},
 	}
 
 var Classifier_GrokClassifierFields = ubx.FieldMap{
 		"Classification": ubx.FieldSpec{WireName: "classification"},
 		"CustomPatterns": ubx.FieldSpec{WireName: "custom_patterns"},
 		"GrokPattern": ubx.FieldSpec{WireName: "grok_pattern"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	}
 
 var Classifier_JsonClassifierFields = ubx.FieldMap{
 		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	}
 
-var Classifier_XmlClassifierFields = ubx.FieldMap{
+var Classifier_XmlclassifierFields = ubx.FieldMap{
 		"Classification": ubx.FieldSpec{WireName: "classification"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"RowTag": ubx.FieldSpec{WireName: "row_tag"},
 	}
 
 type ClassifierConfig struct {
-	Id any
-	Name any
-	Region any
+	// Defines the configuration for an AWS Glue classifier that parses CSV files, including the delimiter, quote symbol, header detection, and whether to treat a single column as a valid CSV format. (AI-inferred)
 	CsvClassifier any
+	// Configures a Grok classifier in AWS Glue, specifying the grok pattern used to parse log or unstructured data, custom pattern definitions, and the classification name applied to matched data. (AI-inferred)
 	GrokClassifier any
+	// Specifies a JSON classifier for AWS Glue that uses a JSON path to identify the JSON data structure within input records. (AI-inferred)
 	JsonClassifier any
-	XmlClassifier any
+	// Defines the row tag and optional classification for an XML classifier, used by AWS Glue to parse XML data and infer its schema. (AI-inferred)
+	Xmlclassifier any
+}
+
+type ClassifierAttrs struct {
+	// Defines the configuration for an AWS Glue classifier that parses CSV files, including the delimiter, quote symbol, header detection, and whether to treat a single column as a valid CSV format. (AI-inferred)
+	CsvClassifier any
+	// Configures a Grok classifier in AWS Glue, specifying the grok pattern used to parse log or unstructured data, custom pattern definitions, and the classification name applied to matched data. (AI-inferred)
+	GrokClassifier any
+	// Specifies a JSON classifier for AWS Glue that uses a JSON path to identify the JSON data structure within input records. (AI-inferred)
+	JsonClassifier any
+	// One of XMLClassifier/Name, GrokClassifier/Name, JsonClassifier/Name or CsvClassifier/Name
+	Name any
+	// Defines the row tag and optional classification for an XML classifier, used by AWS Glue to parse XML data and infer its schema. (AI-inferred)
+	Xmlclassifier any
 }
 
 var Classifier = ubx.ResourceBinding{
 	WireType: "aws_glue_classifier",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"CsvClassifier": ubx.FieldSpec{
 			WireName: "csv_classifier",
-			Kind: "list",
+			Kind: "object",
 			Fields: Classifier_CsvClassifierFields,
 		},
 		"GrokClassifier": ubx.FieldSpec{
 			WireName: "grok_classifier",
-			Kind: "list",
+			Kind: "object",
 			Fields: Classifier_GrokClassifierFields,
 		},
 		"JsonClassifier": ubx.FieldSpec{
 			WireName: "json_classifier",
-			Kind: "list",
+			Kind: "object",
 			Fields: Classifier_JsonClassifierFields,
 		},
-		"XmlClassifier": ubx.FieldSpec{
-			WireName: "xml_classifier",
-			Kind: "list",
-			Fields: Classifier_XmlClassifierFields,
+		"Xmlclassifier": ubx.FieldSpec{
+			WireName: "xmlclassifier",
+			Kind: "object",
+			Fields: Classifier_XmlclassifierFields,
 		},
 	},
 }

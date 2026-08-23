@@ -3,93 +3,116 @@ package api
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type GatewayUsagePlan_ApiStages_Throttle struct {
-	BurstLimit any
-	Path any
-	RateLimit any
-}
-
 type GatewayUsagePlan_ApiStages struct {
+	// The identifier of the API for which this usage plan stage association is configured, referencing the API Gateway REST API. (AI-inferred)
 	ApiId any
+	// In the API Gateway UsagePlan's ApiStages list, this is the name of the deployed stage (such as 'prod') that the usage plan applies to. (AI-inferred)
 	Stage any
+	// Defines method-level throttling limits for the associated API stage, mapping individual method paths (e.g., 'GET /resource') to their own burst and rate limits. (AI-inferred)
 	Throttle any
 }
 
-type GatewayUsagePlan_QuotaSettings struct {
+type GatewayUsagePlan_Quota struct {
+	// The maximum number of API requests permitted during a specified quota period (day, week, or month) for the usage plan, as configured in the quota settings. (AI-inferred)
 	Limit any
+	// Specifies the number of requests that are deducted from the quota limit at the beginning of each period, effectively reducing the total number of requests allowed for that period. (AI-inferred)
 	Offset any
+	// The time period (DAY, WEEK, or MONTH) over which the usage plan's request quota is measured and enforced. (AI-inferred)
 	Period any
 }
 
-type GatewayUsagePlan_ThrottleSettings struct {
-	BurstLimit any
-	RateLimit any
+type GatewayUsagePlan_Tags struct {
+	// Defines the key of a user-defined tag attached to the API Gateway usage plan, used for metadata, cost allocation, and resource organization. (AI-inferred)
+	Key any
+	// The tag value paired with a tag key on the API Gateway usage plan, used for cost allocation, resource organization, and IAM-based access control. (AI-inferred)
+	Value any
 }
 
-var GatewayUsagePlan_ApiStages_ThrottleFields = ubx.FieldMap{
-		"BurstLimit": ubx.FieldSpec{WireName: "burst_limit"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"RateLimit": ubx.FieldSpec{WireName: "rate_limit"},
-	}
+type GatewayUsagePlan_Throttle struct {
+	// The maximum API request rate limit over a time-varying window of one second, defining the burst limit for the usage plan's throttling settings. (AI-inferred)
+	BurstLimit any
+	// Sets the steady-state request rate limit (in requests per second) allowed for API requests covered by the usage plan's throttling configuration. (AI-inferred)
+	RateLimit any
+}
 
 var GatewayUsagePlan_ApiStagesFields = ubx.FieldMap{
 		"ApiId": ubx.FieldSpec{WireName: "api_id"},
 		"Stage": ubx.FieldSpec{WireName: "stage"},
-		"Throttle": ubx.FieldSpec{
-			WireName: "throttle",
-			Kind: "set",
-			Fields: GatewayUsagePlan_ApiStages_ThrottleFields,
-		},
+		"Throttle": ubx.FieldSpec{WireName: "throttle"},
 	}
 
-var GatewayUsagePlan_QuotaSettingsFields = ubx.FieldMap{
+var GatewayUsagePlan_QuotaFields = ubx.FieldMap{
 		"Limit": ubx.FieldSpec{WireName: "limit"},
 		"Offset": ubx.FieldSpec{WireName: "offset"},
 		"Period": ubx.FieldSpec{WireName: "period"},
 	}
 
-var GatewayUsagePlan_ThrottleSettingsFields = ubx.FieldMap{
+var GatewayUsagePlan_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var GatewayUsagePlan_ThrottleFields = ubx.FieldMap{
 		"BurstLimit": ubx.FieldSpec{WireName: "burst_limit"},
 		"RateLimit": ubx.FieldSpec{WireName: "rate_limit"},
 	}
 
 type GatewayUsagePlanConfig struct {
-	Description any
-	Id any
-	Name any
-	ProductCode any
-	Region any
-	Tags any
-	TagsAll any
+	// Associates this usage plan with specific API Gateway stages, optionally configuring per-stage throttling and quota limits for those stages. (AI-inferred)
 	ApiStages any
-	QuotaSettings any
-	ThrottleSettings any
+	// An optional description that provides a friendly label or purpose for the usage plan, helping to distinguish it from other plans in the API Gateway. (AI-inferred)
+	Description any
+	// ``QuotaSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies a target for the maximum number of requests users can make to your REST APIs. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using [](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) to monitor costs and [](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) to manage API requests.
+	Quota any
+	// Specifies the key-value tags to assign to the usage plan, which AWS uses for cost allocation and resource management. (AI-inferred)
+	Tags any
+	// ``ThrottleSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies the overall request rate (average requests per second) and burst capacity when users call your REST APIs.
+	Throttle any
+	// A friendly name for the usage plan, used to identify it in the API Gateway console and API calls. (AI-inferred)
+	UsagePlanName any
+}
+
+type GatewayUsagePlanAttrs struct {
+	// Associates this usage plan with specific API Gateway stages, optionally configuring per-stage throttling and quota limits for those stages. (AI-inferred)
+	ApiStages any
+	// An optional description that provides a friendly label or purpose for the usage plan, helping to distinguish it from other plans in the API Gateway. (AI-inferred)
+	Description any
+	// The unique identifier assigned by AWS API Gateway to this usage plan, used as the resource's id. (AI-inferred)
+	Id any
+	// ``QuotaSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies a target for the maximum number of requests users can make to your REST APIs. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using [](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) to monitor costs and [](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) to manage API requests.
+	Quota any
+	// Specifies the key-value tags to assign to the usage plan, which AWS uses for cost allocation and resource management. (AI-inferred)
+	Tags any
+	// ``ThrottleSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies the overall request rate (average requests per second) and burst capacity when users call your REST APIs.
+	Throttle any
+	// A friendly name for the usage plan, used to identify it in the API Gateway console and API calls. (AI-inferred)
+	UsagePlanName any
 }
 
 var GatewayUsagePlan = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_usage_plan",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProductCode": ubx.FieldSpec{WireName: "product_code"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"ApiStages": ubx.FieldSpec{
 			WireName: "api_stages",
-			Kind: "set",
+			Kind: "list",
 			Fields: GatewayUsagePlan_ApiStagesFields,
 		},
-		"QuotaSettings": ubx.FieldSpec{
-			WireName: "quota_settings",
-			Kind: "list",
-			Fields: GatewayUsagePlan_QuotaSettingsFields,
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Quota": ubx.FieldSpec{
+			WireName: "quota",
+			Kind: "object",
+			Fields: GatewayUsagePlan_QuotaFields,
 		},
-		"ThrottleSettings": ubx.FieldSpec{
-			WireName: "throttle_settings",
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: GatewayUsagePlan_ThrottleSettingsFields,
+			Fields: GatewayUsagePlan_TagsFields,
 		},
+		"Throttle": ubx.FieldSpec{
+			WireName: "throttle",
+			Kind: "object",
+			Fields: GatewayUsagePlan_ThrottleFields,
+		},
+		"UsagePlanName": ubx.FieldSpec{WireName: "usage_plan_name"},
 	},
 }

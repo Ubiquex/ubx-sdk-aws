@@ -7,10 +7,42 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class NotificationConfiguration_Tags:
+    # The key part of a tag applied to the notification configuration, used to label and categorize the AWS resource. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_NotificationConfiguration_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class NotificationConfigurationConfig:
+    # Controls how long the notification configuration collects related events before delivering them as one aggregated notification, balancing timeliness against notification volume. (AI-inferred)
     aggregation_duration: Any = None
+    # The Description property is a required string that provides a human-readable description of the notification configuration, enabling users to identify and distinguish configurations within AWS User Notifications. (AI-inferred)
     description: Any = None
+    # The user-defined name for the notification configuration, used to identify and display the configuration in the AWS Management Console and APIs. (AI-inferred)
     name: Any = None
+    # A list of tags that are attached to the role.
+    tags: Any = None
+
+@dataclasses.dataclass
+class NotificationConfigurationAttrs:
+    # Controls how long the notification configuration collects related events before delivering them as one aggregated notification, balancing timeliness against notification volume. (AI-inferred)
+    aggregation_duration: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies this notification configuration. (AI-inferred)
+    arn: Any = None
+    # The timestamp when the notification configuration was created. (AI-inferred)
+    creation_time: Any = None
+    # The Description property is a required string that provides a human-readable description of the notification configuration, enabling users to identify and distinguish configurations within AWS User Notifications. (AI-inferred)
+    description: Any = None
+    # The user-defined name for the notification configuration, used to identify and display the configuration in the AWS Management Console and APIs. (AI-inferred)
+    name: Any = None
+    # The read-only status of the notification configuration, indicating whether it is active (enabled) or inactive (disabled) for delivering notifications. (AI-inferred)
+    status: Any = None
+    # A list of tags that are attached to the role.
     tags: Any = None
 
 NotificationConfiguration = ubx.ResourceBinding(
@@ -19,6 +51,10 @@ NotificationConfiguration = ubx.ResourceBinding(
         "aggregation_duration": ubx.FieldSpec(wire_name="aggregation_duration"),
         "description": ubx.FieldSpec(wire_name="description"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_NotificationConfiguration_TagsFields,
+        ),
     },
 )

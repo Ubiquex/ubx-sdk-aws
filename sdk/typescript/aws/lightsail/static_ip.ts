@@ -2,25 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StaticIpConfig {
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The instance where the static IP is attached. */
+  attachedTo?: string | Computed<string>;
+  /** The name of the static IP address. */
+  staticIpName: string | Computed<string>;
 }
 
 export interface StaticIpAttrs {
-  arn: string;
-  id: string;
+  /** The instance where the static IP is attached. */
+  attachedTo: string;
+  /** The static IP address. */
   ipAddress: string;
-  name: string;
-  region: string;
-  supportCode: string;
+  /** A Boolean value indicating whether the static IP is attached. */
+  isAttached: boolean;
+  /** The Amazon Resource Name (ARN) uniquely identifying the Lightsail static IP within AWS. (AI-inferred) */
+  staticIpArn: string;
+  /** The name of the static IP address. */
+  staticIpName: string;
 }
 
 export const StaticIp: ResourceBinding<StaticIpConfig, StaticIpAttrs> = {
   wireType: "aws_lightsail_static_ip",
   fields: {
-    id: "id",
-    name: "name",
-    region: "region",
+    attachedTo: "attached_to",
+    staticIpName: "static_ip_name",
   },
 };

@@ -2,15 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ByteMatchSet_ByteMatchTuples_FieldToMatch {
-  data: string;
-  type: string;
+  /** Specifies the name of the HTTP header to match when field_to_match.type is 'HEADER'; for all other field types this must be an empty string. (AI-inferred) */
+  data?: string | Computed<string>;
+  /** Specifies the type of web request component (e.g., HEADER, METHOD, QUERY_STRING, URI, or BODY) that the byte match tuple inspects, as defined in the field_to_match object. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
 export interface ByteMatchSet_ByteMatchTuples {
-  positionalConstraint: string;
-  targetString: string;
-  textTransformation: string;
-  fieldToMatch: ByteMatchSet_ByteMatchTuples_FieldToMatch[];
+  /** Specifies the part of a web request (such as a header, query string, or URI) that AWS WAF Regional inspects for the byte match tuple's search string. (AI-inferred) */
+  fieldToMatch?: ByteMatchSet_ByteMatchTuples_FieldToMatch | Computed<ByteMatchSet_ByteMatchTuples_FieldToMatch>;
+  /** This field specifies how the target search string in the byte match tuple must align with the inspected text, using values such as EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, or CONTAINS_WORD, to determine whether an AWS WAF Regional rule matches a request. (AI-inferred) */
+  positionalConstraint?: string | Computed<string>;
+  /** Specifies the literal string (e.g., a URL or plain text) that AWS WAF Regional searches for in the web request component defined by the containing byte match tuple; for non-ASCII or binary values, you would instead use the tuple's base64-encoded target property. (AI-inferred) */
+  targetString?: string | Computed<string>;
+  /** The base64-encoded representation of the string that AWS WAF Regional searches for in the specified part of a web request, used when the target string cannot be specified directly due to non-printable or binary characters. (AI-inferred) */
+  targetStringBase64?: string | Computed<string>;
+  /** Specifies the text transformation AWS WAF applies to the request content before evaluating the byte match condition, such as converting to lowercase or decoding URL-encoded characters. (AI-inferred) */
+  textTransformation?: string | Computed<string>;
 }
 
 const ByteMatchSet_ByteMatchTuples_FieldToMatchFields: FieldMap = {
@@ -19,40 +27,41 @@ const ByteMatchSet_ByteMatchTuples_FieldToMatchFields: FieldMap = {
 };
 
 const ByteMatchSet_ByteMatchTuplesFields: FieldMap = {
-  positionalConstraint: "positional_constraint",
-  targetString: "target_string",
-  textTransformation: "text_transformation",
   fieldToMatch: {
     wireName: "field_to_match",
-    kind: "list",
+    kind: "object",
     fields: ByteMatchSet_ByteMatchTuples_FieldToMatchFields,
   },
+  positionalConstraint: "positional_constraint",
+  targetString: "target_string",
+  targetStringBase64: "target_string_base64",
+  textTransformation: "text_transformation",
 };
 
 export interface ByteMatchSetConfig {
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** Specifies the list of byte match tuples that define the filter criteria (the part of a web request to inspect, the target string, and text transformation) for the AWS WAF Regional byte match set. (AI-inferred) */
   byteMatchTuples?: ByteMatchSet_ByteMatchTuples[] | Computed<ByteMatchSet_ByteMatchTuples[]>;
+  /** A friendly name for the byte match set, which is used as a unique identifier within the AWS WAF Regional service. (AI-inferred) */
+  name: string | Computed<string>;
 }
 
 export interface ByteMatchSetAttrs {
-  id: string;
-  name: string;
-  region: string;
+  /** Specifies the list of byte match tuples that define the filter criteria (the part of a web request to inspect, the target string, and text transformation) for the AWS WAF Regional byte match set. (AI-inferred) */
   byteMatchTuples: ByteMatchSet_ByteMatchTuples[];
+  /** The AWS-assigned unique identifier (ByteMatchSetId) for the WAF Regional byte match set. (AI-inferred) */
+  id: string;
+  /** A friendly name for the byte match set, which is used as a unique identifier within the AWS WAF Regional service. (AI-inferred) */
+  name: string;
 }
 
 export const ByteMatchSet: ResourceBinding<ByteMatchSetConfig, ByteMatchSetAttrs> = {
   wireType: "aws_wafregional_byte_match_set",
   fields: {
-    id: "id",
-    name: "name",
-    region: "region",
     byteMatchTuples: {
       wireName: "byte_match_tuples",
-      kind: "set",
+      kind: "list",
       fields: ByteMatchSet_ByteMatchTuplesFields,
     },
+    name: "name",
   },
 };

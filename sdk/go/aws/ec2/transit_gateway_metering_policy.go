@@ -3,37 +3,47 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TransitGatewayMeteringPolicy_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type TransitGatewayMeteringPolicy_Tags struct {
+	Key any
+	Value any
 }
 
-var TransitGatewayMeteringPolicy_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var TransitGatewayMeteringPolicy_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type TransitGatewayMeteringPolicyConfig struct {
+	// Middle box attachment Ids
 	MiddleboxAttachmentIds any
-	Region any
 	Tags any
+	// The Id of transit gateway
 	TransitGatewayId any
-	Timeouts any
+}
+
+type TransitGatewayMeteringPolicyAttrs struct {
+	// Middle box attachment Ids
+	MiddleboxAttachmentIds any
+	// State of the transit gateway metering policy
+	State any
+	Tags any
+	// The Id of transit gateway
+	TransitGatewayId any
+	// The Id of the transit gateway metering policy
+	TransitGatewayMeteringPolicyId any
+	// The timestamp at which the latest action performed on the metering policy will become effective
+	UpdateEffectiveAt any
 }
 
 var TransitGatewayMeteringPolicy = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_metering_policy",
 	Fields: ubx.FieldMap{
 		"MiddleboxAttachmentIds": ubx.FieldSpec{WireName: "middlebox_attachment_ids"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: TransitGatewayMeteringPolicy_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: TransitGatewayMeteringPolicy_TagsFields,
 		},
+		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
 	},
 }

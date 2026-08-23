@@ -4,10 +4,34 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayMulticastGroupSourceConfig struct {
+	// The IP address assigned to the transit gateway multicast group.
 	GroupIpAddress any
-	Id any
+	// The ID of the transit gateway attachment.
 	NetworkInterfaceId any
-	Region any
+	// The ID of the transit gateway multicast domain.
+	TransitGatewayMulticastDomainId any
+}
+
+type TransitGatewayMulticastGroupSourceAttrs struct {
+	// The IP address assigned to the transit gateway multicast group.
+	GroupIpAddress any
+	// Indicates that the resource is a transit gateway multicast group member.
+	GroupMember any
+	// Indicates that the resource is a transit gateway multicast group member.
+	GroupSource any
+	// The ID of the transit gateway attachment.
+	NetworkInterfaceId any
+	// The ID of the resource.
+	ResourceId any
+	// The type of resource, for example a VPC attachment.
+	ResourceType any
+	// The source type.
+	SourceType any
+	// The ID of the subnet.
+	SubnetId any
+	// The ID of the transit gateway attachment.
+	TransitGatewayAttachmentId any
+	// The ID of the transit gateway multicast domain.
 	TransitGatewayMulticastDomainId any
 }
 
@@ -15,9 +39,7 @@ var TransitGatewayMulticastGroupSource = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_multicast_group_source",
 	Fields: ubx.FieldMap{
 		"GroupIpAddress": ubx.FieldSpec{WireName: "group_ip_address"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"TransitGatewayMulticastDomainId": ubx.FieldSpec{WireName: "transit_gateway_multicast_domain_id"},
 	},
 }

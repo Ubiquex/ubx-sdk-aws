@@ -2,18 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TargetAccountConfigurationConfig {
+  /** The AWS account ID of the target account. */
   accountId: string | Computed<string>;
+  /** The description of the target account. */
   description?: string | Computed<string>;
+  /** The ID of the experiment template. */
   experimentTemplateId: string | Computed<string>;
-  region?: string | Computed<string>;
-  roleArn?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of an IAM role for the target account. */
+  roleArn: string | Computed<string>;
 }
 
 export interface TargetAccountConfigurationAttrs {
+  /** The AWS account ID of the target account. */
   accountId: string;
+  /** The description of the target account. */
   description: string;
+  /** The ID of the experiment template. */
   experimentTemplateId: string;
-  region: string;
+  /** The Amazon Resource Name (ARN) of an IAM role for the target account. */
   roleArn: string;
 }
 
@@ -23,7 +29,6 @@ export const TargetAccountConfiguration: ResourceBinding<TargetAccountConfigurat
     accountId: "account_id",
     description: "description",
     experimentTemplateId: "experiment_template_id",
-    region: "region",
     roleArn: "role_arn",
   },
 };

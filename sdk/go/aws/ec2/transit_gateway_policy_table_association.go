@@ -4,17 +4,24 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayPolicyTableAssociationConfig struct {
-	Id any
-	Region any
+	// The ID of transit gateway attachment.
 	TransitGatewayAttachmentId any
+	// The ID of transit gateway policy table.
+	TransitGatewayPolicyTableId any
+}
+
+type TransitGatewayPolicyTableAssociationAttrs struct {
+	// The state of the transit gateway policy table association.
+	State any
+	// The ID of transit gateway attachment.
+	TransitGatewayAttachmentId any
+	// The ID of transit gateway policy table.
 	TransitGatewayPolicyTableId any
 }
 
 var TransitGatewayPolicyTableAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_policy_table_association",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
 		"TransitGatewayPolicyTableId": ubx.FieldSpec{WireName: "transit_gateway_policy_table_id"},
 	},

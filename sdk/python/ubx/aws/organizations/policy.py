@@ -7,14 +7,51 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Policy_Tags:
+    # The key of a tag that is attached to the AWS Organizations policy, used to identify the tag's purpose or category. (AI-inferred)
+    key: Any = None
+    # The value part of a tag assigned to the AWS Organizations policy, used to organize and identify the policy. (AI-inferred)
+    value: Any = None
+
+_Policy_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class PolicyConfig:
+    # The Policy text content. For AWS CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format before submitting it.
     content: Any = None
+    # Human readable description of the policy
     description: Any = None
-    id: Any = None
+    # Name of the Policy
     name: Any = None
-    skip_destroy: Any = None
+    # A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to null.
     tags: Any = None
-    tags_all: Any = None
+    # List of unique identifiers (IDs) of the root, OU, or account that you want to attach the policy to
+    target_ids: Any = None
+    # The type of policy to create. You can specify one of the following values: AISERVICES_OPT_OUT_POLICY, BACKUP_POLICY, BEDROCK_POLICY, CHATBOT_POLICY, DECLARATIVE_POLICY_EC2, INSPECTOR_POLICY, NETWORK_SECURITY_DIRECTOR_POLICY, RESOURCE_CONTROL_POLICY, S3_POLICY, SECURITYHUB_POLICY, SERVICE_CONTROL_POLICY, TAG_POLICY, UPGRADE_ROLLOUT_POLICY
+    type: Any = None
+
+@dataclasses.dataclass
+class PolicyAttrs:
+    # ARN of the Policy
+    arn: Any = None
+    # A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.
+    aws_managed: Any = None
+    # The Policy text content. For AWS CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format before submitting it.
+    content: Any = None
+    # Human readable description of the policy
+    description: Any = None
+    # Id of the Policy
+    id: Any = None
+    # Name of the Policy
+    name: Any = None
+    # A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to null.
+    tags: Any = None
+    # List of unique identifiers (IDs) of the root, OU, or account that you want to attach the policy to
+    target_ids: Any = None
+    # The type of policy to create. You can specify one of the following values: AISERVICES_OPT_OUT_POLICY, BACKUP_POLICY, BEDROCK_POLICY, CHATBOT_POLICY, DECLARATIVE_POLICY_EC2, INSPECTOR_POLICY, NETWORK_SECURITY_DIRECTOR_POLICY, RESOURCE_CONTROL_POLICY, S3_POLICY, SECURITYHUB_POLICY, SERVICE_CONTROL_POLICY, TAG_POLICY, UPGRADE_ROLLOUT_POLICY
     type: Any = None
 
 Policy = ubx.ResourceBinding(
@@ -22,11 +59,13 @@ Policy = ubx.ResourceBinding(
     fields={
         "content": ubx.FieldSpec(wire_name="content"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "skip_destroy": ubx.FieldSpec(wire_name="skip_destroy"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Policy_TagsFields,
+        ),
+        "target_ids": ubx.FieldSpec(wire_name="target_ids"),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

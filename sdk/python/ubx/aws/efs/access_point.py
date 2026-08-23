@@ -7,21 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessPoint_AccessPointTags:
+    # The key of a tag in the access_point_tags list on the EFS access point, corresponding to the Key property of the CloudFormation AccessPointTags tag objects. (AI-inferred)
+    key: Any = None
+    # The value of a tag applied to the EFS access point, used for metadata and resource categorization. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
 class AccessPoint_PosixUser:
+    # The POSIX group ID used for all file system operations using this access point.
     gid: Any = None
+    # Secondary POSIX group IDs used for all file system operations using this access point.
     secondary_gids: Any = None
+    # The POSIX user ID used for all file system operations using this access point.
     uid: Any = None
 
 @dataclasses.dataclass
 class AccessPoint_RootDirectory_CreationInfo:
+    # Specifies the POSIX group ID to apply to the ``RootDirectory``. Accepts values from 0 to 2^32 (4294967295).
     owner_gid: Any = None
+    # Specifies the POSIX user ID to apply to the ``RootDirectory``. Accepts values from 0 to 2^32 (4294967295).
     owner_uid: Any = None
+    # Specifies the POSIX permissions to apply to the ``RootDirectory``, in the format of an octal number representing the file's mode bits.
     permissions: Any = None
 
 @dataclasses.dataclass
 class AccessPoint_RootDirectory:
-    path: Any = None
+    # Required if the ``RootDirectory`` > ``Path`` specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's ``RootDirectory`` > ``Path``. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying ``CreationInfo``, you must include values for all properties. Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail. If you do not provide ``CreationInfo`` and the specified ``RootDirectory`` does not exist, attempts to mount the file system using the access point will fail.
     creation_info: Any = None
+    # Specifies the path on the EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide the ``CreationInfo``.
+    path: Any = None
+
+_AccessPoint_AccessPointTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
 
 _AccessPoint_PosixUserFields = {
     "gid": ubx.FieldSpec(wire_name="gid"),
@@ -36,40 +56,62 @@ _AccessPoint_RootDirectory_CreationInfoFields = {
 }
 
 _AccessPoint_RootDirectoryFields = {
-    "path": ubx.FieldSpec(wire_name="path"),
     "creation_info": ubx.FieldSpec(
         wire_name="creation_info",
-        kind="list",
+        kind="object",
         fields=_AccessPoint_RootDirectory_CreationInfoFields,
     ),
+    "path": ubx.FieldSpec(wire_name="path"),
 }
 
 @dataclasses.dataclass
 class AccessPointConfig:
+    # An array of key-value pairs to apply to this resource. For more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).
+    access_point_tags: Any = None
+    # The opaque string specified in the request to ensure idempotent creation.
+    client_token: Any = None
+    # The ID of the EFS file system that the access point applies to. Accepts only the ID format for input when specifying a file system, for example ``fs-0123456789abcedf2``.
     file_system_id: Any = None
-    id: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point.
     posix_user: Any = None
+    # Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's ``RootDirectory`` and its subdirectories.
+    root_directory: Any = None
+
+@dataclasses.dataclass
+class AccessPointAttrs:
+    # The AWS-assigned unique identifier for the EFS access point, used to reference the access point in other resources or APIs. (AI-inferred)
+    access_point_id: Any = None
+    # An array of key-value pairs to apply to this resource. For more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).
+    access_point_tags: Any = None
+    # The Amazon Resource Name (ARN) of the EFS access point, which uniquely identifies the access point within AWS. (AI-inferred)
+    arn: Any = None
+    # The opaque string specified in the request to ensure idempotent creation.
+    client_token: Any = None
+    # The ID of the EFS file system that the access point applies to. Accepts only the ID format for input when specifying a file system, for example ``fs-0123456789abcedf2``.
+    file_system_id: Any = None
+    # The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point.
+    posix_user: Any = None
+    # Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's ``RootDirectory`` and its subdirectories.
     root_directory: Any = None
 
 AccessPoint = ubx.ResourceBinding(
     wire_type="aws_efs_access_point",
     fields={
+        "access_point_tags": ubx.FieldSpec(
+            wire_name="access_point_tags",
+            kind="list",
+            fields=_AccessPoint_AccessPointTagsFields,
+        ),
+        "client_token": ubx.FieldSpec(wire_name="client_token"),
         "file_system_id": ubx.FieldSpec(wire_name="file_system_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "posix_user": ubx.FieldSpec(
             wire_name="posix_user",
-            kind="list",
+            kind="object",
             fields=_AccessPoint_PosixUserFields,
         ),
         "root_directory": ubx.FieldSpec(
             wire_name="root_directory",
-            kind="list",
+            kind="object",
             fields=_AccessPoint_RootDirectoryFields,
         ),
     },

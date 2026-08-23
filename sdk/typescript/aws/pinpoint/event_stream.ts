@@ -2,18 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EventStreamConfig {
+  /** The unique identifier (ID) of the Amazon Pinpoint application that the event stream is associated with. (AI-inferred) */
   applicationId: string | Computed<string>;
+  /** The ARN of the Amazon Kinesis Data Stream or Amazon Data Firehose delivery stream that receives the Pinpoint event stream data. (AI-inferred) */
   destinationStreamArn: string | Computed<string>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The ARN of the IAM role that authorizes Amazon Pinpoint to write event data to the configured Amazon Kinesis stream. (AI-inferred) */
   roleArn: string | Computed<string>;
 }
 
 export interface EventStreamAttrs {
+  /** The unique identifier (ID) of the Amazon Pinpoint application that the event stream is associated with. (AI-inferred) */
   applicationId: string;
+  /** The ARN of the Amazon Kinesis Data Stream or Amazon Data Firehose delivery stream that receives the Pinpoint event stream data. (AI-inferred) */
   destinationStreamArn: string;
+  /** The application ID of the Amazon Pinpoint application that this event stream is associated with. (AI-inferred) */
   id: string;
-  region: string;
+  /** The ARN of the IAM role that authorizes Amazon Pinpoint to write event data to the configured Amazon Kinesis stream. (AI-inferred) */
   roleArn: string;
 }
 
@@ -22,8 +26,6 @@ export const EventStream: ResourceBinding<EventStreamConfig, EventStreamAttrs> =
   fields: {
     applicationId: "application_id",
     destinationStreamArn: "destination_stream_arn",
-    id: "id",
-    region: "region",
     roleArn: "role_arn",
   },
 };

@@ -8,108 +8,145 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Policy_ExcludeMap:
+    # The list of AWS account IDs to exclude from the Firewall Manager policy's scope. (AI-inferred)
     account: Any = None
+    # The list of AWS Organizations organizational unit (OU) IDs to exclude from this Firewall Manager policy's scope. (AI-inferred)
     orgunit: Any = None
 
 @dataclasses.dataclass
-class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_IcmpTypeCode:
+class Policy_ResourceTags:
+    # The key of a tag used to match resources that this AWS Firewall Manager policy applies to, based on the resource's tags. (AI-inferred)
+    key: Any = None
+    # The tag value, paired with the corresponding key, that Firewall Manager uses to match resources for inclusion in (or exclusion from, depending on the policy's ExcludeResourceTags setting) the policy's scope. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCode:
+    # The numeric ICMP code value used to match specific ICMP messages in the first network ACL entry set of the common Network ACL policy, where -1 matches all ICMP codes for the given type. (AI-inferred)
     code: Any = None
+    # The ICMP type number (e.g., 8 for echo request, 3 for destination unreachable) that the network ACL entry matches for ICMP traffic. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
-class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_PortRange:
+class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRange:
+    # The inclusive lower bound of the port range that this network ACL entry applies to, used by Firewall Manager to define the starting port for allowing or denying traffic in a Network ACL policy. (AI-inferred)
     from_: Any = None
+    # The upper bound (inclusive) of the port range for this network ACL entry, defining the last port in the range allowed or denied by the entry. (AI-inferred)
     to: Any = None
 
 @dataclasses.dataclass
-class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry:
+class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries:
+    # The IPv4 CIDR block (e.g., '10.0.0.0/16') that defines the source or destination network to which this network ACL entry applies, used for matching traffic in the Firewall Manager network ACL policy. (AI-inferred)
     cidr_block: Any = None
+    # Indicates whether this network ACL entry applies to outbound (egress) traffic (true) rather than inbound (ingress) traffic (false). (AI-inferred)
     egress: Any = None
-    ipv6_cidr_block: Any = None
-    protocol: Any = None
-    rule_action: Any = None
+    # Defines the ICMP type and code numbers that the Network ACL entry uses to match ICMP traffic, limiting the rule to specific ICMP message types. (AI-inferred)
     icmp_type_code: Any = None
+    # The IPv6 CIDR block that this network ACL entry in the first set of entries applies to for the common network ACL policy. (AI-inferred)
+    ipv6_cidr_block: Any = None
+    # Defines the inclusive range of destination ports (From and To) that this Firewall Manager network ACL entry uses to match traffic for its associated rule action. (AI-inferred)
     port_range: Any = None
+    # Specifies the IP protocol (e.g., tcp, udp, icmp, or a protocol number) for the network ACL entry in the Firewall Manager policy. (AI-inferred)
+    protocol: Any = None
+    # Specifies the action of the network ACL entry, either 'allow' to permit matching traffic or 'deny' to block it. (AI-inferred)
+    rule_action: Any = None
 
 @dataclasses.dataclass
 class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet:
+    # NetworkAcl entry list.
+    first_entries: Any = None
+    # When set to true, Firewall Manager automatically remediates the first entries in the target network ACL to match the policy's specified first entry, replacing non-compliant entries. (AI-inferred)
     force_remediate_for_first_entries: Any = None
+    # Indicates whether AWS Firewall Manager will automatically remediate the last entries of the network ACL to match the policy-defined entries, such as the default deny-all rule. (AI-inferred)
     force_remediate_for_last_entries: Any = None
-    first_entry: Any = None
-    last_entry: Any = None
+    # NetworkAcl entry list.
+    last_entries: Any = None
 
 @dataclasses.dataclass
 class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy:
+    # Network ACL entry set.
     network_acl_entry_set: Any = None
 
 @dataclasses.dataclass
 class Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicy:
+    # Firewall deployment mode.
     firewall_deployment_model: Any = None
 
 @dataclasses.dataclass
 class Policy_SecurityServicePolicyData_PolicyOption:
+    # Network ACL common policy.
     network_acl_common_policy: Any = None
+    # Network firewall policy.
     network_firewall_policy: Any = None
+    # Third party firewall policy.
     third_party_firewall_policy: Any = None
 
 @dataclasses.dataclass
 class Policy_SecurityServicePolicyData:
+    # Firewall managed service data.
     managed_service_data: Any = None
-    type: Any = None
+    # Firewall policy option.
     policy_option: Any = None
+    # Firewall policy type.
+    type: Any = None
 
 _Policy_ExcludeMapFields = {
     "account": ubx.FieldSpec(wire_name="account"),
     "orgunit": ubx.FieldSpec(wire_name="orgunit"),
 }
 
-_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_IcmpTypeCodeFields = {
+_Policy_ResourceTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCodeFields = {
     "code": ubx.FieldSpec(wire_name="code"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_PortRangeFields = {
+_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRangeFields = {
     "from_": ubx.FieldSpec(wire_name="from"),
     "to": ubx.FieldSpec(wire_name="to"),
 }
 
-_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntryFields = {
+_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntriesFields = {
     "cidr_block": ubx.FieldSpec(wire_name="cidr_block"),
     "egress": ubx.FieldSpec(wire_name="egress"),
-    "ipv6_cidr_block": ubx.FieldSpec(wire_name="ipv6_cidr_block"),
-    "protocol": ubx.FieldSpec(wire_name="protocol"),
-    "rule_action": ubx.FieldSpec(wire_name="rule_action"),
     "icmp_type_code": ubx.FieldSpec(
         wire_name="icmp_type_code",
-        kind="list",
-        fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_IcmpTypeCodeFields,
+        kind="object",
+        fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCodeFields,
     ),
+    "ipv6_cidr_block": ubx.FieldSpec(wire_name="ipv6_cidr_block"),
     "port_range": ubx.FieldSpec(
         wire_name="port_range",
-        kind="list",
-        fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntry_PortRangeFields,
+        kind="object",
+        fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRangeFields,
     ),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "rule_action": ubx.FieldSpec(wire_name="rule_action"),
 }
 
 _Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySetFields = {
+    "first_entries": ubx.FieldSpec(
+        wire_name="first_entries",
+        kind="list",
+        fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntriesFields,
+    ),
     "force_remediate_for_first_entries": ubx.FieldSpec(wire_name="force_remediate_for_first_entries"),
     "force_remediate_for_last_entries": ubx.FieldSpec(wire_name="force_remediate_for_last_entries"),
-    "first_entry": ubx.FieldSpec(
-        wire_name="first_entry",
-        kind="set",
-        fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntryFields,
-    ),
-    "last_entry": ubx.FieldSpec(
-        wire_name="last_entry",
-        kind="set",
-        fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntryFields,
+    "last_entries": ubx.FieldSpec(
+        wire_name="last_entries",
+        kind="list",
+        fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntriesFields,
     ),
 }
 
 _Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicyFields = {
     "network_acl_entry_set": ubx.FieldSpec(
         wire_name="network_acl_entry_set",
-        kind="list",
+        kind="object",
         fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySetFields,
     ),
 }
@@ -121,84 +158,136 @@ _Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicyFields = {
 _Policy_SecurityServicePolicyData_PolicyOptionFields = {
     "network_acl_common_policy": ubx.FieldSpec(
         wire_name="network_acl_common_policy",
-        kind="list",
+        kind="object",
         fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicyFields,
     ),
     "network_firewall_policy": ubx.FieldSpec(
         wire_name="network_firewall_policy",
-        kind="list",
+        kind="object",
         fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicyFields,
     ),
     "third_party_firewall_policy": ubx.FieldSpec(
         wire_name="third_party_firewall_policy",
-        kind="list",
+        kind="object",
         fields=_Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicyFields,
     ),
 }
 
 _Policy_SecurityServicePolicyDataFields = {
     "managed_service_data": ubx.FieldSpec(wire_name="managed_service_data"),
-    "type": ubx.FieldSpec(wire_name="type"),
     "policy_option": ubx.FieldSpec(
         wire_name="policy_option",
-        kind="list",
+        kind="object",
         fields=_Policy_SecurityServicePolicyData_PolicyOptionFields,
     ),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 @dataclasses.dataclass
 class PolicyConfig:
+    # Indicates whether AWS Firewall Manager deletes all resources managed by this policy (such as AWS WAF rule groups or Shield protections) when the policy itself is deleted. (AI-inferred)
     delete_all_policy_resources: Any = None
-    delete_unused_fm_managed_resources: Any = None
-    description: Any = None
-    exclude_resource_tags: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
-    remediation_enabled: Any = None
-    resource_set_ids: Any = None
-    resource_tag_logical_operator: Any = None
-    resource_tags: Any = None
-    resource_type: Any = None
-    resource_type_list: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # An FMS includeMap or excludeMap.
     exclude_map: Any = None
+    # When true, the policy applies only to resources that do not have the tags specified in the associated 'resource_tags' list, thereby excluding tagged resources from the policy's scope; when false, it applies to resources that have those tags. (AI-inferred)
+    exclude_resource_tags: Any = None
+    # An FMS includeMap or excludeMap.
     include_map: Any = None
+    # A description of the AWS Firewall Manager policy, used to identify the policy's purpose or scope. (AI-inferred)
+    policy_description: Any = None
+    # The friendly name of the Firewall Manager policy, used to identify it in the AWS console and API operations. (AI-inferred)
+    policy_name: Any = None
+    # Indicates whether Firewall Manager automatically applies the policy's rules to noncompliant resources to remediate them. (AI-inferred)
+    remediation_enabled: Any = None
+    # The list of IDs of the resource sets to which this AWS Firewall Manager policy applies. (AI-inferred)
+    resource_set_ids: Any = None
+    # Specifies the logical operator (AND or OR) used to combine multiple resource tag conditions in the AWS Firewall Manager policy when determining which resources are included or excluded. (AI-inferred)
+    resource_tag_logical_operator: Any = None
+    # This list of tags identifies the AWS resources to which the Firewall Manager policy applies, allowing the policy to target resources based on their associated tags. (AI-inferred)
+    resource_tags: Any = None
+    # An AWS resource type
+    resource_type: Any = None
+    # Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred)
+    resource_type_list: Any = None
+    resources_clean_up: Any = None
+    # Firewall security service policy data.
     security_service_policy_data: Any = None
+    # The tags to assign to the Firewall Manager policy, which are key-value pairs that help you identify, organize, and manage the policy, and can be used for cost allocation and access control. (AI-inferred)
+    tags: Any = None
+
+@dataclasses.dataclass
+class PolicyAttrs:
+    # A resource ARN.
+    arn: Any = None
+    # Indicates whether AWS Firewall Manager deletes all resources managed by this policy (such as AWS WAF rule groups or Shield protections) when the policy itself is deleted. (AI-inferred)
+    delete_all_policy_resources: Any = None
+    # An FMS includeMap or excludeMap.
+    exclude_map: Any = None
+    # When true, the policy applies only to resources that do not have the tags specified in the associated 'resource_tags' list, thereby excluding tagged resources from the policy's scope; when false, it applies to resources that have those tags. (AI-inferred)
+    exclude_resource_tags: Any = None
+    # The unique identifier (policy ID) assigned by AWS Firewall Manager to this policy. (AI-inferred)
+    id: Any = None
+    # An FMS includeMap or excludeMap.
+    include_map: Any = None
+    # A description of the AWS Firewall Manager policy, used to identify the policy's purpose or scope. (AI-inferred)
+    policy_description: Any = None
+    # The friendly name of the Firewall Manager policy, used to identify it in the AWS console and API operations. (AI-inferred)
+    policy_name: Any = None
+    # Indicates whether Firewall Manager automatically applies the policy's rules to noncompliant resources to remediate them. (AI-inferred)
+    remediation_enabled: Any = None
+    # The list of IDs of the resource sets to which this AWS Firewall Manager policy applies. (AI-inferred)
+    resource_set_ids: Any = None
+    # Specifies the logical operator (AND or OR) used to combine multiple resource tag conditions in the AWS Firewall Manager policy when determining which resources are included or excluded. (AI-inferred)
+    resource_tag_logical_operator: Any = None
+    # This list of tags identifies the AWS resources to which the Firewall Manager policy applies, allowing the policy to target resources based on their associated tags. (AI-inferred)
+    resource_tags: Any = None
+    # An AWS resource type
+    resource_type: Any = None
+    # Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred)
+    resource_type_list: Any = None
+    resources_clean_up: Any = None
+    # Firewall security service policy data.
+    security_service_policy_data: Any = None
+    # The tags to assign to the Firewall Manager policy, which are key-value pairs that help you identify, organize, and manage the policy, and can be used for cost allocation and access control. (AI-inferred)
+    tags: Any = None
 
 Policy = ubx.ResourceBinding(
     wire_type="aws_fms_policy",
     fields={
         "delete_all_policy_resources": ubx.FieldSpec(wire_name="delete_all_policy_resources"),
-        "delete_unused_fm_managed_resources": ubx.FieldSpec(wire_name="delete_unused_fm_managed_resources"),
-        "description": ubx.FieldSpec(wire_name="description"),
+        "exclude_map": ubx.FieldSpec(
+            wire_name="exclude_map",
+            kind="object",
+            fields=_Policy_ExcludeMapFields,
+        ),
         "exclude_resource_tags": ubx.FieldSpec(wire_name="exclude_resource_tags"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "include_map": ubx.FieldSpec(
+            wire_name="include_map",
+            kind="object",
+            fields=_Policy_ExcludeMapFields,
+        ),
+        "policy_description": ubx.FieldSpec(wire_name="policy_description"),
+        "policy_name": ubx.FieldSpec(wire_name="policy_name"),
         "remediation_enabled": ubx.FieldSpec(wire_name="remediation_enabled"),
         "resource_set_ids": ubx.FieldSpec(wire_name="resource_set_ids"),
         "resource_tag_logical_operator": ubx.FieldSpec(wire_name="resource_tag_logical_operator"),
-        "resource_tags": ubx.FieldSpec(wire_name="resource_tags"),
+        "resource_tags": ubx.FieldSpec(
+            wire_name="resource_tags",
+            kind="list",
+            fields=_Policy_ResourceTagsFields,
+        ),
         "resource_type": ubx.FieldSpec(wire_name="resource_type"),
         "resource_type_list": ubx.FieldSpec(wire_name="resource_type_list"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "exclude_map": ubx.FieldSpec(
-            wire_name="exclude_map",
-            kind="list",
-            fields=_Policy_ExcludeMapFields,
-        ),
-        "include_map": ubx.FieldSpec(
-            wire_name="include_map",
-            kind="list",
-            fields=_Policy_ExcludeMapFields,
-        ),
+        "resources_clean_up": ubx.FieldSpec(wire_name="resources_clean_up"),
         "security_service_policy_data": ubx.FieldSpec(
             wire_name="security_service_policy_data",
-            kind="list",
+            kind="object",
             fields=_Policy_SecurityServicePolicyDataFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Policy_ResourceTagsFields,
         ),
     },
 )

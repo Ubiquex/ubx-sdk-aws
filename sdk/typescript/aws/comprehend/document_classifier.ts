@@ -2,70 +2,118 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DocumentClassifier_InputDataConfig_AugmentedManifests {
-  annotationDataS3Uri: string;
-  attributeNames: string[];
-  documentType: string;
-  s3Uri: string;
-  sourceDocumentsS3Uri: string;
-  split: string;
+  /** Lists the attribute names (JSON keys) in each augmented manifest line that contain the document text and, optionally, the class label used as training data for the document classifier. (AI-inferred) */
+  attributeNames?: string[] | Computed<string[]>;
+  /** Specifies the S3 URI of the augmented manifest file that contains the labeled documents used to train the document classifier. (AI-inferred) */
+  s3Uri?: string | Computed<string>;
+  /** The split of the augmented manifest data set, which determines whether the documents are used for training or testing the document classifier. (AI-inferred) */
+  split?: string | Computed<string>;
+}
+
+export interface DocumentClassifier_InputDataConfig_DocumentReaderConfig {
+  /** Specifies the Amazon Textract document reading action to apply to input documents, either TEXTRACT_DETECT_DOCUMENT_TEXT for text extraction or TEXTRACT_ANALYZE_DOCUMENT for extraction including forms and tables. (AI-inferred) */
+  documentReadAction: string | Computed<string>;
+  /** Specifies whether the document reader uses the service default text extraction behavior (SERVICE_DEFAULT) or forces the Textract action defined in the document reader configuration (FORCE_DOCUMENT_READ_ACTION). (AI-inferred) */
+  documentReadMode?: string | Computed<string>;
+  /** Specifies a list of feature types (such as TABLES or FORMS) that Amazon Textract should extract from input documents when the document reader processes them, allowing the document classifier to leverage those additional extracted elements. (AI-inferred) */
+  featureTypes?: string[] | Computed<string[]>;
+}
+
+export interface DocumentClassifier_InputDataConfig_Documents {
+  /** The S3 URI of the training documents (e.g., a CSV or augmented manifest file) used to train the Amazon Comprehend document classifier. (AI-inferred) */
+  s3Uri: string | Computed<string>;
+  /** The S3 URI of the test documents used to evaluate the trained document classifier model. (AI-inferred) */
+  testS3Uri?: string | Computed<string>;
 }
 
 export interface DocumentClassifier_InputDataConfig {
-  dataFormat: string;
-  labelDelimiter: string;
-  s3Uri: string;
-  testS3Uri: string;
-  augmentedManifests: DocumentClassifier_InputDataConfig_AugmentedManifests[];
+  /** Specifies the augmented manifest files from Amazon SageMaker Ground Truth that provide labeled training data for the document classifier. (AI-inferred) */
+  augmentedManifests?: DocumentClassifier_InputDataConfig_AugmentedManifests[] | Computed<DocumentClassifier_InputDataConfig_AugmentedManifests[]>;
+  /** Specifies the format of the training data for the document classifier, either COMPREHEND_CSV (default) for a CSV file or AUGMENTED_MANIFEST for an augmented manifest file. (AI-inferred) */
+  dataFormat?: string | Computed<string>;
+  /** Specifies the Amazon Textract document reader settings (document read action, read mode, and feature types) used to extract text from input PDF or Word documents for the document classifier. (AI-inferred) */
+  documentReaderConfig?: DocumentClassifier_InputDataConfig_DocumentReaderConfig | Computed<DocumentClassifier_InputDataConfig_DocumentReaderConfig>;
+  /** Specifies the format of the training data (either COMPREHEND_CSV or AUGMENTED_MANIFEST) for the document classifier. (AI-inferred) */
+  documentType?: string | Computed<string>;
+  /** Provides the S3 URIs for the training documents (and optionally test documents) used to train the document classifier. (AI-inferred) */
+  documents?: DocumentClassifier_InputDataConfig_Documents | Computed<DocumentClassifier_InputDataConfig_Documents>;
+  /** The single character that separates the label from the text in each line of the training data files for the document classifier (e.g., a pipe '|'). (AI-inferred) */
+  labelDelimiter?: string | Computed<string>;
+  /** The S3 URI of the bucket or folder that contains the training documents used to train the document classifier. (AI-inferred) */
+  s3Uri?: string | Computed<string>;
+  /** The S3 URI of the test dataset used to evaluate the trained document classifier. (AI-inferred) */
+  testS3Uri?: string | Computed<string>;
 }
 
 export interface DocumentClassifier_OutputDataConfig {
-  kmsKeyId: string;
-  outputS3Uri: string;
-  s3Uri: string;
+  /** The KMS key ID used to encrypt the output data stored in S3 for the document classifier. (AI-inferred) */
+  kmsKeyId?: string | Computed<string>;
+  /** The S3 URI where the document classifier's output data, such as training metrics and evaluation results, is stored. (AI-inferred) */
+  s3Uri?: string | Computed<string>;
 }
 
-export interface DocumentClassifier_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface DocumentClassifier_Tags {
+  /** The tag key (e.g., 'project') for a user-defined tag attached to the Amazon Comprehend document classifier, used for metadata, cost tracking, and access control. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value part of a tag attached to the Amazon Comprehend document classifier, used for cost allocation or organizational categorization. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 export interface DocumentClassifier_VpcConfig {
-  securityGroupIds: string[];
-  subnets: string[];
+  /** Specifies the list of security group IDs that the Amazon Comprehend document classifier uses when it accesses resources in your VPC, controlling inbound and outbound network traffic for training and inference operations. (AI-inferred) */
+  securityGroupIds: string[] | Computed<string[]>;
+  /** The list of subnet IDs in the Amazon VPC where the document classifier runs, enabling private network access to resources such as training data in S3. (AI-inferred) */
+  subnets: string[] | Computed<string[]>;
 }
 
 const DocumentClassifier_InputDataConfig_AugmentedManifestsFields: FieldMap = {
-  annotationDataS3Uri: "annotation_data_s3_uri",
   attributeNames: "attribute_names",
-  documentType: "document_type",
   s3Uri: "s3_uri",
-  sourceDocumentsS3Uri: "source_documents_s3_uri",
   split: "split",
 };
 
+const DocumentClassifier_InputDataConfig_DocumentReaderConfigFields: FieldMap = {
+  documentReadAction: "document_read_action",
+  documentReadMode: "document_read_mode",
+  featureTypes: "feature_types",
+};
+
+const DocumentClassifier_InputDataConfig_DocumentsFields: FieldMap = {
+  s3Uri: "s3_uri",
+  testS3Uri: "test_s3_uri",
+};
+
 const DocumentClassifier_InputDataConfigFields: FieldMap = {
+  augmentedManifests: {
+    wireName: "augmented_manifests",
+    kind: "list",
+    fields: DocumentClassifier_InputDataConfig_AugmentedManifestsFields,
+  },
   dataFormat: "data_format",
+  documentReaderConfig: {
+    wireName: "document_reader_config",
+    kind: "object",
+    fields: DocumentClassifier_InputDataConfig_DocumentReaderConfigFields,
+  },
+  documentType: "document_type",
+  documents: {
+    wireName: "documents",
+    kind: "object",
+    fields: DocumentClassifier_InputDataConfig_DocumentsFields,
+  },
   labelDelimiter: "label_delimiter",
   s3Uri: "s3_uri",
   testS3Uri: "test_s3_uri",
-  augmentedManifests: {
-    wireName: "augmented_manifests",
-    kind: "set",
-    fields: DocumentClassifier_InputDataConfig_AugmentedManifestsFields,
-  },
 };
 
 const DocumentClassifier_OutputDataConfigFields: FieldMap = {
   kmsKeyId: "kms_key_id",
-  outputS3Uri: "output_s3_uri",
   s3Uri: "s3_uri",
 };
 
-const DocumentClassifier_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const DocumentClassifier_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 const DocumentClassifier_VpcConfigFields: FieldMap = {
@@ -74,77 +122,90 @@ const DocumentClassifier_VpcConfigFields: FieldMap = {
 };
 
 export interface DocumentClassifierConfig {
+  /** The ARN of the IAM role that Amazon Comprehend assumes to access the training documents in the S3 bucket specified as the input data source for the document classifier. (AI-inferred) */
   dataAccessRoleArn: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** The unique name of the document classifier, which identifies it within your AWS account and region. (AI-inferred) */
+  documentClassifierName: string | Computed<string>;
+  /** Specifies the S3 location and format of the training data (documents and labels) used to train the document classifier, including the S3 URI, data format, and optional test data location. (AI-inferred) */
+  inputDataConfig: DocumentClassifier_InputDataConfig | Computed<DocumentClassifier_InputDataConfig>;
+  /** Specifies the language code of the training documents, such as 'en' for English or 'es' for Spanish, which the document classifier is trained on. (AI-inferred) */
   languageCode: string | Computed<string>;
+  /** Specifies the classification mode for the document classifier: MULTI_CLASS for assigning a single class per document, or MULTI_LABEL for assigning multiple labels per document. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** Specifies the AWS KMS key ID used to encrypt the trained document classifier model. (AI-inferred) */
   modelKmsKeyId?: string | Computed<string>;
-  name: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** The model_policy field specifies a JSON-based resource policy that grants other AWS services or IAM principals permission to use the trained document classifier for inference. (AI-inferred) */
+  modelPolicy?: string | Computed<string>;
+  /** Specifies the Amazon S3 location (and optionally the AWS KMS key for encryption) where the document classifier training output, such as model artifacts and evaluation metrics, is stored. (AI-inferred) */
+  outputDataConfig?: DocumentClassifier_OutputDataConfig | Computed<DocumentClassifier_OutputDataConfig>;
+  /** Specifies a list of key-value tags to attach to the document classifier resource. (AI-inferred) */
+  tags?: DocumentClassifier_Tags[] | Computed<DocumentClassifier_Tags[]>;
+  /** Specifies a user-defined version name for the document classifier, allowing you to manage and reference distinct versions of the same classifier within Amazon Comprehend. (AI-inferred) */
   versionName?: string | Computed<string>;
-  versionNamePrefix?: string | Computed<string>;
+  /** The identifier of the AWS KMS key that Amazon Comprehend uses to encrypt the storage volume attached to the compute instance during training of the document classifier. (AI-inferred) */
   volumeKmsKeyId?: string | Computed<string>;
-  inputDataConfig?: DocumentClassifier_InputDataConfig[] | Computed<DocumentClassifier_InputDataConfig[]>;
-  outputDataConfig?: DocumentClassifier_OutputDataConfig[] | Computed<DocumentClassifier_OutputDataConfig[]>;
-  timeouts?: DocumentClassifier_Timeouts | Computed<DocumentClassifier_Timeouts>;
-  vpcConfig?: DocumentClassifier_VpcConfig[] | Computed<DocumentClassifier_VpcConfig[]>;
+  /** Configures the VPC settings (security group IDs and subnet IDs) used by the document classifier to access training data or other resources in a private VPC. (AI-inferred) */
+  vpcConfig?: DocumentClassifier_VpcConfig | Computed<DocumentClassifier_VpcConfig>;
 }
 
 export interface DocumentClassifierAttrs {
+  /** The Amazon Resource Name (ARN) that uniquely identifies the document classifier in Amazon Comprehend. (AI-inferred) */
   arn: string;
+  /** The ARN of the IAM role that Amazon Comprehend assumes to access the training documents in the S3 bucket specified as the input data source for the document classifier. (AI-inferred) */
   dataAccessRoleArn: string;
-  id: string;
+  /** The unique name of the document classifier, which identifies it within your AWS account and region. (AI-inferred) */
+  documentClassifierName: string;
+  /** Specifies the S3 location and format of the training data (documents and labels) used to train the document classifier, including the S3 URI, data format, and optional test data location. (AI-inferred) */
+  inputDataConfig: DocumentClassifier_InputDataConfig;
+  /** Specifies the language code of the training documents, such as 'en' for English or 'es' for Spanish, which the document classifier is trained on. (AI-inferred) */
   languageCode: string;
+  /** Specifies the classification mode for the document classifier: MULTI_CLASS for assigning a single class per document, or MULTI_LABEL for assigning multiple labels per document. (AI-inferred) */
   mode: string;
+  /** Specifies the AWS KMS key ID used to encrypt the trained document classifier model. (AI-inferred) */
   modelKmsKeyId: string;
-  name: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** The model_policy field specifies a JSON-based resource policy that grants other AWS services or IAM principals permission to use the trained document classifier for inference. (AI-inferred) */
+  modelPolicy: string;
+  /** Specifies the Amazon S3 location (and optionally the AWS KMS key for encryption) where the document classifier training output, such as model artifacts and evaluation metrics, is stored. (AI-inferred) */
+  outputDataConfig: DocumentClassifier_OutputDataConfig;
+  /** Specifies a list of key-value tags to attach to the document classifier resource. (AI-inferred) */
+  tags: DocumentClassifier_Tags[];
+  /** Specifies a user-defined version name for the document classifier, allowing you to manage and reference distinct versions of the same classifier within Amazon Comprehend. (AI-inferred) */
   versionName: string;
-  versionNamePrefix: string;
+  /** The identifier of the AWS KMS key that Amazon Comprehend uses to encrypt the storage volume attached to the compute instance during training of the document classifier. (AI-inferred) */
   volumeKmsKeyId: string;
-  inputDataConfig: DocumentClassifier_InputDataConfig[];
-  outputDataConfig: DocumentClassifier_OutputDataConfig[];
-  timeouts: DocumentClassifier_Timeouts;
-  vpcConfig: DocumentClassifier_VpcConfig[];
+  /** Configures the VPC settings (security group IDs and subnet IDs) used by the document classifier to access training data or other resources in a private VPC. (AI-inferred) */
+  vpcConfig: DocumentClassifier_VpcConfig;
 }
 
 export const DocumentClassifier: ResourceBinding<DocumentClassifierConfig, DocumentClassifierAttrs> = {
   wireType: "aws_comprehend_document_classifier",
   fields: {
     dataAccessRoleArn: "data_access_role_arn",
-    id: "id",
+    documentClassifierName: "document_classifier_name",
+    inputDataConfig: {
+      wireName: "input_data_config",
+      kind: "object",
+      fields: DocumentClassifier_InputDataConfigFields,
+    },
     languageCode: "language_code",
     mode: "mode",
     modelKmsKeyId: "model_kms_key_id",
-    name: "name",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
-    versionName: "version_name",
-    versionNamePrefix: "version_name_prefix",
-    volumeKmsKeyId: "volume_kms_key_id",
-    inputDataConfig: {
-      wireName: "input_data_config",
-      kind: "list",
-      fields: DocumentClassifier_InputDataConfigFields,
-    },
+    modelPolicy: "model_policy",
     outputDataConfig: {
       wireName: "output_data_config",
-      kind: "list",
+      kind: "object",
       fields: DocumentClassifier_OutputDataConfigFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: DocumentClassifier_TimeoutsFields,
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: DocumentClassifier_TagsFields,
     },
+    versionName: "version_name",
+    volumeKmsKeyId: "volume_kms_key_id",
     vpcConfig: {
       wireName: "vpc_config",
-      kind: "list",
+      kind: "object",
       fields: DocumentClassifier_VpcConfigFields,
     },
   },

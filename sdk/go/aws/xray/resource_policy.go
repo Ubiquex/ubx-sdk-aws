@@ -4,11 +4,21 @@ package xray
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePolicyConfig struct {
+	// A flag to indicate whether to bypass the resource policy lockout safety check
 	BypassPolicyLockoutCheck any
+	// The resource policy document, which can be up to 5kb in size.
 	PolicyDocument any
+	// The name of the resource policy. Must be unique within a specific AWS account.
 	PolicyName any
-	PolicyRevisionId any
-	Region any
+}
+
+type ResourcePolicyAttrs struct {
+	// A flag to indicate whether to bypass the resource policy lockout safety check
+	BypassPolicyLockoutCheck any
+	// The resource policy document, which can be up to 5kb in size.
+	PolicyDocument any
+	// The name of the resource policy. Must be unique within a specific AWS account.
+	PolicyName any
 }
 
 var ResourcePolicy = ubx.ResourceBinding{
@@ -17,7 +27,5 @@ var ResourcePolicy = ubx.ResourceBinding{
 		"BypassPolicyLockoutCheck": ubx.FieldSpec{WireName: "bypass_policy_lockout_check"},
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
 		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"PolicyRevisionId": ubx.FieldSpec{WireName: "policy_revision_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 	},
 }

@@ -7,24 +7,53 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Profile_Tags:
+    # A user-defined string that serves as the key in a tag attached to an AWS Transfer Family profile, enabling resource categorization and cost allocation. (AI-inferred)
+    key: Any = None
+    # Specifies the value part of a tag attached to this AWS Transfer Family profile, allowing you to categorize and manage the profile with custom metadata. (AI-inferred)
+    value: Any = None
+
+_Profile_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ProfileConfig:
+    # AS2 identifier agreed with a trading partner.
     as2_id: Any = None
+    # List of the certificate IDs associated with this profile to be used for encryption and signing of AS2 messages.
     certificate_ids: Any = None
-    id: Any = None
+    # Enum specifying whether the profile is local or associated with a trading partner.
     profile_type: Any = None
-    region: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class ProfileAttrs:
+    # Specifies the unique Amazon Resource Name (ARN) for the profile.
+    arn: Any = None
+    # AS2 identifier agreed with a trading partner.
+    as2_id: Any = None
+    # List of the certificate IDs associated with this profile to be used for encryption and signing of AS2 messages.
+    certificate_ids: Any = None
+    # A unique identifier for the profile
+    profile_id: Any = None
+    # Enum specifying whether the profile is local or associated with a trading partner.
+    profile_type: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 Profile = ubx.ResourceBinding(
     wire_type="aws_transfer_profile",
     fields={
         "as2_id": ubx.FieldSpec(wire_name="as2_id"),
         "certificate_ids": ubx.FieldSpec(wire_name="certificate_ids"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "profile_type": ubx.FieldSpec(wire_name="profile_type"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Profile_TagsFields,
+        ),
     },
 )

@@ -7,69 +7,80 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ReplicationConfiguration_ReplicationConfiguration_Rule_Destination:
+class ReplicationConfiguration_ReplicationConfiguration_Rules_Destinations:
+    # The AWS region of the destination registry to which container images are replicated, such as us-east-1. (AI-inferred)
     region: Any = None
+    # The AWS account ID of the destination registry where replicated images are stored. (AI-inferred)
     registry_id: Any = None
 
 @dataclasses.dataclass
-class ReplicationConfiguration_ReplicationConfiguration_Rule_RepositoryFilter:
+class ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFilters:
+    # The repository name prefix pattern (e.g., 'prod/') that determines which ECR repositories are included in the replication rule, matching repositories whose names begin with this filter string. (AI-inferred)
     filter: Any = None
+    # Specifies the type of repository filter in an ECR replication rule, where PREFIX_MATCH is the only supported value and indicates that the filter value matches repository names by prefix. (AI-inferred)
     filter_type: Any = None
 
 @dataclasses.dataclass
-class ReplicationConfiguration_ReplicationConfiguration_Rule:
-    destination: Any = None
-    repository_filter: Any = None
+class ReplicationConfiguration_ReplicationConfiguration_Rules:
+    # Specifies the destination registry details, including the AWS Region and registry ID, to which this replication rule replicates images. (AI-inferred)
+    destinations: Any = None
+    # Defines which repositories in the source registry are replicated by the rule, using filter type (such as PREFIX_MATCH) and a filter value that matches repository names. (AI-inferred)
+    repository_filters: Any = None
 
 @dataclasses.dataclass
 class ReplicationConfiguration_ReplicationConfiguration:
-    rule: Any = None
+    # An array of objects representing the replication destinations and repository filters for a replication configuration.
+    rules: Any = None
 
-_ReplicationConfiguration_ReplicationConfiguration_Rule_DestinationFields = {
+_ReplicationConfiguration_ReplicationConfiguration_Rules_DestinationsFields = {
     "region": ubx.FieldSpec(wire_name="region"),
     "registry_id": ubx.FieldSpec(wire_name="registry_id"),
 }
 
-_ReplicationConfiguration_ReplicationConfiguration_Rule_RepositoryFilterFields = {
+_ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFiltersFields = {
     "filter": ubx.FieldSpec(wire_name="filter"),
     "filter_type": ubx.FieldSpec(wire_name="filter_type"),
 }
 
-_ReplicationConfiguration_ReplicationConfiguration_RuleFields = {
-    "destination": ubx.FieldSpec(
-        wire_name="destination",
+_ReplicationConfiguration_ReplicationConfiguration_RulesFields = {
+    "destinations": ubx.FieldSpec(
+        wire_name="destinations",
         kind="list",
-        fields=_ReplicationConfiguration_ReplicationConfiguration_Rule_DestinationFields,
+        fields=_ReplicationConfiguration_ReplicationConfiguration_Rules_DestinationsFields,
     ),
-    "repository_filter": ubx.FieldSpec(
-        wire_name="repository_filter",
+    "repository_filters": ubx.FieldSpec(
+        wire_name="repository_filters",
         kind="list",
-        fields=_ReplicationConfiguration_ReplicationConfiguration_Rule_RepositoryFilterFields,
+        fields=_ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFiltersFields,
     ),
 }
 
 _ReplicationConfiguration_ReplicationConfigurationFields = {
-    "rule": ubx.FieldSpec(
-        wire_name="rule",
+    "rules": ubx.FieldSpec(
+        wire_name="rules",
         kind="list",
-        fields=_ReplicationConfiguration_ReplicationConfiguration_RuleFields,
+        fields=_ReplicationConfiguration_ReplicationConfiguration_RulesFields,
     ),
 }
 
 @dataclasses.dataclass
 class ReplicationConfigurationConfig:
-    id: Any = None
-    region: Any = None
+    # The replication configuration for a registry.
+    replication_configuration: Any = None
+
+@dataclasses.dataclass
+class ReplicationConfigurationAttrs:
+    # The registry_id is the AWS account ID (or registry ID) of the Amazon ECR private registry that this replication configuration is associated with, automatically assigned by CloudFormation. (AI-inferred)
+    registry_id: Any = None
+    # The replication configuration for a registry.
     replication_configuration: Any = None
 
 ReplicationConfiguration = ubx.ResourceBinding(
     wire_type="aws_ecr_replication_configuration",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "replication_configuration": ubx.FieldSpec(
             wire_name="replication_configuration",
-            kind="list",
+            kind="object",
             fields=_ReplicationConfiguration_ReplicationConfigurationFields,
         ),
     },

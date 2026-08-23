@@ -2,35 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CertificateConfig {
-  certificateId: string | Computed<string>;
+  /** The certificate Identifier */
+  certificateIdentifier?: string | Computed<string>;
+  /** The certificate Pem */
   certificatePem?: string | Computed<string>;
+  /** The certificate Wallet */
   certificateWallet?: string | Computed<string>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface CertificateAttrs {
+  /** The certificate Arn */
   certificateArn: string;
-  certificateId: string;
+  /** The certificate Identifier */
+  certificateIdentifier: string;
+  /** The certificate Pem */
   certificatePem: string;
+  /** The certificate Wallet */
   certificateWallet: string;
-  id: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
 }
 
 export const Certificate: ResourceBinding<CertificateConfig, CertificateAttrs> = {
   wireType: "aws_dms_certificate",
   fields: {
-    certificateId: "certificate_id",
+    certificateIdentifier: "certificate_identifier",
     certificatePem: "certificate_pem",
     certificateWallet: "certificate_wallet",
-    id: "id",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
   },
 };

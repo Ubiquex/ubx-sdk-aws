@@ -7,40 +7,91 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ReplicationTask_Tags:
+    # Specifies the key of a tag attached to the AWS DMS replication task, used for identifying, organizing, and managing the resource. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_ReplicationTask_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ReplicationTaskConfig:
+    # Specifies the native source database position (such as a log file number or LSN) from which AWS DMS begins reading change data capture (CDC) changes when starting the replication task. (AI-inferred)
     cdc_start_position: Any = None
+    # The Unix timestamp in seconds that specifies when Change Data Capture (CDC) should begin for the replication task, defining the starting point for capturing ongoing data changes. (AI-inferred)
     cdc_start_time: Any = None
-    id: Any = None
+    # Specifies the point in time (as a Unix timestamp) or LSN (log sequence number) up to which the change data capture (CDC) portion of the replication task should process changes, after which the task stops. (AI-inferred)
+    cdc_stop_position: Any = None
+    # Specifies the migration type for the replication task, which can be one of 'full-load', 'cdc', or 'full-load-and-cdc'. (AI-inferred)
     migration_type: Any = None
-    region: Any = None
+    # The Amazon Resource Name (ARN) of the AWS DMS replication instance that will run the replication task. (AI-inferred)
     replication_instance_arn: Any = None
-    replication_task_id: Any = None
+    # A user-supplied unique identifier for the DMS replication task within an AWS account, used to reference and manage the task in AWS DMS. (AI-inferred)
+    replication_task_identifier: Any = None
+    # A JSON-format string that configures the AWS DMS replication task's operational settings, such as target table preparation mode, full load behavior, and error handling options. (AI-inferred)
     replication_task_settings: Any = None
     resource_identifier: Any = None
+    # The Amazon Resource Name (ARN) of the source database endpoint that the DMS replication task reads data from during migration. (AI-inferred)
     source_endpoint_arn: Any = None
-    start_replication_task: Any = None
+    # JSON string that specifies table mapping rules, including selection and transformation rules, for a DMS replication task. (AI-inferred)
     table_mappings: Any = None
+    # Assigns metadata key-value pairs to the DMS replication task for resource categorization and cost tracking. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
+    # The ARN of the target database endpoint that the replication task connects to for writing migrated data. (AI-inferred)
     target_endpoint_arn: Any = None
+    task_data: Any = None
+
+@dataclasses.dataclass
+class ReplicationTaskAttrs:
+    # Specifies the native source database position (such as a log file number or LSN) from which AWS DMS begins reading change data capture (CDC) changes when starting the replication task. (AI-inferred)
+    cdc_start_position: Any = None
+    # The Unix timestamp in seconds that specifies when Change Data Capture (CDC) should begin for the replication task, defining the starting point for capturing ongoing data changes. (AI-inferred)
+    cdc_start_time: Any = None
+    # Specifies the point in time (as a Unix timestamp) or LSN (log sequence number) up to which the change data capture (CDC) portion of the replication task should process changes, after which the task stops. (AI-inferred)
+    cdc_stop_position: Any = None
+    # The ARN of the DMS replication task, which uniquely identifies it within AWS. (AI-inferred)
+    id: Any = None
+    # Specifies the migration type for the replication task, which can be one of 'full-load', 'cdc', or 'full-load-and-cdc'. (AI-inferred)
+    migration_type: Any = None
+    # The Amazon Resource Name (ARN) of the AWS DMS replication instance that will run the replication task. (AI-inferred)
+    replication_instance_arn: Any = None
+    # A user-supplied unique identifier for the DMS replication task within an AWS account, used to reference and manage the task in AWS DMS. (AI-inferred)
+    replication_task_identifier: Any = None
+    # A JSON-format string that configures the AWS DMS replication task's operational settings, such as target table preparation mode, full load behavior, and error handling options. (AI-inferred)
+    replication_task_settings: Any = None
+    resource_identifier: Any = None
+    # The Amazon Resource Name (ARN) of the source database endpoint that the DMS replication task reads data from during migration. (AI-inferred)
+    source_endpoint_arn: Any = None
+    # JSON string that specifies table mapping rules, including selection and transformation rules, for a DMS replication task. (AI-inferred)
+    table_mappings: Any = None
+    # Assigns metadata key-value pairs to the DMS replication task for resource categorization and cost tracking. (AI-inferred)
+    tags: Any = None
+    # The ARN of the target database endpoint that the replication task connects to for writing migrated data. (AI-inferred)
+    target_endpoint_arn: Any = None
+    task_data: Any = None
 
 ReplicationTask = ubx.ResourceBinding(
     wire_type="aws_dms_replication_task",
     fields={
         "cdc_start_position": ubx.FieldSpec(wire_name="cdc_start_position"),
         "cdc_start_time": ubx.FieldSpec(wire_name="cdc_start_time"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "cdc_stop_position": ubx.FieldSpec(wire_name="cdc_stop_position"),
         "migration_type": ubx.FieldSpec(wire_name="migration_type"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "replication_instance_arn": ubx.FieldSpec(wire_name="replication_instance_arn"),
-        "replication_task_id": ubx.FieldSpec(wire_name="replication_task_id"),
+        "replication_task_identifier": ubx.FieldSpec(wire_name="replication_task_identifier"),
         "replication_task_settings": ubx.FieldSpec(wire_name="replication_task_settings"),
         "resource_identifier": ubx.FieldSpec(wire_name="resource_identifier"),
         "source_endpoint_arn": ubx.FieldSpec(wire_name="source_endpoint_arn"),
-        "start_replication_task": ubx.FieldSpec(wire_name="start_replication_task"),
         "table_mappings": ubx.FieldSpec(wire_name="table_mappings"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ReplicationTask_TagsFields,
+        ),
         "target_endpoint_arn": ubx.FieldSpec(wire_name="target_endpoint_arn"),
+        "task_data": ubx.FieldSpec(wire_name="task_data"),
     },
 )

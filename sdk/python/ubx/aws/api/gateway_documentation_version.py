@@ -8,19 +8,27 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayDocumentationVersionConfig:
+    # Provides a human-readable description for the documentation version snapshot, typically indicating the changes or purpose of that version. (AI-inferred)
     description: Any = None
-    id: Any = None
-    region: Any = None
+    # The version identifier of the API documentation snapshot that this documentation version represents. (AI-inferred)
+    documentation_version: Any = None
+    # The identifier of the REST API to which this documentation version is attached. (AI-inferred)
     rest_api_id: Any = None
-    version: Any = None
+
+@dataclasses.dataclass
+class GatewayDocumentationVersionAttrs:
+    # Provides a human-readable description for the documentation version snapshot, typically indicating the changes or purpose of that version. (AI-inferred)
+    description: Any = None
+    # The version identifier of the API documentation snapshot that this documentation version represents. (AI-inferred)
+    documentation_version: Any = None
+    # The identifier of the REST API to which this documentation version is attached. (AI-inferred)
+    rest_api_id: Any = None
 
 GatewayDocumentationVersion = ubx.ResourceBinding(
     wire_type="aws_api_gateway_documentation_version",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "documentation_version": ubx.FieldSpec(wire_name="documentation_version"),
         "rest_api_id": ubx.FieldSpec(wire_name="rest_api_id"),
-        "version": ubx.FieldSpec(wire_name="version"),
     },
 )

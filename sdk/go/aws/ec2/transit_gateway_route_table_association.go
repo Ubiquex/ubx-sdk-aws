@@ -4,19 +4,22 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayRouteTableAssociationConfig struct {
-	Id any
-	Region any
-	ReplaceExistingAssociation any
+	// The ID of transit gateway attachment.
 	TransitGatewayAttachmentId any
+	// The ID of transit gateway route table.
+	TransitGatewayRouteTableId any
+}
+
+type TransitGatewayRouteTableAssociationAttrs struct {
+	// The ID of transit gateway attachment.
+	TransitGatewayAttachmentId any
+	// The ID of transit gateway route table.
 	TransitGatewayRouteTableId any
 }
 
 var TransitGatewayRouteTableAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_route_table_association",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ReplaceExistingAssociation": ubx.FieldSpec{WireName: "replace_existing_association"},
 		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
 		"TransitGatewayRouteTableId": ubx.FieldSpec{WireName: "transit_gateway_route_table_id"},
 	},

@@ -3,24 +3,28 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ClientVpnRoute_Timeouts struct {
-	Create any
-	Delete any
+type ClientVpnRouteConfig struct {
+	// The ID of the Client VPN endpoint to which this route is associated. (AI-inferred)
+	ClientVpnEndpointId any
+	// A user-defined description for the route, often used to identify its purpose or destination in the Client VPN endpoint. (AI-inferred)
+	Description any
+	// The IPv4 CIDR block (e.g., 10.0.0.0/16) of the destination network that this Client VPN route forwards traffic through the VPN tunnel. (AI-inferred)
+	DestinationCidrBlock any
+	// The ID of the VPC subnet to which the Client VPN endpoint routes traffic for the destination CIDR block. (AI-inferred)
+	TargetVpcSubnetId any
 }
 
-var ClientVpnRoute_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
-type ClientVpnRouteConfig struct {
+type ClientVpnRouteAttrs struct {
+	// The ID of the Client VPN endpoint to which this route is associated. (AI-inferred)
 	ClientVpnEndpointId any
+	// A user-defined description for the route, often used to identify its purpose or destination in the Client VPN endpoint. (AI-inferred)
 	Description any
+	// The IPv4 CIDR block (e.g., 10.0.0.0/16) of the destination network that this Client VPN route forwards traffic through the VPN tunnel. (AI-inferred)
 	DestinationCidrBlock any
+	// The computed unique identifier for the Client VPN route, formatted as the client VPN endpoint ID, destination CIDR block, and target subnet ID separated by colons. (AI-inferred)
 	Id any
-	Region any
+	// The ID of the VPC subnet to which the Client VPN endpoint routes traffic for the destination CIDR block. (AI-inferred)
 	TargetVpcSubnetId any
-	Timeouts any
 }
 
 var ClientVpnRoute = ubx.ResourceBinding{
@@ -29,13 +33,6 @@ var ClientVpnRoute = ubx.ResourceBinding{
 		"ClientVpnEndpointId": ubx.FieldSpec{WireName: "client_vpn_endpoint_id"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DestinationCidrBlock": ubx.FieldSpec{WireName: "destination_cidr_block"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"TargetVpcSubnetId": ubx.FieldSpec{WireName: "target_vpc_subnet_id"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: ClientVpnRoute_TimeoutsFields,
-		},
 	},
 }

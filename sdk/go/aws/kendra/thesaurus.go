@@ -4,14 +4,17 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Thesaurus_SourceS3Path struct {
+	// The name of the S3 bucket that contains the file.
 	Bucket any
+	// The name of the file.
 	Key any
 }
 
-type Thesaurus_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Thesaurus_Tags struct {
+	// The key of a tag attached to an AWS Kendra thesaurus, used to organize and identify the resource for management and billing. (AI-inferred)
+	Key any
+	// The value component of a tag entry associated with the AWS Kendra thesaurus, used for organizing and identifying the resource. (AI-inferred)
+	Value any
 }
 
 var Thesaurus_SourceS3PathFields = ubx.FieldMap{
@@ -19,45 +22,61 @@ var Thesaurus_SourceS3PathFields = ubx.FieldMap{
 		"Key": ubx.FieldSpec{WireName: "key"},
 	}
 
-var Thesaurus_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Thesaurus_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ThesaurusConfig struct {
+	// A description for the thesaurus.
 	Description any
-	Id any
+	// The identifier of the index for the thesaurus.
 	IndexId any
+	// A name for the thesaurus.
 	Name any
-	Region any
+	// An IAM role that gives Amazon Kendra permissions to access the thesaurus file specified in SourceS3Path.
 	RoleArn any
-	Tags any
-	TagsAll any
+	// Information required to find a specific file in an Amazon S3 bucket.
 	SourceS3Path any
-	Timeouts any
+	// A list of key-value pairs that identify or categorize the thesaurus.
+	Tags any
+}
+
+type ThesaurusAttrs struct {
+	// The Amazon Resource Name (ARN) of the thesaurus.
+	Arn any
+	// A description for the thesaurus.
+	Description any
+	// The identifier of the thesaurus.
+	Id any
+	// The identifier of the index for the thesaurus.
+	IndexId any
+	// A name for the thesaurus.
+	Name any
+	// An IAM role that gives Amazon Kendra permissions to access the thesaurus file specified in SourceS3Path.
+	RoleArn any
+	// Information required to find a specific file in an Amazon S3 bucket.
+	SourceS3Path any
+	// A list of key-value pairs that identify or categorize the thesaurus.
+	Tags any
 }
 
 var Thesaurus = ubx.ResourceBinding{
 	WireType: "aws_kendra_thesaurus",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"IndexId": ubx.FieldSpec{WireName: "index_id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"SourceS3Path": ubx.FieldSpec{
 			WireName: "source_s3_path",
-			Kind: "list",
+			Kind: "object",
 			Fields: Thesaurus_SourceS3PathFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Thesaurus_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Thesaurus_TagsFields,
 		},
 	},
 }

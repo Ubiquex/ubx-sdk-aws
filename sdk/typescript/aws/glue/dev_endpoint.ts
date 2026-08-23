@@ -2,76 +2,90 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DevEndpointConfig {
-  arguments?: Record<string, string> | Computed<Record<string, string>>;
+  /** A map of key-value pairs that specify configuration arguments passed to the Apache Spark environment of the development endpoint. (AI-inferred) */
+  arguments?: unknown | Computed<unknown>;
+  /** Specifies a user-defined name for this AWS Glue development endpoint, which AWS Glue uses to identify it; if omitted, CloudFormation automatically generates a unique name. (AI-inferred) */
+  endpointName?: string | Computed<string>;
+  /** The S3 path to one or more Java JAR files that provide custom jars to be used by the Glue development endpoint. (AI-inferred) */
   extraJarsS3Path?: string | Computed<string>;
+  /** The S3 path to a Python library (or set of libraries) that AWS Glue installs on the development endpoint for use by your ETL scripts. (AI-inferred) */
   extraPythonLibsS3Path?: string | Computed<string>;
+  /** Specifies the AWS Glue version (such as '1.0' or '2.0') that defines the Apache Spark and Python runtime environment for this development endpoint. (AI-inferred) */
   glueVersion?: string | Computed<string>;
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
+  /** Specifies the number of compute nodes for the development endpoint, which determines its processing capacity and parallelism. (AI-inferred) */
   numberOfNodes?: number | Computed<number>;
+  /** The number of worker nodes allocated to this AWS Glue development endpoint. (AI-inferred) */
   numberOfWorkers?: number | Computed<number>;
+  /** The SSH public key that AWS Glue uses to authenticate connections to the development endpoint. (AI-inferred) */
   publicKey?: string | Computed<string>;
+  /** A list of SSH public keys used to authenticate to the dev endpoint for secure access. (AI-inferred) */
   publicKeys?: string[] | Computed<string[]>;
-  region?: string | Computed<string>;
+  /** The ARN of the IAM role that the development endpoint assumes to access resources such as data stores and scripts. (AI-inferred) */
   roleArn: string | Computed<string>;
+  /** The name of an AWS Glue security configuration to attach to this development endpoint, which defines encryption and other security settings. (AI-inferred) */
   securityConfiguration?: string | Computed<string>;
+  /** List of security group IDs to attach to the Glue dev endpoint for VPC networking. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
+  /** The subnet ID within a VPC where the AWS Glue development endpoint is provisioned, used when the endpoint needs access to resources in a Virtual Private Cloud. (AI-inferred) */
   subnetId?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** Specifies a set of key-value tags to attach to the AWS Glue development endpoint, used for resource organization, cost allocation, and access control. (AI-inferred) */
+  tags?: unknown | Computed<unknown>;
+  /** The worker type for the development endpoint, such as Standard, G.1X, or G.2X, which determines the compute capacity of each worker. (AI-inferred) */
   workerType?: string | Computed<string>;
 }
 
 export interface DevEndpointAttrs {
-  arguments: Record<string, string>;
-  arn: string;
-  availabilityZone: string;
+  /** A map of key-value pairs that specify configuration arguments passed to the Apache Spark environment of the development endpoint. (AI-inferred) */
+  arguments: unknown;
+  /** Specifies a user-defined name for this AWS Glue development endpoint, which AWS Glue uses to identify it; if omitted, CloudFormation automatically generates a unique name. (AI-inferred) */
+  endpointName: string;
+  /** The S3 path to one or more Java JAR files that provide custom jars to be used by the Glue development endpoint. (AI-inferred) */
   extraJarsS3Path: string;
+  /** The S3 path to a Python library (or set of libraries) that AWS Glue installs on the development endpoint for use by your ETL scripts. (AI-inferred) */
   extraPythonLibsS3Path: string;
-  failureReason: string;
+  /** Specifies the AWS Glue version (such as '1.0' or '2.0') that defines the Apache Spark and Python runtime environment for this development endpoint. (AI-inferred) */
   glueVersion: string;
+  /** The unique identifier for the Glue development endpoint, which is the same as the endpoint's name and is used as the Terraform resource ID for import and state tracking. (AI-inferred) */
   id: string;
-  name: string;
+  /** Specifies the number of compute nodes for the development endpoint, which determines its processing capacity and parallelism. (AI-inferred) */
   numberOfNodes: number;
+  /** The number of worker nodes allocated to this AWS Glue development endpoint. (AI-inferred) */
   numberOfWorkers: number;
-  privateAddress: string;
-  publicAddress: string;
+  /** The SSH public key that AWS Glue uses to authenticate connections to the development endpoint. (AI-inferred) */
   publicKey: string;
+  /** A list of SSH public keys used to authenticate to the dev endpoint for secure access. (AI-inferred) */
   publicKeys: string[];
-  region: string;
+  /** The ARN of the IAM role that the development endpoint assumes to access resources such as data stores and scripts. (AI-inferred) */
   roleArn: string;
+  /** The name of an AWS Glue security configuration to attach to this development endpoint, which defines encryption and other security settings. (AI-inferred) */
   securityConfiguration: string;
+  /** List of security group IDs to attach to the Glue dev endpoint for VPC networking. (AI-inferred) */
   securityGroupIds: string[];
-  status: string;
+  /** The subnet ID within a VPC where the AWS Glue development endpoint is provisioned, used when the endpoint needs access to resources in a Virtual Private Cloud. (AI-inferred) */
   subnetId: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  vpcId: string;
+  /** Specifies a set of key-value tags to attach to the AWS Glue development endpoint, used for resource organization, cost allocation, and access control. (AI-inferred) */
+  tags: unknown;
+  /** The worker type for the development endpoint, such as Standard, G.1X, or G.2X, which determines the compute capacity of each worker. (AI-inferred) */
   workerType: string;
-  yarnEndpointAddress: string;
-  zeppelinRemoteSparkInterpreterPort: number;
 }
 
 export const DevEndpoint: ResourceBinding<DevEndpointConfig, DevEndpointAttrs> = {
   wireType: "aws_glue_dev_endpoint",
   fields: {
     arguments: "arguments",
+    endpointName: "endpoint_name",
     extraJarsS3Path: "extra_jars_s3_path",
     extraPythonLibsS3Path: "extra_python_libs_s3_path",
     glueVersion: "glue_version",
-    id: "id",
-    name: "name",
     numberOfNodes: "number_of_nodes",
     numberOfWorkers: "number_of_workers",
     publicKey: "public_key",
     publicKeys: "public_keys",
-    region: "region",
     roleArn: "role_arn",
     securityConfiguration: "security_configuration",
     securityGroupIds: "security_group_ids",
     subnetId: "subnet_id",
     tags: "tags",
-    tagsAll: "tags_all",
     workerType: "worker_type",
   },
 };

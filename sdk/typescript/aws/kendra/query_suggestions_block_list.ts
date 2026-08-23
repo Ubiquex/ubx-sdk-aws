@@ -2,14 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface QuerySuggestionsBlockList_SourceS3Path {
-  bucket: string;
-  key: string;
+  /** The name of the S3 bucket that contains the file. */
+  bucket: string | Computed<string>;
+  /** The name of the file. */
+  key: string | Computed<string>;
 }
 
-export interface QuerySuggestionsBlockList_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface QuerySuggestionsBlockList_Tags {
+  /** The tag key for a tag assigned to the query suggestions block list, used to organize, categorize, and identify the resource within your AWS environment. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** tags.value represents the value component of a user-defined tag attached to the Amazon Kendra query suggestions block list, enabling you to assign metadata such as environment, project, or cost center for resource organization and management. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const QuerySuggestionsBlockList_SourceS3PathFields: FieldMap = {
@@ -17,61 +20,61 @@ const QuerySuggestionsBlockList_SourceS3PathFields: FieldMap = {
   key: "key",
 };
 
-const QuerySuggestionsBlockList_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const QuerySuggestionsBlockList_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface QuerySuggestionsBlockListConfig {
+  /** A description for the block list. */
   description?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** The identifier of the index for the block list. */
   indexId: string | Computed<string>;
+  /** The name of the block list. */
   name: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of an IAM role with permission to access the S3 bucket that contains the block list text file. */
   roleArn: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  sourceS3Path?: QuerySuggestionsBlockList_SourceS3Path[] | Computed<QuerySuggestionsBlockList_SourceS3Path[]>;
-  timeouts?: QuerySuggestionsBlockList_Timeouts | Computed<QuerySuggestionsBlockList_Timeouts>;
+  /** Information required to find a specific file in an Amazon S3 bucket. */
+  sourceS3Path: QuerySuggestionsBlockList_SourceS3Path | Computed<QuerySuggestionsBlockList_SourceS3Path>;
+  /** A list of key-value pairs that identify or categorize the block list. */
+  tags?: QuerySuggestionsBlockList_Tags[] | Computed<QuerySuggestionsBlockList_Tags[]>;
 }
 
 export interface QuerySuggestionsBlockListAttrs {
+  /** The Amazon Resource Name (ARN) of the query suggestions block list. */
   arn: string;
+  /** A description for the block list. */
   description: string;
+  /** The identifier of the block list. */
   id: string;
+  /** The identifier of the index for the block list. */
   indexId: string;
+  /** The name of the block list. */
   name: string;
-  querySuggestionsBlockListId: string;
-  region: string;
+  /** The Amazon Resource Name (ARN) of an IAM role with permission to access the S3 bucket that contains the block list text file. */
   roleArn: string;
-  status: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  sourceS3Path: QuerySuggestionsBlockList_SourceS3Path[];
-  timeouts: QuerySuggestionsBlockList_Timeouts;
+  /** Information required to find a specific file in an Amazon S3 bucket. */
+  sourceS3Path: QuerySuggestionsBlockList_SourceS3Path;
+  /** A list of key-value pairs that identify or categorize the block list. */
+  tags: QuerySuggestionsBlockList_Tags[];
 }
 
 export const QuerySuggestionsBlockList: ResourceBinding<QuerySuggestionsBlockListConfig, QuerySuggestionsBlockListAttrs> = {
   wireType: "aws_kendra_query_suggestions_block_list",
   fields: {
     description: "description",
-    id: "id",
     indexId: "index_id",
     name: "name",
-    region: "region",
     roleArn: "role_arn",
-    tags: "tags",
-    tagsAll: "tags_all",
     sourceS3Path: {
       wireName: "source_s3_path",
-      kind: "list",
+      kind: "object",
       fields: QuerySuggestionsBlockList_SourceS3PathFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: QuerySuggestionsBlockList_TimeoutsFields,
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: QuerySuggestionsBlockList_TagsFields,
     },
   },
 };

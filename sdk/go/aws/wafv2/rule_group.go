@@ -3,1125 +3,1102 @@ package wafv2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type RuleGroup_CustomResponseBody struct {
-	Content any
-	ContentType any
-	Key any
+type RuleGroup_AvailableLabels struct {
+	// The name of a label that is available for use in the rule group, representing a label that its rules can generate or match against incoming web requests. (AI-inferred)
+	Name any
 }
 
-type RuleGroup_Rule_Action_Allow_CustomRequestHandling_InsertHeader struct {
+type RuleGroup_MonetizationConfig_CryptoConfig_PaymentNetworks_Prices struct {
+	Amount any
+	Currency any
+}
+
+type RuleGroup_MonetizationConfig_CryptoConfig_PaymentNetworks struct {
+	Chain any
+	Prices any
+	WalletAddress any
+}
+
+type RuleGroup_MonetizationConfig_CryptoConfig struct {
+	// List of payment network configurations.
+	PaymentNetworks any
+}
+
+type RuleGroup_MonetizationConfig struct {
+	// Configures cryptocurrency payment settings.
+	CryptoConfig any
+	// The currency mode for monetization. Use REAL for production payments and TEST for testing with testnet currencies.
+	CurrencyMode any
+}
+
+type RuleGroup_Rules_Action_Allow_CustomRequestHandling_InsertHeaders struct {
+	// The name of the custom HTTP header to insert into the request when the rule's Allow action uses custom request handling. (AI-inferred)
 	Name any
+	// The value of the custom header to insert into the request when the rule's allow action is taken. (AI-inferred)
 	Value any
 }
 
-type RuleGroup_Rule_Action_Allow_CustomRequestHandling struct {
-	InsertHeader any
+type RuleGroup_Rules_Action_Allow_CustomRequestHandling struct {
+	// Defines the list of custom HTTP headers to insert into the web request when the rule's allow action is triggered, where each entry specifies a header name and value. (AI-inferred)
+	InsertHeaders any
 }
 
-type RuleGroup_Rule_Action_Allow struct {
+type RuleGroup_Rules_Action_Allow struct {
+	// Specifies custom request handling for the Allow action, defining HTTP headers to insert into the request that is forwarded to the origin when the rule matches. (AI-inferred)
 	CustomRequestHandling any
 }
 
-type RuleGroup_Rule_Action_Block_CustomResponse struct {
+type RuleGroup_Rules_Action_Block_CustomResponse struct {
+	// Key referencing a custom response body defined in the rule group's CustomResponseBodies map, used when the block action returns a custom response to the client. (AI-inferred)
 	CustomResponseBodyKey any
+	// The HTTP status code that AWS WAF returns to the client when a request matches a rule configured with the Block action and a custom response. (AI-inferred)
 	ResponseCode any
-	ResponseHeader any
+	// Specifies custom HTTP headers that are added to the response returned to the client when a request is blocked by this rule's block action. (AI-inferred)
+	ResponseHeaders any
 }
 
-type RuleGroup_Rule_Action_Block struct {
+type RuleGroup_Rules_Action_Block struct {
+	// Specifies the custom HTTP response to return to the client when the rule action is set to block, including the response code, headers, and body content. (AI-inferred)
 	CustomResponse any
 }
 
-type RuleGroup_Rule_Action struct {
-	Allow any
-	Block any
-	Captcha any
-	Challenge any
-	Count any
+type RuleGroup_Rules_Action_Monetize struct {
+	PriceMultiplier any
 }
 
-type RuleGroup_Rule_CaptchaConfig_ImmunityTimeProperty struct {
+type RuleGroup_Rules_Action struct {
+	// Defines the Allow action for this rule, which permits matching requests to continue to subsequent rules or the web ACL's default action, and optionally includes a customRequestHandling block to insert custom headers into the allowed request. (AI-inferred)
+	Allow any
+	// Sets the rule's action to block matching web requests, optionally including a custom response body and status code to return to the client. (AI-inferred)
+	Block any
+	// Specifies the CAPTCHA action for the rule, which challenges the client to solve a puzzle to verify it is human, and only continues the request if the challenge is completed successfully. (AI-inferred)
+	Captcha any
+	// Defines a 'Challenge' action that forces the client to complete a JavaScript-based silent challenge to confirm it is not a bot, optionally including custom request handling for requests that pass the challenge. (AI-inferred)
+	Challenge any
+	// Sets the rule action to Count, which counts matching web requests without blocking or allowing them; this object may be empty or include optional custom request handling. (AI-inferred)
+	Count any
+	// Configures the rule's action to monetize matching requests through AWS Marketplace, allowing them to pass while enabling charging. (AI-inferred)
+	Monetize any
+}
+
+type RuleGroup_Rules_CaptchaConfig_ImmunityTimeProperty struct {
+	// The number of seconds a CAPTCHA-challenged user is allowed to stay in the scope of the rule without being challenged again. (AI-inferred)
 	ImmunityTime any
 }
 
-type RuleGroup_Rule_CaptchaConfig struct {
+type RuleGroup_Rules_CaptchaConfig struct {
+	// Specifies the immunity time (in seconds) after a successful CAPTCHA challenge, during which a client is exempt from solving further CAPTCHA challenges in this rule. (AI-inferred)
 	ImmunityTimeProperty any
 }
 
-type RuleGroup_Rule_RuleLabel struct {
-	Name any
+type RuleGroup_Rules_Statement_AndStatement struct {
+	// The Statements property of an And statement in an AWS WAFv2 rule group defines the list of nested statements that must all evaluate to true for the And statement to match. (AI-inferred)
+	Statements any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement_ForwardedIpConfig struct {
+type RuleGroup_Rules_Statement_AsnMatchStatement_ForwardedIpconfig struct {
+	// Defines whether a request with a missing or unparseable IP address in the configured forwarded header should be treated as matching (MATCH) or not matching (NO_MATCH) the ASN match statement. (AI-inferred)
 	FallbackBehavior any
+	// The name of the HTTP header in the request that contains the originating IP address that AWS WAF uses for ASN matching. (AI-inferred)
 	HeaderName any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement struct {
+type RuleGroup_Rules_Statement_AsnMatchStatement struct {
+	// Specifies the list of autonomous system numbers (ASNs) that the rule uses to match requests based on the ASN of the requesting client, with the match succeeding if the client's ASN is in this list. (AI-inferred)
 	AsnList any
-	ForwardedIpConfig any
+	// Specifies how to derive the client IP address when the request is forwarded by a proxy or load balancer, by defining the HTTP header to inspect and the fallback behavior if that header is absent. (AI-inferred)
+	ForwardedIpconfig any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArguments struct {
-}
-
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Body struct {
+type RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Body struct {
+	// Determines how AWS WAF treats a request body that exceeds the size limit for inspection in a byte match statement's field-to-match body, with valid values such as CONTINUE, MATCH, or NO_MATCH. (AI-inferred)
 	OversizeHandling any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPattern struct {
+type RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPattern struct {
+	// When set to true, this field instructs the WAF rule to match against all cookies in the request rather than a specific subset, so the byte match condition applies to every cookie header. (AI-inferred)
+	All any
+	// The names of cookies to exclude from the inspection, meaning that the rule inspects all cookies except those listed. (AI-inferred)
 	ExcludedCookies any
+	// Specifies the list of cookie names to inspect; when this list is provided, the byte match statement only evaluates the values of these named cookies, overriding any 'all' match pattern. (AI-inferred)
 	IncludedCookies any
-	All any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Cookies struct {
-	MatchScope any
-	OversizeHandling any
+type RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies struct {
+	// Determines which cookies in the request are inspected by the byte match statement, either all cookies, a list of specific cookie names to include, or a list of cookie names to exclude. (AI-inferred)
 	MatchPattern any
+	// Specifies whether AWS WAF matches all cookies or only those whose names match a given prefix (KEY_PREFIX) or suffix (KEY_SUFFIX). (AI-inferred)
+	MatchScope any
+	// Specifies how AWS WAF should handle requests when the cookies in the request exceed the size limit for inspection, with valid values of CONTINUE, MATCH, or NO_MATCH. (AI-inferred)
+	OversizeHandling any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPattern struct {
+type RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPattern struct {
+	// When set, this match pattern instructs AWS WAFv2 to inspect all header names in the request, disabling any header name filtering and applying the byte match to every header. (AI-inferred)
+	All any
+	// A list of HTTP header names that are excluded from the header inspection, so the byte match rule applies only to the headers not listed here. (AI-inferred)
 	ExcludedHeaders any
+	// The list of HTTP header names that the byte match statement inspects, so only those headers are considered for matching. (AI-inferred)
 	IncludedHeaders any
-	All any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Headers struct {
-	MatchScope any
-	OversizeHandling any
+type RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers struct {
+	// Defines the set of HTTP headers to inspect in the byte match statement, either all headers or a specific list of included or excluded header names. (AI-inferred)
 	MatchPattern any
+	// Determines whether the byte match statement inspects the entire header (ALL), only the header name (KEY), or only the header value (VALUE) for the matched header. (AI-inferred)
+	MatchScope any
+	// Determines how AWS WAF handles oversized header keys or values in the request when inspecting headers, with allowed values CONTINUE, MATCH, or NO_MATCH. (AI-inferred)
+	OversizeHandling any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint struct {
+type RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint struct {
+	// Specifies how the rule action is determined when the client's JA3 fingerprint is unavailable, with valid values MATCH and NO_MATCH. (AI-inferred)
 	FallbackBehavior any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPattern struct {
-	IncludedPaths any
+type RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPattern struct {
+	// When the 'all' property is present in the JSON body match pattern, the byte match statement inspects the entire JSON body payload rather than restricting to specific JSON paths. (AI-inferred)
 	All any
+	// A list of JSON pointer paths (e.g., '/foo/bar') that define which parts of the JSON request body are inspected when performing the byte match, so only values at those paths are evaluated. (AI-inferred)
+	IncludedPaths any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBody struct {
+type RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody struct {
+	// Determines whether AWS WAF treats a request as matching or not matching the rule when the request body is not valid JSON. (AI-inferred)
 	InvalidFallbackBehavior any
-	MatchScope any
-	OversizeHandling any
+	// Specifies the portion of the JSON request body to inspect in a byte match statement, either matching all JSON content or only the included JSON paths (includedPaths). (AI-inferred)
 	MatchPattern any
+	// Controls whether the byte match inspects all parts of the JSON body, only keys, or only values when a request's JSON content is evaluated. (AI-inferred)
+	MatchScope any
+	// Determines how AWS WAF handles the JSON body when its size exceeds the inspection limit, using CONTINUE to process the body despite the size, MATCH to automatically treat the rule as matched, or NO_MATCH to automatically treat the rule as not matched. (AI-inferred)
+	OversizeHandling any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch struct {
+type RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch struct {
+	// Specifies that the WAF rule should inspect all query arguments in the request's URL query string for a match, rather than a single named argument. (AI-inferred)
 	AllQueryArguments any
+	// Specifies the request body as the part of the request to inspect in a byte match statement, with an optional oversize handling configuration. (AI-inferred)
 	Body any
+	// Specifies the cookie match configuration for the byte match statement, including which cookies to inspect and how to handle oversize cookie names or values. (AI-inferred)
 	Cookies any
+	// Specifies that the WAF should inspect the order in which HTTP headers appear in the request, enabling rules to match on header sequence rather than individual header values or names. (AI-inferred)
 	HeaderOrder any
+	// Specifies the configuration for inspecting all or selected web request headers, including the header name pattern and whether to inspect header keys, values, or both. (AI-inferred)
 	Headers any
+	// Specifies that the byte match statement inspects the JA3 fingerprint of the TLS client that sent the web request. (AI-inferred)
 	Ja3Fingerprint any
+	// Specifies the JA4 TLS fingerprint of the client's connection to match, with a fallback behavior for clients that do not present a JA4 fingerprint. (AI-inferred)
 	Ja4Fingerprint any
+	// Specifies that the byte match statement inspects the request's JSON body, using the configured match pattern, match scope, and invalid fallback behavior to locate the JSON field to match against. (AI-inferred)
 	JsonBody any
+	// When set, this indicates that the web request's HTTP method (such as GET, POST, or PUT) should be used as the part of the request that the byte match statement inspects for matches. (AI-inferred)
 	Method any
+	// Specifies that AWS WAF should inspect the query string of the web request as the part of the request to match against. (AI-inferred)
 	QueryString any
+	// A single_header field match configuration that instructs the rule to inspect only the named request header, with the header name provided in the Name property. (AI-inferred)
 	SingleHeader any
+	// The single_query_argument field specifies a single query string parameter name (as an object with a 'name' attribute) whose value the byte match rule inspects for the field_to_match condition. (AI-inferred)
 	SingleQueryArgument any
+	// When this empty object is present in the field_to_match, it causes the byte match statement to inspect the URI fragment portion of the request (the part after the '#' character), indicating that the rule's pattern should be evaluated against that fragment. (AI-inferred)
 	UriFragment any
+	// Specifies that the byte match statement inspects the URI path of the web request, which is the part of the URL after the host and before the query string. (AI-inferred)
 	UriPath any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformation struct {
+type RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformations struct {
+	// The numeric priority that controls the order in which this pre-parse text transformation is applied relative to other pre-parse text transformations, where lower numbers indicate earlier application. (AI-inferred)
 	Priority any
 	Type any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement struct {
-	PositionalConstraint any
-	SearchString any
+type RuleGroup_Rules_Statement_ByteMatchStatement struct {
+	// Specifies the part of the web request to inspect (e.g., headers, query string, body, or cookies) for the byte match rule in the rule group. (AI-inferred)
 	FieldToMatch any
-	TextTransformation any
+	// Determines how AWS WAF searches for the specified search string within the request component, such as EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, or CONTAINS_WORD. (AI-inferred)
+	PositionalConstraint any
+	PreParseTextTransformations any
+	// The exact string that the byte match statement searches for within the inspected web request component (e.g., a URI, query string, or header) to trigger the rule's action. (AI-inferred)
+	SearchString any
+	// The base64-encoded text that AWS WAF uses as the pattern to match against the request component, typically used to represent non-printable or binary search strings. (AI-inferred)
+	SearchStringBase64 any
+	// Specifies the ordered list of text transformations (for example, lowercase or HTML entity decode) that AWS WAF applies to the inspected content before the byte match statement evaluates it. (AI-inferred)
+	TextTransformations any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatement struct {
+type RuleGroup_Rules_Statement_GeoMatchStatement struct {
+	// The list of two-letter ISO 3166-1 alpha-2 country codes that the rule matches requests against when using a geo match statement. (AI-inferred)
 	CountryCodes any
-	ForwardedIpConfig any
+	// Configures how AWS WAF retrieves the client IP address from a request header (e.g., X-Forwarded-For) for geo matching, including the header name and the fallback behavior when that header is absent or invalid. (AI-inferred)
+	ForwardedIpconfig any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatement_IpSetForwardedIpConfig struct {
+type RuleGroup_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfig struct {
+	// Determines how AWS WAF handles a request when the forwarded IP address to inspect is not present in the configured header, with allowed values MATCH or NO_MATCH. (AI-inferred)
 	FallbackBehavior any
+	// The name of the HTTP header (e.g., X-Forwarded-For) that contains the client IP address when the IP set reference statement uses forwarded IP configuration. (AI-inferred)
 	HeaderName any
+	// Specifies which IP address to use from the forwarded-for header (e.g., X-Forwarded-For) when the IP set reference is evaluated, with allowed values FIRST, LAST, or ANY. (AI-inferred)
 	Position any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatement struct {
+type RuleGroup_Rules_Statement_IpsetReferenceStatement struct {
+	// The ARN of the AWS WAF V2 IP set whose IP addresses this statement matches against. (AI-inferred)
 	Arn any
-	IpSetForwardedIpConfig any
+	// Configures how AWS WAF handles IP addresses in forwarded headers (such as X-Forwarded-For) when evaluating a request against the referenced IP set, including the header name and fallback behavior. (AI-inferred)
+	IpsetForwardedIpconfig any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatement struct {
+type RuleGroup_Rules_Statement_LabelMatchStatement struct {
+	// The fully qualified label key (e.g., 'awswaf:managed:aws:bot-control:bot:verified' or a custom label like 'myrule:Bots') that the label match statement uses to check whether a request carries that label, triggering the rule if present. (AI-inferred)
 	Key any
+	// Determines whether the label match statement compares against the label namespace (LABEL_NAMESPACE) or the exact label name (LABEL_NAME) of labels added by prior rules in the web ACL. (AI-inferred)
 	Scope any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatement struct {
-	RegexString any
-	FieldToMatch any
-	TextTransformation any
-}
-
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatement struct {
-	Arn any
-	FieldToMatch any
-	TextTransformation any
-}
-
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatement struct {
-	ComparisonOperator any
-	Size any
-	FieldToMatch any
-	TextTransformation any
-}
-
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatement struct {
-	SensitivityLevel any
-	FieldToMatch any
-	TextTransformation any
-}
-
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatement struct {
-	FieldToMatch any
-	TextTransformation any
-}
-
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement struct {
-	AsnMatchStatement any
-	ByteMatchStatement any
-	GeoMatchStatement any
-	IpSetReferenceStatement any
-	LabelMatchStatement any
-	RegexMatchStatement any
-	RegexPatternSetReferenceStatement any
-	SizeConstraintStatement any
-	SqliMatchStatement any
-	XssMatchStatement any
-}
-
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement struct {
+type RuleGroup_Rules_Statement_NotStatement struct {
+	// The single nested rule statement that this NOT statement negates, so the rule matches when that nested statement does not match. (AI-inferred)
 	Statement any
 }
 
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement struct {
-	AndStatement any
-	AsnMatchStatement any
-	ByteMatchStatement any
-	GeoMatchStatement any
-	IpSetReferenceStatement any
-	LabelMatchStatement any
-	NotStatement any
-	OrStatement any
-	RegexMatchStatement any
-	RegexPatternSetReferenceStatement any
-	SizeConstraintStatement any
-	SqliMatchStatement any
-	XssMatchStatement any
-}
-
-type RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement struct {
-	Statement any
-}
-
-type RuleGroup_Rule_Statement_AndStatement_Statement struct {
-	AndStatement any
-	AsnMatchStatement any
-	ByteMatchStatement any
-	GeoMatchStatement any
-	IpSetReferenceStatement any
-	LabelMatchStatement any
-	NotStatement any
-	OrStatement any
-	RegexMatchStatement any
-	RegexPatternSetReferenceStatement any
-	SizeConstraintStatement any
-	SqliMatchStatement any
-	XssMatchStatement any
-}
-
-type RuleGroup_Rule_Statement_AndStatement struct {
-	Statement any
-}
-
-type RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_Cookie struct {
+type RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_Cookie struct {
+	// The name of the cookie that AWS WAF uses as a custom key when aggregating requests for rate-based rate limiting. (AI-inferred)
 	Name any
-	TextTransformation any
+	// Specifies an ordered list of text transformations (each with a Priority and Type) that are applied to the cookie value used as a custom key for rate-based aggregation, ensuring the value is normalized before it is inspected. (AI-inferred)
+	TextTransformations any
 }
 
-type RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_LabelNamespace struct {
+type RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespace struct {
+	// Specifies the label namespace string that acts as a custom key for the rate-based rule, causing request aggregation based on labels that contain this namespace. (AI-inferred)
 	Namespace any
 }
 
-type RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_QueryString struct {
-	TextTransformation any
+type RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_QueryString struct {
+	// Defines the ordered list of text transformations (such as lowercase, URL decode, or replace) that AWS WAF applies to the request's query string value before it is used as an aggregation key in the rate-based rule's custom key. (AI-inferred)
+	TextTransformations any
 }
 
-type RuleGroup_Rule_Statement_RateBasedStatement_CustomKey struct {
+type RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys struct {
+	// When present, this property specifies that the ASN (Autonomous System Number) of the client IP address should be used as a custom key for the rate-based rule, so rate limits are applied per ASN. (AI-inferred)
 	Asn any
+	// The cookie custom key specifies the name of a cookie in the web request to use as an aggregation key for rate-based rule evaluation. (AI-inferred)
 	Cookie any
+	// This block defines the forwarded IP configuration for a rate-based rule, indicating that the request's IP address should be derived from the X-Forwarded-For header (or a custom header) so that rate limits apply to the original client IP behind a proxy, with options for fallback behavior and header name. (AI-inferred)
 	ForwardedIp any
+	// Defines a request header to use as a custom key for rate-based rule aggregation, specifying the header name and text transformations that are applied before evaluating the rate. (AI-inferred)
 	Header any
-	HttpMethod any
+	// This field enables the HTTP method of the request to be used as a custom key for aggregating requests in the rate-based rule's rate limit evaluation. (AI-inferred)
+	Httpmethod any
+	// Configures the client IP address as a custom aggregation key for a rate-based rule statement. (AI-inferred)
 	Ip any
+	// Specifies the client's JA3 TLS fingerprint as a custom key for rate-based rule aggregation, including optional text transformations for validation. (AI-inferred)
 	Ja3Fingerprint any
+	// Defines a custom key for rate-based rules that uses the JA4 TLS fingerprint of the client to aggregate requests for rate limiting. (AI-inferred)
 	Ja4Fingerprint any
+	// Defines a custom key for a rate-based rule that uses a label namespace as the aggregation dimension, so the rule tracks and rate-limits requests separately for each distinct namespace value (set in the nested namespace field). (AI-inferred)
 	LabelNamespace any
+	// Specifies the name of a query string argument to use as a custom key for rate-based aggregation, so that rate limits are applied per unique value of that argument. (AI-inferred)
 	QueryArgument any
+	// Defines the request's query string as a custom aggregation key for the rate-based rule, and can specify text transformations to normalize the query string before counting requests. (AI-inferred)
 	QueryString any
+	// Defines the URI path of the web request as a custom aggregation key for the rate-based rule, with optional text transformations applied to the path value. (AI-inferred)
 	UriPath any
 }
 
-type RuleGroup_Rule_Statement_RateBasedStatement struct {
+type RuleGroup_Rules_Statement_RateBasedStatement struct {
+	// Specifies the key type used to aggregate requests for the rate-based rule's rate calculation, such as IP, FORWARDED_IP, or CUSTOM_KEYS. (AI-inferred)
 	AggregateKeyType any
+	// This field specifies custom keys (such as a header, cookie, query argument, or HTTP method) that AWS WAF uses to aggregate requests for rate-based rule evaluation. (AI-inferred)
+	CustomKeys any
+	// The evaluation window (in seconds) over which the rate-based rule aggregates requests from the specified aggregate key, accepting values of 60, 120, 300, or 600 seconds, with a default of 60 seconds when not specified. (AI-inferred)
 	EvaluationWindowSec any
+	// Specifies the configuration for inspecting the client IP address from a forwarded header (e.g., X-Forwarded-For) for the rate-based rule, including the header name and the fallback behavior when the header is absent. (AI-inferred)
+	ForwardedIpconfig any
+	// The maximum number of requests permitted within the rate-based rule's aggregation window (default 5 minutes) before the rule takes action to block subsequent requests. (AI-inferred)
 	Limit any
-	CustomKey any
-	ForwardedIpConfig any
+	// A nested statement that narrows the requests evaluated by the rate-based rule; only requests matching this statement are counted against the rate limit. (AI-inferred)
 	ScopeDownStatement any
 }
 
-type RuleGroup_Rule_Statement struct {
+type RuleGroup_Rules_Statement_RegexMatchStatement struct {
+	// Determines which part of the web request (such as a header, query string, body, or URI path) the regex pattern is matched against in this WAFv2 rule group's regex match statement. (AI-inferred)
+	FieldToMatch any
+	PreParseTextTransformations any
+	// The regular expression (regex) pattern that the statement uses to match against the inspected web request content, such as the body, headers, or query string. (AI-inferred)
+	RegexString any
+	// Specifies the text transformations to apply to the web request component before the regular expression is evaluated in the regex match statement. (AI-inferred)
+	TextTransformations any
+}
+
+type RuleGroup_Rules_Statement_RegexPatternSetReferenceStatement struct {
+	// The ARN of the AWS WAFv2 regex pattern set that this statement references for matching against web requests. (AI-inferred)
+	Arn any
+	// Defines the part of the web request (such as a header, query string, URI, or body) that the regex pattern set reference statement inspects for matches. (AI-inferred)
+	FieldToMatch any
+	// This list of text transformations is applied to the web request component before the regex pattern set reference statement's main text transformations, so the regex pattern set is evaluated against the pre-parsed, normalized content. (AI-inferred)
+	PreParseTextTransformations any
+	// Defines an ordered list of text transformations (each with a priority and type, such as lowercase, HTML entity decode, or URL decode) that are applied to the inspected web request component before AWS WAF checks it against the referenced regex pattern set. (AI-inferred)
+	TextTransformations any
+}
+
+type RuleGroup_Rules_Statement_SizeConstraintStatement struct {
+	// Specifies how the size of the inspected request component is compared to the Size value, using operators such as EQ, NE, LE, LT, GE, or GT. (AI-inferred)
+	ComparisonOperator any
+	// Specifies the part of the web request that AWS WAF inspects, such as a header, query string, body, or URI path, against the size constraint. (AI-inferred)
+	FieldToMatch any
+	PreParseTextTransformations any
+	// The size (in bytes) to compare with the request component's size for a size constraint rule. (AI-inferred)
+	Size any
+	// A list of text transformations (for example, lowercase, URL-decode, or compress whitespace) that AWS WAF applies to the inspected content before evaluating the size constraint. (AI-inferred)
+	TextTransformations any
+}
+
+type RuleGroup_Rules_Statement_SqliMatchStatement struct {
+	// Specifies the part of the web request (such as a header, query string, body, or URI) in which to search for SQL injection patterns. (AI-inferred)
+	FieldToMatch any
+	// Specifies a list of text transformations to be applied to the request body before it is parsed, used by the SQL injection match statement to normalize or decode content (e.g., decompress or base64 decode) prior to pattern matching. (AI-inferred)
+	PreParseTextTransformations any
+	// Sets the sensitivity level (LOW or HIGH) for the SQL injection match statement, determining how aggressively the rule evaluates request content for SQL injection patterns, with HIGH providing broader detection but potentially more false positives. (AI-inferred)
+	SensitivityLevel any
+	// Defines the ordered list of text transformations (e.g., lowercase, HTML entity decode, compress white space) to apply to the inspected web request component before the SQL injection match evaluation, helping to normalize input and evade bypass attempts. (AI-inferred)
+	TextTransformations any
+}
+
+type RuleGroup_Rules_Statement_XssMatchStatement struct {
+	// Specifies the part of the web request (such as headers, query string, body, or URI path) that AWS WAF inspects for cross-site scripting patterns in this rule statement. (AI-inferred)
+	FieldToMatch any
+	PreParseTextTransformations any
+	// A list of text transformations, each with a priority and type, to apply sequentially to the web request component (e.g., body or query string) before inspecting it for cross-site scripting (XSS) patterns, allowing normalization of malicious payloads. (AI-inferred)
+	TextTransformations any
+}
+
+type RuleGroup_Rules_Statement struct {
+	// Specifies a logical AND statement that combines multiple nested statements, requiring all of them to match for the rule to match. (AI-inferred)
 	AndStatement any
+	// Defines a statement that matches requests originating from IP addresses belonging to specified autonomous system numbers (ASNs). (AI-inferred)
 	AsnMatchStatement any
+	// Configures the byte match statement used to match a web request against a literal string pattern, including the search string, the request component to inspect (e.g., headers, body), and any text transformations to apply. (AI-inferred)
 	ByteMatchStatement any
+	// Sets a rule statement that matches requests based on the country of origin of the IP address, using ISO country codes to allow, block, or count traffic from specific geographic locations. (AI-inferred)
 	GeoMatchStatement any
-	IpSetReferenceStatement any
+	// Defines a rule statement that matches web requests by checking whether the source IP address (or forwarded IP) is present in an AWS WAF IP set referenced by its ARN. (AI-inferred)
+	IpsetReferenceStatement any
+	// Configures a label match statement to match a web request by checking for the presence of a specific label key, with a scope selection of either LABEL_NAMESPACE to match any label in a namespace or LABEL_MATCH to match an exact label. (AI-inferred)
 	LabelMatchStatement any
+	// Defines a logical NOT statement, which inverts the result of its nested statement so that the rule matches when the nested statement does not match. (AI-inferred)
 	NotStatement any
+	// Defines a logical OR operator that combines multiple nested WAF rule statements, causing the parent rule to match if any one of the included statements matches. (AI-inferred)
 	OrStatement any
+	// Defines a rate-based rule criteria that limits the number of requests from a source IP address (or aggregated key) within a trailing time window, triggering the rule's action when the rate exceeds the configured limit. (AI-inferred)
 	RateBasedStatement any
+	// The regex match statement defines a rule condition that inspects a selected component of a web request (such as a header, query argument, or body) using a regular expression pattern, and triggers the rule when a match is found. (AI-inferred)
 	RegexMatchStatement any
+	// Defines a rule statement that references a regex pattern set to match the web request, allowing the rule to evaluate requests against the patterns defined in that set. (AI-inferred)
 	RegexPatternSetReferenceStatement any
+	// A statement that checks the size of a specified request component (like a header, query string, or body) against a comparison operator and a size in bytes. (AI-inferred)
 	SizeConstraintStatement any
+	// Defines the SQL injection match statement for the rule, specifying the request component to inspect (such as body or query string) and the text transformations to apply when identifying SQL injection attacks. (AI-inferred)
 	SqliMatchStatement any
+	// Defines the cross-site scripting (XSS) match criteria for the rule, specifying which part of the web request to inspect and how to transform it before checking for malicious scripts. (AI-inferred)
 	XssMatchStatement any
 }
 
-type RuleGroup_Rule_VisibilityConfig struct {
-	CloudwatchMetricsEnabled any
+type RuleGroup_Rules_VisibilityConfig struct {
+	// When set to true, this enables Amazon CloudWatch metrics for the individual rule within the WAFv2 rule group, allowing you to monitor the rule's request traffic and evaluations. (AI-inferred)
+	CloudWatchMetricsEnabled any
+	// The name of the CloudWatch metric that AWS WAF automatically creates and updates for the rule, used to monitor rule activity. (AI-inferred)
 	MetricName any
+	// Indicates whether AWS WAF captures and stores a sample of web requests that match the rule within the rule group for inspection and analysis, with a limit of 5,000 sampled requests. (AI-inferred)
 	SampledRequestsEnabled any
 }
 
-type RuleGroup_Rule struct {
-	Name any
-	Priority any
+type RuleGroup_Rules struct {
+	// Defines the action (Allow, Block, Count, Challenge, or Captcha) that AWS WAF takes when a web request matches the rule's conditions. (AI-inferred)
 	Action any
+	// Specifies the CAPTCHA configuration for the rule, including the immunity time after a successful CAPTCHA challenge, used when the rule's action is CAPTCHA. (AI-inferred)
 	CaptchaConfig any
-	RuleLabel any
+	// Defines the immunity time settings for the AWS WAF Challenge action, which controls how long a successfully challenged client is allowed to pass without facing another challenge. (AI-inferred)
+	ChallengeConfig any
+	// A descriptive name that uniquely identifies this rule within the rule group, used for tracking and management. (AI-inferred)
+	Name any
+	// The numeric priority of the rule, which determines the order in which WAF evaluates rules within the rule group, with lower numbers evaluated first. (AI-inferred)
+	Priority any
+	// Specifies the labels, each with a name, that are added to matching web requests so that downstream rules, logging, or other services can identify the traffic that matched this rule. (AI-inferred)
+	RuleLabels any
+	// Defines the inspection criteria, such as a byte match, IP set, geo match, or logical combination of conditions, that AWS WAF evaluates to decide whether the rule's action should be applied to a web request. (AI-inferred)
 	Statement any
+	// Configures CloudWatch metrics and sampled request logging for the rule, enabling or disabling metric emission and sampled request collection under a specified metric name. (AI-inferred)
 	VisibilityConfig any
 }
 
-var RuleGroup_CustomResponseBodyFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
+type RuleGroup_Tags struct {
+	// The tag key that uniquely identifies a tag assigned to this AWS WAFv2 rule group, used for organizing and managing the rule group resource. (AI-inferred)
+	Key any
+	// The value of a tag key-value pair attached to the AWS WAFv2 rule group. (AI-inferred)
+	Value any
+}
+
+var RuleGroup_MonetizationConfig_CryptoConfig_PaymentNetworks_PricesFields = ubx.FieldMap{
+		"Amount": ubx.FieldSpec{WireName: "amount"},
+		"Currency": ubx.FieldSpec{WireName: "currency"},
 	}
 
-var RuleGroup_Rule_Action_Allow_CustomRequestHandling_InsertHeaderFields = ubx.FieldMap{
+var RuleGroup_MonetizationConfig_CryptoConfig_PaymentNetworksFields = ubx.FieldMap{
+		"Chain": ubx.FieldSpec{WireName: "chain"},
+		"Prices": ubx.FieldSpec{
+			WireName: "prices",
+			Kind: "list",
+			Fields: RuleGroup_MonetizationConfig_CryptoConfig_PaymentNetworks_PricesFields,
+		},
+		"WalletAddress": ubx.FieldSpec{WireName: "wallet_address"},
+	}
+
+var RuleGroup_MonetizationConfig_CryptoConfigFields = ubx.FieldMap{
+		"PaymentNetworks": ubx.FieldSpec{
+			WireName: "payment_networks",
+			Kind: "list",
+			Fields: RuleGroup_MonetizationConfig_CryptoConfig_PaymentNetworksFields,
+		},
+	}
+
+var RuleGroup_MonetizationConfigFields = ubx.FieldMap{
+		"CryptoConfig": ubx.FieldSpec{
+			WireName: "crypto_config",
+			Kind: "object",
+			Fields: RuleGroup_MonetizationConfig_CryptoConfigFields,
+		},
+		"CurrencyMode": ubx.FieldSpec{WireName: "currency_mode"},
+	}
+
+var RuleGroup_Rules_Action_Allow_CustomRequestHandling_InsertHeadersFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
-var RuleGroup_Rule_Action_Allow_CustomRequestHandlingFields = ubx.FieldMap{
-		"InsertHeader": ubx.FieldSpec{
-			WireName: "insert_header",
-			Kind: "set",
-			Fields: RuleGroup_Rule_Action_Allow_CustomRequestHandling_InsertHeaderFields,
+var RuleGroup_Rules_Action_Allow_CustomRequestHandlingFields = ubx.FieldMap{
+		"InsertHeaders": ubx.FieldSpec{
+			WireName: "insert_headers",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Action_Allow_CustomRequestHandling_InsertHeadersFields,
 		},
 	}
 
-var RuleGroup_Rule_Action_AllowFields = ubx.FieldMap{
+var RuleGroup_Rules_Action_AllowFields = ubx.FieldMap{
 		"CustomRequestHandling": ubx.FieldSpec{
 			WireName: "custom_request_handling",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Action_Allow_CustomRequestHandlingFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Action_Allow_CustomRequestHandlingFields,
 		},
 	}
 
-var RuleGroup_Rule_Action_Block_CustomResponseFields = ubx.FieldMap{
+var RuleGroup_Rules_Action_Block_CustomResponseFields = ubx.FieldMap{
 		"CustomResponseBodyKey": ubx.FieldSpec{WireName: "custom_response_body_key"},
 		"ResponseCode": ubx.FieldSpec{WireName: "response_code"},
-		"ResponseHeader": ubx.FieldSpec{
-			WireName: "response_header",
-			Kind: "set",
-			Fields: RuleGroup_Rule_Action_Allow_CustomRequestHandling_InsertHeaderFields,
+		"ResponseHeaders": ubx.FieldSpec{
+			WireName: "response_headers",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Action_Allow_CustomRequestHandling_InsertHeadersFields,
 		},
 	}
 
-var RuleGroup_Rule_Action_BlockFields = ubx.FieldMap{
+var RuleGroup_Rules_Action_BlockFields = ubx.FieldMap{
 		"CustomResponse": ubx.FieldSpec{
 			WireName: "custom_response",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Action_Block_CustomResponseFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Action_Block_CustomResponseFields,
 		},
 	}
 
-var RuleGroup_Rule_ActionFields = ubx.FieldMap{
+var RuleGroup_Rules_Action_MonetizeFields = ubx.FieldMap{
+		"PriceMultiplier": ubx.FieldSpec{WireName: "price_multiplier"},
+	}
+
+var RuleGroup_Rules_ActionFields = ubx.FieldMap{
 		"Allow": ubx.FieldSpec{
 			WireName: "allow",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Action_AllowFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Action_AllowFields,
 		},
 		"Block": ubx.FieldSpec{
 			WireName: "block",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Action_BlockFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Action_BlockFields,
 		},
 		"Captcha": ubx.FieldSpec{
 			WireName: "captcha",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Action_AllowFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Action_AllowFields,
 		},
 		"Challenge": ubx.FieldSpec{
 			WireName: "challenge",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Action_AllowFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Action_AllowFields,
 		},
 		"Count": ubx.FieldSpec{
 			WireName: "count",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Action_AllowFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Action_AllowFields,
+		},
+		"Monetize": ubx.FieldSpec{
+			WireName: "monetize",
+			Kind: "object",
+			Fields: RuleGroup_Rules_Action_MonetizeFields,
 		},
 	}
 
-var RuleGroup_Rule_CaptchaConfig_ImmunityTimePropertyFields = ubx.FieldMap{
+var RuleGroup_Rules_CaptchaConfig_ImmunityTimePropertyFields = ubx.FieldMap{
 		"ImmunityTime": ubx.FieldSpec{WireName: "immunity_time"},
 	}
 
-var RuleGroup_Rule_CaptchaConfigFields = ubx.FieldMap{
+var RuleGroup_Rules_CaptchaConfigFields = ubx.FieldMap{
 		"ImmunityTimeProperty": ubx.FieldSpec{
 			WireName: "immunity_time_property",
-			Kind: "list",
-			Fields: RuleGroup_Rule_CaptchaConfig_ImmunityTimePropertyFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_CaptchaConfig_ImmunityTimePropertyFields,
 		},
 	}
 
-var RuleGroup_Rule_RuleLabelFields = ubx.FieldMap{
+var RuleGroup_AvailableLabelsFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement_ForwardedIpConfigFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_AndStatementFields = ubx.FieldMap{
+		"Statements": ubx.FieldSpec{WireName: "statements"},
+	}
+
+var RuleGroup_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields = ubx.FieldMap{
 		"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
 		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatementFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_AsnMatchStatementFields = ubx.FieldMap{
 		"AsnList": ubx.FieldSpec{WireName: "asn_list"},
-		"ForwardedIpConfig": ubx.FieldSpec{
-			WireName: "forwarded_ip_config",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement_ForwardedIpConfigFields,
+		"ForwardedIpconfig": ubx.FieldSpec{
+			WireName: "forwarded_ipconfig",
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
 		},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields = ubx.FieldMap{
-	}
-
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_BodyFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_BodyFields = ubx.FieldMap{
 		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPatternFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPatternFields = ubx.FieldMap{
+		"All": ubx.FieldSpec{WireName: "all"},
 		"ExcludedCookies": ubx.FieldSpec{WireName: "excluded_cookies"},
 		"IncludedCookies": ubx.FieldSpec{WireName: "included_cookies"},
-		"All": ubx.FieldSpec{
-			WireName: "all",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields,
-		},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_CookiesFields = ubx.FieldMap{
-		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
-		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
+var RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_CookiesFields = ubx.FieldMap{
 		"MatchPattern": ubx.FieldSpec{
 			WireName: "match_pattern",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPatternFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPatternFields,
 		},
+		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
+		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPatternFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPatternFields = ubx.FieldMap{
+		"All": ubx.FieldSpec{WireName: "all"},
 		"ExcludedHeaders": ubx.FieldSpec{WireName: "excluded_headers"},
 		"IncludedHeaders": ubx.FieldSpec{WireName: "included_headers"},
-		"All": ubx.FieldSpec{
-			WireName: "all",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields,
-		},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_HeadersFields = ubx.FieldMap{
-		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
-		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
+var RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_HeadersFields = ubx.FieldMap{
 		"MatchPattern": ubx.FieldSpec{
 			WireName: "match_pattern",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPatternFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPatternFields,
 		},
+		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
+		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields = ubx.FieldMap{
 		"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPatternFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPatternFields = ubx.FieldMap{
+		"All": ubx.FieldSpec{WireName: "all"},
 		"IncludedPaths": ubx.FieldSpec{WireName: "included_paths"},
-		"All": ubx.FieldSpec{
-			WireName: "all",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields,
-		},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBodyFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBodyFields = ubx.FieldMap{
 		"InvalidFallbackBehavior": ubx.FieldSpec{WireName: "invalid_fallback_behavior"},
-		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
-		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
 		"MatchPattern": ubx.FieldSpec{
 			WireName: "match_pattern",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPatternFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPatternFields,
 		},
+		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
+		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields = ubx.FieldMap{
-		"AllQueryArguments": ubx.FieldSpec{
-			WireName: "all_query_arguments",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields,
-		},
+var RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatchFields = ubx.FieldMap{
+		"AllQueryArguments": ubx.FieldSpec{WireName: "all_query_arguments"},
 		"Body": ubx.FieldSpec{
 			WireName: "body",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
 		},
 		"Cookies": ubx.FieldSpec{
 			WireName: "cookies",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_CookiesFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_CookiesFields,
 		},
 		"HeaderOrder": ubx.FieldSpec{
 			WireName: "header_order",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
 		},
 		"Headers": ubx.FieldSpec{
 			WireName: "headers",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_HeadersFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_HeadersFields,
 		},
 		"Ja3Fingerprint": ubx.FieldSpec{
 			WireName: "ja3_fingerprint",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
 		},
 		"Ja4Fingerprint": ubx.FieldSpec{
 			WireName: "ja4_fingerprint",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
 		},
 		"JsonBody": ubx.FieldSpec{
 			WireName: "json_body",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_JsonBodyFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBodyFields,
 		},
-		"Method": ubx.FieldSpec{
-			WireName: "method",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields,
-		},
-		"QueryString": ubx.FieldSpec{
-			WireName: "query_string",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields,
-		},
+		"Method": ubx.FieldSpec{WireName: "method"},
+		"QueryString": ubx.FieldSpec{WireName: "query_string"},
 		"SingleHeader": ubx.FieldSpec{
 			WireName: "single_header",
-			Kind: "list",
-			Fields: RuleGroup_Rule_RuleLabelFields,
+			Kind: "object",
+			Fields: RuleGroup_AvailableLabelsFields,
 		},
 		"SingleQueryArgument": ubx.FieldSpec{
 			WireName: "single_query_argument",
-			Kind: "list",
-			Fields: RuleGroup_Rule_RuleLabelFields,
+			Kind: "object",
+			Fields: RuleGroup_AvailableLabelsFields,
 		},
 		"UriFragment": ubx.FieldSpec{
 			WireName: "uri_fragment",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
 		},
-		"UriPath": ubx.FieldSpec{
-			WireName: "uri_path",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields,
-		},
+		"UriPath": ubx.FieldSpec{WireName: "uri_path"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields = ubx.FieldMap{
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatementFields = ubx.FieldMap{
-		"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
-		"SearchString": ubx.FieldSpec{WireName: "search_string"},
+var RuleGroup_Rules_Statement_ByteMatchStatementFields = ubx.FieldMap{
 		"FieldToMatch": ubx.FieldSpec{
 			WireName: "field_to_match",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
 		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
+		"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+		"SearchString": ubx.FieldSpec{WireName: "search_string"},
+		"SearchStringBase64": ubx.FieldSpec{WireName: "search_string_base64"},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
 		},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatementFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_GeoMatchStatementFields = ubx.FieldMap{
 		"CountryCodes": ubx.FieldSpec{WireName: "country_codes"},
-		"ForwardedIpConfig": ubx.FieldSpec{
-			WireName: "forwarded_ip_config",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement_ForwardedIpConfigFields,
+		"ForwardedIpconfig": ubx.FieldSpec{
+			WireName: "forwarded_ipconfig",
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
 		},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatement_IpSetForwardedIpConfigFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfigFields = ubx.FieldMap{
 		"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
 		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
 		"Position": ubx.FieldSpec{WireName: "position"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatementFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_IpsetReferenceStatementFields = ubx.FieldMap{
 		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"IpSetForwardedIpConfig": ubx.FieldSpec{
-			WireName: "ip_set_forwarded_ip_config",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatement_IpSetForwardedIpConfigFields,
+		"IpsetForwardedIpconfig": ubx.FieldSpec{
+			WireName: "ipset_forwarded_ipconfig",
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfigFields,
 		},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatementFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_LabelMatchStatementFields = ubx.FieldMap{
 		"Key": ubx.FieldSpec{WireName: "key"},
 		"Scope": ubx.FieldSpec{WireName: "scope"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatementFields = ubx.FieldMap{
-		"RegexString": ubx.FieldSpec{WireName: "regex_string"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
-		},
+var RuleGroup_Rules_Statement_NotStatementFields = ubx.FieldMap{
+		"Statement": ubx.FieldSpec{WireName: "statement"},
 	}
 
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatementFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
-		},
-	}
-
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatementFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
-		},
-	}
-
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatementFields = ubx.FieldMap{
-		"SensitivityLevel": ubx.FieldSpec{WireName: "sensitivity_level"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
-		},
-	}
-
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatementFields = ubx.FieldMap{
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
-		},
-	}
-
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_StatementFields = ubx.FieldMap{
-		"AsnMatchStatement": ubx.FieldSpec{
-			WireName: "asn_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatementFields,
-		},
-		"ByteMatchStatement": ubx.FieldSpec{
-			WireName: "byte_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatementFields,
-		},
-		"GeoMatchStatement": ubx.FieldSpec{
-			WireName: "geo_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatementFields,
-		},
-		"IpSetReferenceStatement": ubx.FieldSpec{
-			WireName: "ip_set_reference_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatementFields,
-		},
-		"LabelMatchStatement": ubx.FieldSpec{
-			WireName: "label_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatementFields,
-		},
-		"RegexMatchStatement": ubx.FieldSpec{
-			WireName: "regex_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatementFields,
-		},
-		"RegexPatternSetReferenceStatement": ubx.FieldSpec{
-			WireName: "regex_pattern_set_reference_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatementFields,
-		},
-		"SizeConstraintStatement": ubx.FieldSpec{
-			WireName: "size_constraint_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatementFields,
-		},
-		"SqliMatchStatement": ubx.FieldSpec{
-			WireName: "sqli_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatementFields,
-		},
-		"XssMatchStatement": ubx.FieldSpec{
-			WireName: "xss_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatementFields,
-		},
-	}
-
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatementFields = ubx.FieldMap{
-		"Statement": ubx.FieldSpec{
-			WireName: "statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_StatementFields,
-		},
-	}
-
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_StatementFields = ubx.FieldMap{
-		"AndStatement": ubx.FieldSpec{
-			WireName: "and_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"AsnMatchStatement": ubx.FieldSpec{
-			WireName: "asn_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatementFields,
-		},
-		"ByteMatchStatement": ubx.FieldSpec{
-			WireName: "byte_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatementFields,
-		},
-		"GeoMatchStatement": ubx.FieldSpec{
-			WireName: "geo_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatementFields,
-		},
-		"IpSetReferenceStatement": ubx.FieldSpec{
-			WireName: "ip_set_reference_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatementFields,
-		},
-		"LabelMatchStatement": ubx.FieldSpec{
-			WireName: "label_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatementFields,
-		},
-		"NotStatement": ubx.FieldSpec{
-			WireName: "not_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"OrStatement": ubx.FieldSpec{
-			WireName: "or_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"RegexMatchStatement": ubx.FieldSpec{
-			WireName: "regex_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatementFields,
-		},
-		"RegexPatternSetReferenceStatement": ubx.FieldSpec{
-			WireName: "regex_pattern_set_reference_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatementFields,
-		},
-		"SizeConstraintStatement": ubx.FieldSpec{
-			WireName: "size_constraint_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatementFields,
-		},
-		"SqliMatchStatement": ubx.FieldSpec{
-			WireName: "sqli_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatementFields,
-		},
-		"XssMatchStatement": ubx.FieldSpec{
-			WireName: "xss_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatementFields,
-		},
-	}
-
-var RuleGroup_Rule_Statement_AndStatement_Statement_AndStatementFields = ubx.FieldMap{
-		"Statement": ubx.FieldSpec{
-			WireName: "statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_StatementFields,
-		},
-	}
-
-var RuleGroup_Rule_Statement_AndStatement_StatementFields = ubx.FieldMap{
-		"AndStatement": ubx.FieldSpec{
-			WireName: "and_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"AsnMatchStatement": ubx.FieldSpec{
-			WireName: "asn_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatementFields,
-		},
-		"ByteMatchStatement": ubx.FieldSpec{
-			WireName: "byte_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatementFields,
-		},
-		"GeoMatchStatement": ubx.FieldSpec{
-			WireName: "geo_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatementFields,
-		},
-		"IpSetReferenceStatement": ubx.FieldSpec{
-			WireName: "ip_set_reference_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatementFields,
-		},
-		"LabelMatchStatement": ubx.FieldSpec{
-			WireName: "label_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatementFields,
-		},
-		"NotStatement": ubx.FieldSpec{
-			WireName: "not_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"OrStatement": ubx.FieldSpec{
-			WireName: "or_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatementFields,
-		},
-		"RegexMatchStatement": ubx.FieldSpec{
-			WireName: "regex_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatementFields,
-		},
-		"RegexPatternSetReferenceStatement": ubx.FieldSpec{
-			WireName: "regex_pattern_set_reference_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatementFields,
-		},
-		"SizeConstraintStatement": ubx.FieldSpec{
-			WireName: "size_constraint_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatementFields,
-		},
-		"SqliMatchStatement": ubx.FieldSpec{
-			WireName: "sqli_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatementFields,
-		},
-		"XssMatchStatement": ubx.FieldSpec{
-			WireName: "xss_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatementFields,
-		},
-	}
-
-var RuleGroup_Rule_Statement_AndStatementFields = ubx.FieldMap{
-		"Statement": ubx.FieldSpec{
-			WireName: "statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_StatementFields,
-		},
-	}
-
-var RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_CookieFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
 		},
 	}
 
-var RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_LabelNamespaceFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespaceFields = ubx.FieldMap{
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
 	}
 
-var RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_QueryStringFields = ubx.FieldMap{
-		"TextTransformation": ubx.FieldSpec{
-			WireName: "text_transformation",
-			Kind: "set",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_TextTransformationFields,
+var RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_QueryStringFields = ubx.FieldMap{
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
 		},
 	}
 
-var RuleGroup_Rule_Statement_RateBasedStatement_CustomKeyFields = ubx.FieldMap{
-		"Asn": ubx.FieldSpec{
-			WireName: "asn",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields,
-		},
+var RuleGroup_Rules_Statement_RateBasedStatement_CustomKeysFields = ubx.FieldMap{
+		"Asn": ubx.FieldSpec{WireName: "asn"},
 		"Cookie": ubx.FieldSpec{
 			WireName: "cookie",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_CookieFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
 		},
-		"ForwardedIp": ubx.FieldSpec{
-			WireName: "forwarded_ip",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields,
-		},
+		"ForwardedIp": ubx.FieldSpec{WireName: "forwarded_ip"},
 		"Header": ubx.FieldSpec{
 			WireName: "header",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_CookieFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
 		},
-		"HttpMethod": ubx.FieldSpec{
-			WireName: "http_method",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields,
-		},
-		"Ip": ubx.FieldSpec{
-			WireName: "ip",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_AllQueryArgumentsFields,
-		},
+		"Httpmethod": ubx.FieldSpec{WireName: "httpmethod"},
+		"Ip": ubx.FieldSpec{WireName: "ip"},
 		"Ja3Fingerprint": ubx.FieldSpec{
 			WireName: "ja3_fingerprint",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
 		},
 		"Ja4Fingerprint": ubx.FieldSpec{
 			WireName: "ja4_fingerprint",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
 		},
 		"LabelNamespace": ubx.FieldSpec{
 			WireName: "label_namespace",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_LabelNamespaceFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespaceFields,
 		},
 		"QueryArgument": ubx.FieldSpec{
 			WireName: "query_argument",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_CookieFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
 		},
 		"QueryString": ubx.FieldSpec{
 			WireName: "query_string",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_QueryStringFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_QueryStringFields,
 		},
 		"UriPath": ubx.FieldSpec{
 			WireName: "uri_path",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_RateBasedStatement_CustomKey_QueryStringFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_RateBasedStatement_CustomKeys_QueryStringFields,
 		},
 	}
 
-var RuleGroup_Rule_Statement_RateBasedStatementFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_RateBasedStatementFields = ubx.FieldMap{
 		"AggregateKeyType": ubx.FieldSpec{WireName: "aggregate_key_type"},
+		"CustomKeys": ubx.FieldSpec{
+			WireName: "custom_keys",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_RateBasedStatement_CustomKeysFields,
+		},
 		"EvaluationWindowSec": ubx.FieldSpec{WireName: "evaluation_window_sec"},
+		"ForwardedIpconfig": ubx.FieldSpec{
+			WireName: "forwarded_ipconfig",
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
+		},
 		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"CustomKey": ubx.FieldSpec{
-			WireName: "custom_key",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_RateBasedStatement_CustomKeyFields,
+		"ScopeDownStatement": ubx.FieldSpec{WireName: "scope_down_statement"},
+	}
+
+var RuleGroup_Rules_Statement_RegexMatchStatementFields = ubx.FieldMap{
+		"FieldToMatch": ubx.FieldSpec{
+			WireName: "field_to_match",
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
 		},
-		"ForwardedIpConfig": ubx.FieldSpec{
-			WireName: "forwarded_ip_config",
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
 			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatement_ForwardedIpConfigFields,
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
 		},
-		"ScopeDownStatement": ubx.FieldSpec{
-			WireName: "scope_down_statement",
+		"RegexString": ubx.FieldSpec{WireName: "regex_string"},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
 			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_StatementFields,
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
 		},
 	}
 
-var RuleGroup_Rule_StatementFields = ubx.FieldMap{
+var RuleGroup_Rules_Statement_RegexPatternSetReferenceStatementFields = ubx.FieldMap{
+		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"FieldToMatch": ubx.FieldSpec{
+			WireName: "field_to_match",
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+		},
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+	}
+
+var RuleGroup_Rules_Statement_SizeConstraintStatementFields = ubx.FieldMap{
+		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+		"FieldToMatch": ubx.FieldSpec{
+			WireName: "field_to_match",
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+		},
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+		"Size": ubx.FieldSpec{WireName: "size"},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+	}
+
+var RuleGroup_Rules_Statement_SqliMatchStatementFields = ubx.FieldMap{
+		"FieldToMatch": ubx.FieldSpec{
+			WireName: "field_to_match",
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+		},
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+		"SensitivityLevel": ubx.FieldSpec{WireName: "sensitivity_level"},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+	}
+
+var RuleGroup_Rules_Statement_XssMatchStatementFields = ubx.FieldMap{
+		"FieldToMatch": ubx.FieldSpec{
+			WireName: "field_to_match",
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+		},
+		"PreParseTextTransformations": ubx.FieldSpec{
+			WireName: "pre_parse_text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+		"TextTransformations": ubx.FieldSpec{
+			WireName: "text_transformations",
+			Kind: "list",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+		},
+	}
+
+var RuleGroup_Rules_StatementFields = ubx.FieldMap{
 		"AndStatement": ubx.FieldSpec{
 			WireName: "and_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_AndStatementFields,
 		},
 		"AsnMatchStatement": ubx.FieldSpec{
 			WireName: "asn_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_AsnMatchStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_AsnMatchStatementFields,
 		},
 		"ByteMatchStatement": ubx.FieldSpec{
 			WireName: "byte_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_ByteMatchStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_ByteMatchStatementFields,
 		},
 		"GeoMatchStatement": ubx.FieldSpec{
 			WireName: "geo_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_GeoMatchStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_GeoMatchStatementFields,
 		},
-		"IpSetReferenceStatement": ubx.FieldSpec{
-			WireName: "ip_set_reference_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_IpSetReferenceStatementFields,
+		"IpsetReferenceStatement": ubx.FieldSpec{
+			WireName: "ipset_reference_statement",
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_IpsetReferenceStatementFields,
 		},
 		"LabelMatchStatement": ubx.FieldSpec{
 			WireName: "label_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_LabelMatchStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_LabelMatchStatementFields,
 		},
 		"NotStatement": ubx.FieldSpec{
 			WireName: "not_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_NotStatementFields,
 		},
 		"OrStatement": ubx.FieldSpec{
 			WireName: "or_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_AndStatementFields,
 		},
 		"RateBasedStatement": ubx.FieldSpec{
 			WireName: "rate_based_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_RateBasedStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_RateBasedStatementFields,
 		},
 		"RegexMatchStatement": ubx.FieldSpec{
 			WireName: "regex_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexMatchStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_RegexMatchStatementFields,
 		},
 		"RegexPatternSetReferenceStatement": ubx.FieldSpec{
 			WireName: "regex_pattern_set_reference_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_RegexPatternSetReferenceStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_RegexPatternSetReferenceStatementFields,
 		},
 		"SizeConstraintStatement": ubx.FieldSpec{
 			WireName: "size_constraint_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SizeConstraintStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_SizeConstraintStatementFields,
 		},
 		"SqliMatchStatement": ubx.FieldSpec{
 			WireName: "sqli_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_SqliMatchStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_SqliMatchStatementFields,
 		},
 		"XssMatchStatement": ubx.FieldSpec{
 			WireName: "xss_match_statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_Statement_AndStatement_Statement_AndStatement_Statement_AndStatement_Statement_XssMatchStatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_Statement_XssMatchStatementFields,
 		},
 	}
 
-var RuleGroup_Rule_VisibilityConfigFields = ubx.FieldMap{
-		"CloudwatchMetricsEnabled": ubx.FieldSpec{WireName: "cloudwatch_metrics_enabled"},
+var RuleGroup_Rules_VisibilityConfigFields = ubx.FieldMap{
+		"CloudWatchMetricsEnabled": ubx.FieldSpec{WireName: "cloud_watch_metrics_enabled"},
 		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
 		"SampledRequestsEnabled": ubx.FieldSpec{WireName: "sampled_requests_enabled"},
 	}
 
-var RuleGroup_RuleFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+var RuleGroup_RulesFields = ubx.FieldMap{
 		"Action": ubx.FieldSpec{
 			WireName: "action",
-			Kind: "list",
-			Fields: RuleGroup_Rule_ActionFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_ActionFields,
 		},
 		"CaptchaConfig": ubx.FieldSpec{
 			WireName: "captcha_config",
-			Kind: "list",
-			Fields: RuleGroup_Rule_CaptchaConfigFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_CaptchaConfigFields,
 		},
-		"RuleLabel": ubx.FieldSpec{
-			WireName: "rule_label",
-			Kind: "set",
-			Fields: RuleGroup_Rule_RuleLabelFields,
+		"ChallengeConfig": ubx.FieldSpec{
+			WireName: "challenge_config",
+			Kind: "object",
+			Fields: RuleGroup_Rules_CaptchaConfigFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"RuleLabels": ubx.FieldSpec{
+			WireName: "rule_labels",
+			Kind: "list",
+			Fields: RuleGroup_AvailableLabelsFields,
 		},
 		"Statement": ubx.FieldSpec{
 			WireName: "statement",
-			Kind: "list",
-			Fields: RuleGroup_Rule_StatementFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_StatementFields,
 		},
 		"VisibilityConfig": ubx.FieldSpec{
 			WireName: "visibility_config",
-			Kind: "list",
-			Fields: RuleGroup_Rule_VisibilityConfigFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_VisibilityConfigFields,
 		},
 	}
 
+var RuleGroup_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type RuleGroupConfig struct {
+	// Specifies the web request capacity units (WCUs) allocated to this rule group, which must be at least the total capacity of all rules it contains and determines whether the group can be associated with a web ACL. (AI-inferred)
 	Capacity any
+	// Custom response key and body map.
+	CustomResponseBodies any
+	// Description of the entity.
 	Description any
-	Id any
+	// Configures monetization for the web ACL or rule group.
+	MonetizationConfig any
+	// Name of the RuleGroup.
 	Name any
-	NamePrefix any
-	Region any
-	RulesJson any
+	// Collection of Rules.
+	Rules any
+	// Use CLOUDFRONT for CloudFront RuleGroup, use REGIONAL for Application Load Balancer and API Gateway.
 	Scope any
+	// Specifies a list of tag objects (each containing a Key and Value) to attach to this AWS WAFv2 rule group for cost allocation and resource management. (AI-inferred)
 	Tags any
-	TagsAll any
-	CustomResponseBody any
-	Rule any
+	// Visibility Metric of the RuleGroup.
+	VisibilityConfig any
+}
+
+type RuleGroupAttrs struct {
+	// ARN of the WAF entity.
+	Arn any
+	// Collection of Available Labels.
+	AvailableLabels any
+	// Specifies the web request capacity units (WCUs) allocated to this rule group, which must be at least the total capacity of all rules it contains and determines whether the group can be associated with a web ACL. (AI-inferred)
+	Capacity any
+	// Collection of Consumed Labels.
+	ConsumedLabels any
+	// Custom response key and body map.
+	CustomResponseBodies any
+	// Description of the entity.
+	Description any
+	// Id of the RuleGroup
+	Id any
+	// Name of the Label.
+	LabelNamespace any
+	// Configures monetization for the web ACL or rule group.
+	MonetizationConfig any
+	// Name of the RuleGroup.
+	Name any
+	// Collection of Rules.
+	Rules any
+	// Use CLOUDFRONT for CloudFront RuleGroup, use REGIONAL for Application Load Balancer and API Gateway.
+	Scope any
+	// Specifies a list of tag objects (each containing a Key and Value) to attach to this AWS WAFv2 rule group for cost allocation and resource management. (AI-inferred)
+	Tags any
+	// Visibility Metric of the RuleGroup.
 	VisibilityConfig any
 }
 
@@ -1129,29 +1106,29 @@ var RuleGroup = ubx.ResourceBinding{
 	WireType: "aws_wafv2_rule_group",
 	Fields: ubx.FieldMap{
 		"Capacity": ubx.FieldSpec{WireName: "capacity"},
+		"CustomResponseBodies": ubx.FieldSpec{WireName: "custom_response_bodies"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RulesJson": ubx.FieldSpec{WireName: "rules_json"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"CustomResponseBody": ubx.FieldSpec{
-			WireName: "custom_response_body",
-			Kind: "set",
-			Fields: RuleGroup_CustomResponseBodyFields,
+		"MonetizationConfig": ubx.FieldSpec{
+			WireName: "monetization_config",
+			Kind: "object",
+			Fields: RuleGroup_MonetizationConfigFields,
 		},
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "set",
-			Fields: RuleGroup_RuleFields,
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: RuleGroup_RulesFields,
+		},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: RuleGroup_TagsFields,
 		},
 		"VisibilityConfig": ubx.FieldSpec{
 			WireName: "visibility_config",
-			Kind: "list",
-			Fields: RuleGroup_Rule_VisibilityConfigFields,
+			Kind: "object",
+			Fields: RuleGroup_Rules_VisibilityConfigFields,
 		},
 	},
 }

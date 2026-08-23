@@ -4,7 +4,9 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserDefinedFunction_ResourceUris struct {
+	// Specifies the type of resource stored at the URI, such as 'JAR', 'FILE', or 'ARCHIVE', for the user-defined function's resource URIs. (AI-inferred)
 	ResourceType any
+	// The URI (typically an S3 path or similar location) of the resource (e.g., jar, archive, or file) associated with the user-defined function. (AI-inferred)
 	Uri any
 }
 
@@ -14,31 +16,53 @@ var UserDefinedFunction_ResourceUrisFields = ubx.FieldMap{
 	}
 
 type UserDefinedFunctionConfig struct {
-	CatalogId any
+	// The Java class that contains the function code.
 	ClassName any
+	// The name of the catalog database in which the function is located.
 	DatabaseName any
-	Id any
-	Name any
+	// The name of the function.
+	FunctionName any
+	// The type of the function.
+	FunctionType any
+	// The owner of the function.
 	OwnerName any
+	// The owner type.
 	OwnerType any
-	Region any
+	// The resource URIs for the function.
+	ResourceUris any
+}
+
+type UserDefinedFunctionAttrs struct {
+	// The Amazon Resource Name (ARN) of the user-defined function.
+	Arn any
+	// The Java class that contains the function code.
+	ClassName any
+	// The name of the catalog database in which the function is located.
+	DatabaseName any
+	// The name of the function.
+	FunctionName any
+	// The type of the function.
+	FunctionType any
+	// The owner of the function.
+	OwnerName any
+	// The owner type.
+	OwnerType any
+	// The resource URIs for the function.
 	ResourceUris any
 }
 
 var UserDefinedFunction = ubx.ResourceBinding{
 	WireType: "aws_glue_user_defined_function",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
 		"ClassName": ubx.FieldSpec{WireName: "class_name"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
+		"FunctionType": ubx.FieldSpec{WireName: "function_type"},
 		"OwnerName": ubx.FieldSpec{WireName: "owner_name"},
 		"OwnerType": ubx.FieldSpec{WireName: "owner_type"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ResourceUris": ubx.FieldSpec{
 			WireName: "resource_uris",
-			Kind: "set",
+			Kind: "list",
 			Fields: UserDefinedFunction_ResourceUrisFields,
 		},
 	},

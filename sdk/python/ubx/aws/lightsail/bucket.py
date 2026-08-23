@@ -7,24 +7,86 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Bucket_AccessRules:
+    # A Boolean value that indicates whether the access control list (ACL) permissions that are applied to individual objects override the getObject option that is currently specified.
+    allow_public_overrides: Any = None
+    # Specifies the anonymous access to all objects in a bucket.
+    get_object: Any = None
+
+@dataclasses.dataclass
+class Bucket_Tags:
+    # The key of a tag to assign to the Lightsail bucket. (AI-inferred)
+    key: Any = None
+    # The value of a tag attached to the Lightsail bucket, used for metadata, identification, and cost allocation. (AI-inferred)
+    value: Any = None
+
+_Bucket_AccessRulesFields = {
+    "allow_public_overrides": ubx.FieldSpec(wire_name="allow_public_overrides"),
+    "get_object": ubx.FieldSpec(wire_name="get_object"),
+}
+
+_Bucket_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class BucketConfig:
+    # An object that sets the public accessibility of objects in the specified bucket.
+    access_rules: Any = None
+    # The name for the bucket.
+    bucket_name: Any = None
+    # The ID of the bundle to use for the bucket.
     bundle_id: Any = None
-    force_delete: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # Specifies whether to enable or disable versioning of objects in the bucket.
+    object_versioning: Any = None
+    # An array of strings to specify the AWS account IDs that can access the bucket.
+    read_only_access_accounts: Any = None
+    # The names of the Lightsail resources for which to set bucket access.
+    resources_receiving_access: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class BucketAttrs:
+    # Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle. You can update a bucket's bundle only one time within a monthly AWS billing cycle.
+    able_to_update_bundle: Any = None
+    # An object that sets the public accessibility of objects in the specified bucket.
+    access_rules: Any = None
+    # The Amazon Resource Name (ARN) uniquely identifying the Lightsail bucket, such as arn:aws:lightsail:region:account-id:bucket/bucket-name. (AI-inferred)
+    bucket_arn: Any = None
+    # The name for the bucket.
+    bucket_name: Any = None
+    # The ID of the bundle to use for the bucket.
+    bundle_id: Any = None
+    # Specifies whether to enable or disable versioning of objects in the bucket.
+    object_versioning: Any = None
+    # An array of strings to specify the AWS account IDs that can access the bucket.
+    read_only_access_accounts: Any = None
+    # The names of the Lightsail resources for which to set bucket access.
+    resources_receiving_access: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # The URL of the bucket.
+    url: Any = None
 
 Bucket = ubx.ResourceBinding(
     wire_type="aws_lightsail_bucket",
     fields={
+        "access_rules": ubx.FieldSpec(
+            wire_name="access_rules",
+            kind="object",
+            fields=_Bucket_AccessRulesFields,
+        ),
+        "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
         "bundle_id": ubx.FieldSpec(wire_name="bundle_id"),
-        "force_delete": ubx.FieldSpec(wire_name="force_delete"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "object_versioning": ubx.FieldSpec(wire_name="object_versioning"),
+        "read_only_access_accounts": ubx.FieldSpec(wire_name="read_only_access_accounts"),
+        "resources_receiving_access": ubx.FieldSpec(wire_name="resources_receiving_access"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Bucket_TagsFields,
+        ),
     },
 )

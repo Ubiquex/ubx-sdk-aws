@@ -3,49 +3,69 @@ package organizations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Account_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Account_Tags struct {
+	// The key portion of a key-value tag assigned to the AWS Organizations account, enabling you to categorize and manage the account for cost allocation, access control, or operational purposes. (AI-inferred)
+	Key any
+	// The value of a key-value tag assigned to the AWS Organizations account. (AI-inferred)
+	Value any
 }
 
-var Account_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Account_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type AccountConfig struct {
-	CloseOnDeletion any
-	CreateGovcloud any
+	// The friendly name of the member account.
+	AccountName any
+	// The email address of the owner to assign to the new member account.
 	Email any
-	IamUserAccessToBilling any
-	Id any
-	Name any
-	ParentId any
+	// List of parent nodes for the member account. Currently only one parent at a time is supported. Default is root.
+	ParentIds any
+	// The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. Default name is OrganizationAccountAccessRole if not specified.
 	RoleName any
+	// A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value.
 	Tags any
-	TagsAll any
-	Timeouts any
+}
+
+type AccountAttrs struct {
+	// If the account was created successfully, the unique identifier (ID) of the new account.
+	AccountId any
+	// The friendly name of the member account.
+	AccountName any
+	// The Amazon Resource Name (ARN) of the account.
+	Arn any
+	// The email address of the owner to assign to the new member account.
+	Email any
+	// The method by which the account joined the organization.
+	JoinedMethod any
+	// The date the account became a part of the organization.
+	JoinedTimestamp any
+	// List of parent nodes for the member account. Currently only one parent at a time is supported. Default is root.
+	ParentIds any
+	// The paths in the organization where the account exists.
+	Paths any
+	// The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. Default name is OrganizationAccountAccessRole if not specified.
+	RoleName any
+	// The state of the account in the organization.
+	State any
+	// The status of the account in the organization.
+	Status any
+	// A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value.
+	Tags any
 }
 
 var Account = ubx.ResourceBinding{
 	WireType: "aws_organizations_account",
 	Fields: ubx.FieldMap{
-		"CloseOnDeletion": ubx.FieldSpec{WireName: "close_on_deletion"},
-		"CreateGovcloud": ubx.FieldSpec{WireName: "create_govcloud"},
+		"AccountName": ubx.FieldSpec{WireName: "account_name"},
 		"Email": ubx.FieldSpec{WireName: "email"},
-		"IamUserAccessToBilling": ubx.FieldSpec{WireName: "iam_user_access_to_billing"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentId": ubx.FieldSpec{WireName: "parent_id"},
+		"ParentIds": ubx.FieldSpec{WireName: "parent_ids"},
 		"RoleName": ubx.FieldSpec{WireName: "role_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Account_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Account_TagsFields,
 		},
 	},
 }

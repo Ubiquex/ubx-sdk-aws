@@ -7,34 +7,53 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class LocalGatewayRouteTable_Timeouts:
-    create: Any = None
-    delete: Any = None
+class LocalGatewayRouteTable_Tags:
+    # The key of a user-defined tag that can be attached to an EC2 Local Gateway Route Table for resource identification and management. (AI-inferred)
+    key: Any = None
+    value: Any = None
 
-_LocalGatewayRouteTable_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_LocalGatewayRouteTable_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class LocalGatewayRouteTableConfig:
+    # The ID of the local gateway.
     local_gateway_id: Any = None
+    # The mode of the local gateway route table.
     mode: Any = None
-    region: Any = None
+    # A list of key-value pairs to associate with the local gateway route table for identification and categorization, where each object consists of a Key and a Value string. (AI-inferred)
     tags: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class LocalGatewayRouteTableAttrs:
+    # The ID of the local gateway.
+    local_gateway_id: Any = None
+    # The ARN of the local gateway route table.
+    local_gateway_route_table_arn: Any = None
+    # The ID of the local gateway route table.
+    local_gateway_route_table_id: Any = None
+    # The mode of the local gateway route table.
+    mode: Any = None
+    # The ARN of the outpost.
+    outpost_arn: Any = None
+    # The owner of the local gateway route table.
+    owner_id: Any = None
+    # The state of the local gateway route table.
+    state: Any = None
+    # A list of key-value pairs to associate with the local gateway route table for identification and categorization, where each object consists of a Key and a Value string. (AI-inferred)
+    tags: Any = None
 
 LocalGatewayRouteTable = ubx.ResourceBinding(
     wire_type="aws_ec2_local_gateway_route_table",
     fields={
         "local_gateway_id": ubx.FieldSpec(wire_name="local_gateway_id"),
         "mode": ubx.FieldSpec(wire_name="mode"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_LocalGatewayRouteTable_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_LocalGatewayRouteTable_TagsFields,
         ),
     },
 )

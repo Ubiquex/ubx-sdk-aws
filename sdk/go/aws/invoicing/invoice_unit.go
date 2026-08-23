@@ -3,35 +3,59 @@ package invoicing
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type InvoiceUnit_ResourceTags struct {
+	// The key part of a resource tag attached to the AWS Invoicing invoice unit, used to define custom metadata for organizing, filtering, and managing the invoice unit. (AI-inferred)
+	Key any
+	// The value component of a resource tag (key-value pair) that can be attached to this invoice unit for cost allocation and organizational purposes. (AI-inferred)
+	Value any
+}
+
 type InvoiceUnit_Rule struct {
+	// Specifies the list of linked account IDs (as strings) that are included under this invoice unit's rule when grouping accounts for invoicing. (AI-inferred)
 	LinkedAccounts any
 }
 
-type InvoiceUnit_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
+var InvoiceUnit_ResourceTagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var InvoiceUnit_RuleFields = ubx.FieldMap{
 		"LinkedAccounts": ubx.FieldSpec{WireName: "linked_accounts"},
 	}
 
-var InvoiceUnit_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type InvoiceUnitConfig struct {
+	// The description field provides an optional, user-defined textual description for the invoice unit, allowing you to record the purpose or context of this billing grouping. (AI-inferred)
 	Description any
+	// The AWS account ID of the account that receives the consolidated invoice for this invoice unit. (AI-inferred)
 	InvoiceReceiver any
+	// Sets the unique name of this invoice unit, a logical group of accounts used to consolidate and customize AWS billing invoices. (AI-inferred)
 	Name any
-	Region any
-	Tags any
-	TaxInheritanceDisabled any
+	// The resource_tags field defines a list of tag objects (each containing a key and value) to associate with the invoice unit, enabling you to categorize and manage the invoice unit resource within AWS Invoicing. (AI-inferred)
+	ResourceTags any
+	// Defines which AWS accounts are included in the invoice unit for consolidated invoicing and which account is designated as the invoice receiver. (AI-inferred)
 	Rule any
-	Timeouts any
+	// When set to true, this disables the invoice unit's inheritance of tax configuration from the payer account, forcing the invoice unit to use its own tax settings. (AI-inferred)
+	TaxInheritanceDisabled any
+}
+
+type InvoiceUnitAttrs struct {
+	// The description field provides an optional, user-defined textual description for the invoice unit, allowing you to record the purpose or context of this billing grouping. (AI-inferred)
+	Description any
+	// The AWS account ID of the account that receives the consolidated invoice for this invoice unit. (AI-inferred)
+	InvoiceReceiver any
+	// The Amazon Resource Name (ARN) that uniquely identifies the invoice unit created by this resource. (AI-inferred)
+	InvoiceUnitArn any
+	// The numeric timestamp indicating when the invoice unit was most recently modified, computed and read-only by the service. (AI-inferred)
+	LastModified any
+	// Sets the unique name of this invoice unit, a logical group of accounts used to consolidate and customize AWS billing invoices. (AI-inferred)
+	Name any
+	// The resource_tags field defines a list of tag objects (each containing a key and value) to associate with the invoice unit, enabling you to categorize and manage the invoice unit resource within AWS Invoicing. (AI-inferred)
+	ResourceTags any
+	// Defines which AWS accounts are included in the invoice unit for consolidated invoicing and which account is designated as the invoice receiver. (AI-inferred)
+	Rule any
+	// When set to true, this disables the invoice unit's inheritance of tax configuration from the payer account, forcing the invoice unit to use its own tax settings. (AI-inferred)
+	TaxInheritanceDisabled any
 }
 
 var InvoiceUnit = ubx.ResourceBinding{
@@ -40,18 +64,16 @@ var InvoiceUnit = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InvoiceReceiver": ubx.FieldSpec{WireName: "invoice_receiver"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TaxInheritanceDisabled": ubx.FieldSpec{WireName: "tax_inheritance_disabled"},
+		"ResourceTags": ubx.FieldSpec{
+			WireName: "resource_tags",
+			Kind: "list",
+			Fields: InvoiceUnit_ResourceTagsFields,
+		},
 		"Rule": ubx.FieldSpec{
 			WireName: "rule",
-			Kind: "list",
+			Kind: "object",
 			Fields: InvoiceUnit_RuleFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: InvoiceUnit_TimeoutsFields,
-		},
+		"TaxInheritanceDisabled": ubx.FieldSpec{WireName: "tax_inheritance_disabled"},
 	},
 }

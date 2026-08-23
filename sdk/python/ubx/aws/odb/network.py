@@ -7,38 +7,187 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Network_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Network_ManagedServices_CrossRegionS3RestoreSourcesAccess:
+    ipv4_addresses: Any = None
+    # Specifies the AWS region where the S3 bucket serving as a cross-region restore source is located. (AI-inferred)
+    region: Any = None
+    status: Any = None
 
-_Network_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+@dataclasses.dataclass
+class Network_ManagedServices_KmsAccess:
+    # The domain name for the AWS KMS access.
+    domain_name: Any = None
+    # The IPv4 addresses for the AWS KMS access.
+    ipv4_addresses: Any = None
+    # The endpoint policy for the AWS KMS access.
+    kms_policy_document: Any = None
+    # The status of the managed resource access.
+    status: Any = None
+
+@dataclasses.dataclass
+class Network_ManagedServices_ManagedS3BackupAccess:
+    # The IPv4 addresses for the managed Amazon S3 backup access.
+    ipv4_addresses: Any = None
+    # The status of the managed resource access.
+    status: Any = None
+
+@dataclasses.dataclass
+class Network_ManagedServices_S3Access:
+    # The domain name for the Amazon S3 access.
+    domain_name: Any = None
+    # The IPv4 addresses for the Amazon S3 access.
+    ipv4_addresses: Any = None
+    # The endpoint policy for the Amazon S3 access.
+    s3_policy_document: Any = None
+    # The status of the managed resource access.
+    status: Any = None
+
+@dataclasses.dataclass
+class Network_ManagedServices_ServiceNetworkEndpoint:
+    # The identifier of the VPC endpoint.
+    vpc_endpoint_id: Any = None
+    # The type of the VPC endpoint.
+    vpc_endpoint_type: Any = None
+
+@dataclasses.dataclass
+class Network_ManagedServices_StsAccess:
+    # The domain name for the AWS STS access.
+    domain_name: Any = None
+    # The IPv4 addresses for the AWS STS access.
+    ipv4_addresses: Any = None
+    # The status of the managed resource access.
+    status: Any = None
+    # The endpoint policy for the AWS STS access.
+    sts_policy_document: Any = None
+
+@dataclasses.dataclass
+class Network_ManagedServices_ZeroEtlAccess:
+    # The CIDR block for the Zero-ETL access.
+    cidr: Any = None
+    # The status of the managed resource access.
+    status: Any = None
+
+@dataclasses.dataclass
+class Network_ManagedServices:
+    # The access configuration for the cross-Region Amazon S3 database restore source.
+    cross_region_s3_restore_sources_access: Any = None
+    # The AWS Key Management Service (KMS) access configuration.
+    kms_access: Any = None
+    # The managed Amazon S3 backup access configuration.
+    managed_s3_backup_access: Any = None
+    # The IPv4 CIDR blocks for the managed services.
+    managed_services_ipv4_cidrs: Any = None
+    # The Amazon Resource Name (ARN) of the resource gateway.
+    resource_gateway_arn: Any = None
+    # The Amazon S3 access configuration.
+    s3_access: Any = None
+    # The Amazon Resource Name (ARN) of the service network.
+    service_network_arn: Any = None
+    # The service network endpoint configuration.
+    service_network_endpoint: Any = None
+    # The AWS Security Token Service (STS) access configuration.
+    sts_access: Any = None
+    # The Zero-ETL access configuration.
+    zero_etl_access: Any = None
+
+@dataclasses.dataclass
+class Network_Tags:
+    # The key of a tag attached to the network resource, used as the tag's unique identifier within the resource. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_Network_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class NetworkConfig:
+    # The AWS Availability Zone (AZ) where the ODB network is located.
     availability_zone: Any = None
+    # The AZ ID of the AZ where the ODB network is located.
     availability_zone_id: Any = None
+    # The CIDR range of the backup subnet in the ODB network.
     backup_subnet_cidr: Any = None
+    # The CIDR range of the client subnet in the ODB network.
     client_subnet_cidr: Any = None
-    cross_region_s3_restore_sources_access: Any = None
+    # The cross-Region Amazon S3 restore sources for the ODB network.
+    cross_region_s3_restore_sources: Any = None
+    # The domain name to use for the resources in the ODB network.
     custom_domain_name: Any = None
+    # The DNS prefix to the default DNS domain name. The default DNS domain name is oraclevcn.com.
     default_dns_prefix: Any = None
+    # Specifies whether to delete associated OCI networking resources along with the ODB network.
     delete_associated_resources: Any = None
+    # The user-friendly name of the ODB network.
     display_name: Any = None
+    # The AWS Key Management Service (KMS) access configuration for the ODB network.
     kms_access: Any = None
+    # The AWS Key Management Service (KMS) policy document that defines permissions for key usage within the ODB network.
     kms_policy_document: Any = None
-    region: Any = None
+    # Specifies the configuration for Amazon S3 access from the ODB network.
     s3_access: Any = None
+    # Specifies the endpoint policy for Amazon S3 access from the ODB network.
     s3_policy_document: Any = None
+    # The AWS Security Token Service (STS) access configuration for the ODB network.
     sts_access: Any = None
+    # The AWS Security Token Service (STS) policy document that defines permissions for token service usage within the ODB network.
     sts_policy_document: Any = None
+    # Tags to assign to the Odb Network.
     tags: Any = None
+    # Specifies the configuration for Zero-ETL access from the ODB network.
     zero_etl_access: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class NetworkAttrs:
+    # The AWS Availability Zone (AZ) where the ODB network is located.
+    availability_zone: Any = None
+    # The AZ ID of the AZ where the ODB network is located.
+    availability_zone_id: Any = None
+    # The CIDR range of the backup subnet in the ODB network.
+    backup_subnet_cidr: Any = None
+    # The CIDR range of the client subnet in the ODB network.
+    client_subnet_cidr: Any = None
+    # The cross-Region Amazon S3 restore sources for the ODB network.
+    cross_region_s3_restore_sources: Any = None
+    # The domain name to use for the resources in the ODB network.
+    custom_domain_name: Any = None
+    # The DNS prefix to the default DNS domain name. The default DNS domain name is oraclevcn.com.
+    default_dns_prefix: Any = None
+    # Specifies whether to delete associated OCI networking resources along with the ODB network.
+    delete_associated_resources: Any = None
+    # The user-friendly name of the ODB network.
+    display_name: Any = None
+    # The list of EC2 placement group IDs associated with your ODB network.
+    ec2_placement_group_ids: Any = None
+    # The AWS Key Management Service (KMS) access configuration for the ODB network.
+    kms_access: Any = None
+    # The AWS Key Management Service (KMS) policy document that defines permissions for key usage within the ODB network.
+    kms_policy_document: Any = None
+    # The managed services configuration for the ODB network.
+    managed_services: Any = None
+    # The unique identifier of the OCI network anchor for the ODB network.
+    oci_network_anchor_id: Any = None
+    # The name of the OCI resource anchor that's associated with the ODB network.
+    oci_resource_anchor_name: Any = None
+    # The URL for the VCN that's associated with the ODB network.
+    oci_vcn_url: Any = None
+    # The Amazon Resource Name (ARN) of the ODB network.
+    odb_network_arn: Any = None
+    # The unique identifier of the ODB network.
+    odb_network_id: Any = None
+    # Specifies the configuration for Amazon S3 access from the ODB network.
+    s3_access: Any = None
+    # Specifies the endpoint policy for Amazon S3 access from the ODB network.
+    s3_policy_document: Any = None
+    # The AWS Security Token Service (STS) access configuration for the ODB network.
+    sts_access: Any = None
+    # The AWS Security Token Service (STS) policy document that defines permissions for token service usage within the ODB network.
+    sts_policy_document: Any = None
+    # Tags to assign to the Odb Network.
+    tags: Any = None
+    # Specifies the configuration for Zero-ETL access from the ODB network.
+    zero_etl_access: Any = None
 
 Network = ubx.ResourceBinding(
     wire_type="aws_odb_network",
@@ -47,24 +196,22 @@ Network = ubx.ResourceBinding(
         "availability_zone_id": ubx.FieldSpec(wire_name="availability_zone_id"),
         "backup_subnet_cidr": ubx.FieldSpec(wire_name="backup_subnet_cidr"),
         "client_subnet_cidr": ubx.FieldSpec(wire_name="client_subnet_cidr"),
-        "cross_region_s3_restore_sources_access": ubx.FieldSpec(wire_name="cross_region_s3_restore_sources_access"),
+        "cross_region_s3_restore_sources": ubx.FieldSpec(wire_name="cross_region_s3_restore_sources"),
         "custom_domain_name": ubx.FieldSpec(wire_name="custom_domain_name"),
         "default_dns_prefix": ubx.FieldSpec(wire_name="default_dns_prefix"),
         "delete_associated_resources": ubx.FieldSpec(wire_name="delete_associated_resources"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "kms_access": ubx.FieldSpec(wire_name="kms_access"),
         "kms_policy_document": ubx.FieldSpec(wire_name="kms_policy_document"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "s3_access": ubx.FieldSpec(wire_name="s3_access"),
         "s3_policy_document": ubx.FieldSpec(wire_name="s3_policy_document"),
         "sts_access": ubx.FieldSpec(wire_name="sts_access"),
         "sts_policy_document": ubx.FieldSpec(wire_name="sts_policy_document"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "zero_etl_access": ubx.FieldSpec(wire_name="zero_etl_access"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Network_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Network_TagsFields,
         ),
+        "zero_etl_access": ubx.FieldSpec(wire_name="zero_etl_access"),
     },
 )

@@ -2,26 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TransitGatewayPolicyTableAssociationConfig {
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The ID of transit gateway attachment. */
   transitGatewayAttachmentId: string | Computed<string>;
+  /** The ID of transit gateway policy table. */
   transitGatewayPolicyTableId: string | Computed<string>;
 }
 
 export interface TransitGatewayPolicyTableAssociationAttrs {
-  id: string;
-  region: string;
-  resourceId: string;
-  resourceType: string;
+  /** The state of the transit gateway policy table association. */
+  state: string;
+  /** The ID of transit gateway attachment. */
   transitGatewayAttachmentId: string;
+  /** The ID of transit gateway policy table. */
   transitGatewayPolicyTableId: string;
 }
 
 export const TransitGatewayPolicyTableAssociation: ResourceBinding<TransitGatewayPolicyTableAssociationConfig, TransitGatewayPolicyTableAssociationAttrs> = {
   wireType: "aws_ec2_transit_gateway_policy_table_association",
   fields: {
-    id: "id",
-    region: "region",
     transitGatewayAttachmentId: "transit_gateway_attachment_id",
     transitGatewayPolicyTableId: "transit_gateway_policy_table_id",
   },

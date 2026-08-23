@@ -3,39 +3,31 @@ package oam
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Sink_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type SinkConfig struct {
+	// The name of the ObservabilityAccessManager Sink.
+	Name any
+	// The policy of this ObservabilityAccessManager Sink.
+	Policy any
+	// Tags to apply to the sink
+	Tags any
 }
 
-var Sink_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
-type SinkConfig struct {
-	Id any
+type SinkAttrs struct {
+	// The Amazon resource name (ARN) of the ObservabilityAccessManager Sink
+	Arn any
+	// The name of the ObservabilityAccessManager Sink.
 	Name any
-	Region any
+	// The policy of this ObservabilityAccessManager Sink.
+	Policy any
+	// Tags to apply to the sink
 	Tags any
-	TagsAll any
-	Timeouts any
 }
 
 var Sink = ubx.ResourceBinding{
 	WireType: "aws_oam_sink",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Policy": ubx.FieldSpec{WireName: "policy"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Sink_TimeoutsFields,
-		},
 	},
 }

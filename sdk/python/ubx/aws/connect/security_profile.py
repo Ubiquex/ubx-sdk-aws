@@ -7,26 +7,191 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SecurityProfile_AllowedAccessControlTags:
+    # The key of a tag entry in the allowed_access_control_tags map, which specifies a tag key that this security profile is permitted to use for access control. (AI-inferred)
+    key: Any = None
+    # The value of a tag key that, when present on an AWS Connect resource, grants the user access to that resource according to the tag-based access control rules defined in the security profile. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class SecurityProfile_AllowedFlowModules:
+    # The identifier of an Amazon Connect flow module that this security profile is permitted to use. (AI-inferred)
+    flow_module_id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class SecurityProfile_Applications:
+    # Specifies the list of permission keys that define the actions a user with this security profile can perform within the associated application namespace (for example, making outbound calls or managing contacts in the agent application). (AI-inferred)
+    application_permissions: Any = None
+    # Specifies the namespace of an Amazon Connect application (for example, 'amazon_connect') for which the security profile grants functional permissions, effectively limiting access to that application's resources. (AI-inferred)
+    namespace: Any = None
+    # Defines the type of application (e.g., Amazon Connect or Contact Lens) that the security profile's permissions apply to within the Applications list. (AI-inferred)
+    type: Any = None
+
+@dataclasses.dataclass
+class SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfiguration_PrimaryAttributeValues:
+    # Specifies the type of access (read, write, or both) that the security profile has to data table entries matching the associated primary attribute value in the AWS Connect granular access control configuration. (AI-inferred)
+    access_type: Any = None
+    # The name of the primary attribute (e.g., a contact or customer attribute) whose allowed values are defined in this configuration to restrict access to a data table in Amazon Connect. (AI-inferred)
+    attribute_name: Any = None
+    # The list of primary attribute values (such as queue IDs or other defined attributes) that determine which data records are accessible for the given data table in the security profile's granular access control. (AI-inferred)
+    values: Any = None
+
+@dataclasses.dataclass
+class SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfiguration:
+    # An array of PrimaryAttributeValue objects.
+    primary_attribute_values: Any = None
+
+@dataclasses.dataclass
+class SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration:
+    # Contains the configuration for record-based access control.
+    primary_attribute_access_control_configuration: Any = None
+
+@dataclasses.dataclass
+class SecurityProfile_GranularAccessControlConfiguration:
+    # Defines the access control configuration for data tables.
+    data_table_access_control_configuration: Any = None
+
+_SecurityProfile_AllowedAccessControlTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_SecurityProfile_AllowedFlowModulesFields = {
+    "flow_module_id": ubx.FieldSpec(wire_name="flow_module_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_SecurityProfile_ApplicationsFields = {
+    "application_permissions": ubx.FieldSpec(wire_name="application_permissions"),
+    "namespace": ubx.FieldSpec(wire_name="namespace"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfiguration_PrimaryAttributeValuesFields = {
+    "access_type": ubx.FieldSpec(wire_name="access_type"),
+    "attribute_name": ubx.FieldSpec(wire_name="attribute_name"),
+    "values": ubx.FieldSpec(wire_name="values"),
+}
+
+_SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfigurationFields = {
+    "primary_attribute_values": ubx.FieldSpec(
+        wire_name="primary_attribute_values",
+        kind="list",
+        fields=_SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfiguration_PrimaryAttributeValuesFields,
+    ),
+}
+
+_SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfigurationFields = {
+    "primary_attribute_access_control_configuration": ubx.FieldSpec(
+        wire_name="primary_attribute_access_control_configuration",
+        kind="object",
+        fields=_SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfigurationFields,
+    ),
+}
+
+_SecurityProfile_GranularAccessControlConfigurationFields = {
+    "data_table_access_control_configuration": ubx.FieldSpec(
+        wire_name="data_table_access_control_configuration",
+        kind="object",
+        fields=_SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfigurationFields,
+    ),
+}
+
+@dataclasses.dataclass
 class SecurityProfileConfig:
+    # The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.
+    allowed_access_control_hierarchy_group_id: Any = None
+    # The list of tags that a security profile uses to restrict access to resources in Amazon Connect.
+    allowed_access_control_tags: Any = None
+    # The list of flow-module resources to be linked to a security profile in Amazon Connect.
+    allowed_flow_modules: Any = None
+    # A list of third-party applications that the security profile will give access to.
+    applications: Any = None
+    # The description of the security profile.
     description: Any = None
-    id: Any = None
-    instance_id: Any = None
-    name: Any = None
+    # Specifies the granular access control settings for the security profile, including the allowed access control tags and whether access is restricted by the agent's hierarchy group. (AI-inferred)
+    granular_access_control_configuration: Any = None
+    # The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect.
+    hierarchy_restricted_resources: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # Permissions assigned to the security profile.
     permissions: Any = None
-    region: Any = None
+    # The name of the security profile.
+    security_profile_name: Any = None
+    # The list of resources that a security profile applies tag restrictions to in Amazon Connect.
+    tag_restricted_resources: Any = None
+    # The tags used to organize, track, or control access for this resource.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class SecurityProfileAttrs:
+    # The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.
+    allowed_access_control_hierarchy_group_id: Any = None
+    # The list of tags that a security profile uses to restrict access to resources in Amazon Connect.
+    allowed_access_control_tags: Any = None
+    # The list of flow-module resources to be linked to a security profile in Amazon Connect.
+    allowed_flow_modules: Any = None
+    # A list of third-party applications that the security profile will give access to.
+    applications: Any = None
+    # The description of the security profile.
+    description: Any = None
+    # Specifies the granular access control settings for the security profile, including the allowed access control tags and whether access is restricted by the agent's hierarchy group. (AI-inferred)
+    granular_access_control_configuration: Any = None
+    # The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect.
+    hierarchy_restricted_resources: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # The AWS Region where this resource was last modified.
+    last_modified_region: Any = None
+    # The timestamp when this resource was last modified.
+    last_modified_time: Any = None
+    # Permissions assigned to the security profile.
+    permissions: Any = None
+    # The Amazon Resource Name (ARN) for the security profile.
+    security_profile_arn: Any = None
+    # The name of the security profile.
+    security_profile_name: Any = None
+    # The list of resources that a security profile applies tag restrictions to in Amazon Connect.
+    tag_restricted_resources: Any = None
+    # The tags used to organize, track, or control access for this resource.
+    tags: Any = None
 
 SecurityProfile = ubx.ResourceBinding(
     wire_type="aws_connect_security_profile",
     fields={
+        "allowed_access_control_hierarchy_group_id": ubx.FieldSpec(wire_name="allowed_access_control_hierarchy_group_id"),
+        "allowed_access_control_tags": ubx.FieldSpec(
+            wire_name="allowed_access_control_tags",
+            kind="list",
+            fields=_SecurityProfile_AllowedAccessControlTagsFields,
+        ),
+        "allowed_flow_modules": ubx.FieldSpec(
+            wire_name="allowed_flow_modules",
+            kind="list",
+            fields=_SecurityProfile_AllowedFlowModulesFields,
+        ),
+        "applications": ubx.FieldSpec(
+            wire_name="applications",
+            kind="list",
+            fields=_SecurityProfile_ApplicationsFields,
+        ),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "instance_id": ubx.FieldSpec(wire_name="instance_id"),
-        "name": ubx.FieldSpec(wire_name="name"),
+        "granular_access_control_configuration": ubx.FieldSpec(
+            wire_name="granular_access_control_configuration",
+            kind="object",
+            fields=_SecurityProfile_GranularAccessControlConfigurationFields,
+        ),
+        "hierarchy_restricted_resources": ubx.FieldSpec(wire_name="hierarchy_restricted_resources"),
+        "instance_arn": ubx.FieldSpec(wire_name="instance_arn"),
         "permissions": ubx.FieldSpec(wire_name="permissions"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "security_profile_name": ubx.FieldSpec(wire_name="security_profile_name"),
+        "tag_restricted_resources": ubx.FieldSpec(wire_name="tag_restricted_resources"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_SecurityProfile_AllowedAccessControlTagsFields,
+        ),
     },
 )

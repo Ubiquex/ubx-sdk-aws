@@ -2,18 +2,65 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Workspace_NetworkAccessControl {
-  prefixListIds: string[];
-  vpceIds: string[];
+  /** The list of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified are allowed to access your workspace. If the list is not included in the configuration then no IP addresses will be allowed to access the workspace. */
+  prefixListIds?: string[] | Computed<string[]>;
+  /** The list of Amazon VPC endpoint IDs for the workspace. If a NetworkAccessConfiguration is specified then only VPC endpoints specified here will be allowed to access the workspace. */
+  vpceIds?: string[] | Computed<string[]>;
 }
 
-export interface Workspace_Timeouts {
-  create: string;
-  update: string;
+export interface Workspace_SamlConfiguration_AssertionAttributes {
+  /** Name of the attribute within the SAML assert to use as the users email in Grafana. */
+  email?: string | Computed<string>;
+  /** Name of the attribute within the SAML assert to use as the users groups in Grafana. */
+  groups?: string | Computed<string>;
+  /** Name of the attribute within the SAML assert to use as the users login handle in Grafana. */
+  login?: string | Computed<string>;
+  /** Name of the attribute within the SAML assert to use as the users name in Grafana. */
+  name?: string | Computed<string>;
+  /** Name of the attribute within the SAML assert to use as the users organizations in Grafana. */
+  org?: string | Computed<string>;
+  /** Name of the attribute within the SAML assert to use as the users roles in Grafana. */
+  role?: string | Computed<string>;
+}
+
+export interface Workspace_SamlConfiguration_IdpMetadata {
+  /** URL that vends the IdPs metadata. */
+  url?: string | Computed<string>;
+  /** XML blob of the IdPs metadata. */
+  xml?: string | Computed<string>;
+}
+
+export interface Workspace_SamlConfiguration_RoleValues {
+  /** List of SAML roles which will be mapped into the Grafana Admin role. */
+  admin?: string[] | Computed<string[]>;
+  /** List of SAML roles which will be mapped into the Grafana Editor role. */
+  editor?: string[] | Computed<string[]>;
+}
+
+export interface Workspace_SamlConfiguration {
+  /** List of SAML organizations allowed to access Grafana. */
+  allowedOrganizations?: string[] | Computed<string[]>;
+  /** Maps Grafana friendly names to the IdPs SAML attributes. */
+  assertionAttributes?: Workspace_SamlConfiguration_AssertionAttributes | Computed<Workspace_SamlConfiguration_AssertionAttributes>;
+  /** IdP Metadata used to configure SAML authentication in Grafana. */
+  idpMetadata: Workspace_SamlConfiguration_IdpMetadata | Computed<Workspace_SamlConfiguration_IdpMetadata>;
+  /** The maximum lifetime an authenticated user can be logged in (in minutes) before being required to re-authenticate. */
+  loginValidityDuration?: number | Computed<number>;
+  /** Maps SAML roles to the Grafana Editor and Admin roles. */
+  roleValues?: Workspace_SamlConfiguration_RoleValues | Computed<Workspace_SamlConfiguration_RoleValues>;
+}
+
+export interface Workspace_Tags {
+  key?: string | Computed<string>;
+  /** The value assigned to a tag key for the Grafana workspace, used to categorize, organize, and track the resource for cost and management purposes. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 export interface Workspace_VpcConfiguration {
-  securityGroupIds: string[];
-  subnetIds: string[];
+  /** The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect. */
+  securityGroupIds: string[] | Computed<string[]>;
+  /** The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect. */
+  subnetIds: string[] | Computed<string[]>;
 }
 
 const Workspace_NetworkAccessControlFields: FieldMap = {
@@ -21,9 +68,48 @@ const Workspace_NetworkAccessControlFields: FieldMap = {
   vpceIds: "vpce_ids",
 };
 
-const Workspace_TimeoutsFields: FieldMap = {
-  create: "create",
-  update: "update",
+const Workspace_SamlConfiguration_AssertionAttributesFields: FieldMap = {
+  email: "email",
+  groups: "groups",
+  login: "login",
+  name: "name",
+  org: "org",
+  role: "role",
+};
+
+const Workspace_SamlConfiguration_IdpMetadataFields: FieldMap = {
+  url: "url",
+  xml: "xml",
+};
+
+const Workspace_SamlConfiguration_RoleValuesFields: FieldMap = {
+  admin: "admin",
+  editor: "editor",
+};
+
+const Workspace_SamlConfigurationFields: FieldMap = {
+  allowedOrganizations: "allowed_organizations",
+  assertionAttributes: {
+    wireName: "assertion_attributes",
+    kind: "object",
+    fields: Workspace_SamlConfiguration_AssertionAttributesFields,
+  },
+  idpMetadata: {
+    wireName: "idp_metadata",
+    kind: "object",
+    fields: Workspace_SamlConfiguration_IdpMetadataFields,
+  },
+  loginValidityDuration: "login_validity_duration",
+  roleValues: {
+    wireName: "role_values",
+    kind: "object",
+    fields: Workspace_SamlConfiguration_RoleValuesFields,
+  },
+};
+
+const Workspace_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 const Workspace_VpcConfigurationFields: FieldMap = {
@@ -32,54 +118,95 @@ const Workspace_VpcConfigurationFields: FieldMap = {
 };
 
 export interface WorkspaceConfig {
+  /** These enums represent valid account access types. Specifically these enums determine whether the workspace can access AWS resources in the AWS account only, or whether it can also access resources in other accounts in the same organization. If the value CURRENT_ACCOUNT is used, a workspace role ARN must be provided. If the value is ORGANIZATION, a list of organizational units must be provided. */
   accountAccessType: string | Computed<string>;
+  /** List of authentication providers to enable. */
   authenticationProviders: string[] | Computed<string[]>;
-  configuration?: string | Computed<string>;
+  /** A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request. */
+  clientToken?: string | Computed<string>;
+  /** List of data sources on the service managed IAM role. */
   dataSources?: string[] | Computed<string[]>;
+  /** Description of a workspace. */
   description?: string | Computed<string>;
+  /** The version of Grafana to support in your workspace. */
   grafanaVersion?: string | Computed<string>;
-  id?: string | Computed<string>;
-  kmsKeyId?: string | Computed<string>;
+  /** The user friendly name of a workspace. */
   name?: string | Computed<string>;
+  /** The configuration settings for Network Access Control. */
+  networkAccessControl?: Workspace_NetworkAccessControl | Computed<Workspace_NetworkAccessControl>;
+  /** List of notification destinations on the customers service managed IAM role that the Grafana workspace can query. */
   notificationDestinations?: string[] | Computed<string[]>;
+  /** The name of an IAM role that already exists to use with AWS Organizations to access AWS data sources and notification channels in other accounts in an organization. */
   organizationRoleName?: string | Computed<string>;
+  /** List of Organizational Units containing AWS accounts the Grafana workspace can pull data from. */
   organizationalUnits?: string[] | Computed<string[]>;
+  /** These enums represent valid permission types to use when creating or configuring a Grafana workspace. The SERVICE_MANAGED permission type means the Managed Grafana service will create a workspace IAM role on your behalf. The CUSTOMER_MANAGED permission type means that the customer is expected to provide an IAM role that the Grafana workspace can use to query data sources. */
   permissionType: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** Allow workspace admins to install plugins */
+  pluginAdminEnabled?: boolean | Computed<boolean>;
+  /** IAM Role that will be used to grant the Grafana workspace access to a customers AWS resources. */
   roleArn?: string | Computed<string>;
+  /** SAML configuration data associated with an AMG workspace. */
+  samlConfiguration?: Workspace_SamlConfiguration | Computed<Workspace_SamlConfiguration>;
+  /** The name of the AWS CloudFormation stack set to use to generate IAM roles to be used for this workspace. */
   stackSetName?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  networkAccessControl?: Workspace_NetworkAccessControl[] | Computed<Workspace_NetworkAccessControl[]>;
-  timeouts?: Workspace_Timeouts | Computed<Workspace_Timeouts>;
-  vpcConfiguration?: Workspace_VpcConfiguration[] | Computed<Workspace_VpcConfiguration[]>;
+  /** The list of tags associated with the workspace. */
+  tags?: Workspace_Tags[] | Computed<Workspace_Tags[]>;
+  /** The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to. */
+  vpcConfiguration?: Workspace_VpcConfiguration | Computed<Workspace_VpcConfiguration>;
 }
 
 export interface WorkspaceAttrs {
+  /** These enums represent valid account access types. Specifically these enums determine whether the workspace can access AWS resources in the AWS account only, or whether it can also access resources in other accounts in the same organization. If the value CURRENT_ACCOUNT is used, a workspace role ARN must be provided. If the value is ORGANIZATION, a list of organizational units must be provided. */
   accountAccessType: string;
-  arn: string;
+  /** List of authentication providers to enable. */
   authenticationProviders: string[];
-  configuration: string;
+  /** A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request. */
+  clientToken: string;
+  /** Timestamp when the workspace was created. */
+  creationTimestamp: string;
+  /** List of data sources on the service managed IAM role. */
   dataSources: string[];
+  /** Description of a workspace. */
   description: string;
+  /** Endpoint for the Grafana workspace. */
   endpoint: string;
+  /** The version of Grafana to support in your workspace. */
   grafanaVersion: string;
+  /** The id that uniquely identifies a Grafana workspace. */
   id: string;
-  kmsKeyId: string;
+  /** Timestamp when the workspace was last modified */
+  modificationTimestamp: string;
+  /** The user friendly name of a workspace. */
   name: string;
+  /** The configuration settings for Network Access Control. */
+  networkAccessControl: Workspace_NetworkAccessControl;
+  /** List of notification destinations on the customers service managed IAM role that the Grafana workspace can query. */
   notificationDestinations: string[];
+  /** The name of an IAM role that already exists to use with AWS Organizations to access AWS data sources and notification channels in other accounts in an organization. */
   organizationRoleName: string;
+  /** List of Organizational Units containing AWS accounts the Grafana workspace can pull data from. */
   organizationalUnits: string[];
+  /** These enums represent valid permission types to use when creating or configuring a Grafana workspace. The SERVICE_MANAGED permission type means the Managed Grafana service will create a workspace IAM role on your behalf. The CUSTOMER_MANAGED permission type means that the customer is expected to provide an IAM role that the Grafana workspace can use to query data sources. */
   permissionType: string;
-  region: string;
+  /** Allow workspace admins to install plugins */
+  pluginAdminEnabled: boolean;
+  /** IAM Role that will be used to grant the Grafana workspace access to a customers AWS resources. */
   roleArn: string;
+  /** SAML configuration data associated with an AMG workspace. */
+  samlConfiguration: Workspace_SamlConfiguration;
+  /** Valid SAML configuration statuses. */
   samlConfigurationStatus: string;
+  /** The client ID of the AWS SSO Managed Application. */
+  ssoClientId: string;
+  /** The name of the AWS CloudFormation stack set to use to generate IAM roles to be used for this workspace. */
   stackSetName: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  networkAccessControl: Workspace_NetworkAccessControl[];
-  timeouts: Workspace_Timeouts;
-  vpcConfiguration: Workspace_VpcConfiguration[];
+  /** These enums represent the status of a workspace. */
+  status: string;
+  /** The list of tags associated with the workspace. */
+  tags: Workspace_Tags[];
+  /** The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to. */
+  vpcConfiguration: Workspace_VpcConfiguration;
 }
 
 export const Workspace: ResourceBinding<WorkspaceConfig, WorkspaceAttrs> = {
@@ -87,35 +214,36 @@ export const Workspace: ResourceBinding<WorkspaceConfig, WorkspaceAttrs> = {
   fields: {
     accountAccessType: "account_access_type",
     authenticationProviders: "authentication_providers",
-    configuration: "configuration",
+    clientToken: "client_token",
     dataSources: "data_sources",
     description: "description",
     grafanaVersion: "grafana_version",
-    id: "id",
-    kmsKeyId: "kms_key_id",
     name: "name",
+    networkAccessControl: {
+      wireName: "network_access_control",
+      kind: "object",
+      fields: Workspace_NetworkAccessControlFields,
+    },
     notificationDestinations: "notification_destinations",
     organizationRoleName: "organization_role_name",
     organizationalUnits: "organizational_units",
     permissionType: "permission_type",
-    region: "region",
+    pluginAdminEnabled: "plugin_admin_enabled",
     roleArn: "role_arn",
-    stackSetName: "stack_set_name",
-    tags: "tags",
-    tagsAll: "tags_all",
-    networkAccessControl: {
-      wireName: "network_access_control",
-      kind: "list",
-      fields: Workspace_NetworkAccessControlFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
+    samlConfiguration: {
+      wireName: "saml_configuration",
       kind: "object",
-      fields: Workspace_TimeoutsFields,
+      fields: Workspace_SamlConfigurationFields,
+    },
+    stackSetName: "stack_set_name",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Workspace_TagsFields,
     },
     vpcConfiguration: {
       wireName: "vpc_configuration",
-      kind: "list",
+      kind: "object",
       fields: Workspace_VpcConfigurationFields,
     },
   },

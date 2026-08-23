@@ -2,8 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MaintenanceWindowTarget_Targets {
-  key: string;
-  values: string[];
+  /** Specifies the type of target, such as 'InstanceIds' to match EC2 instance IDs or a tag key in the format 'tag:key' to match instances by tag, which determines how the associated Values are interpreted. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** Specifies the values for the maintenance window target key, such as EC2 instance IDs when the key is 'InstanceIds' or resource group names when the key is 'ResourceGroup'. (AI-inferred) */
+  values?: string[] | Computed<string[]>;
 }
 
 const MaintenanceWindowTarget_TargetsFields: FieldMap = {
@@ -12,41 +14,49 @@ const MaintenanceWindowTarget_TargetsFields: FieldMap = {
 };
 
 export interface MaintenanceWindowTargetConfig {
+  /** A description for the target. */
   description?: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** The name for the maintenance window target. */
   name?: string | Computed<string>;
+  /** A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window. */
   ownerInformation?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The type of target that is being registered with the maintenance window. */
   resourceType: string | Computed<string>;
+  /** The targets to register with the maintenance window. */
+  targets: MaintenanceWindowTarget_Targets[] | Computed<MaintenanceWindowTarget_Targets[]>;
+  /** The ID of the maintenance window to register the target with. */
   windowId: string | Computed<string>;
-  targets?: MaintenanceWindowTarget_Targets[] | Computed<MaintenanceWindowTarget_Targets[]>;
 }
 
 export interface MaintenanceWindowTargetAttrs {
+  /** A description for the target. */
   description: string;
-  id: string;
+  /** The name for the maintenance window target. */
   name: string;
+  /** A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window. */
   ownerInformation: string;
-  region: string;
+  /** The type of target that is being registered with the maintenance window. */
   resourceType: string;
-  windowId: string;
+  /** The targets to register with the maintenance window. */
   targets: MaintenanceWindowTarget_Targets[];
+  /** The ID of the maintenance window to register the target with. */
+  windowId: string;
+  /** The ID of the target. */
+  windowTargetId: string;
 }
 
 export const MaintenanceWindowTarget: ResourceBinding<MaintenanceWindowTargetConfig, MaintenanceWindowTargetAttrs> = {
   wireType: "aws_ssm_maintenance_window_target",
   fields: {
     description: "description",
-    id: "id",
     name: "name",
     ownerInformation: "owner_information",
-    region: "region",
     resourceType: "resource_type",
-    windowId: "window_id",
     targets: {
       wireName: "targets",
       kind: "list",
       fields: MaintenanceWindowTarget_TargetsFields,
     },
+    windowId: "window_id",
   },
 };

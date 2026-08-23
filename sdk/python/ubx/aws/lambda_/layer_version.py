@@ -7,36 +7,67 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class LayerVersionConfig:
-    compatible_architectures: Any = None
-    compatible_runtimes: Any = None
-    description: Any = None
-    filename: Any = None
-    id: Any = None
-    layer_name: Any = None
-    license_info: Any = None
-    region: Any = None
+class LayerVersion_Content:
+    # The Amazon S3 bucket of the layer archive.
     s3_bucket: Any = None
+    # The Amazon S3 key of the layer archive.
     s3_key: Any = None
+    # Specifies whether Lambda should copy the deployment package to its internal storage (COPY) or reference it directly from your S3 bucket (REFERENCE).
+    s3_object_storage_mode: Any = None
+    # For versioned objects, the version of the layer archive object to use.
     s3_object_version: Any = None
-    skip_destroy: Any = None
-    source_code_hash: Any = None
+
+_LayerVersion_ContentFields = {
+    "s3_bucket": ubx.FieldSpec(wire_name="s3_bucket"),
+    "s3_key": ubx.FieldSpec(wire_name="s3_key"),
+    "s3_object_storage_mode": ubx.FieldSpec(wire_name="s3_object_storage_mode"),
+    "s3_object_version": ubx.FieldSpec(wire_name="s3_object_version"),
+}
+
+@dataclasses.dataclass
+class LayerVersionConfig:
+    # A list of compatible instruction set architectures.
+    compatible_architectures: Any = None
+    # A list of compatible function runtimes. Used for filtering with ListLayers and ListLayerVersions.
+    compatible_runtimes: Any = None
+    # The `content` field specifies the Amazon S3 bucket, key, and optional object version that store the Lambda layer version's deployment package. (AI-inferred)
+    content: Any = None
+    # The description of the version.
+    description: Any = None
+    # The name or Amazon Resource Name (ARN) of the layer.
+    layer_name: Any = None
+    # The layer's software license.
+    license_info: Any = None
+
+@dataclasses.dataclass
+class LayerVersionAttrs:
+    # A list of compatible instruction set architectures.
+    compatible_architectures: Any = None
+    # A list of compatible function runtimes. Used for filtering with ListLayers and ListLayerVersions.
+    compatible_runtimes: Any = None
+    # The `content` field specifies the Amazon S3 bucket, key, and optional object version that store the Lambda layer version's deployment package. (AI-inferred)
+    content: Any = None
+    # The description of the version.
+    description: Any = None
+    # The name or Amazon Resource Name (ARN) of the layer.
+    layer_name: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies the Lambda layer version. (AI-inferred)
+    layer_version_arn: Any = None
+    # The layer's software license.
+    license_info: Any = None
 
 LayerVersion = ubx.ResourceBinding(
     wire_type="aws_lambda_layer_version",
     fields={
         "compatible_architectures": ubx.FieldSpec(wire_name="compatible_architectures"),
         "compatible_runtimes": ubx.FieldSpec(wire_name="compatible_runtimes"),
+        "content": ubx.FieldSpec(
+            wire_name="content",
+            kind="object",
+            fields=_LayerVersion_ContentFields,
+        ),
         "description": ubx.FieldSpec(wire_name="description"),
-        "filename": ubx.FieldSpec(wire_name="filename"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "layer_name": ubx.FieldSpec(wire_name="layer_name"),
         "license_info": ubx.FieldSpec(wire_name="license_info"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "s3_bucket": ubx.FieldSpec(wire_name="s3_bucket"),
-        "s3_key": ubx.FieldSpec(wire_name="s3_key"),
-        "s3_object_version": ubx.FieldSpec(wire_name="s3_object_version"),
-        "skip_destroy": ubx.FieldSpec(wire_name="skip_destroy"),
-        "source_code_hash": ubx.FieldSpec(wire_name="source_code_hash"),
     },
 )

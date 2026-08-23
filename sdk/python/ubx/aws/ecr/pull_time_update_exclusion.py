@@ -8,13 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PullTimeUpdateExclusionConfig:
+    # Principal arn that should not update image pull times.
     principal_arn: Any = None
-    region: Any = None
+
+@dataclasses.dataclass
+class PullTimeUpdateExclusionAttrs:
+    # Principal arn that should not update image pull times.
+    principal_arn: Any = None
 
 PullTimeUpdateExclusion = ubx.ResourceBinding(
     wire_type="aws_ecr_pull_time_update_exclusion",
     fields={
         "principal_arn": ubx.FieldSpec(wire_name="principal_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
     },
 )

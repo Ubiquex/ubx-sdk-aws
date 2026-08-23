@@ -3,23 +3,46 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TrafficMirrorFilter_Tags struct {
+	Key any
+	// The value portion of a tag entry attached to the EC2 Traffic Mirror Filter, used to store arbitrary metadata for identification or categorization. (AI-inferred)
+	Value any
+}
+
+var TrafficMirrorFilter_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type TrafficMirrorFilterConfig struct {
+	// The description of a traffic mirror filter.
 	Description any
-	Id any
+	// The network service that is associated with the traffic mirror filter.
 	NetworkServices any
-	Region any
+	// The tags for a traffic mirror filter.
 	Tags any
-	TagsAll any
+}
+
+type TrafficMirrorFilterAttrs struct {
+	// The description of a traffic mirror filter.
+	Description any
+	// The ID of a traffic mirror filter.
+	Id any
+	// The network service that is associated with the traffic mirror filter.
+	NetworkServices any
+	// The tags for a traffic mirror filter.
+	Tags any
 }
 
 var TrafficMirrorFilter = ubx.ResourceBinding{
 	WireType: "aws_ec2_traffic_mirror_filter",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"NetworkServices": ubx.FieldSpec{WireName: "network_services"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: TrafficMirrorFilter_TagsFields,
+		},
 	},
 }

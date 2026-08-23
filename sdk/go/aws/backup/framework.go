@@ -3,89 +3,116 @@ package backup
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Framework_Control_InputParameter struct {
-	Name any
+type Framework_FrameworkControls_ControlInputParameters struct {
+	// Specifies the name of an input parameter for a control in an AWS Backup framework, such as requiredRetentionDays, which is passed to the control to customize its behavior. (AI-inferred)
+	ParameterName any
+	// Specifies the value assigned to a control input parameter, customizing the framework control's behavior by providing configuration data such as thresholds, identifiers, or other control-specific settings. (AI-inferred)
+	ParameterValue any
+}
+
+type Framework_FrameworkControls_ControlScope_Tags struct {
+	// The tag key used to define the resource tag scope for a backup framework control, filtering which tagged resources the control applies to. (AI-inferred)
+	Key any
+	// The value of a tag used in the control scope, which restricts the framework control's evaluation to backup resources that carry that tag key-value pair. (AI-inferred)
 	Value any
 }
 
-type Framework_Control_Scope struct {
+type Framework_FrameworkControls_ControlScope struct {
+	// The list of resource IDs (such as ARNs) that the control scope explicitly includes for compliance evaluation in the AWS Backup framework. (AI-inferred)
 	ComplianceResourceIds any
+	// The list of AWS resource types (e.g., 'AWS::Backup::RecoveryPoint') to which the Backup framework control's compliance scope applies, filtering which resources are evaluated by the control. (AI-inferred)
 	ComplianceResourceTypes any
+	// Specifies the tag key-value pairs that AWS Backup uses to scope the control, so that only resources matching these tags are included in the framework's compliance evaluation. (AI-inferred)
 	Tags any
 }
 
-type Framework_Control struct {
-	Name any
-	InputParameter any
-	Scope any
+type Framework_FrameworkControls struct {
+	// Specifies the input parameters for a control within an AWS Backup framework, such as the retention period threshold that the control evaluates. (AI-inferred)
+	ControlInputParameters any
+	// The name of the backup framework control, which identifies the specific compliance rule (for example, BACKUP_RECOVERY_POINT_MANUAL_DELETION or BACKUP_RESOURCES_PROTECTED_BY_BACKUP_PLAN) that this framework control evaluates. (AI-inferred)
+	ControlName any
+	// Specifies the resource types and tags that determine which backup resources the framework control applies to. (AI-inferred)
+	ControlScope any
 }
 
-type Framework_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
+var Framework_FrameworkControls_ControlInputParametersFields = ubx.FieldMap{
+		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
+		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+	}
 
-var Framework_Control_InputParameterFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+var Framework_FrameworkControls_ControlScope_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
-var Framework_Control_ScopeFields = ubx.FieldMap{
+var Framework_FrameworkControls_ControlScopeFields = ubx.FieldMap{
 		"ComplianceResourceIds": ubx.FieldSpec{WireName: "compliance_resource_ids"},
 		"ComplianceResourceTypes": ubx.FieldSpec{WireName: "compliance_resource_types"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
-
-var Framework_ControlFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"InputParameter": ubx.FieldSpec{
-			WireName: "input_parameter",
-			Kind: "set",
-			Fields: Framework_Control_InputParameterFields,
-		},
-		"Scope": ubx.FieldSpec{
-			WireName: "scope",
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: Framework_Control_ScopeFields,
+			Fields: Framework_FrameworkControls_ControlScope_TagsFields,
 		},
 	}
 
-var Framework_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Framework_FrameworkControlsFields = ubx.FieldMap{
+		"ControlInputParameters": ubx.FieldSpec{
+			WireName: "control_input_parameters",
+			Kind: "list",
+			Fields: Framework_FrameworkControls_ControlInputParametersFields,
+		},
+		"ControlName": ubx.FieldSpec{WireName: "control_name"},
+		"ControlScope": ubx.FieldSpec{
+			WireName: "control_scope",
+			Kind: "object",
+			Fields: Framework_FrameworkControls_ControlScopeFields,
+		},
 	}
 
 type FrameworkConfig struct {
-	Description any
-	Id any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
-	Control any
-	Timeouts any
+	// Contains detailed information about all of the controls of a framework. Each framework must contain at least one control.
+	FrameworkControls any
+	// An optional description of the framework with a maximum 1,024 characters.
+	FrameworkDescription any
+	// The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+	FrameworkName any
+	// Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.
+	FrameworkTags any
+}
+
+type FrameworkAttrs struct {
+	// The date and time that a framework is created, in ISO 8601 representation. The value of CreationTime is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.
+	CreationTime any
+	// The deployment status of a framework. The statuses are: `CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED`
+	DeploymentStatus any
+	// An Amazon Resource Name (ARN) that uniquely identifies Framework as a resource
+	FrameworkArn any
+	// Contains detailed information about all of the controls of a framework. Each framework must contain at least one control.
+	FrameworkControls any
+	// An optional description of the framework with a maximum 1,024 characters.
+	FrameworkDescription any
+	// The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
+	FrameworkName any
+	// A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn AWS Config recording on or off for each resource. The statuses are: `ACTIVE` when recording is turned on for all resources governed by the framework. `PARTIALLY_ACTIVE` when recording is turned off for at least one resource governed by the framework. `INACTIVE` when recording is turned off for all resources governed by the framework. `UNAVAILABLE` when AWS Backup is unable to validate recording status at this time.
+	FrameworkStatus any
+	// Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.
+	FrameworkTags any
 }
 
 var Framework = ubx.ResourceBinding{
 	WireType: "aws_backup_framework",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Control": ubx.FieldSpec{
-			WireName: "control",
-			Kind: "set",
-			Fields: Framework_ControlFields,
+		"FrameworkControls": ubx.FieldSpec{
+			WireName: "framework_controls",
+			Kind: "list",
+			Fields: Framework_FrameworkControlsFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Framework_TimeoutsFields,
+		"FrameworkDescription": ubx.FieldSpec{WireName: "framework_description"},
+		"FrameworkName": ubx.FieldSpec{WireName: "framework_name"},
+		"FrameworkTags": ubx.FieldSpec{
+			WireName: "framework_tags",
+			Kind: "list",
+			Fields: Framework_FrameworkControls_ControlScope_TagsFields,
 		},
 	},
 }

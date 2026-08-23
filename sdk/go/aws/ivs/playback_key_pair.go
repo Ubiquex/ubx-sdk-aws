@@ -3,39 +3,49 @@ package ivs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type PlaybackKeyPair_Timeouts struct {
-	Create any
-	Delete any
+type PlaybackKeyPair_Tags struct {
+	// The key portion of a tag attached to the IVS playback key pair, used to label and organize the resource within AWS. (AI-inferred)
+	Key any
+	// The value of a tag applied to the Amazon IVS playback key pair, used for metadata management. (AI-inferred)
+	Value any
 }
 
-var PlaybackKeyPair_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var PlaybackKeyPair_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type PlaybackKeyPairConfig struct {
-	Id any
+	// An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource. The value does not need to be unique.
 	Name any
-	PublicKey any
-	Region any
+	// The public portion of a customer-generated key pair. This field is required to create the AWS::IVS::PlaybackKeyPair resource.
+	PublicKeyMaterial any
+	// A list of key-value pairs that contain metadata for the asset model.
 	Tags any
-	TagsAll any
-	Timeouts any
+}
+
+type PlaybackKeyPairAttrs struct {
+	// Key-pair identifier.
+	Arn any
+	// Key-pair identifier.
+	Fingerprint any
+	// An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource. The value does not need to be unique.
+	Name any
+	// The public portion of a customer-generated key pair. This field is required to create the AWS::IVS::PlaybackKeyPair resource.
+	PublicKeyMaterial any
+	// A list of key-value pairs that contain metadata for the asset model.
+	Tags any
 }
 
 var PlaybackKeyPair = ubx.ResourceBinding{
 	WireType: "aws_ivs_playback_key_pair",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"PublicKey": ubx.FieldSpec{WireName: "public_key"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: PlaybackKeyPair_TimeoutsFields,
+		"PublicKeyMaterial": ubx.FieldSpec{WireName: "public_key_material"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: PlaybackKeyPair_TagsFields,
 		},
 	},
 }

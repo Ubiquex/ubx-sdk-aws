@@ -2,21 +2,37 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RecordingConfiguration_DestinationConfiguration_S3 {
-  bucketName: string;
+  /** The name of the Amazon S3 bucket where AWS IVS stores the recorded video segments for this recording configuration. (AI-inferred) */
+  bucketName: string | Computed<string>;
 }
 
 export interface RecordingConfiguration_DestinationConfiguration {
-  s3: RecordingConfiguration_DestinationConfiguration_S3[];
+  /** Recording S3 Destination Configuration. */
+  s3?: RecordingConfiguration_DestinationConfiguration_S3 | Computed<RecordingConfiguration_DestinationConfiguration_S3>;
+}
+
+export interface RecordingConfiguration_RenditionConfiguration {
+  /** Resolution Selection indicates which set of renditions are recorded for a stream. */
+  renditionSelection?: string | Computed<string>;
+  /** Renditions indicates which renditions are recorded for a stream. */
+  renditions?: string[] | Computed<string[]>;
+}
+
+export interface RecordingConfiguration_Tags {
+  key?: string | Computed<string>;
+  /** The value of a tag attached to an AWS IVS recording configuration, used to organize, categorize, and manage the resource. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 export interface RecordingConfiguration_ThumbnailConfiguration {
-  recordingMode: string;
-  targetIntervalSeconds: number;
-}
-
-export interface RecordingConfiguration_Timeouts {
-  create: string;
-  delete: string;
+  /** Thumbnail Recording Mode, which determines whether thumbnails are recorded at an interval or are disabled. */
+  recordingMode?: string | Computed<string>;
+  /** Resolution indicates the desired resolution of recorded thumbnails. */
+  resolution?: string | Computed<string>;
+  /** Storage indicates the format in which thumbnails are recorded. */
+  storage?: string[] | Computed<string[]>;
+  /** Target Interval Seconds defines the interval at which thumbnails are recorded. This field is required if RecordingMode is INTERVAL. */
+  targetIntervalSeconds?: number | Computed<number>;
 }
 
 const RecordingConfiguration_DestinationConfiguration_S3Fields: FieldMap = {
@@ -26,70 +42,86 @@ const RecordingConfiguration_DestinationConfiguration_S3Fields: FieldMap = {
 const RecordingConfiguration_DestinationConfigurationFields: FieldMap = {
   s3: {
     wireName: "s3",
-    kind: "list",
+    kind: "object",
     fields: RecordingConfiguration_DestinationConfiguration_S3Fields,
   },
 };
 
+const RecordingConfiguration_RenditionConfigurationFields: FieldMap = {
+  renditionSelection: "rendition_selection",
+  renditions: "renditions",
+};
+
+const RecordingConfiguration_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
 const RecordingConfiguration_ThumbnailConfigurationFields: FieldMap = {
   recordingMode: "recording_mode",
+  resolution: "resolution",
+  storage: "storage",
   targetIntervalSeconds: "target_interval_seconds",
 };
 
-const RecordingConfiguration_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-};
-
 export interface RecordingConfigurationConfig {
-  id?: string | Computed<string>;
+  /** Recording Destination Configuration. */
+  destinationConfiguration: RecordingConfiguration_DestinationConfiguration | Computed<RecordingConfiguration_DestinationConfiguration>;
+  /** Recording Configuration Name. */
   name?: string | Computed<string>;
+  /** Recording Reconnect Window Seconds. (0 means disabled) */
   recordingReconnectWindowSeconds?: number | Computed<number>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  destinationConfiguration?: RecordingConfiguration_DestinationConfiguration[] | Computed<RecordingConfiguration_DestinationConfiguration[]>;
-  thumbnailConfiguration?: RecordingConfiguration_ThumbnailConfiguration[] | Computed<RecordingConfiguration_ThumbnailConfiguration[]>;
-  timeouts?: RecordingConfiguration_Timeouts | Computed<RecordingConfiguration_Timeouts>;
+  /** Rendition Configuration describes which renditions should be recorded for a stream. */
+  renditionConfiguration?: RecordingConfiguration_RenditionConfiguration | Computed<RecordingConfiguration_RenditionConfiguration>;
+  /** A list of key-value pairs that contain metadata for the asset model. */
+  tags?: RecordingConfiguration_Tags[] | Computed<RecordingConfiguration_Tags[]>;
+  /** Recording Thumbnail Configuration. */
+  thumbnailConfiguration?: RecordingConfiguration_ThumbnailConfiguration | Computed<RecordingConfiguration_ThumbnailConfiguration>;
 }
 
 export interface RecordingConfigurationAttrs {
+  /** Recording Configuration ARN is automatically generated on creation and assigned as the unique identifier. */
   arn: string;
-  id: string;
+  /** Recording Destination Configuration. */
+  destinationConfiguration: RecordingConfiguration_DestinationConfiguration;
+  /** Recording Configuration Name. */
   name: string;
+  /** Recording Reconnect Window Seconds. (0 means disabled) */
   recordingReconnectWindowSeconds: number;
-  region: string;
+  /** Rendition Configuration describes which renditions should be recorded for a stream. */
+  renditionConfiguration: RecordingConfiguration_RenditionConfiguration;
+  /** Recording Configuration State. */
   state: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  destinationConfiguration: RecordingConfiguration_DestinationConfiguration[];
-  thumbnailConfiguration: RecordingConfiguration_ThumbnailConfiguration[];
-  timeouts: RecordingConfiguration_Timeouts;
+  /** A list of key-value pairs that contain metadata for the asset model. */
+  tags: RecordingConfiguration_Tags[];
+  /** Recording Thumbnail Configuration. */
+  thumbnailConfiguration: RecordingConfiguration_ThumbnailConfiguration;
 }
 
 export const RecordingConfiguration: ResourceBinding<RecordingConfigurationConfig, RecordingConfigurationAttrs> = {
   wireType: "aws_ivs_recording_configuration",
   fields: {
-    id: "id",
-    name: "name",
-    recordingReconnectWindowSeconds: "recording_reconnect_window_seconds",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
     destinationConfiguration: {
       wireName: "destination_configuration",
-      kind: "list",
+      kind: "object",
       fields: RecordingConfiguration_DestinationConfigurationFields,
+    },
+    name: "name",
+    recordingReconnectWindowSeconds: "recording_reconnect_window_seconds",
+    renditionConfiguration: {
+      wireName: "rendition_configuration",
+      kind: "object",
+      fields: RecordingConfiguration_RenditionConfigurationFields,
+    },
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: RecordingConfiguration_TagsFields,
     },
     thumbnailConfiguration: {
       wireName: "thumbnail_configuration",
-      kind: "list",
-      fields: RecordingConfiguration_ThumbnailConfigurationFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
       kind: "object",
-      fields: RecordingConfiguration_TimeoutsFields,
+      fields: RecordingConfiguration_ThumbnailConfigurationFields,
     },
   },
 };

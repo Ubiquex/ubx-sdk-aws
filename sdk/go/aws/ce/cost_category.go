@@ -3,217 +3,64 @@ package ce
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type CostCategory_Rule_InheritedValue struct {
-	DimensionKey any
-	DimensionName any
-}
-
-type CostCategory_Rule_Rule_And_And_CostCategory struct {
+type CostCategory_Tags struct {
+	// The key portion of a tag applied to the AWS Cost Category. (AI-inferred)
 	Key any
-	MatchOptions any
-	Values any
-}
-
-type CostCategory_Rule_Rule_And_And struct {
-	CostCategory any
-	Dimension any
-	Tags any
-}
-
-type CostCategory_Rule_Rule_And struct {
-	And any
-	CostCategory any
-	Dimension any
-	Not any
-	Or any
-	Tags any
-}
-
-type CostCategory_Rule_Rule struct {
-	And any
-	CostCategory any
-	Dimension any
-	Not any
-	Or any
-	Tags any
-}
-
-type CostCategory_Rule struct {
-	Type any
+	// Specifies the value portion of a user-defined tag (key-value pair) applied to the AWS Cost Category, used to categorize and track cost allocation. (AI-inferred)
 	Value any
-	InheritedValue any
-	Rule any
 }
 
-type CostCategory_SplitChargeRule_Parameter struct {
-	Type any
-	Values any
-}
-
-type CostCategory_SplitChargeRule struct {
-	Method any
-	Source any
-	Targets any
-	Parameter any
-}
-
-var CostCategory_Rule_InheritedValueFields = ubx.FieldMap{
-		"DimensionKey": ubx.FieldSpec{WireName: "dimension_key"},
-		"DimensionName": ubx.FieldSpec{WireName: "dimension_name"},
-	}
-
-var CostCategory_Rule_Rule_And_And_CostCategoryFields = ubx.FieldMap{
+var CostCategory_TagsFields = ubx.FieldMap{
 		"Key": ubx.FieldSpec{WireName: "key"},
-		"MatchOptions": ubx.FieldSpec{WireName: "match_options"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
-
-var CostCategory_Rule_Rule_And_AndFields = ubx.FieldMap{
-		"CostCategory": ubx.FieldSpec{
-			WireName: "cost_category",
-			Kind: "list",
-			Fields: CostCategory_Rule_Rule_And_And_CostCategoryFields,
-		},
-		"Dimension": ubx.FieldSpec{
-			WireName: "dimension",
-			Kind: "list",
-			Fields: CostCategory_Rule_Rule_And_And_CostCategoryFields,
-		},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: CostCategory_Rule_Rule_And_And_CostCategoryFields,
-		},
-	}
-
-var CostCategory_Rule_Rule_AndFields = ubx.FieldMap{
-		"And": ubx.FieldSpec{
-			WireName: "and",
-			Kind: "set",
-			Fields: CostCategory_Rule_Rule_And_AndFields,
-		},
-		"CostCategory": ubx.FieldSpec{
-			WireName: "cost_category",
-			Kind: "list",
-			Fields: CostCategory_Rule_Rule_And_And_CostCategoryFields,
-		},
-		"Dimension": ubx.FieldSpec{
-			WireName: "dimension",
-			Kind: "list",
-			Fields: CostCategory_Rule_Rule_And_And_CostCategoryFields,
-		},
-		"Not": ubx.FieldSpec{
-			WireName: "not",
-			Kind: "list",
-			Fields: CostCategory_Rule_Rule_And_AndFields,
-		},
-		"Or": ubx.FieldSpec{
-			WireName: "or",
-			Kind: "set",
-			Fields: CostCategory_Rule_Rule_And_AndFields,
-		},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: CostCategory_Rule_Rule_And_And_CostCategoryFields,
-		},
-	}
-
-var CostCategory_Rule_RuleFields = ubx.FieldMap{
-		"And": ubx.FieldSpec{
-			WireName: "and",
-			Kind: "set",
-			Fields: CostCategory_Rule_Rule_AndFields,
-		},
-		"CostCategory": ubx.FieldSpec{
-			WireName: "cost_category",
-			Kind: "list",
-			Fields: CostCategory_Rule_Rule_And_And_CostCategoryFields,
-		},
-		"Dimension": ubx.FieldSpec{
-			WireName: "dimension",
-			Kind: "list",
-			Fields: CostCategory_Rule_Rule_And_And_CostCategoryFields,
-		},
-		"Not": ubx.FieldSpec{
-			WireName: "not",
-			Kind: "list",
-			Fields: CostCategory_Rule_Rule_AndFields,
-		},
-		"Or": ubx.FieldSpec{
-			WireName: "or",
-			Kind: "set",
-			Fields: CostCategory_Rule_Rule_AndFields,
-		},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: CostCategory_Rule_Rule_And_And_CostCategoryFields,
-		},
-	}
-
-var CostCategory_RuleFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
 		"Value": ubx.FieldSpec{WireName: "value"},
-		"InheritedValue": ubx.FieldSpec{
-			WireName: "inherited_value",
-			Kind: "list",
-			Fields: CostCategory_Rule_InheritedValueFields,
-		},
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "list",
-			Fields: CostCategory_Rule_RuleFields,
-		},
-	}
-
-var CostCategory_SplitChargeRule_ParameterFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
-
-var CostCategory_SplitChargeRuleFields = ubx.FieldMap{
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Targets": ubx.FieldSpec{WireName: "targets"},
-		"Parameter": ubx.FieldSpec{
-			WireName: "parameter",
-			Kind: "set",
-			Fields: CostCategory_SplitChargeRule_ParameterFields,
-		},
 	}
 
 type CostCategoryConfig struct {
+	// The default value for the cost category
 	DefaultValue any
-	EffectiveStart any
-	Id any
+	// The name of the cost category, which must be unique within your AWS account and is used to identify the cost category in the AWS Cost Management console and APIs. (AI-inferred)
 	Name any
+	// Specifies the version of the cost category rule syntax, which must be set to 'CostCategoryExpression.v1' for the rule expressions. (AI-inferred)
 	RuleVersion any
+	// JSON array format of Expression in Billing and Cost Management API
+	Rules any
+	// Json array format of CostCategorySplitChargeRule in Billing and Cost Management API
+	SplitChargeRules any
+	// Tags to assign to the cost category.
 	Tags any
-	TagsAll any
-	Rule any
-	SplitChargeRule any
+}
+
+type CostCategoryAttrs struct {
+	// Cost category ARN
+	Arn any
+	// The default value for the cost category
+	DefaultValue any
+	// ISO 8601 date time with offset format
+	EffectiveStart any
+	// The name of the cost category, which must be unique within your AWS account and is used to identify the cost category in the AWS Cost Management console and APIs. (AI-inferred)
+	Name any
+	// Specifies the version of the cost category rule syntax, which must be set to 'CostCategoryExpression.v1' for the rule expressions. (AI-inferred)
+	RuleVersion any
+	// JSON array format of Expression in Billing and Cost Management API
+	Rules any
+	// Json array format of CostCategorySplitChargeRule in Billing and Cost Management API
+	SplitChargeRules any
+	// Tags to assign to the cost category.
+	Tags any
 }
 
 var CostCategory = ubx.ResourceBinding{
 	WireType: "aws_ce_cost_category",
 	Fields: ubx.FieldMap{
 		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"EffectiveStart": ubx.FieldSpec{WireName: "effective_start"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RuleVersion": ubx.FieldSpec{WireName: "rule_version"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
+		"Rules": ubx.FieldSpec{WireName: "rules"},
+		"SplitChargeRules": ubx.FieldSpec{WireName: "split_charge_rules"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: CostCategory_RuleFields,
-		},
-		"SplitChargeRule": ubx.FieldSpec{
-			WireName: "split_charge_rule",
-			Kind: "set",
-			Fields: CostCategory_SplitChargeRuleFields,
+			Fields: CostCategory_TagsFields,
 		},
 	},
 }

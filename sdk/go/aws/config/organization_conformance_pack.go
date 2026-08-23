@@ -3,61 +3,87 @@ package config
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type OrganizationConformancePack_InputParameter struct {
+type OrganizationConformancePack_ConformancePackInputParameters struct {
+	// The name of an input parameter for the conformance pack, used to pass a value into the conformance pack template. (AI-inferred)
 	ParameterName any
+	// The value portion of a key-value input parameter pair (with the associated parameter_key) that is supplied to the AWS Config organization conformance pack template when the conformance pack is deployed or updated. (AI-inferred)
 	ParameterValue any
 }
 
-type OrganizationConformancePack_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type OrganizationConformancePack_Tags struct {
+	Key any
+	// The value of a user-defined tag attached to the AWS Config organization conformance pack, used for metadata and resource identification. (AI-inferred)
+	Value any
 }
 
-var OrganizationConformancePack_InputParameterFields = ubx.FieldMap{
+var OrganizationConformancePack_ConformancePackInputParametersFields = ubx.FieldMap{
 		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
 		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
 	}
 
-var OrganizationConformancePack_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var OrganizationConformancePack_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type OrganizationConformancePackConfig struct {
+	// A list of ConformancePackInputParameter objects.
+	ConformancePackInputParameters any
+	// AWS Config stores intermediate files while processing conformance pack template.
 	DeliveryS3Bucket any
+	// The prefix for the delivery S3 bucket.
 	DeliveryS3KeyPrefix any
+	// A list of AWS accounts to be excluded from an organization conformance pack while deploying a conformance pack.
 	ExcludedAccounts any
-	Id any
-	Name any
-	Region any
+	// The name of the organization conformance pack.
+	OrganizationConformancePackName any
+	// The tags for the organization conformance pack.
+	Tags any
+	// A string containing full conformance pack template body.
 	TemplateBody any
+	// Location of file containing the template body.
 	TemplateS3Uri any
-	InputParameter any
-	Timeouts any
+}
+
+type OrganizationConformancePackAttrs struct {
+	// A list of ConformancePackInputParameter objects.
+	ConformancePackInputParameters any
+	// AWS Config stores intermediate files while processing conformance pack template.
+	DeliveryS3Bucket any
+	// The prefix for the delivery S3 bucket.
+	DeliveryS3KeyPrefix any
+	// A list of AWS accounts to be excluded from an organization conformance pack while deploying a conformance pack.
+	ExcludedAccounts any
+	// Amazon Resource Name (ARN) of the organization conformance pack.
+	OrganizationConformancePackArn any
+	// The name of the organization conformance pack.
+	OrganizationConformancePackName any
+	// The tags for the organization conformance pack.
+	Tags any
+	// A string containing full conformance pack template body.
+	TemplateBody any
+	// Location of file containing the template body.
+	TemplateS3Uri any
 }
 
 var OrganizationConformancePack = ubx.ResourceBinding{
 	WireType: "aws_config_organization_conformance_pack",
 	Fields: ubx.FieldMap{
+		"ConformancePackInputParameters": ubx.FieldSpec{
+			WireName: "conformance_pack_input_parameters",
+			Kind: "list",
+			Fields: OrganizationConformancePack_ConformancePackInputParametersFields,
+		},
 		"DeliveryS3Bucket": ubx.FieldSpec{WireName: "delivery_s3_bucket"},
 		"DeliveryS3KeyPrefix": ubx.FieldSpec{WireName: "delivery_s3_key_prefix"},
 		"ExcludedAccounts": ubx.FieldSpec{WireName: "excluded_accounts"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"OrganizationConformancePackName": ubx.FieldSpec{WireName: "organization_conformance_pack_name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: OrganizationConformancePack_TagsFields,
+		},
 		"TemplateBody": ubx.FieldSpec{WireName: "template_body"},
 		"TemplateS3Uri": ubx.FieldSpec{WireName: "template_s3_uri"},
-		"InputParameter": ubx.FieldSpec{
-			WireName: "input_parameter",
-			Kind: "set",
-			Fields: OrganizationConformancePack_InputParameterFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: OrganizationConformancePack_TimeoutsFields,
-		},
 	},
 }

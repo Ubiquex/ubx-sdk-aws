@@ -4,11 +4,24 @@ package acmpca
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PermissionConfig struct {
+	// The actions that the specified AWS service principal can use. Actions IssueCertificate, GetCertificate and ListPermissions must be provided.
 	Actions any
+	// The Amazon Resource Name (ARN) of the Private Certificate Authority that grants the permission.
 	CertificateAuthorityArn any
-	Id any
+	// The AWS service or identity that receives the permission. At this time, the only valid principal is acm.amazonaws.com.
 	Principal any
-	Region any
+	// The ID of the calling account.
+	SourceAccount any
+}
+
+type PermissionAttrs struct {
+	// The actions that the specified AWS service principal can use. Actions IssueCertificate, GetCertificate and ListPermissions must be provided.
+	Actions any
+	// The Amazon Resource Name (ARN) of the Private Certificate Authority that grants the permission.
+	CertificateAuthorityArn any
+	// The AWS service or identity that receives the permission. At this time, the only valid principal is acm.amazonaws.com.
+	Principal any
+	// The ID of the calling account.
 	SourceAccount any
 }
 
@@ -17,9 +30,7 @@ var Permission = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{WireName: "actions"},
 		"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Principal": ubx.FieldSpec{WireName: "principal"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SourceAccount": ubx.FieldSpec{WireName: "source_account"},
 	},
 }

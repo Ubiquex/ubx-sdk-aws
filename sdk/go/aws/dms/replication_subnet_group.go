@@ -3,25 +3,49 @@ package dms
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ReplicationSubnetGroup_Tags struct {
+	Key any
+	// The value portion of a tag (key-value pair) assigned to the DMS replication subnet group, used to categorize and manage the resource for cost allocation and operational purposes. (AI-inferred)
+	Value any
+}
+
+var ReplicationSubnetGroup_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ReplicationSubnetGroupConfig struct {
-	Id any
-	Region any
+	// The description for the subnet group.
 	ReplicationSubnetGroupDescription any
-	ReplicationSubnetGroupId any
+	// The name for the replication subnet group. This value is stored as a lowercase string.
+	ReplicationSubnetGroupIdentifier any
+	// One or more subnet IDs to be assigned to the replication subnet group.
 	SubnetIds any
+	// One or more tags to be assigned to the replication subnet group
 	Tags any
-	TagsAll any
+}
+
+type ReplicationSubnetGroupAttrs struct {
+	// The description for the subnet group.
+	ReplicationSubnetGroupDescription any
+	// The name for the replication subnet group. This value is stored as a lowercase string.
+	ReplicationSubnetGroupIdentifier any
+	// One or more subnet IDs to be assigned to the replication subnet group.
+	SubnetIds any
+	// One or more tags to be assigned to the replication subnet group
+	Tags any
 }
 
 var ReplicationSubnetGroup = ubx.ResourceBinding{
 	WireType: "aws_dms_replication_subnet_group",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ReplicationSubnetGroupDescription": ubx.FieldSpec{WireName: "replication_subnet_group_description"},
-		"ReplicationSubnetGroupId": ubx.FieldSpec{WireName: "replication_subnet_group_id"},
+		"ReplicationSubnetGroupIdentifier": ubx.FieldSpec{WireName: "replication_subnet_group_identifier"},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ReplicationSubnetGroup_TagsFields,
+		},
 	},
 }

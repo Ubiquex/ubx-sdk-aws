@@ -3,28 +3,50 @@ package neptune
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type GlobalCluster_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type GlobalCluster_Tags struct {
+	// The user-defined key of a key-value pair tag applied to the AWS::Neptune::GlobalCluster resource. (AI-inferred)
+	Key any
+	// The user-defined value associated with a tag key on the Neptune global cluster, used for metadata and resource categorization. (AI-inferred)
+	Value any
 }
 
-var GlobalCluster_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var GlobalCluster_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type GlobalClusterConfig struct {
+	// Whether deletion protection is enabled.
 	DeletionProtection any
+	// The name of the database engine.
 	Engine any
+	// The version number of the database engine.
 	EngineVersion any
+	// The cluster identifier of the global database cluster.
 	GlobalClusterIdentifier any
-	Id any
-	Region any
-	SourceDbClusterIdentifier any
+	// The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.
+	SourceDbclusterIdentifier any
+	// Whether the global database cluster is storage encrypted.
 	StorageEncrypted any
-	Timeouts any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type GlobalClusterAttrs struct {
+	// Whether deletion protection is enabled.
+	DeletionProtection any
+	// The name of the database engine.
+	Engine any
+	// The version number of the database engine.
+	EngineVersion any
+	// The cluster identifier of the global database cluster.
+	GlobalClusterIdentifier any
+	// The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.
+	SourceDbclusterIdentifier any
+	// Whether the global database cluster is storage encrypted.
+	StorageEncrypted any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var GlobalCluster = ubx.ResourceBinding{
@@ -34,14 +56,12 @@ var GlobalCluster = ubx.ResourceBinding{
 		"Engine": ubx.FieldSpec{WireName: "engine"},
 		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
 		"GlobalClusterIdentifier": ubx.FieldSpec{WireName: "global_cluster_identifier"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SourceDbClusterIdentifier": ubx.FieldSpec{WireName: "source_db_cluster_identifier"},
+		"SourceDbclusterIdentifier": ubx.FieldSpec{WireName: "source_dbcluster_identifier"},
 		"StorageEncrypted": ubx.FieldSpec{WireName: "storage_encrypted"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: GlobalCluster_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: GlobalCluster_TagsFields,
 		},
 	},
 }

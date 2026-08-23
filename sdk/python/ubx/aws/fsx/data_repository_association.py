@@ -8,18 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataRepositoryAssociation_S3_AutoExportPolicy:
+    # Specifies the file system event types (NEW, CHANGED, DELETED) that trigger automatic export of file data from the FSx for Lustre file system to the linked S3 bucket. (AI-inferred)
     events: Any = None
 
 @dataclasses.dataclass
 class DataRepositoryAssociation_S3:
+    # Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.
     auto_export_policy: Any = None
+    # Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.
     auto_import_policy: Any = None
 
 @dataclasses.dataclass
-class DataRepositoryAssociation_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class DataRepositoryAssociation_Tags:
+    # The key of a tag attached to the Amazon FSx data repository association, used to identify and categorize the resource. (AI-inferred)
+    key: Any = None
+    # The value portion of a tag key-value pair attached to the FSx data repository association, used to assign custom metadata for organizational and identification purposes. (AI-inferred)
+    value: Any = None
 
 _DataRepositoryAssociation_S3_AutoExportPolicyFields = {
     "events": ubx.FieldSpec(wire_name="events"),
@@ -28,59 +32,76 @@ _DataRepositoryAssociation_S3_AutoExportPolicyFields = {
 _DataRepositoryAssociation_S3Fields = {
     "auto_export_policy": ubx.FieldSpec(
         wire_name="auto_export_policy",
-        kind="list",
+        kind="object",
         fields=_DataRepositoryAssociation_S3_AutoExportPolicyFields,
     ),
     "auto_import_policy": ubx.FieldSpec(
         wire_name="auto_import_policy",
-        kind="list",
+        kind="object",
         fields=_DataRepositoryAssociation_S3_AutoExportPolicyFields,
     ),
 }
 
-_DataRepositoryAssociation_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_DataRepositoryAssociation_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class DataRepositoryAssociationConfig:
+    # A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to true.
     batch_import_meta_data_on_create: Any = None
+    # The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format s3://myBucket/myPrefix/ . This path specifies where in the S3 data repository files will be imported from or exported to.
     data_repository_path: Any = None
-    delete_data_in_filesystem: Any = None
+    # The globally unique ID of the file system, assigned by Amazon FSx.
     file_system_id: Any = None
+    # This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.
     file_system_path: Any = None
-    id: Any = None
+    # For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.
     imported_file_chunk_size: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.
     s3: Any = None
-    timeouts: Any = None
+    # A list of Tag values, with a maximum of 50 elements.
+    tags: Any = None
+
+@dataclasses.dataclass
+class DataRepositoryAssociationAttrs:
+    # The system-generated, unique ID of the data repository association.
+    association_id: Any = None
+    # A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to true.
+    batch_import_meta_data_on_create: Any = None
+    # The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format s3://myBucket/myPrefix/ . This path specifies where in the S3 data repository files will be imported from or exported to.
+    data_repository_path: Any = None
+    # The globally unique ID of the file system, assigned by Amazon FSx.
+    file_system_id: Any = None
+    # This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.
+    file_system_path: Any = None
+    # For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.
+    imported_file_chunk_size: Any = None
+    # The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see Amazon Resource Names (ARNs) in the Amazon Web Services General Reference.
+    resource_arn: Any = None
+    # The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.
+    s3: Any = None
+    # A list of Tag values, with a maximum of 50 elements.
+    tags: Any = None
 
 DataRepositoryAssociation = ubx.ResourceBinding(
     wire_type="aws_fsx_data_repository_association",
     fields={
         "batch_import_meta_data_on_create": ubx.FieldSpec(wire_name="batch_import_meta_data_on_create"),
         "data_repository_path": ubx.FieldSpec(wire_name="data_repository_path"),
-        "delete_data_in_filesystem": ubx.FieldSpec(wire_name="delete_data_in_filesystem"),
         "file_system_id": ubx.FieldSpec(wire_name="file_system_id"),
         "file_system_path": ubx.FieldSpec(wire_name="file_system_path"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "imported_file_chunk_size": ubx.FieldSpec(wire_name="imported_file_chunk_size"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "s3": ubx.FieldSpec(
             wire_name="s3",
-            kind="list",
+            kind="object",
             fields=_DataRepositoryAssociation_S3Fields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_DataRepositoryAssociation_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_DataRepositoryAssociation_TagsFields,
         ),
     },
 )

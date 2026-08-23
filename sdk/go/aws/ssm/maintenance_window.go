@@ -3,22 +3,67 @@ package ssm
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MaintenanceWindow_Tags struct {
+	Key any
+	// Specifies a user-defined value for a tag that can be used to categorize and manage this Systems Manager maintenance window, such as by project or environment. (AI-inferred)
+	Value any
+}
+
+var MaintenanceWindow_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type MaintenanceWindowConfig struct {
+	// Enables a maintenance window task to run on managed instances, even if you have not registered those instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task with the maintenance window.
 	AllowUnassociatedTargets any
+	// The number of hours before the end of the maintenance window that AWS Systems Manager stops scheduling new tasks for execution.
 	Cutoff any
+	// A description of the maintenance window.
 	Description any
+	// The duration of the maintenance window in hours.
 	Duration any
-	Enabled any
+	// The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.
 	EndDate any
-	Id any
+	// The name of the maintenance window.
 	Name any
-	Region any
+	// The schedule of the maintenance window in the form of a cron or rate expression.
 	Schedule any
+	// The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
 	ScheduleOffset any
+	// The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.
 	ScheduleTimezone any
+	// The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. StartDate allows you to delay activation of the maintenance window until the specified future date.
 	StartDate any
+	// Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key-value pairs). Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in.
 	Tags any
-	TagsAll any
+}
+
+type MaintenanceWindowAttrs struct {
+	// Enables a maintenance window task to run on managed instances, even if you have not registered those instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task with the maintenance window.
+	AllowUnassociatedTargets any
+	// The number of hours before the end of the maintenance window that AWS Systems Manager stops scheduling new tasks for execution.
+	Cutoff any
+	// A description of the maintenance window.
+	Description any
+	// The duration of the maintenance window in hours.
+	Duration any
+	// The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.
+	EndDate any
+	// The name of the maintenance window.
+	Name any
+	// The schedule of the maintenance window in the form of a cron or rate expression.
+	Schedule any
+	// The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
+	ScheduleOffset any
+	// The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.
+	ScheduleTimezone any
+	// The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. StartDate allows you to delay activation of the maintenance window until the specified future date.
+	StartDate any
+	// Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key-value pairs). Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in.
+	Tags any
+	// The ID of the maintenance window.
+	WindowId any
 }
 
 var MaintenanceWindow = ubx.ResourceBinding{
@@ -28,16 +73,16 @@ var MaintenanceWindow = ubx.ResourceBinding{
 		"Cutoff": ubx.FieldSpec{WireName: "cutoff"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"Schedule": ubx.FieldSpec{WireName: "schedule"},
 		"ScheduleOffset": ubx.FieldSpec{WireName: "schedule_offset"},
 		"ScheduleTimezone": ubx.FieldSpec{WireName: "schedule_timezone"},
 		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: MaintenanceWindow_TagsFields,
+		},
 	},
 }

@@ -3,33 +3,46 @@ package elastic
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BeanstalkApplicationVersion_SourceBundle struct {
+	// The Amazon S3 bucket where the data is located.
+	S3Bucket any
+	// The Amazon S3 key where the data is located.
+	S3Key any
+}
+
+var BeanstalkApplicationVersion_SourceBundleFields = ubx.FieldMap{
+		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
+		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
+	}
+
 type BeanstalkApplicationVersionConfig struct {
-	Application any
-	Bucket any
+	// The name of the Elastic Beanstalk application that is associated with this application version.
+	ApplicationName any
+	// A description of this application version.
 	Description any
-	ForceDelete any
+	// The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred)
+	SourceBundle any
+}
+
+type BeanstalkApplicationVersionAttrs struct {
+	// The name of the Elastic Beanstalk application that is associated with this application version.
+	ApplicationName any
+	// A description of this application version.
+	Description any
 	Id any
-	Key any
-	Name any
-	Process any
-	Region any
-	Tags any
-	TagsAll any
+	// The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred)
+	SourceBundle any
 }
 
 var BeanstalkApplicationVersion = ubx.ResourceBinding{
 	WireType: "aws_elastic_beanstalk_application_version",
 	Fields: ubx.FieldMap{
-		"Application": ubx.FieldSpec{WireName: "application"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"ForceDelete": ubx.FieldSpec{WireName: "force_delete"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Process": ubx.FieldSpec{WireName: "process"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"SourceBundle": ubx.FieldSpec{
+			WireName: "source_bundle",
+			Kind: "object",
+			Fields: BeanstalkApplicationVersion_SourceBundleFields,
+		},
 	},
 }

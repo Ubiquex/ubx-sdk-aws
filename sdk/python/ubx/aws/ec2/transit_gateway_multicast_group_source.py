@@ -8,19 +8,41 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TransitGatewayMulticastGroupSourceConfig:
+    # The IP address assigned to the transit gateway multicast group.
     group_ip_address: Any = None
-    id: Any = None
+    # The ID of the transit gateway attachment.
     network_interface_id: Any = None
-    region: Any = None
+    # The ID of the transit gateway multicast domain.
+    transit_gateway_multicast_domain_id: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayMulticastGroupSourceAttrs:
+    # The IP address assigned to the transit gateway multicast group.
+    group_ip_address: Any = None
+    # Indicates that the resource is a transit gateway multicast group member.
+    group_member: Any = None
+    # Indicates that the resource is a transit gateway multicast group member.
+    group_source: Any = None
+    # The ID of the transit gateway attachment.
+    network_interface_id: Any = None
+    # The ID of the resource.
+    resource_id: Any = None
+    # The type of resource, for example a VPC attachment.
+    resource_type: Any = None
+    # The source type.
+    source_type: Any = None
+    # The ID of the subnet.
+    subnet_id: Any = None
+    # The ID of the transit gateway attachment.
+    transit_gateway_attachment_id: Any = None
+    # The ID of the transit gateway multicast domain.
     transit_gateway_multicast_domain_id: Any = None
 
 TransitGatewayMulticastGroupSource = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_multicast_group_source",
     fields={
         "group_ip_address": ubx.FieldSpec(wire_name="group_ip_address"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "network_interface_id": ubx.FieldSpec(wire_name="network_interface_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "transit_gateway_multicast_domain_id": ubx.FieldSpec(wire_name="transit_gateway_multicast_domain_id"),
     },
 )

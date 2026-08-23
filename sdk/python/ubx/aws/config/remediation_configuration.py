@@ -8,19 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RemediationConfiguration_ExecutionControls_SsmControls:
+    # Specifies the maximum percentage of remediation actions that can run in parallel for the rule's SSM document, throttling concurrent executions (default is 100). (AI-inferred)
     concurrent_execution_rate_percentage: Any = None
+    # The maximum percentage of remediation actions that are allowed to fail before the remediation action is stopped. (AI-inferred)
     error_percentage: Any = None
 
 @dataclasses.dataclass
 class RemediationConfiguration_ExecutionControls:
+    # Configures the Systems Manager automation controls for the remediation, specifically the concurrent execution rate and error rate percentages that determine how SSM documents are run. (AI-inferred)
     ssm_controls: Any = None
-
-@dataclasses.dataclass
-class RemediationConfiguration_Parameter:
-    name: Any = None
-    resource_value: Any = None
-    static_value: Any = None
-    static_values: Any = None
 
 _RemediationConfiguration_ExecutionControls_SsmControlsFields = {
     "concurrent_execution_rate_percentage": ubx.FieldSpec(wire_name="concurrent_execution_rate_percentage"),
@@ -30,55 +26,73 @@ _RemediationConfiguration_ExecutionControls_SsmControlsFields = {
 _RemediationConfiguration_ExecutionControlsFields = {
     "ssm_controls": ubx.FieldSpec(
         wire_name="ssm_controls",
-        kind="list",
+        kind="object",
         fields=_RemediationConfiguration_ExecutionControls_SsmControlsFields,
     ),
 }
 
-_RemediationConfiguration_ParameterFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "resource_value": ubx.FieldSpec(wire_name="resource_value"),
-    "static_value": ubx.FieldSpec(wire_name="static_value"),
-    "static_values": ubx.FieldSpec(wire_name="static_values"),
-}
-
 @dataclasses.dataclass
 class RemediationConfigurationConfig:
+    # When set to true, AWS Config automatically executes the remediation action on noncompliant resources associated with the rule; when false, remediation must be invoked manually. (AI-inferred)
     automatic: Any = None
+    # The name of the AWS Config rule for which this remediation configuration is defined, associating the remediation actions with that rule. (AI-inferred)
     config_rule_name: Any = None
-    id: Any = None
-    maximum_automatic_attempts: Any = None
-    region: Any = None
-    resource_type: Any = None
-    retry_attempt_seconds: Any = None
-    target_id: Any = None
-    target_type: Any = None
-    target_version: Any = None
+    # Configures the SSM execution controls for the remediation, including the concurrent execution rate percentage and error percentage that limit how many concurrent remediation executions are allowed and the acceptable error rate. (AI-inferred)
     execution_controls: Any = None
-    parameter: Any = None
+    # Determines the maximum number of times AWS Config automatically retries the remediation action on a non-compliant resource, with a valid value between 1 and 5. (AI-inferred)
+    maximum_automatic_attempts: Any = None
+    # Specifies the set of parameters passed to the AWS Systems Manager automation document that performs the remediation, mapping each parameter name to a static value or a dynamic value derived from the evaluated resource. (AI-inferred)
+    parameters: Any = None
+    # The type of AWS resource (e.g., 'AWS::EC2::Instance') that this Config remediation configuration applies to for automatic remediation actions. (AI-inferred)
+    resource_type: Any = None
+    # The maximum time, in seconds, during which AWS Config will make automatic remediation attempts for a noncompliant resource before giving up. (AI-inferred)
+    retry_attempt_seconds: Any = None
+    # The identifier of the remediation target, which is the name of the SSM document or the ARN of the custom action that remediates the noncompliant resource. (AI-inferred)
+    target_id: Any = None
+    # The type of target for the remediation action, which must be set to SSM_DOCUMENT because AWS Config currently supports only SSM Automation documents as remediation targets. (AI-inferred)
+    target_type: Any = None
+    # Specifies the version of the AWS Systems Manager automation document to use for the remediation action; if not provided, the default version of the document is used. (AI-inferred)
+    target_version: Any = None
+
+@dataclasses.dataclass
+class RemediationConfigurationAttrs:
+    # When set to true, AWS Config automatically executes the remediation action on noncompliant resources associated with the rule; when false, remediation must be invoked manually. (AI-inferred)
+    automatic: Any = None
+    # The name of the AWS Config rule for which this remediation configuration is defined, associating the remediation actions with that rule. (AI-inferred)
+    config_rule_name: Any = None
+    # Configures the SSM execution controls for the remediation, including the concurrent execution rate percentage and error percentage that limit how many concurrent remediation executions are allowed and the acceptable error rate. (AI-inferred)
+    execution_controls: Any = None
+    # Determines the maximum number of times AWS Config automatically retries the remediation action on a non-compliant resource, with a valid value between 1 and 5. (AI-inferred)
+    maximum_automatic_attempts: Any = None
+    # Specifies the set of parameters passed to the AWS Systems Manager automation document that performs the remediation, mapping each parameter name to a static value or a dynamic value derived from the evaluated resource. (AI-inferred)
+    parameters: Any = None
+    # The type of AWS resource (e.g., 'AWS::EC2::Instance') that this Config remediation configuration applies to for automatic remediation actions. (AI-inferred)
+    resource_type: Any = None
+    # The maximum time, in seconds, during which AWS Config will make automatic remediation attempts for a noncompliant resource before giving up. (AI-inferred)
+    retry_attempt_seconds: Any = None
+    # The identifier of the remediation target, which is the name of the SSM document or the ARN of the custom action that remediates the noncompliant resource. (AI-inferred)
+    target_id: Any = None
+    # The type of target for the remediation action, which must be set to SSM_DOCUMENT because AWS Config currently supports only SSM Automation documents as remediation targets. (AI-inferred)
+    target_type: Any = None
+    # Specifies the version of the AWS Systems Manager automation document to use for the remediation action; if not provided, the default version of the document is used. (AI-inferred)
+    target_version: Any = None
 
 RemediationConfiguration = ubx.ResourceBinding(
     wire_type="aws_config_remediation_configuration",
     fields={
         "automatic": ubx.FieldSpec(wire_name="automatic"),
         "config_rule_name": ubx.FieldSpec(wire_name="config_rule_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
+        "execution_controls": ubx.FieldSpec(
+            wire_name="execution_controls",
+            kind="object",
+            fields=_RemediationConfiguration_ExecutionControlsFields,
+        ),
         "maximum_automatic_attempts": ubx.FieldSpec(wire_name="maximum_automatic_attempts"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
         "resource_type": ubx.FieldSpec(wire_name="resource_type"),
         "retry_attempt_seconds": ubx.FieldSpec(wire_name="retry_attempt_seconds"),
         "target_id": ubx.FieldSpec(wire_name="target_id"),
         "target_type": ubx.FieldSpec(wire_name="target_type"),
         "target_version": ubx.FieldSpec(wire_name="target_version"),
-        "execution_controls": ubx.FieldSpec(
-            wire_name="execution_controls",
-            kind="list",
-            fields=_RemediationConfiguration_ExecutionControlsFields,
-        ),
-        "parameter": ubx.FieldSpec(
-            wire_name="parameter",
-            kind="list",
-            fields=_RemediationConfiguration_ParameterFields,
-        ),
     },
 )

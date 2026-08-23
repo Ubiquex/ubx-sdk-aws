@@ -7,46 +7,57 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class RegistryScanningConfiguration_Rule_RepositoryFilter:
+class RegistryScanningConfiguration_Rules_RepositoryFilters:
+    # The repository name pattern (such as 'example' or 'prod/*') that the scanning rule uses to match which repositories it applies to. (AI-inferred)
     filter: Any = None
+    # Specifies the type of repository filter (e.g., WILDCARD) used to match repository names for the ECR scanning rule. (AI-inferred)
     filter_type: Any = None
 
 @dataclasses.dataclass
-class RegistryScanningConfiguration_Rule:
+class RegistryScanningConfiguration_Rules:
+    # Defines which repositories a scanning rule applies to by listing repository filters, each with a filter pattern (e.g., a name or wildcard expression) and a filter type (WILDCARD or EXACT) that tells ECR how to match repository names. (AI-inferred)
+    repository_filters: Any = None
+    # Specifies the frequency at which ECR scans images in repositories that match this rule, either on each image push (SCAN_ON_PUSH) or continuously (CONTINUOUS_SCAN). (AI-inferred)
     scan_frequency: Any = None
-    repository_filter: Any = None
 
-_RegistryScanningConfiguration_Rule_RepositoryFilterFields = {
+_RegistryScanningConfiguration_Rules_RepositoryFiltersFields = {
     "filter": ubx.FieldSpec(wire_name="filter"),
     "filter_type": ubx.FieldSpec(wire_name="filter_type"),
 }
 
-_RegistryScanningConfiguration_RuleFields = {
-    "scan_frequency": ubx.FieldSpec(wire_name="scan_frequency"),
-    "repository_filter": ubx.FieldSpec(
-        wire_name="repository_filter",
-        kind="set",
-        fields=_RegistryScanningConfiguration_Rule_RepositoryFilterFields,
+_RegistryScanningConfiguration_RulesFields = {
+    "repository_filters": ubx.FieldSpec(
+        wire_name="repository_filters",
+        kind="list",
+        fields=_RegistryScanningConfiguration_Rules_RepositoryFiltersFields,
     ),
+    "scan_frequency": ubx.FieldSpec(wire_name="scan_frequency"),
 }
 
 @dataclasses.dataclass
 class RegistryScanningConfigurationConfig:
-    id: Any = None
-    region: Any = None
+    # The scanning rules associated with the registry. A registry scanning configuration may contain a maximum of 2 rules.
+    rules: Any = None
+    # The type of scanning configured for the registry.
     scan_type: Any = None
-    rule: Any = None
+
+@dataclasses.dataclass
+class RegistryScanningConfigurationAttrs:
+    # The registry id.
+    registry_id: Any = None
+    # The scanning rules associated with the registry. A registry scanning configuration may contain a maximum of 2 rules.
+    rules: Any = None
+    # The type of scanning configured for the registry.
+    scan_type: Any = None
 
 RegistryScanningConfiguration = ubx.ResourceBinding(
     wire_type="aws_ecr_registry_scanning_configuration",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "scan_type": ubx.FieldSpec(wire_name="scan_type"),
-        "rule": ubx.FieldSpec(
-            wire_name="rule",
-            kind="set",
-            fields=_RegistryScanningConfiguration_RuleFields,
+        "rules": ubx.FieldSpec(
+            wire_name="rules",
+            kind="list",
+            fields=_RegistryScanningConfiguration_RulesFields,
         ),
+        "scan_type": ubx.FieldSpec(wire_name="scan_type"),
     },
 )

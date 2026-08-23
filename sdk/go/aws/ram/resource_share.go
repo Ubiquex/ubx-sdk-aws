@@ -4,54 +4,97 @@ package ram
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceShare_ResourceShareConfiguration struct {
+	// The resource share restricts access to an account
+	ExclusiveAccountAccess any
+	// Specifies whether the consumer account retains access to the resource share after leaving the organization.
 	RetainSharingOnAccountLeaveOrganization any
 }
 
-type ResourceShare_Timeouts struct {
-	Create any
-	Delete any
+type ResourceShare_Tags struct {
+	// The key of a user-defined tag attached to the AWS RAM resource share, used for cost allocation and resource categorization. (AI-inferred)
+	Key any
+	// The value of a tag attached to the AWS RAM resource share, used for categorizing and managing the resource share. (AI-inferred)
+	Value any
 }
 
 var ResourceShare_ResourceShareConfigurationFields = ubx.FieldMap{
+		"ExclusiveAccountAccess": ubx.FieldSpec{WireName: "exclusive_account_access"},
 		"RetainSharingOnAccountLeaveOrganization": ubx.FieldSpec{WireName: "retain_sharing_on_account_leave_organization"},
 	}
 
-var ResourceShare_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var ResourceShare_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ResourceShareConfig struct {
+	// Specifies whether principals outside your organization in AWS Organizations can be associated with a resource share. A value of `true` lets you share with individual AWS accounts that are not in your organization. A value of `false` only has meaning if your account is a member of an AWS Organization. The default value is `true`.
 	AllowExternalPrincipals any
-	Id any
+	// Specifies the name of the resource share.
 	Name any
+	// Specifies the [Amazon Resource Names (ARNs)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the AWS RAM permission to associate with the resource share. If you do not specify an ARN for the permission, AWS RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.
 	PermissionArns any
-	Region any
-	Tags any
-	TagsAll any
+	// Specifies the principals to associate with the resource share. The possible values are: - An AWS account ID - An Amazon Resource Name (ARN) of an organization in AWS Organizations - An ARN of an organizational unit (OU) in AWS Organizations - An ARN of an IAM role - An ARN of an IAM user
+	Principals any
+	// Specifies a list of one or more ARNs of the resources to associate with the resource share.
+	ResourceArns any
+	// The configuration for a resource share.
 	ResourceShareConfiguration any
-	Timeouts any
+	// Specifies from which source accounts the service principal has access to the resources in this resource share.
+	Sources any
+	// Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.
+	Tags any
+}
+
+type ResourceShareAttrs struct {
+	// Specifies whether principals outside your organization in AWS Organizations can be associated with a resource share. A value of `true` lets you share with individual AWS accounts that are not in your organization. A value of `false` only has meaning if your account is a member of an AWS Organization. The default value is `true`.
+	AllowExternalPrincipals any
+	// The Amazon Resource Name (ARN) that uniquely identifies the resource share. (AI-inferred)
+	Arn any
+	// The date and time when the resource share was created.
+	CreationTime any
+	// The feature set of the resource share.
+	FeatureSet any
+	// The date and time when the resource share was last updated.
+	LastUpdatedTime any
+	// Specifies the name of the resource share.
+	Name any
+	// The ID of the AWS account that owns the resource share.
+	OwningAccountId any
+	// Specifies the [Amazon Resource Names (ARNs)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the AWS RAM permission to associate with the resource share. If you do not specify an ARN for the permission, AWS RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.
+	PermissionArns any
+	// Specifies the principals to associate with the resource share. The possible values are: - An AWS account ID - An Amazon Resource Name (ARN) of an organization in AWS Organizations - An ARN of an organizational unit (OU) in AWS Organizations - An ARN of an IAM role - An ARN of an IAM user
+	Principals any
+	// Specifies a list of one or more ARNs of the resources to associate with the resource share.
+	ResourceArns any
+	// The configuration for a resource share.
+	ResourceShareConfiguration any
+	// Specifies from which source accounts the service principal has access to the resources in this resource share.
+	Sources any
+	// The current status of the resource share.
+	Status any
+	// Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.
+	Tags any
 }
 
 var ResourceShare = ubx.ResourceBinding{
 	WireType: "aws_ram_resource_share",
 	Fields: ubx.FieldMap{
 		"AllowExternalPrincipals": ubx.FieldSpec{WireName: "allow_external_principals"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PermissionArns": ubx.FieldSpec{WireName: "permission_arns"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Principals": ubx.FieldSpec{WireName: "principals"},
+		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
 		"ResourceShareConfiguration": ubx.FieldSpec{
 			WireName: "resource_share_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: ResourceShare_ResourceShareConfigurationFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: ResourceShare_TimeoutsFields,
+		"Sources": ubx.FieldSpec{WireName: "sources"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ResourceShare_TagsFields,
 		},
 	},
 }

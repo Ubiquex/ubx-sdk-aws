@@ -4,12 +4,32 @@ package ecr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PullThroughCacheRuleConfig struct {
+	// The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.
 	CredentialArn any
+	// The ARN of the IAM role to be assumed by Amazon ECR to authenticate to ECR upstream registry. This role must be in the same account as the registry that you are configuring.
 	CustomRoleArn any
+	// The ECRRepositoryPrefix is a custom alias for upstream registry url.
 	EcrRepositoryPrefix any
-	Id any
-	Region any
+	// The name of the upstream registry.
+	UpstreamRegistry any
+	// The upstreamRegistryUrl is the endpoint of upstream registry url of the public repository to be cached
 	UpstreamRegistryUrl any
+	// The repository name prefix of upstream registry to match with the upstream repository name. When this field isn't specified, Amazon ECR will use the `ROOT`.
+	UpstreamRepositoryPrefix any
+}
+
+type PullThroughCacheRuleAttrs struct {
+	// The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.
+	CredentialArn any
+	// The ARN of the IAM role to be assumed by Amazon ECR to authenticate to ECR upstream registry. This role must be in the same account as the registry that you are configuring.
+	CustomRoleArn any
+	// The ECRRepositoryPrefix is a custom alias for upstream registry url.
+	EcrRepositoryPrefix any
+	// The name of the upstream registry.
+	UpstreamRegistry any
+	// The upstreamRegistryUrl is the endpoint of upstream registry url of the public repository to be cached
+	UpstreamRegistryUrl any
+	// The repository name prefix of upstream registry to match with the upstream repository name. When this field isn't specified, Amazon ECR will use the `ROOT`.
 	UpstreamRepositoryPrefix any
 }
 
@@ -19,8 +39,7 @@ var PullThroughCacheRule = ubx.ResourceBinding{
 		"CredentialArn": ubx.FieldSpec{WireName: "credential_arn"},
 		"CustomRoleArn": ubx.FieldSpec{WireName: "custom_role_arn"},
 		"EcrRepositoryPrefix": ubx.FieldSpec{WireName: "ecr_repository_prefix"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"UpstreamRegistry": ubx.FieldSpec{WireName: "upstream_registry"},
 		"UpstreamRegistryUrl": ubx.FieldSpec{WireName: "upstream_registry_url"},
 		"UpstreamRepositoryPrefix": ubx.FieldSpec{WireName: "upstream_repository_prefix"},
 	},

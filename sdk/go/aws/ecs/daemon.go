@@ -4,20 +4,24 @@ package ecs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Daemon_DeploymentConfiguration_Alarms struct {
+	// The CloudWatch alarm names to monitor during a daemon deployment.
 	AlarmNames any
+	// Determines whether to use the CloudWatch alarm option in the daemon deployment process. The default value is ``false``.
 	Enable any
 }
 
 type Daemon_DeploymentConfiguration struct {
-	BakeTimeInMinutes any
-	DrainPercent any
+	// The CloudWatch alarm configuration for a daemon. When enabled, CloudWatch alarms determine whether a daemon deployment has failed.
 	Alarms any
+	// The amount of time (in minutes) to wait after a successful deployment step before proceeding. This allows time to monitor for issues before continuing. The default value is 0.
+	BakeTimeInMinutes any
+	// The percentage of container instances to drain simultaneously during a daemon deployment. Valid values are between 0.0 and 100.0.
+	DrainPercent any
 }
 
-type Daemon_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Daemon_Tags struct {
+	Key any
+	Value any
 }
 
 var Daemon_DeploymentConfiguration_AlarmsFields = ubx.FieldMap{
@@ -26,33 +30,61 @@ var Daemon_DeploymentConfiguration_AlarmsFields = ubx.FieldMap{
 	}
 
 var Daemon_DeploymentConfigurationFields = ubx.FieldMap{
-		"BakeTimeInMinutes": ubx.FieldSpec{WireName: "bake_time_in_minutes"},
-		"DrainPercent": ubx.FieldSpec{WireName: "drain_percent"},
 		"Alarms": ubx.FieldSpec{
 			WireName: "alarms",
-			Kind: "list",
+			Kind: "object",
 			Fields: Daemon_DeploymentConfiguration_AlarmsFields,
 		},
+		"BakeTimeInMinutes": ubx.FieldSpec{WireName: "bake_time_in_minutes"},
+		"DrainPercent": ubx.FieldSpec{WireName: "drain_percent"},
 	}
 
-var Daemon_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Daemon_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type DaemonConfig struct {
+	// The Amazon Resource Names (ARNs) of the capacity providers associated with the daemon.
 	CapacityProviderArns any
+	// The Amazon Resource Name (ARN) of the cluster that the daemon is running in.
 	ClusterArn any
+	DaemonName any
+	// The Amazon Resource Name (ARN) of the daemon task definition used by this revision.
 	DaemonTaskDefinitionArn any
-	EnableEcsManagedTags any
-	EnableExecuteCommand any
-	Name any
-	PropagateTags any
-	Region any
-	Tags any
+	// Optional deployment parameters that control how a daemon rolls out updates across container instances.
 	DeploymentConfiguration any
-	Timeouts any
+	// Specifies whether Amazon ECS managed tags are turned on for the daemon tasks.
+	EnableEcsmanagedTags any
+	// Specifies whether the execute command functionality is turned on for the daemon tasks.
+	EnableExecuteCommand any
+	// Specifies whether tags are propagated from the daemon to the daemon tasks.
+	PropagateTags any
+	Tags any
+}
+
+type DaemonAttrs struct {
+	// The Amazon Resource Names (ARNs) of the capacity providers associated with the daemon.
+	CapacityProviderArns any
+	// The Amazon Resource Name (ARN) of the cluster that the daemon is running in.
+	ClusterArn any
+	CreatedAt any
+	DaemonArn any
+	DaemonName any
+	DaemonStatus any
+	// The Amazon Resource Name (ARN) of the daemon task definition used by this revision.
+	DaemonTaskDefinitionArn any
+	DeploymentArn any
+	// Optional deployment parameters that control how a daemon rolls out updates across container instances.
+	DeploymentConfiguration any
+	// Specifies whether Amazon ECS managed tags are turned on for the daemon tasks.
+	EnableEcsmanagedTags any
+	// Specifies whether the execute command functionality is turned on for the daemon tasks.
+	EnableExecuteCommand any
+	// Specifies whether tags are propagated from the daemon to the daemon tasks.
+	PropagateTags any
+	Tags any
+	UpdatedAt any
 }
 
 var Daemon = ubx.ResourceBinding{
@@ -60,22 +92,20 @@ var Daemon = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CapacityProviderArns": ubx.FieldSpec{WireName: "capacity_provider_arns"},
 		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
+		"DaemonName": ubx.FieldSpec{WireName: "daemon_name"},
 		"DaemonTaskDefinitionArn": ubx.FieldSpec{WireName: "daemon_task_definition_arn"},
-		"EnableEcsManagedTags": ubx.FieldSpec{WireName: "enable_ecs_managed_tags"},
-		"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"DeploymentConfiguration": ubx.FieldSpec{
 			WireName: "deployment_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Daemon_DeploymentConfigurationFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Daemon_TimeoutsFields,
+		"EnableEcsmanagedTags": ubx.FieldSpec{WireName: "enable_ecsmanaged_tags"},
+		"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
+		"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Daemon_TagsFields,
 		},
 	},
 }

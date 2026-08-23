@@ -3,27 +3,61 @@ package shield
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ProtectionGroup_Tags struct {
+	Key any
+	// The value component of a tag attached to the AWS Shield Protection Group, used to store custom metadata that helps identify, organize, and manage the protection group. (AI-inferred)
+	Value any
+}
+
+var ProtectionGroup_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ProtectionGroupConfig struct {
+	// Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events. * Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically. * Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers. * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.
 	Aggregation any
-	Id any
+	// The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set `Pattern` to `ARBITRARY` and you must not set it for any other `Pattern` setting.
 	Members any
+	// The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.
 	Pattern any
+	// The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.
 	ProtectionGroupId any
+	// The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group. You must set this when you set `Pattern` to `BY_RESOURCE_TYPE` and you must not set it for any other `Pattern` setting.
 	ResourceType any
+	// One or more tag key-value pairs for the Protection object.
 	Tags any
-	TagsAll any
+}
+
+type ProtectionGroupAttrs struct {
+	// Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events. * Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically. * Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers. * Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.
+	Aggregation any
+	// The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set `Pattern` to `ARBITRARY` and you must not set it for any other `Pattern` setting.
+	Members any
+	// The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.
+	Pattern any
+	// The ARN (Amazon Resource Name) of the protection group.
+	ProtectionGroupArn any
+	// The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it.
+	ProtectionGroupId any
+	// The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group. You must set this when you set `Pattern` to `BY_RESOURCE_TYPE` and you must not set it for any other `Pattern` setting.
+	ResourceType any
+	// One or more tag key-value pairs for the Protection object.
+	Tags any
 }
 
 var ProtectionGroup = ubx.ResourceBinding{
 	WireType: "aws_shield_protection_group",
 	Fields: ubx.FieldMap{
 		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Members": ubx.FieldSpec{WireName: "members"},
 		"Pattern": ubx.FieldSpec{WireName: "pattern"},
 		"ProtectionGroupId": ubx.FieldSpec{WireName: "protection_group_id"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ProtectionGroup_TagsFields,
+		},
 	},
 }

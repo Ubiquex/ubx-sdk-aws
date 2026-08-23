@@ -3,22 +3,42 @@ package efs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessPoint_AccessPointTags struct {
+	// The key of a tag in the access_point_tags list on the EFS access point, corresponding to the Key property of the CloudFormation AccessPointTags tag objects. (AI-inferred)
+	Key any
+	// The value of a tag applied to the EFS access point, used for metadata and resource categorization. (AI-inferred)
+	Value any
+}
+
 type AccessPoint_PosixUser struct {
+	// The POSIX group ID used for all file system operations using this access point.
 	Gid any
+	// Secondary POSIX group IDs used for all file system operations using this access point.
 	SecondaryGids any
+	// The POSIX user ID used for all file system operations using this access point.
 	Uid any
 }
 
 type AccessPoint_RootDirectory_CreationInfo struct {
+	// Specifies the POSIX group ID to apply to the ``RootDirectory``. Accepts values from 0 to 2^32 (4294967295).
 	OwnerGid any
+	// Specifies the POSIX user ID to apply to the ``RootDirectory``. Accepts values from 0 to 2^32 (4294967295).
 	OwnerUid any
+	// Specifies the POSIX permissions to apply to the ``RootDirectory``, in the format of an octal number representing the file's mode bits.
 	Permissions any
 }
 
 type AccessPoint_RootDirectory struct {
-	Path any
+	// Required if the ``RootDirectory`` > ``Path`` specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's ``RootDirectory`` > ``Path``. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying ``CreationInfo``, you must include values for all properties. Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail. If you do not provide ``CreationInfo`` and the specified ``RootDirectory`` does not exist, attempts to mount the file system using the access point will fail.
 	CreationInfo any
+	// Specifies the path on the EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide the ``CreationInfo``.
+	Path any
 }
+
+var AccessPoint_AccessPointTagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var AccessPoint_PosixUserFields = ubx.FieldMap{
 		"Gid": ubx.FieldSpec{WireName: "gid"},
@@ -33,40 +53,62 @@ var AccessPoint_RootDirectory_CreationInfoFields = ubx.FieldMap{
 	}
 
 var AccessPoint_RootDirectoryFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
 		"CreationInfo": ubx.FieldSpec{
 			WireName: "creation_info",
-			Kind: "list",
+			Kind: "object",
 			Fields: AccessPoint_RootDirectory_CreationInfoFields,
 		},
+		"Path": ubx.FieldSpec{WireName: "path"},
 	}
 
 type AccessPointConfig struct {
+	// An array of key-value pairs to apply to this resource. For more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).
+	AccessPointTags any
+	// The opaque string specified in the request to ensure idempotent creation.
+	ClientToken any
+	// The ID of the EFS file system that the access point applies to. Accepts only the ID format for input when specifying a file system, for example ``fs-0123456789abcedf2``.
 	FileSystemId any
-	Id any
-	Region any
-	Tags any
-	TagsAll any
+	// The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point.
 	PosixUser any
+	// Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's ``RootDirectory`` and its subdirectories.
+	RootDirectory any
+}
+
+type AccessPointAttrs struct {
+	// The AWS-assigned unique identifier for the EFS access point, used to reference the access point in other resources or APIs. (AI-inferred)
+	AccessPointId any
+	// An array of key-value pairs to apply to this resource. For more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).
+	AccessPointTags any
+	// The Amazon Resource Name (ARN) of the EFS access point, which uniquely identifies the access point within AWS. (AI-inferred)
+	Arn any
+	// The opaque string specified in the request to ensure idempotent creation.
+	ClientToken any
+	// The ID of the EFS file system that the access point applies to. Accepts only the ID format for input when specifying a file system, for example ``fs-0123456789abcedf2``.
+	FileSystemId any
+	// The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point.
+	PosixUser any
+	// Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's ``RootDirectory`` and its subdirectories.
 	RootDirectory any
 }
 
 var AccessPoint = ubx.ResourceBinding{
 	WireType: "aws_efs_access_point",
 	Fields: ubx.FieldMap{
+		"AccessPointTags": ubx.FieldSpec{
+			WireName: "access_point_tags",
+			Kind: "list",
+			Fields: AccessPoint_AccessPointTagsFields,
+		},
+		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
 		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"PosixUser": ubx.FieldSpec{
 			WireName: "posix_user",
-			Kind: "list",
+			Kind: "object",
 			Fields: AccessPoint_PosixUserFields,
 		},
 		"RootDirectory": ubx.FieldSpec{
 			WireName: "root_directory",
-			Kind: "list",
+			Kind: "object",
 			Fields: AccessPoint_RootDirectoryFields,
 		},
 	},

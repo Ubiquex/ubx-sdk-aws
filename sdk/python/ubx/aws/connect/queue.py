@@ -7,50 +7,137 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Queue_AdditionalEmailAddresses:
+    # Specifies the ARN of an additional email address to associate with the Amazon Connect queue, enabling the queue to handle email contacts from multiple addresses. (AI-inferred)
+    email_address_arn: Any = None
+
+@dataclasses.dataclass
 class Queue_OutboundCallerConfig:
+    # The caller ID name.
     outbound_caller_id_name: Any = None
-    outbound_caller_id_number_id: Any = None
-    outbound_flow_id: Any = None
+    # The caller ID number.
+    outbound_caller_id_number_arn: Any = None
+    # The outbound whisper flow to be used during an outbound call.
+    outbound_flow_arn: Any = None
+
+@dataclasses.dataclass
+class Queue_OutboundEmailConfig:
+    # The email address connect resource ID.
+    outbound_email_address_id: Any = None
+
+@dataclasses.dataclass
+class Queue_Tags:
+    # The key of a tag assigned to the Amazon Connect queue, used for metadata and resource filtering. (AI-inferred)
+    key: Any = None
+    # The value of a tag attached to the Amazon Connect queue. (AI-inferred)
+    value: Any = None
+
+_Queue_AdditionalEmailAddressesFields = {
+    "email_address_arn": ubx.FieldSpec(wire_name="email_address_arn"),
+}
 
 _Queue_OutboundCallerConfigFields = {
     "outbound_caller_id_name": ubx.FieldSpec(wire_name="outbound_caller_id_name"),
-    "outbound_caller_id_number_id": ubx.FieldSpec(wire_name="outbound_caller_id_number_id"),
-    "outbound_flow_id": ubx.FieldSpec(wire_name="outbound_flow_id"),
+    "outbound_caller_id_number_arn": ubx.FieldSpec(wire_name="outbound_caller_id_number_arn"),
+    "outbound_flow_arn": ubx.FieldSpec(wire_name="outbound_flow_arn"),
+}
+
+_Queue_OutboundEmailConfigFields = {
+    "outbound_email_address_id": ubx.FieldSpec(wire_name="outbound_email_address_id"),
+}
+
+_Queue_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class QueueConfig:
+    # The email addresses that agents can use when replying to or initiating email contacts
+    additional_email_addresses: Any = None
+    # The description of the queue.
     description: Any = None
-    hours_of_operation_id: Any = None
-    id: Any = None
-    instance_id: Any = None
+    # The identifier for the hours of operation.
+    hours_of_operation_arn: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # The maximum number of contacts that can be in the queue before it is considered full.
     max_contacts: Any = None
+    # The name of the queue.
     name: Any = None
-    quick_connect_ids: Any = None
-    region: Any = None
-    status: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # The outbound caller ID name, number, and outbound whisper flow.
     outbound_caller_config: Any = None
+    # The outbound email address ID.
+    outbound_email_config: Any = None
+    # The quick connects available to agents who are working the queue.
+    quick_connect_arns: Any = None
+    # The status of the queue.
+    status: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class QueueAttrs:
+    # The email addresses that agents can use when replying to or initiating email contacts
+    additional_email_addresses: Any = None
+    # The description of the queue.
+    description: Any = None
+    # The identifier for the hours of operation.
+    hours_of_operation_arn: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # The AWS Region where this resource was last modified.
+    last_modified_region: Any = None
+    # The timestamp when this resource was last modified.
+    last_modified_time: Any = None
+    # The maximum number of contacts that can be in the queue before it is considered full.
+    max_contacts: Any = None
+    # The name of the queue.
+    name: Any = None
+    # The outbound caller ID name, number, and outbound whisper flow.
+    outbound_caller_config: Any = None
+    # The outbound email address ID.
+    outbound_email_config: Any = None
+    # The Amazon Resource Name (ARN) for the queue.
+    queue_arn: Any = None
+    # The quick connects available to agents who are working the queue.
+    quick_connect_arns: Any = None
+    # The status of the queue.
+    status: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # The type of queue.
+    type: Any = None
 
 Queue = ubx.ResourceBinding(
     wire_type="aws_connect_queue",
     fields={
+        "additional_email_addresses": ubx.FieldSpec(
+            wire_name="additional_email_addresses",
+            kind="list",
+            fields=_Queue_AdditionalEmailAddressesFields,
+        ),
         "description": ubx.FieldSpec(wire_name="description"),
-        "hours_of_operation_id": ubx.FieldSpec(wire_name="hours_of_operation_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "instance_id": ubx.FieldSpec(wire_name="instance_id"),
+        "hours_of_operation_arn": ubx.FieldSpec(wire_name="hours_of_operation_arn"),
+        "instance_arn": ubx.FieldSpec(wire_name="instance_arn"),
         "max_contacts": ubx.FieldSpec(wire_name="max_contacts"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "quick_connect_ids": ubx.FieldSpec(wire_name="quick_connect_ids"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "status": ubx.FieldSpec(wire_name="status"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "outbound_caller_config": ubx.FieldSpec(
             wire_name="outbound_caller_config",
-            kind="list",
+            kind="object",
             fields=_Queue_OutboundCallerConfigFields,
+        ),
+        "outbound_email_config": ubx.FieldSpec(
+            wire_name="outbound_email_config",
+            kind="object",
+            fields=_Queue_OutboundEmailConfigFields,
+        ),
+        "quick_connect_arns": ubx.FieldSpec(wire_name="quick_connect_arns"),
+        "status": ubx.FieldSpec(wire_name="status"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Queue_TagsFields,
         ),
     },
 )

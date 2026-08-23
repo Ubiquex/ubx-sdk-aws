@@ -3,58 +3,88 @@ package evidently
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Feature_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Feature_EntityOverrides struct {
+	// The unique identifier of the user or session for which this entity override sets a specific feature variation. (AI-inferred)
+	EntityId any
+	// The name of the variation to assign to the overridden entity in an entity override. (AI-inferred)
+	Variation any
 }
 
-type Feature_Variations_Value struct {
-	BoolValue any
-	DoubleValue any
-	LongValue any
-	StringValue any
-}
-
-type Feature_Variations struct {
-	Name any
+type Feature_Tags struct {
+	// The key for a tag attached to the Evidently feature, enabling you to categorize and manage the resource. (AI-inferred)
+	Key any
+	// The value of a tag attached to the Evidently feature, used to assign custom metadata for resource organization, cost allocation, and access control in AWS Evidently. (AI-inferred)
 	Value any
 }
 
-var Feature_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+type Feature_Variations struct {
+	// In a feature variation, when the variation type is boolean, this field specifies the true/false value that is served for that variation. (AI-inferred)
+	BooleanValue any
+	// The numeric double value assigned to this variation of the feature, used when the variation's value type is set to double. (AI-inferred)
+	DoubleValue any
+	// Sets the numeric (long) value for this feature variation, which Evidently returns as the variation's value when the feature is evaluated for a user or session. (AI-inferred)
+	LongValue any
+	// For a variation of the Evidently feature, this defines the string-typed value that is returned when the feature is evaluated and this variation is selected. (AI-inferred)
+	StringValue any
+	// The user-defined name for a variation of the Evidently feature, used to reference this variation when defining traffic allocation or feature evaluation rules. (AI-inferred)
+	VariationName any
+}
+
+var Feature_EntityOverridesFields = ubx.FieldMap{
+		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
+		"Variation": ubx.FieldSpec{WireName: "variation"},
 	}
 
-var Feature_Variations_ValueFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"LongValue": ubx.FieldSpec{WireName: "long_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
+var Feature_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 var Feature_VariationsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "list",
-			Fields: Feature_Variations_ValueFields,
-		},
+		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
+		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
+		"LongValue": ubx.FieldSpec{WireName: "long_value"},
+		"StringValue": ubx.FieldSpec{WireName: "string_value"},
+		"VariationName": ubx.FieldSpec{WireName: "variation_name"},
 	}
 
 type FeatureConfig struct {
+	// Specifies the variation used as the default for an Evidently feature when no targeting rules match or no other overrides apply. (AI-inferred)
 	DefaultVariation any
+	// An optional description of the Evidently feature, used to convey the feature's purpose or intended behavior to viewers in the console. (AI-inferred)
 	Description any
+	// Specifies a list of entity overrides, where each override assigns a specific variation to a given entity (such as a user or session) for this feature. (AI-inferred)
 	EntityOverrides any
+	// Determines whether the feature is evaluated as a feature flag using allocation rules (ALL_RULES) or as an experiment that exposes the feature to a percentage of users (AFFECTED_USERS). (AI-inferred)
 	EvaluationStrategy any
-	Id any
+	// The name of the feature, which must be unique within the Evidently project and can contain only letters, numbers, underscores, and hyphens. (AI-inferred)
 	Name any
+	// The name or ARN of the Evidently project that this feature belongs to. (AI-inferred)
 	Project any
-	Region any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
-	Timeouts any
+	// Specifies the list of variations for the feature, where each variation defines a name and a value that the feature can serve to users, enabling A/B testing and experimentation. (AI-inferred)
+	Variations any
+}
+
+type FeatureAttrs struct {
+	// The Amazon Resource Name (ARN) uniquely identifying this Evidently feature in AWS. (AI-inferred)
+	Arn any
+	// Specifies the variation used as the default for an Evidently feature when no targeting rules match or no other overrides apply. (AI-inferred)
+	DefaultVariation any
+	// An optional description of the Evidently feature, used to convey the feature's purpose or intended behavior to viewers in the console. (AI-inferred)
+	Description any
+	// Specifies a list of entity overrides, where each override assigns a specific variation to a given entity (such as a user or session) for this feature. (AI-inferred)
+	EntityOverrides any
+	// Determines whether the feature is evaluated as a feature flag using allocation rules (ALL_RULES) or as an experiment that exposes the feature to a percentage of users (AFFECTED_USERS). (AI-inferred)
+	EvaluationStrategy any
+	// The name of the feature, which must be unique within the Evidently project and can contain only letters, numbers, underscores, and hyphens. (AI-inferred)
+	Name any
+	// The name or ARN of the Evidently project that this feature belongs to. (AI-inferred)
+	Project any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// Specifies the list of variations for the feature, where each variation defines a name and a value that the feature can serve to users, enabling A/B testing and experimentation. (AI-inferred)
 	Variations any
 }
 
@@ -63,22 +93,22 @@ var Feature = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DefaultVariation": ubx.FieldSpec{WireName: "default_variation"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"EntityOverrides": ubx.FieldSpec{WireName: "entity_overrides"},
+		"EntityOverrides": ubx.FieldSpec{
+			WireName: "entity_overrides",
+			Kind: "list",
+			Fields: Feature_EntityOverridesFields,
+		},
 		"EvaluationStrategy": ubx.FieldSpec{WireName: "evaluation_strategy"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Feature_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Feature_TagsFields,
 		},
 		"Variations": ubx.FieldSpec{
 			WireName: "variations",
-			Kind: "set",
+			Kind: "list",
 			Fields: Feature_VariationsFields,
 		},
 	},

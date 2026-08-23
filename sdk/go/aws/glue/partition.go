@@ -3,109 +3,203 @@ package glue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Partition_StorageDescriptor_Columns struct {
+type Partition_PartitionInput_StorageDescriptor_Columns struct {
+	// Sets the optional comment or description for a column within the partition's storage descriptor, providing human-readable context for that column in the AWS Glue Data Catalog. (AI-inferred)
 	Comment any
+	// The name of a column in the storage descriptor for the partition, defining the schema of the data stored in the partition. (AI-inferred)
 	Name any
+	// The data type (e.g., string, int, boolean) of the column in the partition's schema, as used by Glue when reading or writing the underlying data format. (AI-inferred)
 	Type any
 }
 
-type Partition_StorageDescriptor_SerDeInfo struct {
+type Partition_PartitionInput_StorageDescriptor_SchemaReference_SchemaId struct {
+	// The name of the AWS Glue Schema Registry that contains the schema referenced by the partition's storage descriptor. (AI-inferred)
+	RegistryName any
+	// The Amazon Resource Name (ARN) of the schema in the AWS Glue Schema Registry that this partition's storage descriptor references. (AI-inferred)
+	SchemaArn any
+	// The name of the AWS Glue Schema Registry schema that this partition's storage descriptor references. (AI-inferred)
+	SchemaName any
+}
+
+type Partition_PartitionInput_StorageDescriptor_SchemaReference struct {
+	// Identifies the schema in the AWS Glue Schema Registry (by schema ARN or registry name and schema name) that this partition's storage descriptor references via its schema reference. (AI-inferred)
+	SchemaId any
+	// The unique identifier (UUID) of a specific version of a schema in the AWS Glue Schema Registry, used to reference that schema version for this partition's storage descriptor when schema reference is configured. (AI-inferred)
+	SchemaVersionId any
+	// The version number of the referenced Glue schema, used to pin the partition's storage descriptor to a specific schema version for schema evolution compatibility. (AI-inferred)
+	SchemaVersionNumber any
+}
+
+type Partition_PartitionInput_StorageDescriptor_SerdeInfo struct {
+	// The name of the serializer/deserializer (SerDe) library used to read and write data for the partition's storage descriptor. (AI-inferred)
 	Name any
+	// Specifies the key-value configuration parameters for the SerDe (serializer/deserializer), such as format-specific options like delimiters, applied to the partition's storage descriptor. (AI-inferred)
 	Parameters any
+	// Specifies the fully qualified class name of the SerDe library (e.g., org.openx.data.jsonserde.JsonSerDe) used to serialize and deserialize data in the table partition. (AI-inferred)
 	SerializationLibrary any
 }
 
-type Partition_StorageDescriptor_SkewedInfo struct {
+type Partition_PartitionInput_StorageDescriptor_SkewedInfo struct {
+	// A list of column names in the partition's storage descriptor that are identified as having skewed data values, used together with skewed column value maps for optimizing storage and query performance in AWS Glue. (AI-inferred)
 	SkewedColumnNames any
+	// Specifies a mapping from skewed column values to their physical file or directory locations within the storage descriptor, allowing query engines to locate data for unbalanced values efficiently. (AI-inferred)
 	SkewedColumnValueLocationMaps any
+	// Specifies the list of skewed values (in the same order and count as the skewed column names) that should be mapped to separate physical locations for asymmetric or skewed data in the Glue table's storage descriptor. (AI-inferred)
 	SkewedColumnValues any
 }
 
-type Partition_StorageDescriptor_SortColumns struct {
+type Partition_PartitionInput_StorageDescriptor_SortColumns struct {
+	// The name of the column that serves as the sort key for this partition, determining the order of data within the partition's storage descriptor. (AI-inferred)
 	Column any
+	// Specifies whether the column is sorted in ascending (0) or descending (1) order. (AI-inferred)
 	SortOrder any
 }
 
-type Partition_StorageDescriptor struct {
-	AdditionalLocations any
+type Partition_PartitionInput_StorageDescriptor struct {
+	// The list of column names by which the partition data is bucketed (hash-partitioned) within the Glue table. (AI-inferred)
 	BucketColumns any
-	Compressed any
-	InputFormat any
-	Location any
-	NumberOfBuckets any
-	OutputFormat any
-	Parameters any
-	StoredAsSubDirectories any
+	// Defines the columns (name, data type, and optional comment) that make up the schema of the partition's storage descriptor. (AI-inferred)
 	Columns any
-	SerDeInfo any
+	// Indicates whether the data in the partition is compressed, as defined in the AWS Glue StorageDescriptor for the partition's table format. (AI-inferred)
+	Compressed any
+	// The fully qualified class name of the input format used for reading files in this partition, such as org.apache.hadoop.mapred.TextInputFormat. (AI-inferred)
+	InputFormat any
+	// The URI of the storage location (typically an S3 prefix) where the data files for this partition reside, as defined in the partition's StorageDescriptor. (AI-inferred)
+	Location any
+	// Specifies the number of buckets in the storage descriptor for the partition, which defines the bucketing layout of the underlying data in AWS Glue. (AI-inferred)
+	NumberOfBuckets any
+	// Specifies the fully qualified class name of the Hadoop OutputFormat used for writing data files in the partition, such as org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat or org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat. (AI-inferred)
+	OutputFormat any
+	// Specifies custom key-value pairs (parameters) for the storage descriptor, such as SerDe or compression properties, for the Glue partition. (AI-inferred)
+	Parameters any
+	// Specifies a reference to a schema in the AWS Glue Schema Registry, including the schema identifier and version, that defines the column structure for this partition. (AI-inferred)
+	SchemaReference any
+	// Specifies the serialization/deserialization (SerDe) configuration, including the SerDe library name and parameters, used to interpret the data in the partition's storage descriptor. (AI-inferred)
+	SerdeInfo any
+	// Specifies skewed column names, skewed column values, and their location mappings for the partition's storage descriptor, used to optimize storage and query handling for skewed data in the table. (AI-inferred)
 	SkewedInfo any
+	// Sorts the data stored in the partition by the specified columns, each entry providing a column name and an integer sort order (0 for descending, 1 for ascending). (AI-inferred)
 	SortColumns any
+	// Specifies whether the partition's data is stored in subdirectories rather than in a single directory, as part of the storage descriptor. (AI-inferred)
+	StoredAsSubDirectories any
 }
 
-var Partition_StorageDescriptor_ColumnsFields = ubx.FieldMap{
+type Partition_PartitionInput struct {
+	// Specifies key-value pairs that store custom metadata for the partition (e.g., compression type or other table properties), as a dynamic map of strings. (AI-inferred)
+	Parameters any
+	// Defines the physical storage details for the partition, including its location (such as an S3 path), input and output formats, column schema, SerDe configuration, and bucket or sort key settings. (AI-inferred)
+	StorageDescriptor any
+	// The list of partition key values that uniquely identify this partition within the Glue table, matching the order of the table's partition key columns. (AI-inferred)
+	Values any
+}
+
+var Partition_PartitionInput_StorageDescriptor_ColumnsFields = ubx.FieldMap{
 		"Comment": ubx.FieldSpec{WireName: "comment"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
-var Partition_StorageDescriptor_SerDeInfoFields = ubx.FieldMap{
+var Partition_PartitionInput_StorageDescriptor_SchemaReference_SchemaIdFields = ubx.FieldMap{
+		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
+		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
+		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
+	}
+
+var Partition_PartitionInput_StorageDescriptor_SchemaReferenceFields = ubx.FieldMap{
+		"SchemaId": ubx.FieldSpec{
+			WireName: "schema_id",
+			Kind: "object",
+			Fields: Partition_PartitionInput_StorageDescriptor_SchemaReference_SchemaIdFields,
+		},
+		"SchemaVersionId": ubx.FieldSpec{WireName: "schema_version_id"},
+		"SchemaVersionNumber": ubx.FieldSpec{WireName: "schema_version_number"},
+	}
+
+var Partition_PartitionInput_StorageDescriptor_SerdeInfoFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Parameters": ubx.FieldSpec{WireName: "parameters"},
 		"SerializationLibrary": ubx.FieldSpec{WireName: "serialization_library"},
 	}
 
-var Partition_StorageDescriptor_SkewedInfoFields = ubx.FieldMap{
+var Partition_PartitionInput_StorageDescriptor_SkewedInfoFields = ubx.FieldMap{
 		"SkewedColumnNames": ubx.FieldSpec{WireName: "skewed_column_names"},
 		"SkewedColumnValueLocationMaps": ubx.FieldSpec{WireName: "skewed_column_value_location_maps"},
 		"SkewedColumnValues": ubx.FieldSpec{WireName: "skewed_column_values"},
 	}
 
-var Partition_StorageDescriptor_SortColumnsFields = ubx.FieldMap{
+var Partition_PartitionInput_StorageDescriptor_SortColumnsFields = ubx.FieldMap{
 		"Column": ubx.FieldSpec{WireName: "column"},
 		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
 	}
 
-var Partition_StorageDescriptorFields = ubx.FieldMap{
-		"AdditionalLocations": ubx.FieldSpec{WireName: "additional_locations"},
+var Partition_PartitionInput_StorageDescriptorFields = ubx.FieldMap{
 		"BucketColumns": ubx.FieldSpec{WireName: "bucket_columns"},
+		"Columns": ubx.FieldSpec{
+			WireName: "columns",
+			Kind: "list",
+			Fields: Partition_PartitionInput_StorageDescriptor_ColumnsFields,
+		},
 		"Compressed": ubx.FieldSpec{WireName: "compressed"},
 		"InputFormat": ubx.FieldSpec{WireName: "input_format"},
 		"Location": ubx.FieldSpec{WireName: "location"},
 		"NumberOfBuckets": ubx.FieldSpec{WireName: "number_of_buckets"},
 		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
 		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"StoredAsSubDirectories": ubx.FieldSpec{WireName: "stored_as_sub_directories"},
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Partition_StorageDescriptor_ColumnsFields,
+		"SchemaReference": ubx.FieldSpec{
+			WireName: "schema_reference",
+			Kind: "object",
+			Fields: Partition_PartitionInput_StorageDescriptor_SchemaReferenceFields,
 		},
-		"SerDeInfo": ubx.FieldSpec{
-			WireName: "ser_de_info",
-			Kind: "list",
-			Fields: Partition_StorageDescriptor_SerDeInfoFields,
+		"SerdeInfo": ubx.FieldSpec{
+			WireName: "serde_info",
+			Kind: "object",
+			Fields: Partition_PartitionInput_StorageDescriptor_SerdeInfoFields,
 		},
 		"SkewedInfo": ubx.FieldSpec{
 			WireName: "skewed_info",
-			Kind: "list",
-			Fields: Partition_StorageDescriptor_SkewedInfoFields,
+			Kind: "object",
+			Fields: Partition_PartitionInput_StorageDescriptor_SkewedInfoFields,
 		},
 		"SortColumns": ubx.FieldSpec{
 			WireName: "sort_columns",
 			Kind: "list",
-			Fields: Partition_StorageDescriptor_SortColumnsFields,
+			Fields: Partition_PartitionInput_StorageDescriptor_SortColumnsFields,
 		},
+		"StoredAsSubDirectories": ubx.FieldSpec{WireName: "stored_as_sub_directories"},
+	}
+
+var Partition_PartitionInputFields = ubx.FieldMap{
+		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"StorageDescriptor": ubx.FieldSpec{
+			WireName: "storage_descriptor",
+			Kind: "object",
+			Fields: Partition_PartitionInput_StorageDescriptorFields,
+		},
+		"Values": ubx.FieldSpec{WireName: "values"},
 	}
 
 type PartitionConfig struct {
+	// The identifier of the AWS Glue Data Catalog (typically the AWS account ID) that contains the database and table where this partition is created. (AI-inferred)
 	CatalogId any
+	// The name of the Glue Data Catalog database that contains the table for which this partition is defined. (AI-inferred)
 	DatabaseName any
-	Id any
-	Parameters any
-	PartitionValues any
-	Region any
+	// The partition_input field defines the metadata and storage configuration for a single partition in a Glue table, including its values, storage descriptor, and parameters. (AI-inferred)
+	PartitionInput any
+	// The name of the Glue table to which this partition belongs. (AI-inferred)
 	TableName any
-	StorageDescriptor any
+}
+
+type PartitionAttrs struct {
+	// The identifier of the AWS Glue Data Catalog (typically the AWS account ID) that contains the database and table where this partition is created. (AI-inferred)
+	CatalogId any
+	// The name of the Glue Data Catalog database that contains the table for which this partition is defined. (AI-inferred)
+	DatabaseName any
+	// The unique identifier of the Glue partition, typically a composite of the database name, table name, and partition values (e.g., 'database:table:value1/value2'). (AI-inferred)
+	Id any
+	// The partition_input field defines the metadata and storage configuration for a single partition in a Glue table, including its values, storage descriptor, and parameters. (AI-inferred)
+	PartitionInput any
+	// The name of the Glue table to which this partition belongs. (AI-inferred)
+	TableName any
 }
 
 var Partition = ubx.ResourceBinding{
@@ -113,15 +207,11 @@ var Partition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"PartitionValues": ubx.FieldSpec{WireName: "partition_values"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"StorageDescriptor": ubx.FieldSpec{
-			WireName: "storage_descriptor",
-			Kind: "list",
-			Fields: Partition_StorageDescriptorFields,
+		"PartitionInput": ubx.FieldSpec{
+			WireName: "partition_input",
+			Kind: "object",
+			Fields: Partition_PartitionInputFields,
 		},
+		"TableName": ubx.FieldSpec{WireName: "table_name"},
 	},
 }

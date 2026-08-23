@@ -2,28 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Rule_ExcludeResourceTags {
-  resourceTagKey: string;
-  resourceTagValue: string;
-}
-
-export interface Rule_LockConfiguration_UnlockDelay {
-  unlockDelayUnit: string;
-  unlockDelayValue: number;
+  /** Specifies the tag key used to identify resources that should be excluded from the retention rule's cleanup (i.e., resources with this tag key will not be affected by the rule). (AI-inferred) */
+  resourceTagKey?: string | Computed<string>;
+  /** The value of a resource tag that, when matched on a resource, excludes that resource from the retention rule's effect. (AI-inferred) */
+  resourceTagValue?: string | Computed<string>;
 }
 
 export interface Rule_LockConfiguration {
-  unlockDelay: Rule_LockConfiguration_UnlockDelay[];
+  /** The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days. */
+  unlockDelayUnit?: string | Computed<string>;
+  /** The unlock delay period, measured in the unit specified for UnlockDelayUnit. */
+  unlockDelayValue?: number | Computed<number>;
 }
 
 export interface Rule_RetentionPeriod {
-  retentionPeriodUnit: string;
-  retentionPeriodValue: number;
+  /** The retention period unit of the rule */
+  retentionPeriodUnit: string | Computed<string>;
+  /** The retention period value of the rule. */
+  retentionPeriodValue: number | Computed<number>;
 }
 
-export interface Rule_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Rule_Tags {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 const Rule_ExcludeResourceTagsFields: FieldMap = {
@@ -31,17 +32,9 @@ const Rule_ExcludeResourceTagsFields: FieldMap = {
   resourceTagValue: "resource_tag_value",
 };
 
-const Rule_LockConfiguration_UnlockDelayFields: FieldMap = {
+const Rule_LockConfigurationFields: FieldMap = {
   unlockDelayUnit: "unlock_delay_unit",
   unlockDelayValue: "unlock_delay_value",
-};
-
-const Rule_LockConfigurationFields: FieldMap = {
-  unlockDelay: {
-    wireName: "unlock_delay",
-    kind: "list",
-    fields: Rule_LockConfiguration_UnlockDelayFields,
-  },
 };
 
 const Rule_RetentionPeriodFields: FieldMap = {
@@ -49,75 +42,85 @@ const Rule_RetentionPeriodFields: FieldMap = {
   retentionPeriodValue: "retention_period_value",
 };
 
-const Rule_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Rule_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface RuleConfig {
+  /** The description of the retention rule. */
   description?: string | Computed<string>;
-  region?: string | Computed<string>;
-  resourceType: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** Information about the exclude resource tags used to identify resources that are excluded by the retention rule. */
   excludeResourceTags?: Rule_ExcludeResourceTags[] | Computed<Rule_ExcludeResourceTags[]>;
-  lockConfiguration?: Rule_LockConfiguration[] | Computed<Rule_LockConfiguration[]>;
+  /** The lock configuration for the Recycle Bin rule, specifying the lock mode ('governance' or 'compliance') that determines whether the rule can be modified or deleted after creation. (AI-inferred) */
+  lockConfiguration?: Rule_LockConfiguration | Computed<Rule_LockConfiguration>;
+  /** Information about the resource tags used to identify resources that are retained by the retention rule. */
   resourceTags?: Rule_ExcludeResourceTags[] | Computed<Rule_ExcludeResourceTags[]>;
-  retentionPeriod?: Rule_RetentionPeriod[] | Computed<Rule_RetentionPeriod[]>;
-  timeouts?: Rule_Timeouts | Computed<Rule_Timeouts>;
+  /** The resource type retained by the retention rule. */
+  resourceType: string | Computed<string>;
+  /** The retention period of the rule. */
+  retentionPeriod: Rule_RetentionPeriod | Computed<Rule_RetentionPeriod>;
+  /** The state of the retention rule. Only retention rules that are in the available state retain resources. */
+  status?: string | Computed<string>;
+  /** Information about the tags assigned to the retention rule. */
+  tags?: Rule_Tags[] | Computed<Rule_Tags[]>;
 }
 
 export interface RuleAttrs {
+  /** Rule Arn is unique for each rule. */
   arn: string;
+  /** The description of the retention rule. */
   description: string;
-  id: string;
-  lockEndTime: string;
-  lockState: string;
-  region: string;
-  resourceType: string;
-  status: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** Information about the exclude resource tags used to identify resources that are excluded by the retention rule. */
   excludeResourceTags: Rule_ExcludeResourceTags[];
-  lockConfiguration: Rule_LockConfiguration[];
+  /** The unique ID of the retention rule. */
+  identifier: string;
+  /** The lock configuration for the Recycle Bin rule, specifying the lock mode ('governance' or 'compliance') that determines whether the rule can be modified or deleted after creation. (AI-inferred) */
+  lockConfiguration: Rule_LockConfiguration;
+  /** The lock state for the retention rule. */
+  lockState: string;
+  /** Information about the resource tags used to identify resources that are retained by the retention rule. */
   resourceTags: Rule_ExcludeResourceTags[];
-  retentionPeriod: Rule_RetentionPeriod[];
-  timeouts: Rule_Timeouts;
+  /** The resource type retained by the retention rule. */
+  resourceType: string;
+  /** The retention period of the rule. */
+  retentionPeriod: Rule_RetentionPeriod;
+  /** The state of the retention rule. Only retention rules that are in the available state retain resources. */
+  status: string;
+  /** Information about the tags assigned to the retention rule. */
+  tags: Rule_Tags[];
 }
 
 export const Rule: ResourceBinding<RuleConfig, RuleAttrs> = {
   wireType: "aws_rbin_rule",
   fields: {
     description: "description",
-    region: "region",
-    resourceType: "resource_type",
-    tags: "tags",
-    tagsAll: "tags_all",
     excludeResourceTags: {
       wireName: "exclude_resource_tags",
-      kind: "set",
+      kind: "list",
       fields: Rule_ExcludeResourceTagsFields,
     },
     lockConfiguration: {
       wireName: "lock_configuration",
-      kind: "list",
+      kind: "object",
       fields: Rule_LockConfigurationFields,
     },
     resourceTags: {
       wireName: "resource_tags",
-      kind: "set",
+      kind: "list",
       fields: Rule_ExcludeResourceTagsFields,
     },
+    resourceType: "resource_type",
     retentionPeriod: {
       wireName: "retention_period",
-      kind: "list",
+      kind: "object",
       fields: Rule_RetentionPeriodFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Rule_TimeoutsFields,
+    status: "status",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Rule_TagsFields,
     },
   },
 };

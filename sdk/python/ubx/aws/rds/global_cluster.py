@@ -7,54 +7,76 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class GlobalCluster_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class GlobalCluster_GlobalEndpoint:
+    # The writer endpoint for the global database cluster. This endpoint always points to the writer DB instance in the current primary cluster.
+    address: Any = None
 
-_GlobalCluster_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+@dataclasses.dataclass
+class GlobalCluster_Tags:
+    # The key of a tag attached to the RDS Global Cluster, used to organize and identify the cluster. (AI-inferred)
+    key: Any = None
+    # The value of a user-defined tag key attached to the RDS Global Cluster, used to store custom metadata such as environment, owner, or cost center for the cluster. (AI-inferred)
+    value: Any = None
+
+_GlobalCluster_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class GlobalClusterConfig:
-    database_name: Any = None
+    # The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.
     deletion_protection: Any = None
+    # The name of the database engine to be used for this DB cluster. Valid Values: aurora (for MySQL 5.6-compatible Aurora), aurora-mysql (for MySQL 5.7-compatible Aurora). If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
     engine: Any = None
+    # The life cycle type of the global cluster. You can use this setting to enroll your global cluster into Amazon RDS Extended Support.
     engine_lifecycle_support: Any = None
+    # The version number of the database engine to use. If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
     engine_version: Any = None
-    force_destroy: Any = None
+    # The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.
     global_cluster_identifier: Any = None
-    id: Any = None
-    region: Any = None
-    source_db_cluster_identifier: Any = None
+    # The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional. This parameter is stored as a lowercase string.
+    source_dbcluster_identifier: Any = None
+    # The storage encryption setting for the new global database cluster. If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
     storage_encrypted: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class GlobalClusterAttrs:
+    # The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.
+    deletion_protection: Any = None
+    # The name of the database engine to be used for this DB cluster. Valid Values: aurora (for MySQL 5.6-compatible Aurora), aurora-mysql (for MySQL 5.7-compatible Aurora). If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
+    engine: Any = None
+    # The life cycle type of the global cluster. You can use this setting to enroll your global cluster into Amazon RDS Extended Support.
+    engine_lifecycle_support: Any = None
+    # The version number of the database engine to use. If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
+    engine_version: Any = None
+    # The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.
+    global_cluster_identifier: Any = None
+    # The global endpoint of the RDS global cluster, containing the address and port used to connect to the primary (writer) instance for read/write operations. (AI-inferred)
+    global_endpoint: Any = None
+    # The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional. This parameter is stored as a lowercase string.
+    source_dbcluster_identifier: Any = None
+    # The storage encryption setting for the new global database cluster. If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
+    storage_encrypted: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 GlobalCluster = ubx.ResourceBinding(
     wire_type="aws_rds_global_cluster",
     fields={
-        "database_name": ubx.FieldSpec(wire_name="database_name"),
         "deletion_protection": ubx.FieldSpec(wire_name="deletion_protection"),
         "engine": ubx.FieldSpec(wire_name="engine"),
         "engine_lifecycle_support": ubx.FieldSpec(wire_name="engine_lifecycle_support"),
         "engine_version": ubx.FieldSpec(wire_name="engine_version"),
-        "force_destroy": ubx.FieldSpec(wire_name="force_destroy"),
         "global_cluster_identifier": ubx.FieldSpec(wire_name="global_cluster_identifier"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "source_db_cluster_identifier": ubx.FieldSpec(wire_name="source_db_cluster_identifier"),
+        "source_dbcluster_identifier": ubx.FieldSpec(wire_name="source_dbcluster_identifier"),
         "storage_encrypted": ubx.FieldSpec(wire_name="storage_encrypted"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_GlobalCluster_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_GlobalCluster_TagsFields,
         ),
     },
 )

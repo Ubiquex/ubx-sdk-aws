@@ -3,23 +3,95 @@ package emr
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Studio_Tags struct {
+	// Defines a user-defined tag key for the Amazon EMR Studio, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
+	Key any
+	// The value portion of a tag applied to the EMR Studio, used to categorize, identify, or manage the studio resource. (AI-inferred)
+	Value any
+}
+
+var Studio_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type StudioConfig struct {
+	// Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM. Amazon EMR Studio currently only supports SSO authentication.
 	AuthMode any
+	// The default Amazon S3 location to back up EMR Studio Workspaces and notebook files. A Studio user can select an alternative Amazon S3 location when creating a Workspace.
 	DefaultS3Location any
+	// A detailed description of the Studio.
 	Description any
+	// The ARN of an AWS KMS key used to encrypt data within the EMR Studio workspace, such as notebooks and artifacts. (AI-inferred)
 	EncryptionKeyArn any
+	// The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by VpcId.
 	EngineSecurityGroupId any
-	Id any
+	// The ARN of the IAM Identity Center instance to create the Studio application.
+	IdcInstanceArn any
+	// Specifies whether IAM Identity Center user assignment is REQUIRED or OPTIONAL. If the value is set to REQUIRED, users must be explicitly assigned to the Studio application to access the Studio.
+	IdcUserAssignment any
+	// Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.
 	IdpAuthUrl any
+	// The name of relay state parameter for external Identity Provider.
 	IdpRelayStateParameterName any
+	// A descriptive name for the Amazon EMR Studio.
 	Name any
-	Region any
+	// The IAM role that EMR Studio assumes to call AWS services on your behalf. (AI-inferred)
 	ServiceRole any
+	// A list of up to 5 subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by VpcId. Studio users can create a Workspace in any of the specified subnets.
 	SubnetIds any
+	// A list of key-value tags to attach to the EMR Studio, used for organizing, managing, and cost allocation of the resource in AWS. (AI-inferred)
 	Tags any
-	TagsAll any
+	// A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is false.
+	TrustedIdentityPropagationEnabled any
+	// The IAM role that EMR Studio users assume, granting permissions for their studio work within the EMR Studio environment. (AI-inferred)
 	UserRole any
+	// The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.
 	VpcId any
+	// The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by VpcId.
+	WorkspaceSecurityGroupId any
+}
+
+type StudioAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies this EMR Studio in AWS. (AI-inferred)
+	Arn any
+	// Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM. Amazon EMR Studio currently only supports SSO authentication.
+	AuthMode any
+	// The default Amazon S3 location to back up EMR Studio Workspaces and notebook files. A Studio user can select an alternative Amazon S3 location when creating a Workspace.
+	DefaultS3Location any
+	// A detailed description of the Studio.
+	Description any
+	// The ARN of an AWS KMS key used to encrypt data within the EMR Studio workspace, such as notebooks and artifacts. (AI-inferred)
+	EncryptionKeyArn any
+	// The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by VpcId.
+	EngineSecurityGroupId any
+	// The ARN of the IAM Identity Center instance to create the Studio application.
+	IdcInstanceArn any
+	// Specifies whether IAM Identity Center user assignment is REQUIRED or OPTIONAL. If the value is set to REQUIRED, users must be explicitly assigned to the Studio application to access the Studio.
+	IdcUserAssignment any
+	// Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.
+	IdpAuthUrl any
+	// The name of relay state parameter for external Identity Provider.
+	IdpRelayStateParameterName any
+	// A descriptive name for the Amazon EMR Studio.
+	Name any
+	// The IAM role that EMR Studio assumes to call AWS services on your behalf. (AI-inferred)
+	ServiceRole any
+	// The ID of the EMR Studio.
+	StudioId any
+	// A list of up to 5 subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by VpcId. Studio users can create a Workspace in any of the specified subnets.
+	SubnetIds any
+	// A list of key-value tags to attach to the EMR Studio, used for organizing, managing, and cost allocation of the resource in AWS. (AI-inferred)
+	Tags any
+	// A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is false.
+	TrustedIdentityPropagationEnabled any
+	// The unique Studio access URL.
+	Url any
+	// The IAM role that EMR Studio users assume, granting permissions for their studio work within the EMR Studio environment. (AI-inferred)
+	UserRole any
+	// The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.
+	VpcId any
+	// The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by VpcId.
 	WorkspaceSecurityGroupId any
 }
 
@@ -31,15 +103,19 @@ var Studio = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
 		"EngineSecurityGroupId": ubx.FieldSpec{WireName: "engine_security_group_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"IdcInstanceArn": ubx.FieldSpec{WireName: "idc_instance_arn"},
+		"IdcUserAssignment": ubx.FieldSpec{WireName: "idc_user_assignment"},
 		"IdpAuthUrl": ubx.FieldSpec{WireName: "idp_auth_url"},
 		"IdpRelayStateParameterName": ubx.FieldSpec{WireName: "idp_relay_state_parameter_name"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ServiceRole": ubx.FieldSpec{WireName: "service_role"},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Studio_TagsFields,
+		},
+		"TrustedIdentityPropagationEnabled": ubx.FieldSpec{WireName: "trusted_identity_propagation_enabled"},
 		"UserRole": ubx.FieldSpec{WireName: "user_role"},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 		"WorkspaceSecurityGroupId": ubx.FieldSpec{WireName: "workspace_security_group_id"},

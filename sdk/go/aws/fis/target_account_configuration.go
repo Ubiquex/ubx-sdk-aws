@@ -4,10 +4,24 @@ package fis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TargetAccountConfigurationConfig struct {
+	// The AWS account ID of the target account.
 	AccountId any
+	// The description of the target account.
 	Description any
+	// The ID of the experiment template.
 	ExperimentTemplateId any
-	Region any
+	// The Amazon Resource Name (ARN) of an IAM role for the target account.
+	RoleArn any
+}
+
+type TargetAccountConfigurationAttrs struct {
+	// The AWS account ID of the target account.
+	AccountId any
+	// The description of the target account.
+	Description any
+	// The ID of the experiment template.
+	ExperimentTemplateId any
+	// The Amazon Resource Name (ARN) of an IAM role for the target account.
 	RoleArn any
 }
 
@@ -17,7 +31,6 @@ var TargetAccountConfiguration = ubx.ResourceBinding{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExperimentTemplateId": ubx.FieldSpec{WireName: "experiment_template_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 	},
 }

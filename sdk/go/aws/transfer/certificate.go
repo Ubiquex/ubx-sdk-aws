@@ -3,29 +3,83 @@ package transfer
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Certificate_Tags struct {
+	Key any
+	// The value portion of a key-value tag attached to the AWS Transfer Family certificate, used for identifying and categorizing the resource. (AI-inferred)
+	Value any
+}
+
+var Certificate_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type CertificateConfig struct {
+	// Specifies the active date for the certificate.
+	ActiveDate any
+	// Specifies the certificate body to be imported.
 	Certificate any
+	// Specifies the certificate chain to be imported.
 	CertificateChain any
+	// A textual description for the certificate.
 	Description any
-	Id any
+	// Specifies the inactive date for the certificate.
+	InactiveDate any
+	// Specifies the private key for the certificate.
 	PrivateKey any
-	Region any
+	// Key-value pairs that can be used to group and search for certificates. Tags are metadata attached to certificates for any purpose.
 	Tags any
-	TagsAll any
+	// Specifies the usage type for the certificate.
+	Usage any
+}
+
+type CertificateAttrs struct {
+	// Specifies the active date for the certificate.
+	ActiveDate any
+	// Specifies the unique Amazon Resource Name (ARN) for the agreement.
+	Arn any
+	// Specifies the certificate body to be imported.
+	Certificate any
+	// Specifies the certificate chain to be imported.
+	CertificateChain any
+	// A unique identifier for the certificate.
+	CertificateId any
+	// A textual description for the certificate.
+	Description any
+	// Specifies the inactive date for the certificate.
+	InactiveDate any
+	// Specifies the not after date for the certificate.
+	NotAfterDate any
+	// Specifies the not before date for the certificate.
+	NotBeforeDate any
+	// Specifies the private key for the certificate.
+	PrivateKey any
+	// Specifies Certificate's serial.
+	Serial any
+	// A status description for the certificate.
+	Status any
+	// Key-value pairs that can be used to group and search for certificates. Tags are metadata attached to certificates for any purpose.
+	Tags any
+	// Describing the type of certificate. With or without a private key.
+	Type any
+	// Specifies the usage type for the certificate.
 	Usage any
 }
 
 var Certificate = ubx.ResourceBinding{
 	WireType: "aws_transfer_certificate",
 	Fields: ubx.FieldMap{
+		"ActiveDate": ubx.FieldSpec{WireName: "active_date"},
 		"Certificate": ubx.FieldSpec{WireName: "certificate"},
 		"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"InactiveDate": ubx.FieldSpec{WireName: "inactive_date"},
 		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Certificate_TagsFields,
+		},
 		"Usage": ubx.FieldSpec{WireName: "usage"},
 	},
 }

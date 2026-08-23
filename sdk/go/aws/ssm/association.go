@@ -3,21 +3,51 @@ package ssm
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Association_OutputLocation_S3Location struct {
+	// The name of the S3 bucket where the output (such as execution logs) from the SSM association is stored when an output location is configured. (AI-inferred)
+	OutputS3BucketName any
+	// Specifies the S3 key prefix under which the association's output files are stored in the output S3 bucket, enabling logical grouping or folder structure for the results. (AI-inferred)
+	OutputS3KeyPrefix any
+	// Specifies the AWS Region where the output S3 bucket resides, so that the association's execution results are written to the correct regional bucket. (AI-inferred)
+	OutputS3Region any
+}
+
 type Association_OutputLocation struct {
-	S3BucketName any
-	S3KeyPrefix any
-	S3Region any
+	// Specifies the S3 bucket, key prefix, and AWS region for storing the output of the association's command execution. (AI-inferred)
+	S3Location any
+}
+
+type Association_Tags struct {
+	// The key of a user-defined tag assigned to the SSM association, used to organize, identify, and filter the association within AWS Systems Manager. (AI-inferred)
+	Key any
+	// The value of a tag attached to the AWS Systems Manager association, which aids in organizing, identifying, and managing the association through AWS tagging policies. (AI-inferred)
+	Value any
 }
 
 type Association_Targets struct {
+	// Specifies the key of the target filter (e.g., 'InstanceIds' or a tag key) used to select the managed instances to which the SSM association applies. (AI-inferred)
 	Key any
+	// Values for the target key, such as EC2 instance IDs when the key is 'InstanceIds' or tag values when the key is a tag-based key like 'tag:Environment'. (AI-inferred)
 	Values any
 }
 
+var Association_OutputLocation_S3LocationFields = ubx.FieldMap{
+		"OutputS3BucketName": ubx.FieldSpec{WireName: "output_s3_bucket_name"},
+		"OutputS3KeyPrefix": ubx.FieldSpec{WireName: "output_s3_key_prefix"},
+		"OutputS3Region": ubx.FieldSpec{WireName: "output_s3_region"},
+	}
+
 var Association_OutputLocationFields = ubx.FieldMap{
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3KeyPrefix": ubx.FieldSpec{WireName: "s3_key_prefix"},
-		"S3Region": ubx.FieldSpec{WireName: "s3_region"},
+		"S3Location": ubx.FieldSpec{
+			WireName: "s3_location",
+			Kind: "object",
+			Fields: Association_OutputLocation_S3LocationFields,
+		},
+	}
+
+var Association_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 var Association_TargetsFields = ubx.FieldMap{
@@ -26,56 +56,122 @@ var Association_TargetsFields = ubx.FieldMap{
 	}
 
 type AssociationConfig struct {
+	// When true, the SSM association is applied only at the interval specified by its cron schedule, and it will not also run during a configured maintenance window. (AI-inferred)
 	ApplyOnlyAtCronInterval any
+	// A role used by association to take actions on your behalf.
+	AssociationDispatchAssumeRole any
+	// The name of the association.
 	AssociationName any
+	// Specifies the name of the parameter in the Automation document that receives the target instance IDs or resource identifiers defined in the association's Targets property. (AI-inferred)
 	AutomationTargetParameterName any
+	// Specifies the names or ARNs of Change Calendar resources that define the schedule window during which the SSM association is allowed to run. (AI-inferred)
 	CalendarNames any
+	// Sets the compliance severity level for the association, which determines how the association's compliance status is reported in Systems Manager Compliance. (AI-inferred)
 	ComplianceSeverity any
+	// The version of the SSM document to associate with the target.
 	DocumentVersion any
-	Id any
+	// The ID of the instance that the SSM document is associated with.
+	InstanceId any
+	// Specifies the maximum number or percentage of targets that can run the association concurrently, used to control the rate at which state manager applies the document to instances. (AI-inferred)
 	MaxConcurrency any
+	// Specifies the maximum number of errors (or, when expressed as a percentage, the maximum portion of the target set) that can occur before the SSM association stops sending requests to run on additional targets. (AI-inferred)
 	MaxErrors any
+	// The name of the SSM document.
 	Name any
-	Parameters any
-	Region any
-	ScheduleExpression any
-	SyncCompliance any
-	Tags any
-	TagsAll any
-	WaitForSuccessTimeoutSeconds any
+	// Specifies the S3 bucket location where the execution output of the SSM association is stored, allowing log and result data to be saved to a user-defined S3 bucket. (AI-inferred)
 	OutputLocation any
+	// Parameter values that the SSM document uses at runtime.
+	Parameters any
+	// A Cron or Rate expression that specifies when the association is applied to the target.
+	ScheduleExpression any
+	// Specifies the number of minutes to wait after the scheduled time before the association runs, allowing you to delay execution from the cron or rate schedule defined for the association. (AI-inferred)
+	ScheduleOffset any
+	// Indicates whether compliance for the association is automatically synced with AWS Systems Manager (AUTO) or manually synced (MANUAL). (AI-inferred)
+	SyncCompliance any
+	// A key-value pair to associate with a resource.
+	Tags any
+	// The targets that the SSM document sends commands to.
 	Targets any
+	// Specifies the maximum time in seconds that the provider will wait for the SSM association to reach a successful state after creation or update, after which it returns an error. (AI-inferred)
+	WaitForSuccessTimeoutSeconds any
+}
+
+type AssociationAttrs struct {
+	// When true, the SSM association is applied only at the interval specified by its cron schedule, and it will not also run during a configured maintenance window. (AI-inferred)
+	ApplyOnlyAtCronInterval any
+	// A role used by association to take actions on your behalf.
+	AssociationDispatchAssumeRole any
+	// Unique identifier of the association.
+	AssociationId any
+	// The name of the association.
+	AssociationName any
+	// Specifies the name of the parameter in the Automation document that receives the target instance IDs or resource identifiers defined in the association's Targets property. (AI-inferred)
+	AutomationTargetParameterName any
+	// Specifies the names or ARNs of Change Calendar resources that define the schedule window during which the SSM association is allowed to run. (AI-inferred)
+	CalendarNames any
+	// Sets the compliance severity level for the association, which determines how the association's compliance status is reported in Systems Manager Compliance. (AI-inferred)
+	ComplianceSeverity any
+	// The version of the SSM document to associate with the target.
+	DocumentVersion any
+	// The ID of the instance that the SSM document is associated with.
+	InstanceId any
+	// Specifies the maximum number or percentage of targets that can run the association concurrently, used to control the rate at which state manager applies the document to instances. (AI-inferred)
+	MaxConcurrency any
+	// Specifies the maximum number of errors (or, when expressed as a percentage, the maximum portion of the target set) that can occur before the SSM association stops sending requests to run on additional targets. (AI-inferred)
+	MaxErrors any
+	// The name of the SSM document.
+	Name any
+	// Specifies the S3 bucket location where the execution output of the SSM association is stored, allowing log and result data to be saved to a user-defined S3 bucket. (AI-inferred)
+	OutputLocation any
+	// Parameter values that the SSM document uses at runtime.
+	Parameters any
+	// A Cron or Rate expression that specifies when the association is applied to the target.
+	ScheduleExpression any
+	// Specifies the number of minutes to wait after the scheduled time before the association runs, allowing you to delay execution from the cron or rate schedule defined for the association. (AI-inferred)
+	ScheduleOffset any
+	// Indicates whether compliance for the association is automatically synced with AWS Systems Manager (AUTO) or manually synced (MANUAL). (AI-inferred)
+	SyncCompliance any
+	// A key-value pair to associate with a resource.
+	Tags any
+	// The targets that the SSM document sends commands to.
+	Targets any
+	// Specifies the maximum time in seconds that the provider will wait for the SSM association to reach a successful state after creation or update, after which it returns an error. (AI-inferred)
+	WaitForSuccessTimeoutSeconds any
 }
 
 var Association = ubx.ResourceBinding{
 	WireType: "aws_ssm_association",
 	Fields: ubx.FieldMap{
 		"ApplyOnlyAtCronInterval": ubx.FieldSpec{WireName: "apply_only_at_cron_interval"},
+		"AssociationDispatchAssumeRole": ubx.FieldSpec{WireName: "association_dispatch_assume_role"},
 		"AssociationName": ubx.FieldSpec{WireName: "association_name"},
 		"AutomationTargetParameterName": ubx.FieldSpec{WireName: "automation_target_parameter_name"},
 		"CalendarNames": ubx.FieldSpec{WireName: "calendar_names"},
 		"ComplianceSeverity": ubx.FieldSpec{WireName: "compliance_severity"},
 		"DocumentVersion": ubx.FieldSpec{WireName: "document_version"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxConcurrency": ubx.FieldSpec{WireName: "max_concurrency"},
 		"MaxErrors": ubx.FieldSpec{WireName: "max_errors"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-		"SyncCompliance": ubx.FieldSpec{WireName: "sync_compliance"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"WaitForSuccessTimeoutSeconds": ubx.FieldSpec{WireName: "wait_for_success_timeout_seconds"},
 		"OutputLocation": ubx.FieldSpec{
 			WireName: "output_location",
-			Kind: "list",
+			Kind: "object",
 			Fields: Association_OutputLocationFields,
+		},
+		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
+		"ScheduleOffset": ubx.FieldSpec{WireName: "schedule_offset"},
+		"SyncCompliance": ubx.FieldSpec{WireName: "sync_compliance"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Association_TagsFields,
 		},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
 			Kind: "list",
 			Fields: Association_TargetsFields,
 		},
+		"WaitForSuccessTimeoutSeconds": ubx.FieldSpec{WireName: "wait_for_success_timeout_seconds"},
 	},
 }

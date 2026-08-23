@@ -7,42 +7,117 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Subnet_Timeouts:
-    create: Any = None
-    delete: Any = None
+class Subnet_BlockPublicAccessStates:
+    # The mode of VPC BPA. Options here are off, block-bidirectional, block-ingress
+    internet_gateway_block_mode: Any = None
 
-_Subnet_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+@dataclasses.dataclass
+class Subnet_PrivateDnsNameOptionsOnLaunch:
+    # Indicates whether to enable Resource Name DNS AAAA (IPv6) record for instances launched in this subnet, affecting how instance hostnames resolve in the VPC's private DNS. (AI-inferred)
+    enable_resource_name_dns_aaaarecord: Any = None
+    # Specifies whether to enable the automatic creation of an A record for the resource-based name (private DNS name) of instances launched in this subnet, mapping that name to the instance's private IPv4 address within the VPC's private hosted zone. (AI-inferred)
+    enable_resource_name_dns_arecord: Any = None
+    # Specifies the type of hostname (ip-name or resource-name) that EC2 instances launched in this subnet will receive for their private DNS hostnames, as part of the subnet's PrivateDnsNameOptionsOnLaunch configuration. (AI-inferred)
+    hostname_type: Any = None
+
+@dataclasses.dataclass
+class Subnet_Tags:
+    # The case-sensitive key of a tag applied to the subnet, used to identify and categorize the resource for cost allocation, access control, and operational management. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_Subnet_PrivateDnsNameOptionsOnLaunchFields = {
+    "enable_resource_name_dns_aaaarecord": ubx.FieldSpec(wire_name="enable_resource_name_dns_aaaarecord"),
+    "enable_resource_name_dns_arecord": ubx.FieldSpec(wire_name="enable_resource_name_dns_arecord"),
+    "hostname_type": ubx.FieldSpec(wire_name="hostname_type"),
+}
+
+_Subnet_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class SubnetConfig:
+    # Indicates whether a network interface created in this subnet receives an IPv6 address. The default value is ``false``. If you specify ``AssignIpv6AddressOnCreation``, you must also specify an IPv6 CIDR block.
     assign_ipv6_address_on_creation: Any = None
+    # The Availability Zone of the subnet. If you update this property, you must also update the ``CidrBlock`` property.
     availability_zone: Any = None
+    # The AZ ID of the subnet.
     availability_zone_id: Any = None
+    # The IPv4 CIDR block assigned to the subnet. If you update this property, we create a new subnet, and then delete the existing one.
     cidr_block: Any = None
-    customer_owned_ipv4_pool: Any = None
+    # Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations. You must first configure a NAT gateway in a public subnet (separate from the subnet containing the IPv6-only workloads). For example, the subnet containing the NAT gateway should have a ``0.0.0.0/0`` route pointing to the internet gateway. For more information, see [Configure DNS64 and NAT64](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-nat64-dns64.html#nat-gateway-nat64-dns64-walkthrough) in the *User Guide*.
     enable_dns64: Any = None
+    # Indicates the device position for local network interfaces in this subnet. For example, ``1`` indicates local network interfaces in this subnet are the secondary network interface (eth1).
     enable_lni_at_device_index: Any = None
-    enable_resource_name_dns_a_record_on_launch: Any = None
-    enable_resource_name_dns_aaaa_record_on_launch: Any = None
-    id: Any = None
+    # An IPv4 IPAM pool ID for the subnet.
     ipv4_ipam_pool_id: Any = None
+    # An IPv4 netmask length for the subnet.
     ipv4_netmask_length: Any = None
+    # The IPv6 CIDR block. If you specify ``AssignIpv6AddressOnCreation``, you must also specify an IPv6 CIDR block.
     ipv6_cidr_block: Any = None
+    # An IPv6 IPAM pool ID for the subnet.
     ipv6_ipam_pool_id: Any = None
+    # Indicates whether this is an IPv6 only subnet. For more information, see [Subnet basics](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#subnet-basics) in the *User Guide*.
     ipv6_native: Any = None
+    # An IPv6 netmask length for the subnet.
     ipv6_netmask_length: Any = None
-    map_customer_owned_ip_on_launch: Any = None
+    # Indicates whether instances launched in this subnet receive a public IPv4 address. The default value is ``false``. AWS charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the *Public IPv4 Address* tab on the [VPC pricing page](https://docs.aws.amazon.com/vpc/pricing/).
     map_public_ip_on_launch: Any = None
+    # The Amazon Resource Name (ARN) of the Outpost.
     outpost_arn: Any = None
-    private_dns_hostname_type_on_launch: Any = None
-    region: Any = None
+    # The hostname type for EC2 instances launched into this subnet and how DNS A and AAAA record queries to the instances should be handled. For more information, see [Amazon EC2 instance hostname types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html) in the *User Guide*. Available options: + EnableResourceNameDnsAAAARecord (true | false) + EnableResourceNameDnsARecord (true | false) + HostnameType (ip-name | resource-name)
+    private_dns_name_options_on_launch: Any = None
+    # Any tags assigned to the subnet.
     tags: Any = None
-    tags_all: Any = None
+    # The ID of the VPC the subnet is in. If you update this property, you must also update the ``CidrBlock`` property.
     vpc_id: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class SubnetAttrs:
+    # Indicates whether a network interface created in this subnet receives an IPv6 address. The default value is ``false``. If you specify ``AssignIpv6AddressOnCreation``, you must also specify an IPv6 CIDR block.
+    assign_ipv6_address_on_creation: Any = None
+    # The Availability Zone of the subnet. If you update this property, you must also update the ``CidrBlock`` property.
+    availability_zone: Any = None
+    # The AZ ID of the subnet.
+    availability_zone_id: Any = None
+    # The effective Block Public Access configuration for the subnet, reporting the current state (`allow` or `block`) for both inbound and outbound traffic via `inbound` and `outbound` keys. (AI-inferred)
+    block_public_access_states: Any = None
+    # The IPv4 CIDR block assigned to the subnet. If you update this property, we create a new subnet, and then delete the existing one.
+    cidr_block: Any = None
+    # Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations. You must first configure a NAT gateway in a public subnet (separate from the subnet containing the IPv6-only workloads). For example, the subnet containing the NAT gateway should have a ``0.0.0.0/0`` route pointing to the internet gateway. For more information, see [Configure DNS64 and NAT64](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-nat64-dns64.html#nat-gateway-nat64-dns64-walkthrough) in the *User Guide*.
+    enable_dns64: Any = None
+    # Indicates the device position for local network interfaces in this subnet. For example, ``1`` indicates local network interfaces in this subnet are the secondary network interface (eth1).
+    enable_lni_at_device_index: Any = None
+    # An IPv4 IPAM pool ID for the subnet.
+    ipv4_ipam_pool_id: Any = None
+    # An IPv4 netmask length for the subnet.
+    ipv4_netmask_length: Any = None
+    # The IPv6 CIDR block. If you specify ``AssignIpv6AddressOnCreation``, you must also specify an IPv6 CIDR block.
+    ipv6_cidr_block: Any = None
+    # The list of IPv6 CIDR blocks associated with the subnet, automatically populated by AWS as read-only values. (AI-inferred)
+    ipv6_cidr_blocks: Any = None
+    # An IPv6 IPAM pool ID for the subnet.
+    ipv6_ipam_pool_id: Any = None
+    # Indicates whether this is an IPv6 only subnet. For more information, see [Subnet basics](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#subnet-basics) in the *User Guide*.
+    ipv6_native: Any = None
+    # An IPv6 netmask length for the subnet.
+    ipv6_netmask_length: Any = None
+    # Indicates whether instances launched in this subnet receive a public IPv4 address. The default value is ``false``. AWS charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the *Public IPv4 Address* tab on the [VPC pricing page](https://docs.aws.amazon.com/vpc/pricing/).
+    map_public_ip_on_launch: Any = None
+    # The unique identifier of the network ACL association attached to this subnet, which represents the association between the subnet and its network ACL (either the default or a custom ACL). (AI-inferred)
+    network_acl_association_id: Any = None
+    # The Amazon Resource Name (ARN) of the Outpost.
+    outpost_arn: Any = None
+    # The hostname type for EC2 instances launched into this subnet and how DNS A and AAAA record queries to the instances should be handled. For more information, see [Amazon EC2 instance hostname types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html) in the *User Guide*. Available options: + EnableResourceNameDnsAAAARecord (true | false) + EnableResourceNameDnsARecord (true | false) + HostnameType (ip-name | resource-name)
+    private_dns_name_options_on_launch: Any = None
+    # The unique identifier assigned by AWS when the subnet is created (e.g., 'subnet-1234567890abcdef0'), which is used to refer to the subnet in other resources. (AI-inferred)
+    subnet_id: Any = None
+    # Any tags assigned to the subnet.
+    tags: Any = None
+    # The ID of the VPC the subnet is in. If you update this property, you must also update the ``CidrBlock`` property.
+    vpc_id: Any = None
 
 Subnet = ubx.ResourceBinding(
     wire_type="aws_subnet",
@@ -51,30 +126,26 @@ Subnet = ubx.ResourceBinding(
         "availability_zone": ubx.FieldSpec(wire_name="availability_zone"),
         "availability_zone_id": ubx.FieldSpec(wire_name="availability_zone_id"),
         "cidr_block": ubx.FieldSpec(wire_name="cidr_block"),
-        "customer_owned_ipv4_pool": ubx.FieldSpec(wire_name="customer_owned_ipv4_pool"),
         "enable_dns64": ubx.FieldSpec(wire_name="enable_dns64"),
         "enable_lni_at_device_index": ubx.FieldSpec(wire_name="enable_lni_at_device_index"),
-        "enable_resource_name_dns_a_record_on_launch": ubx.FieldSpec(wire_name="enable_resource_name_dns_a_record_on_launch"),
-        "enable_resource_name_dns_aaaa_record_on_launch": ubx.FieldSpec(wire_name="enable_resource_name_dns_aaaa_record_on_launch"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "ipv4_ipam_pool_id": ubx.FieldSpec(wire_name="ipv4_ipam_pool_id"),
         "ipv4_netmask_length": ubx.FieldSpec(wire_name="ipv4_netmask_length"),
         "ipv6_cidr_block": ubx.FieldSpec(wire_name="ipv6_cidr_block"),
         "ipv6_ipam_pool_id": ubx.FieldSpec(wire_name="ipv6_ipam_pool_id"),
         "ipv6_native": ubx.FieldSpec(wire_name="ipv6_native"),
         "ipv6_netmask_length": ubx.FieldSpec(wire_name="ipv6_netmask_length"),
-        "map_customer_owned_ip_on_launch": ubx.FieldSpec(wire_name="map_customer_owned_ip_on_launch"),
         "map_public_ip_on_launch": ubx.FieldSpec(wire_name="map_public_ip_on_launch"),
         "outpost_arn": ubx.FieldSpec(wire_name="outpost_arn"),
-        "private_dns_hostname_type_on_launch": ubx.FieldSpec(wire_name="private_dns_hostname_type_on_launch"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "private_dns_name_options_on_launch": ubx.FieldSpec(
+            wire_name="private_dns_name_options_on_launch",
             kind="object",
-            fields=_Subnet_TimeoutsFields,
+            fields=_Subnet_PrivateDnsNameOptionsOnLaunchFields,
         ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Subnet_TagsFields,
+        ),
+        "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
     },
 )

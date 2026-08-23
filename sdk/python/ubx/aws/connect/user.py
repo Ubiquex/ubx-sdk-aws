@@ -7,72 +7,287 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class User_AfterContactWorkConfigs_AfterContactWorkConfig:
+    # Sets the after contact work (ACW) mode for the user, with valid values typically DEFAULT to use the default ACW duration or CUSTOM to allow specifying a custom timeout. (AI-inferred)
+    after_contact_work_mode: Any = None
+    # The maximum time in seconds an agent is allowed to spend on after-contact work (ACW) before being marked unavailable, as configured for this Amazon Connect user. (AI-inferred)
+    after_contact_work_time_limit: Any = None
+
+@dataclasses.dataclass
+class User_AfterContactWorkConfigs:
+    # Configures a specific after-contact work task for the user, such as AGENT_CALL or AGENT_GREETING, and the duration in seconds allowed for that task. (AI-inferred)
+    after_contact_work_config: Any = None
+    # Configures the agent-first-callback feature, which determines whether an agent's first interaction after completing after-contact work is a callback from the previous contact, including whether it is enabled and the timeout period. (AI-inferred)
+    agent_first_callback_after_contact_work_config: Any = None
+    # The contact channel (e.g., VOICE, CHAT, or TASK) to which this after-contact-work configuration applies for the user. (AI-inferred)
+    channel: Any = None
+
+@dataclasses.dataclass
+class User_AutoAcceptConfigs:
+    # Indicates whether the agent will automatically accept the first callback in Amazon Connect. (AI-inferred)
+    agent_first_callback_auto_accept: Any = None
+    # When set to true, this Amazon Connect user automatically accepts incoming contacts (such as phone calls) without requiring the agent to manually accept them, as configured by the auto-accept settings. (AI-inferred)
+    auto_accept: Any = None
+    # The contact channel (e.g., VOICE or CHAT) for which this auto-accept configuration applies, enabling automatic acceptance of incoming contacts on that channel. (AI-inferred)
+    channel: Any = None
+
+@dataclasses.dataclass
 class User_IdentityInfo:
+    # The email address. If you are using SAML for identity management and include this parameter, an error is returned.
     email: Any = None
+    # The first name. This is required if you are using Amazon Connect or SAML for identity management.
     first_name: Any = None
+    # The last name. This is required if you are using Amazon Connect or SAML for identity management.
     last_name: Any = None
+    # The mobile phone number.
+    mobile: Any = None
+    # The secondary email address. If you provide a secondary email, the user receives email notifications -- other than password reset notifications -- to this email address instead of to their primary email address.
     secondary_email: Any = None
 
 @dataclasses.dataclass
+class User_PersistentConnectionConfigs:
+    # This string indicates which agent communication channel (e.g., CHAT, VOICE, or TASK) the enclosing persistent connection configuration applies to. (AI-inferred)
+    channel: Any = None
+    # When set to true, this enables the persistent chat feature for the Connect user, allowing customers to resume a previous chat session after disconnecting. (AI-inferred)
+    persistent_connection: Any = None
+
+@dataclasses.dataclass
 class User_PhoneConfig:
+    # The After Call Work (ACW) timeout setting, in seconds.
     after_contact_work_time_limit: Any = None
+    # The Auto accept setting.
     auto_accept: Any = None
+    # The phone number for the user's desk phone.
     desk_phone_number: Any = None
+    # The Persistent Connection setting.
+    persistent_connection: Any = None
+    # The phone type.
     phone_type: Any = None
+
+@dataclasses.dataclass
+class User_PhoneNumberConfigs:
+    # The channel (e.g., VOICE or SMS) that this phone number configuration applies to for the Amazon Connect user. (AI-inferred)
+    channel: Any = None
+    # The phone number assigned to the Amazon Connect user, used for desk phone or other non-softphone devices, typically in E.164 format. (AI-inferred)
+    phone_number: Any = None
+    # Specifies the type of phone for the user's phone configuration, which can be either `SOFT_PHONE` or `DESK_PHONE`. (AI-inferred)
+    phone_type: Any = None
+
+@dataclasses.dataclass
+class User_Tags:
+    key: Any = None
+    # The value of a tag key attached to the Amazon Connect user, used to manage and categorize the user resource within AWS. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class User_UserProficiencies:
+    # The name of the attribute for a user proficiency in AWS Connect, such as a skill or language, which is paired with an attribute value and proficiency level in the user's proficiency assignments. (AI-inferred)
+    attribute_name: Any = None
+    # The value of the proficiency attribute (e.g., 'English' for the 'Language' attribute) that defines a user's skill level for routing. (AI-inferred)
+    attribute_value: Any = None
+    level: Any = None
+
+@dataclasses.dataclass
+class User_VoiceEnhancementConfigs:
+    # Specifies the audio channel (CUSTOMER or AGENT) for this voice enhancement configuration, determining whether the enhancement is applied to the customer's audio or the agent's audio for the Connect user. (AI-inferred)
+    channel: Any = None
+    # Specifies the voice enhancement mode for the Connect user, with 'ENHANCED' enabling enhanced audio processing or 'DISABLED' turning it off. (AI-inferred)
+    voice_enhancement_mode: Any = None
+
+_User_AfterContactWorkConfigs_AfterContactWorkConfigFields = {
+    "after_contact_work_mode": ubx.FieldSpec(wire_name="after_contact_work_mode"),
+    "after_contact_work_time_limit": ubx.FieldSpec(wire_name="after_contact_work_time_limit"),
+}
+
+_User_AfterContactWorkConfigsFields = {
+    "after_contact_work_config": ubx.FieldSpec(
+        wire_name="after_contact_work_config",
+        kind="object",
+        fields=_User_AfterContactWorkConfigs_AfterContactWorkConfigFields,
+    ),
+    "agent_first_callback_after_contact_work_config": ubx.FieldSpec(
+        wire_name="agent_first_callback_after_contact_work_config",
+        kind="object",
+        fields=_User_AfterContactWorkConfigs_AfterContactWorkConfigFields,
+    ),
+    "channel": ubx.FieldSpec(wire_name="channel"),
+}
+
+_User_AutoAcceptConfigsFields = {
+    "agent_first_callback_auto_accept": ubx.FieldSpec(wire_name="agent_first_callback_auto_accept"),
+    "auto_accept": ubx.FieldSpec(wire_name="auto_accept"),
+    "channel": ubx.FieldSpec(wire_name="channel"),
+}
 
 _User_IdentityInfoFields = {
     "email": ubx.FieldSpec(wire_name="email"),
     "first_name": ubx.FieldSpec(wire_name="first_name"),
     "last_name": ubx.FieldSpec(wire_name="last_name"),
+    "mobile": ubx.FieldSpec(wire_name="mobile"),
     "secondary_email": ubx.FieldSpec(wire_name="secondary_email"),
+}
+
+_User_PersistentConnectionConfigsFields = {
+    "channel": ubx.FieldSpec(wire_name="channel"),
+    "persistent_connection": ubx.FieldSpec(wire_name="persistent_connection"),
 }
 
 _User_PhoneConfigFields = {
     "after_contact_work_time_limit": ubx.FieldSpec(wire_name="after_contact_work_time_limit"),
     "auto_accept": ubx.FieldSpec(wire_name="auto_accept"),
     "desk_phone_number": ubx.FieldSpec(wire_name="desk_phone_number"),
+    "persistent_connection": ubx.FieldSpec(wire_name="persistent_connection"),
     "phone_type": ubx.FieldSpec(wire_name="phone_type"),
+}
+
+_User_PhoneNumberConfigsFields = {
+    "channel": ubx.FieldSpec(wire_name="channel"),
+    "phone_number": ubx.FieldSpec(wire_name="phone_number"),
+    "phone_type": ubx.FieldSpec(wire_name="phone_type"),
+}
+
+_User_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_User_UserProficienciesFields = {
+    "attribute_name": ubx.FieldSpec(wire_name="attribute_name"),
+    "attribute_value": ubx.FieldSpec(wire_name="attribute_value"),
+    "level": ubx.FieldSpec(wire_name="level"),
+}
+
+_User_VoiceEnhancementConfigsFields = {
+    "channel": ubx.FieldSpec(wire_name="channel"),
+    "voice_enhancement_mode": ubx.FieldSpec(wire_name="voice_enhancement_mode"),
 }
 
 @dataclasses.dataclass
 class UserConfig:
+    # After Contact Work configurations of a user.
+    after_contact_work_configs: Any = None
+    # Auto-accept configurations of a user.
+    auto_accept_configs: Any = None
+    # The identifier of the user account in the directory used for identity management.
     directory_user_id: Any = None
-    hierarchy_group_id: Any = None
-    id: Any = None
-    instance_id: Any = None
-    name: Any = None
-    password: Any = None
-    region: Any = None
-    routing_profile_id: Any = None
-    security_profile_ids: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # The identifier of the hierarchy group for the user.
+    hierarchy_group_arn: Any = None
+    # Contains information about the identity of a user.
     identity_info: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.
+    password: Any = None
+    # Persistent Connection configurations of a user.
+    persistent_connection_configs: Any = None
+    # Contains information about the phone configuration settings for a user.
     phone_config: Any = None
+    # Phone Number configurations of a user.
+    phone_number_configs: Any = None
+    # The identifier of the routing profile for the user.
+    routing_profile_arn: Any = None
+    # One or more security profile arns for the user
+    security_profile_arns: Any = None
+    # One or more tags.
+    tags: Any = None
+    # One or more predefined attributes assigned to a user, with a level that indicates how skilled they are.
+    user_proficiencies: Any = None
+    # The user name for the account.
+    username: Any = None
+    # Voice Enhancement configurations of a user.
+    voice_enhancement_configs: Any = None
+
+@dataclasses.dataclass
+class UserAttrs:
+    # After Contact Work configurations of a user.
+    after_contact_work_configs: Any = None
+    # Auto-accept configurations of a user.
+    auto_accept_configs: Any = None
+    # The identifier of the user account in the directory used for identity management.
+    directory_user_id: Any = None
+    # The identifier of the hierarchy group for the user.
+    hierarchy_group_arn: Any = None
+    # Contains information about the identity of a user.
+    identity_info: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.
+    password: Any = None
+    # Persistent Connection configurations of a user.
+    persistent_connection_configs: Any = None
+    # Contains information about the phone configuration settings for a user.
+    phone_config: Any = None
+    # Phone Number configurations of a user.
+    phone_number_configs: Any = None
+    # The identifier of the routing profile for the user.
+    routing_profile_arn: Any = None
+    # One or more security profile arns for the user
+    security_profile_arns: Any = None
+    # One or more tags.
+    tags: Any = None
+    # The Amazon Resource Name (ARN) for the user.
+    user_arn: Any = None
+    # One or more predefined attributes assigned to a user, with a level that indicates how skilled they are.
+    user_proficiencies: Any = None
+    # The user name for the account.
+    username: Any = None
+    # Voice Enhancement configurations of a user.
+    voice_enhancement_configs: Any = None
 
 User = ubx.ResourceBinding(
     wire_type="aws_connect_user",
     fields={
+        "after_contact_work_configs": ubx.FieldSpec(
+            wire_name="after_contact_work_configs",
+            kind="list",
+            fields=_User_AfterContactWorkConfigsFields,
+        ),
+        "auto_accept_configs": ubx.FieldSpec(
+            wire_name="auto_accept_configs",
+            kind="list",
+            fields=_User_AutoAcceptConfigsFields,
+        ),
         "directory_user_id": ubx.FieldSpec(wire_name="directory_user_id"),
-        "hierarchy_group_id": ubx.FieldSpec(wire_name="hierarchy_group_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "instance_id": ubx.FieldSpec(wire_name="instance_id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "password": ubx.FieldSpec(wire_name="password"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "routing_profile_id": ubx.FieldSpec(wire_name="routing_profile_id"),
-        "security_profile_ids": ubx.FieldSpec(wire_name="security_profile_ids"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "hierarchy_group_arn": ubx.FieldSpec(wire_name="hierarchy_group_arn"),
         "identity_info": ubx.FieldSpec(
             wire_name="identity_info",
-            kind="list",
+            kind="object",
             fields=_User_IdentityInfoFields,
+        ),
+        "instance_arn": ubx.FieldSpec(wire_name="instance_arn"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "persistent_connection_configs": ubx.FieldSpec(
+            wire_name="persistent_connection_configs",
+            kind="list",
+            fields=_User_PersistentConnectionConfigsFields,
         ),
         "phone_config": ubx.FieldSpec(
             wire_name="phone_config",
-            kind="list",
+            kind="object",
             fields=_User_PhoneConfigFields,
+        ),
+        "phone_number_configs": ubx.FieldSpec(
+            wire_name="phone_number_configs",
+            kind="list",
+            fields=_User_PhoneNumberConfigsFields,
+        ),
+        "routing_profile_arn": ubx.FieldSpec(wire_name="routing_profile_arn"),
+        "security_profile_arns": ubx.FieldSpec(wire_name="security_profile_arns"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_User_TagsFields,
+        ),
+        "user_proficiencies": ubx.FieldSpec(
+            wire_name="user_proficiencies",
+            kind="list",
+            fields=_User_UserProficienciesFields,
+        ),
+        "username": ubx.FieldSpec(wire_name="username"),
+        "voice_enhancement_configs": ubx.FieldSpec(
+            wire_name="voice_enhancement_configs",
+            kind="list",
+            fields=_User_VoiceEnhancementConfigsFields,
         ),
     },
 )

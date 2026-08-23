@@ -7,24 +7,48 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ReplicationSubnetGroup_Tags:
+    key: Any = None
+    # The value portion of a tag (key-value pair) assigned to the DMS replication subnet group, used to categorize and manage the resource for cost allocation and operational purposes. (AI-inferred)
+    value: Any = None
+
+_ReplicationSubnetGroup_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ReplicationSubnetGroupConfig:
-    id: Any = None
-    region: Any = None
+    # The description for the subnet group.
     replication_subnet_group_description: Any = None
-    replication_subnet_group_id: Any = None
+    # The name for the replication subnet group. This value is stored as a lowercase string.
+    replication_subnet_group_identifier: Any = None
+    # One or more subnet IDs to be assigned to the replication subnet group.
     subnet_ids: Any = None
+    # One or more tags to be assigned to the replication subnet group
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class ReplicationSubnetGroupAttrs:
+    # The description for the subnet group.
+    replication_subnet_group_description: Any = None
+    # The name for the replication subnet group. This value is stored as a lowercase string.
+    replication_subnet_group_identifier: Any = None
+    # One or more subnet IDs to be assigned to the replication subnet group.
+    subnet_ids: Any = None
+    # One or more tags to be assigned to the replication subnet group
+    tags: Any = None
 
 ReplicationSubnetGroup = ubx.ResourceBinding(
     wire_type="aws_dms_replication_subnet_group",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "replication_subnet_group_description": ubx.FieldSpec(wire_name="replication_subnet_group_description"),
-        "replication_subnet_group_id": ubx.FieldSpec(wire_name="replication_subnet_group_id"),
+        "replication_subnet_group_identifier": ubx.FieldSpec(wire_name="replication_subnet_group_identifier"),
         "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ReplicationSubnetGroup_TagsFields,
+        ),
     },
 )

@@ -7,24 +7,57 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Pair_Tags:
+    # The key of a tag attached to the EC2 key pair, used to organize and identify the resource within AWS. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_Pair_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class PairConfig:
-    id: Any = None
+    # The format of the key pair. Default: ``pem``
+    key_format: Any = None
+    # A unique name for the key pair. Constraints: Up to 255 ASCII characters
     key_name: Any = None
-    key_name_prefix: Any = None
-    public_key: Any = None
-    region: Any = None
+    # The type of key pair. Note that ED25519 keys are not supported for Windows instances. If the ``PublicKeyMaterial`` property is specified, the ``KeyType`` property is ignored, and the key type is inferred from the ``PublicKeyMaterial`` value. Default: ``rsa``
+    key_type: Any = None
+    # The public key material. The ``PublicKeyMaterial`` property is used to import a key pair. If this property is not specified, then a new key pair will be created.
+    public_key_material: Any = None
+    # The tags to apply to the key pair.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class PairAttrs:
+    # The SHA-1 digest of the DER-encoded public key for the EC2 key pair, used to verify the key's identity. (AI-inferred)
+    key_fingerprint: Any = None
+    # The format of the key pair. Default: ``pem``
+    key_format: Any = None
+    # A unique name for the key pair. Constraints: Up to 255 ASCII characters
+    key_name: Any = None
+    # The unique identifier that AWS assigns to the key pair upon creation, for example 'key-1234567890abcdef0'. (AI-inferred)
+    key_pair_id: Any = None
+    # The type of key pair. Note that ED25519 keys are not supported for Windows instances. If the ``PublicKeyMaterial`` property is specified, the ``KeyType`` property is ignored, and the key type is inferred from the ``PublicKeyMaterial`` value. Default: ``rsa``
+    key_type: Any = None
+    # The public key material. The ``PublicKeyMaterial`` property is used to import a key pair. If this property is not specified, then a new key pair will be created.
+    public_key_material: Any = None
+    # The tags to apply to the key pair.
+    tags: Any = None
 
 Pair = ubx.ResourceBinding(
     wire_type="aws_key_pair",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
+        "key_format": ubx.FieldSpec(wire_name="key_format"),
         "key_name": ubx.FieldSpec(wire_name="key_name"),
-        "key_name_prefix": ubx.FieldSpec(wire_name="key_name_prefix"),
-        "public_key": ubx.FieldSpec(wire_name="public_key"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "key_type": ubx.FieldSpec(wire_name="key_type"),
+        "public_key_material": ubx.FieldSpec(wire_name="public_key_material"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Pair_TagsFields,
+        ),
     },
 )

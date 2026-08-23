@@ -4,14 +4,29 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkflowConfig struct {
+	// A collection of properties to be used as part of each execution of the workflow
 	DefaultRunProperties any
+	// A description of the workflow
 	Description any
-	Id any
+	// You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.
 	MaxConcurrentRuns any
+	// The name of the workflow representing the flow
 	Name any
-	Region any
+	// The tags to use with this workflow.
 	Tags any
-	TagsAll any
+}
+
+type WorkflowAttrs struct {
+	// A collection of properties to be used as part of each execution of the workflow
+	DefaultRunProperties any
+	// A description of the workflow
+	Description any
+	// You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.
+	MaxConcurrentRuns any
+	// The name of the workflow representing the flow
+	Name any
+	// The tags to use with this workflow.
+	Tags any
 }
 
 var Workflow = ubx.ResourceBinding{
@@ -19,11 +34,8 @@ var Workflow = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DefaultRunProperties": ubx.FieldSpec{WireName: "default_run_properties"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"MaxConcurrentRuns": ubx.FieldSpec{WireName: "max_concurrent_runs"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 	},
 }

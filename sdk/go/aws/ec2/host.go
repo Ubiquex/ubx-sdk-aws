@@ -3,31 +3,60 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Host_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Host_Tags struct {
+	// The key of a user-defined tag assigned to the EC2 Dedicated Host. (AI-inferred)
+	Key any
+	// The value portion of a tag attached to the EC2 Dedicated Host. (AI-inferred)
+	Value any
 }
 
-var Host_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Host_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type HostConfig struct {
+	// The ID of the Outpost hardware asset.
 	AssetId any
+	// Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID.
 	AutoPlacement any
+	// The Availability Zone in which to allocate the Dedicated Host.
 	AvailabilityZone any
+	// Automatically allocates a new dedicated host and moves your instances on to it if a degradation is detected on your current host.
+	HostMaintenance any
+	// Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by default.
 	HostRecovery any
-	Id any
+	// Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the Dedicated Hosts support multiple instance types within that instance family.
 	InstanceFamily any
+	// Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the Dedicated Hosts support instances of the specified instance type only.
 	InstanceType any
+	// The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.
 	OutpostArn any
-	Region any
+	// Any tags assigned to the Host.
 	Tags any
-	TagsAll any
-	Timeouts any
+}
+
+type HostAttrs struct {
+	// The ID of the Outpost hardware asset.
+	AssetId any
+	// Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID.
+	AutoPlacement any
+	// The Availability Zone in which to allocate the Dedicated Host.
+	AvailabilityZone any
+	// ID of the host created.
+	HostId any
+	// Automatically allocates a new dedicated host and moves your instances on to it if a degradation is detected on your current host.
+	HostMaintenance any
+	// Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by default.
+	HostRecovery any
+	// Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the Dedicated Hosts support multiple instance types within that instance family.
+	InstanceFamily any
+	// Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the Dedicated Hosts support instances of the specified instance type only.
+	InstanceType any
+	// The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.
+	OutpostArn any
+	// Any tags assigned to the Host.
+	Tags any
 }
 
 var Host = ubx.ResourceBinding{
@@ -36,18 +65,15 @@ var Host = ubx.ResourceBinding{
 		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
 		"AutoPlacement": ubx.FieldSpec{WireName: "auto_placement"},
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+		"HostMaintenance": ubx.FieldSpec{WireName: "host_maintenance"},
 		"HostRecovery": ubx.FieldSpec{WireName: "host_recovery"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"InstanceFamily": ubx.FieldSpec{WireName: "instance_family"},
 		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
 		"OutpostArn": ubx.FieldSpec{WireName: "outpost_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Host_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Host_TagsFields,
 		},
 	},
 }

@@ -7,12 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ProactiveEngagement_EmergencyContact:
+class ProactiveEngagement_EmergencyContactList:
+    # A free-form note field attached to an emergency contact, used to record additional context such as the contact's role or best time to reach them. (AI-inferred)
     contact_notes: Any = None
+    # The email address where AWS Shield Advanced sends proactive engagement notifications and alerts for this emergency contact. (AI-inferred)
     email_address: Any = None
+    # The phone number of the emergency contact for AWS Shield Advanced proactive engagement notifications. (AI-inferred)
     phone_number: Any = None
 
-_ProactiveEngagement_EmergencyContactFields = {
+_ProactiveEngagement_EmergencyContactListFields = {
     "contact_notes": ubx.FieldSpec(wire_name="contact_notes"),
     "email_address": ubx.FieldSpec(wire_name="email_address"),
     "phone_number": ubx.FieldSpec(wire_name="phone_number"),
@@ -20,17 +23,28 @@ _ProactiveEngagement_EmergencyContactFields = {
 
 @dataclasses.dataclass
 class ProactiveEngagementConfig:
-    enabled: Any = None
-    emergency_contact: Any = None
+    # A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. To enable proactive engagement, the contact list must include at least one phone number.
+    emergency_contact_list: Any = None
+    # If `ENABLED`, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support. If `DISABLED`, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support.
+    proactive_engagement_status: Any = None
+
+@dataclasses.dataclass
+class ProactiveEngagementAttrs:
+    # The AWS account ID that the Shield Advanced proactive engagement configuration applies to; this is automatically resolved to the current account and is read-only. (AI-inferred)
+    account_id: Any = None
+    # A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. To enable proactive engagement, the contact list must include at least one phone number.
+    emergency_contact_list: Any = None
+    # If `ENABLED`, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support. If `DISABLED`, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support.
+    proactive_engagement_status: Any = None
 
 ProactiveEngagement = ubx.ResourceBinding(
     wire_type="aws_shield_proactive_engagement",
     fields={
-        "enabled": ubx.FieldSpec(wire_name="enabled"),
-        "emergency_contact": ubx.FieldSpec(
-            wire_name="emergency_contact",
+        "emergency_contact_list": ubx.FieldSpec(
+            wire_name="emergency_contact_list",
             kind="list",
-            fields=_ProactiveEngagement_EmergencyContactFields,
+            fields=_ProactiveEngagement_EmergencyContactListFields,
         ),
+        "proactive_engagement_status": ubx.FieldSpec(wire_name="proactive_engagement_status"),
     },
 )

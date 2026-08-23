@@ -8,47 +8,78 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CodeSigningConfig_AllowedPublishers:
+    # List of Signing profile version Arns
     signing_profile_version_arns: Any = None
 
 @dataclasses.dataclass
-class CodeSigningConfig_Policies:
+class CodeSigningConfig_CodeSigningPolicies:
+    # Indicates how Lambda operations involve updating the code artifact will operate. Default to Warn if not provided
     untrusted_artifact_on_deployment: Any = None
+
+@dataclasses.dataclass
+class CodeSigningConfig_Tags:
+    # The key of a tag assigned to the AWS Lambda code signing configuration, used to identify and organize the resource. (AI-inferred)
+    key: Any = None
+    # The value of a user-defined tag applied to the AWS Lambda code signing configuration. (AI-inferred)
+    value: Any = None
 
 _CodeSigningConfig_AllowedPublishersFields = {
     "signing_profile_version_arns": ubx.FieldSpec(wire_name="signing_profile_version_arns"),
 }
 
-_CodeSigningConfig_PoliciesFields = {
+_CodeSigningConfig_CodeSigningPoliciesFields = {
     "untrusted_artifact_on_deployment": ubx.FieldSpec(wire_name="untrusted_artifact_on_deployment"),
+}
+
+_CodeSigningConfig_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class CodeSigningConfigConfig:
-    description: Any = None
-    id: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # When the CodeSigningConfig is later on attached to a function, the function code will be expected to be signed by profiles from this list
     allowed_publishers: Any = None
-    policies: Any = None
+    # Policies to control how to act if a signature is invalid
+    code_signing_policies: Any = None
+    # A description of the CodeSigningConfig
+    description: Any = None
+    # A list of tags to apply to CodeSigningConfig resource
+    tags: Any = None
+
+@dataclasses.dataclass
+class CodeSigningConfigAttrs:
+    # When the CodeSigningConfig is later on attached to a function, the function code will be expected to be signed by profiles from this list
+    allowed_publishers: Any = None
+    # A unique Arn for CodeSigningConfig resource
+    code_signing_config_arn: Any = None
+    # A unique identifier for CodeSigningConfig resource
+    code_signing_config_id: Any = None
+    # Policies to control how to act if a signature is invalid
+    code_signing_policies: Any = None
+    # A description of the CodeSigningConfig
+    description: Any = None
+    # A list of tags to apply to CodeSigningConfig resource
+    tags: Any = None
 
 CodeSigningConfig = ubx.ResourceBinding(
     wire_type="aws_lambda_code_signing_config",
     fields={
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "allowed_publishers": ubx.FieldSpec(
             wire_name="allowed_publishers",
-            kind="list",
+            kind="object",
             fields=_CodeSigningConfig_AllowedPublishersFields,
         ),
-        "policies": ubx.FieldSpec(
-            wire_name="policies",
+        "code_signing_policies": ubx.FieldSpec(
+            wire_name="code_signing_policies",
+            kind="object",
+            fields=_CodeSigningConfig_CodeSigningPoliciesFields,
+        ),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_CodeSigningConfig_PoliciesFields,
+            fields=_CodeSigningConfig_TagsFields,
         ),
     },
 )

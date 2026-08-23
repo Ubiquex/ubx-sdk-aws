@@ -4,129 +4,125 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Catalog_CatalogProperties_DataLakeAccessProperties struct {
+	// Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation.
+	AllowFullTableExternalDataAccess any
+	// Specifies a federated catalog type for the native catalog resource.
 	CatalogType any
+	// Turns on or off data lake access for Apache Spark applications that access Amazon Redshift databases in the Data Catalog from any non-Redshift engine.
 	DataLakeAccess any
+	// A role that will be assumed by Glue for transferring data into/out of the staging bucket during a query.
 	DataTransferRole any
+	// An encryption key that will be used for the staging bucket that will be created along with the catalog.
 	KmsKey any
+	// The name of the managed workgroup associated with the catalog.
 	ManagedWorkgroupName any
+	// The status of the managed workgroup.
 	ManagedWorkgroupStatus any
+	// The name of the Redshift database.
 	RedshiftDatabaseName any
-	StatusMessage any
-}
-
-type Catalog_CatalogProperties_IcebergOptimizationProperties struct {
-	Compaction any
-	OrphanFileDeletion any
-	Retention any
-	RoleArn any
 }
 
 type Catalog_CatalogProperties struct {
+	// Additional key-value properties for the catalog.
 	CustomProperties any
+	// Data lake access properties for the catalog.
 	DataLakeAccessProperties any
-	IcebergOptimizationProperties any
 }
 
 type Catalog_CreateDatabaseDefaultPermissions_Principal struct {
+	// The unique identifier (such as an IAM role ARN, IAM user ARN, or AWS account ID) of the Data Lake principal that receives the default permissions for databases created in the Glue catalog. (AI-inferred)
 	DataLakePrincipalIdentifier any
 }
 
 type Catalog_CreateDatabaseDefaultPermissions struct {
+	// The list of AWS Glue permissions (e.g., 'ALL' or 'CREATE_TABLE') granted by default to the specified principal on newly created databases in the Data Catalog. (AI-inferred)
 	Permissions any
+	// Defines the principal (IAM user, role, or all users) that the Glue database's default permissions are granted to, via its Data Lake principal identifier. (AI-inferred)
 	Principal any
 }
 
 type Catalog_FederatedCatalog struct {
+	// The name of the connection to an external data source.
 	ConnectionName any
-	ConnectionType any
+	// A unique identifier for the federated catalog.
 	Identifier any
 }
 
+type Catalog_Tags struct {
+	Key any
+	// The value of a tag key in the Tags property of the AWS Glue Catalog, used to attach custom metadata to the Glue Data Catalog for identification and resource management. (AI-inferred)
+	Value any
+}
+
 type Catalog_TargetRedshiftCatalog struct {
+	// The Amazon Resource Name (ARN) of the catalog resource.
 	CatalogArn any
 }
 
-type Catalog_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
-
-var Catalog_CatalogProperties_DataLakeAccessPropertiesFields = ubx.FieldMap{
-		"CatalogType": ubx.FieldSpec{WireName: "catalog_type"},
-		"DataLakeAccess": ubx.FieldSpec{WireName: "data_lake_access"},
-		"DataTransferRole": ubx.FieldSpec{WireName: "data_transfer_role"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"ManagedWorkgroupName": ubx.FieldSpec{WireName: "managed_workgroup_name"},
-		"ManagedWorkgroupStatus": ubx.FieldSpec{WireName: "managed_workgroup_status"},
-		"RedshiftDatabaseName": ubx.FieldSpec{WireName: "redshift_database_name"},
-		"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
-	}
-
-var Catalog_CatalogProperties_IcebergOptimizationPropertiesFields = ubx.FieldMap{
-		"Compaction": ubx.FieldSpec{WireName: "compaction"},
-		"OrphanFileDeletion": ubx.FieldSpec{WireName: "orphan_file_deletion"},
-		"Retention": ubx.FieldSpec{WireName: "retention"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
-
-var Catalog_CatalogPropertiesFields = ubx.FieldMap{
-		"CustomProperties": ubx.FieldSpec{WireName: "custom_properties"},
-		"DataLakeAccessProperties": ubx.FieldSpec{
-			WireName: "data_lake_access_properties",
-			Kind: "list",
-			Fields: Catalog_CatalogProperties_DataLakeAccessPropertiesFields,
-		},
-		"IcebergOptimizationProperties": ubx.FieldSpec{
-			WireName: "iceberg_optimization_properties",
-			Kind: "list",
-			Fields: Catalog_CatalogProperties_IcebergOptimizationPropertiesFields,
-		},
-	}
-
-var Catalog_CreateDatabaseDefaultPermissions_PrincipalFields = ubx.FieldMap{
-		"DataLakePrincipalIdentifier": ubx.FieldSpec{WireName: "data_lake_principal_identifier"},
-	}
-
-var Catalog_CreateDatabaseDefaultPermissionsFields = ubx.FieldMap{
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-		"Principal": ubx.FieldSpec{
-			WireName: "principal",
-			Kind: "list",
-			Fields: Catalog_CreateDatabaseDefaultPermissions_PrincipalFields,
-		},
-	}
-
 var Catalog_FederatedCatalogFields = ubx.FieldMap{
 		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+	}
+
+var Catalog_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 var Catalog_TargetRedshiftCatalogFields = ubx.FieldMap{
 		"CatalogArn": ubx.FieldSpec{WireName: "catalog_arn"},
 	}
 
-var Catalog_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type CatalogConfig struct {
+	// Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation.
 	AllowFullTableExternalDataAccess any
+	// A description of the catalog.
 	Description any
-	Name any
-	OverwriteChildResourcePermissionsWithDefault any
-	Parameters any
-	Region any
-	Tags any
-	CatalogProperties any
-	CreateDatabaseDefaultPermissions any
-	CreateTableDefaultPermissions any
+	// A FederatedCatalog structure that references an entity outside the Glue Data Catalog.
 	FederatedCatalog any
+	// The name of the catalog to create.
+	Name any
+	// Specifies whether to overwrite child resource permissions with the default permissions.
+	OverwriteChildResourcePermissionsWithDefault any
+	// A map of key-value pairs that define parameters and properties of the catalog.
+	Parameters any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// A structure that describes a target catalog for resource linking.
 	TargetRedshiftCatalog any
-	Timeouts any
+}
+
+type CatalogAttrs struct {
+	// Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation.
+	AllowFullTableExternalDataAccess any
+	// The ID of the catalog.
+	CatalogId any
+	// A structure that specifies data lake access properties and other custom properties.
+	CatalogProperties any
+	// An array of PrincipalPermissions objects for default database permissions.
+	CreateDatabaseDefaultPermissions any
+	// An array of PrincipalPermissions objects for default table permissions.
+	CreateTableDefaultPermissions any
+	// The time at which the catalog was created.
+	CreateTime any
+	// A description of the catalog.
+	Description any
+	// A FederatedCatalog structure that references an entity outside the Glue Data Catalog.
+	FederatedCatalog any
+	// The name of the catalog to create.
+	Name any
+	// Specifies whether to overwrite child resource permissions with the default permissions.
+	OverwriteChildResourcePermissionsWithDefault any
+	// A map of key-value pairs that define parameters and properties of the catalog.
+	Parameters any
+	// The Amazon Resource Name (ARN) of the catalog.
+	ResourceArn any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// A structure that describes a target catalog for resource linking.
+	TargetRedshiftCatalog any
+	// The time at which the catalog was last updated.
+	UpdateTime any
 }
 
 var Catalog = ubx.ResourceBinding{
@@ -134,40 +130,23 @@ var Catalog = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllowFullTableExternalDataAccess": ubx.FieldSpec{WireName: "allow_full_table_external_data_access"},
 		"Description": ubx.FieldSpec{WireName: "description"},
+		"FederatedCatalog": ubx.FieldSpec{
+			WireName: "federated_catalog",
+			Kind: "object",
+			Fields: Catalog_FederatedCatalogFields,
+		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OverwriteChildResourcePermissionsWithDefault": ubx.FieldSpec{WireName: "overwrite_child_resource_permissions_with_default"},
 		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"CatalogProperties": ubx.FieldSpec{
-			WireName: "catalog_properties",
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: Catalog_CatalogPropertiesFields,
-		},
-		"CreateDatabaseDefaultPermissions": ubx.FieldSpec{
-			WireName: "create_database_default_permissions",
-			Kind: "list",
-			Fields: Catalog_CreateDatabaseDefaultPermissionsFields,
-		},
-		"CreateTableDefaultPermissions": ubx.FieldSpec{
-			WireName: "create_table_default_permissions",
-			Kind: "list",
-			Fields: Catalog_CreateDatabaseDefaultPermissionsFields,
-		},
-		"FederatedCatalog": ubx.FieldSpec{
-			WireName: "federated_catalog",
-			Kind: "list",
-			Fields: Catalog_FederatedCatalogFields,
+			Fields: Catalog_TagsFields,
 		},
 		"TargetRedshiftCatalog": ubx.FieldSpec{
 			WireName: "target_redshift_catalog",
-			Kind: "list",
-			Fields: Catalog_TargetRedshiftCatalogFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
 			Kind: "object",
-			Fields: Catalog_TimeoutsFields,
+			Fields: Catalog_TargetRedshiftCatalogFields,
 		},
 	},
 }

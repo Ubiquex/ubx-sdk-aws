@@ -3,25 +3,58 @@ package key
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Pair_Tags struct {
+	// The key of a tag attached to the EC2 key pair, used to organize and identify the resource within AWS. (AI-inferred)
+	Key any
+	Value any
+}
+
+var Pair_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type PairConfig struct {
-	Id any
+	// The format of the key pair. Default: ``pem``
+	KeyFormat any
+	// A unique name for the key pair. Constraints: Up to 255 ASCII characters
 	KeyName any
-	KeyNamePrefix any
-	PublicKey any
-	Region any
+	// The type of key pair. Note that ED25519 keys are not supported for Windows instances. If the ``PublicKeyMaterial`` property is specified, the ``KeyType`` property is ignored, and the key type is inferred from the ``PublicKeyMaterial`` value. Default: ``rsa``
+	KeyType any
+	// The public key material. The ``PublicKeyMaterial`` property is used to import a key pair. If this property is not specified, then a new key pair will be created.
+	PublicKeyMaterial any
+	// The tags to apply to the key pair.
 	Tags any
-	TagsAll any
+}
+
+type PairAttrs struct {
+	// The SHA-1 digest of the DER-encoded public key for the EC2 key pair, used to verify the key's identity. (AI-inferred)
+	KeyFingerprint any
+	// The format of the key pair. Default: ``pem``
+	KeyFormat any
+	// A unique name for the key pair. Constraints: Up to 255 ASCII characters
+	KeyName any
+	// The unique identifier that AWS assigns to the key pair upon creation, for example 'key-1234567890abcdef0'. (AI-inferred)
+	KeyPairId any
+	// The type of key pair. Note that ED25519 keys are not supported for Windows instances. If the ``PublicKeyMaterial`` property is specified, the ``KeyType`` property is ignored, and the key type is inferred from the ``PublicKeyMaterial`` value. Default: ``rsa``
+	KeyType any
+	// The public key material. The ``PublicKeyMaterial`` property is used to import a key pair. If this property is not specified, then a new key pair will be created.
+	PublicKeyMaterial any
+	// The tags to apply to the key pair.
+	Tags any
 }
 
 var Pair = ubx.ResourceBinding{
 	WireType: "aws_key_pair",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"KeyFormat": ubx.FieldSpec{WireName: "key_format"},
 		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"KeyNamePrefix": ubx.FieldSpec{WireName: "key_name_prefix"},
-		"PublicKey": ubx.FieldSpec{WireName: "public_key"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"KeyType": ubx.FieldSpec{WireName: "key_type"},
+		"PublicKeyMaterial": ubx.FieldSpec{WireName: "public_key_material"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Pair_TagsFields,
+		},
 	},
 }

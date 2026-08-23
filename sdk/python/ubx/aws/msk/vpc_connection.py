@@ -8,14 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VpcConnectionConfig:
+    # The type of private link authentication
     authentication: Any = None
+    # Specifies the subnets in the client VPC where the MSK VPC connection is created, enabling network access from those subnets to the cluster. (AI-inferred)
     client_subnets: Any = None
-    id: Any = None
-    region: Any = None
+    # Specifies the security group IDs to attach to the elastic network interface created for the MSK VPC connection, controlling traffic to and from client resources. (AI-inferred)
     security_groups: Any = None
+    # A key-value pair to associate with a resource.
     tags: Any = None
-    tags_all: Any = None
+    # The Amazon Resource Name (ARN) of the target cluster
     target_cluster_arn: Any = None
+    # The ID of the client VPC that will be connected to the MSK cluster using this VPC connection. (AI-inferred)
+    vpc_id: Any = None
+
+@dataclasses.dataclass
+class VpcConnectionAttrs:
+    # The Amazon Resource Name (ARN) assigned to the MSK VPC connection. (AI-inferred)
+    arn: Any = None
+    # The type of private link authentication
+    authentication: Any = None
+    # Specifies the subnets in the client VPC where the MSK VPC connection is created, enabling network access from those subnets to the cluster. (AI-inferred)
+    client_subnets: Any = None
+    # Specifies the security group IDs to attach to the elastic network interface created for the MSK VPC connection, controlling traffic to and from client resources. (AI-inferred)
+    security_groups: Any = None
+    # A key-value pair to associate with a resource.
+    tags: Any = None
+    # The Amazon Resource Name (ARN) of the target cluster
+    target_cluster_arn: Any = None
+    # The ID of the client VPC that will be connected to the MSK cluster using this VPC connection. (AI-inferred)
     vpc_id: Any = None
 
 VpcConnection = ubx.ResourceBinding(
@@ -23,11 +43,8 @@ VpcConnection = ubx.ResourceBinding(
     fields={
         "authentication": ubx.FieldSpec(wire_name="authentication"),
         "client_subnets": ubx.FieldSpec(wire_name="client_subnets"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "security_groups": ubx.FieldSpec(wire_name="security_groups"),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "target_cluster_arn": ubx.FieldSpec(wire_name="target_cluster_arn"),
         "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
     },

@@ -8,23 +8,39 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NamedQueryConfig:
+    # The database to which the query belongs.
     database: Any = None
+    # The query description.
     description: Any = None
-    id: Any = None
+    # The query name.
     name: Any = None
-    query: Any = None
-    region: Any = None
-    workgroup: Any = None
+    # The contents of the query with all query statements.
+    query_string: Any = None
+    # The name of the workgroup that contains the named query.
+    work_group: Any = None
+
+@dataclasses.dataclass
+class NamedQueryAttrs:
+    # The database to which the query belongs.
+    database: Any = None
+    # The query description.
+    description: Any = None
+    # The query name.
+    name: Any = None
+    # The unique ID of the query.
+    named_query_id: Any = None
+    # The contents of the query with all query statements.
+    query_string: Any = None
+    # The name of the workgroup that contains the named query.
+    work_group: Any = None
 
 NamedQuery = ubx.ResourceBinding(
     wire_type="aws_athena_named_query",
     fields={
         "database": ubx.FieldSpec(wire_name="database"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "query": ubx.FieldSpec(wire_name="query"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "workgroup": ubx.FieldSpec(wire_name="workgroup"),
+        "query_string": ubx.FieldSpec(wire_name="query_string"),
+        "work_group": ubx.FieldSpec(wire_name="work_group"),
     },
 )

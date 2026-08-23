@@ -3,26 +3,26 @@ package m2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Deployment_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type DeploymentConfig struct {
+	// The application ID.
+	ApplicationId any
+	// The version number of the application to deploy
+	ApplicationVersion any
+	// The environment ID.
+	EnvironmentId any
 }
 
-var Deployment_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
-type DeploymentConfig struct {
+type DeploymentAttrs struct {
+	// The application ID.
 	ApplicationId any
+	// The version number of the application to deploy
 	ApplicationVersion any
+	// The deployment ID.
+	DeploymentId any
+	// The environment ID.
 	EnvironmentId any
-	ForceStop any
-	Region any
-	Start any
-	Timeouts any
+	// The status of the deployment.
+	Status any
 }
 
 var Deployment = ubx.ResourceBinding{
@@ -31,13 +31,5 @@ var Deployment = ubx.ResourceBinding{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"ApplicationVersion": ubx.FieldSpec{WireName: "application_version"},
 		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"ForceStop": ubx.FieldSpec{WireName: "force_stop"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Deployment_TimeoutsFields,
-		},
 	},
 }

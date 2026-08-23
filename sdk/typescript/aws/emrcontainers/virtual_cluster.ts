@@ -2,21 +2,28 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VirtualCluster_ContainerProvider_Info_EksInfo {
-  namespace: string;
+  /** The Kubernetes namespace in the Amazon EKS cluster where the virtual cluster's resources are deployed. (AI-inferred) */
+  namespace: string | Computed<string>;
 }
 
 export interface VirtualCluster_ContainerProvider_Info {
-  eksInfo: VirtualCluster_ContainerProvider_Info_EksInfo[];
+  /** Specifies the Amazon EKS cluster information for the container provider, including the Kubernetes namespace where the virtual cluster runs. (AI-inferred) */
+  eksInfo: VirtualCluster_ContainerProvider_Info_EksInfo | Computed<VirtualCluster_ContainerProvider_Info_EksInfo>;
 }
 
 export interface VirtualCluster_ContainerProvider {
-  id: string;
-  type: string;
-  info: VirtualCluster_ContainerProvider_Info[];
+  /** The ID of the container cluster */
+  id: string | Computed<string>;
+  /** The info object inside container_provider contains provider-specific details, specifically the Amazon EKS namespace in which the virtual cluster runs. (AI-inferred) */
+  info: VirtualCluster_ContainerProvider_Info | Computed<VirtualCluster_ContainerProvider_Info>;
+  /** The type of the container provider */
+  type: string | Computed<string>;
 }
 
-export interface VirtualCluster_Timeouts {
-  delete: string;
+export interface VirtualCluster_Tags {
+  key?: string | Computed<string>;
+  /** The value portion of a tag attached to the EMR Containers virtual cluster. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const VirtualCluster_ContainerProvider_Info_EksInfoFields: FieldMap = {
@@ -26,63 +33,71 @@ const VirtualCluster_ContainerProvider_Info_EksInfoFields: FieldMap = {
 const VirtualCluster_ContainerProvider_InfoFields: FieldMap = {
   eksInfo: {
     wireName: "eks_info",
-    kind: "list",
+    kind: "object",
     fields: VirtualCluster_ContainerProvider_Info_EksInfoFields,
   },
 };
 
 const VirtualCluster_ContainerProviderFields: FieldMap = {
   id: "id",
-  type: "type",
   info: {
     wireName: "info",
-    kind: "list",
+    kind: "object",
     fields: VirtualCluster_ContainerProvider_InfoFields,
   },
+  type: "type",
 };
 
-const VirtualCluster_TimeoutsFields: FieldMap = {
-  delete: "delete",
+const VirtualCluster_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface VirtualClusterConfig {
-  id?: string | Computed<string>;
+  /** The container provider configuration that defines the underlying container platform (e.g., Amazon EKS) on which the virtual cluster runs, including the provider type and the Amazon EKS cluster information. (AI-inferred) */
+  containerProvider: VirtualCluster_ContainerProvider | Computed<VirtualCluster_ContainerProvider>;
+  /** Name of the virtual cluster. */
   name: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  containerProvider?: VirtualCluster_ContainerProvider[] | Computed<VirtualCluster_ContainerProvider[]>;
-  timeouts?: VirtualCluster_Timeouts | Computed<VirtualCluster_Timeouts>;
+  /** The ID of the security configuration. */
+  securityConfigurationId?: string | Computed<string>;
+  /** Whether the virtual cluster is session-enabled for Spark Connect. */
+  sessionEnabled?: boolean | Computed<boolean>;
+  /** An array of key-value pairs to apply to this virtual cluster. */
+  tags?: VirtualCluster_Tags[] | Computed<VirtualCluster_Tags[]>;
 }
 
 export interface VirtualClusterAttrs {
+  /** The Amazon Resource Name (ARN) that uniquely identifies the EMR Containers virtual cluster in AWS. (AI-inferred) */
   arn: string;
+  /** The container provider configuration that defines the underlying container platform (e.g., Amazon EKS) on which the virtual cluster runs, including the provider type and the Amazon EKS cluster information. (AI-inferred) */
+  containerProvider: VirtualCluster_ContainerProvider;
+  /** Id of the virtual cluster. */
   id: string;
+  /** Name of the virtual cluster. */
   name: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  containerProvider: VirtualCluster_ContainerProvider[];
-  timeouts: VirtualCluster_Timeouts;
+  /** The ID of the security configuration. */
+  securityConfigurationId: string;
+  /** Whether the virtual cluster is session-enabled for Spark Connect. */
+  sessionEnabled: boolean;
+  /** An array of key-value pairs to apply to this virtual cluster. */
+  tags: VirtualCluster_Tags[];
 }
 
 export const VirtualCluster: ResourceBinding<VirtualClusterConfig, VirtualClusterAttrs> = {
   wireType: "aws_emrcontainers_virtual_cluster",
   fields: {
-    id: "id",
-    name: "name",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
     containerProvider: {
       wireName: "container_provider",
-      kind: "list",
+      kind: "object",
       fields: VirtualCluster_ContainerProviderFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: VirtualCluster_TimeoutsFields,
+    name: "name",
+    securityConfigurationId: "security_configuration_id",
+    sessionEnabled: "session_enabled",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: VirtualCluster_TagsFields,
     },
   },
 };

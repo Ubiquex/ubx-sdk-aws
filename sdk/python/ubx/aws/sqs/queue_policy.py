@@ -8,17 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class QueuePolicyConfig:
+    # A policy document that contains the permissions for the specified SQS queues. For more information about SQS policies, see [Using custom policies with the access policy language](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html) in the *Developer Guide*.
+    policy_document: Any = None
+    # The URLs of the queues to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SQS::Queue`` resource.
+    queues: Any = None
+
+@dataclasses.dataclass
+class QueuePolicyAttrs:
+    # The ID of the SQS queue policy is the URL of the queue to which the policy is attached. (AI-inferred)
     id: Any = None
-    policy: Any = None
-    queue_url: Any = None
-    region: Any = None
+    # A policy document that contains the permissions for the specified SQS queues. For more information about SQS policies, see [Using custom policies with the access policy language](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html) in the *Developer Guide*.
+    policy_document: Any = None
+    # The URLs of the queues to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SQS::Queue`` resource.
+    queues: Any = None
 
 QueuePolicy = ubx.ResourceBinding(
     wire_type="aws_sqs_queue_policy",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "policy": ubx.FieldSpec(wire_name="policy"),
-        "queue_url": ubx.FieldSpec(wire_name="queue_url"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "policy_document": ubx.FieldSpec(wire_name="policy_document"),
+        "queues": ubx.FieldSpec(wire_name="queues"),
     },
 )

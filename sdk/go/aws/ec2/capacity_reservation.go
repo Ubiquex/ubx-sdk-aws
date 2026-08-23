@@ -3,61 +3,160 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type CapacityReservation_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type CapacityReservation_CapacityAllocationSet struct {
+	// Indicates whether the allocated capacity is for 'used' (currently running instances) or 'future' (reserved but not yet running) usage, with allowed values of 'used' or 'future'. (AI-inferred)
+	AllocationType any
+	// The number of EC2 instances of the specified instance type to reserve in this capacity reservation allocation. (AI-inferred)
+	Count any
 }
 
-var CapacityReservation_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+type CapacityReservation_CommitmentInfo struct {
+	// The timestamp indicating when the committed term of the EC2 Capacity Reservation ends, marking the expiration of a reserved capacity commitment. (AI-inferred)
+	CommitmentEndDate any
+	// The number of EC2 instances you are committed to running as part of this Capacity Reservation's commitment, which underpins the capacity reservation's usage commitment and corresponding billing discount. (AI-inferred)
+	CommittedInstanceCount any
+}
+
+type CapacityReservation_TagSpecifications_Tags struct {
+	// The key of a tag to apply to the EC2 Capacity Reservation. (AI-inferred)
+	Key any
+	// The value of a tag to assign to the EC2 Capacity Reservation, used to categorize or identify the reservation. (AI-inferred)
+	Value any
+}
+
+type CapacityReservation_TagSpecifications struct {
+	// Specifies the type of resource to tag, which for an EC2 Capacity Reservation must be set to `capacity-reservation` to apply the associated tags to that reservation. (AI-inferred)
+	ResourceType any
+	// The list of tags to associate with the EC2 Capacity Reservation, as part of the tag specifications for the resource. (AI-inferred)
+	Tags any
+}
+
+var CapacityReservation_TagSpecifications_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var CapacityReservation_TagSpecificationsFields = ubx.FieldMap{
+		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: CapacityReservation_TagSpecifications_TagsFields,
+		},
 	}
 
 type CapacityReservationConfig struct {
+	// The Availability Zone where the capacity reservation is created, used to reserve compute capacity in that specific zone for EC2 instances. (AI-inferred)
 	AvailabilityZone any
+	// Specifies the ID of the Availability Zone (such as use1-az1) in which to create the Capacity Reservation, serving as an alternative to specifying the Availability Zone by name. (AI-inferred)
+	AvailabilityZoneId any
+	// Indicates whether the capacity reservation is EBS-optimized, which provides dedicated throughput for Amazon EBS I/O. (AI-inferred)
 	EbsOptimized any
+	// The date and time (in ISO 8601 format) when the Capacity Reservation expires, after which the reserved capacity is released and any instances running in the reservation are automatically stopped or terminated. (AI-inferred)
 	EndDate any
+	// Determines whether the Capacity Reservation has a specific end date/time (limited) or persists indefinitely (unlimited). (AI-inferred)
 	EndDateType any
+	// A Boolean value indicating whether the Capacity Reservation supports instances that use ephemeral (instance store) storage. (AI-inferred)
 	EphemeralStorage any
-	Id any
+	// The number of instances for which to reserve capacity in the Capacity Reservation. (AI-inferred)
 	InstanceCount any
+	// Determines how the capacity reservation matches instances: 'open' allows any matching instance to use the reservation automatically, while 'targeted' requires instances to explicitly specify the reservation ID to use it. (AI-inferred)
 	InstanceMatchCriteria any
+	// Specifies the operating system platform (e.g., Linux/UNIX, Windows, Red Hat Enterprise Linux, SUSE Linux) that the capacity reservation will support, matching the platform of the AMI used to launch instances. (AI-inferred)
 	InstancePlatform any
+	// The EC2 instance type for which to reserve capacity, such as m5.large or c5.xlarge. (AI-inferred)
 	InstanceType any
-	OutpostArn any
+	// The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation. (AI-inferred)
+	OutPostArn any
+	// The ARN of the cluster placement group in which to create the capacity reservation. (AI-inferred)
 	PlacementGroupArn any
-	Region any
-	Tags any
-	TagsAll any
+	// Specifies one or more tag specifications, each defining a resource type (such as 'capacity-reservation') and a set of tags to apply to the capacity reservation. (AI-inferred)
+	TagSpecifications any
+	// The tenancy of the Capacity Reservation, either 'default' for shared hardware or 'dedicated' for a single physical server. (AI-inferred)
 	Tenancy any
-	Timeouts any
+	// Specifies the AWS account ID that will be billed for unused capacity in this EC2 Capacity Reservation. (AI-inferred)
+	UnusedReservationBillingOwnerId any
+}
+
+type CapacityReservationAttrs struct {
+	// The Availability Zone where the capacity reservation is created, used to reserve compute capacity in that specific zone for EC2 instances. (AI-inferred)
+	AvailabilityZone any
+	// Specifies the ID of the Availability Zone (such as use1-az1) in which to create the Capacity Reservation, serving as an alternative to specifying the Availability Zone by name. (AI-inferred)
+	AvailabilityZoneId any
+	// The number of instances that remain available for use in the Capacity Reservation, reflecting unused capacity that can still be used to launch instances. (AI-inferred)
+	AvailableInstanceCount any
+	// A computed list of objects that describes how the total instance capacity of the reservation is allocated among different allocation types (e.g., 'used' or 'future'), as reported by the EC2 DescribeCapacityReservations API. (AI-inferred)
+	CapacityAllocationSet any
+	// The Amazon Resource Name (ARN) of the EC2 Capacity Reservation, used to uniquely identify the reservation across AWS services. (AI-inferred)
+	CapacityReservationArn any
+	// The ID of the Capacity Reservation Fleet that this capacity reservation belongs to, if it was created as part of a fleet; this value is only set when the reservation is managed by a fleet. (AI-inferred)
+	CapacityReservationFleetId any
+	// commitment_info is a computed object that exposes the commitment duration and commitment end date for this EC2 Capacity Reservation, reflecting the reserved capacity's committed term details. (AI-inferred)
+	CommitmentInfo any
+	// The date and time at which the Capacity Reservation was created. (AI-inferred)
+	CreateDate any
+	DeliveryPreference any
+	// Indicates whether the capacity reservation is EBS-optimized, which provides dedicated throughput for Amazon EBS I/O. (AI-inferred)
+	EbsOptimized any
+	// The date and time (in ISO 8601 format) when the Capacity Reservation expires, after which the reserved capacity is released and any instances running in the reservation are automatically stopped or terminated. (AI-inferred)
+	EndDate any
+	// Determines whether the Capacity Reservation has a specific end date/time (limited) or persists indefinitely (unlimited). (AI-inferred)
+	EndDateType any
+	// A Boolean value indicating whether the Capacity Reservation supports instances that use ephemeral (instance store) storage. (AI-inferred)
+	EphemeralStorage any
+	// The unique capacity reservation identifier (e.g., cr-1234567890abcdef0) assigned by AWS when the reservation is created, used to reference this reservation in API calls and other resources. (AI-inferred)
+	Id any
+	// The number of instances for which to reserve capacity in the Capacity Reservation. (AI-inferred)
+	InstanceCount any
+	// Determines how the capacity reservation matches instances: 'open' allows any matching instance to use the reservation automatically, while 'targeted' requires instances to explicitly specify the reservation ID to use it. (AI-inferred)
+	InstanceMatchCriteria any
+	// Specifies the operating system platform (e.g., Linux/UNIX, Windows, Red Hat Enterprise Linux, SUSE Linux) that the capacity reservation will support, matching the platform of the AMI used to launch instances. (AI-inferred)
+	InstancePlatform any
+	// The EC2 instance type for which to reserve capacity, such as m5.large or c5.xlarge. (AI-inferred)
+	InstanceType any
+	// The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation. (AI-inferred)
+	OutPostArn any
+	// The ID of the AWS account that owns the Capacity Reservation. (AI-inferred)
+	OwnerId any
+	// The ARN of the cluster placement group in which to create the capacity reservation. (AI-inferred)
+	PlacementGroupArn any
+	// The type of the Capacity Reservation, either 'default' for on-demand reservations or 'capacity-block' for future-dated reservations. (AI-inferred)
+	ReservationType any
+	// The date and time at which the capacity reservation was started, as reported by the AWS EC2 API. (AI-inferred)
+	StartDate any
+	// The current lifecycle state of the capacity reservation, such as 'active', 'pending', 'failed', 'expired', or 'cancelled', as reported by AWS. (AI-inferred)
+	State any
+	// Specifies one or more tag specifications, each defining a resource type (such as 'capacity-reservation') and a set of tags to apply to the capacity reservation. (AI-inferred)
+	TagSpecifications any
+	// The tenancy of the Capacity Reservation, either 'default' for shared hardware or 'dedicated' for a single physical server. (AI-inferred)
+	Tenancy any
+	// The total number of instances for which this Capacity Reservation reserves capacity, reported by EC2 as a read-only attribute that cannot be modified. (AI-inferred)
+	TotalInstanceCount any
+	// Specifies the AWS account ID that will be billed for unused capacity in this EC2 Capacity Reservation. (AI-inferred)
+	UnusedReservationBillingOwnerId any
 }
 
 var CapacityReservation = ubx.ResourceBinding{
 	WireType: "aws_ec2_capacity_reservation",
 	Fields: ubx.FieldMap{
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
 		"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
 		"EndDate": ubx.FieldSpec{WireName: "end_date"},
 		"EndDateType": ubx.FieldSpec{WireName: "end_date_type"},
 		"EphemeralStorage": ubx.FieldSpec{WireName: "ephemeral_storage"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
 		"InstanceMatchCriteria": ubx.FieldSpec{WireName: "instance_match_criteria"},
 		"InstancePlatform": ubx.FieldSpec{WireName: "instance_platform"},
 		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"OutpostArn": ubx.FieldSpec{WireName: "outpost_arn"},
+		"OutPostArn": ubx.FieldSpec{WireName: "out_post_arn"},
 		"PlacementGroupArn": ubx.FieldSpec{WireName: "placement_group_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Tenancy": ubx.FieldSpec{WireName: "tenancy"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: CapacityReservation_TimeoutsFields,
+		"TagSpecifications": ubx.FieldSpec{
+			WireName: "tag_specifications",
+			Kind: "list",
+			Fields: CapacityReservation_TagSpecificationsFields,
 		},
+		"Tenancy": ubx.FieldSpec{WireName: "tenancy"},
+		"UnusedReservationBillingOwnerId": ubx.FieldSpec{WireName: "unused_reservation_billing_owner_id"},
 	},
 }

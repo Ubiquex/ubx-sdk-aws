@@ -4,14 +4,10 @@ package m2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Application_Definition struct {
+	// The inline application definition content, specified as a string, that contains the application's definition in a format like JSON or YAML to be used for the M2 application. (AI-inferred)
 	Content any
+	// The S3 URI (e.g., s3://bucket/key) that points to the application definition file stored in Amazon S3, used to specify the application definition when it is not provided inline. (AI-inferred)
 	S3Location any
-}
-
-type Application_Timeouts struct {
-	Create any
-	Delete any
-	Update any
 }
 
 var Application_DefinitionFields = ubx.FieldMap{
@@ -19,43 +15,57 @@ var Application_DefinitionFields = ubx.FieldMap{
 		"S3Location": ubx.FieldSpec{WireName: "s3_location"},
 	}
 
-var Application_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type ApplicationConfig struct {
-	Description any
-	EngineType any
-	KmsKeyId any
-	Name any
-	Region any
-	RoleArn any
-	Tags any
+	// Contains the application definition for the AWS M2 mainframe modernization application, supplying the code or configuration either inline or via an S3 location. (AI-inferred)
 	Definition any
-	Timeouts any
+	// This optional string supplies a customer-defined description for the AWS Mainframe Modernization application, used to identify the application's purpose. (AI-inferred)
+	Description any
+	// The engine type for the application, which determines the runtime environment (either Micro Focus or Blu Age). (AI-inferred)
+	EngineType any
+	// The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting application-related resources.
+	KmsKeyId any
+	// Specifies the required name for the AWS Mainframe Modernization application, which must be unique across all applications in your AWS account and Region and serves as the human-readable identifier in the M2 console and API. (AI-inferred)
+	Name any
+	// The ARN of the IAM role that the application assumes to access other AWS services and resources needed for its operation. (AI-inferred)
+	RoleArn any
+	// Specifies a map of key-value tags to attach to the AWS Mainframe Modernization application for management and categorization. (AI-inferred)
+	Tags any
+}
+
+type ApplicationAttrs struct {
+	// The Amazon Resource Name (ARN) uniquely identifying the AWS Mainframe Modernization (M2) application, assigned by AWS and used to reference the application in other services, IAM policies, and monitoring tools. (AI-inferred)
+	ApplicationArn any
+	// The unique identifier assigned by AWS to the Mainframe Modernization application when it is created. (AI-inferred)
+	ApplicationId any
+	// Contains the application definition for the AWS M2 mainframe modernization application, supplying the code or configuration either inline or via an S3 location. (AI-inferred)
+	Definition any
+	// This optional string supplies a customer-defined description for the AWS Mainframe Modernization application, used to identify the application's purpose. (AI-inferred)
+	Description any
+	// The engine type for the application, which determines the runtime environment (either Micro Focus or Blu Age). (AI-inferred)
+	EngineType any
+	// The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting application-related resources.
+	KmsKeyId any
+	// Specifies the required name for the AWS Mainframe Modernization application, which must be unique across all applications in your AWS account and Region and serves as the human-readable identifier in the M2 console and API. (AI-inferred)
+	Name any
+	// The ARN of the IAM role that the application assumes to access other AWS services and resources needed for its operation. (AI-inferred)
+	RoleArn any
+	// Specifies a map of key-value tags to attach to the AWS Mainframe Modernization application for management and categorization. (AI-inferred)
+	Tags any
 }
 
 var Application = ubx.ResourceBinding{
 	WireType: "aws_m2_application",
 	Fields: ubx.FieldMap{
+		"Definition": ubx.FieldSpec{
+			WireName: "definition",
+			Kind: "object",
+			Fields: Application_DefinitionFields,
+		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EngineType": ubx.FieldSpec{WireName: "engine_type"},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Definition": ubx.FieldSpec{
-			WireName: "definition",
-			Kind: "list",
-			Fields: Application_DefinitionFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Application_TimeoutsFields,
-		},
 	},
 }

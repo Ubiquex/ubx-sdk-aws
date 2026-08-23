@@ -7,20 +7,72 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ReportDefinition_Tags:
+    # The key of a user-defined tag applied to the AWS Cost and Usage Report definition, used for resource categorization and cost allocation tracking. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_ReportDefinition_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ReportDefinitionConfig:
+    # A list of manifests that you want Amazon Web Services to create for this report.
     additional_artifacts: Any = None
+    # A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.
     additional_schema_elements: Any = None
+    # The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.
+    billing_view_arn: Any = None
+    # The compression format that AWS uses for the report.
     compression: Any = None
+    # The format that AWS saves the report in.
     format: Any = None
-    id: Any = None
+    # Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.
     refresh_closed_reports: Any = None
+    # The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
     report_name: Any = None
+    # Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.
     report_versioning: Any = None
+    # The S3 bucket where AWS delivers the report.
     s3_bucket: Any = None
+    # The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.
     s3_prefix: Any = None
+    # The region of the S3 bucket that AWS delivers the report into.
     s3_region: Any = None
+    # Specifies the list of tag key-value pairs to attach to the AWS Cost and Usage Report definition, enabling resource-level identification and management. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
+    # The granularity of the line items in the report.
+    time_unit: Any = None
+
+@dataclasses.dataclass
+class ReportDefinitionAttrs:
+    # A list of manifests that you want Amazon Web Services to create for this report.
+    additional_artifacts: Any = None
+    # A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.
+    additional_schema_elements: Any = None
+    # The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.
+    billing_view_arn: Any = None
+    # The compression format that AWS uses for the report.
+    compression: Any = None
+    # The format that AWS saves the report in.
+    format: Any = None
+    # Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.
+    refresh_closed_reports: Any = None
+    # The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
+    report_name: Any = None
+    # Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.
+    report_versioning: Any = None
+    # The S3 bucket where AWS delivers the report.
+    s3_bucket: Any = None
+    # The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.
+    s3_prefix: Any = None
+    # The region of the S3 bucket that AWS delivers the report into.
+    s3_region: Any = None
+    # Specifies the list of tag key-value pairs to attach to the AWS Cost and Usage Report definition, enabling resource-level identification and management. (AI-inferred)
+    tags: Any = None
+    # The granularity of the line items in the report.
     time_unit: Any = None
 
 ReportDefinition = ubx.ResourceBinding(
@@ -28,17 +80,20 @@ ReportDefinition = ubx.ResourceBinding(
     fields={
         "additional_artifacts": ubx.FieldSpec(wire_name="additional_artifacts"),
         "additional_schema_elements": ubx.FieldSpec(wire_name="additional_schema_elements"),
+        "billing_view_arn": ubx.FieldSpec(wire_name="billing_view_arn"),
         "compression": ubx.FieldSpec(wire_name="compression"),
         "format": ubx.FieldSpec(wire_name="format"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "refresh_closed_reports": ubx.FieldSpec(wire_name="refresh_closed_reports"),
         "report_name": ubx.FieldSpec(wire_name="report_name"),
         "report_versioning": ubx.FieldSpec(wire_name="report_versioning"),
         "s3_bucket": ubx.FieldSpec(wire_name="s3_bucket"),
         "s3_prefix": ubx.FieldSpec(wire_name="s3_prefix"),
         "s3_region": ubx.FieldSpec(wire_name="s3_region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ReportDefinition_TagsFields,
+        ),
         "time_unit": ubx.FieldSpec(wire_name="time_unit"),
     },
 )

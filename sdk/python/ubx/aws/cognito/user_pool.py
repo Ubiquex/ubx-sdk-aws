@@ -7,166 +7,251 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class UserPool_AccountRecoverySetting_RecoveryMechanism:
+class UserPool_AccountRecoverySetting_RecoveryMechanisms:
+    # The name of the recovery mechanism, which must be one of `verified_email`, `verified_phone_number`, or `admin_only` and identifies the method (email, phone, or admin) used for user account recovery. (AI-inferred)
     name: Any = None
+    # This number determines the order in which the recovery mechanism is attempted for user account recovery, with lower values having higher precedence and being tried first. (AI-inferred)
     priority: Any = None
 
 @dataclasses.dataclass
 class UserPool_AccountRecoverySetting:
-    recovery_mechanism: Any = None
+    # Specifies the ordered list of account recovery mechanisms (like verified email or phone number) with priorities that determine how a user can recover their account in this user pool. (AI-inferred)
+    recovery_mechanisms: Any = None
 
 @dataclasses.dataclass
 class UserPool_AdminCreateUserConfig_InviteMessageTemplate:
+    # Specifies the body of the email message that is sent as an invitation to a new user when an administrator creates the user in the user pool, allowing placeholders such as {username} and {####} for the temporary password/verification code. (AI-inferred)
     email_message: Any = None
+    # The subject line for the email invitation message sent to a newly created user when an administrator creates the user account in the user pool. (AI-inferred)
     email_subject: Any = None
-    sms_message: Any = None
+    # The SMS message body that is sent to a user when an admin creates their account, containing placeholders for the username and the temporary password. (AI-inferred)
+    smsmessage: Any = None
 
 @dataclasses.dataclass
 class UserPool_AdminCreateUserConfig:
+    # When true, only administrators are allowed to create user accounts in the user pool, disabling self-registration by end users. (AI-inferred)
     allow_admin_create_user_only: Any = None
+    # Configures the email subject, email body, and SMS body used in the invitation message sent to a new user when an administrator creates that user's account. (AI-inferred)
     invite_message_template: Any = None
+    # Sets the number of days that a user account created by an administrator remains valid without any sign-in activity, after which it expires and the user must reset their password. (AI-inferred)
+    unused_account_validity_days: Any = None
 
 @dataclasses.dataclass
 class UserPool_DeviceConfiguration:
+    # If true, a challenge is required when a user attempts to sign in from a device that has not been previously recognized, as part of the user pool's device tracking and remembered device settings. (AI-inferred)
     challenge_required_on_new_device: Any = None
+    # When true, a user's device is remembered only if the user explicitly chooses to remember it during sign-in; when false, devices are automatically remembered regardless of user prompt. (AI-inferred)
     device_only_remembered_on_user_prompt: Any = None
 
 @dataclasses.dataclass
 class UserPool_EmailConfiguration:
+    # The name of the Amazon SES configuration set to use when sending emails from the user pool. (AI-inferred)
     configuration_set: Any = None
+    # Specifies which email account Amazon Cognito uses to send emails, either Cognito's default account ('COGNITO_DEFAULT') or a developer-configured Amazon SES account ('DEVELOPER'). (AI-inferred)
     email_sending_account: Any = None
-    from_email_address: Any = None
+    # The sender email address that Amazon Cognito uses in the 'From' field of emails it sends to users, which must be verified in Amazon Simple Email Service (SES). (AI-inferred)
+    from_: Any = None
+    # The email address that recipients of Cognito notification emails can reply to, configured in the email configuration of the user pool. (AI-inferred)
     reply_to_email_address: Any = None
+    # The Amazon Resource Name (ARN) of a verified email address in Amazon SES that Cognito uses as the sender for user pool emails. (AI-inferred)
     source_arn: Any = None
 
 @dataclasses.dataclass
-class UserPool_EmailMfaConfiguration:
-    message: Any = None
-    subject: Any = None
+class UserPool_IssuerConfiguration:
+    # The type field in issuer_configuration selects whether the user pool issues tokens with a custom issuer URL (provided via the associated issuer field) or uses the default Cognito issuer, thereby controlling the issuer claim. (AI-inferred)
+    type: Any = None
+
+@dataclasses.dataclass
+class UserPool_KeyConfiguration:
+    # Defines the cryptographic key type (RSA or ECC) used for signing the user pool's JSON Web Tokens (JWTs). (AI-inferred)
+    key_type: Any = None
+    # The ARN of an AWS KMS customer-managed key that Amazon Cognito uses to encrypt user pool data at rest instead of the default AWS-owned encryption key. (AI-inferred)
+    kms_key_arn: Any = None
 
 @dataclasses.dataclass
 class UserPool_LambdaConfig_CustomEmailSender:
+    # The Amazon Resource Name (ARN) of the Lambda function that Cognito invokes to send custom email messages for the user pool. (AI-inferred)
     lambda_arn: Any = None
+    # The version of the AWS Lambda function to invoke for custom email sending, which must be set to 'V1_0'. (AI-inferred)
     lambda_version: Any = None
 
 @dataclasses.dataclass
 class UserPool_LambdaConfig:
+    # The ARN of the Lambda function invoked when Cognito needs to create a custom authentication challenge as part of the user pool's custom authentication flow. (AI-inferred)
     create_auth_challenge: Any = None
-    custom_message: Any = None
-    define_auth_challenge: Any = None
-    kms_key_id: Any = None
-    post_authentication: Any = None
-    post_confirmation: Any = None
-    pre_authentication: Any = None
-    pre_sign_up: Any = None
-    pre_token_generation: Any = None
-    user_migration: Any = None
-    verify_auth_challenge_response: Any = None
+    # Configuration for a custom email sender Lambda trigger, specifying the ARN and version of the Lambda function that handles sending email notifications for the user pool. (AI-inferred)
     custom_email_sender: Any = None
-    custom_sms_sender: Any = None
+    # ARN of the Lambda function Amazon Cognito invokes to customize email and SMS messages for user verification, invitation, and account confirmation. (AI-inferred)
+    custom_message: Any = None
+    # The configuration for a custom SMS sender Lambda trigger, specifying the Lambda function ARN and version used to send SMS messages for user verification and account recovery. (AI-inferred)
+    custom_smssender: Any = None
+    # The ARN of the Lambda function invoked for the Define Auth Challenge trigger, which determines whether a custom authentication challenge is required and defines the challenge presented to the user. (AI-inferred)
+    define_auth_challenge: Any = None
+    inbound_federation: Any = None
+    # The KMS key ID to use for encrypting the Lambda environment variables of the user pool's Lambda trigger functions. (AI-inferred)
+    kmskey_id: Any = None
+    # The ARN of a Lambda function that Amazon Cognito invokes after a user is authenticated, enabling custom post-authentication logic such as logging or modifying the authentication response. (AI-inferred)
+    post_authentication: Any = None
+    # The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito triggers after a user confirms their account, enabling custom post-confirmation workflows. (AI-inferred)
+    post_confirmation: Any = None
+    # The ARN of the Lambda function invoked by the pre-authentication trigger for the user pool. (AI-inferred)
+    pre_authentication: Any = None
+    # The ARN of an AWS Lambda function that Amazon Cognito invokes as a pre sign-up trigger, allowing you to customize or validate the sign-up flow before the user is created. (AI-inferred)
+    pre_sign_up: Any = None
+    # The ARN of an AWS Lambda function that Amazon Cognito invokes before generating identity and access tokens, allowing you to customize token claims. (AI-inferred)
+    pre_token_generation: Any = None
+    # Specifies the ARN and version of the Lambda function to invoke on the pre token generation trigger, enabling customization of access token and ID token claims. (AI-inferred)
     pre_token_generation_config: Any = None
+    # The ARN of an AWS Lambda function that Amazon Cognito invokes to migrate a user from an external user directory into the user pool when the user attempts to sign in for the first time. (AI-inferred)
+    user_migration: Any = None
+    # The Amazon Resource Name (ARN) of a Lambda function that AWS Cognito invokes to verify a user's response to a custom auth challenge, enabling custom verification logic during authentication. (AI-inferred)
+    verify_auth_challenge_response: Any = None
 
 @dataclasses.dataclass
-class UserPool_PasswordPolicy:
+class UserPool_Policies_PasswordPolicy:
+    # Specifies the minimum number of characters a user password must contain in the Cognito user pool, enforcing a length requirement with a default of 8 characters. (AI-inferred)
     minimum_length: Any = None
+    # Specifies the number of previous passwords that Amazon Cognito remembers for each user, preventing the reuse of those passwords when a user changes their password. (AI-inferred)
     password_history_size: Any = None
+    # Specifies whether user passwords must contain at least one lowercase letter, with true enforcing the requirement and false making it optional. (AI-inferred)
     require_lowercase: Any = None
+    # A Boolean that specifies whether passwords in the user pool must include at least one numeric character (0-9) when users set or change their password. (AI-inferred)
     require_numbers: Any = None
+    # Specifies whether passwords in the user pool must contain at least one symbol (non-alphanumeric character). (AI-inferred)
     require_symbols: Any = None
+    # Specifies whether passwords in the user pool must contain at least one uppercase letter (A-Z). (AI-inferred)
     require_uppercase: Any = None
+    # The number of days a temporary password generated for a user (e.g., by an admin or during a password reset) remains valid before the user must change it. (AI-inferred)
     temporary_password_validity_days: Any = None
 
 @dataclasses.dataclass
+class UserPool_Policies_SignInPolicy:
+    # Specifies the list of authentication factors (such as PASSWORD, EMAIL_OTP, SMS_OTP, or WEB_AUTHN) that are allowed as the first step in the sign-in flow for the user pool. (AI-inferred)
+    allowed_first_auth_factors: Any = None
+
+@dataclasses.dataclass
+class UserPool_Policies:
+    # Specifies the password policy for the user pool, including rules for minimum length, required character types (uppercase, lowercase, numbers, symbols), and temporary password validity, which must be satisfied by users when they set or change their passwords. (AI-inferred)
+    password_policy: Any = None
+    # Defines the sign-in policy for the Cognito user pool, which dictates the allowed sign-in methods (such as username, email, or phone number) and whether sign-in aliases are enabled. (AI-inferred)
+    sign_in_policy: Any = None
+
+@dataclasses.dataclass
 class UserPool_Schema_NumberAttributeConstraints:
+    # Sets the inclusive maximum numeric value allowed for a custom Number-type schema attribute in the user pool, so that submitted values above this limit are rejected. (AI-inferred)
     max_value: Any = None
+    # Defines the lower bound for the numeric value of a number-type custom attribute in the user pool's schema. (AI-inferred)
     min_value: Any = None
 
 @dataclasses.dataclass
 class UserPool_Schema_StringAttributeConstraints:
+    # Maximum number of characters allowed in a string attribute value, used to define the upper bound for string schema attributes in the user pool. (AI-inferred)
     max_length: Any = None
+    # The minimum number of characters that a string attribute value must contain, enforced for the Cognito user pool schema attribute. (AI-inferred)
     min_length: Any = None
 
 @dataclasses.dataclass
 class UserPool_Schema:
+    # Specifies the data type of the user pool schema attribute, which must be one of String, Number, DateTime, or Boolean and determines how the attribute's value is stored and validated. (AI-inferred)
     attribute_data_type: Any = None
+    # Indicates whether the schema attribute is a developer-only custom attribute that cannot be modified by end users and is only settable through the Cognito admin/developer APIs. (AI-inferred)
     developer_only_attribute: Any = None
+    # This boolean property specifies whether the user pool schema attribute can be changed after the user profile is created. (AI-inferred)
     mutable: Any = None
+    # Specifies the name of the user pool schema attribute, such as a built-in or custom attribute like 'email' or 'my_custom_attr'. (AI-inferred)
     name: Any = None
-    required: Any = None
+    # Specifies the minimum and maximum numeric values allowed for a schema attribute of type Number in the user pool schema. (AI-inferred)
     number_attribute_constraints: Any = None
+    # Specifies whether this user pool schema attribute is required for users signing up. (AI-inferred)
+    required: Any = None
+    # Configures the minimum and maximum character length limits for a string attribute in the user pool's schema definition. (AI-inferred)
     string_attribute_constraints: Any = None
 
 @dataclasses.dataclass
-class UserPool_SignInPolicy:
-    allowed_first_auth_factors: Any = None
+class UserPool_SmsConfiguration_EumsSms:
+    caller_arn: Any = None
+    configuration_set_name: Any = None
+    # The external ID that AWS Cognito includes when it assumes the IAM role for sending SMS messages, preventing confused-deputy attacks and must match the external ID on the role's trust policy. (AI-inferred)
+    external_id: Any = None
+    in_entity_id: Any = None
+    in_template_id: Any = None
+    origination_identity: Any = None
+    region: Any = None
 
 @dataclasses.dataclass
 class UserPool_SmsConfiguration:
+    eums_sms: Any = None
+    # An arbitrary string that must match the `sts:ExternalId` condition in the IAM role's trust policy that Cognito assumes to send SMS messages via Amazon SNS, providing a security control against the confused deputy problem. (AI-inferred)
     external_id: Any = None
+    # The ARN of the IAM role that Amazon Cognito assumes to send SMS messages via Amazon SNS for the user pool. (AI-inferred)
     sns_caller_arn: Any = None
+    # Specifies the AWS Region in which Amazon SNS is used for sending SMS messages from the user pool. (AI-inferred)
     sns_region: Any = None
 
 @dataclasses.dataclass
-class UserPool_SoftwareTokenMfaConfiguration:
-    enabled: Any = None
-
-@dataclasses.dataclass
 class UserPool_UserAttributeUpdateSettings:
+    # Specifies which user attributes (such as email or phone_number) require verification before a user can update them in the Cognito user pool, and if any attribute is listed, that attribute's change is blocked until the new value is verified via a verification code or token. (AI-inferred)
     attributes_require_verification_before_update: Any = None
 
 @dataclasses.dataclass
 class UserPool_UserPoolAddOns_AdvancedSecurityAdditionalFlows:
+    # Determines the AWS Cognito Advanced Security mode (AUDIT or ENFORCED) for custom authentication flows, overriding the pool-level advanced security mode. (AI-inferred)
     custom_auth_mode: Any = None
 
 @dataclasses.dataclass
 class UserPool_UserPoolAddOns:
-    advanced_security_mode: Any = None
+    # Specifies additional authentication flows, such as custom auth, to be included in the advanced security threat protection settings for the user pool. (AI-inferred)
     advanced_security_additional_flows: Any = None
+    # Specifies the advanced security mode for the user pool, which can be OFF, AUDIT, or ENFORCED, enabling features like compromised credential detection and account takeover protection. (AI-inferred)
+    advanced_security_mode: Any = None
 
 @dataclasses.dataclass
 class UserPool_UsernameConfiguration:
+    # Determines whether usernames in the user pool are case-sensitive, meaning 'User' and 'user' would be considered distinct when true, and the same when false. (AI-inferred)
     case_sensitive: Any = None
 
 @dataclasses.dataclass
 class UserPool_VerificationMessageTemplate:
+    # Specifies whether the default email verification message uses a confirmation link or a confirmation code, with valid values CONFIRM_WITH_LINK or CONFIRM_WITH_CODE. (AI-inferred)
     default_email_option: Any = None
+    # Specifies the body of the email message sent to users for verification purposes (such as account or email/phone verification), which can include the verification code placeholder {####}. (AI-inferred)
     email_message: Any = None
+    # The custom email message body, including a placeholder for the verification link, that Amazon Cognito sends to users when email verification uses a link instead of a code. (AI-inferred)
     email_message_by_link: Any = None
+    # The subject line used in the email verification message sent to users when their email address is being verified. (AI-inferred)
     email_subject: Any = None
+    # The subject line for the verification email sent to users when they verify their email address or phone number using a link (as opposed to a verification code). (AI-inferred)
     email_subject_by_link: Any = None
+    # The SMS message content sent to users for verification, which can include the {####} placeholder that is replaced with the actual verification code. (AI-inferred)
     sms_message: Any = None
 
-@dataclasses.dataclass
-class UserPool_WebAuthnConfiguration:
-    relying_party_id: Any = None
-    user_verification: Any = None
-
-_UserPool_AccountRecoverySetting_RecoveryMechanismFields = {
+_UserPool_AccountRecoverySetting_RecoveryMechanismsFields = {
     "name": ubx.FieldSpec(wire_name="name"),
     "priority": ubx.FieldSpec(wire_name="priority"),
 }
 
 _UserPool_AccountRecoverySettingFields = {
-    "recovery_mechanism": ubx.FieldSpec(
-        wire_name="recovery_mechanism",
-        kind="set",
-        fields=_UserPool_AccountRecoverySetting_RecoveryMechanismFields,
+    "recovery_mechanisms": ubx.FieldSpec(
+        wire_name="recovery_mechanisms",
+        kind="list",
+        fields=_UserPool_AccountRecoverySetting_RecoveryMechanismsFields,
     ),
 }
 
 _UserPool_AdminCreateUserConfig_InviteMessageTemplateFields = {
     "email_message": ubx.FieldSpec(wire_name="email_message"),
     "email_subject": ubx.FieldSpec(wire_name="email_subject"),
-    "sms_message": ubx.FieldSpec(wire_name="sms_message"),
+    "smsmessage": ubx.FieldSpec(wire_name="smsmessage"),
 }
 
 _UserPool_AdminCreateUserConfigFields = {
     "allow_admin_create_user_only": ubx.FieldSpec(wire_name="allow_admin_create_user_only"),
     "invite_message_template": ubx.FieldSpec(
         wire_name="invite_message_template",
-        kind="list",
+        kind="object",
         fields=_UserPool_AdminCreateUserConfig_InviteMessageTemplateFields,
     ),
+    "unused_account_validity_days": ubx.FieldSpec(wire_name="unused_account_validity_days"),
 }
 
 _UserPool_DeviceConfigurationFields = {
@@ -177,14 +262,18 @@ _UserPool_DeviceConfigurationFields = {
 _UserPool_EmailConfigurationFields = {
     "configuration_set": ubx.FieldSpec(wire_name="configuration_set"),
     "email_sending_account": ubx.FieldSpec(wire_name="email_sending_account"),
-    "from_email_address": ubx.FieldSpec(wire_name="from_email_address"),
+    "from_": ubx.FieldSpec(wire_name="from"),
     "reply_to_email_address": ubx.FieldSpec(wire_name="reply_to_email_address"),
     "source_arn": ubx.FieldSpec(wire_name="source_arn"),
 }
 
-_UserPool_EmailMfaConfigurationFields = {
-    "message": ubx.FieldSpec(wire_name="message"),
-    "subject": ubx.FieldSpec(wire_name="subject"),
+_UserPool_IssuerConfigurationFields = {
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_UserPool_KeyConfigurationFields = {
+    "key_type": ubx.FieldSpec(wire_name="key_type"),
+    "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
 }
 
 _UserPool_LambdaConfig_CustomEmailSenderFields = {
@@ -194,34 +283,39 @@ _UserPool_LambdaConfig_CustomEmailSenderFields = {
 
 _UserPool_LambdaConfigFields = {
     "create_auth_challenge": ubx.FieldSpec(wire_name="create_auth_challenge"),
+    "custom_email_sender": ubx.FieldSpec(
+        wire_name="custom_email_sender",
+        kind="object",
+        fields=_UserPool_LambdaConfig_CustomEmailSenderFields,
+    ),
     "custom_message": ubx.FieldSpec(wire_name="custom_message"),
+    "custom_smssender": ubx.FieldSpec(
+        wire_name="custom_smssender",
+        kind="object",
+        fields=_UserPool_LambdaConfig_CustomEmailSenderFields,
+    ),
     "define_auth_challenge": ubx.FieldSpec(wire_name="define_auth_challenge"),
-    "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
+    "inbound_federation": ubx.FieldSpec(
+        wire_name="inbound_federation",
+        kind="object",
+        fields=_UserPool_LambdaConfig_CustomEmailSenderFields,
+    ),
+    "kmskey_id": ubx.FieldSpec(wire_name="kmskey_id"),
     "post_authentication": ubx.FieldSpec(wire_name="post_authentication"),
     "post_confirmation": ubx.FieldSpec(wire_name="post_confirmation"),
     "pre_authentication": ubx.FieldSpec(wire_name="pre_authentication"),
     "pre_sign_up": ubx.FieldSpec(wire_name="pre_sign_up"),
     "pre_token_generation": ubx.FieldSpec(wire_name="pre_token_generation"),
-    "user_migration": ubx.FieldSpec(wire_name="user_migration"),
-    "verify_auth_challenge_response": ubx.FieldSpec(wire_name="verify_auth_challenge_response"),
-    "custom_email_sender": ubx.FieldSpec(
-        wire_name="custom_email_sender",
-        kind="list",
-        fields=_UserPool_LambdaConfig_CustomEmailSenderFields,
-    ),
-    "custom_sms_sender": ubx.FieldSpec(
-        wire_name="custom_sms_sender",
-        kind="list",
-        fields=_UserPool_LambdaConfig_CustomEmailSenderFields,
-    ),
     "pre_token_generation_config": ubx.FieldSpec(
         wire_name="pre_token_generation_config",
-        kind="list",
+        kind="object",
         fields=_UserPool_LambdaConfig_CustomEmailSenderFields,
     ),
+    "user_migration": ubx.FieldSpec(wire_name="user_migration"),
+    "verify_auth_challenge_response": ubx.FieldSpec(wire_name="verify_auth_challenge_response"),
 }
 
-_UserPool_PasswordPolicyFields = {
+_UserPool_Policies_PasswordPolicyFields = {
     "minimum_length": ubx.FieldSpec(wire_name="minimum_length"),
     "password_history_size": ubx.FieldSpec(wire_name="password_history_size"),
     "require_lowercase": ubx.FieldSpec(wire_name="require_lowercase"),
@@ -229,6 +323,23 @@ _UserPool_PasswordPolicyFields = {
     "require_symbols": ubx.FieldSpec(wire_name="require_symbols"),
     "require_uppercase": ubx.FieldSpec(wire_name="require_uppercase"),
     "temporary_password_validity_days": ubx.FieldSpec(wire_name="temporary_password_validity_days"),
+}
+
+_UserPool_Policies_SignInPolicyFields = {
+    "allowed_first_auth_factors": ubx.FieldSpec(wire_name="allowed_first_auth_factors"),
+}
+
+_UserPool_PoliciesFields = {
+    "password_policy": ubx.FieldSpec(
+        wire_name="password_policy",
+        kind="object",
+        fields=_UserPool_Policies_PasswordPolicyFields,
+    ),
+    "sign_in_policy": ubx.FieldSpec(
+        wire_name="sign_in_policy",
+        kind="object",
+        fields=_UserPool_Policies_SignInPolicyFields,
+    ),
 }
 
 _UserPool_Schema_NumberAttributeConstraintsFields = {
@@ -246,31 +357,38 @@ _UserPool_SchemaFields = {
     "developer_only_attribute": ubx.FieldSpec(wire_name="developer_only_attribute"),
     "mutable": ubx.FieldSpec(wire_name="mutable"),
     "name": ubx.FieldSpec(wire_name="name"),
-    "required": ubx.FieldSpec(wire_name="required"),
     "number_attribute_constraints": ubx.FieldSpec(
         wire_name="number_attribute_constraints",
-        kind="list",
+        kind="object",
         fields=_UserPool_Schema_NumberAttributeConstraintsFields,
     ),
+    "required": ubx.FieldSpec(wire_name="required"),
     "string_attribute_constraints": ubx.FieldSpec(
         wire_name="string_attribute_constraints",
-        kind="list",
+        kind="object",
         fields=_UserPool_Schema_StringAttributeConstraintsFields,
     ),
 }
 
-_UserPool_SignInPolicyFields = {
-    "allowed_first_auth_factors": ubx.FieldSpec(wire_name="allowed_first_auth_factors"),
+_UserPool_SmsConfiguration_EumsSmsFields = {
+    "caller_arn": ubx.FieldSpec(wire_name="caller_arn"),
+    "configuration_set_name": ubx.FieldSpec(wire_name="configuration_set_name"),
+    "external_id": ubx.FieldSpec(wire_name="external_id"),
+    "in_entity_id": ubx.FieldSpec(wire_name="in_entity_id"),
+    "in_template_id": ubx.FieldSpec(wire_name="in_template_id"),
+    "origination_identity": ubx.FieldSpec(wire_name="origination_identity"),
+    "region": ubx.FieldSpec(wire_name="region"),
 }
 
 _UserPool_SmsConfigurationFields = {
+    "eums_sms": ubx.FieldSpec(
+        wire_name="eums_sms",
+        kind="object",
+        fields=_UserPool_SmsConfiguration_EumsSmsFields,
+    ),
     "external_id": ubx.FieldSpec(wire_name="external_id"),
     "sns_caller_arn": ubx.FieldSpec(wire_name="sns_caller_arn"),
     "sns_region": ubx.FieldSpec(wire_name="sns_region"),
-}
-
-_UserPool_SoftwareTokenMfaConfigurationFields = {
-    "enabled": ubx.FieldSpec(wire_name="enabled"),
 }
 
 _UserPool_UserAttributeUpdateSettingsFields = {
@@ -282,12 +400,12 @@ _UserPool_UserPoolAddOns_AdvancedSecurityAdditionalFlowsFields = {
 }
 
 _UserPool_UserPoolAddOnsFields = {
-    "advanced_security_mode": ubx.FieldSpec(wire_name="advanced_security_mode"),
     "advanced_security_additional_flows": ubx.FieldSpec(
         wire_name="advanced_security_additional_flows",
-        kind="list",
+        kind="object",
         fields=_UserPool_UserPoolAddOns_AdvancedSecurityAdditionalFlowsFields,
     ),
+    "advanced_security_mode": ubx.FieldSpec(wire_name="advanced_security_mode"),
 }
 
 _UserPool_UsernameConfigurationFields = {
@@ -303,142 +421,238 @@ _UserPool_VerificationMessageTemplateFields = {
     "sms_message": ubx.FieldSpec(wire_name="sms_message"),
 }
 
-_UserPool_WebAuthnConfigurationFields = {
-    "relying_party_id": ubx.FieldSpec(wire_name="relying_party_id"),
-    "user_verification": ubx.FieldSpec(wire_name="user_verification"),
-}
-
 @dataclasses.dataclass
 class UserPoolConfig:
-    alias_attributes: Any = None
-    auto_verified_attributes: Any = None
-    deletion_protection: Any = None
-    email_verification_message: Any = None
-    email_verification_subject: Any = None
-    id: Any = None
-    mfa_configuration: Any = None
-    name: Any = None
-    region: Any = None
-    sms_authentication_message: Any = None
-    sms_verification_message: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    user_pool_tier: Any = None
-    username_attributes: Any = None
+    # Configures the account recovery methods (such as email verification, SMS, or admin-only) that users can use to regain access to their accounts in the Cognito user pool. (AI-inferred)
     account_recovery_setting: Any = None
+    # Configuration for the admin create user flow, controlling whether only administrators can create users and customizing the invitation message sent to new users. (AI-inferred)
     admin_create_user_config: Any = None
+    # Specifies the list of user attributes (such as email, phone_number, or preferred_username) that can be used as alternate sign-in aliases for the user pool. (AI-inferred)
+    alias_attributes: Any = None
+    # Specifies the list of user attributes (such as email or phone_number) that Cognito automatically attempts to verify during user sign-up, marking them as verified when the verification process succeeds. (AI-inferred)
+    auto_verified_attributes: Any = None
+    # Indicates whether deletion protection is enabled for the user pool, with allowed values of ACTIVE or INACTIVE to prevent accidental deletion. (AI-inferred)
+    deletion_protection: Any = None
+    # Specifies device configuration settings for the user pool, determining whether a new device must pass a challenge and whether devices are remembered only when the user explicitly chooses to keep them signed in. (AI-inferred)
     device_configuration: Any = None
+    # Specifies the email message body that Amazon Cognito sends to users when they need to authenticate using a one-time passcode (OTP) delivered to their email address, supporting the {####} placeholder for the actual code. (AI-inferred)
+    email_authentication_message: Any = None
+    # Specifies the subject line of the email message that Amazon Cognito sends when users use email as an authentication factor (email MFA). (AI-inferred)
+    email_authentication_subject: Any = None
+    # Configures the email delivery settings for the user pool, specifying the source ARN, reply-to address, and delivery method used for messages such as verification codes and account notifications. (AI-inferred)
     email_configuration: Any = None
-    email_mfa_configuration: Any = None
+    # The custom email message that AWS Cognito sends to users to verify their email address, where you can include the verification code placeholder {####}. (AI-inferred)
+    email_verification_message: Any = None
+    # The subject line of the email that is sent to users when they need to verify their email address. (AI-inferred)
+    email_verification_subject: Any = None
+    # A list of the multi-factor authentication (MFA) methods enabled for the Cognito user pool, where each item is either 'SMS_MFA' or 'SOFTWARE_TOKEN_MFA'. (AI-inferred)
+    enabled_mfas: Any = None
+    # Specifies the issuer configuration for the user pool, which defines the custom issuer ID and issuer URL that Cognito uses for tokens. (AI-inferred)
+    issuer_configuration: Any = None
+    # Defines the AWS KMS key configurations used for encrypting custom email and SMS sender messages in the Cognito user pool, specifying the KMS key ID and provider for each custom sender. (AI-inferred)
+    key_configuration: Any = None
+    # Configures AWS Lambda triggers for user pool workflows, allowing you to specify Lambda function ARNs for events such as pre-signup, post-confirmation, and custom message, among others. (AI-inferred)
     lambda_config: Any = None
-    password_policy: Any = None
+    # Specifies whether multi-factor authentication (MFA) is enabled for the user pool, with valid values 'OFF', 'ON', or 'OPTIONAL'. (AI-inferred)
+    mfa_configuration: Any = None
+    # Configures the password policy for the user pool, specifying rules for password length, required character types, and temporary password validity duration. (AI-inferred)
+    policies: Any = None
+    # Specifies the list of schema attributes (standard and custom) for the user pool, including each attribute's data type, whether it is required or mutable, and any validation constraints. (AI-inferred)
     schema: Any = None
-    sign_in_policy: Any = None
+    # The customizable SMS message text that Amazon Cognito sends to users for authentication (such as MFA code delivery), which must include the {####} placeholder for the verification code. (AI-inferred)
+    sms_authentication_message: Any = None
+    # Configures the Amazon SNS settings used by the user pool to send SMS messages for user verification and authentication, including the SNS caller ARN and external ID required for Cognito to publish SMS messages. (AI-inferred)
     sms_configuration: Any = None
-    software_token_mfa_configuration: Any = None
+    # The SMS message template sent to users when they verify their phone number, which can include the verification code placeholder {####}. (AI-inferred)
+    sms_verification_message: Any = None
+    # Defines the user pool's attribute update settings, specifically the list of user attributes that require verification before a user can update them. (AI-inferred)
     user_attribute_update_settings: Any = None
+    # Configures the advanced security features for the user pool, specifically the advanced security mode (e.g., ENFORCED, AUDIT, or OFF) for threat protection. (AI-inferred)
     user_pool_add_ons: Any = None
+    # Specifies a unique name for the user pool within the AWS region, which may contain letters, numbers, and underscores. (AI-inferred)
+    user_pool_name: Any = None
+    # The user_pool_tags field specifies a map of key-value tags to attach to the Cognito user pool for metadata, cost allocation, and resource management. (AI-inferred)
+    user_pool_tags: Any = None
+    # Specifies the feature tier of the Cognito user pool (Lite, Standard, or Enterprise), which determines the available features and pricing for the pool. (AI-inferred)
+    user_pool_tier: Any = None
+    # Defines the list of user attributes (such as email or phone number) that can be used as the username for signing in to the user pool. (AI-inferred)
+    username_attributes: Any = None
+    # A configuration object that controls whether usernames are case-sensitive (via the CaseSensitive property) for the user pool. (AI-inferred)
     username_configuration: Any = None
+    # Configures the templates for verification messages (email/SMS) sent to users, such as account verification or password reset, including subject, body, and the default email delivery method. (AI-inferred)
     verification_message_template: Any = None
-    web_authn_configuration: Any = None
+    # Configures WebAuthn as a second factor for the user pool, specifying the relying party ID, relying party name, user verification preference, and timeout for passwordless sign-in with security keys. (AI-inferred)
+    web_authn_factor_configuration: Any = None
+    # The Relying Party ID for WebAuthn passkey authentication, which specifies the domain (e.g., 'example.com') that the user pool associates with registered passkeys. (AI-inferred)
+    web_authn_relying_party_id: Any = None
+    # Specifies the user verification requirement for WebAuthn passkeys in the user pool, determining whether a user must complete an additional verification step (such as biometric or PIN) when using a passkey, with allowed values 'required', 'preferred', or 'discouraged'. (AI-inferred)
+    web_authn_user_verification: Any = None
+
+@dataclasses.dataclass
+class UserPoolAttrs:
+    # Configures the account recovery methods (such as email verification, SMS, or admin-only) that users can use to regain access to their accounts in the Cognito user pool. (AI-inferred)
+    account_recovery_setting: Any = None
+    # Configuration for the admin create user flow, controlling whether only administrators can create users and customizing the invitation message sent to new users. (AI-inferred)
+    admin_create_user_config: Any = None
+    # Specifies the list of user attributes (such as email, phone_number, or preferred_username) that can be used as alternate sign-in aliases for the user pool. (AI-inferred)
+    alias_attributes: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies the Cognito user pool, typically in the form arn:aws:cognito-idp:region:account-id:userpool/user-pool-id. (AI-inferred)
+    arn: Any = None
+    # Specifies the list of user attributes (such as email or phone_number) that Cognito automatically attempts to verify during user sign-up, marking them as verified when the verification process succeeds. (AI-inferred)
+    auto_verified_attributes: Any = None
+    # Indicates whether deletion protection is enabled for the user pool, with allowed values of ACTIVE or INACTIVE to prevent accidental deletion. (AI-inferred)
+    deletion_protection: Any = None
+    # Specifies device configuration settings for the user pool, determining whether a new device must pass a challenge and whether devices are remembered only when the user explicitly chooses to keep them signed in. (AI-inferred)
+    device_configuration: Any = None
+    # Specifies the email message body that Amazon Cognito sends to users when they need to authenticate using a one-time passcode (OTP) delivered to their email address, supporting the {####} placeholder for the actual code. (AI-inferred)
+    email_authentication_message: Any = None
+    # Specifies the subject line of the email message that Amazon Cognito sends when users use email as an authentication factor (email MFA). (AI-inferred)
+    email_authentication_subject: Any = None
+    # Configures the email delivery settings for the user pool, specifying the source ARN, reply-to address, and delivery method used for messages such as verification codes and account notifications. (AI-inferred)
+    email_configuration: Any = None
+    # The custom email message that AWS Cognito sends to users to verify their email address, where you can include the verification code placeholder {####}. (AI-inferred)
+    email_verification_message: Any = None
+    # The subject line of the email that is sent to users when they need to verify their email address. (AI-inferred)
+    email_verification_subject: Any = None
+    # A list of the multi-factor authentication (MFA) methods enabled for the Cognito user pool, where each item is either 'SMS_MFA' or 'SOFTWARE_TOKEN_MFA'. (AI-inferred)
+    enabled_mfas: Any = None
+    # Specifies the issuer configuration for the user pool, which defines the custom issuer ID and issuer URL that Cognito uses for tokens. (AI-inferred)
+    issuer_configuration: Any = None
+    # Defines the AWS KMS key configurations used for encrypting custom email and SMS sender messages in the Cognito user pool, specifying the KMS key ID and provider for each custom sender. (AI-inferred)
+    key_configuration: Any = None
+    # Configures AWS Lambda triggers for user pool workflows, allowing you to specify Lambda function ARNs for events such as pre-signup, post-confirmation, and custom message, among others. (AI-inferred)
+    lambda_config: Any = None
+    # Specifies whether multi-factor authentication (MFA) is enabled for the user pool, with valid values 'OFF', 'ON', or 'OPTIONAL'. (AI-inferred)
+    mfa_configuration: Any = None
+    # Configures the password policy for the user pool, specifying rules for password length, required character types, and temporary password validity duration. (AI-inferred)
+    policies: Any = None
+    # ProviderName is a read-only attribute that returns the name of the Amazon Cognito user pool, which identifies the user pool as the provider. (AI-inferred)
+    provider_name: Any = None
+    # The AWS-created URL for the user pool, typically formatted as https://cognito-idp.<region>.amazonaws.com/<pool_id>, which clients use to make authentication requests to this user pool. (AI-inferred)
+    provider_url: Any = None
+    # Specifies the list of schema attributes (standard and custom) for the user pool, including each attribute's data type, whether it is required or mutable, and any validation constraints. (AI-inferred)
+    schema: Any = None
+    # The customizable SMS message text that Amazon Cognito sends to users for authentication (such as MFA code delivery), which must include the {####} placeholder for the verification code. (AI-inferred)
+    sms_authentication_message: Any = None
+    # Configures the Amazon SNS settings used by the user pool to send SMS messages for user verification and authentication, including the SNS caller ARN and external ID required for Cognito to publish SMS messages. (AI-inferred)
+    sms_configuration: Any = None
+    # The SMS message template sent to users when they verify their phone number, which can include the verification code placeholder {####}. (AI-inferred)
+    sms_verification_message: Any = None
+    # Defines the user pool's attribute update settings, specifically the list of user attributes that require verification before a user can update them. (AI-inferred)
+    user_attribute_update_settings: Any = None
+    # Configures the advanced security features for the user pool, specifically the advanced security mode (e.g., ENFORCED, AUDIT, or OFF) for threat protection. (AI-inferred)
+    user_pool_add_ons: Any = None
+    # The unique identifier assigned by AWS to the user pool. (AI-inferred)
+    user_pool_id: Any = None
+    # Specifies a unique name for the user pool within the AWS region, which may contain letters, numbers, and underscores. (AI-inferred)
+    user_pool_name: Any = None
+    # The user_pool_tags field specifies a map of key-value tags to attach to the Cognito user pool for metadata, cost allocation, and resource management. (AI-inferred)
+    user_pool_tags: Any = None
+    # Specifies the feature tier of the Cognito user pool (Lite, Standard, or Enterprise), which determines the available features and pricing for the pool. (AI-inferred)
+    user_pool_tier: Any = None
+    # Defines the list of user attributes (such as email or phone number) that can be used as the username for signing in to the user pool. (AI-inferred)
+    username_attributes: Any = None
+    # A configuration object that controls whether usernames are case-sensitive (via the CaseSensitive property) for the user pool. (AI-inferred)
+    username_configuration: Any = None
+    # Configures the templates for verification messages (email/SMS) sent to users, such as account verification or password reset, including subject, body, and the default email delivery method. (AI-inferred)
+    verification_message_template: Any = None
+    # Configures WebAuthn as a second factor for the user pool, specifying the relying party ID, relying party name, user verification preference, and timeout for passwordless sign-in with security keys. (AI-inferred)
+    web_authn_factor_configuration: Any = None
+    # The Relying Party ID for WebAuthn passkey authentication, which specifies the domain (e.g., 'example.com') that the user pool associates with registered passkeys. (AI-inferred)
+    web_authn_relying_party_id: Any = None
+    # Specifies the user verification requirement for WebAuthn passkeys in the user pool, determining whether a user must complete an additional verification step (such as biometric or PIN) when using a passkey, with allowed values 'required', 'preferred', or 'discouraged'. (AI-inferred)
+    web_authn_user_verification: Any = None
 
 UserPool = ubx.ResourceBinding(
     wire_type="aws_cognito_user_pool",
     fields={
-        "alias_attributes": ubx.FieldSpec(wire_name="alias_attributes"),
-        "auto_verified_attributes": ubx.FieldSpec(wire_name="auto_verified_attributes"),
-        "deletion_protection": ubx.FieldSpec(wire_name="deletion_protection"),
-        "email_verification_message": ubx.FieldSpec(wire_name="email_verification_message"),
-        "email_verification_subject": ubx.FieldSpec(wire_name="email_verification_subject"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "mfa_configuration": ubx.FieldSpec(wire_name="mfa_configuration"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "sms_authentication_message": ubx.FieldSpec(wire_name="sms_authentication_message"),
-        "sms_verification_message": ubx.FieldSpec(wire_name="sms_verification_message"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "user_pool_tier": ubx.FieldSpec(wire_name="user_pool_tier"),
-        "username_attributes": ubx.FieldSpec(wire_name="username_attributes"),
         "account_recovery_setting": ubx.FieldSpec(
             wire_name="account_recovery_setting",
-            kind="list",
+            kind="object",
             fields=_UserPool_AccountRecoverySettingFields,
         ),
         "admin_create_user_config": ubx.FieldSpec(
             wire_name="admin_create_user_config",
-            kind="list",
+            kind="object",
             fields=_UserPool_AdminCreateUserConfigFields,
         ),
+        "alias_attributes": ubx.FieldSpec(wire_name="alias_attributes"),
+        "auto_verified_attributes": ubx.FieldSpec(wire_name="auto_verified_attributes"),
+        "deletion_protection": ubx.FieldSpec(wire_name="deletion_protection"),
         "device_configuration": ubx.FieldSpec(
             wire_name="device_configuration",
-            kind="list",
+            kind="object",
             fields=_UserPool_DeviceConfigurationFields,
         ),
+        "email_authentication_message": ubx.FieldSpec(wire_name="email_authentication_message"),
+        "email_authentication_subject": ubx.FieldSpec(wire_name="email_authentication_subject"),
         "email_configuration": ubx.FieldSpec(
             wire_name="email_configuration",
-            kind="list",
+            kind="object",
             fields=_UserPool_EmailConfigurationFields,
         ),
-        "email_mfa_configuration": ubx.FieldSpec(
-            wire_name="email_mfa_configuration",
-            kind="list",
-            fields=_UserPool_EmailMfaConfigurationFields,
+        "email_verification_message": ubx.FieldSpec(wire_name="email_verification_message"),
+        "email_verification_subject": ubx.FieldSpec(wire_name="email_verification_subject"),
+        "enabled_mfas": ubx.FieldSpec(wire_name="enabled_mfas"),
+        "issuer_configuration": ubx.FieldSpec(
+            wire_name="issuer_configuration",
+            kind="object",
+            fields=_UserPool_IssuerConfigurationFields,
+        ),
+        "key_configuration": ubx.FieldSpec(
+            wire_name="key_configuration",
+            kind="object",
+            fields=_UserPool_KeyConfigurationFields,
         ),
         "lambda_config": ubx.FieldSpec(
             wire_name="lambda_config",
-            kind="list",
+            kind="object",
             fields=_UserPool_LambdaConfigFields,
         ),
-        "password_policy": ubx.FieldSpec(
-            wire_name="password_policy",
-            kind="list",
-            fields=_UserPool_PasswordPolicyFields,
+        "mfa_configuration": ubx.FieldSpec(wire_name="mfa_configuration"),
+        "policies": ubx.FieldSpec(
+            wire_name="policies",
+            kind="object",
+            fields=_UserPool_PoliciesFields,
         ),
         "schema": ubx.FieldSpec(
             wire_name="schema",
-            kind="set",
+            kind="list",
             fields=_UserPool_SchemaFields,
         ),
-        "sign_in_policy": ubx.FieldSpec(
-            wire_name="sign_in_policy",
-            kind="list",
-            fields=_UserPool_SignInPolicyFields,
-        ),
+        "sms_authentication_message": ubx.FieldSpec(wire_name="sms_authentication_message"),
         "sms_configuration": ubx.FieldSpec(
             wire_name="sms_configuration",
-            kind="list",
+            kind="object",
             fields=_UserPool_SmsConfigurationFields,
         ),
-        "software_token_mfa_configuration": ubx.FieldSpec(
-            wire_name="software_token_mfa_configuration",
-            kind="list",
-            fields=_UserPool_SoftwareTokenMfaConfigurationFields,
-        ),
+        "sms_verification_message": ubx.FieldSpec(wire_name="sms_verification_message"),
         "user_attribute_update_settings": ubx.FieldSpec(
             wire_name="user_attribute_update_settings",
-            kind="list",
+            kind="object",
             fields=_UserPool_UserAttributeUpdateSettingsFields,
         ),
         "user_pool_add_ons": ubx.FieldSpec(
             wire_name="user_pool_add_ons",
-            kind="list",
+            kind="object",
             fields=_UserPool_UserPoolAddOnsFields,
         ),
+        "user_pool_name": ubx.FieldSpec(wire_name="user_pool_name"),
+        "user_pool_tags": ubx.FieldSpec(wire_name="user_pool_tags"),
+        "user_pool_tier": ubx.FieldSpec(wire_name="user_pool_tier"),
+        "username_attributes": ubx.FieldSpec(wire_name="username_attributes"),
         "username_configuration": ubx.FieldSpec(
             wire_name="username_configuration",
-            kind="list",
+            kind="object",
             fields=_UserPool_UsernameConfigurationFields,
         ),
         "verification_message_template": ubx.FieldSpec(
             wire_name="verification_message_template",
-            kind="list",
+            kind="object",
             fields=_UserPool_VerificationMessageTemplateFields,
         ),
-        "web_authn_configuration": ubx.FieldSpec(
-            wire_name="web_authn_configuration",
-            kind="list",
-            fields=_UserPool_WebAuthnConfigurationFields,
-        ),
+        "web_authn_factor_configuration": ubx.FieldSpec(wire_name="web_authn_factor_configuration"),
+        "web_authn_relying_party_id": ubx.FieldSpec(wire_name="web_authn_relying_party_id"),
+        "web_authn_user_verification": ubx.FieldSpec(wire_name="web_authn_user_verification"),
     },
 )

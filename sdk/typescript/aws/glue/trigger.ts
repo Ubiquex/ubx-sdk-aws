@@ -2,40 +2,50 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Trigger_Actions_NotificationProperty {
-  notifyDelayAfter: number;
+  /** Specifies the number of minutes to wait after a job run completes before sending a notification for this Glue trigger action. (AI-inferred) */
+  notifyDelayAfter?: number | Computed<number>;
 }
 
 export interface Trigger_Actions {
-  arguments: Record<string, string>;
-  crawlerName: string;
-  jobName: string;
-  securityConfiguration: string;
-  timeout: number;
-  notificationProperty: Trigger_Actions_NotificationProperty[];
+  /** The set of key-value pairs that are passed as arguments to the referenced Glue job when this trigger action runs. (AI-inferred) */
+  arguments?: unknown | Computed<unknown>;
+  /** The name of the AWS Glue crawler to start when this trigger action is invoked, used for crawler-based trigger actions. (AI-inferred) */
+  crawlerName?: string | Computed<string>;
+  /** The name of the AWS Glue job that will be started when the trigger fires, as defined in the Actions property of the Glue trigger. (AI-inferred) */
+  jobName?: string | Computed<string>;
+  /** Defines the notification settings for a Glue trigger action, specifically the number of minutes after a job run starts before a job run delay notification is sent (NotifyDelayAfter). (AI-inferred) */
+  notificationProperty?: Trigger_Actions_NotificationProperty | Computed<Trigger_Actions_NotificationProperty>;
+  /** The name of the AWS Glue security configuration that encrypts the job run's data and connections when this trigger action starts a job. (AI-inferred) */
+  securityConfiguration?: string | Computed<string>;
+  /** The job run timeout in minutes for the action, overriding the timeout value of the associated job. (AI-inferred) */
+  timeout?: number | Computed<number>;
 }
 
 export interface Trigger_EventBatchingCondition {
-  batchSize: number;
-  batchWindow: number;
+  /** Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires. */
+  batchSize: number | Computed<number>;
+  /** Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received. */
+  batchWindow?: number | Computed<number>;
 }
 
 export interface Trigger_Predicate_Conditions {
-  crawlState: string;
-  crawlerName: string;
-  jobName: string;
-  logicalOperator: string;
-  state: string;
+  /** The crawl state (e.g., SUCCEEDED, FAILED, RUNNING) that the crawler referenced in this condition must reach for the trigger predicate to evaluate as true. (AI-inferred) */
+  crawlState?: string | Computed<string>;
+  /** The name of the AWS Glue crawler that must reach the specified crawl state (e.g., COMPLETED) to satisfy the trigger condition. (AI-inferred) */
+  crawlerName?: string | Computed<string>;
+  /** The name of the AWS Glue job whose run state (e.g., SUCCEEDED, FAILED, TIMEOUT) this predicate condition evaluates to determine whether the trigger fires. (AI-inferred) */
+  jobName?: string | Computed<string>;
+  /** Specifies the logical operator (AND or OR) that combines this condition with the previous condition in the trigger's predicate, defaulting to AND when not specified. (AI-inferred) */
+  logicalOperator?: string | Computed<string>;
+  /** The state (e.g., SUCCEEDED, FAILED) that the referenced job or crawler must be in for this condition to be met within the trigger's predicate. (AI-inferred) */
+  state?: string | Computed<string>;
 }
 
 export interface Trigger_Predicate {
-  logical: string;
-  conditions: Trigger_Predicate_Conditions[];
-}
-
-export interface Trigger_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+  /** A list of the conditions that determine when the trigger will fire. */
+  conditions?: Trigger_Predicate_Conditions[] | Computed<Trigger_Predicate_Conditions[]>;
+  /** An optional field if only one condition is listed. If multiple conditions are listed, then this field is required. */
+  logical?: string | Computed<string>;
 }
 
 const Trigger_Actions_NotificationPropertyFields: FieldMap = {
@@ -46,13 +56,13 @@ const Trigger_ActionsFields: FieldMap = {
   arguments: "arguments",
   crawlerName: "crawler_name",
   jobName: "job_name",
-  securityConfiguration: "security_configuration",
-  timeout: "timeout",
   notificationProperty: {
     wireName: "notification_property",
-    kind: "list",
+    kind: "object",
     fields: Trigger_Actions_NotificationPropertyFields,
   },
+  securityConfiguration: "security_configuration",
+  timeout: "timeout",
 };
 
 const Trigger_EventBatchingConditionFields: FieldMap = {
@@ -69,91 +79,84 @@ const Trigger_Predicate_ConditionsFields: FieldMap = {
 };
 
 const Trigger_PredicateFields: FieldMap = {
-  logical: "logical",
   conditions: {
     wireName: "conditions",
     kind: "list",
     fields: Trigger_Predicate_ConditionsFields,
   },
-};
-
-const Trigger_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+  logical: "logical",
 };
 
 export interface TriggerConfig {
+  /** The actions initiated by this trigger. */
+  actions: Trigger_Actions[] | Computed<Trigger_Actions[]>;
+  /** A description of this trigger. */
   description?: string | Computed<string>;
-  enabled?: boolean | Computed<boolean>;
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires. */
+  eventBatchingCondition?: Trigger_EventBatchingCondition | Computed<Trigger_EventBatchingCondition>;
+  /** The name of the trigger. */
+  name?: string | Computed<string>;
+  /** The predicate of this trigger, which defines when it will fire. */
+  predicate?: Trigger_Predicate | Computed<Trigger_Predicate>;
+  /** A cron expression used to specify the schedule. */
   schedule?: string | Computed<string>;
+  /** Set to true to start SCHEDULED and CONDITIONAL triggers when created. True is not supported for ON_DEMAND triggers. */
   startOnCreation?: boolean | Computed<boolean>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
+  /** The tags to use with this trigger. */
+  tags?: unknown | Computed<unknown>;
+  /** The type of trigger that this is. */
   type: string | Computed<string>;
+  /** The name of the workflow associated with the trigger. */
   workflowName?: string | Computed<string>;
-  actions?: Trigger_Actions[] | Computed<Trigger_Actions[]>;
-  eventBatchingCondition?: Trigger_EventBatchingCondition[] | Computed<Trigger_EventBatchingCondition[]>;
-  predicate?: Trigger_Predicate[] | Computed<Trigger_Predicate[]>;
-  timeouts?: Trigger_Timeouts | Computed<Trigger_Timeouts>;
 }
 
 export interface TriggerAttrs {
-  arn: string;
-  description: string;
-  enabled: boolean;
-  id: string;
-  name: string;
-  region: string;
-  schedule: string;
-  startOnCreation: boolean;
-  state: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  type: string;
-  workflowName: string;
+  /** The actions initiated by this trigger. */
   actions: Trigger_Actions[];
-  eventBatchingCondition: Trigger_EventBatchingCondition[];
-  predicate: Trigger_Predicate[];
-  timeouts: Trigger_Timeouts;
+  /** A description of this trigger. */
+  description: string;
+  /** Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires. */
+  eventBatchingCondition: Trigger_EventBatchingCondition;
+  /** The name of the trigger. */
+  name: string;
+  /** The predicate of this trigger, which defines when it will fire. */
+  predicate: Trigger_Predicate;
+  /** A cron expression used to specify the schedule. */
+  schedule: string;
+  /** Set to true to start SCHEDULED and CONDITIONAL triggers when created. True is not supported for ON_DEMAND triggers. */
+  startOnCreation: boolean;
+  /** The tags to use with this trigger. */
+  tags: unknown;
+  /** The type of trigger that this is. */
+  type: string;
+  /** The name of the workflow associated with the trigger. */
+  workflowName: string;
 }
 
 export const Trigger: ResourceBinding<TriggerConfig, TriggerAttrs> = {
   wireType: "aws_glue_trigger",
   fields: {
-    description: "description",
-    enabled: "enabled",
-    id: "id",
-    name: "name",
-    region: "region",
-    schedule: "schedule",
-    startOnCreation: "start_on_creation",
-    tags: "tags",
-    tagsAll: "tags_all",
-    type: "type",
-    workflowName: "workflow_name",
     actions: {
       wireName: "actions",
       kind: "list",
       fields: Trigger_ActionsFields,
     },
+    description: "description",
     eventBatchingCondition: {
       wireName: "event_batching_condition",
-      kind: "list",
+      kind: "object",
       fields: Trigger_EventBatchingConditionFields,
     },
+    name: "name",
     predicate: {
       wireName: "predicate",
-      kind: "list",
+      kind: "object",
       fields: Trigger_PredicateFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Trigger_TimeoutsFields,
-    },
+    schedule: "schedule",
+    startOnCreation: "start_on_creation",
+    tags: "tags",
+    type: "type",
+    workflowName: "workflow_name",
   },
 };

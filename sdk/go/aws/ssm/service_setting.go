@@ -4,17 +4,30 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceSettingConfig struct {
-	Id any
-	Region any
+	// The ID of the service setting, such as /ssm/parameter-store/high-throughput-enabled.
 	SettingId any
+	// The value of the service setting.
 	SettingValue any
+}
+
+type ServiceSettingAttrs struct {
+	// The ARN of the service setting.
+	Arn any
+	// The last time the service setting was modified.
+	LastModifiedDate any
+	// The ARN of the last modified user.
+	LastModifiedUser any
+	// The ID of the service setting, such as /ssm/parameter-store/high-throughput-enabled.
+	SettingId any
+	// The value of the service setting.
+	SettingValue any
+	// The status of the service setting. The value can be Default, Customized or PendingUpdate.
+	Status any
 }
 
 var ServiceSetting = ubx.ResourceBinding{
 	WireType: "aws_ssm_service_setting",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SettingId": ubx.FieldSpec{WireName: "setting_id"},
 		"SettingValue": ubx.FieldSpec{WireName: "setting_value"},
 	},

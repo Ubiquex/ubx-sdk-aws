@@ -3,29 +3,38 @@ package glue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type SecurityConfiguration_EncryptionConfiguration_CloudwatchEncryption struct {
-	CloudwatchEncryptionMode any
+type SecurityConfiguration_EncryptionConfiguration_CloudWatchEncryption struct {
+	// Specifies whether CloudWatch Logs encryption is disabled or uses SSE-KMS for the Glue security configuration, with allowed values 'DISABLED' and 'SSE-KMS'. (AI-inferred)
+	CloudWatchEncryptionMode any
+	// The ARN of the AWS KMS key used to encrypt CloudWatch log data for the Glue security configuration. (AI-inferred)
 	KmsKeyArn any
 }
 
 type SecurityConfiguration_EncryptionConfiguration_JobBookmarksEncryption struct {
+	// Sets the encryption mode for job bookmark data to either DISABLED (no encryption) or CSE-KMS (client-side encryption via an AWS KMS key specified in the same job_bookmarks_encryption block). (AI-inferred)
 	JobBookmarksEncryptionMode any
+	// The ARN of the AWS KMS key used to encrypt job bookmark data when job bookmark encryption is enabled for the Glue security configuration. (AI-inferred)
 	KmsKeyArn any
 }
 
-type SecurityConfiguration_EncryptionConfiguration_S3Encryption struct {
+type SecurityConfiguration_EncryptionConfiguration_S3Encryptions struct {
+	// The ARN of the AWS KMS key used to encrypt data in Amazon S3 when the encryption mode is set to SSE-KMS, as part of a Glue security configuration's S3 encryption settings. (AI-inferred)
 	KmsKeyArn any
+	// Specifies the S3 encryption mode for the Glue security configuration, which can be 'DISABLED', 'SSE-S3', or 'SSE-KMS' to control how data in S3 is encrypted. (AI-inferred)
 	S3EncryptionMode any
 }
 
 type SecurityConfiguration_EncryptionConfiguration struct {
-	CloudwatchEncryption any
+	// The encryption configuration for Amazon CloudWatch.
+	CloudWatchEncryption any
+	// The encryption configuration for job bookmarks.
 	JobBookmarksEncryption any
-	S3Encryption any
+	// The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
+	S3Encryptions any
 }
 
-var SecurityConfiguration_EncryptionConfiguration_CloudwatchEncryptionFields = ubx.FieldMap{
-		"CloudwatchEncryptionMode": ubx.FieldSpec{WireName: "cloudwatch_encryption_mode"},
+var SecurityConfiguration_EncryptionConfiguration_CloudWatchEncryptionFields = ubx.FieldMap{
+		"CloudWatchEncryptionMode": ubx.FieldSpec{WireName: "cloud_watch_encryption_mode"},
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
 	}
 
@@ -34,46 +43,51 @@ var SecurityConfiguration_EncryptionConfiguration_JobBookmarksEncryptionFields =
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
 	}
 
-var SecurityConfiguration_EncryptionConfiguration_S3EncryptionFields = ubx.FieldMap{
+var SecurityConfiguration_EncryptionConfiguration_S3EncryptionsFields = ubx.FieldMap{
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
 		"S3EncryptionMode": ubx.FieldSpec{WireName: "s3_encryption_mode"},
 	}
 
 var SecurityConfiguration_EncryptionConfigurationFields = ubx.FieldMap{
-		"CloudwatchEncryption": ubx.FieldSpec{
-			WireName: "cloudwatch_encryption",
-			Kind: "list",
-			Fields: SecurityConfiguration_EncryptionConfiguration_CloudwatchEncryptionFields,
+		"CloudWatchEncryption": ubx.FieldSpec{
+			WireName: "cloud_watch_encryption",
+			Kind: "object",
+			Fields: SecurityConfiguration_EncryptionConfiguration_CloudWatchEncryptionFields,
 		},
 		"JobBookmarksEncryption": ubx.FieldSpec{
 			WireName: "job_bookmarks_encryption",
-			Kind: "list",
+			Kind: "object",
 			Fields: SecurityConfiguration_EncryptionConfiguration_JobBookmarksEncryptionFields,
 		},
-		"S3Encryption": ubx.FieldSpec{
-			WireName: "s3_encryption",
+		"S3Encryptions": ubx.FieldSpec{
+			WireName: "s3_encryptions",
 			Kind: "list",
-			Fields: SecurityConfiguration_EncryptionConfiguration_S3EncryptionFields,
+			Fields: SecurityConfiguration_EncryptionConfiguration_S3EncryptionsFields,
 		},
 	}
 
 type SecurityConfigurationConfig struct {
-	Id any
-	Name any
-	Region any
+	// The encryption configuration for the security configuration.
 	EncryptionConfiguration any
+	// The name for the security configuration.
+	Name any
+}
+
+type SecurityConfigurationAttrs struct {
+	// The encryption configuration for the security configuration.
+	EncryptionConfiguration any
+	// The name for the security configuration.
+	Name any
 }
 
 var SecurityConfiguration = ubx.ResourceBinding{
 	WireType: "aws_glue_security_configuration",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: SecurityConfiguration_EncryptionConfigurationFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -7,42 +7,70 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TransitGatewayMulticastDomain_Timeouts:
-    create: Any = None
-    delete: Any = None
+class TransitGatewayMulticastDomain_Options:
+    # Indicates whether to automatically cross-account subnet associations that are associated with the transit gateway multicast domain. Valid Values: enable | disable
+    auto_accept_shared_associations: Any = None
+    # Indicates whether Internet Group Management Protocol (IGMP) version 2 is turned on for the transit gateway multicast domain. Valid Values: enable | disable
+    igmpv2_support: Any = None
+    # Indicates whether support for statically configuring transit gateway multicast group sources is turned on. Valid Values: enable | disable
+    static_sources_support: Any = None
 
-_TransitGatewayMulticastDomain_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+@dataclasses.dataclass
+class TransitGatewayMulticastDomain_Tags:
+    key: Any = None
+    # The value of a tag key-value pair attached to the transit gateway multicast domain, used to assign arbitrary metadata for identification and management. (AI-inferred)
+    value: Any = None
+
+_TransitGatewayMulticastDomain_OptionsFields = {
+    "auto_accept_shared_associations": ubx.FieldSpec(wire_name="auto_accept_shared_associations"),
+    "igmpv2_support": ubx.FieldSpec(wire_name="igmpv2_support"),
+    "static_sources_support": ubx.FieldSpec(wire_name="static_sources_support"),
+}
+
+_TransitGatewayMulticastDomain_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class TransitGatewayMulticastDomainConfig:
-    auto_accept_shared_associations: Any = None
-    id: Any = None
-    igmpv2_support: Any = None
-    region: Any = None
-    static_sources_support: Any = None
+    # The options for the transit gateway multicast domain.
+    options: Any = None
+    # The tags for the transit gateway multicast domain.
     tags: Any = None
-    tags_all: Any = None
+    # The ID of the transit gateway.
     transit_gateway_id: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayMulticastDomainAttrs:
+    # The time the transit gateway multicast domain was created.
+    creation_time: Any = None
+    # The options for the transit gateway multicast domain.
+    options: Any = None
+    # The state of the transit gateway multicast domain.
+    state: Any = None
+    # The tags for the transit gateway multicast domain.
+    tags: Any = None
+    # The ID of the transit gateway.
+    transit_gateway_id: Any = None
+    # The Amazon Resource Name (ARN) of the transit gateway multicast domain.
+    transit_gateway_multicast_domain_arn: Any = None
+    # The ID of the transit gateway multicast domain.
+    transit_gateway_multicast_domain_id: Any = None
 
 TransitGatewayMulticastDomain = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_multicast_domain",
     fields={
-        "auto_accept_shared_associations": ubx.FieldSpec(wire_name="auto_accept_shared_associations"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "igmpv2_support": ubx.FieldSpec(wire_name="igmpv2_support"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "static_sources_support": ubx.FieldSpec(wire_name="static_sources_support"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "transit_gateway_id": ubx.FieldSpec(wire_name="transit_gateway_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "options": ubx.FieldSpec(
+            wire_name="options",
             kind="object",
-            fields=_TransitGatewayMulticastDomain_TimeoutsFields,
+            fields=_TransitGatewayMulticastDomain_OptionsFields,
         ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_TransitGatewayMulticastDomain_TagsFields,
+        ),
+        "transit_gateway_id": ubx.FieldSpec(wire_name="transit_gateway_id"),
     },
 )

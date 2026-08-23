@@ -8,21 +8,31 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ReplicationConfig_ComputeConfig:
+    # Specifies the Availability Zone (AZ) in which the AWS DMS replication instance associated with this replication config will be provisioned. (AI-inferred)
     availability_zone: Any = None
+    # Specifies the custom DNS name servers (as a comma-separated list of IP addresses) that the AWS DMS replication instance uses for name resolution. (AI-inferred)
     dns_name_servers: Any = None
+    # The ARN or ID of the AWS KMS key used to encrypt data on the storage attached to the AWS DMS replication instance. (AI-inferred)
     kms_key_id: Any = None
+    # The maximum number of DMS capacity units that the replication can scale to, defining the upper limit of compute capacity for the AWS DMS replication config. (AI-inferred)
     max_capacity_units: Any = None
+    # Sets the minimum number of DMS capacity units to provision for a serverless replication, defining the lower bound for automatic scaling of compute resources. (AI-inferred)
     min_capacity_units: Any = None
+    # Specifies whether to enable Multi-AZ deployment for the AWS DMS replication config's compute environment, providing high availability by provisioning a standby replica in a different Availability Zone. (AI-inferred)
     multi_az: Any = None
+    # Specifies the preferred weekly maintenance window (in UTC, format ddd:hh24:mi-ddd:hh24:mi) during which AWS Database Migration Service can perform maintenance on the replication services associated with this replication config. (AI-inferred)
     preferred_maintenance_window: Any = None
+    # The identifier of the AWS DMS replication subnet group in which the replication instance for this replication config is deployed. (AI-inferred)
     replication_subnet_group_id: Any = None
+    # Specifies the VPC security group IDs to associate with the compute configuration for the AWS DMS replication, controlling network access to the replication environment. (AI-inferred)
     vpc_security_group_ids: Any = None
 
 @dataclasses.dataclass
-class ReplicationConfig_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class ReplicationConfig_Tags:
+    # The key of a key-value tag that can be attached to the DMS replication configuration for resource management and cost allocation. (AI-inferred)
+    key: Any = None
+    # The value portion of a tag assigned to the AWS DMS replication configuration, used for metadata, identification, and cost allocation. (AI-inferred)
+    value: Any = None
 
 _ReplicationConfig_ComputeConfigFields = {
     "availability_zone": ubx.FieldSpec(wire_name="availability_zone"),
@@ -36,55 +46,79 @@ _ReplicationConfig_ComputeConfigFields = {
     "vpc_security_group_ids": ubx.FieldSpec(wire_name="vpc_security_group_ids"),
 }
 
-_ReplicationConfig_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_ReplicationConfig_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ReplicationConfigConfig:
-    id: Any = None
-    region: Any = None
-    replication_config_identifier: Any = None
-    replication_settings: Any = None
-    replication_type: Any = None
-    resource_identifier: Any = None
-    source_endpoint_arn: Any = None
-    start_replication: Any = None
-    supplemental_settings: Any = None
-    table_mappings: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    target_endpoint_arn: Any = None
+    # Configuration parameters for provisioning a AWS DMS Serverless replication
     compute_config: Any = None
-    timeouts: Any = None
+    # A unique identifier of replication configuration
+    replication_config_identifier: Any = None
+    # JSON settings for Servereless replications that are provisioned using this replication configuration
+    replication_settings: Any = None
+    # The type of AWS DMS Serverless replication to provision using this replication configuration
+    replication_type: Any = None
+    # A unique value or name that you get set for a given resource that can be used to construct an Amazon Resource Name (ARN) for that resource
+    resource_identifier: Any = None
+    # The Amazon Resource Name (ARN) of the source endpoint for this AWS DMS Serverless replication configuration
+    source_endpoint_arn: Any = None
+    # JSON settings for specifying supplemental data
+    supplemental_settings: Any = None
+    # JSON table mappings for AWS DMS Serverless replications that are provisioned using this replication configuration
+    table_mappings: Any = None
+    # <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p>
+    tags: Any = None
+    # The Amazon Resource Name (ARN) of the target endpoint for this AWS DMS Serverless replication configuration
+    target_endpoint_arn: Any = None
+
+@dataclasses.dataclass
+class ReplicationConfigAttrs:
+    # Configuration parameters for provisioning a AWS DMS Serverless replication
+    compute_config: Any = None
+    # The Amazon Resource Name (ARN) of the Replication Config
+    replication_config_arn: Any = None
+    # A unique identifier of replication configuration
+    replication_config_identifier: Any = None
+    # JSON settings for Servereless replications that are provisioned using this replication configuration
+    replication_settings: Any = None
+    # The type of AWS DMS Serverless replication to provision using this replication configuration
+    replication_type: Any = None
+    # A unique value or name that you get set for a given resource that can be used to construct an Amazon Resource Name (ARN) for that resource
+    resource_identifier: Any = None
+    # The Amazon Resource Name (ARN) of the source endpoint for this AWS DMS Serverless replication configuration
+    source_endpoint_arn: Any = None
+    # JSON settings for specifying supplemental data
+    supplemental_settings: Any = None
+    # JSON table mappings for AWS DMS Serverless replications that are provisioned using this replication configuration
+    table_mappings: Any = None
+    # <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p>
+    tags: Any = None
+    # The Amazon Resource Name (ARN) of the target endpoint for this AWS DMS Serverless replication configuration
+    target_endpoint_arn: Any = None
 
 ReplicationConfig = ubx.ResourceBinding(
     wire_type="aws_dms_replication_config",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "compute_config": ubx.FieldSpec(
+            wire_name="compute_config",
+            kind="object",
+            fields=_ReplicationConfig_ComputeConfigFields,
+        ),
         "replication_config_identifier": ubx.FieldSpec(wire_name="replication_config_identifier"),
         "replication_settings": ubx.FieldSpec(wire_name="replication_settings"),
         "replication_type": ubx.FieldSpec(wire_name="replication_type"),
         "resource_identifier": ubx.FieldSpec(wire_name="resource_identifier"),
         "source_endpoint_arn": ubx.FieldSpec(wire_name="source_endpoint_arn"),
-        "start_replication": ubx.FieldSpec(wire_name="start_replication"),
         "supplemental_settings": ubx.FieldSpec(wire_name="supplemental_settings"),
         "table_mappings": ubx.FieldSpec(wire_name="table_mappings"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "target_endpoint_arn": ubx.FieldSpec(wire_name="target_endpoint_arn"),
-        "compute_config": ubx.FieldSpec(
-            wire_name="compute_config",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_ReplicationConfig_ComputeConfigFields,
+            fields=_ReplicationConfig_TagsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_ReplicationConfig_TimeoutsFields,
-        ),
+        "target_endpoint_arn": ubx.FieldSpec(wire_name="target_endpoint_arn"),
     },
 )

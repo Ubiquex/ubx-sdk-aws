@@ -2,20 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TransitGatewayRouteConfig {
+  /** Indicates whether to drop traffic that matches this route. */
   blackhole?: boolean | Computed<boolean>;
+  /** The CIDR range used for destination matches. Routing decisions are based on the most specific match. */
   destinationCidrBlock: string | Computed<string>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** The ID of transit gateway attachment. */
   transitGatewayAttachmentId?: string | Computed<string>;
+  /** The ID of transit gateway route table. */
   transitGatewayRouteTableId: string | Computed<string>;
 }
 
 export interface TransitGatewayRouteAttrs {
+  /** Indicates whether to drop traffic that matches this route. */
   blackhole: boolean;
+  /** The CIDR range used for destination matches. Routing decisions are based on the most specific match. */
   destinationCidrBlock: string;
-  id: string;
-  region: string;
+  /** The ID of transit gateway attachment. */
   transitGatewayAttachmentId: string;
+  /** The ID of transit gateway route table. */
   transitGatewayRouteTableId: string;
 }
 
@@ -24,8 +28,6 @@ export const TransitGatewayRoute: ResourceBinding<TransitGatewayRouteConfig, Tra
   fields: {
     blackhole: "blackhole",
     destinationCidrBlock: "destination_cidr_block",
-    id: "id",
-    region: "region",
     transitGatewayAttachmentId: "transit_gateway_attachment_id",
     transitGatewayRouteTableId: "transit_gateway_route_table_id",
   },

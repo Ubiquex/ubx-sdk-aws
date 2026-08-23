@@ -8,53 +8,96 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResourceShare_ResourceShareConfiguration:
+    # The resource share restricts access to an account
+    exclusive_account_access: Any = None
+    # Specifies whether the consumer account retains access to the resource share after leaving the organization.
     retain_sharing_on_account_leave_organization: Any = None
 
 @dataclasses.dataclass
-class ResourceShare_Timeouts:
-    create: Any = None
-    delete: Any = None
+class ResourceShare_Tags:
+    # The key of a user-defined tag attached to the AWS RAM resource share, used for cost allocation and resource categorization. (AI-inferred)
+    key: Any = None
+    # The value of a tag attached to the AWS RAM resource share, used for categorizing and managing the resource share. (AI-inferred)
+    value: Any = None
 
 _ResourceShare_ResourceShareConfigurationFields = {
+    "exclusive_account_access": ubx.FieldSpec(wire_name="exclusive_account_access"),
     "retain_sharing_on_account_leave_organization": ubx.FieldSpec(wire_name="retain_sharing_on_account_leave_organization"),
 }
 
-_ResourceShare_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_ResourceShare_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ResourceShareConfig:
+    # Specifies whether principals outside your organization in AWS Organizations can be associated with a resource share. A value of `true` lets you share with individual AWS accounts that are not in your organization. A value of `false` only has meaning if your account is a member of an AWS Organization. The default value is `true`.
     allow_external_principals: Any = None
-    id: Any = None
+    # Specifies the name of the resource share.
     name: Any = None
+    # Specifies the [Amazon Resource Names (ARNs)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the AWS RAM permission to associate with the resource share. If you do not specify an ARN for the permission, AWS RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.
     permission_arns: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Specifies the principals to associate with the resource share. The possible values are: - An AWS account ID - An Amazon Resource Name (ARN) of an organization in AWS Organizations - An ARN of an organizational unit (OU) in AWS Organizations - An ARN of an IAM role - An ARN of an IAM user
+    principals: Any = None
+    # Specifies a list of one or more ARNs of the resources to associate with the resource share.
+    resource_arns: Any = None
+    # The configuration for a resource share.
     resource_share_configuration: Any = None
-    timeouts: Any = None
+    # Specifies from which source accounts the service principal has access to the resources in this resource share.
+    sources: Any = None
+    # Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.
+    tags: Any = None
+
+@dataclasses.dataclass
+class ResourceShareAttrs:
+    # Specifies whether principals outside your organization in AWS Organizations can be associated with a resource share. A value of `true` lets you share with individual AWS accounts that are not in your organization. A value of `false` only has meaning if your account is a member of an AWS Organization. The default value is `true`.
+    allow_external_principals: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies the resource share. (AI-inferred)
+    arn: Any = None
+    # The date and time when the resource share was created.
+    creation_time: Any = None
+    # The feature set of the resource share.
+    feature_set: Any = None
+    # The date and time when the resource share was last updated.
+    last_updated_time: Any = None
+    # Specifies the name of the resource share.
+    name: Any = None
+    # The ID of the AWS account that owns the resource share.
+    owning_account_id: Any = None
+    # Specifies the [Amazon Resource Names (ARNs)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the AWS RAM permission to associate with the resource share. If you do not specify an ARN for the permission, AWS RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.
+    permission_arns: Any = None
+    # Specifies the principals to associate with the resource share. The possible values are: - An AWS account ID - An Amazon Resource Name (ARN) of an organization in AWS Organizations - An ARN of an organizational unit (OU) in AWS Organizations - An ARN of an IAM role - An ARN of an IAM user
+    principals: Any = None
+    # Specifies a list of one or more ARNs of the resources to associate with the resource share.
+    resource_arns: Any = None
+    # The configuration for a resource share.
+    resource_share_configuration: Any = None
+    # Specifies from which source accounts the service principal has access to the resources in this resource share.
+    sources: Any = None
+    # The current status of the resource share.
+    status: Any = None
+    # Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.
+    tags: Any = None
 
 ResourceShare = ubx.ResourceBinding(
     wire_type="aws_ram_resource_share",
     fields={
         "allow_external_principals": ubx.FieldSpec(wire_name="allow_external_principals"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "permission_arns": ubx.FieldSpec(wire_name="permission_arns"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "principals": ubx.FieldSpec(wire_name="principals"),
+        "resource_arns": ubx.FieldSpec(wire_name="resource_arns"),
         "resource_share_configuration": ubx.FieldSpec(
             wire_name="resource_share_configuration",
-            kind="list",
+            kind="object",
             fields=_ResourceShare_ResourceShareConfigurationFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_ResourceShare_TimeoutsFields,
+        "sources": ubx.FieldSpec(wire_name="sources"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_ResourceShare_TagsFields,
         ),
     },
 )

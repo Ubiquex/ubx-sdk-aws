@@ -7,36 +7,84 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class CapacityReservation_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignments:
+    # Specifies the list of Athena workgroup names assigned to this capacity reservation for query processing. (AI-inferred)
+    workgroup_names: Any = None
 
-_CapacityReservation_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+@dataclasses.dataclass
+class CapacityReservation_CapacityAssignmentConfiguration:
+    # List of capacity assignments
+    capacity_assignments: Any = None
+
+@dataclasses.dataclass
+class CapacityReservation_Tags:
+    key: Any = None
+    # Specifies the value of an arbitrary user-defined tag key assigned to an AWS Athena capacity reservation, allowing metadata-based management and categorization of the reservation. (AI-inferred)
+    value: Any = None
+
+_CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignmentsFields = {
+    "workgroup_names": ubx.FieldSpec(wire_name="workgroup_names"),
+}
+
+_CapacityReservation_CapacityAssignmentConfigurationFields = {
+    "capacity_assignments": ubx.FieldSpec(
+        wire_name="capacity_assignments",
+        kind="list",
+        fields=_CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignmentsFields,
+    ),
+}
+
+_CapacityReservation_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class CapacityReservationConfig:
+    # Assignment configuration to assign workgroups to a reservation
+    capacity_assignment_configuration: Any = None
+    # The reservation name.
     name: Any = None
-    region: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
+    # The number of DPUs to request to be allocated to the reservation.
     target_dpus: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class CapacityReservationAttrs:
+    # The number of DPUs Athena has provisioned and allocated for the reservation
+    allocated_dpus: Any = None
+    # The Amazon Resource Name (ARN) of the specified capacity reservation
+    arn: Any = None
+    # Assignment configuration to assign workgroups to a reservation
+    capacity_assignment_configuration: Any = None
+    # The date and time the reservation was created.
+    creation_time: Any = None
+    # The timestamp when the last successful allocated was made
+    last_successful_allocation_time: Any = None
+    # The reservation name.
+    name: Any = None
+    # The current lifecycle state of the Athena capacity reservation (e.g., PENDING, ACTIVE, CANCELLING), updated automatically by AWS and not settable by the user. (AI-inferred)
+    status: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # The number of DPUs to request to be allocated to the reservation.
+    target_dpus: Any = None
 
 CapacityReservation = ubx.ResourceBinding(
     wire_type="aws_athena_capacity_reservation",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "target_dpus": ubx.FieldSpec(wire_name="target_dpus"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "capacity_assignment_configuration": ubx.FieldSpec(
+            wire_name="capacity_assignment_configuration",
             kind="object",
-            fields=_CapacityReservation_TimeoutsFields,
+            fields=_CapacityReservation_CapacityAssignmentConfigurationFields,
         ),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_CapacityReservation_TagsFields,
+        ),
+        "target_dpus": ubx.FieldSpec(wire_name="target_dpus"),
     },
 )

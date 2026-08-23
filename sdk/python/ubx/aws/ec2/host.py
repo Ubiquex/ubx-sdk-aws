@@ -7,31 +7,60 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Host_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Host_Tags:
+    # The key of a user-defined tag assigned to the EC2 Dedicated Host. (AI-inferred)
+    key: Any = None
+    # The value portion of a tag attached to the EC2 Dedicated Host. (AI-inferred)
+    value: Any = None
 
-_Host_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Host_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class HostConfig:
+    # The ID of the Outpost hardware asset.
     asset_id: Any = None
+    # Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID.
     auto_placement: Any = None
+    # The Availability Zone in which to allocate the Dedicated Host.
     availability_zone: Any = None
+    # Automatically allocates a new dedicated host and moves your instances on to it if a degradation is detected on your current host.
+    host_maintenance: Any = None
+    # Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by default.
     host_recovery: Any = None
-    id: Any = None
+    # Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the Dedicated Hosts support multiple instance types within that instance family.
     instance_family: Any = None
+    # Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the Dedicated Hosts support instances of the specified instance type only.
     instance_type: Any = None
+    # The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.
     outpost_arn: Any = None
-    region: Any = None
+    # Any tags assigned to the Host.
     tags: Any = None
-    tags_all: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class HostAttrs:
+    # The ID of the Outpost hardware asset.
+    asset_id: Any = None
+    # Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID.
+    auto_placement: Any = None
+    # The Availability Zone in which to allocate the Dedicated Host.
+    availability_zone: Any = None
+    # ID of the host created.
+    host_id: Any = None
+    # Automatically allocates a new dedicated host and moves your instances on to it if a degradation is detected on your current host.
+    host_maintenance: Any = None
+    # Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by default.
+    host_recovery: Any = None
+    # Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the Dedicated Hosts support multiple instance types within that instance family.
+    instance_family: Any = None
+    # Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the Dedicated Hosts support instances of the specified instance type only.
+    instance_type: Any = None
+    # The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.
+    outpost_arn: Any = None
+    # Any tags assigned to the Host.
+    tags: Any = None
 
 Host = ubx.ResourceBinding(
     wire_type="aws_ec2_host",
@@ -39,18 +68,15 @@ Host = ubx.ResourceBinding(
         "asset_id": ubx.FieldSpec(wire_name="asset_id"),
         "auto_placement": ubx.FieldSpec(wire_name="auto_placement"),
         "availability_zone": ubx.FieldSpec(wire_name="availability_zone"),
+        "host_maintenance": ubx.FieldSpec(wire_name="host_maintenance"),
         "host_recovery": ubx.FieldSpec(wire_name="host_recovery"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "instance_family": ubx.FieldSpec(wire_name="instance_family"),
         "instance_type": ubx.FieldSpec(wire_name="instance_type"),
         "outpost_arn": ubx.FieldSpec(wire_name="outpost_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Host_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Host_TagsFields,
         ),
     },
 )

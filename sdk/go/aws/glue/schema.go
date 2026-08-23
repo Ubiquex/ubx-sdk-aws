@@ -3,31 +3,105 @@ package glue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Schema_CheckpointVersion struct {
+	// Indicates if the latest version needs to be updated.
+	IsLatest any
+	// Indicates the version number in the schema to update.
+	VersionNumber any
+}
+
+type Schema_Registry struct {
+	// Amazon Resource Name for the Registry.
+	Arn any
+	// Name of the registry in which the schema will be created.
+	Name any
+}
+
+type Schema_Tags struct {
+	Key any
+	// The value of a tag attached to an AWS Glue schema, which allows you to assign custom metadata to the schema for cost tracking, access control, and operational organization. (AI-inferred)
+	Value any
+}
+
+var Schema_CheckpointVersionFields = ubx.FieldMap{
+		"IsLatest": ubx.FieldSpec{WireName: "is_latest"},
+		"VersionNumber": ubx.FieldSpec{WireName: "version_number"},
+	}
+
+var Schema_RegistryFields = ubx.FieldMap{
+		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
+
+var Schema_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type SchemaConfig struct {
+	// Specify checkpoint version for update. This is only required to update the Compatibility.
+	CheckpointVersion any
+	// Compatibility setting for the schema.
 	Compatibility any
+	// Data format name to use for the schema. Accepted values: 'AVRO', 'JSON', 'PROTOBUF'
 	DataFormat any
+	// A description of the schema. If description is not provided, there will not be any default value for this.
 	Description any
-	Id any
-	Region any
-	RegistryArn any
+	// Name of the schema.
+	Name any
+	// Identifier for the registry which the schema is part of.
+	Registry any
+	// Definition for the initial schema version in plain-text.
 	SchemaDefinition any
-	SchemaName any
+	// List of tags to tag the schema
 	Tags any
-	TagsAll any
+}
+
+type SchemaAttrs struct {
+	// Amazon Resource Name for the Schema.
+	Arn any
+	// Specify checkpoint version for update. This is only required to update the Compatibility.
+	CheckpointVersion any
+	// Compatibility setting for the schema.
+	Compatibility any
+	// Data format name to use for the schema. Accepted values: 'AVRO', 'JSON', 'PROTOBUF'
+	DataFormat any
+	// A description of the schema. If description is not provided, there will not be any default value for this.
+	Description any
+	// Represents the version ID associated with the initial schema version.
+	InitialSchemaVersionId any
+	// Name of the schema.
+	Name any
+	// Identifier for the registry which the schema is part of.
+	Registry any
+	// Definition for the initial schema version in plain-text.
+	SchemaDefinition any
+	// List of tags to tag the schema
+	Tags any
 }
 
 var Schema = ubx.ResourceBinding{
 	WireType: "aws_glue_schema",
 	Fields: ubx.FieldMap{
+		"CheckpointVersion": ubx.FieldSpec{
+			WireName: "checkpoint_version",
+			Kind: "object",
+			Fields: Schema_CheckpointVersionFields,
+		},
 		"Compatibility": ubx.FieldSpec{WireName: "compatibility"},
 		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RegistryArn": ubx.FieldSpec{WireName: "registry_arn"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Registry": ubx.FieldSpec{
+			WireName: "registry",
+			Kind: "object",
+			Fields: Schema_RegistryFields,
+		},
 		"SchemaDefinition": ubx.FieldSpec{WireName: "schema_definition"},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Schema_TagsFields,
+		},
 	},
 }

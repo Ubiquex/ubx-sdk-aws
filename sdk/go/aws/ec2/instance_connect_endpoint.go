@@ -3,39 +3,90 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type InstanceConnectEndpoint_Timeouts struct {
-	Create any
-	Delete any
+type InstanceConnectEndpoint_PublicDnsNames_Dualstack struct {
+	// The DNS name of the EC2 Instance Connect Endpoint.
+	DnsName any
+	// The Federal Information Processing Standards (FIPS) compliant DNS name of the EC2 Instance Connect Endpoint.
+	FipsDnsName any
 }
 
-var InstanceConnectEndpoint_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+type InstanceConnectEndpoint_PublicDnsNames struct {
+	// The DNS names of the endpoint.
+	Dualstack any
+	// The DNS names of the endpoint.
+	Ipv4 any
+}
+
+type InstanceConnectEndpoint_Tags struct {
+	// The key of a tag attached to the EC2 Instance Connect Endpoint, used to identify, categorize, and filter the resource within AWS. (AI-inferred)
+	Key any
+	Value any
+}
+
+var InstanceConnectEndpoint_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type InstanceConnectEndpointConfig struct {
-	IpAddressType any
+	// The client token of the instance connect endpoint.
+	ClientToken any
+	// Indicates whether your client's IP address is preserved as the source when you connect to a resource.
 	PreserveClientIp any
-	Region any
+	// The security groups associated with the endpoint.
 	SecurityGroupIds any
+	// The ID of the subnet in which the EC2 Instance Connect Endpoint was created.
 	SubnetId any
+	// The tags assigned to the EC2 Instance Connect Endpoint.
 	Tags any
-	Timeouts any
+}
+
+type InstanceConnectEndpointAttrs struct {
+	// The Availability Zone of the EC2 Instance Connect Endpoint
+	AvailabilityZone any
+	// The ID of the Availability Zone of the EC2 Instance Connect Endpoint
+	AvailabilityZoneId any
+	// The client token of the instance connect endpoint.
+	ClientToken any
+	// The date and time that the EC2 Instance Connect Endpoint was created
+	CreatedAt any
+	// The ID of the EC2 Instance Connect Endpoint.
+	Id any
+	// The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint
+	InstanceConnectEndpointArn any
+	// The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint
+	NetworkInterfaceIds any
+	// The ID of the AWS account that created the EC2 Instance Connect Endpoint
+	OwnerId any
+	// Indicates whether your client's IP address is preserved as the source when you connect to a resource.
+	PreserveClientIp any
+	// The public DNS names of the endpoint, including IPv4-only and dualstack DNS names.
+	PublicDnsNames any
+	// The security groups associated with the endpoint.
+	SecurityGroupIds any
+	// The current state of the EC2 Instance Connect Endpoint
+	State any
+	// The message for the current state of the EC2 Instance Connect Endpoint. Can include a failure message
+	StateMessage any
+	// The ID of the subnet in which the EC2 Instance Connect Endpoint was created.
+	SubnetId any
+	// The tags assigned to the EC2 Instance Connect Endpoint.
+	Tags any
+	// The ID of the VPC in which the EC2 Instance Connect Endpoint was created
+	VpcId any
 }
 
 var InstanceConnectEndpoint = ubx.ResourceBinding{
 	WireType: "aws_ec2_instance_connect_endpoint",
 	Fields: ubx.FieldMap{
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
+		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
 		"PreserveClientIp": ubx.FieldSpec{WireName: "preserve_client_ip"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
 		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: InstanceConnectEndpoint_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: InstanceConnectEndpoint_TagsFields,
 		},
 	},
 }

@@ -8,19 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SubnetGroupConfig:
+    # An optional user-provided description that identifies the purpose or context of this DAX subnet group. (AI-inferred)
     description: Any = None
+    # The name of this DAX subnet group; if omitted, CloudFormation generates a unique name based on the logical resource ID. (AI-inferred)
+    subnet_group_name: Any = None
+    # The list of subnet IDs in the VPC where the DAX cluster will be deployed, defining the network locations for the cluster's nodes. (AI-inferred)
+    subnet_ids: Any = None
+
+@dataclasses.dataclass
+class SubnetGroupAttrs:
+    # An optional user-provided description that identifies the purpose or context of this DAX subnet group. (AI-inferred)
+    description: Any = None
+    # The name of the DAX subnet group, which uniquely identifies the resource within AWS. (AI-inferred)
     id: Any = None
-    name: Any = None
-    region: Any = None
+    # The name of this DAX subnet group; if omitted, CloudFormation generates a unique name based on the logical resource ID. (AI-inferred)
+    subnet_group_name: Any = None
+    # The list of subnet IDs in the VPC where the DAX cluster will be deployed, defining the network locations for the cluster's nodes. (AI-inferred)
     subnet_ids: Any = None
 
 SubnetGroup = ubx.ResourceBinding(
     wire_type="aws_dax_subnet_group",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "subnet_group_name": ubx.FieldSpec(wire_name="subnet_group_name"),
         "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
     },
 )

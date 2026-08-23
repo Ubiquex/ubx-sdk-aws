@@ -8,37 +8,79 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PlaceIndex_DataSourceConfiguration:
+    # Sets the intended use of the place index to either SingleUse (geocode without storing results) or Storage (store results for later use), affecting how AWS Location Service handles query data. (AI-inferred)
     intended_use: Any = None
+
+@dataclasses.dataclass
+class PlaceIndex_Tags:
+    # The key of a tag attached to the Amazon Location Service place index resource, used to identify and organize the resource. (AI-inferred)
+    key: Any = None
+    # The value for a tag assigned to the Amazon Location Service place index, used to organize and identify the resource. (AI-inferred)
+    value: Any = None
 
 _PlaceIndex_DataSourceConfigurationFields = {
     "intended_use": ubx.FieldSpec(wire_name="intended_use"),
 }
 
+_PlaceIndex_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 @dataclasses.dataclass
 class PlaceIndexConfig:
+    # The data provider (such as Esri, Here, or Grab) that supplies the location data for the place index and is required when creating the resource. (AI-inferred)
     data_source: Any = None
-    description: Any = None
-    id: Any = None
-    index_name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Specifies the data storage options for the place index, including the intended use, such as single-use queries versus persistent storage of location data. (AI-inferred)
     data_source_configuration: Any = None
+    # An optional user-supplied description of the place index, used to identify or note its purpose. (AI-inferred)
+    description: Any = None
+    # The custom name assigned to the place index, which must be unique within an AWS account and region and is used as the resource identifier in its ARN. (AI-inferred)
+    index_name: Any = None
+    # The pricing plan (RequestBasedUsage or MobileAssetTracking) for the place index, which determines the billing model for geocoding and reverse geocoding requests. (AI-inferred)
+    pricing_plan: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class PlaceIndexAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies the place index resource. (AI-inferred)
+    arn: Any = None
+    # The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
+    create_time: Any = None
+    # The data provider (such as Esri, Here, or Grab) that supplies the location data for the place index and is required when creating the resource. (AI-inferred)
+    data_source: Any = None
+    # Specifies the data storage options for the place index, including the intended use, such as single-use queries versus persistent storage of location data. (AI-inferred)
+    data_source_configuration: Any = None
+    # An optional user-supplied description of the place index, used to identify or note its purpose. (AI-inferred)
+    description: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies the place index resource. (AI-inferred)
+    index_arn: Any = None
+    # The custom name assigned to the place index, which must be unique within an AWS account and region and is used as the resource identifier in its ARN. (AI-inferred)
+    index_name: Any = None
+    # The pricing plan (RequestBasedUsage or MobileAssetTracking) for the place index, which determines the billing model for geocoding and reverse geocoding requests. (AI-inferred)
+    pricing_plan: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+    # The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
+    update_time: Any = None
 
 PlaceIndex = ubx.ResourceBinding(
     wire_type="aws_location_place_index",
     fields={
         "data_source": ubx.FieldSpec(wire_name="data_source"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "index_name": ubx.FieldSpec(wire_name="index_name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "data_source_configuration": ubx.FieldSpec(
             wire_name="data_source_configuration",
-            kind="list",
+            kind="object",
             fields=_PlaceIndex_DataSourceConfigurationFields,
+        ),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "index_name": ubx.FieldSpec(wire_name="index_name"),
+        "pricing_plan": ubx.FieldSpec(wire_name="pricing_plan"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_PlaceIndex_TagsFields,
         ),
     },
 )

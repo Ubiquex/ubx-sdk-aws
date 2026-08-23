@@ -3,15 +3,42 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TrafficMirrorTarget_Tags struct {
+	Key any
+	Value any
+}
+
+var TrafficMirrorTarget_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type TrafficMirrorTargetConfig struct {
+	// The description of the Traffic Mirror target.
 	Description any
+	// The ID of the Gateway Load Balancer endpoint.
 	GatewayLoadBalancerEndpointId any
-	Id any
+	// The network interface ID that is associated with the target.
 	NetworkInterfaceId any
+	// The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.
 	NetworkLoadBalancerArn any
-	Region any
+	// The tags to assign to the Traffic Mirror target.
 	Tags any
-	TagsAll any
+}
+
+type TrafficMirrorTargetAttrs struct {
+	// The description of the Traffic Mirror target.
+	Description any
+	// The ID of the Gateway Load Balancer endpoint.
+	GatewayLoadBalancerEndpointId any
+	// The unique AWS-assigned identifier for the traffic mirror target, typically formatted as tmt- followed by alphanumeric characters. (AI-inferred)
+	Id any
+	// The network interface ID that is associated with the target.
+	NetworkInterfaceId any
+	// The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.
+	NetworkLoadBalancerArn any
+	// The tags to assign to the Traffic Mirror target.
+	Tags any
 }
 
 var TrafficMirrorTarget = ubx.ResourceBinding{
@@ -19,11 +46,12 @@ var TrafficMirrorTarget = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"GatewayLoadBalancerEndpointId": ubx.FieldSpec{WireName: "gateway_load_balancer_endpoint_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
 		"NetworkLoadBalancerArn": ubx.FieldSpec{WireName: "network_load_balancer_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: TrafficMirrorTarget_TagsFields,
+		},
 	},
 }

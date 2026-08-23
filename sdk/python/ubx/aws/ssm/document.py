@@ -7,50 +7,113 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Document_AttachmentsSource:
+class Document_Attachments:
+    # The key name of an attachment entry, such as 'SourceUrl' or 'Script', that specifies the attachment's purpose within an Automation document. (AI-inferred)
     key: Any = None
     name: Any = None
+    # Provides the list of source URLs (such as Amazon S3 file URLs) that define the actual content locations for an SSM document attachment, matched with the attachment's key to specify the type of source. (AI-inferred)
     values: Any = None
 
-_Document_AttachmentsSourceFields = {
+@dataclasses.dataclass
+class Document_Requires:
+    # The name of the AWS Systems Manager document that this document requires as a dependency. (AI-inferred)
+    name: Any = None
+    # The version of another SSM document that this document requires as a dependency, specified in the 'requires' block of the aws_ssm_document resource. (AI-inferred)
+    version: Any = None
+
+@dataclasses.dataclass
+class Document_Tags:
+    # The tag key to assign to the SSM document, used for identifying and managing the document in AWS Systems Manager. (AI-inferred)
+    key: Any = None
+    # The value portion of a key-value tag attached to an SSM document, used to add metadata that supports resource identification, organization, and access control in AWS Systems Manager. (AI-inferred)
+    value: Any = None
+
+_Document_AttachmentsFields = {
     "key": ubx.FieldSpec(wire_name="key"),
     "name": ubx.FieldSpec(wire_name="name"),
     "values": ubx.FieldSpec(wire_name="values"),
 }
 
+_Document_RequiresFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "version": ubx.FieldSpec(wire_name="version"),
+}
+
+_Document_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
 @dataclasses.dataclass
 class DocumentConfig:
+    # A list of key and value pairs that describe attachments to a version of a document.
+    attachments: Any = None
+    # The content for the Systems Manager document in JSON, YAML or String format.
     content: Any = None
+    # Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default format.
     document_format: Any = None
+    # The type of document to create.
     document_type: Any = None
-    id: Any = None
+    # A name for the Systems Manager document.
     name: Any = None
-    permissions: Any = None
-    region: Any = None
+    # A list of SSM documents required by a document. For example, an ApplicationConfiguration document requires an ApplicationConfigurationSchema document.
+    requires: Any = None
+    # Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
     tags: Any = None
-    tags_all: Any = None
+    # Specify a target type to define the kinds of resources the document can run on.
     target_type: Any = None
+    # Update method - when set to 'Replace', the update will replace the existing document; when set to 'NewVersion', the update will create a new version.
+    update_method: Any = None
+    # An optional field specifying the version of the artifact you are creating with the document. This value is unique across all versions of a document, and cannot be changed.
     version_name: Any = None
-    attachments_source: Any = None
+
+@dataclasses.dataclass
+class DocumentAttrs:
+    # A list of key and value pairs that describe attachments to a version of a document.
+    attachments: Any = None
+    # The content for the Systems Manager document in JSON, YAML or String format.
+    content: Any = None
+    # Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default format.
+    document_format: Any = None
+    # The type of document to create.
+    document_type: Any = None
+    # A name for the Systems Manager document.
+    name: Any = None
+    # A list of SSM documents required by a document. For example, an ApplicationConfiguration document requires an ApplicationConfigurationSchema document.
+    requires: Any = None
+    # Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
+    tags: Any = None
+    # Specify a target type to define the kinds of resources the document can run on.
+    target_type: Any = None
+    # Update method - when set to 'Replace', the update will replace the existing document; when set to 'NewVersion', the update will create a new version.
+    update_method: Any = None
+    # An optional field specifying the version of the artifact you are creating with the document. This value is unique across all versions of a document, and cannot be changed.
+    version_name: Any = None
 
 Document = ubx.ResourceBinding(
     wire_type="aws_ssm_document",
     fields={
+        "attachments": ubx.FieldSpec(
+            wire_name="attachments",
+            kind="list",
+            fields=_Document_AttachmentsFields,
+        ),
         "content": ubx.FieldSpec(wire_name="content"),
         "document_format": ubx.FieldSpec(wire_name="document_format"),
         "document_type": ubx.FieldSpec(wire_name="document_type"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "permissions": ubx.FieldSpec(wire_name="permissions"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "target_type": ubx.FieldSpec(wire_name="target_type"),
-        "version_name": ubx.FieldSpec(wire_name="version_name"),
-        "attachments_source": ubx.FieldSpec(
-            wire_name="attachments_source",
+        "requires": ubx.FieldSpec(
+            wire_name="requires",
             kind="list",
-            fields=_Document_AttachmentsSourceFields,
+            fields=_Document_RequiresFields,
         ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Document_TagsFields,
+        ),
+        "target_type": ubx.FieldSpec(wire_name="target_type"),
+        "update_method": ubx.FieldSpec(wire_name="update_method"),
+        "version_name": ubx.FieldSpec(wire_name="version_name"),
     },
 )

@@ -3,43 +3,200 @@ package xray
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type SamplingRuleConfig struct {
+type SamplingRule_SamplingRule_SamplingRateBoost struct {
+	// Time window (in minutes) in which only one sampling rate boost can be triggered. After a boost occurs, no further boosts are allowed until the next window.
+	CooldownWindowMinutes any
+	// The maximum sampling rate X-Ray will apply when it detects anomalies. X-Ray determines the appropriate rate between your baseline and the maximum, depending on anomaly activity.
+	MaxRate any
+}
+
+type SamplingRule_SamplingRule struct {
+	// Matches attributes derived from the request.
 	Attributes any
+	// The percentage of matching requests to instrument, after the reservoir is exhausted.
 	FixedRate any
+	// Matches the hostname from a request URL.
 	Host any
-	HttpMethod any
-	Id any
+	// Matches the HTTP method from a request URL.
+	Httpmethod any
+	// The priority of the sampling rule.
 	Priority any
-	Region any
+	// A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.
 	ReservoirSize any
+	// Matches the ARN of the AWS resource on which the service runs.
 	ResourceArn any
+	// The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+	RuleArn any
+	// The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
 	RuleName any
+	// Specifies the sampling-rate boost configuration for this X-Ray sampling rule, including whether the boost is enabled, the conditions that trigger it, and the boosted sampling rate to apply when those conditions are met. (AI-inferred)
+	SamplingRateBoost any
+	// Matches the name that the service uses to identify itself in segments.
 	ServiceName any
+	// Matches the origin that the service uses to identify its type in segments.
 	ServiceType any
-	Tags any
-	TagsAll any
-	UrlPath any
+	// Matches the path from a request URL.
+	Urlpath any
+	// The version of the sampling rule format (1)
 	Version any
+}
+
+type SamplingRule_SamplingRuleRecord struct {
+	// When the rule was created, in Unix time seconds.
+	CreatedAt any
+	// When the rule was modified, in Unix time seconds.
+	ModifiedAt any
+	// The sampling rule configuration (including rule name, priority, reservoir size, fixed rate, and service matching attributes) embedded within the sampling rule record. (AI-inferred)
+	SamplingRule any
+}
+
+type SamplingRule_SamplingRuleUpdate struct {
+	// Matches attributes derived from the request.
+	Attributes any
+	// The percentage of matching requests to instrument, after the reservoir is exhausted.
+	FixedRate any
+	// Matches the hostname from a request URL.
+	Host any
+	// Matches the HTTP method from a request URL.
+	Httpmethod any
+	// The priority of the sampling rule.
+	Priority any
+	// A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.
+	ReservoirSize any
+	// Matches the ARN of the AWS resource on which the service runs.
+	ResourceArn any
+	// The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+	RuleArn any
+	// The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+	RuleName any
+	SamplingRateBoost any
+	// Matches the name that the service uses to identify itself in segments.
+	ServiceName any
+	// Matches the origin that the service uses to identify its type in segments.
+	ServiceType any
+	// Matches the path from a request URL.
+	Urlpath any
+}
+
+type SamplingRule_Tags struct {
+	// The key of a tag assigned to the AWS X-Ray sampling rule, used to categorize and manage the rule. (AI-inferred)
+	Key any
+	// The value component of a tag assigned to an AWS X-Ray sampling rule, used for metadata, identification, and cost allocation. (AI-inferred)
+	Value any
+}
+
+var SamplingRule_SamplingRule_SamplingRateBoostFields = ubx.FieldMap{
+		"CooldownWindowMinutes": ubx.FieldSpec{WireName: "cooldown_window_minutes"},
+		"MaxRate": ubx.FieldSpec{WireName: "max_rate"},
+	}
+
+var SamplingRule_SamplingRuleFields = ubx.FieldMap{
+		"Attributes": ubx.FieldSpec{WireName: "attributes"},
+		"FixedRate": ubx.FieldSpec{WireName: "fixed_rate"},
+		"Host": ubx.FieldSpec{WireName: "host"},
+		"Httpmethod": ubx.FieldSpec{WireName: "httpmethod"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"ReservoirSize": ubx.FieldSpec{WireName: "reservoir_size"},
+		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"RuleArn": ubx.FieldSpec{WireName: "rule_arn"},
+		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+		"SamplingRateBoost": ubx.FieldSpec{
+			WireName: "sampling_rate_boost",
+			Kind: "object",
+			Fields: SamplingRule_SamplingRule_SamplingRateBoostFields,
+		},
+		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
+		"Urlpath": ubx.FieldSpec{WireName: "urlpath"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
+
+var SamplingRule_SamplingRuleRecordFields = ubx.FieldMap{
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+		"SamplingRule": ubx.FieldSpec{
+			WireName: "sampling_rule",
+			Kind: "object",
+			Fields: SamplingRule_SamplingRuleFields,
+		},
+	}
+
+var SamplingRule_SamplingRuleUpdateFields = ubx.FieldMap{
+		"Attributes": ubx.FieldSpec{WireName: "attributes"},
+		"FixedRate": ubx.FieldSpec{WireName: "fixed_rate"},
+		"Host": ubx.FieldSpec{WireName: "host"},
+		"Httpmethod": ubx.FieldSpec{WireName: "httpmethod"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"ReservoirSize": ubx.FieldSpec{WireName: "reservoir_size"},
+		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"RuleArn": ubx.FieldSpec{WireName: "rule_arn"},
+		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+		"SamplingRateBoost": ubx.FieldSpec{
+			WireName: "sampling_rate_boost",
+			Kind: "object",
+			Fields: SamplingRule_SamplingRule_SamplingRateBoostFields,
+		},
+		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
+		"Urlpath": ubx.FieldSpec{WireName: "urlpath"},
+	}
+
+var SamplingRule_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+type SamplingRuleConfig struct {
+	// The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+	RuleName any
+	// This object defines the X-Ray sampling rule's configuration, including priority, reservoir size, fixed rate, and matching criteria such as host, service, HTTP method, URL path, resource ARN, and attributes. (AI-inferred)
+	SamplingRule any
+	// The sampling_rule_record field contains the complete sampling rule record, including the rule name, ARN, creation and modification timestamps, and the sampling rule's configuration details such as priority, reservoir size, and fixed rate. (AI-inferred)
+	SamplingRuleRecord any
+	// Sampling rule update configuration for an existing AWS X-Ray sampling rule, specifying the desired changes such as reservoir size, fixed rate, and rule attributes. (AI-inferred)
+	SamplingRuleUpdate any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type SamplingRuleAttrs struct {
+	// The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+	RuleArn any
+	// The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
+	RuleName any
+	// This object defines the X-Ray sampling rule's configuration, including priority, reservoir size, fixed rate, and matching criteria such as host, service, HTTP method, URL path, resource ARN, and attributes. (AI-inferred)
+	SamplingRule any
+	// The sampling_rule_record field contains the complete sampling rule record, including the rule name, ARN, creation and modification timestamps, and the sampling rule's configuration details such as priority, reservoir size, and fixed rate. (AI-inferred)
+	SamplingRuleRecord any
+	// Sampling rule update configuration for an existing AWS X-Ray sampling rule, specifying the desired changes such as reservoir size, fixed rate, and rule attributes. (AI-inferred)
+	SamplingRuleUpdate any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var SamplingRule = ubx.ResourceBinding{
 	WireType: "aws_xray_sampling_rule",
 	Fields: ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"FixedRate": ubx.FieldSpec{WireName: "fixed_rate"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ReservoirSize": ubx.FieldSpec{WireName: "reservoir_size"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"UrlPath": ubx.FieldSpec{WireName: "url_path"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"SamplingRule": ubx.FieldSpec{
+			WireName: "sampling_rule",
+			Kind: "object",
+			Fields: SamplingRule_SamplingRuleFields,
+		},
+		"SamplingRuleRecord": ubx.FieldSpec{
+			WireName: "sampling_rule_record",
+			Kind: "object",
+			Fields: SamplingRule_SamplingRuleRecordFields,
+		},
+		"SamplingRuleUpdate": ubx.FieldSpec{
+			WireName: "sampling_rule_update",
+			Kind: "object",
+			Fields: SamplingRule_SamplingRuleUpdateFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: SamplingRule_TagsFields,
+		},
 	},
 }

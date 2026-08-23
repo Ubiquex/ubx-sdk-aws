@@ -3,39 +3,34 @@ package route53
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type KeySigningKey_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type KeySigningKeyConfig struct {
+	// The unique string (ID) used to identify a hosted zone.
+	HostedZoneId any
+	// The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management Service (KMS). The KeyManagementServiceArn must be unique for each key signing key (KSK) in a single hosted zone.
+	KeyManagementServiceArn any
+	// An alphanumeric string used to identify a key signing key (KSK). Name must be unique for each key signing key in the same hosted zone.
+	Name any
+	// A string specifying the initial status of the key signing key (KSK). You can set the value to ACTIVE or INACTIVE.
+	Status any
 }
 
-var KeySigningKey_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
-type KeySigningKeyConfig struct {
+type KeySigningKeyAttrs struct {
+	// The unique string (ID) used to identify a hosted zone.
 	HostedZoneId any
-	Id any
+	// The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management Service (KMS). The KeyManagementServiceArn must be unique for each key signing key (KSK) in a single hosted zone.
 	KeyManagementServiceArn any
+	// An alphanumeric string used to identify a key signing key (KSK). Name must be unique for each key signing key in the same hosted zone.
 	Name any
+	// A string specifying the initial status of the key signing key (KSK). You can set the value to ACTIVE or INACTIVE.
 	Status any
-	Timeouts any
 }
 
 var KeySigningKey = ubx.ResourceBinding{
 	WireType: "aws_route53_key_signing_key",
 	Fields: ubx.FieldMap{
 		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"KeyManagementServiceArn": ubx.FieldSpec{WireName: "key_management_service_arn"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Status": ubx.FieldSpec{WireName: "status"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: KeySigningKey_TimeoutsFields,
-		},
 	},
 }

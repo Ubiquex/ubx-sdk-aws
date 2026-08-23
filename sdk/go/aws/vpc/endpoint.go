@@ -3,101 +3,36 @@ package vpc
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Endpoint_DnsOptions struct {
-	DnsRecordIpType any
-	PrivateDnsOnlyForInboundResolverEndpoint any
-	PrivateDnsPreference any
-	PrivateDnsSpecifiedDomains any
-}
-
-type Endpoint_SubnetConfiguration struct {
-	Ipv4 any
-	Ipv6 any
-	SubnetId any
-}
-
-type Endpoint_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
-
-var Endpoint_DnsOptionsFields = ubx.FieldMap{
-		"DnsRecordIpType": ubx.FieldSpec{WireName: "dns_record_ip_type"},
-		"PrivateDnsOnlyForInboundResolverEndpoint": ubx.FieldSpec{WireName: "private_dns_only_for_inbound_resolver_endpoint"},
-		"PrivateDnsPreference": ubx.FieldSpec{WireName: "private_dns_preference"},
-		"PrivateDnsSpecifiedDomains": ubx.FieldSpec{WireName: "private_dns_specified_domains"},
-	}
-
-var Endpoint_SubnetConfigurationFields = ubx.FieldMap{
-		"Ipv4": ubx.FieldSpec{WireName: "ipv4"},
-		"Ipv6": ubx.FieldSpec{WireName: "ipv6"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
-
-var Endpoint_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type EndpointConfig struct {
-	AutoAccept any
-	Id any
-	IpAddressType any
-	Policy any
-	PrivateDnsEnabled any
-	Region any
-	ResourceConfigurationArn any
-	RouteTableIds any
+	// The name of the VPC Endpoint
+	Name any
+	// The ID of one or more security groups to associate with the endpoint network interface
 	SecurityGroupIds any
-	ServiceName any
-	ServiceNetworkArn any
-	ServiceRegion any
+	// The ID of one or more subnets in which to create an endpoint network interface
 	SubnetIds any
-	Tags any
-	TagsAll any
-	VpcEndpointType any
+	// The ID of the VPC in which the endpoint will be used.
 	VpcId any
-	DnsOptions any
-	SubnetConfiguration any
-	Timeouts any
+}
+
+type EndpointAttrs struct {
+	// The identifier of the VPC Endpoint
+	Id any
+	// The name of the VPC Endpoint
+	Name any
+	// The ID of one or more security groups to associate with the endpoint network interface
+	SecurityGroupIds any
+	// The ID of one or more subnets in which to create an endpoint network interface
+	SubnetIds any
+	// The ID of the VPC in which the endpoint will be used.
+	VpcId any
 }
 
 var Endpoint = ubx.ResourceBinding{
 	WireType: "aws_vpc_endpoint",
 	Fields: ubx.FieldMap{
-		"AutoAccept": ubx.FieldSpec{WireName: "auto_accept"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"PrivateDnsEnabled": ubx.FieldSpec{WireName: "private_dns_enabled"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ResourceConfigurationArn": ubx.FieldSpec{WireName: "resource_configuration_arn"},
-		"RouteTableIds": ubx.FieldSpec{WireName: "route_table_ids"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"ServiceNetworkArn": ubx.FieldSpec{WireName: "service_network_arn"},
-		"ServiceRegion": ubx.FieldSpec{WireName: "service_region"},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"VpcEndpointType": ubx.FieldSpec{WireName: "vpc_endpoint_type"},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-		"DnsOptions": ubx.FieldSpec{
-			WireName: "dns_options",
-			Kind: "list",
-			Fields: Endpoint_DnsOptionsFields,
-		},
-		"SubnetConfiguration": ubx.FieldSpec{
-			WireName: "subnet_configuration",
-			Kind: "set",
-			Fields: Endpoint_SubnetConfigurationFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Endpoint_TimeoutsFields,
-		},
 	},
 }

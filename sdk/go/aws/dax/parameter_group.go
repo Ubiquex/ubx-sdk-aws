@@ -3,35 +3,29 @@ package dax
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ParameterGroup_Parameters struct {
-	Name any
-	Value any
+type ParameterGroupConfig struct {
+	// A description of the parameter group.
+	Description any
+	// The name of the parameter group.
+	ParameterGroupName any
+	// An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.
+	ParameterNameValues any
 }
 
-var ParameterGroup_ParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
-
-type ParameterGroupConfig struct {
+type ParameterGroupAttrs struct {
+	// A description of the parameter group.
 	Description any
-	Id any
-	Name any
-	Region any
-	Parameters any
+	// The name of the parameter group.
+	ParameterGroupName any
+	// An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.
+	ParameterNameValues any
 }
 
 var ParameterGroup = ubx.ResourceBinding{
 	WireType: "aws_dax_parameter_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "set",
-			Fields: ParameterGroup_ParametersFields,
-		},
+		"ParameterGroupName": ubx.FieldSpec{WireName: "parameter_group_name"},
+		"ParameterNameValues": ubx.FieldSpec{WireName: "parameter_name_values"},
 	},
 }

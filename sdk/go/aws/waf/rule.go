@@ -4,8 +4,11 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rule_Predicates struct {
+	// The unique identifier of the AWS WAF entity (such as an IP set, byte match set, SQL injection match set, or XSS match set) that this predicate references, matching the predicate's Type. (AI-inferred)
 	DataId any
+	// Whether to invert the match result for this predicate, making the rule match when the specified WAF condition does NOT match. (AI-inferred)
 	Negated any
+	// The type of the predicate in an AWS WAF rule, indicating which kind of match condition (such as IPMatch, ByteMatch, or SqlInjectionMatch) the rule uses to block or allow requests. (AI-inferred)
 	Type any
 }
 
@@ -16,25 +19,33 @@ var Rule_PredicatesFields = ubx.FieldMap{
 	}
 
 type RuleConfig struct {
-	Id any
+	// The name of the CloudWatch metric that AWS WAF publishes for this rule, used for monitoring and setting CloudWatch alarms. (AI-inferred)
 	MetricName any
+	// A friendly name for the WAF rule, which must be unique within the account and is used to identify the rule when it is created and referenced by WebACLs. (AI-inferred)
 	Name any
-	Tags any
-	TagsAll any
+	// Specifies the set of conditions (e.g., IP matches, string matches, SQL injection match) and whether each condition is negated, which together determine the requests that this AWS WAF Classic rule will match. (AI-inferred)
+	Predicates any
+}
+
+type RuleAttrs struct {
+	// The unique identifier (RuleId) assigned by AWS WAF when the rule is created, used to reference the rule in other resources. (AI-inferred)
+	Id any
+	// The name of the CloudWatch metric that AWS WAF publishes for this rule, used for monitoring and setting CloudWatch alarms. (AI-inferred)
+	MetricName any
+	// A friendly name for the WAF rule, which must be unique within the account and is used to identify the rule when it is created and referenced by WebACLs. (AI-inferred)
+	Name any
+	// Specifies the set of conditions (e.g., IP matches, string matches, SQL injection match) and whether each condition is negated, which together determine the requests that this AWS WAF Classic rule will match. (AI-inferred)
 	Predicates any
 }
 
 var Rule = ubx.ResourceBinding{
 	WireType: "aws_waf_rule",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"Predicates": ubx.FieldSpec{
 			WireName: "predicates",
-			Kind: "set",
+			Kind: "list",
 			Fields: Rule_PredicatesFields,
 		},
 	},

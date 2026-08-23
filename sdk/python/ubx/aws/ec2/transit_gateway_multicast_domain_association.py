@@ -7,36 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TransitGatewayMulticastDomainAssociation_Timeouts:
-    create: Any = None
-    delete: Any = None
-
-_TransitGatewayMulticastDomainAssociation_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-}
+class TransitGatewayMulticastDomainAssociationConfig:
+    # The IDs of the subnets to associate with the transit gateway multicast domain.
+    subnet_id: Any = None
+    # The ID of the transit gateway attachment.
+    transit_gateway_attachment_id: Any = None
+    # The ID of the transit gateway multicast domain.
+    transit_gateway_multicast_domain_id: Any = None
 
 @dataclasses.dataclass
-class TransitGatewayMulticastDomainAssociationConfig:
-    id: Any = None
-    region: Any = None
+class TransitGatewayMulticastDomainAssociationAttrs:
+    # The ID of the resource.
+    resource_id: Any = None
+    # The type of resource, for example a VPC attachment.
+    resource_type: Any = None
+    # The state of the subnet association.
+    state: Any = None
+    # The IDs of the subnets to associate with the transit gateway multicast domain.
     subnet_id: Any = None
+    # The ID of the transit gateway attachment.
     transit_gateway_attachment_id: Any = None
+    # The ID of the transit gateway multicast domain.
     transit_gateway_multicast_domain_id: Any = None
-    timeouts: Any = None
 
 TransitGatewayMulticastDomainAssociation = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_multicast_domain_association",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
         "transit_gateway_attachment_id": ubx.FieldSpec(wire_name="transit_gateway_attachment_id"),
         "transit_gateway_multicast_domain_id": ubx.FieldSpec(wire_name="transit_gateway_multicast_domain_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_TransitGatewayMulticastDomainAssociation_TimeoutsFields,
-        ),
     },
 )

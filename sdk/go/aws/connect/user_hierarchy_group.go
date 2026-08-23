@@ -3,25 +3,52 @@ package connect
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type UserHierarchyGroup_Tags struct {
+	// The key of a tag attached to the Amazon Connect user hierarchy group, forming the key portion of a key-value pair that helps categorize, organize, and manage the resource. (AI-inferred)
+	Key any
+	// The value portion of a tag (key-value pair) attached to the Amazon Connect user hierarchy group. (AI-inferred)
+	Value any
+}
+
+var UserHierarchyGroup_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type UserHierarchyGroupConfig struct {
-	Id any
-	InstanceId any
+	// The identifier of the Amazon Connect instance.
+	InstanceArn any
+	// The name of the user hierarchy group.
 	Name any
-	ParentGroupId any
-	Region any
+	// The Amazon Resource Name (ARN) for the User hierarchy group.
+	ParentGroupArn any
+	// One or more tags.
 	Tags any
-	TagsAll any
+}
+
+type UserHierarchyGroupAttrs struct {
+	// The identifier of the Amazon Connect instance.
+	InstanceArn any
+	// The name of the user hierarchy group.
+	Name any
+	// The Amazon Resource Name (ARN) for the User hierarchy group.
+	ParentGroupArn any
+	// One or more tags.
+	Tags any
+	// The Amazon Resource Name (ARN) for the User hierarchy group.
+	UserHierarchyGroupArn any
 }
 
 var UserHierarchyGroup = ubx.ResourceBinding{
 	WireType: "aws_connect_user_hierarchy_group",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentGroupId": ubx.FieldSpec{WireName: "parent_group_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"ParentGroupArn": ubx.FieldSpec{WireName: "parent_group_arn"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: UserHierarchyGroup_TagsFields,
+		},
 	},
 }

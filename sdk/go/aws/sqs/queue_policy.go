@@ -4,18 +4,25 @@ package sqs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueuePolicyConfig struct {
+	// A policy document that contains the permissions for the specified SQS queues. For more information about SQS policies, see [Using custom policies with the access policy language](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html) in the *Developer Guide*.
+	PolicyDocument any
+	// The URLs of the queues to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SQS::Queue`` resource.
+	Queues any
+}
+
+type QueuePolicyAttrs struct {
+	// The ID of the SQS queue policy is the URL of the queue to which the policy is attached. (AI-inferred)
 	Id any
-	Policy any
-	QueueUrl any
-	Region any
+	// A policy document that contains the permissions for the specified SQS queues. For more information about SQS policies, see [Using custom policies with the access policy language](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html) in the *Developer Guide*.
+	PolicyDocument any
+	// The URLs of the queues to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SQS::Queue`` resource.
+	Queues any
 }
 
 var QueuePolicy = ubx.ResourceBinding{
 	WireType: "aws_sqs_queue_policy",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"QueueUrl": ubx.FieldSpec{WireName: "queue_url"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+		"Queues": ubx.FieldSpec{WireName: "queues"},
 	},
 }

@@ -3,107 +3,227 @@ package msk
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Replicator_KafkaCluster_AmazonMskCluster struct {
+type Replicator_KafkaClusters_AmazonMskCluster struct {
+	// The ARN of an Amazon MSK cluster that is included in the replicator's set of Kafka clusters, serving as a source or target for replication. (AI-inferred)
 	MskClusterArn any
 }
 
-type Replicator_KafkaCluster_VpcConfig struct {
-	SecurityGroupsIds any
+type Replicator_KafkaClusters_ApacheKafkaCluster struct {
+	// A unique user-supplied string that identifies the self-managed Apache Kafka cluster so the MSK replicator can reference it in the replication info. (AI-inferred)
+	ApacheKafkaClusterId any
+	// The bootstrap broker string (comma-separated list of host:port pairs) of the self-managed Apache Kafka cluster used as a source or target for replication. (AI-inferred)
+	BootstrapBrokerString any
+}
+
+type Replicator_KafkaClusters_ClientAuthentication_Mtls struct {
+	// The ARN of the AWS Secrets Manager secret containing the client certificate and private key used for mutual TLS authentication when connecting to this Kafka cluster. (AI-inferred)
+	SecretArn any
+}
+
+type Replicator_KafkaClusters_ClientAuthentication_SaslScram struct {
+	// Specifies the SASL/SCRAM authentication mechanism (e.g., SCRAM-SHA-512) used by the replicator to connect to the Kafka cluster. (AI-inferred)
+	Mechanism any
+	// The ARN of the AWS Secrets Manager secret that stores the SASL/SCRAM credentials used to authenticate to the Kafka cluster. (AI-inferred)
+	SecretArn any
+}
+
+type Replicator_KafkaClusters_ClientAuthentication struct {
+	Mtls any
+	// Specifies SASL/SCRAM authentication settings for the associated Kafka cluster, including an 'Enabled' flag that determines whether the replicator uses SASL/SCRAM authentication when connecting to the cluster. (AI-inferred)
+	SaslScram any
+}
+
+type Replicator_KafkaClusters_EncryptionInTransit struct {
+	// Sets the encryption-in-transit type (either 'TLS' or 'PLAINTEXT') that the MSK replicator uses when communicating with this Kafka cluster. (AI-inferred)
+	EncryptionType any
+	// The root CA certificate (in PEM format) used to validate the Kafka broker's certificate when establishing an encrypted TLS connection to the source or target Kafka cluster. (AI-inferred)
+	RootCaCertificate any
+}
+
+type Replicator_KafkaClusters_VpcConfig struct {
+	// Specifies the security groups that the MSK replicator uses to access the Kafka cluster in its VPC. (AI-inferred)
+	SecurityGroupIds any
+	// Specifies the list of subnet IDs in the VPC where the Kafka cluster's network interfaces are deployed for the replicator to communicate with the cluster. (AI-inferred)
 	SubnetIds any
 }
 
-type Replicator_KafkaCluster struct {
+type Replicator_KafkaClusters struct {
+	// Defines the Amazon MSK cluster details (containing the MSK cluster ARN) for a source or destination Kafka cluster in the replicator. (AI-inferred)
 	AmazonMskCluster any
+	// Configuration for a self-managed Apache Kafka cluster used as a source or target in the MSK replicator, specifying the bootstrap broker string and VPC settings for network connectivity. (AI-inferred)
+	ApacheKafkaCluster any
+	// The client_authentication property specifies the authentication mechanism (such as IAM, TLS, or SASL/SCRAM) used by the replicator to securely connect to this Kafka cluster during replication. (AI-inferred)
+	ClientAuthentication any
+	// Configures encryption-in-transit settings for the connection to this Kafka cluster, specifying whether TLS is used (e.g., TLS or PLAINTEXT). (AI-inferred)
+	EncryptionInTransit any
+	// Specifies the VPC configuration for the Kafka cluster, including the subnets and security groups used for network access to the cluster. (AI-inferred)
 	VpcConfig any
 }
 
-type Replicator_LogDelivery_ReplicatorLogDelivery_CloudwatchLogs struct {
+type Replicator_LogDelivery_ReplicatorLogDelivery_CloudWatchLogs struct {
+	// Whether log delivery to CloudWatch Logs is enabled.
 	Enabled any
+	// The CloudWatch log group that is the destination for log delivery.
 	LogGroup any
 }
 
 type Replicator_LogDelivery_ReplicatorLogDelivery_Firehose struct {
+	// The Firehose delivery stream that is the destination for log delivery.
 	DeliveryStream any
+	// Whether log delivery to Firehose is enabled.
 	Enabled any
 }
 
 type Replicator_LogDelivery_ReplicatorLogDelivery_S3 struct {
+	// The S3 bucket that is the destination for log delivery.
 	Bucket any
+	// Whether log delivery to S3 is enabled.
 	Enabled any
+	// The S3 prefix that is the destination for log delivery.
 	Prefix any
 }
 
 type Replicator_LogDelivery_ReplicatorLogDelivery struct {
-	CloudwatchLogs any
+	// Details about delivering logs to CloudWatch Logs.
+	CloudWatchLogs any
+	// Details about delivering logs to Firehose.
 	Firehose any
+	// Details about delivering logs to S3.
 	S3 any
 }
 
 type Replicator_LogDelivery struct {
+	// Details of the log delivery for the replicator.
 	ReplicatorLogDelivery any
 }
 
 type Replicator_ReplicationInfoList_ConsumerGroupReplication struct {
+	// Determines how consumer group offsets are synchronized from the source Kafka cluster to the target Kafka cluster during replication. (AI-inferred)
 	ConsumerGroupOffsetSyncMode any
+	// The list of consumer group names to exclude from being replicated by the MSK Replicator for this replication pair, meaning their offsets will not be copied between clusters. (AI-inferred)
 	ConsumerGroupsToExclude any
+	// A list of consumer group names whose offsets will be replicated from the source Kafka cluster to the target cluster as part of the MSK Replicator's consumer group replication. (AI-inferred)
 	ConsumerGroupsToReplicate any
+	// Indicates whether to automatically detect and replicate newly created consumer groups to the target cluster during ongoing replication. (AI-inferred)
 	DetectAndCopyNewConsumerGroups any
+	// Specifies whether to periodically synchronize consumer group offsets from the source Kafka cluster to the target cluster, ensuring that consumer group positions are kept in sync for failover or migration scenarios. (AI-inferred)
 	SynchroniseConsumerGroupOffsets any
 }
 
 type Replicator_ReplicationInfoList_TopicReplication_StartingPosition struct {
+	// Determines whether topic replication starts from the latest offset (LATEST) or the earliest available offset (EARLIEST) in the source cluster. (AI-inferred)
 	Type any
 }
 
 type Replicator_ReplicationInfoList_TopicReplication struct {
+	// Whether to copy access control lists (ACLs) for topics from the source cluster to the target cluster in the MSK replicator. (AI-inferred)
 	CopyAccessControlListsForTopics any
+	// Indicates whether topic configurations (such as topic-level settings) are copied from the source cluster to the target cluster during replication. (AI-inferred)
 	CopyTopicConfigurations any
+	// When enabled, the replicator automatically detects newly created topics in the source cluster and begins replicating them to the target cluster. (AI-inferred)
 	DetectAndCopyNewTopics any
-	TopicsToExclude any
-	TopicsToReplicate any
+	// Specifies where the replicator starts reading topics from in the source cluster, using either the latest or earliest offset to determine the initial synchronization point. (AI-inferred)
 	StartingPosition any
+	// Specifies the configuration for how replicated topic names are derived, such as using the same name or prefixing with the source alias. (AI-inferred)
 	TopicNameConfiguration any
+	// Specifies the list of Kafka topic names that are excluded from replication, meaning these topics will not be replicated to the destination cluster. (AI-inferred)
+	TopicsToExclude any
+	// A list of Kafka topic names to replicate from the source cluster to the target cluster. (AI-inferred)
+	TopicsToReplicate any
 }
 
 type Replicator_ReplicationInfoList struct {
-	SourceKafkaClusterAlias any
-	SourceKafkaClusterArn any
-	TargetCompressionType any
-	TargetKafkaClusterAlias any
-	TargetKafkaClusterArn any
+	// Defines the configuration for replicating consumer groups between the source and target Kafka clusters, including the list of consumer group names to replicate and whether to synchronize their offsets. (AI-inferred)
 	ConsumerGroupReplication any
+	// The ARN of the source Kafka cluster from which the replicator replicates data, specified within each replication info entry. (AI-inferred)
+	SourceKafkaClusterArn any
+	// The identifier of the source Apache Kafka cluster from which data is replicated within a replication configuration. (AI-inferred)
+	SourceKafkaClusterId any
+	// Defines the compression type (e.g., NONE, GZIP, SNAPPY, LZ4, ZSTD) applied to the topic data as it is replicated from the source cluster to the target cluster in the MSK Replicator. (AI-inferred)
+	TargetCompressionType any
+	// In each replication info entry, the ARN of the target Kafka cluster to which the replicator replicates data. (AI-inferred)
+	TargetKafkaClusterArn any
+	// The identifier (typically the ARN) of the target Kafka cluster that this replication entry replicates topics and consumer group data to. (AI-inferred)
+	TargetKafkaClusterId any
+	// Specifies the topic replication configuration for a given replication pair, including which topics to replicate, the starting position for reading records, and how topic names are handled. (AI-inferred)
 	TopicReplication any
 }
 
-type Replicator_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Replicator_Tags struct {
+	Key any
+	Value any
 }
 
-var Replicator_KafkaCluster_AmazonMskClusterFields = ubx.FieldMap{
+var Replicator_KafkaClusters_AmazonMskClusterFields = ubx.FieldMap{
 		"MskClusterArn": ubx.FieldSpec{WireName: "msk_cluster_arn"},
 	}
 
-var Replicator_KafkaCluster_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupsIds": ubx.FieldSpec{WireName: "security_groups_ids"},
+var Replicator_KafkaClusters_ApacheKafkaClusterFields = ubx.FieldMap{
+		"ApacheKafkaClusterId": ubx.FieldSpec{WireName: "apache_kafka_cluster_id"},
+		"BootstrapBrokerString": ubx.FieldSpec{WireName: "bootstrap_broker_string"},
+	}
+
+var Replicator_KafkaClusters_ClientAuthentication_MtlsFields = ubx.FieldMap{
+		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+	}
+
+var Replicator_KafkaClusters_ClientAuthentication_SaslScramFields = ubx.FieldMap{
+		"Mechanism": ubx.FieldSpec{WireName: "mechanism"},
+		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+	}
+
+var Replicator_KafkaClusters_ClientAuthenticationFields = ubx.FieldMap{
+		"Mtls": ubx.FieldSpec{
+			WireName: "mtls",
+			Kind: "object",
+			Fields: Replicator_KafkaClusters_ClientAuthentication_MtlsFields,
+		},
+		"SaslScram": ubx.FieldSpec{
+			WireName: "sasl_scram",
+			Kind: "object",
+			Fields: Replicator_KafkaClusters_ClientAuthentication_SaslScramFields,
+		},
+	}
+
+var Replicator_KafkaClusters_EncryptionInTransitFields = ubx.FieldMap{
+		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+		"RootCaCertificate": ubx.FieldSpec{WireName: "root_ca_certificate"},
+	}
+
+var Replicator_KafkaClusters_VpcConfigFields = ubx.FieldMap{
+		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
 	}
 
-var Replicator_KafkaClusterFields = ubx.FieldMap{
+var Replicator_KafkaClustersFields = ubx.FieldMap{
 		"AmazonMskCluster": ubx.FieldSpec{
 			WireName: "amazon_msk_cluster",
-			Kind: "list",
-			Fields: Replicator_KafkaCluster_AmazonMskClusterFields,
+			Kind: "object",
+			Fields: Replicator_KafkaClusters_AmazonMskClusterFields,
+		},
+		"ApacheKafkaCluster": ubx.FieldSpec{
+			WireName: "apache_kafka_cluster",
+			Kind: "object",
+			Fields: Replicator_KafkaClusters_ApacheKafkaClusterFields,
+		},
+		"ClientAuthentication": ubx.FieldSpec{
+			WireName: "client_authentication",
+			Kind: "object",
+			Fields: Replicator_KafkaClusters_ClientAuthenticationFields,
+		},
+		"EncryptionInTransit": ubx.FieldSpec{
+			WireName: "encryption_in_transit",
+			Kind: "object",
+			Fields: Replicator_KafkaClusters_EncryptionInTransitFields,
 		},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "list",
-			Fields: Replicator_KafkaCluster_VpcConfigFields,
+			Kind: "object",
+			Fields: Replicator_KafkaClusters_VpcConfigFields,
 		},
 	}
 
-var Replicator_LogDelivery_ReplicatorLogDelivery_CloudwatchLogsFields = ubx.FieldMap{
+var Replicator_LogDelivery_ReplicatorLogDelivery_CloudWatchLogsFields = ubx.FieldMap{
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
 	}
@@ -120,19 +240,19 @@ var Replicator_LogDelivery_ReplicatorLogDelivery_S3Fields = ubx.FieldMap{
 	}
 
 var Replicator_LogDelivery_ReplicatorLogDeliveryFields = ubx.FieldMap{
-		"CloudwatchLogs": ubx.FieldSpec{
-			WireName: "cloudwatch_logs",
-			Kind: "list",
-			Fields: Replicator_LogDelivery_ReplicatorLogDelivery_CloudwatchLogsFields,
+		"CloudWatchLogs": ubx.FieldSpec{
+			WireName: "cloud_watch_logs",
+			Kind: "object",
+			Fields: Replicator_LogDelivery_ReplicatorLogDelivery_CloudWatchLogsFields,
 		},
 		"Firehose": ubx.FieldSpec{
 			WireName: "firehose",
-			Kind: "list",
+			Kind: "object",
 			Fields: Replicator_LogDelivery_ReplicatorLogDelivery_FirehoseFields,
 		},
 		"S3": ubx.FieldSpec{
 			WireName: "s3",
-			Kind: "list",
+			Kind: "object",
 			Fields: Replicator_LogDelivery_ReplicatorLogDelivery_S3Fields,
 		},
 	}
@@ -140,7 +260,7 @@ var Replicator_LogDelivery_ReplicatorLogDeliveryFields = ubx.FieldMap{
 var Replicator_LogDeliveryFields = ubx.FieldMap{
 		"ReplicatorLogDelivery": ubx.FieldSpec{
 			WireName: "replicator_log_delivery",
-			Kind: "list",
+			Kind: "object",
 			Fields: Replicator_LogDelivery_ReplicatorLogDeliveryFields,
 		},
 	}
@@ -161,76 +281,93 @@ var Replicator_ReplicationInfoList_TopicReplicationFields = ubx.FieldMap{
 		"CopyAccessControlListsForTopics": ubx.FieldSpec{WireName: "copy_access_control_lists_for_topics"},
 		"CopyTopicConfigurations": ubx.FieldSpec{WireName: "copy_topic_configurations"},
 		"DetectAndCopyNewTopics": ubx.FieldSpec{WireName: "detect_and_copy_new_topics"},
-		"TopicsToExclude": ubx.FieldSpec{WireName: "topics_to_exclude"},
-		"TopicsToReplicate": ubx.FieldSpec{WireName: "topics_to_replicate"},
 		"StartingPosition": ubx.FieldSpec{
 			WireName: "starting_position",
-			Kind: "list",
+			Kind: "object",
 			Fields: Replicator_ReplicationInfoList_TopicReplication_StartingPositionFields,
 		},
 		"TopicNameConfiguration": ubx.FieldSpec{
 			WireName: "topic_name_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Replicator_ReplicationInfoList_TopicReplication_StartingPositionFields,
 		},
+		"TopicsToExclude": ubx.FieldSpec{WireName: "topics_to_exclude"},
+		"TopicsToReplicate": ubx.FieldSpec{WireName: "topics_to_replicate"},
 	}
 
 var Replicator_ReplicationInfoListFields = ubx.FieldMap{
-		"SourceKafkaClusterAlias": ubx.FieldSpec{WireName: "source_kafka_cluster_alias"},
-		"SourceKafkaClusterArn": ubx.FieldSpec{WireName: "source_kafka_cluster_arn"},
-		"TargetCompressionType": ubx.FieldSpec{WireName: "target_compression_type"},
-		"TargetKafkaClusterAlias": ubx.FieldSpec{WireName: "target_kafka_cluster_alias"},
-		"TargetKafkaClusterArn": ubx.FieldSpec{WireName: "target_kafka_cluster_arn"},
 		"ConsumerGroupReplication": ubx.FieldSpec{
 			WireName: "consumer_group_replication",
-			Kind: "list",
+			Kind: "object",
 			Fields: Replicator_ReplicationInfoList_ConsumerGroupReplicationFields,
 		},
+		"SourceKafkaClusterArn": ubx.FieldSpec{WireName: "source_kafka_cluster_arn"},
+		"SourceKafkaClusterId": ubx.FieldSpec{WireName: "source_kafka_cluster_id"},
+		"TargetCompressionType": ubx.FieldSpec{WireName: "target_compression_type"},
+		"TargetKafkaClusterArn": ubx.FieldSpec{WireName: "target_kafka_cluster_arn"},
+		"TargetKafkaClusterId": ubx.FieldSpec{WireName: "target_kafka_cluster_id"},
 		"TopicReplication": ubx.FieldSpec{
 			WireName: "topic_replication",
-			Kind: "list",
+			Kind: "object",
 			Fields: Replicator_ReplicationInfoList_TopicReplicationFields,
 		},
 	}
 
-var Replicator_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Replicator_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ReplicatorConfig struct {
+	// A summary description of the replicator.
 	Description any
-	Id any
-	Region any
-	ReplicatorName any
-	ServiceExecutionRoleArn any
-	Tags any
-	TagsAll any
-	KafkaCluster any
+	// Specifies a list of Kafka clusters which are targets of the replicator.
+	KafkaClusters any
+	// Configuration for log delivery for the replicator.
 	LogDelivery any
+	// A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.
 	ReplicationInfoList any
-	Timeouts any
+	// The name of the replicator.
+	ReplicatorName any
+	// The Amazon Resource Name (ARN) of the IAM role used by the replicator to access external resources.
+	ServiceExecutionRoleArn any
+	// A collection of tags associated with a resource
+	Tags any
+}
+
+type ReplicatorAttrs struct {
+	// The current version of the MSK replicator.
+	CurrentVersion any
+	// A summary description of the replicator.
+	Description any
+	// Specifies a list of Kafka clusters which are targets of the replicator.
+	KafkaClusters any
+	// Configuration for log delivery for the replicator.
+	LogDelivery any
+	// A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.
+	ReplicationInfoList any
+	// Amazon Resource Name for the created replicator.
+	ReplicatorArn any
+	// The name of the replicator.
+	ReplicatorName any
+	// The Amazon Resource Name (ARN) of the IAM role used by the replicator to access external resources.
+	ServiceExecutionRoleArn any
+	// A collection of tags associated with a resource
+	Tags any
 }
 
 var Replicator = ubx.ResourceBinding{
 	WireType: "aws_msk_replicator",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ReplicatorName": ubx.FieldSpec{WireName: "replicator_name"},
-		"ServiceExecutionRoleArn": ubx.FieldSpec{WireName: "service_execution_role_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"KafkaCluster": ubx.FieldSpec{
-			WireName: "kafka_cluster",
+		"KafkaClusters": ubx.FieldSpec{
+			WireName: "kafka_clusters",
 			Kind: "list",
-			Fields: Replicator_KafkaClusterFields,
+			Fields: Replicator_KafkaClustersFields,
 		},
 		"LogDelivery": ubx.FieldSpec{
 			WireName: "log_delivery",
-			Kind: "list",
+			Kind: "object",
 			Fields: Replicator_LogDeliveryFields,
 		},
 		"ReplicationInfoList": ubx.FieldSpec{
@@ -238,10 +375,12 @@ var Replicator = ubx.ResourceBinding{
 			Kind: "list",
 			Fields: Replicator_ReplicationInfoListFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Replicator_TimeoutsFields,
+		"ReplicatorName": ubx.FieldSpec{WireName: "replicator_name"},
+		"ServiceExecutionRoleArn": ubx.FieldSpec{WireName: "service_execution_role_arn"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Replicator_TagsFields,
 		},
 	},
 }

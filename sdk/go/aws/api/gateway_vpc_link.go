@@ -3,25 +3,52 @@ package api
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type GatewayVpcLink_Tags struct {
+	// Identifies the key of a user-defined tag attached to the API Gateway VPC Link, used to organize and categorize the resource via AWS tagging conventions. (AI-inferred)
+	Key any
+	// Specifies the value for a tag key attached to the VPC Link, enabling metadata-based management, cost allocation, and access control for the resource. (AI-inferred)
+	Value any
+}
+
+var GatewayVpcLink_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type GatewayVpcLinkConfig struct {
+	// A user-defined textual description of the VPC link, used to identify and manage the link in API Gateway. (AI-inferred)
 	Description any
-	Id any
+	// The user-friendly name of the VPC link, which identifies it within API Gateway. (AI-inferred)
 	Name any
-	Region any
+	// An array of arbitrary tags (key-value pairs) to associate with the VPC link.
 	Tags any
-	TagsAll any
+	// Specifies the Amazon Resource Names (ARNs) of the Network Load Balancers that the VPC link routes API traffic to, allowing API Gateway to access private resources in a VPC. (AI-inferred)
 	TargetArns any
+}
+
+type GatewayVpcLinkAttrs struct {
+	// A user-defined textual description of the VPC link, used to identify and manage the link in API Gateway. (AI-inferred)
+	Description any
+	// The user-friendly name of the VPC link, which identifies it within API Gateway. (AI-inferred)
+	Name any
+	// An array of arbitrary tags (key-value pairs) to associate with the VPC link.
+	Tags any
+	// Specifies the Amazon Resource Names (ARNs) of the Network Load Balancers that the VPC link routes API traffic to, allowing API Gateway to access private resources in a VPC. (AI-inferred)
+	TargetArns any
+	// The unique identifier (e.g., an alphanumeric string) assigned by AWS to this VPC link, used to reference the link in API Gateway configurations. (AI-inferred)
+	VpcLinkId any
 }
 
 var GatewayVpcLink = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_vpc_link",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: GatewayVpcLink_TagsFields,
+		},
 		"TargetArns": ubx.FieldSpec{WireName: "target_arns"},
 	},
 }

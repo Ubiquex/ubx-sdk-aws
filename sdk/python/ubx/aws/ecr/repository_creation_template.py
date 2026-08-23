@@ -8,38 +8,89 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RepositoryCreationTemplate_EncryptionConfiguration:
+    # The encryption type to use.
     encryption_type: Any = None
+    # If you use the KMS or KMS_DSSE encryption type, specify the CMK to use for encryption. The alias, key ID, or full ARN of the CMK can be specified. The key must exist in the same Region as the repository. If no key is specified, the default AWS managed CMK for Amazon ECR will be used.
     kms_key: Any = None
 
 @dataclasses.dataclass
-class RepositoryCreationTemplate_ImageTagMutabilityExclusionFilter:
-    filter: Any = None
-    filter_type: Any = None
+class RepositoryCreationTemplate_ImageTagMutabilityExclusionFilters:
+    # Specifies the type of filter for image tag mutability exclusions, where 'ALL' matches every tag and 'REGEX' uses a regular expression pattern in the corresponding value field. (AI-inferred)
+    image_tag_mutability_exclusion_filter_type: Any = None
+    # This field specifies the tag pattern (such as a regex or wildcard expression) that identifies image tags excluded from the repository creation template's image tag mutability policy, allowing those tags to be overwritten even in immutable repositories. (AI-inferred)
+    image_tag_mutability_exclusion_filter_value: Any = None
+
+@dataclasses.dataclass
+class RepositoryCreationTemplate_ResourceTags:
+    # The key of a tag that this repository creation template automatically applies to newly created Amazon ECR repositories. (AI-inferred)
+    key: Any = None
+    # The value of a tag key-value pair in the ResourceTags list of the AWS ECR Repository Creation Template, used to add metadata for identification, categorization, and cost allocation. (AI-inferred)
+    value: Any = None
 
 _RepositoryCreationTemplate_EncryptionConfigurationFields = {
     "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
     "kms_key": ubx.FieldSpec(wire_name="kms_key"),
 }
 
-_RepositoryCreationTemplate_ImageTagMutabilityExclusionFilterFields = {
-    "filter": ubx.FieldSpec(wire_name="filter"),
-    "filter_type": ubx.FieldSpec(wire_name="filter_type"),
+_RepositoryCreationTemplate_ImageTagMutabilityExclusionFiltersFields = {
+    "image_tag_mutability_exclusion_filter_type": ubx.FieldSpec(wire_name="image_tag_mutability_exclusion_filter_type"),
+    "image_tag_mutability_exclusion_filter_value": ubx.FieldSpec(wire_name="image_tag_mutability_exclusion_filter_value"),
+}
+
+_RepositoryCreationTemplate_ResourceTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class RepositoryCreationTemplateConfig:
+    # A list of enumerable Strings representing the repository creation scenarios that this template will apply towards. The supported scenarios are PULL_THROUGH_CACHE, REPLICATION, and CREATE_ON_PUSH
     applied_for: Any = None
+    # The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.
     custom_role_arn: Any = None
+    # The description associated with the repository creation template.
     description: Any = None
-    id: Any = None
-    image_tag_mutability: Any = None
-    lifecycle_policy: Any = None
-    prefix: Any = None
-    region: Any = None
-    repository_policy: Any = None
-    resource_tags: Any = None
+    # The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest. By default, when no encryption configuration is set or the ``AES256`` encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES256 encryption algorithm. This does not require any action on your part. For more control over the encryption of the contents of your repository, you can use server-side encryption with KMSlong key stored in KMSlong (KMS) to encrypt your images. For more information, see [Amazon ECR encryption at rest](https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html) in the *Amazon Elastic Container Registry User Guide*.
     encryption_configuration: Any = None
-    image_tag_mutability_exclusion_filter: Any = None
+    # The tag mutability setting for the repository. If this parameter is omitted, the default setting of ``MUTABLE`` will be used which will allow image tags to be overwritten. If ``IMMUTABLE`` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.
+    image_tag_mutability: Any = None
+    # A list of filters that specify which image tags are excluded from the repository creation template's image tag mutability setting.
+    image_tag_mutability_exclusion_filters: Any = None
+    # The lifecycle policy to use for repositories created using the template.
+    lifecycle_policy: Any = None
+    # The repository namespace prefix associated with the repository creation template.
+    prefix: Any = None
+    # The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.
+    repository_policy: Any = None
+    # The metadata to apply to the repository to help you categorize and organize. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    resource_tags: Any = None
+
+@dataclasses.dataclass
+class RepositoryCreationTemplateAttrs:
+    # A list of enumerable Strings representing the repository creation scenarios that this template will apply towards. The supported scenarios are PULL_THROUGH_CACHE, REPLICATION, and CREATE_ON_PUSH
+    applied_for: Any = None
+    # The creation timestamp (in ISO 8601 format) recorded by AWS ECR when this repository creation template was first created, provided as a read-only computed attribute. (AI-inferred)
+    created_at: Any = None
+    # The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.
+    custom_role_arn: Any = None
+    # The description associated with the repository creation template.
+    description: Any = None
+    # The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest. By default, when no encryption configuration is set or the ``AES256`` encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES256 encryption algorithm. This does not require any action on your part. For more control over the encryption of the contents of your repository, you can use server-side encryption with KMSlong key stored in KMSlong (KMS) to encrypt your images. For more information, see [Amazon ECR encryption at rest](https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html) in the *Amazon Elastic Container Registry User Guide*.
+    encryption_configuration: Any = None
+    # The tag mutability setting for the repository. If this parameter is omitted, the default setting of ``MUTABLE`` will be used which will allow image tags to be overwritten. If ``IMMUTABLE`` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.
+    image_tag_mutability: Any = None
+    # A list of filters that specify which image tags are excluded from the repository creation template's image tag mutability setting.
+    image_tag_mutability_exclusion_filters: Any = None
+    # The lifecycle policy to use for repositories created using the template.
+    lifecycle_policy: Any = None
+    # The repository namespace prefix associated with the repository creation template.
+    prefix: Any = None
+    # The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.
+    repository_policy: Any = None
+    # The metadata to apply to the repository to help you categorize and organize. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    resource_tags: Any = None
+    # The timestamp indicating when the AWS ECR repository creation template was last updated. (AI-inferred)
+    updated_at: Any = None
 
 RepositoryCreationTemplate = ubx.ResourceBinding(
     wire_type="aws_ecr_repository_creation_template",
@@ -47,22 +98,24 @@ RepositoryCreationTemplate = ubx.ResourceBinding(
         "applied_for": ubx.FieldSpec(wire_name="applied_for"),
         "custom_role_arn": ubx.FieldSpec(wire_name="custom_role_arn"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "image_tag_mutability": ubx.FieldSpec(wire_name="image_tag_mutability"),
-        "lifecycle_policy": ubx.FieldSpec(wire_name="lifecycle_policy"),
-        "prefix": ubx.FieldSpec(wire_name="prefix"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "repository_policy": ubx.FieldSpec(wire_name="repository_policy"),
-        "resource_tags": ubx.FieldSpec(wire_name="resource_tags"),
         "encryption_configuration": ubx.FieldSpec(
             wire_name="encryption_configuration",
-            kind="list",
+            kind="object",
             fields=_RepositoryCreationTemplate_EncryptionConfigurationFields,
         ),
-        "image_tag_mutability_exclusion_filter": ubx.FieldSpec(
-            wire_name="image_tag_mutability_exclusion_filter",
+        "image_tag_mutability": ubx.FieldSpec(wire_name="image_tag_mutability"),
+        "image_tag_mutability_exclusion_filters": ubx.FieldSpec(
+            wire_name="image_tag_mutability_exclusion_filters",
             kind="list",
-            fields=_RepositoryCreationTemplate_ImageTagMutabilityExclusionFilterFields,
+            fields=_RepositoryCreationTemplate_ImageTagMutabilityExclusionFiltersFields,
+        ),
+        "lifecycle_policy": ubx.FieldSpec(wire_name="lifecycle_policy"),
+        "prefix": ubx.FieldSpec(wire_name="prefix"),
+        "repository_policy": ubx.FieldSpec(wire_name="repository_policy"),
+        "resource_tags": ubx.FieldSpec(
+            wire_name="resource_tags",
+            kind="list",
+            fields=_RepositoryCreationTemplate_ResourceTagsFields,
         ),
     },
 )

@@ -3,158 +3,237 @@ package ecs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type DaemonTaskDefinition_ContainerDefinition_DependsOn struct {
+type DaemonTaskDefinition_ContainerDefinitions_DependsOn struct {
+	// Specifies the condition (START, COMPLETE, SUCCESS, or HEALTHY) that must be satisfied by the referenced dependency container before this container can start. (AI-inferred)
 	Condition any
+	// The name of the container that this container definition depends on, used in a dependsOn entry to specify the target container for a dependency condition. (AI-inferred)
 	ContainerName any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_Environment struct {
+type DaemonTaskDefinition_ContainerDefinitions_Environment struct {
+	// The `name` attribute of an environment variable entry defines the variable name that will be set inside the container's environment. (AI-inferred)
 	Name any
+	// The value of the environment variable to pass to the container. (AI-inferred)
 	Value any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_EnvironmentFile struct {
+type DaemonTaskDefinition_ContainerDefinitions_EnvironmentFiles struct {
+	// Specifies the source type of the environment file, either 's3' for an Amazon S3 object or 'ssm' for an AWS Systems Manager parameter. (AI-inferred)
 	Type any
+	// For each environment file entry, this is the ARN of the Amazon S3 object that contains the environment variable definitions to be injected into the container. (AI-inferred)
 	Value any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_FirelensConfiguration struct {
+type DaemonTaskDefinition_ContainerDefinitions_FirelensConfiguration struct {
+	// A map of configuration options (e.g., enable-ecs-log-metadata, config-file-type, config-file-value) passed to the Fluent Bit or Fluentd log router when FireLens is configured for the container. (AI-inferred)
 	Options any
+	// Sets which log router (fluentd or fluentbit) the Firelens configuration uses to deliver container logs to the configured destination. (AI-inferred)
 	Type any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_HealthCheck struct {
+type DaemonTaskDefinition_ContainerDefinitions_HealthCheck struct {
+	// The command to run inside the container to check its health, typically a list starting with 'CMD-SHELL' or 'CMD' followed by the executable or shell command and its arguments. (AI-inferred)
 	Command any
+	// Specifies the time period in seconds between each container health check execution for this task definition. (AI-inferred)
 	Interval any
+	// Number of consecutive failed health checks required before the container is considered unhealthy. (AI-inferred)
 	Retries any
+	// The number of seconds after the container starts during which failed health checks do not count toward the maximum number of retries, allowing the container to initialize before health check evaluation begins. (AI-inferred)
 	StartPeriod any
+	// The number of seconds to wait for a health check to return a response before marking the container as unhealthy, with a valid range of 2 to 60 seconds. (AI-inferred)
 	Timeout any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_LinuxParameters_Capabilities struct {
+type DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Capabilities struct {
+	// Specifies the Linux capabilities to add to the container, granting additional kernel permissions beyond the default set. (AI-inferred)
 	Add any
+	// Defines the Linux kernel capabilities that should be removed (dropped) from the container's capability set, reducing its privileges. (AI-inferred)
 	Drop any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_LinuxParameters_Device struct {
+type DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Devices struct {
+	// The path inside the container at which the host device is exposed, as specified in the devices list of LinuxParameters for the container definition. (AI-inferred)
 	ContainerPath any
+	// The path on the host instance of the device to expose to the container. (AI-inferred)
 	HostPath any
+	// Specifies the cgroup permissions (read, write, mknod) to apply to the container device for this device entry in the ECS task definition's Linux parameters. (AI-inferred)
 	Permissions any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_LinuxParameters_Tmpfs struct {
+type DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Tmpfs struct {
+	// The absolute file path inside the container where the tmpfs volume is mounted. (AI-inferred)
 	ContainerPath any
+	// Specifies the mount options (such as 'ro' or 'noexec') for the tmpfs mount in the container's Linux parameters. (AI-inferred)
 	MountOptions any
+	// The size (in MiB) of the tmpfs mount to be used in the container's ephemeral storage. (AI-inferred)
 	Size any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_LinuxParameters struct {
-	InitProcessEnabled any
+type DaemonTaskDefinition_ContainerDefinitions_LinuxParameters struct {
+	// Specifies the Linux capabilities to add or remove from the container's default set, using add and drop lists. (AI-inferred)
 	Capabilities any
-	Device any
+	// Specifies the list of host devices to expose to the container within its Linux parameters, where each device object defines the hostPath, containerPath, and permissions for that device. (AI-inferred)
+	Devices any
+	// Enables the init process (PID 1) inside the container, ensuring that it properly reaps zombie processes and handles signals within the container's namespace. (AI-inferred)
+	InitProcessEnabled any
+	// Defines the tmpfs mount configurations for the container, specifying the container path and mount options (such as size and permissions) for each tmpfs volume. (AI-inferred)
 	Tmpfs any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_LogConfiguration_SecretOption struct {
+type DaemonTaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions struct {
+	// The name (configuration key) of a secret passed to the container's logging driver, whose actual value is retrieved from the AWS Secrets Manager or SSM Parameter Store secret specified in the corresponding valueFrom field. (AI-inferred)
 	Name any
+	// Specifies the ARN of the AWS Secrets Manager secret or SSM Parameter Store parameter from which the container's log driver retrieves the secret value for the given log configuration secret option. (AI-inferred)
 	ValueFrom any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_LogConfiguration struct {
+type DaemonTaskDefinition_ContainerDefinitions_LogConfiguration struct {
+	// Specifies the log driver to use for the container (e.g., awslogs, fluentd, gelf, json-file, journald, logentries, syslog, splunk, awsfirelens), which determines how logs are collected and sent to a destination. (AI-inferred)
 	LogDriver any
+	// Specifies the key-value map of configuration options to pass to the container's log driver, such as awslogs-group, awslogs-region, and awslogs-stream-prefix for the awslogs driver. (AI-inferred)
 	Options any
-	SecretOption any
+	// Specifies a list of secrets to pass to the container's log driver, where each entry consists of the name of the log driver option (as the secret key) and the valueFrom ARN that references the secret in AWS Secrets Manager or AWS Systems Manager Parameter Store. (AI-inferred)
+	SecretOptions any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_MountPoint struct {
+type DaemonTaskDefinition_ContainerDefinitions_MountPoints struct {
+	// The path inside the container at which the volume is mounted, as specified in a mount point for an ECS task definition. (AI-inferred)
 	ContainerPath any
+	// Indicates whether the container's mount point is read-only; when true, the container can only read from the volume, and when false, it has read-write access. (AI-inferred)
 	ReadOnly any
+	// Specifies the name of the volume to mount, which must correspond to a volume defined in the task definition's volumes section. (AI-inferred)
 	SourceVolume any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_RepositoryCredentials struct {
+type DaemonTaskDefinition_ContainerDefinitions_RepositoryCredentials struct {
+	// Specifies the ARN of an AWS Secrets Manager secret or SSM parameter that stores the private repository credentials (username and password) used to authenticate when pulling the container image. (AI-inferred)
 	CredentialsParameter any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_RestartPolicy struct {
+type DaemonTaskDefinition_ContainerDefinitions_RestartPolicy struct {
 	Enabled any
+	// The list of container exit codes that are ignored by the restart policy, meaning if the container exits with one of these codes, it will not be automatically restarted. (AI-inferred)
 	IgnoredExitCodes any
+	// In the restart policy for an ECS container definition, this field sets the time window, in seconds, during which Amazon ECS counts restart attempts against the configured maximum before stopping the container. (AI-inferred)
 	RestartAttemptPeriod any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_SystemControl struct {
+type DaemonTaskDefinition_ContainerDefinitions_SystemControls struct {
+	// The namespaced kernel parameter path (e.g., net.ipv4.ip_forward) that this system control entry sets inside the container. (AI-inferred)
 	Namespace any
+	// The value of the kernel parameter (sysctl setting) to apply inside the container, paired with the namespace in the same system_controls block to customize runtime container networking or other kernel defaults. (AI-inferred)
 	Value any
 }
 
-type DaemonTaskDefinition_ContainerDefinition_Ulimit struct {
+type DaemonTaskDefinition_ContainerDefinitions_Ulimits struct {
+	// The hard limit (maximum value) for the specified ulimit in the container definition, corresponding to the `rlim_max` value used by Docker's `--ulimit` flag. (AI-inferred)
 	HardLimit any
+	// The name of the resource limit to set, such as nofile, nproc, or cpu, defining which ulimit is applied to the container. (AI-inferred)
 	Name any
+	// The soft limit for the specified ulimit, which is the value the kernel enforces for the resource (e.g., file size, open files) in the container. (AI-inferred)
 	SoftLimit any
 }
 
-type DaemonTaskDefinition_ContainerDefinition struct {
+type DaemonTaskDefinition_ContainerDefinitions struct {
+	// Specifies the command to pass to the container, which overrides the default command set in the container image. (AI-inferred)
 	Command any
+	// The number of CPU units reserved for the container, where 1024 CPU units equal one vCPU. (AI-inferred)
 	Cpu any
-	EntryPoint any
-	Essential any
-	Image any
-	Interactive any
-	Memory any
-	MemoryReservation any
-	Name any
-	Privileged any
-	PseudoTerminal any
-	ReadonlyRootFilesystem any
-	StartTimeout any
-	StopTimeout any
-	User any
-	WorkingDirectory any
+	// Specifies the container dependencies for this container, where each dependency defines a container name and a condition (START or COMPLETE) that must be satisfied before this container can start. (AI-inferred)
 	DependsOn any
+	// Overrides the default entry point for the container, specified as a list of command-line arguments that form the ENTRYPOINT instruction (e.g., ['/bin/sh', '-c']). (AI-inferred)
+	EntryPoint any
+	// Defines the environment variables to pass to the container, as a list of key-value pairs (name and value) that the container can access at runtime. (AI-inferred)
 	Environment any
-	EnvironmentFile any
+	// Specifies a list of files (such as those stored in Amazon S3 or AWS Systems Manager Parameter Store) from which environment variables are loaded for the container. (AI-inferred)
+	EnvironmentFiles any
+	// Indicates whether the container is marked as essential; if an essential container stops or fails, the entire task is stopped. (AI-inferred)
+	Essential any
+	// Configures the FireLens log router for this container, specifying the log driver type (fluentd or fluentbit) and its associated options for routing container logs to a downstream processor. (AI-inferred)
 	FirelensConfiguration any
+	// Configures the Docker health check for the container, specifying the command and parameters such as interval, timeout, retries, and start period that Amazon ECS uses to monitor container health. (AI-inferred)
 	HealthCheck any
+	// Specifies the Docker image name and optionally tag or digest (e.g., 'nginx:latest' or '123456789012.dkr.ecr.us-east-1.amazonaws.com/my-app:1.0') that the container will run from in the ECS task definition. (AI-inferred)
+	Image any
+	// Specifies whether the container's standard input remains open, equivalent to the Docker interactive (-i) flag. (AI-inferred)
+	Interactive any
+	// Configures Linux-specific container settings such as kernel capabilities, devices, tmpfs mounts, shared memory size, and whether to run an init process inside the container. (AI-inferred)
 	LinuxParameters any
+	// Specifies the logging configuration for the container, including the log driver to use, its options, and optional secret options. (AI-inferred)
 	LogConfiguration any
-	MountPoint any
+	// The hard memory limit in MiB for the container; if the container exceeds this memory usage, the ECS agent may stop the container. (AI-inferred)
+	Memory any
+	// Specifies the soft memory limit (in MiB) for the container, which may be exceeded if the host has spare memory but triggers OOM or task-idle behavior under memory pressure. (AI-inferred)
+	MemoryReservation any
+	// Specifies which volumes from the task definition to mount into the container, including the container path, source volume, and whether the mount is read-only within each container definition. (AI-inferred)
+	MountPoints any
+	// The name of the container, used to uniquely identify it within the task definition and required for each container definition. (AI-inferred)
+	Name any
+	// Determines whether the container runs in privileged mode, giving it full access to host devices and extended Docker capabilities (equivalent to Docker's --privileged flag). (AI-inferred)
+	Privileged any
+	// Allocates a pseudo-TTY to the container, providing an interactive terminal session (corresponding to Docker's tty option). (AI-inferred)
+	PseudoTerminal any
+	// When set to true, the container's root filesystem is mounted as read-only, preventing the container from writing to its root filesystem. (AI-inferred)
+	ReadonlyRootFilesystem any
+	// Provides the Amazon Resource Name (ARN) of the AWS Secrets Manager secret that stores the private repository credentials used to pull the container image. (AI-inferred)
 	RepositoryCredentials any
+	// Defines the restart policy for the container in the ECS task definition, specifying whether the container is automatically restarted when it exits and the maximum number of restart attempts allowed. (AI-inferred)
 	RestartPolicy any
-	Secret any
-	SystemControl any
-	Ulimit any
+	// Specifies the secrets to inject into the container as environment variables, referencing AWS Systems Manager Parameter Store or AWS Secrets Manager secrets via the valueFrom ARN or name. (AI-inferred)
+	Secrets any
+	// The maximum time in seconds ECS waits for this container to transition from CREATED to RUNNING before stopping the container and failing the task. (AI-inferred)
+	StartTimeout any
+	// Specifies the time (in seconds) to wait for the container to stop gracefully after a stop signal before force-stopping it, overriding the default Docker stop timeout in this container definition. (AI-inferred)
+	StopTimeout any
+	// Specifies a list of Linux kernel system controls (sysctl) for the container, where each entry defines a namespace (e.g., net.core.somaxconn) and a corresponding value to tune kernel parameters. (AI-inferred)
+	SystemControls any
+	// Configures ulimit settings for each container in an ECS daemon task definition, specifying the resource name (e.g., nofile, nproc) and its soft and hard limits. (AI-inferred)
+	Ulimits any
+	// Specifies the user name or UID (and optionally group name or GID) to run the container's process as, overriding the default user defined in the container image. (AI-inferred)
+	User any
+	// Sets the working directory inside the container from which the container's default command is executed. (AI-inferred)
+	WorkingDirectory any
 }
 
-type DaemonTaskDefinition_Volume_Host struct {
+type DaemonTaskDefinition_Tags struct {
+	// The key of a tag assigned to the ECS daemon task definition, used to identify, categorize, and manage the resource. (AI-inferred)
+	Key any
+	Value any
+}
+
+type DaemonTaskDefinition_Volumes_Host struct {
+	// Specifies the absolute path on the container instance host where a bind-mount volume is sourced, used for EC2 launch type tasks when the volume type is 'bind'. (AI-inferred)
 	SourcePath any
 }
 
-type DaemonTaskDefinition_Volume struct {
-	Name any
+type DaemonTaskDefinition_Volumes struct {
+	// For each volume defined in the task definition, the host object configures an Amazon ECS host volume, with the optional sourcePath property specifying the path on the container instance host to mount the volume from. (AI-inferred)
 	Host any
+	// Specifies the name of the volume, which is used to reference this volume from a container definition's mountPoints sourceVolume in the ECS task definition. (AI-inferred)
+	Name any
 }
 
-var DaemonTaskDefinition_ContainerDefinition_DependsOnFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_DependsOnFields = ubx.FieldMap{
 		"Condition": ubx.FieldSpec{WireName: "condition"},
 		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_EnvironmentFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_EnvironmentFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_EnvironmentFileFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_EnvironmentFilesFields = ubx.FieldMap{
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_FirelensConfigurationFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_FirelensConfigurationFields = ubx.FieldMap{
 		"Options": ubx.FieldSpec{WireName: "options"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_HealthCheckFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_HealthCheckFields = ubx.FieldMap{
 		"Command": ubx.FieldSpec{WireName: "command"},
 		"Interval": ubx.FieldSpec{WireName: "interval"},
 		"Retries": ubx.FieldSpec{WireName: "retries"},
@@ -162,212 +241,258 @@ var DaemonTaskDefinition_ContainerDefinition_HealthCheckFields = ubx.FieldMap{
 		"Timeout": ubx.FieldSpec{WireName: "timeout"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_LinuxParameters_CapabilitiesFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_CapabilitiesFields = ubx.FieldMap{
 		"Add": ubx.FieldSpec{WireName: "add"},
 		"Drop": ubx.FieldSpec{WireName: "drop"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_LinuxParameters_DeviceFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_DevicesFields = ubx.FieldMap{
 		"ContainerPath": ubx.FieldSpec{WireName: "container_path"},
 		"HostPath": ubx.FieldSpec{WireName: "host_path"},
 		"Permissions": ubx.FieldSpec{WireName: "permissions"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_LinuxParameters_TmpfsFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_TmpfsFields = ubx.FieldMap{
 		"ContainerPath": ubx.FieldSpec{WireName: "container_path"},
 		"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
 		"Size": ubx.FieldSpec{WireName: "size"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_LinuxParametersFields = ubx.FieldMap{
-		"InitProcessEnabled": ubx.FieldSpec{WireName: "init_process_enabled"},
+var DaemonTaskDefinition_ContainerDefinitions_LinuxParametersFields = ubx.FieldMap{
 		"Capabilities": ubx.FieldSpec{
 			WireName: "capabilities",
-			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_LinuxParameters_CapabilitiesFields,
+			Kind: "object",
+			Fields: DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_CapabilitiesFields,
 		},
-		"Device": ubx.FieldSpec{
-			WireName: "device",
+		"Devices": ubx.FieldSpec{
+			WireName: "devices",
 			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_LinuxParameters_DeviceFields,
+			Fields: DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_DevicesFields,
 		},
+		"InitProcessEnabled": ubx.FieldSpec{WireName: "init_process_enabled"},
 		"Tmpfs": ubx.FieldSpec{
 			WireName: "tmpfs",
 			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_LinuxParameters_TmpfsFields,
+			Fields: DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_TmpfsFields,
 		},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_LogConfiguration_SecretOptionFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptionsFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ValueFrom": ubx.FieldSpec{WireName: "value_from"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_LogConfigurationFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_LogConfigurationFields = ubx.FieldMap{
 		"LogDriver": ubx.FieldSpec{WireName: "log_driver"},
 		"Options": ubx.FieldSpec{WireName: "options"},
-		"SecretOption": ubx.FieldSpec{
-			WireName: "secret_option",
+		"SecretOptions": ubx.FieldSpec{
+			WireName: "secret_options",
 			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_LogConfiguration_SecretOptionFields,
+			Fields: DaemonTaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptionsFields,
 		},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_MountPointFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_MountPointsFields = ubx.FieldMap{
 		"ContainerPath": ubx.FieldSpec{WireName: "container_path"},
 		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
 		"SourceVolume": ubx.FieldSpec{WireName: "source_volume"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_RepositoryCredentialsFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_RepositoryCredentialsFields = ubx.FieldMap{
 		"CredentialsParameter": ubx.FieldSpec{WireName: "credentials_parameter"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_RestartPolicyFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_RestartPolicyFields = ubx.FieldMap{
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"IgnoredExitCodes": ubx.FieldSpec{WireName: "ignored_exit_codes"},
 		"RestartAttemptPeriod": ubx.FieldSpec{WireName: "restart_attempt_period"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_SystemControlFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_SystemControlsFields = ubx.FieldMap{
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinition_UlimitFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitions_UlimitsFields = ubx.FieldMap{
 		"HardLimit": ubx.FieldSpec{WireName: "hard_limit"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SoftLimit": ubx.FieldSpec{WireName: "soft_limit"},
 	}
 
-var DaemonTaskDefinition_ContainerDefinitionFields = ubx.FieldMap{
+var DaemonTaskDefinition_ContainerDefinitionsFields = ubx.FieldMap{
 		"Command": ubx.FieldSpec{WireName: "command"},
 		"Cpu": ubx.FieldSpec{WireName: "cpu"},
+		"DependsOn": ubx.FieldSpec{
+			WireName: "depends_on",
+			Kind: "list",
+			Fields: DaemonTaskDefinition_ContainerDefinitions_DependsOnFields,
+		},
 		"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
+		"Environment": ubx.FieldSpec{
+			WireName: "environment",
+			Kind: "list",
+			Fields: DaemonTaskDefinition_ContainerDefinitions_EnvironmentFields,
+		},
+		"EnvironmentFiles": ubx.FieldSpec{
+			WireName: "environment_files",
+			Kind: "list",
+			Fields: DaemonTaskDefinition_ContainerDefinitions_EnvironmentFilesFields,
+		},
 		"Essential": ubx.FieldSpec{WireName: "essential"},
+		"FirelensConfiguration": ubx.FieldSpec{
+			WireName: "firelens_configuration",
+			Kind: "object",
+			Fields: DaemonTaskDefinition_ContainerDefinitions_FirelensConfigurationFields,
+		},
+		"HealthCheck": ubx.FieldSpec{
+			WireName: "health_check",
+			Kind: "object",
+			Fields: DaemonTaskDefinition_ContainerDefinitions_HealthCheckFields,
+		},
 		"Image": ubx.FieldSpec{WireName: "image"},
 		"Interactive": ubx.FieldSpec{WireName: "interactive"},
+		"LinuxParameters": ubx.FieldSpec{
+			WireName: "linux_parameters",
+			Kind: "object",
+			Fields: DaemonTaskDefinition_ContainerDefinitions_LinuxParametersFields,
+		},
+		"LogConfiguration": ubx.FieldSpec{
+			WireName: "log_configuration",
+			Kind: "object",
+			Fields: DaemonTaskDefinition_ContainerDefinitions_LogConfigurationFields,
+		},
 		"Memory": ubx.FieldSpec{WireName: "memory"},
 		"MemoryReservation": ubx.FieldSpec{WireName: "memory_reservation"},
+		"MountPoints": ubx.FieldSpec{
+			WireName: "mount_points",
+			Kind: "list",
+			Fields: DaemonTaskDefinition_ContainerDefinitions_MountPointsFields,
+		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Privileged": ubx.FieldSpec{WireName: "privileged"},
 		"PseudoTerminal": ubx.FieldSpec{WireName: "pseudo_terminal"},
 		"ReadonlyRootFilesystem": ubx.FieldSpec{WireName: "readonly_root_filesystem"},
-		"StartTimeout": ubx.FieldSpec{WireName: "start_timeout"},
-		"StopTimeout": ubx.FieldSpec{WireName: "stop_timeout"},
-		"User": ubx.FieldSpec{WireName: "user"},
-		"WorkingDirectory": ubx.FieldSpec{WireName: "working_directory"},
-		"DependsOn": ubx.FieldSpec{
-			WireName: "depends_on",
-			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_DependsOnFields,
-		},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "set",
-			Fields: DaemonTaskDefinition_ContainerDefinition_EnvironmentFields,
-		},
-		"EnvironmentFile": ubx.FieldSpec{
-			WireName: "environment_file",
-			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_EnvironmentFileFields,
-		},
-		"FirelensConfiguration": ubx.FieldSpec{
-			WireName: "firelens_configuration",
-			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_FirelensConfigurationFields,
-		},
-		"HealthCheck": ubx.FieldSpec{
-			WireName: "health_check",
-			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_HealthCheckFields,
-		},
-		"LinuxParameters": ubx.FieldSpec{
-			WireName: "linux_parameters",
-			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_LinuxParametersFields,
-		},
-		"LogConfiguration": ubx.FieldSpec{
-			WireName: "log_configuration",
-			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_LogConfigurationFields,
-		},
-		"MountPoint": ubx.FieldSpec{
-			WireName: "mount_point",
-			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_MountPointFields,
-		},
 		"RepositoryCredentials": ubx.FieldSpec{
 			WireName: "repository_credentials",
-			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_RepositoryCredentialsFields,
+			Kind: "object",
+			Fields: DaemonTaskDefinition_ContainerDefinitions_RepositoryCredentialsFields,
 		},
 		"RestartPolicy": ubx.FieldSpec{
 			WireName: "restart_policy",
-			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_RestartPolicyFields,
+			Kind: "object",
+			Fields: DaemonTaskDefinition_ContainerDefinitions_RestartPolicyFields,
 		},
-		"Secret": ubx.FieldSpec{
-			WireName: "secret",
+		"Secrets": ubx.FieldSpec{
+			WireName: "secrets",
 			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_LogConfiguration_SecretOptionFields,
+			Fields: DaemonTaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptionsFields,
 		},
-		"SystemControl": ubx.FieldSpec{
-			WireName: "system_control",
+		"StartTimeout": ubx.FieldSpec{WireName: "start_timeout"},
+		"StopTimeout": ubx.FieldSpec{WireName: "stop_timeout"},
+		"SystemControls": ubx.FieldSpec{
+			WireName: "system_controls",
 			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_SystemControlFields,
+			Fields: DaemonTaskDefinition_ContainerDefinitions_SystemControlsFields,
 		},
-		"Ulimit": ubx.FieldSpec{
-			WireName: "ulimit",
+		"Ulimits": ubx.FieldSpec{
+			WireName: "ulimits",
 			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinition_UlimitFields,
+			Fields: DaemonTaskDefinition_ContainerDefinitions_UlimitsFields,
 		},
+		"User": ubx.FieldSpec{WireName: "user"},
+		"WorkingDirectory": ubx.FieldSpec{WireName: "working_directory"},
 	}
 
-var DaemonTaskDefinition_Volume_HostFields = ubx.FieldMap{
+var DaemonTaskDefinition_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var DaemonTaskDefinition_Volumes_HostFields = ubx.FieldMap{
 		"SourcePath": ubx.FieldSpec{WireName: "source_path"},
 	}
 
-var DaemonTaskDefinition_VolumeFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+var DaemonTaskDefinition_VolumesFields = ubx.FieldMap{
 		"Host": ubx.FieldSpec{
 			WireName: "host",
-			Kind: "list",
-			Fields: DaemonTaskDefinition_Volume_HostFields,
+			Kind: "object",
+			Fields: DaemonTaskDefinition_Volumes_HostFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	}
 
 type DaemonTaskDefinitionConfig struct {
+	// A list of container definitions in JSON format that describe the containers that make up the daemon task.
+	ContainerDefinitions any
+	// The number of CPU units used by the daemon task.
 	Cpu any
+	// The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf.
 	ExecutionRoleArn any
+	// The name of a family that this daemon task definition is registered to.
 	Family any
+	// The IPC namespace mode for the daemon. The valid values are ``none`` and ``shared``. The default is ``none``. If ``none`` is specified or no value is provided, the daemon runs with its own IPC namespace, isolated from other tasks. If ``shared`` is specified, the daemon joins the host IPC namespace, making it accessible to non-daemon tasks that use ``ipcMode: "host"`` or other daemons that use ``ipcMode: "shared"``.
+	IpcMode any
+	// The amount of memory (in MiB) used by the daemon task.
 	Memory any
-	Region any
+	// The PID namespace mode for the daemon. The valid values are ``none`` and ``shared``. The default is ``none``. If ``none`` is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If ``shared`` is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use ``pidMode: "host"`` or other daemons that use ``pidMode: "shared"``.
+	PidMode any
+	// Specifies a list of key-value tag pairs to attach to the ECS task definition, enabling cost allocation and resource grouping. (AI-inferred)
 	Tags any
+	// The short name or full Amazon Resource Name (ARN) of the IAM role that grants containers in the daemon task permission to call Amazon Web Services APIs on your behalf.
 	TaskRoleArn any
-	ContainerDefinition any
-	Volume any
+	// The list of data volume definitions for the daemon task.
+	Volumes any
+}
+
+type DaemonTaskDefinitionAttrs struct {
+	// A list of container definitions in JSON format that describe the containers that make up the daemon task.
+	ContainerDefinitions any
+	// The number of CPU units used by the daemon task.
+	Cpu any
+	// The Amazon Resource Name (ARN) that uniquely identifies this ECS daemon task definition within your AWS account and region. (AI-inferred)
+	DaemonTaskDefinitionArn any
+	// The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf.
+	ExecutionRoleArn any
+	// The name of a family that this daemon task definition is registered to.
+	Family any
+	// The IPC namespace mode for the daemon. The valid values are ``none`` and ``shared``. The default is ``none``. If ``none`` is specified or no value is provided, the daemon runs with its own IPC namespace, isolated from other tasks. If ``shared`` is specified, the daemon joins the host IPC namespace, making it accessible to non-daemon tasks that use ``ipcMode: "host"`` or other daemons that use ``ipcMode: "shared"``.
+	IpcMode any
+	// The amount of memory (in MiB) used by the daemon task.
+	Memory any
+	// The PID namespace mode for the daemon. The valid values are ``none`` and ``shared``. The default is ``none``. If ``none`` is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If ``shared`` is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use ``pidMode: "host"`` or other daemons that use ``pidMode: "shared"``.
+	PidMode any
+	// Specifies a list of key-value tag pairs to attach to the ECS task definition, enabling cost allocation and resource grouping. (AI-inferred)
+	Tags any
+	// The short name or full Amazon Resource Name (ARN) of the IAM role that grants containers in the daemon task permission to call Amazon Web Services APIs on your behalf.
+	TaskRoleArn any
+	// The list of data volume definitions for the daemon task.
+	Volumes any
 }
 
 var DaemonTaskDefinition = ubx.ResourceBinding{
 	WireType: "aws_ecs_daemon_task_definition",
 	Fields: ubx.FieldMap{
+		"ContainerDefinitions": ubx.FieldSpec{
+			WireName: "container_definitions",
+			Kind: "list",
+			Fields: DaemonTaskDefinition_ContainerDefinitionsFields,
+		},
 		"Cpu": ubx.FieldSpec{WireName: "cpu"},
 		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
 		"Family": ubx.FieldSpec{WireName: "family"},
+		"IpcMode": ubx.FieldSpec{WireName: "ipc_mode"},
 		"Memory": ubx.FieldSpec{WireName: "memory"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TaskRoleArn": ubx.FieldSpec{WireName: "task_role_arn"},
-		"ContainerDefinition": ubx.FieldSpec{
-			WireName: "container_definition",
+		"PidMode": ubx.FieldSpec{WireName: "pid_mode"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: DaemonTaskDefinition_ContainerDefinitionFields,
+			Fields: DaemonTaskDefinition_TagsFields,
 		},
-		"Volume": ubx.FieldSpec{
-			WireName: "volume",
-			Kind: "set",
-			Fields: DaemonTaskDefinition_VolumeFields,
+		"TaskRoleArn": ubx.FieldSpec{WireName: "task_role_arn"},
+		"Volumes": ubx.FieldSpec{
+			WireName: "volumes",
+			Kind: "list",
+			Fields: DaemonTaskDefinition_VolumesFields,
 		},
 	},
 }

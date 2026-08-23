@@ -7,42 +7,124 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Vpc_Tags:
+    # This field represents the key of a user-defined tag applied to the VPC, forming the key-value pair in the VPC's tag set. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class Vpc_VpcEncryptionControl_ResourceExclusions_EgressOnlyInternetGateway:
+    # The current state of the exclusion configuration.
+    state: Any = None
+    # A message providing additional information about the exclusion state.
+    state_message: Any = None
+
+@dataclasses.dataclass
+class Vpc_VpcEncryptionControl_ResourceExclusions:
+    # Describes an exclusion configuration for VPC Encryption Control. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
+    egress_only_internet_gateway: Any = None
+    # Describes an exclusion configuration for VPC Encryption Control. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
+    elastic_file_system: Any = None
+    # Describes an exclusion configuration for VPC Encryption Control. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
+    internet_gateway: Any = None
+    # Describes an exclusion configuration for VPC Encryption Control. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
+    lambda_: Any = None
+    # Describes an exclusion configuration for VPC Encryption Control. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
+    nat_gateway: Any = None
+    # Describes an exclusion configuration for VPC Encryption Control. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
+    virtual_private_gateway: Any = None
+    # Describes an exclusion configuration for VPC Encryption Control. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
+    vpc_lattice: Any = None
+    # Describes an exclusion configuration for VPC Encryption Control. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
+    vpc_peering: Any = None
+
+@dataclasses.dataclass
+class Vpc_VpcEncryptionControl:
+    egress_only_internet_gateway_exclusion: Any = None
+    elastic_file_system_exclusion: Any = None
+    internet_gateway_exclusion: Any = None
+    lambda_exclusion: Any = None
+    # The encryption mode for the VPC Encryption Control configuration.
+    mode: Any = None
+    nat_gateway_exclusion: Any = None
+    # Describes the exclusion configurations for various resource types in VPC Encryption Control. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
+    resource_exclusions: Any = None
+    # The current state of the VPC Encryption Control configuration.
+    state: Any = None
+    # A message providing additional information about the encryption control state.
+    state_message: Any = None
+    virtual_private_gateway_exclusion: Any = None
+    # The ID of the VPC Encryption Control configuration.
+    vpc_encryption_control_id: Any = None
+    # The ID of the VPC associated with the encryption control configuration.
+    vpc_id: Any = None
+    vpc_lattice_exclusion: Any = None
+    vpc_peering_exclusion: Any = None
+
+_Vpc_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class VpcConfig:
-    assign_generated_ipv6_cidr_block: Any = None
+    # The IPv4 network range for the VPC, in CIDR notation. For example, ``10.0.0.0/16``. We modify the specified CIDR block to its canonical form; for example, if you specify ``100.68.0.18/18``, we modify it to ``100.68.0.0/18``. You must specify either``CidrBlock`` or ``Ipv4IpamPoolId``.
     cidr_block: Any = None
+    # Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS hostnames; otherwise, they do not. Disabled by default for nondefault VPCs. For more information, see [DNS attributes in your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html#vpc-dns-support). You can only enable DNS hostnames if you've enabled DNS support.
     enable_dns_hostnames: Any = None
+    # Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled. Enabled by default. For more information, see [DNS attributes in your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html#vpc-dns-support).
     enable_dns_support: Any = None
-    enable_network_address_usage_metrics: Any = None
-    id: Any = None
+    # The allowed tenancy of instances launched into the VPC. + ``default``: An instance launched into the VPC runs on shared hardware by default, unless you explicitly specify a different tenancy during instance launch. + ``dedicated``: An instance launched into the VPC runs on dedicated hardware by default, unless you explicitly specify a tenancy of ``host`` during instance launch. You cannot specify a tenancy of ``default`` during instance launch. Updating ``InstanceTenancy`` requires no replacement only if you are updating its value from ``dedicated`` to ``default``. Updating ``InstanceTenancy`` from ``default`` to ``dedicated`` requires replacement.
     instance_tenancy: Any = None
+    # The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see [What is IPAM?](https://docs.aws.amazon.com//vpc/latest/ipam/what-is-it-ipam.html) in the *Amazon VPC IPAM User Guide*. You must specify either``CidrBlock`` or ``Ipv4IpamPoolId``.
     ipv4_ipam_pool_id: Any = None
+    # The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see [What is IPAM?](https://docs.aws.amazon.com//vpc/latest/ipam/what-is-it-ipam.html) in the *Amazon VPC IPAM User Guide*.
     ipv4_netmask_length: Any = None
-    ipv6_cidr_block: Any = None
-    ipv6_cidr_block_network_border_group: Any = None
-    ipv6_ipam_pool_id: Any = None
-    ipv6_netmask_length: Any = None
-    region: Any = None
+    # The tags for the VPC.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class VpcAttrs:
+    # The IPv4 network range for the VPC, in CIDR notation. For example, ``10.0.0.0/16``. We modify the specified CIDR block to its canonical form; for example, if you specify ``100.68.0.18/18``, we modify it to ``100.68.0.0/18``. You must specify either``CidrBlock`` or ``Ipv4IpamPoolId``.
+    cidr_block: Any = None
+    # This computed field contains the list of IPv4 CIDR block associations for the VPC, including the primary CIDR block and any secondary CIDR blocks attached to the VPC. (AI-inferred)
+    cidr_block_associations: Any = None
+    # The ID of the default network ACL that AWS automatically creates for the VPC. (AI-inferred)
+    default_network_acl: Any = None
+    # The ID of the default security group that AWS automatically creates for the VPC. (AI-inferred)
+    default_security_group: Any = None
+    # Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS hostnames; otherwise, they do not. Disabled by default for nondefault VPCs. For more information, see [DNS attributes in your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html#vpc-dns-support). You can only enable DNS hostnames if you've enabled DNS support.
+    enable_dns_hostnames: Any = None
+    # Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled. Enabled by default. For more information, see [DNS attributes in your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html#vpc-dns-support).
+    enable_dns_support: Any = None
+    # The allowed tenancy of instances launched into the VPC. + ``default``: An instance launched into the VPC runs on shared hardware by default, unless you explicitly specify a different tenancy during instance launch. + ``dedicated``: An instance launched into the VPC runs on dedicated hardware by default, unless you explicitly specify a tenancy of ``host`` during instance launch. You cannot specify a tenancy of ``default`` during instance launch. Updating ``InstanceTenancy`` requires no replacement only if you are updating its value from ``dedicated`` to ``default``. Updating ``InstanceTenancy`` from ``default`` to ``dedicated`` requires replacement.
+    instance_tenancy: Any = None
+    # The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see [What is IPAM?](https://docs.aws.amazon.com//vpc/latest/ipam/what-is-it-ipam.html) in the *Amazon VPC IPAM User Guide*. You must specify either``CidrBlock`` or ``Ipv4IpamPoolId``.
+    ipv4_ipam_pool_id: Any = None
+    # The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see [What is IPAM?](https://docs.aws.amazon.com//vpc/latest/ipam/what-is-it-ipam.html) in the *Amazon VPC IPAM User Guide*.
+    ipv4_netmask_length: Any = None
+    # The IPv6 CIDR block(s) assigned to the VPC, computed by AWS and returned as a list of strings. (AI-inferred)
+    ipv6_cidr_blocks: Any = None
+    # The tags for the VPC.
+    tags: Any = None
+    # Describes the configuration and state of VPC encryption controls. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
+    vpc_encryption_control: Any = None
+    # The unique identifier assigned by AWS to the VPC when it is created, used to reference the VPC elsewhere. (AI-inferred)
+    vpc_id: Any = None
 
 Vpc = ubx.ResourceBinding(
     wire_type="aws_vpc",
     fields={
-        "assign_generated_ipv6_cidr_block": ubx.FieldSpec(wire_name="assign_generated_ipv6_cidr_block"),
         "cidr_block": ubx.FieldSpec(wire_name="cidr_block"),
         "enable_dns_hostnames": ubx.FieldSpec(wire_name="enable_dns_hostnames"),
         "enable_dns_support": ubx.FieldSpec(wire_name="enable_dns_support"),
-        "enable_network_address_usage_metrics": ubx.FieldSpec(wire_name="enable_network_address_usage_metrics"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "instance_tenancy": ubx.FieldSpec(wire_name="instance_tenancy"),
         "ipv4_ipam_pool_id": ubx.FieldSpec(wire_name="ipv4_ipam_pool_id"),
         "ipv4_netmask_length": ubx.FieldSpec(wire_name="ipv4_netmask_length"),
-        "ipv6_cidr_block": ubx.FieldSpec(wire_name="ipv6_cidr_block"),
-        "ipv6_cidr_block_network_border_group": ubx.FieldSpec(wire_name="ipv6_cidr_block_network_border_group"),
-        "ipv6_ipam_pool_id": ubx.FieldSpec(wire_name="ipv6_ipam_pool_id"),
-        "ipv6_netmask_length": ubx.FieldSpec(wire_name="ipv6_netmask_length"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Vpc_TagsFields,
+        ),
     },
 )

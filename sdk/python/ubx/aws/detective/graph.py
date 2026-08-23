@@ -7,18 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Graph_Tags:
+    # The key of a tag attached to the Detective graph, used to organize, identify, and manage access to the graph through resource-level permissions and cost allocation. (AI-inferred)
+    key: Any = None
+    # The value of a tag attached to the AWS Detective graph, used to categorize, manage, and control access to the graph alongside other AWS resources. (AI-inferred)
+    value: Any = None
+
+_Graph_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class GraphConfig:
-    id: Any = None
-    region: Any = None
+    # Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.
+    auto_enable_members: Any = None
+    # The list of tags to attach to the Detective graph, where each tag consists of a key and a value to help organize, identify, and manage the resource. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class GraphAttrs:
+    # The Detective graph ARN
+    arn: Any = None
+    # Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.
+    auto_enable_members: Any = None
+    # The list of tags to attach to the Detective graph, where each tag consists of a key and a value to help organize, identify, and manage the resource. (AI-inferred)
+    tags: Any = None
 
 Graph = ubx.ResourceBinding(
     wire_type="aws_detective_graph",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "auto_enable_members": ubx.FieldSpec(wire_name="auto_enable_members"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Graph_TagsFields,
+        ),
     },
 )

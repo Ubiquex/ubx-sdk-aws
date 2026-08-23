@@ -7,19 +7,77 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EnvironmentEc2_Repositories:
+    # The relative path component within the AWS Cloud9 environment where the source repository will be cloned, serving as the directory name for the repository. (AI-inferred)
+    path_component: Any = None
+    # The URL of the source code repository to clone into the Cloud9 environment when the environment is created. (AI-inferred)
+    repository_url: Any = None
+
+@dataclasses.dataclass
+class EnvironmentEc2_Tags:
+    key: Any = None
+    # Specifies the value for a tag key on the AWS Cloud9 EC2 environment, allowing you to add arbitrary metadata for identifying or organizing the environment. (AI-inferred)
+    value: Any = None
+
+_EnvironmentEc2_RepositoriesFields = {
+    "path_component": ubx.FieldSpec(wire_name="path_component"),
+    "repository_url": ubx.FieldSpec(wire_name="repository_url"),
+}
+
+_EnvironmentEc2_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class EnvironmentEc2Config:
+    # The number of minutes of inactivity after which AWS Cloud9 automatically stops the environment's EC2 instance, shutting down the environment when this time is reached. (AI-inferred)
     automatic_stop_time_minutes: Any = None
+    # Specifies whether AWS Cloud9 connects to the environment's Amazon EC2 instance via SSH (CONNECT_SSH, the default) or AWS Systems Manager (CONNECT_SSM). (AI-inferred)
     connection_type: Any = None
+    # An optional description that provides additional non-identifying context about the Cloud9 environment. (AI-inferred)
     description: Any = None
-    id: Any = None
+    # The image_id specifies the Amazon Machine Image (AMI) ID used to launch the Amazon EC2 instance that hosts the Cloud9 environment. (AI-inferred)
     image_id: Any = None
+    # Specifies the EC2 instance type (e.g., t2.micro, m5.large) that the AWS Cloud9 environment runs on, determining the compute and memory resources available. (AI-inferred)
     instance_type: Any = None
+    # Specifies the name of the Cloud9 development environment. (AI-inferred)
     name: Any = None
+    # The Amazon Resource Name (ARN) of the environment owner; if not specified, the environment is owned by the user who created it. (AI-inferred)
     owner_arn: Any = None
-    region: Any = None
+    # A list of repositories to clone into the environment, each containing the repository URL and the path component where it should be cloned. (AI-inferred)
+    repositories: Any = None
+    # The ID of the subnet in which the Cloud9 environment's EC2 instance is launched, allowing the environment to reside in a specific VPC and network configuration. (AI-inferred)
     subnet_id: Any = None
+    # Specifies a list of tag key-value pairs to associate with the Cloud9 EC2 environment. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class EnvironmentEc2Attrs:
+    # The Amazon Resource Name (ARN) of the Cloud9 EC2 development environment. (AI-inferred)
+    arn: Any = None
+    # The number of minutes of inactivity after which AWS Cloud9 automatically stops the environment's EC2 instance, shutting down the environment when this time is reached. (AI-inferred)
+    automatic_stop_time_minutes: Any = None
+    # Specifies whether AWS Cloud9 connects to the environment's Amazon EC2 instance via SSH (CONNECT_SSH, the default) or AWS Systems Manager (CONNECT_SSM). (AI-inferred)
+    connection_type: Any = None
+    # An optional description that provides additional non-identifying context about the Cloud9 environment. (AI-inferred)
+    description: Any = None
+    # The unique identifier assigned by AWS Cloud9 to the environment, such as 'env-1234567890abcdef0'. (AI-inferred)
+    id: Any = None
+    # The image_id specifies the Amazon Machine Image (AMI) ID used to launch the Amazon EC2 instance that hosts the Cloud9 environment. (AI-inferred)
+    image_id: Any = None
+    # Specifies the EC2 instance type (e.g., t2.micro, m5.large) that the AWS Cloud9 environment runs on, determining the compute and memory resources available. (AI-inferred)
+    instance_type: Any = None
+    # Specifies the name of the Cloud9 development environment. (AI-inferred)
+    name: Any = None
+    # The Amazon Resource Name (ARN) of the environment owner; if not specified, the environment is owned by the user who created it. (AI-inferred)
+    owner_arn: Any = None
+    # A list of repositories to clone into the environment, each containing the repository URL and the path component where it should be cloned. (AI-inferred)
+    repositories: Any = None
+    # The ID of the subnet in which the Cloud9 environment's EC2 instance is launched, allowing the environment to reside in a specific VPC and network configuration. (AI-inferred)
+    subnet_id: Any = None
+    # Specifies a list of tag key-value pairs to associate with the Cloud9 EC2 environment. (AI-inferred)
+    tags: Any = None
 
 EnvironmentEc2 = ubx.ResourceBinding(
     wire_type="aws_cloud9_environment_ec2",
@@ -27,14 +85,20 @@ EnvironmentEc2 = ubx.ResourceBinding(
         "automatic_stop_time_minutes": ubx.FieldSpec(wire_name="automatic_stop_time_minutes"),
         "connection_type": ubx.FieldSpec(wire_name="connection_type"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "image_id": ubx.FieldSpec(wire_name="image_id"),
         "instance_type": ubx.FieldSpec(wire_name="instance_type"),
         "name": ubx.FieldSpec(wire_name="name"),
         "owner_arn": ubx.FieldSpec(wire_name="owner_arn"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "repositories": ubx.FieldSpec(
+            wire_name="repositories",
+            kind="list",
+            fields=_EnvironmentEc2_RepositoriesFields,
+        ),
         "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_EnvironmentEc2_TagsFields,
+        ),
     },
 )

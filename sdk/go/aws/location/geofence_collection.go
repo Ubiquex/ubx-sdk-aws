@@ -3,27 +3,53 @@ package location
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type GeofenceCollection_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type GeofenceCollection_Tags struct {
+	// The key of a tag attached to the AWS Location geofence collection, used to label the resource with custom metadata for identification, organization, and access control. (AI-inferred)
+	Key any
+	Value any
 }
 
-var GeofenceCollection_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var GeofenceCollection_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type GeofenceCollectionConfig struct {
+	// The name of the geofence collection, which must be unique within the AWS account and region and serves as the collection's identifier. (AI-inferred)
 	CollectionName any
+	// An optional descriptive text that provides a human-readable overview or purpose of the geofence collection in Amazon Location Service. (AI-inferred)
 	Description any
-	Id any
+	// The identifier (key ID or ARN) of the customer-managed AWS KMS key used to encrypt the geofence collection's data. (AI-inferred)
 	KmsKeyId any
-	Region any
+	// The pricing plan for the geofence collection, which determines the billing model (such as request-based usage) for geofencing operations performed on that collection. (AI-inferred)
+	PricingPlan any
+	// This shape is deprecated since 2022-02-01: Deprecated. No longer allowed.
+	PricingPlanDataSource any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
-	Timeouts any
+}
+
+type GeofenceCollectionAttrs struct {
+	// The unique Amazon Resource Name (ARN) assigned to the geofence collection. (AI-inferred)
+	Arn any
+	// The Amazon Resource Name (ARN) of the geofence collection, which uniquely identifies it within AWS and is assigned by the service when the collection is created. (AI-inferred)
+	CollectionArn any
+	// The name of the geofence collection, which must be unique within the AWS account and region and serves as the collection's identifier. (AI-inferred)
+	CollectionName any
+	// The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
+	CreateTime any
+	// An optional descriptive text that provides a human-readable overview or purpose of the geofence collection in Amazon Location Service. (AI-inferred)
+	Description any
+	// The identifier (key ID or ARN) of the customer-managed AWS KMS key used to encrypt the geofence collection's data. (AI-inferred)
+	KmsKeyId any
+	// The pricing plan for the geofence collection, which determines the billing model (such as request-based usage) for geofencing operations performed on that collection. (AI-inferred)
+	PricingPlan any
+	// This shape is deprecated since 2022-02-01: Deprecated. No longer allowed.
+	PricingPlanDataSource any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+	// The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
+	UpdateTime any
 }
 
 var GeofenceCollection = ubx.ResourceBinding{
@@ -31,15 +57,13 @@ var GeofenceCollection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CollectionName": ubx.FieldSpec{WireName: "collection_name"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: GeofenceCollection_TimeoutsFields,
+		"PricingPlan": ubx.FieldSpec{WireName: "pricing_plan"},
+		"PricingPlanDataSource": ubx.FieldSpec{WireName: "pricing_plan_data_source"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: GeofenceCollection_TagsFields,
 		},
 	},
 }

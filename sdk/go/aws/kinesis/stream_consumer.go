@@ -3,23 +3,51 @@ package kinesis
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamConsumer_Tags struct {
+	// The key of a tag applied to the Kinesis stream consumer, enabling resource identification and attribute-based access control for the consumer. (AI-inferred)
+	Key any
+	// Specifies the value for a tag assigned to the Kinesis stream consumer, used for cost allocation, access control, and metadata organization. (AI-inferred)
+	Value any
+}
+
+var StreamConsumer_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type StreamConsumerConfig struct {
-	Id any
-	Name any
-	Region any
+	// The name of the Kinesis Stream Consumer. For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.
+	ConsumerName any
+	// The Amazon resource name (ARN) of the Kinesis data stream that you want to register the consumer with.
 	StreamArn any
+	// An arbitrary set of tags (key–value pairs) to associate with the Kinesis consumer.
 	Tags any
-	TagsAll any
+}
+
+type StreamConsumerAttrs struct {
+	// The ARN returned by Kinesis Data Streams when you registered the consumer. If you don't know the ARN of the consumer that you want to deregister, you can use the ListStreamConsumers operation to get a list of the descriptions of all the consumers that are currently registered with a given data stream. The description of a consumer contains its ARN.
+	ConsumerArn any
+	// Timestamp when the consumer was created.
+	ConsumerCreationTimestamp any
+	// The name of the Kinesis Stream Consumer. For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.
+	ConsumerName any
+	// A consumer can't read data while in the CREATING or DELETING states. Valid Values: CREATING | DELETING | ACTIVE
+	ConsumerStatus any
+	// The Amazon resource name (ARN) of the Kinesis data stream that you want to register the consumer with.
+	StreamArn any
+	// An arbitrary set of tags (key–value pairs) to associate with the Kinesis consumer.
+	Tags any
 }
 
 var StreamConsumer = ubx.ResourceBinding{
 	WireType: "aws_kinesis_stream_consumer",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"ConsumerName": ubx.FieldSpec{WireName: "consumer_name"},
 		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: StreamConsumer_TagsFields,
+		},
 	},
 }

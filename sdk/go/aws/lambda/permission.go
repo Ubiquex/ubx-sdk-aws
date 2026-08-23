@@ -3,34 +3,48 @@ package lambda
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Permission_Timeouts struct {
-	Create any
-	Delete any
-	Read any
+type PermissionConfig struct {
+	// The action that the principal can use on the function. For example, ``lambda:InvokeFunction`` or ``lambda:GetFunction``.
+	Action any
+	// For Alexa Smart Home functions, a token that the invoker must supply.
+	EventSourceToken any
+	// The name or ARN of the Lambda function, version, or alias. **Name formats** + *Function name* – ``my-function`` (name-only), ``my-function:v1`` (with alias). + *Function ARN* – ``arn:aws:lambda:us-west-2:123456789012:function:my-function``. + *Partial ARN* – ``123456789012:function:my-function``. You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.
+	FunctionName any
+	// The type of authentication that your function URL uses. Set to ``AWS_IAM`` if you want to restrict access to authenticated users only. Set to ``NONE`` if you want to bypass IAM authentication to create a public endpoint. For more information, see [Control access to Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html).
+	FunctionUrlAuthType any
+	// Indicates whether the permission applies when the function is invoked through a function URL.
+	InvokedViaFunctionUrl any
+	// The AWS-service, AWS-account, IAM user, or IAM role that invokes the function. If you specify a service, use ``SourceArn`` or ``SourceAccount`` to limit who can invoke the function through that service.
+	Principal any
+	// The identifier for your organization in AOlong. Use this to grant permissions to all the AWS-accounts under this organization.
+	PrincipalOrgId any
+	// For AWS-service, the ID of the AWS-account that owns the resource. Use this together with ``SourceArn`` to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.
+	SourceAccount any
+	// For AWS-services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic. Note that Lambda configures the comparison using the ``StringLike`` operator.
+	SourceArn any
 }
 
-var Permission_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Read": ubx.FieldSpec{WireName: "read"},
-	}
-
-type PermissionConfig struct {
+type PermissionAttrs struct {
+	// The action that the principal can use on the function. For example, ``lambda:InvokeFunction`` or ``lambda:GetFunction``.
 	Action any
+	// For Alexa Smart Home functions, a token that the invoker must supply.
 	EventSourceToken any
+	// The name or ARN of the Lambda function, version, or alias. **Name formats** + *Function name* – ``my-function`` (name-only), ``my-function:v1`` (with alias). + *Function ARN* – ``arn:aws:lambda:us-west-2:123456789012:function:my-function``. + *Partial ARN* – ``123456789012:function:my-function``. You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.
 	FunctionName any
+	// The type of authentication that your function URL uses. Set to ``AWS_IAM`` if you want to restrict access to authenticated users only. Set to ``NONE`` if you want to bypass IAM authentication to create a public endpoint. For more information, see [Control access to Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html).
 	FunctionUrlAuthType any
+	// The unique identifier for the Lambda permission, typically a combination of the function name and the statement ID. (AI-inferred)
 	Id any
+	// Indicates whether the permission applies when the function is invoked through a function URL.
 	InvokedViaFunctionUrl any
+	// The AWS-service, AWS-account, IAM user, or IAM role that invokes the function. If you specify a service, use ``SourceArn`` or ``SourceAccount`` to limit who can invoke the function through that service.
 	Principal any
+	// The identifier for your organization in AOlong. Use this to grant permissions to all the AWS-accounts under this organization.
 	PrincipalOrgId any
-	Qualifier any
-	Region any
+	// For AWS-service, the ID of the AWS-account that owns the resource. Use this together with ``SourceArn`` to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.
 	SourceAccount any
+	// For AWS-services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic. Note that Lambda configures the comparison using the ``StringLike`` operator.
 	SourceArn any
-	StatementId any
-	StatementIdPrefix any
-	Timeouts any
 }
 
 var Permission = ubx.ResourceBinding{
@@ -40,20 +54,10 @@ var Permission = ubx.ResourceBinding{
 		"EventSourceToken": ubx.FieldSpec{WireName: "event_source_token"},
 		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
 		"FunctionUrlAuthType": ubx.FieldSpec{WireName: "function_url_auth_type"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"InvokedViaFunctionUrl": ubx.FieldSpec{WireName: "invoked_via_function_url"},
 		"Principal": ubx.FieldSpec{WireName: "principal"},
 		"PrincipalOrgId": ubx.FieldSpec{WireName: "principal_org_id"},
-		"Qualifier": ubx.FieldSpec{WireName: "qualifier"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SourceAccount": ubx.FieldSpec{WireName: "source_account"},
 		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
-		"StatementId": ubx.FieldSpec{WireName: "statement_id"},
-		"StatementIdPrefix": ubx.FieldSpec{WireName: "statement_id_prefix"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Permission_TimeoutsFields,
-		},
 	},
 }

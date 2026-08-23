@@ -3,39 +3,48 @@ package scheduler
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ScheduleGroup_Timeouts struct {
-	Create any
-	Delete any
+type ScheduleGroup_Tags struct {
+	// The key portion of a tag attached to an AWS EventBridge Scheduler schedule group, used to identify and organize the resource. (AI-inferred)
+	Key any
+	// The value component of a tag attached to the AWS EventBridge Scheduler schedule group, used to define metadata for the resource. (AI-inferred)
+	Value any
 }
 
-var ScheduleGroup_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var ScheduleGroup_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ScheduleGroupConfig struct {
-	Id any
+	// The name of the schedule group, which must be unique within your AWS account and Region; if omitted, CloudFormation generates a unique name. (AI-inferred)
 	Name any
-	NamePrefix any
-	Region any
+	// The list of tags to associate with the schedule group.
 	Tags any
-	TagsAll any
-	Timeouts any
+}
+
+type ScheduleGroupAttrs struct {
+	// The Amazon Resource Name (ARN) of the schedule group.
+	Arn any
+	// The time at which the schedule group was created.
+	CreationDate any
+	// The time at which the schedule group was last modified.
+	LastModificationDate any
+	// The name of the schedule group, which must be unique within your AWS account and Region; if omitted, CloudFormation generates a unique name. (AI-inferred)
+	Name any
+	// Specifies the state of the schedule group.
+	State any
+	// The list of tags to associate with the schedule group.
+	Tags any
 }
 
 var ScheduleGroup = ubx.ResourceBinding{
 	WireType: "aws_scheduler_schedule_group",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: ScheduleGroup_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ScheduleGroup_TagsFields,
 		},
 	},
 }

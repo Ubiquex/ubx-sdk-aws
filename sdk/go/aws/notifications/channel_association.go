@@ -4,7 +4,16 @@ package notifications
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChannelAssociationConfig struct {
+	// ARN identifier of the channel. Example: arn:aws:chatbot::123456789012:chat-configuration/slack-channel/security-ops
 	Arn any
+	// ARN identifier of the NotificationConfiguration. Example: arn:aws:notifications::123456789012:configuration/a01jes88qxwkbj05xv9c967pgm1
+	NotificationConfigurationArn any
+}
+
+type ChannelAssociationAttrs struct {
+	// ARN identifier of the channel. Example: arn:aws:chatbot::123456789012:chat-configuration/slack-channel/security-ops
+	Arn any
+	// ARN identifier of the NotificationConfiguration. Example: arn:aws:notifications::123456789012:configuration/a01jes88qxwkbj05xv9c967pgm1
 	NotificationConfigurationArn any
 }
 

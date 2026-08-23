@@ -3,24 +3,60 @@ package connect
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RoutingProfile_ManualAssignmentQueueConfigs_QueueReference struct {
+	// Specifies the contact channel (VOICE, CHAT, or TASK) for the queue reference in this manual assignment queue configuration, determining which channel the queue handles for manual assignment in the routing profile. (AI-inferred)
+	Channel any
+	// The Amazon Resource Name (ARN) of the Amazon Connect queue that is included in the routing profile's manual assignment queue configuration, allowing agents to manually assign contacts to that queue. (AI-inferred)
+	QueueArn any
+}
+
+type RoutingProfile_ManualAssignmentQueueConfigs struct {
+	// Specifies the queue and its contact channel (such as VOICE or CHAT) that manual assignment uses to route contacts, containing the queue ID and channel type. (AI-inferred)
+	QueueReference any
+}
+
 type RoutingProfile_MediaConcurrencies_CrossChannelBehavior struct {
+	// Determines whether contacts from other channels are allowed to be routed to the agent while the agent is handling a contact on this media channel, with valid values ALLOW or DENY. (AI-inferred)
 	BehaviorType any
 }
 
 type RoutingProfile_MediaConcurrencies struct {
+	// Specifies the contact channel type (e.g., VOICE, CHAT, or TASK) to which the media concurrency limit applies in the Amazon Connect routing profile. (AI-inferred)
 	Channel any
+	// The maximum number of concurrent contacts of the channel (e.g., VOICE, CHAT) that an agent assigned to this routing profile can handle at the same time. (AI-inferred)
 	Concurrency any
+	// Specifies how contacts from other channels are routed when this channel's concurrency limit is reached, with a `behavior_type` value (`ROUTE_CURRENT_CHANNEL_ONLY` or `ROUTE_ANY_CHANNEL`) controlling whether only the current channel or any channel can be routed to the agent. (AI-inferred)
 	CrossChannelBehavior any
 }
 
 type RoutingProfile_QueueConfigs struct {
-	Channel any
+	// Specifies the delay in seconds that a contact waits in this queue before the routing profile attempts to route the contact to a lower-priority queue (or to an available agent, if no other queues are configured). (AI-inferred)
 	Delay any
+	// The priority assigned to a specific queue in the routing profile, where lower numbers indicate higher routing priority and contact distribution order. (AI-inferred)
 	Priority any
-	QueueArn any
-	QueueId any
-	QueueName any
+	// Specifies the Amazon Connect queue to which this routing profile queue configuration applies, identified by its queue ID or ARN. (AI-inferred)
+	QueueReference any
 }
+
+type RoutingProfile_Tags struct {
+	// The user-defined key of a tag that can be attached to an Amazon Connect routing profile to add custom metadata for resource management and categorization. (AI-inferred)
+	Key any
+	// The value portion of a tag associated with the AWS Connect routing profile, used for resource metadata and categorization. (AI-inferred)
+	Value any
+}
+
+var RoutingProfile_ManualAssignmentQueueConfigs_QueueReferenceFields = ubx.FieldMap{
+		"Channel": ubx.FieldSpec{WireName: "channel"},
+		"QueueArn": ubx.FieldSpec{WireName: "queue_arn"},
+	}
+
+var RoutingProfile_ManualAssignmentQueueConfigsFields = ubx.FieldMap{
+		"QueueReference": ubx.FieldSpec{
+			WireName: "queue_reference",
+			Kind: "object",
+			Fields: RoutingProfile_ManualAssignmentQueueConfigs_QueueReferenceFields,
+		},
+	}
 
 var RoutingProfile_MediaConcurrencies_CrossChannelBehaviorFields = ubx.FieldMap{
 		"BehaviorType": ubx.FieldSpec{WireName: "behavior_type"},
@@ -31,53 +67,97 @@ var RoutingProfile_MediaConcurrenciesFields = ubx.FieldMap{
 		"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
 		"CrossChannelBehavior": ubx.FieldSpec{
 			WireName: "cross_channel_behavior",
-			Kind: "list",
+			Kind: "object",
 			Fields: RoutingProfile_MediaConcurrencies_CrossChannelBehaviorFields,
 		},
 	}
 
 var RoutingProfile_QueueConfigsFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
 		"Delay": ubx.FieldSpec{WireName: "delay"},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"QueueArn": ubx.FieldSpec{WireName: "queue_arn"},
-		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
-		"QueueName": ubx.FieldSpec{WireName: "queue_name"},
+		"QueueReference": ubx.FieldSpec{
+			WireName: "queue_reference",
+			Kind: "object",
+			Fields: RoutingProfile_ManualAssignmentQueueConfigs_QueueReferenceFields,
+		},
+	}
+
+var RoutingProfile_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type RoutingProfileConfig struct {
-	DefaultOutboundQueueId any
+	// Whether agents with this routing profile will have their routing order calculated based on longest idle time or time since their last inbound contact.
+	AgentAvailabilityTimer any
+	// The identifier of the default outbound queue for this routing profile.
+	DefaultOutboundQueueArn any
+	// The description of the routing profile.
 	Description any
-	Id any
-	InstanceId any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
+	// The identifier of the Amazon Connect instance.
+	InstanceArn any
+	// The manual assignment queues to associate with this routing profile.
+	ManualAssignmentQueueConfigs any
+	// The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.
 	MediaConcurrencies any
+	// The name of the routing profile.
+	Name any
+	// The queues to associate with this routing profile.
 	QueueConfigs any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type RoutingProfileAttrs struct {
+	// Whether agents with this routing profile will have their routing order calculated based on longest idle time or time since their last inbound contact.
+	AgentAvailabilityTimer any
+	// The identifier of the default outbound queue for this routing profile.
+	DefaultOutboundQueueArn any
+	// The description of the routing profile.
+	Description any
+	// The identifier of the Amazon Connect instance.
+	InstanceArn any
+	// The manual assignment queues to associate with this routing profile.
+	ManualAssignmentQueueConfigs any
+	// The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.
+	MediaConcurrencies any
+	// The name of the routing profile.
+	Name any
+	// The queues to associate with this routing profile.
+	QueueConfigs any
+	// The Amazon Resource Name (ARN) of the routing profile.
+	RoutingProfileArn any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var RoutingProfile = ubx.ResourceBinding{
 	WireType: "aws_connect_routing_profile",
 	Fields: ubx.FieldMap{
-		"DefaultOutboundQueueId": ubx.FieldSpec{WireName: "default_outbound_queue_id"},
+		"AgentAvailabilityTimer": ubx.FieldSpec{WireName: "agent_availability_timer"},
+		"DefaultOutboundQueueArn": ubx.FieldSpec{WireName: "default_outbound_queue_arn"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+		"ManualAssignmentQueueConfigs": ubx.FieldSpec{
+			WireName: "manual_assignment_queue_configs",
+			Kind: "list",
+			Fields: RoutingProfile_ManualAssignmentQueueConfigsFields,
+		},
 		"MediaConcurrencies": ubx.FieldSpec{
 			WireName: "media_concurrencies",
-			Kind: "set",
+			Kind: "list",
 			Fields: RoutingProfile_MediaConcurrenciesFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"QueueConfigs": ubx.FieldSpec{
 			WireName: "queue_configs",
-			Kind: "set",
+			Kind: "list",
 			Fields: RoutingProfile_QueueConfigsFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: RoutingProfile_TagsFields,
 		},
 	},
 }

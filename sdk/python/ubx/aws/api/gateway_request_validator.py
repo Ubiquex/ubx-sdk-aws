@@ -8,19 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayRequestValidatorConfig:
-    id: Any = None
+    # Specifies the name of the API Gateway request validator for identification; if omitted, API Gateway generates a name. (AI-inferred)
     name: Any = None
-    region: Any = None
+    # The ID of the REST API to which this request validator belongs. (AI-inferred)
     rest_api_id: Any = None
+    # Indicates whether the request validator checks the request body against the configured model schema for the API method. (AI-inferred)
     validate_request_body: Any = None
+    # Indicates whether this request validator validates the query string and header parameters of incoming API requests. (AI-inferred)
+    validate_request_parameters: Any = None
+
+@dataclasses.dataclass
+class GatewayRequestValidatorAttrs:
+    # Specifies the name of the API Gateway request validator for identification; if omitted, API Gateway generates a name. (AI-inferred)
+    name: Any = None
+    # The unique identifier assigned by API Gateway to the request validator, returned after creation. (AI-inferred)
+    request_validator_id: Any = None
+    # The ID of the REST API to which this request validator belongs. (AI-inferred)
+    rest_api_id: Any = None
+    # Indicates whether the request validator checks the request body against the configured model schema for the API method. (AI-inferred)
+    validate_request_body: Any = None
+    # Indicates whether this request validator validates the query string and header parameters of incoming API requests. (AI-inferred)
     validate_request_parameters: Any = None
 
 GatewayRequestValidator = ubx.ResourceBinding(
     wire_type="aws_api_gateway_request_validator",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "rest_api_id": ubx.FieldSpec(wire_name="rest_api_id"),
         "validate_request_body": ubx.FieldSpec(wire_name="validate_request_body"),
         "validate_request_parameters": ubx.FieldSpec(wire_name="validate_request_parameters"),

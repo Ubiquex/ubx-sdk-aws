@@ -2,19 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RemediationConfiguration_ExecutionControls_SsmControls {
-  concurrentExecutionRatePercentage: number;
-  errorPercentage: number;
+  /** Specifies the maximum percentage of remediation actions that can run in parallel for the rule's SSM document, throttling concurrent executions (default is 100). (AI-inferred) */
+  concurrentExecutionRatePercentage?: number | Computed<number>;
+  /** The maximum percentage of remediation actions that are allowed to fail before the remediation action is stopped. (AI-inferred) */
+  errorPercentage?: number | Computed<number>;
 }
 
 export interface RemediationConfiguration_ExecutionControls {
-  ssmControls: RemediationConfiguration_ExecutionControls_SsmControls[];
-}
-
-export interface RemediationConfiguration_Parameter {
-  name: string;
-  resourceValue: string;
-  staticValue: string;
-  staticValues: string[];
+  /** Configures the Systems Manager automation controls for the remediation, specifically the concurrent execution rate and error rate percentages that determine how SSM documents are run. (AI-inferred) */
+  ssmControls?: RemediationConfiguration_ExecutionControls_SsmControls | Computed<RemediationConfiguration_ExecutionControls_SsmControls>;
 }
 
 const RemediationConfiguration_ExecutionControls_SsmControlsFields: FieldMap = {
@@ -25,47 +21,55 @@ const RemediationConfiguration_ExecutionControls_SsmControlsFields: FieldMap = {
 const RemediationConfiguration_ExecutionControlsFields: FieldMap = {
   ssmControls: {
     wireName: "ssm_controls",
-    kind: "list",
+    kind: "object",
     fields: RemediationConfiguration_ExecutionControls_SsmControlsFields,
   },
 };
 
-const RemediationConfiguration_ParameterFields: FieldMap = {
-  name: "name",
-  resourceValue: "resource_value",
-  staticValue: "static_value",
-  staticValues: "static_values",
-};
-
 export interface RemediationConfigurationConfig {
+  /** When set to true, AWS Config automatically executes the remediation action on noncompliant resources associated with the rule; when false, remediation must be invoked manually. (AI-inferred) */
   automatic?: boolean | Computed<boolean>;
+  /** The name of the AWS Config rule for which this remediation configuration is defined, associating the remediation actions with that rule. (AI-inferred) */
   configRuleName: string | Computed<string>;
-  id?: string | Computed<string>;
+  /** Configures the SSM execution controls for the remediation, including the concurrent execution rate percentage and error percentage that limit how many concurrent remediation executions are allowed and the acceptable error rate. (AI-inferred) */
+  executionControls?: RemediationConfiguration_ExecutionControls | Computed<RemediationConfiguration_ExecutionControls>;
+  /** Determines the maximum number of times AWS Config automatically retries the remediation action on a non-compliant resource, with a valid value between 1 and 5. (AI-inferred) */
   maximumAutomaticAttempts?: number | Computed<number>;
-  region?: string | Computed<string>;
+  /** Specifies the set of parameters passed to the AWS Systems Manager automation document that performs the remediation, mapping each parameter name to a static value or a dynamic value derived from the evaluated resource. (AI-inferred) */
+  parameters?: unknown | Computed<unknown>;
+  /** The type of AWS resource (e.g., 'AWS::EC2::Instance') that this Config remediation configuration applies to for automatic remediation actions. (AI-inferred) */
   resourceType?: string | Computed<string>;
+  /** The maximum time, in seconds, during which AWS Config will make automatic remediation attempts for a noncompliant resource before giving up. (AI-inferred) */
   retryAttemptSeconds?: number | Computed<number>;
+  /** The identifier of the remediation target, which is the name of the SSM document or the ARN of the custom action that remediates the noncompliant resource. (AI-inferred) */
   targetId: string | Computed<string>;
+  /** The type of target for the remediation action, which must be set to SSM_DOCUMENT because AWS Config currently supports only SSM Automation documents as remediation targets. (AI-inferred) */
   targetType: string | Computed<string>;
+  /** Specifies the version of the AWS Systems Manager automation document to use for the remediation action; if not provided, the default version of the document is used. (AI-inferred) */
   targetVersion?: string | Computed<string>;
-  executionControls?: RemediationConfiguration_ExecutionControls[] | Computed<RemediationConfiguration_ExecutionControls[]>;
-  parameter?: RemediationConfiguration_Parameter[] | Computed<RemediationConfiguration_Parameter[]>;
 }
 
 export interface RemediationConfigurationAttrs {
-  arn: string;
+  /** When set to true, AWS Config automatically executes the remediation action on noncompliant resources associated with the rule; when false, remediation must be invoked manually. (AI-inferred) */
   automatic: boolean;
+  /** The name of the AWS Config rule for which this remediation configuration is defined, associating the remediation actions with that rule. (AI-inferred) */
   configRuleName: string;
-  id: string;
+  /** Configures the SSM execution controls for the remediation, including the concurrent execution rate percentage and error percentage that limit how many concurrent remediation executions are allowed and the acceptable error rate. (AI-inferred) */
+  executionControls: RemediationConfiguration_ExecutionControls;
+  /** Determines the maximum number of times AWS Config automatically retries the remediation action on a non-compliant resource, with a valid value between 1 and 5. (AI-inferred) */
   maximumAutomaticAttempts: number;
-  region: string;
+  /** Specifies the set of parameters passed to the AWS Systems Manager automation document that performs the remediation, mapping each parameter name to a static value or a dynamic value derived from the evaluated resource. (AI-inferred) */
+  parameters: unknown;
+  /** The type of AWS resource (e.g., 'AWS::EC2::Instance') that this Config remediation configuration applies to for automatic remediation actions. (AI-inferred) */
   resourceType: string;
+  /** The maximum time, in seconds, during which AWS Config will make automatic remediation attempts for a noncompliant resource before giving up. (AI-inferred) */
   retryAttemptSeconds: number;
+  /** The identifier of the remediation target, which is the name of the SSM document or the ARN of the custom action that remediates the noncompliant resource. (AI-inferred) */
   targetId: string;
+  /** The type of target for the remediation action, which must be set to SSM_DOCUMENT because AWS Config currently supports only SSM Automation documents as remediation targets. (AI-inferred) */
   targetType: string;
+  /** Specifies the version of the AWS Systems Manager automation document to use for the remediation action; if not provided, the default version of the document is used. (AI-inferred) */
   targetVersion: string;
-  executionControls: RemediationConfiguration_ExecutionControls[];
-  parameter: RemediationConfiguration_Parameter[];
 }
 
 export const RemediationConfiguration: ResourceBinding<RemediationConfigurationConfig, RemediationConfigurationAttrs> = {
@@ -73,23 +77,17 @@ export const RemediationConfiguration: ResourceBinding<RemediationConfigurationC
   fields: {
     automatic: "automatic",
     configRuleName: "config_rule_name",
-    id: "id",
+    executionControls: {
+      wireName: "execution_controls",
+      kind: "object",
+      fields: RemediationConfiguration_ExecutionControlsFields,
+    },
     maximumAutomaticAttempts: "maximum_automatic_attempts",
-    region: "region",
+    parameters: "parameters",
     resourceType: "resource_type",
     retryAttemptSeconds: "retry_attempt_seconds",
     targetId: "target_id",
     targetType: "target_type",
     targetVersion: "target_version",
-    executionControls: {
-      wireName: "execution_controls",
-      kind: "list",
-      fields: RemediationConfiguration_ExecutionControlsFields,
-    },
-    parameter: {
-      wireName: "parameter",
-      kind: "list",
-      fields: RemediationConfiguration_ParameterFields,
-    },
   },
 };

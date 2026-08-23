@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MaintenanceWindowTarget_Targets:
+    # Specifies the type of target, such as 'InstanceIds' to match EC2 instance IDs or a tag key in the format 'tag:key' to match instances by tag, which determines how the associated Values are interpreted. (AI-inferred)
     key: Any = None
+    # Specifies the values for the maintenance window target key, such as EC2 instance IDs when the key is 'InstanceIds' or resource group names when the key is 'ResourceGroup'. (AI-inferred)
     values: Any = None
 
 _MaintenanceWindowTarget_TargetsFields = {
@@ -18,29 +20,48 @@ _MaintenanceWindowTarget_TargetsFields = {
 
 @dataclasses.dataclass
 class MaintenanceWindowTargetConfig:
+    # A description for the target.
     description: Any = None
-    id: Any = None
+    # The name for the maintenance window target.
     name: Any = None
+    # A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.
     owner_information: Any = None
-    region: Any = None
+    # The type of target that is being registered with the maintenance window.
     resource_type: Any = None
-    window_id: Any = None
+    # The targets to register with the maintenance window.
     targets: Any = None
+    # The ID of the maintenance window to register the target with.
+    window_id: Any = None
+
+@dataclasses.dataclass
+class MaintenanceWindowTargetAttrs:
+    # A description for the target.
+    description: Any = None
+    # The name for the maintenance window target.
+    name: Any = None
+    # A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.
+    owner_information: Any = None
+    # The type of target that is being registered with the maintenance window.
+    resource_type: Any = None
+    # The targets to register with the maintenance window.
+    targets: Any = None
+    # The ID of the maintenance window to register the target with.
+    window_id: Any = None
+    # The ID of the target.
+    window_target_id: Any = None
 
 MaintenanceWindowTarget = ubx.ResourceBinding(
     wire_type="aws_ssm_maintenance_window_target",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "owner_information": ubx.FieldSpec(wire_name="owner_information"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "resource_type": ubx.FieldSpec(wire_name="resource_type"),
-        "window_id": ubx.FieldSpec(wire_name="window_id"),
         "targets": ubx.FieldSpec(
             wire_name="targets",
             kind="list",
             fields=_MaintenanceWindowTarget_TargetsFields,
         ),
+        "window_id": ubx.FieldSpec(wire_name="window_id"),
     },
 )

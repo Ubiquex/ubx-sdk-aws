@@ -4,7 +4,16 @@ package notifications
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationalUnitAssociationConfig struct {
+	// ARN identifier of the NotificationConfiguration. Example: arn:aws:notifications::123456789012:configuration/a01jes88qxwkbj05xv9c967pgm1
 	NotificationConfigurationArn any
+	// The ID of the organizational unit.
+	OrganizationalUnitId any
+}
+
+type OrganizationalUnitAssociationAttrs struct {
+	// ARN identifier of the NotificationConfiguration. Example: arn:aws:notifications::123456789012:configuration/a01jes88qxwkbj05xv9c967pgm1
+	NotificationConfigurationArn any
+	// The ID of the organizational unit.
 	OrganizationalUnitId any
 }
 

@@ -7,20 +7,89 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Protection_ApplicationLayerAutomaticResponseConfiguration_Action:
+    # When present, this marker block selects 'block' as the Shield Advanced automatic application-layer response action, causing the detected malicious request to be blocked. (AI-inferred)
+    block: Any = None
+    # Sets the automatic application-layer DDoS mitigation action to 'Count', causing AWS Shield Advanced to count matching requests without blocking them so you can observe traffic before enforcing a block. (AI-inferred)
+    count: Any = None
+
+@dataclasses.dataclass
+class Protection_ApplicationLayerAutomaticResponseConfiguration:
+    # Specifies the action setting that Shield Advanced should use in the AWS WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the AWS WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource.
+    action: Any = None
+    # Indicates whether automatic application layer DDoS mitigation is enabled for the protection.
+    status: Any = None
+
+@dataclasses.dataclass
+class Protection_Tags:
+    key: Any = None
+    # The value component of a tag key-value pair attached to an AWS Shield Advanced protection resource, used to store metadata such as owner, environment, or cost center for resource organization and identity. (AI-inferred)
+    value: Any = None
+
+_Protection_ApplicationLayerAutomaticResponseConfiguration_ActionFields = {
+    "block": ubx.FieldSpec(wire_name="block"),
+    "count": ubx.FieldSpec(wire_name="count"),
+}
+
+_Protection_ApplicationLayerAutomaticResponseConfigurationFields = {
+    "action": ubx.FieldSpec(
+        wire_name="action",
+        kind="object",
+        fields=_Protection_ApplicationLayerAutomaticResponseConfiguration_ActionFields,
+    ),
+    "status": ubx.FieldSpec(wire_name="status"),
+}
+
+_Protection_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ProtectionConfig:
-    id: Any = None
+    # The automatic application layer DDoS mitigation settings for a Protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks.
+    application_layer_automatic_response_configuration: Any = None
+    # The Amazon Resource Names (ARNs) of the health check to associate with the protection.
+    health_check_arns: Any = None
+    # Friendly name for the Protection.
     name: Any = None
+    # The ARN (Amazon Resource Name) of the resource to be protected.
     resource_arn: Any = None
+    # One or more tag key-value pairs for the Protection object.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class ProtectionAttrs:
+    # The automatic application layer DDoS mitigation settings for a Protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks.
+    application_layer_automatic_response_configuration: Any = None
+    # The Amazon Resource Names (ARNs) of the health check to associate with the protection.
+    health_check_arns: Any = None
+    # Friendly name for the Protection.
+    name: Any = None
+    # The ARN (Amazon Resource Name) of the protection.
+    protection_arn: Any = None
+    # The unique identifier (ID) of the protection.
+    protection_id: Any = None
+    # The ARN (Amazon Resource Name) of the resource to be protected.
+    resource_arn: Any = None
+    # One or more tag key-value pairs for the Protection object.
+    tags: Any = None
 
 Protection = ubx.ResourceBinding(
     wire_type="aws_shield_protection",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
+        "application_layer_automatic_response_configuration": ubx.FieldSpec(
+            wire_name="application_layer_automatic_response_configuration",
+            kind="object",
+            fields=_Protection_ApplicationLayerAutomaticResponseConfigurationFields,
+        ),
+        "health_check_arns": ubx.FieldSpec(wire_name="health_check_arns"),
         "name": ubx.FieldSpec(wire_name="name"),
         "resource_arn": ubx.FieldSpec(wire_name="resource_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Protection_TagsFields,
+        ),
     },
 )

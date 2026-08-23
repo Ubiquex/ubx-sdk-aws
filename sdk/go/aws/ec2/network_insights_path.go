@@ -4,15 +4,28 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkInsightsPath_FilterAtDestination_DestinationPortRange struct {
+	// The inclusive lower bound of the destination port range used to filter network path analysis at the destination endpoint. (AI-inferred)
 	FromPort any
+	// The end (inclusive) of the destination port range used to filter the path analysis at the destination. (AI-inferred)
 	ToPort any
 }
 
 type NetworkInsightsPath_FilterAtDestination struct {
+	// The destination IP address to match when filtering network insights path analysis at the destination. (AI-inferred)
 	DestinationAddress any
-	SourceAddress any
+	// Defines the destination port range (from and to) used to filter the network path analysis at the destination, so only traffic sent to that port range is considered for the path. (AI-inferred)
 	DestinationPortRange any
+	// Specifies the source IPv4 address to match when filtering traffic at the destination endpoint of the network insights path. (AI-inferred)
+	SourceAddress any
+	// The source port range to filter network paths at the destination, specifying which source ports are included in the path analysis when the filter is applied at the destination. (AI-inferred)
 	SourcePortRange any
+}
+
+type NetworkInsightsPath_Tags struct {
+	// The key portion of a user-defined tag applied to the AWS EC2 Network Insights Path, used for resource categorization and access control. (AI-inferred)
+	Key any
+	// The value of a user-defined tag attached to the EC2 Network Insights Path. (AI-inferred)
+	Value any
 }
 
 var NetworkInsightsPath_FilterAtDestination_DestinationPortRangeFields = ubx.FieldMap{
@@ -22,32 +35,74 @@ var NetworkInsightsPath_FilterAtDestination_DestinationPortRangeFields = ubx.Fie
 
 var NetworkInsightsPath_FilterAtDestinationFields = ubx.FieldMap{
 		"DestinationAddress": ubx.FieldSpec{WireName: "destination_address"},
-		"SourceAddress": ubx.FieldSpec{WireName: "source_address"},
 		"DestinationPortRange": ubx.FieldSpec{
 			WireName: "destination_port_range",
-			Kind: "list",
+			Kind: "object",
 			Fields: NetworkInsightsPath_FilterAtDestination_DestinationPortRangeFields,
 		},
+		"SourceAddress": ubx.FieldSpec{WireName: "source_address"},
 		"SourcePortRange": ubx.FieldSpec{
 			WireName: "source_port_range",
-			Kind: "list",
+			Kind: "object",
 			Fields: NetworkInsightsPath_FilterAtDestination_DestinationPortRangeFields,
 		},
 	}
 
+var NetworkInsightsPath_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type NetworkInsightsPathConfig struct {
+	// The ID of the AWS resource that serves as the destination for the network insights path, such as an EC2 instance or network interface, used when specifying the destination by resource ID instead of an IP address. (AI-inferred)
 	Destination any
+	// The IP address of the destination resource used for the network insights path analysis. (AI-inferred)
 	DestinationIp any
+	// The destination port to use for the path analysis when the protocol is TCP or UDP. (AI-inferred)
 	DestinationPort any
-	Id any
-	Protocol any
-	Region any
-	Source any
-	SourceIp any
-	Tags any
-	TagsAll any
+	// Specifies the path filter applied to the destination endpoint, defining the source and destination addresses and port ranges that determine which traffic is analyzed. (AI-inferred)
 	FilterAtDestination any
+	// Specifies the filter conditions (such as source/destination IP addresses and port ranges) to apply to the source endpoint when analyzing the network path. (AI-inferred)
 	FilterAtSource any
+	// Specifies the protocol (e.g., TCP or UDP) that the network insights path will analyze between the source and destination. (AI-inferred)
+	Protocol any
+	// Specifies the ID of the source resource (such as an EC2 instance, network interface, or subnet) from which the network insights path originates. (AI-inferred)
+	Source any
+	// Specifies the source IP address for the network insights path, used to set the origin of the path when the source resource has multiple IPs or when directly specifying an IP source. (AI-inferred)
+	SourceIp any
+	// The tags to attach to the EC2 Network Insights Path, allowing you to organize and identify the path for cost allocation and resource management. (AI-inferred)
+	Tags any
+}
+
+type NetworkInsightsPathAttrs struct {
+	// The date and time when the network insights path was created, returned as a string timestamp. (AI-inferred)
+	CreatedDate any
+	// The ID of the AWS resource that serves as the destination for the network insights path, such as an EC2 instance or network interface, used when specifying the destination by resource ID instead of an IP address. (AI-inferred)
+	Destination any
+	// The ARN of the destination resource for the network insights path, computed by AWS after creation. (AI-inferred)
+	DestinationArn any
+	// The IP address of the destination resource used for the network insights path analysis. (AI-inferred)
+	DestinationIp any
+	// The destination port to use for the path analysis when the protocol is TCP or UDP. (AI-inferred)
+	DestinationPort any
+	// Specifies the path filter applied to the destination endpoint, defining the source and destination addresses and port ranges that determine which traffic is analyzed. (AI-inferred)
+	FilterAtDestination any
+	// Specifies the filter conditions (such as source/destination IP addresses and port ranges) to apply to the source endpoint when analyzing the network path. (AI-inferred)
+	FilterAtSource any
+	// The Amazon Resource Name (ARN) that uniquely identifies the Network Insights Path. (AI-inferred)
+	NetworkInsightsPathArn any
+	// The unique identifier assigned by AWS for this network insights path. (AI-inferred)
+	NetworkInsightsPathId any
+	// Specifies the protocol (e.g., TCP or UDP) that the network insights path will analyze between the source and destination. (AI-inferred)
+	Protocol any
+	// Specifies the ID of the source resource (such as an EC2 instance, network interface, or subnet) from which the network insights path originates. (AI-inferred)
+	Source any
+	// The Amazon Resource Name (ARN) of the source resource in this Network Insights Path, which is automatically resolved from the specified Source property and returned as a read-only attribute. (AI-inferred)
+	SourceArn any
+	// Specifies the source IP address for the network insights path, used to set the origin of the path when the source resource has multiple IPs or when directly specifying an IP source. (AI-inferred)
+	SourceIp any
+	// The tags to attach to the EC2 Network Insights Path, allowing you to organize and identify the path for cost allocation and resource management. (AI-inferred)
+	Tags any
 }
 
 var NetworkInsightsPath = ubx.ResourceBinding{
@@ -56,22 +111,23 @@ var NetworkInsightsPath = ubx.ResourceBinding{
 		"Destination": ubx.FieldSpec{WireName: "destination"},
 		"DestinationIp": ubx.FieldSpec{WireName: "destination_ip"},
 		"DestinationPort": ubx.FieldSpec{WireName: "destination_port"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"SourceIp": ubx.FieldSpec{WireName: "source_ip"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"FilterAtDestination": ubx.FieldSpec{
 			WireName: "filter_at_destination",
-			Kind: "list",
+			Kind: "object",
 			Fields: NetworkInsightsPath_FilterAtDestinationFields,
 		},
 		"FilterAtSource": ubx.FieldSpec{
 			WireName: "filter_at_source",
-			Kind: "list",
+			Kind: "object",
 			Fields: NetworkInsightsPath_FilterAtDestinationFields,
+		},
+		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Source": ubx.FieldSpec{WireName: "source"},
+		"SourceIp": ubx.FieldSpec{WireName: "source_ip"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: NetworkInsightsPath_TagsFields,
 		},
 	},
 }

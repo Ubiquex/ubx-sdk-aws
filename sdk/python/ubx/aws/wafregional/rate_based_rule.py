@@ -7,12 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class RateBasedRule_Predicate:
+class RateBasedRule_MatchPredicates:
+    # The ID of the AWS WAF Regional entity (such as a ByteMatchSet, IPSet, SqlInjectionMatchSet, or XssMatchSet) that this rate-based rule predicate uses to inspect web requests. (AI-inferred)
     data_id: Any = None
+    # Whether the predicate's match condition is inverted, so that a True value causes the rate-based rule to match requests that do NOT satisfy the predicate's criteria (e.g., requests not from the specified IP set), while False matches requests that do satisfy them. (AI-inferred)
     negated: Any = None
+    # The type of the match predicate (e.g., IPMatch, ByteMatch, SqlInjectionMatch), which indicates the kind of pattern to match; for a rate-based rule this is typically IPMatch because the rule matches based on IP addresses. (AI-inferred)
     type: Any = None
 
-_RateBasedRule_PredicateFields = {
+_RateBasedRule_MatchPredicatesFields = {
     "data_id": ubx.FieldSpec(wire_name="data_id"),
     "negated": ubx.FieldSpec(wire_name="negated"),
     "type": ubx.FieldSpec(wire_name="type"),
@@ -20,31 +23,43 @@ _RateBasedRule_PredicateFields = {
 
 @dataclasses.dataclass
 class RateBasedRuleConfig:
-    id: Any = None
+    # Specifies the list of predicates (such as IP match, byte match, SQL injection, or XSS match conditions) that determine which requests are counted toward the rate limit for blocking in this rate-based rule. (AI-inferred)
+    match_predicates: Any = None
+    # The CloudWatch metric name for the rule, which must be unique within the web ACL and is used to monitor the rate-based rule's traffic in CloudWatch. (AI-inferred)
     metric_name: Any = None
+    # The friendly name assigned to the AWS WAF Regional rate-based rule, required to identify the rule in the console and API. (AI-inferred)
     name: Any = None
+    # Specifies the field (always 'IP' for this resource type) that AWS WAF uses to determine the source of web requests for rate limiting, controlling how requests are counted against the rule's rate threshold. (AI-inferred)
     rate_key: Any = None
+    # The maximum number of requests from a single IP address in a 5-minute period that triggers the rate-based rule's action, which for AWS WAF Regional is fixed at 2000. (AI-inferred)
     rate_limit: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    predicate: Any = None
+
+@dataclasses.dataclass
+class RateBasedRuleAttrs:
+    # The unique identifier assigned by AWS WAF Regional to the rate-based rule, used to reference the rule in other resources. (AI-inferred)
+    id: Any = None
+    # Specifies the list of predicates (such as IP match, byte match, SQL injection, or XSS match conditions) that determine which requests are counted toward the rate limit for blocking in this rate-based rule. (AI-inferred)
+    match_predicates: Any = None
+    # The CloudWatch metric name for the rule, which must be unique within the web ACL and is used to monitor the rate-based rule's traffic in CloudWatch. (AI-inferred)
+    metric_name: Any = None
+    # The friendly name assigned to the AWS WAF Regional rate-based rule, required to identify the rule in the console and API. (AI-inferred)
+    name: Any = None
+    # Specifies the field (always 'IP' for this resource type) that AWS WAF uses to determine the source of web requests for rate limiting, controlling how requests are counted against the rule's rate threshold. (AI-inferred)
+    rate_key: Any = None
+    # The maximum number of requests from a single IP address in a 5-minute period that triggers the rate-based rule's action, which for AWS WAF Regional is fixed at 2000. (AI-inferred)
+    rate_limit: Any = None
 
 RateBasedRule = ubx.ResourceBinding(
     wire_type="aws_wafregional_rate_based_rule",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
+        "match_predicates": ubx.FieldSpec(
+            wire_name="match_predicates",
+            kind="list",
+            fields=_RateBasedRule_MatchPredicatesFields,
+        ),
         "metric_name": ubx.FieldSpec(wire_name="metric_name"),
         "name": ubx.FieldSpec(wire_name="name"),
         "rate_key": ubx.FieldSpec(wire_name="rate_key"),
         "rate_limit": ubx.FieldSpec(wire_name="rate_limit"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "predicate": ubx.FieldSpec(
-            wire_name="predicate",
-            kind="set",
-            fields=_RateBasedRule_PredicateFields,
-        ),
     },
 )

@@ -4,24 +4,24 @@ package msk
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServerlessCluster_ClientAuthentication_Sasl_Iam struct {
+	// Enables IAM-based access control for SASL authentication on the MSK Serverless cluster. (AI-inferred)
 	Enabled any
 }
 
 type ServerlessCluster_ClientAuthentication_Sasl struct {
+	// Enables IAM access control for SASL authentication, allowing clients to authenticate to the cluster using AWS Identity and Access Management (IAM) credentials. (AI-inferred)
 	Iam any
 }
 
 type ServerlessCluster_ClientAuthentication struct {
+	// Defines the SASL authentication configuration for the MSK Serverless cluster, which must include the Iam property to enable IAM-based client authentication, as serverless clusters support only IAM as the SASL mechanism. (AI-inferred)
 	Sasl any
 }
 
-type ServerlessCluster_Timeouts struct {
-	Create any
-	Delete any
-}
-
-type ServerlessCluster_VpcConfig struct {
-	SecurityGroupIds any
+type ServerlessCluster_VpcConfigs struct {
+	// A list of security group IDs to associate with the MSK Serverless cluster's elastic network interfaces in the VPC. (AI-inferred)
+	SecurityGroups any
+	// The list of subnet IDs in the customer VPC where the MSK Serverless cluster's network interfaces and broker endpoints are provisioned. (AI-inferred)
 	SubnetIds any
 }
 
@@ -32,7 +32,7 @@ var ServerlessCluster_ClientAuthentication_Sasl_IamFields = ubx.FieldMap{
 var ServerlessCluster_ClientAuthentication_SaslFields = ubx.FieldMap{
 		"Iam": ubx.FieldSpec{
 			WireName: "iam",
-			Kind: "list",
+			Kind: "object",
 			Fields: ServerlessCluster_ClientAuthentication_Sasl_IamFields,
 		},
 	}
@@ -40,54 +40,54 @@ var ServerlessCluster_ClientAuthentication_SaslFields = ubx.FieldMap{
 var ServerlessCluster_ClientAuthenticationFields = ubx.FieldMap{
 		"Sasl": ubx.FieldSpec{
 			WireName: "sasl",
-			Kind: "list",
+			Kind: "object",
 			Fields: ServerlessCluster_ClientAuthentication_SaslFields,
 		},
 	}
 
-var ServerlessCluster_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
-var ServerlessCluster_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+var ServerlessCluster_VpcConfigsFields = ubx.FieldMap{
+		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
 	}
 
 type ServerlessClusterConfig struct {
-	ClusterName any
-	Id any
-	Region any
-	Tags any
-	TagsAll any
+	// Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred)
 	ClientAuthentication any
-	Timeouts any
-	VpcConfig any
+	// The name to assign to the serverless Apache Kafka cluster. (AI-inferred)
+	ClusterName any
+	// A key-value pair to associate with a resource.
+	Tags any
+	// Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred)
+	VpcConfigs any
+}
+
+type ServerlessClusterAttrs struct {
+	// The Amazon Resource Name (ARN) of the serverless cluster. (AI-inferred)
+	Arn any
+	// Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred)
+	ClientAuthentication any
+	// The name to assign to the serverless Apache Kafka cluster. (AI-inferred)
+	ClusterName any
+	// A key-value pair to associate with a resource.
+	Tags any
+	// Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred)
+	VpcConfigs any
 }
 
 var ServerlessCluster = ubx.ResourceBinding{
 	WireType: "aws_msk_serverless_cluster",
 	Fields: ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"ClientAuthentication": ubx.FieldSpec{
 			WireName: "client_authentication",
-			Kind: "list",
+			Kind: "object",
 			Fields: ServerlessCluster_ClientAuthenticationFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: ServerlessCluster_TimeoutsFields,
-		},
-		"VpcConfig": ubx.FieldSpec{
-			WireName: "vpc_config",
+		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"VpcConfigs": ubx.FieldSpec{
+			WireName: "vpc_configs",
 			Kind: "list",
-			Fields: ServerlessCluster_VpcConfigFields,
+			Fields: ServerlessCluster_VpcConfigsFields,
 		},
 	},
 }

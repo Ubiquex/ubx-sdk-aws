@@ -8,10 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TargetAccountConfigurationConfig:
+    # The AWS account ID of the target account.
     account_id: Any = None
+    # The description of the target account.
     description: Any = None
+    # The ID of the experiment template.
     experiment_template_id: Any = None
-    region: Any = None
+    # The Amazon Resource Name (ARN) of an IAM role for the target account.
+    role_arn: Any = None
+
+@dataclasses.dataclass
+class TargetAccountConfigurationAttrs:
+    # The AWS account ID of the target account.
+    account_id: Any = None
+    # The description of the target account.
+    description: Any = None
+    # The ID of the experiment template.
+    experiment_template_id: Any = None
+    # The Amazon Resource Name (ARN) of an IAM role for the target account.
     role_arn: Any = None
 
 TargetAccountConfiguration = ubx.ResourceBinding(
@@ -20,7 +34,6 @@ TargetAccountConfiguration = ubx.ResourceBinding(
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "description": ubx.FieldSpec(wire_name="description"),
         "experiment_template_id": ubx.FieldSpec(wire_name="experiment_template_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "role_arn": ubx.FieldSpec(wire_name="role_arn"),
     },
 )

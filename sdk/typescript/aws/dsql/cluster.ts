@@ -2,19 +2,26 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Cluster_EncryptionDetails {
-  encryptionStatus: string;
-  encryptionType: string;
+  /** The status of encryption for the cluster. */
+  encryptionStatus?: string | Computed<string>;
+  /** The type of encryption that protects data in the cluster. */
+  encryptionType?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the KMS key that encrypts data in the cluster. */
+  kmsKeyArn?: string | Computed<string>;
 }
 
 export interface Cluster_MultiRegionProperties {
-  clusters: string[];
-  witnessRegion: string;
+  /** Specifies the Amazon Resource Names (ARNs) of the linked regional DSQL clusters that form the multi-region cluster. (AI-inferred) */
+  clusters?: string[] | Computed<string[]>;
+  /** The witness region in a multi-region cluster. */
+  witnessRegion?: string | Computed<string>;
 }
 
-export interface Cluster_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Cluster_Tags {
+  /** The key of a tag assigned to the DSQL cluster, used to organize and identify the cluster for management and cost allocation. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value of a user-defined tag attached to the DSQL cluster, used for metadata and cost allocation. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const Cluster_MultiRegionPropertiesFields: FieldMap = {
@@ -22,54 +29,68 @@ const Cluster_MultiRegionPropertiesFields: FieldMap = {
   witnessRegion: "witness_region",
 };
 
-const Cluster_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Cluster_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface ClusterConfig {
+  /** Whether deletion protection is enabled in this cluster. */
   deletionProtectionEnabled?: boolean | Computed<boolean>;
-  forceDestroy?: boolean | Computed<boolean>;
+  /** The KMS key that encrypts data on the cluster. */
   kmsEncryptionKey?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  multiRegionProperties?: Cluster_MultiRegionProperties[] | Computed<Cluster_MultiRegionProperties[]>;
-  timeouts?: Cluster_Timeouts | Computed<Cluster_Timeouts>;
+  /** The Multi-region properties associated to this cluster. */
+  multiRegionProperties?: Cluster_MultiRegionProperties | Computed<Cluster_MultiRegionProperties>;
+  /** The IAM policy applied to the cluster resource. */
+  policyDocument?: string | Computed<string>;
+  tags?: Cluster_Tags[] | Computed<Cluster_Tags[]>;
 }
 
 export interface ClusterAttrs {
-  arn: string;
+  /** The time of when the cluster was created in ISO-8601 format. */
+  creationTime: string;
+  /** Whether deletion protection is enabled in this cluster. */
   deletionProtectionEnabled: boolean;
-  encryptionDetails: Cluster_EncryptionDetails[];
-  forceDestroy: boolean;
+  /** The encryption configuration details for the cluster. */
+  encryptionDetails: Cluster_EncryptionDetails;
+  /** The DSQL cluster endpoint. */
+  endpoint: string;
+  /** The ID of the created cluster. */
   identifier: string;
+  /** The KMS key that encrypts data on the cluster. */
   kmsEncryptionKey: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
+  /** The Multi-region properties associated to this cluster. */
+  multiRegionProperties: Cluster_MultiRegionProperties;
+  /** The IAM policy applied to the cluster resource. */
+  policyDocument: string;
+  /** The version number of the cluster's resource based policy */
+  policyVersion: string;
+  /** The Amazon Resource Name (ARN) for the cluster. */
+  resourceArn: string;
+  /** The status of the cluster. */
+  status: string;
+  tags: Cluster_Tags[];
+  /** The DSQL cluster VPC endpoint. */
+  vpcEndpoint: string;
+  /** The VPC endpoint service name. */
   vpcEndpointServiceName: string;
-  multiRegionProperties: Cluster_MultiRegionProperties[];
-  timeouts: Cluster_Timeouts;
 }
 
 export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
   wireType: "aws_dsql_cluster",
   fields: {
     deletionProtectionEnabled: "deletion_protection_enabled",
-    forceDestroy: "force_destroy",
     kmsEncryptionKey: "kms_encryption_key",
-    region: "region",
-    tags: "tags",
     multiRegionProperties: {
       wireName: "multi_region_properties",
-      kind: "list",
+      kind: "object",
       fields: Cluster_MultiRegionPropertiesFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Cluster_TimeoutsFields,
+    policyDocument: "policy_document",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Cluster_TagsFields,
     },
   },
 };

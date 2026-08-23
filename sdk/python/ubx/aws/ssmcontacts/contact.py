@@ -7,13 +7,105 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Contact_Plan_Targets_ChannelTargetInfo:
+    # Specifies the Amazon Resource Name (ARN) of the contact channel (such as an email, SMS, or voice channel) that is contacted when this plan target is triggered during an incident. (AI-inferred)
+    channel_id: Any = None
+    # The number of minutes to wait before retrying the contact channel if the previous attempt to reach it fails. (AI-inferred)
+    retry_interval_in_minutes: Any = None
+
+@dataclasses.dataclass
+class Contact_Plan_Targets_ContactTargetInfo:
+    # The Amazon Resource Name (ARN) of the contact that Incident Manager engages when the engagement plan reaches this target. (AI-inferred)
+    contact_id: Any = None
+    # Determines whether this contact is an essential target in the engagement plan, meaning that if this contact does not acknowledge an engagement, the engagement is considered failed. (AI-inferred)
+    is_essential: Any = None
+
+@dataclasses.dataclass
+class Contact_Plan_Targets:
+    # Identifies the contact channel that Incident Manager engages for a given plan target, along with the optional retry interval before escalation within that stage of the contact's engagement plan. (AI-inferred)
+    channel_target_info: Any = None
+    # Specifies the target contact for an engagement plan stage, including the contact's ARN and whether it is an essential target that must acknowledge an incident before escalation proceeds. (AI-inferred)
+    contact_target_info: Any = None
+
+@dataclasses.dataclass
+class Contact_Plan:
+    # The number of minutes to wait for the contact to acknowledge an alert before moving to the next stage of the contact's engagement plan. (AI-inferred)
+    duration_in_minutes: Any = None
+    # The list of Amazon Resource Names (ARNs) of the rotations to include in the contact's plan, defining the rotation schedules used for on-call coverage. (AI-inferred)
+    rotation_ids: Any = None
+    # Specifies the list of targets to engage during a stage of the contact's plan, where each target can be a contact channel (e.g., email, SMS, voice) or another contact, defined using ChannelTargetInfo or ContactTargetInfo. (AI-inferred)
+    targets: Any = None
+
+@dataclasses.dataclass
+class Contact_Tags:
+    key: Any = None
+    # The value of a tag assigned to the SSM Contacts contact, used for categorizing and managing the contact resource. (AI-inferred)
+    value: Any = None
+
+_Contact_Plan_Targets_ChannelTargetInfoFields = {
+    "channel_id": ubx.FieldSpec(wire_name="channel_id"),
+    "retry_interval_in_minutes": ubx.FieldSpec(wire_name="retry_interval_in_minutes"),
+}
+
+_Contact_Plan_Targets_ContactTargetInfoFields = {
+    "contact_id": ubx.FieldSpec(wire_name="contact_id"),
+    "is_essential": ubx.FieldSpec(wire_name="is_essential"),
+}
+
+_Contact_Plan_TargetsFields = {
+    "channel_target_info": ubx.FieldSpec(
+        wire_name="channel_target_info",
+        kind="object",
+        fields=_Contact_Plan_Targets_ChannelTargetInfoFields,
+    ),
+    "contact_target_info": ubx.FieldSpec(
+        wire_name="contact_target_info",
+        kind="object",
+        fields=_Contact_Plan_Targets_ContactTargetInfoFields,
+    ),
+}
+
+_Contact_PlanFields = {
+    "duration_in_minutes": ubx.FieldSpec(wire_name="duration_in_minutes"),
+    "rotation_ids": ubx.FieldSpec(wire_name="rotation_ids"),
+    "targets": ubx.FieldSpec(
+        wire_name="targets",
+        kind="list",
+        fields=_Contact_Plan_TargetsFields,
+    ),
+}
+
+_Contact_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class ContactConfig:
+    # Alias of the contact. String value with 20 to 256 characters. Only alphabetical, numeric characters, dash, or underscore allowed.
     alias: Any = None
+    # Name of the contact. String value with 3 to 256 characters. Only alphabetical, space, numeric characters, dash, or underscore allowed.
     display_name: Any = None
-    id: Any = None
-    region: Any = None
+    # The stages that an escalation plan or engagement plan engages contacts and contact methods in.
+    plan: Any = None
+    # Specifies a list of key-value tag objects to associate with the contact for resource identification and cost tracking. (AI-inferred)
     tags: Any = None
-    tags_all: Any = None
+    # Contact type, which specify type of contact. Currently supported values: “PERSONAL”, “SHARED”, “OTHER“.
+    type: Any = None
+
+@dataclasses.dataclass
+class ContactAttrs:
+    # Alias of the contact. String value with 20 to 256 characters. Only alphabetical, numeric characters, dash, or underscore allowed.
+    alias: Any = None
+    # The Amazon Resource Name (ARN) of the contact.
+    arn: Any = None
+    # Name of the contact. String value with 3 to 256 characters. Only alphabetical, space, numeric characters, dash, or underscore allowed.
+    display_name: Any = None
+    # The stages that an escalation plan or engagement plan engages contacts and contact methods in.
+    plan: Any = None
+    # Specifies a list of key-value tag objects to associate with the contact for resource identification and cost tracking. (AI-inferred)
+    tags: Any = None
+    # Contact type, which specify type of contact. Currently supported values: “PERSONAL”, “SHARED”, “OTHER“.
     type: Any = None
 
 Contact = ubx.ResourceBinding(
@@ -21,10 +113,16 @@ Contact = ubx.ResourceBinding(
     fields={
         "alias": ubx.FieldSpec(wire_name="alias"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "plan": ubx.FieldSpec(
+            wire_name="plan",
+            kind="list",
+            fields=_Contact_PlanFields,
+        ),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Contact_TagsFields,
+        ),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

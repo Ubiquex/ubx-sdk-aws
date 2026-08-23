@@ -3,17 +3,90 @@ package transfer
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Agreement_CustomDirectories struct {
+	// Specifies a location to store the failed files for an AS2 message.
+	FailedFilesDirectory any
+	// Specifies a location to store the MDN file for an AS2 message.
+	MdnFilesDirectory any
+	// Specifies a location to store the payload file for an AS2 message.
+	PayloadFilesDirectory any
+	// Specifies a location to store the status file for an AS2 message.
+	StatusFilesDirectory any
+	// Specifies a location to store the temporary processing file for an AS2 message.
+	TemporaryFilesDirectory any
+}
+
+type Agreement_Tags struct {
+	// The key of a tag attached to an AWS Transfer Family agreement, used to categorize or identify the resource. (AI-inferred)
+	Key any
+	Value any
+}
+
+var Agreement_CustomDirectoriesFields = ubx.FieldMap{
+		"FailedFilesDirectory": ubx.FieldSpec{WireName: "failed_files_directory"},
+		"MdnFilesDirectory": ubx.FieldSpec{WireName: "mdn_files_directory"},
+		"PayloadFilesDirectory": ubx.FieldSpec{WireName: "payload_files_directory"},
+		"StatusFilesDirectory": ubx.FieldSpec{WireName: "status_files_directory"},
+		"TemporaryFilesDirectory": ubx.FieldSpec{WireName: "temporary_files_directory"},
+	}
+
+var Agreement_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type AgreementConfig struct {
+	// Specifies the access role for the agreement.
 	AccessRole any
+	// Specifies the base directory for the agreement.
 	BaseDirectory any
+	// Specifies a separate directory for each type of file to store for an AS2 message.
+	CustomDirectories any
+	// A textual description for the agreement.
 	Description any
-	Id any
+	// Specifies whether to enforce an AS2 message is signed for this agreement.
+	EnforceMessageSigning any
+	// A unique identifier for the local profile.
 	LocalProfileId any
+	// A unique identifier for the partner profile.
 	PartnerProfileId any
-	Region any
+	// Specifies whether to preserve the filename received for this agreement.
+	PreserveFilename any
+	// A unique identifier for the server.
 	ServerId any
+	// Specifies the status of the agreement.
+	Status any
+	// Key-value pairs that can be used to group and search for agreements. Tags are metadata attached to agreements for any purpose.
 	Tags any
-	TagsAll any
+}
+
+type AgreementAttrs struct {
+	// Specifies the access role for the agreement.
+	AccessRole any
+	// A unique identifier for the agreement.
+	AgreementId any
+	// Specifies the unique Amazon Resource Name (ARN) for the agreement.
+	Arn any
+	// Specifies the base directory for the agreement.
+	BaseDirectory any
+	// Specifies a separate directory for each type of file to store for an AS2 message.
+	CustomDirectories any
+	// A textual description for the agreement.
+	Description any
+	// Specifies whether to enforce an AS2 message is signed for this agreement.
+	EnforceMessageSigning any
+	// A unique identifier for the local profile.
+	LocalProfileId any
+	// A unique identifier for the partner profile.
+	PartnerProfileId any
+	// Specifies whether to preserve the filename received for this agreement.
+	PreserveFilename any
+	// A unique identifier for the server.
+	ServerId any
+	// Specifies the status of the agreement.
+	Status any
+	// Key-value pairs that can be used to group and search for agreements. Tags are metadata attached to agreements for any purpose.
+	Tags any
 }
 
 var Agreement = ubx.ResourceBinding{
@@ -21,13 +94,22 @@ var Agreement = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessRole": ubx.FieldSpec{WireName: "access_role"},
 		"BaseDirectory": ubx.FieldSpec{WireName: "base_directory"},
+		"CustomDirectories": ubx.FieldSpec{
+			WireName: "custom_directories",
+			Kind: "object",
+			Fields: Agreement_CustomDirectoriesFields,
+		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"EnforceMessageSigning": ubx.FieldSpec{WireName: "enforce_message_signing"},
 		"LocalProfileId": ubx.FieldSpec{WireName: "local_profile_id"},
 		"PartnerProfileId": ubx.FieldSpec{WireName: "partner_profile_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"PreserveFilename": ubx.FieldSpec{WireName: "preserve_filename"},
 		"ServerId": ubx.FieldSpec{WireName: "server_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Agreement_TagsFields,
+		},
 	},
 }

@@ -4,15 +4,23 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ByteMatchSet_ByteMatchTuples_FieldToMatch struct {
+	// The name of the HTTP header to match when the field_to_match type is set to HEADER, such as 'User-Agent' or 'Referer'. (AI-inferred)
 	Data any
+	// The type of the part of the web request to inspect (e.g., HEADER, METHOD, QUERY_STRING, URI, or BODY), which determines how the byte match condition is applied. (AI-inferred)
 	Type any
 }
 
 type ByteMatchSet_ByteMatchTuples struct {
-	PositionalConstraint any
-	TargetString any
-	TextTransformation any
+	// Specifies the part of the web request in which to search for the target string, such as a specific header, query string, URI, or body. (AI-inferred)
 	FieldToMatch any
+	// Specifies how AWS WAF searches for the target string within the text, such as EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, or CONTAINS_WORD. (AI-inferred)
+	PositionalConstraint any
+	// The literal text that AWS WAF searches for in the specified part of the web request; CloudFormation automatically base64-encodes it when calling the WAF API, and non-ASCII characters should be provided via the separate base64 field. (AI-inferred)
+	TargetString any
+	// The Base64-encoded representation of the target string that AWS WAF searches for in web requests, used instead of the plain-text target_string when the match content is binary or contains non-printable characters. (AI-inferred)
+	TargetStringBase64 any
+	// Specifies how AWS WAF transforms the request text before evaluating it against the byte match tuple, such as converting to lowercase, decoding HTML entities, or compressing white space. (AI-inferred)
+	TextTransformation any
 }
 
 var ByteMatchSet_ByteMatchTuples_FieldToMatchFields = ubx.FieldMap{
@@ -21,31 +29,41 @@ var ByteMatchSet_ByteMatchTuples_FieldToMatchFields = ubx.FieldMap{
 	}
 
 var ByteMatchSet_ByteMatchTuplesFields = ubx.FieldMap{
-		"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
-		"TargetString": ubx.FieldSpec{WireName: "target_string"},
-		"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
 		"FieldToMatch": ubx.FieldSpec{
 			WireName: "field_to_match",
-			Kind: "list",
+			Kind: "object",
 			Fields: ByteMatchSet_ByteMatchTuples_FieldToMatchFields,
 		},
+		"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
+		"TargetString": ubx.FieldSpec{WireName: "target_string"},
+		"TargetStringBase64": ubx.FieldSpec{WireName: "target_string_base64"},
+		"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
 	}
 
 type ByteMatchSetConfig struct {
-	Id any
-	Name any
+	// Define the set of byte match conditions (e.g., the request part, target string, positional constraint, and text transformation) that determine whether a web request matches this WAF byte match set. (AI-inferred)
 	ByteMatchTuples any
+	// A friendly name or description that identifies the ByteMatchSet, and is required when creating the resource. (AI-inferred)
+	Name any
+}
+
+type ByteMatchSetAttrs struct {
+	// Define the set of byte match conditions (e.g., the request part, target string, positional constraint, and text transformation) that determine whether a web request matches this WAF byte match set. (AI-inferred)
+	ByteMatchTuples any
+	// The unique identifier assigned by AWS WAF to the byte match set, used to reference it in other resources. (AI-inferred)
+	Id any
+	// A friendly name or description that identifies the ByteMatchSet, and is required when creating the resource. (AI-inferred)
+	Name any
 }
 
 var ByteMatchSet = ubx.ResourceBinding{
 	WireType: "aws_waf_byte_match_set",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"ByteMatchTuples": ubx.FieldSpec{
 			WireName: "byte_match_tuples",
-			Kind: "set",
+			Kind: "list",
 			Fields: ByteMatchSet_ByteMatchTuplesFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

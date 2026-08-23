@@ -3,14 +3,42 @@ package transfer
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Profile_Tags struct {
+	// A user-defined string that serves as the key in a tag attached to an AWS Transfer Family profile, enabling resource categorization and cost allocation. (AI-inferred)
+	Key any
+	// Specifies the value part of a tag attached to this AWS Transfer Family profile, allowing you to categorize and manage the profile with custom metadata. (AI-inferred)
+	Value any
+}
+
+var Profile_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ProfileConfig struct {
+	// AS2 identifier agreed with a trading partner.
 	As2Id any
+	// List of the certificate IDs associated with this profile to be used for encryption and signing of AS2 messages.
 	CertificateIds any
-	Id any
+	// Enum specifying whether the profile is local or associated with a trading partner.
 	ProfileType any
-	Region any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
+}
+
+type ProfileAttrs struct {
+	// Specifies the unique Amazon Resource Name (ARN) for the profile.
+	Arn any
+	// AS2 identifier agreed with a trading partner.
+	As2Id any
+	// List of the certificate IDs associated with this profile to be used for encryption and signing of AS2 messages.
+	CertificateIds any
+	// A unique identifier for the profile
+	ProfileId any
+	// Enum specifying whether the profile is local or associated with a trading partner.
+	ProfileType any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Profile = ubx.ResourceBinding{
@@ -18,10 +46,11 @@ var Profile = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"As2Id": ubx.FieldSpec{WireName: "as2_id"},
 		"CertificateIds": ubx.FieldSpec{WireName: "certificate_ids"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"ProfileType": ubx.FieldSpec{WireName: "profile_type"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Profile_TagsFields,
+		},
 	},
 }

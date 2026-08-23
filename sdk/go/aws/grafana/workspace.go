@@ -4,17 +4,64 @@ package grafana
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workspace_NetworkAccessControl struct {
+	// The list of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified are allowed to access your workspace. If the list is not included in the configuration then no IP addresses will be allowed to access the workspace.
 	PrefixListIds any
+	// The list of Amazon VPC endpoint IDs for the workspace. If a NetworkAccessConfiguration is specified then only VPC endpoints specified here will be allowed to access the workspace.
 	VpceIds any
 }
 
-type Workspace_Timeouts struct {
-	Create any
-	Update any
+type Workspace_SamlConfiguration_AssertionAttributes struct {
+	// Name of the attribute within the SAML assert to use as the users email in Grafana.
+	Email any
+	// Name of the attribute within the SAML assert to use as the users groups in Grafana.
+	Groups any
+	// Name of the attribute within the SAML assert to use as the users login handle in Grafana.
+	Login any
+	// Name of the attribute within the SAML assert to use as the users name in Grafana.
+	Name any
+	// Name of the attribute within the SAML assert to use as the users organizations in Grafana.
+	Org any
+	// Name of the attribute within the SAML assert to use as the users roles in Grafana.
+	Role any
+}
+
+type Workspace_SamlConfiguration_IdpMetadata struct {
+	// URL that vends the IdPs metadata.
+	Url any
+	// XML blob of the IdPs metadata.
+	Xml any
+}
+
+type Workspace_SamlConfiguration_RoleValues struct {
+	// List of SAML roles which will be mapped into the Grafana Admin role.
+	Admin any
+	// List of SAML roles which will be mapped into the Grafana Editor role.
+	Editor any
+}
+
+type Workspace_SamlConfiguration struct {
+	// List of SAML organizations allowed to access Grafana.
+	AllowedOrganizations any
+	// Maps Grafana friendly names to the IdPs SAML attributes.
+	AssertionAttributes any
+	// IdP Metadata used to configure SAML authentication in Grafana.
+	IdpMetadata any
+	// The maximum lifetime an authenticated user can be logged in (in minutes) before being required to re-authenticate.
+	LoginValidityDuration any
+	// Maps SAML roles to the Grafana Editor and Admin roles.
+	RoleValues any
+}
+
+type Workspace_Tags struct {
+	Key any
+	// The value assigned to a tag key for the Grafana workspace, used to categorize, organize, and track the resource for cost and management purposes. (AI-inferred)
+	Value any
 }
 
 type Workspace_VpcConfiguration struct {
+	// The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.
 	SecurityGroupIds any
+	// The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.
 	SubnetIds any
 }
 
@@ -23,9 +70,48 @@ var Workspace_NetworkAccessControlFields = ubx.FieldMap{
 		"VpceIds": ubx.FieldSpec{WireName: "vpce_ids"},
 	}
 
-var Workspace_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Workspace_SamlConfiguration_AssertionAttributesFields = ubx.FieldMap{
+		"Email": ubx.FieldSpec{WireName: "email"},
+		"Groups": ubx.FieldSpec{WireName: "groups"},
+		"Login": ubx.FieldSpec{WireName: "login"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Org": ubx.FieldSpec{WireName: "org"},
+		"Role": ubx.FieldSpec{WireName: "role"},
+	}
+
+var Workspace_SamlConfiguration_IdpMetadataFields = ubx.FieldMap{
+		"Url": ubx.FieldSpec{WireName: "url"},
+		"Xml": ubx.FieldSpec{WireName: "xml"},
+	}
+
+var Workspace_SamlConfiguration_RoleValuesFields = ubx.FieldMap{
+		"Admin": ubx.FieldSpec{WireName: "admin"},
+		"Editor": ubx.FieldSpec{WireName: "editor"},
+	}
+
+var Workspace_SamlConfigurationFields = ubx.FieldMap{
+		"AllowedOrganizations": ubx.FieldSpec{WireName: "allowed_organizations"},
+		"AssertionAttributes": ubx.FieldSpec{
+			WireName: "assertion_attributes",
+			Kind: "object",
+			Fields: Workspace_SamlConfiguration_AssertionAttributesFields,
+		},
+		"IdpMetadata": ubx.FieldSpec{
+			WireName: "idp_metadata",
+			Kind: "object",
+			Fields: Workspace_SamlConfiguration_IdpMetadataFields,
+		},
+		"LoginValidityDuration": ubx.FieldSpec{WireName: "login_validity_duration"},
+		"RoleValues": ubx.FieldSpec{
+			WireName: "role_values",
+			Kind: "object",
+			Fields: Workspace_SamlConfiguration_RoleValuesFields,
+		},
+	}
+
+var Workspace_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 var Workspace_VpcConfigurationFields = ubx.FieldMap{
@@ -34,26 +120,94 @@ var Workspace_VpcConfigurationFields = ubx.FieldMap{
 	}
 
 type WorkspaceConfig struct {
+	// These enums represent valid account access types. Specifically these enums determine whether the workspace can access AWS resources in the AWS account only, or whether it can also access resources in other accounts in the same organization. If the value CURRENT_ACCOUNT is used, a workspace role ARN must be provided. If the value is ORGANIZATION, a list of organizational units must be provided.
 	AccountAccessType any
+	// List of authentication providers to enable.
 	AuthenticationProviders any
-	Configuration any
+	// A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+	ClientToken any
+	// List of data sources on the service managed IAM role.
 	DataSources any
+	// Description of a workspace.
 	Description any
+	// The version of Grafana to support in your workspace.
 	GrafanaVersion any
-	Id any
-	KmsKeyId any
+	// The user friendly name of a workspace.
 	Name any
-	NotificationDestinations any
-	OrganizationRoleName any
-	OrganizationalUnits any
-	PermissionType any
-	Region any
-	RoleArn any
-	StackSetName any
-	Tags any
-	TagsAll any
+	// The configuration settings for Network Access Control.
 	NetworkAccessControl any
-	Timeouts any
+	// List of notification destinations on the customers service managed IAM role that the Grafana workspace can query.
+	NotificationDestinations any
+	// The name of an IAM role that already exists to use with AWS Organizations to access AWS data sources and notification channels in other accounts in an organization.
+	OrganizationRoleName any
+	// List of Organizational Units containing AWS accounts the Grafana workspace can pull data from.
+	OrganizationalUnits any
+	// These enums represent valid permission types to use when creating or configuring a Grafana workspace. The SERVICE_MANAGED permission type means the Managed Grafana service will create a workspace IAM role on your behalf. The CUSTOMER_MANAGED permission type means that the customer is expected to provide an IAM role that the Grafana workspace can use to query data sources.
+	PermissionType any
+	// Allow workspace admins to install plugins
+	PluginAdminEnabled any
+	// IAM Role that will be used to grant the Grafana workspace access to a customers AWS resources.
+	RoleArn any
+	// SAML configuration data associated with an AMG workspace.
+	SamlConfiguration any
+	// The name of the AWS CloudFormation stack set to use to generate IAM roles to be used for this workspace.
+	StackSetName any
+	// The list of tags associated with the workspace.
+	Tags any
+	// The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+	VpcConfiguration any
+}
+
+type WorkspaceAttrs struct {
+	// These enums represent valid account access types. Specifically these enums determine whether the workspace can access AWS resources in the AWS account only, or whether it can also access resources in other accounts in the same organization. If the value CURRENT_ACCOUNT is used, a workspace role ARN must be provided. If the value is ORGANIZATION, a list of organizational units must be provided.
+	AccountAccessType any
+	// List of authentication providers to enable.
+	AuthenticationProviders any
+	// A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+	ClientToken any
+	// Timestamp when the workspace was created.
+	CreationTimestamp any
+	// List of data sources on the service managed IAM role.
+	DataSources any
+	// Description of a workspace.
+	Description any
+	// Endpoint for the Grafana workspace.
+	Endpoint any
+	// The version of Grafana to support in your workspace.
+	GrafanaVersion any
+	// The id that uniquely identifies a Grafana workspace.
+	Id any
+	// Timestamp when the workspace was last modified
+	ModificationTimestamp any
+	// The user friendly name of a workspace.
+	Name any
+	// The configuration settings for Network Access Control.
+	NetworkAccessControl any
+	// List of notification destinations on the customers service managed IAM role that the Grafana workspace can query.
+	NotificationDestinations any
+	// The name of an IAM role that already exists to use with AWS Organizations to access AWS data sources and notification channels in other accounts in an organization.
+	OrganizationRoleName any
+	// List of Organizational Units containing AWS accounts the Grafana workspace can pull data from.
+	OrganizationalUnits any
+	// These enums represent valid permission types to use when creating or configuring a Grafana workspace. The SERVICE_MANAGED permission type means the Managed Grafana service will create a workspace IAM role on your behalf. The CUSTOMER_MANAGED permission type means that the customer is expected to provide an IAM role that the Grafana workspace can use to query data sources.
+	PermissionType any
+	// Allow workspace admins to install plugins
+	PluginAdminEnabled any
+	// IAM Role that will be used to grant the Grafana workspace access to a customers AWS resources.
+	RoleArn any
+	// SAML configuration data associated with an AMG workspace.
+	SamlConfiguration any
+	// Valid SAML configuration statuses.
+	SamlConfigurationStatus any
+	// The client ID of the AWS SSO Managed Application.
+	SsoClientId any
+	// The name of the AWS CloudFormation stack set to use to generate IAM roles to be used for this workspace.
+	StackSetName any
+	// These enums represent the status of a workspace.
+	Status any
+	// The list of tags associated with the workspace.
+	Tags any
+	// The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
 	VpcConfiguration any
 }
 
@@ -62,35 +216,36 @@ var Workspace = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountAccessType": ubx.FieldSpec{WireName: "account_access_type"},
 		"AuthenticationProviders": ubx.FieldSpec{WireName: "authentication_providers"},
-		"Configuration": ubx.FieldSpec{WireName: "configuration"},
+		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
 		"DataSources": ubx.FieldSpec{WireName: "data_sources"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"GrafanaVersion": ubx.FieldSpec{WireName: "grafana_version"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
+		"NetworkAccessControl": ubx.FieldSpec{
+			WireName: "network_access_control",
+			Kind: "object",
+			Fields: Workspace_NetworkAccessControlFields,
+		},
 		"NotificationDestinations": ubx.FieldSpec{WireName: "notification_destinations"},
 		"OrganizationRoleName": ubx.FieldSpec{WireName: "organization_role_name"},
 		"OrganizationalUnits": ubx.FieldSpec{WireName: "organizational_units"},
 		"PermissionType": ubx.FieldSpec{WireName: "permission_type"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"PluginAdminEnabled": ubx.FieldSpec{WireName: "plugin_admin_enabled"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"StackSetName": ubx.FieldSpec{WireName: "stack_set_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"NetworkAccessControl": ubx.FieldSpec{
-			WireName: "network_access_control",
-			Kind: "list",
-			Fields: Workspace_NetworkAccessControlFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"SamlConfiguration": ubx.FieldSpec{
+			WireName: "saml_configuration",
 			Kind: "object",
-			Fields: Workspace_TimeoutsFields,
+			Fields: Workspace_SamlConfigurationFields,
+		},
+		"StackSetName": ubx.FieldSpec{WireName: "stack_set_name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Workspace_TagsFields,
 		},
 		"VpcConfiguration": ubx.FieldSpec{
 			WireName: "vpc_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Workspace_VpcConfigurationFields,
 		},
 	},

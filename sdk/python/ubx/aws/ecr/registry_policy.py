@@ -8,15 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegistryPolicyConfig:
-    id: Any = None
-    policy: Any = None
-    region: Any = None
+    # The JSON policy text for your registry.
+    policy_text: Any = None
+
+@dataclasses.dataclass
+class RegistryPolicyAttrs:
+    # The JSON policy text for your registry.
+    policy_text: Any = None
+    # The registry id.
+    registry_id: Any = None
 
 RegistryPolicy = ubx.ResourceBinding(
     wire_type="aws_ecr_registry_policy",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "policy": ubx.FieldSpec(wire_name="policy"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "policy_text": ubx.FieldSpec(wire_name="policy_text"),
     },
 )

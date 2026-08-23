@@ -7,198 +7,328 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Service_Alarms:
-    alarm_names: Any = None
-    enable: Any = None
-    rollback: Any = None
-
-@dataclasses.dataclass
 class Service_CapacityProviderStrategy:
+    # The base value designates the minimum number of tasks to run on the specified capacity provider; only one capacity provider in a strategy can have a base defined. (AI-inferred)
     base: Any = None
+    # Specifies the name of the capacity provider (e.g., FARGATE, FARGATE_SPOT, or a custom capacity provider) to use for placing tasks in the ECS service cluster. (AI-inferred)
     capacity_provider: Any = None
+    # The relative weight of the capacity provider in the strategy, which determines the proportion of tasks that are placed on that provider. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
-class Service_DeploymentCircuitBreaker:
+class Service_DeploymentConfiguration_Alarms:
+    # One or more CloudWatch alarm names. Use a "," to separate the alarms.
+    alarm_names: Any = None
+    # Determines whether to use the CloudWatch alarm option in the service deployment process.
     enable: Any = None
+    # Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.
     rollback: Any = None
 
 @dataclasses.dataclass
 class Service_DeploymentConfiguration_CanaryConfiguration:
+    # The amount of time in minutes to wait during the canary phase before shifting the remaining production traffic to the new service revision. Valid values are 0 to 1440 minutes (24 hours). The default value is 10.
     canary_bake_time_in_minutes: Any = None
+    # The percentage of production traffic to shift to the new service revision during the canary phase. Valid values are multiples of 0.1 from 0.1 to 100.0. The default value is 5.0.
     canary_percent: Any = None
 
 @dataclasses.dataclass
-class Service_DeploymentConfiguration_LifecycleHook:
+class Service_DeploymentConfiguration_DeploymentCircuitBreaker_ThresholdConfiguration:
+    # Determines how Amazon ECS uses ``value`` to calculate the failure threshold. For the percentage types (``BOUNDED_PERCENT`` and ``UNBOUNDED_PERCENT``), Amazon ECS multiplies ``value`` by the latest service desired count. For ``COUNT``, Amazon ECS uses ``value`` directly as the threshold. The default is ``BOUNDED_PERCENT``.
+    type: Any = None
+    # Specifies the integer that Amazon ECS uses to calculate the failure threshold. When ``type`` is ``COUNT``, this value is the failure threshold itself. When ``type`` is a percentage type, Amazon ECS multiplies this value by the latest service desired count to produce the failure threshold. The default is ``50``.
+    value: Any = None
+
+@dataclasses.dataclass
+class Service_DeploymentConfiguration_DeploymentCircuitBreaker:
+    # Determines whether to use the deployment circuit breaker logic for the service.
+    enable: Any = None
+    # Specifies whether the deployment circuit breaker resets its failure count when a task reaches a healthy state. When set to ``true``, a task that reaches a healthy state resets the failure count to ``0``. When set to ``false``, Amazon ECS does not reset the failure count. The default is ``true``.
+    reset_on_healthy_task: Any = None
+    # Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.
+    rollback: Any = None
+    # Defines the failure threshold that the deployment circuit breaker uses to monitor a deployment. The ``type`` and ``value`` together determine the number of task failures that are tolerated before the circuit breaker triggers. By default, the threshold configuration uses a ``type`` of ``BOUNDED_PERCENT`` with a ``value`` of ``50``.
+    threshold_configuration: Any = None
+
+@dataclasses.dataclass
+class Service_DeploymentConfiguration_LifecycleHooks_TimeoutConfiguration:
+    action: Any = None
+    # The maximum number of minutes that an Amazon ECS deployment lifecycle hook can remain running before the deployment is considered failed and rolled back, as part of the service's deployment configuration. (AI-inferred)
+    timeout_in_minutes: Any = None
+
+@dataclasses.dataclass
+class Service_DeploymentConfiguration_LifecycleHooks:
     hook_details: Any = None
+    # The ARN of the Lambda function or Amazon ECS task that the deployment lifecycle hook invokes during an Amazon ECS service deployment. (AI-inferred)
     hook_target_arn: Any = None
+    # Lists the deployment lifecycle stages (e.g., PENDING or PRIMARY) during which the ECS service lifecycle hook is invoked. (AI-inferred)
     lifecycle_stages: Any = None
+    # The ARN of the IAM role that Amazon ECS assumes to invoke the target of this deployment lifecycle hook during a service deployment. (AI-inferred)
     role_arn: Any = None
+    # Determines whether the lifecycle hook applies to the task level or the service level, with valid values of TASK and SERVICE, controlling the target scope of the hook during an Amazon ECS deployment. (AI-inferred)
+    target_type: Any = None
+    # Defines the maximum time ECS will wait for the associated lifecycle hook to complete before considering the hook failed and proceeding with the deployment. (AI-inferred)
+    timeout_configuration: Any = None
 
 @dataclasses.dataclass
 class Service_DeploymentConfiguration_LinearConfiguration:
+    # The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100 percent traffic.
     step_bake_time_in_minutes: Any = None
+    # The percentage of production traffic to shift in each step during a linear deployment. Valid values are multiples of 0.1 from 3.0 to 100.0. The default value is 10.0.
     step_percent: Any = None
 
 @dataclasses.dataclass
 class Service_DeploymentConfiguration:
+    # One of the methods which provide a way for you to quickly identify when a deployment has failed, and then to optionally roll back the failure to the last working deployment. When the alarms are generated, Amazon ECS sets the service deployment to failed. Set the rollback parameter to have Amazon ECS to roll back your service to the last completed deployment after a failure. You can only use the ``DeploymentAlarms`` method to detect failures when the ``DeploymentController`` is set to ``ECS``. For more information, see [Rolling update](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html) in the *Amazon Elastic Container Service Developer Guide*.
+    alarms: Any = None
+    # The duration waiting before terminating the previous service revision and marking a deployment complete. The following rules apply when you don't specify a value: + For blue/green, linear, and canary deployments, the value is set to 15 minutes. + For rolling deployments, there is no bake time set by default. + The external deployment controller (``EXTERNAL``) and the ACD blue/green deployment controller (``CODE_DEPLOY``) do not support the ``BakeTimeInMinutes`` parameter. If you provide a bake time for a rolling deployment, the CloudFormation handler timeout is increased to the maximum of 36 hours, matching the timeout for blue/green, linear, and canary deployments.
     bake_time_in_minutes: Any = None
-    strategy: Any = None
+    # Configuration for a canary deployment strategy that shifts a fixed percentage of traffic to the new service revision, waits for a specified bake time, then shifts the remaining traffic. The following validation applies only to Canary deployments created through CFN. CFN operations time out after 36 hours. Canary deployments can approach this limit because of their extended duration. This can cause CFN to roll back the deployment. To prevent timeout-related rollbacks, CFN rejects deployments when the calculated deployment time exceeds 33 hours based on your template configuration: ``BakeTimeInMinutes + CanaryBakeTimeInMinutes`` Additional backend processes (such as task scaling and running lifecycle hooks) can extend deployment time beyond these calculations. Even deployments under the 33-hour threshold might still time out if these processes cause the total duration to exceed 36 hours.
     canary_configuration: Any = None
-    lifecycle_hook: Any = None
+    # The deployment circuit breaker can only be used for services using the rolling update (``ECS``) deployment type. The *deployment circuit breaker* determines whether a service deployment will fail if the service can't reach a steady state. If it is turned on, a service deployment will transition to a failed state and stop launching new tasks. You can also configure Amazon ECS to roll back your service to the last completed deployment after a failure. For more information, see [Rolling update](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html) in the *Amazon Elastic Container Service Developer Guide*. For more information about API failure reasons, see [API failure reasons](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html) in the *Amazon Elastic Container Service Developer Guide*.
+    deployment_circuit_breaker: Any = None
+    # An array of deployment lifecycle hook objects to run custom logic or pause the deployment at specific stages of the deployment lifecycle.
+    lifecycle_hooks: Any = None
+    # Configuration for a linear deployment strategy that shifts production traffic in equal percentage increments with configurable wait times between each step until 100 percent of traffic is shifted to the new service revision. The following validation applies only to Linear deployments created through CFN. CFN operations time out after 36 hours. Linear deployments can approach this limit because of their extended duration. This can cause CFN to roll back the deployment. To prevent timeout-related rollbacks, CFN rejects deployments when the calculated deployment time exceeds 33 hours based on your template configuration: ``BakeTimeInMinutes + (StepBakeTimeInMinutes × Number of deployment steps)`` Where the number of deployment steps is calculated as follows: + *If StepPercent evenly divides by 100*: The number of deployment steps equals ``(100 ÷ StepPercent) - 1`` + *Otherwise*: The number of deployment steps equals the floor of ``100 ÷ StepPercent``. For example, if ``StepPercent`` is 11, the number of deployment steps is 9 (not 9.1). This calculation reflects that CFN doesn't apply the step bake time after the final traffic shift reaches 100%. For example, with a ``StepPercent`` of 50%, there are actually two traffic shifts, but only one deployment step is counted for validation purposes because the bake time is applied only after the first 50% shift, not after reaching 100%. Additional backend processes (such as task scaling and running lifecycle hooks) can extend deployment time beyond these calculations. Even deployments under the 33-hour threshold might still time out if these processes cause the total duration to exceed 36 hours.
     linear_configuration: Any = None
+    # If a service is using the rolling update (``ECS``) deployment type, the ``maximumPercent`` parameter represents an upper limit on the number of your service's tasks that are allowed in the ``RUNNING`` or ``PENDING`` state during a deployment, as a percentage of the ``desiredCount`` (rounded down to the nearest integer). This parameter enables you to define the deployment batch size. For example, if your service is using the ``REPLICA`` service scheduler and has a ``desiredCount`` of four tasks and a ``maximumPercent`` value of 200%, the scheduler may start four new tasks before stopping the four older tasks (provided that the cluster resources required to do this are available). The default ``maximumPercent`` value for a service using the ``REPLICA`` service scheduler is 200%. The Amazon ECS scheduler uses this parameter to replace unhealthy tasks by starting replacement tasks first and then stopping the unhealthy tasks, as long as cluster resources for starting replacement tasks are available. For more information about how the scheduler replaces unhealthy tasks, see [Amazon ECS services](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html). If a service is using either the blue/green (``CODE_DEPLOY``) or ``EXTERNAL`` deployment types, and tasks in the service use the EC2 launch type, the *maximum percent* value is set to the default value. The *maximum percent* value is used to define the upper limit on the number of the tasks in the service that remain in the ``RUNNING`` state while the container instances are in the ``DRAINING`` state. You can't specify a custom ``maximumPercent`` value for a service that uses either the blue/green (``CODE_DEPLOY``) or ``EXTERNAL`` deployment types and has tasks that use the EC2 launch type. If the service uses either the blue/green (``CODE_DEPLOY``) or ``EXTERNAL`` deployment types, and the tasks in the service use the Fargate launch type, the maximum percent value is not used. The value is still returned when describing your service.
+    maximum_percent: Any = None
+    # If a service is using the rolling update (``ECS``) deployment type, the ``minimumHealthyPercent`` represents a lower limit on the number of your service's tasks that must remain in the ``RUNNING`` state during a deployment, as a percentage of the ``desiredCount`` (rounded up to the nearest integer). This parameter enables you to deploy without using additional cluster capacity. For example, if your service has a ``desiredCount`` of four tasks and a ``minimumHealthyPercent`` of 50%, the service scheduler may stop two existing tasks to free up cluster capacity before starting two new tasks. If any tasks are unhealthy and if ``maximumPercent`` doesn't allow the Amazon ECS scheduler to start replacement tasks, the scheduler stops the unhealthy tasks one-by-one — using the ``minimumHealthyPercent`` as a constraint — to clear up capacity to launch replacement tasks. For more information about how the scheduler replaces unhealthy tasks, see [Amazon ECS services](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html). For services that *do not* use a load balancer, the following should be noted: + A service is considered healthy if all essential containers within the tasks in the service pass their health checks. + If a task has no essential containers with a health check defined, the service scheduler will wait for 40 seconds after a task reaches a ``RUNNING`` state before the task is counted towards the minimum healthy percent total. + If a task has one or more essential containers with a health check defined, the service scheduler will wait for the task to reach a healthy status before counting it towards the minimum healthy percent total. A task is considered healthy when all essential containers within the task have passed their health checks. The amount of time the service scheduler can wait for is determined by the container health check settings. For services that *do* use a load balancer, the following should be noted: + If a task has no essential containers with a health check defined, the service scheduler will wait for the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total. + If a task has an essential container with a health check defined, the service scheduler will wait for both the task to reach a healthy status and the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total. The default value for a replica service for ``minimumHealthyPercent`` is 100%. The default ``minimumHealthyPercent`` value for a service using the ``DAEMON`` service schedule is 0% for the CLI, the AWS SDKs, and the APIs and 50% for the AWS Management Console. The minimum number of healthy tasks during a deployment is the ``desiredCount`` multiplied by the ``minimumHealthyPercent``/100, rounded up to the nearest integer value. If a service is using either the blue/green (``CODE_DEPLOY``) or ``EXTERNAL`` deployment types and is running tasks that use the EC2 launch type, the *minimum healthy percent* value is set to the default value. The *minimum healthy percent* value is used to define the lower limit on the number of the tasks in the service that remain in the ``RUNNING`` state while the container instances are in the ``DRAINING`` state. You can't specify a custom ``minimumHealthyPercent`` value for a service that uses either the blue/green (``CODE_DEPLOY``) or ``EXTERNAL`` deployment types and has tasks that use the EC2 launch type. If a service is using either the blue/green (``CODE_DEPLOY``) or ``EXTERNAL`` deployment types and is running tasks that use the Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your service.
+    minimum_healthy_percent: Any = None
+    # The deployment strategy for the service. Choose from these valid values: + ``ROLLING`` - When you create a service which uses the rolling update (``ROLLING``) deployment strategy, the Amazon ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration. + ``BLUE_GREEN`` - A blue/green deployment strategy (``BLUE_GREEN``) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With Amazon ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed. + ``LINEAR`` - A *linear* deployment strategy (``LINEAR``) gradually shifts traffic from the current production environment to a new environment in equal percentages over time. With Amazon ECS linear deployments, you can control the pace of traffic shifting and validate new service revisions with increasing amounts of production traffic. + ``CANARY`` - A *canary* deployment strategy (``CANARY``) shifts a small percentage of traffic to the new service revision first, then shifts the remaining traffic all at once after a specified time period. This allows you to test the new version with a subset of users before full deployment.
+    strategy: Any = None
 
 @dataclasses.dataclass
 class Service_DeploymentController:
+    # The deployment controller type to use. The deployment controller is the mechanism that determines how tasks are deployed for your service. The valid options are: + ECS When you create a service which uses the ``ECS`` deployment controller, you can choose between the following deployment strategies: + ``ROLLING``: When you create a service which uses the *rolling update* (``ROLLING``) deployment strategy, the ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration. Rolling update deployments are best suited for the following scenarios: + Gradual service updates: You need to update your service incrementally without taking the entire service offline at once. + Limited resource requirements: You want to avoid the additional resource costs of running two complete environments simultaneously (as required by blue/green deployments). + Acceptable deployment time: Your application can tolerate a longer deployment process, as rolling updates replace tasks one by one. + No need for instant roll back: Your service can tolerate a rollback process that takes minutes rather than seconds. + Simple deployment process: You prefer a straightforward deployment approach without the complexity of managing multiple environments, target groups, and listeners. + No load balancer requirement: Your service doesn't use or require a load balancer, ALB, NLB, or Service Connect (which are required for blue/green deployments). + Stateful applications: Your application maintains state that makes it difficult to run two parallel environments. + Cost sensitivity: You want to minimize deployment costs by not running duplicate environments during deployment. Rolling updates are the default deployment strategy for services and provide a balance between deployment safety and resource efficiency for many common application scenarios. + ``BLUE_GREEN``: A *blue/green* deployment strategy (``BLUE_GREEN``) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed. ECS blue/green deployments are best suited for the following scenarios: + Service validation: When you need to validate new service revisions before directing production traffic to them + Zero downtime: When your service requires zero-downtime deployments + Instant roll back: When you need the ability to quickly roll back if issues are detected + Load balancer requirement: When your service uses ALB, NLB, or Service Connect + External Use a third-party deployment controller. + Blue/green deployment (powered by ACD) ACD installs an updated version of the application as a new replacement task set and reroutes production traffic from the original application task set to the replacement task set. The original task set is terminated after a successful deployment. Use this deployment controller to verify a new deployment of a service before sending production traffic to it. When updating the deployment controller for a service, consider the following depending on the type of migration you're performing. + If you have a template that contains the ``EXTERNAL`` deployment controller information as well as ``TaskSet`` and ``PrimaryTaskSet`` resources, and you remove the task set resources from the template when updating from ``EXTERNAL`` to ``ECS``, the ``DescribeTaskSet`` and ``DeleteTaskSet`` API calls will return a 400 error after the deployment controller is updated to ``ECS``. This results in a delete failure on the task set resources, even though the stack transitions to ``UPDATE_COMPLETE`` status. For more information, see [Resource removed from stack but not deleted](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-resource-removed-not-deleted) in the CFNlong User Guide. To fix this issue, delete the task sets directly using the ECS``DeleteTaskSet`` API. For more information about how to delete a task set, see [DeleteTaskSet](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskSet.html) in the ECSlong API Reference. + If you're migrating from ``CODE_DEPLOY`` to ``ECS`` with a new task definition and CFN performs a rollback operation, the ECS``UpdateService`` request fails with the following error: Resource handler returned message: "Invalid request provided: Unable to update task definition on services with a CODE_DEPLOY deployment controller. + After a successful migration from ``ECS`` to ``EXTERNAL`` deployment controller, you need to manually remove the ``ACTIVE`` task set, because ECS no longer manages the deployment. For information about how to delete a task set, see [DeleteTaskSet](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskSet.html) in the ECSlong API Reference.
     type: Any = None
 
 @dataclasses.dataclass
-class Service_LoadBalancer_AdvancedConfiguration:
+class Service_ForceNewDeployment:
+    # Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (``my_image:latest``) or to roll Fargate tasks onto a newer platform version.
+    enable_force_new_deployment: Any = None
+    # When you change the``ForceNewDeploymentNonce`` value in your template, it signals ECS to start a new deployment even though no other service parameters have changed. The value must be a unique, time- varying value like a timestamp, random string, or sequence number. Use this property when you want to ensure your tasks pick up the latest version of a Docker image that uses the same tag but has been updated in the registry.
+    force_new_deployment_nonce: Any = None
+
+@dataclasses.dataclass
+class Service_LoadBalancers_AdvancedConfiguration:
     alternate_target_group_arn: Any = None
     production_listener_rule: Any = None
     role_arn: Any = None
     test_listener_rule: Any = None
 
 @dataclasses.dataclass
-class Service_LoadBalancer:
-    container_name: Any = None
-    container_port: Any = None
-    elb_name: Any = None
-    target_group_arn: Any = None
+class Service_LoadBalancers:
     advanced_configuration: Any = None
+    # Specifies the name of the container (as defined in the task definition) that the load balancer routes traffic to, used together with containerPort to register targets in the target group. (AI-inferred)
+    container_name: Any = None
+    # The port on the container that the load balancer forwards traffic to, used by the associated target group to route requests to the ECS service's container. (AI-inferred)
+    container_port: Any = None
+    # The name of the Classic Load Balancer to associate with the ECS service, used when the load balancer type is classic rather than an Application or Network Load Balancer target group. (AI-inferred)
+    load_balancer_name: Any = None
+    # The ARN of the target group to which the ECS service's tasks are registered for the specified load balancer. (AI-inferred)
+    target_group_arn: Any = None
 
 @dataclasses.dataclass
-class Service_NetworkConfiguration:
+class Service_Monitoring_MetricConfigurations:
+    # Specifies the names of the metrics (such as CPUUtilization or MemoryUtilization) that the Amazon ECS service will emit to CloudWatch as part of its monitoring configuration. (AI-inferred)
+    metric_names: Any = None
+    # The number of seconds between aggregation periods for the ECS service's CloudWatch metric, determining the metric's resolution granularity. (AI-inferred)
+    resolution_seconds: Any = None
+
+@dataclasses.dataclass
+class Service_Monitoring:
+    # The list of metric configurations for the service monitoring.
+    metric_configurations: Any = None
+
+@dataclasses.dataclass
+class Service_NetworkConfiguration_AwsvpcConfiguration:
+    # Whether the task's elastic network interface receives a public IP address. Consider the following when you set this value: + When you use ``create-service`` or ``update-service``, the default is ``DISABLED``. + When the service ``deploymentController`` is ``ECS``, the value must be ``DISABLED``.
     assign_public_ip: Any = None
+    # The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified. All specified security groups must be from the same VPC.
     security_groups: Any = None
+    # The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified. All specified subnets must be from the same VPC.
     subnets: Any = None
 
 @dataclasses.dataclass
-class Service_OrderedPlacementStrategy:
-    field: Any = None
-    type: Any = None
+class Service_NetworkConfiguration:
+    # An object representing the networking details for a task or service. For example ``awsVpcConfiguration={subnets=["subnet-12344321"],securityGroups=["sg-12344321"]}``.
+    awsvpc_configuration: Any = None
 
 @dataclasses.dataclass
 class Service_PlacementConstraints:
+    # A cluster query language expression that defines the placement constraint for the service when the constraint type is 'memberOf', using the Amazon ECS placement constraint syntax. (AI-inferred)
     expression: Any = None
+    # Specifies the type of placement constraint, either 'distinctInstance' to place each task on a distinct container instance, or 'memberOf' to apply a cluster query language expression. (AI-inferred)
+    type: Any = None
+
+@dataclasses.dataclass
+class Service_PlacementStrategies:
+    # The field to apply the placement strategy against; for spread strategies this is often a custom attribute like attribute:ecs.availability-zone, for binpack it is cpu or memory, and it is not used for random strategies. (AI-inferred)
+    field: Any = None
+    # The type of placement strategy to use, such as spread, binpack, or random, for distributing tasks across container instances in the ECS service. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Service_ServiceConnectConfiguration_AccessLogConfiguration:
+    # The format for Service Connect access log output. Choose TEXT for human-readable logs or JSON for structured data that integrates well with log analysis tools.
     format: Any = None
+    # Specifies whether to include query parameters in Service Connect access logs. When enabled, query parameters from HTTP requests are included in the access logs. Consider security and privacy implications when enabling this feature, as query parameters may contain sensitive information such as request IDs and tokens. By default, this parameter is ``DISABLED``.
     include_query_parameters: Any = None
 
 @dataclasses.dataclass
-class Service_ServiceConnectConfiguration_LogConfiguration_SecretOption:
+class Service_ServiceConnectConfiguration_LogConfiguration_SecretOptions:
+    # Specifies the name of the secret option, which serves as the key for the log driver configuration and pairs with the valueFrom ARN to retrieve the secret value from AWS Secrets Manager. (AI-inferred)
     name: Any = None
+    # The ARN of the AWS Secrets Manager secret or SSM Parameter Store parameter that supplies the value for the named log configuration option in the ECS Service Connect log configuration. (AI-inferred)
     value_from: Any = None
 
 @dataclasses.dataclass
 class Service_ServiceConnectConfiguration_LogConfiguration:
+    # The log driver to use for the container. For tasks on FARGATElong, the supported log drivers are ``awslogs``, ``splunk``, and ``awsfirelens``. For tasks hosted on Amazon EC2 instances, the supported log drivers are ``awslogs``, ``fluentd``, ``gelf``, ``json-file``, ``journald``, ``syslog``, ``splunk``, and ``awsfirelens``. For more information about using the ``awslogs`` log driver, see [Send Amazon ECS logs to CloudWatch](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html) in the *Amazon Elastic Container Service Developer Guide*. For more information about using the ``awsfirelens`` log driver, see [Send Amazon ECS logs to an service or Partner](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html). If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's [available on GitHub](https://docs.aws.amazon.com/https://github.com/aws/amazon-ecs-agent) and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.
     log_driver: Any = None
+    # The configuration options to send to the log driver. The options you can specify depend on the log driver. Some of the options you can specify when you use the ``awslogs`` log driver to route logs to Amazon CloudWatch include the following: + awslogs-create-group Required: No Specify whether you want the log group to be created automatically. If this option isn't specified, it defaults to false. Your IAM policy must include the logs:CreateLogGroup permission before you attempt to use awslogs-create-group. + awslogs-region Required: Yes Specify the Region that the awslogs log driver is to send your Docker logs to. You can choose to send all of your logs from clusters in different Regions to a single region in CloudWatch Logs. This is so that they're all visible in one location. Otherwise, you can separate them by Region for more granularity. Make sure that the specified log group exists in the Region that you specify with this option. + awslogs-group Required: Yes Make sure to specify a log group that the awslogs log driver sends its log streams to. + awslogs-stream-prefix Required: Yes, when using Fargate.Optional when using EC2. Use the awslogs-stream-prefix option to associate a log stream with the specified prefix, the container name, and the ID of the Amazon ECS task that the container belongs to. If you specify a prefix with this option, then the log stream takes the format prefix-name/container-name/ecs-task-id. If you don't specify a prefix with this option, then the log stream is named after the container ID that's assigned by the Docker daemon on the container instance. Because it's difficult to trace logs back to the container that sent them with just the Docker container ID (which is only available on the container instance), we recommend that you specify a prefix with this option. For Amazon ECS services, you can use the service name as the prefix. Doing so, you can trace log streams to the service that the container belongs to, the name of the container that sent them, and the ID of the task that the container belongs to. You must specify a stream-prefix for your logs to have your logs appear in the Log pane when using the Amazon ECS console. + awslogs-datetime-format Required: No This option defines a multiline start pattern in Python strftime format. A log message consists of a line that matches the pattern and any following lines that don’t match the pattern. The matched line is the delimiter between log messages. One example of a use case for using this format is for parsing output such as a stack dump, which might otherwise be logged in multiple entries. The correct pattern allows it to be captured in a single entry. For more information, see awslogs-datetime-format. You cannot configure both the awslogs-datetime-format and awslogs-multiline-pattern options. Multiline logging performs regular expression parsing and matching of all log messages. This might have a negative impact on logging performance. + awslogs-multiline-pattern Required: No This option defines a multiline start pattern that uses a regular expression. A log message consists of a line that matches the pattern and any following lines that don’t match the pattern. The matched line is the delimiter between log messages. For more information, see awslogs-multiline-pattern. This option is ignored if awslogs-datetime-format is also configured. You cannot configure both the awslogs-datetime-format and awslogs-multiline-pattern options. Multiline logging performs regular expression parsing and matching of all log messages. This might have a negative impact on logging performance. The following options apply to all supported log drivers. + mode Required: No Valid values: non-blocking | blocking This option defines the delivery mode of log messages from the container to the log driver specified using logDriver. The delivery mode you choose affects application availability when the flow of logs from container is interrupted. If you use the blocking mode and the flow of logs is interrupted, calls from container code to write to the stdout and stderr streams will block. The logging thread of the application will block as a result. This may cause the application to become unresponsive and lead to container healthcheck failure. If you use the non-blocking mode, the container's logs are instead stored in an in-memory intermediate buffer configured with the max-buffer-size option. This prevents the application from becoming unresponsive when logs cannot be sent. We recommend using this mode if you want to ensure service availability and are okay with some log loss. For more information, see Preventing log loss with non-blocking mode in the awslogs container log driver. You can set a default mode for all containers in a specific Region by using the defaultLogDriverMode account setting. If you don't specify the mode option or configure the account setting, Amazon ECS will default to the non-blocking mode. For more information about the account setting, see Default log driver mode in the Amazon Elastic Container Service Developer Guide. On June 25, 2025, Amazon ECS changed the default log driver mode from blocking to non-blocking to prioritize task availability over logging. To continue using the blocking mode after this change, do one of the following: Set the mode option in your container definition's logConfiguration as blocking. Set the defaultLogDriverMode account setting to blocking. + max-buffer-size Required: No Default value: 10m When non-blocking mode is used, the max-buffer-size log option controls the size of the buffer that's used for intermediate message storage. Make sure to specify an adequate buffer size based on your application. When the buffer fills up, further logs cannot be stored. Logs that cannot be stored are lost. To route logs using the ``splunk`` log router, you need to specify a ``splunk-token`` and a ``splunk-url``. When you use the ``awsfirelens`` log router to route logs to an AWS Service or AWS Partner Network destination for log storage and analytics, you can set the ``log-driver-buffer-limit`` option to limit the number of events that are buffered in memory, before being sent to the log router container. It can help to resolve potential log loss issue because high throughput might result in memory running out for the buffer inside of Docker. Other options you can specify when using ``awsfirelens`` to route logs depend on the destination. When you export logs to Amazon Data Firehose, you can specify the AWS Region with ``region`` and a name for the log stream with ``delivery_stream``. When you export logs to Amazon Kinesis Data Streams, you can specify an AWS Region with ``region`` and a data stream name with ``stream``. When you export logs to Amazon OpenSearch Service, you can specify options like ``Name``, ``Host`` (OpenSearch Service endpoint without protocol), ``Port``, ``Index``, ``Type``, ``Aws_auth``, ``Aws_region``, ``Suppress_Type_Name``, and ``tls``. For more information, see [Under the hood: FireLens for Amazon ECS Tasks](https://docs.aws.amazon.com/containers/under-the-hood-firelens-for-amazon-ecs-tasks/). When you export logs to Amazon S3, you can specify the bucket using the ``bucket`` option. You can also specify ``region``, ``total_file_size``, ``upload_timeout``, and ``use_put_object`` as options. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: ``sudo docker version --format '{{.Server.APIVersion}}'``
     options: Any = None
-    secret_option: Any = None
+    # The secrets to pass to the log configuration. For more information, see [Specifying sensitive data](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html) in the *Amazon Elastic Container Service Developer Guide*.
+    secret_options: Any = None
 
 @dataclasses.dataclass
-class Service_ServiceConnectConfiguration_Service_ClientAlias_TestTrafficRules_Header_Value:
+class Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_Header_Value:
     exact: Any = None
 
 @dataclasses.dataclass
-class Service_ServiceConnectConfiguration_Service_ClientAlias_TestTrafficRules_Header:
+class Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_Header:
+    # The name of the HTTP header that identifies test traffic for routing through this client alias, enabling Service Connect canary deployments. (AI-inferred)
     name: Any = None
     value: Any = None
 
 @dataclasses.dataclass
-class Service_ServiceConnectConfiguration_Service_ClientAlias_TestTrafficRules:
+class Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules:
     header: Any = None
 
 @dataclasses.dataclass
-class Service_ServiceConnectConfiguration_Service_ClientAlias:
+class Service_ServiceConnectConfiguration_Services_ClientAliases:
+    # The custom DNS hostname that clients use to access the service through AWS ECS Service Connect, which overrides the default service discovery name within the namespace. (AI-inferred)
     dns_name: Any = None
+    # The port number that clients use to connect to the service through this Service Connect client alias. (AI-inferred)
     port: Any = None
     test_traffic_rules: Any = None
 
 @dataclasses.dataclass
-class Service_ServiceConnectConfiguration_Service_Timeout:
+class Service_ServiceConnectConfiguration_Services_Timeout:
+    # Specifies the idle timeout in seconds for a service in the Amazon ECS Service Connect configuration, during which a connection must have activity to remain open, otherwise it is closed. (AI-inferred)
     idle_timeout_seconds: Any = None
+    # Defines the maximum time in seconds that an individual request can stay in flight before the Service Connect proxy times it out, enforcing request-level timeout for the ECS Service Connect service. (AI-inferred)
     per_request_timeout_seconds: Any = None
 
 @dataclasses.dataclass
-class Service_ServiceConnectConfiguration_Service_Tls_IssuerCertAuthority:
+class Service_ServiceConnectConfiguration_Services_Tls_IssuerCertificateAuthority:
+    # The ARN of the AWS Private Certificate Authority (ACM PCA) that issues the TLS certificate for the ECS Service Connect service. (AI-inferred)
     aws_pca_authority_arn: Any = None
 
 @dataclasses.dataclass
-class Service_ServiceConnectConfiguration_Service_Tls:
+class Service_ServiceConnectConfiguration_Services_Tls:
+    # Specifies the ARN of the private certificate authority (such as AWS Private CA) that issues the TLS certificates used for the Service Connect service's mutual TLS encryption. (AI-inferred)
+    issuer_certificate_authority: Any = None
+    # The ARN of the AWS KMS key used to encrypt the private key of the TLS certificate for this Service Connect service. (AI-inferred)
     kms_key: Any = None
+    # The ARN of the IAM role that Amazon ECS assumes to create the certificate used for the service's Service Connect TLS configuration. (AI-inferred)
     role_arn: Any = None
-    issuer_cert_authority: Any = None
 
 @dataclasses.dataclass
-class Service_ServiceConnectConfiguration_Service:
+class Service_ServiceConnectConfiguration_Services:
+    # The list of client aliases for each Service Connect service, which define alternative names and ports for the service to be discovered within the Cloud Map namespace. (AI-inferred)
+    client_aliases: Any = None
+    # The discovery name for this service in Amazon ECS Service Connect, which is used as the DNS hostname for service-to-service communication within the Service Connect namespace. (AI-inferred)
     discovery_name: Any = None
+    # Overrides the port that the Amazon ECS Service Connect service uses to accept inbound traffic, so you can map a different ingress port than the default one determined by the service's port configuration. (AI-inferred)
     ingress_port_override: Any = None
+    # Specifies the name of the port mapping in the task definition that ECS Service Connect uses to route traffic to this service. (AI-inferred)
     port_name: Any = None
-    client_alias: Any = None
+    # Configures the idle and request timeouts (in seconds) for the Service Connect service, with fields for `idleTimeoutSeconds` and `requestTimeoutSeconds`. (AI-inferred)
     timeout: Any = None
+    # Configures TLS for an individual Service Connect service, specifying the certificate authority (via ARN) that issues client certificates and the optional KMS key used to encrypt the CA's private key. (AI-inferred)
     tls: Any = None
 
 @dataclasses.dataclass
 class Service_ServiceConnectConfiguration:
-    enabled: Any = None
-    namespace: Any = None
+    # Configuration for Service Connect access logging. Access logs provide detailed information about requests made to your service, including request patterns, response codes, and timing data for debugging and monitoring purposes. To enable access logs, you must also specify a ``logConfiguration`` in the ``serviceConnectConfiguration``.
     access_log_configuration: Any = None
+    # Specifies whether to use Service Connect with this service.
+    enabled: Any = None
+    # The log configuration for the container. This parameter maps to ``LogConfig`` in the docker container create command and the ``--log-driver`` option to docker run. By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. Understand the following when specifying a log configuration for your containers. + Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent. For tasks on FARGATElong, the supported log drivers are ``awslogs``, ``splunk``, and ``awsfirelens``. For tasks hosted on Amazon EC2 instances, the supported log drivers are ``awslogs``, ``fluentd``, ``gelf``, ``json-file``, ``journald``,``syslog``, ``splunk``, and ``awsfirelens``. + This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. + For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the ``ECS_AVAILABLE_LOGGING_DRIVERS`` environment variable before containers placed on that instance can use these log configuration options. For more information, see [Amazon ECS container agent configuration](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html) in the *Amazon Elastic Container Service Developer Guide*. + For tasks that are on FARGATElong, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.
     log_configuration: Any = None
-    service: Any = None
+    # The namespace name or full Amazon Resource Name (ARN) of the CMAPlong namespace for use with Service Connect. The namespace must be in the same AWS Region as the Amazon ECS service and cluster. The type of namespace doesn't affect Service Connect. For more information about CMAPlong, see [Working with Services](https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html) in the *Developer Guide*.
+    namespace: Any = None
+    # The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used by other Amazon ECS services to connect to this service. This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to other services within the namespace. An example of this would be a frontend application that accepts incoming requests from either a load balancer that's attached to the service or by other means. An object selects a port from the task definition, assigns a name for the CMAPlong service, and a list of aliases (endpoints) and ports for client applications to refer to this service.
+    services: Any = None
 
 @dataclasses.dataclass
 class Service_ServiceRegistries:
+    # The name of the container (as specified in the task definition) whose port is used for service discovery with the Cloud Map registry. (AI-inferred)
     container_name: Any = None
+    # The port on the container that AWS Cloud Map service discovery uses to route traffic to the ECS service; if omitted, the container's first assigned port is used. (AI-inferred)
     container_port: Any = None
+    # The port number to register with the service registry, overriding the container port from the task definition for service discovery purposes. (AI-inferred)
     port: Any = None
+    # The Amazon Resource Name (ARN) of the AWS Cloud Map service registry that this ECS service uses for service discovery. (AI-inferred)
     registry_arn: Any = None
 
 @dataclasses.dataclass
-class Service_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Service_Tags:
+    # The key of a tag attached to the ECS service, used for organizing and identifying the service within AWS. (AI-inferred)
+    key: Any = None
+    # Sets the value of a metadata tag on the ECS service, which can be used for cost allocation, resource lifecycle management, and IAM-based access control. (AI-inferred)
+    value: Any = None
 
 @dataclasses.dataclass
-class Service_VolumeConfiguration_ManagedEbsVolume_TagSpecifications:
+class Service_VolumeConfigurations_ManagedEbsvolume_TagSpecifications:
+    # Determines which source of tags (either the ECS task definition or the ECS service) should be propagated to the managed EBS volume, with valid values of TASK_DEFINITION or SERVICE. (AI-inferred)
     propagate_tags: Any = None
+    # The type of Amazon EBS resource (either 'volume' or 'snapshot') to which the tags in this tag specification apply, used when tagging a managed EBS volume attached to an ECS service. (AI-inferred)
     resource_type: Any = None
+    # Specifies the list of tag key-value pairs to be applied to the managed EBS volume when it is provisioned for the ECS service. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
-class Service_VolumeConfiguration_ManagedEbsVolume:
+class Service_VolumeConfigurations_ManagedEbsvolume:
+    # Specifies whether the managed Amazon EBS volume used by the ECS service task should be encrypted. (AI-inferred)
     encrypted: Any = None
-    file_system_type: Any = None
+    # The filesystem type (e.g., ext4, xfs) to format the managed EBS volume with, used when the ECS service creates and attaches the volume. (AI-inferred)
+    filesystem_type: Any = None
+    # Specifies the provisioned IOPS for the managed Amazon EBS volume attached to the ECS service, controlling the volume's input/output performance. (AI-inferred)
     iops: Any = None
+    # The customer-managed KMS key ARN or ID used to encrypt the managed EBS volume attached to the ECS service's tasks. (AI-inferred)
     kms_key_id: Any = None
+    # The ARN of the IAM role that Amazon ECS assumes to create, attach, and detach the managed EBS volume for the service, falling back to the service-linked role if not provided. (AI-inferred)
     role_arn: Any = None
-    size_in_gb: Any = None
+    # Specifies the size in GiB of the Amazon EBS volume that is created and attached to the container instances when the ECS service uses a managed EBS volume configuration. (AI-inferred)
+    size_in_gi_b: Any = None
+    # Specifies the snapshot ARN or ID from which the Amazon EBS volume is created, allowing the ECS service's managed volume to be initialized with data from an existing snapshot. (AI-inferred)
     snapshot_id: Any = None
-    throughput: Any = None
-    volume_initialization_rate: Any = None
-    volume_type: Any = None
+    # Defines the tag specifications for the Amazon EBS volume that this ECS service creates and manages, specifying which tags are applied to the volume resource when it is provisioned. (AI-inferred)
     tag_specifications: Any = None
+    # Sets the throughput in MiB/s for the managed EBS volume when the volume type is gp3, controlling the performance throughput of the volume. (AI-inferred)
+    throughput: Any = None
+    # Sets the rate (in GiB per minute) at which the managed EBS volume is initialized, used when restoring from a snapshot to pre-warm blocks and avoid I/O performance degradation before the task accesses them. (AI-inferred)
+    volume_initialization_rate: Any = None
+    # Specifies the Amazon EBS volume type (e.g., gp3, io2) for the managed EBS volume attached to tasks in this ECS service. (AI-inferred)
+    volume_type: Any = None
 
 @dataclasses.dataclass
-class Service_VolumeConfiguration:
+class Service_VolumeConfigurations:
+    # Defines the configuration for an Amazon Elastic Block Store (EBS) volume that is managed by Amazon ECS for use as a service-managed volume in an ECS service, including settings such as size, volume type, file system type, and encryption. (AI-inferred)
+    managed_ebsvolume: Any = None
+    # The name of the EBS volume attached at the ECS service level, which must match the volume name referenced by container mount points as sourceVolume in the task definition. (AI-inferred)
     name: Any = None
-    managed_ebs_volume: Any = None
 
 @dataclasses.dataclass
 class Service_VpcLatticeConfigurations:
+    # Specifies the name of the port mapping in the task definition that VPC Lattice uses to route traffic to the service. (AI-inferred)
     port_name: Any = None
+    # The ARN of the IAM role that Amazon ECS assumes to register and deregister the service with the associated VPC Lattice target group. (AI-inferred)
     role_arn: Any = None
+    # The ARN of the VPC Lattice target group that this ECS service registers with as a target. (AI-inferred)
     target_group_arn: Any = None
-
-_Service_AlarmsFields = {
-    "alarm_names": ubx.FieldSpec(wire_name="alarm_names"),
-    "enable": ubx.FieldSpec(wire_name="enable"),
-    "rollback": ubx.FieldSpec(wire_name="rollback"),
-}
 
 _Service_CapacityProviderStrategyFields = {
     "base": ubx.FieldSpec(wire_name="base"),
@@ -206,7 +336,8 @@ _Service_CapacityProviderStrategyFields = {
     "weight": ubx.FieldSpec(wire_name="weight"),
 }
 
-_Service_DeploymentCircuitBreakerFields = {
+_Service_DeploymentConfiguration_AlarmsFields = {
+    "alarm_names": ubx.FieldSpec(wire_name="alarm_names"),
     "enable": ubx.FieldSpec(wire_name="enable"),
     "rollback": ubx.FieldSpec(wire_name="rollback"),
 }
@@ -216,11 +347,38 @@ _Service_DeploymentConfiguration_CanaryConfigurationFields = {
     "canary_percent": ubx.FieldSpec(wire_name="canary_percent"),
 }
 
-_Service_DeploymentConfiguration_LifecycleHookFields = {
+_Service_DeploymentConfiguration_DeploymentCircuitBreaker_ThresholdConfigurationFields = {
+    "type": ubx.FieldSpec(wire_name="type"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Service_DeploymentConfiguration_DeploymentCircuitBreakerFields = {
+    "enable": ubx.FieldSpec(wire_name="enable"),
+    "reset_on_healthy_task": ubx.FieldSpec(wire_name="reset_on_healthy_task"),
+    "rollback": ubx.FieldSpec(wire_name="rollback"),
+    "threshold_configuration": ubx.FieldSpec(
+        wire_name="threshold_configuration",
+        kind="object",
+        fields=_Service_DeploymentConfiguration_DeploymentCircuitBreaker_ThresholdConfigurationFields,
+    ),
+}
+
+_Service_DeploymentConfiguration_LifecycleHooks_TimeoutConfigurationFields = {
+    "action": ubx.FieldSpec(wire_name="action"),
+    "timeout_in_minutes": ubx.FieldSpec(wire_name="timeout_in_minutes"),
+}
+
+_Service_DeploymentConfiguration_LifecycleHooksFields = {
     "hook_details": ubx.FieldSpec(wire_name="hook_details"),
     "hook_target_arn": ubx.FieldSpec(wire_name="hook_target_arn"),
     "lifecycle_stages": ubx.FieldSpec(wire_name="lifecycle_stages"),
     "role_arn": ubx.FieldSpec(wire_name="role_arn"),
+    "target_type": ubx.FieldSpec(wire_name="target_type"),
+    "timeout_configuration": ubx.FieldSpec(
+        wire_name="timeout_configuration",
+        kind="object",
+        fields=_Service_DeploymentConfiguration_LifecycleHooks_TimeoutConfigurationFields,
+    ),
 }
 
 _Service_DeploymentConfiguration_LinearConfigurationFields = {
@@ -229,61 +387,99 @@ _Service_DeploymentConfiguration_LinearConfigurationFields = {
 }
 
 _Service_DeploymentConfigurationFields = {
+    "alarms": ubx.FieldSpec(
+        wire_name="alarms",
+        kind="object",
+        fields=_Service_DeploymentConfiguration_AlarmsFields,
+    ),
     "bake_time_in_minutes": ubx.FieldSpec(wire_name="bake_time_in_minutes"),
-    "strategy": ubx.FieldSpec(wire_name="strategy"),
     "canary_configuration": ubx.FieldSpec(
         wire_name="canary_configuration",
-        kind="list",
+        kind="object",
         fields=_Service_DeploymentConfiguration_CanaryConfigurationFields,
     ),
-    "lifecycle_hook": ubx.FieldSpec(
-        wire_name="lifecycle_hook",
-        kind="set",
-        fields=_Service_DeploymentConfiguration_LifecycleHookFields,
+    "deployment_circuit_breaker": ubx.FieldSpec(
+        wire_name="deployment_circuit_breaker",
+        kind="object",
+        fields=_Service_DeploymentConfiguration_DeploymentCircuitBreakerFields,
+    ),
+    "lifecycle_hooks": ubx.FieldSpec(
+        wire_name="lifecycle_hooks",
+        kind="list",
+        fields=_Service_DeploymentConfiguration_LifecycleHooksFields,
     ),
     "linear_configuration": ubx.FieldSpec(
         wire_name="linear_configuration",
-        kind="list",
+        kind="object",
         fields=_Service_DeploymentConfiguration_LinearConfigurationFields,
     ),
+    "maximum_percent": ubx.FieldSpec(wire_name="maximum_percent"),
+    "minimum_healthy_percent": ubx.FieldSpec(wire_name="minimum_healthy_percent"),
+    "strategy": ubx.FieldSpec(wire_name="strategy"),
 }
 
 _Service_DeploymentControllerFields = {
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_Service_LoadBalancer_AdvancedConfigurationFields = {
+_Service_ForceNewDeploymentFields = {
+    "enable_force_new_deployment": ubx.FieldSpec(wire_name="enable_force_new_deployment"),
+    "force_new_deployment_nonce": ubx.FieldSpec(wire_name="force_new_deployment_nonce"),
+}
+
+_Service_LoadBalancers_AdvancedConfigurationFields = {
     "alternate_target_group_arn": ubx.FieldSpec(wire_name="alternate_target_group_arn"),
     "production_listener_rule": ubx.FieldSpec(wire_name="production_listener_rule"),
     "role_arn": ubx.FieldSpec(wire_name="role_arn"),
     "test_listener_rule": ubx.FieldSpec(wire_name="test_listener_rule"),
 }
 
-_Service_LoadBalancerFields = {
-    "container_name": ubx.FieldSpec(wire_name="container_name"),
-    "container_port": ubx.FieldSpec(wire_name="container_port"),
-    "elb_name": ubx.FieldSpec(wire_name="elb_name"),
-    "target_group_arn": ubx.FieldSpec(wire_name="target_group_arn"),
+_Service_LoadBalancersFields = {
     "advanced_configuration": ubx.FieldSpec(
         wire_name="advanced_configuration",
+        kind="object",
+        fields=_Service_LoadBalancers_AdvancedConfigurationFields,
+    ),
+    "container_name": ubx.FieldSpec(wire_name="container_name"),
+    "container_port": ubx.FieldSpec(wire_name="container_port"),
+    "load_balancer_name": ubx.FieldSpec(wire_name="load_balancer_name"),
+    "target_group_arn": ubx.FieldSpec(wire_name="target_group_arn"),
+}
+
+_Service_Monitoring_MetricConfigurationsFields = {
+    "metric_names": ubx.FieldSpec(wire_name="metric_names"),
+    "resolution_seconds": ubx.FieldSpec(wire_name="resolution_seconds"),
+}
+
+_Service_MonitoringFields = {
+    "metric_configurations": ubx.FieldSpec(
+        wire_name="metric_configurations",
         kind="list",
-        fields=_Service_LoadBalancer_AdvancedConfigurationFields,
+        fields=_Service_Monitoring_MetricConfigurationsFields,
     ),
 }
 
-_Service_NetworkConfigurationFields = {
+_Service_NetworkConfiguration_AwsvpcConfigurationFields = {
     "assign_public_ip": ubx.FieldSpec(wire_name="assign_public_ip"),
     "security_groups": ubx.FieldSpec(wire_name="security_groups"),
     "subnets": ubx.FieldSpec(wire_name="subnets"),
 }
 
-_Service_OrderedPlacementStrategyFields = {
-    "field": ubx.FieldSpec(wire_name="field"),
-    "type": ubx.FieldSpec(wire_name="type"),
+_Service_NetworkConfigurationFields = {
+    "awsvpc_configuration": ubx.FieldSpec(
+        wire_name="awsvpc_configuration",
+        kind="object",
+        fields=_Service_NetworkConfiguration_AwsvpcConfigurationFields,
+    ),
 }
 
 _Service_PlacementConstraintsFields = {
     "expression": ubx.FieldSpec(wire_name="expression"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Service_PlacementStrategiesFields = {
+    "field": ubx.FieldSpec(wire_name="field"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
@@ -292,7 +488,7 @@ _Service_ServiceConnectConfiguration_AccessLogConfigurationFields = {
     "include_query_parameters": ubx.FieldSpec(wire_name="include_query_parameters"),
 }
 
-_Service_ServiceConnectConfiguration_LogConfiguration_SecretOptionFields = {
+_Service_ServiceConnectConfiguration_LogConfiguration_SecretOptionsFields = {
     "name": ubx.FieldSpec(wire_name="name"),
     "value_from": ubx.FieldSpec(wire_name="value_from"),
 }
@@ -300,101 +496,101 @@ _Service_ServiceConnectConfiguration_LogConfiguration_SecretOptionFields = {
 _Service_ServiceConnectConfiguration_LogConfigurationFields = {
     "log_driver": ubx.FieldSpec(wire_name="log_driver"),
     "options": ubx.FieldSpec(wire_name="options"),
-    "secret_option": ubx.FieldSpec(
-        wire_name="secret_option",
+    "secret_options": ubx.FieldSpec(
+        wire_name="secret_options",
         kind="list",
-        fields=_Service_ServiceConnectConfiguration_LogConfiguration_SecretOptionFields,
+        fields=_Service_ServiceConnectConfiguration_LogConfiguration_SecretOptionsFields,
     ),
 }
 
-_Service_ServiceConnectConfiguration_Service_ClientAlias_TestTrafficRules_Header_ValueFields = {
+_Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_Header_ValueFields = {
     "exact": ubx.FieldSpec(wire_name="exact"),
 }
 
-_Service_ServiceConnectConfiguration_Service_ClientAlias_TestTrafficRules_HeaderFields = {
+_Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_HeaderFields = {
     "name": ubx.FieldSpec(wire_name="name"),
     "value": ubx.FieldSpec(
         wire_name="value",
-        kind="list",
-        fields=_Service_ServiceConnectConfiguration_Service_ClientAlias_TestTrafficRules_Header_ValueFields,
+        kind="object",
+        fields=_Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_Header_ValueFields,
     ),
 }
 
-_Service_ServiceConnectConfiguration_Service_ClientAlias_TestTrafficRulesFields = {
+_Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRulesFields = {
     "header": ubx.FieldSpec(
         wire_name="header",
-        kind="list",
-        fields=_Service_ServiceConnectConfiguration_Service_ClientAlias_TestTrafficRules_HeaderFields,
+        kind="object",
+        fields=_Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_HeaderFields,
     ),
 }
 
-_Service_ServiceConnectConfiguration_Service_ClientAliasFields = {
+_Service_ServiceConnectConfiguration_Services_ClientAliasesFields = {
     "dns_name": ubx.FieldSpec(wire_name="dns_name"),
     "port": ubx.FieldSpec(wire_name="port"),
     "test_traffic_rules": ubx.FieldSpec(
         wire_name="test_traffic_rules",
-        kind="list",
-        fields=_Service_ServiceConnectConfiguration_Service_ClientAlias_TestTrafficRulesFields,
+        kind="object",
+        fields=_Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRulesFields,
     ),
 }
 
-_Service_ServiceConnectConfiguration_Service_TimeoutFields = {
+_Service_ServiceConnectConfiguration_Services_TimeoutFields = {
     "idle_timeout_seconds": ubx.FieldSpec(wire_name="idle_timeout_seconds"),
     "per_request_timeout_seconds": ubx.FieldSpec(wire_name="per_request_timeout_seconds"),
 }
 
-_Service_ServiceConnectConfiguration_Service_Tls_IssuerCertAuthorityFields = {
+_Service_ServiceConnectConfiguration_Services_Tls_IssuerCertificateAuthorityFields = {
     "aws_pca_authority_arn": ubx.FieldSpec(wire_name="aws_pca_authority_arn"),
 }
 
-_Service_ServiceConnectConfiguration_Service_TlsFields = {
+_Service_ServiceConnectConfiguration_Services_TlsFields = {
+    "issuer_certificate_authority": ubx.FieldSpec(
+        wire_name="issuer_certificate_authority",
+        kind="object",
+        fields=_Service_ServiceConnectConfiguration_Services_Tls_IssuerCertificateAuthorityFields,
+    ),
     "kms_key": ubx.FieldSpec(wire_name="kms_key"),
     "role_arn": ubx.FieldSpec(wire_name="role_arn"),
-    "issuer_cert_authority": ubx.FieldSpec(
-        wire_name="issuer_cert_authority",
-        kind="list",
-        fields=_Service_ServiceConnectConfiguration_Service_Tls_IssuerCertAuthorityFields,
-    ),
 }
 
-_Service_ServiceConnectConfiguration_ServiceFields = {
+_Service_ServiceConnectConfiguration_ServicesFields = {
+    "client_aliases": ubx.FieldSpec(
+        wire_name="client_aliases",
+        kind="list",
+        fields=_Service_ServiceConnectConfiguration_Services_ClientAliasesFields,
+    ),
     "discovery_name": ubx.FieldSpec(wire_name="discovery_name"),
     "ingress_port_override": ubx.FieldSpec(wire_name="ingress_port_override"),
     "port_name": ubx.FieldSpec(wire_name="port_name"),
-    "client_alias": ubx.FieldSpec(
-        wire_name="client_alias",
-        kind="list",
-        fields=_Service_ServiceConnectConfiguration_Service_ClientAliasFields,
-    ),
     "timeout": ubx.FieldSpec(
         wire_name="timeout",
-        kind="list",
-        fields=_Service_ServiceConnectConfiguration_Service_TimeoutFields,
+        kind="object",
+        fields=_Service_ServiceConnectConfiguration_Services_TimeoutFields,
     ),
     "tls": ubx.FieldSpec(
         wire_name="tls",
-        kind="list",
-        fields=_Service_ServiceConnectConfiguration_Service_TlsFields,
+        kind="object",
+        fields=_Service_ServiceConnectConfiguration_Services_TlsFields,
     ),
 }
 
 _Service_ServiceConnectConfigurationFields = {
-    "enabled": ubx.FieldSpec(wire_name="enabled"),
-    "namespace": ubx.FieldSpec(wire_name="namespace"),
     "access_log_configuration": ubx.FieldSpec(
         wire_name="access_log_configuration",
-        kind="list",
+        kind="object",
         fields=_Service_ServiceConnectConfiguration_AccessLogConfigurationFields,
     ),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
     "log_configuration": ubx.FieldSpec(
         wire_name="log_configuration",
-        kind="list",
+        kind="object",
         fields=_Service_ServiceConnectConfiguration_LogConfigurationFields,
     ),
-    "service": ubx.FieldSpec(
-        wire_name="service",
+    "namespace": ubx.FieldSpec(wire_name="namespace"),
+    "services": ubx.FieldSpec(
+        wire_name="services",
         kind="list",
-        fields=_Service_ServiceConnectConfiguration_ServiceFields,
+        fields=_Service_ServiceConnectConfiguration_ServicesFields,
     ),
 }
 
@@ -405,43 +601,46 @@ _Service_ServiceRegistriesFields = {
     "registry_arn": ubx.FieldSpec(wire_name="registry_arn"),
 }
 
-_Service_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Service_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
-_Service_VolumeConfiguration_ManagedEbsVolume_TagSpecificationsFields = {
+_Service_VolumeConfigurations_ManagedEbsvolume_TagSpecificationsFields = {
     "propagate_tags": ubx.FieldSpec(wire_name="propagate_tags"),
     "resource_type": ubx.FieldSpec(wire_name="resource_type"),
-    "tags": ubx.FieldSpec(wire_name="tags"),
+    "tags": ubx.FieldSpec(
+        wire_name="tags",
+        kind="list",
+        fields=_Service_TagsFields,
+    ),
 }
 
-_Service_VolumeConfiguration_ManagedEbsVolumeFields = {
+_Service_VolumeConfigurations_ManagedEbsvolumeFields = {
     "encrypted": ubx.FieldSpec(wire_name="encrypted"),
-    "file_system_type": ubx.FieldSpec(wire_name="file_system_type"),
+    "filesystem_type": ubx.FieldSpec(wire_name="filesystem_type"),
     "iops": ubx.FieldSpec(wire_name="iops"),
     "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
     "role_arn": ubx.FieldSpec(wire_name="role_arn"),
-    "size_in_gb": ubx.FieldSpec(wire_name="size_in_gb"),
+    "size_in_gi_b": ubx.FieldSpec(wire_name="size_in_gi_b"),
     "snapshot_id": ubx.FieldSpec(wire_name="snapshot_id"),
-    "throughput": ubx.FieldSpec(wire_name="throughput"),
-    "volume_initialization_rate": ubx.FieldSpec(wire_name="volume_initialization_rate"),
-    "volume_type": ubx.FieldSpec(wire_name="volume_type"),
     "tag_specifications": ubx.FieldSpec(
         wire_name="tag_specifications",
         kind="list",
-        fields=_Service_VolumeConfiguration_ManagedEbsVolume_TagSpecificationsFields,
+        fields=_Service_VolumeConfigurations_ManagedEbsvolume_TagSpecificationsFields,
     ),
+    "throughput": ubx.FieldSpec(wire_name="throughput"),
+    "volume_initialization_rate": ubx.FieldSpec(wire_name="volume_initialization_rate"),
+    "volume_type": ubx.FieldSpec(wire_name="volume_type"),
 }
 
-_Service_VolumeConfigurationFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "managed_ebs_volume": ubx.FieldSpec(
-        wire_name="managed_ebs_volume",
-        kind="list",
-        fields=_Service_VolumeConfiguration_ManagedEbsVolumeFields,
+_Service_VolumeConfigurationsFields = {
+    "managed_ebsvolume": ubx.FieldSpec(
+        wire_name="managed_ebsvolume",
+        kind="object",
+        fields=_Service_VolumeConfigurations_ManagedEbsvolumeFields,
     ),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Service_VpcLatticeConfigurationsFields = {
@@ -452,140 +651,206 @@ _Service_VpcLatticeConfigurationsFields = {
 
 @dataclasses.dataclass
 class ServiceConfig:
+    # Indicates whether to use Availability Zone rebalancing for the service. For more information, see [Balancing an Amazon ECS service across Availability Zones](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html) in the *Amazon Elastic Container Service Developer Guide*. The default behavior of ``AvailabilityZoneRebalancing`` differs between create and update requests: + For create service requests, when no value is specified for ``AvailabilityZoneRebalancing``, Amazon ECS defaults the value to ``ENABLED``. + For update service requests, when no value is specified for ``AvailabilityZoneRebalancing``, Amazon ECS defaults to the existing service’s ``AvailabilityZoneRebalancing`` value. If the service never had an ``AvailabilityZoneRebalancing`` value set, Amazon ECS treats this as ``DISABLED``.
     availability_zone_rebalancing: Any = None
-    cluster: Any = None
-    deployment_maximum_percent: Any = None
-    deployment_minimum_healthy_percent: Any = None
-    desired_count: Any = None
-    enable_ecs_managed_tags: Any = None
-    enable_execute_command: Any = None
-    force_delete: Any = None
-    force_new_deployment: Any = None
-    health_check_grace_period_seconds: Any = None
-    iam_role: Any = None
-    id: Any = None
-    launch_type: Any = None
-    name: Any = None
-    platform_version: Any = None
-    propagate_tags: Any = None
-    region: Any = None
-    scheduling_strategy: Any = None
-    sigint_rollback: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    task_definition: Any = None
-    triggers: Any = None
-    wait_for_steady_state: Any = None
-    alarms: Any = None
+    # The capacity provider strategy to use for the service. If a ``capacityProviderStrategy`` is specified, the ``launchType`` parameter must be omitted. If no ``capacityProviderStrategy`` or ``launchType`` is specified, the ``defaultCapacityProviderStrategy`` for the cluster is used. A capacity provider strategy can contain a maximum of 20 capacity providers. To remove this property from your service resource, specify an empty ``CapacityProviderStrategyItem`` array.
     capacity_provider_strategy: Any = None
-    deployment_circuit_breaker: Any = None
+    # The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on. If you do not specify a cluster, the default cluster is assumed.
+    cluster: Any = None
+    # Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.
     deployment_configuration: Any = None
+    # The deployment controller to use for the service.
     deployment_controller: Any = None
-    load_balancer: Any = None
+    # The number of instantiations of the specified task definition to place and keep running in your service. For new services, if a desired count is not specified, a default value of ``1`` is used. When using the ``DAEMON`` scheduling strategy, the desired count is not required. For existing services, if a desired count is not specified, it is omitted from the operation.
+    desired_count: Any = None
+    # Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see [Tagging your Amazon ECS resources](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html) in the *Amazon Elastic Container Service Developer Guide*. When you use Amazon ECS managed tags, you must set the ``propagateTags`` request parameter.
+    enable_ecsmanaged_tags: Any = None
+    # Determines whether the execute command functionality is turned on for the service. If ``true``, the execute command functionality is turned on for all containers in tasks as part of the service.
+    enable_execute_command: Any = None
+    # Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (``my_image:latest``) or to roll Fargate tasks onto a newer platform version.
+    force_new_deployment: Any = None
+    # The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you do not specify a health check grace period value, the default value of 0 is used. If you do not use any of the health checks, then ``healthCheckGracePeriodSeconds`` is unused. If your service has more running tasks than desired, unhealthy tasks in the grace period might be stopped to reach the desired count.
+    health_check_grace_period_seconds: Any = None
+    # The launch type on which to run your service. For more information, see [Amazon ECS Launch Types](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) in the *Amazon Elastic Container Service Developer Guide*. If you want to use Managed Instances, you must use the ``capacityProviderStrategy`` request parameter
+    launch_type: Any = None
+    # A list of load balancer objects to associate with the service. If you specify the ``Role`` property, ``LoadBalancers`` must be specified as well. For information about the number of load balancers that you can specify per service, see [Service Load Balancing](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html) in the *Amazon Elastic Container Service Developer Guide*. To remove this property from your service resource, specify an empty ``LoadBalancer`` array.
+    load_balancers: Any = None
+    # The optional monitoring configuration for a service, which defines the resolution for the service-level ``CPUUtilization`` and ``MemoryUtilization`` Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of ``60`` seconds.
+    monitoring: Any = None
+    # The network configuration for a task or service.
     network_configuration: Any = None
-    ordered_placement_strategy: Any = None
+    # An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime. To remove this property from your service resource, specify an empty ``PlacementConstraint`` array.
     placement_constraints: Any = None
+    # The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service. To remove this property from your service resource, specify an empty ``PlacementStrategy`` array.
+    placement_strategies: Any = None
+    # The platform version that your tasks in the service are running on. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the ``LATEST`` platform version is used. For more information, see [platform versions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html) in the *Amazon Elastic Container Service Developer Guide*.
+    platform_version: Any = None
+    # Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the [TagResource](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html) API action. You must set this to a value other than ``NONE`` when you use Cost Explorer. For more information, see [Amazon ECS usage reports](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html) in the *Amazon Elastic Container Service Developer Guide*. The default is ``NONE``.
+    propagate_tags: Any = None
+    # The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your load balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and your task definition doesn't use the ``awsvpc`` network mode. If you specify the ``role`` parameter, you must also specify a load balancer object with the ``loadBalancers`` parameter. If your account has already created the Amazon ECS service-linked role, that role is used for your service unless you specify a role here. The service-linked role is required if your task definition uses the ``awsvpc`` network mode or if the service is configured to use service discovery, an external deployment controller, multiple target groups, or Elastic Inference accelerators in which case you don't specify a role here. For more information, see [Using service-linked roles for Amazon ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html) in the *Amazon Elastic Container Service Developer Guide*. If your specified role has a path other than ``/``, then you must either specify the full role ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name ``bar`` has a path of ``/foo/`` then you would specify ``/foo/bar`` as the role name. For more information, see [Friendly names and paths](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names) in the *IAM User Guide*.
+    role: Any = None
+    # The scheduling strategy to use for the service. For more information, see [Services](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html). There are two service scheduler strategies available: + ``REPLICA``-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions. This scheduler strategy is required if the service uses the ``CODE_DEPLOY`` or ``EXTERNAL`` deployment controller types. + ``DAEMON``-The daemon scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks and will stop tasks that don't meet the placement constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies. Tasks using the Fargate launch type or the ``CODE_DEPLOY`` or ``EXTERNAL`` deployment controller types don't support the ``DAEMON`` scheduling strategy.
+    scheduling_strategy: Any = None
+    # The Service Connect configuration of your Amazon ECS service. The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace. Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see [Service Connect](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html) in the *Amazon Elastic Container Service Developer Guide*.
     service_connect_configuration: Any = None
+    # The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a Region or across multiple Regions. The stack update fails if you change any properties that require replacement and the ``ServiceName`` is configured. This is because AWS CloudFormation creates the replacement service first, but each ``ServiceName`` must be unique in the cluster.
+    service_name: Any = None
+    # The details of the service discovery registry to associate with this service. For more information, see [Service discovery](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html). Each service may be associated with one service registry. Multiple service registries for each service isn't supported. To remove this property from your service resource, specify an empty ``ServiceRegistry`` array.
     service_registries: Any = None
-    timeouts: Any = None
-    volume_configuration: Any = None
+    # The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as well. The following basic restrictions apply to tags: + Maximum number of tags per resource - 50 + For each resource, each tag key must be unique, and each tag key can have only one value. + Maximum key length - 128 Unicode characters in UTF-8 + Maximum value length - 256 Unicode characters in UTF-8 + If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. + Tag keys and values are case-sensitive. + Do not use ``aws:``, ``AWS:``, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
+    tags: Any = None
+    # The ``family`` and ``revision`` (``family:revision``) or full ARN of the task definition to run in your service. If a ``revision`` isn't specified, the latest ``ACTIVE`` revision is used. A task definition must be specified if the service uses either the ``ECS`` or ``CODE_DEPLOY`` deployment controllers. For more information about deployment types, see [Amazon ECS deployment types](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html).
+    task_definition: Any = None
+    # The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume. To remove this property from your service resource, specify an empty ``ServiceVolumeConfiguration`` array.
+    volume_configurations: Any = None
+    # The VPC Lattice configuration for the service being created.
+    vpc_lattice_configurations: Any = None
+
+@dataclasses.dataclass
+class ServiceAttrs:
+    # Indicates whether to use Availability Zone rebalancing for the service. For more information, see [Balancing an Amazon ECS service across Availability Zones](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html) in the *Amazon Elastic Container Service Developer Guide*. The default behavior of ``AvailabilityZoneRebalancing`` differs between create and update requests: + For create service requests, when no value is specified for ``AvailabilityZoneRebalancing``, Amazon ECS defaults the value to ``ENABLED``. + For update service requests, when no value is specified for ``AvailabilityZoneRebalancing``, Amazon ECS defaults to the existing service’s ``AvailabilityZoneRebalancing`` value. If the service never had an ``AvailabilityZoneRebalancing`` value set, Amazon ECS treats this as ``DISABLED``.
+    availability_zone_rebalancing: Any = None
+    # The capacity provider strategy to use for the service. If a ``capacityProviderStrategy`` is specified, the ``launchType`` parameter must be omitted. If no ``capacityProviderStrategy`` or ``launchType`` is specified, the ``defaultCapacityProviderStrategy`` for the cluster is used. A capacity provider strategy can contain a maximum of 20 capacity providers. To remove this property from your service resource, specify an empty ``CapacityProviderStrategyItem`` array.
+    capacity_provider_strategy: Any = None
+    # The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on. If you do not specify a cluster, the default cluster is assumed.
+    cluster: Any = None
+    # Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.
+    deployment_configuration: Any = None
+    # The deployment controller to use for the service.
+    deployment_controller: Any = None
+    # The number of instantiations of the specified task definition to place and keep running in your service. For new services, if a desired count is not specified, a default value of ``1`` is used. When using the ``DAEMON`` scheduling strategy, the desired count is not required. For existing services, if a desired count is not specified, it is omitted from the operation.
+    desired_count: Any = None
+    # Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see [Tagging your Amazon ECS resources](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html) in the *Amazon Elastic Container Service Developer Guide*. When you use Amazon ECS managed tags, you must set the ``propagateTags`` request parameter.
+    enable_ecsmanaged_tags: Any = None
+    # Determines whether the execute command functionality is turned on for the service. If ``true``, the execute command functionality is turned on for all containers in tasks as part of the service.
+    enable_execute_command: Any = None
+    # Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (``my_image:latest``) or to roll Fargate tasks onto a newer platform version.
+    force_new_deployment: Any = None
+    # The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you do not specify a health check grace period value, the default value of 0 is used. If you do not use any of the health checks, then ``healthCheckGracePeriodSeconds`` is unused. If your service has more running tasks than desired, unhealthy tasks in the grace period might be stopped to reach the desired count.
+    health_check_grace_period_seconds: Any = None
+    # The launch type on which to run your service. For more information, see [Amazon ECS Launch Types](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) in the *Amazon Elastic Container Service Developer Guide*. If you want to use Managed Instances, you must use the ``capacityProviderStrategy`` request parameter
+    launch_type: Any = None
+    # A list of load balancer objects to associate with the service. If you specify the ``Role`` property, ``LoadBalancers`` must be specified as well. For information about the number of load balancers that you can specify per service, see [Service Load Balancing](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html) in the *Amazon Elastic Container Service Developer Guide*. To remove this property from your service resource, specify an empty ``LoadBalancer`` array.
+    load_balancers: Any = None
+    # The optional monitoring configuration for a service, which defines the resolution for the service-level ``CPUUtilization`` and ``MemoryUtilization`` Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of ``60`` seconds.
+    monitoring: Any = None
+    # The unique name of the ECS service within its cluster; when omitted, this is auto-generated by ECS, and this attribute holds the final name after creation. (AI-inferred)
+    name: Any = None
+    # The network configuration for a task or service.
+    network_configuration: Any = None
+    # An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime. To remove this property from your service resource, specify an empty ``PlacementConstraint`` array.
+    placement_constraints: Any = None
+    # The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service. To remove this property from your service resource, specify an empty ``PlacementStrategy`` array.
+    placement_strategies: Any = None
+    # The platform version that your tasks in the service are running on. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the ``LATEST`` platform version is used. For more information, see [platform versions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html) in the *Amazon Elastic Container Service Developer Guide*.
+    platform_version: Any = None
+    # Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the [TagResource](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html) API action. You must set this to a value other than ``NONE`` when you use Cost Explorer. For more information, see [Amazon ECS usage reports](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html) in the *Amazon Elastic Container Service Developer Guide*. The default is ``NONE``.
+    propagate_tags: Any = None
+    # The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your load balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and your task definition doesn't use the ``awsvpc`` network mode. If you specify the ``role`` parameter, you must also specify a load balancer object with the ``loadBalancers`` parameter. If your account has already created the Amazon ECS service-linked role, that role is used for your service unless you specify a role here. The service-linked role is required if your task definition uses the ``awsvpc`` network mode or if the service is configured to use service discovery, an external deployment controller, multiple target groups, or Elastic Inference accelerators in which case you don't specify a role here. For more information, see [Using service-linked roles for Amazon ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html) in the *Amazon Elastic Container Service Developer Guide*. If your specified role has a path other than ``/``, then you must either specify the full role ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name ``bar`` has a path of ``/foo/`` then you would specify ``/foo/bar`` as the role name. For more information, see [Friendly names and paths](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names) in the *IAM User Guide*.
+    role: Any = None
+    # The scheduling strategy to use for the service. For more information, see [Services](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html). There are two service scheduler strategies available: + ``REPLICA``-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions. This scheduler strategy is required if the service uses the ``CODE_DEPLOY`` or ``EXTERNAL`` deployment controller types. + ``DAEMON``-The daemon scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks and will stop tasks that don't meet the placement constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies. Tasks using the Fargate launch type or the ``CODE_DEPLOY`` or ``EXTERNAL`` deployment controller types don't support the ``DAEMON`` scheduling strategy.
+    scheduling_strategy: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies the ECS service. (AI-inferred)
+    service_arn: Any = None
+    # The Service Connect configuration of your Amazon ECS service. The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace. Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see [Service Connect](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html) in the *Amazon Elastic Container Service Developer Guide*.
+    service_connect_configuration: Any = None
+    # The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a Region or across multiple Regions. The stack update fails if you change any properties that require replacement and the ``ServiceName`` is configured. This is because AWS CloudFormation creates the replacement service first, but each ``ServiceName`` must be unique in the cluster.
+    service_name: Any = None
+    # The details of the service discovery registry to associate with this service. For more information, see [Service discovery](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html). Each service may be associated with one service registry. Multiple service registries for each service isn't supported. To remove this property from your service resource, specify an empty ``ServiceRegistry`` array.
+    service_registries: Any = None
+    # The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as well. The following basic restrictions apply to tags: + Maximum number of tags per resource - 50 + For each resource, each tag key must be unique, and each tag key can have only one value. + Maximum key length - 128 Unicode characters in UTF-8 + Maximum value length - 256 Unicode characters in UTF-8 + If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. + Tag keys and values are case-sensitive. + Do not use ``aws:``, ``AWS:``, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
+    tags: Any = None
+    # The ``family`` and ``revision`` (``family:revision``) or full ARN of the task definition to run in your service. If a ``revision`` isn't specified, the latest ``ACTIVE`` revision is used. A task definition must be specified if the service uses either the ``ECS`` or ``CODE_DEPLOY`` deployment controllers. For more information about deployment types, see [Amazon ECS deployment types](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html).
+    task_definition: Any = None
+    # The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume. To remove this property from your service resource, specify an empty ``ServiceVolumeConfiguration`` array.
+    volume_configurations: Any = None
+    # The VPC Lattice configuration for the service being created.
     vpc_lattice_configurations: Any = None
 
 Service = ubx.ResourceBinding(
     wire_type="aws_ecs_service",
     fields={
         "availability_zone_rebalancing": ubx.FieldSpec(wire_name="availability_zone_rebalancing"),
-        "cluster": ubx.FieldSpec(wire_name="cluster"),
-        "deployment_maximum_percent": ubx.FieldSpec(wire_name="deployment_maximum_percent"),
-        "deployment_minimum_healthy_percent": ubx.FieldSpec(wire_name="deployment_minimum_healthy_percent"),
-        "desired_count": ubx.FieldSpec(wire_name="desired_count"),
-        "enable_ecs_managed_tags": ubx.FieldSpec(wire_name="enable_ecs_managed_tags"),
-        "enable_execute_command": ubx.FieldSpec(wire_name="enable_execute_command"),
-        "force_delete": ubx.FieldSpec(wire_name="force_delete"),
-        "force_new_deployment": ubx.FieldSpec(wire_name="force_new_deployment"),
-        "health_check_grace_period_seconds": ubx.FieldSpec(wire_name="health_check_grace_period_seconds"),
-        "iam_role": ubx.FieldSpec(wire_name="iam_role"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "launch_type": ubx.FieldSpec(wire_name="launch_type"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "platform_version": ubx.FieldSpec(wire_name="platform_version"),
-        "propagate_tags": ubx.FieldSpec(wire_name="propagate_tags"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "scheduling_strategy": ubx.FieldSpec(wire_name="scheduling_strategy"),
-        "sigint_rollback": ubx.FieldSpec(wire_name="sigint_rollback"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "task_definition": ubx.FieldSpec(wire_name="task_definition"),
-        "triggers": ubx.FieldSpec(wire_name="triggers"),
-        "wait_for_steady_state": ubx.FieldSpec(wire_name="wait_for_steady_state"),
-        "alarms": ubx.FieldSpec(
-            wire_name="alarms",
-            kind="list",
-            fields=_Service_AlarmsFields,
-        ),
         "capacity_provider_strategy": ubx.FieldSpec(
             wire_name="capacity_provider_strategy",
-            kind="set",
+            kind="list",
             fields=_Service_CapacityProviderStrategyFields,
         ),
-        "deployment_circuit_breaker": ubx.FieldSpec(
-            wire_name="deployment_circuit_breaker",
-            kind="list",
-            fields=_Service_DeploymentCircuitBreakerFields,
-        ),
+        "cluster": ubx.FieldSpec(wire_name="cluster"),
         "deployment_configuration": ubx.FieldSpec(
             wire_name="deployment_configuration",
-            kind="list",
+            kind="object",
             fields=_Service_DeploymentConfigurationFields,
         ),
         "deployment_controller": ubx.FieldSpec(
             wire_name="deployment_controller",
-            kind="list",
+            kind="object",
             fields=_Service_DeploymentControllerFields,
         ),
-        "load_balancer": ubx.FieldSpec(
-            wire_name="load_balancer",
-            kind="set",
-            fields=_Service_LoadBalancerFields,
+        "desired_count": ubx.FieldSpec(wire_name="desired_count"),
+        "enable_ecsmanaged_tags": ubx.FieldSpec(wire_name="enable_ecsmanaged_tags"),
+        "enable_execute_command": ubx.FieldSpec(wire_name="enable_execute_command"),
+        "force_new_deployment": ubx.FieldSpec(
+            wire_name="force_new_deployment",
+            kind="object",
+            fields=_Service_ForceNewDeploymentFields,
+        ),
+        "health_check_grace_period_seconds": ubx.FieldSpec(wire_name="health_check_grace_period_seconds"),
+        "launch_type": ubx.FieldSpec(wire_name="launch_type"),
+        "load_balancers": ubx.FieldSpec(
+            wire_name="load_balancers",
+            kind="list",
+            fields=_Service_LoadBalancersFields,
+        ),
+        "monitoring": ubx.FieldSpec(
+            wire_name="monitoring",
+            kind="object",
+            fields=_Service_MonitoringFields,
         ),
         "network_configuration": ubx.FieldSpec(
             wire_name="network_configuration",
-            kind="list",
+            kind="object",
             fields=_Service_NetworkConfigurationFields,
-        ),
-        "ordered_placement_strategy": ubx.FieldSpec(
-            wire_name="ordered_placement_strategy",
-            kind="list",
-            fields=_Service_OrderedPlacementStrategyFields,
         ),
         "placement_constraints": ubx.FieldSpec(
             wire_name="placement_constraints",
-            kind="set",
+            kind="list",
             fields=_Service_PlacementConstraintsFields,
         ),
+        "placement_strategies": ubx.FieldSpec(
+            wire_name="placement_strategies",
+            kind="list",
+            fields=_Service_PlacementStrategiesFields,
+        ),
+        "platform_version": ubx.FieldSpec(wire_name="platform_version"),
+        "propagate_tags": ubx.FieldSpec(wire_name="propagate_tags"),
+        "role": ubx.FieldSpec(wire_name="role"),
+        "scheduling_strategy": ubx.FieldSpec(wire_name="scheduling_strategy"),
         "service_connect_configuration": ubx.FieldSpec(
             wire_name="service_connect_configuration",
-            kind="list",
+            kind="object",
             fields=_Service_ServiceConnectConfigurationFields,
         ),
+        "service_name": ubx.FieldSpec(wire_name="service_name"),
         "service_registries": ubx.FieldSpec(
             wire_name="service_registries",
             kind="list",
             fields=_Service_ServiceRegistriesFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Service_TimeoutsFields,
-        ),
-        "volume_configuration": ubx.FieldSpec(
-            wire_name="volume_configuration",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_Service_VolumeConfigurationFields,
+            fields=_Service_TagsFields,
+        ),
+        "task_definition": ubx.FieldSpec(wire_name="task_definition"),
+        "volume_configurations": ubx.FieldSpec(
+            wire_name="volume_configurations",
+            kind="list",
+            fields=_Service_VolumeConfigurationsFields,
         ),
         "vpc_lattice_configurations": ubx.FieldSpec(
             wire_name="vpc_lattice_configurations",
-            kind="set",
+            kind="list",
             fields=_Service_VpcLatticeConfigurationsFields,
         ),
     },

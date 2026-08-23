@@ -3,25 +3,31 @@ package ec2
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ClientVpnAuthorizationRule_Timeouts struct {
-	Create any
-	Delete any
+type ClientVpnAuthorizationRuleConfig struct {
+	// The ID of the Active Directory group that is allowed access to the network; if omitted, all users in the directory are permitted. (AI-inferred)
+	AccessGroupId any
+	// Indicates whether to authorize access to all groups, so when set to true, the rule applies to every Active Directory group, and when false, you must specify target groups via the GroupId field. (AI-inferred)
+	AuthorizeAllGroups any
+	// The ID of the Client VPN endpoint to which this authorization rule applies. (AI-inferred)
+	ClientVpnEndpointId any
+	// A brief, optional description that identifies the purpose of the Client VPN authorization rule. (AI-inferred)
+	Description any
+	// The CIDR block of the target network that this authorization rule grants access to for the specified clients or groups. (AI-inferred)
+	TargetNetworkCidr any
 }
 
-var ClientVpnAuthorizationRule_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
-type ClientVpnAuthorizationRuleConfig struct {
+type ClientVpnAuthorizationRuleAttrs struct {
+	// The ID of the Active Directory group that is allowed access to the network; if omitted, all users in the directory are permitted. (AI-inferred)
 	AccessGroupId any
+	// Indicates whether to authorize access to all groups, so when set to true, the rule applies to every Active Directory group, and when false, you must specify target groups via the GroupId field. (AI-inferred)
 	AuthorizeAllGroups any
+	// The ID of the Client VPN endpoint to which this authorization rule applies. (AI-inferred)
 	ClientVpnEndpointId any
+	// A brief, optional description that identifies the purpose of the Client VPN authorization rule. (AI-inferred)
 	Description any
 	Id any
-	Region any
+	// The CIDR block of the target network that this authorization rule grants access to for the specified clients or groups. (AI-inferred)
 	TargetNetworkCidr any
-	Timeouts any
 }
 
 var ClientVpnAuthorizationRule = ubx.ResourceBinding{
@@ -31,13 +37,6 @@ var ClientVpnAuthorizationRule = ubx.ResourceBinding{
 		"AuthorizeAllGroups": ubx.FieldSpec{WireName: "authorize_all_groups"},
 		"ClientVpnEndpointId": ubx.FieldSpec{WireName: "client_vpn_endpoint_id"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"TargetNetworkCidr": ubx.FieldSpec{WireName: "target_network_cidr"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: ClientVpnAuthorizationRule_TimeoutsFields,
-		},
 	},
 }

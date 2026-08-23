@@ -4,20 +4,28 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupPolicyConfig struct {
-	Group any
-	Id any
-	Name any
-	NamePrefix any
-	Policy any
+	// The name of the group to associate the policy with. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-.
+	GroupName any
+	// The policy document. You must provide policies in JSON format in IAM. However, for CFN templates formatted in YAML, you can provide the policy in JSON or YAML format. CFN always converts a YAML policy to JSON format before submitting it to IAM. The [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex) used to validate this parameter is a string of characters consisting of the following: + Any printable ASCII character ranging from the space character (``\u0020``) through the end of the ASCII character range + The printable characters in the Basic Latin and Latin-1 Supplement character set (through ``\u00FF``) + The special characters tab (``\u0009``), line feed (``\u000A``), and carriage return (``\u000D``)
+	PolicyDocument any
+	// The name of the policy document. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+	PolicyName any
+}
+
+type GroupPolicyAttrs struct {
+	// The name of the group to associate the policy with. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-.
+	GroupName any
+	// The policy document. You must provide policies in JSON format in IAM. However, for CFN templates formatted in YAML, you can provide the policy in JSON or YAML format. CFN always converts a YAML policy to JSON format before submitting it to IAM. The [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex) used to validate this parameter is a string of characters consisting of the following: + Any printable ASCII character ranging from the space character (``\u0020``) through the end of the ASCII character range + The printable characters in the Basic Latin and Latin-1 Supplement character set (through ``\u00FF``) + The special characters tab (``\u0009``), line feed (``\u000A``), and carriage return (``\u000D``)
+	PolicyDocument any
+	// The name of the policy document. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+	PolicyName any
 }
 
 var GroupPolicy = ubx.ResourceBinding{
 	WireType: "aws_iam_group_policy",
 	Fields: ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"GroupName": ubx.FieldSpec{WireName: "group_name"},
+		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
 	},
 }

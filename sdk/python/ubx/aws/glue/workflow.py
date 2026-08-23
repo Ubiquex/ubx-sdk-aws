@@ -8,25 +8,37 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WorkflowConfig:
+    # A collection of properties to be used as part of each execution of the workflow
     default_run_properties: Any = None
+    # A description of the workflow
     description: Any = None
-    id: Any = None
+    # You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.
     max_concurrent_runs: Any = None
+    # The name of the workflow representing the flow
     name: Any = None
-    region: Any = None
+    # The tags to use with this workflow.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class WorkflowAttrs:
+    # A collection of properties to be used as part of each execution of the workflow
+    default_run_properties: Any = None
+    # A description of the workflow
+    description: Any = None
+    # You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.
+    max_concurrent_runs: Any = None
+    # The name of the workflow representing the flow
+    name: Any = None
+    # The tags to use with this workflow.
+    tags: Any = None
 
 Workflow = ubx.ResourceBinding(
     wire_type="aws_glue_workflow",
     fields={
         "default_run_properties": ubx.FieldSpec(wire_name="default_run_properties"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "max_concurrent_runs": ubx.FieldSpec(wire_name="max_concurrent_runs"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
     },
 )

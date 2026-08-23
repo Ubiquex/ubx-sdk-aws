@@ -4,8 +4,16 @@ package xray
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Group_InsightsConfiguration struct {
+	// Set the InsightsEnabled value to true to enable insights or false to disable insights.
 	InsightsEnabled any
+	// Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.
 	NotificationsEnabled any
+}
+
+type Group_Tags struct {
+	// Specifies the key of a tag assigned to the AWS X-Ray group, enabling you to categorize and manage the group within your AWS environment. (AI-inferred)
+	Key any
+	Value any
 }
 
 var Group_InsightsConfigurationFields = ubx.FieldMap{
@@ -13,14 +21,33 @@ var Group_InsightsConfigurationFields = ubx.FieldMap{
 		"NotificationsEnabled": ubx.FieldSpec{WireName: "notifications_enabled"},
 	}
 
+var Group_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type GroupConfig struct {
+	// The filter expression defining criteria by which to group traces.
 	FilterExpression any
+	// The case-sensitive name of the new group. Names must be unique.
 	GroupName any
-	Id any
-	Region any
-	Tags any
-	TagsAll any
+	// Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred)
 	InsightsConfiguration any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type GroupAttrs struct {
+	// The filter expression defining criteria by which to group traces.
+	FilterExpression any
+	// The ARN of the group that was generated on creation.
+	GroupArn any
+	// The case-sensitive name of the new group. Names must be unique.
+	GroupName any
+	// Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred)
+	InsightsConfiguration any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Group = ubx.ResourceBinding{
@@ -28,14 +55,15 @@ var Group = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"FilterExpression": ubx.FieldSpec{WireName: "filter_expression"},
 		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"InsightsConfiguration": ubx.FieldSpec{
 			WireName: "insights_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Group_InsightsConfigurationFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Group_TagsFields,
 		},
 	},
 }

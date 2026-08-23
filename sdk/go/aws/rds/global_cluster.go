@@ -3,55 +3,77 @@ package rds
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type GlobalCluster_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type GlobalCluster_GlobalEndpoint struct {
+	// The writer endpoint for the global database cluster. This endpoint always points to the writer DB instance in the current primary cluster.
+	Address any
 }
 
-var GlobalCluster_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+type GlobalCluster_Tags struct {
+	// The key of a tag attached to the RDS Global Cluster, used to organize and identify the cluster. (AI-inferred)
+	Key any
+	// The value of a user-defined tag key attached to the RDS Global Cluster, used to store custom metadata such as environment, owner, or cost center for the cluster. (AI-inferred)
+	Value any
+}
+
+var GlobalCluster_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type GlobalClusterConfig struct {
-	DatabaseName any
+	// The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.
 	DeletionProtection any
+	// The name of the database engine to be used for this DB cluster. Valid Values: aurora (for MySQL 5.6-compatible Aurora), aurora-mysql (for MySQL 5.7-compatible Aurora). If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
 	Engine any
+	// The life cycle type of the global cluster. You can use this setting to enroll your global cluster into Amazon RDS Extended Support.
 	EngineLifecycleSupport any
+	// The version number of the database engine to use. If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
 	EngineVersion any
-	ForceDestroy any
+	// The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.
 	GlobalClusterIdentifier any
-	Id any
-	Region any
-	SourceDbClusterIdentifier any
+	// The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional. This parameter is stored as a lowercase string.
+	SourceDbclusterIdentifier any
+	// The storage encryption setting for the new global database cluster. If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
 	StorageEncrypted any
+	// An array of key-value pairs to apply to this resource.
 	Tags any
-	TagsAll any
-	Timeouts any
+}
+
+type GlobalClusterAttrs struct {
+	// The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.
+	DeletionProtection any
+	// The name of the database engine to be used for this DB cluster. Valid Values: aurora (for MySQL 5.6-compatible Aurora), aurora-mysql (for MySQL 5.7-compatible Aurora). If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
+	Engine any
+	// The life cycle type of the global cluster. You can use this setting to enroll your global cluster into Amazon RDS Extended Support.
+	EngineLifecycleSupport any
+	// The version number of the database engine to use. If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
+	EngineVersion any
+	// The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.
+	GlobalClusterIdentifier any
+	// The global endpoint of the RDS global cluster, containing the address and port used to connect to the primary (writer) instance for read/write operations. (AI-inferred)
+	GlobalEndpoint any
+	// The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional. This parameter is stored as a lowercase string.
+	SourceDbclusterIdentifier any
+	// The storage encryption setting for the new global database cluster. If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.
+	StorageEncrypted any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var GlobalCluster = ubx.ResourceBinding{
 	WireType: "aws_rds_global_cluster",
 	Fields: ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
 		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
 		"Engine": ubx.FieldSpec{WireName: "engine"},
 		"EngineLifecycleSupport": ubx.FieldSpec{WireName: "engine_lifecycle_support"},
 		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"ForceDestroy": ubx.FieldSpec{WireName: "force_destroy"},
 		"GlobalClusterIdentifier": ubx.FieldSpec{WireName: "global_cluster_identifier"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SourceDbClusterIdentifier": ubx.FieldSpec{WireName: "source_db_cluster_identifier"},
+		"SourceDbclusterIdentifier": ubx.FieldSpec{WireName: "source_dbcluster_identifier"},
 		"StorageEncrypted": ubx.FieldSpec{WireName: "storage_encrypted"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: GlobalCluster_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: GlobalCluster_TagsFields,
 		},
 	},
 }

@@ -4,21 +4,31 @@ package cognito
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserPoolClient_AnalyticsConfiguration struct {
+	// The ARN of the Amazon Pinpoint project or Amazon Kinesis Data Firehose delivery stream used by the user pool client's analytics configuration to send user activity data. (AI-inferred)
 	ApplicationArn any
+	// The Amazon Pinpoint application ID that receives user pool client analytics data. (AI-inferred)
 	ApplicationId any
+	// Specifies the external ID that Amazon Cognito uses when it assumes the IAM role defined in the analytics configuration to send user activity data to the analytics application. (AI-inferred)
 	ExternalId any
+	// The ARN of the IAM role that Amazon Cognito assumes to publish analytics events to Amazon Pinpoint for this user pool client. (AI-inferred)
 	RoleArn any
+	// Indicates whether user data from the user pool client is shared with the configured Amazon Pinpoint analytics provider. (AI-inferred)
 	UserDataShared any
 }
 
 type UserPoolClient_RefreshTokenRotation struct {
+	// Determines whether refresh token rotation is enabled for the user pool client, with valid values being 'ENABLED' or 'DISABLED'. (AI-inferred)
 	Feature any
+	// Sets the retry grace period, in seconds, during which an old refresh token remains valid after it has been rotated for a new one, allowing clients that still present the previous token to successfully obtain new tokens before the old token is revoked. (AI-inferred)
 	RetryGracePeriodSeconds any
 }
 
 type UserPoolClient_TokenValidityUnits struct {
+	// Specifies the time unit (e.g., seconds, minutes, hours, or days) used to interpret the numeric value of the access token validity period for the Cognito user pool client. (AI-inferred)
 	AccessToken any
+	// Specifies the unit of time (e.g., seconds, minutes, hours, days) used for the ID token's validity period in the user pool client. (AI-inferred)
 	IdToken any
+	// Specifies the time unit (e.g., seconds, minutes, hours, or days) used for the refresh token's validity period in the user pool client. (AI-inferred)
 	RefreshToken any
 }
 
@@ -42,30 +52,105 @@ var UserPoolClient_TokenValidityUnitsFields = ubx.FieldMap{
 	}
 
 type UserPoolClientConfig struct {
+	// The validity duration, in minutes, for access tokens issued by this Cognito user pool client, after which they expire. (AI-inferred)
 	AccessTokenValidity any
+	// The list of allowed OAuth flows (such as code, implicit, or client_credentials) for the user pool client, which determines how tokens can be obtained via the hosted UI or API. (AI-inferred)
 	AllowedOauthFlows any
+	// This boolean enables the OAuth 2.0 authorization flows (such as authorization code, implicit, and client credentials) for this user pool client, allowing it to be used with the hosted UI and OAuth tokens. (AI-inferred)
 	AllowedOauthFlowsUserPoolClient any
+	// Defines the list of OAuth 2.0 scopes that the user pool client is allowed to request (e.g., email, phone, openid, profile, or custom scopes), controlling the access scope granted during the authorization code or implicit OAuth flows. (AI-inferred)
 	AllowedOauthScopes any
-	AuthSessionValidity any
-	CallbackUrls any
-	DefaultRedirectUri any
-	EnablePropagateAdditionalUserContextData any
-	EnableTokenRevocation any
-	ExplicitAuthFlows any
-	GenerateSecret any
-	IdTokenValidity any
-	LogoutUrls any
-	Name any
-	PreventUserExistenceErrors any
-	ReadAttributes any
-	RefreshTokenValidity any
-	Region any
-	SupportedIdentityProviders any
-	UserPoolId any
-	WriteAttributes any
+	// Configures the Amazon Pinpoint analytics settings for the user pool client, including the Pinpoint application ID, IAM role ARN, external ID, and whether user data is shared, to enable tracking of user events. (AI-inferred)
 	AnalyticsConfiguration any
+	// The number of minutes (1-15) that an authentication session remains valid before expiring, controlling how long a user can complete the interactive sign-in flow without restarting. (AI-inferred)
+	AuthSessionValidity any
+	// List of allowed callback URLs for the Cognito user pool client's OAuth 2.0 authorization endpoints, which Cognito redirects to after authentication. (AI-inferred)
+	CallbackUrls any
+	// The name of the user pool client, used to identify the client application in the AWS Management Console and in API responses. (AI-inferred)
+	ClientName any
+	// The URI that the user is redirected to after sign-in or sign-out if no redirect_uri parameter is supplied in the authorization request. (AI-inferred)
+	DefaultRedirectUri any
+	// Indicates whether the user pool client propagates additional user context data (such as device fingerprints) to the user pool for advanced security risk evaluation. (AI-inferred)
+	EnablePropagateAdditionalUserContextData any
+	// Enable token revocation for the user pool client, allowing Cognito to revoke refresh tokens (e.g., after a password change or user disablement) so they can no longer be used. (AI-inferred)
+	EnableTokenRevocation any
+	// Lists the authentication flows explicitly enabled for this user pool client (e.g., ALLOW_USER_SRP_AUTH, ALLOW_REFRESH_TOKEN_AUTH, ALLOW_CUSTOM_AUTH, ALLOW_ADMIN_USER_PASSWORD_AUTH), overriding the default set of allowed flows for the app client. (AI-inferred)
+	ExplicitAuthFlows any
+	// Indicates whether the app client will have a generated client secret, used for confidential clients to authenticate to the token endpoint. (AI-inferred)
+	GenerateSecret any
+	// The number of minutes that an ID token issued by the user pool client remains valid before it expires. (AI-inferred)
+	IdTokenValidity any
+	// Specifies the list of allowed logout redirect URIs to which Cognito may redirect users after signing out from the user pool client. (AI-inferred)
+	LogoutUrls any
+	// Indicates whether the user pool client prevents user enumeration by returning a generic error when a user does not exist, with allowed values 'ENABLED' or 'LEGACY'. (AI-inferred)
+	PreventUserExistenceErrors any
+	// Specifies the user pool attributes that the app client can read from the user's profile. (AI-inferred)
+	ReadAttributes any
 	RefreshTokenRotation any
+	// The number of days that a refresh token remains valid before the user must re-authenticate. (AI-inferred)
+	RefreshTokenValidity any
+	// A list of identity provider names (e.g., COGNITO, Facebook, Google, LoginWithAmazon, or custom SAML/OIDC providers) that are enabled for this app client, controlling which IdPs can be used for sign-in. (AI-inferred)
+	SupportedIdentityProviders any
+	// Specifies the time units (such as seconds, minutes, hours, or days) for the expiration of access, ID, and refresh tokens issued by the user pool client, enabling separate validity durations for each token type. (AI-inferred)
 	TokenValidityUnits any
+	// The unique ID of the Amazon Cognito user pool to which this app client belongs, used to link the client configuration to its parent pool. (AI-inferred)
+	UserPoolId any
+	// Specifies the list of user pool attributes that the app client is allowed to update (write) for users, controlling which profile fields can be modified through the client. (AI-inferred)
+	WriteAttributes any
+}
+
+type UserPoolClientAttrs struct {
+	// The validity duration, in minutes, for access tokens issued by this Cognito user pool client, after which they expire. (AI-inferred)
+	AccessTokenValidity any
+	// The list of allowed OAuth flows (such as code, implicit, or client_credentials) for the user pool client, which determines how tokens can be obtained via the hosted UI or API. (AI-inferred)
+	AllowedOauthFlows any
+	// This boolean enables the OAuth 2.0 authorization flows (such as authorization code, implicit, and client credentials) for this user pool client, allowing it to be used with the hosted UI and OAuth tokens. (AI-inferred)
+	AllowedOauthFlowsUserPoolClient any
+	// Defines the list of OAuth 2.0 scopes that the user pool client is allowed to request (e.g., email, phone, openid, profile, or custom scopes), controlling the access scope granted during the authorization code or implicit OAuth flows. (AI-inferred)
+	AllowedOauthScopes any
+	// Configures the Amazon Pinpoint analytics settings for the user pool client, including the Pinpoint application ID, IAM role ARN, external ID, and whether user data is shared, to enable tracking of user events. (AI-inferred)
+	AnalyticsConfiguration any
+	// The number of minutes (1-15) that an authentication session remains valid before expiring, controlling how long a user can complete the interactive sign-in flow without restarting. (AI-inferred)
+	AuthSessionValidity any
+	// List of allowed callback URLs for the Cognito user pool client's OAuth 2.0 authorization endpoints, which Cognito redirects to after authentication. (AI-inferred)
+	CallbackUrls any
+	// The unique identifier (ID) of the user pool client, assigned by Amazon Cognito when the client is created. (AI-inferred)
+	ClientId any
+	// The name of the user pool client, used to identify the client application in the AWS Management Console and in API responses. (AI-inferred)
+	ClientName any
+	// The client secret that this app client uses to authenticate with the Cognito User Pool service, generated by Cognito and exposed as a read-only attribute after creation. (AI-inferred)
+	ClientSecret any
+	// The URI that the user is redirected to after sign-in or sign-out if no redirect_uri parameter is supplied in the authorization request. (AI-inferred)
+	DefaultRedirectUri any
+	// Indicates whether the user pool client propagates additional user context data (such as device fingerprints) to the user pool for advanced security risk evaluation. (AI-inferred)
+	EnablePropagateAdditionalUserContextData any
+	// Enable token revocation for the user pool client, allowing Cognito to revoke refresh tokens (e.g., after a password change or user disablement) so they can no longer be used. (AI-inferred)
+	EnableTokenRevocation any
+	// Lists the authentication flows explicitly enabled for this user pool client (e.g., ALLOW_USER_SRP_AUTH, ALLOW_REFRESH_TOKEN_AUTH, ALLOW_CUSTOM_AUTH, ALLOW_ADMIN_USER_PASSWORD_AUTH), overriding the default set of allowed flows for the app client. (AI-inferred)
+	ExplicitAuthFlows any
+	// Indicates whether the app client will have a generated client secret, used for confidential clients to authenticate to the token endpoint. (AI-inferred)
+	GenerateSecret any
+	// The number of minutes that an ID token issued by the user pool client remains valid before it expires. (AI-inferred)
+	IdTokenValidity any
+	// Specifies the list of allowed logout redirect URIs to which Cognito may redirect users after signing out from the user pool client. (AI-inferred)
+	LogoutUrls any
+	// This attribute returns the name of the Cognito user pool application client, as originally specified in the ClientName parameter during client creation. (AI-inferred)
+	Name any
+	// Indicates whether the user pool client prevents user enumeration by returning a generic error when a user does not exist, with allowed values 'ENABLED' or 'LEGACY'. (AI-inferred)
+	PreventUserExistenceErrors any
+	// Specifies the user pool attributes that the app client can read from the user's profile. (AI-inferred)
+	ReadAttributes any
+	RefreshTokenRotation any
+	// The number of days that a refresh token remains valid before the user must re-authenticate. (AI-inferred)
+	RefreshTokenValidity any
+	// A list of identity provider names (e.g., COGNITO, Facebook, Google, LoginWithAmazon, or custom SAML/OIDC providers) that are enabled for this app client, controlling which IdPs can be used for sign-in. (AI-inferred)
+	SupportedIdentityProviders any
+	// Specifies the time units (such as seconds, minutes, hours, or days) for the expiration of access, ID, and refresh tokens issued by the user pool client, enabling separate validity durations for each token type. (AI-inferred)
+	TokenValidityUnits any
+	// The unique ID of the Amazon Cognito user pool to which this app client belongs, used to link the client configuration to its parent pool. (AI-inferred)
+	UserPoolId any
+	// Specifies the list of user pool attributes that the app client is allowed to update (write) for users, controlling which profile fields can be modified through the client. (AI-inferred)
+	WriteAttributes any
 }
 
 var UserPoolClient = ubx.ResourceBinding{
@@ -75,8 +160,14 @@ var UserPoolClient = ubx.ResourceBinding{
 		"AllowedOauthFlows": ubx.FieldSpec{WireName: "allowed_oauth_flows"},
 		"AllowedOauthFlowsUserPoolClient": ubx.FieldSpec{WireName: "allowed_oauth_flows_user_pool_client"},
 		"AllowedOauthScopes": ubx.FieldSpec{WireName: "allowed_oauth_scopes"},
+		"AnalyticsConfiguration": ubx.FieldSpec{
+			WireName: "analytics_configuration",
+			Kind: "object",
+			Fields: UserPoolClient_AnalyticsConfigurationFields,
+		},
 		"AuthSessionValidity": ubx.FieldSpec{WireName: "auth_session_validity"},
 		"CallbackUrls": ubx.FieldSpec{WireName: "callback_urls"},
+		"ClientName": ubx.FieldSpec{WireName: "client_name"},
 		"DefaultRedirectUri": ubx.FieldSpec{WireName: "default_redirect_uri"},
 		"EnablePropagateAdditionalUserContextData": ubx.FieldSpec{WireName: "enable_propagate_additional_user_context_data"},
 		"EnableTokenRevocation": ubx.FieldSpec{WireName: "enable_token_revocation"},
@@ -84,28 +175,21 @@ var UserPoolClient = ubx.ResourceBinding{
 		"GenerateSecret": ubx.FieldSpec{WireName: "generate_secret"},
 		"IdTokenValidity": ubx.FieldSpec{WireName: "id_token_validity"},
 		"LogoutUrls": ubx.FieldSpec{WireName: "logout_urls"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"PreventUserExistenceErrors": ubx.FieldSpec{WireName: "prevent_user_existence_errors"},
 		"ReadAttributes": ubx.FieldSpec{WireName: "read_attributes"},
-		"RefreshTokenValidity": ubx.FieldSpec{WireName: "refresh_token_validity"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SupportedIdentityProviders": ubx.FieldSpec{WireName: "supported_identity_providers"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
-		"WriteAttributes": ubx.FieldSpec{WireName: "write_attributes"},
-		"AnalyticsConfiguration": ubx.FieldSpec{
-			WireName: "analytics_configuration",
-			Kind: "list",
-			Fields: UserPoolClient_AnalyticsConfigurationFields,
-		},
 		"RefreshTokenRotation": ubx.FieldSpec{
 			WireName: "refresh_token_rotation",
-			Kind: "list",
+			Kind: "object",
 			Fields: UserPoolClient_RefreshTokenRotationFields,
 		},
+		"RefreshTokenValidity": ubx.FieldSpec{WireName: "refresh_token_validity"},
+		"SupportedIdentityProviders": ubx.FieldSpec{WireName: "supported_identity_providers"},
 		"TokenValidityUnits": ubx.FieldSpec{
 			WireName: "token_validity_units",
-			Kind: "list",
+			Kind: "object",
 			Fields: UserPoolClient_TokenValidityUnitsFields,
 		},
+		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"WriteAttributes": ubx.FieldSpec{WireName: "write_attributes"},
 	},
 }

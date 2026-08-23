@@ -7,93 +7,125 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfig:
+class EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigs:
+    # Specifies the authentication method (e.g., AWS_IAM or BASIC_AUTH) used to access the Glue Schema Registry when the Lambda event source mapping uses Amazon Managed Kafka. (AI-inferred)
     type: Any = None
+    # The URI of the schema registry endpoint that Lambda uses to access and resolve message schemas for the Amazon Managed Kafka (MSK) event source mapping. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
-class EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_SchemaValidationConfig:
+class EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_SchemaValidationConfigs:
+    # The name of the Kafka message header attribute that Lambda uses to locate the schema in the MSK Schema Registry for validating records consumed from the topic. (AI-inferred)
     attribute: Any = None
 
 @dataclasses.dataclass
 class EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig:
+    # An array of access configuration objects that tell Lambda how to authenticate with your schema registry.
+    access_configs: Any = None
+    # The record format that Lambda delivers to your function after schema validation. + Choose ``JSON`` to have Lambda deliver the record to your function as a standard JSON object. + Choose ``SOURCE`` to have Lambda deliver the record to your function in its original source format. Lambda removes all schema metadata, such as the schema ID, before sending the record to your function.
     event_record_format: Any = None
+    # The URI for your schema registry. The correct URI format depends on the type of schema registry you're using. + For GLU schema registries, use the ARN of the registry. + For Confluent schema registries, use the URL of the registry.
     schema_registry_uri: Any = None
-    access_config: Any = None
-    schema_validation_config: Any = None
+    # An array of schema validation configuration objects, which tell Lambda the message attributes you want to validate and filter using your schema registry.
+    schema_validation_configs: Any = None
 
 @dataclasses.dataclass
 class EventSourceMapping_AmazonManagedKafkaEventSourceConfig:
+    # The identifier for the Kafka Consumer Group to join.
     consumer_group_id: Any = None
+    # Specific configuration settings for a Kafka schema registry.
     schema_registry_config: Any = None
 
 @dataclasses.dataclass
 class EventSourceMapping_DestinationConfig_OnFailure:
-    destination_arn: Any = None
+    # The Amazon Resource Name (ARN) of the destination resource. To retain records of failed invocations from [Kinesis](https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html), [DynamoDB](https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html), [self-managed Apache Kafka](https://docs.aws.amazon.com/lambda/latest/dg/kafka-on-failure.html), or [Amazon MSK](https://docs.aws.amazon.com/lambda/latest/dg/kafka-on-failure.html), you can configure an Amazon SNS topic, Amazon SQS queue, Amazon S3 bucket, or Kafka topic as the destination. Amazon SNS destinations have a message size limit of 256 KB. If the combined size of the function request and response payload exceeds the limit, Lambda will drop the payload when sending ``OnFailure`` event to the destination. For details on this behavior, refer to [Retaining records of asynchronous invocations](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html). To retain records of failed invocations from [Kinesis](https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html), [DynamoDB](https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html), [self-managed Kafka](https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination) or [Amazon MSK](https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination), you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3 bucket as the destination.
+    destination: Any = None
 
 @dataclasses.dataclass
 class EventSourceMapping_DestinationConfig:
+    # A destination for events that failed processing. For more information, see [Adding a destination](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations).
     on_failure: Any = None
 
 @dataclasses.dataclass
-class EventSourceMapping_DocumentDbEventSourceConfig:
+class EventSourceMapping_DocumentDbeventSourceConfig:
+    # The name of the collection to consume within the database. If you do not specify a collection, Lambda consumes all collections.
     collection_name: Any = None
+    # The name of the database to consume within the DocumentDB cluster.
     database_name: Any = None
+    # Determines what DocumentDB sends to your event stream during document update operations. If set to UpdateLookup, DocumentDB sends a delta describing the changes, along with a copy of the entire document. Otherwise, DocumentDB sends only a partial document that contains the changes.
     full_document: Any = None
 
 @dataclasses.dataclass
-class EventSourceMapping_FilterCriteria_Filter:
+class EventSourceMapping_FilterCriteria_Filters:
+    # The pattern is a JSON string in the event pattern format (for example, an EventBridge pattern or a filter pattern for self-managed sources like Kafka) that determines which events are delivered to the Lambda function from the event source mapping, with each filter in the list defining a single pattern to match against the event payload. (AI-inferred)
     pattern: Any = None
 
 @dataclasses.dataclass
 class EventSourceMapping_FilterCriteria:
-    filter: Any = None
+    # A list of filters.
+    filters: Any = None
+
+@dataclasses.dataclass
+class EventSourceMapping_LoggingConfig:
+    # Set this property to filter the system logs for your function that Lambda sends to CloudWatch. Lambda only sends system logs at the selected level of detail and lower, where ``DEBUG`` is the highest level and ``WARN`` is the lowest.
+    system_log_level: Any = None
 
 @dataclasses.dataclass
 class EventSourceMapping_MetricsConfig:
+    # The metrics you want your event source mapping to produce, including ``EventCount``, ``ErrorCount``, ``KafkaMetrics``. + ``EventCount`` to receive metrics related to the number of events processed by your event source mapping. + ``ErrorCount`` (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the number of errors in your event source mapping processing. + ``KafkaMetrics`` (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the Kafka consumers from your event source mapping. For more information about these metrics, see [Event source mapping metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics).
     metrics: Any = None
 
 @dataclasses.dataclass
 class EventSourceMapping_ProvisionedPollerConfig:
+    # The maximum number of event pollers this event source can scale up to. For Amazon SQS events source mappings, default is 200, and minimum value allowed is 2. For Amazon MSK and self-managed Apache Kafka event source mappings, default is 200, and minimum value allowed is 1.
     maximum_pollers: Any = None
+    # The minimum number of event pollers this event source can scale down to. For Amazon SQS events source mappings, default is 2, and minimum 2 required. For Amazon MSK and self-managed Apache Kafka event source mappings, default is 1.
     minimum_pollers: Any = None
+    # (Amazon MSK and self-managed Apache Kafka) The name of the provisioned poller group. Use this option to group multiple ESMs within the event source's VPC to share Event Poller Unit (EPU) capacity. You can use this option to optimize Provisioned mode costs for your ESMs. You can group up to 100 ESMs per poller group and aggregate maximum pollers across all ESMs in a group cannot exceed 2000.
     poller_group_name: Any = None
 
 @dataclasses.dataclass
 class EventSourceMapping_ScalingConfig:
+    # The maximum number of concurrent functions that an event source can invoke.
     maximum_concurrency: Any = None
 
 @dataclasses.dataclass
+class EventSourceMapping_SelfManagedEventSource_Endpoints:
+    # The list of bootstrap servers for your Kafka brokers in the following format: ``"KafkaBootstrapServers": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]``.
+    kafka_bootstrap_servers: Any = None
+
+@dataclasses.dataclass
 class EventSourceMapping_SelfManagedEventSource:
+    # The list of bootstrap servers for your Kafka brokers in the following format: ``"KafkaBootstrapServers": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]``.
     endpoints: Any = None
 
 @dataclasses.dataclass
-class EventSourceMapping_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class EventSourceMapping_Tags:
+    # Specifies the key portion of a tag attached to the AWS Lambda event source mapping, which is used to categorize the resource for cost tracking, operational management, and access control via resource-level policies. (AI-inferred)
+    key: Any = None
+    value: Any = None
 
-_EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigFields = {
+_EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigsFields = {
     "type": ubx.FieldSpec(wire_name="type"),
     "uri": ubx.FieldSpec(wire_name="uri"),
 }
 
-_EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_SchemaValidationConfigFields = {
+_EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_SchemaValidationConfigsFields = {
     "attribute": ubx.FieldSpec(wire_name="attribute"),
 }
 
 _EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfigFields = {
+    "access_configs": ubx.FieldSpec(
+        wire_name="access_configs",
+        kind="list",
+        fields=_EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigsFields,
+    ),
     "event_record_format": ubx.FieldSpec(wire_name="event_record_format"),
     "schema_registry_uri": ubx.FieldSpec(wire_name="schema_registry_uri"),
-    "access_config": ubx.FieldSpec(
-        wire_name="access_config",
-        kind="set",
-        fields=_EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigFields,
-    ),
-    "schema_validation_config": ubx.FieldSpec(
-        wire_name="schema_validation_config",
-        kind="set",
-        fields=_EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_SchemaValidationConfigFields,
+    "schema_validation_configs": ubx.FieldSpec(
+        wire_name="schema_validation_configs",
+        kind="list",
+        fields=_EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_SchemaValidationConfigsFields,
     ),
 }
 
@@ -101,39 +133,43 @@ _EventSourceMapping_AmazonManagedKafkaEventSourceConfigFields = {
     "consumer_group_id": ubx.FieldSpec(wire_name="consumer_group_id"),
     "schema_registry_config": ubx.FieldSpec(
         wire_name="schema_registry_config",
-        kind="list",
+        kind="object",
         fields=_EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfigFields,
     ),
 }
 
 _EventSourceMapping_DestinationConfig_OnFailureFields = {
-    "destination_arn": ubx.FieldSpec(wire_name="destination_arn"),
+    "destination": ubx.FieldSpec(wire_name="destination"),
 }
 
 _EventSourceMapping_DestinationConfigFields = {
     "on_failure": ubx.FieldSpec(
         wire_name="on_failure",
-        kind="list",
+        kind="object",
         fields=_EventSourceMapping_DestinationConfig_OnFailureFields,
     ),
 }
 
-_EventSourceMapping_DocumentDbEventSourceConfigFields = {
+_EventSourceMapping_DocumentDbeventSourceConfigFields = {
     "collection_name": ubx.FieldSpec(wire_name="collection_name"),
     "database_name": ubx.FieldSpec(wire_name="database_name"),
     "full_document": ubx.FieldSpec(wire_name="full_document"),
 }
 
-_EventSourceMapping_FilterCriteria_FilterFields = {
+_EventSourceMapping_FilterCriteria_FiltersFields = {
     "pattern": ubx.FieldSpec(wire_name="pattern"),
 }
 
 _EventSourceMapping_FilterCriteriaFields = {
-    "filter": ubx.FieldSpec(
-        wire_name="filter",
-        kind="set",
-        fields=_EventSourceMapping_FilterCriteria_FilterFields,
+    "filters": ubx.FieldSpec(
+        wire_name="filters",
+        kind="list",
+        fields=_EventSourceMapping_FilterCriteria_FiltersFields,
     ),
+}
+
+_EventSourceMapping_LoggingConfigFields = {
+    "system_log_level": ubx.FieldSpec(wire_name="system_log_level"),
 }
 
 _EventSourceMapping_MetricsConfigFields = {
@@ -150,129 +186,223 @@ _EventSourceMapping_ScalingConfigFields = {
     "maximum_concurrency": ubx.FieldSpec(wire_name="maximum_concurrency"),
 }
 
-_EventSourceMapping_SelfManagedEventSourceFields = {
-    "endpoints": ubx.FieldSpec(wire_name="endpoints"),
+_EventSourceMapping_SelfManagedEventSource_EndpointsFields = {
+    "kafka_bootstrap_servers": ubx.FieldSpec(wire_name="kafka_bootstrap_servers"),
 }
 
-_EventSourceMapping_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_EventSourceMapping_SelfManagedEventSourceFields = {
+    "endpoints": ubx.FieldSpec(
+        wire_name="endpoints",
+        kind="object",
+        fields=_EventSourceMapping_SelfManagedEventSource_EndpointsFields,
+    ),
+}
+
+_EventSourceMapping_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class EventSourceMappingConfig:
-    batch_size: Any = None
-    bisect_batch_on_function_error: Any = None
-    enabled: Any = None
-    event_source_arn: Any = None
-    function_name: Any = None
-    function_response_types: Any = None
-    id: Any = None
-    kms_key_arn: Any = None
-    maximum_batching_window_in_seconds: Any = None
-    maximum_record_age_in_seconds: Any = None
-    maximum_retry_attempts: Any = None
-    parallelization_factor: Any = None
-    queues: Any = None
-    region: Any = None
-    starting_position: Any = None
-    starting_position_timestamp: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    topics: Any = None
-    tumbling_window_in_seconds: Any = None
-    use_resource_timeout_for_propagation: Any = None
+    # Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
     amazon_managed_kafka_event_source_config: Any = None
+    # The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB). + *Amazon Kinesis* – Default 100. Max 10,000. + *Amazon DynamoDB Streams* – Default 100. Max 10,000. + *Amazon Simple Queue Service* – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10. + *Amazon Managed Streaming for Apache Kafka* – Default 100. Max 10,000. + *Self-managed Apache Kafka* – Default 100. Max 10,000. + *Amazon MQ (ActiveMQ and RabbitMQ)* – Default 100. Max 10,000. + *DocumentDB* – Default 100. Max 10,000.
+    batch_size: Any = None
+    # (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry. The default value is false. When using ``BisectBatchOnFunctionError``, check the ``BatchSize`` parameter in the ``OnFailure`` destination message's metadata. The ``BatchSize`` could be greater than 1 since LAM consolidates failed messages metadata when writing to the ``OnFailure`` destination.
+    bisect_batch_on_function_error: Any = None
+    # A configuration object that specifies the destination of an event after Lambda processes it. For more information, see [Adding a destination](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations).
     destination_config: Any = None
-    document_db_event_source_config: Any = None
+    # Specific configuration settings for a DocumentDB event source.
+    document_dbevent_source_config: Any = None
+    # When true, the event source mapping is active. When false, Lambda pauses polling and invocation. Default: True
+    enabled: Any = None
+    # The Amazon Resource Name (ARN) of the event source. + *Amazon Kinesis* – The ARN of the data stream or a stream consumer. + *Amazon DynamoDB Streams* – The ARN of the stream. + *Amazon Simple Queue Service* – The ARN of the queue. + *Amazon Managed Streaming for Apache Kafka* – The ARN of the cluster or the ARN of the VPC connection (for [cross-account event source mappings](https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc)). + *Amazon MQ* – The ARN of the broker. + *Amazon DocumentDB* – The ARN of the DocumentDB change stream.
+    event_source_arn: Any = None
+    # An object that contains the filters for an event source.
     filter_criteria: Any = None
+    # The name or ARN of the Lambda function. **Name formats** + *Function name* – ``MyFunction``. + *Function ARN* – ``arn:aws:lambda:us-west-2:123456789012:function:MyFunction``. + *Version or Alias ARN* – ``arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD``. + *Partial ARN* – ``123456789012:function:MyFunction``. The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.
+    function_name: Any = None
+    # (Kinesis, DynamoDB Streams, and SQS) A list of current response type enums applied to the event source mapping. Valid Values: ``ReportBatchItemFailures``
+    function_response_types: Any = None
+    # The ARN of the KMSlong (KMS) customer managed key that Lambda uses to encrypt your function's [filter criteria](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics).
+    kms_key_arn: Any = None
+    # The function's Amazon CloudWatch Logs configuration settings.
+    logging_config: Any = None
+    # The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. *Default (, , event sources)*: 0 *Default (, Kafka, , event sources)*: 500 ms *Related setting:* For SQS event sources, when you set ``BatchSize`` to a value greater than 10, you must set ``MaximumBatchingWindowInSeconds`` to at least 1.
+    maximum_batching_window_in_seconds: Any = None
+    # (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. The minimum valid value for maximum record age is 60s. Although values less than 60 and greater than -1 fall within the parameter's absolute range, they are not allowed
+    maximum_record_age_in_seconds: Any = None
+    # (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.
+    maximum_retry_attempts: Any = None
+    # The metrics configuration for your event source. Use this configuration object to define which metrics you want your event source mapping to produce.
     metrics_config: Any = None
+    # (Kinesis and DynamoDB Streams only) The number of batches to process concurrently from each shard. The default value is 1.
+    parallelization_factor: Any = None
+    # The [provisioned mode](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode) configuration for the event source. Use Provisioned Mode to customize the minimum and maximum number of event pollers for your event source.
     provisioned_poller_config: Any = None
+    # (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.
+    queues: Any = None
+    # (Amazon SQS only) The scaling configuration for the event source. To remove the configuration, pass an empty value.
     scaling_config: Any = None
+    # The self-managed Apache Kafka cluster for your event source.
     self_managed_event_source: Any = None
+    # Specific configuration settings for a self-managed Apache Kafka event source.
     self_managed_kafka_event_source_config: Any = None
-    source_access_configuration: Any = None
-    timeouts: Any = None
+    # An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.
+    source_access_configurations: Any = None
+    # The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB. + *LATEST* - Read only new records. + *TRIM_HORIZON* - Process all available records. + *AT_TIMESTAMP* - Specify a time from which to start reading records.
+    starting_position: Any = None
+    # With ``StartingPosition`` set to ``AT_TIMESTAMP``, the time from which to start reading, in Unix time seconds. ``StartingPositionTimestamp`` cannot be in the future.
+    starting_position_timestamp: Any = None
+    # A list of tags to add to the event source mapping. You must have the ``lambda:TagResource``, ``lambda:UntagResource``, and ``lambda:ListTags`` permissions for your [principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html) to manage the CFN stack. If you don't have these permissions, there might be unexpected behavior with stack-level tags propagating to the resource during resource creation and update.
+    tags: Any = None
+    # The name of the Kafka topic.
+    topics: Any = None
+    # (Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.
+    tumbling_window_in_seconds: Any = None
+
+@dataclasses.dataclass
+class EventSourceMappingAttrs:
+    # Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
+    amazon_managed_kafka_event_source_config: Any = None
+    # The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB). + *Amazon Kinesis* – Default 100. Max 10,000. + *Amazon DynamoDB Streams* – Default 100. Max 10,000. + *Amazon Simple Queue Service* – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10. + *Amazon Managed Streaming for Apache Kafka* – Default 100. Max 10,000. + *Self-managed Apache Kafka* – Default 100. Max 10,000. + *Amazon MQ (ActiveMQ and RabbitMQ)* – Default 100. Max 10,000. + *DocumentDB* – Default 100. Max 10,000.
+    batch_size: Any = None
+    # (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry. The default value is false. When using ``BisectBatchOnFunctionError``, check the ``BatchSize`` parameter in the ``OnFailure`` destination message's metadata. The ``BatchSize`` could be greater than 1 since LAM consolidates failed messages metadata when writing to the ``OnFailure`` destination.
+    bisect_batch_on_function_error: Any = None
+    # A configuration object that specifies the destination of an event after Lambda processes it. For more information, see [Adding a destination](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations).
+    destination_config: Any = None
+    # Specific configuration settings for a DocumentDB event source.
+    document_dbevent_source_config: Any = None
+    # When true, the event source mapping is active. When false, Lambda pauses polling and invocation. Default: True
+    enabled: Any = None
+    # The Amazon Resource Name (ARN) of the event source. + *Amazon Kinesis* – The ARN of the data stream or a stream consumer. + *Amazon DynamoDB Streams* – The ARN of the stream. + *Amazon Simple Queue Service* – The ARN of the queue. + *Amazon Managed Streaming for Apache Kafka* – The ARN of the cluster or the ARN of the VPC connection (for [cross-account event source mappings](https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc)). + *Amazon MQ* – The ARN of the broker. + *Amazon DocumentDB* – The ARN of the DocumentDB change stream.
+    event_source_arn: Any = None
+    # The Amazon Resource Name (ARN) that uniquely identifies this Lambda event source mapping. (AI-inferred)
+    event_source_mapping_arn: Any = None
+    # An object that contains the filters for an event source.
+    filter_criteria: Any = None
+    # The name or ARN of the Lambda function. **Name formats** + *Function name* – ``MyFunction``. + *Function ARN* – ``arn:aws:lambda:us-west-2:123456789012:function:MyFunction``. + *Version or Alias ARN* – ``arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD``. + *Partial ARN* – ``123456789012:function:MyFunction``. The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.
+    function_name: Any = None
+    # (Kinesis, DynamoDB Streams, and SQS) A list of current response type enums applied to the event source mapping. Valid Values: ``ReportBatchItemFailures``
+    function_response_types: Any = None
+    # The unique UUID assigned by AWS to this event source mapping, used to reference it in API calls and other resources. (AI-inferred)
+    id: Any = None
+    # The ARN of the KMSlong (KMS) customer managed key that Lambda uses to encrypt your function's [filter criteria](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics).
+    kms_key_arn: Any = None
+    # The function's Amazon CloudWatch Logs configuration settings.
+    logging_config: Any = None
+    # The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. *Default (, , event sources)*: 0 *Default (, Kafka, , event sources)*: 500 ms *Related setting:* For SQS event sources, when you set ``BatchSize`` to a value greater than 10, you must set ``MaximumBatchingWindowInSeconds`` to at least 1.
+    maximum_batching_window_in_seconds: Any = None
+    # (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. The minimum valid value for maximum record age is 60s. Although values less than 60 and greater than -1 fall within the parameter's absolute range, they are not allowed
+    maximum_record_age_in_seconds: Any = None
+    # (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.
+    maximum_retry_attempts: Any = None
+    # The metrics configuration for your event source. Use this configuration object to define which metrics you want your event source mapping to produce.
+    metrics_config: Any = None
+    # (Kinesis and DynamoDB Streams only) The number of batches to process concurrently from each shard. The default value is 1.
+    parallelization_factor: Any = None
+    # The [provisioned mode](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode) configuration for the event source. Use Provisioned Mode to customize the minimum and maximum number of event pollers for your event source.
+    provisioned_poller_config: Any = None
+    # (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.
+    queues: Any = None
+    # (Amazon SQS only) The scaling configuration for the event source. To remove the configuration, pass an empty value.
+    scaling_config: Any = None
+    # The self-managed Apache Kafka cluster for your event source.
+    self_managed_event_source: Any = None
+    # Specific configuration settings for a self-managed Apache Kafka event source.
+    self_managed_kafka_event_source_config: Any = None
+    # An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.
+    source_access_configurations: Any = None
+    # The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB. + *LATEST* - Read only new records. + *TRIM_HORIZON* - Process all available records. + *AT_TIMESTAMP* - Specify a time from which to start reading records.
+    starting_position: Any = None
+    # With ``StartingPosition`` set to ``AT_TIMESTAMP``, the time from which to start reading, in Unix time seconds. ``StartingPositionTimestamp`` cannot be in the future.
+    starting_position_timestamp: Any = None
+    # A list of tags to add to the event source mapping. You must have the ``lambda:TagResource``, ``lambda:UntagResource``, and ``lambda:ListTags`` permissions for your [principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html) to manage the CFN stack. If you don't have these permissions, there might be unexpected behavior with stack-level tags propagating to the resource during resource creation and update.
+    tags: Any = None
+    # The name of the Kafka topic.
+    topics: Any = None
+    # (Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.
+    tumbling_window_in_seconds: Any = None
 
 EventSourceMapping = ubx.ResourceBinding(
     wire_type="aws_lambda_event_source_mapping",
     fields={
+        "amazon_managed_kafka_event_source_config": ubx.FieldSpec(
+            wire_name="amazon_managed_kafka_event_source_config",
+            kind="object",
+            fields=_EventSourceMapping_AmazonManagedKafkaEventSourceConfigFields,
+        ),
         "batch_size": ubx.FieldSpec(wire_name="batch_size"),
         "bisect_batch_on_function_error": ubx.FieldSpec(wire_name="bisect_batch_on_function_error"),
+        "destination_config": ubx.FieldSpec(
+            wire_name="destination_config",
+            kind="object",
+            fields=_EventSourceMapping_DestinationConfigFields,
+        ),
+        "document_dbevent_source_config": ubx.FieldSpec(
+            wire_name="document_dbevent_source_config",
+            kind="object",
+            fields=_EventSourceMapping_DocumentDbeventSourceConfigFields,
+        ),
         "enabled": ubx.FieldSpec(wire_name="enabled"),
         "event_source_arn": ubx.FieldSpec(wire_name="event_source_arn"),
+        "filter_criteria": ubx.FieldSpec(
+            wire_name="filter_criteria",
+            kind="object",
+            fields=_EventSourceMapping_FilterCriteriaFields,
+        ),
         "function_name": ubx.FieldSpec(wire_name="function_name"),
         "function_response_types": ubx.FieldSpec(wire_name="function_response_types"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "kms_key_arn": ubx.FieldSpec(wire_name="kms_key_arn"),
+        "logging_config": ubx.FieldSpec(
+            wire_name="logging_config",
+            kind="object",
+            fields=_EventSourceMapping_LoggingConfigFields,
+        ),
         "maximum_batching_window_in_seconds": ubx.FieldSpec(wire_name="maximum_batching_window_in_seconds"),
         "maximum_record_age_in_seconds": ubx.FieldSpec(wire_name="maximum_record_age_in_seconds"),
         "maximum_retry_attempts": ubx.FieldSpec(wire_name="maximum_retry_attempts"),
-        "parallelization_factor": ubx.FieldSpec(wire_name="parallelization_factor"),
-        "queues": ubx.FieldSpec(wire_name="queues"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "starting_position": ubx.FieldSpec(wire_name="starting_position"),
-        "starting_position_timestamp": ubx.FieldSpec(wire_name="starting_position_timestamp"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "topics": ubx.FieldSpec(wire_name="topics"),
-        "tumbling_window_in_seconds": ubx.FieldSpec(wire_name="tumbling_window_in_seconds"),
-        "use_resource_timeout_for_propagation": ubx.FieldSpec(wire_name="use_resource_timeout_for_propagation"),
-        "amazon_managed_kafka_event_source_config": ubx.FieldSpec(
-            wire_name="amazon_managed_kafka_event_source_config",
-            kind="list",
-            fields=_EventSourceMapping_AmazonManagedKafkaEventSourceConfigFields,
-        ),
-        "destination_config": ubx.FieldSpec(
-            wire_name="destination_config",
-            kind="list",
-            fields=_EventSourceMapping_DestinationConfigFields,
-        ),
-        "document_db_event_source_config": ubx.FieldSpec(
-            wire_name="document_db_event_source_config",
-            kind="list",
-            fields=_EventSourceMapping_DocumentDbEventSourceConfigFields,
-        ),
-        "filter_criteria": ubx.FieldSpec(
-            wire_name="filter_criteria",
-            kind="list",
-            fields=_EventSourceMapping_FilterCriteriaFields,
-        ),
         "metrics_config": ubx.FieldSpec(
             wire_name="metrics_config",
-            kind="list",
+            kind="object",
             fields=_EventSourceMapping_MetricsConfigFields,
         ),
+        "parallelization_factor": ubx.FieldSpec(wire_name="parallelization_factor"),
         "provisioned_poller_config": ubx.FieldSpec(
             wire_name="provisioned_poller_config",
-            kind="list",
+            kind="object",
             fields=_EventSourceMapping_ProvisionedPollerConfigFields,
         ),
+        "queues": ubx.FieldSpec(wire_name="queues"),
         "scaling_config": ubx.FieldSpec(
             wire_name="scaling_config",
-            kind="list",
+            kind="object",
             fields=_EventSourceMapping_ScalingConfigFields,
         ),
         "self_managed_event_source": ubx.FieldSpec(
             wire_name="self_managed_event_source",
-            kind="list",
+            kind="object",
             fields=_EventSourceMapping_SelfManagedEventSourceFields,
         ),
         "self_managed_kafka_event_source_config": ubx.FieldSpec(
             wire_name="self_managed_kafka_event_source_config",
-            kind="list",
+            kind="object",
             fields=_EventSourceMapping_AmazonManagedKafkaEventSourceConfigFields,
         ),
-        "source_access_configuration": ubx.FieldSpec(
-            wire_name="source_access_configuration",
-            kind="set",
-            fields=_EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigFields,
+        "source_access_configurations": ubx.FieldSpec(
+            wire_name="source_access_configurations",
+            kind="list",
+            fields=_EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_EventSourceMapping_TimeoutsFields,
+        "starting_position": ubx.FieldSpec(wire_name="starting_position"),
+        "starting_position_timestamp": ubx.FieldSpec(wire_name="starting_position_timestamp"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_EventSourceMapping_TagsFields,
         ),
+        "topics": ubx.FieldSpec(wire_name="topics"),
+        "tumbling_window_in_seconds": ubx.FieldSpec(wire_name="tumbling_window_in_seconds"),
     },
 )

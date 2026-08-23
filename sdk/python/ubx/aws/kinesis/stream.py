@@ -7,70 +7,114 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Stream_StreamEncryption:
+    # The encryption type to use. The only valid value is KMS.
+    encryption_type: Any = None
+    # The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias aws/kinesis.
+    key_id: Any = None
+
+@dataclasses.dataclass
 class Stream_StreamModeDetails:
+    # The mode of the stream
     stream_mode: Any = None
 
 @dataclasses.dataclass
-class Stream_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Stream_Tags:
+    # The key of a tag attached to the Kinesis stream, used to organize, identify, and manage access to the stream. (AI-inferred)
+    key: Any = None
+    # Specifies the value of a user-defined tag applied to the Kinesis data stream, allowing you to associate arbitrary metadata with the resource. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class Stream_WarmThroughputObject:
+    # Current warm throughput in MiB/s
+    current_mi_bps: Any = None
+    # Target warm throughput in MiB/s that a customer can write to a stream at any given time
+    target_mi_bps: Any = None
+
+_Stream_StreamEncryptionFields = {
+    "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
+    "key_id": ubx.FieldSpec(wire_name="key_id"),
+}
 
 _Stream_StreamModeDetailsFields = {
     "stream_mode": ubx.FieldSpec(wire_name="stream_mode"),
 }
 
-_Stream_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Stream_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class StreamConfig:
-    arn: Any = None
-    encryption_type: Any = None
-    enforce_consumer_deletion: Any = None
-    id: Any = None
-    kms_key_id: Any = None
-    max_record_size_in_kib: Any = None
+    # The final list of shard-level metrics
+    desired_shard_level_metrics: Any = None
+    # Maximum size of a data record in KiB allowed to be put into Kinesis stream.
+    max_record_size_in_ki_b: Any = None
+    # The name of the Kinesis stream.
     name: Any = None
-    region: Any = None
-    retention_period: Any = None
+    # The number of hours for the data records that are stored in shards to remain accessible.
+    retention_period_hours: Any = None
+    # The number of shards that the stream uses. Required when StreamMode = PROVISIONED is passed.
     shard_count: Any = None
-    shard_level_metrics: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    warm_throughput_mib_ps: Any = None
+    # When specified, enables or updates server-side encryption using an AWS KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption.
+    stream_encryption: Any = None
+    # When specified, enables or updates the mode of stream. Default is PROVISIONED.
     stream_mode_details: Any = None
-    timeouts: Any = None
+    # An arbitrary set of tags (key-value pairs) to associate with the Kinesis stream.
+    tags: Any = None
+    # Target warm throughput in MiB/s for the stream. This property can ONLY be set when StreamMode is ON_DEMAND.
+    warm_throughput_mi_bps: Any = None
+
+@dataclasses.dataclass
+class StreamAttrs:
+    # The Amazon resource name (ARN) of the Kinesis stream
+    arn: Any = None
+    # The final list of shard-level metrics
+    desired_shard_level_metrics: Any = None
+    # Maximum size of a data record in KiB allowed to be put into Kinesis stream.
+    max_record_size_in_ki_b: Any = None
+    # The name of the Kinesis stream.
+    name: Any = None
+    # The number of hours for the data records that are stored in shards to remain accessible.
+    retention_period_hours: Any = None
+    # The number of shards that the stream uses. Required when StreamMode = PROVISIONED is passed.
+    shard_count: Any = None
+    # When specified, enables or updates server-side encryption using an AWS KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption.
+    stream_encryption: Any = None
+    # When specified, enables or updates the mode of stream. Default is PROVISIONED.
+    stream_mode_details: Any = None
+    # An arbitrary set of tags (key-value pairs) to associate with the Kinesis stream.
+    tags: Any = None
+    # Target warm throughput in MiB/s for the stream. This property can ONLY be set when StreamMode is ON_DEMAND.
+    warm_throughput_mi_bps: Any = None
+    # Warm throughput configuration details for the stream. Only present for ON_DEMAND streams.
+    warm_throughput_object: Any = None
 
 Stream = ubx.ResourceBinding(
     wire_type="aws_kinesis_stream",
     fields={
-        "arn": ubx.FieldSpec(wire_name="arn"),
-        "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
-        "enforce_consumer_deletion": ubx.FieldSpec(wire_name="enforce_consumer_deletion"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
-        "max_record_size_in_kib": ubx.FieldSpec(wire_name="max_record_size_in_kib"),
+        "desired_shard_level_metrics": ubx.FieldSpec(wire_name="desired_shard_level_metrics"),
+        "max_record_size_in_ki_b": ubx.FieldSpec(wire_name="max_record_size_in_ki_b"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "retention_period": ubx.FieldSpec(wire_name="retention_period"),
+        "retention_period_hours": ubx.FieldSpec(wire_name="retention_period_hours"),
         "shard_count": ubx.FieldSpec(wire_name="shard_count"),
-        "shard_level_metrics": ubx.FieldSpec(wire_name="shard_level_metrics"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "warm_throughput_mib_ps": ubx.FieldSpec(wire_name="warm_throughput_mib_ps"),
+        "stream_encryption": ubx.FieldSpec(
+            wire_name="stream_encryption",
+            kind="object",
+            fields=_Stream_StreamEncryptionFields,
+        ),
         "stream_mode_details": ubx.FieldSpec(
             wire_name="stream_mode_details",
-            kind="list",
+            kind="object",
             fields=_Stream_StreamModeDetailsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Stream_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Stream_TagsFields,
         ),
+        "warm_throughput_mi_bps": ubx.FieldSpec(wire_name="warm_throughput_mi_bps"),
     },
 )

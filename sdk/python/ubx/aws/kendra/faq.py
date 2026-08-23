@@ -8,61 +8,88 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Faq_S3Path:
+    # The name of the S3 bucket that contains the FAQ data file specified for the Kendra FAQ. (AI-inferred)
     bucket: Any = None
+    # The S3 object key (file name/path) within the bucket that points to the FAQ file used by the Kendra index. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
-class Faq_Timeouts:
-    create: Any = None
-    delete: Any = None
+class Faq_Tags:
+    # The key of a tag attached to the Kendra FAQ, used to identify and categorize the resource for management and cost allocation. (AI-inferred)
+    key: Any = None
+    # The value component of a tag (a key-value pair) attached to the Amazon Kendra FAQ resource, used for metadata, categorization, and cost allocation. (AI-inferred)
+    value: Any = None
 
 _Faq_S3PathFields = {
     "bucket": ubx.FieldSpec(wire_name="bucket"),
     "key": ubx.FieldSpec(wire_name="key"),
 }
 
-_Faq_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_Faq_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class FaqConfig:
+    # Description of the FAQ
     description: Any = None
+    # Format of the input file
     file_format: Any = None
-    id: Any = None
+    # Unique ID of Index
     index_id: Any = None
+    # The code for a language.
     language_code: Any = None
+    # The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred)
     name: Any = None
-    region: Any = None
+    # The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred)
     role_arn: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred)
     s3_path: Any = None
-    timeouts: Any = None
+    # List of tags
+    tags: Any = None
+
+@dataclasses.dataclass
+class FaqAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies the Kendra FAQ resource. (AI-inferred)
+    arn: Any = None
+    # Description of the FAQ
+    description: Any = None
+    # Format of the input file
+    file_format: Any = None
+    # Unique ID of the FAQ
+    id: Any = None
+    # Unique ID of Index
+    index_id: Any = None
+    # The code for a language.
+    language_code: Any = None
+    # The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred)
+    name: Any = None
+    # The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred)
+    role_arn: Any = None
+    # The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred)
+    s3_path: Any = None
+    # List of tags
+    tags: Any = None
 
 Faq = ubx.ResourceBinding(
     wire_type="aws_kendra_faq",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
         "file_format": ubx.FieldSpec(wire_name="file_format"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "index_id": ubx.FieldSpec(wire_name="index_id"),
         "language_code": ubx.FieldSpec(wire_name="language_code"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "role_arn": ubx.FieldSpec(wire_name="role_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "s3_path": ubx.FieldSpec(
             wire_name="s3_path",
-            kind="list",
+            kind="object",
             fields=_Faq_S3PathFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Faq_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Faq_TagsFields,
         ),
     },
 )

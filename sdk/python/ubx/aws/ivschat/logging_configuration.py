@@ -7,30 +7,37 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class LoggingConfiguration_DestinationConfiguration_CloudwatchLogs:
+class LoggingConfiguration_DestinationConfiguration_CloudWatchLogs:
+    # Name of the Amazon CloudWatch Logs log group where chat activity will be logged.
     log_group_name: Any = None
 
 @dataclasses.dataclass
 class LoggingConfiguration_DestinationConfiguration_Firehose:
+    # Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.
     delivery_stream_name: Any = None
 
 @dataclasses.dataclass
 class LoggingConfiguration_DestinationConfiguration_S3:
+    # Name of the Amazon S3 bucket where chat activity will be logged.
     bucket_name: Any = None
 
 @dataclasses.dataclass
 class LoggingConfiguration_DestinationConfiguration:
-    cloudwatch_logs: Any = None
+    # CloudWatch destination configuration for IVS Chat logging.
+    cloud_watch_logs: Any = None
+    # Kinesis Firehose destination configuration for IVS Chat logging.
     firehose: Any = None
+    # S3 destination configuration for IVS Chat logging.
     s3: Any = None
 
 @dataclasses.dataclass
-class LoggingConfiguration_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class LoggingConfiguration_Tags:
+    # Specifies the key of a tag to attach to the IVS Chat Logging Configuration, enabling you to organize, identify, and manage the resource for purposes such as cost allocation or access control. (AI-inferred)
+    key: Any = None
+    # The value of a tag attached to the IVS Chat logging configuration, used to assign arbitrary metadata for resource organization, cost allocation, or access control. (AI-inferred)
+    value: Any = None
 
-_LoggingConfiguration_DestinationConfiguration_CloudwatchLogsFields = {
+_LoggingConfiguration_DestinationConfiguration_CloudWatchLogsFields = {
     "log_group_name": ubx.FieldSpec(wire_name="log_group_name"),
 }
 
@@ -43,56 +50,65 @@ _LoggingConfiguration_DestinationConfiguration_S3Fields = {
 }
 
 _LoggingConfiguration_DestinationConfigurationFields = {
-    "cloudwatch_logs": ubx.FieldSpec(
-        wire_name="cloudwatch_logs",
-        kind="list",
-        fields=_LoggingConfiguration_DestinationConfiguration_CloudwatchLogsFields,
+    "cloud_watch_logs": ubx.FieldSpec(
+        wire_name="cloud_watch_logs",
+        kind="object",
+        fields=_LoggingConfiguration_DestinationConfiguration_CloudWatchLogsFields,
     ),
     "firehose": ubx.FieldSpec(
         wire_name="firehose",
-        kind="list",
+        kind="object",
         fields=_LoggingConfiguration_DestinationConfiguration_FirehoseFields,
     ),
     "s3": ubx.FieldSpec(
         wire_name="s3",
-        kind="list",
+        kind="object",
         fields=_LoggingConfiguration_DestinationConfiguration_S3Fields,
     ),
 }
 
-_LoggingConfiguration_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_LoggingConfiguration_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class LoggingConfigurationConfig:
-    id: Any = None
-    name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Destination configuration for IVS Chat logging.
     destination_configuration: Any = None
-    timeouts: Any = None
+    # The name of the logging configuration. The value does not need to be unique.
+    name: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
+
+@dataclasses.dataclass
+class LoggingConfigurationAttrs:
+    # LoggingConfiguration ARN is automatically generated on creation and assigned as the unique identifier.
+    arn: Any = None
+    # Destination configuration for IVS Chat logging.
+    destination_configuration: Any = None
+    # The system-generated ID of the logging configuration.
+    id: Any = None
+    # The name of the logging configuration. The value does not need to be unique.
+    name: Any = None
+    # The state of the logging configuration. When the state is ACTIVE, the configuration is ready to log chat content.
+    state: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 LoggingConfiguration = ubx.ResourceBinding(
     wire_type="aws_ivschat_logging_configuration",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "destination_configuration": ubx.FieldSpec(
             wire_name="destination_configuration",
-            kind="list",
+            kind="object",
             fields=_LoggingConfiguration_DestinationConfigurationFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_LoggingConfiguration_TimeoutsFields,
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_LoggingConfiguration_TagsFields,
         ),
     },
 )

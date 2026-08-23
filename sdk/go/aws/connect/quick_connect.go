@@ -3,85 +3,141 @@ package connect
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type QuickConnect_QuickConnectConfig_FlowConfig struct {
+	// The identifier of the contact flow.
+	ContactFlowArn any
+}
+
 type QuickConnect_QuickConnectConfig_PhoneConfig struct {
+	// The phone number in E.164 format.
 	PhoneNumber any
 }
 
 type QuickConnect_QuickConnectConfig_QueueConfig struct {
-	ContactFlowId any
-	QueueId any
+	// The identifier of the contact flow.
+	ContactFlowArn any
+	// The identifier for the queue.
+	QueueArn any
 }
 
 type QuickConnect_QuickConnectConfig_UserConfig struct {
-	ContactFlowId any
-	UserId any
+	// The identifier of the contact flow.
+	ContactFlowArn any
+	// The identifier of the user.
+	UserArn any
 }
 
 type QuickConnect_QuickConnectConfig struct {
-	QuickConnectType any
+	// The flow configuration. This is required only if QuickConnectType is FLOW.
+	FlowConfig any
+	// The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.
 	PhoneConfig any
+	// The queue configuration. This is required only if QuickConnectType is QUEUE.
 	QueueConfig any
+	// The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+	QuickConnectType any
+	// The user configuration. This is required only if QuickConnectType is USER.
 	UserConfig any
 }
+
+type QuickConnect_Tags struct {
+	// The key of a tag attached to the Amazon Connect quick connect resource, used to categorize and organize the resource. (AI-inferred)
+	Key any
+	Value any
+}
+
+var QuickConnect_QuickConnectConfig_FlowConfigFields = ubx.FieldMap{
+		"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
+	}
 
 var QuickConnect_QuickConnectConfig_PhoneConfigFields = ubx.FieldMap{
 		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
 	}
 
 var QuickConnect_QuickConnectConfig_QueueConfigFields = ubx.FieldMap{
-		"ContactFlowId": ubx.FieldSpec{WireName: "contact_flow_id"},
-		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
+		"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
+		"QueueArn": ubx.FieldSpec{WireName: "queue_arn"},
 	}
 
 var QuickConnect_QuickConnectConfig_UserConfigFields = ubx.FieldMap{
-		"ContactFlowId": ubx.FieldSpec{WireName: "contact_flow_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
+		"UserArn": ubx.FieldSpec{WireName: "user_arn"},
 	}
 
 var QuickConnect_QuickConnectConfigFields = ubx.FieldMap{
-		"QuickConnectType": ubx.FieldSpec{WireName: "quick_connect_type"},
+		"FlowConfig": ubx.FieldSpec{
+			WireName: "flow_config",
+			Kind: "object",
+			Fields: QuickConnect_QuickConnectConfig_FlowConfigFields,
+		},
 		"PhoneConfig": ubx.FieldSpec{
 			WireName: "phone_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: QuickConnect_QuickConnectConfig_PhoneConfigFields,
 		},
 		"QueueConfig": ubx.FieldSpec{
 			WireName: "queue_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: QuickConnect_QuickConnectConfig_QueueConfigFields,
 		},
+		"QuickConnectType": ubx.FieldSpec{WireName: "quick_connect_type"},
 		"UserConfig": ubx.FieldSpec{
 			WireName: "user_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: QuickConnect_QuickConnectConfig_UserConfigFields,
 		},
 	}
 
+var QuickConnect_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type QuickConnectConfig struct {
+	// The description of the quick connect.
 	Description any
-	Id any
-	InstanceId any
+	// The identifier of the Amazon Connect instance.
+	InstanceArn any
+	// The name of the quick connect.
 	Name any
-	Region any
-	Tags any
-	TagsAll any
+	// Configuration settings for the quick connect.
 	QuickConnectConfig any
+	// One or more tags.
+	Tags any
+}
+
+type QuickConnectAttrs struct {
+	// The description of the quick connect.
+	Description any
+	// The identifier of the Amazon Connect instance.
+	InstanceArn any
+	// The name of the quick connect.
+	Name any
+	// The Amazon Resource Name (ARN) for the quick connect.
+	QuickConnectArn any
+	// Configuration settings for the quick connect.
+	QuickConnectConfig any
+	// The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+	QuickConnectType any
+	// One or more tags.
+	Tags any
 }
 
 var QuickConnect = ubx.ResourceBinding{
 	WireType: "aws_connect_quick_connect",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"QuickConnectConfig": ubx.FieldSpec{
 			WireName: "quick_connect_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: QuickConnect_QuickConnectConfigFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: QuickConnect_TagsFields,
 		},
 	},
 }

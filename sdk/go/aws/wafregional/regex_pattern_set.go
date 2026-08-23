@@ -4,18 +4,25 @@ package wafregional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegexPatternSetConfig struct {
-	Id any
+	// A unique, user-defined name for the regex pattern set, used to identify it in AWS WAF Regional. (AI-inferred)
 	Name any
+	// Specifies the regular expression patterns to include in this set, where each string is a distinct pattern that AWS WAF Regional uses to match against web requests. (AI-inferred)
 	RegexPatternStrings any
-	Region any
+}
+
+type RegexPatternSetAttrs struct {
+	// The unique identifier automatically assigned to this WAF Regional regex pattern set, used to reference it in other resources such as rules and WebACLs. (AI-inferred)
+	Id any
+	// A unique, user-defined name for the regex pattern set, used to identify it in AWS WAF Regional. (AI-inferred)
+	Name any
+	// Specifies the regular expression patterns to include in this set, where each string is a distinct pattern that AWS WAF Regional uses to match against web requests. (AI-inferred)
+	RegexPatternStrings any
 }
 
 var RegexPatternSet = ubx.ResourceBinding{
 	WireType: "aws_wafregional_regex_pattern_set",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RegexPatternStrings": ubx.FieldSpec{WireName: "regex_pattern_strings"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 	},
 }

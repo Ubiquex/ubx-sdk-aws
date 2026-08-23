@@ -3,12 +3,42 @@ package amplify
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Webhook_Tags struct {
+	Key any
+	Value any
+}
+
+var Webhook_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type WebhookConfig struct {
+	// The unique ID for an Amplify app.
 	AppId any
+	// The name for a branch that is part of an Amplify app.
 	BranchName any
+	// The description for a webhook.
 	Description any
-	Id any
-	Region any
+	// Tags for the webhook.
+	Tags any
+}
+
+type WebhookAttrs struct {
+	// The unique ID for an Amplify app.
+	AppId any
+	// The Amazon Resource Name (ARN) for the webhook.
+	Arn any
+	// The name for a branch that is part of an Amplify app.
+	BranchName any
+	// The description for a webhook.
+	Description any
+	// Tags for the webhook.
+	Tags any
+	// The unique ID for a webhook.
+	WebhookId any
+	// The URL of the webhook.
+	WebhookUrl any
 }
 
 var Webhook = ubx.ResourceBinding{
@@ -17,7 +47,10 @@ var Webhook = ubx.ResourceBinding{
 		"AppId": ubx.FieldSpec{WireName: "app_id"},
 		"BranchName": ubx.FieldSpec{WireName: "branch_name"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Webhook_TagsFields,
+		},
 	},
 }

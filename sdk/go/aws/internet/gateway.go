@@ -3,39 +3,37 @@ package internet
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Gateway_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Gateway_Tags struct {
+	// The key of a user-defined tag entry in the tags map for this AWS internet gateway, used to label the gateway with custom metadata such as environment or owner. (AI-inferred)
+	Key any
+	// The value component of a key-value tag attached to the Internet Gateway, used to store metadata for identification, organization, or cost allocation. (AI-inferred)
+	Value any
 }
 
-var Gateway_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Gateway_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type GatewayConfig struct {
-	Id any
-	Region any
+	// Any tags to assign to the internet gateway.
 	Tags any
-	TagsAll any
-	VpcId any
-	Timeouts any
+}
+
+type GatewayAttrs struct {
+	// The unique identifier (e.g., `igw-...`) assigned by AWS to the internet gateway. (AI-inferred)
+	InternetGatewayId any
+	// Any tags to assign to the internet gateway.
+	Tags any
 }
 
 var Gateway = ubx.ResourceBinding{
 	WireType: "aws_internet_gateway",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Gateway_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Gateway_TagsFields,
 		},
 	},
 }

@@ -7,25 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ClientVpnAuthorizationRule_Timeouts:
-    create: Any = None
-    delete: Any = None
-
-_ClientVpnAuthorizationRule_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-}
+class ClientVpnAuthorizationRuleConfig:
+    # The ID of the Active Directory group that is allowed access to the network; if omitted, all users in the directory are permitted. (AI-inferred)
+    access_group_id: Any = None
+    # Indicates whether to authorize access to all groups, so when set to true, the rule applies to every Active Directory group, and when false, you must specify target groups via the GroupId field. (AI-inferred)
+    authorize_all_groups: Any = None
+    # The ID of the Client VPN endpoint to which this authorization rule applies. (AI-inferred)
+    client_vpn_endpoint_id: Any = None
+    # A brief, optional description that identifies the purpose of the Client VPN authorization rule. (AI-inferred)
+    description: Any = None
+    # The CIDR block of the target network that this authorization rule grants access to for the specified clients or groups. (AI-inferred)
+    target_network_cidr: Any = None
 
 @dataclasses.dataclass
-class ClientVpnAuthorizationRuleConfig:
+class ClientVpnAuthorizationRuleAttrs:
+    # The ID of the Active Directory group that is allowed access to the network; if omitted, all users in the directory are permitted. (AI-inferred)
     access_group_id: Any = None
+    # Indicates whether to authorize access to all groups, so when set to true, the rule applies to every Active Directory group, and when false, you must specify target groups via the GroupId field. (AI-inferred)
     authorize_all_groups: Any = None
+    # The ID of the Client VPN endpoint to which this authorization rule applies. (AI-inferred)
     client_vpn_endpoint_id: Any = None
+    # A brief, optional description that identifies the purpose of the Client VPN authorization rule. (AI-inferred)
     description: Any = None
     id: Any = None
-    region: Any = None
+    # The CIDR block of the target network that this authorization rule grants access to for the specified clients or groups. (AI-inferred)
     target_network_cidr: Any = None
-    timeouts: Any = None
 
 ClientVpnAuthorizationRule = ubx.ResourceBinding(
     wire_type="aws_ec2_client_vpn_authorization_rule",
@@ -34,13 +40,6 @@ ClientVpnAuthorizationRule = ubx.ResourceBinding(
         "authorize_all_groups": ubx.FieldSpec(wire_name="authorize_all_groups"),
         "client_vpn_endpoint_id": ubx.FieldSpec(wire_name="client_vpn_endpoint_id"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "target_network_cidr": ubx.FieldSpec(wire_name="target_network_cidr"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_ClientVpnAuthorizationRule_TimeoutsFields,
-        ),
     },
 )

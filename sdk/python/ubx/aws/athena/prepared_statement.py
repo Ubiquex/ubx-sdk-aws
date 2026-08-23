@@ -7,40 +7,33 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class PreparedStatement_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_PreparedStatement_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
+class PreparedStatementConfig:
+    # The description of the prepared statement.
+    description: Any = None
+    # The query string for the prepared statement.
+    query_statement: Any = None
+    # The name of the prepared statement.
+    statement_name: Any = None
+    # The name of the workgroup to which the prepared statement belongs.
+    work_group: Any = None
 
 @dataclasses.dataclass
-class PreparedStatementConfig:
+class PreparedStatementAttrs:
+    # The description of the prepared statement.
     description: Any = None
-    id: Any = None
-    name: Any = None
+    # The query string for the prepared statement.
     query_statement: Any = None
-    region: Any = None
-    workgroup: Any = None
-    timeouts: Any = None
+    # The name of the prepared statement.
+    statement_name: Any = None
+    # The name of the workgroup to which the prepared statement belongs.
+    work_group: Any = None
 
 PreparedStatement = ubx.ResourceBinding(
     wire_type="aws_athena_prepared_statement",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "query_statement": ubx.FieldSpec(wire_name="query_statement"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "workgroup": ubx.FieldSpec(wire_name="workgroup"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_PreparedStatement_TimeoutsFields,
-        ),
+        "statement_name": ubx.FieldSpec(wire_name="statement_name"),
+        "work_group": ubx.FieldSpec(wire_name="work_group"),
     },
 )

@@ -3,21 +3,90 @@ package shield
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Protection_ApplicationLayerAutomaticResponseConfiguration_Action struct {
+	// When present, this marker block selects 'block' as the Shield Advanced automatic application-layer response action, causing the detected malicious request to be blocked. (AI-inferred)
+	Block any
+	// Sets the automatic application-layer DDoS mitigation action to 'Count', causing AWS Shield Advanced to count matching requests without blocking them so you can observe traffic before enforcing a block. (AI-inferred)
+	Count any
+}
+
+type Protection_ApplicationLayerAutomaticResponseConfiguration struct {
+	// Specifies the action setting that Shield Advanced should use in the AWS WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the AWS WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource.
+	Action any
+	// Indicates whether automatic application layer DDoS mitigation is enabled for the protection.
+	Status any
+}
+
+type Protection_Tags struct {
+	Key any
+	// The value component of a tag key-value pair attached to an AWS Shield Advanced protection resource, used to store metadata such as owner, environment, or cost center for resource organization and identity. (AI-inferred)
+	Value any
+}
+
+var Protection_ApplicationLayerAutomaticResponseConfiguration_ActionFields = ubx.FieldMap{
+		"Block": ubx.FieldSpec{WireName: "block"},
+		"Count": ubx.FieldSpec{WireName: "count"},
+	}
+
+var Protection_ApplicationLayerAutomaticResponseConfigurationFields = ubx.FieldMap{
+		"Action": ubx.FieldSpec{
+			WireName: "action",
+			Kind: "object",
+			Fields: Protection_ApplicationLayerAutomaticResponseConfiguration_ActionFields,
+		},
+		"Status": ubx.FieldSpec{WireName: "status"},
+	}
+
+var Protection_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ProtectionConfig struct {
-	Id any
+	// The automatic application layer DDoS mitigation settings for a Protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks.
+	ApplicationLayerAutomaticResponseConfiguration any
+	// The Amazon Resource Names (ARNs) of the health check to associate with the protection.
+	HealthCheckArns any
+	// Friendly name for the Protection.
 	Name any
+	// The ARN (Amazon Resource Name) of the resource to be protected.
 	ResourceArn any
+	// One or more tag key-value pairs for the Protection object.
 	Tags any
-	TagsAll any
+}
+
+type ProtectionAttrs struct {
+	// The automatic application layer DDoS mitigation settings for a Protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks.
+	ApplicationLayerAutomaticResponseConfiguration any
+	// The Amazon Resource Names (ARNs) of the health check to associate with the protection.
+	HealthCheckArns any
+	// Friendly name for the Protection.
+	Name any
+	// The ARN (Amazon Resource Name) of the protection.
+	ProtectionArn any
+	// The unique identifier (ID) of the protection.
+	ProtectionId any
+	// The ARN (Amazon Resource Name) of the resource to be protected.
+	ResourceArn any
+	// One or more tag key-value pairs for the Protection object.
+	Tags any
 }
 
 var Protection = ubx.ResourceBinding{
 	WireType: "aws_shield_protection",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"ApplicationLayerAutomaticResponseConfiguration": ubx.FieldSpec{
+			WireName: "application_layer_automatic_response_configuration",
+			Kind: "object",
+			Fields: Protection_ApplicationLayerAutomaticResponseConfigurationFields,
+		},
+		"HealthCheckArns": ubx.FieldSpec{WireName: "health_check_arns"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Protection_TagsFields,
+		},
 	},
 }

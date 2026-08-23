@@ -3,77 +3,28 @@ package pinpoint
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type App_CampaignHook struct {
-	LambdaFunctionName any
-	Mode any
-	WebUrl any
-}
-
-type App_Limits struct {
-	Daily any
-	MaximumDuration any
-	MessagesPerSecond any
-	Total any
-}
-
-type App_QuietTime struct {
-	End any
-	Start any
-}
-
-var App_CampaignHookFields = ubx.FieldMap{
-		"LambdaFunctionName": ubx.FieldSpec{WireName: "lambda_function_name"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"WebUrl": ubx.FieldSpec{WireName: "web_url"},
-	}
-
-var App_LimitsFields = ubx.FieldMap{
-		"Daily": ubx.FieldSpec{WireName: "daily"},
-		"MaximumDuration": ubx.FieldSpec{WireName: "maximum_duration"},
-		"MessagesPerSecond": ubx.FieldSpec{WireName: "messages_per_second"},
-		"Total": ubx.FieldSpec{WireName: "total"},
-	}
-
-var App_QuietTimeFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
-
 type AppConfig struct {
-	Id any
+	// The display name of the Amazon Pinpoint application. (AI-inferred)
 	Name any
-	NamePrefix any
-	Region any
+	// Assigns tags (key-value pairs) to the Amazon Pinpoint application, enabling categorization and management via AWS Resource Groups and cost allocation. (AI-inferred)
 	Tags any
-	TagsAll any
-	CampaignHook any
-	Limits any
-	QuietTime any
+}
+
+type AppAttrs struct {
+	// The Amazon Resource Name (ARN) of the Pinpoint application. (AI-inferred)
+	Arn any
+	// The unique identifier assigned to the Amazon Pinpoint application when it is created. (AI-inferred)
+	Id any
+	// The display name of the Amazon Pinpoint application. (AI-inferred)
+	Name any
+	// Assigns tags (key-value pairs) to the Amazon Pinpoint application, enabling categorization and management via AWS Resource Groups and cost allocation. (AI-inferred)
+	Tags any
 }
 
 var App = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_app",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"CampaignHook": ubx.FieldSpec{
-			WireName: "campaign_hook",
-			Kind: "list",
-			Fields: App_CampaignHookFields,
-		},
-		"Limits": ubx.FieldSpec{
-			WireName: "limits",
-			Kind: "list",
-			Fields: App_LimitsFields,
-		},
-		"QuietTime": ubx.FieldSpec{
-			WireName: "quiet_time",
-			Kind: "list",
-			Fields: App_QuietTimeFields,
-		},
 	},
 }

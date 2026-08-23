@@ -3,38 +3,77 @@ package transfer
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Connector_As2Config_AsyncMdnConfig struct {
+	// Specifies the list of AS2 server IDs that are used as the intended recipients for asynchronous MDN (Message Disposition Notification) responses in this connector's AS2 configuration. (AI-inferred)
+	ServerIds any
+	// URL of the server to receive the MDN response on
+	Url any
+}
+
 type Connector_As2Config struct {
+	// Configures asynchronous Message Disposition Notification (MDN) handling for the AS2 connector, specifying the destination URL, the Secrets Manager secret ARN used to sign the HTTPS request, and whether to send the original message with the MDN (BOTH or NONE). (AI-inferred)
+	AsyncMdnConfig any
+	// ARN or name of the secret in AWS Secrets Manager which contains the credentials for Basic authentication. If empty, Basic authentication is disabled for the AS2 connector
+	BasicAuthSecretId any
+	// Compression setting for this AS2 connector configuration.
 	Compression any
+	// Encryption algorithm for this AS2 connector configuration.
 	EncryptionAlgorithm any
+	// A unique identifier for the local profile.
 	LocalProfileId any
+	// MDN Response setting for this AS2 connector configuration.
 	MdnResponse any
+	// MDN Signing algorithm for this AS2 connector configuration.
 	MdnSigningAlgorithm any
+	// The message subject for this AS2 connector configuration.
 	MessageSubject any
+	// A unique identifier for the partner profile.
 	PartnerProfileId any
+	// Specifies whether to use the AWS S3 object content-type as the content-type for the AS2 message.
+	PreserveContentType any
+	// Signing algorithm for this AS2 connector configuration.
 	SigningAlgorithm any
 }
 
 type Connector_EgressConfig_VpcLattice struct {
+	// Port to connect to on the target VPC Lattice resource
 	PortNumber any
+	// ARN of the VPC Lattice resource configuration
 	ResourceConfigurationArn any
 }
 
 type Connector_EgressConfig struct {
+	// Specifies the VPC Lattice configuration used by the AWS Transfer Family connector for routing outbound connections, allowing integration with a VPC Lattice service network to securely reach remote hosts. (AI-inferred)
 	VpcLattice any
 }
 
 type Connector_SftpConfig struct {
+	// Specifies the number of active connections that your connector can establish with the remote server at the same time.
+	MaxConcurrentConnections any
+	// List of public host keys, for the external server to which you are connecting.
 	TrustedHostKeys any
+	// ARN or name of the secret in AWS Secrets Manager which contains the SFTP user's private keys or passwords.
 	UserSecretId any
 }
 
-type Connector_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Connector_Tags struct {
+	Key any
+	// The value of a user-defined tag attached to the AWS Transfer Family connector, used for metadata such as cost allocation or organizational identification. (AI-inferred)
+	Value any
 }
 
+var Connector_As2Config_AsyncMdnConfigFields = ubx.FieldMap{
+		"ServerIds": ubx.FieldSpec{WireName: "server_ids"},
+		"Url": ubx.FieldSpec{WireName: "url"},
+	}
+
 var Connector_As2ConfigFields = ubx.FieldMap{
+		"AsyncMdnConfig": ubx.FieldSpec{
+			WireName: "async_mdn_config",
+			Kind: "object",
+			Fields: Connector_As2Config_AsyncMdnConfigFields,
+		},
+		"BasicAuthSecretId": ubx.FieldSpec{WireName: "basic_auth_secret_id"},
 		"Compression": ubx.FieldSpec{WireName: "compression"},
 		"EncryptionAlgorithm": ubx.FieldSpec{WireName: "encryption_algorithm"},
 		"LocalProfileId": ubx.FieldSpec{WireName: "local_profile_id"},
@@ -42,6 +81,7 @@ var Connector_As2ConfigFields = ubx.FieldMap{
 		"MdnSigningAlgorithm": ubx.FieldSpec{WireName: "mdn_signing_algorithm"},
 		"MessageSubject": ubx.FieldSpec{WireName: "message_subject"},
 		"PartnerProfileId": ubx.FieldSpec{WireName: "partner_profile_id"},
+		"PreserveContentType": ubx.FieldSpec{WireName: "preserve_content_type"},
 		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
 	}
 
@@ -53,67 +93,106 @@ var Connector_EgressConfig_VpcLatticeFields = ubx.FieldMap{
 var Connector_EgressConfigFields = ubx.FieldMap{
 		"VpcLattice": ubx.FieldSpec{
 			WireName: "vpc_lattice",
-			Kind: "list",
+			Kind: "object",
 			Fields: Connector_EgressConfig_VpcLatticeFields,
 		},
 	}
 
 var Connector_SftpConfigFields = ubx.FieldMap{
+		"MaxConcurrentConnections": ubx.FieldSpec{WireName: "max_concurrent_connections"},
 		"TrustedHostKeys": ubx.FieldSpec{WireName: "trusted_host_keys"},
 		"UserSecretId": ubx.FieldSpec{WireName: "user_secret_id"},
 	}
 
-var Connector_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Connector_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type ConnectorConfig struct {
+	// Specifies the access role for the connector.
 	AccessRole any
-	Id any
-	LoggingRole any
-	Region any
-	SecurityPolicyName any
-	Tags any
-	TagsAll any
-	Url any
+	// Configuration for an AS2 connector.
 	As2Config any
+	// Specifies the S3 access point that acts as the source location from which the AWS Transfer Family connector reads files to send to the remote server. (AI-inferred)
 	EgressConfig any
+	// Specifies the protocol type for the connector (either 'AS2' or 'SFTP') to use for outbound file transfers. (AI-inferred)
+	EgressType any
+	// IP address type for Connector
+	IpAddressType any
+	// Specifies the logging role for the connector.
+	LoggingRole any
+	// Security policy for SFTP Connector
+	SecurityPolicyName any
+	// Configuration for an SFTP connector.
 	SftpConfig any
-	Timeouts any
+	// Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.
+	Tags any
+	// URL for Connector
+	Url any
+}
+
+type ConnectorAttrs struct {
+	// Specifies the access role for the connector.
+	AccessRole any
+	// Specifies the unique Amazon Resource Name (ARN) for the connector.
+	Arn any
+	// Configuration for an AS2 connector.
+	As2Config any
+	// A unique identifier for the connector.
+	ConnectorId any
+	// Specifies the S3 access point that acts as the source location from which the AWS Transfer Family connector reads files to send to the remote server. (AI-inferred)
+	EgressConfig any
+	// Specifies the protocol type for the connector (either 'AS2' or 'SFTP') to use for outbound file transfers. (AI-inferred)
+	EgressType any
+	// Detailed error message when Connector in ERRORED status
+	ErrorMessage any
+	// IP address type for Connector
+	IpAddressType any
+	// Specifies the logging role for the connector.
+	LoggingRole any
+	// Security policy for SFTP Connector
+	SecurityPolicyName any
+	// The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.
+	ServiceManagedEgressIpAddresses any
+	// Configuration for an SFTP connector.
+	SftpConfig any
+	// The current lifecycle status of the Transfer Family connector, such as ACTIVE or INACTIVE, indicating whether the connector is enabled for file transfers. (AI-inferred)
+	Status any
+	// Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.
+	Tags any
+	// URL for Connector
+	Url any
 }
 
 var Connector = ubx.ResourceBinding{
 	WireType: "aws_transfer_connector",
 	Fields: ubx.FieldMap{
 		"AccessRole": ubx.FieldSpec{WireName: "access_role"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LoggingRole": ubx.FieldSpec{WireName: "logging_role"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SecurityPolicyName": ubx.FieldSpec{WireName: "security_policy_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Url": ubx.FieldSpec{WireName: "url"},
 		"As2Config": ubx.FieldSpec{
 			WireName: "as2_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: Connector_As2ConfigFields,
 		},
 		"EgressConfig": ubx.FieldSpec{
 			WireName: "egress_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: Connector_EgressConfigFields,
 		},
+		"EgressType": ubx.FieldSpec{WireName: "egress_type"},
+		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
+		"LoggingRole": ubx.FieldSpec{WireName: "logging_role"},
+		"SecurityPolicyName": ubx.FieldSpec{WireName: "security_policy_name"},
 		"SftpConfig": ubx.FieldSpec{
 			WireName: "sftp_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: Connector_SftpConfigFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Connector_TimeoutsFields,
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Connector_TagsFields,
 		},
+		"Url": ubx.FieldSpec{WireName: "url"},
 	},
 }

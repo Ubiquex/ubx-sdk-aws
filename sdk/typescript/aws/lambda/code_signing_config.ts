@@ -2,61 +2,79 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CodeSigningConfig_AllowedPublishers {
-  signingProfileVersionArns: string[];
+  /** List of Signing profile version Arns */
+  signingProfileVersionArns: string[] | Computed<string[]>;
 }
 
-export interface CodeSigningConfig_Policies {
-  untrustedArtifactOnDeployment: string;
+export interface CodeSigningConfig_CodeSigningPolicies {
+  /** Indicates how Lambda operations involve updating the code artifact will operate. Default to Warn if not provided */
+  untrustedArtifactOnDeployment: string | Computed<string>;
+}
+
+export interface CodeSigningConfig_Tags {
+  /** The key of a tag assigned to the AWS Lambda code signing configuration, used to identify and organize the resource. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value of a user-defined tag applied to the AWS Lambda code signing configuration. (AI-inferred) */
+  value?: string | Computed<string>;
 }
 
 const CodeSigningConfig_AllowedPublishersFields: FieldMap = {
   signingProfileVersionArns: "signing_profile_version_arns",
 };
 
-const CodeSigningConfig_PoliciesFields: FieldMap = {
+const CodeSigningConfig_CodeSigningPoliciesFields: FieldMap = {
   untrustedArtifactOnDeployment: "untrusted_artifact_on_deployment",
 };
 
+const CodeSigningConfig_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
 export interface CodeSigningConfigConfig {
+  /** When the CodeSigningConfig is later on attached to a function, the function code will be expected to be signed by profiles from this list */
+  allowedPublishers: CodeSigningConfig_AllowedPublishers | Computed<CodeSigningConfig_AllowedPublishers>;
+  /** Policies to control how to act if a signature is invalid */
+  codeSigningPolicies?: CodeSigningConfig_CodeSigningPolicies | Computed<CodeSigningConfig_CodeSigningPolicies>;
+  /** A description of the CodeSigningConfig */
   description?: string | Computed<string>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  allowedPublishers?: CodeSigningConfig_AllowedPublishers[] | Computed<CodeSigningConfig_AllowedPublishers[]>;
-  policies?: CodeSigningConfig_Policies[] | Computed<CodeSigningConfig_Policies[]>;
+  /** A list of tags to apply to CodeSigningConfig resource */
+  tags?: CodeSigningConfig_Tags[] | Computed<CodeSigningConfig_Tags[]>;
 }
 
 export interface CodeSigningConfigAttrs {
-  arn: string;
-  configId: string;
+  /** When the CodeSigningConfig is later on attached to a function, the function code will be expected to be signed by profiles from this list */
+  allowedPublishers: CodeSigningConfig_AllowedPublishers;
+  /** A unique Arn for CodeSigningConfig resource */
+  codeSigningConfigArn: string;
+  /** A unique identifier for CodeSigningConfig resource */
+  codeSigningConfigId: string;
+  /** Policies to control how to act if a signature is invalid */
+  codeSigningPolicies: CodeSigningConfig_CodeSigningPolicies;
+  /** A description of the CodeSigningConfig */
   description: string;
-  id: string;
-  lastModified: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  allowedPublishers: CodeSigningConfig_AllowedPublishers[];
-  policies: CodeSigningConfig_Policies[];
+  /** A list of tags to apply to CodeSigningConfig resource */
+  tags: CodeSigningConfig_Tags[];
 }
 
 export const CodeSigningConfig: ResourceBinding<CodeSigningConfigConfig, CodeSigningConfigAttrs> = {
   wireType: "aws_lambda_code_signing_config",
   fields: {
-    description: "description",
-    id: "id",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
     allowedPublishers: {
       wireName: "allowed_publishers",
-      kind: "list",
+      kind: "object",
       fields: CodeSigningConfig_AllowedPublishersFields,
     },
-    policies: {
-      wireName: "policies",
+    codeSigningPolicies: {
+      wireName: "code_signing_policies",
+      kind: "object",
+      fields: CodeSigningConfig_CodeSigningPoliciesFields,
+    },
+    description: "description",
+    tags: {
+      wireName: "tags",
       kind: "list",
-      fields: CodeSigningConfig_PoliciesFields,
+      fields: CodeSigningConfig_TagsFields,
     },
   },
 };

@@ -4,15 +4,23 @@ package wafregional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ByteMatchSet_ByteMatchTuples_FieldToMatch struct {
+	// Specifies the name of the HTTP header to match when field_to_match.type is 'HEADER'; for all other field types this must be an empty string. (AI-inferred)
 	Data any
+	// Specifies the type of web request component (e.g., HEADER, METHOD, QUERY_STRING, URI, or BODY) that the byte match tuple inspects, as defined in the field_to_match object. (AI-inferred)
 	Type any
 }
 
 type ByteMatchSet_ByteMatchTuples struct {
-	PositionalConstraint any
-	TargetString any
-	TextTransformation any
+	// Specifies the part of a web request (such as a header, query string, or URI) that AWS WAF Regional inspects for the byte match tuple's search string. (AI-inferred)
 	FieldToMatch any
+	// This field specifies how the target search string in the byte match tuple must align with the inspected text, using values such as EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, or CONTAINS_WORD, to determine whether an AWS WAF Regional rule matches a request. (AI-inferred)
+	PositionalConstraint any
+	// Specifies the literal string (e.g., a URL or plain text) that AWS WAF Regional searches for in the web request component defined by the containing byte match tuple; for non-ASCII or binary values, you would instead use the tuple's base64-encoded target property. (AI-inferred)
+	TargetString any
+	// The base64-encoded representation of the string that AWS WAF Regional searches for in the specified part of a web request, used when the target string cannot be specified directly due to non-printable or binary characters. (AI-inferred)
+	TargetStringBase64 any
+	// Specifies the text transformation AWS WAF applies to the request content before evaluating the byte match condition, such as converting to lowercase or decoding URL-encoded characters. (AI-inferred)
+	TextTransformation any
 }
 
 var ByteMatchSet_ByteMatchTuples_FieldToMatchFields = ubx.FieldMap{
@@ -21,33 +29,41 @@ var ByteMatchSet_ByteMatchTuples_FieldToMatchFields = ubx.FieldMap{
 	}
 
 var ByteMatchSet_ByteMatchTuplesFields = ubx.FieldMap{
-		"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
-		"TargetString": ubx.FieldSpec{WireName: "target_string"},
-		"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
 		"FieldToMatch": ubx.FieldSpec{
 			WireName: "field_to_match",
-			Kind: "list",
+			Kind: "object",
 			Fields: ByteMatchSet_ByteMatchTuples_FieldToMatchFields,
 		},
+		"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
+		"TargetString": ubx.FieldSpec{WireName: "target_string"},
+		"TargetStringBase64": ubx.FieldSpec{WireName: "target_string_base64"},
+		"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
 	}
 
 type ByteMatchSetConfig struct {
-	Id any
-	Name any
-	Region any
+	// Specifies the list of byte match tuples that define the filter criteria (the part of a web request to inspect, the target string, and text transformation) for the AWS WAF Regional byte match set. (AI-inferred)
 	ByteMatchTuples any
+	// A friendly name for the byte match set, which is used as a unique identifier within the AWS WAF Regional service. (AI-inferred)
+	Name any
+}
+
+type ByteMatchSetAttrs struct {
+	// Specifies the list of byte match tuples that define the filter criteria (the part of a web request to inspect, the target string, and text transformation) for the AWS WAF Regional byte match set. (AI-inferred)
+	ByteMatchTuples any
+	// The AWS-assigned unique identifier (ByteMatchSetId) for the WAF Regional byte match set. (AI-inferred)
+	Id any
+	// A friendly name for the byte match set, which is used as a unique identifier within the AWS WAF Regional service. (AI-inferred)
+	Name any
 }
 
 var ByteMatchSet = ubx.ResourceBinding{
 	WireType: "aws_wafregional_byte_match_set",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ByteMatchTuples": ubx.FieldSpec{
 			WireName: "byte_match_tuples",
-			Kind: "set",
+			Kind: "list",
 			Fields: ByteMatchSet_ByteMatchTuplesFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

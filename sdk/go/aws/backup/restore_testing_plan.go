@@ -4,11 +4,22 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RestoreTestingPlan_RecoveryPointSelection struct {
+	// Specifies the algorithm used to select recovery points for restore testing, where `LATEST_WITHIN_WINDOW` picks the most recent recovery point within the selection window and `RANDOM_WITHIN_WINDOW` picks a random recovery point from that window. (AI-inferred)
 	Algorithm any
+	// Specifies the names of backup vaults whose recovery points are excluded from the restore testing plan selection, preventing those vaults' recovery points from being used in restore tests. (AI-inferred)
 	ExcludeVaults any
+	// Specifies the names of backup vaults to include in the recovery point selection, so that only recovery points from these vaults are considered for restore testing. (AI-inferred)
 	IncludeVaults any
+	// Specifies the types of backup recovery points to include in the restore testing plan, such as 'CONTINUOUS' or 'SNAPSHOT', determining which recovery points are eligible for testing. (AI-inferred)
 	RecoveryPointTypes any
+	// Specifies the number of days prior to the current date from which recovery points are eligible for selection in the restore testing plan, restricting tests to recently created recovery points. (AI-inferred)
 	SelectionWindowDays any
+}
+
+type RestoreTestingPlan_Tags struct {
+	// The key of a tag attached to the AWS Backup restore testing plan, used for organizing, identifying, and managing the resource. (AI-inferred)
+	Key any
+	Value any
 }
 
 var RestoreTestingPlan_RecoveryPointSelectionFields = ubx.FieldMap{
@@ -19,29 +30,59 @@ var RestoreTestingPlan_RecoveryPointSelectionFields = ubx.FieldMap{
 		"SelectionWindowDays": ubx.FieldSpec{WireName: "selection_window_days"},
 	}
 
+var RestoreTestingPlan_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type RestoreTestingPlanConfig struct {
-	Name any
-	Region any
-	ScheduleExpression any
-	ScheduleExpressionTimezone any
-	StartWindowHours any
-	Tags any
+	// Defines the recovery point selection criteria for the restore testing plan, including the selection algorithm (e.g., latest or random within a window) and optional filters on resource types and backup vault names to narrow which recovery points are tested. (AI-inferred)
 	RecoveryPointSelection any
+	// The name of the restore testing plan, which must be unique within your AWS account and is used to identify the plan in AWS Backup. (AI-inferred)
+	RestoreTestingPlanName any
+	// Defines the cron or rate expression that determines when the restore testing plan automatically initiates restore tests, such as 'cron(0 12 * * ? *)' or 'rate(1 day)'. (AI-inferred)
+	ScheduleExpression any
+	// Specifies the IANA timezone (in Area/Location format, e.g., 'America/New_York') used to evaluate the restore testing plan's schedule expression, enabling the test schedule to run at a local time. (AI-inferred)
+	ScheduleExpressionTimezone any
+	// Defines the number of hours after the scheduled time that the restore testing plan is allowed to begin its restore test, providing a time buffer for the test to start within that window. (AI-inferred)
+	StartWindowHours any
+	// A list of key-value pairs that assign tags to the AWS Backup restore testing plan, used for organizing, identifying, and managing the plan through cost allocation and access control. (AI-inferred)
+	Tags any
+}
+
+type RestoreTestingPlanAttrs struct {
+	// Defines the recovery point selection criteria for the restore testing plan, including the selection algorithm (e.g., latest or random within a window) and optional filters on resource types and backup vault names to narrow which recovery points are tested. (AI-inferred)
+	RecoveryPointSelection any
+	// The Amazon Resource Name (ARN) that uniquely identifies the restore testing plan, assigned by AWS when the plan is created. (AI-inferred)
+	RestoreTestingPlanArn any
+	// The name of the restore testing plan, which must be unique within your AWS account and is used to identify the plan in AWS Backup. (AI-inferred)
+	RestoreTestingPlanName any
+	// Defines the cron or rate expression that determines when the restore testing plan automatically initiates restore tests, such as 'cron(0 12 * * ? *)' or 'rate(1 day)'. (AI-inferred)
+	ScheduleExpression any
+	// Specifies the IANA timezone (in Area/Location format, e.g., 'America/New_York') used to evaluate the restore testing plan's schedule expression, enabling the test schedule to run at a local time. (AI-inferred)
+	ScheduleExpressionTimezone any
+	// Defines the number of hours after the scheduled time that the restore testing plan is allowed to begin its restore test, providing a time buffer for the test to start within that window. (AI-inferred)
+	StartWindowHours any
+	// A list of key-value pairs that assign tags to the AWS Backup restore testing plan, used for organizing, identifying, and managing the plan through cost allocation and access control. (AI-inferred)
+	Tags any
 }
 
 var RestoreTestingPlan = ubx.ResourceBinding{
 	WireType: "aws_backup_restore_testing_plan",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"RecoveryPointSelection": ubx.FieldSpec{
+			WireName: "recovery_point_selection",
+			Kind: "object",
+			Fields: RestoreTestingPlan_RecoveryPointSelectionFields,
+		},
+		"RestoreTestingPlanName": ubx.FieldSpec{WireName: "restore_testing_plan_name"},
 		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
 		"ScheduleExpressionTimezone": ubx.FieldSpec{WireName: "schedule_expression_timezone"},
 		"StartWindowHours": ubx.FieldSpec{WireName: "start_window_hours"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"RecoveryPointSelection": ubx.FieldSpec{
-			WireName: "recovery_point_selection",
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
 			Kind: "list",
-			Fields: RestoreTestingPlan_RecoveryPointSelectionFields,
+			Fields: RestoreTestingPlan_TagsFields,
 		},
 	},
 }

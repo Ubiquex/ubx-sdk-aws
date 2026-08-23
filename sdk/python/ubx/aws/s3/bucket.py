@@ -7,221 +7,857 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Bucket_CorsRule:
-    allowed_headers: Any = None
-    allowed_methods: Any = None
-    allowed_origins: Any = None
-    expose_headers: Any = None
-    max_age_seconds: Any = None
+class Bucket_AccelerateConfiguration:
+    # Specifies the transfer acceleration status of the bucket.
+    acceleration_status: Any = None
 
 @dataclasses.dataclass
-class Bucket_Grant:
-    id: Any = None
-    permissions: Any = None
-    type: Any = None
-    uri: Any = None
-
-@dataclasses.dataclass
-class Bucket_LifecycleRule_Expiration:
-    date: Any = None
-    days: Any = None
-    expired_object_delete_marker: Any = None
-
-@dataclasses.dataclass
-class Bucket_LifecycleRule_NoncurrentVersionExpiration:
-    days: Any = None
-
-@dataclasses.dataclass
-class Bucket_LifecycleRule_NoncurrentVersionTransition:
-    days: Any = None
-    storage_class: Any = None
-
-@dataclasses.dataclass
-class Bucket_LifecycleRule_Transition:
-    date: Any = None
-    days: Any = None
-    storage_class: Any = None
-
-@dataclasses.dataclass
-class Bucket_LifecycleRule:
-    abort_incomplete_multipart_upload_days: Any = None
-    enabled: Any = None
-    id: Any = None
+class Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport_Destination:
+    # The AWS account ID of the destination bucket that receives the storage-class analysis data export, which is the account that owns the destination bucket for cross-account exports. (AI-inferred)
+    bucket_account_id: Any = None
+    # The Amazon Resource Name (ARN) of the S3 bucket where the S3 analytics data export file is delivered. (AI-inferred)
+    bucket_arn: Any = None
+    # Specifies the file format of the exported storage class analysis data to the destination S3 bucket, with the only supported value being 'CSV'. (AI-inferred)
+    format: Any = None
+    # The prefix used to store the storage class analysis data export files in the destination S3 bucket. (AI-inferred)
     prefix: Any = None
-    tags: Any = None
-    expiration: Any = None
-    noncurrent_version_expiration: Any = None
-    noncurrent_version_transition: Any = None
-    transition: Any = None
 
 @dataclasses.dataclass
-class Bucket_Logging:
-    target_bucket: Any = None
-    target_prefix: Any = None
+class Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport:
+    # Specifies the destination S3 bucket (with its ARN, account ID, prefix, and format) to which the storage class analysis data export is delivered. (AI-inferred)
+    destination: Any = None
+    # Defines the version of the output schema used when S3 exports storage class analysis results to the configured destination, with the only supported value being 'V_1'. (AI-inferred)
+    output_schema_version: Any = None
+
+@dataclasses.dataclass
+class Bucket_AnalyticsConfigurations_StorageClassAnalysis:
+    # Configuration for exporting the results of S3 Storage Class Analysis, defining the destination S3 bucket and the output format (e.g., CSV) for the analysis data. (AI-inferred)
+    data_export: Any = None
+
+@dataclasses.dataclass
+class Bucket_AnalyticsConfigurations_TagFilters:
+    # The tag key that defines which objects are included in the S3 analytics configuration's tag-based filter. (AI-inferred)
+    key: Any = None
+    # Specifies the tag value used to filter objects for the S3 analytics configuration; objects with this tag value are included in the analytics export. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class Bucket_AnalyticsConfigurations:
+    # A unique identifier for the S3 bucket analytics configuration, used to distinguish it from other analytics configurations on the same bucket. (AI-inferred)
+    id: Any = None
+    # The object key prefix used to filter which objects in the bucket are included in this S3 analytics configuration, so only objects with keys starting with this prefix are analyzed. (AI-inferred)
+    prefix: Any = None
+    # Specifies the data export configuration for storage class analysis, defining where and how the analytics results are delivered (destination bucket, prefix, and output format). (AI-inferred)
+    storage_class_analysis: Any = None
+    # The tag filters that specify which objects with matching tag key-value pairs are included in the S3 analytics export configuration. (AI-inferred)
+    tag_filters: Any = None
+
+@dataclasses.dataclass
+class Bucket_BucketEncryption_ServerSideEncryptionConfiguration_BlockedEncryptionTypes:
+    encryption_type: Any = None
+
+@dataclasses.dataclass
+class Bucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefault:
+    # Specifies the AWS KMS key ID (or ARN) that Amazon S3 uses to encrypt objects by default when the default server-side encryption is set to aws:kms for this bucket. (AI-inferred)
+    kmsmaster_key_id: Any = None
+    # Specifies the default server-side encryption algorithm applied to objects written to the S3 bucket, accepting values like AES256, aws:kms, or aws:kms:dsse. (AI-inferred)
+    ssealgorithm: Any = None
+
+@dataclasses.dataclass
+class Bucket_BucketEncryption_ServerSideEncryptionConfiguration:
+    blocked_encryption_types: Any = None
+    # Whether to enable an S3 Bucket Key for the SSE-KMS encryption rule, which uses a bucket-level key to reduce KMS request costs for all objects encrypted under this bucket. (AI-inferred)
+    bucket_key_enabled: Any = None
+    # Specifies the default server-side encryption method applied to objects uploaded to the S3 bucket, including the encryption algorithm (e.g., AES256 or aws:kms) and optional AWS KMS key ID. (AI-inferred)
+    server_side_encryption_by_default: Any = None
+
+@dataclasses.dataclass
+class Bucket_BucketEncryption:
+    # Specifies the default server-side-encryption configuration.
+    server_side_encryption_configuration: Any = None
+
+@dataclasses.dataclass
+class Bucket_CorsConfiguration_CorsRules:
+    # Specifies the HTTP headers that are allowed in a request to the S3 bucket from a cross-origin origin; each entry can be a specific header name (e.g., 'x-amz-date') or the wildcard '*' to allow all headers. (AI-inferred)
+    allowed_headers: Any = None
+    # Specifies the list of HTTP methods (such as GET, PUT, POST, DELETE, HEAD) that are allowed for cross-origin requests to the S3 bucket. (AI-inferred)
+    allowed_methods: Any = None
+    # Specifies the origins (scheme, host, and port) that are allowed to make cross-origin requests to the bucket. (AI-inferred)
+    allowed_origins: Any = None
+    # Specifies the response headers that are exposed to the client (browser) in the actual S3 CORS response, allowing client-side scripts to access them. (AI-inferred)
+    exposed_headers: Any = None
+    # The ID is an optional unique identifier for this CORS rule, up to 255 characters, used to identify the rule within the CORS configuration. (AI-inferred)
+    id: Any = None
+    # Specifies the time in seconds that the browser caches the response to a preflight (OPTIONS) request. (AI-inferred)
+    max_age: Any = None
+
+@dataclasses.dataclass
+class Bucket_CorsConfiguration:
+    # A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.
+    cors_rules: Any = None
+
+@dataclasses.dataclass
+class Bucket_IntelligentTieringConfigurations_Tierings:
+    # The access tier (either ARCHIVE_ACCESS or DEEP_ARCHIVE_ACCESS) to which objects are transitioned after the specified number of days in this Intelligent-Tiering configuration. (AI-inferred)
+    access_tier: Any = None
+    # The number of days after object creation when S3 Intelligent-Tiering moves the object to the specified access tier (e.g., ARCHIVE_ACCESS or DEEP_ARCHIVE_ACCESS). (AI-inferred)
+    days: Any = None
+
+@dataclasses.dataclass
+class Bucket_IntelligentTieringConfigurations:
+    # A unique identifier for this S3 Intelligent-Tiering configuration, used to distinguish it from other configurations on the same bucket. (AI-inferred)
+    id: Any = None
+    # Specifies an object key name prefix that identifies the subset of objects to which this S3 Intelligent-Tiering configuration applies, so only objects with keys beginning with this prefix are included. (AI-inferred)
+    prefix: Any = None
+    # Indicates whether the S3 Intelligent-Tiering configuration is enabled or disabled, with allowed values 'Enabled' and 'Disabled'. (AI-inferred)
+    status: Any = None
+    # Defines the tag filters (key and value pairs) that determine which objects are eligible for this S3 Intelligent-Tiering configuration, so that only objects with matching tags are included in the tiering behavior. (AI-inferred)
+    tag_filters: Any = None
+    # Defines each S3 Intelligent-Tiering tier (ARCHIVE_ACCESS or DEEP_ARCHIVE_ACCESS) and the number of days after which objects are moved to that tier. (AI-inferred)
+    tierings: Any = None
+
+@dataclasses.dataclass
+class Bucket_InventoryConfigurations:
+    # The destination configuration for an S3 inventory report, specifying where the inventory list is delivered (e.g., the target S3 bucket ARN, optional prefix, and output format). (AI-inferred)
+    destination: Any = None
+    # Indicates whether the inventory configuration is enabled for the S3 bucket. (AI-inferred)
+    enabled: Any = None
+    # The unique identifier for this S3 inventory configuration, used to distinguish it from other inventory configurations on the bucket. (AI-inferred)
+    id: Any = None
+    # Determines whether the inventory report includes all versions of each object ('All') or only the current version ('Current'). (AI-inferred)
+    included_object_versions: Any = None
+    # Specifies the list of additional object metadata fields (such as Size, LastModifiedDate, StorageClass, ETag) to be included in the S3 inventory output for the bucket, in addition to the mandatory fields (bucket name and object key). (AI-inferred)
+    optional_fields: Any = None
+    # Filters the inventory to only include objects whose keys begin with the specified prefix, such as 'documents/' or 'logs/'. (AI-inferred)
+    prefix: Any = None
+    # Specifies how often the S3 inventory report is generated, either Daily or Weekly. (AI-inferred)
+    schedule_frequency: Any = None
+
+@dataclasses.dataclass
+class Bucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUpload:
+    # Specifies the number of days after a multipart upload is initiated that S3 will abort the incomplete multipart upload, based on the upload's initiation date. (AI-inferred)
+    days_after_initiation: Any = None
+
+@dataclasses.dataclass
+class Bucket_LifecycleConfiguration_Rules_NoncurrentVersionExpiration:
+    # The number of newer noncurrent versions of an object to preserve before the oldest noncurrent version becomes eligible for expiration, enabling you to retain a specified number of recent versions while expiring older ones. (AI-inferred)
+    newer_noncurrent_versions: Any = None
+    # The number of days after which a noncurrent version of an object is expired and permanently deleted in the S3 lifecycle rule. (AI-inferred)
+    noncurrent_days: Any = None
+
+@dataclasses.dataclass
+class Bucket_LifecycleConfiguration_Rules_NoncurrentVersionTransition:
+    # The number of newer noncurrent versions to retain before this lifecycle transition applies, allowing the action to skip recent noncurrent versions and only affect older ones. (AI-inferred)
+    newer_noncurrent_versions: Any = None
+    # The storage class that noncurrent object versions are transitioned to, such as GLACIER, DEEP_ARCHIVE, or STANDARD_IA, as defined in the S3 lifecycle noncurrent version transition rule. (AI-inferred)
+    storage_class: Any = None
+    # The number of days from when an object version becomes noncurrent to when it is transitioned to the storage class specified in the lifecycle rule's noncurrent version transition. (AI-inferred)
+    transition_in_days: Any = None
+
+@dataclasses.dataclass
+class Bucket_LifecycleConfiguration_Rules_Transition:
+    # The S3 storage class to which the objects are transitioned when the lifecycle rule's transition action triggers (for example, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, or DEEP_ARCHIVE). (AI-inferred)
+    storage_class: Any = None
+    # Specifies the date (in ISO 8601 format) when objects in the bucket are transitioned to the storage class defined by the same transition object, and is mutually exclusive with the 'days' property. (AI-inferred)
+    transition_date: Any = None
+    # Specifies the number of days after object creation when the lifecycle transition action (to a specified storage class) takes effect for objects in the S3 bucket. (AI-inferred)
+    transition_in_days: Any = None
+
+@dataclasses.dataclass
+class Bucket_LifecycleConfiguration_Rules:
+    # Specifies the number of days after a multipart upload is initiated that the upload must be aborted, as part of an S3 lifecycle rule. (AI-inferred)
+    abort_incomplete_multipart_upload: Any = None
+    # Specifies the exact date (in ISO 8601 format) on which Amazon S3 permanently deletes objects matching this lifecycle rule, used as an alternative to specifying a number of days. (AI-inferred)
+    expiration_date: Any = None
+    # The number of days after object creation when Amazon S3 permanently deletes objects that match this lifecycle rule. (AI-inferred)
+    expiration_in_days: Any = None
+    # Indicates whether Amazon S3 removes expired object delete markers when enforcing this lifecycle rule's expiration action. (AI-inferred)
+    expired_object_delete_marker: Any = None
+    # A unique identifier for the S3 lifecycle rule, used to distinguish it from other rules in the same bucket's lifecycle configuration. (AI-inferred)
+    id: Any = None
+    # Specifies the expiration behavior for noncurrent versions of objects in the S3 bucket, including the number of days to keep them and optionally how many newer versions to retain. (AI-inferred)
+    noncurrent_version_expiration: Any = None
+    # Specifies the number of days after which an object version that is no longer current is automatically deleted by the lifecycle rule. (AI-inferred)
+    noncurrent_version_expiration_in_days: Any = None
+    # Specifies when noncurrent versions of an object transition to a different storage class, including the number of days after becoming noncurrent and the target storage class. (AI-inferred)
+    noncurrent_version_transition: Any = None
+    # Defines the transition actions for noncurrent versions of objects in an S3 lifecycle rule, specifying when to move them to a different storage class and how many newer versions to consider. (AI-inferred)
+    noncurrent_version_transitions: Any = None
+    # Specifies the minimum object size in bytes for which the lifecycle rule applies to objects. (AI-inferred)
+    object_size_greater_than: Any = None
+    # Specifies the maximum object size (in bytes) for which the lifecycle rule applies, meaning only objects smaller than this value are eligible for the rule's actions. (AI-inferred)
+    object_size_less_than: Any = None
+    # Specifies the object key prefix that this lifecycle rule applies to, limiting the rule's effect to objects with keys that begin with this string. (AI-inferred)
+    prefix: Any = None
+    # Whether the lifecycle rule is currently active, with allowed values 'Enabled' or 'Disabled', controlling whether Amazon S3 executes the rule's expiration, transition, or other actions on matching objects. (AI-inferred)
+    status: Any = None
+    # Defines tag key-value pairs that must match an object's tags for the lifecycle rule to apply, thereby scoping the rule to a subset of objects. (AI-inferred)
+    tag_filters: Any = None
+    # Defines a lifecycle transition action that moves objects to a specified storage class after a specified number of days or on a specific date. (AI-inferred)
+    transition: Any = None
+    # Defines a lifecycle transition, specifying when objects should transition to a different storage class (such as STANDARD_IA or GLACIER) based on age in days or a specific date. (AI-inferred)
+    transitions: Any = None
+
+@dataclasses.dataclass
+class Bucket_LifecycleConfiguration:
+    # A lifecycle rule for individual objects in an Amazon S3 bucket.
+    rules: Any = None
+    # Indicates which default minimum object size behavior is applied to the lifecycle configuration. This parameter applies to general purpose buckets only. It isn't supported for directory bucket lifecycle configurations. + ``all_storage_classes_128K`` - Objects smaller than 128 KB will not transition to any storage class by default. + ``varies_by_storage_class`` - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB. To customize the minimum object size for any transition you can add a filter that specifies a custom ``ObjectSizeGreaterThan`` or ``ObjectSizeLessThan`` in the body of your transition rule. Custom filters always take precedence over the default transition behavior.
+    transition_default_minimum_object_size: Any = None
+
+@dataclasses.dataclass
+class Bucket_LoggingConfiguration:
+    # The name of the bucket where Amazon S3 should store server access log files. You can store log files in any bucket that you own. By default, logs are stored in the bucket where the ``LoggingConfiguration`` property is defined.
+    destination_bucket_name: Any = None
+    # A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.
+    log_file_prefix: Any = None
+    # Describes the key format for server access log file in the target bucket. You can choose between SimplePrefix and PartitionedPrefix.
+    target_object_key_format: Any = None
+
+@dataclasses.dataclass
+class Bucket_MetadataConfiguration_AnnotationTableConfiguration_EncryptionConfiguration:
+    # If server-side encryption with KMSlong (KMS) keys (SSE-KMS) is specified, you must also specify the KMS key Amazon Resource Name (ARN). You must specify a customer-managed KMS key that's located in the same Region as the general purpose bucket that corresponds to the metadata table configuration.
+    kms_key_arn: Any = None
+    # The encryption type specified for a metadata table. To specify server-side encryption with KMSlong (KMS) keys (SSE-KMS), use the ``aws:kms`` value. To specify server-side encryption with Amazon S3 managed keys (SSE-S3), use the ``AES256`` value.
+    sse_algorithm: Any = None
+
+@dataclasses.dataclass
+class Bucket_MetadataConfiguration_AnnotationTableConfiguration:
+    # Specifies whether the annotation table configuration is enabled or disabled.
+    configuration_state: Any = None
+    # The encryption settings for an S3 Metadata journal table or inventory table configuration.
+    encryption_configuration: Any = None
+    # The ARN of the IAM role that grants Amazon S3 Metadata permission to read annotations from your bucket.
+    role: Any = None
+    # The Amazon Resource Name (ARN) for the annotation table.
+    table_arn: Any = None
+    # The name of the annotation table.
+    table_name: Any = None
+
+@dataclasses.dataclass
+class Bucket_MetadataConfiguration_Destination:
+    # The Amazon Resource Name (ARN) of the table bucket where the metadata configuration is stored.
+    table_bucket_arn: Any = None
+    # The type of the table bucket where the metadata configuration is stored. The ``aws`` value indicates an AWS managed table bucket, and the ``customer`` value indicates a customer-managed table bucket. V2 metadata configurations are stored in AWS managed table buckets, and V1 metadata configurations are stored in customer-managed table buckets.
+    table_bucket_type: Any = None
+    # The namespace in the table bucket where the metadata tables for a metadata configuration are stored.
+    table_namespace: Any = None
+
+@dataclasses.dataclass
+class Bucket_MetadataConfiguration_InventoryTableConfiguration:
+    # The configuration state of the inventory table, indicating whether the inventory table is enabled or disabled.
+    configuration_state: Any = None
+    # The encryption settings for an S3 Metadata journal table or inventory table configuration.
+    encryption_configuration: Any = None
+    # The Amazon Resource Name (ARN) for the inventory table.
+    table_arn: Any = None
+    # The name of the inventory table.
+    table_name: Any = None
+
+@dataclasses.dataclass
+class Bucket_MetadataConfiguration_JournalTableConfiguration_RecordExpiration:
+    # If you enable journal table record expiration, you can set the number of days to retain your journal table records. Journal table records must be retained for a minimum of 7 days. To set this value, specify any whole number from ``7`` to ``2147483647``. For example, to retain your journal table records for one year, set this value to ``365``.
+    days: Any = None
+    # Specifies whether journal table record expiration is enabled or disabled.
+    expiration: Any = None
+
+@dataclasses.dataclass
+class Bucket_MetadataConfiguration_JournalTableConfiguration:
+    # The encryption settings for an S3 Metadata journal table or inventory table configuration.
+    encryption_configuration: Any = None
+    # The journal table record expiration settings for a journal table in an S3 Metadata configuration.
+    record_expiration: Any = None
+    # The Amazon Resource Name (ARN) for the journal table.
+    table_arn: Any = None
+    # The name of the journal table.
+    table_name: Any = None
+
+@dataclasses.dataclass
+class Bucket_MetadataConfiguration:
+    # The annotation table configuration for an S3 Metadata configuration. The annotation table tracks all annotations on objects in your bucket so that you can query annotation data at scale. If you've disabled your annotation table configuration and now want to re-enable it, you must first manually delete the old annotation table from your AWS managed table bucket. Otherwise, the newly re-enabled annotation table configuration will enter a failed state because the annotation table already exists in the table bucket.
+    annotation_table_configuration: Any = None
+    # The destination information for the S3 Metadata configuration.
+    destination: Any = None
+    # The inventory table configuration for an S3 Metadata configuration. If you've disabled your inventory table configuration and now want to re-enable it, you must first manually delete the old inventory table from your AWS managed table bucket. Otherwise, the newly re-enabled inventory table configuration will enter a failed state because the inventory table already exists in the table bucket.
+    inventory_table_configuration: Any = None
+    # The journal table configuration for an S3 Metadata configuration. The journal table is required for each metadata table configuration and cannot be disabled. The journal configuration will enter a failed state if a journal table already exists in the table bucket. The journal table of a previous configuration must be deleted before a new journal table can be created successfully.
+    journal_table_configuration: Any = None
+
+@dataclasses.dataclass
+class Bucket_MetadataTableConfiguration_S3TablesDestination:
+    # The Amazon Resource Name (ARN) for the metadata table in the metadata table configuration. The specified metadata table name must be unique within the ``aws_s3_metadata`` namespace in the destination table bucket.
+    table_arn: Any = None
+    # The Amazon Resource Name (ARN) for the table bucket that's specified as the destination in the metadata table configuration. The destination table bucket must be in the same Region and AWS-account as the general purpose bucket.
+    table_bucket_arn: Any = None
+    # The name for the metadata table in your metadata table configuration. The specified metadata table name must be unique within the ``aws_s3_metadata`` namespace in the destination table bucket.
+    table_name: Any = None
+    # The table bucket namespace for the metadata table in your metadata table configuration. This value is always ``aws_s3_metadata``.
+    table_namespace: Any = None
+
+@dataclasses.dataclass
+class Bucket_MetadataTableConfiguration:
+    # The destination information for a V1 S3 Metadata configuration. The destination table bucket must be in the same Region and AWS-account as the general purpose bucket. The specified metadata table name must be unique within the ``aws_s3_metadata`` namespace in the destination table bucket.
+    s3_tables_destination: Any = None
+
+@dataclasses.dataclass
+class Bucket_MetricsConfigurations:
+    # The ARN of the S3 access point whose requests are filtered into this metrics configuration, restricting CloudWatch request metrics to that access point. (AI-inferred)
+    access_point_arn: Any = None
+    # The unique identifier for this S3 metrics configuration, used to reference or manage the configuration. (AI-inferred)
+    id: Any = None
+    # The object key prefix that filters the objects included in the S3 metrics configuration, so metrics are collected only for objects whose keys begin with this prefix. (AI-inferred)
+    prefix: Any = None
+    # Defines the tag key-value pairs that filter which objects are included in this S3 bucket metrics configuration, so metrics are only collected for objects matching all specified tags. (AI-inferred)
+    tag_filters: Any = None
+
+@dataclasses.dataclass
+class Bucket_NotificationConfiguration_EventBridgeConfiguration:
+    # Enables delivery of events to Amazon EventBridge.
+    event_bridge_enabled: Any = None
+
+@dataclasses.dataclass
+class Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3Key_Rules:
+    # Specifies whether the filter rule matches the object key by prefix or suffix, with allowed values of 'prefix' or 'suffix'. (AI-inferred)
+    name: Any = None
+    # The value of a filter rule in an S3 bucket's notification configuration that specifies a prefix or suffix pattern which object key names must match to trigger the Lambda function. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3Key:
+    # A list of S3 key filter rules (each specifying a Name of 'prefix' or 'suffix' and a Value) that determine which object key names trigger the Lambda function notification for this configuration. (AI-inferred)
+    rules: Any = None
+
+@dataclasses.dataclass
+class Bucket_NotificationConfiguration_LambdaConfigurations_Filter:
+    # Specifies the S3 object key filter rules (prefix or suffix) that determine which objects trigger the Lambda function notification. (AI-inferred)
+    s3_key: Any = None
+
+@dataclasses.dataclass
+class Bucket_NotificationConfiguration_LambdaConfigurations:
+    # The S3 event type (e.g., s3:ObjectCreated:*) that triggers the Lambda function for this notification configuration. (AI-inferred)
+    event: Any = None
+    # Defines the object key name prefix and/or suffix filters that determine which S3 object events trigger the associated Lambda function notification. (AI-inferred)
+    filter: Any = None
+    # The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3 invokes when the specified event type occurs for this filter. (AI-inferred)
+    function: Any = None
+
+@dataclasses.dataclass
+class Bucket_NotificationConfiguration_QueueConfigurations:
+    # The S3 event type (e.g., s3:ObjectCreated:*) that triggers the notification to the SQS queue. (AI-inferred)
+    event: Any = None
+    # Defines the object key name filter criteria (prefix and/or suffix rules) that determine which S3 objects trigger the notification to the configured queue. (AI-inferred)
+    filter: Any = None
+    # The ARN of the Amazon SQS queue to which the S3 bucket sends event notifications for this queue configuration. (AI-inferred)
+    queue: Any = None
+
+@dataclasses.dataclass
+class Bucket_NotificationConfiguration_TopicConfigurations:
+    # The S3 event type (e.g., s3:ObjectCreated:* or s3:ObjectRemoved:*) that triggers the notification to the SNS topic. (AI-inferred)
+    event: Any = None
+    # Configures the S3KeyFilter for this SNS topic notification, restricting which object key names (by prefix and/or suffix) trigger the event. (AI-inferred)
+    filter: Any = None
+    # The Amazon Resource Name (ARN) of the SNS topic that S3 publishes event notifications to for this topic configuration. (AI-inferred)
+    topic: Any = None
+
+@dataclasses.dataclass
+class Bucket_NotificationConfiguration:
+    # Amazon S3 can send events to Amazon EventBridge whenever certain events happen in your bucket, see [Using EventBridge](https://docs.aws.amazon.com/AmazonS3/latest/userguide/EventBridge.html) in the *Amazon S3 User Guide*. Unlike other destinations, delivery of events to EventBridge can be either enabled or disabled for a bucket. If enabled, all events will be sent to EventBridge and you can use EventBridge rules to route events to additional targets. For more information, see [What Is Amazon EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html) in the *Amazon EventBridge User Guide*
+    event_bridge_configuration: Any = None
+    # Describes the LAMlong functions to invoke and the events for which to invoke them.
+    lambda_configurations: Any = None
+    # The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.
+    queue_configurations: Any = None
+    # The topic to which notifications are sent and the events for which notifications are generated.
+    topic_configurations: Any = None
 
 @dataclasses.dataclass
 class Bucket_ObjectLockConfiguration_Rule_DefaultRetention:
+    # The number of days that you want to specify for the default retention period. If Object Lock is turned on, you must specify ``Mode`` and specify either ``Days`` or ``Years``.
     days: Any = None
+    # The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. If Object Lock is turned on, you must specify ``Mode`` and specify either ``Days`` or ``Years``.
     mode: Any = None
+    # The number of years that you want to specify for the default retention period. If Object Lock is turned on, you must specify ``Mode`` and specify either ``Days`` or ``Years``.
     years: Any = None
 
 @dataclasses.dataclass
 class Bucket_ObjectLockConfiguration_Rule:
+    # The container element for optionally specifying the default Object Lock retention settings for new objects placed in the specified bucket. + The ``DefaultRetention`` settings require both a mode and a period. + The ``DefaultRetention`` period can be either ``Days`` or ``Years`` but you must select one. You cannot specify ``Days`` and ``Years`` at the same time.
     default_retention: Any = None
 
 @dataclasses.dataclass
 class Bucket_ObjectLockConfiguration:
+    # Indicates whether this bucket has an Object Lock configuration enabled. Enable ``ObjectLockEnabled`` when you apply ``ObjectLockConfiguration`` to a bucket.
     object_lock_enabled: Any = None
+    # Specifies the Object Lock rule for the specified object. Enable the this rule when you apply ``ObjectLockConfiguration`` to a bucket.
     rule: Any = None
 
 @dataclasses.dataclass
-class Bucket_ReplicationConfiguration_Rules_Destination_AccessControlTranslation:
-    owner: Any = None
+class Bucket_OwnershipControls_Rules:
+    # Specifies the object ownership rule applied to new objects in the S3 bucket, with valid values including BucketOwnerPreferred, ObjectWriter, and BucketOwnerEnforced. (AI-inferred)
+    object_ownership: Any = None
 
 @dataclasses.dataclass
-class Bucket_ReplicationConfiguration_Rules_Destination_Metrics:
-    minutes: Any = None
+class Bucket_OwnershipControls:
+    # Specifies the container element for Object Ownership rules.
+    rules: Any = None
+
+@dataclasses.dataclass
+class Bucket_PublicAccessBlockConfiguration:
+    # Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to ``TRUE`` causes the following behavior: + PUT Bucket ACL and PUT Object ACL calls fail if the specified ACL is public. + PUT Object calls fail if the request includes a public ACL. + PUT Bucket calls fail if the request includes a public ACL. Enabling this setting doesn't affect existing policies or ACLs.
+    block_public_acls: Any = None
+    # Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to ``TRUE`` causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. Enabling this setting doesn't affect existing bucket policies.
+    block_public_policy: Any = None
+    # Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to ``TRUE`` causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket. Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.
+    ignore_public_acls: Any = None
+    # Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to ``TRUE`` restricts access to this bucket to only AWS-service principals and authorized users within this account if the bucket has a public policy. Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.
+    restrict_public_buckets: Any = None
+
+@dataclasses.dataclass
+class Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplication:
+    # Specifies whether S3 replicates delete markers created in the source bucket to the destination bucket; set to Enabled to replicate them or Disabled to prevent replication. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
-class Bucket_ReplicationConfiguration_Rules_Destination:
-    account_id: Any = None
-    bucket: Any = None
+class Bucket_ReplicationConfiguration_Rules_Destination_AccessControlTranslation:
+    # Overrides the replica owner to the destination bucket owner by specifying `Destination`, required when replicating objects across AWS accounts. (AI-inferred)
+    owner: Any = None
+
+@dataclasses.dataclass
+class Bucket_ReplicationConfiguration_Rules_Destination_EncryptionConfiguration:
+    # Specifies the AWS KMS key ID (or ARN) used by Amazon S3 to encrypt the replicated objects in the destination bucket when the destination uses SSE-KMS encryption. (AI-inferred)
     replica_kms_key_id: Any = None
-    storage_class: Any = None
+
+@dataclasses.dataclass
+class Bucket_ReplicationConfiguration_Rules_Destination_Metrics_EventThreshold:
+    # The number of minutes after which S3 emits a replication metrics event, used as the event threshold for replication time control (RTC) metrics in the destination bucket. (AI-inferred)
+    minutes: Any = None
+
+@dataclasses.dataclass
+class Bucket_ReplicationConfiguration_Rules_Destination_Metrics:
+    # Specifies the minimum replication time threshold in minutes (via the 'Minutes' property) that an object must meet for the replication event to be counted and reported in the S3 replication metrics for this destination. (AI-inferred)
+    event_threshold: Any = None
+    # Specifies whether replication metrics are enabled for this destination bucket, with valid values 'Enabled' or 'Disabled'. (AI-inferred)
+    status: Any = None
+
+@dataclasses.dataclass
+class Bucket_ReplicationConfiguration_Rules_Destination_ReplicationTime:
+    # Indicates whether S3 Replication Time Control (RTC) is enabled for the replication destination, with valid values 'Enabled' or 'Disabled'. (AI-inferred)
+    status: Any = None
+    # Specifies the time threshold for S3 Replication Time Control (RTC), defining the number of minutes within which the replicated object is expected to be available in the destination bucket. (AI-inferred)
+    time: Any = None
+
+@dataclasses.dataclass
+class Bucket_ReplicationConfiguration_Rules_Destination:
+    # Specifies the access control translation settings that change the ownership of replicated objects to the destination bucket's AWS account, used when replicating across different AWS accounts (cross-account replication). (AI-inferred)
     access_control_translation: Any = None
+    # The AWS account ID of the destination bucket's owner, required when replicating objects into a bucket in a different AWS account. (AI-inferred)
+    account: Any = None
+    # The Amazon Resource Name (ARN) of the S3 bucket to which objects are replicated as part of this replication rule. (AI-inferred)
+    bucket: Any = None
+    # Specifies the encryption configuration for objects replicated to the destination bucket, including the KMS key ID used to encrypt the replicas. (AI-inferred)
+    encryption_configuration: Any = None
+    # Specifies the replication metrics configuration for the destination bucket, including whether S3 emits metrics (Status) and the event threshold in minutes (EventThreshold) after which replication events are emitted. (AI-inferred)
     metrics: Any = None
+    # Configures S3 Replication Time Control (RTC) for the destination bucket, including whether RTC is enabled and the replication time threshold in minutes. (AI-inferred)
     replication_time: Any = None
+    # The storage class to assign to objects replicated to the destination bucket, overriding the default storage class of the destination bucket; for example, STANDARD, STANDARD_IA, or GLACIER. (AI-inferred)
+    storage_class: Any = None
+
+@dataclasses.dataclass
+class Bucket_ReplicationConfiguration_Rules_Filter_And:
+    # The object key name prefix that must match for objects to be included in an S3 replication rule when the rule's filter uses an AND combination of predicates, typically paired with at least one tag condition. (AI-inferred)
+    prefix: Any = None
+    # Specifies a list of tag key-value pairs that an object must include for the replication rule's filter 'and' condition to match, limiting replication to objects that have all of the specified tags. (AI-inferred)
+    tag_filters: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_Filter:
+    # Specifies a logical AND combination of filter predicates (typically a prefix and one or more tags) that S3 applies when deciding which objects match the replication rule, requiring all specified criteria to be true. (AI-inferred)
+    and_: Any = None
+    # The object key prefix that identifies which objects the replication rule applies to, used as a filter condition in an S3 replication rule. (AI-inferred)
     prefix: Any = None
-    tags: Any = None
-
-@dataclasses.dataclass
-class Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteria_SseKmsEncryptedObjects:
-    enabled: Any = None
+    # This field specifies the tag key and value (as nested Key and Value properties) that an object must have for the S3 replication rule's filter to apply, defining the tag-based criteria for selecting objects to replicate. (AI-inferred)
+    tag_filter: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteria:
+    # Specifies whether Amazon S3 should replicate objects that are modified after being replicated to the destination bucket, using a Status property (Enabled or Disabled) to control the behavior. (AI-inferred)
+    replica_modifications: Any = None
+    # A filter that, when its Status is 'Enabled', tells S3 replication to replicate source objects encrypted with SSE-KMS, and when 'Disabled', excludes them from replication. (AI-inferred)
     sse_kms_encrypted_objects: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules:
-    delete_marker_replication_status: Any = None
-    id: Any = None
-    prefix: Any = None
-    priority: Any = None
-    status: Any = None
+    # Specifies whether delete markers created in the source bucket are replicated to the destination bucket, with Status set to Enabled to replicate them or Disabled to skip them. (AI-inferred)
+    delete_marker_replication: Any = None
+    # The destination configuration for a replication rule, specifying the target S3 bucket and optional settings such as storage class, account, encryption, access control translation, metrics, and replication time. (AI-inferred)
     destination: Any = None
+    # The filter that defines the object key prefix, tag, or logical AND combination of conditions that determine which objects in the source bucket are replicated by this replication rule. (AI-inferred)
     filter: Any = None
+    # A unique identifier for the replication rule, used to distinguish it from other rules within the same bucket's replication configuration. (AI-inferred)
+    id: Any = None
+    # Specifies the object key prefix in the source bucket that identifies which objects this replication rule applies to, with an empty or omitted prefix matching all objects. (AI-inferred)
+    prefix: Any = None
+    # The numeric priority for this replication rule, where higher values take precedence when multiple rules match an object, and it is required when multiple rules exist with filters. (AI-inferred)
+    priority: Any = None
+    # Specifies additional source selection criteria for the replication rule, such as whether to replicate objects encrypted with SSE-KMS. (AI-inferred)
     source_selection_criteria: Any = None
+    # Specifies whether the replication rule is enabled (Enabled) or disabled (Disabled). (AI-inferred)
+    status: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration:
+    # The Amazon Resource Name (ARN) of the IAMlong (IAM) role that Amazon S3 assumes when replicating objects. For more information, see [How to Set Up Replication](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html) in the *Amazon S3 User Guide*.
     role: Any = None
+    # A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules.
     rules: Any = None
 
 @dataclasses.dataclass
-class Bucket_ServerSideEncryptionConfiguration_Rule_ApplyServerSideEncryptionByDefault:
-    kms_master_key_id: Any = None
-    sse_algorithm: Any = None
+class Bucket_WebsiteConfiguration_RedirectAllRequestsTo:
+    # Name of the host where requests are redirected.
+    host_name: Any = None
+    # Protocol to use when redirecting requests. The default is the protocol that is used in the original request.
+    protocol: Any = None
 
 @dataclasses.dataclass
-class Bucket_ServerSideEncryptionConfiguration_Rule:
-    bucket_key_enabled: Any = None
-    apply_server_side_encryption_by_default: Any = None
+class Bucket_WebsiteConfiguration_RoutingRules_RedirectRule:
+    # Specifies the host name to use in the redirect request for a routing rule in the S3 website configuration; for example, if the rule matches, requests are redirected to this host instead of the original bucket's website endpoint. (AI-inferred)
+    host_name: Any = None
+    # Specifies the HTTP redirect code (such as 301, 302, or 307) that S3 returns in the redirect response when this routing rule matches, overriding the default 301. (AI-inferred)
+    http_redirect_code: Any = None
+    # Specifies the protocol (http or https) to use in the redirect location for requests that match the routing rule's condition. (AI-inferred)
+    protocol: Any = None
+    # Specifies the object key prefix to use in the redirect request, replacing the matched prefix from the original request. (AI-inferred)
+    replace_key_prefix_with: Any = None
+    # Specifies the object key name to use in the redirect request, replacing the entire original key for requests that match the routing rule. (AI-inferred)
+    replace_key_with: Any = None
 
 @dataclasses.dataclass
-class Bucket_ServerSideEncryptionConfiguration:
-    rule: Any = None
+class Bucket_WebsiteConfiguration_RoutingRules_RoutingRuleCondition:
+    # The HTTP error code (e.g., '404') that the origin must return in order for this routing rule condition to apply. (AI-inferred)
+    http_error_code_returned_equals: Any = None
+    # Specifies the object key prefix that must match for the routing rule condition to apply when S3 serves requests from the website endpoint. (AI-inferred)
+    key_prefix_equals: Any = None
 
 @dataclasses.dataclass
-class Bucket_Timeouts:
-    create: Any = None
-    delete: Any = None
-    read: Any = None
-    update: Any = None
+class Bucket_WebsiteConfiguration_RoutingRules:
+    # Specifies the redirect behavior for a routing rule, including protocol, host name, port, key replacement, and HTTP redirect code, applied when the rule's condition is met. (AI-inferred)
+    redirect_rule: Any = None
+    # Defines the condition (such as a specific HTTP error code or a key prefix) that must be matched for the S3 website routing rule to take effect. (AI-inferred)
+    routing_rule_condition: Any = None
 
 @dataclasses.dataclass
-class Bucket_Versioning:
-    enabled: Any = None
-    mfa_delete: Any = None
-
-@dataclasses.dataclass
-class Bucket_Website:
+class Bucket_WebsiteConfiguration:
+    # The name of the error document for the website.
     error_document: Any = None
+    # The name of the index document for the website.
     index_document: Any = None
+    # Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.
     redirect_all_requests_to: Any = None
+    # Rules that define when a redirect is applied and the redirect behavior.
     routing_rules: Any = None
 
-_Bucket_CorsRuleFields = {
+_Bucket_AccelerateConfigurationFields = {
+    "acceleration_status": ubx.FieldSpec(wire_name="acceleration_status"),
+}
+
+_Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport_DestinationFields = {
+    "bucket_account_id": ubx.FieldSpec(wire_name="bucket_account_id"),
+    "bucket_arn": ubx.FieldSpec(wire_name="bucket_arn"),
+    "format": ubx.FieldSpec(wire_name="format"),
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+}
+
+_Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExportFields = {
+    "destination": ubx.FieldSpec(
+        wire_name="destination",
+        kind="object",
+        fields=_Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport_DestinationFields,
+    ),
+    "output_schema_version": ubx.FieldSpec(wire_name="output_schema_version"),
+}
+
+_Bucket_AnalyticsConfigurations_StorageClassAnalysisFields = {
+    "data_export": ubx.FieldSpec(
+        wire_name="data_export",
+        kind="object",
+        fields=_Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExportFields,
+    ),
+}
+
+_Bucket_AnalyticsConfigurations_TagFiltersFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Bucket_AnalyticsConfigurationsFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+    "storage_class_analysis": ubx.FieldSpec(
+        wire_name="storage_class_analysis",
+        kind="object",
+        fields=_Bucket_AnalyticsConfigurations_StorageClassAnalysisFields,
+    ),
+    "tag_filters": ubx.FieldSpec(
+        wire_name="tag_filters",
+        kind="list",
+        fields=_Bucket_AnalyticsConfigurations_TagFiltersFields,
+    ),
+}
+
+_Bucket_BucketEncryption_ServerSideEncryptionConfiguration_BlockedEncryptionTypesFields = {
+    "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
+}
+
+_Bucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefaultFields = {
+    "kmsmaster_key_id": ubx.FieldSpec(wire_name="kmsmaster_key_id"),
+    "ssealgorithm": ubx.FieldSpec(wire_name="ssealgorithm"),
+}
+
+_Bucket_BucketEncryption_ServerSideEncryptionConfigurationFields = {
+    "blocked_encryption_types": ubx.FieldSpec(
+        wire_name="blocked_encryption_types",
+        kind="object",
+        fields=_Bucket_BucketEncryption_ServerSideEncryptionConfiguration_BlockedEncryptionTypesFields,
+    ),
+    "bucket_key_enabled": ubx.FieldSpec(wire_name="bucket_key_enabled"),
+    "server_side_encryption_by_default": ubx.FieldSpec(
+        wire_name="server_side_encryption_by_default",
+        kind="object",
+        fields=_Bucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefaultFields,
+    ),
+}
+
+_Bucket_BucketEncryptionFields = {
+    "server_side_encryption_configuration": ubx.FieldSpec(
+        wire_name="server_side_encryption_configuration",
+        kind="list",
+        fields=_Bucket_BucketEncryption_ServerSideEncryptionConfigurationFields,
+    ),
+}
+
+_Bucket_CorsConfiguration_CorsRulesFields = {
     "allowed_headers": ubx.FieldSpec(wire_name="allowed_headers"),
     "allowed_methods": ubx.FieldSpec(wire_name="allowed_methods"),
     "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
-    "expose_headers": ubx.FieldSpec(wire_name="expose_headers"),
-    "max_age_seconds": ubx.FieldSpec(wire_name="max_age_seconds"),
-}
-
-_Bucket_GrantFields = {
+    "exposed_headers": ubx.FieldSpec(wire_name="exposed_headers"),
     "id": ubx.FieldSpec(wire_name="id"),
-    "permissions": ubx.FieldSpec(wire_name="permissions"),
-    "type": ubx.FieldSpec(wire_name="type"),
-    "uri": ubx.FieldSpec(wire_name="uri"),
+    "max_age": ubx.FieldSpec(wire_name="max_age"),
 }
 
-_Bucket_LifecycleRule_ExpirationFields = {
-    "date": ubx.FieldSpec(wire_name="date"),
+_Bucket_CorsConfigurationFields = {
+    "cors_rules": ubx.FieldSpec(
+        wire_name="cors_rules",
+        kind="list",
+        fields=_Bucket_CorsConfiguration_CorsRulesFields,
+    ),
+}
+
+_Bucket_IntelligentTieringConfigurations_TieringsFields = {
+    "access_tier": ubx.FieldSpec(wire_name="access_tier"),
     "days": ubx.FieldSpec(wire_name="days"),
-    "expired_object_delete_marker": ubx.FieldSpec(wire_name="expired_object_delete_marker"),
 }
 
-_Bucket_LifecycleRule_NoncurrentVersionExpirationFields = {
-    "days": ubx.FieldSpec(wire_name="days"),
-}
-
-_Bucket_LifecycleRule_NoncurrentVersionTransitionFields = {
-    "days": ubx.FieldSpec(wire_name="days"),
-    "storage_class": ubx.FieldSpec(wire_name="storage_class"),
-}
-
-_Bucket_LifecycleRule_TransitionFields = {
-    "date": ubx.FieldSpec(wire_name="date"),
-    "days": ubx.FieldSpec(wire_name="days"),
-    "storage_class": ubx.FieldSpec(wire_name="storage_class"),
-}
-
-_Bucket_LifecycleRuleFields = {
-    "abort_incomplete_multipart_upload_days": ubx.FieldSpec(wire_name="abort_incomplete_multipart_upload_days"),
-    "enabled": ubx.FieldSpec(wire_name="enabled"),
+_Bucket_IntelligentTieringConfigurationsFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "prefix": ubx.FieldSpec(wire_name="prefix"),
-    "tags": ubx.FieldSpec(wire_name="tags"),
-    "expiration": ubx.FieldSpec(
-        wire_name="expiration",
+    "status": ubx.FieldSpec(wire_name="status"),
+    "tag_filters": ubx.FieldSpec(
+        wire_name="tag_filters",
         kind="list",
-        fields=_Bucket_LifecycleRule_ExpirationFields,
+        fields=_Bucket_AnalyticsConfigurations_TagFiltersFields,
     ),
+    "tierings": ubx.FieldSpec(
+        wire_name="tierings",
+        kind="list",
+        fields=_Bucket_IntelligentTieringConfigurations_TieringsFields,
+    ),
+}
+
+_Bucket_InventoryConfigurationsFields = {
+    "destination": ubx.FieldSpec(
+        wire_name="destination",
+        kind="object",
+        fields=_Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport_DestinationFields,
+    ),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "included_object_versions": ubx.FieldSpec(wire_name="included_object_versions"),
+    "optional_fields": ubx.FieldSpec(wire_name="optional_fields"),
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+    "schedule_frequency": ubx.FieldSpec(wire_name="schedule_frequency"),
+}
+
+_Bucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUploadFields = {
+    "days_after_initiation": ubx.FieldSpec(wire_name="days_after_initiation"),
+}
+
+_Bucket_LifecycleConfiguration_Rules_NoncurrentVersionExpirationFields = {
+    "newer_noncurrent_versions": ubx.FieldSpec(wire_name="newer_noncurrent_versions"),
+    "noncurrent_days": ubx.FieldSpec(wire_name="noncurrent_days"),
+}
+
+_Bucket_LifecycleConfiguration_Rules_NoncurrentVersionTransitionFields = {
+    "newer_noncurrent_versions": ubx.FieldSpec(wire_name="newer_noncurrent_versions"),
+    "storage_class": ubx.FieldSpec(wire_name="storage_class"),
+    "transition_in_days": ubx.FieldSpec(wire_name="transition_in_days"),
+}
+
+_Bucket_LifecycleConfiguration_Rules_TransitionFields = {
+    "storage_class": ubx.FieldSpec(wire_name="storage_class"),
+    "transition_date": ubx.FieldSpec(wire_name="transition_date"),
+    "transition_in_days": ubx.FieldSpec(wire_name="transition_in_days"),
+}
+
+_Bucket_LifecycleConfiguration_RulesFields = {
+    "abort_incomplete_multipart_upload": ubx.FieldSpec(
+        wire_name="abort_incomplete_multipart_upload",
+        kind="object",
+        fields=_Bucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUploadFields,
+    ),
+    "expiration_date": ubx.FieldSpec(wire_name="expiration_date"),
+    "expiration_in_days": ubx.FieldSpec(wire_name="expiration_in_days"),
+    "expired_object_delete_marker": ubx.FieldSpec(wire_name="expired_object_delete_marker"),
+    "id": ubx.FieldSpec(wire_name="id"),
     "noncurrent_version_expiration": ubx.FieldSpec(
         wire_name="noncurrent_version_expiration",
-        kind="list",
-        fields=_Bucket_LifecycleRule_NoncurrentVersionExpirationFields,
+        kind="object",
+        fields=_Bucket_LifecycleConfiguration_Rules_NoncurrentVersionExpirationFields,
     ),
+    "noncurrent_version_expiration_in_days": ubx.FieldSpec(wire_name="noncurrent_version_expiration_in_days"),
     "noncurrent_version_transition": ubx.FieldSpec(
         wire_name="noncurrent_version_transition",
-        kind="set",
-        fields=_Bucket_LifecycleRule_NoncurrentVersionTransitionFields,
+        kind="object",
+        fields=_Bucket_LifecycleConfiguration_Rules_NoncurrentVersionTransitionFields,
+    ),
+    "noncurrent_version_transitions": ubx.FieldSpec(
+        wire_name="noncurrent_version_transitions",
+        kind="list",
+        fields=_Bucket_LifecycleConfiguration_Rules_NoncurrentVersionTransitionFields,
+    ),
+    "object_size_greater_than": ubx.FieldSpec(wire_name="object_size_greater_than"),
+    "object_size_less_than": ubx.FieldSpec(wire_name="object_size_less_than"),
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "tag_filters": ubx.FieldSpec(
+        wire_name="tag_filters",
+        kind="list",
+        fields=_Bucket_AnalyticsConfigurations_TagFiltersFields,
     ),
     "transition": ubx.FieldSpec(
         wire_name="transition",
-        kind="set",
-        fields=_Bucket_LifecycleRule_TransitionFields,
+        kind="object",
+        fields=_Bucket_LifecycleConfiguration_Rules_TransitionFields,
+    ),
+    "transitions": ubx.FieldSpec(
+        wire_name="transitions",
+        kind="list",
+        fields=_Bucket_LifecycleConfiguration_Rules_TransitionFields,
     ),
 }
 
-_Bucket_LoggingFields = {
-    "target_bucket": ubx.FieldSpec(wire_name="target_bucket"),
-    "target_prefix": ubx.FieldSpec(wire_name="target_prefix"),
+_Bucket_LifecycleConfigurationFields = {
+    "rules": ubx.FieldSpec(
+        wire_name="rules",
+        kind="list",
+        fields=_Bucket_LifecycleConfiguration_RulesFields,
+    ),
+    "transition_default_minimum_object_size": ubx.FieldSpec(wire_name="transition_default_minimum_object_size"),
+}
+
+_Bucket_LoggingConfigurationFields = {
+    "destination_bucket_name": ubx.FieldSpec(wire_name="destination_bucket_name"),
+    "log_file_prefix": ubx.FieldSpec(wire_name="log_file_prefix"),
+    "target_object_key_format": ubx.FieldSpec(wire_name="target_object_key_format"),
+}
+
+_Bucket_MetricsConfigurationsFields = {
+    "access_point_arn": ubx.FieldSpec(wire_name="access_point_arn"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+    "tag_filters": ubx.FieldSpec(
+        wire_name="tag_filters",
+        kind="list",
+        fields=_Bucket_AnalyticsConfigurations_TagFiltersFields,
+    ),
+}
+
+_Bucket_NotificationConfiguration_EventBridgeConfigurationFields = {
+    "event_bridge_enabled": ubx.FieldSpec(wire_name="event_bridge_enabled"),
+}
+
+_Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3Key_RulesFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3KeyFields = {
+    "rules": ubx.FieldSpec(
+        wire_name="rules",
+        kind="list",
+        fields=_Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3Key_RulesFields,
+    ),
+}
+
+_Bucket_NotificationConfiguration_LambdaConfigurations_FilterFields = {
+    "s3_key": ubx.FieldSpec(
+        wire_name="s3_key",
+        kind="object",
+        fields=_Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3KeyFields,
+    ),
+}
+
+_Bucket_NotificationConfiguration_LambdaConfigurationsFields = {
+    "event": ubx.FieldSpec(wire_name="event"),
+    "filter": ubx.FieldSpec(
+        wire_name="filter",
+        kind="object",
+        fields=_Bucket_NotificationConfiguration_LambdaConfigurations_FilterFields,
+    ),
+    "function": ubx.FieldSpec(wire_name="function"),
+}
+
+_Bucket_NotificationConfiguration_QueueConfigurationsFields = {
+    "event": ubx.FieldSpec(wire_name="event"),
+    "filter": ubx.FieldSpec(
+        wire_name="filter",
+        kind="object",
+        fields=_Bucket_NotificationConfiguration_LambdaConfigurations_FilterFields,
+    ),
+    "queue": ubx.FieldSpec(wire_name="queue"),
+}
+
+_Bucket_NotificationConfiguration_TopicConfigurationsFields = {
+    "event": ubx.FieldSpec(wire_name="event"),
+    "filter": ubx.FieldSpec(
+        wire_name="filter",
+        kind="object",
+        fields=_Bucket_NotificationConfiguration_LambdaConfigurations_FilterFields,
+    ),
+    "topic": ubx.FieldSpec(wire_name="topic"),
+}
+
+_Bucket_NotificationConfigurationFields = {
+    "event_bridge_configuration": ubx.FieldSpec(
+        wire_name="event_bridge_configuration",
+        kind="object",
+        fields=_Bucket_NotificationConfiguration_EventBridgeConfigurationFields,
+    ),
+    "lambda_configurations": ubx.FieldSpec(
+        wire_name="lambda_configurations",
+        kind="list",
+        fields=_Bucket_NotificationConfiguration_LambdaConfigurationsFields,
+    ),
+    "queue_configurations": ubx.FieldSpec(
+        wire_name="queue_configurations",
+        kind="list",
+        fields=_Bucket_NotificationConfiguration_QueueConfigurationsFields,
+    ),
+    "topic_configurations": ubx.FieldSpec(
+        wire_name="topic_configurations",
+        kind="list",
+        fields=_Bucket_NotificationConfiguration_TopicConfigurationsFields,
+    ),
 }
 
 _Bucket_ObjectLockConfiguration_Rule_DefaultRetentionFields = {
@@ -233,7 +869,7 @@ _Bucket_ObjectLockConfiguration_Rule_DefaultRetentionFields = {
 _Bucket_ObjectLockConfiguration_RuleFields = {
     "default_retention": ubx.FieldSpec(
         wire_name="default_retention",
-        kind="list",
+        kind="object",
         fields=_Bucket_ObjectLockConfiguration_Rule_DefaultRetentionFields,
     ),
 }
@@ -242,223 +878,411 @@ _Bucket_ObjectLockConfigurationFields = {
     "object_lock_enabled": ubx.FieldSpec(wire_name="object_lock_enabled"),
     "rule": ubx.FieldSpec(
         wire_name="rule",
-        kind="list",
+        kind="object",
         fields=_Bucket_ObjectLockConfiguration_RuleFields,
     ),
+}
+
+_Bucket_OwnershipControls_RulesFields = {
+    "object_ownership": ubx.FieldSpec(wire_name="object_ownership"),
+}
+
+_Bucket_OwnershipControlsFields = {
+    "rules": ubx.FieldSpec(
+        wire_name="rules",
+        kind="list",
+        fields=_Bucket_OwnershipControls_RulesFields,
+    ),
+}
+
+_Bucket_PublicAccessBlockConfigurationFields = {
+    "block_public_acls": ubx.FieldSpec(wire_name="block_public_acls"),
+    "block_public_policy": ubx.FieldSpec(wire_name="block_public_policy"),
+    "ignore_public_acls": ubx.FieldSpec(wire_name="ignore_public_acls"),
+    "restrict_public_buckets": ubx.FieldSpec(wire_name="restrict_public_buckets"),
+}
+
+_Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplicationFields = {
+    "status": ubx.FieldSpec(wire_name="status"),
 }
 
 _Bucket_ReplicationConfiguration_Rules_Destination_AccessControlTranslationFields = {
     "owner": ubx.FieldSpec(wire_name="owner"),
 }
 
-_Bucket_ReplicationConfiguration_Rules_Destination_MetricsFields = {
+_Bucket_ReplicationConfiguration_Rules_Destination_EncryptionConfigurationFields = {
+    "replica_kms_key_id": ubx.FieldSpec(wire_name="replica_kms_key_id"),
+}
+
+_Bucket_ReplicationConfiguration_Rules_Destination_Metrics_EventThresholdFields = {
     "minutes": ubx.FieldSpec(wire_name="minutes"),
+}
+
+_Bucket_ReplicationConfiguration_Rules_Destination_MetricsFields = {
+    "event_threshold": ubx.FieldSpec(
+        wire_name="event_threshold",
+        kind="object",
+        fields=_Bucket_ReplicationConfiguration_Rules_Destination_Metrics_EventThresholdFields,
+    ),
     "status": ubx.FieldSpec(wire_name="status"),
 }
 
+_Bucket_ReplicationConfiguration_Rules_Destination_ReplicationTimeFields = {
+    "status": ubx.FieldSpec(wire_name="status"),
+    "time": ubx.FieldSpec(
+        wire_name="time",
+        kind="object",
+        fields=_Bucket_ReplicationConfiguration_Rules_Destination_Metrics_EventThresholdFields,
+    ),
+}
+
 _Bucket_ReplicationConfiguration_Rules_DestinationFields = {
-    "account_id": ubx.FieldSpec(wire_name="account_id"),
-    "bucket": ubx.FieldSpec(wire_name="bucket"),
-    "replica_kms_key_id": ubx.FieldSpec(wire_name="replica_kms_key_id"),
-    "storage_class": ubx.FieldSpec(wire_name="storage_class"),
     "access_control_translation": ubx.FieldSpec(
         wire_name="access_control_translation",
-        kind="list",
+        kind="object",
         fields=_Bucket_ReplicationConfiguration_Rules_Destination_AccessControlTranslationFields,
+    ),
+    "account": ubx.FieldSpec(wire_name="account"),
+    "bucket": ubx.FieldSpec(wire_name="bucket"),
+    "encryption_configuration": ubx.FieldSpec(
+        wire_name="encryption_configuration",
+        kind="object",
+        fields=_Bucket_ReplicationConfiguration_Rules_Destination_EncryptionConfigurationFields,
     ),
     "metrics": ubx.FieldSpec(
         wire_name="metrics",
-        kind="list",
+        kind="object",
         fields=_Bucket_ReplicationConfiguration_Rules_Destination_MetricsFields,
     ),
     "replication_time": ubx.FieldSpec(
         wire_name="replication_time",
+        kind="object",
+        fields=_Bucket_ReplicationConfiguration_Rules_Destination_ReplicationTimeFields,
+    ),
+    "storage_class": ubx.FieldSpec(wire_name="storage_class"),
+}
+
+_Bucket_ReplicationConfiguration_Rules_Filter_AndFields = {
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+    "tag_filters": ubx.FieldSpec(
+        wire_name="tag_filters",
         kind="list",
-        fields=_Bucket_ReplicationConfiguration_Rules_Destination_MetricsFields,
+        fields=_Bucket_AnalyticsConfigurations_TagFiltersFields,
     ),
 }
 
 _Bucket_ReplicationConfiguration_Rules_FilterFields = {
+    "and_": ubx.FieldSpec(
+        wire_name="and",
+        kind="object",
+        fields=_Bucket_ReplicationConfiguration_Rules_Filter_AndFields,
+    ),
     "prefix": ubx.FieldSpec(wire_name="prefix"),
-    "tags": ubx.FieldSpec(wire_name="tags"),
-}
-
-_Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteria_SseKmsEncryptedObjectsFields = {
-    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "tag_filter": ubx.FieldSpec(
+        wire_name="tag_filter",
+        kind="object",
+        fields=_Bucket_AnalyticsConfigurations_TagFiltersFields,
+    ),
 }
 
 _Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteriaFields = {
+    "replica_modifications": ubx.FieldSpec(
+        wire_name="replica_modifications",
+        kind="object",
+        fields=_Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplicationFields,
+    ),
     "sse_kms_encrypted_objects": ubx.FieldSpec(
         wire_name="sse_kms_encrypted_objects",
-        kind="list",
-        fields=_Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteria_SseKmsEncryptedObjectsFields,
+        kind="object",
+        fields=_Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplicationFields,
     ),
 }
 
 _Bucket_ReplicationConfiguration_RulesFields = {
-    "delete_marker_replication_status": ubx.FieldSpec(wire_name="delete_marker_replication_status"),
-    "id": ubx.FieldSpec(wire_name="id"),
-    "prefix": ubx.FieldSpec(wire_name="prefix"),
-    "priority": ubx.FieldSpec(wire_name="priority"),
-    "status": ubx.FieldSpec(wire_name="status"),
+    "delete_marker_replication": ubx.FieldSpec(
+        wire_name="delete_marker_replication",
+        kind="object",
+        fields=_Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplicationFields,
+    ),
     "destination": ubx.FieldSpec(
         wire_name="destination",
-        kind="list",
+        kind="object",
         fields=_Bucket_ReplicationConfiguration_Rules_DestinationFields,
     ),
     "filter": ubx.FieldSpec(
         wire_name="filter",
-        kind="list",
+        kind="object",
         fields=_Bucket_ReplicationConfiguration_Rules_FilterFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
     "source_selection_criteria": ubx.FieldSpec(
         wire_name="source_selection_criteria",
-        kind="list",
+        kind="object",
         fields=_Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteriaFields,
     ),
+    "status": ubx.FieldSpec(wire_name="status"),
 }
 
 _Bucket_ReplicationConfigurationFields = {
     "role": ubx.FieldSpec(wire_name="role"),
     "rules": ubx.FieldSpec(
         wire_name="rules",
-        kind="set",
+        kind="list",
         fields=_Bucket_ReplicationConfiguration_RulesFields,
     ),
 }
 
-_Bucket_ServerSideEncryptionConfiguration_Rule_ApplyServerSideEncryptionByDefaultFields = {
-    "kms_master_key_id": ubx.FieldSpec(wire_name="kms_master_key_id"),
-    "sse_algorithm": ubx.FieldSpec(wire_name="sse_algorithm"),
+_Bucket_WebsiteConfiguration_RedirectAllRequestsToFields = {
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
 }
 
-_Bucket_ServerSideEncryptionConfiguration_RuleFields = {
-    "bucket_key_enabled": ubx.FieldSpec(wire_name="bucket_key_enabled"),
-    "apply_server_side_encryption_by_default": ubx.FieldSpec(
-        wire_name="apply_server_side_encryption_by_default",
-        kind="list",
-        fields=_Bucket_ServerSideEncryptionConfiguration_Rule_ApplyServerSideEncryptionByDefaultFields,
+_Bucket_WebsiteConfiguration_RoutingRules_RedirectRuleFields = {
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "http_redirect_code": ubx.FieldSpec(wire_name="http_redirect_code"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "replace_key_prefix_with": ubx.FieldSpec(wire_name="replace_key_prefix_with"),
+    "replace_key_with": ubx.FieldSpec(wire_name="replace_key_with"),
+}
+
+_Bucket_WebsiteConfiguration_RoutingRules_RoutingRuleConditionFields = {
+    "http_error_code_returned_equals": ubx.FieldSpec(wire_name="http_error_code_returned_equals"),
+    "key_prefix_equals": ubx.FieldSpec(wire_name="key_prefix_equals"),
+}
+
+_Bucket_WebsiteConfiguration_RoutingRulesFields = {
+    "redirect_rule": ubx.FieldSpec(
+        wire_name="redirect_rule",
+        kind="object",
+        fields=_Bucket_WebsiteConfiguration_RoutingRules_RedirectRuleFields,
+    ),
+    "routing_rule_condition": ubx.FieldSpec(
+        wire_name="routing_rule_condition",
+        kind="object",
+        fields=_Bucket_WebsiteConfiguration_RoutingRules_RoutingRuleConditionFields,
     ),
 }
 
-_Bucket_ServerSideEncryptionConfigurationFields = {
-    "rule": ubx.FieldSpec(
-        wire_name="rule",
-        kind="list",
-        fields=_Bucket_ServerSideEncryptionConfiguration_RuleFields,
-    ),
-}
-
-_Bucket_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "read": ubx.FieldSpec(wire_name="read"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
-
-_Bucket_VersioningFields = {
-    "enabled": ubx.FieldSpec(wire_name="enabled"),
-    "mfa_delete": ubx.FieldSpec(wire_name="mfa_delete"),
-}
-
-_Bucket_WebsiteFields = {
+_Bucket_WebsiteConfigurationFields = {
     "error_document": ubx.FieldSpec(wire_name="error_document"),
     "index_document": ubx.FieldSpec(wire_name="index_document"),
-    "redirect_all_requests_to": ubx.FieldSpec(wire_name="redirect_all_requests_to"),
-    "routing_rules": ubx.FieldSpec(wire_name="routing_rules"),
+    "redirect_all_requests_to": ubx.FieldSpec(
+        wire_name="redirect_all_requests_to",
+        kind="object",
+        fields=_Bucket_WebsiteConfiguration_RedirectAllRequestsToFields,
+    ),
+    "routing_rules": ubx.FieldSpec(
+        wire_name="routing_rules",
+        kind="list",
+        fields=_Bucket_WebsiteConfiguration_RoutingRulesFields,
+    ),
 }
 
 @dataclasses.dataclass
 class BucketConfig:
-    acceleration_status: Any = None
-    acl: Any = None
-    bucket: Any = None
+    # The ABAC status of the general purpose bucket. When ABAC is enabled for the general purpose bucket, you can use tags to manage access to the general purpose buckets as well as for cost tracking purposes. When ABAC is disabled for the general purpose buckets, you can only use tags for cost tracking purposes. For more information, see [Using tags with S3 general purpose buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html).
+    abac_status: Any = None
+    # Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see [Amazon S3 Transfer Acceleration](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html) in the *Amazon S3 User Guide*.
+    accelerate_configuration: Any = None
+    # This is a legacy property, and it is not recommended for most use cases. A majority of modern use cases in Amazon S3 no longer require the use of ACLs, and we recommend that you keep ACLs disabled. For more information, see [Controlling object ownership](https://docs.aws.amazon.com//AmazonS3/latest/userguide/about-object-ownership.html) in the *Amazon S3 User Guide*. A canned access control list (ACL) that grants predefined permissions to the bucket. For more information about canned ACLs, see [Canned ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl) in the *Amazon S3 User Guide*. S3 buckets are created with ACLs disabled by default. Therefore, unless you explicitly set the [AWS::S3::OwnershipControls](https://docs.aws.amazon.com//AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ownershipcontrols.html) property to enable ACLs, your resource will fail to deploy with any value other than Private. Use cases requiring ACLs are uncommon. The majority of access control configurations can be successfully and more easily achieved with bucket policies. For more information, see [AWS::S3::BucketPolicy](https://docs.aws.amazon.com//AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html). For examples of common policy configurations, including S3 Server Access Logs buckets and more, see [Bucket policy examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html) in the *Amazon S3 User Guide*.
+    access_control: Any = None
+    # Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
+    analytics_configurations: Any = None
+    # Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3), AWS KMS-managed keys (SSE-KMS), or dual-layer server-side encryption with KMS-managed keys (DSSE-KMS). For information about the Amazon S3 default encryption feature, see [Amazon S3 Default Encryption for S3 Buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html) in the *Amazon S3 User Guide*.
+    bucket_encryption: Any = None
+    # A name for the bucket. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the bucket name. The bucket name must contain only lowercase letters, numbers, periods (.), and dashes (-) and must follow [Amazon S3 bucket restrictions and limitations](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html). For more information, see [Rules for naming Amazon S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) in the *Amazon S3 User Guide*. If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you need to replace the resource, specify a new name.
+    bucket_name: Any = None
+    # This prefix is used to generate a unique S3 bucket name by combining the specified prefix with a random suffix, ensuring the bucket name is globally unique. (AI-inferred)
+    bucket_name_prefix: Any = None
     bucket_namespace: Any = None
-    bucket_prefix: Any = None
-    force_destroy: Any = None
-    id: Any = None
-    object_lock_enabled: Any = None
-    policy: Any = None
-    region: Any = None
-    request_payer: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    cors_rule: Any = None
-    grant: Any = None
-    lifecycle_rule: Any = None
-    logging: Any = None
+    # Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [Enabling Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html) in the *Amazon S3 User Guide*.
+    cors_configuration: Any = None
+    # Defines how Amazon S3 handles Intelligent-Tiering storage.
+    intelligent_tiering_configurations: Any = None
+    # Specifies the S3 Inventory configuration for an Amazon S3 bucket. For more information, see [GET Bucket inventory](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html) in the *Amazon S3 API Reference*.
+    inventory_configurations: Any = None
+    # Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see [Object Lifecycle Management](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html) in the *Amazon S3 User Guide*.
+    lifecycle_configuration: Any = None
+    # Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For examples and more information, see [PUT Bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html) in the *Amazon S3 API Reference*. To successfully complete the ``AWS::S3::Bucket LoggingConfiguration`` request, you must have ``s3:PutObject`` and ``s3:PutObjectAcl`` in your IAM permissions.
+    logging_configuration: Any = None
+    # Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see [PutBucketMetricsConfiguration](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html).
+    metrics_configurations: Any = None
+    # Describes the notification configuration for an Amazon S3 bucket. If you create the target resource and related permissions in the same template, you might have a circular dependency. For example, you might use the ``AWS::Lambda::Permission`` resource to grant the bucket permission to invoke an AWS Lambda function. However, AWS CloudFormation can't create the bucket until the bucket has permission to invoke the function (AWS CloudFormation checks whether the bucket can invoke the function). If you're using Refs to pass the bucket name, this leads to a circular dependency. To avoid this dependency, you can create all resources without specifying the notification configuration. Then, update the stack with a notification configuration. For more information on permissions, see [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html) and [Granting Permissions to Publish Event Notification Messages to a Destination](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html#grant-destinations-permissions-to-s3).
+    notification_configuration: Any = None
+    # Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see [Locking Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html).
     object_lock_configuration: Any = None
+    # Indicates whether this bucket has an Object Lock configuration enabled. Enable ``ObjectLockEnabled`` when you apply ``ObjectLockConfiguration`` to a bucket.
+    object_lock_enabled: Any = None
+    # Specifies the container element for Object Ownership rules. S3 Object Ownership is an Amazon S3 bucket-level setting that you can use to disable access control lists (ACLs) and take ownership of every object in your bucket, simplifying access management for data stored in Amazon S3. For more information, see [Controlling ownership of objects and disabling ACLs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html) in the *Amazon S3 User Guide*.
+    ownership_controls: Any = None
+    # The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. Bucket-level settings work alongside account-level settings (which may inherit from organization-level policies). For more information about when Amazon S3 considers a bucket or object public, see [The Meaning of "Public"](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status) in the *Amazon S3 User Guide*.
+    public_access_block_configuration: Any = None
+    # A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB. The latest version of the replication configuration XML is V2. For more information about XML V2 replication configurations, see [Replication configuration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-add-config.html) in the *Amazon S3 User Guide*.
     replication_configuration: Any = None
-    server_side_encryption_configuration: Any = None
-    timeouts: Any = None
-    versioning: Any = None
-    website: Any = None
+    # An arbitrary set of tags (key-value pairs) for this S3 bucket.
+    tags: Any = None
+    # Describes the versioning state of an Amazon S3 bucket. For more information, see [PUT Bucket versioning](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html) in the *Amazon S3 API Reference*. Keep the following timing in mind when enabling, suspending, or transitioning between versioning states: + *Enabling versioning* - Changes may take up to 15 minutes to propagate across all AWS regions for full consistency. + *Suspending versioning* - Takes effect immediately with no propagation delay. + *Transitioning between states* - Any change from Suspended to Enabled has a 15-minute delay.
+    versioning_configuration: Any = None
+    # Specifies website configuration parameters for an Amazon S3 bucket.
+    website_configuration: Any = None
+
+@dataclasses.dataclass
+class BucketAttrs:
+    # The ABAC status of the general purpose bucket. When ABAC is enabled for the general purpose bucket, you can use tags to manage access to the general purpose buckets as well as for cost tracking purposes. When ABAC is disabled for the general purpose buckets, you can only use tags for cost tracking purposes. For more information, see [Using tags with S3 general purpose buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html).
+    abac_status: Any = None
+    # Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see [Amazon S3 Transfer Acceleration](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html) in the *Amazon S3 User Guide*.
+    accelerate_configuration: Any = None
+    # This is a legacy property, and it is not recommended for most use cases. A majority of modern use cases in Amazon S3 no longer require the use of ACLs, and we recommend that you keep ACLs disabled. For more information, see [Controlling object ownership](https://docs.aws.amazon.com//AmazonS3/latest/userguide/about-object-ownership.html) in the *Amazon S3 User Guide*. A canned access control list (ACL) that grants predefined permissions to the bucket. For more information about canned ACLs, see [Canned ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl) in the *Amazon S3 User Guide*. S3 buckets are created with ACLs disabled by default. Therefore, unless you explicitly set the [AWS::S3::OwnershipControls](https://docs.aws.amazon.com//AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ownershipcontrols.html) property to enable ACLs, your resource will fail to deploy with any value other than Private. Use cases requiring ACLs are uncommon. The majority of access control configurations can be successfully and more easily achieved with bucket policies. For more information, see [AWS::S3::BucketPolicy](https://docs.aws.amazon.com//AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html). For examples of common policy configurations, including S3 Server Access Logs buckets and more, see [Bucket policy examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html) in the *Amazon S3 User Guide*.
+    access_control: Any = None
+    # Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
+    analytics_configurations: Any = None
+    # the Amazon Resource Name (ARN) of the specified bucket.
+    arn: Any = None
+    # Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3), AWS KMS-managed keys (SSE-KMS), or dual-layer server-side encryption with KMS-managed keys (DSSE-KMS). For information about the Amazon S3 default encryption feature, see [Amazon S3 Default Encryption for S3 Buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html) in the *Amazon S3 User Guide*.
+    bucket_encryption: Any = None
+    # A name for the bucket. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the bucket name. The bucket name must contain only lowercase letters, numbers, periods (.), and dashes (-) and must follow [Amazon S3 bucket restrictions and limitations](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html). For more information, see [Rules for naming Amazon S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) in the *Amazon S3 User Guide*. If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you need to replace the resource, specify a new name.
+    bucket_name: Any = None
+    # This prefix is used to generate a unique S3 bucket name by combining the specified prefix with a random suffix, ensuring the bucket name is globally unique. (AI-inferred)
+    bucket_name_prefix: Any = None
+    bucket_namespace: Any = None
+    # Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [Enabling Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html) in the *Amazon S3 User Guide*.
+    cors_configuration: Any = None
+    # The bucket's DNS domain name, which is the global S3 endpoint of the form `<bucket-name>.s3.amazonaws.com`, exposed as a computed attribute for resource references. (AI-inferred)
+    domain_name: Any = None
+    # The dual-stack domain name for the S3 bucket, which is the automatically generated endpoint that supports both IPv4 and IPv6 connections, typically in the format bucket-name.s3.dualstack.region.amazonaws.com. (AI-inferred)
+    dual_stack_domain_name: Any = None
+    # Defines how Amazon S3 handles Intelligent-Tiering storage.
+    intelligent_tiering_configurations: Any = None
+    # Specifies the S3 Inventory configuration for an Amazon S3 bucket. For more information, see [GET Bucket inventory](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html) in the *Amazon S3 API Reference*.
+    inventory_configurations: Any = None
+    # Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see [Object Lifecycle Management](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html) in the *Amazon S3 User Guide*.
+    lifecycle_configuration: Any = None
+    # Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For examples and more information, see [PUT Bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html) in the *Amazon S3 API Reference*. To successfully complete the ``AWS::S3::Bucket LoggingConfiguration`` request, you must have ``s3:PutObject`` and ``s3:PutObjectAcl`` in your IAM permissions.
+    logging_configuration: Any = None
+    # Creates a V2 S3 Metadata configuration of a general purpose bucket. For more information, see [Accelerating data discovery with S3 Metadata](https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html) in the *Amazon S3 User Guide*.
+    metadata_configuration: Any = None
+    # We recommend that you create your S3 Metadata configurations by using the V2 [MetadataConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-s3-bucket-metadataconfiguration.html) resource type. We no longer recommend using the V1 ``MetadataTableConfiguration`` resource type. If you created your S3 Metadata configuration before July 15, 2025, we recommend that you delete and re-create your configuration by using the [MetadataConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-s3-bucket-metadataconfiguration.html) resource type so that you can expire journal table records and create a live inventory table. Creates a V1 S3 Metadata configuration for a general purpose bucket. For more information, see [Accelerating data discovery with S3 Metadata](https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html) in the *Amazon S3 User Guide*.
+    metadata_table_configuration: Any = None
+    # Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see [PutBucketMetricsConfiguration](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html).
+    metrics_configurations: Any = None
+    # Describes the notification configuration for an Amazon S3 bucket. If you create the target resource and related permissions in the same template, you might have a circular dependency. For example, you might use the ``AWS::Lambda::Permission`` resource to grant the bucket permission to invoke an AWS Lambda function. However, AWS CloudFormation can't create the bucket until the bucket has permission to invoke the function (AWS CloudFormation checks whether the bucket can invoke the function). If you're using Refs to pass the bucket name, this leads to a circular dependency. To avoid this dependency, you can create all resources without specifying the notification configuration. Then, update the stack with a notification configuration. For more information on permissions, see [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html) and [Granting Permissions to Publish Event Notification Messages to a Destination](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html#grant-destinations-permissions-to-s3).
+    notification_configuration: Any = None
+    # Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see [Locking Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html).
+    object_lock_configuration: Any = None
+    # Indicates whether this bucket has an Object Lock configuration enabled. Enable ``ObjectLockEnabled`` when you apply ``ObjectLockConfiguration`` to a bucket.
+    object_lock_enabled: Any = None
+    # Specifies the container element for Object Ownership rules. S3 Object Ownership is an Amazon S3 bucket-level setting that you can use to disable access control lists (ACLs) and take ownership of every object in your bucket, simplifying access management for data stored in Amazon S3. For more information, see [Controlling ownership of objects and disabling ACLs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html) in the *Amazon S3 User Guide*.
+    ownership_controls: Any = None
+    # The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. Bucket-level settings work alongside account-level settings (which may inherit from organization-level policies). For more information about when Amazon S3 considers a bucket or object public, see [The Meaning of "Public"](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status) in the *Amazon S3 User Guide*.
+    public_access_block_configuration: Any = None
+    # The AWS S3 bucket's regional domain name, e.g., 'my-bucket.s3.us-west-2.amazonaws.com', which is a constructed endpoint for accessing the bucket in the region where it was created. (AI-inferred)
+    regional_domain_name: Any = None
+    # A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB. The latest version of the replication configuration XML is V2. For more information about XML V2 replication configurations, see [Replication configuration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-add-config.html) in the *Amazon S3 User Guide*.
+    replication_configuration: Any = None
+    # An arbitrary set of tags (key-value pairs) for this S3 bucket.
+    tags: Any = None
+    # Describes the versioning state of an Amazon S3 bucket. For more information, see [PUT Bucket versioning](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html) in the *Amazon S3 API Reference*. Keep the following timing in mind when enabling, suspending, or transitioning between versioning states: + *Enabling versioning* - Changes may take up to 15 minutes to propagate across all AWS regions for full consistency. + *Suspending versioning* - Takes effect immediately with no propagation delay. + *Transitioning between states* - Any change from Suspended to Enabled has a 15-minute delay.
+    versioning_configuration: Any = None
+    # Specifies website configuration parameters for an Amazon S3 bucket.
+    website_configuration: Any = None
+    # The website URL endpoint for the S3 bucket when static website hosting is configured, such as http://bucket-name.s3-website-region.amazonaws.com. (AI-inferred)
+    website_url: Any = None
 
 Bucket = ubx.ResourceBinding(
     wire_type="aws_s3_bucket",
     fields={
-        "acceleration_status": ubx.FieldSpec(wire_name="acceleration_status"),
-        "acl": ubx.FieldSpec(wire_name="acl"),
-        "bucket": ubx.FieldSpec(wire_name="bucket"),
+        "abac_status": ubx.FieldSpec(wire_name="abac_status"),
+        "accelerate_configuration": ubx.FieldSpec(
+            wire_name="accelerate_configuration",
+            kind="object",
+            fields=_Bucket_AccelerateConfigurationFields,
+        ),
+        "access_control": ubx.FieldSpec(wire_name="access_control"),
+        "analytics_configurations": ubx.FieldSpec(
+            wire_name="analytics_configurations",
+            kind="list",
+            fields=_Bucket_AnalyticsConfigurationsFields,
+        ),
+        "bucket_encryption": ubx.FieldSpec(
+            wire_name="bucket_encryption",
+            kind="object",
+            fields=_Bucket_BucketEncryptionFields,
+        ),
+        "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
+        "bucket_name_prefix": ubx.FieldSpec(wire_name="bucket_name_prefix"),
         "bucket_namespace": ubx.FieldSpec(wire_name="bucket_namespace"),
-        "bucket_prefix": ubx.FieldSpec(wire_name="bucket_prefix"),
-        "force_destroy": ubx.FieldSpec(wire_name="force_destroy"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "object_lock_enabled": ubx.FieldSpec(wire_name="object_lock_enabled"),
-        "policy": ubx.FieldSpec(wire_name="policy"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "request_payer": ubx.FieldSpec(wire_name="request_payer"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "cors_rule": ubx.FieldSpec(
-            wire_name="cors_rule",
-            kind="list",
-            fields=_Bucket_CorsRuleFields,
+        "cors_configuration": ubx.FieldSpec(
+            wire_name="cors_configuration",
+            kind="object",
+            fields=_Bucket_CorsConfigurationFields,
         ),
-        "grant": ubx.FieldSpec(
-            wire_name="grant",
-            kind="set",
-            fields=_Bucket_GrantFields,
-        ),
-        "lifecycle_rule": ubx.FieldSpec(
-            wire_name="lifecycle_rule",
+        "intelligent_tiering_configurations": ubx.FieldSpec(
+            wire_name="intelligent_tiering_configurations",
             kind="list",
-            fields=_Bucket_LifecycleRuleFields,
+            fields=_Bucket_IntelligentTieringConfigurationsFields,
         ),
-        "logging": ubx.FieldSpec(
-            wire_name="logging",
+        "inventory_configurations": ubx.FieldSpec(
+            wire_name="inventory_configurations",
             kind="list",
-            fields=_Bucket_LoggingFields,
+            fields=_Bucket_InventoryConfigurationsFields,
+        ),
+        "lifecycle_configuration": ubx.FieldSpec(
+            wire_name="lifecycle_configuration",
+            kind="object",
+            fields=_Bucket_LifecycleConfigurationFields,
+        ),
+        "logging_configuration": ubx.FieldSpec(
+            wire_name="logging_configuration",
+            kind="object",
+            fields=_Bucket_LoggingConfigurationFields,
+        ),
+        "metrics_configurations": ubx.FieldSpec(
+            wire_name="metrics_configurations",
+            kind="list",
+            fields=_Bucket_MetricsConfigurationsFields,
+        ),
+        "notification_configuration": ubx.FieldSpec(
+            wire_name="notification_configuration",
+            kind="object",
+            fields=_Bucket_NotificationConfigurationFields,
         ),
         "object_lock_configuration": ubx.FieldSpec(
             wire_name="object_lock_configuration",
-            kind="list",
+            kind="object",
             fields=_Bucket_ObjectLockConfigurationFields,
+        ),
+        "object_lock_enabled": ubx.FieldSpec(wire_name="object_lock_enabled"),
+        "ownership_controls": ubx.FieldSpec(
+            wire_name="ownership_controls",
+            kind="object",
+            fields=_Bucket_OwnershipControlsFields,
+        ),
+        "public_access_block_configuration": ubx.FieldSpec(
+            wire_name="public_access_block_configuration",
+            kind="object",
+            fields=_Bucket_PublicAccessBlockConfigurationFields,
         ),
         "replication_configuration": ubx.FieldSpec(
             wire_name="replication_configuration",
-            kind="list",
+            kind="object",
             fields=_Bucket_ReplicationConfigurationFields,
         ),
-        "server_side_encryption_configuration": ubx.FieldSpec(
-            wire_name="server_side_encryption_configuration",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_Bucket_ServerSideEncryptionConfigurationFields,
+            fields=_Bucket_AnalyticsConfigurations_TagFiltersFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "versioning_configuration": ubx.FieldSpec(
+            wire_name="versioning_configuration",
             kind="object",
-            fields=_Bucket_TimeoutsFields,
+            fields=_Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplicationFields,
         ),
-        "versioning": ubx.FieldSpec(
-            wire_name="versioning",
-            kind="list",
-            fields=_Bucket_VersioningFields,
-        ),
-        "website": ubx.FieldSpec(
-            wire_name="website",
-            kind="list",
-            fields=_Bucket_WebsiteFields,
+        "website_configuration": ubx.FieldSpec(
+            wire_name="website_configuration",
+            kind="object",
+            fields=_Bucket_WebsiteConfigurationFields,
         ),
     },
 )

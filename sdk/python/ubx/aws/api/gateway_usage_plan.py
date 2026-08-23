@@ -7,92 +7,115 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class GatewayUsagePlan_ApiStages_Throttle:
-    burst_limit: Any = None
-    path: Any = None
-    rate_limit: Any = None
-
-@dataclasses.dataclass
 class GatewayUsagePlan_ApiStages:
+    # The identifier of the API for which this usage plan stage association is configured, referencing the API Gateway REST API. (AI-inferred)
     api_id: Any = None
+    # In the API Gateway UsagePlan's ApiStages list, this is the name of the deployed stage (such as 'prod') that the usage plan applies to. (AI-inferred)
     stage: Any = None
+    # Defines method-level throttling limits for the associated API stage, mapping individual method paths (e.g., 'GET /resource') to their own burst and rate limits. (AI-inferred)
     throttle: Any = None
 
 @dataclasses.dataclass
-class GatewayUsagePlan_QuotaSettings:
+class GatewayUsagePlan_Quota:
+    # The maximum number of API requests permitted during a specified quota period (day, week, or month) for the usage plan, as configured in the quota settings. (AI-inferred)
     limit: Any = None
+    # Specifies the number of requests that are deducted from the quota limit at the beginning of each period, effectively reducing the total number of requests allowed for that period. (AI-inferred)
     offset: Any = None
+    # The time period (DAY, WEEK, or MONTH) over which the usage plan's request quota is measured and enforced. (AI-inferred)
     period: Any = None
 
 @dataclasses.dataclass
-class GatewayUsagePlan_ThrottleSettings:
-    burst_limit: Any = None
-    rate_limit: Any = None
+class GatewayUsagePlan_Tags:
+    # Defines the key of a user-defined tag attached to the API Gateway usage plan, used for metadata, cost allocation, and resource organization. (AI-inferred)
+    key: Any = None
+    # The tag value paired with a tag key on the API Gateway usage plan, used for cost allocation, resource organization, and IAM-based access control. (AI-inferred)
+    value: Any = None
 
-_GatewayUsagePlan_ApiStages_ThrottleFields = {
-    "burst_limit": ubx.FieldSpec(wire_name="burst_limit"),
-    "path": ubx.FieldSpec(wire_name="path"),
-    "rate_limit": ubx.FieldSpec(wire_name="rate_limit"),
-}
+@dataclasses.dataclass
+class GatewayUsagePlan_Throttle:
+    # The maximum API request rate limit over a time-varying window of one second, defining the burst limit for the usage plan's throttling settings. (AI-inferred)
+    burst_limit: Any = None
+    # Sets the steady-state request rate limit (in requests per second) allowed for API requests covered by the usage plan's throttling configuration. (AI-inferred)
+    rate_limit: Any = None
 
 _GatewayUsagePlan_ApiStagesFields = {
     "api_id": ubx.FieldSpec(wire_name="api_id"),
     "stage": ubx.FieldSpec(wire_name="stage"),
-    "throttle": ubx.FieldSpec(
-        wire_name="throttle",
-        kind="set",
-        fields=_GatewayUsagePlan_ApiStages_ThrottleFields,
-    ),
+    "throttle": ubx.FieldSpec(wire_name="throttle"),
 }
 
-_GatewayUsagePlan_QuotaSettingsFields = {
+_GatewayUsagePlan_QuotaFields = {
     "limit": ubx.FieldSpec(wire_name="limit"),
     "offset": ubx.FieldSpec(wire_name="offset"),
     "period": ubx.FieldSpec(wire_name="period"),
 }
 
-_GatewayUsagePlan_ThrottleSettingsFields = {
+_GatewayUsagePlan_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_GatewayUsagePlan_ThrottleFields = {
     "burst_limit": ubx.FieldSpec(wire_name="burst_limit"),
     "rate_limit": ubx.FieldSpec(wire_name="rate_limit"),
 }
 
 @dataclasses.dataclass
 class GatewayUsagePlanConfig:
-    description: Any = None
-    id: Any = None
-    name: Any = None
-    product_code: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Associates this usage plan with specific API Gateway stages, optionally configuring per-stage throttling and quota limits for those stages. (AI-inferred)
     api_stages: Any = None
-    quota_settings: Any = None
-    throttle_settings: Any = None
+    # An optional description that provides a friendly label or purpose for the usage plan, helping to distinguish it from other plans in the API Gateway. (AI-inferred)
+    description: Any = None
+    # ``QuotaSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies a target for the maximum number of requests users can make to your REST APIs. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using [](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) to monitor costs and [](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) to manage API requests.
+    quota: Any = None
+    # Specifies the key-value tags to assign to the usage plan, which AWS uses for cost allocation and resource management. (AI-inferred)
+    tags: Any = None
+    # ``ThrottleSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies the overall request rate (average requests per second) and burst capacity when users call your REST APIs.
+    throttle: Any = None
+    # A friendly name for the usage plan, used to identify it in the API Gateway console and API calls. (AI-inferred)
+    usage_plan_name: Any = None
+
+@dataclasses.dataclass
+class GatewayUsagePlanAttrs:
+    # Associates this usage plan with specific API Gateway stages, optionally configuring per-stage throttling and quota limits for those stages. (AI-inferred)
+    api_stages: Any = None
+    # An optional description that provides a friendly label or purpose for the usage plan, helping to distinguish it from other plans in the API Gateway. (AI-inferred)
+    description: Any = None
+    # The unique identifier assigned by AWS API Gateway to this usage plan, used as the resource's id. (AI-inferred)
+    id: Any = None
+    # ``QuotaSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies a target for the maximum number of requests users can make to your REST APIs. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using [](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) to monitor costs and [](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) to manage API requests.
+    quota: Any = None
+    # Specifies the key-value tags to assign to the usage plan, which AWS uses for cost allocation and resource management. (AI-inferred)
+    tags: Any = None
+    # ``ThrottleSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies the overall request rate (average requests per second) and burst capacity when users call your REST APIs.
+    throttle: Any = None
+    # A friendly name for the usage plan, used to identify it in the API Gateway console and API calls. (AI-inferred)
+    usage_plan_name: Any = None
 
 GatewayUsagePlan = ubx.ResourceBinding(
     wire_type="aws_api_gateway_usage_plan",
     fields={
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "product_code": ubx.FieldSpec(wire_name="product_code"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "api_stages": ubx.FieldSpec(
             wire_name="api_stages",
-            kind="set",
+            kind="list",
             fields=_GatewayUsagePlan_ApiStagesFields,
         ),
-        "quota_settings": ubx.FieldSpec(
-            wire_name="quota_settings",
-            kind="list",
-            fields=_GatewayUsagePlan_QuotaSettingsFields,
+        "description": ubx.FieldSpec(wire_name="description"),
+        "quota": ubx.FieldSpec(
+            wire_name="quota",
+            kind="object",
+            fields=_GatewayUsagePlan_QuotaFields,
         ),
-        "throttle_settings": ubx.FieldSpec(
-            wire_name="throttle_settings",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_GatewayUsagePlan_ThrottleSettingsFields,
+            fields=_GatewayUsagePlan_TagsFields,
         ),
+        "throttle": ubx.FieldSpec(
+            wire_name="throttle",
+            kind="object",
+            fields=_GatewayUsagePlan_ThrottleFields,
+        ),
+        "usage_plan_name": ubx.FieldSpec(wire_name="usage_plan_name"),
     },
 )

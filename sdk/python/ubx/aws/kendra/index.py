@@ -8,63 +8,94 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Index_CapacityUnits:
+    # The number of query capacity units allocated to the index, which determines the query throughput in queries per second that the index can support. (AI-inferred)
     query_capacity_units: Any = None
+    # Specifies the storage capacity (in gigabytes) provisioned for the Amazon Kendra index, determining how much document content and metadata can be stored. (AI-inferred)
     storage_capacity_units: Any = None
 
 @dataclasses.dataclass
-class Index_DocumentMetadataConfigurationUpdates_Relevance:
-    duration: Any = None
-    freshness: Any = None
-    importance: Any = None
-    rank_order: Any = None
-    values_importance_map: Any = None
+class Index_DocumentMetadataConfigurations_Relevance_ValueImportanceItems:
+    # The specific metadata field value (e.g., a string like 'Premium') for which the associated importance score adjusts relevance for documents containing that exact value. (AI-inferred)
+    key: Any = None
+    # The numeric importance weight (from 1 to 10) assigned to a specific value of a metadata field, which determines how much that value influences search relevance for the Kendra index, with 5 as the neutral baseline. (AI-inferred)
+    value: Any = None
 
 @dataclasses.dataclass
-class Index_DocumentMetadataConfigurationUpdates_Search:
+class Index_DocumentMetadataConfigurations_Relevance:
+    # Sets the ISO 8601 duration (e.g., 'P30D') during which a document is considered recent for freshness-based relevance scoring within this metadata field's relevance configuration. (AI-inferred)
+    duration: Any = None
+    # Determines whether the last-updated timestamp of this metadata field is used as a freshness signal to boost recently updated documents in Kendra search ranking. (AI-inferred)
+    freshness: Any = None
+    # Determines the weighting of this custom metadata field in Kendra's relevance scoring, where higher values increase the impact of matches on this field on search result rankings. (AI-inferred)
+    importance: Any = None
+    # Determines whether the values of this metadata field are ranked in ascending or descending order when contributing to a document's relevance score. (AI-inferred)
+    rank_order: Any = None
+    # Specifies a list of importance weights for specific values of this metadata field, used to adjust the relevance ranking of documents based on the presence of those field values. (AI-inferred)
+    value_importance_items: Any = None
+
+@dataclasses.dataclass
+class Index_DocumentMetadataConfigurations_Search:
+    # Indicates whether the metadata field's values can be displayed in the search results returned by Amazon Kendra. (AI-inferred)
     displayable: Any = None
+    # Indicates whether the metadata field can be used to create facets in Kendra search results, allowing users to filter and narrow down search results by that field. (AI-inferred)
     facetable: Any = None
+    # Indicates whether this document metadata field can be searched (i.e., used in query text) within the Amazon Kendra index. (AI-inferred)
     searchable: Any = None
+    # Indicates whether this metadata field can be used to sort search results in the Kendra index. (AI-inferred)
     sortable: Any = None
 
 @dataclasses.dataclass
-class Index_DocumentMetadataConfigurationUpdates:
+class Index_DocumentMetadataConfigurations:
+    # The name of a custom metadata field for documents in the index, as defined in the DocumentMetadataConfiguration property. (AI-inferred)
     name: Any = None
-    type: Any = None
+    # Specifies relevance settings, such as importance and freshness, that control how this metadata field influences search result ranking in the Kendra index. (AI-inferred)
     relevance: Any = None
+    # Specifies search-related settings for the metadata field, including whether it is facetable, searchable, displayable, and sortable in Amazon Kendra search results. (AI-inferred)
     search: Any = None
+    # Specifies the data type of the document metadata field (e.g., STRING, STRING_LIST, LONG_VALUE, DATE_VALUE), which determines how the field's values are indexed and used for filtering and search. (AI-inferred)
+    type: Any = None
 
 @dataclasses.dataclass
 class Index_ServerSideEncryptionConfiguration:
+    # Specifies the AWS KMS key ID (ARN) used to encrypt the index data, enabling customer-managed key encryption for the Amazon Kendra index. (AI-inferred)
     kms_key_id: Any = None
 
 @dataclasses.dataclass
-class Index_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-@dataclasses.dataclass
-class Index_UserGroupResolutionConfiguration:
-    user_group_resolution_mode: Any = None
+class Index_Tags:
+    # The key of a tag assigned to the Amazon Kendra index, used to categorize and manage the index for cost allocation, access control, and resource organization. (AI-inferred)
+    key: Any = None
+    # The value part of a tag attached to the Amazon Kendra index, used for metadata, cost allocation, and access control. (AI-inferred)
+    value: Any = None
 
 @dataclasses.dataclass
 class Index_UserTokenConfigurations_JsonTokenTypeConfiguration:
+    # The name of the group attribute field in the JSON token that identifies the user's group memberships for access control. (AI-inferred)
     group_attribute_field: Any = None
+    # Specifies the name of the JSON field that contains the user name, used by the index's JSON token configuration for access control. (AI-inferred)
     user_name_attribute_field: Any = None
 
 @dataclasses.dataclass
 class Index_UserTokenConfigurations_JwtTokenTypeConfiguration:
+    # Specifies a regular expression pattern used to extract the user name from the JWT token's claim for mapping to a Kendra user identity in access control. (AI-inferred)
     claim_regex: Any = None
+    # The name of the JWT token attribute that contains the list of group names for the user, used by Amazon Kendra to filter search results based on group membership. (AI-inferred)
     group_attribute_field: Any = None
+    # The issuer claim (iss) from the JWT token that identifies the principal that issued the token, used by Kendra to validate the token's origin. (AI-inferred)
     issuer: Any = None
+    # Specifies where the JWT signing key is stored, either in a URL or in AWS Secrets Manager. (AI-inferred)
     key_location: Any = None
-    secrets_manager_arn: Any = None
+    # The ARN of an AWS Secrets Manager secret that stores the JWT signing keys used to validate user tokens for Kendra index access control. (AI-inferred)
+    secret_manager_arn: Any = None
+    # The URL of the identity provider (IdP) that issues the JWT tokens used for user access control in the Kendra index. (AI-inferred)
     url: Any = None
+    # The name of the attribute in the JWT token that contains the user name for access control. (AI-inferred)
     user_name_attribute_field: Any = None
 
 @dataclasses.dataclass
 class Index_UserTokenConfigurations:
+    # Specifies the JSON token type configuration for user token authentication, defining which attributes in the JSON token map to the user name and group fields for access control in Amazon Kendra. (AI-inferred)
     json_token_type_configuration: Any = None
+    # Defines the JWT token type configuration for Kendra index user access control, including how to retrieve the JWT token from a secret or URL, and which user and group attributes to use for access control. (AI-inferred)
     jwt_token_type_configuration: Any = None
 
 _Index_CapacityUnitsFields = {
@@ -72,48 +103,52 @@ _Index_CapacityUnitsFields = {
     "storage_capacity_units": ubx.FieldSpec(wire_name="storage_capacity_units"),
 }
 
-_Index_DocumentMetadataConfigurationUpdates_RelevanceFields = {
+_Index_DocumentMetadataConfigurations_Relevance_ValueImportanceItemsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Index_DocumentMetadataConfigurations_RelevanceFields = {
     "duration": ubx.FieldSpec(wire_name="duration"),
     "freshness": ubx.FieldSpec(wire_name="freshness"),
     "importance": ubx.FieldSpec(wire_name="importance"),
     "rank_order": ubx.FieldSpec(wire_name="rank_order"),
-    "values_importance_map": ubx.FieldSpec(wire_name="values_importance_map"),
+    "value_importance_items": ubx.FieldSpec(
+        wire_name="value_importance_items",
+        kind="list",
+        fields=_Index_DocumentMetadataConfigurations_Relevance_ValueImportanceItemsFields,
+    ),
 }
 
-_Index_DocumentMetadataConfigurationUpdates_SearchFields = {
+_Index_DocumentMetadataConfigurations_SearchFields = {
     "displayable": ubx.FieldSpec(wire_name="displayable"),
     "facetable": ubx.FieldSpec(wire_name="facetable"),
     "searchable": ubx.FieldSpec(wire_name="searchable"),
     "sortable": ubx.FieldSpec(wire_name="sortable"),
 }
 
-_Index_DocumentMetadataConfigurationUpdatesFields = {
+_Index_DocumentMetadataConfigurationsFields = {
     "name": ubx.FieldSpec(wire_name="name"),
-    "type": ubx.FieldSpec(wire_name="type"),
     "relevance": ubx.FieldSpec(
         wire_name="relevance",
-        kind="list",
-        fields=_Index_DocumentMetadataConfigurationUpdates_RelevanceFields,
+        kind="object",
+        fields=_Index_DocumentMetadataConfigurations_RelevanceFields,
     ),
     "search": ubx.FieldSpec(
         wire_name="search",
-        kind="list",
-        fields=_Index_DocumentMetadataConfigurationUpdates_SearchFields,
+        kind="object",
+        fields=_Index_DocumentMetadataConfigurations_SearchFields,
     ),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Index_ServerSideEncryptionConfigurationFields = {
     "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
 }
 
-_Index_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
-
-_Index_UserGroupResolutionConfigurationFields = {
-    "user_group_resolution_mode": ubx.FieldSpec(wire_name="user_group_resolution_mode"),
+_Index_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _Index_UserTokenConfigurations_JsonTokenTypeConfigurationFields = {
@@ -126,7 +161,7 @@ _Index_UserTokenConfigurations_JwtTokenTypeConfigurationFields = {
     "group_attribute_field": ubx.FieldSpec(wire_name="group_attribute_field"),
     "issuer": ubx.FieldSpec(wire_name="issuer"),
     "key_location": ubx.FieldSpec(wire_name="key_location"),
-    "secrets_manager_arn": ubx.FieldSpec(wire_name="secrets_manager_arn"),
+    "secret_manager_arn": ubx.FieldSpec(wire_name="secret_manager_arn"),
     "url": ubx.FieldSpec(wire_name="url"),
     "user_name_attribute_field": ubx.FieldSpec(wire_name="user_name_attribute_field"),
 }
@@ -134,71 +169,94 @@ _Index_UserTokenConfigurations_JwtTokenTypeConfigurationFields = {
 _Index_UserTokenConfigurationsFields = {
     "json_token_type_configuration": ubx.FieldSpec(
         wire_name="json_token_type_configuration",
-        kind="list",
+        kind="object",
         fields=_Index_UserTokenConfigurations_JsonTokenTypeConfigurationFields,
     ),
     "jwt_token_type_configuration": ubx.FieldSpec(
         wire_name="jwt_token_type_configuration",
-        kind="list",
+        kind="object",
         fields=_Index_UserTokenConfigurations_JwtTokenTypeConfigurationFields,
     ),
 }
 
 @dataclasses.dataclass
 class IndexConfig:
-    description: Any = None
-    edition: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
-    role_arn: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    user_context_policy: Any = None
+    # Specifies the query and storage capacity units that configure the throughput and storage capacity of the Amazon Kendra index. (AI-inferred)
     capacity_units: Any = None
-    document_metadata_configuration_updates: Any = None
+    # Provides a description of the Amazon Kendra index, e.g., to indicate its intended use or contents. (AI-inferred)
+    description: Any = None
+    # Configures the list of metadata fields that can be attached to documents in the Kendra index, defining each field's name, data type, and search properties such as faceting, display, and sorting. (AI-inferred)
+    document_metadata_configurations: Any = None
+    # Edition of index
+    edition: Any = None
+    # Name of index
+    name: Any = None
+    # Role Arn
+    role_arn: Any = None
+    # Specifies the AWS KMS key used to encrypt the index for server-side encryption. (AI-inferred)
     server_side_encryption_configuration: Any = None
-    timeouts: Any = None
-    user_group_resolution_configuration: Any = None
+    # List of tags
+    tags: Any = None
+    # Determines whether user context filtering is applied to search results, using either attribute-based filtering or user token-based access control. (AI-inferred)
+    user_context_policy: Any = None
+    # Configures token-based user context filtering for the index by specifying either a JSON token or JWT token type and its associated parameters. (AI-inferred)
+    user_token_configurations: Any = None
+
+@dataclasses.dataclass
+class IndexAttrs:
+    # The Amazon Resource Name (ARN) that uniquely identifies the Kendra index within AWS. (AI-inferred)
+    arn: Any = None
+    # Specifies the query and storage capacity units that configure the throughput and storage capacity of the Amazon Kendra index. (AI-inferred)
+    capacity_units: Any = None
+    # Provides a description of the Amazon Kendra index, e.g., to indicate its intended use or contents. (AI-inferred)
+    description: Any = None
+    # Configures the list of metadata fields that can be attached to documents in the Kendra index, defining each field's name, data type, and search properties such as faceting, display, and sorting. (AI-inferred)
+    document_metadata_configurations: Any = None
+    # Edition of index
+    edition: Any = None
+    # Unique ID of index
+    id: Any = None
+    # Name of index
+    name: Any = None
+    # Role Arn
+    role_arn: Any = None
+    # Specifies the AWS KMS key used to encrypt the index for server-side encryption. (AI-inferred)
+    server_side_encryption_configuration: Any = None
+    # List of tags
+    tags: Any = None
+    # Determines whether user context filtering is applied to search results, using either attribute-based filtering or user token-based access control. (AI-inferred)
+    user_context_policy: Any = None
+    # Configures token-based user context filtering for the index by specifying either a JSON token or JWT token type and its associated parameters. (AI-inferred)
     user_token_configurations: Any = None
 
 Index = ubx.ResourceBinding(
     wire_type="aws_kendra_index",
     fields={
-        "description": ubx.FieldSpec(wire_name="description"),
-        "edition": ubx.FieldSpec(wire_name="edition"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "role_arn": ubx.FieldSpec(wire_name="role_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "user_context_policy": ubx.FieldSpec(wire_name="user_context_policy"),
         "capacity_units": ubx.FieldSpec(
             wire_name="capacity_units",
-            kind="list",
+            kind="object",
             fields=_Index_CapacityUnitsFields,
         ),
-        "document_metadata_configuration_updates": ubx.FieldSpec(
-            wire_name="document_metadata_configuration_updates",
-            kind="set",
-            fields=_Index_DocumentMetadataConfigurationUpdatesFields,
+        "description": ubx.FieldSpec(wire_name="description"),
+        "document_metadata_configurations": ubx.FieldSpec(
+            wire_name="document_metadata_configurations",
+            kind="list",
+            fields=_Index_DocumentMetadataConfigurationsFields,
         ),
+        "edition": ubx.FieldSpec(wire_name="edition"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "role_arn": ubx.FieldSpec(wire_name="role_arn"),
         "server_side_encryption_configuration": ubx.FieldSpec(
             wire_name="server_side_encryption_configuration",
-            kind="list",
+            kind="object",
             fields=_Index_ServerSideEncryptionConfigurationFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Index_TimeoutsFields,
-        ),
-        "user_group_resolution_configuration": ubx.FieldSpec(
-            wire_name="user_group_resolution_configuration",
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_Index_UserGroupResolutionConfigurationFields,
+            fields=_Index_TagsFields,
         ),
+        "user_context_policy": ubx.FieldSpec(wire_name="user_context_policy"),
         "user_token_configurations": ubx.FieldSpec(
             wire_name="user_token_configurations",
             kind="list",

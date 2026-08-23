@@ -8,40 +8,57 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataQualityRuleset_TargetTable:
-    catalog_id: Any = None
+    # The name of the database where the AWS Glue table exists.
     database_name: Any = None
+    # The name of the AWS Glue table.
     table_name: Any = None
 
 _DataQualityRuleset_TargetTableFields = {
-    "catalog_id": ubx.FieldSpec(wire_name="catalog_id"),
     "database_name": ubx.FieldSpec(wire_name="database_name"),
     "table_name": ubx.FieldSpec(wire_name="table_name"),
 }
 
 @dataclasses.dataclass
 class DataQualityRulesetConfig:
+    # A unique token for idempotency.
+    client_token: Any = None
+    # A description of the data quality ruleset.
     description: Any = None
-    id: Any = None
+    # A unique name for the data quality ruleset.
     name: Any = None
-    region: Any = None
+    # A Data Quality Definition Language (DQDL) ruleset.
     ruleset: Any = None
+    # A map of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
+    # An object representing an AWS Glue table.
+    target_table: Any = None
+
+@dataclasses.dataclass
+class DataQualityRulesetAttrs:
+    # A unique token for idempotency.
+    client_token: Any = None
+    # A description of the data quality ruleset.
+    description: Any = None
+    # A unique name for the data quality ruleset.
+    name: Any = None
+    # A Data Quality Definition Language (DQDL) ruleset.
+    ruleset: Any = None
+    # A map of key-value pairs to apply to this resource.
+    tags: Any = None
+    # An object representing an AWS Glue table.
     target_table: Any = None
 
 DataQualityRuleset = ubx.ResourceBinding(
     wire_type="aws_glue_data_quality_ruleset",
     fields={
+        "client_token": ubx.FieldSpec(wire_name="client_token"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "ruleset": ubx.FieldSpec(wire_name="ruleset"),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "target_table": ubx.FieldSpec(
             wire_name="target_table",
-            kind="list",
+            kind="object",
             fields=_DataQualityRuleset_TargetTableFields,
         ),
     },

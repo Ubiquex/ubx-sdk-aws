@@ -3,31 +3,87 @@ package connect
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ContactFlowModule_ExternalInvocationConfiguration struct {
+	// Specifies whether the flow module resource is enabled for external invocation
+	Enabled any
+}
+
+type ContactFlowModule_Tags struct {
+	// The key of a tag assigned to an Amazon Connect contact flow module for resource metadata and management. (AI-inferred)
+	Key any
+	// The value of a tag applied to the Amazon Connect contact flow module, used for organizing, managing, and identifying the resource within AWS. (AI-inferred)
+	Value any
+}
+
+var ContactFlowModule_ExternalInvocationConfigurationFields = ubx.FieldMap{
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
+var ContactFlowModule_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ContactFlowModuleConfig struct {
+	// The content of the contact flow module in JSON format.
 	Content any
-	ContentHash any
+	// The description of the contact flow module.
 	Description any
-	Filename any
-	Id any
-	InstanceId any
+	// Defines the external invocation configuration of the flow module resource
+	ExternalInvocationConfiguration any
+	// The identifier of the Amazon Connect instance (ARN).
+	InstanceArn any
+	// The name of the contact flow module.
 	Name any
-	Region any
+	// The schema of the settings for contact flow module in JSON Schema V4 format.
+	Settings any
+	// The state of the contact flow module.
+	State any
+	// One or more tags.
 	Tags any
-	TagsAll any
+}
+
+type ContactFlowModuleAttrs struct {
+	// The identifier of the contact flow module (ARN).
+	ContactFlowModuleArn any
+	// The content of the contact flow module in JSON format.
+	Content any
+	// The description of the contact flow module.
+	Description any
+	// Defines the external invocation configuration of the flow module resource
+	ExternalInvocationConfiguration any
+	// The identifier of the Amazon Connect instance (ARN).
+	InstanceArn any
+	// The name of the contact flow module.
+	Name any
+	// The schema of the settings for contact flow module in JSON Schema V4 format.
+	Settings any
+	// The state of the contact flow module.
+	State any
+	// The status of the contact flow module.
+	Status any
+	// One or more tags.
+	Tags any
 }
 
 var ContactFlowModule = ubx.ResourceBinding{
 	WireType: "aws_connect_contact_flow_module",
 	Fields: ubx.FieldMap{
 		"Content": ubx.FieldSpec{WireName: "content"},
-		"ContentHash": ubx.FieldSpec{WireName: "content_hash"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Filename": ubx.FieldSpec{WireName: "filename"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"ExternalInvocationConfiguration": ubx.FieldSpec{
+			WireName: "external_invocation_configuration",
+			Kind: "object",
+			Fields: ContactFlowModule_ExternalInvocationConfigurationFields,
+		},
+		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Settings": ubx.FieldSpec{WireName: "settings"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ContactFlowModule_TagsFields,
+		},
 	},
 }

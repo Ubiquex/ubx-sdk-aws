@@ -2,25 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegexPatternSetConfig {
-  id?: string | Computed<string>;
+  /** A unique, user-defined name for the regex pattern set, used to identify it in AWS WAF Regional. (AI-inferred) */
   name: string | Computed<string>;
-  regexPatternStrings?: string[] | Computed<string[]>;
-  region?: string | Computed<string>;
+  /** Specifies the regular expression patterns to include in this set, where each string is a distinct pattern that AWS WAF Regional uses to match against web requests. (AI-inferred) */
+  regexPatternStrings: string[] | Computed<string[]>;
 }
 
 export interface RegexPatternSetAttrs {
+  /** The unique identifier automatically assigned to this WAF Regional regex pattern set, used to reference it in other resources such as rules and WebACLs. (AI-inferred) */
   id: string;
+  /** A unique, user-defined name for the regex pattern set, used to identify it in AWS WAF Regional. (AI-inferred) */
   name: string;
+  /** Specifies the regular expression patterns to include in this set, where each string is a distinct pattern that AWS WAF Regional uses to match against web requests. (AI-inferred) */
   regexPatternStrings: string[];
-  region: string;
 }
 
 export const RegexPatternSet: ResourceBinding<RegexPatternSetConfig, RegexPatternSetAttrs> = {
   wireType: "aws_wafregional_regex_pattern_set",
   fields: {
-    id: "id",
     name: "name",
     regexPatternStrings: "regex_pattern_strings",
-    region: "region",
   },
 };

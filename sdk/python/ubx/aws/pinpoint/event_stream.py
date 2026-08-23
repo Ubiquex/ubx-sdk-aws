@@ -8,10 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EventStreamConfig:
+    # The unique identifier (ID) of the Amazon Pinpoint application that the event stream is associated with. (AI-inferred)
     application_id: Any = None
+    # The ARN of the Amazon Kinesis Data Stream or Amazon Data Firehose delivery stream that receives the Pinpoint event stream data. (AI-inferred)
     destination_stream_arn: Any = None
+    # The ARN of the IAM role that authorizes Amazon Pinpoint to write event data to the configured Amazon Kinesis stream. (AI-inferred)
+    role_arn: Any = None
+
+@dataclasses.dataclass
+class EventStreamAttrs:
+    # The unique identifier (ID) of the Amazon Pinpoint application that the event stream is associated with. (AI-inferred)
+    application_id: Any = None
+    # The ARN of the Amazon Kinesis Data Stream or Amazon Data Firehose delivery stream that receives the Pinpoint event stream data. (AI-inferred)
+    destination_stream_arn: Any = None
+    # The application ID of the Amazon Pinpoint application that this event stream is associated with. (AI-inferred)
     id: Any = None
-    region: Any = None
+    # The ARN of the IAM role that authorizes Amazon Pinpoint to write event data to the configured Amazon Kinesis stream. (AI-inferred)
     role_arn: Any = None
 
 EventStream = ubx.ResourceBinding(
@@ -19,8 +31,6 @@ EventStream = ubx.ResourceBinding(
     fields={
         "application_id": ubx.FieldSpec(wire_name="application_id"),
         "destination_stream_arn": ubx.FieldSpec(wire_name="destination_stream_arn"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "role_arn": ubx.FieldSpec(wire_name="role_arn"),
     },
 )

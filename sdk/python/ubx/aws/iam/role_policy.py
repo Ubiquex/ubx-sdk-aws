@@ -8,19 +8,27 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RolePolicyConfig:
-    id: Any = None
-    name: Any = None
-    name_prefix: Any = None
-    policy: Any = None
-    role: Any = None
+    # The policy document. You must provide policies in JSON format in IAM. However, for CFN templates formatted in YAML, you can provide the policy in JSON or YAML format. CFN always converts a YAML policy to JSON format before submitting it to IAM. The [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex) used to validate this parameter is a string of characters consisting of the following: + Any printable ASCII character ranging from the space character (``\u0020``) through the end of the ASCII character range + The printable characters in the Basic Latin and Latin-1 Supplement character set (through ``\u00FF``) + The special characters tab (``\u0009``), line feed (``\u000A``), and carriage return (``\u000D``)
+    policy_document: Any = None
+    # The name of the policy document. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+    policy_name: Any = None
+    # The name of the role to associate the policy with. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+    role_name: Any = None
+
+@dataclasses.dataclass
+class RolePolicyAttrs:
+    # The policy document. You must provide policies in JSON format in IAM. However, for CFN templates formatted in YAML, you can provide the policy in JSON or YAML format. CFN always converts a YAML policy to JSON format before submitting it to IAM. The [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex) used to validate this parameter is a string of characters consisting of the following: + Any printable ASCII character ranging from the space character (``\u0020``) through the end of the ASCII character range + The printable characters in the Basic Latin and Latin-1 Supplement character set (through ``\u00FF``) + The special characters tab (``\u0009``), line feed (``\u000A``), and carriage return (``\u000D``)
+    policy_document: Any = None
+    # The name of the policy document. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+    policy_name: Any = None
+    # The name of the role to associate the policy with. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+    role_name: Any = None
 
 RolePolicy = ubx.ResourceBinding(
     wire_type="aws_iam_role_policy",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "policy": ubx.FieldSpec(wire_name="policy"),
-        "role": ubx.FieldSpec(wire_name="role"),
+        "policy_document": ubx.FieldSpec(wire_name="policy_document"),
+        "policy_name": ubx.FieldSpec(wire_name="policy_name"),
+        "role_name": ubx.FieldSpec(wire_name="role_name"),
     },
 )

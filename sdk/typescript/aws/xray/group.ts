@@ -2,8 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Group_InsightsConfiguration {
-  insightsEnabled: boolean;
-  notificationsEnabled: boolean;
+  /** Set the InsightsEnabled value to true to enable insights or false to disable insights. */
+  insightsEnabled?: boolean | Computed<boolean>;
+  /** Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true. */
+  notificationsEnabled?: boolean | Computed<boolean>;
+}
+
+export interface Group_Tags {
+  /** Specifies the key of a tag assigned to the AWS X-Ray group, enabling you to categorize and manage the group within your AWS environment. (AI-inferred) */
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 const Group_InsightsConfigurationFields: FieldMap = {
@@ -11,25 +19,33 @@ const Group_InsightsConfigurationFields: FieldMap = {
   notificationsEnabled: "notifications_enabled",
 };
 
+const Group_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
 export interface GroupConfig {
-  filterExpression: string | Computed<string>;
+  /** The filter expression defining criteria by which to group traces. */
+  filterExpression?: string | Computed<string>;
+  /** The case-sensitive name of the new group. Names must be unique. */
   groupName: string | Computed<string>;
-  id?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  insightsConfiguration?: Group_InsightsConfiguration[] | Computed<Group_InsightsConfiguration[]>;
+  /** Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred) */
+  insightsConfiguration?: Group_InsightsConfiguration | Computed<Group_InsightsConfiguration>;
+  /** An array of key-value pairs to apply to this resource. */
+  tags?: Group_Tags[] | Computed<Group_Tags[]>;
 }
 
 export interface GroupAttrs {
-  arn: string;
+  /** The filter expression defining criteria by which to group traces. */
   filterExpression: string;
+  /** The ARN of the group that was generated on creation. */
+  groupArn: string;
+  /** The case-sensitive name of the new group. Names must be unique. */
   groupName: string;
-  id: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  insightsConfiguration: Group_InsightsConfiguration[];
+  /** Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred) */
+  insightsConfiguration: Group_InsightsConfiguration;
+  /** An array of key-value pairs to apply to this resource. */
+  tags: Group_Tags[];
 }
 
 export const Group: ResourceBinding<GroupConfig, GroupAttrs> = {
@@ -37,14 +53,15 @@ export const Group: ResourceBinding<GroupConfig, GroupAttrs> = {
   fields: {
     filterExpression: "filter_expression",
     groupName: "group_name",
-    id: "id",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
     insightsConfiguration: {
       wireName: "insights_configuration",
-      kind: "list",
+      kind: "object",
       fields: Group_InsightsConfigurationFields,
+    },
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Group_TagsFields,
     },
   },
 };

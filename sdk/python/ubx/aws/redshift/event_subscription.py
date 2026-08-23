@@ -7,50 +7,81 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class EventSubscription_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class EventSubscription_Tags:
+    # The key name of a tag assigned to this Redshift event subscription, used for management and identifying the resource. (AI-inferred)
+    key: Any = None
+    # The value of a key-value tag attached to the AWS Redshift event subscription, used for identifying and managing the resource. (AI-inferred)
+    value: Any = None
 
-_EventSubscription_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_EventSubscription_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class EventSubscriptionConfig:
+    # A boolean value; set to true to activate the subscription, and set to false to create the subscription but not activate it.
     enabled: Any = None
+    # Specifies the Amazon Redshift event categories to be published by the event notification subscription.
     event_categories: Any = None
-    id: Any = None
-    name: Any = None
-    region: Any = None
+    # Specifies the Amazon Redshift event severity to be published by the event notification subscription.
     severity: Any = None
+    # The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications.
     sns_topic_arn: Any = None
+    # A list of one or more identifiers of Amazon Redshift source objects.
     source_ids: Any = None
+    # The type of source that will be generating the events.
     source_type: Any = None
+    # The name of the Amazon Redshift event notification subscription
+    subscription_name: Any = None
+    # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    tags_all: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class EventSubscriptionAttrs:
+    # The name of the Amazon Redshift event notification subscription.
+    cust_subscription_id: Any = None
+    # The AWS account associated with the Amazon Redshift event notification subscription.
+    customer_aws_id: Any = None
+    # A boolean value; set to true to activate the subscription, and set to false to create the subscription but not activate it.
+    enabled: Any = None
+    # Specifies the Amazon Redshift event categories to be published by the event notification subscription.
+    event_categories: Any = None
+    # The list of Amazon Redshift event categories specified in the event notification subscription.
+    event_categories_list: Any = None
+    # Specifies the Amazon Redshift event severity to be published by the event notification subscription.
+    severity: Any = None
+    # The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications.
+    sns_topic_arn: Any = None
+    # A list of one or more identifiers of Amazon Redshift source objects.
+    source_ids: Any = None
+    # A list of the sources that publish events to the Amazon Redshift event notification subscription.
+    source_ids_list: Any = None
+    # The type of source that will be generating the events.
+    source_type: Any = None
+    # The status of the Amazon Redshift event notification subscription.
+    status: Any = None
+    # The date and time the Amazon Redshift event notification subscription was created.
+    subscription_creation_time: Any = None
+    # The name of the Amazon Redshift event notification subscription
+    subscription_name: Any = None
+    # An array of key-value pairs to apply to this resource.
+    tags: Any = None
 
 EventSubscription = ubx.ResourceBinding(
     wire_type="aws_redshift_event_subscription",
     fields={
         "enabled": ubx.FieldSpec(wire_name="enabled"),
         "event_categories": ubx.FieldSpec(wire_name="event_categories"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "severity": ubx.FieldSpec(wire_name="severity"),
         "sns_topic_arn": ubx.FieldSpec(wire_name="sns_topic_arn"),
         "source_ids": ubx.FieldSpec(wire_name="source_ids"),
         "source_type": ubx.FieldSpec(wire_name="source_type"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_EventSubscription_TimeoutsFields,
+        "subscription_name": ubx.FieldSpec(wire_name="subscription_name"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_EventSubscription_TagsFields,
         ),
     },
 )

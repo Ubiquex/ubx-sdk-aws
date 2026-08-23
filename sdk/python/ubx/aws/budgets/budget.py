@@ -7,101 +7,157 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Budget_AutoAdjustData_HistoricalOptions:
+class Budget_Budget_AutoAdjustData_HistoricalOptions:
+    # Specifies the number of months of historical spending data that AWS Budgets uses to automatically calculate the adjusted budget amount. (AI-inferred)
     budget_adjustment_period: Any = None
-    lookback_available_periods: Any = None
 
 @dataclasses.dataclass
-class Budget_AutoAdjustData:
+class Budget_Budget_AutoAdjustData:
+    # Indicates whether the budget's automatic adjustment is based on a forecast of future spend (FORECAST) or on historical spending patterns (HISTORICAL). (AI-inferred)
     auto_adjust_type: Any = None
-    last_auto_adjust_time: Any = None
+    # Specifies the number of historical budget periods (months) of past spending that AWS Budgets uses to calculate the automatically adjusted budget amount. (AI-inferred)
     historical_options: Any = None
 
 @dataclasses.dataclass
-class Budget_CostFilter:
-    name: Any = None
-    values: Any = None
+class Budget_Budget_BudgetLimit:
+    # The numerical amount of the budget limit, representing the maximum cost or usage allowed by the budget. (AI-inferred)
+    amount: Any = None
+    # The three-letter currency code (e.g., USD) that defines the monetary unit for the budget limit amount and must match the currency of the AWS account. (AI-inferred)
+    unit: Any = None
 
 @dataclasses.dataclass
-class Budget_CostTypes:
+class Budget_Budget_CostTypes:
+    # Specifies whether credits (such as promotional AWS credits) are included when calculating the costs covered by this budget. (AI-inferred)
     include_credit: Any = None
+    # Determines whether discounts are included in the cost amounts tracked by this budget. (AI-inferred)
     include_discount: Any = None
+    # Controls whether the budget includes other non-recurring subscription costs, such as one-time fees for services like Amazon QuickSight. (AI-inferred)
     include_other_subscription: Any = None
+    # Whether the budget includes recurring costs (such as monthly subscription or recurring service fees) when calculating actual spend against the budget. (AI-inferred)
     include_recurring: Any = None
+    # Indicates whether the budget includes refunds when calculating costs. (AI-inferred)
     include_refund: Any = None
+    # Specifies whether the budget includes subscription costs (such as AWS Support) when determining actual and forecasted spend. (AI-inferred)
     include_subscription: Any = None
+    # Determines whether AWS Support charges (such as subscription fees for AWS Support plans) are included when calculating the costs tracked by this budget. (AI-inferred)
     include_support: Any = None
+    # Specifies whether the budget includes taxes associated with your usage. (AI-inferred)
     include_tax: Any = None
+    # Specifies whether to include upfront fees, such as the one-time payment for Reserved Instances, in the budget's cost calculations. (AI-inferred)
     include_upfront: Any = None
+    # In AWS Budgets, this boolean flag in the budget's cost types controls whether the budget includes amortized costs, which spread upfront reservation or savings plan charges over the term of the commitment. (AI-inferred)
     use_amortized: Any = None
+    # A boolean flag that indicates whether the budget includes blended costs, which are calculated by mixing the effective rates of on-demand and reserved-instance usage. (AI-inferred)
     use_blended: Any = None
 
 @dataclasses.dataclass
-class Budget_FilterExpression_And_And_CostCategories:
+class Budget_Budget_FilterExpression_CostCategories:
+    # The name of the AWS Cost Category to use as a filter key for this budget. (AI-inferred)
     key: Any = None
+    # Specifies the matching options (such as EQUALS, STARTS_WITH) that apply to the cost category values in the budget's filter expression. (AI-inferred)
     match_options: Any = None
+    # Defines the specific values of the chosen cost category that the budget filter matches, restricting the budget to only include costs associated with those cost category values. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
-class Budget_FilterExpression_And_And:
-    cost_categories: Any = None
-    dimensions: Any = None
-    tags: Any = None
-
-@dataclasses.dataclass
-class Budget_FilterExpression_And:
+class Budget_Budget_FilterExpression:
+    # Specifies a list of filter expressions that must all be satisfied (logical AND) for a cost or usage item to be counted in the budget, enabling combined dimension-based filtering (e.g., service and region together). (AI-inferred)
     and_: Any = None
+    # Maps cost category names to lists of values within the budget's filter expression; only actual costs that match at least one of the listed values for each configured cost category are counted toward the budget. (AI-inferred)
     cost_categories: Any = None
+    # Defines the AWS cost dimensions (like SERVICE or REGION) and their allowed values that this budget's filter expression uses to match and track specific cost and usage. (AI-inferred)
     dimensions: Any = None
+    # The `not` field holds a nested filter expression that is logically negated, so the budget applies only to costs that do not match the nested criteria. (AI-inferred)
     not_: Any = None
+    # A list of filter sub-expressions that are combined using OR logic, so that a cost is included in the budget if it matches any of the listed sub-expressions. (AI-inferred)
     or_: Any = None
+    # Defines the tag-based filters (tag key and list of values) that restrict the budget's cost scope to matching tagged resources in the budget filter expression. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
-class Budget_FilterExpression:
-    and_: Any = None
-    cost_categories: Any = None
-    dimensions: Any = None
-    not_: Any = None
-    or_: Any = None
-    tags: Any = None
+class Budget_Budget_TimePeriod:
+    # The end date of the budget time period, indicating the last day the budget is active; if omitted, the budget period is open-ended. (AI-inferred)
+    end: Any = None
+    # The start date and time of the budget's coverage period, expressed in UTC (usually ISO 8601 format), which determines the beginning of the time window over which costs are evaluated against the budget. (AI-inferred)
+    start: Any = None
 
 @dataclasses.dataclass
-class Budget_Notification:
+class Budget_Budget:
+    # Configuration for automatic budget limit adjustment, where AWS adjusts the budget's limit based on historical usage or a forecast, including the autoAdjustType (HISTORICAL or FORECAST) and the corresponding adjustment period options. (AI-inferred)
+    auto_adjust_data: Any = None
+    # Specifies the ARN of an AWS Billing view that the budget is scoped to, allowing the budget to track costs only for the accounts and usage associated with that billing view. (AI-inferred)
+    billing_view_arn: Any = None
+    # Specifies the cost or usage threshold for the budget, defined by an amount and unit (for example, '100.0' and 'USD'). (AI-inferred)
+    budget_limit: Any = None
+    # The name of the budget, which acts as a unique identifier within the AWS account for the specified budget type; if omitted, CloudFormation generates a unique name (e.g., the logical ID). (AI-inferred)
+    budget_name: Any = None
+    # Specifies the type of budget, such as COST, USAGE, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, or SAVINGS_PLANS_COVERAGE, which determines the metric and dimensions used to track your AWS spend or usage. (AI-inferred)
+    budget_type: Any = None
+    # A map of cost filter dimension names (such as Service, LinkedAccount, Region, or TagKeyValue) to lists of values that restricts the budget to matching AWS costs, analogous to the CostFilters property in the AWS Budgets API. (AI-inferred)
+    cost_filters: Any = None
+    # Specifies the CostTypes object that controls which AWS cost types (such as taxes, subscriptions, recurring charges, support, discounts, credits, and upfront fees) are included or excluded when calculating the budget's actual and forecasted costs. (AI-inferred)
+    cost_types: Any = None
+    # Specifies a logical expression of key-value filters (such as service, tag, or account) and an operator (AND or OR) that determines which cost and usage data is included in the budget. (AI-inferred)
+    filter_expression: Any = None
+    metrics: Any = None
+    # Specifies budget limits for future cost budget periods, mapping each period's start date (YYYY-MM-DD) to a budget limit amount and unit for that period. (AI-inferred)
+    planned_budget_limits: Any = None
+    # Specifies the start and end dates that determine the period covered by the budget. (AI-inferred)
+    time_period: Any = None
+    # The time unit (DAILY, MONTHLY, QUARTERLY, or ANNUALLY) that defines the period over which the budget tracks costs or usage and resets. (AI-inferred)
+    time_unit: Any = None
+
+@dataclasses.dataclass
+class Budget_NotificationsWithSubscribers_Notification:
+    # Specifies the comparison operator (e.g., GREATER_THAN, LESS_THAN, EQUAL_TO) used to evaluate the budget's actual or forecasted value against the notification threshold. (AI-inferred)
     comparison_operator: Any = None
+    # Specifies whether the budget notification is triggered by actual spending or a forecasted spend amount. (AI-inferred)
     notification_type: Any = None
-    subscriber_email_addresses: Any = None
-    subscriber_sns_topic_arns: Any = None
+    # The numeric threshold value that, when compared against the actual or forecasted budget cost or usage using the notification's comparison operator, triggers the budget notification. (AI-inferred)
     threshold: Any = None
+    # Specifies whether the budget notification threshold is expressed as a percentage of the budget limit or as an absolute value (e.g., a dollar amount or usage quantity), corresponding to the PERCENTAGE or ABSOLUTE_VALUE enum values for the budget alarm. (AI-inferred)
     threshold_type: Any = None
 
 @dataclasses.dataclass
-class Budget_PlannedLimit:
-    amount: Any = None
-    start_time: Any = None
-    unit: Any = None
+class Budget_NotificationsWithSubscribers_Subscribers:
+    # The email address or SNS topic ARN that receives the budget notification for the associated subscriber type. (AI-inferred)
+    address: Any = None
+    # The subscription channel type used by the subscriber to receive budget notifications, such as SNS or EMAIL. (AI-inferred)
+    subscription_type: Any = None
 
-_Budget_AutoAdjustData_HistoricalOptionsFields = {
+@dataclasses.dataclass
+class Budget_NotificationsWithSubscribers:
+    # Defines the notification configuration for a budget, including threshold value, comparison operator (e.g., GREATER_THAN), threshold type (PERCENTAGE or ABSOLUTE_VALUE), and notification type (e.g., ACTUAL or FORECASTED), which triggers an alert to the subscribed SNS topics or email addresses. (AI-inferred)
+    notification: Any = None
+    # Specifies the list of subscribers (email addresses or SNS topic ARNs) that receive the budget notification. (AI-inferred)
+    subscribers: Any = None
+
+@dataclasses.dataclass
+class Budget_ResourceTags:
+    # The key of a resource tag (a key-value pair) applied to the budget, used to categorize or identify the budget for cost allocation and management. (AI-inferred)
+    key: Any = None
+    # The value of a tag entry in the resource_tags map, used to attach metadata to the budget resource for identification and organization. (AI-inferred)
+    value: Any = None
+
+_Budget_Budget_AutoAdjustData_HistoricalOptionsFields = {
     "budget_adjustment_period": ubx.FieldSpec(wire_name="budget_adjustment_period"),
-    "lookback_available_periods": ubx.FieldSpec(wire_name="lookback_available_periods"),
 }
 
-_Budget_AutoAdjustDataFields = {
+_Budget_Budget_AutoAdjustDataFields = {
     "auto_adjust_type": ubx.FieldSpec(wire_name="auto_adjust_type"),
-    "last_auto_adjust_time": ubx.FieldSpec(wire_name="last_auto_adjust_time"),
     "historical_options": ubx.FieldSpec(
         wire_name="historical_options",
-        kind="list",
-        fields=_Budget_AutoAdjustData_HistoricalOptionsFields,
+        kind="object",
+        fields=_Budget_Budget_AutoAdjustData_HistoricalOptionsFields,
     ),
 }
 
-_Budget_CostFilterFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "values": ubx.FieldSpec(wire_name="values"),
+_Budget_Budget_BudgetLimitFields = {
+    "amount": ubx.FieldSpec(wire_name="amount"),
+    "unit": ubx.FieldSpec(wire_name="unit"),
 }
 
-_Budget_CostTypesFields = {
+_Budget_Budget_CostTypesFields = {
     "include_credit": ubx.FieldSpec(wire_name="include_credit"),
     "include_discount": ubx.FieldSpec(wire_name="include_discount"),
     "include_other_subscription": ubx.FieldSpec(wire_name="include_other_subscription"),
@@ -115,180 +171,140 @@ _Budget_CostTypesFields = {
     "use_blended": ubx.FieldSpec(wire_name="use_blended"),
 }
 
-_Budget_FilterExpression_And_And_CostCategoriesFields = {
+_Budget_Budget_FilterExpression_CostCategoriesFields = {
     "key": ubx.FieldSpec(wire_name="key"),
     "match_options": ubx.FieldSpec(wire_name="match_options"),
     "values": ubx.FieldSpec(wire_name="values"),
 }
 
-_Budget_FilterExpression_And_AndFields = {
+_Budget_Budget_FilterExpressionFields = {
+    "and_": ubx.FieldSpec(wire_name="and"),
     "cost_categories": ubx.FieldSpec(
         wire_name="cost_categories",
-        kind="list",
-        fields=_Budget_FilterExpression_And_And_CostCategoriesFields,
+        kind="object",
+        fields=_Budget_Budget_FilterExpression_CostCategoriesFields,
     ),
     "dimensions": ubx.FieldSpec(
         wire_name="dimensions",
-        kind="list",
-        fields=_Budget_FilterExpression_And_And_CostCategoriesFields,
+        kind="object",
+        fields=_Budget_Budget_FilterExpression_CostCategoriesFields,
     ),
+    "not_": ubx.FieldSpec(wire_name="not"),
+    "or_": ubx.FieldSpec(wire_name="or"),
     "tags": ubx.FieldSpec(
         wire_name="tags",
-        kind="list",
-        fields=_Budget_FilterExpression_And_And_CostCategoriesFields,
+        kind="object",
+        fields=_Budget_Budget_FilterExpression_CostCategoriesFields,
     ),
 }
 
-_Budget_FilterExpression_AndFields = {
-    "and_": ubx.FieldSpec(
-        wire_name="and",
-        kind="list",
-        fields=_Budget_FilterExpression_And_AndFields,
-    ),
-    "cost_categories": ubx.FieldSpec(
-        wire_name="cost_categories",
-        kind="list",
-        fields=_Budget_FilterExpression_And_And_CostCategoriesFields,
-    ),
-    "dimensions": ubx.FieldSpec(
-        wire_name="dimensions",
-        kind="list",
-        fields=_Budget_FilterExpression_And_And_CostCategoriesFields,
-    ),
-    "not_": ubx.FieldSpec(
-        wire_name="not",
-        kind="list",
-        fields=_Budget_FilterExpression_And_AndFields,
-    ),
-    "or_": ubx.FieldSpec(
-        wire_name="or",
-        kind="list",
-        fields=_Budget_FilterExpression_And_AndFields,
-    ),
-    "tags": ubx.FieldSpec(
-        wire_name="tags",
-        kind="list",
-        fields=_Budget_FilterExpression_And_And_CostCategoriesFields,
-    ),
+_Budget_Budget_TimePeriodFields = {
+    "end": ubx.FieldSpec(wire_name="end"),
+    "start": ubx.FieldSpec(wire_name="start"),
 }
 
-_Budget_FilterExpressionFields = {
-    "and_": ubx.FieldSpec(
-        wire_name="and",
-        kind="list",
-        fields=_Budget_FilterExpression_AndFields,
+_Budget_BudgetFields = {
+    "auto_adjust_data": ubx.FieldSpec(
+        wire_name="auto_adjust_data",
+        kind="object",
+        fields=_Budget_Budget_AutoAdjustDataFields,
     ),
-    "cost_categories": ubx.FieldSpec(
-        wire_name="cost_categories",
-        kind="list",
-        fields=_Budget_FilterExpression_And_And_CostCategoriesFields,
+    "billing_view_arn": ubx.FieldSpec(wire_name="billing_view_arn"),
+    "budget_limit": ubx.FieldSpec(
+        wire_name="budget_limit",
+        kind="object",
+        fields=_Budget_Budget_BudgetLimitFields,
     ),
-    "dimensions": ubx.FieldSpec(
-        wire_name="dimensions",
-        kind="list",
-        fields=_Budget_FilterExpression_And_And_CostCategoriesFields,
+    "budget_name": ubx.FieldSpec(wire_name="budget_name"),
+    "budget_type": ubx.FieldSpec(wire_name="budget_type"),
+    "cost_filters": ubx.FieldSpec(wire_name="cost_filters"),
+    "cost_types": ubx.FieldSpec(
+        wire_name="cost_types",
+        kind="object",
+        fields=_Budget_Budget_CostTypesFields,
     ),
-    "not_": ubx.FieldSpec(
-        wire_name="not",
-        kind="list",
-        fields=_Budget_FilterExpression_AndFields,
+    "filter_expression": ubx.FieldSpec(
+        wire_name="filter_expression",
+        kind="object",
+        fields=_Budget_Budget_FilterExpressionFields,
     ),
-    "or_": ubx.FieldSpec(
-        wire_name="or",
-        kind="list",
-        fields=_Budget_FilterExpression_AndFields,
+    "metrics": ubx.FieldSpec(wire_name="metrics"),
+    "planned_budget_limits": ubx.FieldSpec(wire_name="planned_budget_limits"),
+    "time_period": ubx.FieldSpec(
+        wire_name="time_period",
+        kind="object",
+        fields=_Budget_Budget_TimePeriodFields,
     ),
-    "tags": ubx.FieldSpec(
-        wire_name="tags",
-        kind="list",
-        fields=_Budget_FilterExpression_And_And_CostCategoriesFields,
-    ),
+    "time_unit": ubx.FieldSpec(wire_name="time_unit"),
 }
 
-_Budget_NotificationFields = {
+_Budget_NotificationsWithSubscribers_NotificationFields = {
     "comparison_operator": ubx.FieldSpec(wire_name="comparison_operator"),
     "notification_type": ubx.FieldSpec(wire_name="notification_type"),
-    "subscriber_email_addresses": ubx.FieldSpec(wire_name="subscriber_email_addresses"),
-    "subscriber_sns_topic_arns": ubx.FieldSpec(wire_name="subscriber_sns_topic_arns"),
     "threshold": ubx.FieldSpec(wire_name="threshold"),
     "threshold_type": ubx.FieldSpec(wire_name="threshold_type"),
 }
 
-_Budget_PlannedLimitFields = {
-    "amount": ubx.FieldSpec(wire_name="amount"),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-    "unit": ubx.FieldSpec(wire_name="unit"),
+_Budget_NotificationsWithSubscribers_SubscribersFields = {
+    "address": ubx.FieldSpec(wire_name="address"),
+    "subscription_type": ubx.FieldSpec(wire_name="subscription_type"),
+}
+
+_Budget_NotificationsWithSubscribersFields = {
+    "notification": ubx.FieldSpec(
+        wire_name="notification",
+        kind="object",
+        fields=_Budget_NotificationsWithSubscribers_NotificationFields,
+    ),
+    "subscribers": ubx.FieldSpec(
+        wire_name="subscribers",
+        kind="list",
+        fields=_Budget_NotificationsWithSubscribers_SubscribersFields,
+    ),
+}
+
+_Budget_ResourceTagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class BudgetConfig:
-    account_id: Any = None
-    billing_view_arn: Any = None
-    budget_type: Any = None
+    # The budget object defines the essential budget configuration, including the budget name, type (COST or USAGE), amount limit, time unit, and optional cost filters and cost types. (AI-inferred)
+    budget: Any = None
+    # Specifies the budget notifications and the email or SNS subscribers to receive alerts when the budget threshold is exceeded. (AI-inferred)
+    notifications_with_subscribers: Any = None
+    # Specifies a list of resource tag key-value pairs (with Key and Value properties) that are attached to this AWS Budgets budget to help categorize and manage it for cost allocation and filtering. (AI-inferred)
+    resource_tags: Any = None
+
+@dataclasses.dataclass
+class BudgetAttrs:
+    # The budget object defines the essential budget configuration, including the budget name, type (COST or USAGE), amount limit, time unit, and optional cost filters and cost types. (AI-inferred)
+    budget: Any = None
+    # The budget name, which uniquely identifies the budget within the AWS account and is used as the resource's primary identifier. (AI-inferred)
     id: Any = None
-    limit_amount: Any = None
-    limit_unit: Any = None
-    metrics: Any = None
-    name: Any = None
-    name_prefix: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    time_period_end: Any = None
-    time_period_start: Any = None
-    time_unit: Any = None
-    auto_adjust_data: Any = None
-    cost_filter: Any = None
-    cost_types: Any = None
-    filter_expression: Any = None
-    notification: Any = None
-    planned_limit: Any = None
+    # Specifies the budget notifications and the email or SNS subscribers to receive alerts when the budget threshold is exceeded. (AI-inferred)
+    notifications_with_subscribers: Any = None
+    # Specifies a list of resource tag key-value pairs (with Key and Value properties) that are attached to this AWS Budgets budget to help categorize and manage it for cost allocation and filtering. (AI-inferred)
+    resource_tags: Any = None
 
 Budget = ubx.ResourceBinding(
     wire_type="aws_budgets_budget",
     fields={
-        "account_id": ubx.FieldSpec(wire_name="account_id"),
-        "billing_view_arn": ubx.FieldSpec(wire_name="billing_view_arn"),
-        "budget_type": ubx.FieldSpec(wire_name="budget_type"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "limit_amount": ubx.FieldSpec(wire_name="limit_amount"),
-        "limit_unit": ubx.FieldSpec(wire_name="limit_unit"),
-        "metrics": ubx.FieldSpec(wire_name="metrics"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "time_period_end": ubx.FieldSpec(wire_name="time_period_end"),
-        "time_period_start": ubx.FieldSpec(wire_name="time_period_start"),
-        "time_unit": ubx.FieldSpec(wire_name="time_unit"),
-        "auto_adjust_data": ubx.FieldSpec(
-            wire_name="auto_adjust_data",
+        "budget": ubx.FieldSpec(
+            wire_name="budget",
+            kind="object",
+            fields=_Budget_BudgetFields,
+        ),
+        "notifications_with_subscribers": ubx.FieldSpec(
+            wire_name="notifications_with_subscribers",
             kind="list",
-            fields=_Budget_AutoAdjustDataFields,
+            fields=_Budget_NotificationsWithSubscribersFields,
         ),
-        "cost_filter": ubx.FieldSpec(
-            wire_name="cost_filter",
-            kind="set",
-            fields=_Budget_CostFilterFields,
-        ),
-        "cost_types": ubx.FieldSpec(
-            wire_name="cost_types",
+        "resource_tags": ubx.FieldSpec(
+            wire_name="resource_tags",
             kind="list",
-            fields=_Budget_CostTypesFields,
-        ),
-        "filter_expression": ubx.FieldSpec(
-            wire_name="filter_expression",
-            kind="list",
-            fields=_Budget_FilterExpressionFields,
-        ),
-        "notification": ubx.FieldSpec(
-            wire_name="notification",
-            kind="set",
-            fields=_Budget_NotificationFields,
-        ),
-        "planned_limit": ubx.FieldSpec(
-            wire_name="planned_limit",
-            kind="set",
-            fields=_Budget_PlannedLimitFields,
+            fields=_Budget_ResourceTagsFields,
         ),
     },
 )

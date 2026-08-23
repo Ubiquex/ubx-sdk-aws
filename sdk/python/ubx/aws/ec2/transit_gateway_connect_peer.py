@@ -7,44 +7,71 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TransitGatewayConnectPeer_Timeouts:
-    create: Any = None
-    delete: Any = None
+class TransitGatewayConnectPeer_ConnectPeerConfiguration_BgpConfigurations:
+    # BGP status of the Connect Peer's BGP session, indicating whether the Border Gateway Protocol session is up or down. (AI-inferred)
+    bgp_status: Any = None
+    # The IP address of the BGP peer used for establishing BGP sessions with the Transit Gateway Connect Peer. (AI-inferred)
+    peer_address: Any = None
+    # Specifies the autonomous system number (ASN) of the BGP peer for the Connect peer, which is used to configure BGP peering between the transit gateway and the Connect attachment. (AI-inferred)
+    peer_asn: Any = None
+    # Specifies the IP address on the Transit Gateway side that will be used as the local endpoint for the BGP session with the Connect peer. (AI-inferred)
+    transit_gateway_address: Any = None
+    # The autonomous system number (ASN) that the transit gateway uses for the BGP session with the Connect peer. (AI-inferred)
+    transit_gateway_asn: Any = None
 
-_TransitGatewayConnectPeer_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+@dataclasses.dataclass
+class TransitGatewayConnectPeer_ConnectPeerConfiguration:
+    # The BGP configuration details.
+    bgp_configurations: Any = None
+    # The range of interior BGP peer IP addresses.
+    inside_cidr_blocks: Any = None
+    # The peer IP address (GRE outer IP address) on the appliance side of the Connect peer.
+    peer_address: Any = None
+    # The tunnel protocol.
+    protocol: Any = None
+    # The Connect peer IP address on the transit gateway side of the tunnel.
+    transit_gateway_address: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayConnectPeer_Tags:
+    key: Any = None
+    value: Any = None
+
+_TransitGatewayConnectPeer_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class TransitGatewayConnectPeerConfig:
-    bgp_asn: Any = None
-    id: Any = None
-    inside_cidr_blocks: Any = None
-    peer_address: Any = None
-    region: Any = None
+    # The tags for the Connect Peer.
     tags: Any = None
-    tags_all: Any = None
-    transit_gateway_address: Any = None
+    # The ID of the Connect attachment.
     transit_gateway_attachment_id: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class TransitGatewayConnectPeerAttrs:
+    # The computed configuration of the transit gateway Connect peer, including the tunnel protocol, inside CIDR blocks, the transit gateway and peer addresses, and BGP configuration options. (AI-inferred)
+    connect_peer_configuration: Any = None
+    # The creation time.
+    creation_time: Any = None
+    # The state of the Connect peer.
+    state: Any = None
+    # The tags for the Connect Peer.
+    tags: Any = None
+    # The ID of the Connect attachment.
+    transit_gateway_attachment_id: Any = None
+    # The ID of the Connect peer.
+    transit_gateway_connect_peer_id: Any = None
 
 TransitGatewayConnectPeer = ubx.ResourceBinding(
     wire_type="aws_ec2_transit_gateway_connect_peer",
     fields={
-        "bgp_asn": ubx.FieldSpec(wire_name="bgp_asn"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "inside_cidr_blocks": ubx.FieldSpec(wire_name="inside_cidr_blocks"),
-        "peer_address": ubx.FieldSpec(wire_name="peer_address"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "transit_gateway_address": ubx.FieldSpec(wire_name="transit_gateway_address"),
-        "transit_gateway_attachment_id": ubx.FieldSpec(wire_name="transit_gateway_attachment_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_TransitGatewayConnectPeer_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_TransitGatewayConnectPeer_TagsFields,
         ),
+        "transit_gateway_attachment_id": ubx.FieldSpec(wire_name="transit_gateway_attachment_id"),
     },
 )

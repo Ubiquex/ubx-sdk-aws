@@ -7,216 +7,63 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class CostCategory_Rule_InheritedValue:
-    dimension_key: Any = None
-    dimension_name: Any = None
-
-@dataclasses.dataclass
-class CostCategory_Rule_Rule_And_And_CostCategory:
+class CostCategory_Tags:
+    # The key portion of a tag applied to the AWS Cost Category. (AI-inferred)
     key: Any = None
-    match_options: Any = None
-    values: Any = None
-
-@dataclasses.dataclass
-class CostCategory_Rule_Rule_And_And:
-    cost_category: Any = None
-    dimension: Any = None
-    tags: Any = None
-
-@dataclasses.dataclass
-class CostCategory_Rule_Rule_And:
-    and_: Any = None
-    cost_category: Any = None
-    dimension: Any = None
-    not_: Any = None
-    or_: Any = None
-    tags: Any = None
-
-@dataclasses.dataclass
-class CostCategory_Rule_Rule:
-    and_: Any = None
-    cost_category: Any = None
-    dimension: Any = None
-    not_: Any = None
-    or_: Any = None
-    tags: Any = None
-
-@dataclasses.dataclass
-class CostCategory_Rule:
-    type: Any = None
+    # Specifies the value portion of a user-defined tag (key-value pair) applied to the AWS Cost Category, used to categorize and track cost allocation. (AI-inferred)
     value: Any = None
-    inherited_value: Any = None
-    rule: Any = None
 
-@dataclasses.dataclass
-class CostCategory_SplitChargeRule_Parameter:
-    type: Any = None
-    values: Any = None
-
-@dataclasses.dataclass
-class CostCategory_SplitChargeRule:
-    method: Any = None
-    source: Any = None
-    targets: Any = None
-    parameter: Any = None
-
-_CostCategory_Rule_InheritedValueFields = {
-    "dimension_key": ubx.FieldSpec(wire_name="dimension_key"),
-    "dimension_name": ubx.FieldSpec(wire_name="dimension_name"),
-}
-
-_CostCategory_Rule_Rule_And_And_CostCategoryFields = {
+_CostCategory_TagsFields = {
     "key": ubx.FieldSpec(wire_name="key"),
-    "match_options": ubx.FieldSpec(wire_name="match_options"),
-    "values": ubx.FieldSpec(wire_name="values"),
-}
-
-_CostCategory_Rule_Rule_And_AndFields = {
-    "cost_category": ubx.FieldSpec(
-        wire_name="cost_category",
-        kind="list",
-        fields=_CostCategory_Rule_Rule_And_And_CostCategoryFields,
-    ),
-    "dimension": ubx.FieldSpec(
-        wire_name="dimension",
-        kind="list",
-        fields=_CostCategory_Rule_Rule_And_And_CostCategoryFields,
-    ),
-    "tags": ubx.FieldSpec(
-        wire_name="tags",
-        kind="list",
-        fields=_CostCategory_Rule_Rule_And_And_CostCategoryFields,
-    ),
-}
-
-_CostCategory_Rule_Rule_AndFields = {
-    "and_": ubx.FieldSpec(
-        wire_name="and",
-        kind="set",
-        fields=_CostCategory_Rule_Rule_And_AndFields,
-    ),
-    "cost_category": ubx.FieldSpec(
-        wire_name="cost_category",
-        kind="list",
-        fields=_CostCategory_Rule_Rule_And_And_CostCategoryFields,
-    ),
-    "dimension": ubx.FieldSpec(
-        wire_name="dimension",
-        kind="list",
-        fields=_CostCategory_Rule_Rule_And_And_CostCategoryFields,
-    ),
-    "not_": ubx.FieldSpec(
-        wire_name="not",
-        kind="list",
-        fields=_CostCategory_Rule_Rule_And_AndFields,
-    ),
-    "or_": ubx.FieldSpec(
-        wire_name="or",
-        kind="set",
-        fields=_CostCategory_Rule_Rule_And_AndFields,
-    ),
-    "tags": ubx.FieldSpec(
-        wire_name="tags",
-        kind="list",
-        fields=_CostCategory_Rule_Rule_And_And_CostCategoryFields,
-    ),
-}
-
-_CostCategory_Rule_RuleFields = {
-    "and_": ubx.FieldSpec(
-        wire_name="and",
-        kind="set",
-        fields=_CostCategory_Rule_Rule_AndFields,
-    ),
-    "cost_category": ubx.FieldSpec(
-        wire_name="cost_category",
-        kind="list",
-        fields=_CostCategory_Rule_Rule_And_And_CostCategoryFields,
-    ),
-    "dimension": ubx.FieldSpec(
-        wire_name="dimension",
-        kind="list",
-        fields=_CostCategory_Rule_Rule_And_And_CostCategoryFields,
-    ),
-    "not_": ubx.FieldSpec(
-        wire_name="not",
-        kind="list",
-        fields=_CostCategory_Rule_Rule_AndFields,
-    ),
-    "or_": ubx.FieldSpec(
-        wire_name="or",
-        kind="set",
-        fields=_CostCategory_Rule_Rule_AndFields,
-    ),
-    "tags": ubx.FieldSpec(
-        wire_name="tags",
-        kind="list",
-        fields=_CostCategory_Rule_Rule_And_And_CostCategoryFields,
-    ),
-}
-
-_CostCategory_RuleFields = {
-    "type": ubx.FieldSpec(wire_name="type"),
     "value": ubx.FieldSpec(wire_name="value"),
-    "inherited_value": ubx.FieldSpec(
-        wire_name="inherited_value",
-        kind="list",
-        fields=_CostCategory_Rule_InheritedValueFields,
-    ),
-    "rule": ubx.FieldSpec(
-        wire_name="rule",
-        kind="list",
-        fields=_CostCategory_Rule_RuleFields,
-    ),
-}
-
-_CostCategory_SplitChargeRule_ParameterFields = {
-    "type": ubx.FieldSpec(wire_name="type"),
-    "values": ubx.FieldSpec(wire_name="values"),
-}
-
-_CostCategory_SplitChargeRuleFields = {
-    "method": ubx.FieldSpec(wire_name="method"),
-    "source": ubx.FieldSpec(wire_name="source"),
-    "targets": ubx.FieldSpec(wire_name="targets"),
-    "parameter": ubx.FieldSpec(
-        wire_name="parameter",
-        kind="set",
-        fields=_CostCategory_SplitChargeRule_ParameterFields,
-    ),
 }
 
 @dataclasses.dataclass
 class CostCategoryConfig:
+    # The default value for the cost category
     default_value: Any = None
-    effective_start: Any = None
-    id: Any = None
+    # The name of the cost category, which must be unique within your AWS account and is used to identify the cost category in the AWS Cost Management console and APIs. (AI-inferred)
     name: Any = None
+    # Specifies the version of the cost category rule syntax, which must be set to 'CostCategoryExpression.v1' for the rule expressions. (AI-inferred)
     rule_version: Any = None
+    # JSON array format of Expression in Billing and Cost Management API
+    rules: Any = None
+    # Json array format of CostCategorySplitChargeRule in Billing and Cost Management API
+    split_charge_rules: Any = None
+    # Tags to assign to the cost category.
     tags: Any = None
-    tags_all: Any = None
-    rule: Any = None
-    split_charge_rule: Any = None
+
+@dataclasses.dataclass
+class CostCategoryAttrs:
+    # Cost category ARN
+    arn: Any = None
+    # The default value for the cost category
+    default_value: Any = None
+    # ISO 8601 date time with offset format
+    effective_start: Any = None
+    # The name of the cost category, which must be unique within your AWS account and is used to identify the cost category in the AWS Cost Management console and APIs. (AI-inferred)
+    name: Any = None
+    # Specifies the version of the cost category rule syntax, which must be set to 'CostCategoryExpression.v1' for the rule expressions. (AI-inferred)
+    rule_version: Any = None
+    # JSON array format of Expression in Billing and Cost Management API
+    rules: Any = None
+    # Json array format of CostCategorySplitChargeRule in Billing and Cost Management API
+    split_charge_rules: Any = None
+    # Tags to assign to the cost category.
+    tags: Any = None
 
 CostCategory = ubx.ResourceBinding(
     wire_type="aws_ce_cost_category",
     fields={
         "default_value": ubx.FieldSpec(wire_name="default_value"),
-        "effective_start": ubx.FieldSpec(wire_name="effective_start"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "rule_version": ubx.FieldSpec(wire_name="rule_version"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "rule": ubx.FieldSpec(
-            wire_name="rule",
+        "rules": ubx.FieldSpec(wire_name="rules"),
+        "split_charge_rules": ubx.FieldSpec(wire_name="split_charge_rules"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
             kind="list",
-            fields=_CostCategory_RuleFields,
-        ),
-        "split_charge_rule": ubx.FieldSpec(
-            wire_name="split_charge_rule",
-            kind="set",
-            fields=_CostCategory_SplitChargeRuleFields,
+            fields=_CostCategory_TagsFields,
         ),
     },
 )

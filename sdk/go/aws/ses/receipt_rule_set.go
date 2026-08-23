@@ -4,16 +4,18 @@ package ses
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReceiptRuleSetConfig struct {
-	Id any
-	Region any
+	// The name of the rule set.
+	RuleSetName any
+}
+
+type ReceiptRuleSetAttrs struct {
+	// The name of the rule set.
 	RuleSetName any
 }
 
 var ReceiptRuleSet = ubx.ResourceBinding{
 	WireType: "aws_ses_receipt_rule_set",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RuleSetName": ubx.FieldSpec{WireName: "rule_set_name"},
 	},
 }

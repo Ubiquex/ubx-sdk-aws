@@ -4,13 +4,17 @@ package qldb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Stream_KinesisConfiguration struct {
+	// Indicates whether to enable aggregation of QLDB stream records before they are delivered to Kinesis Data Streams, which groups multiple records into a single Kinesis record to reduce the number of requests. (AI-inferred)
 	AggregationEnabled any
+	// The Amazon Resource Name (ARN) of the Kinesis data stream to which QLDB writes journal data. (AI-inferred)
 	StreamArn any
 }
 
-type Stream_Timeouts struct {
-	Create any
-	Delete any
+type Stream_Tags struct {
+	// The key of a user-defined tag applied to an Amazon QLDB stream, used to organize, identify, and manage the stream resource within AWS. (AI-inferred)
+	Key any
+	// The value component of a tag attached to the Amazon QLDB stream, used to assign metadata to the stream for identification and management. (AI-inferred)
+	Value any
 }
 
 var Stream_KinesisConfigurationFields = ubx.FieldMap{
@@ -18,46 +22,66 @@ var Stream_KinesisConfigurationFields = ubx.FieldMap{
 		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
 	}
 
-var Stream_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var Stream_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type StreamConfig struct {
+	// The exclusive_end_time specifies the date and time at which the QLDB journal stream stops delivering data; if omitted, the stream continues indefinitely. (AI-inferred)
 	ExclusiveEndTime any
-	Id any
+	// The inclusive start time and date (ISO 8601 timestamp) from which the QLDB stream starts capturing journal data, including all revisions committed at or after that exact moment. (AI-inferred)
 	InclusiveStartTime any
-	LedgerName any
-	Region any
-	RoleArn any
-	StreamName any
-	Tags any
-	TagsAll any
+	// Specifies the Amazon Kinesis Data Streams destination for the QLDB stream, including the ARN of the target Kinesis stream and whether aggregation of records is enabled. (AI-inferred)
 	KinesisConfiguration any
-	Timeouts any
+	// The name of the QLDB ledger from which this stream exports data. (AI-inferred)
+	LedgerName any
+	// The ARN of the IAM role that QLDB assumes to write journal data to the destination Kinesis Data Stream. (AI-inferred)
+	RoleArn any
+	// The user-defined name of the QLDB journal stream, which must be unique within the AWS account and region and is used to identify the stream when creating or managing it. (AI-inferred)
+	StreamName any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type StreamAttrs struct {
+	// The Amazon Resource Name (ARN) of the QLDB stream, which uniquely identifies the stream within AWS. (AI-inferred)
+	Arn any
+	// The exclusive_end_time specifies the date and time at which the QLDB journal stream stops delivering data; if omitted, the stream continues indefinitely. (AI-inferred)
+	ExclusiveEndTime any
+	// The unique identifier assigned by AWS to the QLDB stream when it is created. (AI-inferred)
+	Id any
+	// The inclusive start time and date (ISO 8601 timestamp) from which the QLDB stream starts capturing journal data, including all revisions committed at or after that exact moment. (AI-inferred)
+	InclusiveStartTime any
+	// Specifies the Amazon Kinesis Data Streams destination for the QLDB stream, including the ARN of the target Kinesis stream and whether aggregation of records is enabled. (AI-inferred)
+	KinesisConfiguration any
+	// The name of the QLDB ledger from which this stream exports data. (AI-inferred)
+	LedgerName any
+	// The ARN of the IAM role that QLDB assumes to write journal data to the destination Kinesis Data Stream. (AI-inferred)
+	RoleArn any
+	// The user-defined name of the QLDB journal stream, which must be unique within the AWS account and region and is used to identify the stream when creating or managing it. (AI-inferred)
+	StreamName any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Stream = ubx.ResourceBinding{
 	WireType: "aws_qldb_stream",
 	Fields: ubx.FieldMap{
 		"ExclusiveEndTime": ubx.FieldSpec{WireName: "exclusive_end_time"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"InclusiveStartTime": ubx.FieldSpec{WireName: "inclusive_start_time"},
-		"LedgerName": ubx.FieldSpec{WireName: "ledger_name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
 		"KinesisConfiguration": ubx.FieldSpec{
 			WireName: "kinesis_configuration",
-			Kind: "list",
+			Kind: "object",
 			Fields: Stream_KinesisConfigurationFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Stream_TimeoutsFields,
+		"LedgerName": ubx.FieldSpec{WireName: "ledger_name"},
+		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Stream_TagsFields,
 		},
 	},
 }

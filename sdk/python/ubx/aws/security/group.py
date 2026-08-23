@@ -7,80 +7,136 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Group_Egress:
-    cidr_blocks: Any = None
+class Group_SecurityGroupEgress:
+    # The IPv4 address range, in CIDR form, that is allowed as the destination for outbound traffic in this security group egress rule. (AI-inferred)
+    cidr_ip: Any = None
+    # The destination IPv6 CIDR block for the outbound traffic allowed by this security group egress rule, such as ::/0 for all IPv6 addresses. (AI-inferred)
+    cidr_ipv6: Any = None
+    # A human-readable description for the outbound (egress) rule, used to document the rule's purpose or context. (AI-inferred)
     description: Any = None
+    # The ID of the destination prefix list that the egress rule applies to, allowing traffic to the CIDR blocks defined by that prefix list (e.g., for VPC endpoints or managed prefix lists). (AI-inferred)
+    destination_prefix_list_id: Any = None
+    # The ID of the destination security group for this egress rule, which allows outbound traffic to that security group. (AI-inferred)
+    destination_security_group_id: Any = None
+    # The starting port number of the port range for this outbound (egress) rule, defining the lower bound of destination ports permitted for the specified protocol. (AI-inferred)
     from_port: Any = None
-    ipv6_cidr_blocks: Any = None
-    prefix_list_ids: Any = None
-    protocol: Any = None
-    security_groups: Any = None
-    self: Any = None
+    # Specifies the IP protocol name or number (such as tcp, udp, icmp, or -1 for all protocols) that this egress rule applies to. (AI-inferred)
+    ip_protocol: Any = None
+    # The end of the port range (inclusive) for the destination port in this outbound security group rule; for a single port, set it equal to from_port. (AI-inferred)
     to_port: Any = None
 
 @dataclasses.dataclass
-class Group_Timeouts:
-    create: Any = None
-    delete: Any = None
+class Group_SecurityGroupIngress:
+    # The IPv4 CIDR block from which inbound traffic is allowed by this security group ingress rule. (AI-inferred)
+    cidr_ip: Any = None
+    # The IPv6 CIDR block (e.g., 2001:db8::/32) that is allowed to send inbound traffic to the security group. (AI-inferred)
+    cidr_ipv6: Any = None
+    # A brief, human-readable description for the security group ingress rule, used to document its purpose or source, with a maximum length of 255 characters. (AI-inferred)
+    description: Any = None
+    # The starting port number for the inbound rule's port range, or the ICMP type number when the protocol is ICMP. (AI-inferred)
+    from_port: Any = None
+    # Specifies the IP protocol name (such as tcp, udp, or icmp), a protocol number, or ' -1 ' to represent all protocols, for the ingress rule. (AI-inferred)
+    ip_protocol: Any = None
+    # The ID of an AWS prefix list (such as a managed prefix list for AWS services or VPC endpoints) that serves as the source of the inbound traffic permitted by this ingress rule. (AI-inferred)
+    source_prefix_list_id: Any = None
+    # Specifies the ID of the source security group (in the same VPC or a peer VPC) whose instances are allowed to send inbound traffic to this security group, used as the SourceSecurityGroupId property of a security group ingress rule. (AI-inferred)
+    source_security_group_id: Any = None
+    # The name of the source security group whose members are allowed inbound access by this ingress rule; this is used for EC2-Classic rules, whereas VPC security groups usually reference the source by its `SourceSecurityGroupId` instead. (AI-inferred)
+    source_security_group_name: Any = None
+    # The AWS account ID of the owner of the referenced source security group, required when the source security group belongs to a different AWS account. (AI-inferred)
+    source_security_group_owner_id: Any = None
+    # The ending port number of the range for this ingress rule; for a single port, specify the same value as from_port. (AI-inferred)
+    to_port: Any = None
 
-_Group_EgressFields = {
-    "cidr_blocks": ubx.FieldSpec(wire_name="cidr_blocks"),
+@dataclasses.dataclass
+class Group_Tags:
+    # The key of a tag assigned to the security group, used to organize and identify the resource. (AI-inferred)
+    key: Any = None
+    value: Any = None
+
+_Group_SecurityGroupEgressFields = {
+    "cidr_ip": ubx.FieldSpec(wire_name="cidr_ip"),
+    "cidr_ipv6": ubx.FieldSpec(wire_name="cidr_ipv6"),
     "description": ubx.FieldSpec(wire_name="description"),
+    "destination_prefix_list_id": ubx.FieldSpec(wire_name="destination_prefix_list_id"),
+    "destination_security_group_id": ubx.FieldSpec(wire_name="destination_security_group_id"),
     "from_port": ubx.FieldSpec(wire_name="from_port"),
-    "ipv6_cidr_blocks": ubx.FieldSpec(wire_name="ipv6_cidr_blocks"),
-    "prefix_list_ids": ubx.FieldSpec(wire_name="prefix_list_ids"),
-    "protocol": ubx.FieldSpec(wire_name="protocol"),
-    "security_groups": ubx.FieldSpec(wire_name="security_groups"),
-    "self": ubx.FieldSpec(wire_name="self"),
+    "ip_protocol": ubx.FieldSpec(wire_name="ip_protocol"),
     "to_port": ubx.FieldSpec(wire_name="to_port"),
 }
 
-_Group_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_Group_SecurityGroupIngressFields = {
+    "cidr_ip": ubx.FieldSpec(wire_name="cidr_ip"),
+    "cidr_ipv6": ubx.FieldSpec(wire_name="cidr_ipv6"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "from_port": ubx.FieldSpec(wire_name="from_port"),
+    "ip_protocol": ubx.FieldSpec(wire_name="ip_protocol"),
+    "source_prefix_list_id": ubx.FieldSpec(wire_name="source_prefix_list_id"),
+    "source_security_group_id": ubx.FieldSpec(wire_name="source_security_group_id"),
+    "source_security_group_name": ubx.FieldSpec(wire_name="source_security_group_name"),
+    "source_security_group_owner_id": ubx.FieldSpec(wire_name="source_security_group_owner_id"),
+    "to_port": ubx.FieldSpec(wire_name="to_port"),
+}
+
+_Group_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class GroupConfig:
-    description: Any = None
-    egress: Any = None
-    id: Any = None
-    ingress: Any = None
-    name: Any = None
-    name_prefix: Any = None
-    region: Any = None
-    revoke_rules_on_delete: Any = None
+    # A description for the security group.
+    group_description: Any = None
+    # The name of the security group.
+    group_name: Any = None
+    # [VPC only] The outbound rules associated with the security group. There is a short interruption during which you cannot connect to the security group.
+    security_group_egress: Any = None
+    # The inbound rules associated with the security group. There is a short interruption during which you cannot connect to the security group.
+    security_group_ingress: Any = None
+    # Any tags assigned to the security group.
     tags: Any = None
-    tags_all: Any = None
+    # The ID of the VPC for the security group.
     vpc_id: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class GroupAttrs:
+    # A description for the security group.
+    group_description: Any = None
+    # The group ID of the specified security group.
+    group_id: Any = None
+    # The name of the security group.
+    group_name: Any = None
+    # The group name or group ID depending on whether the SG is created in default or specific VPC
+    id: Any = None
+    # [VPC only] The outbound rules associated with the security group. There is a short interruption during which you cannot connect to the security group.
+    security_group_egress: Any = None
+    # The inbound rules associated with the security group. There is a short interruption during which you cannot connect to the security group.
+    security_group_ingress: Any = None
+    # Any tags assigned to the security group.
+    tags: Any = None
+    # The ID of the VPC for the security group.
+    vpc_id: Any = None
 
 Group = ubx.ResourceBinding(
     wire_type="aws_security_group",
     fields={
-        "description": ubx.FieldSpec(wire_name="description"),
-        "egress": ubx.FieldSpec(
-            wire_name="egress",
-            kind="set",
-            fields=_Group_EgressFields,
+        "group_description": ubx.FieldSpec(wire_name="group_description"),
+        "group_name": ubx.FieldSpec(wire_name="group_name"),
+        "security_group_egress": ubx.FieldSpec(
+            wire_name="security_group_egress",
+            kind="list",
+            fields=_Group_SecurityGroupEgressFields,
         ),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "ingress": ubx.FieldSpec(
-            wire_name="ingress",
-            kind="set",
-            fields=_Group_EgressFields,
+        "security_group_ingress": ubx.FieldSpec(
+            wire_name="security_group_ingress",
+            kind="list",
+            fields=_Group_SecurityGroupIngressFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "revoke_rules_on_delete": ubx.FieldSpec(wire_name="revoke_rules_on_delete"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Group_TagsFields,
+        ),
         "vpc_id": ubx.FieldSpec(wire_name="vpc_id"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Group_TimeoutsFields,
-        ),
     },
 )

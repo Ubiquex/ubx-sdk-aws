@@ -4,30 +4,42 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypes struct {
+	// Specifies the list of AWS resource types that will be excluded from recording by the configuration recorder. (AI-inferred)
 	ResourceTypes any
 }
 
 type ConfigurationRecorder_RecordingGroup_RecordingStrategy struct {
+	// Defines the recording strategy for the configuration recorder, with values such as ALL_SUPPORTED_RESOURCE_TYPES to record all supported resource types, INCLUDE_SPECIFIED_RESOURCE_TYPES to record only those listed in the recording group's resourceTypes, or EXCLUDE_SPECIFIED_RESOURCE_TYPES to record all except those listed. (AI-inferred)
 	UseOnly any
 }
 
 type ConfigurationRecorder_RecordingGroup struct {
+	// When set to true, AWS Config records configuration changes for all supported AWS resource types in the region. (AI-inferred)
 	AllSupported any
-	IncludeGlobalResourceTypes any
-	ResourceTypes any
+	// Specifies the resource types to exclude from being recorded by AWS Config, allowing you to record all supported types except those listed when allSupported is enabled. (AI-inferred)
 	ExclusionByResourceTypes any
+	// Indicates whether AWS Config records configuration changes to global resource types (such as IAM users, groups, roles, and customer managed policies) across all regions. (AI-inferred)
+	IncludeGlobalResourceTypes any
+	// Defines the recording strategy for AWS Config, specifying whether to record all supported resource types, only included resource types, or all except excluded resource types. (AI-inferred)
 	RecordingStrategy any
+	// Specifies the list of AWS resource types to be recorded by AWS Config; if omitted or empty, AWS Config records all supported resource types. (AI-inferred)
+	ResourceTypes any
 }
 
-type ConfigurationRecorder_RecordingMode_RecordingModeOverride struct {
+type ConfigurationRecorder_RecordingMode_RecordingModeOverrides struct {
+	// A description that you provide for this recording mode override, explaining its purpose or distinguishing it from other overrides for specific resource types. (AI-inferred)
 	Description any
+	// Specifies how often AWS Config records configuration changes for the resource types in this override, either CONTINUOUS for real-time recording or DAILY for a single daily snapshot. (AI-inferred)
 	RecordingFrequency any
+	// Lists the AWS resource types (e.g., 'AWS::EC2::Instance') for which this recording mode override applies, allowing a different recording frequency to be set for those specific resources. (AI-inferred)
 	ResourceTypes any
 }
 
 type ConfigurationRecorder_RecordingMode struct {
+	// Specifies how often AWS Config records configuration changes for the resources in scope, either continuously or on a daily basis. (AI-inferred)
 	RecordingFrequency any
-	RecordingModeOverride any
+	// Specifies a list of overrides that set the recording mode (either CONTINUOUS or RECORD_ONLY) for specific AWS resource types, allowing you to customize recording behavior on a per-resource-type basis within the configuration recorder's recording mode. (AI-inferred)
+	RecordingModeOverrides any
 }
 
 var ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypesFields = ubx.FieldMap{
@@ -40,21 +52,21 @@ var ConfigurationRecorder_RecordingGroup_RecordingStrategyFields = ubx.FieldMap{
 
 var ConfigurationRecorder_RecordingGroupFields = ubx.FieldMap{
 		"AllSupported": ubx.FieldSpec{WireName: "all_supported"},
-		"IncludeGlobalResourceTypes": ubx.FieldSpec{WireName: "include_global_resource_types"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
 		"ExclusionByResourceTypes": ubx.FieldSpec{
 			WireName: "exclusion_by_resource_types",
-			Kind: "list",
+			Kind: "object",
 			Fields: ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypesFields,
 		},
+		"IncludeGlobalResourceTypes": ubx.FieldSpec{WireName: "include_global_resource_types"},
 		"RecordingStrategy": ubx.FieldSpec{
 			WireName: "recording_strategy",
-			Kind: "list",
+			Kind: "object",
 			Fields: ConfigurationRecorder_RecordingGroup_RecordingStrategyFields,
 		},
+		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
 	}
 
-var ConfigurationRecorder_RecordingMode_RecordingModeOverrideFields = ubx.FieldMap{
+var ConfigurationRecorder_RecordingMode_RecordingModeOverridesFields = ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"RecordingFrequency": ubx.FieldSpec{WireName: "recording_frequency"},
 		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
@@ -62,38 +74,51 @@ var ConfigurationRecorder_RecordingMode_RecordingModeOverrideFields = ubx.FieldM
 
 var ConfigurationRecorder_RecordingModeFields = ubx.FieldMap{
 		"RecordingFrequency": ubx.FieldSpec{WireName: "recording_frequency"},
-		"RecordingModeOverride": ubx.FieldSpec{
-			WireName: "recording_mode_override",
+		"RecordingModeOverrides": ubx.FieldSpec{
+			WireName: "recording_mode_overrides",
 			Kind: "list",
-			Fields: ConfigurationRecorder_RecordingMode_RecordingModeOverrideFields,
+			Fields: ConfigurationRecorder_RecordingMode_RecordingModeOverridesFields,
 		},
 	}
 
 type ConfigurationRecorderConfig struct {
-	Id any
+	// The name of the configuration recorder, which must be unique within the region and defaults to 'default' if not specified. (AI-inferred)
 	Name any
-	Region any
-	RoleArn any
+	// Specifies which AWS resource types are recorded by the configuration recorder, including whether to record all supported resource types and global resource types like IAM resources. (AI-inferred)
 	RecordingGroup any
+	// Specifies the recording frequency (continuous or periodic) that controls how often AWS Config records configuration changes for supported resources. (AI-inferred)
 	RecordingMode any
+	// The Amazon Resource Name (ARN) of the IAM role that AWS Config uses to record resource changes and deliver them to the delivery channel. (AI-inferred)
+	RoleArn any
+}
+
+type ConfigurationRecorderAttrs struct {
+	// The physical resource ID of the configuration recorder, which is the same as its user-defined Name. (AI-inferred)
+	Id any
+	// The name of the configuration recorder, which must be unique within the region and defaults to 'default' if not specified. (AI-inferred)
+	Name any
+	// Specifies which AWS resource types are recorded by the configuration recorder, including whether to record all supported resource types and global resource types like IAM resources. (AI-inferred)
+	RecordingGroup any
+	// Specifies the recording frequency (continuous or periodic) that controls how often AWS Config records configuration changes for supported resources. (AI-inferred)
+	RecordingMode any
+	// The Amazon Resource Name (ARN) of the IAM role that AWS Config uses to record resource changes and deliver them to the delivery channel. (AI-inferred)
+	RoleArn any
 }
 
 var ConfigurationRecorder = ubx.ResourceBinding{
 	WireType: "aws_config_configuration_recorder",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"RecordingGroup": ubx.FieldSpec{
 			WireName: "recording_group",
-			Kind: "list",
+			Kind: "object",
 			Fields: ConfigurationRecorder_RecordingGroupFields,
 		},
 		"RecordingMode": ubx.FieldSpec{
 			WireName: "recording_mode",
-			Kind: "list",
+			Kind: "object",
 			Fields: ConfigurationRecorder_RecordingModeFields,
 		},
+		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 	},
 }

@@ -7,106 +7,226 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Replicator_KafkaCluster_AmazonMskCluster:
+class Replicator_KafkaClusters_AmazonMskCluster:
+    # The ARN of an Amazon MSK cluster that is included in the replicator's set of Kafka clusters, serving as a source or target for replication. (AI-inferred)
     msk_cluster_arn: Any = None
 
 @dataclasses.dataclass
-class Replicator_KafkaCluster_VpcConfig:
-    security_groups_ids: Any = None
+class Replicator_KafkaClusters_ApacheKafkaCluster:
+    # A unique user-supplied string that identifies the self-managed Apache Kafka cluster so the MSK replicator can reference it in the replication info. (AI-inferred)
+    apache_kafka_cluster_id: Any = None
+    # The bootstrap broker string (comma-separated list of host:port pairs) of the self-managed Apache Kafka cluster used as a source or target for replication. (AI-inferred)
+    bootstrap_broker_string: Any = None
+
+@dataclasses.dataclass
+class Replicator_KafkaClusters_ClientAuthentication_Mtls:
+    # The ARN of the AWS Secrets Manager secret containing the client certificate and private key used for mutual TLS authentication when connecting to this Kafka cluster. (AI-inferred)
+    secret_arn: Any = None
+
+@dataclasses.dataclass
+class Replicator_KafkaClusters_ClientAuthentication_SaslScram:
+    # Specifies the SASL/SCRAM authentication mechanism (e.g., SCRAM-SHA-512) used by the replicator to connect to the Kafka cluster. (AI-inferred)
+    mechanism: Any = None
+    # The ARN of the AWS Secrets Manager secret that stores the SASL/SCRAM credentials used to authenticate to the Kafka cluster. (AI-inferred)
+    secret_arn: Any = None
+
+@dataclasses.dataclass
+class Replicator_KafkaClusters_ClientAuthentication:
+    mtls: Any = None
+    # Specifies SASL/SCRAM authentication settings for the associated Kafka cluster, including an 'Enabled' flag that determines whether the replicator uses SASL/SCRAM authentication when connecting to the cluster. (AI-inferred)
+    sasl_scram: Any = None
+
+@dataclasses.dataclass
+class Replicator_KafkaClusters_EncryptionInTransit:
+    # Sets the encryption-in-transit type (either 'TLS' or 'PLAINTEXT') that the MSK replicator uses when communicating with this Kafka cluster. (AI-inferred)
+    encryption_type: Any = None
+    # The root CA certificate (in PEM format) used to validate the Kafka broker's certificate when establishing an encrypted TLS connection to the source or target Kafka cluster. (AI-inferred)
+    root_ca_certificate: Any = None
+
+@dataclasses.dataclass
+class Replicator_KafkaClusters_VpcConfig:
+    # Specifies the security groups that the MSK replicator uses to access the Kafka cluster in its VPC. (AI-inferred)
+    security_group_ids: Any = None
+    # Specifies the list of subnet IDs in the VPC where the Kafka cluster's network interfaces are deployed for the replicator to communicate with the cluster. (AI-inferred)
     subnet_ids: Any = None
 
 @dataclasses.dataclass
-class Replicator_KafkaCluster:
+class Replicator_KafkaClusters:
+    # Defines the Amazon MSK cluster details (containing the MSK cluster ARN) for a source or destination Kafka cluster in the replicator. (AI-inferred)
     amazon_msk_cluster: Any = None
+    # Configuration for a self-managed Apache Kafka cluster used as a source or target in the MSK replicator, specifying the bootstrap broker string and VPC settings for network connectivity. (AI-inferred)
+    apache_kafka_cluster: Any = None
+    # The client_authentication property specifies the authentication mechanism (such as IAM, TLS, or SASL/SCRAM) used by the replicator to securely connect to this Kafka cluster during replication. (AI-inferred)
+    client_authentication: Any = None
+    # Configures encryption-in-transit settings for the connection to this Kafka cluster, specifying whether TLS is used (e.g., TLS or PLAINTEXT). (AI-inferred)
+    encryption_in_transit: Any = None
+    # Specifies the VPC configuration for the Kafka cluster, including the subnets and security groups used for network access to the cluster. (AI-inferred)
     vpc_config: Any = None
 
 @dataclasses.dataclass
-class Replicator_LogDelivery_ReplicatorLogDelivery_CloudwatchLogs:
+class Replicator_LogDelivery_ReplicatorLogDelivery_CloudWatchLogs:
+    # Whether log delivery to CloudWatch Logs is enabled.
     enabled: Any = None
+    # The CloudWatch log group that is the destination for log delivery.
     log_group: Any = None
 
 @dataclasses.dataclass
 class Replicator_LogDelivery_ReplicatorLogDelivery_Firehose:
+    # The Firehose delivery stream that is the destination for log delivery.
     delivery_stream: Any = None
+    # Whether log delivery to Firehose is enabled.
     enabled: Any = None
 
 @dataclasses.dataclass
 class Replicator_LogDelivery_ReplicatorLogDelivery_S3:
+    # The S3 bucket that is the destination for log delivery.
     bucket: Any = None
+    # Whether log delivery to S3 is enabled.
     enabled: Any = None
+    # The S3 prefix that is the destination for log delivery.
     prefix: Any = None
 
 @dataclasses.dataclass
 class Replicator_LogDelivery_ReplicatorLogDelivery:
-    cloudwatch_logs: Any = None
+    # Details about delivering logs to CloudWatch Logs.
+    cloud_watch_logs: Any = None
+    # Details about delivering logs to Firehose.
     firehose: Any = None
+    # Details about delivering logs to S3.
     s3: Any = None
 
 @dataclasses.dataclass
 class Replicator_LogDelivery:
+    # Details of the log delivery for the replicator.
     replicator_log_delivery: Any = None
 
 @dataclasses.dataclass
 class Replicator_ReplicationInfoList_ConsumerGroupReplication:
+    # Determines how consumer group offsets are synchronized from the source Kafka cluster to the target Kafka cluster during replication. (AI-inferred)
     consumer_group_offset_sync_mode: Any = None
+    # The list of consumer group names to exclude from being replicated by the MSK Replicator for this replication pair, meaning their offsets will not be copied between clusters. (AI-inferred)
     consumer_groups_to_exclude: Any = None
+    # A list of consumer group names whose offsets will be replicated from the source Kafka cluster to the target cluster as part of the MSK Replicator's consumer group replication. (AI-inferred)
     consumer_groups_to_replicate: Any = None
+    # Indicates whether to automatically detect and replicate newly created consumer groups to the target cluster during ongoing replication. (AI-inferred)
     detect_and_copy_new_consumer_groups: Any = None
+    # Specifies whether to periodically synchronize consumer group offsets from the source Kafka cluster to the target cluster, ensuring that consumer group positions are kept in sync for failover or migration scenarios. (AI-inferred)
     synchronise_consumer_group_offsets: Any = None
 
 @dataclasses.dataclass
 class Replicator_ReplicationInfoList_TopicReplication_StartingPosition:
+    # Determines whether topic replication starts from the latest offset (LATEST) or the earliest available offset (EARLIEST) in the source cluster. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Replicator_ReplicationInfoList_TopicReplication:
+    # Whether to copy access control lists (ACLs) for topics from the source cluster to the target cluster in the MSK replicator. (AI-inferred)
     copy_access_control_lists_for_topics: Any = None
+    # Indicates whether topic configurations (such as topic-level settings) are copied from the source cluster to the target cluster during replication. (AI-inferred)
     copy_topic_configurations: Any = None
+    # When enabled, the replicator automatically detects newly created topics in the source cluster and begins replicating them to the target cluster. (AI-inferred)
     detect_and_copy_new_topics: Any = None
-    topics_to_exclude: Any = None
-    topics_to_replicate: Any = None
+    # Specifies where the replicator starts reading topics from in the source cluster, using either the latest or earliest offset to determine the initial synchronization point. (AI-inferred)
     starting_position: Any = None
+    # Specifies the configuration for how replicated topic names are derived, such as using the same name or prefixing with the source alias. (AI-inferred)
     topic_name_configuration: Any = None
+    # Specifies the list of Kafka topic names that are excluded from replication, meaning these topics will not be replicated to the destination cluster. (AI-inferred)
+    topics_to_exclude: Any = None
+    # A list of Kafka topic names to replicate from the source cluster to the target cluster. (AI-inferred)
+    topics_to_replicate: Any = None
 
 @dataclasses.dataclass
 class Replicator_ReplicationInfoList:
-    source_kafka_cluster_alias: Any = None
-    source_kafka_cluster_arn: Any = None
-    target_compression_type: Any = None
-    target_kafka_cluster_alias: Any = None
-    target_kafka_cluster_arn: Any = None
+    # Defines the configuration for replicating consumer groups between the source and target Kafka clusters, including the list of consumer group names to replicate and whether to synchronize their offsets. (AI-inferred)
     consumer_group_replication: Any = None
+    # The ARN of the source Kafka cluster from which the replicator replicates data, specified within each replication info entry. (AI-inferred)
+    source_kafka_cluster_arn: Any = None
+    # The identifier of the source Apache Kafka cluster from which data is replicated within a replication configuration. (AI-inferred)
+    source_kafka_cluster_id: Any = None
+    # Defines the compression type (e.g., NONE, GZIP, SNAPPY, LZ4, ZSTD) applied to the topic data as it is replicated from the source cluster to the target cluster in the MSK Replicator. (AI-inferred)
+    target_compression_type: Any = None
+    # In each replication info entry, the ARN of the target Kafka cluster to which the replicator replicates data. (AI-inferred)
+    target_kafka_cluster_arn: Any = None
+    # The identifier (typically the ARN) of the target Kafka cluster that this replication entry replicates topics and consumer group data to. (AI-inferred)
+    target_kafka_cluster_id: Any = None
+    # Specifies the topic replication configuration for a given replication pair, including which topics to replicate, the starting position for reading records, and how topic names are handled. (AI-inferred)
     topic_replication: Any = None
 
 @dataclasses.dataclass
-class Replicator_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Replicator_Tags:
+    key: Any = None
+    value: Any = None
 
-_Replicator_KafkaCluster_AmazonMskClusterFields = {
+_Replicator_KafkaClusters_AmazonMskClusterFields = {
     "msk_cluster_arn": ubx.FieldSpec(wire_name="msk_cluster_arn"),
 }
 
-_Replicator_KafkaCluster_VpcConfigFields = {
-    "security_groups_ids": ubx.FieldSpec(wire_name="security_groups_ids"),
+_Replicator_KafkaClusters_ApacheKafkaClusterFields = {
+    "apache_kafka_cluster_id": ubx.FieldSpec(wire_name="apache_kafka_cluster_id"),
+    "bootstrap_broker_string": ubx.FieldSpec(wire_name="bootstrap_broker_string"),
+}
+
+_Replicator_KafkaClusters_ClientAuthentication_MtlsFields = {
+    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
+}
+
+_Replicator_KafkaClusters_ClientAuthentication_SaslScramFields = {
+    "mechanism": ubx.FieldSpec(wire_name="mechanism"),
+    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
+}
+
+_Replicator_KafkaClusters_ClientAuthenticationFields = {
+    "mtls": ubx.FieldSpec(
+        wire_name="mtls",
+        kind="object",
+        fields=_Replicator_KafkaClusters_ClientAuthentication_MtlsFields,
+    ),
+    "sasl_scram": ubx.FieldSpec(
+        wire_name="sasl_scram",
+        kind="object",
+        fields=_Replicator_KafkaClusters_ClientAuthentication_SaslScramFields,
+    ),
+}
+
+_Replicator_KafkaClusters_EncryptionInTransitFields = {
+    "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
+    "root_ca_certificate": ubx.FieldSpec(wire_name="root_ca_certificate"),
+}
+
+_Replicator_KafkaClusters_VpcConfigFields = {
+    "security_group_ids": ubx.FieldSpec(wire_name="security_group_ids"),
     "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
 }
 
-_Replicator_KafkaClusterFields = {
+_Replicator_KafkaClustersFields = {
     "amazon_msk_cluster": ubx.FieldSpec(
         wire_name="amazon_msk_cluster",
-        kind="list",
-        fields=_Replicator_KafkaCluster_AmazonMskClusterFields,
+        kind="object",
+        fields=_Replicator_KafkaClusters_AmazonMskClusterFields,
+    ),
+    "apache_kafka_cluster": ubx.FieldSpec(
+        wire_name="apache_kafka_cluster",
+        kind="object",
+        fields=_Replicator_KafkaClusters_ApacheKafkaClusterFields,
+    ),
+    "client_authentication": ubx.FieldSpec(
+        wire_name="client_authentication",
+        kind="object",
+        fields=_Replicator_KafkaClusters_ClientAuthenticationFields,
+    ),
+    "encryption_in_transit": ubx.FieldSpec(
+        wire_name="encryption_in_transit",
+        kind="object",
+        fields=_Replicator_KafkaClusters_EncryptionInTransitFields,
     ),
     "vpc_config": ubx.FieldSpec(
         wire_name="vpc_config",
-        kind="list",
-        fields=_Replicator_KafkaCluster_VpcConfigFields,
+        kind="object",
+        fields=_Replicator_KafkaClusters_VpcConfigFields,
     ),
 }
 
-_Replicator_LogDelivery_ReplicatorLogDelivery_CloudwatchLogsFields = {
+_Replicator_LogDelivery_ReplicatorLogDelivery_CloudWatchLogsFields = {
     "enabled": ubx.FieldSpec(wire_name="enabled"),
     "log_group": ubx.FieldSpec(wire_name="log_group"),
 }
@@ -123,19 +243,19 @@ _Replicator_LogDelivery_ReplicatorLogDelivery_S3Fields = {
 }
 
 _Replicator_LogDelivery_ReplicatorLogDeliveryFields = {
-    "cloudwatch_logs": ubx.FieldSpec(
-        wire_name="cloudwatch_logs",
-        kind="list",
-        fields=_Replicator_LogDelivery_ReplicatorLogDelivery_CloudwatchLogsFields,
+    "cloud_watch_logs": ubx.FieldSpec(
+        wire_name="cloud_watch_logs",
+        kind="object",
+        fields=_Replicator_LogDelivery_ReplicatorLogDelivery_CloudWatchLogsFields,
     ),
     "firehose": ubx.FieldSpec(
         wire_name="firehose",
-        kind="list",
+        kind="object",
         fields=_Replicator_LogDelivery_ReplicatorLogDelivery_FirehoseFields,
     ),
     "s3": ubx.FieldSpec(
         wire_name="s3",
-        kind="list",
+        kind="object",
         fields=_Replicator_LogDelivery_ReplicatorLogDelivery_S3Fields,
     ),
 }
@@ -143,7 +263,7 @@ _Replicator_LogDelivery_ReplicatorLogDeliveryFields = {
 _Replicator_LogDeliveryFields = {
     "replicator_log_delivery": ubx.FieldSpec(
         wire_name="replicator_log_delivery",
-        kind="list",
+        kind="object",
         fields=_Replicator_LogDelivery_ReplicatorLogDeliveryFields,
     ),
 }
@@ -164,76 +284,93 @@ _Replicator_ReplicationInfoList_TopicReplicationFields = {
     "copy_access_control_lists_for_topics": ubx.FieldSpec(wire_name="copy_access_control_lists_for_topics"),
     "copy_topic_configurations": ubx.FieldSpec(wire_name="copy_topic_configurations"),
     "detect_and_copy_new_topics": ubx.FieldSpec(wire_name="detect_and_copy_new_topics"),
-    "topics_to_exclude": ubx.FieldSpec(wire_name="topics_to_exclude"),
-    "topics_to_replicate": ubx.FieldSpec(wire_name="topics_to_replicate"),
     "starting_position": ubx.FieldSpec(
         wire_name="starting_position",
-        kind="list",
+        kind="object",
         fields=_Replicator_ReplicationInfoList_TopicReplication_StartingPositionFields,
     ),
     "topic_name_configuration": ubx.FieldSpec(
         wire_name="topic_name_configuration",
-        kind="list",
+        kind="object",
         fields=_Replicator_ReplicationInfoList_TopicReplication_StartingPositionFields,
     ),
+    "topics_to_exclude": ubx.FieldSpec(wire_name="topics_to_exclude"),
+    "topics_to_replicate": ubx.FieldSpec(wire_name="topics_to_replicate"),
 }
 
 _Replicator_ReplicationInfoListFields = {
-    "source_kafka_cluster_alias": ubx.FieldSpec(wire_name="source_kafka_cluster_alias"),
-    "source_kafka_cluster_arn": ubx.FieldSpec(wire_name="source_kafka_cluster_arn"),
-    "target_compression_type": ubx.FieldSpec(wire_name="target_compression_type"),
-    "target_kafka_cluster_alias": ubx.FieldSpec(wire_name="target_kafka_cluster_alias"),
-    "target_kafka_cluster_arn": ubx.FieldSpec(wire_name="target_kafka_cluster_arn"),
     "consumer_group_replication": ubx.FieldSpec(
         wire_name="consumer_group_replication",
-        kind="list",
+        kind="object",
         fields=_Replicator_ReplicationInfoList_ConsumerGroupReplicationFields,
     ),
+    "source_kafka_cluster_arn": ubx.FieldSpec(wire_name="source_kafka_cluster_arn"),
+    "source_kafka_cluster_id": ubx.FieldSpec(wire_name="source_kafka_cluster_id"),
+    "target_compression_type": ubx.FieldSpec(wire_name="target_compression_type"),
+    "target_kafka_cluster_arn": ubx.FieldSpec(wire_name="target_kafka_cluster_arn"),
+    "target_kafka_cluster_id": ubx.FieldSpec(wire_name="target_kafka_cluster_id"),
     "topic_replication": ubx.FieldSpec(
         wire_name="topic_replication",
-        kind="list",
+        kind="object",
         fields=_Replicator_ReplicationInfoList_TopicReplicationFields,
     ),
 }
 
-_Replicator_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Replicator_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ReplicatorConfig:
+    # A summary description of the replicator.
     description: Any = None
-    id: Any = None
-    region: Any = None
-    replicator_name: Any = None
-    service_execution_role_arn: Any = None
-    tags: Any = None
-    tags_all: Any = None
-    kafka_cluster: Any = None
+    # Specifies a list of Kafka clusters which are targets of the replicator.
+    kafka_clusters: Any = None
+    # Configuration for log delivery for the replicator.
     log_delivery: Any = None
+    # A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.
     replication_info_list: Any = None
-    timeouts: Any = None
+    # The name of the replicator.
+    replicator_name: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role used by the replicator to access external resources.
+    service_execution_role_arn: Any = None
+    # A collection of tags associated with a resource
+    tags: Any = None
+
+@dataclasses.dataclass
+class ReplicatorAttrs:
+    # The current version of the MSK replicator.
+    current_version: Any = None
+    # A summary description of the replicator.
+    description: Any = None
+    # Specifies a list of Kafka clusters which are targets of the replicator.
+    kafka_clusters: Any = None
+    # Configuration for log delivery for the replicator.
+    log_delivery: Any = None
+    # A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.
+    replication_info_list: Any = None
+    # Amazon Resource Name for the created replicator.
+    replicator_arn: Any = None
+    # The name of the replicator.
+    replicator_name: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role used by the replicator to access external resources.
+    service_execution_role_arn: Any = None
+    # A collection of tags associated with a resource
+    tags: Any = None
 
 Replicator = ubx.ResourceBinding(
     wire_type="aws_msk_replicator",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "replicator_name": ubx.FieldSpec(wire_name="replicator_name"),
-        "service_execution_role_arn": ubx.FieldSpec(wire_name="service_execution_role_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "kafka_cluster": ubx.FieldSpec(
-            wire_name="kafka_cluster",
+        "kafka_clusters": ubx.FieldSpec(
+            wire_name="kafka_clusters",
             kind="list",
-            fields=_Replicator_KafkaClusterFields,
+            fields=_Replicator_KafkaClustersFields,
         ),
         "log_delivery": ubx.FieldSpec(
             wire_name="log_delivery",
-            kind="list",
+            kind="object",
             fields=_Replicator_LogDeliveryFields,
         ),
         "replication_info_list": ubx.FieldSpec(
@@ -241,10 +378,12 @@ Replicator = ubx.ResourceBinding(
             kind="list",
             fields=_Replicator_ReplicationInfoListFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Replicator_TimeoutsFields,
+        "replicator_name": ubx.FieldSpec(wire_name="replicator_name"),
+        "service_execution_role_arn": ubx.FieldSpec(wire_name="service_execution_role_arn"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Replicator_TagsFields,
         ),
     },
 )

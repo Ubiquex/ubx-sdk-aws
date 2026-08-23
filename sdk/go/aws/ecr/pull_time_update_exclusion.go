@@ -4,14 +4,18 @@ package ecr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PullTimeUpdateExclusionConfig struct {
+	// Principal arn that should not update image pull times.
 	PrincipalArn any
-	Region any
+}
+
+type PullTimeUpdateExclusionAttrs struct {
+	// Principal arn that should not update image pull times.
+	PrincipalArn any
 }
 
 var PullTimeUpdateExclusion = ubx.ResourceBinding{
 	WireType: "aws_ecr_pull_time_update_exclusion",
 	Fields: ubx.FieldMap{
 		"PrincipalArn": ubx.FieldSpec{WireName: "principal_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 	},
 }

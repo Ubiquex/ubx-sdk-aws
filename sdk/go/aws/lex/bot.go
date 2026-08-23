@@ -3,125 +3,2219 @@ package lex
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Bot_AbortStatement_Message struct {
-	Content any
-	ContentType any
-	GroupNumber any
+type Bot_BotFileS3Location struct {
+	// The name of the Amazon S3 bucket that contains the bot definition file referenced by this location. (AI-inferred)
+	S3Bucket any
+	// The S3 object key (path) of the JSON file that defines the bot, used when the bot's definition is stored in an S3 bucket. (AI-inferred)
+	S3ObjectKey any
+	// Specifies the version ID of the S3 object that contains the bot definition file, allowing retrieval of a specific version when S3 versioning is enabled on the bucket. (AI-inferred)
+	S3ObjectVersion any
 }
 
-type Bot_AbortStatement struct {
-	ResponseCard any
+type Bot_BotLocales_AudioFillerSettings struct {
+	// Specifies the type of audio filler (SILENCE or NOISE) that Amazon Lex uses to manage gaps in speech within a bot locale. (AI-inferred)
+	AudioType any
+	// Whether the bot locale uses audio filler, which plays brief audio during pauses to make conversations feel more natural. (AI-inferred)
+	Enabled any
+	// Specifies the minimum length of time, in milliseconds, that audio filler (e.g., a beep or spoken filler like 'um') is played during a conversation pause, so that the filler is not interrupted too abruptly when the user resumes speaking. (AI-inferred)
+	MinimumPlayDurationInMilliseconds any
+	// The delay in milliseconds that Amazon Lex waits before delivering the audio filler response to the user in the specified bot locale, used to prevent premature audio interruption during silence or barge-in. (AI-inferred)
+	ResponseDeliveryDelayInMilliseconds any
+	// The number of milliseconds that Amazon Lex waits before playing audio filler in a bot locale when a user pauses during a conversation. (AI-inferred)
+	StartDelayInMilliseconds any
+}
+
+type Bot_BotLocales_CustomVocabulary_CustomVocabularyItems struct {
+	// Specifies the alternate display text used in conversation transcripts for this custom vocabulary item, replacing the raw phrase for readability. (AI-inferred)
+	DisplayAs any
+	// The word or phrase to add to the custom vocabulary for a Lex V2 bot locale, enabling the service to recognize and handle this expression in speech recognition. (AI-inferred)
+	Phrase any
+	// Sets the relative preference (1-3) that Amazon Lex gives to this custom vocabulary item when matching speech input against the phrase. (AI-inferred)
+	Weight any
+}
+
+type Bot_BotLocales_CustomVocabulary struct {
+	// Defines the list of custom vocabulary entries (each with a phrase and optional weight/display-as) for the bot locale's custom vocabulary, controlling how Amazon Lex V2 recognizes and renders specific words. (AI-inferred)
+	CustomVocabularyItems any
+}
+
+type Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecification_BedrockGuardrailConfiguration struct {
+	// Specifies the Amazon Bedrock guardrail identifier (such as its ARN) that is applied to the model's responses during Lex bot build time. (AI-inferred)
+	BedrockGuardrailIdentifier any
+	// Specifies the version (e.g., '1' or 'DRAFT') of the Amazon Bedrock guardrail that the descriptive bot builder should use to filter the model's responses. (AI-inferred)
+	BedrockGuardrailVersion any
+}
+
+type Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecification struct {
+	// This object configures the Amazon Bedrock guardrail (e.g., its ID and version) that is applied to the Bedrock model used by the descriptive bot builder within the bot locale's generative AI buildtime settings. (AI-inferred)
+	BedrockGuardrailConfiguration any
+	// Specifies a custom prompt to use with the Bedrock model for the descriptive bot builder during build time, overriding the default prompt. (AI-inferred)
+	BedrockModelCustomPrompt any
+	// Determines whether trace reporting (enabled or disabled) is activated for the Amazon Bedrock model used by the descriptive bot builder within the Lex bot's generative AI settings. (AI-inferred)
+	BedrockTraceStatus any
+	// The ARN of the Amazon Bedrock foundation model used to generate descriptive bot builder responses during build-time settings in the Lex bot's generative AI configuration. (AI-inferred)
+	ModelArn any
+}
+
+type Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification struct {
+	// Specifies the Amazon Bedrock foundation model and its inference parameters that the descriptive bot builder uses to generate or improve bot descriptions. (AI-inferred)
+	BedrockModelSpecification any
+	// Enables or disables the descriptive bot builder, which uses generative AI to automatically generate or refine the bot's description and conversation flow during build time for this locale. (AI-inferred)
+	Enabled any
+}
+
+type Bot_BotLocales_GenerativeAisettings_BuildtimeSettings struct {
+	// Configures the descriptive bot builder feature for the locale's build-time settings, enabling you to control whether the feature is active and specify the Amazon Bedrock model ARN used to generate human-readable descriptions for the bot and its components. (AI-inferred)
+	DescriptiveBotBuilderSpecification any
+	// Configures automatic generation of sample utterances during bot build time, including toggling generation on/off and setting the maximum number of sample utterances to generate per intent or slot type. (AI-inferred)
+	SampleUtteranceGenerationSpecification any
+}
+
+type Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecification_IntentDisambiguationSettings struct {
+	// Specifies a custom message that Amazon Lex displays to the user to clarify which intent they want to fulfill when the bot cannot confidently determine the user's intent. (AI-inferred)
+	CustomDisambiguationMessage any
+	// Enables or disables intent disambiguation for the bot locale, which lets the bot ask clarifying questions when user input could match multiple intents. (AI-inferred)
+	Enabled any
+	// Sets the maximum number of intents Amazon Lex can consider as candidates when performing intent disambiguation for the bot locale's NLU improvement configuration. (AI-inferred)
+	MaxDisambiguationIntents any
+}
+
+type Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecification struct {
+	// Determines whether the bot locale uses generative AI assistance through Amazon Bedrock to improve intent classification, with values typically 'ENABLED' or 'DISABLED'. (AI-inferred)
+	AssistedNluMode any
+	// Whether to enable the NLU improvement specification, which uses generative AI to improve natural language understanding for the bot locale. (AI-inferred)
+	Enabled any
+	// Configures intent disambiguation for the bot locale, enabling or disabling Amazon Lex's ability to select the most likely intent when user input could match multiple intents as part of its NLU improvement settings. (AI-inferred)
+	IntentDisambiguationSettings any
+}
+
+type Bot_BotLocales_GenerativeAisettings_RuntimeSettings struct {
+	// Defines the configuration for the locale's natural language understanding improvement feature, which uses generative AI to enhance the bot's comprehension and classification of user input. (AI-inferred)
+	NluImprovementSpecification any
+	// Configures whether Amazon Lex uses generative AI to improve slot resolution in the bot locale, and optionally defines the elicitation prompt (via ElicitationSpecification) used when the improved resolution cannot determine a slot value. (AI-inferred)
+	SlotResolutionImprovementSpecification any
+}
+
+type Bot_BotLocales_GenerativeAisettings struct {
+	// Configures the generative AI assistant's behavior during the bot building process, including whether it can retrieve knowledge base answers and the prompt specification used. (AI-inferred)
+	BuildtimeSettings any
+	// Specifies the runtime configuration for the Lex bot locale's generative AI feature, including the Amazon Bedrock model and inference settings used at runtime. (AI-inferred)
+	RuntimeSettings any
+}
+
+type Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentConfiguration struct {
+	// The identifier of the Amazon Bedrock agent alias that this intent uses to invoke the agent for handling conversation. (AI-inferred)
+	BedrockAgentAliasId any
+	// The unique identifier of the Amazon Bedrock agent that the Lex bot intent is configured to use for agent-based conversation handling. (AI-inferred)
+	BedrockAgentId any
+}
+
+type Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentIntentKnowledgeBaseConfiguration struct {
+	// The ARN of the Amazon Bedrock knowledge base that the Bedrock agent for this intent uses to retrieve information for generating responses. (AI-inferred)
+	BedrockKnowledgeBaseArn any
+	// This object configures the Amazon Bedrock model used by the Bedrock agent intent's knowledge base, including the model ARN and related model parameters. (AI-inferred)
+	BedrockModelConfiguration any
+}
+
+type Bot_BotLocales_Intents_BedrockAgentIntentConfiguration struct {
+	// Defines the configuration for the Amazon Bedrock agent that Lex should invoke for this intent, such as the Bedrock agent alias ARN. (AI-inferred)
+	BedrockAgentConfiguration any
+	// Configures the Amazon Bedrock knowledge base (identified by its ARN) that this Lex Bedrock agent intent will use to retrieve and ground its responses. (AI-inferred)
+	BedrockAgentIntentKnowledgeBaseConfiguration any
+}
+
+type Bot_BotLocales_Intents_DialogCodeHook struct {
+	// When enabled, the dialog code hook (a Lambda function) is invoked for each user input in the intent's conversation to handle fulfillment and validation. (AI-inferred)
+	Enabled any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayload struct {
+	// Specifies the JSON-formatted custom payload string that is sent to the messaging platform for this start response message in the fulfillment code hook. (AI-inferred)
+	Value any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCard_Buttons struct {
+	// Defines the label text displayed on a button in the image response card for the start response message group of the fulfillment code hook, which users can click to trigger an action in the Lex bot. (AI-inferred)
+	Text any
+	// The value sent to the Amazon Lex bot when the user clicks this button on the image response card. (AI-inferred)
+	Value any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCard struct {
+	// Defines the list of buttons displayed on the image response card, where each button has a text label and a value sent back to the bot when selected. (AI-inferred)
+	Buttons any
+	// The URL of the image displayed in the image response card included in the start response message for the fulfillment updates specification of a code hook. (AI-inferred)
+	ImageUrl any
+	// The subtitle text displayed beneath the title in the image response card shown during the Lex bot's fulfillment update message. (AI-inferred)
+	Subtitle any
+	// The title of the image response card shown to the user in the start response message group for the intent's fulfillment code hook update in Amazon Lex. (AI-inferred)
+	Title any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message struct {
+	// Specifies the custom payload, a free-form string, for the message that is sent to the user when the fulfillment code hook starts providing an update. (AI-inferred)
+	CustomPayload any
+	// Defines the image response card message for the start response of the fulfillment update, specifying the card's title, subtitle, image URL, and optional buttons to present to the user. (AI-inferred)
+	ImageResponseCard any
+	// This object provides the literal text for a plain-text message sent to the user at the beginning of intent fulfillment, as part of a message group within the start response of the fulfillment code hook. (AI-inferred)
+	PlainTextMessage any
+	// The SSML message object that provides the SSML-formatted text to be spoken to the user in the start response message group when the fulfillment code hook begins. (AI-inferred)
+	Ssmlmessage any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups struct {
+	// Defines a message variant (with contentType and content) that appears as part of a message group in the start response sent to the user when the fulfillment code hook begins executing its updates. (AI-inferred)
 	Message any
+	// Defines a list of alternative message variations for a message group within the bot's fulfillment start response, where each variation is a Message object specifying content and formatting for potentially different user experiences. (AI-inferred)
+	Variations any
 }
 
-type Bot_ClarificationPrompt struct {
-	MaxAttempts any
-	ResponseCard any
-	Message any
+type Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse struct {
+	// Whether the user can interrupt the start response message while it is being played. (AI-inferred)
+	AllowInterrupt any
+	// Number of seconds to wait after the fulfillment code hook starts before sending the start response message to the user. (AI-inferred)
+	DelayInSeconds any
+	// Defines the message groups for the start response, which determine the initial message(s) sent to the user when the Lambda fulfillment code hook begins, where each message group can contain a message and its variations. (AI-inferred)
+	MessageGroups any
 }
 
-type Bot_Intent struct {
-	IntentName any
-	IntentVersion any
+type Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_UpdateResponse struct {
+	// This boolean controls whether the user can interrupt the bot's spoken fulfillment update response (for example, to provide additional input) while it is being delivered. (AI-inferred)
+	AllowInterrupt any
+	// The frequency, in seconds, at which Amazon Lex sends the configured interim update message to the user while the fulfillment code hook is still executing. (AI-inferred)
+	FrequencyInSeconds any
+	// Provides the list of message groups, each containing a message (plain text, SSML, or custom payload), that Amazon Lex sends as interim updates to the user while the fulfillment code hook is processing the intent. (AI-inferred)
+	MessageGroups any
 }
 
-type Bot_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification struct {
+	// Indicates whether fulfillment updates are enabled for the intent, controlling whether Lambda can send progress updates to the user during the fulfillment process. (AI-inferred)
+	Active any
+	// Defines the initial message and its configuration that Lex sends to the user when the fulfillment update starts, including the message groups and whether the response can be interrupted. (AI-inferred)
+	StartResponse any
+	// Defines the maximum amount of time, in seconds, that the fulfillment code hook Lambda function is allowed to continue streaming update responses to the user before Amazon Lex halts them. (AI-inferred)
+	TimeoutInSeconds any
+	// The update_response object defines the periodic progress update messages that Amazon Lex sends to the user while the fulfillment code hook is still processing, including the message groups and the update frequency. (AI-inferred)
+	UpdateResponse any
 }
 
-var Bot_AbortStatement_MessageFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"GroupNumber": ubx.FieldSpec{WireName: "group_number"},
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_Condition struct {
+	// The expression, written in Amazon Lex condition syntax, that is evaluated to determine whether this conditional branch's response should be taken, and which can reference intent slots and session attributes. (AI-inferred)
+	ExpressionString any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_DialogAction struct {
+	// The name of the slot that Amazon Lex should elicit from the user when the dialog action type is ElicitSlot, specifying which slot to prompt for in the next step of the conversation. (AI-inferred)
+	SlotToElicit any
+	// The suppress_next_message field, when true, tells Amazon Lex to suppress the bot's next message for this dialog action, so the bot does not send the next message in the conversation flow. (AI-inferred)
+	SuppressNextMessage any
+	// Specifies the type of dialog action (e.g., Close, ConfirmIntent, Delegate, ElicitIntent, ElicitSlot) that the bot should perform in the next step of the conditional branch. (AI-inferred)
+	Type any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverride_Value struct {
+	// Specifies the interpreted (resolved) value to assign to the slot during the next step when the failure condition is met, overriding the slot's value in the bot's intent processing. (AI-inferred)
+	InterpretedValue any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverride struct {
+	// Defines the shape of the slot value override in an Amazon Lex bot, either 'Scalar' (a single value) or 'List' (a list of values) when setting the next step's slot values in a conditional branch. (AI-inferred)
+	Shape any
+	// This field specifies the override value for the target slot in the next step's intent when the conditional branch is taken after a failure, as a structured object whose shape must match the slot's data type (scalar, list, or composite). (AI-inferred)
+	Value any
+	// Specifies the list of values to assign to a slot when overriding its value in the next step of a conditional branch taken after a post-fulfillment status failure, used within the bot locale intent's slot value override. (AI-inferred)
+	Values any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots struct {
+	// The name of the slot within the intent that is assigned a value when this failure conditional branch's next step is executed in the post-fulfillment status specification of a Lex bot. (AI-inferred)
+	SlotName any
+	// Specifies the replacement value for a slot in the target intent of the next step, including whether it is a single scalar or a list of values, and the actual interpreted value(s) to assign when transitioning after a failed conditional branch. (AI-inferred)
+	SlotValueOverride any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent struct {
+	// Specifies the name of the Amazon Lex intent to transition to next when the current intent's fulfillment code hook fails and this failure conditional branch is selected. (AI-inferred)
+	Name any
+	// Specifies the slot name/value pairs to set on the target intent when the conditional branch's next step invokes that intent, enabling prefilling or overriding of slot values before the intent is processed. (AI-inferred)
+	Slots any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributes struct {
+	// The key (name) of the session attribute to be set or updated when this conditional branch's next step is executed. (AI-inferred)
+	Key any
+	// The value to assign to the session attribute key in the next step of the conditional branch when the failure condition is met in the post-fulfillment status specification of a Lex bot intent. (AI-inferred)
+	Value any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep struct {
+	// Defines the specific dialog action (e.g., StartIntent, ElicitSlot, or Close) to execute as the next step of a conditional branch under the failure conditional of a fulfillment code hook's post-fulfillment status specification. (AI-inferred)
+	DialogAction any
+	// Specifies the target intent to transition to in the next step of a conditional branch when the post-fulfillment failure condition is met, including the intent name and any slot values to set. (AI-inferred)
+	Intent any
+	// Defines the list of session attributes (key-value pairs) to set in the next step when a failure condition is matched in the post-fulfillment status specification of a Lex bot intent's fulfillment code hook. (AI-inferred)
+	SessionAttributes any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_Response struct {
+	// Determines whether the user can interrupt the response message delivered in the failure conditional branch's response, allowing Amazon Lex to stop playback and handle new user input. (AI-inferred)
+	AllowInterrupt any
+	// Specifies a list of message groups, each containing a primary message and optional message variations, that Amazon Lex uses to respond when a conditional branch's condition is evaluated (here, the failure conditional's branch response). (AI-inferred)
+	MessageGroupsList any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches struct {
+	// Specifies the expression evaluated against the session state that determines whether this branch of the post-fulfillment failure conditional is executed. (AI-inferred)
+	Condition any
+	// The name of this conditional branch, which Lex evaluates when the post-fulfillment status is a failure, to determine which actions to execute. (AI-inferred)
+	Name any
+	// Defines the dialog action or next step that the bot takes when the failure condition of this conditional branch is met in the post-fulfillment status specification. (AI-inferred)
+	NextStep any
+	// Defines the response specification (message groups and interrupt behavior) that Amazon Lex V2 uses to reply to the user when this conditional branch's condition is met within the failure conditional of the post-fulfillment status specification. (AI-inferred)
+	Response any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_DefaultBranch struct {
+	// Specifies the dialog state (next action in the conversation) that the bot transitions to when the default branch of the failure conditional is executed after the fulfillment code hook fails. (AI-inferred)
+	NextStep any
+	// Specifies the response messages (message groups) that Amazon Lex returns to the user when the post-fulfillment status hook fails and the default branch of the failure conditional is selected. (AI-inferred)
+	Response any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional struct {
+	// Defines the list of conditional branches evaluated when the post-fulfillment status is failure, each with a condition and response to determine the appropriate follow-up action. (AI-inferred)
+	ConditionalBranches any
+	// Defines the default branch of the conditional block that executes when the fulfillment code hook fails and no other condition in the failure conditional matches, specifying the next action or response to take. (AI-inferred)
+	DefaultBranch any
+	// Indicates whether the failure conditional logic for the post-fulfillment status specification is active, determining if the defined conditional branches are evaluated. (AI-inferred)
+	IsActive any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification struct {
+	// Defines the conditional branches that Lex evaluates after the fulfillment code hook fails, determining the next dialog step for the intent. (AI-inferred)
+	FailureConditional any
+	// Defines the dialog state (e.g., another intent, slot setting, or closing action) that Lex transitions to after the fulfillment code hook reports a failure. (AI-inferred)
+	FailureNextStep any
+	// Specifies the response that Amazon Lex sends to the user when the fulfillment code hook indicates that the intent's fulfillment failed. (AI-inferred)
+	FailureResponse any
+	// Specifies the conditional branch and its conditions/branches that the bot evaluates after the fulfillment code hook completes successfully for the intent. (AI-inferred)
+	SuccessConditional any
+	// Specifies the next dialog step, such as closing the dialog or invoking another intent, that the bot takes after the fulfillment code hook completes successfully. (AI-inferred)
+	SuccessNextStep any
+	// Specifies the response (message group) sent to the user after the fulfillment code hook executes successfully, indicating the intent was fulfilled. (AI-inferred)
+	SuccessResponse any
+	// Specifies the conditional branching configuration that the bot evaluates after the fulfillment code hook times out, determining which branch and associated responses to take based on the defined conditions. (AI-inferred)
+	TimeoutConditional any
+	// Defines the dialog state that Amazon Lex transitions to when the fulfillment code hook times out, specifying the next action, intent, and session attributes to use. (AI-inferred)
+	TimeoutNextStep any
+	// Configures the response that Amazon Lex sends to the user when the fulfillment code hook times out, including the message groups and interruptibility settings for that timeout message. (AI-inferred)
+	TimeoutResponse any
+}
+
+type Bot_BotLocales_Intents_FulfillmentCodeHook struct {
+	// Indicates whether the fulfillment code hook is enabled for the intent, allowing an AWS Lambda function to be invoked to generate a response and fulfill the user's request. (AI-inferred)
+	Enabled any
+	// Configures the timeout and provides responses to the user while the fulfillment code hook is running, including start, update, and final messages, to keep the session active during async fulfillment. (AI-inferred)
+	FulfillmentUpdatesSpecification any
+	// Indicates whether the fulfillment code hook is active (enabled) for the intent, determining if Amazon Lex invokes the Lambda function when the intent is fulfilled. (AI-inferred)
+	IsActive any
+	// Defines how the bot proceeds after the fulfillment code hook runs, including the success, failure, and timeout responses and next steps for the intent. (AI-inferred)
+	PostFulfillmentStatusSpecification any
+}
+
+type Bot_BotLocales_Intents_InitialResponseSetting_CodeHook struct {
+	// Indicates whether the Lambda function configured as the code hook is invoked when the intent's initial response is triggered. (AI-inferred)
+	EnableCodeHookInvocation any
+	// Specifies a custom label that Amazon Lex includes in the Lambda event when the initial response code hook is invoked, allowing the Lambda function to identify the context or stage of this particular code hook invocation. (AI-inferred)
+	InvocationLabel any
+	// Indicates whether the Lambda code hook associated with the intent's initial response setting is active, controlling whether Amazon Lex invokes the function during the initial response phase. (AI-inferred)
+	IsActive any
+	// Specifies the next dialog state and response handling (such as success/failure branches) that Amazon Lex invokes after the intent's initial-response code hook completes. (AI-inferred)
+	PostCodeHookSpecification any
+}
+
+type Bot_BotLocales_Intents_InitialResponseSetting struct {
+	// Configures the AWS Lambda function invoked to initialize and validate the intent when it is first entered, specifying the Lambda ARN and message version for the code hook. (AI-inferred)
+	CodeHook any
+	// Defines the conditional specification (branches and default branch) used to determine the bot's initial response in the intent, based on conditions evaluated against slot values or session attributes. (AI-inferred)
+	Conditional any
+	// Specifies the initial response message that Amazon Lex sends to the user when this intent is invoked, defined as a set of message groups and an optional allow-interrupt flag. (AI-inferred)
+	InitialResponse any
+	// Defines the dialog state to transition to after the initial response message is delivered, such as eliciting a slot, closing the intent, or switching to another intent. (AI-inferred)
+	NextStep any
+}
+
+type Bot_BotLocales_Intents_InputContexts struct {
+	// The name of an input context that must be active for the intent to be considered by Amazon Lex. (AI-inferred)
+	Name any
+}
+
+type Bot_BotLocales_Intents_IntentClosingSetting struct {
+	// Defines the message or message variations sent to the user when the intent is fulfilled and the conversation is closed. (AI-inferred)
+	ClosingResponse any
+	// Specifies the conditional specification (set of conditional branches and a default branch) evaluated after the intent closing message to choose the next response or dialog action based on session state. (AI-inferred)
+	Conditional any
+	// Indicates whether the closing response message is active and will be shown to the user when the intent is fulfilled. (AI-inferred)
+	IsActive any
+	// Specifies the next step in the conversation after the intent's closing message is delivered, using a DialogState object that defines the subsequent dialog action, intent, or session attributes. (AI-inferred)
+	NextStep any
+}
+
+type Bot_BotLocales_Intents_IntentConfirmationSetting_ElicitationCodeHook struct {
+	// If true, the bot invokes the configured code hook (Lambda function) when eliciting confirmation from the user for the intent; if false, no code hook is invoked during the confirmation elicitation step. (AI-inferred)
+	EnableCodeHookInvocation any
+	// Specifies an optional label that is passed to the Lambda function of the elicitation code hook, allowing the Lambda to identify which specific code hook invocation triggered it during intent confirmation. (AI-inferred)
+	InvocationLabel any
+}
+
+type Bot_BotLocales_Intents_IntentConfirmationSetting_PromptSpecification struct {
+	// Determines whether the user can interrupt the prompt (for example, by speaking) while the bot is delivering it, with a default of false when not specified. (AI-inferred)
+	AllowInterrupt any
+	// The maximum number of times the bot will repeat the confirmation prompt to elicit a valid response from the user before giving up or taking fallback action. (AI-inferred)
+	MaxRetries any
+	// Defines the list of message groups that provide the prompt's message content for the intent confirmation prompt, where each group contains a primary message and an optional list of variation messages. (AI-inferred)
+	MessageGroupsList any
+	// Specifies whether the confirmation prompt selects messages from the message group in sequential order or at random; choose Random to rotate messages randomly or Sequential to use them in order. (AI-inferred)
+	MessageSelectionStrategy any
+	// Specifies per-attempt configuration (e.g., for initial, retry1, retry2) for the confirmation prompt, including allowed input types and audio/DTMF/text input settings. (AI-inferred)
+	PromptAttemptsSpecification any
+}
+
+type Bot_BotLocales_Intents_IntentConfirmationSetting struct {
+	// Specifies the Lambda function (code hook) that Amazon Lex invokes when the user confirms an intent during the confirmation step. (AI-inferred)
+	CodeHook any
+	// Specifies the conditional branches and default branch that determine the Lex bot's response when the user confirms the intent, based on evaluating conditions such as slot values and session attributes. (AI-inferred)
+	ConfirmationConditional any
+	// The confirmation_next_step specifies the dialog step Amazon Lex executes after the user confirms the intent, defining the action (such as eliciting a slot or invoking a Lambda function) and the target slot to elicit if applicable. (AI-inferred)
+	ConfirmationNextStep any
+	// Configuration for the message the bot sends to the user to ask for confirmation before proceeding with the intent, specified as a response specification with message groups and interruption settings. (AI-inferred)
+	ConfirmationResponse any
+	// Specifies the conditional branching logic to execute when the user declines the confirmation prompt for the intent. (AI-inferred)
+	DeclinationConditional any
+	// The next step in the dialog that is executed after the user declines the intent confirmation prompt, defining the subsequent action (such as eliciting an intent or slot) through its dialogAction and properties. (AI-inferred)
+	DeclinationNextStep any
+	// The response message that Amazon Lex sends to the user when the user declines the confirmation prompt for the intent. (AI-inferred)
+	DeclinationResponse any
+	// The Lambda function configuration that is invoked when the bot is eliciting confirmation from the user for this intent, allowing the confirmation prompt or acceptance logic to be customized. (AI-inferred)
+	ElicitationCodeHook any
+	// Defines the conditional branches (including a default branch) that the Lex bot evaluates when the user's response to the intent confirmation prompt fails (i.e., the confirmation is declined or invalid), determining the next dialog action. (AI-inferred)
+	FailureConditional any
+	// Defines the next dialog step (such as eliciting a slot or closing the intent) that the bot takes when an intent confirmation fails. (AI-inferred)
+	FailureNextStep any
+	// This object defines the response the bot sends to the user when the user does not confirm the intent (i.e., after the user fails to accept the confirmation prompt), including the message groups and any allow-interrupt behavior. (AI-inferred)
+	FailureResponse any
+	// When set to true, enables the intent confirmation prompt so that Amazon Lex asks the user to confirm the intent before proceeding; when false, the confirmation step is skipped. (AI-inferred)
+	IsActive any
+	// Configures the prompt shown to the user to confirm the intent, including the message groups, maximum retries, and interruption behavior. (AI-inferred)
+	PromptSpecification any
+}
+
+type Bot_BotLocales_Intents_KendraConfiguration struct {
+	// The ARN of the Amazon Kendra index that the intent queries to provide search-based answers when the intent is triggered. (AI-inferred)
+	KendraIndex any
+	// A filter string, expressed in Amazon Kendra query syntax, that is applied to the Kendra search request for this intent to narrow the search results returned from the configured Kendra index. (AI-inferred)
+	QueryFilterString any
+	// Indicates whether the Amazon Kendra query filter string, specified in queryFilterString, is applied to filter the results returned from the Amazon Kendra index for the intent. (AI-inferred)
+	QueryFilterStringEnabled any
+}
+
+type Bot_BotLocales_Intents_OutputContexts struct {
+	// Sets the name of an output context that becomes active after the intent is fulfilled, used to manage conversation flow and pass state to subsequent intents. (AI-inferred)
+	Name any
+	// The number of seconds that the output context remains active after the associated intent is fulfilled, after which it expires and can no longer be used by subsequent intents. (AI-inferred)
+	TimeToLiveInSeconds any
+	// The number of conversation turns that the output context remains active after being set, after which it expires. (AI-inferred)
+	TurnsToLive any
+}
+
+type Bot_BotLocales_Intents_QinConnectIntentConfiguration_QinConnectAssistantConfiguration struct {
+	// The ARN of the Amazon Q in Connect assistant used by the Lex intent to provide AI-generated answers and recommendations. (AI-inferred)
+	AssistantArn any
+}
+
+type Bot_BotLocales_Intents_QinConnectIntentConfiguration struct {
+	// Configures the Amazon Q in Connect assistant linked to this intent, allowing the bot to leverage Q in Connect's real-time AI and generative assistance during the intent's execution. (AI-inferred)
+	QinConnectAssistantConfiguration any
+}
+
+type Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfiguration_BkbexactResponseFields struct {
+	// The name of the field in the Amazon Bedrock knowledge store that contains the exact answer to be returned for the QnA intent. (AI-inferred)
+	AnswerField any
+}
+
+type Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfiguration struct {
+	// The ARN of the Amazon Bedrock knowledge base that the Lex QnA intent uses as its knowledge store for retrieving answers. (AI-inferred)
+	BedrockKnowledgeBaseArn any
+	// Specifies the list of field names from the Amazon Bedrock knowledge store response that should be returned exactly as-is (exact response) for the QnA intent, rather than being paraphrased by the model. (AI-inferred)
+	BkbexactResponseFields any
+	// Determines whether the bot returns the exact response text from the Bedrock knowledge store or a paraphrased version when answering QnA intents. (AI-inferred)
+	ExactResponse any
+}
+
+type Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_KendraConfiguration struct {
+	// When true, the QnA intent returns only the exact answer supplied by the connected Amazon Kendra index instead of a synthesized or fallback response. (AI-inferred)
+	ExactResponse any
+	// The Amazon Resource Name (ARN) of the Amazon Kendra index that the QnA intent uses to search for answers for user queries. (AI-inferred)
+	KendraIndex any
+	// Specifies the query filter string that Amazon Lex uses to filter the Amazon Kendra index results when the QnA intent retrieves answers from the configured data source. (AI-inferred)
+	QueryFilterString any
+	// Indicates whether the configured query filter string is enabled to filter Amazon Kendra search results for this QnA intent. (AI-inferred)
+	QueryFilterStringEnabled any
+}
+
+type Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfiguration_ExactResponseFields struct {
+	// Specifies the OpenSearch index field name that contains the exact answer text returned to the user when the QnA intent matches a query using exact response matching. (AI-inferred)
+	AnswerField any
+	// The name of the field in the Amazon OpenSearch Service index that stores the question text, used by the QnA intent's exact-response matching logic. (AI-inferred)
+	QuestionField any
+}
+
+type Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfiguration struct {
+	// The endpoint URL of the Amazon OpenSearch Service domain that the QnA intent's data source configuration uses to query for answers. (AI-inferred)
+	DomainEndpoint any
+	// When true, Amazon Lex returns the exact text of the top OpenSearch result as the bot's answer, rather than generating a natural language response from that result. (AI-inferred)
+	ExactResponse any
+	// Specifies the Amazon OpenSearch Service index fields (answerField and sourceField) that store the exact answer text and its source for high-confidence matches returned by the QnA intent. (AI-inferred)
+	ExactResponseFields any
+	// Specifies which fields from the Amazon OpenSearch Service index are returned to the user as part of the QnA intent's response when an answer is retrieved. (AI-inferred)
+	IncludeFields any
+	// The name of the OpenSearch index that the QnA intent's data source configuration will query to retrieve answers. (AI-inferred)
+	IndexName any
+}
+
+type Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration struct {
+	// This object configures the Amazon Bedrock knowledge store that Lex uses as the data source for answering user queries in this QnA intent, including the knowledge store's ARN and an optional flag for exact response matching. (AI-inferred)
+	BedrockKnowledgeStoreConfiguration any
+	// Specifies the Amazon Kendra index (and optional query filter string) that the QnA intent uses to retrieve answers from a Kendra data source. (AI-inferred)
+	KendraConfiguration any
+	// Specifies the Amazon OpenSearch Serverless collection and index used by the QnA intent's data source to retrieve answers, including the collection ARN and index name. (AI-inferred)
+	OpensearchConfiguration any
+}
+
+type Bot_BotLocales_Intents_QnAintentConfiguration struct {
+	// Specifies the Amazon Bedrock model configuration used by the QnA intent to generate responses to user queries. (AI-inferred)
+	BedrockModelConfiguration any
+	// Configures the data source (such as an Amazon S3 bucket or an Amazon Bedrock knowledge base) that supplies the question-and-answer pairs used by the QnA intent. (AI-inferred)
+	DataSourceConfiguration any
+}
+
+type Bot_BotLocales_Intents_SampleUtterances struct {
+	// The user's natural language phrase that triggers this intent, used as training data for the bot's language model. (AI-inferred)
+	Utterance any
+}
+
+type Bot_BotLocales_Intents_SlotPriorities struct {
+	// Sets the order in which Amazon Lex elicits slot values for the intent, with lower numbers indicating higher priority (e.g., priority 1 is elicited before priority 2). (AI-inferred)
+	Priority any
+	// The name of the slot whose elicitation order is being set in the intent's slot priority list, matching a slot defined in the intent's slots collection. (AI-inferred)
+	SlotName any
+}
+
+type Bot_BotLocales_Intents_Slots_MultipleValuesSetting struct {
+	// When true, this setting allows the slot to capture multiple values in a single user utterance; when false, the slot captures only a single value. (AI-inferred)
+	AllowMultipleValues any
+}
+
+type Bot_BotLocales_Intents_Slots_ObfuscationSetting struct {
+	// Determines whether the slot value is obfuscated in conversation logs, accepting `NONE` (no obfuscation) or `DEFAULT_OBFUSCATION` (masks the value). (AI-inferred)
+	ObfuscationSettingType any
+}
+
+type Bot_BotLocales_Intents_Slots_SubSlotSetting struct {
+	// Defines a template expression that composes a composite slot's value from sub-slot values, using curly-brace placeholders that reference the sub-slot names. (AI-inferred)
+	Expression any
+	// Specifies the configuration for each sub-slot within a composite slot, defining the slot type and value elicitation settings for each named sub-slot. (AI-inferred)
+	SlotSpecifications any
+}
+
+type Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecification_DefaultValueList struct {
+	// Defines a specific default value that Amazon Lex uses for the slot when the user does not supply a value during the conversation. (AI-inferred)
+	DefaultValue any
+}
+
+type Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecification struct {
+	// Defines the list of default values Amazon Lex uses for a slot when the user does not provide a response during elicitation. (AI-inferred)
+	DefaultValueList any
+}
+
+type Bot_BotLocales_Intents_Slots_ValueElicitationSetting_SlotCaptureSetting struct {
+	// Defines the condition that must be satisfied for the slot value to be captured, and if the condition is not met, the bot skips the capture and proceeds to the appropriate failure handling defined in the slot capture setting. (AI-inferred)
+	CaptureConditional any
+	// Defines the dialog state (including the next dialog action, intent, and session attributes) that the conversation transitions to after the slot value is successfully captured. (AI-inferred)
+	CaptureNextStep any
+	// Specifies the response, including message groups and variations, that Amazon Lex sends to the user after successfully capturing the slot value during elicitation. (AI-inferred)
+	CaptureResponse any
+	// The code hook (Lambda function) that Lex invokes when a slot value is captured during value elicitation, allowing you to validate or process the captured value. (AI-inferred)
+	CodeHook any
+	// The Lambda function configuration used by Amazon Lex to handle slot capture (elicitation and validation) for this slot in the intent. (AI-inferred)
+	ElicitationCodeHook any
+	// Defines the conditional specification that controls the next step in the dialog when the slot value cannot be captured successfully, enabling branching logic for failure handling in the slot's value elicitation. (AI-inferred)
+	FailureConditional any
+	// Specifies the next step in the conversation that the bot takes when it fails to capture a slot value (e.g., the user's input cannot be interpreted or the slot is not validated). (AI-inferred)
+	FailureNextStep any
+	// The `failure_response` object defines the response specification (including message groups and allow-interrupt behavior) that Amazon Lex uses to prompt the user again when it fails to capture a valid slot value during value elicitation. (AI-inferred)
+	FailureResponse any
+}
+
+type Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecification_StillWaitingResponse struct {
+	// Indicates whether the user can interrupt the still-waiting response while the bot is waiting for the slot value. (AI-inferred)
+	AllowInterrupt any
+	// Specifies how often (in seconds) the bot sends the still-waiting response message to the user while waiting for a slot value during elicitation. (AI-inferred)
+	FrequencyInSeconds any
+	// Defines the ordered list of message groups, each containing a primary message and optional variations, that Amazon Lex sends to the user while they are still waiting during a slot's value elicitation wait-and-continue response. (AI-inferred)
+	MessageGroupsList any
+	// Specifies the number of seconds to wait before sending a 'still waiting' message to the user during a slot's wait-and-continue prompt in the still waiting response configuration. (AI-inferred)
+	TimeoutInSeconds any
+}
+
+type Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecification struct {
+	// Defines the message (via message groups and an allow-interrupt flag) that Amazon Lex sends to the user when they choose to continue after the waiting prompt during slot value elicitation. (AI-inferred)
+	ContinueResponse any
+	// Indicates whether the wait-and-continue prompt behavior for the slot's value elicitation is enabled in the Amazon Lex bot. (AI-inferred)
+	IsActive any
+	// Defines the response that Amazon Lex sends to the user repeatedly while the user is still waiting to provide a slot value, including the message groups, the frequency (in seconds) at which the message repeats, and whether the user can interrupt the still-waiting prompt. (AI-inferred)
+	StillWaitingResponse any
+	// For an Amazon Lex V2 bot, defines the response specification (messages and interruption settings) that the bot uses to prompt the user while waiting for them to provide the value for the slot, as part of the wait-and-continue configuration in value elicitation. (AI-inferred)
+	WaitingResponse any
+}
+
+type Bot_BotLocales_Intents_Slots_ValueElicitationSetting struct {
+	// Defines the default value specification for a slot, listing default values that are used when the user does not supply a value during elicitation. (AI-inferred)
+	DefaultValueSpecification any
+	// Defines the prompt messages, maximum retries, and other settings used to elicit the slot value from the user when the slot is empty or invalid. (AI-inferred)
+	PromptSpecification any
+	// List of sample utterances that Amazon Lex uses to recognize when a user is providing a value for the slot during elicitation. (AI-inferred)
+	SampleUtterances any
+	// Defines the response, next step, and code hook behavior that is invoked after the slot's value is successfully captured in Amazon Lex V2. (AI-inferred)
+	SlotCaptureSetting any
+	// Specifies whether the slot must be filled (Required) or may be left empty (Optional) when eliciting values for the intent. (AI-inferred)
+	SlotConstraint any
+	// Defines the prompts and behavior for a slot's value elicitation when the bot is waiting for user input (still-waiting response) and after the user provides input (continue response), including whether those prompts are active and their response specifications. (AI-inferred)
+	WaitAndContinueSpecification any
+}
+
+type Bot_BotLocales_Intents_Slots struct {
+	// Provides a short text description of the slot's purpose within the intent, used for clarity and documentation. (AI-inferred)
+	Description any
+	// Configures whether a slot in an intent can capture and store multiple values for its assigned slot type, typically controlled by an allowMultipleValues boolean flag. (AI-inferred)
+	MultipleValuesSetting any
+	// The unique name of the slot within the intent, used as a reference in slot resolution and Lambda function events. (AI-inferred)
+	Name any
+	// Specifies the obfuscation setting for the slot value to protect sensitive data in transcripts, with the type either 'None' or 'DefaultObfuscation'. (AI-inferred)
+	ObfuscationSetting any
+	// Specifies the name of the slot type that defines the allowed values and data format for this slot, which is used to interpret and validate user input during a conversation. (AI-inferred)
+	SlotTypeName any
+	// Defines the settings for a composite slot, where the slot is made up of multiple sub-slots, including an expression and the sub-slot specifications that determine how the slot value is assembled. (AI-inferred)
+	SubSlotSetting any
+	// Configures how Amazon Lex prompts the user for the slot value, including prompt messages and wait-and-continue behavior during the conversation. (AI-inferred)
+	ValueElicitationSetting any
+}
+
+type Bot_BotLocales_Intents struct {
+	// Defines the Bedrock agent intent configuration for the intent, specifying the Bedrock agent and agent intent IDs that this Lex intent uses to delegate handling to a Bedrock agent. (AI-inferred)
+	BedrockAgentIntentConfiguration any
+	// A human-readable description of the intent that clarifies its purpose within the bot locale. (AI-inferred)
+	Description any
+	// Configures the dialog code hook for this intent, including whether it is enabled and the ARN of the Lambda function to invoke for dialog initialization and validation. (AI-inferred)
+	DialogCodeHook any
+	DisplayName any
+	// Configures the fulfillment code hook, including the Lambda function and optional post-fulfillment updates, that is invoked to complete the user's request once the intent is fully elicited. (AI-inferred)
+	FulfillmentCodeHook any
+	// Specifies the initial response configuration for an intent, including the first message sent to the user, optional code hooks, conditional branches, and the next step in the conversation flow. (AI-inferred)
+	InitialResponseSetting any
+	// Specifies the input contexts that must be active for the intent to be invoked, enabling the bot to control dialog flow by restricting when the intent is considered. (AI-inferred)
+	InputContexts any
+	// Configures the closing response Amazon Lex sends to the user after the intent is fulfilled, including the message to display and whether the dialog session should be closed. (AI-inferred)
+	IntentClosingSetting any
+	// Defines the prompt the bot uses to ask the user to confirm the intent before fulfillment, along with the response and handling when the user declines confirmation. (AI-inferred)
+	IntentConfirmationSetting any
+	// Configuration that connects the intent to an Amazon Kendra index, enabling the bot to query the index and use its results as responses when the intent is invoked. (AI-inferred)
+	KendraConfiguration any
+	// The unique name of the intent within a bot locale, which must be composed of letters, numbers, and underscores (starting with a letter) and is used to identify the intent in the Lex bot definition. (AI-inferred)
+	Name any
+	// Defines the output contexts that are activated when the intent is fulfilled, controlling which other intents can be invoked in the subsequent conversation turns. (AI-inferred)
+	OutputContexts any
+	// Specifies the signature of an Amazon Lex built-in intent that this custom intent is based on, allowing the intent to inherit the built-in intent's behavior and configuration. (AI-inferred)
+	ParentIntentSignature any
+	QinConnectIntentConfiguration any
+	// Configuration for the built-in AMAZON.QnAIntent, defining data sources (e.g., Amazon Kendra indexes) and fallback intent behavior for answering user questions in a Lex bot locale. (AI-inferred)
+	QnAintentConfiguration any
+	// Defines the list of sample utterances (phrases) that are used to train the bot's language model and determine when the intent should be triggered. (AI-inferred)
+	SampleUtterances any
+	// Defines the order in which slots are filled for the intent, where each item specifies a slot name and its priority level. (AI-inferred)
+	SlotPriorities any
+	// Defines the list of slots for the intent, each specifying a unique name, a slot type, whether the slot is required, and the prompts used to elicit and confirm the slot value from the user. (AI-inferred)
+	Slots any
+}
+
+type Bot_BotLocales_SlotTypes_CompositeSlotTypeSetting_SubSlots struct {
+	// Specifies the name of an individual sub-slot within a composite slot type, which is used to identify and reference that sub-slot when the composite slot is captured in a conversation. (AI-inferred)
+	Name any
+	// The unique identifier of the slot type assigned to this sub-slot within the composite slot type, which determines the data format and validation for values captured in that sub-slot. (AI-inferred)
+	SlotTypeId any
+	// The name of an existing slot type (custom or built-in) that this sub-slot references within a composite slot type, enabling the definition of structured multi-slot values in Amazon Lex V2. (AI-inferred)
+	SlotTypeName any
+}
+
+type Bot_BotLocales_SlotTypes_CompositeSlotTypeSetting struct {
+	// Specifies the list of sub-slots that compose this composite slot type, where each sub-slot defines its name and the slot type it references. (AI-inferred)
+	SubSlots any
+}
+
+type Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSetting_Source struct {
+	// The ARN of the AWS KMS key used to decrypt the S3 object containing the grammar definition file for this external grammar slot type source. (AI-inferred)
+	KmsKeyArn any
+	// The name of the S3 bucket that contains the grammar definition file for the grammar slot type. (AI-inferred)
+	S3BucketName any
+	// The S3 object key (file path) of the grammar file inside the specified S3 bucket, used as the source for defining this grammar slot type in Amazon Lex. (AI-inferred)
+	S3ObjectKey any
+}
+
+type Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSetting struct {
+	// Specifies the Amazon S3 location of the grammar file used as the source for the grammar slot type. (AI-inferred)
+	Source any
+}
+
+type Bot_BotLocales_SlotTypes_ExternalSourceSetting struct {
+	// Specifies the grammar slot type settings for a slot type that uses an external source, including the S3 bucket and object key of the grammar definition file. (AI-inferred)
+	GrammarSlotTypeSetting any
+}
+
+type Bot_BotLocales_SlotTypes_SlotTypeValues struct {
+	// Defines the sample utterance (a string stored under the nested 'value' property) that represents a slot type value for a Lex bot locale. (AI-inferred)
+	SampleValue any
+	// Provides a list of alternative words or phrases (synonyms) that map to this slot type value, enabling the bot to recognize multiple expressions for the same value. (AI-inferred)
+	Synonyms any
+}
+
+type Bot_BotLocales_SlotTypes_ValueSelectionSetting_AdvancedRecognitionSetting struct {
+	// Specifies the audio recognition strategy for the slot type, where the only supported value is 'UseSlotTypeAsCustomVocabulary', which uses the slot type's values as a custom vocabulary for audio recognition. (AI-inferred)
+	AudioRecognitionStrategy any
+}
+
+type Bot_BotLocales_SlotTypes_ValueSelectionSetting_RegexFilter struct {
+	// The regular expression pattern used by Lex to validate or filter slot values, defining which user inputs match for the slot type when the value selection setting includes a regex filter. (AI-inferred)
+	Pattern any
+}
+
+type Bot_BotLocales_SlotTypes_ValueSelectionSetting struct {
+	// Specifies advanced recognition options for the slot type's value selection, including whether fuzzy matching is enabled to recognize user input that approximates defined slot values. (AI-inferred)
+	AdvancedRecognitionSetting any
+	// The regex_filter object specifies a regular expression pattern that constrains which user utterances are valid values for slots using this slot type in the Lex bot. (AI-inferred)
+	RegexFilter any
+	// Specifies how Amazon Lex resolves a slot value when multiple slot type entries match the user's utterance, with options such as returning the original value or the top resolution. (AI-inferred)
+	ResolutionStrategy any
+}
+
+type Bot_BotLocales_SlotTypes struct {
+	// Specifies the component slot types and their names that together form a composite slot type in an Amazon Lex bot locale. (AI-inferred)
+	CompositeSlotTypeSetting any
+	// A free-form description of the slot type, used to document its intended purpose and assist in maintenance and identification within the Amazon Lex bot. (AI-inferred)
+	Description any
+	// Configures an external grammar source (such as a file in Amazon S3) that defines the valid values for a slot type in a Lex bot locale. (AI-inferred)
+	ExternalSourceSetting any
+	// The name of the custom slot type within the bot locale, used as a unique identifier for the slot type in that locale. (AI-inferred)
+	Name any
+	// The signature (name) of the parent slot type that this slot type inherits from, allowing the slot type to reuse and extend the parent's configuration within the Lex bot's locale. (AI-inferred)
+	ParentSlotTypeSignature any
+	// Specifies the acceptable values for a custom slot type, where each entry can include a primary `value` and optional `synonyms` that map alternative phrases to that value. (AI-inferred)
+	SlotTypeValues any
+	// This object configures how slot values for the slot type are selected, specifying the resolution strategy (OriginalValue or TopResolution) and optionally a regex pattern for matching values when the strategy is Regex. (AI-inferred)
+	ValueSelectionSetting any
+}
+
+type Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfig_DeepgramConfig struct {
+	// For the Deepgram speech model configuration in the bot locale's speech recognition settings, this field specifies the ARN of the AWS Secrets Manager secret that contains the Deepgram API token used to authenticate requests. (AI-inferred)
+	ApiTokenSecretArn any
+	// The identifier of the Deepgram speech recognition model to use in this bot locale, such as a specific model version name. (AI-inferred)
+	ModelId any
+}
+
+type Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfig struct {
+	// Configuration for Deepgram as the third-party speech recognition provider, including API key and model settings, used when the speech model type is set to Deepgram. (AI-inferred)
+	DeepgramConfig any
+}
+
+type Bot_BotLocales_SpeechRecognitionSettings struct {
+	// Configures the custom language model used by Amazon Lex for speech recognition in this bot locale, via a SpeechModelConfig object that specifies the model name. (AI-inferred)
+	SpeechModelConfig any
+	// Specifies the preferred speech recognition model type (e.g., 'Standard' or 'Generative') used by Amazon Lex when converting audio input to text for this bot locale. (AI-inferred)
+	SpeechModelPreference any
+}
+
+type Bot_BotLocales_UnifiedSpeechSettings_SpeechFoundationModel struct {
+	// Specifies the Amazon Resource Name (ARN) of the speech foundation model used to perform speech recognition and natural language understanding for the bot's locale. (AI-inferred)
+	ModelArn any
+	VoiceId any
+}
+
+type Bot_BotLocales_UnifiedSpeechSettings struct {
+	// Specifies the foundation model (e.g., Amazon Nova) and its version used for automatic speech recognition in the bot locale, enabling enhanced ASR under unified speech settings. (AI-inferred)
+	SpeechFoundationModel any
+}
+
+type Bot_BotLocales_VoiceSettings struct {
+	// The text-to-speech voice engine used for the bot locale, which can be either 'standard' or 'neural'. (AI-inferred)
+	Engine any
+	// Specifies the Amazon Polly voice ID that Amazon Lex uses for text-to-speech in this bot locale. (AI-inferred)
+	VoiceId any
+}
+
+type Bot_BotLocales struct {
+	// Configures the bot locale's audio filler settings, including the maximum duration a filler audio can play while the bot waits for user input. (AI-inferred)
+	AudioFillerSettings any
+	// Configures the custom vocabulary for the bot locale, containing a list of domain-specific phrases with optional weights that Amazon Lex uses to improve speech recognition accuracy. (AI-inferred)
+	CustomVocabulary any
+	// Provides a descriptive note for a bot locale, identifying the language or regional variant (e.g., English (US)) for the bot's conversational experience. (AI-inferred)
+	Description any
+	// Defines the generative AI settings for the bot locale, including configuration for integrating an Amazon Bedrock agent and enabling runtime features such as slot resolution improvement. (AI-inferred)
+	GenerativeAisettings any
+	// Specifies the list of intents defined for a user locale in the Lex bot, where each intent includes its name, sample utterances, and slot configuration. (AI-inferred)
+	Intents any
+	// Specifies the unique language and regional variant identifier (e.g., 'en_US' or 'de_DE') for this bot locale, enabling the bot to support multiple locales within the same bot. (AI-inferred)
+	LocaleId any
+	// Sets the minimum confidence score (0.0 to 1.0) that Amazon Lex requires for a user's utterance to be considered a match for an intent in this bot locale. (AI-inferred)
+	NluConfidenceThreshold any
+	// Defines the custom slot types available within this locale, specifying how slot values are captured and validated in the bot's interactions. (AI-inferred)
+	SlotTypes any
+	// Determines the sensitivity of speech detection in the bot locale, with valid values of AUTO, HIGH, or LOW, which controls how aggressively Amazon Lex recognizes spoken input in the audio stream. (AI-inferred)
+	SpeechDetectionSensitivity any
+	// For each locale of the bot, the speech recognition settings configure how speech is recognized, including whether speech recognition is enabled and the engine type used (standard or cross-talk). (AI-inferred)
+	SpeechRecognitionSettings any
+	// Specifies speech recognition settings for the locale, including phrase lists and custom vocabulary that improve transcription accuracy. (AI-inferred)
+	UnifiedSpeechSettings any
+	// Configures the voice used by the bot for this locale, including the Amazon Polly voice ID and engine type. (AI-inferred)
+	VoiceSettings any
+}
+
+type Bot_BotMembers struct {
+	// The unique identifier of the alias of the member Lex V2 bot that is associated with this bot via its bot_members list. (AI-inferred)
+	BotMemberAliasId any
+	// The alias name of the child bot that is included as a member of this composite (parent) Lex bot. (AI-inferred)
+	BotMemberAliasName any
+	// The Amazon Lex bot ID (unique identifier) of a member bot that is associated with this bot in its network of related bots. (AI-inferred)
+	BotMemberId any
+	// The unique name given to a member bot within the parent bot's multi-bot configuration, used to identify and reference that bot in the overall bot routing and orchestration logic. (AI-inferred)
+	BotMemberName any
+	// The version of the bot member (e.g., '1' or '$LATEST') that is being associated with the parent bot in an Amazon Lex multi-region bot network. (AI-inferred)
+	BotMemberVersion any
+}
+
+type Bot_DataPrivacy struct {
+	// Indicates whether the Amazon Lex bot collects information from children under age 13, requiring compliance with the Children's Online Privacy Protection Act (COPPA). (AI-inferred)
+	ChildDirected any
+}
+
+type Bot_Replication struct {
+	// Specifies the list of AWS Regions to replicate the Lex bot to, enabling the bot to operate in multiple regions for high availability and reduced latency. (AI-inferred)
+	ReplicaRegions any
+}
+
+type Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHook struct {
+	// Specifies the version of the Lambda code hook interface used by the bot, with the only valid value being 1.0. (AI-inferred)
+	CodeHookInterfaceVersion any
+	// ARN of the Lambda function invoked as the code hook for this bot alias locale, used to handle conversation flow or fulfillment logic. (AI-inferred)
+	LambdaArn any
+}
+
+type Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification struct {
+	// The lambda_code_hook object defines the AWS Lambda function used as the code hook for the bot alias locale, specifying the Lambda function ARN and the code hook interface version. (AI-inferred)
+	LambdaCodeHook any
+}
+
+type Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting struct {
+	// Specifies the AWS Lambda function and optional interface version that Amazon Lex V2 invokes to handle the bot's dialog for each locale configured on this bot alias. (AI-inferred)
+	CodeHookSpecification any
+	// Determines whether the locale is enabled for the bot alias in the test bot alias settings; when false, the locale is not available for use. (AI-inferred)
+	Enabled any
+}
+
+type Bot_TestBotAliasSettings_BotAliasLocaleSettings struct {
+	// Specifies the per-locale configuration for the test bot alias, including whether the alias is enabled for that locale and the Lambda code hook specification used to handle slot and intent requests. (AI-inferred)
+	BotAliasLocaleSetting any
+	// Specifies the locale identifier (such as 'en_US' or 'es_ES') for which the corresponding bot alias locale settings apply, enabling language-specific alias configuration. (AI-inferred)
+	LocaleId any
+}
+
+type Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_Destination_S3Bucket struct {
+	// The ARN of the AWS KMS key used to encrypt audio conversation logs delivered to the S3 bucket. (AI-inferred)
+	KmsKeyArn any
+	// For Amazon Lex conversation logs, this sets the S3 object prefix under which the audio logs are stored in the destination S3 bucket. (AI-inferred)
+	LogPrefix any
+	// The ARN of the S3 bucket where audio conversation logs are delivered for this bot alias. (AI-inferred)
+	S3BucketArn any
+}
+
+type Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_Destination struct {
+	// The S3 bucket destination for audio conversation logs, specifying the bucket name, ARN, and optional KMS key ARN used for encrypting the log files. (AI-inferred)
+	S3Bucket any
+}
+
+type Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings struct {
+	// Specifies the Amazon S3 bucket that receives audio conversation logs for the bot alias. (AI-inferred)
+	Destination any
+	// Whether audio conversation logs are enabled for the bot alias, allowing capture of audio streams to the configured S3 destination. (AI-inferred)
+	Enabled any
+}
+
+type Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_Destination_CloudWatch struct {
+	// The ARN of the CloudWatch log group where Amazon Lex delivers text conversation logs for this bot alias. (AI-inferred)
+	CloudWatchLogGroupArn any
+	// The prefix that is prepended to the log stream names in CloudWatch Logs where Amazon Lex writes text conversation logs for the bot alias. (AI-inferred)
+	LogPrefix any
+}
+
+type Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_Destination struct {
+	// This object defines the destination for text conversation logs as a CloudWatch Logs log group, specifying the log group ARN to which Amazon Lex delivers the logs. (AI-inferred)
+	CloudWatch any
+}
+
+type Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings struct {
+	// Defines the Amazon S3 bucket (including optional KMS encryption key) where text conversation logs are delivered when text logging is enabled for the test bot alias's conversation log settings. (AI-inferred)
+	Destination any
+	// Whether text conversation logs are enabled for the bot alias. (AI-inferred)
+	Enabled any
+}
+
+type Bot_TestBotAliasSettings_ConversationLogSettings struct {
+	// Specifies the list of audio log settings for the test bot alias's conversation logs, defining the S3 bucket destination and whether each audio log is enabled. (AI-inferred)
+	AudioLogSettings any
+	// Specifies a list of settings for text conversation logs on the bot alias, each containing an enabled flag and the ARN of the CloudWatch Logs log group where Lex delivers text transcripts. (AI-inferred)
+	TextLogSettings any
+}
+
+type Bot_TestBotAliasSettings_SentimentAnalysisSettings struct {
+	// Indicates whether Amazon Lex detects the sentiment of user utterances for the test bot alias, enabling sentiment-based responses when set to true. (AI-inferred)
+	DetectSentiment any
+}
+
+type Bot_TestBotAliasSettings struct {
+	// Defines the per-locale settings (including Lambda code hook and enabled status) for the test bot alias associated with this Lex bot. (AI-inferred)
+	BotAliasLocaleSettings any
+	// Configures the conversation log settings, including text and audio log destinations, for the test bot alias of the Lex bot. (AI-inferred)
+	ConversationLogSettings any
+	// A description of the resource
+	Description any
+	// Specifies sentiment analysis settings for the test bot alias, including the detectSentiment flag that enables or disables Amazon Lex sentiment detection on user utterances. (AI-inferred)
+	SentimentAnalysisSettings any
+}
+
+var Bot_BotFileS3LocationFields = ubx.FieldMap{
+		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
+		"S3ObjectKey": ubx.FieldSpec{WireName: "s3_object_key"},
+		"S3ObjectVersion": ubx.FieldSpec{WireName: "s3_object_version"},
 	}
 
-var Bot_AbortStatementFields = ubx.FieldMap{
-		"ResponseCard": ubx.FieldSpec{WireName: "response_card"},
-		"Message": ubx.FieldSpec{
-			WireName: "message",
-			Kind: "set",
-			Fields: Bot_AbortStatement_MessageFields,
+var Bot_BotLocales_AudioFillerSettingsFields = ubx.FieldMap{
+		"AudioType": ubx.FieldSpec{WireName: "audio_type"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"MinimumPlayDurationInMilliseconds": ubx.FieldSpec{WireName: "minimum_play_duration_in_milliseconds"},
+		"ResponseDeliveryDelayInMilliseconds": ubx.FieldSpec{WireName: "response_delivery_delay_in_milliseconds"},
+		"StartDelayInMilliseconds": ubx.FieldSpec{WireName: "start_delay_in_milliseconds"},
+	}
+
+var Bot_BotLocales_CustomVocabulary_CustomVocabularyItemsFields = ubx.FieldMap{
+		"DisplayAs": ubx.FieldSpec{WireName: "display_as"},
+		"Phrase": ubx.FieldSpec{WireName: "phrase"},
+		"Weight": ubx.FieldSpec{WireName: "weight"},
+	}
+
+var Bot_BotLocales_CustomVocabularyFields = ubx.FieldMap{
+		"CustomVocabularyItems": ubx.FieldSpec{
+			WireName: "custom_vocabulary_items",
+			Kind: "list",
+			Fields: Bot_BotLocales_CustomVocabulary_CustomVocabularyItemsFields,
 		},
 	}
 
-var Bot_ClarificationPromptFields = ubx.FieldMap{
-		"MaxAttempts": ubx.FieldSpec{WireName: "max_attempts"},
-		"ResponseCard": ubx.FieldSpec{WireName: "response_card"},
-		"Message": ubx.FieldSpec{
-			WireName: "message",
-			Kind: "set",
-			Fields: Bot_AbortStatement_MessageFields,
+var Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecification_BedrockGuardrailConfigurationFields = ubx.FieldMap{
+		"BedrockGuardrailIdentifier": ubx.FieldSpec{WireName: "bedrock_guardrail_identifier"},
+		"BedrockGuardrailVersion": ubx.FieldSpec{WireName: "bedrock_guardrail_version"},
+	}
+
+var Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecificationFields = ubx.FieldMap{
+		"BedrockGuardrailConfiguration": ubx.FieldSpec{
+			WireName: "bedrock_guardrail_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecification_BedrockGuardrailConfigurationFields,
+		},
+		"BedrockModelCustomPrompt": ubx.FieldSpec{WireName: "bedrock_model_custom_prompt"},
+		"BedrockTraceStatus": ubx.FieldSpec{WireName: "bedrock_trace_status"},
+		"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
+	}
+
+var Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecificationFields = ubx.FieldMap{
+		"BedrockModelSpecification": ubx.FieldSpec{
+			WireName: "bedrock_model_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecificationFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
+var Bot_BotLocales_GenerativeAisettings_BuildtimeSettingsFields = ubx.FieldMap{
+		"DescriptiveBotBuilderSpecification": ubx.FieldSpec{
+			WireName: "descriptive_bot_builder_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecificationFields,
+		},
+		"SampleUtteranceGenerationSpecification": ubx.FieldSpec{
+			WireName: "sample_utterance_generation_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecificationFields,
 		},
 	}
 
-var Bot_IntentFields = ubx.FieldMap{
-		"IntentName": ubx.FieldSpec{WireName: "intent_name"},
-		"IntentVersion": ubx.FieldSpec{WireName: "intent_version"},
+var Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecification_IntentDisambiguationSettingsFields = ubx.FieldMap{
+		"CustomDisambiguationMessage": ubx.FieldSpec{WireName: "custom_disambiguation_message"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"MaxDisambiguationIntents": ubx.FieldSpec{WireName: "max_disambiguation_intents"},
 	}
 
-var Bot_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecificationFields = ubx.FieldMap{
+		"AssistedNluMode": ubx.FieldSpec{WireName: "assisted_nlu_mode"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"IntentDisambiguationSettings": ubx.FieldSpec{
+			WireName: "intent_disambiguation_settings",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecification_IntentDisambiguationSettingsFields,
+		},
+	}
+
+var Bot_BotLocales_GenerativeAisettings_RuntimeSettingsFields = ubx.FieldMap{
+		"NluImprovementSpecification": ubx.FieldSpec{
+			WireName: "nlu_improvement_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecificationFields,
+		},
+		"SlotResolutionImprovementSpecification": ubx.FieldSpec{
+			WireName: "slot_resolution_improvement_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecificationFields,
+		},
+	}
+
+var Bot_BotLocales_GenerativeAisettingsFields = ubx.FieldMap{
+		"BuildtimeSettings": ubx.FieldSpec{
+			WireName: "buildtime_settings",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettingsFields,
+		},
+		"RuntimeSettings": ubx.FieldSpec{
+			WireName: "runtime_settings",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettings_RuntimeSettingsFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentConfigurationFields = ubx.FieldMap{
+		"BedrockAgentAliasId": ubx.FieldSpec{WireName: "bedrock_agent_alias_id"},
+		"BedrockAgentId": ubx.FieldSpec{WireName: "bedrock_agent_id"},
+	}
+
+var Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentIntentKnowledgeBaseConfigurationFields = ubx.FieldMap{
+		"BedrockKnowledgeBaseArn": ubx.FieldSpec{WireName: "bedrock_knowledge_base_arn"},
+		"BedrockModelConfiguration": ubx.FieldSpec{
+			WireName: "bedrock_model_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecificationFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_BedrockAgentIntentConfigurationFields = ubx.FieldMap{
+		"BedrockAgentConfiguration": ubx.FieldSpec{
+			WireName: "bedrock_agent_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentConfigurationFields,
+		},
+		"BedrockAgentIntentKnowledgeBaseConfiguration": ubx.FieldSpec{
+			WireName: "bedrock_agent_intent_knowledge_base_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentIntentKnowledgeBaseConfigurationFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_DialogCodeHookFields = ubx.FieldMap{
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields = ubx.FieldMap{
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCard_ButtonsFields = ubx.FieldMap{
+		"Text": ubx.FieldSpec{WireName: "text"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCardFields = ubx.FieldMap{
+		"Buttons": ubx.FieldSpec{
+			WireName: "buttons",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCard_ButtonsFields,
+		},
+		"ImageUrl": ubx.FieldSpec{WireName: "image_url"},
+		"Subtitle": ubx.FieldSpec{WireName: "subtitle"},
+		"Title": ubx.FieldSpec{WireName: "title"},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_MessageFields = ubx.FieldMap{
+		"CustomPayload": ubx.FieldSpec{
+			WireName: "custom_payload",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
+		},
+		"ImageResponseCard": ubx.FieldSpec{
+			WireName: "image_response_card",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCardFields,
+		},
+		"PlainTextMessage": ubx.FieldSpec{
+			WireName: "plain_text_message",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
+		},
+		"Ssmlmessage": ubx.FieldSpec{
+			WireName: "ssmlmessage",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields = ubx.FieldMap{
+		"Message": ubx.FieldSpec{
+			WireName: "message",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_MessageFields,
+		},
+		"Variations": ubx.FieldSpec{
+			WireName: "variations",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_MessageFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponseFields = ubx.FieldMap{
+		"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
+		"DelayInSeconds": ubx.FieldSpec{WireName: "delay_in_seconds"},
+		"MessageGroups": ubx.FieldSpec{
+			WireName: "message_groups",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_UpdateResponseFields = ubx.FieldMap{
+		"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
+		"FrequencyInSeconds": ubx.FieldSpec{WireName: "frequency_in_seconds"},
+		"MessageGroups": ubx.FieldSpec{
+			WireName: "message_groups",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecificationFields = ubx.FieldMap{
+		"Active": ubx.FieldSpec{WireName: "active"},
+		"StartResponse": ubx.FieldSpec{
+			WireName: "start_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponseFields,
+		},
+		"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
+		"UpdateResponse": ubx.FieldSpec{
+			WireName: "update_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_UpdateResponseFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ConditionFields = ubx.FieldMap{
+		"ExpressionString": ubx.FieldSpec{WireName: "expression_string"},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_DialogActionFields = ubx.FieldMap{
+		"SlotToElicit": ubx.FieldSpec{WireName: "slot_to_elicit"},
+		"SuppressNextMessage": ubx.FieldSpec{WireName: "suppress_next_message"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverride_ValueFields = ubx.FieldMap{
+		"InterpretedValue": ubx.FieldSpec{WireName: "interpreted_value"},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverrideFields = ubx.FieldMap{
+		"Shape": ubx.FieldSpec{WireName: "shape"},
+		"Value": ubx.FieldSpec{
+			WireName: "value",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverride_ValueFields,
+		},
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_SlotsFields = ubx.FieldMap{
+		"SlotName": ubx.FieldSpec{WireName: "slot_name"},
+		"SlotValueOverride": ubx.FieldSpec{
+			WireName: "slot_value_override",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverrideFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_IntentFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Slots": ubx.FieldSpec{
+			WireName: "slots",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_SlotsFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributesFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields = ubx.FieldMap{
+		"DialogAction": ubx.FieldSpec{
+			WireName: "dialog_action",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_DialogActionFields,
+		},
+		"Intent": ubx.FieldSpec{
+			WireName: "intent",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_IntentFields,
+		},
+		"SessionAttributes": ubx.FieldSpec{
+			WireName: "session_attributes",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributesFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields = ubx.FieldMap{
+		"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
+		"MessageGroupsList": ubx.FieldSpec{
+			WireName: "message_groups_list",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranchesFields = ubx.FieldMap{
+		"Condition": ubx.FieldSpec{
+			WireName: "condition",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ConditionFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"NextStep": ubx.FieldSpec{
+			WireName: "next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+		"Response": ubx.FieldSpec{
+			WireName: "response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_DefaultBranchFields = ubx.FieldMap{
+		"NextStep": ubx.FieldSpec{
+			WireName: "next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+		"Response": ubx.FieldSpec{
+			WireName: "response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields = ubx.FieldMap{
+		"ConditionalBranches": ubx.FieldSpec{
+			WireName: "conditional_branches",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranchesFields,
+		},
+		"DefaultBranch": ubx.FieldSpec{
+			WireName: "default_branch",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_DefaultBranchFields,
+		},
+		"IsActive": ubx.FieldSpec{WireName: "is_active"},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecificationFields = ubx.FieldMap{
+		"FailureConditional": ubx.FieldSpec{
+			WireName: "failure_conditional",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+		},
+		"FailureNextStep": ubx.FieldSpec{
+			WireName: "failure_next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+		"FailureResponse": ubx.FieldSpec{
+			WireName: "failure_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+		"SuccessConditional": ubx.FieldSpec{
+			WireName: "success_conditional",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+		},
+		"SuccessNextStep": ubx.FieldSpec{
+			WireName: "success_next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+		"SuccessResponse": ubx.FieldSpec{
+			WireName: "success_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+		"TimeoutConditional": ubx.FieldSpec{
+			WireName: "timeout_conditional",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+		},
+		"TimeoutNextStep": ubx.FieldSpec{
+			WireName: "timeout_next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+		"TimeoutResponse": ubx.FieldSpec{
+			WireName: "timeout_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_FulfillmentCodeHookFields = ubx.FieldMap{
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"FulfillmentUpdatesSpecification": ubx.FieldSpec{
+			WireName: "fulfillment_updates_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecificationFields,
+		},
+		"IsActive": ubx.FieldSpec{WireName: "is_active"},
+		"PostFulfillmentStatusSpecification": ubx.FieldSpec{
+			WireName: "post_fulfillment_status_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecificationFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_InitialResponseSetting_CodeHookFields = ubx.FieldMap{
+		"EnableCodeHookInvocation": ubx.FieldSpec{WireName: "enable_code_hook_invocation"},
+		"InvocationLabel": ubx.FieldSpec{WireName: "invocation_label"},
+		"IsActive": ubx.FieldSpec{WireName: "is_active"},
+		"PostCodeHookSpecification": ubx.FieldSpec{
+			WireName: "post_code_hook_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecificationFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_InitialResponseSettingFields = ubx.FieldMap{
+		"CodeHook": ubx.FieldSpec{
+			WireName: "code_hook",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_InitialResponseSetting_CodeHookFields,
+		},
+		"Conditional": ubx.FieldSpec{
+			WireName: "conditional",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+		},
+		"InitialResponse": ubx.FieldSpec{
+			WireName: "initial_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+		"NextStep": ubx.FieldSpec{
+			WireName: "next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_InputContextsFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
+
+var Bot_BotLocales_Intents_IntentClosingSettingFields = ubx.FieldMap{
+		"ClosingResponse": ubx.FieldSpec{
+			WireName: "closing_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+		"Conditional": ubx.FieldSpec{
+			WireName: "conditional",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+		},
+		"IsActive": ubx.FieldSpec{WireName: "is_active"},
+		"NextStep": ubx.FieldSpec{
+			WireName: "next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_IntentConfirmationSetting_ElicitationCodeHookFields = ubx.FieldMap{
+		"EnableCodeHookInvocation": ubx.FieldSpec{WireName: "enable_code_hook_invocation"},
+		"InvocationLabel": ubx.FieldSpec{WireName: "invocation_label"},
+	}
+
+var Bot_BotLocales_Intents_IntentConfirmationSetting_PromptSpecificationFields = ubx.FieldMap{
+		"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
+		"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
+		"MessageGroupsList": ubx.FieldSpec{
+			WireName: "message_groups_list",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
+		},
+		"MessageSelectionStrategy": ubx.FieldSpec{WireName: "message_selection_strategy"},
+		"PromptAttemptsSpecification": ubx.FieldSpec{WireName: "prompt_attempts_specification"},
+	}
+
+var Bot_BotLocales_Intents_IntentConfirmationSettingFields = ubx.FieldMap{
+		"CodeHook": ubx.FieldSpec{
+			WireName: "code_hook",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_InitialResponseSetting_CodeHookFields,
+		},
+		"ConfirmationConditional": ubx.FieldSpec{
+			WireName: "confirmation_conditional",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+		},
+		"ConfirmationNextStep": ubx.FieldSpec{
+			WireName: "confirmation_next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+		"ConfirmationResponse": ubx.FieldSpec{
+			WireName: "confirmation_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+		"DeclinationConditional": ubx.FieldSpec{
+			WireName: "declination_conditional",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+		},
+		"DeclinationNextStep": ubx.FieldSpec{
+			WireName: "declination_next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+		"DeclinationResponse": ubx.FieldSpec{
+			WireName: "declination_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+		"ElicitationCodeHook": ubx.FieldSpec{
+			WireName: "elicitation_code_hook",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_IntentConfirmationSetting_ElicitationCodeHookFields,
+		},
+		"FailureConditional": ubx.FieldSpec{
+			WireName: "failure_conditional",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+		},
+		"FailureNextStep": ubx.FieldSpec{
+			WireName: "failure_next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+		"FailureResponse": ubx.FieldSpec{
+			WireName: "failure_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+		"IsActive": ubx.FieldSpec{WireName: "is_active"},
+		"PromptSpecification": ubx.FieldSpec{
+			WireName: "prompt_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_IntentConfirmationSetting_PromptSpecificationFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_KendraConfigurationFields = ubx.FieldMap{
+		"KendraIndex": ubx.FieldSpec{WireName: "kendra_index"},
+		"QueryFilterString": ubx.FieldSpec{WireName: "query_filter_string"},
+		"QueryFilterStringEnabled": ubx.FieldSpec{WireName: "query_filter_string_enabled"},
+	}
+
+var Bot_BotLocales_Intents_OutputContextsFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"TimeToLiveInSeconds": ubx.FieldSpec{WireName: "time_to_live_in_seconds"},
+		"TurnsToLive": ubx.FieldSpec{WireName: "turns_to_live"},
+	}
+
+var Bot_BotLocales_Intents_QinConnectIntentConfiguration_QinConnectAssistantConfigurationFields = ubx.FieldMap{
+		"AssistantArn": ubx.FieldSpec{WireName: "assistant_arn"},
+	}
+
+var Bot_BotLocales_Intents_QinConnectIntentConfigurationFields = ubx.FieldMap{
+		"QinConnectAssistantConfiguration": ubx.FieldSpec{
+			WireName: "qin_connect_assistant_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_QinConnectIntentConfiguration_QinConnectAssistantConfigurationFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfiguration_BkbexactResponseFieldsFields = ubx.FieldMap{
+		"AnswerField": ubx.FieldSpec{WireName: "answer_field"},
+	}
+
+var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfigurationFields = ubx.FieldMap{
+		"BedrockKnowledgeBaseArn": ubx.FieldSpec{WireName: "bedrock_knowledge_base_arn"},
+		"BkbexactResponseFields": ubx.FieldSpec{
+			WireName: "bkbexact_response_fields",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfiguration_BkbexactResponseFieldsFields,
+		},
+		"ExactResponse": ubx.FieldSpec{WireName: "exact_response"},
+	}
+
+var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_KendraConfigurationFields = ubx.FieldMap{
+		"ExactResponse": ubx.FieldSpec{WireName: "exact_response"},
+		"KendraIndex": ubx.FieldSpec{WireName: "kendra_index"},
+		"QueryFilterString": ubx.FieldSpec{WireName: "query_filter_string"},
+		"QueryFilterStringEnabled": ubx.FieldSpec{WireName: "query_filter_string_enabled"},
+	}
+
+var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfiguration_ExactResponseFieldsFields = ubx.FieldMap{
+		"AnswerField": ubx.FieldSpec{WireName: "answer_field"},
+		"QuestionField": ubx.FieldSpec{WireName: "question_field"},
+	}
+
+var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfigurationFields = ubx.FieldMap{
+		"DomainEndpoint": ubx.FieldSpec{WireName: "domain_endpoint"},
+		"ExactResponse": ubx.FieldSpec{WireName: "exact_response"},
+		"ExactResponseFields": ubx.FieldSpec{
+			WireName: "exact_response_fields",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfiguration_ExactResponseFieldsFields,
+		},
+		"IncludeFields": ubx.FieldSpec{WireName: "include_fields"},
+		"IndexName": ubx.FieldSpec{WireName: "index_name"},
+	}
+
+var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfigurationFields = ubx.FieldMap{
+		"BedrockKnowledgeStoreConfiguration": ubx.FieldSpec{
+			WireName: "bedrock_knowledge_store_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfigurationFields,
+		},
+		"KendraConfiguration": ubx.FieldSpec{
+			WireName: "kendra_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_KendraConfigurationFields,
+		},
+		"OpensearchConfiguration": ubx.FieldSpec{
+			WireName: "opensearch_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfigurationFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_QnAintentConfigurationFields = ubx.FieldMap{
+		"BedrockModelConfiguration": ubx.FieldSpec{
+			WireName: "bedrock_model_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecificationFields,
+		},
+		"DataSourceConfiguration": ubx.FieldSpec{
+			WireName: "data_source_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfigurationFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_SampleUtterancesFields = ubx.FieldMap{
+		"Utterance": ubx.FieldSpec{WireName: "utterance"},
+	}
+
+var Bot_BotLocales_Intents_SlotPrioritiesFields = ubx.FieldMap{
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"SlotName": ubx.FieldSpec{WireName: "slot_name"},
+	}
+
+var Bot_BotLocales_Intents_Slots_MultipleValuesSettingFields = ubx.FieldMap{
+		"AllowMultipleValues": ubx.FieldSpec{WireName: "allow_multiple_values"},
+	}
+
+var Bot_BotLocales_Intents_Slots_ObfuscationSettingFields = ubx.FieldMap{
+		"ObfuscationSettingType": ubx.FieldSpec{WireName: "obfuscation_setting_type"},
+	}
+
+var Bot_BotLocales_Intents_Slots_SubSlotSettingFields = ubx.FieldMap{
+		"Expression": ubx.FieldSpec{WireName: "expression"},
+		"SlotSpecifications": ubx.FieldSpec{WireName: "slot_specifications"},
+	}
+
+var Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecification_DefaultValueListFields = ubx.FieldMap{
+		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	}
+
+var Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecificationFields = ubx.FieldMap{
+		"DefaultValueList": ubx.FieldSpec{
+			WireName: "default_value_list",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecification_DefaultValueListFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_Slots_ValueElicitationSetting_SlotCaptureSettingFields = ubx.FieldMap{
+		"CaptureConditional": ubx.FieldSpec{
+			WireName: "capture_conditional",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+		},
+		"CaptureNextStep": ubx.FieldSpec{
+			WireName: "capture_next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+		"CaptureResponse": ubx.FieldSpec{
+			WireName: "capture_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+		"CodeHook": ubx.FieldSpec{
+			WireName: "code_hook",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_InitialResponseSetting_CodeHookFields,
+		},
+		"ElicitationCodeHook": ubx.FieldSpec{
+			WireName: "elicitation_code_hook",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_IntentConfirmationSetting_ElicitationCodeHookFields,
+		},
+		"FailureConditional": ubx.FieldSpec{
+			WireName: "failure_conditional",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+		},
+		"FailureNextStep": ubx.FieldSpec{
+			WireName: "failure_next_step",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+		},
+		"FailureResponse": ubx.FieldSpec{
+			WireName: "failure_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecification_StillWaitingResponseFields = ubx.FieldMap{
+		"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
+		"FrequencyInSeconds": ubx.FieldSpec{WireName: "frequency_in_seconds"},
+		"MessageGroupsList": ubx.FieldSpec{
+			WireName: "message_groups_list",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
+		},
+		"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
+	}
+
+var Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecificationFields = ubx.FieldMap{
+		"ContinueResponse": ubx.FieldSpec{
+			WireName: "continue_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+		"IsActive": ubx.FieldSpec{WireName: "is_active"},
+		"StillWaitingResponse": ubx.FieldSpec{
+			WireName: "still_waiting_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecification_StillWaitingResponseFields,
+		},
+		"WaitingResponse": ubx.FieldSpec{
+			WireName: "waiting_response",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_Slots_ValueElicitationSettingFields = ubx.FieldMap{
+		"DefaultValueSpecification": ubx.FieldSpec{
+			WireName: "default_value_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecificationFields,
+		},
+		"PromptSpecification": ubx.FieldSpec{
+			WireName: "prompt_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_IntentConfirmationSetting_PromptSpecificationFields,
+		},
+		"SampleUtterances": ubx.FieldSpec{
+			WireName: "sample_utterances",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_SampleUtterancesFields,
+		},
+		"SlotCaptureSetting": ubx.FieldSpec{
+			WireName: "slot_capture_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSetting_SlotCaptureSettingFields,
+		},
+		"SlotConstraint": ubx.FieldSpec{WireName: "slot_constraint"},
+		"WaitAndContinueSpecification": ubx.FieldSpec{
+			WireName: "wait_and_continue_specification",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecificationFields,
+		},
+	}
+
+var Bot_BotLocales_Intents_SlotsFields = ubx.FieldMap{
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"MultipleValuesSetting": ubx.FieldSpec{
+			WireName: "multiple_values_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_Slots_MultipleValuesSettingFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ObfuscationSetting": ubx.FieldSpec{
+			WireName: "obfuscation_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_Slots_ObfuscationSettingFields,
+		},
+		"SlotTypeName": ubx.FieldSpec{WireName: "slot_type_name"},
+		"SubSlotSetting": ubx.FieldSpec{
+			WireName: "sub_slot_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_Slots_SubSlotSettingFields,
+		},
+		"ValueElicitationSetting": ubx.FieldSpec{
+			WireName: "value_elicitation_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSettingFields,
+		},
+	}
+
+var Bot_BotLocales_IntentsFields = ubx.FieldMap{
+		"BedrockAgentIntentConfiguration": ubx.FieldSpec{
+			WireName: "bedrock_agent_intent_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_BedrockAgentIntentConfigurationFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DialogCodeHook": ubx.FieldSpec{
+			WireName: "dialog_code_hook",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_DialogCodeHookFields,
+		},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"FulfillmentCodeHook": ubx.FieldSpec{
+			WireName: "fulfillment_code_hook",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHookFields,
+		},
+		"InitialResponseSetting": ubx.FieldSpec{
+			WireName: "initial_response_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_InitialResponseSettingFields,
+		},
+		"InputContexts": ubx.FieldSpec{
+			WireName: "input_contexts",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_InputContextsFields,
+		},
+		"IntentClosingSetting": ubx.FieldSpec{
+			WireName: "intent_closing_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_IntentClosingSettingFields,
+		},
+		"IntentConfirmationSetting": ubx.FieldSpec{
+			WireName: "intent_confirmation_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_IntentConfirmationSettingFields,
+		},
+		"KendraConfiguration": ubx.FieldSpec{
+			WireName: "kendra_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_KendraConfigurationFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"OutputContexts": ubx.FieldSpec{
+			WireName: "output_contexts",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_OutputContextsFields,
+		},
+		"ParentIntentSignature": ubx.FieldSpec{WireName: "parent_intent_signature"},
+		"QinConnectIntentConfiguration": ubx.FieldSpec{
+			WireName: "qin_connect_intent_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_QinConnectIntentConfigurationFields,
+		},
+		"QnAintentConfiguration": ubx.FieldSpec{
+			WireName: "qn_aintent_configuration",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_QnAintentConfigurationFields,
+		},
+		"SampleUtterances": ubx.FieldSpec{
+			WireName: "sample_utterances",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_SampleUtterancesFields,
+		},
+		"SlotPriorities": ubx.FieldSpec{
+			WireName: "slot_priorities",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_SlotPrioritiesFields,
+		},
+		"Slots": ubx.FieldSpec{
+			WireName: "slots",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_SlotsFields,
+		},
+	}
+
+var Bot_BotLocales_SlotTypes_CompositeSlotTypeSetting_SubSlotsFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SlotTypeId": ubx.FieldSpec{WireName: "slot_type_id"},
+		"SlotTypeName": ubx.FieldSpec{WireName: "slot_type_name"},
+	}
+
+var Bot_BotLocales_SlotTypes_CompositeSlotTypeSettingFields = ubx.FieldMap{
+		"SubSlots": ubx.FieldSpec{
+			WireName: "sub_slots",
+			Kind: "list",
+			Fields: Bot_BotLocales_SlotTypes_CompositeSlotTypeSetting_SubSlotsFields,
+		},
+	}
+
+var Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSetting_SourceFields = ubx.FieldMap{
+		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
+		"S3ObjectKey": ubx.FieldSpec{WireName: "s3_object_key"},
+	}
+
+var Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSettingFields = ubx.FieldMap{
+		"Source": ubx.FieldSpec{
+			WireName: "source",
+			Kind: "object",
+			Fields: Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSetting_SourceFields,
+		},
+	}
+
+var Bot_BotLocales_SlotTypes_ExternalSourceSettingFields = ubx.FieldMap{
+		"GrammarSlotTypeSetting": ubx.FieldSpec{
+			WireName: "grammar_slot_type_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSettingFields,
+		},
+	}
+
+var Bot_BotLocales_SlotTypes_SlotTypeValuesFields = ubx.FieldMap{
+		"SampleValue": ubx.FieldSpec{
+			WireName: "sample_value",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
+		},
+		"Synonyms": ubx.FieldSpec{
+			WireName: "synonyms",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
+		},
+	}
+
+var Bot_BotLocales_SlotTypes_ValueSelectionSetting_AdvancedRecognitionSettingFields = ubx.FieldMap{
+		"AudioRecognitionStrategy": ubx.FieldSpec{WireName: "audio_recognition_strategy"},
+	}
+
+var Bot_BotLocales_SlotTypes_ValueSelectionSetting_RegexFilterFields = ubx.FieldMap{
+		"Pattern": ubx.FieldSpec{WireName: "pattern"},
+	}
+
+var Bot_BotLocales_SlotTypes_ValueSelectionSettingFields = ubx.FieldMap{
+		"AdvancedRecognitionSetting": ubx.FieldSpec{
+			WireName: "advanced_recognition_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_SlotTypes_ValueSelectionSetting_AdvancedRecognitionSettingFields,
+		},
+		"RegexFilter": ubx.FieldSpec{
+			WireName: "regex_filter",
+			Kind: "object",
+			Fields: Bot_BotLocales_SlotTypes_ValueSelectionSetting_RegexFilterFields,
+		},
+		"ResolutionStrategy": ubx.FieldSpec{WireName: "resolution_strategy"},
+	}
+
+var Bot_BotLocales_SlotTypesFields = ubx.FieldMap{
+		"CompositeSlotTypeSetting": ubx.FieldSpec{
+			WireName: "composite_slot_type_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_SlotTypes_CompositeSlotTypeSettingFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"ExternalSourceSetting": ubx.FieldSpec{
+			WireName: "external_source_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_SlotTypes_ExternalSourceSettingFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ParentSlotTypeSignature": ubx.FieldSpec{WireName: "parent_slot_type_signature"},
+		"SlotTypeValues": ubx.FieldSpec{
+			WireName: "slot_type_values",
+			Kind: "list",
+			Fields: Bot_BotLocales_SlotTypes_SlotTypeValuesFields,
+		},
+		"ValueSelectionSetting": ubx.FieldSpec{
+			WireName: "value_selection_setting",
+			Kind: "object",
+			Fields: Bot_BotLocales_SlotTypes_ValueSelectionSettingFields,
+		},
+	}
+
+var Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfig_DeepgramConfigFields = ubx.FieldMap{
+		"ApiTokenSecretArn": ubx.FieldSpec{WireName: "api_token_secret_arn"},
+		"ModelId": ubx.FieldSpec{WireName: "model_id"},
+	}
+
+var Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfigFields = ubx.FieldMap{
+		"DeepgramConfig": ubx.FieldSpec{
+			WireName: "deepgram_config",
+			Kind: "object",
+			Fields: Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfig_DeepgramConfigFields,
+		},
+	}
+
+var Bot_BotLocales_SpeechRecognitionSettingsFields = ubx.FieldMap{
+		"SpeechModelConfig": ubx.FieldSpec{
+			WireName: "speech_model_config",
+			Kind: "object",
+			Fields: Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfigFields,
+		},
+		"SpeechModelPreference": ubx.FieldSpec{WireName: "speech_model_preference"},
+	}
+
+var Bot_BotLocales_UnifiedSpeechSettings_SpeechFoundationModelFields = ubx.FieldMap{
+		"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
+		"VoiceId": ubx.FieldSpec{WireName: "voice_id"},
+	}
+
+var Bot_BotLocales_UnifiedSpeechSettingsFields = ubx.FieldMap{
+		"SpeechFoundationModel": ubx.FieldSpec{
+			WireName: "speech_foundation_model",
+			Kind: "object",
+			Fields: Bot_BotLocales_UnifiedSpeechSettings_SpeechFoundationModelFields,
+		},
+	}
+
+var Bot_BotLocales_VoiceSettingsFields = ubx.FieldMap{
+		"Engine": ubx.FieldSpec{WireName: "engine"},
+		"VoiceId": ubx.FieldSpec{WireName: "voice_id"},
+	}
+
+var Bot_BotLocalesFields = ubx.FieldMap{
+		"AudioFillerSettings": ubx.FieldSpec{
+			WireName: "audio_filler_settings",
+			Kind: "object",
+			Fields: Bot_BotLocales_AudioFillerSettingsFields,
+		},
+		"CustomVocabulary": ubx.FieldSpec{
+			WireName: "custom_vocabulary",
+			Kind: "object",
+			Fields: Bot_BotLocales_CustomVocabularyFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"GenerativeAisettings": ubx.FieldSpec{
+			WireName: "generative_aisettings",
+			Kind: "object",
+			Fields: Bot_BotLocales_GenerativeAisettingsFields,
+		},
+		"Intents": ubx.FieldSpec{
+			WireName: "intents",
+			Kind: "list",
+			Fields: Bot_BotLocales_IntentsFields,
+		},
+		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+		"NluConfidenceThreshold": ubx.FieldSpec{WireName: "nlu_confidence_threshold"},
+		"SlotTypes": ubx.FieldSpec{
+			WireName: "slot_types",
+			Kind: "list",
+			Fields: Bot_BotLocales_SlotTypesFields,
+		},
+		"SpeechDetectionSensitivity": ubx.FieldSpec{WireName: "speech_detection_sensitivity"},
+		"SpeechRecognitionSettings": ubx.FieldSpec{
+			WireName: "speech_recognition_settings",
+			Kind: "object",
+			Fields: Bot_BotLocales_SpeechRecognitionSettingsFields,
+		},
+		"UnifiedSpeechSettings": ubx.FieldSpec{
+			WireName: "unified_speech_settings",
+			Kind: "object",
+			Fields: Bot_BotLocales_UnifiedSpeechSettingsFields,
+		},
+		"VoiceSettings": ubx.FieldSpec{
+			WireName: "voice_settings",
+			Kind: "object",
+			Fields: Bot_BotLocales_VoiceSettingsFields,
+		},
+	}
+
+var Bot_BotMembersFields = ubx.FieldMap{
+		"BotMemberAliasId": ubx.FieldSpec{WireName: "bot_member_alias_id"},
+		"BotMemberAliasName": ubx.FieldSpec{WireName: "bot_member_alias_name"},
+		"BotMemberId": ubx.FieldSpec{WireName: "bot_member_id"},
+		"BotMemberName": ubx.FieldSpec{WireName: "bot_member_name"},
+		"BotMemberVersion": ubx.FieldSpec{WireName: "bot_member_version"},
+	}
+
+var Bot_DataPrivacyFields = ubx.FieldMap{
+		"ChildDirected": ubx.FieldSpec{WireName: "child_directed"},
+	}
+
+var Bot_ReplicationFields = ubx.FieldMap{
+		"ReplicaRegions": ubx.FieldSpec{WireName: "replica_regions"},
+	}
+
+var Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHookFields = ubx.FieldMap{
+		"CodeHookInterfaceVersion": ubx.FieldSpec{WireName: "code_hook_interface_version"},
+		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
+	}
+
+var Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecificationFields = ubx.FieldMap{
+		"LambdaCodeHook": ubx.FieldSpec{
+			WireName: "lambda_code_hook",
+			Kind: "object",
+			Fields: Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHookFields,
+		},
+	}
+
+var Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSettingFields = ubx.FieldMap{
+		"CodeHookSpecification": ubx.FieldSpec{
+			WireName: "code_hook_specification",
+			Kind: "object",
+			Fields: Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecificationFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
+var Bot_TestBotAliasSettings_BotAliasLocaleSettingsFields = ubx.FieldMap{
+		"BotAliasLocaleSetting": ubx.FieldSpec{
+			WireName: "bot_alias_locale_setting",
+			Kind: "object",
+			Fields: Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSettingFields,
+		},
+		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+	}
+
+var Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_Destination_S3BucketFields = ubx.FieldMap{
+		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"LogPrefix": ubx.FieldSpec{WireName: "log_prefix"},
+		"S3BucketArn": ubx.FieldSpec{WireName: "s3_bucket_arn"},
+	}
+
+var Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_DestinationFields = ubx.FieldMap{
+		"S3Bucket": ubx.FieldSpec{
+			WireName: "s3_bucket",
+			Kind: "object",
+			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_Destination_S3BucketFields,
+		},
+	}
+
+var Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettingsFields = ubx.FieldMap{
+		"Destination": ubx.FieldSpec{
+			WireName: "destination",
+			Kind: "object",
+			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_DestinationFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
+var Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_Destination_CloudWatchFields = ubx.FieldMap{
+		"CloudWatchLogGroupArn": ubx.FieldSpec{WireName: "cloud_watch_log_group_arn"},
+		"LogPrefix": ubx.FieldSpec{WireName: "log_prefix"},
+	}
+
+var Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_DestinationFields = ubx.FieldMap{
+		"CloudWatch": ubx.FieldSpec{
+			WireName: "cloud_watch",
+			Kind: "object",
+			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_Destination_CloudWatchFields,
+		},
+	}
+
+var Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettingsFields = ubx.FieldMap{
+		"Destination": ubx.FieldSpec{
+			WireName: "destination",
+			Kind: "object",
+			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_DestinationFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
+var Bot_TestBotAliasSettings_ConversationLogSettingsFields = ubx.FieldMap{
+		"AudioLogSettings": ubx.FieldSpec{
+			WireName: "audio_log_settings",
+			Kind: "list",
+			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettingsFields,
+		},
+		"TextLogSettings": ubx.FieldSpec{
+			WireName: "text_log_settings",
+			Kind: "list",
+			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettingsFields,
+		},
+	}
+
+var Bot_TestBotAliasSettings_SentimentAnalysisSettingsFields = ubx.FieldMap{
+		"DetectSentiment": ubx.FieldSpec{WireName: "detect_sentiment"},
+	}
+
+var Bot_TestBotAliasSettingsFields = ubx.FieldMap{
+		"BotAliasLocaleSettings": ubx.FieldSpec{
+			WireName: "bot_alias_locale_settings",
+			Kind: "list",
+			Fields: Bot_TestBotAliasSettings_BotAliasLocaleSettingsFields,
+		},
+		"ConversationLogSettings": ubx.FieldSpec{
+			WireName: "conversation_log_settings",
+			Kind: "object",
+			Fields: Bot_TestBotAliasSettings_ConversationLogSettingsFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"SentimentAnalysisSettings": ubx.FieldSpec{
+			WireName: "sentiment_analysis_settings",
+			Kind: "object",
+			Fields: Bot_TestBotAliasSettings_SentimentAnalysisSettingsFields,
+		},
 	}
 
 type BotConfig struct {
-	ChildDirected any
-	CreateVersion any
+	AutoBuildBotLocales any
+	// Configuration for the Amazon S3 location of the bot definition file, specifying the S3 bucket and object key used to import the bot. (AI-inferred)
+	BotFileS3Location any
+	// Defines the list of locale-specific configurations for the bot, each with its own language and country, intents, slot types, and localized prompt/voice settings. (AI-inferred)
+	BotLocales any
+	// The list of bot members in a network to be created.
+	BotMembers any
+	// A list of key-value tag pairs (each containing 'key' and 'value') that are attached to the Amazon Lex bot for metadata, cost allocation, and access control. (AI-inferred)
+	BotTags any
+	// The type of a bot to create.
+	BotType any
+	// Specifies data privacy settings for the bot, including the ChildDirected flag that indicates whether the bot is intended for children under 13, affecting how Amazon Lex stores and processes speech and user data. (AI-inferred)
+	DataPrivacy any
+	// A description of the resource
 	Description any
-	DetectSentiment any
-	EnableModelImprovements any
-	Id any
-	IdleSessionTtlInSeconds any
-	Locale any
+	// Configures the CloudWatch log group and IAM role used to store error logs generated by the Amazon Lex bot. (AI-inferred)
+	ErrorLogSettings any
+	// Sets the number of seconds an Amazon Lex bot session remains active after the user's last interaction before the session is closed. (AI-inferred)
+	IdleSessionTtlinSeconds any
+	// The unique name assigned to the Amazon Lex bot, which is required and must be unique within the AWS account. (AI-inferred)
 	Name any
-	NluIntentConfidenceThreshold any
-	ProcessBehavior any
-	Region any
-	VoiceId any
-	AbortStatement any
-	ClarificationPrompt any
-	Intent any
-	Timeouts any
+	// The 'replication' property defines the cross-region replication configuration for the Lex bot, specifying the IAM replication role and the list of destination AWS regions to which the bot is replicated. (AI-inferred)
+	Replication any
+	// The ARN of an IAM role that Amazon Lex assumes to access other AWS services (such as Lambda functions) on behalf of the bot. (AI-inferred)
+	RoleArn any
+	// Configures the test bot alias used for validating the bot, including locale-specific alias settings, conversation log settings, and a description. (AI-inferred)
+	TestBotAliasSettings any
+	// Defines the list of key-value tags applied to the test bot alias that AWS Lex creates for testing the bot. (AI-inferred)
+	TestBotAliasTags any
+}
+
+type BotAttrs struct {
+	// The Amazon Resource Name (ARN) that uniquely identifies this Amazon Lex bot in AWS. (AI-inferred)
+	Arn any
+	AutoBuildBotLocales any
+	// Configuration for the Amazon S3 location of the bot definition file, specifying the S3 bucket and object key used to import the bot. (AI-inferred)
+	BotFileS3Location any
+	// Defines the list of locale-specific configurations for the bot, each with its own language and country, intents, slot types, and localized prompt/voice settings. (AI-inferred)
+	BotLocales any
+	// The list of bot members in a network to be created.
+	BotMembers any
+	// A list of key-value tag pairs (each containing 'key' and 'value') that are attached to the Amazon Lex bot for metadata, cost allocation, and access control. (AI-inferred)
+	BotTags any
+	// The type of a bot to create.
+	BotType any
+	// Specifies data privacy settings for the bot, including the ChildDirected flag that indicates whether the bot is intended for children under 13, affecting how Amazon Lex stores and processes speech and user data. (AI-inferred)
+	DataPrivacy any
+	// A description of the resource
+	Description any
+	// Configures the CloudWatch log group and IAM role used to store error logs generated by the Amazon Lex bot. (AI-inferred)
+	ErrorLogSettings any
+	// The unique identifier of the Lex bot, which is the bot's name. (AI-inferred)
+	Id any
+	// Sets the number of seconds an Amazon Lex bot session remains active after the user's last interaction before the session is closed. (AI-inferred)
+	IdleSessionTtlinSeconds any
+	// The unique name assigned to the Amazon Lex bot, which is required and must be unique within the AWS account. (AI-inferred)
+	Name any
+	// The 'replication' property defines the cross-region replication configuration for the Lex bot, specifying the IAM replication role and the list of destination AWS regions to which the bot is replicated. (AI-inferred)
+	Replication any
+	// The ARN of an IAM role that Amazon Lex assumes to access other AWS services (such as Lambda functions) on behalf of the bot. (AI-inferred)
+	RoleArn any
+	// Configures the test bot alias used for validating the bot, including locale-specific alias settings, conversation log settings, and a description. (AI-inferred)
+	TestBotAliasSettings any
+	// Defines the list of key-value tags applied to the test bot alias that AWS Lex creates for testing the bot. (AI-inferred)
+	TestBotAliasTags any
 }
 
 var Bot = ubx.ResourceBinding{
 	WireType: "aws_lex_bot",
 	Fields: ubx.FieldMap{
-		"ChildDirected": ubx.FieldSpec{WireName: "child_directed"},
-		"CreateVersion": ubx.FieldSpec{WireName: "create_version"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DetectSentiment": ubx.FieldSpec{WireName: "detect_sentiment"},
-		"EnableModelImprovements": ubx.FieldSpec{WireName: "enable_model_improvements"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IdleSessionTtlInSeconds": ubx.FieldSpec{WireName: "idle_session_ttl_in_seconds"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NluIntentConfidenceThreshold": ubx.FieldSpec{WireName: "nlu_intent_confidence_threshold"},
-		"ProcessBehavior": ubx.FieldSpec{WireName: "process_behavior"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"VoiceId": ubx.FieldSpec{WireName: "voice_id"},
-		"AbortStatement": ubx.FieldSpec{
-			WireName: "abort_statement",
-			Kind: "list",
-			Fields: Bot_AbortStatementFields,
-		},
-		"ClarificationPrompt": ubx.FieldSpec{
-			WireName: "clarification_prompt",
-			Kind: "list",
-			Fields: Bot_ClarificationPromptFields,
-		},
-		"Intent": ubx.FieldSpec{
-			WireName: "intent",
-			Kind: "set",
-			Fields: Bot_IntentFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"AutoBuildBotLocales": ubx.FieldSpec{WireName: "auto_build_bot_locales"},
+		"BotFileS3Location": ubx.FieldSpec{
+			WireName: "bot_file_s3_location",
 			Kind: "object",
-			Fields: Bot_TimeoutsFields,
+			Fields: Bot_BotFileS3LocationFields,
+		},
+		"BotLocales": ubx.FieldSpec{
+			WireName: "bot_locales",
+			Kind: "list",
+			Fields: Bot_BotLocalesFields,
+		},
+		"BotMembers": ubx.FieldSpec{
+			WireName: "bot_members",
+			Kind: "list",
+			Fields: Bot_BotMembersFields,
+		},
+		"BotTags": ubx.FieldSpec{
+			WireName: "bot_tags",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributesFields,
+		},
+		"BotType": ubx.FieldSpec{WireName: "bot_type"},
+		"DataPrivacy": ubx.FieldSpec{
+			WireName: "data_privacy",
+			Kind: "object",
+			Fields: Bot_DataPrivacyFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"ErrorLogSettings": ubx.FieldSpec{
+			WireName: "error_log_settings",
+			Kind: "object",
+			Fields: Bot_BotLocales_Intents_DialogCodeHookFields,
+		},
+		"IdleSessionTtlinSeconds": ubx.FieldSpec{WireName: "idle_session_ttlin_seconds"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Replication": ubx.FieldSpec{
+			WireName: "replication",
+			Kind: "object",
+			Fields: Bot_ReplicationFields,
+		},
+		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"TestBotAliasSettings": ubx.FieldSpec{
+			WireName: "test_bot_alias_settings",
+			Kind: "object",
+			Fields: Bot_TestBotAliasSettingsFields,
+		},
+		"TestBotAliasTags": ubx.FieldSpec{
+			WireName: "test_bot_alias_tags",
+			Kind: "list",
+			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributesFields,
 		},
 	},
 }

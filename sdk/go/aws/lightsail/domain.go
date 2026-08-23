@@ -3,17 +3,70 @@ package lightsail
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type DomainConfig struct {
-	DomainName any
+type Domain_DomainEntries struct {
 	Id any
-	Region any
+	// Indicates whether the domain entry is an alias record that routes traffic to an AWS resource such as a load balancer or distribution, rather than a standard DNS record with a literal target. (AI-inferred)
+	IsAlias any
+	// The subdomain or hostname for the DNS record, such as 'www' or '@' for the root domain, that this domain entry defines. (AI-inferred)
+	Name any
+	// The destination value that this Lightsail domain DNS record resolves to, such as an IPv4 address for an A record or a hostname for a CNAME record. (AI-inferred)
+	Target any
+	// The DNS record type for this domain entry, such as A, CNAME, MX, or TXT. (AI-inferred)
+	Type any
+}
+
+type Domain_Location struct {
+	// The Availability Zone.
+	AvailabilityZone any
+	// The AWS Region name.
+	RegionName any
+}
+
+type Domain_Tags struct {
+	// The key of a tag that can be assigned to a Lightsail domain, enabling you to categorize, manage, and control access to the domain. (AI-inferred)
+	Key any
+	Value any
+}
+
+var Domain_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+type DomainConfig struct {
+	// The name of the domain to manage in Lightsail.
+	DomainName any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
+}
+
+type DomainAttrs struct {
+	// The Amazon Resource Name (ARN) of the domain (read-only).
+	Arn any
+	// The timestamp when the domain was created (read-only).
+	CreatedAt any
+	// An array of key-value pairs containing information about the domain entries.
+	DomainEntries any
+	// The name of the domain to manage in Lightsail.
+	DomainName any
+	// The AWS Region and Availability Zone where the domain was created (read-only).
+	Location any
+	// The Lightsail resource type (read-only).
+	ResourceType any
+	// The support code. Include this code in your email to support when you have questions (read-only).
+	SupportCode any
+	// An array of key-value pairs to apply to this resource.
+	Tags any
 }
 
 var Domain = ubx.ResourceBinding{
 	WireType: "aws_lightsail_domain",
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Domain_TagsFields,
+		},
 	},
 }

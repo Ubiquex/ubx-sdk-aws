@@ -7,54 +7,72 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Eip_Timeouts:
-    delete: Any = None
-    read: Any = None
-    update: Any = None
+class Eip_Tags:
+    key: Any = None
+    # The value portion of a key-value tag attached to the Elastic IP address. (AI-inferred)
+    value: Any = None
 
-_Eip_TimeoutsFields = {
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "read": ubx.FieldSpec(wire_name="read"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Eip_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class EipConfig:
+    # An Elastic IP address or a carrier IP address in a Wavelength Zone.
     address: Any = None
-    associate_with_private_ip: Any = None
-    customer_owned_ipv4_pool: Any = None
+    # The network (``vpc``). If you define an Elastic IP address and associate it with a VPC that is defined in the same template, you must declare a dependency on the VPC-gateway attachment by using the [DependsOn Attribute](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html) on this resource.
     domain: Any = None
-    id: Any = None
-    instance: Any = None
+    # The ID of the instance. Updates to the ``InstanceId`` property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
+    instance_id: Any = None
+    # The ID of an IPAM pool which has an Amazon-provided or BYOIP public IPv4 CIDR provisioned to it. For more information, see [Allocate sequential Elastic IP addresses from an IPAM pool](https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-eip-pool.html) in the *Amazon VPC IPAM User Guide*.
     ipam_pool_id: Any = None
+    # A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups. Use [DescribeAvailabilityZones](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html) to view the network border groups.
     network_border_group: Any = None
-    network_interface: Any = None
+    # The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool. Updates to the ``PublicIpv4Pool`` property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
     public_ipv4_pool: Any = None
-    region: Any = None
+    # Any tags assigned to the Elastic IP address. Updates to the ``Tags`` property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
     tags: Any = None
-    tags_all: Any = None
-    timeouts: Any = None
+    # The Elastic IP address you are accepting for transfer. You can only accept one transferred address. For more information on Elastic IP address transfers, see [Transfer Elastic IP addresses](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro) in the *Amazon Virtual Private Cloud User Guide*.
+    transfer_address: Any = None
+
+@dataclasses.dataclass
+class EipAttrs:
+    # An Elastic IP address or a carrier IP address in a Wavelength Zone.
+    address: Any = None
+    # The unique identifier assigned by AWS to this Elastic IP address when it was allocated for use in a VPC. (AI-inferred)
+    allocation_id: Any = None
+    # The network (``vpc``). If you define an Elastic IP address and associate it with a VPC that is defined in the same template, you must declare a dependency on the VPC-gateway attachment by using the [DependsOn Attribute](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html) on this resource.
+    domain: Any = None
+    # The ID of the instance. Updates to the ``InstanceId`` property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
+    instance_id: Any = None
+    # The ID of an IPAM pool which has an Amazon-provided or BYOIP public IPv4 CIDR provisioned to it. For more information, see [Allocate sequential Elastic IP addresses from an IPAM pool](https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-eip-pool.html) in the *Amazon VPC IPAM User Guide*.
+    ipam_pool_id: Any = None
+    # A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups. Use [DescribeAvailabilityZones](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html) to view the network border groups.
+    network_border_group: Any = None
+    # The public IPv4 address that AWS allocates to the Elastic IP (EIP) resource, which you can associate with an EC2 instance or network interface. (AI-inferred)
+    public_ip: Any = None
+    # The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool. Updates to the ``PublicIpv4Pool`` property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
+    public_ipv4_pool: Any = None
+    # Any tags assigned to the Elastic IP address. Updates to the ``Tags`` property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
+    tags: Any = None
+    # The Elastic IP address you are accepting for transfer. You can only accept one transferred address. For more information on Elastic IP address transfers, see [Transfer Elastic IP addresses](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro) in the *Amazon Virtual Private Cloud User Guide*.
+    transfer_address: Any = None
 
 Eip = ubx.ResourceBinding(
     wire_type="aws_eip",
     fields={
         "address": ubx.FieldSpec(wire_name="address"),
-        "associate_with_private_ip": ubx.FieldSpec(wire_name="associate_with_private_ip"),
-        "customer_owned_ipv4_pool": ubx.FieldSpec(wire_name="customer_owned_ipv4_pool"),
         "domain": ubx.FieldSpec(wire_name="domain"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "instance": ubx.FieldSpec(wire_name="instance"),
+        "instance_id": ubx.FieldSpec(wire_name="instance_id"),
         "ipam_pool_id": ubx.FieldSpec(wire_name="ipam_pool_id"),
         "network_border_group": ubx.FieldSpec(wire_name="network_border_group"),
-        "network_interface": ubx.FieldSpec(wire_name="network_interface"),
         "public_ipv4_pool": ubx.FieldSpec(wire_name="public_ipv4_pool"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Eip_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Eip_TagsFields,
         ),
+        "transfer_address": ubx.FieldSpec(wire_name="transfer_address"),
     },
 )

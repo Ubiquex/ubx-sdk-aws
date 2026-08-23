@@ -3,143 +3,261 @@ package ssmincidents
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ResponsePlan_Action_SsmAutomation_Parameter struct {
-	Name any
+type ResponsePlan_Actions_SsmAutomation_DynamicParameters_Value struct {
+	// Specifies the dynamic incident variable (such as an incident ARN or severity) that will be resolved at runtime and used as the value for this SSM automation document parameter. (AI-inferred)
+	Variable any
+}
+
+type ResponsePlan_Actions_SsmAutomation_DynamicParameters struct {
+	// In the SSM automation action of an Incident Manager response plan, the key in a dynamic_parameters mapping identifies the name of the automation document parameter whose value will be dynamically set from incident data. (AI-inferred)
+	Key any
+	// The runtime value assigned to a specific SSM automation document parameter, allowing the response plan to pass incident details or other dynamic values into the automation execution. (AI-inferred)
+	Value any
+}
+
+type ResponsePlan_Actions_SsmAutomation_Parameters struct {
+	// The name of the parameter to pass to the SSM automation document when the response plan triggers the runbook. (AI-inferred)
+	Key any
+	// The list of values to assign to the corresponding SSM automation document parameter when the response plan triggers the automation run. (AI-inferred)
 	Values any
 }
 
-type ResponsePlan_Action_SsmAutomation struct {
+type ResponsePlan_Actions_SsmAutomation struct {
+	// The name of the SSM automation document (runbook) that the response plan executes as part of the automation action. (AI-inferred)
 	DocumentName any
+	// Specifies the version of the SSM Automation document (runbook) to run when the response plan triggers this automation action. (AI-inferred)
 	DocumentVersion any
+	// Defines dynamic parameter key-value pairs to pass to the SSM automation document run as part of the response plan, with each value dynamically derived from incident context (e.g., incident ARN) rather than a static value. (AI-inferred)
 	DynamicParameters any
+	// Specifies the input parameters to pass to the SSM automation runbook when this response plan action is executed. (AI-inferred)
+	Parameters any
+	// The ARN of the IAM role that AWS Systems Manager Automation assumes when executing the automation runbook as part of this response plan's SSM automation action. (AI-inferred)
 	RoleArn any
+	// Specifies which AWS account the SSM automation document should run in, either the account that was impacted by the incident (IMPACTED_ACCOUNT) or a different, specifically selected account (SPECIFIC_ACCOUNT). (AI-inferred)
 	TargetAccount any
-	Parameter any
 }
 
-type ResponsePlan_Action struct {
+type ResponsePlan_Actions struct {
+	// Specifies the AWS Systems Manager (SSM) automation document to execute as an action when an incident is created, including the document name, the role assumed for execution, and any input parameters. (AI-inferred)
 	SsmAutomation any
 }
 
-type ResponsePlan_IncidentTemplate_NotificationTarget struct {
+type ResponsePlan_ChatChannel struct {
+	// The list of Amazon SNS topic ARNs that AWS Chatbot uses to send notifications to the configured chat channel for the incident response plan. (AI-inferred)
+	ChatbotSns any
+}
+
+type ResponsePlan_IncidentTemplate_IncidentTags struct {
+	// The key of a tag to apply to the incident when it is created, as defined in the incident template of the response plan. (AI-inferred)
+	Key any
+	// The value of the tag assigned to the incident created from this response plan. (AI-inferred)
+	Value any
+}
+
+type ResponsePlan_IncidentTemplate_NotificationTargets struct {
+	// The ARN of the SNS topic that receives incident notifications when a matching incident is created or updated. (AI-inferred)
 	SnsTopicArn any
 }
 
 type ResponsePlan_IncidentTemplate struct {
+	// The deduplication string.
 	DedupeString any
+	// The impact value.
 	Impact any
+	// Tags that get applied to incidents created by the StartIncident API action.
 	IncidentTags any
+	// The list of notification targets.
+	NotificationTargets any
+	// The summary string.
 	Summary any
+	// The title string.
 	Title any
-	NotificationTarget any
 }
 
-type ResponsePlan_Integration_Pagerduty struct {
-	Name any
-	SecretId any
+type ResponsePlan_Integrations_PagerDutyConfiguration_PagerDutyIncidentConfiguration struct {
+	// The service_id specifies the unique identifier of the PagerDuty service where incidents will be created when this response plan is executed. (AI-inferred)
 	ServiceId any
 }
 
-type ResponsePlan_Integration struct {
-	Pagerduty any
+type ResponsePlan_Integrations_PagerDutyConfiguration struct {
+	// The name of the PagerDuty configuration, used to identify this integration within the response plan. (AI-inferred)
+	Name any
+	// The PagerDuty incident configuration that specifies the ID of the PagerDuty service where the incident will be created. (AI-inferred)
+	PagerDutyIncidentConfiguration any
+	// The ID or ARN of the AWS Secrets Manager secret that stores the PagerDuty API token used for the PagerDuty integration in the response plan. (AI-inferred)
+	SecretId any
 }
 
-var ResponsePlan_Action_SsmAutomation_ParameterFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+type ResponsePlan_Integrations struct {
+	// Defines the PagerDuty settings (including a name and the ARN or secret ID of an AWS Secrets Manager secret that stores the PagerDuty API token) that Incident Manager uses when triggering a PagerDuty incident for this integration. (AI-inferred)
+	PagerDutyConfiguration any
+}
+
+var ResponsePlan_Actions_SsmAutomation_DynamicParameters_ValueFields = ubx.FieldMap{
+		"Variable": ubx.FieldSpec{WireName: "variable"},
+	}
+
+var ResponsePlan_Actions_SsmAutomation_DynamicParametersFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{
+			WireName: "value",
+			Kind: "object",
+			Fields: ResponsePlan_Actions_SsmAutomation_DynamicParameters_ValueFields,
+		},
+	}
+
+var ResponsePlan_Actions_SsmAutomation_ParametersFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
 		"Values": ubx.FieldSpec{WireName: "values"},
 	}
 
-var ResponsePlan_Action_SsmAutomationFields = ubx.FieldMap{
+var ResponsePlan_Actions_SsmAutomationFields = ubx.FieldMap{
 		"DocumentName": ubx.FieldSpec{WireName: "document_name"},
 		"DocumentVersion": ubx.FieldSpec{WireName: "document_version"},
-		"DynamicParameters": ubx.FieldSpec{WireName: "dynamic_parameters"},
+		"DynamicParameters": ubx.FieldSpec{
+			WireName: "dynamic_parameters",
+			Kind: "list",
+			Fields: ResponsePlan_Actions_SsmAutomation_DynamicParametersFields,
+		},
+		"Parameters": ubx.FieldSpec{
+			WireName: "parameters",
+			Kind: "list",
+			Fields: ResponsePlan_Actions_SsmAutomation_ParametersFields,
+		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"TargetAccount": ubx.FieldSpec{WireName: "target_account"},
-		"Parameter": ubx.FieldSpec{
-			WireName: "parameter",
-			Kind: "set",
-			Fields: ResponsePlan_Action_SsmAutomation_ParameterFields,
-		},
 	}
 
-var ResponsePlan_ActionFields = ubx.FieldMap{
+var ResponsePlan_ActionsFields = ubx.FieldMap{
 		"SsmAutomation": ubx.FieldSpec{
 			WireName: "ssm_automation",
-			Kind: "list",
-			Fields: ResponsePlan_Action_SsmAutomationFields,
+			Kind: "object",
+			Fields: ResponsePlan_Actions_SsmAutomationFields,
 		},
 	}
 
-var ResponsePlan_IncidentTemplate_NotificationTargetFields = ubx.FieldMap{
+var ResponsePlan_ChatChannelFields = ubx.FieldMap{
+		"ChatbotSns": ubx.FieldSpec{WireName: "chatbot_sns"},
+	}
+
+var ResponsePlan_IncidentTemplate_IncidentTagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var ResponsePlan_IncidentTemplate_NotificationTargetsFields = ubx.FieldMap{
 		"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
 	}
 
 var ResponsePlan_IncidentTemplateFields = ubx.FieldMap{
 		"DedupeString": ubx.FieldSpec{WireName: "dedupe_string"},
 		"Impact": ubx.FieldSpec{WireName: "impact"},
-		"IncidentTags": ubx.FieldSpec{WireName: "incident_tags"},
+		"IncidentTags": ubx.FieldSpec{
+			WireName: "incident_tags",
+			Kind: "list",
+			Fields: ResponsePlan_IncidentTemplate_IncidentTagsFields,
+		},
+		"NotificationTargets": ubx.FieldSpec{
+			WireName: "notification_targets",
+			Kind: "list",
+			Fields: ResponsePlan_IncidentTemplate_NotificationTargetsFields,
+		},
 		"Summary": ubx.FieldSpec{WireName: "summary"},
 		"Title": ubx.FieldSpec{WireName: "title"},
-		"NotificationTarget": ubx.FieldSpec{
-			WireName: "notification_target",
-			Kind: "set",
-			Fields: ResponsePlan_IncidentTemplate_NotificationTargetFields,
-		},
 	}
 
-var ResponsePlan_Integration_PagerdutyFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
+var ResponsePlan_Integrations_PagerDutyConfiguration_PagerDutyIncidentConfigurationFields = ubx.FieldMap{
 		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
 	}
 
-var ResponsePlan_IntegrationFields = ubx.FieldMap{
-		"Pagerduty": ubx.FieldSpec{
-			WireName: "pagerduty",
-			Kind: "list",
-			Fields: ResponsePlan_Integration_PagerdutyFields,
+var ResponsePlan_Integrations_PagerDutyConfigurationFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PagerDutyIncidentConfiguration": ubx.FieldSpec{
+			WireName: "pager_duty_incident_configuration",
+			Kind: "object",
+			Fields: ResponsePlan_Integrations_PagerDutyConfiguration_PagerDutyIncidentConfigurationFields,
+		},
+		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
+	}
+
+var ResponsePlan_IntegrationsFields = ubx.FieldMap{
+		"PagerDutyConfiguration": ubx.FieldSpec{
+			WireName: "pager_duty_configuration",
+			Kind: "object",
+			Fields: ResponsePlan_Integrations_PagerDutyConfigurationFields,
 		},
 	}
 
 type ResponsePlanConfig struct {
+	// The list of actions.
+	Actions any
+	// The chat channel configuration.
 	ChatChannel any
+	// The display name of the response plan.
 	DisplayName any
+	// The list of engagements to use.
 	Engagements any
-	Id any
-	Name any
-	Region any
-	Tags any
-	TagsAll any
-	Action any
+	// The incident template configuration.
 	IncidentTemplate any
-	Integration any
+	// The list of integrations.
+	Integrations any
+	// The name of the response plan.
+	Name any
+	// The tags to apply to the response plan.
+	Tags any
+}
+
+type ResponsePlanAttrs struct {
+	// The list of actions.
+	Actions any
+	// The ARN of the response plan.
+	Arn any
+	// The chat channel configuration.
+	ChatChannel any
+	// The display name of the response plan.
+	DisplayName any
+	// The list of engagements to use.
+	Engagements any
+	// The incident template configuration.
+	IncidentTemplate any
+	// The list of integrations.
+	Integrations any
+	// The name of the response plan.
+	Name any
+	// The tags to apply to the response plan.
+	Tags any
 }
 
 var ResponsePlan = ubx.ResourceBinding{
 	WireType: "aws_ssmincidents_response_plan",
 	Fields: ubx.FieldMap{
-		"ChatChannel": ubx.FieldSpec{WireName: "chat_channel"},
+		"Actions": ubx.FieldSpec{
+			WireName: "actions",
+			Kind: "list",
+			Fields: ResponsePlan_ActionsFields,
+		},
+		"ChatChannel": ubx.FieldSpec{
+			WireName: "chat_channel",
+			Kind: "object",
+			Fields: ResponsePlan_ChatChannelFields,
+		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Engagements": ubx.FieldSpec{WireName: "engagements"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "list",
-			Fields: ResponsePlan_ActionFields,
-		},
 		"IncidentTemplate": ubx.FieldSpec{
 			WireName: "incident_template",
-			Kind: "list",
+			Kind: "object",
 			Fields: ResponsePlan_IncidentTemplateFields,
 		},
-		"Integration": ubx.FieldSpec{
-			WireName: "integration",
+		"Integrations": ubx.FieldSpec{
+			WireName: "integrations",
 			Kind: "list",
-			Fields: ResponsePlan_IntegrationFields,
+			Fields: ResponsePlan_IntegrationsFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: ResponsePlan_IncidentTemplate_IncidentTagsFields,
 		},
 	},
 }

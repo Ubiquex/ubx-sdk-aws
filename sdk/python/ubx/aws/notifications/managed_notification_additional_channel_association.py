@@ -8,13 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagedNotificationAdditionalChannelAssociationConfig:
+    # ARN identifier of the channel. Example: arn:aws:chatbot::123456789012:chat-configuration/slack-channel/security-ops
     channel_arn: Any = None
-    managed_notification_arn: Any = None
+    # ARN identifier of the Managed Notification. Example: arn:aws:notifications::381491923782:managed-notification-configuration/category/AWS-Health/sub-category/Billing
+    managed_notification_configuration_arn: Any = None
+
+@dataclasses.dataclass
+class ManagedNotificationAdditionalChannelAssociationAttrs:
+    # ARN identifier of the channel. Example: arn:aws:chatbot::123456789012:chat-configuration/slack-channel/security-ops
+    channel_arn: Any = None
+    # ARN identifier of the Managed Notification. Example: arn:aws:notifications::381491923782:managed-notification-configuration/category/AWS-Health/sub-category/Billing
+    managed_notification_configuration_arn: Any = None
 
 ManagedNotificationAdditionalChannelAssociation = ubx.ResourceBinding(
     wire_type="aws_notifications_managed_notification_additional_channel_association",
     fields={
         "channel_arn": ubx.FieldSpec(wire_name="channel_arn"),
-        "managed_notification_arn": ubx.FieldSpec(wire_name="managed_notification_arn"),
+        "managed_notification_configuration_arn": ubx.FieldSpec(wire_name="managed_notification_configuration_arn"),
     },
 )

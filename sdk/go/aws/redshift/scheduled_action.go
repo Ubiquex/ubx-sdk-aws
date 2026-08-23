@@ -3,83 +3,58 @@ package redshift
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ScheduledAction_TargetAction_PauseCluster struct {
-	ClusterIdentifier any
-}
-
-type ScheduledAction_TargetAction_ResizeCluster struct {
-	Classic any
-	ClusterIdentifier any
-	ClusterType any
-	NodeType any
-	NumberOfNodes any
-}
-
-type ScheduledAction_TargetAction struct {
-	PauseCluster any
-	ResizeCluster any
-	ResumeCluster any
-}
-
-var ScheduledAction_TargetAction_PauseClusterFields = ubx.FieldMap{
-		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-	}
-
-var ScheduledAction_TargetAction_ResizeClusterFields = ubx.FieldMap{
-		"Classic": ubx.FieldSpec{WireName: "classic"},
-		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-		"ClusterType": ubx.FieldSpec{WireName: "cluster_type"},
-		"NodeType": ubx.FieldSpec{WireName: "node_type"},
-		"NumberOfNodes": ubx.FieldSpec{WireName: "number_of_nodes"},
-	}
-
-var ScheduledAction_TargetActionFields = ubx.FieldMap{
-		"PauseCluster": ubx.FieldSpec{
-			WireName: "pause_cluster",
-			Kind: "list",
-			Fields: ScheduledAction_TargetAction_PauseClusterFields,
-		},
-		"ResizeCluster": ubx.FieldSpec{
-			WireName: "resize_cluster",
-			Kind: "list",
-			Fields: ScheduledAction_TargetAction_ResizeClusterFields,
-		},
-		"ResumeCluster": ubx.FieldSpec{
-			WireName: "resume_cluster",
-			Kind: "list",
-			Fields: ScheduledAction_TargetAction_PauseClusterFields,
-		},
-	}
-
 type ScheduledActionConfig struct {
-	Description any
+	// If true, the schedule is enabled. If false, the scheduled action does not trigger.
 	Enable any
+	// The UTC date and time after which the scheduled action no longer runs; if omitted, the action continues indefinitely until disabled or deleted. (AI-inferred)
 	EndTime any
+	// The IAM role to assume to run the target action.
 	IamRole any
-	Id any
-	Name any
-	Region any
+	// The schedule in `at( )` or `cron( )` format.
 	Schedule any
+	// The description of the scheduled action.
+	ScheduledActionDescription any
+	// The name of the scheduled action. The name must be unique within an account.
+	ScheduledActionName any
+	// The UTC start time when the scheduled action becomes active, specified in ISO 8601 format. (AI-inferred)
 	StartTime any
+	// Configures the specific Redshift cluster operation (such as resize, pause, or resume) that the scheduled action will invoke when it fires. (AI-inferred)
+	TargetAction any
+}
+
+type ScheduledActionAttrs struct {
+	// If true, the schedule is enabled. If false, the scheduled action does not trigger.
+	Enable any
+	// The UTC date and time after which the scheduled action no longer runs; if omitted, the action continues indefinitely until disabled or deleted. (AI-inferred)
+	EndTime any
+	// The IAM role to assume to run the target action.
+	IamRole any
+	// List of times when the scheduled action will run.
+	NextInvocations any
+	// The schedule in `at( )` or `cron( )` format.
+	Schedule any
+	// The description of the scheduled action.
+	ScheduledActionDescription any
+	// The name of the scheduled action. The name must be unique within an account.
+	ScheduledActionName any
+	// The UTC start time when the scheduled action becomes active, specified in ISO 8601 format. (AI-inferred)
+	StartTime any
+	// The state of the scheduled action.
+	State any
+	// Configures the specific Redshift cluster operation (such as resize, pause, or resume) that the scheduled action will invoke when it fires. (AI-inferred)
 	TargetAction any
 }
 
 var ScheduledAction = ubx.ResourceBinding{
 	WireType: "aws_redshift_scheduled_action",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
 		"Enable": ubx.FieldSpec{WireName: "enable"},
 		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"IamRole": ubx.FieldSpec{WireName: "iam_role"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"Schedule": ubx.FieldSpec{WireName: "schedule"},
+		"ScheduledActionDescription": ubx.FieldSpec{WireName: "scheduled_action_description"},
+		"ScheduledActionName": ubx.FieldSpec{WireName: "scheduled_action_name"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TargetAction": ubx.FieldSpec{
-			WireName: "target_action",
-			Kind: "list",
-			Fields: ScheduledAction_TargetActionFields,
-		},
+		"TargetAction": ubx.FieldSpec{WireName: "target_action"},
 	},
 }

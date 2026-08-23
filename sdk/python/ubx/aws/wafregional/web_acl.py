@@ -8,107 +8,68 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WebAcl_DefaultAction:
+    # The action that AWS WAF takes when a request doesn't match any rule in the web ACL, either 'ALLOW' or 'BLOCK'. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
-class WebAcl_LoggingConfiguration_RedactedFields_FieldToMatch:
-    data: Any = None
-    type: Any = None
-
-@dataclasses.dataclass
-class WebAcl_LoggingConfiguration_RedactedFields:
-    field_to_match: Any = None
-
-@dataclasses.dataclass
-class WebAcl_LoggingConfiguration:
-    log_destination: Any = None
-    redacted_fields: Any = None
-
-@dataclasses.dataclass
-class WebAcl_Rule:
-    priority: Any = None
-    rule_id: Any = None
-    type: Any = None
+class WebAcl_Rules:
+    # Determines the action (ALLOW, BLOCK, or COUNT) that AWS WAF Regional applies to a web request when the corresponding rule matches. (AI-inferred)
     action: Any = None
-    override_action: Any = None
+    # Determines the evaluation order of the rule within the web ACL, where rules with lower priority values are evaluated first. (AI-inferred)
+    priority: Any = None
+    # Specifies the unique identifier of the AWS WAF Regional rule to associate with this web ACL's rule list. (AI-inferred)
+    rule_id: Any = None
 
 _WebAcl_DefaultActionFields = {
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_WebAcl_LoggingConfiguration_RedactedFields_FieldToMatchFields = {
-    "data": ubx.FieldSpec(wire_name="data"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
-_WebAcl_LoggingConfiguration_RedactedFieldsFields = {
-    "field_to_match": ubx.FieldSpec(
-        wire_name="field_to_match",
-        kind="set",
-        fields=_WebAcl_LoggingConfiguration_RedactedFields_FieldToMatchFields,
-    ),
-}
-
-_WebAcl_LoggingConfigurationFields = {
-    "log_destination": ubx.FieldSpec(wire_name="log_destination"),
-    "redacted_fields": ubx.FieldSpec(
-        wire_name="redacted_fields",
-        kind="list",
-        fields=_WebAcl_LoggingConfiguration_RedactedFieldsFields,
-    ),
-}
-
-_WebAcl_RuleFields = {
-    "priority": ubx.FieldSpec(wire_name="priority"),
-    "rule_id": ubx.FieldSpec(wire_name="rule_id"),
-    "type": ubx.FieldSpec(wire_name="type"),
+_WebAcl_RulesFields = {
     "action": ubx.FieldSpec(
         wire_name="action",
-        kind="list",
+        kind="object",
         fields=_WebAcl_DefaultActionFields,
     ),
-    "override_action": ubx.FieldSpec(
-        wire_name="override_action",
-        kind="list",
-        fields=_WebAcl_DefaultActionFields,
-    ),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "rule_id": ubx.FieldSpec(wire_name="rule_id"),
 }
 
 @dataclasses.dataclass
 class WebAclConfig:
-    id: Any = None
+    # The action AWS WAF takes when a web request doesn't match any rule in the web ACL, specified as an object with a Type property that can be ALLOW, BLOCK, or COUNT. (AI-inferred)
+    default_action: Any = None
+    # The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred)
     metric_name: Any = None
     name: Any = None
-    region: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred)
+    rules: Any = None
+
+@dataclasses.dataclass
+class WebAclAttrs:
+    # The action AWS WAF takes when a web request doesn't match any rule in the web ACL, specified as an object with a Type property that can be ALLOW, BLOCK, or COUNT. (AI-inferred)
     default_action: Any = None
-    logging_configuration: Any = None
-    rule: Any = None
+    # The unique AWS-assigned identifier for the Web ACL, used as the resource ID. (AI-inferred)
+    id: Any = None
+    # The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred)
+    metric_name: Any = None
+    name: Any = None
+    # Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred)
+    rules: Any = None
 
 WebAcl = ubx.ResourceBinding(
     wire_type="aws_wafregional_web_acl",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "metric_name": ubx.FieldSpec(wire_name="metric_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "default_action": ubx.FieldSpec(
             wire_name="default_action",
-            kind="list",
+            kind="object",
             fields=_WebAcl_DefaultActionFields,
         ),
-        "logging_configuration": ubx.FieldSpec(
-            wire_name="logging_configuration",
+        "metric_name": ubx.FieldSpec(wire_name="metric_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "rules": ubx.FieldSpec(
+            wire_name="rules",
             kind="list",
-            fields=_WebAcl_LoggingConfigurationFields,
-        ),
-        "rule": ubx.FieldSpec(
-            wire_name="rule",
-            kind="set",
-            fields=_WebAcl_RuleFields,
+            fields=_WebAcl_RulesFields,
         ),
     },
 )

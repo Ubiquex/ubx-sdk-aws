@@ -3,75 +3,95 @@ package ssmcontacts
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Plan_Stage_Target_ChannelTargetInfo struct {
-	ContactChannelId any
+type Plan_Stages_Targets_ChannelTargetInfo struct {
+	// The Amazon Resource Name (ARN) of the contact channel to notify when this stage is triggered. (AI-inferred)
+	ChannelId any
+	// The number of minutes to wait before retrying the contact channel if the previous attempt fails, as part of the channel target configuration in an SSM Contacts plan stage. (AI-inferred)
 	RetryIntervalInMinutes any
 }
 
-type Plan_Stage_Target_ContactTargetInfo struct {
+type Plan_Stages_Targets_ContactTargetInfo struct {
+	// The Amazon Resource Name (ARN) of the AWS SSM Contacts contact that this stage targets when the escalation plan is executed. (AI-inferred)
 	ContactId any
+	// A boolean that, when true, marks this contact as essential so that if the contact cannot be reached during an incident, the escalation plan stops and does not continue to subsequent targets. (AI-inferred)
 	IsEssential any
 }
 
-type Plan_Stage_Target struct {
+type Plan_Stages_Targets struct {
+	// Specifies the target as a contact channel rather than a contact, detailing the contact channel's identifier and the retry interval in minutes to wait before re-contacting it during the escalation stage. (AI-inferred)
 	ChannelTargetInfo any
+	// Identifies an SSM Contacts contact as a target for the stage, using its contact ID and an IsEssential flag that determines whether the contact must be reached for the on-call handoff to continue. (AI-inferred)
 	ContactTargetInfo any
 }
 
-type Plan_Stage struct {
+type Plan_Stages struct {
+	// The duration, in minutes, for which this stage of the engagement runs before moving to the next stage or ending the engagement. (AI-inferred)
 	DurationInMinutes any
-	Target any
+	// Specifies the contacts or contact channels that are notified when this stage of the on-call escalation plan is reached, based on the escalation time. (AI-inferred)
+	Targets any
 }
 
-var Plan_Stage_Target_ChannelTargetInfoFields = ubx.FieldMap{
-		"ContactChannelId": ubx.FieldSpec{WireName: "contact_channel_id"},
+var Plan_Stages_Targets_ChannelTargetInfoFields = ubx.FieldMap{
+		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
 		"RetryIntervalInMinutes": ubx.FieldSpec{WireName: "retry_interval_in_minutes"},
 	}
 
-var Plan_Stage_Target_ContactTargetInfoFields = ubx.FieldMap{
+var Plan_Stages_Targets_ContactTargetInfoFields = ubx.FieldMap{
 		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
 		"IsEssential": ubx.FieldSpec{WireName: "is_essential"},
 	}
 
-var Plan_Stage_TargetFields = ubx.FieldMap{
+var Plan_Stages_TargetsFields = ubx.FieldMap{
 		"ChannelTargetInfo": ubx.FieldSpec{
 			WireName: "channel_target_info",
-			Kind: "list",
-			Fields: Plan_Stage_Target_ChannelTargetInfoFields,
+			Kind: "object",
+			Fields: Plan_Stages_Targets_ChannelTargetInfoFields,
 		},
 		"ContactTargetInfo": ubx.FieldSpec{
 			WireName: "contact_target_info",
-			Kind: "list",
-			Fields: Plan_Stage_Target_ContactTargetInfoFields,
+			Kind: "object",
+			Fields: Plan_Stages_Targets_ContactTargetInfoFields,
 		},
 	}
 
-var Plan_StageFields = ubx.FieldMap{
+var Plan_StagesFields = ubx.FieldMap{
 		"DurationInMinutes": ubx.FieldSpec{WireName: "duration_in_minutes"},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
+		"Targets": ubx.FieldSpec{
+			WireName: "targets",
 			Kind: "list",
-			Fields: Plan_Stage_TargetFields,
+			Fields: Plan_Stages_TargetsFields,
 		},
 	}
 
 type PlanConfig struct {
+	// Contact ID for the AWS SSM Incident Manager Contact to associate the plan.
 	ContactId any
-	Id any
-	Region any
-	Stage any
+	// Rotation Ids to associate with Oncall Contact for engagement.
+	RotationIds any
+	// The stages that an escalation plan or engagement plan engages contacts and contact methods in.
+	Stages any
+}
+
+type PlanAttrs struct {
+	// The Amazon Resource Name (ARN) of the contact.
+	Arn any
+	// Contact ID for the AWS SSM Incident Manager Contact to associate the plan.
+	ContactId any
+	// Rotation Ids to associate with Oncall Contact for engagement.
+	RotationIds any
+	// The stages that an escalation plan or engagement plan engages contacts and contact methods in.
+	Stages any
 }
 
 var Plan = ubx.ResourceBinding{
 	WireType: "aws_ssmcontacts_plan",
 	Fields: ubx.FieldMap{
 		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Stage": ubx.FieldSpec{
-			WireName: "stage",
+		"RotationIds": ubx.FieldSpec{WireName: "rotation_ids"},
+		"Stages": ubx.FieldSpec{
+			WireName: "stages",
 			Kind: "list",
-			Fields: Plan_StageFields,
+			Fields: Plan_StagesFields,
 		},
 	},
 }

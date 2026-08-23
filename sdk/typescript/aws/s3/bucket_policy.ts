@@ -2,25 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BucketPolicyConfig {
+  /** The name of the Amazon S3 bucket to which the policy applies. */
   bucket: string | Computed<string>;
-  id?: string | Computed<string>;
-  policy: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** A policy document containing permissions to add to the specified bucket. In IAM, you must provide policy documents in JSON format. However, in CloudFormation you can provide the policy in JSON or YAML format because CloudFormation converts YAML to JSON before submitting it to IAM. For more information, see the AWS::IAM::Policy [PolicyDocument](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policydocument) resource description in this guide and [Access Policy Language Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-language-overview.html) in the *Amazon S3 User Guide*. */
+  policyDocument: unknown | Computed<unknown>;
 }
 
 export interface BucketPolicyAttrs {
+  /** The name of the Amazon S3 bucket to which the policy applies. */
   bucket: string;
-  id: string;
-  policy: string;
-  region: string;
+  /** A policy document containing permissions to add to the specified bucket. In IAM, you must provide policy documents in JSON format. However, in CloudFormation you can provide the policy in JSON or YAML format because CloudFormation converts YAML to JSON before submitting it to IAM. For more information, see the AWS::IAM::Policy [PolicyDocument](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policydocument) resource description in this guide and [Access Policy Language Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-language-overview.html) in the *Amazon S3 User Guide*. */
+  policyDocument: unknown;
 }
 
 export const BucketPolicy: ResourceBinding<BucketPolicyConfig, BucketPolicyAttrs> = {
   wireType: "aws_s3_bucket_policy",
   fields: {
     bucket: "bucket",
-    id: "id",
-    policy: "policy",
-    region: "region",
+    policyDocument: "policy_document",
   },
 };

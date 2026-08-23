@@ -2,14 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Room_MessageReviewHandler {
-  fallbackResult: string;
-  uri: string;
+  /** Specifies the fallback behavior if the handler does not return a valid response, encounters an error, or times out. */
+  fallbackResult?: string | Computed<string>;
+  /** Identifier of the message review handler. */
+  uri?: string | Computed<string>;
 }
 
-export interface Room_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Room_Tags {
+  /** The key of a tag assigned to the IVS Chat Room, used to organize and identify the resource (e.g., 'Environment' or 'Owner'). (AI-inferred) */
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 const Room_MessageReviewHandlerFields: FieldMap = {
@@ -17,59 +19,61 @@ const Room_MessageReviewHandlerFields: FieldMap = {
   uri: "uri",
 };
 
-const Room_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Room_TagsFields: FieldMap = {
+  key: "key",
+  value: "value",
 };
 
 export interface RoomConfig {
-  id?: string | Computed<string>;
+  /** Array of logging configuration identifiers attached to the room. */
   loggingConfigurationIdentifiers?: string[] | Computed<string[]>;
+  /** The maximum number of characters in a single message. */
   maximumMessageLength?: number | Computed<number>;
+  /** The maximum number of messages per second that can be sent to the room. */
   maximumMessageRatePerSecond?: number | Computed<number>;
+  /** Configuration information for optional review of messages. */
+  messageReviewHandler?: Room_MessageReviewHandler | Computed<Room_MessageReviewHandler>;
+  /** The name of the room. The value does not need to be unique. */
   name?: string | Computed<string>;
-  region?: string | Computed<string>;
-  tags?: Record<string, string> | Computed<Record<string, string>>;
-  tagsAll?: Record<string, string> | Computed<Record<string, string>>;
-  messageReviewHandler?: Room_MessageReviewHandler[] | Computed<Room_MessageReviewHandler[]>;
-  timeouts?: Room_Timeouts | Computed<Room_Timeouts>;
+  /** An array of key-value pairs to apply to this resource. */
+  tags?: Room_Tags[] | Computed<Room_Tags[]>;
 }
 
 export interface RoomAttrs {
+  /** Room ARN is automatically generated on creation and assigned as the unique identifier. */
   arn: string;
+  /** The system-generated ID of the room. */
   id: string;
+  /** Array of logging configuration identifiers attached to the room. */
   loggingConfigurationIdentifiers: string[];
+  /** The maximum number of characters in a single message. */
   maximumMessageLength: number;
+  /** The maximum number of messages per second that can be sent to the room. */
   maximumMessageRatePerSecond: number;
+  /** Configuration information for optional review of messages. */
+  messageReviewHandler: Room_MessageReviewHandler;
+  /** The name of the room. The value does not need to be unique. */
   name: string;
-  region: string;
-  tags: Record<string, string>;
-  tagsAll: Record<string, string>;
-  messageReviewHandler: Room_MessageReviewHandler[];
-  timeouts: Room_Timeouts;
+  /** An array of key-value pairs to apply to this resource. */
+  tags: Room_Tags[];
 }
 
 export const Room: ResourceBinding<RoomConfig, RoomAttrs> = {
   wireType: "aws_ivschat_room",
   fields: {
-    id: "id",
     loggingConfigurationIdentifiers: "logging_configuration_identifiers",
     maximumMessageLength: "maximum_message_length",
     maximumMessageRatePerSecond: "maximum_message_rate_per_second",
-    name: "name",
-    region: "region",
-    tags: "tags",
-    tagsAll: "tags_all",
     messageReviewHandler: {
       wireName: "message_review_handler",
-      kind: "list",
+      kind: "object",
       fields: Room_MessageReviewHandlerFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Room_TimeoutsFields,
+    name: "name",
+    tags: {
+      wireName: "tags",
+      kind: "list",
+      fields: Room_TagsFields,
     },
   },
 };

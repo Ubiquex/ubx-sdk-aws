@@ -3,22 +3,24 @@ package network
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type InterfacePermission_Timeouts struct {
-	Create any
-	Delete any
+type InterfacePermissionConfig struct {
+	// The AWS account ID that is granted permission to attach the network interface to an instance or associate it with an Elastic IP. (AI-inferred)
+	AwsAccountId any
+	// The ID of the Elastic Network Interface (ENI) to which this permission grants cross-account attachment access. (AI-inferred)
+	NetworkInterfaceId any
+	// The type of permission to grant on the network interface, either INSTANCE-ATTACH (allows an instance to attach to the interface) or EIP-ASSOCIATE (allows an Elastic IP to be associated with the interface). (AI-inferred)
+	Permission any
 }
 
-var InterfacePermission_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
-type InterfacePermissionConfig struct {
+type InterfacePermissionAttrs struct {
+	// The AWS account ID that is granted permission to attach the network interface to an instance or associate it with an Elastic IP. (AI-inferred)
 	AwsAccountId any
+	// The unique identifier assigned by AWS to this network interface permission, used to reference the permission in other API calls. (AI-inferred)
+	Id any
+	// The ID of the Elastic Network Interface (ENI) to which this permission grants cross-account attachment access. (AI-inferred)
 	NetworkInterfaceId any
+	// The type of permission to grant on the network interface, either INSTANCE-ATTACH (allows an instance to attach to the interface) or EIP-ASSOCIATE (allows an Elastic IP to be associated with the interface). (AI-inferred)
 	Permission any
-	Region any
-	Timeouts any
 }
 
 var InterfacePermission = ubx.ResourceBinding{
@@ -27,11 +29,5 @@ var InterfacePermission = ubx.ResourceBinding{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
 		"Permission": ubx.FieldSpec{WireName: "permission"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: InterfacePermission_TimeoutsFields,
-		},
 	},
 }

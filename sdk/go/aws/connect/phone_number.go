@@ -3,29 +3,52 @@ package connect
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type PhoneNumber_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type PhoneNumber_Tags struct {
+	Key any
+	Value any
 }
 
-var PhoneNumber_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var PhoneNumber_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	}
 
 type PhoneNumberConfig struct {
+	// The phone number country code.
 	CountryCode any
+	// The description of the phone number.
 	Description any
-	Id any
+	// The phone number prefix.
 	Prefix any
-	Region any
+	// The source phone number arn.
+	SourcePhoneNumberArn any
+	// One or more tags.
 	Tags any
-	TagsAll any
+	// The ARN of the target the phone number is claimed to.
 	TargetArn any
+	// The phone number type
 	Type any
-	Timeouts any
+}
+
+type PhoneNumberAttrs struct {
+	// The phone number e164 address.
+	Address any
+	// The phone number country code.
+	CountryCode any
+	// The description of the phone number.
+	Description any
+	// The phone number ARN
+	PhoneNumberArn any
+	// The phone number prefix.
+	Prefix any
+	// The source phone number arn.
+	SourcePhoneNumberArn any
+	// One or more tags.
+	Tags any
+	// The ARN of the target the phone number is claimed to.
+	TargetArn any
+	// The phone number type
+	Type any
 }
 
 var PhoneNumber = ubx.ResourceBinding{
@@ -33,17 +56,14 @@ var PhoneNumber = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CountryCode": ubx.FieldSpec{WireName: "country_code"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"SourcePhoneNumberArn": ubx.FieldSpec{WireName: "source_phone_number_arn"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: PhoneNumber_TagsFields,
+		},
 		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
 		"Type": ubx.FieldSpec{WireName: "type"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: PhoneNumber_TimeoutsFields,
-		},
 	},
 }

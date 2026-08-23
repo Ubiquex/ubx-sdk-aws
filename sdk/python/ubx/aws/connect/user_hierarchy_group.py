@@ -7,24 +7,51 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class UserHierarchyGroup_Tags:
+    # The key of a tag attached to the Amazon Connect user hierarchy group, forming the key portion of a key-value pair that helps categorize, organize, and manage the resource. (AI-inferred)
+    key: Any = None
+    # The value portion of a tag (key-value pair) attached to the Amazon Connect user hierarchy group. (AI-inferred)
+    value: Any = None
+
+_UserHierarchyGroup_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+@dataclasses.dataclass
 class UserHierarchyGroupConfig:
-    id: Any = None
-    instance_id: Any = None
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # The name of the user hierarchy group.
     name: Any = None
-    parent_group_id: Any = None
-    region: Any = None
+    # The Amazon Resource Name (ARN) for the User hierarchy group.
+    parent_group_arn: Any = None
+    # One or more tags.
     tags: Any = None
-    tags_all: Any = None
+
+@dataclasses.dataclass
+class UserHierarchyGroupAttrs:
+    # The identifier of the Amazon Connect instance.
+    instance_arn: Any = None
+    # The name of the user hierarchy group.
+    name: Any = None
+    # The Amazon Resource Name (ARN) for the User hierarchy group.
+    parent_group_arn: Any = None
+    # One or more tags.
+    tags: Any = None
+    # The Amazon Resource Name (ARN) for the User hierarchy group.
+    user_hierarchy_group_arn: Any = None
 
 UserHierarchyGroup = ubx.ResourceBinding(
     wire_type="aws_connect_user_hierarchy_group",
     fields={
-        "id": ubx.FieldSpec(wire_name="id"),
-        "instance_id": ubx.FieldSpec(wire_name="instance_id"),
+        "instance_arn": ubx.FieldSpec(wire_name="instance_arn"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "parent_group_id": ubx.FieldSpec(wire_name="parent_group_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
+        "parent_group_arn": ubx.FieldSpec(wire_name="parent_group_arn"),
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_UserHierarchyGroup_TagsFields,
+        ),
     },
 )

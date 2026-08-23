@@ -7,114 +7,320 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Cluster_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Cluster_Endpoint:
+    # The DNS hostname of the Amazon Redshift cluster's connection endpoint, used to connect to the cluster. (AI-inferred)
+    address: Any = None
+    # The TCP port number on which the Redshift cluster accepts incoming connections, typically 5439 by default. (AI-inferred)
+    port: Any = None
 
-_Cluster_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+@dataclasses.dataclass
+class Cluster_LoggingProperties:
+    # The name of the S3 bucket where Redshift audit logs are delivered when logging is enabled for the cluster. (AI-inferred)
+    bucket_name: Any = None
+    # Specifies whether the Redshift cluster's query logging destination is Amazon S3 ('s3') or Amazon CloudWatch Logs ('cloudwatch'), used in the LoggingProperties for enabling and configuring audit logging. (AI-inferred)
+    log_destination_type: Any = None
+    # Specifies the types of Redshift logs (connectionlog, useractivitylog, or userlog) to export to the configured S3 bucket when logging is enabled. (AI-inferred)
+    log_exports: Any = None
+    # When cluster logging is enabled, this S3 key prefix is prepended to the log file names uploaded to the destination S3 bucket, allowing logs to be organized under a common folder path. (AI-inferred)
+    s3_key_prefix: Any = None
+
+@dataclasses.dataclass
+class Cluster_Tags:
+    key: Any = None
+    # Specifies the value component of a user-defined tag attached to the Amazon Redshift cluster, used for resource organization, cost allocation, and access control via the tag key-value pair. (AI-inferred)
+    value: Any = None
+
+_Cluster_LoggingPropertiesFields = {
+    "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
+    "log_destination_type": ubx.FieldSpec(wire_name="log_destination_type"),
+    "log_exports": ubx.FieldSpec(wire_name="log_exports"),
+    "s3_key_prefix": ubx.FieldSpec(wire_name="s3_key_prefix"),
+}
+
+_Cluster_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ClusterConfig:
+    # Major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. Default value is True
     allow_version_upgrade: Any = None
-    apply_immediately: Any = None
+    # The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following. enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type. disabled - Don't use AQUA. auto - Amazon Redshift determines whether to use AQUA.
     aqua_configuration_status: Any = None
+    # The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Default value is 1
     automated_snapshot_retention_period: Any = None
+    # The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint
     availability_zone: Any = None
-    availability_zone_relocation_enabled: Any = None
+    # The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.
+    availability_zone_relocation: Any = None
+    # The availability zone relocation status of the cluster
+    availability_zone_relocation_status: Any = None
+    # A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to false , the resize type is elastic.
+    classic: Any = None
+    # A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. All alphabetical characters must be lower case, no hypens at the end, no two consecutive hyphens. Cluster name should be unique for all clusters within an AWS account
     cluster_identifier: Any = None
+    # The name of the parameter group to be associated with this cluster.
     cluster_parameter_group_name: Any = None
+    # A list of security groups to be associated with this cluster.
+    cluster_security_groups: Any = None
+    # The name of a cluster subnet group to be associated with this cluster.
     cluster_subnet_group_name: Any = None
+    # The type of the cluster. When cluster type is specified as single-node, the NumberOfNodes parameter is not required and if multi-node, the NumberOfNodes parameter is required
     cluster_type: Any = None
+    # The version of the Amazon Redshift engine software that you want to deploy on the cluster.The version selected runs on all the nodes in the cluster.
     cluster_version: Any = None
-    database_name: Any = None
-    default_iam_role_arn: Any = None
+    # The name of the first database to be created when the cluster is created. To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database.
+    dbname: Any = None
+    # A boolean indicating whether to enable the deferred maintenance window.
+    defer_maintenance: Any = None
+    # An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 60 days or less.
+    defer_maintenance_duration: Any = None
+    # A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.
+    defer_maintenance_end_time: Any = None
+    # A timestamp indicating the start time for the deferred maintenance window.
+    defer_maintenance_start_time: Any = None
+    # The destination AWS Region that you want to copy snapshots to. Constraints: Must be the name of a valid AWS Region. For more information, see Regions and Endpoints in the Amazon Web Services [https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region] General Reference
+    destination_region: Any = None
+    # The Elastic IP (EIP) address for the cluster.
     elastic_ip: Any = None
+    # If true, the data in the cluster is encrypted at rest.
     encrypted: Any = None
+    # An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see Enhanced VPC Routing in the Amazon Redshift Cluster Management Guide. If this option is true , enhanced VPC routing is enabled. Default: false
     enhanced_vpc_routing: Any = None
-    final_snapshot_identifier: Any = None
+    # Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM
+    hsm_client_certificate_identifier: Any = None
+    # Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.
+    hsm_configuration_identifier: Any = None
+    # A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 50 IAM roles in a single request
     iam_roles: Any = None
-    id: Any = None
+    # The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.
     kms_key_id: Any = None
+    # Configures Amazon Redshift audit logging to an S3 bucket, specifying the destination bucket and optional key prefix for log files. (AI-inferred)
+    logging_properties: Any = None
+    # The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the PendingModifiedValues for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.
     maintenance_track_name: Any = None
+    # A boolean indicating if the redshift cluster's admin user credentials is managed by Redshift or not. You can't use MasterUserPassword if ManageMasterPassword is true. If ManageMasterPassword is false or not set, Amazon Redshift uses MasterUserPassword for the admin user account's password.
     manage_master_password: Any = None
+    # The number of days to retain newly copied snapshots in the destination AWS Region after they are copied from the source AWS Region. If the value is -1, the manual snapshot is retained indefinitely. The value must be either -1 or an integer between 1 and 3,653.
     manual_snapshot_retention_period: Any = None
-    master_password: Any = None
+    # The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin user credentials secret.
     master_password_secret_kms_key_id: Any = None
-    master_password_wo: Any = None
-    master_password_wo_version: Any = None
+    # The password associated with the master user account for the cluster that is being created. You can't use MasterUserPassword if ManageMasterPassword is true. Password must be between 8 and 64 characters in length, should have at least one uppercase letter.Must contain at least one lowercase letter.Must contain one number.Can be any printable ASCII character.
+    master_user_password: Any = None
+    # The user name associated with the master user account for the cluster that is being created. The user name can't be PUBLIC and first character must be a letter.
     master_username: Any = None
+    # A boolean indicating if the redshift cluster is multi-az or not. If you don't provide this parameter or set the value to false, the redshift cluster will be single-az.
     multi_az: Any = None
+    # The namespace resource policy document that will be attached to a Redshift cluster.
+    namespace_resource_policy: Any = None
+    # The node type to be provisioned for the cluster.Valid Values: ds2.xlarge | ds2.8xlarge | dc1.large | dc1.8xlarge | dc2.large | dc2.8xlarge | ra3.large | ra3.4xlarge | ra3.16xlarge | rg.large | rg.xlarge | rg.4xlarge | rg.12xlarge
     node_type: Any = None
+    # The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node.
     number_of_nodes: Any = None
+    # The AWS account ID of the owner of the snapshot from which the Redshift cluster is being restored, used when restoring from a snapshot in another account. (AI-inferred)
     owner_account: Any = None
+    # The port number on which the cluster accepts incoming connections. The cluster is accessible only via the JDBC and ODBC connection strings
     port: Any = None
+    # The weekly time range (in UTC) during which automated cluster maintenance can occur.
     preferred_maintenance_window: Any = None
+    # If true, the cluster can be accessed from a public network.
     publicly_accessible: Any = None
-    region: Any = None
-    skip_final_snapshot: Any = None
-    snapshot_arn: Any = None
+    # The Redshift operation to be performed. Resource Action supports pause-cluster, resume-cluster, failover-primary-compute APIs
+    resource_action: Any = None
+    # The identifier of the database revision. You can retrieve this value from the response to the DescribeClusterDbRevisions request.
+    revision_target: Any = None
+    # A boolean indicating if we want to rotate Encryption Keys.
+    rotate_encryption_key: Any = None
+    # The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
     snapshot_cluster_identifier: Any = None
+    # The name of the snapshot copy grant to use when snapshots of an AWS KMS-encrypted cluster are copied to the destination region.
+    snapshot_copy_grant_name: Any = None
+    # Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.
+    snapshot_copy_manual: Any = None
+    # The number of days to retain automated snapshots in the destination region after they are copied from the source region. Default is 7. Constraints: Must be at least 1 and no more than 35.
+    snapshot_copy_retention_period: Any = None
+    # The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.
     snapshot_identifier: Any = None
+    # The list of tags for the cluster parameter group.
     tags: Any = None
-    tags_all: Any = None
+    # A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.
     vpc_security_group_ids: Any = None
-    timeouts: Any = None
+
+@dataclasses.dataclass
+class ClusterAttrs:
+    # Major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. Default value is True
+    allow_version_upgrade: Any = None
+    # The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following. enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type. disabled - Don't use AQUA. auto - Amazon Redshift determines whether to use AQUA.
+    aqua_configuration_status: Any = None
+    # The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Default value is 1
+    automated_snapshot_retention_period: Any = None
+    # The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint
+    availability_zone: Any = None
+    # The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.
+    availability_zone_relocation: Any = None
+    # The availability zone relocation status of the cluster
+    availability_zone_relocation_status: Any = None
+    # A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to false , the resize type is elastic.
+    classic: Any = None
+    # A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. All alphabetical characters must be lower case, no hypens at the end, no two consecutive hyphens. Cluster name should be unique for all clusters within an AWS account
+    cluster_identifier: Any = None
+    # The Amazon Resource Name (ARN) of the cluster namespace.
+    cluster_namespace_arn: Any = None
+    # The name of the parameter group to be associated with this cluster.
+    cluster_parameter_group_name: Any = None
+    # A list of security groups to be associated with this cluster.
+    cluster_security_groups: Any = None
+    # The name of a cluster subnet group to be associated with this cluster.
+    cluster_subnet_group_name: Any = None
+    # The type of the cluster. When cluster type is specified as single-node, the NumberOfNodes parameter is not required and if multi-node, the NumberOfNodes parameter is required
+    cluster_type: Any = None
+    # The version of the Amazon Redshift engine software that you want to deploy on the cluster.The version selected runs on all the nodes in the cluster.
+    cluster_version: Any = None
+    # The name of the first database to be created when the cluster is created. To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database.
+    dbname: Any = None
+    # A boolean indicating whether to enable the deferred maintenance window.
+    defer_maintenance: Any = None
+    # An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 60 days or less.
+    defer_maintenance_duration: Any = None
+    # A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.
+    defer_maintenance_end_time: Any = None
+    # A unique identifier for the deferred maintenance window.
+    defer_maintenance_identifier: Any = None
+    # A timestamp indicating the start time for the deferred maintenance window.
+    defer_maintenance_start_time: Any = None
+    # The destination AWS Region that you want to copy snapshots to. Constraints: Must be the name of a valid AWS Region. For more information, see Regions and Endpoints in the Amazon Web Services [https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region] General Reference
+    destination_region: Any = None
+    # The Elastic IP (EIP) address for the cluster.
+    elastic_ip: Any = None
+    # If true, the data in the cluster is encrypted at rest.
+    encrypted: Any = None
+    # The endpoint object provides the DNS address and port used to connect to the Redshift cluster. (AI-inferred)
+    endpoint: Any = None
+    # An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see Enhanced VPC Routing in the Amazon Redshift Cluster Management Guide. If this option is true , enhanced VPC routing is enabled. Default: false
+    enhanced_vpc_routing: Any = None
+    # Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM
+    hsm_client_certificate_identifier: Any = None
+    # Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.
+    hsm_configuration_identifier: Any = None
+    # A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 50 IAM roles in a single request
+    iam_roles: Any = None
+    # The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.
+    kms_key_id: Any = None
+    # Configures Amazon Redshift audit logging to an S3 bucket, specifying the destination bucket and optional key prefix for log files. (AI-inferred)
+    logging_properties: Any = None
+    # The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the PendingModifiedValues for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.
+    maintenance_track_name: Any = None
+    # A boolean indicating if the redshift cluster's admin user credentials is managed by Redshift or not. You can't use MasterUserPassword if ManageMasterPassword is true. If ManageMasterPassword is false or not set, Amazon Redshift uses MasterUserPassword for the admin user account's password.
+    manage_master_password: Any = None
+    # The number of days to retain newly copied snapshots in the destination AWS Region after they are copied from the source AWS Region. If the value is -1, the manual snapshot is retained indefinitely. The value must be either -1 or an integer between 1 and 3,653.
+    manual_snapshot_retention_period: Any = None
+    # The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+    master_password_secret_arn: Any = None
+    # The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin user credentials secret.
+    master_password_secret_kms_key_id: Any = None
+    # The password associated with the master user account for the cluster that is being created. You can't use MasterUserPassword if ManageMasterPassword is true. Password must be between 8 and 64 characters in length, should have at least one uppercase letter.Must contain at least one lowercase letter.Must contain one number.Can be any printable ASCII character.
+    master_user_password: Any = None
+    # The user name associated with the master user account for the cluster that is being created. The user name can't be PUBLIC and first character must be a letter.
+    master_username: Any = None
+    # A boolean indicating if the redshift cluster is multi-az or not. If you don't provide this parameter or set the value to false, the redshift cluster will be single-az.
+    multi_az: Any = None
+    # The namespace resource policy document that will be attached to a Redshift cluster.
+    namespace_resource_policy: Any = None
+    # The node type to be provisioned for the cluster.Valid Values: ds2.xlarge | ds2.8xlarge | dc1.large | dc1.8xlarge | dc2.large | dc2.8xlarge | ra3.large | ra3.4xlarge | ra3.16xlarge | rg.large | rg.xlarge | rg.4xlarge | rg.12xlarge
+    node_type: Any = None
+    # The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node.
+    number_of_nodes: Any = None
+    # The AWS account ID of the owner of the snapshot from which the Redshift cluster is being restored, used when restoring from a snapshot in another account. (AI-inferred)
+    owner_account: Any = None
+    # The port number on which the cluster accepts incoming connections. The cluster is accessible only via the JDBC and ODBC connection strings
+    port: Any = None
+    # The weekly time range (in UTC) during which automated cluster maintenance can occur.
+    preferred_maintenance_window: Any = None
+    # If true, the cluster can be accessed from a public network.
+    publicly_accessible: Any = None
+    # The Redshift operation to be performed. Resource Action supports pause-cluster, resume-cluster, failover-primary-compute APIs
+    resource_action: Any = None
+    # The identifier of the database revision. You can retrieve this value from the response to the DescribeClusterDbRevisions request.
+    revision_target: Any = None
+    # A boolean indicating if we want to rotate Encryption Keys.
+    rotate_encryption_key: Any = None
+    # The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+    snapshot_cluster_identifier: Any = None
+    # The name of the snapshot copy grant to use when snapshots of an AWS KMS-encrypted cluster are copied to the destination region.
+    snapshot_copy_grant_name: Any = None
+    # Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.
+    snapshot_copy_manual: Any = None
+    # The number of days to retain automated snapshots in the destination region after they are copied from the source region. Default is 7. Constraints: Must be at least 1 and no more than 35.
+    snapshot_copy_retention_period: Any = None
+    # The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.
+    snapshot_identifier: Any = None
+    # The list of tags for the cluster parameter group.
+    tags: Any = None
+    # A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.
+    vpc_security_group_ids: Any = None
 
 Cluster = ubx.ResourceBinding(
     wire_type="aws_redshift_cluster",
     fields={
         "allow_version_upgrade": ubx.FieldSpec(wire_name="allow_version_upgrade"),
-        "apply_immediately": ubx.FieldSpec(wire_name="apply_immediately"),
         "aqua_configuration_status": ubx.FieldSpec(wire_name="aqua_configuration_status"),
         "automated_snapshot_retention_period": ubx.FieldSpec(wire_name="automated_snapshot_retention_period"),
         "availability_zone": ubx.FieldSpec(wire_name="availability_zone"),
-        "availability_zone_relocation_enabled": ubx.FieldSpec(wire_name="availability_zone_relocation_enabled"),
+        "availability_zone_relocation": ubx.FieldSpec(wire_name="availability_zone_relocation"),
+        "availability_zone_relocation_status": ubx.FieldSpec(wire_name="availability_zone_relocation_status"),
+        "classic": ubx.FieldSpec(wire_name="classic"),
         "cluster_identifier": ubx.FieldSpec(wire_name="cluster_identifier"),
         "cluster_parameter_group_name": ubx.FieldSpec(wire_name="cluster_parameter_group_name"),
+        "cluster_security_groups": ubx.FieldSpec(wire_name="cluster_security_groups"),
         "cluster_subnet_group_name": ubx.FieldSpec(wire_name="cluster_subnet_group_name"),
         "cluster_type": ubx.FieldSpec(wire_name="cluster_type"),
         "cluster_version": ubx.FieldSpec(wire_name="cluster_version"),
-        "database_name": ubx.FieldSpec(wire_name="database_name"),
-        "default_iam_role_arn": ubx.FieldSpec(wire_name="default_iam_role_arn"),
+        "dbname": ubx.FieldSpec(wire_name="dbname"),
+        "defer_maintenance": ubx.FieldSpec(wire_name="defer_maintenance"),
+        "defer_maintenance_duration": ubx.FieldSpec(wire_name="defer_maintenance_duration"),
+        "defer_maintenance_end_time": ubx.FieldSpec(wire_name="defer_maintenance_end_time"),
+        "defer_maintenance_start_time": ubx.FieldSpec(wire_name="defer_maintenance_start_time"),
+        "destination_region": ubx.FieldSpec(wire_name="destination_region"),
         "elastic_ip": ubx.FieldSpec(wire_name="elastic_ip"),
         "encrypted": ubx.FieldSpec(wire_name="encrypted"),
         "enhanced_vpc_routing": ubx.FieldSpec(wire_name="enhanced_vpc_routing"),
-        "final_snapshot_identifier": ubx.FieldSpec(wire_name="final_snapshot_identifier"),
+        "hsm_client_certificate_identifier": ubx.FieldSpec(wire_name="hsm_client_certificate_identifier"),
+        "hsm_configuration_identifier": ubx.FieldSpec(wire_name="hsm_configuration_identifier"),
         "iam_roles": ubx.FieldSpec(wire_name="iam_roles"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "kms_key_id": ubx.FieldSpec(wire_name="kms_key_id"),
+        "logging_properties": ubx.FieldSpec(
+            wire_name="logging_properties",
+            kind="object",
+            fields=_Cluster_LoggingPropertiesFields,
+        ),
         "maintenance_track_name": ubx.FieldSpec(wire_name="maintenance_track_name"),
         "manage_master_password": ubx.FieldSpec(wire_name="manage_master_password"),
         "manual_snapshot_retention_period": ubx.FieldSpec(wire_name="manual_snapshot_retention_period"),
-        "master_password": ubx.FieldSpec(wire_name="master_password"),
         "master_password_secret_kms_key_id": ubx.FieldSpec(wire_name="master_password_secret_kms_key_id"),
-        "master_password_wo": ubx.FieldSpec(wire_name="master_password_wo"),
-        "master_password_wo_version": ubx.FieldSpec(wire_name="master_password_wo_version"),
+        "master_user_password": ubx.FieldSpec(wire_name="master_user_password"),
         "master_username": ubx.FieldSpec(wire_name="master_username"),
         "multi_az": ubx.FieldSpec(wire_name="multi_az"),
+        "namespace_resource_policy": ubx.FieldSpec(wire_name="namespace_resource_policy"),
         "node_type": ubx.FieldSpec(wire_name="node_type"),
         "number_of_nodes": ubx.FieldSpec(wire_name="number_of_nodes"),
         "owner_account": ubx.FieldSpec(wire_name="owner_account"),
         "port": ubx.FieldSpec(wire_name="port"),
         "preferred_maintenance_window": ubx.FieldSpec(wire_name="preferred_maintenance_window"),
         "publicly_accessible": ubx.FieldSpec(wire_name="publicly_accessible"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "skip_final_snapshot": ubx.FieldSpec(wire_name="skip_final_snapshot"),
-        "snapshot_arn": ubx.FieldSpec(wire_name="snapshot_arn"),
+        "resource_action": ubx.FieldSpec(wire_name="resource_action"),
+        "revision_target": ubx.FieldSpec(wire_name="revision_target"),
+        "rotate_encryption_key": ubx.FieldSpec(wire_name="rotate_encryption_key"),
         "snapshot_cluster_identifier": ubx.FieldSpec(wire_name="snapshot_cluster_identifier"),
+        "snapshot_copy_grant_name": ubx.FieldSpec(wire_name="snapshot_copy_grant_name"),
+        "snapshot_copy_manual": ubx.FieldSpec(wire_name="snapshot_copy_manual"),
+        "snapshot_copy_retention_period": ubx.FieldSpec(wire_name="snapshot_copy_retention_period"),
         "snapshot_identifier": ubx.FieldSpec(wire_name="snapshot_identifier"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
-        "vpc_security_group_ids": ubx.FieldSpec(wire_name="vpc_security_group_ids"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Cluster_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Cluster_TagsFields,
         ),
+        "vpc_security_group_ids": ubx.FieldSpec(wire_name="vpc_security_group_ids"),
     },
 )

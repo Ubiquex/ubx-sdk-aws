@@ -3,35 +3,41 @@ package ssmcontacts
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ContactChannel_DeliveryAddress struct {
-	SimpleAddress any
+type ContactChannelConfig struct {
+	// The details that SSM Incident Manager uses when trying to engage the contact channel.
+	ChannelAddress any
+	// The device name. String of 6 to 50 alphabetical, numeric, dash, and underscore characters.
+	ChannelName any
+	// Device type, which specify notification channel. Currently supported values: “SMS”, “VOICE”, “EMAIL”, “CHATBOT.
+	ChannelType any
+	// ARN of the contact resource
+	ContactId any
+	// If you want to activate the channel at a later time, you can choose to defer activation. SSM Incident Manager can't engage your contact channel until it has been activated.
+	DeferActivation any
 }
 
-var ContactChannel_DeliveryAddressFields = ubx.FieldMap{
-		"SimpleAddress": ubx.FieldSpec{WireName: "simple_address"},
-	}
-
-type ContactChannelConfig struct {
+type ContactChannelAttrs struct {
+	// The Amazon Resource Name (ARN) of the engagement to a contact channel.
+	Arn any
+	// The details that SSM Incident Manager uses when trying to engage the contact channel.
+	ChannelAddress any
+	// The device name. String of 6 to 50 alphabetical, numeric, dash, and underscore characters.
+	ChannelName any
+	// Device type, which specify notification channel. Currently supported values: “SMS”, “VOICE”, “EMAIL”, “CHATBOT.
+	ChannelType any
+	// ARN of the contact resource
 	ContactId any
-	Id any
-	Name any
-	Region any
-	Type any
-	DeliveryAddress any
+	// If you want to activate the channel at a later time, you can choose to defer activation. SSM Incident Manager can't engage your contact channel until it has been activated.
+	DeferActivation any
 }
 
 var ContactChannel = ubx.ResourceBinding{
 	WireType: "aws_ssmcontacts_contact_channel",
 	Fields: ubx.FieldMap{
+		"ChannelAddress": ubx.FieldSpec{WireName: "channel_address"},
+		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
+		"ChannelType": ubx.FieldSpec{WireName: "channel_type"},
 		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"DeliveryAddress": ubx.FieldSpec{
-			WireName: "delivery_address",
-			Kind: "list",
-			Fields: ContactChannel_DeliveryAddressFields,
-		},
+		"DeferActivation": ubx.FieldSpec{WireName: "defer_activation"},
 	},
 }

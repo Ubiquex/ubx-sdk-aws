@@ -3,23 +3,75 @@ package network
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type InterfaceAttachment_EnaSrdSpecification_EnaSrdUdpSpecification struct {
+	// Enable ENA Express (Scalable Reliable Datagram) for UDP traffic on the network interface attachment, which can improve throughput and reduce latency for UDP workloads. (AI-inferred)
+	EnaSrdUdpEnabled any
+}
+
+type InterfaceAttachment_EnaSrdSpecification struct {
+	// Indicates whether ENA Express is enabled for the network interface.
+	EnaSrdEnabled any
+	// Configures ENA Express for UDP network traffic.
+	EnaSrdUdpSpecification any
+}
+
+var InterfaceAttachment_EnaSrdSpecification_EnaSrdUdpSpecificationFields = ubx.FieldMap{
+		"EnaSrdUdpEnabled": ubx.FieldSpec{WireName: "ena_srd_udp_enabled"},
+	}
+
+var InterfaceAttachment_EnaSrdSpecificationFields = ubx.FieldMap{
+		"EnaSrdEnabled": ubx.FieldSpec{WireName: "ena_srd_enabled"},
+		"EnaSrdUdpSpecification": ubx.FieldSpec{
+			WireName: "ena_srd_udp_specification",
+			Kind: "object",
+			Fields: InterfaceAttachment_EnaSrdSpecification_EnaSrdUdpSpecificationFields,
+		},
+	}
+
 type InterfaceAttachmentConfig struct {
+	// Whether to delete the network interface when the instance terminates. By default, this value is set to ``true``.
+	DeleteOnTermination any
+	// The network interface's position in the attachment order. For example, the first attached network interface has a ``DeviceIndex`` of 0.
 	DeviceIndex any
-	Id any
+	// The number of ENA queues created with the instance.
+	EnaQueueCount any
+	// ENA Express uses AWS Scalable Reliable Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network traffic between EC2 instances. With ENA Express, you can communicate between two EC2 instances in the same subnet within the same account, or in different accounts. Both sending and receiving instances must have ENA Express enabled. To improve the reliability of network packet delivery, ENA Express reorders network packets on the receiving end by default. However, some UDP-based applications are designed to handle network packets that are out of order to reduce the overhead for packet delivery at the network layer. When ENA Express is enabled, you can specify whether UDP network traffic uses it.
+	EnaSrdSpecification any
+	// The ID of the instance to which you will attach the ENI.
 	InstanceId any
-	NetworkCardIndex any
+	// The ID of the ENI that you want to attach.
 	NetworkInterfaceId any
-	Region any
+}
+
+type InterfaceAttachmentAttrs struct {
+	// The unique identifier for the attachment between the network interface and the instance. (AI-inferred)
+	AttachmentId any
+	// Whether to delete the network interface when the instance terminates. By default, this value is set to ``true``.
+	DeleteOnTermination any
+	// The network interface's position in the attachment order. For example, the first attached network interface has a ``DeviceIndex`` of 0.
+	DeviceIndex any
+	// The number of ENA queues created with the instance.
+	EnaQueueCount any
+	// ENA Express uses AWS Scalable Reliable Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network traffic between EC2 instances. With ENA Express, you can communicate between two EC2 instances in the same subnet within the same account, or in different accounts. Both sending and receiving instances must have ENA Express enabled. To improve the reliability of network packet delivery, ENA Express reorders network packets on the receiving end by default. However, some UDP-based applications are designed to handle network packets that are out of order to reduce the overhead for packet delivery at the network layer. When ENA Express is enabled, you can specify whether UDP network traffic uses it.
+	EnaSrdSpecification any
+	// The ID of the instance to which you will attach the ENI.
+	InstanceId any
+	// The ID of the ENI that you want to attach.
+	NetworkInterfaceId any
 }
 
 var InterfaceAttachment = ubx.ResourceBinding{
 	WireType: "aws_network_interface_attachment",
 	Fields: ubx.FieldMap{
+		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
 		"DeviceIndex": ubx.FieldSpec{WireName: "device_index"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"EnaQueueCount": ubx.FieldSpec{WireName: "ena_queue_count"},
+		"EnaSrdSpecification": ubx.FieldSpec{
+			WireName: "ena_srd_specification",
+			Kind: "object",
+			Fields: InterfaceAttachment_EnaSrdSpecificationFields,
+		},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"NetworkCardIndex": ubx.FieldSpec{WireName: "network_card_index"},
 		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
 	},
 }

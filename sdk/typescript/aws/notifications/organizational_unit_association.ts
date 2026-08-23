@@ -2,12 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface OrganizationalUnitAssociationConfig {
+  /** ARN identifier of the NotificationConfiguration. Example: arn:aws:notifications::123456789012:configuration/a01jes88qxwkbj05xv9c967pgm1 */
   notificationConfigurationArn: string | Computed<string>;
+  /** The ID of the organizational unit. */
   organizationalUnitId: string | Computed<string>;
 }
 
 export interface OrganizationalUnitAssociationAttrs {
+  /** ARN identifier of the NotificationConfiguration. Example: arn:aws:notifications::123456789012:configuration/a01jes88qxwkbj05xv9c967pgm1 */
   notificationConfigurationArn: string;
+  /** The ID of the organizational unit. */
   organizationalUnitId: string;
 }
 

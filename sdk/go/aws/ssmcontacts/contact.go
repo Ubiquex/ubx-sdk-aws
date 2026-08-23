@@ -3,13 +3,105 @@ package ssmcontacts
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Contact_Plan_Targets_ChannelTargetInfo struct {
+	// Specifies the Amazon Resource Name (ARN) of the contact channel (such as an email, SMS, or voice channel) that is contacted when this plan target is triggered during an incident. (AI-inferred)
+	ChannelId any
+	// The number of minutes to wait before retrying the contact channel if the previous attempt to reach it fails. (AI-inferred)
+	RetryIntervalInMinutes any
+}
+
+type Contact_Plan_Targets_ContactTargetInfo struct {
+	// The Amazon Resource Name (ARN) of the contact that Incident Manager engages when the engagement plan reaches this target. (AI-inferred)
+	ContactId any
+	// Determines whether this contact is an essential target in the engagement plan, meaning that if this contact does not acknowledge an engagement, the engagement is considered failed. (AI-inferred)
+	IsEssential any
+}
+
+type Contact_Plan_Targets struct {
+	// Identifies the contact channel that Incident Manager engages for a given plan target, along with the optional retry interval before escalation within that stage of the contact's engagement plan. (AI-inferred)
+	ChannelTargetInfo any
+	// Specifies the target contact for an engagement plan stage, including the contact's ARN and whether it is an essential target that must acknowledge an incident before escalation proceeds. (AI-inferred)
+	ContactTargetInfo any
+}
+
+type Contact_Plan struct {
+	// The number of minutes to wait for the contact to acknowledge an alert before moving to the next stage of the contact's engagement plan. (AI-inferred)
+	DurationInMinutes any
+	// The list of Amazon Resource Names (ARNs) of the rotations to include in the contact's plan, defining the rotation schedules used for on-call coverage. (AI-inferred)
+	RotationIds any
+	// Specifies the list of targets to engage during a stage of the contact's plan, where each target can be a contact channel (e.g., email, SMS, voice) or another contact, defined using ChannelTargetInfo or ContactTargetInfo. (AI-inferred)
+	Targets any
+}
+
+type Contact_Tags struct {
+	Key any
+	// The value of a tag assigned to the SSM Contacts contact, used for categorizing and managing the contact resource. (AI-inferred)
+	Value any
+}
+
+var Contact_Plan_Targets_ChannelTargetInfoFields = ubx.FieldMap{
+		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
+		"RetryIntervalInMinutes": ubx.FieldSpec{WireName: "retry_interval_in_minutes"},
+	}
+
+var Contact_Plan_Targets_ContactTargetInfoFields = ubx.FieldMap{
+		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
+		"IsEssential": ubx.FieldSpec{WireName: "is_essential"},
+	}
+
+var Contact_Plan_TargetsFields = ubx.FieldMap{
+		"ChannelTargetInfo": ubx.FieldSpec{
+			WireName: "channel_target_info",
+			Kind: "object",
+			Fields: Contact_Plan_Targets_ChannelTargetInfoFields,
+		},
+		"ContactTargetInfo": ubx.FieldSpec{
+			WireName: "contact_target_info",
+			Kind: "object",
+			Fields: Contact_Plan_Targets_ContactTargetInfoFields,
+		},
+	}
+
+var Contact_PlanFields = ubx.FieldMap{
+		"DurationInMinutes": ubx.FieldSpec{WireName: "duration_in_minutes"},
+		"RotationIds": ubx.FieldSpec{WireName: "rotation_ids"},
+		"Targets": ubx.FieldSpec{
+			WireName: "targets",
+			Kind: "list",
+			Fields: Contact_Plan_TargetsFields,
+		},
+	}
+
+var Contact_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type ContactConfig struct {
+	// Alias of the contact. String value with 20 to 256 characters. Only alphabetical, numeric characters, dash, or underscore allowed.
 	Alias any
+	// Name of the contact. String value with 3 to 256 characters. Only alphabetical, space, numeric characters, dash, or underscore allowed.
 	DisplayName any
-	Id any
-	Region any
+	// The stages that an escalation plan or engagement plan engages contacts and contact methods in.
+	Plan any
+	// Specifies a list of key-value tag objects to associate with the contact for resource identification and cost tracking. (AI-inferred)
 	Tags any
-	TagsAll any
+	// Contact type, which specify type of contact. Currently supported values: “PERSONAL”, “SHARED”, “OTHER“.
+	Type any
+}
+
+type ContactAttrs struct {
+	// Alias of the contact. String value with 20 to 256 characters. Only alphabetical, numeric characters, dash, or underscore allowed.
+	Alias any
+	// The Amazon Resource Name (ARN) of the contact.
+	Arn any
+	// Name of the contact. String value with 3 to 256 characters. Only alphabetical, space, numeric characters, dash, or underscore allowed.
+	DisplayName any
+	// The stages that an escalation plan or engagement plan engages contacts and contact methods in.
+	Plan any
+	// Specifies a list of key-value tag objects to associate with the contact for resource identification and cost tracking. (AI-inferred)
+	Tags any
+	// Contact type, which specify type of contact. Currently supported values: “PERSONAL”, “SHARED”, “OTHER“.
 	Type any
 }
 
@@ -18,10 +110,16 @@ var Contact = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Alias": ubx.FieldSpec{WireName: "alias"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Plan": ubx.FieldSpec{
+			WireName: "plan",
+			Kind: "list",
+			Fields: Contact_PlanFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Contact_TagsFields,
+		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

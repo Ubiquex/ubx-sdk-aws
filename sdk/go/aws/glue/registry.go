@@ -3,23 +3,47 @@ package glue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Registry_Tags struct {
+	// The tag key part of a key-value pair used to tag an AWS Glue registry, enabling you to categorize and filter the resource. (AI-inferred)
+	Key any
+	// The value portion of a user-defined tag attached to this AWS Glue registry, used to categorize, identify, or manage the registry. (AI-inferred)
+	Value any
+}
+
+var Registry_TagsFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
 type RegistryConfig struct {
+	// A description of the registry. If description is not provided, there will not be any default value for this.
 	Description any
-	Id any
-	Region any
-	RegistryName any
+	// Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.
+	Name any
+	// List of tags to tag the Registry
 	Tags any
-	TagsAll any
+}
+
+type RegistryAttrs struct {
+	// Amazon Resource Name for the created Registry.
+	Arn any
+	// A description of the registry. If description is not provided, there will not be any default value for this.
+	Description any
+	// Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.
+	Name any
+	// List of tags to tag the Registry
+	Tags any
 }
 
 var Registry = ubx.ResourceBinding{
 	WireType: "aws_glue_registry",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TagsAll": ubx.FieldSpec{WireName: "tags_all"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: Registry_TagsFields,
+		},
 	},
 }

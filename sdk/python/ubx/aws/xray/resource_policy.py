@@ -8,11 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResourcePolicyConfig:
+    # A flag to indicate whether to bypass the resource policy lockout safety check
     bypass_policy_lockout_check: Any = None
+    # The resource policy document, which can be up to 5kb in size.
     policy_document: Any = None
+    # The name of the resource policy. Must be unique within a specific AWS account.
     policy_name: Any = None
-    policy_revision_id: Any = None
-    region: Any = None
+
+@dataclasses.dataclass
+class ResourcePolicyAttrs:
+    # A flag to indicate whether to bypass the resource policy lockout safety check
+    bypass_policy_lockout_check: Any = None
+    # The resource policy document, which can be up to 5kb in size.
+    policy_document: Any = None
+    # The name of the resource policy. Must be unique within a specific AWS account.
+    policy_name: Any = None
 
 ResourcePolicy = ubx.ResourceBinding(
     wire_type="aws_xray_resource_policy",
@@ -20,7 +30,5 @@ ResourcePolicy = ubx.ResourceBinding(
         "bypass_policy_lockout_check": ubx.FieldSpec(wire_name="bypass_policy_lockout_check"),
         "policy_document": ubx.FieldSpec(wire_name="policy_document"),
         "policy_name": ubx.FieldSpec(wire_name="policy_name"),
-        "policy_revision_id": ubx.FieldSpec(wire_name="policy_revision_id"),
-        "region": ubx.FieldSpec(wire_name="region"),
     },
 )

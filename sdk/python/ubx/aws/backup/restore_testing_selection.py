@@ -8,12 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RestoreTestingSelection_ProtectedResourceConditions_StringEquals:
+    # Specifies the AWS resource tag key (e.g., Environment) that the string_equals condition requires to be present with a matching value on a protected resource for the restore testing selection. (AI-inferred)
     key: Any = None
+    # The value that a protected resource's attribute or tag (identified by the corresponding key in the enclosing StringEquals key-value pair) must equal for the resource to match this restore testing selection condition. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class RestoreTestingSelection_ProtectedResourceConditions:
+    # Specifies key-value pairs for tag-based filtering, where a protected resource must have a tag whose key and value exactly match a pair in this list to be included in the restore testing selection. (AI-inferred)
     string_equals: Any = None
+    # A list of conditions where each specifies a resource attribute (such as a tag key) and a value, and the condition is satisfied when the resource's attribute value does not equal that value, thereby excluding matching protected resources from the restore testing selection. (AI-inferred)
     string_not_equals: Any = None
 
 _RestoreTestingSelection_ProtectedResourceConditions_StringEqualsFields = {
@@ -36,31 +40,56 @@ _RestoreTestingSelection_ProtectedResourceConditionsFields = {
 
 @dataclasses.dataclass
 class RestoreTestingSelectionConfig:
+    # The ARN of the IAM role that AWS Backup assumes to perform restore testing for the resources included in this restore testing selection. (AI-inferred)
     iam_role_arn: Any = None
-    name: Any = None
+    # The ARNs of the protected resources to include in the restore testing selection. (AI-inferred)
     protected_resource_arns: Any = None
-    protected_resource_type: Any = None
-    region: Any = None
-    restore_metadata_overrides: Any = None
-    restore_testing_plan_name: Any = None
-    validation_window_hours: Any = None
+    # Defines the key-value conditions (StringEquals and StringNotEquals) on protected resource attributes, such as tags, to filter which resources are included in the restore testing selection. (AI-inferred)
     protected_resource_conditions: Any = None
+    # Specifies the AWS resource type (e.g., 'EBS', 'S3', or '*') that determines which protected resources are included in the restore testing selection. (AI-inferred)
+    protected_resource_type: Any = None
+    # A map of restore metadata overrides used to customize the restore job parameters for a restore testing selection. (AI-inferred)
+    restore_metadata_overrides: Any = None
+    # The name of the AWS Backup restore testing plan that this selection is associated with. (AI-inferred)
+    restore_testing_plan_name: Any = None
+    # The name of the restore testing selection, which must be unique among all restore testing selections in the same restore testing plan. (AI-inferred)
+    restore_testing_selection_name: Any = None
+    # The number of hours in the validation window, starting from the beginning of the restore test, within which the restore test must complete successfully or it is considered failed. (AI-inferred)
+    validation_window_hours: Any = None
+
+@dataclasses.dataclass
+class RestoreTestingSelectionAttrs:
+    # The ARN of the IAM role that AWS Backup assumes to perform restore testing for the resources included in this restore testing selection. (AI-inferred)
+    iam_role_arn: Any = None
+    # The ARNs of the protected resources to include in the restore testing selection. (AI-inferred)
+    protected_resource_arns: Any = None
+    # Defines the key-value conditions (StringEquals and StringNotEquals) on protected resource attributes, such as tags, to filter which resources are included in the restore testing selection. (AI-inferred)
+    protected_resource_conditions: Any = None
+    # Specifies the AWS resource type (e.g., 'EBS', 'S3', or '*') that determines which protected resources are included in the restore testing selection. (AI-inferred)
+    protected_resource_type: Any = None
+    # A map of restore metadata overrides used to customize the restore job parameters for a restore testing selection. (AI-inferred)
+    restore_metadata_overrides: Any = None
+    # The name of the AWS Backup restore testing plan that this selection is associated with. (AI-inferred)
+    restore_testing_plan_name: Any = None
+    # The name of the restore testing selection, which must be unique among all restore testing selections in the same restore testing plan. (AI-inferred)
+    restore_testing_selection_name: Any = None
+    # The number of hours in the validation window, starting from the beginning of the restore test, within which the restore test must complete successfully or it is considered failed. (AI-inferred)
+    validation_window_hours: Any = None
 
 RestoreTestingSelection = ubx.ResourceBinding(
     wire_type="aws_backup_restore_testing_selection",
     fields={
         "iam_role_arn": ubx.FieldSpec(wire_name="iam_role_arn"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "protected_resource_arns": ubx.FieldSpec(wire_name="protected_resource_arns"),
-        "protected_resource_type": ubx.FieldSpec(wire_name="protected_resource_type"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "restore_metadata_overrides": ubx.FieldSpec(wire_name="restore_metadata_overrides"),
-        "restore_testing_plan_name": ubx.FieldSpec(wire_name="restore_testing_plan_name"),
-        "validation_window_hours": ubx.FieldSpec(wire_name="validation_window_hours"),
         "protected_resource_conditions": ubx.FieldSpec(
             wire_name="protected_resource_conditions",
-            kind="list",
+            kind="object",
             fields=_RestoreTestingSelection_ProtectedResourceConditionsFields,
         ),
+        "protected_resource_type": ubx.FieldSpec(wire_name="protected_resource_type"),
+        "restore_metadata_overrides": ubx.FieldSpec(wire_name="restore_metadata_overrides"),
+        "restore_testing_plan_name": ubx.FieldSpec(wire_name="restore_testing_plan_name"),
+        "restore_testing_selection_name": ubx.FieldSpec(wire_name="restore_testing_selection_name"),
+        "validation_window_hours": ubx.FieldSpec(wire_name="validation_window_hours"),
     },
 )

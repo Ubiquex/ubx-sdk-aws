@@ -8,59 +8,78 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Thesaurus_SourceS3Path:
+    # The name of the S3 bucket that contains the file.
     bucket: Any = None
+    # The name of the file.
     key: Any = None
 
 @dataclasses.dataclass
-class Thesaurus_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class Thesaurus_Tags:
+    # The key of a tag attached to an AWS Kendra thesaurus, used to organize and identify the resource for management and billing. (AI-inferred)
+    key: Any = None
+    # The value component of a tag entry associated with the AWS Kendra thesaurus, used for organizing and identifying the resource. (AI-inferred)
+    value: Any = None
 
 _Thesaurus_SourceS3PathFields = {
     "bucket": ubx.FieldSpec(wire_name="bucket"),
     "key": ubx.FieldSpec(wire_name="key"),
 }
 
-_Thesaurus_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_Thesaurus_TagsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
 class ThesaurusConfig:
+    # A description for the thesaurus.
     description: Any = None
-    id: Any = None
+    # The identifier of the index for the thesaurus.
     index_id: Any = None
+    # A name for the thesaurus.
     name: Any = None
-    region: Any = None
+    # An IAM role that gives Amazon Kendra permissions to access the thesaurus file specified in SourceS3Path.
     role_arn: Any = None
-    tags: Any = None
-    tags_all: Any = None
+    # Information required to find a specific file in an Amazon S3 bucket.
     source_s3_path: Any = None
-    timeouts: Any = None
+    # A list of key-value pairs that identify or categorize the thesaurus.
+    tags: Any = None
+
+@dataclasses.dataclass
+class ThesaurusAttrs:
+    # The Amazon Resource Name (ARN) of the thesaurus.
+    arn: Any = None
+    # A description for the thesaurus.
+    description: Any = None
+    # The identifier of the thesaurus.
+    id: Any = None
+    # The identifier of the index for the thesaurus.
+    index_id: Any = None
+    # A name for the thesaurus.
+    name: Any = None
+    # An IAM role that gives Amazon Kendra permissions to access the thesaurus file specified in SourceS3Path.
+    role_arn: Any = None
+    # Information required to find a specific file in an Amazon S3 bucket.
+    source_s3_path: Any = None
+    # A list of key-value pairs that identify or categorize the thesaurus.
+    tags: Any = None
 
 Thesaurus = ubx.ResourceBinding(
     wire_type="aws_kendra_thesaurus",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "index_id": ubx.FieldSpec(wire_name="index_id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "role_arn": ubx.FieldSpec(wire_name="role_arn"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "tags_all": ubx.FieldSpec(wire_name="tags_all"),
         "source_s3_path": ubx.FieldSpec(
             wire_name="source_s3_path",
-            kind="list",
+            kind="object",
             fields=_Thesaurus_SourceS3PathFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Thesaurus_TimeoutsFields,
+        "tags": ubx.FieldSpec(
+            wire_name="tags",
+            kind="list",
+            fields=_Thesaurus_TagsFields,
         ),
     },
 )
